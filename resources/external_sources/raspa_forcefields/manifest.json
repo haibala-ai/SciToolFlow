@@ -1,0 +1,67 @@
+{
+  "source": {
+    "repository": "lsmo-epfl/aiida-lsmo",
+    "revision": "6bf08fa42e545dadf889ea8095d7fcdd8d1be15c",
+    "files": [
+      {
+        "path": "aiida_lsmo/calcfunctions/ff_data.yaml",
+        "git_blob": "126a26d30f998235474553e5a9d98b5227509f5f"
+      },
+      {
+        "path": "aiida_lsmo/calcfunctions/ff_builder_module.py",
+        "git_blob": "f96cd55c2966df992a95c8c58fd62a8d333ced1a"
+      },
+      {
+        "path": "LICENSE",
+        "git_blob": "1d3e96f9be48f2d71940ac1a432f360b15c37985"
+      }
+    ]
+  },
+  "parameters": {
+    "ff_framework": "UFF",
+    "ff_molecules": {
+      "CO2": "TraPPE",
+      "H2": "Buch-nonFH"
+    },
+    "shifted": false,
+    "tail_corrections": true,
+    "mixing_rule": "Lorentz-Berthelot",
+    "separate_interactions": false
+  },
+  "scientific_descriptions": {
+    "framework": "UFF dispersion parameters as reported in Rappe1992 (10.1021/ja00051a040)",
+    "CO2": "TraPPE parameters for carbon dioxide, reported in Potoff2001 (10.1002/aic.690470719).",
+    "H2": "Buch force field without Feynman-Hibbs rules, for a simpler use with mixtures. Use only for near ambient temperatures or above.\n"
+  },
+  "unchanged_upstream_renderer_functions": [
+    "check_ff_list",
+    "mix_molecule_ff",
+    "render_ff_def",
+    "render_ff_mixing_def",
+    "render_molecule_def",
+    "render_pseudo_atoms_def"
+  ],
+  "supported_temperature_kelvin": "273 or above: H2 Buch-nonFH is a near-ambient classical model",
+  "files": [
+    {
+      "name": "CO2.def",
+      "sha256": "c3eb6fd3a6258ee5a2269a3fe84bac54b5ea5ec8dbf0b58e03b7c2083e66cb86"
+    },
+    {
+      "name": "H2.def",
+      "sha256": "32acea9c247a88b400f979b070ecc66fd7de9b3b55b373d4dd67e689d2a23af7"
+    },
+    {
+      "name": "force_field.def",
+      "sha256": "dcd34815f31840976cbb74f607dbb6f812d1f043ac444026816bdca626e743d1"
+    },
+    {
+      "name": "force_field_mixing_rules.def",
+      "sha256": "af1f2678b5d239a0b5a711c84a7428555775be0ee2eea6630759c96822da45e4"
+    },
+    {
+      "name": "pseudo_atoms.def",
+      "sha256": "653d8737d5bc0fe88131cfa41e92f86e5e0790fcf39c16f4719bfb127ba7fd61"
+    }
+  ]
+}

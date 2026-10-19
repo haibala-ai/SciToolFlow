@@ -1,0 +1,7 @@
+lightning
+pandas
+python-Levenshtein
+rdkit
+rxn-chem-utils
+torch
+transformers

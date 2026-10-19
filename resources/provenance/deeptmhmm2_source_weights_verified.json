@@ -1,0 +1,158 @@
+{
+  "repository": "fteufel/DeepTMHMM2",
+  "revision": "526f6c60f93c0868c7315413da8e669d12373cc3",
+  "verified_blobs": [
+    {
+      "path": ".github/workflows/biolib.yml",
+      "git_blob": "e73fdee55878d6e9eedbec4dbc7abe02af04a5e3"
+    },
+    {
+      "path": ".gitignore",
+      "git_blob": "b7faf403d915ca307532bb0eb9cceaf0214e8e5b"
+    },
+    {
+      "path": "README.md",
+      "git_blob": "0af147dfd39691b1b4ec257aeb250b7a028a7241"
+    },
+    {
+      "path": "biolib/.biolib/config.yml",
+      "git_blob": "ebc5c617c1674fa151627ab227e1c9335a1e599e"
+    },
+    {
+      "path": "biolib/Dockerfile",
+      "git_blob": "1259b28e264b957a98eb4babbc42de247bc26793"
+    },
+    {
+      "path": "biolib/README.md",
+      "git_blob": "827d5a66c633d0b68c59426c1894b3357a7eb09d"
+    },
+    {
+      "path": "biolib/make_report.py",
+      "git_blob": "36aeba100c676833f4de438dbb164c179025c8cd"
+    },
+    {
+      "path": "biolib/run.sh",
+      "git_blob": "78a74e7b906ad1cbb97ac1824ddda9d76a2363ca"
+    },
+    {
+      "path": "checkpoints/memtype_0.ckpt",
+      "git_blob": "0bf3f2eb81c8b4d8b69d02174059a91333b9c763"
+    },
+    {
+      "path": "checkpoints/memtype_1.ckpt",
+      "git_blob": "f164655b91c2097e0af0dae4337d461594bc8f0b"
+    },
+    {
+      "path": "checkpoints/memtype_2.ckpt",
+      "git_blob": "b9b2d90195e433593f5324db499e1bcd7a9f6f91"
+    },
+    {
+      "path": "checkpoints/memtype_3.ckpt",
+      "git_blob": "63f2f2e4f435ae47efd3950dac07d5174fd82a57"
+    },
+    {
+      "path": "checkpoints/memtype_4.ckpt",
+      "git_blob": "8f6ea1662c87fcdf37b0d6c6a304b335e9646059"
+    },
+    {
+      "path": "checkpoints/topology_0.ckpt",
+      "git_blob": "5edfb155f5a04d8e7e214716d59e5e4fb2032325"
+    },
+    {
+      "path": "checkpoints/topology_1.ckpt",
+      "git_blob": "ddc678e3a5f9d2eecfb21f8e1fb1c1bf5c921058"
+    },
+    {
+      "path": "checkpoints/topology_2.ckpt",
+      "git_blob": "fcebf1d39c322854309414675f1017cfc66c8910"
+    },
+    {
+      "path": "checkpoints/topology_3.ckpt",
+      "git_blob": "3fd233c31dffbe6ecaf61fa3bd1e4a4ca24b82e1"
+    },
+    {
+      "path": "checkpoints/topology_4.ckpt",
+      "git_blob": "b5eb52e1409ff3415d7b10ee2ce750de14394164"
+    },
+    {
+      "path": "deeptmhmm2_predictor/__init__.py",
+      "git_blob": "5ce0f702f2354f769f1ce389a5bb8464ed4528be"
+    },
+    {
+      "path": "deeptmhmm2_predictor/api.py",
+      "git_blob": "183888b16a01a91fb5bfd81286daa27e22ef03eb"
+    },
+    {
+      "path": "deeptmhmm2_predictor/constants.py",
+      "git_blob": "372b9f0134949823394dca6cf5849d8b4128cbca"
+    },
+    {
+      "path": "deeptmhmm2_predictor/main.py",
+      "git_blob": "3dedbc6f2c3d1207a4173cc5e93d685e1e02344b"
+    },
+    {
+      "path": "deeptmhmm2_predictor/model/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "deeptmhmm2_predictor/model/container.py",
+      "git_blob": "e1277b9a40e51b1bf21400c88fa47f39178a99ce"
+    },
+    {
+      "path": "deeptmhmm2_predictor/model/crf.py",
+      "git_blob": "be710fd8eb1e61a3a9b2586737448b3dbeb5f974"
+    },
+    {
+      "path": "deeptmhmm2_predictor/model/crf_config_with_tp_split_io.py",
+      "git_blob": "a1f67c7fc95389156740e8f579c4e0133dc6e188"
+    },
+    {
+      "path": "deeptmhmm2_predictor/model/lightning_deeptmhmm.py",
+      "git_blob": "494f885b1f25b69e870775e387b4b0fcadc4d372"
+    },
+    {
+      "path": "deeptmhmm2_predictor/model/lightning_memtype.py",
+      "git_blob": "844cc9ab591a24841369d3e117b12c84bbe3c205"
+    },
+    {
+      "path": "deeptmhmm2_predictor/model/torch_deeptmhmm.py",
+      "git_blob": "eacc7f9d80b3be040b3088015ea9c1c75259eca4"
+    },
+    {
+      "path": "deeptmhmm2_predictor/model/torch_memtype.py",
+      "git_blob": "7428110a7127a19c642b1de28da663f0ff18ee9a"
+    },
+    {
+      "path": "deeptmhmm2_predictor/utils/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "deeptmhmm2_predictor/utils/esm_embed.py",
+      "git_blob": "127c963c43161b53702310dcc902010ce8a8f705"
+    },
+    {
+      "path": "deeptmhmm2_predictor/utils/formats.py",
+      "git_blob": "1a1b6bf8daafff6eb739a8f9297c0c7a220d922b"
+    },
+    {
+      "path": "deeptmhmm2_predictor/utils/plotting.py",
+      "git_blob": "0711027519326393bd1dda62674f6df6be39c649"
+    },
+    {
+      "path": "deeptmhmm2_predictor/utils/postprocessing.py",
+      "git_blob": "cd799cfa192ed2ceeecee59e7978fa4992f6f937"
+    },
+    {
+      "path": "deeptmhmm2_predictor/weights.py",
+      "git_blob": "97a2cc33af8e9b0808636b415ad7cf3c6dde68c2"
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob": "064256a2ce3a869dd0b8d55bcd9761754b20af70"
+    },
+    {
+      "path": "sample.fasta",
+      "git_blob": "ce6f3d27cc8cf236d16282afb65427f062734d93"
+    }
+  ]
+}

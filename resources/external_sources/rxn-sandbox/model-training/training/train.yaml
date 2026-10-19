@@ -1,0 +1,35 @@
+model:
+  vocab_path: vocab/vocab.txt
+  task: "forward"
+  learning_rate: 0.001584893192461114
+  warmup_ratio: 0.1
+  # attention_mask: -1e4
+  max_length: 256  # for generating predictions
+data:
+  vocab_path: vocab/vocab.txt
+  train_path: data/pistachio/data.forward/train.jsonl
+  validation_path: data/pistachio/data.forward/validation.jsonl
+  truncation: true
+  max_length: 256  # for tokenizing input data
+  num_dataloader_workers: 16
+  batch_size: 512
+trainer:
+  accumulate_grad_batches: 2
+  max_epochs: 60
+  # profiler: simple
+  accelerator: gpu
+  enable_progress_bar: false
+  devices: 1
+  precision: 32
+  deterministic: true
+  # detect_anomaly: true
+  gradient_clip_val: 1.0
+  gradient_clip_algorithm: "norm"
+  callbacks:
+    - class_path: lightning.pytorch.callbacks.ModelCheckpoint
+      init_args:
+        monitor: val_accuracy
+        mode: max
+        save_top_k: 10
+        filename: "{epoch:02d}-{val_accuracy:.4f}"
+seed_everything: 42

@@ -1,0 +1,16 @@
+# Third-party resource notices
+
+This resource snapshot contains independently licensed materials. Their upstream terms and notices remain applicable; the SciToolFlow license does not relicense them.
+
+- **OmegaFold** — [HeliXonProtein/OmegaFold](https://github.com/HeliXonProtein/OmegaFold), Apache-2.0. Original license: `external_sources/OmegaFold/LICENSE`. Large prediction weights are excluded.
+- **DeepTMHMM2** — [fteufel/DeepTMHMM2](https://github.com/fteufel/DeepTMHMM2), revision `526f6c60f93c0868c7315413da8e669d12373cc3`. The original `pyproject.toml` declares the MIT License classifier and credits Felix Teufel. No separate LICENSE text was present in that snapshot; the original declaration and authorship metadata are retained. Checkpoints and ESM2 weights are excluded.
+- **RXN Sandbox** — [rxn4chemistry/rxn-sandbox](https://github.com/rxn4chemistry/rxn-sandbox), OpenMDW-1.1. Original agreement: `external_sources/rxn-sandbox/LICENSE.OpenMDW-1.1`. The bundle includes its SCScore support files; SCScore originates from [connorcoley/scscore](https://github.com/connorcoley/scscore), MIT, Copyright (c) 2017 Connor Coley. The SCScore license is also retained in its directory. The large forward/retro checkpoints are excluded.
+- **RASPA2** — [iRASPA/RASPA2](https://github.com/iRASPA/RASPA2), MIT. Original copyright, authors and terms: `external_sources/RASPA2/COPYING` and `AUTHORS`. Compiled binaries, example-run outputs and large PDF documentation are excluded.
+- **Zeo++ and Voro++** — [lsmo-epfl/zeopp-lsmo](https://github.com/lsmo-epfl/zeopp-lsmo), upstream BSD-style terms. Original licenses: `external_sources/zeopp-lsmo/LICENSE` and `voro++/LICENSE`. Compiled binaries and object files are excluded.
+- **Eigen** — [Eigen](https://eigen.tuxfamily.org/), multiple original file notices and upstream licenses as recorded in `external_sources/eigen3/runtime/usr/share/doc/libeigen3-dev/copyright`. Header notices remain intact. Debian binaries are excluded.
+- **aiida-lsmo and generated force-field definitions** — [lsmo-epfl/aiida-lsmo](https://github.com/lsmo-epfl/aiida-lsmo), revision `6bf08fa42e545dadf889ea8095d7fcdd8d1be15c`, MIT. Original license: `external_sources/aiida-lsmo/LICENSE`. The generated definitions retain their parameters, scientific citations and checksums in `external_sources/raspa_forcefields/manifest.json`.
+- **MOFSimplify** — [hjkgrp/MOFSimplify](https://github.com/hjkgrp/MOFSimplify), MIT, Copyright (c) 2023 Kulik Group. Original license: `models/MOFSimplify/LICENSE`. This bundle retains the original small models and paired tables without recalibration or retraining.
+- **Materials Project** — public snapshot and index attributed to [Materials Project Open Data](https://registry.opendata.aws/materials-project/), subject to its linked terms of use. These files are not relicensed by SciToolFlow and do not constitute a complete historical archive.
+- **Historical provenance records** — SciToolFlow metadata describing the particular development snapshot, not certification of files that a user downloads later. The complete HIPPIE dataset is excluded.
+
+`manifest.json` records SHA256 identities for the distributed files. Runtime copies created under `.local/` preserve these source bytes; building external programs creates additional host-specific files only in that local working area.

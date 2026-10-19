@@ -1,0 +1,31 @@
+data:
+  path: data/pistachio/reactions_cleaned.txt
+  name: data
+  proc_dir: data/pistachio/pipeline
+common:
+  sequence:
+  - IMPORT
+  - STANDARDIZE
+  fragment_bond: TILDE
+  reaction_column_name: rxn
+  keep_intermediate_columns: false
+rxn_import:
+  input_file: data/pistachio/reactions_cleaned.txt
+  output_csv: data/pistachio/pipeline/data.imported.csv
+  data_format: TXT
+  input_csv_column_name: rxn
+  reaction_column_name: rxn
+  fragment_bond: TILDE
+  remove_atom_mapping: true
+  column_for_light: null
+  column_for_heat: null
+  keep_original_rxn_column: false
+standardize:
+  input_file_path: data/pistachio/pipeline/data.imported.csv
+  annotation_file_paths: []
+  discard_unannotated_metals: false
+  output_file_path: data/pistachio/pipeline/data.standardized.csv
+  fragment_bond: TILDE
+  reaction_column_name: rxn
+  remove_stereo_if_not_defined_in_precursors: false
+  keep_intermediate_columns: false

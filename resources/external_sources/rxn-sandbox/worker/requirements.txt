@@ -1,0 +1,11 @@
+celery[redis]<5.4.0
+lightning
+Levenshtein
+rdkit
+redis
+torch
+transformers<5
+rxn-chem-utils
+rxn-reaction-preprocessing
+numpy
+jsonargparse[signatures]

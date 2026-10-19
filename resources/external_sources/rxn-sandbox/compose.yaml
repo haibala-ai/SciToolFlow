@@ -1,0 +1,64 @@
+name: rxn
+
+services:
+
+  redis:
+    image: public.ecr.aws/docker/library/redis
+    command: redis-server --requirepass ubuntu
+    environment:
+      - REDIS_PASSWORD=ubuntu
+
+  broker:
+    image: public.ecr.aws/docker/library/rabbitmq:3.13-management
+    environment:
+      RABBITMQ_DEFAULT_PASS: ubuntu
+      RABBITMQ_DEFAULT_USER: ubuntu
+
+  worker:
+    build:
+      context: ./worker
+    volumes:
+      - ./models:/app/models
+      - ./vocab:/app/vocab
+      - ./scripts:/app/scripts
+    environment:
+      CELERY_QUEUE: product_prediction,retro_prediction
+      CELERY_BROKER_URL: amqp://ubuntu:ubuntu@broker:5672//
+      CELERY_RESULT_BACKEND: redis://:ubuntu@redis:6379/0
+    depends_on: [redis, broker]
+
+  jupyter:
+    build:
+      context: ./jupyter
+    working_dir: /rxn
+    volumes:
+      - ./jupyter:/rxn
+    environment:
+      CELERY_QUEUE: product_prediction,retro_prediction
+      CELERY_BROKER_URL: amqp://ubuntu:ubuntu@broker:5672//
+      CELERY_RESULT_BACKEND: redis://:ubuntu@redis:6379/0
+    ports:
+      - "8888:8888"
+    depends_on: [redis, broker, worker]
+
+  mcp:
+    build:
+      context: ./mcp
+    ports:
+      - "8000:8000"
+    environment:
+      CELERY_BROKER_URL: amqp://ubuntu:ubuntu@broker:5672//
+      CELERY_RESULT_BACKEND: redis://:ubuntu@redis:6379/0
+    depends_on: [redis, broker, worker]
+
+  openwebui:
+    image: ghcr.io/open-webui/open-webui
+    ports:
+      - "3000:8080"
+    environment:
+      WEBUI_AUTH: "False"
+    volumes:
+      - openwebui-data:/app/backend/data
+
+volumes:
+  openwebui-data:

@@ -1,0 +1,16 @@
+model:
+  vocab_path: vocab/vocab.txt
+  task: "forward"
+  predictions_path: "predictions.jsonl"
+  num_beams: 3
+  topn: 3
+  max_length: 256  # for generating predictions
+data:
+  vocab_path: vocab/vocab.txt
+  predict_path: data/input.jsonl
+  truncation: true
+  max_length: 256  # for tokenizing input data
+  num_dataloader_workers: 16
+  batch_size: 512
+seed_everything: 42
+ckpt_path: lightning_logs/forward/checkpoints/epoch=59-val_accuracy=0.6476.ckpt

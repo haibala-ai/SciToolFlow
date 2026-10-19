@@ -1,4 +1,4 @@
-"""Hash distributable source/data only; never credentials, weights or run outputs."""
+"""Hash source, data and bundled resources; exclude private runtime files."""
 
 from pathlib import Path
 import hashlib
@@ -19,6 +19,7 @@ def main():
         "tests",
         "scripts",
         "docs",
+        "resources",
     ]:
         for file in (ROOT / name).rglob("*"):
             relative = file.relative_to(ROOT)

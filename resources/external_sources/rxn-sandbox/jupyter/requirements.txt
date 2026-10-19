@@ -1,0 +1,7 @@
+celery[redis]
+ipykernel
+ipywidgets
+matplotlib
+notebook
+pandas
+rdkit
