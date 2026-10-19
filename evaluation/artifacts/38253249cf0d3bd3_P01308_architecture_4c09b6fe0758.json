@@ -1,0 +1,8 @@
+{
+  "source_url": "https://rest.uniprot.org/uniprotkb/P01308.json",
+  "primary_accession": "P01308",
+  "taxon_id": 9606,
+  "fetched_at": "2026-10-15T19:10:44.996369+00:00",
+  "annotations": [],
+  "response_sha256": "4c09b6fe0758b3dd0142c71fa1c04cd23aa7862a3c734e7d4298e74bee7870f3"
+}

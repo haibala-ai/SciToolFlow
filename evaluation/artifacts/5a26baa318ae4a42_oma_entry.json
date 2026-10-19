@@ -1,0 +1,66 @@
+{
+  "entry_nr": 24410593,
+  "entry_url": "https://omabrowser.org/api/protein/24410593/",
+  "omaid": "HUMAN03911",
+  "canonicalid": "INS_HUMAN",
+  "sequence_md5": "12e9c9e4e2835c302e8ba615115edda3",
+  "sequence_length": 110,
+  "species": {
+    "code": "HUMAN",
+    "taxon_id": 9606,
+    "species": "Homo sapiens",
+    "genome_url": "https://omabrowser.org/api/genome/HUMAN/"
+  },
+  "oma_group": 1098294,
+  "oma_hog_id": "HOG:F0798498.1a",
+  "chromosome": "11",
+  "locus": {
+    "start": 2159852,
+    "end": 2160971,
+    "strand": -1
+  },
+  "is_main_isoform": true,
+  "roothog_id": 798498,
+  "hog_levels": [
+    "Homo sapiens",
+    "Homininae",
+    "Hominidae",
+    "Hominoidea",
+    "Catarrhini",
+    "Simiiformes",
+    "Haplorrhini",
+    "Primates",
+    "Euarchontoglires",
+    "Boreoeutheria",
+    "Eutheria",
+    "Theria",
+    "Mammalia",
+    "Amniota",
+    "Tetrapoda",
+    "Sarcopterygii",
+    "Euteleostomi",
+    "Gnathostomata",
+    "Vertebrata"
+  ],
+  "sequence": "MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN",
+  "cdna": "ATGGCCCTGTGGATGCGCCTCCTGCCCCTGCTGGCGCTGCTGGCCCTCTGGGGACCTGACCCAGCCGCAGCCTTTGTGAACCAACACCTGTGCGGCTCACACCTGGTGGAAGCTCTCTACCTAGTGTGCGGGGAACGAGGCTTCTTCTACACACCCAAGACCCGCCGGGAGGCAGAGGACCTGCAGGTGGGGCAGGTGGAGCTGGGCGGGGGCCCTGGTGCAGGCAGCCTGCAGCCCTTGGCCCTGGAGGGGTCCCTGCAGAAGCGTGGCATTGTGGAACAATGCTGTACCAGCATCTGCTCCCTCTACCAGCTGGAGAACTACTGCAACTAG",
+  "structure": {
+    "source": "AlphaFold",
+    "sequence_3di": "DVVVVVVVVVVVCCCVVPDPPPPPPPPDDDDDDDPPPVVVCVVPPDDDDPPDPPPDDPDDDDDDDDDDDDDDDDDDDDDDPDPDDPDDDPDPPVVRPDDDDPVVVVVVVD"
+  },
+  "description": "insulin [Source:HGNC Symbol;Acc:HGNC:6081]; transcript_id=ENST00000397262.5",
+  "domains": "https://omabrowser.org/api/protein/24410593/domains/",
+  "xref": "https://omabrowser.org/api/protein/24410593/xref/",
+  "orthologs": "https://omabrowser.org/api/protein/24410593/orthologs/",
+  "homoeologs": null,
+  "gene_ontology": "https://omabrowser.org/api/protein/24410593/gene_ontology/",
+  "oma_group_url": "https://omabrowser.org/api/group/1098294/",
+  "oma_hog_members": "https://omabrowser.org/api/hog/HOG:F0798498.1a/members/",
+  "isoforms": "https://omabrowser.org/api/protein/24410593/isoforms/",
+  "alternative_isoforms_urls": [
+    "https://omabrowser.org/api/protein/24410594/",
+    "https://omabrowser.org/api/protein/24410595/",
+    "https://omabrowser.org/api/protein/24410596/",
+    "https://omabrowser.org/api/protein/24410597/"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "submission": {
+    "status": 1,
+    "task_id": "38161726-3108-48f8-a251-101d90ba8638"
+  },
+  "response": {
+    "status": "done",
+    "result": {
+      "count": 1,
+      "items": [
+        {
+          "id": "sequence1",
+          "sequence": "TTCCPSIVARSNFNVCRLPGTPEAICATYTGCIIIPGATCPGDYAN",
+          "pred_global_label": "SIGNAL",
+          "pred_global_prob": 0.9999933242797852,
+          "topology": "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO",
+          "regions": [
+            {
+              "start": 1,
+              "end": 46,
+              "type": "O"
+            }
+          ],
+          "cleavage_sites": []
+        }
+      ]
+    },
+    "error": null
+  }
+}

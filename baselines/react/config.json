@@ -1,0 +1,18 @@
+{
+  "max_steps": 80,
+  "max_discovery_calls": 20,
+  "max_think_steps": 8,
+  "max_consecutive_thinks": 2,
+  "max_actions": 8,
+  "max_protocol_errors": 5,
+  "max_failures_per_action": 0,
+  "max_identical_tool_steps": 10,
+  "answer_schema_guard": true,
+  "max_output_tokens": 4096,
+  "max_input_tokens": 40960,
+  "task_timeout_seconds": 1800,
+  "tool_timeout_seconds": 180,
+  "tool_names_only_initially": true,
+  "max_context_chars": 200000,
+  "protocol_schema_guard": true
+}

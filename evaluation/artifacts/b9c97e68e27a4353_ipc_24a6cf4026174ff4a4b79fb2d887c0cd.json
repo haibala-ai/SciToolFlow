@@ -1,0 +1,22 @@
+{
+  "submission": {
+    "status": 1,
+    "task_id": "26b1eca5-4524-4ed5-a437-246f44acdfe5"
+  },
+  "response": {
+    "status": "done",
+    "result": {
+      "count": 1,
+      "items": [
+        {
+          "id": "sequence1",
+          "sequence": "TTCCPSIVARSNFNVCRLPGTPEAICATYTGCIIIPGATCPGDYAN",
+          "length": 46,
+          "mode": "peptide",
+          "pI": 6.1687
+        }
+      ]
+    },
+    "error": null
+  }
+}

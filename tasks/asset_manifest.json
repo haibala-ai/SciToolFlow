@@ -1,0 +1,41 @@
+{
+  "scheme": "asset://<name>; resolve with scitoolflow.evaluation.release_io.load_agent_input",
+  "files": {
+    "9ec2e3a66e36ae94_6.1.1.freq.out.gz": {
+      "sha256": "9ec2e3a66e36ae94f078e4e40e819eb495659464aebc514428dc2252d8900f5c",
+      "bytes": 6990,
+      "source_project_relative_path": "reference_data/QChem_public/6.1.1.freq.out.gz"
+    },
+    "4dbded695eec6a93_Frequency_no_equal.qout": {
+      "sha256": "4dbded695eec6a93cd37f4a04f20999e4c447a3f7405efc142c04fe086967f6b",
+      "bytes": 103092,
+      "source_project_relative_path": "reference_data/QChem_public/Frequency_no_equal.qout"
+    },
+    "746505ff8da1c5f7_VC_solv_eps10.2.qcout": {
+      "sha256": "746505ff8da1c5f73b17f1fbebc98331d87533166f0e86fbcc752635367d0011",
+      "bytes": 34961,
+      "source_project_relative_path": "reference_data/QChem_public/VC_solv_eps10.2.qcout"
+    },
+    "c9ce6c8745de94d8_nbo.qout": {
+      "sha256": "c9ce6c8745de94d8bd363e2a53bc1b0348b9c0d92a668d1cef5e9bb64cd581aa",
+      "bytes": 424727,
+      "source_project_relative_path": "reference_data/QChem_public/nbo.qout"
+    },
+    "b1e9df1bd8803ceb_tfsi_nbo.qcout": {
+      "sha256": "b1e9df1bd8803ceb85cd58841d4b59eb3d16c8a1b158ab88b781d25796a39787",
+      "bytes": 145606,
+      "source_project_relative_path": "reference_data/QChem_public/tfsi_nbo.qcout"
+    },
+    "cc840fa9ffe4473a_nbo7_1.qout": {
+      "sha256": "cc840fa9ffe4473a55dec2796c67a1a375700b4c7ef83a32833e609b087f915e",
+      "bytes": 1198307,
+      "source_project_relative_path": "reference_data/QChem_public/nbo7_1.qout"
+    },
+    "7b53fd062d9759a0_HKUST-1.cif": {
+      "sha256": "7b53fd062d9759a0a454bea681dbb5e4da10339fb583b9ac0eb8012624a25473",
+      "bytes": 23932,
+      "source_project_relative_path": "audits/remediation_20261013/fixtures/HKUST-1.cif"
+    }
+  },
+  "scope": "Only declared public input bytes. No reference answers, tool paths, traces or generated target outputs."
+}

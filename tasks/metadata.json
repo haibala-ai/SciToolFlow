@@ -1,0 +1,4322 @@
+{
+  "version": "0.3.0",
+  "tasks": 500,
+  "split": "none",
+  "budget_policy": "min(128, max(32, ceil(1.5 * reference_calls) + 5))",
+  "workflow_groups": {
+    "grouping": "workflow family union shared entity cohorts (Jaccard >= 0.8)",
+    "group_count": 194,
+    "groups": {
+      "80070ae0f11b18f4b0ce51502fbac06e0543305ea907eb85e091ea9270425430": [
+        "FLOW-0001"
+      ],
+      "63d72d684395e7c4bff4084e104b49f8f276a77dcecf80536118f68e81d7914c": [
+        "FLOW-0002",
+        "FLOW-0003",
+        "FLOW-0004",
+        "FLOW-0005",
+        "FLOW-0006",
+        "FLOW-0007",
+        "FLOW-0008",
+        "FLOW-0009",
+        "FLOW-0010",
+        "FLOW-0011",
+        "FLOW-0012",
+        "FLOW-0013",
+        "FLOW-0014",
+        "FLOW-0015",
+        "FLOW-0016",
+        "FLOW-0017",
+        "FLOW-0018",
+        "FLOW-0019",
+        "FLOW-0020",
+        "FLOW-0021",
+        "FLOW-0022",
+        "FLOW-0023",
+        "FLOW-0024",
+        "FLOW-0025",
+        "FLOW-0026",
+        "FLOW-0027",
+        "FLOW-0028",
+        "FLOW-0029",
+        "FLOW-0030",
+        "FLOW-0031",
+        "FLOW-0032",
+        "FLOW-0033",
+        "FLOW-0034",
+        "FLOW-0035",
+        "FLOW-0036",
+        "FLOW-0037",
+        "FLOW-0038",
+        "FLOW-0039",
+        "FLOW-0040",
+        "FLOW-0177",
+        "FLOW-0178",
+        "FLOW-0179",
+        "FLOW-0204",
+        "FLOW-0205",
+        "FLOW-0206"
+      ],
+      "3ad9f159f840909327079d0dabc038f812837fcb93dd890a9f67300b1dbeef37": [
+        "FLOW-0041",
+        "FLOW-0042",
+        "FLOW-0043",
+        "FLOW-0044",
+        "FLOW-0045",
+        "FLOW-0046",
+        "FLOW-0047",
+        "FLOW-0048",
+        "FLOW-0049",
+        "FLOW-0050",
+        "FLOW-0051",
+        "FLOW-0052",
+        "FLOW-0053",
+        "FLOW-0054",
+        "FLOW-0055",
+        "FLOW-0056",
+        "FLOW-0057",
+        "FLOW-0058",
+        "FLOW-0059",
+        "FLOW-0060",
+        "FLOW-0061",
+        "FLOW-0062",
+        "FLOW-0063",
+        "FLOW-0064",
+        "FLOW-0065",
+        "FLOW-0066",
+        "FLOW-0067",
+        "FLOW-0068",
+        "FLOW-0069",
+        "FLOW-0070",
+        "FLOW-0071",
+        "FLOW-0072",
+        "FLOW-0073",
+        "FLOW-0197",
+        "FLOW-0198",
+        "FLOW-0199"
+      ],
+      "2be189e561ac8b89c0755f566aa6e24929f1e8554040cedc3e3e6630d7ecfaee": [
+        "FLOW-0074",
+        "FLOW-0075",
+        "FLOW-0076",
+        "FLOW-0077",
+        "FLOW-0078",
+        "FLOW-0079",
+        "FLOW-0080",
+        "FLOW-0081",
+        "FLOW-0082",
+        "FLOW-0083",
+        "FLOW-0084",
+        "FLOW-0085",
+        "FLOW-0086",
+        "FLOW-0087",
+        "FLOW-0088",
+        "FLOW-0089",
+        "FLOW-0090",
+        "FLOW-0091",
+        "FLOW-0092",
+        "FLOW-0093",
+        "FLOW-0094",
+        "FLOW-0095",
+        "FLOW-0096",
+        "FLOW-0097",
+        "FLOW-0098"
+      ],
+      "edf3d68fdbe1ed7eb49d98de7cb81da65ca829275753753fd3d9df14e1db125b": [
+        "FLOW-0099",
+        "FLOW-0100",
+        "FLOW-0101",
+        "FLOW-0102",
+        "FLOW-0103",
+        "FLOW-0104",
+        "FLOW-0105",
+        "FLOW-0106",
+        "FLOW-0107",
+        "FLOW-0108",
+        "FLOW-0109",
+        "FLOW-0110",
+        "FLOW-0111",
+        "FLOW-0112",
+        "FLOW-0113",
+        "FLOW-0114",
+        "FLOW-0115",
+        "FLOW-0116",
+        "FLOW-0120",
+        "FLOW-0121",
+        "FLOW-0122"
+      ],
+      "5ada5e6d04bdc2c375a4866bd7876554cd69c737f76d4adb2390bbf4c621c0c9": [
+        "FLOW-0117",
+        "FLOW-0118",
+        "FLOW-0119"
+      ],
+      "3881b6b155b6660c6ee05e19bc06b50bc818bfcc955c485e8da9c78f343faf24": [
+        "FLOW-0123",
+        "FLOW-0124",
+        "FLOW-0125",
+        "FLOW-0126",
+        "FLOW-0127",
+        "FLOW-0128",
+        "FLOW-0129",
+        "FLOW-0130",
+        "FLOW-0134",
+        "FLOW-0135",
+        "FLOW-0136",
+        "FLOW-0137",
+        "FLOW-0138",
+        "FLOW-0139",
+        "FLOW-0140",
+        "FLOW-0141",
+        "FLOW-0142",
+        "FLOW-0146",
+        "FLOW-0147",
+        "FLOW-0150",
+        "FLOW-0151",
+        "FLOW-0152",
+        "FLOW-0153",
+        "FLOW-0154",
+        "FLOW-0155",
+        "FLOW-0164",
+        "FLOW-0165",
+        "FLOW-0166",
+        "FLOW-0167",
+        "FLOW-0168",
+        "FLOW-0191",
+        "FLOW-0192",
+        "FLOW-0193",
+        "FLOW-0194",
+        "FLOW-0195",
+        "FLOW-0196"
+      ],
+      "c3c5fbe0c960ceb9722bc6b9b39aaac37331ba4820f425fcf116b64fe2f6257e": [
+        "FLOW-0131",
+        "FLOW-0132",
+        "FLOW-0133",
+        "FLOW-0156",
+        "FLOW-0157",
+        "FLOW-0158",
+        "FLOW-0159",
+        "FLOW-0160",
+        "FLOW-0161"
+      ],
+      "666f1c95353f638bc9023e4ae140ff114bc841fafb257420ea753139b99ae7e5": [
+        "FLOW-0143",
+        "FLOW-0144",
+        "FLOW-0145"
+      ],
+      "af0bfcba6e51319ee756896150e609b4210d049e697680bc507e7816a567d18d": [
+        "FLOW-0148",
+        "FLOW-0149"
+      ],
+      "7a1023adc2522908de44d6866534ac83debb7753e7e0a88a62bcde595b53d670": [
+        "FLOW-0162",
+        "FLOW-0163"
+      ],
+      "822069382643967b16171a34f5a91cba48cdc4daf73df757c4955259c7b6b4fa": [
+        "FLOW-0169",
+        "FLOW-0170",
+        "FLOW-0171",
+        "FLOW-0172",
+        "FLOW-0173",
+        "FLOW-0174",
+        "FLOW-0175",
+        "FLOW-0176",
+        "FLOW-0186",
+        "FLOW-0187",
+        "FLOW-0188",
+        "FLOW-0189",
+        "FLOW-0190",
+        "FLOW-0203"
+      ],
+      "47db0535248c3298d5bdea22b833edaccde1366e47affd454ca04e20a737c20c": [
+        "FLOW-0180",
+        "FLOW-0181",
+        "FLOW-0182"
+      ],
+      "7e4bbb3516954db57ace630447d3533fc37bd78f7018319cf964f90f3c940b5a": [
+        "FLOW-0183",
+        "FLOW-0184",
+        "FLOW-0185"
+      ],
+      "ee7a90e8c3a4bb136b90019c205028f1c25948f133a93412435ac15eefba5530": [
+        "FLOW-0200",
+        "FLOW-0201",
+        "FLOW-0202"
+      ],
+      "bio-pdb-chain-audit-v1": [
+        "FLOW-0207",
+        "FLOW-0212",
+        "FLOW-0213"
+      ],
+      "bio-pdb-interface-audit-v1": [
+        "FLOW-0208",
+        "FLOW-0218",
+        "FLOW-0255"
+      ],
+      "bio-cds-sequence-audit-v1": [
+        "FLOW-0209"
+      ],
+      "bio-peptide-property-panel-v1": [
+        "FLOW-0210",
+        "FLOW-0214",
+        "FLOW-0215"
+      ],
+      "chem-pubchem-identity-panel-v1": [
+        "FLOW-0211",
+        "FLOW-0216"
+      ],
+      "bio-identity-topology-audit-v1": [
+        "FLOW-0217"
+      ],
+      "bio-cds-protein-audit-v1": [
+        "FLOW-0219",
+        "FLOW-0220"
+      ],
+      "bio-sequence-digest-property-chain-v1": [
+        "FLOW-0221",
+        "FLOW-0224",
+        "FLOW-0226",
+        "FLOW-0227"
+      ],
+      "bio-cds-digest-structure-chain-v1": [
+        "FLOW-0222",
+        "FLOW-0228",
+        "FLOW-0245"
+      ],
+      "chem-identifier-chain-v1": [
+        "FLOW-0223",
+        "FLOW-0231",
+        "FLOW-0246"
+      ],
+      "bio-peptide-structure-digest-chain-v1": [
+        "FLOW-0225",
+        "FLOW-0229",
+        "FLOW-0242",
+        "FLOW-0249"
+      ],
+      "bio-network-annotation-v1": [
+        "FLOW-0230"
+      ],
+      "ml-calibration-holdout-v1": [
+        "FLOW-0232"
+      ],
+      "mat-electronic-structure-audit-v1": [
+        "FLOW-0233",
+        "FLOW-0252",
+        "FLOW-0263"
+      ],
+      "mat-structure-consistency-audit-v1": [
+        "FLOW-0234",
+        "FLOW-0253",
+        "FLOW-0264",
+        "FLOW-0319"
+      ],
+      "ml-standardize-holdout-v1": [
+        "FLOW-0235",
+        "FLOW-0254",
+        "FLOW-0261"
+      ],
+      "chem-real-compound-family-v1": [
+        "FLOW-0236"
+      ],
+      "mat-cross-entry-comparison-v1": [
+        "FLOW-0237"
+      ],
+      "ml-classification-holdout-v1": [
+        "FLOW-0238",
+        "FLOW-0260",
+        "FLOW-0271",
+        "FLOW-0279"
+      ],
+      "bio-enzyme-comparison-v1": [
+        "FLOW-0239"
+      ],
+      "bio-ppi-interface-comparison-v1": [
+        "FLOW-0240",
+        "FLOW-0251",
+        "FLOW-0256"
+      ],
+      "bio-ortholog-neighbourhood-v1": [
+        "FLOW-0241"
+      ],
+      "bio-cds-sequence-audit-v2": [
+        "FLOW-0243"
+      ],
+      "bio-structure-digest-property-chain-v2": [
+        "FLOW-0244",
+        "FLOW-0257",
+        "FLOW-0266"
+      ],
+      "mat-formula-resolution-audit-v1": [
+        "FLOW-0247",
+        "FLOW-0259",
+        "FLOW-0265",
+        "FLOW-0315"
+      ],
+      "ml-model-comparison-v1": [
+        "FLOW-0248",
+        "FLOW-0258",
+        "FLOW-0278",
+        "FLOW-0284"
+      ],
+      "bio-ortholog-interaction-comparison-v1": [
+        "FLOW-0250",
+        "FLOW-0267",
+        "FLOW-0277"
+      ],
+      "ml-cross-validation-v1": [
+        "FLOW-0262",
+        "FLOW-0272"
+      ],
+      "mat-bandgap-search-audit-v1": [
+        "FLOW-0268",
+        "FLOW-0273",
+        "FLOW-0274",
+        "FLOW-0286"
+      ],
+      "chem-redox-pair-identifier-chain-v1": [
+        "FLOW-0269",
+        "FLOW-0275",
+        "FLOW-0276"
+      ],
+      "bio-antibody-cdr-annotation-v1": [
+        "FLOW-0270",
+        "FLOW-0282"
+      ],
+      "bio-restriction-site-audit-v1": [
+        "FLOW-0280",
+        "FLOW-0281"
+      ],
+      "ml-clustering-comparison-v1": [
+        "FLOW-0283"
+      ],
+      "ml-association-measures-v1": [
+        "FLOW-0285"
+      ],
+      "bio-digest-rule-comparison-v1": [
+        "FLOW-0287",
+        "FLOW-0293",
+        "FLOW-0307",
+        "FLOW-0313"
+      ],
+      "bio-peptide-identifier-chain-v1": [
+        "FLOW-0288",
+        "FLOW-0289",
+        "FLOW-0312",
+        "FLOW-0318",
+        "FLOW-0322"
+      ],
+      "ml-overfitting-check-v1": [
+        "FLOW-0290"
+      ],
+      "bio-interface-to-peptide-chain-v1": [
+        "FLOW-0291"
+      ],
+      "chem-stereoisomer-identifier-chain-v1": [
+        "FLOW-0292"
+      ],
+      "bio-cath-peptide-formula-chain-v1": [
+        "FLOW-0294"
+      ],
+      "bio-protein-parameter-comparison-v1": [
+        "FLOW-0295"
+      ],
+      "bio-secretion-evidence-v1": [
+        "FLOW-0296",
+        "FLOW-0301"
+      ],
+      "bio-modification-family-audit-v1": [
+        "FLOW-0297"
+      ],
+      "bio-formula-cross-check-v1": [
+        "FLOW-0298"
+      ],
+      "bio-solubility-assessment-v1": [
+        "FLOW-0299"
+      ],
+      "bio-cath-modification-audit-v1": [
+        "FLOW-0300"
+      ],
+      "bio-dna-weight-variants-v1": [
+        "FLOW-0302"
+      ],
+      "bio-digest-tool-cross-check-v1": [
+        "FLOW-0303",
+        "FLOW-0323",
+        "FLOW-0327",
+        "FLOW-0334"
+      ],
+      "bio-physchem-views-v1": [
+        "FLOW-0304"
+      ],
+      "bio-alignment-comparison-v1": [
+        "FLOW-0305"
+      ],
+      "bio-dna-composition-audit-v1": [
+        "FLOW-0306"
+      ],
+      "bio-primer-pair-check-v1": [
+        "FLOW-0308"
+      ],
+      "chem-structure-pipeline-check-v1": [
+        "FLOW-0309",
+        "FLOW-0314"
+      ],
+      "bio-modification-motif-audit-v1": [
+        "FLOW-0310"
+      ],
+      "bio-affinity-unit-check-v1": [
+        "FLOW-0311"
+      ],
+      "chem-identifier-round-trip-v1": [
+        "FLOW-0316",
+        "FLOW-0332",
+        "FLOW-0333",
+        "FLOW-0339",
+        "FLOW-0340"
+      ],
+      "chem-identifier-canonicality-v1": [
+        "FLOW-0317",
+        "FLOW-0321"
+      ],
+      "chem-connection-table-chain-v1": [
+        "FLOW-0320",
+        "FLOW-0336"
+      ],
+      "bio-localisation-evidence-v1": [
+        "FLOW-0324"
+      ],
+      "bio-structural-dynamics-audit-v1": [
+        "FLOW-0325"
+      ],
+      "bio-family-architecture-v1": [
+        "FLOW-0326"
+      ],
+      "chem-multi-molecule-similarity-v1": [
+        "FLOW-0328",
+        "FLOW-0351",
+        "FLOW-0367",
+        "FLOW-0383",
+        "FLOW-0391"
+      ],
+      "bio-peptide-round-trip-v1": [
+        "FLOW-0329"
+      ],
+      "bio-peptide-round-trip-v2": [
+        "FLOW-0330",
+        "FLOW-0331"
+      ],
+      "bio-digest-formula-mass-check-v1": [
+        "FLOW-0335",
+        "FLOW-0342",
+        "FLOW-0358"
+      ],
+      "bio-peptide-round-trip-v3": [
+        "FLOW-0337",
+        "FLOW-0338"
+      ],
+      "bio-digest-cross-check-multichain-v1": [
+        "FLOW-0341",
+        "FLOW-0349"
+      ],
+      "chem-connection-table-chain-v2": [
+        "FLOW-0343"
+      ],
+      "chem-identifier-canonicality-v2": [
+        "FLOW-0344"
+      ],
+      "bio-peptide-round-trip-v4": [
+        "FLOW-0345",
+        "FLOW-0346"
+      ],
+      "chem-identifier-round-trip-v2": [
+        "FLOW-0347"
+      ],
+      "chem-identifier-round-trip-v3": [
+        "FLOW-0348"
+      ],
+      "chem-connection-table-chain-v3": [
+        "FLOW-0350"
+      ],
+      "chem-identifier-canonicality-v3": [
+        "FLOW-0352"
+      ],
+      "bio-peptide-round-trip-v5": [
+        "FLOW-0353",
+        "FLOW-0354"
+      ],
+      "bio-peptide-round-trip-v6": [
+        "FLOW-0355"
+      ],
+      "chem-identifier-round-trip-v4": [
+        "FLOW-0356",
+        "FLOW-0357"
+      ],
+      "chem-identifier-canonicality-v4": [
+        "FLOW-0359",
+        "FLOW-0375"
+      ],
+      "chem-connection-table-chain-v4": [
+        "FLOW-0360"
+      ],
+      "bio-peptide-round-trip-v7": [
+        "FLOW-0361",
+        "FLOW-0362"
+      ],
+      "bio-peptide-round-trip-v8": [
+        "FLOW-0363"
+      ],
+      "chem-identifier-round-trip-v5": [
+        "FLOW-0364",
+        "FLOW-0365"
+      ],
+      "bio-digest-formula-mass-check-v2": [
+        "FLOW-0366",
+        "FLOW-0374"
+      ],
+      "chem-connection-table-chain-v5": [
+        "FLOW-0368",
+        "FLOW-0376"
+      ],
+      "bio-peptide-round-trip-v9": [
+        "FLOW-0369",
+        "FLOW-0370"
+      ],
+      "bio-peptide-round-trip-v10": [
+        "FLOW-0371"
+      ],
+      "chem-identifier-round-trip-v6": [
+        "FLOW-0372",
+        "FLOW-0373"
+      ],
+      "bio-peptide-round-trip-v11": [
+        "FLOW-0377",
+        "FLOW-0378"
+      ],
+      "bio-peptide-round-trip-v12": [
+        "FLOW-0379"
+      ],
+      "chem-identifier-round-trip-v7": [
+        "FLOW-0380",
+        "FLOW-0381"
+      ],
+      "bio-digest-formula-mass-check-v3": [
+        "FLOW-0382",
+        "FLOW-0390"
+      ],
+      "chem-connection-table-chain-v6": [
+        "FLOW-0384",
+        "FLOW-0392"
+      ],
+      "bio-peptide-round-trip-v13": [
+        "FLOW-0385",
+        "FLOW-0386"
+      ],
+      "bio-peptide-round-trip-v14": [
+        "FLOW-0387"
+      ],
+      "chem-identifier-round-trip-v8": [
+        "FLOW-0388",
+        "FLOW-0389"
+      ],
+      "bio-peptide-round-trip-v15": [
+        "FLOW-0393",
+        "FLOW-0394"
+      ],
+      "bio-peptide-round-trip-v16": [
+        "FLOW-0395"
+      ],
+      "chem-identifier-round-trip-v9": [
+        "FLOW-0396",
+        "FLOW-0397"
+      ],
+      "bio-digest-formula-mass-check-v4": [
+        "FLOW-0398",
+        "FLOW-0406"
+      ],
+      "chem-multi-molecule-similarity-v2": [
+        "FLOW-0399",
+        "FLOW-0407"
+      ],
+      "chem-connection-table-chain-v7": [
+        "FLOW-0400",
+        "FLOW-0408"
+      ],
+      "bio-peptide-round-trip-v17": [
+        "FLOW-0401",
+        "FLOW-0402"
+      ],
+      "bio-peptide-round-trip-v18": [
+        "FLOW-0403"
+      ],
+      "chem-identifier-round-trip-v10": [
+        "FLOW-0404",
+        "FLOW-0405"
+      ],
+      "bio-peptide-round-trip-v19": [
+        "FLOW-0409",
+        "FLOW-0410"
+      ],
+      "bio-peptide-round-trip-v20": [
+        "FLOW-0411"
+      ],
+      "chem-identifier-round-trip-v11": [
+        "FLOW-0412",
+        "FLOW-0413"
+      ],
+      "bio-digest-formula-mass-check-v5": [
+        "FLOW-0414",
+        "FLOW-0422"
+      ],
+      "chem-multi-molecule-similarity-v3": [
+        "FLOW-0415",
+        "FLOW-0423"
+      ],
+      "chem-connection-table-chain-v8": [
+        "FLOW-0416",
+        "FLOW-0424"
+      ],
+      "bio-peptide-round-trip-v21": [
+        "FLOW-0417",
+        "FLOW-0418"
+      ],
+      "bio-peptide-round-trip-v22": [
+        "FLOW-0419"
+      ],
+      "chem-identifier-round-trip-v12": [
+        "FLOW-0420",
+        "FLOW-0421"
+      ],
+      "bio-peptide-round-trip-v23": [
+        "FLOW-0425",
+        "FLOW-0426"
+      ],
+      "bio-peptide-round-trip-v24": [
+        "FLOW-0427"
+      ],
+      "chem-identifier-round-trip-v13": [
+        "FLOW-0428",
+        "FLOW-0429"
+      ],
+      "bio-digest-formula-mass-check-v6": [
+        "FLOW-0430"
+      ],
+      "chem-multi-molecule-similarity-v4": [
+        "FLOW-0431"
+      ],
+      "chem-connection-table-chain-v9": [
+        "FLOW-0432"
+      ],
+      "bio-peptide-round-trip-v25": [
+        "FLOW-0433",
+        "FLOW-0434"
+      ],
+      "bio-peptide-round-trip-v26": [
+        "FLOW-0435"
+      ],
+      "chem-identifier-round-trip-v14": [
+        "FLOW-0436",
+        "FLOW-0437"
+      ],
+      "bio-digest-formula-mass-check-v7": [
+        "FLOW-0438"
+      ],
+      "chem-multi-molecule-similarity-v5": [
+        "FLOW-0439"
+      ],
+      "chem-connection-table-chain-v10": [
+        "FLOW-0440"
+      ],
+      "bio-peptide-round-trip-v27": [
+        "FLOW-0441",
+        "FLOW-0442"
+      ],
+      "bio-peptide-round-trip-v28": [
+        "FLOW-0443"
+      ],
+      "chem-identifier-round-trip-v15": [
+        "FLOW-0444",
+        "FLOW-0445"
+      ],
+      "bio-digest-formula-mass-check-v8": [
+        "FLOW-0446"
+      ],
+      "chem-multi-molecule-similarity-v6": [
+        "FLOW-0447"
+      ],
+      "chem-connection-table-chain-v11": [
+        "FLOW-0448"
+      ],
+      "bio-peptide-round-trip-v29": [
+        "FLOW-0449",
+        "FLOW-0450"
+      ],
+      "bio-peptide-round-trip-v30": [
+        "FLOW-0451"
+      ],
+      "chem-identifier-round-trip-v16": [
+        "FLOW-0452",
+        "FLOW-0453"
+      ],
+      "bio-digest-formula-mass-check-v9": [
+        "FLOW-0454"
+      ],
+      "chem-multi-molecule-similarity-v7": [
+        "FLOW-0455"
+      ],
+      "chem-connection-table-chain-v12": [
+        "FLOW-0456"
+      ],
+      "bio-peptide-round-trip-v31": [
+        "FLOW-0457",
+        "FLOW-0458"
+      ],
+      "bio-peptide-round-trip-v32": [
+        "FLOW-0459"
+      ],
+      "chem-identifier-round-trip-v17": [
+        "FLOW-0460",
+        "FLOW-0461"
+      ],
+      "bio-digest-formula-mass-check-v10": [
+        "FLOW-0462"
+      ],
+      "chem-multi-molecule-similarity-v8": [
+        "FLOW-0463"
+      ],
+      "chem-connection-table-chain-v13": [
+        "FLOW-0464"
+      ],
+      "ml-real-material-bandgap-summary-v1": [
+        "FLOW-0465"
+      ],
+      "ml-real-material-group-comparison-v1": [
+        "FLOW-0466"
+      ],
+      "ml-real-material-correlation-v1": [
+        "FLOW-0467"
+      ],
+      "ml-real-material-interpolation-v1": [
+        "FLOW-0468"
+      ],
+      "mat-real-density-crosscheck-v1": [
+        "FLOW-0469"
+      ],
+      "mat-real-formula-resolution-v2": [
+        "FLOW-0470"
+      ],
+      "ml-real-material-regression-v1": [
+        "FLOW-0471"
+      ],
+      "ml-real-material-polynomial-cv-v1": [
+        "FLOW-0472"
+      ],
+      "ml-real-contingency-independence-v1": [
+        "FLOW-0473"
+      ],
+      "ml-real-material-anova-v1": [
+        "FLOW-0474"
+      ],
+      "ml-real-linear-system-v1": [
+        "FLOW-0475"
+      ],
+      "ml-real-material-svd-v1": [
+        "FLOW-0476"
+      ],
+      "ml-real-material-dbscan-v1": [
+        "FLOW-0477"
+      ],
+      "ml-real-material-scaling-imputation-v1": [
+        "FLOW-0478"
+      ],
+      "ml-real-material-gradient-v1": [
+        "FLOW-0479"
+      ],
+      "ml-real-material-classification-v1": [
+        "FLOW-0480"
+      ],
+      "ml-real-json-navigation-independence-v1": [
+        "FLOW-0481"
+      ],
+      "ml-real-csv-record-typing-v1": [
+        "FLOW-0482"
+      ],
+      "ml-real-material-design-matrix-v1": [
+        "FLOW-0483"
+      ],
+      "ml-real-material-kmeans-v1": [
+        "FLOW-0484"
+      ],
+      "ml-real-material-spectral-v1": [
+        "FLOW-0485"
+      ],
+      "mat-real-formula-volume-density-v1": [
+        "FLOW-0486"
+      ],
+      "mat-real-formula-bandgap-both-routes-v2": [
+        "FLOW-0487"
+      ],
+      "chem-real-identifier-tally-v1": [
+        "FLOW-0488"
+      ],
+      "ml-real-contingency-3x2-v1": [
+        "FLOW-0489"
+      ],
+      "ml-real-material-residual-analysis-v1": [
+        "FLOW-0490"
+      ],
+      "ml-real-material-two-model-comparison-v1": [
+        "FLOW-0491"
+      ],
+      "ml-real-material-rank-reduction-v1": [
+        "FLOW-0492"
+      ],
+      "ml-real-material-standardize-then-cluster-v1": [
+        "FLOW-0493"
+      ],
+      "ml-real-json-series-summary-v1": [
+        "FLOW-0494"
+      ],
+      "ml-real-csv-two-filter-cascade-v1": [
+        "FLOW-0495"
+      ],
+      "ml-real-material-gradient-extrema-v1": [
+        "FLOW-0496"
+      ],
+      "ml-real-material-split-describe-score-v1": [
+        "FLOW-0497"
+      ],
+      "ml-real-material-ridge-vs-plain-v1": [
+        "FLOW-0498"
+      ],
+      "ml-real-json-anova-v1": [
+        "FLOW-0499"
+      ],
+      "mat-real-volume-density-consistency-v1": [
+        "FLOW-0500"
+      ]
+    },
+    "note": "The task set is one benchmark; it is not divided into development and test parts. The grouping is kept because a group marks tasks that share a workflow family or an entity cohort, which is useful when reading coverage and when adding tasks later. Each task also records its own split_group_id."
+  },
+  "coverage": {
+    "target": 500,
+    "task_count": 500,
+    "eligible_tool_count": 546,
+    "covered_tool_count": 322,
+    "tool_coverage_fraction": 0.589744,
+    "coverage_scope": "necessary reference tool calls",
+    "tools": {
+      "NameToSMILES": {
+        "domain": "Chemical",
+        "tasks_using_tool": 87,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "NameToCas": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "RXNPredict": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "RXNRetrosynthetic": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "RXNPredictProperties": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "SMILESToWeight": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "MolSimilarity": {
+        "domain": "Chemical",
+        "tasks_using_tool": 28,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "FuncGroups": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "SafetySummary": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CheckPatent": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CheckExplosiveness": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "SMILESToInChI": {
+        "domain": "Chemical",
+        "tasks_using_tool": 168,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "InChIKeyToSMILES": {
+        "domain": "Chemical",
+        "tasks_using_tool": 4,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "InChIKeyToInChI": {
+        "domain": "Chemical",
+        "tasks_using_tool": 38,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "InChIKeyToMOL": {
+        "domain": "Chemical",
+        "tasks_using_tool": 21,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "IsValidInChIKey": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "InChIToSMILES": {
+        "domain": "Chemical",
+        "tasks_using_tool": 111,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "InChIToInChIKey": {
+        "domain": "Chemical",
+        "tasks_using_tool": 152,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "InChIToCSID": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "SMILEStoSELFIES": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SELFIEStoSMILES": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "RandomMoelcule": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "Length_SELFIES": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "Split_SELFIES": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ExplainAtomPairScore": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetAtomPairFingerprintAsBitVect": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "AssignPattyTypes": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ExplainAtomCode": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "TestMolecule": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ConvertSdfToCsv": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ShowMol": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "TypeAtomsInMolecule": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CalculateEstateIndices": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CalculateEstateVsa": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GenerateEstateFingerprint": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ExtractRotatableDihedralsFromSdf": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateMolecularCenter": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateUsrcatScores": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateShapeSimilarity": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculatePmi": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CalculateDistanceMatrix": {
+        "domain": "Chemical",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ClusterMolecules": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ProcessFingerprintMol": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "FingerprintsFromSmiles": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "FoldFingerprintFromSmiles": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetRdkFingerprintFromSmiles": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFraggleSimilarity": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GenerateFraggleFragments": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CheckValidRingCut": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "BuildAtomPairFpFromSmiles": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "BuildTorsionsFpFromSmiles": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "BuildRdkitFpFromSmiles": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "BuildPharm2DFpFromSmiles": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "BuildMorganFpFromSmiles": {
+        "domain": "Chemical",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "BuildAvalonFpFromSmiles": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ConvertSmilesToInchi": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GenerateMolKeyFromSmiles": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetStereoCodeFromSmiles": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetPatternFingerprint": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CanSerialize": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "AssignCIPLabels": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "Enumerate": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "Deprotect": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CondenseAbbreviationSubstanceGroups": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "SlnToSmiles": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CreateShingling": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "EncodeMolecule": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "EncodeSECFP": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetBCUT": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetAutocorrelation2D": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAutocorrelation3D": {
+        "domain": "Chemical",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetAsphericity": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetChi0n": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetChi0v": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetChi1n": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetChi1v": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetChi2n": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetChi2v": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetCoulombMat": {
+        "domain": "Chemical",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetCrippenDescriptors": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEEMCharges": {
+        "domain": "Chemical",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEccentricity": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetExactMolceularWeight": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFractionCSP3": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetGETAWAY": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetHallKierAlpha": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetInertialShapeFactor": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetKappa1": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetKappa2": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetKappa3": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetLabuteASA": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetMolFormula": {
+        "domain": "Chemical",
+        "tasks_using_tool": 94,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetMORSE": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetNPR1": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetNPR2": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAliphaticCarbocyclesNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAliphaticHeterocyclesNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAliphaticRingsNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAmideBondsNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAromaticCarbocyclesNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAromaticHeterocyclesNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAromaticRingsNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAtomStereoCentersNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetAtomsNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetBridgeheadAtomsNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetHBANum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetHBDNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetHeavyAtomsNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 17,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetHeteroatomsNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetHeterocyclesNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetLipinskiHBANum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetLipinskiHBDNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetRingsNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetRotatableBondsNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 6,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetSaturatedCarbocyclesNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetSaturatedHeterocyclesNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetSaturatedRingsNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetSpiroAtomsNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetUnspecifiedAtomStereoCentersNum": {
+        "domain": "Chemical",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GenerateRDKFingerprintsFromCSV": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GenerateMorganfingerprintsFromCSV": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GenerateElectricalDescriptorsFromCSV": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "MLPClassifier": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "AdaBoostClassifier": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "RandomForestClassifier": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "AssignOxidationNumbers": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculatePBF": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculatePMI1": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CalculatePMI2": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CalculatePMI3": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CalculatePhi": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateRDF": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateRadiusOfGyration": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateSpherocityIndex": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateTPSA": {
+        "domain": "Chemical",
+        "tasks_using_tool": 21,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CalculateWHIM": {
+        "domain": "Chemical",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CustomPropertyVSA": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAtomFeature": {
+        "domain": "Chemical",
+        "tasks_using_tool": 13,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetAtomPairFingerprint": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetConnectivityInvariants": {
+        "domain": "Chemical",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFeatureInvariants": {
+        "domain": "Chemical",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetAtomPairCode": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetHybridization": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetRingSystems": {
+        "domain": "Chemical",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetMACCSKeysFingerprint": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetMorganFingerprint": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetTopologicalTorsionFingerprint": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetUSR": {
+        "domain": "Chemical",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetUSRCAT": {
+        "domain": "Chemical",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "AddHydrogens": {
+        "domain": "Chemical",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "AddWavyBondsForStereoAny": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "AssignAtomChiralTagsFromStructure": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "AssignRadicals": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "AssignStereoChemistry": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAdjacencyMatrix": {
+        "domain": "Chemical",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetAllowNontetrahedralChirality": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetDistanceMatrix": {
+        "domain": "Chemical",
+        "tasks_using_tool": 6,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFormalCharge": {
+        "domain": "Chemical",
+        "tasks_using_tool": 14,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFormalChargeOfAtoms": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetMolFrags": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetUseLegacyStereoPerception": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "HapticBondsToDative": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "HasQueryHs": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "Kekulize": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "MergeQueryHs": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "MurckoDecompose": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "RemoveHydrogens": {
+        "domain": "Chemical",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "RemoveStereochemistry": {
+        "domain": "Chemical",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SetAromaticity": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "SetBondStereoFromDirections": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "DetermineBondOrders": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "DetermineBonds": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "IsSubstructof": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetTemplateMolecule": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetTautomers": {
+        "domain": "Chemical",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetModifiedAtoms": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetModifiedBonds": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetSubstructMatches": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CASToPrice": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "MOFToSMILES": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "SMILESToCAS": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PredictStability": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PredictAdsorption": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "MofLattice": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "MofFractionalCoordinates": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "MofNeighborIndices": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "MofBranchPoints": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "MofBridges": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetSymbolOfSite": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PlotAdjacencyMatrix": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetTerminalIndices": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFloatingSolventMolecules": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SearchMaterialsContainingElements": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SearchMaterialsByChemsys": {
+        "domain": "Material",
+        "tasks_using_tool": 5,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetDocByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetFormulaByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 26,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetMaterialIdByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 12,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetBandGapByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 44,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetBandGapByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetVolumeByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetVolumeByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 16,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetDensityByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 28,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetDensityByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetDensityAtomicByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 4,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetDensityAtomicByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetEnergyAboveHullByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetInitialStructuresByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetInitialStructuresByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "SearchByBandGap": {
+        "domain": "Material",
+        "tasks_using_tool": 7,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SearchXasByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetCbmByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetCbmByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEnergyPerAtomByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEnergyPerAtomByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetEfermiByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEfermiByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetVbmByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetVbmByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFormationEnergyPerAtomByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFormationEnergyPerAtomByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetETotalByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 5,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetETotalByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEIonicByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 5,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEIonicByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEElectronicByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 5,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEElectronicByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEquilibriumReactionEnergyPerAtom": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetFormulaAnonymousByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetFormulaAnonymousByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "IsMagneticByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "IsMagneticByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "IsMetalByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 6,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "IsMetalByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "IsStableByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "IsStableByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetNumMagneticSitesByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetTotalMagnetizationByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetTotalMagnetizationNormalizedVolByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetUncorrectedEnergyPerAtomByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEosInfoByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetPhononInfoByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetCrystalStructureByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 6,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetAtomicPositionsMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetMagnetismInfoByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetCompositionByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 24,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetPhysicalPropertiesByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetNsitesByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 4,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetElementsByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetNumberOfElementsByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetDielectricByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetCrystalSystemByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 13,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetChemicalSystemByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetSpaceGroupSymbolByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 10,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFormulaPrettyByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetSurfaceAnisotropyByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetStructureByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 4,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetWeightedSurfaceEnergyByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetRobocrystallographerData": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetDescriptionByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetSynthesisDocByKeywords": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetBatteryFormulaByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetWorkingIonByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 24,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetMaxVoltageStepByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFrameworkByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFrameworkFormulaByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 14,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetElementsByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetNelementsByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetChemsysByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFormulaAnonymousByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetWarningsByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFormulaChargeByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 18,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFormulaDischargeByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 21,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEnergyVolumeByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetMaxDeltaVolumeBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetAverageVoltageByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 12,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetCapacityGravByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetCapacityVolByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEnergyGravByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 6,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFracaChargeByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetStabilityChargeByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetStabilityDischargeByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetIdChargeByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetIdDischargeByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetHostStructureByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 6,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetAdjPairsByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 12,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetMaterialIdByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetEntriesCompositionSummaryByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetElectrodeObjectByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "IsDeprecated": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetDeprecatedReasonsByBatteryId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetPossibleSpeciesByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetPossibleValencesByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetAverageOxidationStatesByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetPropertyNameByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetOxidationStateMethodByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetSymmetryByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetCreatedTimeByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetReferencesByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetAuthorsByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetRemarksByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetLastUpdatedTimeByTaskId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetFsIdByTaskId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetTaskIdByFsId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetUrlByFsId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAlloyPairsByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetPairIdByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetBondInfoByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 7,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetBondTypesByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetBondLengthStatsByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetCoordinationEnvsByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetOriginsByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetCoordinationEnvsAnonymousByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetStructureGraphByMaterialId": {
+        "domain": "Material",
+        "tasks_using_tool": 7,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetChargeByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetSpinMultiplicityByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetNatomsByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetElementsByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetNelementsByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetNelectronsByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetCompositionByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 6,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFormulaAlphabeticalByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFormulaPrettyByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFormulaAnonymousByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetChemsysByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetSymmetryByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetPropertyNameByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetPropertyIdByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetDeprecatedByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetDeprecationReasonsByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetLevelOfTheoryByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetSolventByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetLotSolventByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetLastUpdatedTimeByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetWarningsByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetOriginsByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetMoleculeIdByFormula": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetMoleculeLevelsOfTheoryByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetSpeciesHashByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetCoordHashByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetInchiByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetInchikeyByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetSimilarMoleculesByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetConstituentMoleculesByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetUniqueCalcTypesByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetUniqueTaskTypesByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetUniqueLevelsOfTheoryByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetUniqueSolventsByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetUniqueLotSolventsByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetThermoPropertyIdsByMoelculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 4,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetThermoLevelsOfTheoryByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 5,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetElectronicEnergyByMoelculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 5,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetZeroPointEnergyByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetTotalEnthalpyByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetTotalEntropyByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetTranslationalEnthalpyByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetTranslationalEntropyByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetRotationalEnthalpyByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetRotationalEntropyByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetVibrationalEnthalpyByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetVibrationalEntropyByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFreeEnergyByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 5,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetVibrationPropertyIdsByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 5,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetVibrationLevelsOfTheoryByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 5,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFrequenciesByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetFrequencyModesByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetIrIntensitiesByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 6,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetIrActivitiesByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 6,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetOrbitalsPropertyIdsByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetOrbitalsLevelsOfTheoryByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetOpenShellByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetNboPopulationByMoleculeId": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetStructureInfo": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateDensity": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetElementComposition": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateSymmetry": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "BingSearch": {
+        "domain": "General",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "WolframAlpha": {
+        "domain": "General",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "DownloadPapers": {
+        "domain": "General",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "DownloadPapersMuti": {
+        "domain": "General",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PaperQA": {
+        "domain": "General",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetChi3n": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetChi3v": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetChi4n": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetChi4v": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetPatternFingerprintTemplate": {
+        "domain": "Chemical",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "UnitConverter": {
+        "domain": "Material",
+        "tasks_using_tool": 20,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SearchCSV": {
+        "domain": "Material",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "AseTool": {
+        "domain": "Material",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CodeInterpreterTools": {
+        "domain": "General",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "DescribeNumericData": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 15,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PearsonCorrelation": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SpearmanCorrelation": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "WelchTTest": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PairedTTest": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "MannWhitneyUTest": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "OneWayANOVA": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ChiSquareIndependence": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "BootstrapMeanInterval": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "LinearLeastSquares": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "MatrixInverse": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "MatrixSVD": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SymmetricEigenDecomposition": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SolveLinearSystem": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PolynomialLeastSquaresFit": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "InterpolateLinear": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "NumericalTrapezoidIntegration": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "FiniteDifferenceGradient": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 4,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SplitTrainTest": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "StandardizeNumericFeatures": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 22,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "MinMaxScaleFeatures": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "MedianImputeFeatures": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PolynomialFeaturesTransform": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 4,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PrincipalComponentProjection": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 11,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "FitLinearRegression": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 9,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "FitRidgeRegression": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "FitLogisticRegression": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 4,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PredictLinearModel": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 11,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PredictLogisticModel": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 4,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "RegressionMetrics": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 13,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ClassificationMetrics": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 5,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "KMeansClustering": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 17,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "DBSCANClustering": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CrossValidateRegressor": {
+        "domain": "MachineLearning",
+        "tasks_using_tool": 4,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ParseCSVRecords": {
+        "domain": "General",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ParseJSONDocument": {
+        "domain": "General",
+        "tasks_using_tool": 6,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetJSONPointer": {
+        "domain": "General",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "FilterRecords": {
+        "domain": "General",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "JoinRecordTables": {
+        "domain": "General",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ConvertRecordColumnTypes": {
+        "domain": "General",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ExtractNumericMatrix": {
+        "domain": "General",
+        "tasks_using_tool": 17,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ExtractNumericVector": {
+        "domain": "General",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "FormatMarkdownTable": {
+        "domain": "General",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "SmilesToPdb": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ComputePiMw": {
+        "domain": "Biology",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ComputeProtPara": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ComputeProtScale": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ComputeExtinctionCoefficient": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SequenceToPdb": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ComputeResidueAccuracy": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GenerateRandomMutation": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CipherOptimizer": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculatorPeptideProperty": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculatorOligonucleotide": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PredictSignalPeptide": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PredictTransmembraneRegion": {
+        "domain": "Biology",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ProteinCodonOptimization": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "DNARNACodonOptimization": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ComputeHydrophilicity": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ComputeAnnealingTemperature": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ConvertingPeptide2SMILES": {
+        "domain": "Biology",
+        "tasks_using_tool": 67,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ProteinIsoelectricPointCalculator": {
+        "domain": "Biology",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ComputeAffinity": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PeptideWeightCalculator": {
+        "domain": "Biology",
+        "tasks_using_tool": 17,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PeptideFormulaCalculator": {
+        "domain": "Biology",
+        "tasks_using_tool": 25,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "DegenerateCodonCalculatorbyAminoAcid": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "OverlapPeptideLibraryDesign": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "AlanineScanningLibraryDesign": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "TruncationLibraryDesign": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PositionalScanningLibraryDesign": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ProteaseDigestion": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CDRLabelingAntibody": {
+        "domain": "Biology",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "AntibodySequenceNumbering": {
+        "domain": "Biology",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CircularDNAAlignment": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CompareSequenceByLogExpectation": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "DoubleSequenceGlobalAlignment": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ProteinSolubilityPredictor": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "InherentDisorderedRegionsPredictor": {
+        "domain": "Biology",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "DoubleSequenceLocalAlignment": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ProteinMotifAnalysis": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SequenceSimilarityCalculator": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ORFFind": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "TranslateDNAtoAminoAcidSequence": {
+        "domain": "Biology",
+        "tasks_using_tool": 7,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "RepeatDNASequenceSearch": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "RepeatProteinSequenceSearch": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PalindromicSequencesFinder": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateAminoAcidbyDegenerateCodon": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "ProteinNuclearLocalizationSequencePrediction": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "SmallMoleculeSimilarityCalculation": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "DNAMolecularWeightCalculator": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CpGIslandPrediction": {
+        "domain": "Biology",
+        "tasks_using_tool": 4,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PCRPrimerProperties": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "AminoAcidStatistics": {
+        "domain": "Biology",
+        "tasks_using_tool": 5,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "SummaryEnzymeCleavageSites": {
+        "domain": "Biology",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "RandomDNAGeneration": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "AnalyzeProteinCATHFromPDBID": {
+        "domain": "Biology",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "AnalyzeProteinLengthFromPDB": {
+        "domain": "Biology",
+        "tasks_using_tool": 11,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "AnalyzeProteinSeqFromPDB": {
+        "domain": "Biology",
+        "tasks_using_tool": 100,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "FixPDBFile": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "FoldProtein": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateEnergyFromSequence": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateForceFromSequence": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateForceEnergyFromSequence": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GenerateSequenceFromEnergy": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetFASTAFromName": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CalculateProteinANM": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "AnalyzeProteinStructure": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "DesignProteinAlpha": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "DesignProteinBeta": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "DesignProteinAlphaBeta": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "DesignProteinFromLength": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "SaveToCSVFile": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "FetchProteinStructureFromPDBID": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GenerateMoleculeDescription": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "TexToMoleculeSELFIES": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PredictDrugTargetInteraction": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PredictHumanProteinInteraction": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PredictYeastProteinInteraction": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PredictProteinSolubility": {
+        "domain": "Biology",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PredictProteinBinaryLocalization": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "AnalyzeAtomCount": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateMolecularWeight": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateCenterOfMass": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateAverageCoordinates": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateAtomDistance": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetAminoAcidFrequency": {
+        "domain": "Biology",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GetReverseComplement": {
+        "domain": "Biology",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CalculateHydrophobicityAndPolarity": {
+        "domain": "Biology",
+        "tasks_using_tool": 3,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PerformBlastQuery": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CalculateSingleLinearDNAMolecularWeight": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CalculateSingleCircleDNAMolecularWeight": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CalculateDoubleLinearDNAMolecularWeight": {
+        "domain": "Biology",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CalculateDoubleCircleDNAMolecularWeight": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "NucleicAcidGCCalculator": {
+        "domain": "Biology",
+        "tasks_using_tool": 8,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "CoordsFromSMILES": {
+        "domain": "Biology",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "Convert3DMolecules2SMILES": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "CutPeptide": {
+        "domain": "Biology",
+        "tasks_using_tool": 23,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "GenerateRandSequence": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PredictPeptideMass": {
+        "domain": "Biology",
+        "tasks_using_tool": 103,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "RedundancyReduction": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "DrawProteinStructure": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "DeepTMHMM": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "ScanHamap": {
+        "domain": "Biology",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "Sulfinator": {
+        "domain": "Biology",
+        "tasks_using_tool": 2,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "HIPPIE": {
+        "domain": "Biology",
+        "tasks_using_tool": 5,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PredictMyristoylation": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "PPI3DPDB": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PPI3DSingle": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "PPI3DTwo": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "MusiteDeep": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "INGAArchitecture": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "INGAHomology": {
+        "domain": "Biology",
+        "tasks_using_tool": 1,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "INGAInteraction": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      },
+      "GetCoronaOrthologs": {
+        "domain": "Biology",
+        "tasks_using_tool": 6,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "Mutabind2": {
+        "domain": "Biology",
+        "tasks_using_tool": 7,
+        "status": "covered_by_successful_reference",
+        "gap_reason": null
+      },
+      "NeEMO": {
+        "domain": "Biology",
+        "tasks_using_tool": 0,
+        "status": "not_covered_by_any_task",
+        "gap_reason": "No necessary reference path calls this tool."
+      }
+    }
+  },
+  "reference_status": {
+    "total": 500,
+    "eligible": 500,
+    "quarantined": {},
+    "rebuilt_native_react_tasks": [
+      "FLOW-0207",
+      "FLOW-0208",
+      "FLOW-0255",
+      "FLOW-0257",
+      "FLOW-0282"
+    ],
+    "policy": "Five formerly unverifiable references replaced by reviewed fresh native ReAct evidence; original claims retained in audit backup."
+  },
+  "statistics": {
+    "tasks": 500,
+    "registered_tools": 546,
+    "covered_tools": 322,
+    "disciplines": {
+      "Biology": {
+        "registered_tools": 113,
+        "covered_tools": 51,
+        "primary_domain_tasks": 140,
+        "tasks_using_domain": 142
+      },
+      "Chemical": {
+        "registered_tools": 177,
+        "covered_tools": 75,
+        "primary_domain_tasks": 159,
+        "tasks_using_domain": 229
+      },
+      "General": {
+        "registered_tools": 15,
+        "covered_tools": 6,
+        "primary_domain_tasks": 0,
+        "tasks_using_domain": 29
+      },
+      "MachineLearning": {
+        "registered_tools": 40,
+        "covered_tools": 33,
+        "primary_domain_tasks": 47,
+        "tasks_using_domain": 67
+      },
+      "Material": {
+        "registered_tools": 201,
+        "covered_tools": 157,
+        "primary_domain_tasks": 154,
+        "tasks_using_domain": 177
+      }
+    },
+    "input_kinds": {
+      "inline": 76,
+      "external_snapshot": 397,
+      "file": 27
+    },
+    "unique_workflow_groups": 194,
+    "unique_ordered_tool_paths": 257,
+    "necessary_reference_calls": 3292,
+    "mean_necessary_calls": 6.584,
+    "necessary_call_range": [
+      2,
+      20
+    ],
+    "necessary_call_distribution": {
+      "2": 9,
+      "3": 40,
+      "4": 81,
+      "5": 67,
+      "6": 62,
+      "7": 116,
+      "8": 36,
+      "9": 17,
+      "10": 17,
+      "11": 26,
+      "12": 6,
+      "13": 7,
+      "14": 4,
+      "15": 4,
+      "16": 6,
+      "19": 1,
+      "20": 1
+    },
+    "distinct_tool_distribution": {
+      "2": 27,
+      "3": 52,
+      "4": 102,
+      "5": 132,
+      "6": 147,
+      "7": 24,
+      "8": 16
+    },
+    "inline_reference_outputs": 3344,
+    "all_inline_outputs_complete": true,
+    "reference_model_api_calls_in_remediation": 0,
+    "native_react_rebuilt_tasks": 5,
+    "new_artifact_files": [],
+    "file_identities": 48
+  },
+  "public_task_fields": [
+    "Parameter",
+    "files",
+    "id",
+    "inputs",
+    "question",
+    "question_language",
+    "domain",
+    "answer_schema",
+    "unit_annotations",
+    "max_tool_calls"
+  ],
+  "hidden_files": [
+    "evaluation/references.jsonl",
+    "evaluation/reference_traces/",
+    "evaluation/artifacts/"
+  ],
+  "questions_inputs_and_scientific_gold_changed": true,
+  "answer_contract_revision_20261018": {
+    "scope": "all 500 reviewed, targeted public/scientific/rubric revisions",
+    "changed": {
+      "question": 22,
+      "inputs": 19,
+      "answer_contract": 209,
+      "gold_answer": 195,
+      "scoring": 318,
+      "reference_tool_path": 0
+    },
+    "unchanged_answer_contracts": 291,
+    "numeric_tool_observations_changed": false,
+    "reference_paths_changed": false,
+    "report": "results/reports/full_run_audit_20261018/README.md",
+    "per_task_ledger": "results/reports/full_run_audit_20261018/task_review.jsonl",
+    "criterion": "Scientific evidence and task/rubric reasoning; Qwen success is not a task-quality criterion.",
+    "new_full500_score_available": false,
+    "source_selector_variability_in_archives_observed": false
+  },
+  "release_id": "20261018-scientific-contract-audit"
+}

@@ -1,0 +1,15 @@
+# SciTool-LLM, Python 3.10. CUDA 12-family build for the existing driver.
+# Install the vLLM cu129 release wheel from GitHub (or the verified local cache).
+vllm==0.21.0+cu129
+torch==2.11.0+cu128
+torchaudio==2.11.0+cu128
+torchvision==0.26.0+cu128
+# Use the cu128 wheel (SHA256 ccc73c7db9890224ab05f5fb60e2034f9e6c8672a10be0cf00e95cbbae3eda7c).
+xformers==0.0.35
+transformers==5.19.0
+numpy==2.2.6
+pydantic==2.12.4
+protobuf==6.33.6
+opencv-python-headless==4.13.0.92
+cuda-python==12.9.10
+quack-kernels==0.4.1

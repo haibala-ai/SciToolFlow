@@ -1,0 +1,25 @@
+{
+  "profiles": [
+    {
+      "name": "SciTool-Unified",
+      "packages": 320,
+      "file": "configs/environments/SciTool-Unified.yml"
+    },
+    {
+      "name": "SciTool-LLM",
+      "packages": 250,
+      "file": "configs/environments/SciTool-LLM.yml"
+    },
+    {
+      "name": "SciTool-RXN-Local",
+      "packages": 240,
+      "file": "configs/environments/SciTool-RXN-Local.yml"
+    },
+    {
+      "name": "SciTool-Chroma",
+      "packages": 157,
+      "file": "configs/environments/SciTool-Chroma.yml"
+    }
+  ],
+  "new_environment_created": false
+}

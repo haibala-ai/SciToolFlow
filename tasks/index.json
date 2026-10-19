@@ -1,0 +1,4013 @@
+{
+  "canonical_source": "tasks/questions.jsonl",
+  "count": 500,
+  "domains": {
+    "Biology": 140,
+    "Chemical": 159,
+    "MachineLearning": 47,
+    "Material": 154
+  },
+  "references_visible_to_agent": false,
+  "tasks": [
+    {
+      "id": "FLOW-0001",
+      "domain": "Chemical",
+      "line": 1,
+      "question_preview": "Audit an archival transformation of the supplied SMILES that deliberately removes tetrahedral stereo annotation. Obtain the actual transformed SMILES and compar",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0002",
+      "domain": "Material",
+      "line": 2,
+      "question_preview": "Primitive versus bonding-cell normalization. Compare the summary and bonding endpoint cells for the same material: obtain each actual site count and volume, nor",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0003",
+      "domain": "Material",
+      "line": 3,
+      "question_preview": "Primitive versus bonding-cell normalization. Compare the summary and bonding endpoint cells for the same material: obtain each actual site count and volume, nor",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0004",
+      "domain": "Material",
+      "line": 4,
+      "question_preview": "Primitive versus bonding-cell normalization. Compare the summary and bonding endpoint cells for the same material: obtain each actual site count and volume, nor",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0005",
+      "domain": "Material",
+      "line": 5,
+      "question_preview": "Relative dielectric-component closure. Obtain total, ionic and electronic scalar relative permittivities for the same material and the dielectric endpoint repor",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0006",
+      "domain": "Material",
+      "line": 6,
+      "question_preview": "Relative dielectric-component closure. Obtain total, ionic and electronic scalar relative permittivities for the same material and the dielectric endpoint repor",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0007",
+      "domain": "Material",
+      "line": 7,
+      "question_preview": "Relative dielectric-component closure. Obtain total, ionic and electronic scalar relative permittivities for the same material and the dielectric endpoint repor",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0008",
+      "domain": "Material",
+      "line": 8,
+      "question_preview": "Electronic band-edge consistency. Obtain the gap, CBM, VBM, Fermi level and metal flag for the same material. Compare CBM-VBM with the reported gap when finite ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0009",
+      "domain": "Material",
+      "line": 9,
+      "question_preview": "Electronic band-edge consistency. Obtain the gap, CBM, VBM, Fermi level and metal flag for the same material. Compare CBM-VBM with the reported gap when finite ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0010",
+      "domain": "Material",
+      "line": 10,
+      "question_preview": "Electronic band-edge consistency. Obtain the gap, CBM, VBM, Fermi level and metal flag for the same material. Compare CBM-VBM with the reported gap when finite ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0011",
+      "domain": "Material",
+      "line": 11,
+      "question_preview": "Thermodynamic screening decision consistency. For the same material obtain corrected and uncorrected energy/atom, formation energy/atom, energy above hull and s",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0012",
+      "domain": "Material",
+      "line": 12,
+      "question_preview": "Thermodynamic screening decision consistency. For the same material obtain corrected and uncorrected energy/atom, formation energy/atom, energy above hull and s",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0013",
+      "domain": "Material",
+      "line": 13,
+      "question_preview": "Thermodynamic screening decision consistency. For the same material obtain corrected and uncorrected energy/atom, formation energy/atom, energy above hull and s",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0014",
+      "domain": "Material",
+      "line": 14,
+      "question_preview": "Magnetic moment normalization consistency. Use the magnetism endpoint report together with scalar magnetic flags/site count, total moment, moment normalized per",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0015",
+      "domain": "Material",
+      "line": 15,
+      "question_preview": "Magnetic moment normalization consistency. Use the magnetism endpoint report together with scalar magnetic flags/site count, total moment, moment normalized per",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0016",
+      "domain": "Material",
+      "line": 16,
+      "question_preview": "Magnetic moment normalization consistency. Use the magnetism endpoint report together with scalar magnetic flags/site count, total moment, moment normalized per",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0017",
+      "domain": "Material",
+      "line": 17,
+      "question_preview": "Oxidation-state charge-balance audit. Retrieve actual composition, possible species/valences, average oxidation states and the oxidation assignment method/prope",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0018",
+      "domain": "Material",
+      "line": 18,
+      "question_preview": "Oxidation-state charge-balance audit. Retrieve actual composition, possible species/valences, average oxidation states and the oxidation assignment method/prope",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0019",
+      "domain": "Material",
+      "line": 19,
+      "question_preview": "Oxidation-state charge-balance audit. Retrieve actual composition, possible species/valences, average oxidation states and the oxidation assignment method/prope",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0020",
+      "domain": "Material",
+      "line": 20,
+      "question_preview": "Symmetry metadata agreement. Compare the symmetry endpoint object with reported crystal system/space-group symbol and the crystal lattice constants/angles. Repo",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0021",
+      "domain": "Material",
+      "line": 21,
+      "question_preview": "Symmetry metadata agreement. Compare the symmetry endpoint object with reported crystal system/space-group symbol and the crystal lattice constants/angles. Repo",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0022",
+      "domain": "Material",
+      "line": 22,
+      "question_preview": "Symmetry metadata agreement. Compare the symmetry endpoint object with reported crystal system/space-group symbol and the crystal lattice constants/angles. Repo",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0023",
+      "domain": "Material",
+      "line": 23,
+      "question_preview": "Local energy-volume curvature estimate. Fetch the actual EOS documents and preserve task IDs. For the first document with at least five finite pairs, sort uniqu",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0024",
+      "domain": "Material",
+      "line": 24,
+      "question_preview": "Local energy-volume curvature estimate. Fetch the actual EOS documents and preserve task IDs. For the first document with at least five finite pairs, sort uniqu",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0025",
+      "domain": "Material",
+      "line": 25,
+      "question_preview": "Surface-energy screening with structure context. Obtain weighted surface energy, surface anisotropy and the surface endpoint structure together with summary com",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0026",
+      "domain": "Material",
+      "line": 26,
+      "question_preview": "Surface-energy screening with structure context. Obtain weighted surface energy, surface anisotropy and the surface endpoint structure together with summary com",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0027",
+      "domain": "Material",
+      "line": 27,
+      "question_preview": "Periodic bonding graph interpretation. Obtain the structure graph, detailed bonding report and labeled/anonymous coordination environments. Check the number/spe",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0028",
+      "domain": "Material",
+      "line": 28,
+      "question_preview": "Periodic bonding graph interpretation. Obtain the structure graph, detailed bonding report and labeled/anonymous coordination environments. Check the number/spe",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0029",
+      "domain": "Material",
+      "line": 29,
+      "question_preview": "Periodic bonding graph interpretation. Obtain the structure graph, detailed bonding report and labeled/anonymous coordination environments. Check the number/spe",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0030",
+      "domain": "Material",
+      "line": 30,
+      "question_preview": "Bonding-result provenance completeness. Compare bonding origins/last-update information with the detailed bonding and structure-graph reports, and retrieve refe",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0031",
+      "domain": "Material",
+      "line": 31,
+      "question_preview": "Identity-preserving band-gap shortlist validation. Search within the supplied gap interval and separately within the supplied chemical system. Check membership ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0032",
+      "domain": "Material",
+      "line": 32,
+      "question_preview": "Identity-preserving band-gap shortlist validation. Search within the supplied gap interval and separately within the supplied chemical system. Check membership ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0033",
+      "domain": "Material",
+      "line": 33,
+      "question_preview": "Identity-preserving band-gap shortlist validation. Search within the supplied gap interval and separately within the supplied chemical system. Check membership ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0034",
+      "domain": "Material",
+      "line": 34,
+      "question_preview": "Element-filter versus chemical-system identity. Search for materials containing the supplied elements and for the exact chemical system. Verify the target mater",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0035",
+      "domain": "Material",
+      "line": 35,
+      "question_preview": "Element-filter versus chemical-system identity. Search for materials containing the supplied elements and for the exact chemical system. Verify the target mater",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0036",
+      "domain": "Material",
+      "line": 36,
+      "question_preview": "Lattice-coordinate consistency from a surface structure. Obtain the surface endpoint structure and its lattice/site Cartesian and fractional coordinates. For ev",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0037",
+      "domain": "Material",
+      "line": 37,
+      "question_preview": "Lattice-coordinate consistency from a surface structure. Obtain the surface endpoint structure and its lattice/site Cartesian and fractional coordinates. For ev",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0038",
+      "domain": "Material",
+      "line": 38,
+      "question_preview": "Natural-language structure description audit. Compare robocrystallographer data and the generated description with actual composition, symmetry and crystal latt",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0039",
+      "domain": "Material",
+      "line": 39,
+      "question_preview": "Natural-language structure description audit. Compare robocrystallographer data and the generated description with actual composition, symmetry and crystal latt",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0040",
+      "domain": "Material",
+      "line": 40,
+      "question_preview": "Natural-language structure description audit. Compare robocrystallographer data and the generated description with actual composition, symmetry and crystal latt",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0041",
+      "domain": "Material",
+      "line": 41,
+      "question_preview": "Specific-energy dimensional closure. For the same insertion electrode obtain working ion, charged/discharged formulas, average voltage, gravimetric capacity and",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0042",
+      "domain": "Material",
+      "line": 42,
+      "question_preview": "Specific-energy dimensional closure. For the same insertion electrode obtain working ion, charged/discharged formulas, average voltage, gravimetric capacity and",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0043",
+      "domain": "Material",
+      "line": 43,
+      "question_preview": "Specific-energy dimensional closure. For the same insertion electrode obtain working ion, charged/discharged formulas, average voltage, gravimetric capacity and",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0044",
+      "domain": "Material",
+      "line": 44,
+      "question_preview": "Endpoint material identity and cell properties. Resolve the electrode charged/discharged material IDs and formulas, retrieve their material compositions and vol",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0045",
+      "domain": "Material",
+      "line": 45,
+      "question_preview": "Endpoint material identity and cell properties. Resolve the electrode charged/discharged material IDs and formulas, retrieve their material compositions and vol",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0046",
+      "domain": "Material",
+      "line": 46,
+      "question_preview": "Endpoint material identity and cell properties. Resolve the electrode charged/discharged material IDs and formulas, retrieve their material compositions and vol",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0047",
+      "domain": "Material",
+      "line": 47,
+      "question_preview": "Working-ion and framework stoichiometry. Retrieve framework formula/object, charged/discharged formulas, working ion and battery formula. Strip only the working",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0048",
+      "domain": "Material",
+      "line": 48,
+      "question_preview": "Working-ion and framework stoichiometry. Retrieve framework formula/object, charged/discharged formulas, working ion and battery formula. Strip only the working",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0049",
+      "domain": "Material",
+      "line": 49,
+      "question_preview": "Working-ion and framework stoichiometry. Retrieve framework formula/object, charged/discharged formulas, working ion and battery formula. Strip only the working",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0050",
+      "domain": "Material",
+      "line": 50,
+      "question_preview": "Electrode composition metadata reconciliation. Retrieve electrode element list/count/chemical system, anonymous formula and endpoint formulas. Reconstruct disti",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0051",
+      "domain": "Material",
+      "line": 51,
+      "question_preview": "Electrode composition metadata reconciliation. Retrieve electrode element list/count/chemical system, anonymous formula and endpoint formulas. Reconstruct disti",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0052",
+      "domain": "Material",
+      "line": 52,
+      "question_preview": "Electrode composition metadata reconciliation. Retrieve electrode element list/count/chemical system, anonymous formula and endpoint formulas. Reconstruct disti",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0053",
+      "domain": "Material",
+      "line": 53,
+      "question_preview": "Working-ion fraction normalization. Obtain charged/discharged formulas, fraction-A charged and adjacent-pair fraction metadata plus working ion/framework formul",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0054",
+      "domain": "Material",
+      "line": 54,
+      "question_preview": "Working-ion fraction normalization. Obtain charged/discharged formulas, fraction-A charged and adjacent-pair fraction metadata plus working ion/framework formul",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0055",
+      "domain": "Material",
+      "line": 55,
+      "question_preview": "Working-ion fraction normalization. Obtain charged/discharged formulas, fraction-A charged and adjacent-pair fraction metadata plus working ion/framework formul",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0056",
+      "domain": "Material",
+      "line": 56,
+      "question_preview": "Electrode stability and warning-qualified screening. Obtain charged/discharged stability values, warnings, average voltage and working-ion identity. Apply the s",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0057",
+      "domain": "Material",
+      "line": 57,
+      "question_preview": "Electrode stability and warning-qualified screening. Obtain charged/discharged stability values, warnings, average voltage and working-ion identity. Apply the s",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0058",
+      "domain": "Material",
+      "line": 58,
+      "question_preview": "Electrode stability and warning-qualified screening. Obtain charged/discharged stability values, warnings, average voltage and working-ion identity. Apply the s",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0059",
+      "domain": "Material",
+      "line": 59,
+      "question_preview": "Voltage-step versus average-voltage reconciliation. Compare the electrode maximum voltage step and average voltage with every adjacent-pair/voltage-pair value i",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0060",
+      "domain": "Material",
+      "line": 60,
+      "question_preview": "Voltage-step versus average-voltage reconciliation. Compare the electrode maximum voltage step and average voltage with every adjacent-pair/voltage-pair value i",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0061",
+      "domain": "Material",
+      "line": 61,
+      "question_preview": "Voltage-step versus average-voltage reconciliation. Compare the electrode maximum voltage step and average voltage with every adjacent-pair/voltage-pair value i",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0062",
+      "domain": "Material",
+      "line": 62,
+      "question_preview": "Electrode volume-change consistency. Obtain maximum fractional volume change, detailed charged/discharged masses/volumes and endpoint formulas/IDs. Recompute pe",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0063",
+      "domain": "Material",
+      "line": 63,
+      "question_preview": "Electrode volume-change consistency. Obtain maximum fractional volume change, detailed charged/discharged masses/volumes and endpoint formulas/IDs. Recompute pe",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0064",
+      "domain": "Material",
+      "line": 64,
+      "question_preview": "Electrode volume-change consistency. Obtain maximum fractional volume change, detailed charged/discharged masses/volumes and endpoint formulas/IDs. Recompute pe",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0065",
+      "domain": "Material",
+      "line": 65,
+      "question_preview": "Electrode archival status and linkage. Obtain deprecation flag/reasons, linked material ID, entry-composition summary, host structure and working ion. Verify wh",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0066",
+      "domain": "Material",
+      "line": 66,
+      "question_preview": "Electrode archival status and linkage. Obtain deprecation flag/reasons, linked material ID, entry-composition summary, host structure and working ion. Verify wh",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0067",
+      "domain": "Material",
+      "line": 67,
+      "question_preview": "Electrode archival status and linkage. Obtain deprecation flag/reasons, linked material ID, entry-composition summary, host structure and working ion. Verify wh",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0068",
+      "domain": "Material",
+      "line": 68,
+      "question_preview": "Capacity normalization from electrode masses. Use the detailed electrode-object per-step mAh/mass values to reconstruct mAh/g under both charged and discharged ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0069",
+      "domain": "Material",
+      "line": 69,
+      "question_preview": "Capacity normalization from electrode masses. Use the detailed electrode-object per-step mAh/mass values to reconstruct mAh/g under both charged and discharged ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0070",
+      "domain": "Material",
+      "line": 70,
+      "question_preview": "Capacity normalization from electrode masses. Use the detailed electrode-object per-step mAh/mass values to reconstruct mAh/g under both charged and discharged ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0071",
+      "domain": "Material",
+      "line": 71,
+      "question_preview": "Host versus endpoint composition comparison. Resolve host structure, framework formula, working ion and charged/discharged endpoint material IDs. Retrieve endpo",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0072",
+      "domain": "Material",
+      "line": 72,
+      "question_preview": "Host versus endpoint composition comparison. Resolve host structure, framework formula, working ion and charged/discharged endpoint material IDs. Retrieve endpo",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0073",
+      "domain": "Material",
+      "line": 73,
+      "question_preview": "Host versus endpoint composition comparison. Resolve host structure, framework formula, working ion and charged/discharged endpoint material IDs. Retrieve endpo",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0074",
+      "domain": "Material",
+      "line": 74,
+      "question_preview": "Molecular electron-count and spin parity audit. Retrieve composition, atom count, charge, spin multiplicity, electron count and open-shell report. Independently",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0075",
+      "domain": "Material",
+      "line": 75,
+      "question_preview": "Molecular electron-count and spin parity audit. Retrieve composition, atom count, charge, spin multiplicity, electron count and open-shell report. Independently",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0076",
+      "domain": "Material",
+      "line": 76,
+      "question_preview": "Molecular electron-count and spin parity audit. Retrieve composition, atom count, charge, spin multiplicity, electron count and open-shell report. Independently",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0077",
+      "domain": "Material",
+      "line": 77,
+      "question_preview": "Molecular formula and species metadata reconciliation. Retrieve composition, alphabetical/pretty/anonymous formulas, chemical system and element list/count. Rec",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0078",
+      "domain": "Material",
+      "line": 78,
+      "question_preview": "Molecular formula and species metadata reconciliation. Retrieve composition, alphabetical/pretty/anonymous formulas, chemical system and element list/count. Rec",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0079",
+      "domain": "Material",
+      "line": 79,
+      "question_preview": "Molecular formula and species metadata reconciliation. Retrieve composition, alphabetical/pretty/anonymous formulas, chemical system and element list/count. Rec",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0080",
+      "domain": "Material",
+      "line": 80,
+      "question_preview": "Molecular identifier round-trip audit. Obtain archived InChI/InChIKey and species/coordinate hashes for the same molecule. Generate a key from the actual InChI ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0081",
+      "domain": "Material",
+      "line": 81,
+      "question_preview": "Molecular identifier round-trip audit. Obtain archived InChI/InChIKey and species/coordinate hashes for the same molecule. Generate a key from the actual InChI ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0082",
+      "domain": "Material",
+      "line": 82,
+      "question_preview": "Molecular identifier round-trip audit. Obtain archived InChI/InChIKey and species/coordinate hashes for the same molecule. Generate a key from the actual InChI ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0083",
+      "domain": "Material",
+      "line": 83,
+      "question_preview": "Calculation-method and solvent provenance reconciliation. Retrieve unique levels of theory/solvents/combined labels and selected level-of-theory/solvent/combine",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0084",
+      "domain": "Material",
+      "line": 84,
+      "question_preview": "Calculation-method and solvent provenance reconciliation. Retrieve unique levels of theory/solvents/combined labels and selected level-of-theory/solvent/combine",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0085",
+      "domain": "Material",
+      "line": 85,
+      "question_preview": "Calculation-method and solvent provenance reconciliation. Retrieve unique levels of theory/solvents/combined labels and selected level-of-theory/solvent/combine",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0086",
+      "domain": "Material",
+      "line": 86,
+      "question_preview": "Molecular Gibbs-energy algebraic closure. For each common solvent label, obtain electronic energy E, thermal enthalpy correction H, entropy S and reported Gibbs",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0087",
+      "domain": "Material",
+      "line": 87,
+      "question_preview": "Molecular Gibbs-energy algebraic closure. For each common solvent label, obtain electronic energy E, thermal enthalpy correction H, entropy S and reported Gibbs",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0088",
+      "domain": "Material",
+      "line": 88,
+      "question_preview": "Molecular Gibbs-energy algebraic closure. For each common solvent label, obtain electronic energy E, thermal enthalpy correction H, entropy S and reported Gibbs",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0089",
+      "domain": "Material",
+      "line": 89,
+      "question_preview": "Solvent-dependent electronic and Gibbs shifts. Retrieve solvent-keyed electronic/free energies plus zero-point energy and the unique method-solvent labels. Comp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0090",
+      "domain": "Material",
+      "line": 90,
+      "question_preview": "Solvent-dependent electronic and Gibbs shifts. Retrieve solvent-keyed electronic/free energies plus zero-point energy and the unique method-solvent labels. Comp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0091",
+      "domain": "Material",
+      "line": 91,
+      "question_preview": "Vibrational mode count versus molecular geometry. Retrieve frequencies, atom count and symmetry/linearity metadata together with vibration property IDs and meth",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0092",
+      "domain": "Material",
+      "line": 92,
+      "question_preview": "Vibrational mode count versus molecular geometry. Retrieve frequencies, atom count and symmetry/linearity metadata together with vibration property IDs and meth",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0093",
+      "domain": "Material",
+      "line": 93,
+      "question_preview": "Vibrational mode count versus molecular geometry. Retrieve frequencies, atom count and symmetry/linearity metadata together with vibration property IDs and meth",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0094",
+      "domain": "Material",
+      "line": 94,
+      "question_preview": "Molecule archive status and calculation origins. Retrieve deprecation flag/reasons, warnings, last-update time, origins and unique calculation/task types. Repor",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0095",
+      "domain": "Material",
+      "line": 95,
+      "question_preview": "Molecule archive status and calculation origins. Retrieve deprecation flag/reasons, warnings, last-update time, origins and unique calculation/task types. Repor",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0096",
+      "domain": "Material",
+      "line": 96,
+      "question_preview": "Molecule archive status and calculation origins. Retrieve deprecation flag/reasons, warnings, last-update time, origins and unique calculation/task types. Repor",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0097",
+      "domain": "Material",
+      "line": 97,
+      "question_preview": "Cross-property calculation provenance audit. Retrieve thermo, vibration and orbital property IDs and their method labels alongside molecular property name/ID an",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0098",
+      "domain": "Material",
+      "line": 98,
+      "question_preview": "Cross-property calculation provenance audit. Retrieve thermo, vibration and orbital property IDs and their method labels alongside molecular property name/ID an",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0099",
+      "domain": "Material",
+      "line": 99,
+      "question_preview": "Q-Chem thermal-enthalpy component accounting. Read translational, rotational and vibrational enthalpy contributions from the supplied Q-Chem output. Verify iden",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0100",
+      "domain": "Material",
+      "line": 100,
+      "question_preview": "Q-Chem thermal-enthalpy component accounting. Read translational, rotational and vibrational enthalpy contributions from the supplied Q-Chem output. Verify iden",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0101",
+      "domain": "Material",
+      "line": 101,
+      "question_preview": "Q-Chem thermal-enthalpy component accounting. Read translational, rotational and vibrational enthalpy contributions from the supplied Q-Chem output. Verify iden",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0102",
+      "domain": "Material",
+      "line": 102,
+      "question_preview": "Q-Chem entropy component and T*S accounting. Read translational, rotational and vibrational entropy contributions from the same output, verify source/temperatur",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0103",
+      "domain": "Material",
+      "line": 103,
+      "question_preview": "Q-Chem entropy component and T*S accounting. Read translational, rotational and vibrational entropy contributions from the same output, verify source/temperatur",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0104",
+      "domain": "Material",
+      "line": 104,
+      "question_preview": "Q-Chem entropy component and T*S accounting. Read translational, rotational and vibrational entropy contributions from the same output, verify source/temperatur",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0105",
+      "domain": "Material",
+      "line": 105,
+      "question_preview": "Translational thermal contribution consistency. Read translational enthalpy/entropy and the rotational counterparts from the same supplied output. Verify source",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0106",
+      "domain": "Material",
+      "line": 106,
+      "question_preview": "Translational thermal contribution consistency. Read translational enthalpy/entropy and the rotational counterparts from the same supplied output. Verify source",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0107",
+      "domain": "Material",
+      "line": 107,
+      "question_preview": "Translational thermal contribution consistency. Read translational enthalpy/entropy and the rotational counterparts from the same supplied output. Verify source",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0108",
+      "domain": "Material",
+      "line": 108,
+      "question_preview": "Vibrational thermal term versus mode evidence. Read vibrational enthalpy/entropy and the actual frequency-mode data from the same output. Verify source/formula/",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0109",
+      "domain": "Material",
+      "line": 109,
+      "question_preview": "Vibrational thermal term versus mode evidence. Read vibrational enthalpy/entropy and the actual frequency-mode data from the same output. Verify source/formula/",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0110",
+      "domain": "Material",
+      "line": 110,
+      "question_preview": "Vibrational thermal term versus mode evidence. Read vibrational enthalpy/entropy and the actual frequency-mode data from the same output. Verify source/formula/",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0111",
+      "domain": "Material",
+      "line": 111,
+      "question_preview": "IR mode/intensity/flag alignment. Read actual frequency-mode vectors, IR intensities and IR-activity flags from the supplied file. Verify source hashes and vect",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0112",
+      "domain": "Material",
+      "line": 112,
+      "question_preview": "IR mode/intensity/flag alignment. Read actual frequency-mode vectors, IR intensities and IR-activity flags from the supplied file. Verify source hashes and vect",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0113",
+      "domain": "Material",
+      "line": 113,
+      "question_preview": "IR mode/intensity/flag alignment. Read actual frequency-mode vectors, IR intensities and IR-activity flags from the supplied file. Verify source hashes and vect",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0114",
+      "domain": "Material",
+      "line": 114,
+      "question_preview": "Normal-mode displacement dimension audit. Read mode vectors, IR intensities and IR flags from the actual supplied output. Derive N from the returned formula, ch",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0115",
+      "domain": "Material",
+      "line": 115,
+      "question_preview": "Normal-mode displacement dimension audit. Read mode vectors, IR intensities and IR flags from the actual supplied output. Derive N from the returned formula, ch",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0116",
+      "domain": "Material",
+      "line": 116,
+      "question_preview": "Normal-mode displacement dimension audit. Read mode vectors, IR intensities and IR flags from the actual supplied output. Derive N from the returned formula, ch",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0117",
+      "domain": "Material",
+      "line": 117,
+      "question_preview": "Natural-population charge conservation. Read the actual NPA population tables from the supplied NBO output, parse and select the first table. Sum atomic charges",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0118",
+      "domain": "Material",
+      "line": 118,
+      "question_preview": "Natural-population charge conservation. Read the actual NPA population tables from the supplied NBO output, parse and select the first table. Sum atomic charges",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0119",
+      "domain": "Material",
+      "line": 119,
+      "question_preview": "Natural-population charge conservation. Read the actual NPA population tables from the supplied NBO output, parse and select the first table. Sum atomic charges",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0120",
+      "domain": "Material",
+      "line": 120,
+      "question_preview": "Component-resolved thermal free-energy correction. Obtain all three thermal enthalpy and entropy contributions from the same Q-Chem output, verify common source",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0121",
+      "domain": "Material",
+      "line": 121,
+      "question_preview": "Component-resolved thermal free-energy correction. Obtain all three thermal enthalpy and entropy contributions from the same Q-Chem output, verify common source",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0122",
+      "domain": "Material",
+      "line": 122,
+      "question_preview": "Component-resolved thermal free-energy correction. Obtain all three thermal enthalpy and entropy contributions from the same Q-Chem output, verify common source",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0123",
+      "domain": "Chemical",
+      "line": 123,
+      "question_preview": "SELFIES archival round-trip integrity. Encode the supplied SMILES to SELFIES, inspect its token split and declared length, decode it, and compare molecular form",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0124",
+      "domain": "Chemical",
+      "line": 124,
+      "question_preview": "SELFIES archival round-trip integrity. Encode the supplied SMILES to SELFIES, inspect its token split and declared length, decode it, and compare molecular form",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0125",
+      "domain": "Chemical",
+      "line": 125,
+      "question_preview": "SELFIES archival round-trip integrity. Encode the supplied SMILES to SELFIES, inspect its token split and declared length, decode it, and compare molecular form",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0126",
+      "domain": "Chemical",
+      "line": 126,
+      "question_preview": "Standard identifier round-trip preservation. Convert the source SMILES to standard InChI and InChIKey, then reconstruct a SMILES from that actual InChI and rege",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0127",
+      "domain": "Chemical",
+      "line": 127,
+      "question_preview": "Standard identifier round-trip preservation. Convert the source SMILES to standard InChI and InChIKey, then reconstruct a SMILES from that actual InChI and rege",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0128",
+      "domain": "Chemical",
+      "line": 128,
+      "question_preview": "Standard identifier round-trip preservation. Convert the source SMILES to standard InChI and InChIKey, then reconstruct a SMILES from that actual InChI and rege",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0129",
+      "domain": "Chemical",
+      "line": 129,
+      "question_preview": "Explicit-hydrogen representation normalization. Add graph hydrogens to the supplied SMILES and remove them again using the actual returned representations. Comp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0130",
+      "domain": "Chemical",
+      "line": 130,
+      "question_preview": "Explicit-hydrogen representation normalization. Add graph hydrogens to the supplied SMILES and remove them again using the actual returned representations. Comp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0131",
+      "domain": "Chemical",
+      "line": 131,
+      "question_preview": "Ring-core scaffold and side-chain accounting. Obtain the actual Murcko scaffold, its ring systems, heavy-atom count, molecular formula and standard InChI. Compa",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0132",
+      "domain": "Chemical",
+      "line": 132,
+      "question_preview": "Ring-core scaffold and side-chain accounting. Obtain the actual Murcko scaffold, its ring systems, heavy-atom count, molecular formula and standard InChI. Compa",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0133",
+      "domain": "Chemical",
+      "line": 133,
+      "question_preview": "Ring-core scaffold and side-chain accounting. Obtain the actual Murcko scaffold, its ring systems, heavy-atom count, molecular formula and standard InChI. Compa",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0134",
+      "domain": "Chemical",
+      "line": 134,
+      "question_preview": "Enumerated tautomer composition and identity layers. Obtain the tautomer-query template and returned tautomers. Compare at most the first three distinct returne",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0135",
+      "domain": "Chemical",
+      "line": 135,
+      "question_preview": "Enumerated tautomer composition and identity layers. Obtain the tautomer-query template and returned tautomers. Compare at most the first three distinct returne",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0136",
+      "domain": "Chemical",
+      "line": 136,
+      "question_preview": "Enumerated tautomer composition and identity layers. Obtain the tautomer-query template and returned tautomers. Compare at most the first three distinct returne",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0137",
+      "domain": "Chemical",
+      "line": 137,
+      "question_preview": "Graph adjacency and topological-distance agreement. Obtain the actual adjacency/topological-distance matrices and atom-feature order. Check dimensions/symmetry/",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0138",
+      "domain": "Chemical",
+      "line": 138,
+      "question_preview": "Graph adjacency and topological-distance agreement. Obtain the actual adjacency/topological-distance matrices and atom-feature order. Check dimensions/symmetry/",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0139",
+      "domain": "Chemical",
+      "line": 139,
+      "question_preview": "Graph adjacency and topological-distance agreement. Obtain the actual adjacency/topological-distance matrices and atom-feature order. Check dimensions/symmetry/",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0140",
+      "domain": "Chemical",
+      "line": 140,
+      "question_preview": "Isotope-specific versus average molecular mass. For the source and its supplied isotope-labeled counterpart, obtain molecular formula, average molar mass, isoto",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0141",
+      "domain": "Chemical",
+      "line": 141,
+      "question_preview": "Isotope-specific versus average molecular mass. For the source and its supplied isotope-labeled counterpart, obtain molecular formula, average molar mass, isoto",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0142",
+      "domain": "Chemical",
+      "line": 142,
+      "question_preview": "Isotope-specific versus average molecular mass. For the source and its supplied isotope-labeled counterpart, obtain molecular formula, average molar mass, isoto",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0143",
+      "domain": "Chemical",
+      "line": 143,
+      "question_preview": "Atomwise versus molecular formal-charge consistency. Obtain atomic formal charges, total formal charge, atom features and disconnected-fragment mapping. Indepen",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0144",
+      "domain": "Chemical",
+      "line": 144,
+      "question_preview": "Atomwise versus molecular formal-charge consistency. Obtain atomic formal charges, total formal charge, atom features and disconnected-fragment mapping. Indepen",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0145",
+      "domain": "Chemical",
+      "line": 145,
+      "question_preview": "Atomwise versus molecular formal-charge consistency. Obtain atomic formal charges, total formal charge, atom features and disconnected-fragment mapping. Indepen",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0146",
+      "domain": "Chemical",
+      "line": 146,
+      "question_preview": "Morgan encoding invariance under SMILES reordering. Use the supplied alternative SMILES encodings of the same intended graph. First verify identity by actual st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0147",
+      "domain": "Chemical",
+      "line": 147,
+      "question_preview": "Morgan encoding invariance under SMILES reordering. Use the supplied alternative SMILES encodings of the same intended graph. First verify identity by actual st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0148",
+      "domain": "Chemical",
+      "line": 148,
+      "question_preview": "Similarity-matrix invariants across a molecular panel. For the supplied three-molecule panel, obtain the implemented fingerprint distance matrix and pairwise Ta",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0149",
+      "domain": "Chemical",
+      "line": 149,
+      "question_preview": "Similarity-matrix invariants across a molecular panel. For the supplied three-molecule panel, obtain the implemented fingerprint distance matrix and pairwise Ta",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0150",
+      "domain": "Chemical",
+      "line": 150,
+      "question_preview": "Atom-pair encoding and graph distance provenance. Obtain atom features, atom-pair codes, the topological distance matrix and the atom-pair fingerprint for the s",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0151",
+      "domain": "Chemical",
+      "line": 151,
+      "question_preview": "Atom-pair encoding and graph distance provenance. Obtain atom features, atom-pair codes, the topological distance matrix and the atom-pair fingerprint for the s",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0152",
+      "domain": "Chemical",
+      "line": 152,
+      "question_preview": "Atom-pair encoding and graph distance provenance. Obtain atom features, atom-pair codes, the topological distance matrix and the atom-pair fingerprint for the s",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0153",
+      "domain": "Chemical",
+      "line": 153,
+      "question_preview": "Torsion versus atom-pair fingerprint comparison. For the source and supplied analogue, obtain torsion and atom-pair fingerprints and ring/rotatable-bond counts.",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0154",
+      "domain": "Chemical",
+      "line": 154,
+      "question_preview": "Torsion versus atom-pair fingerprint comparison. For the source and supplied analogue, obtain torsion and atom-pair fingerprints and ring/rotatable-bond counts.",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0155",
+      "domain": "Chemical",
+      "line": 155,
+      "question_preview": "Torsion versus atom-pair fingerprint comparison. For the source and supplied analogue, obtain torsion and atom-pair fingerprints and ring/rotatable-bond counts.",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0156",
+      "domain": "Chemical",
+      "line": 156,
+      "question_preview": "Fragment-based similarity directionality. Generate actual Fraggle fragments for the source and analogue, compute fragment-based similarity in both directions wi",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0157",
+      "domain": "Chemical",
+      "line": 157,
+      "question_preview": "Fragment-based similarity directionality. Generate actual Fraggle fragments for the source and analogue, compute fragment-based similarity in both directions wi",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0158",
+      "domain": "Chemical",
+      "line": 158,
+      "question_preview": "Fragment-based similarity directionality. Generate actual Fraggle fragments for the source and analogue, compute fragment-based similarity in both directions wi",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0159",
+      "domain": "Chemical",
+      "line": 159,
+      "question_preview": "Pattern and path fingerprints under canonical identity. Validate the supplied alternative encodings by standard InChI, obtain pattern and RDKit-path fingerprint",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0160",
+      "domain": "Chemical",
+      "line": 160,
+      "question_preview": "Pattern and path fingerprints under canonical identity. Validate the supplied alternative encodings by standard InChI, obtain pattern and RDKit-path fingerprint",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0161",
+      "domain": "Chemical",
+      "line": 161,
+      "question_preview": "Pattern and path fingerprints under canonical identity. Validate the supplied alternative encodings by standard InChI, obtain pattern and RDKit-path fingerprint",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0162",
+      "domain": "Chemical",
+      "line": 162,
+      "question_preview": "Fused and spiro ring-topology interpretation. Obtain ring systems, ring counts, bridgehead/spiro counts, adjacency and atom-feature order. Compare the shared-at",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0163",
+      "domain": "Chemical",
+      "line": 163,
+      "question_preview": "Fused and spiro ring-topology interpretation. Obtain ring systems, ring counts, bridgehead/spiro counts, adjacency and atom-feature order. Compare the shared-at",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0164",
+      "domain": "Chemical",
+      "line": 164,
+      "question_preview": "Conformer charge and Coulomb-descriptor invariants. Obtain actual EEM partial charges, total formal charge, molecular formula and Coulomb descriptor matrix unde",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0165",
+      "domain": "Chemical",
+      "line": 165,
+      "question_preview": "Conformer charge and Coulomb-descriptor invariants. Obtain actual EEM partial charges, total formal charge, molecular formula and Coulomb descriptor matrix unde",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0166",
+      "domain": "Chemical",
+      "line": 166,
+      "question_preview": "Atom-type and EState aggregation conservation. Obtain atomwise EState indices/types and the grouped EState fingerprint for the same molecule. Match the one-base",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0167",
+      "domain": "Chemical",
+      "line": 167,
+      "question_preview": "Atom-type and EState aggregation conservation. Obtain atomwise EState indices/types and the grouped EState fingerprint for the same molecule. Match the one-base",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0168",
+      "domain": "Chemical",
+      "line": 168,
+      "question_preview": "Atom-type and EState aggregation conservation. Obtain atomwise EState indices/types and the grouped EState fingerprint for the same molecule. Match the one-base",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0169",
+      "domain": "Chemical",
+      "line": 169,
+      "question_preview": "BCUT molecular-cohort projection and clustering. Compute all eight native BCUT2D coordinates for each supplied molecule in the declared order. Fit per-column po",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0170",
+      "domain": "Chemical",
+      "line": 170,
+      "question_preview": "BCUT molecular-cohort projection and clustering. Compute all eight native BCUT2D coordinates for each supplied molecule in the declared order. Fit per-column po",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0171",
+      "domain": "Chemical",
+      "line": 171,
+      "question_preview": "BCUT molecular-cohort projection and clustering. Compute all eight native BCUT2D coordinates for each supplied molecule in the declared order. Fit per-column po",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0172",
+      "domain": "Chemical",
+      "line": 172,
+      "question_preview": "Native Crippen descriptor-space comparison. Compute native logP and molar-refractivity descriptor values for each molecule. Report their native conventions with",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0173",
+      "domain": "Chemical",
+      "line": 173,
+      "question_preview": "Native Crippen descriptor-space comparison. Compute native logP and molar-refractivity descriptor values for each molecule. Report their native conventions with",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0174",
+      "domain": "Chemical",
+      "line": 174,
+      "question_preview": "Native Crippen descriptor-space comparison. Compute native logP and molar-refractivity descriptor values for each molecule. Report their native conventions with",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0175",
+      "domain": "Chemical",
+      "line": 175,
+      "question_preview": "Fixed-conformer WHIM feature compression. Obtain the complete native WHIM vector for each supplied molecule under the audited seed-42 hydrogen-added conformer p",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0176",
+      "domain": "Chemical",
+      "line": 176,
+      "question_preview": "Fixed-conformer WHIM feature compression. Obtain the complete native WHIM vector for each supplied molecule under the audited seed-42 hydrogen-added conformer p",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0177",
+      "domain": "Material",
+      "line": 177,
+      "question_preview": "Formula-level electronic-query identity loss. Retrieve formula-level band-edge/Fermi/gap reports and the candidate material IDs, then obtain the supplied target",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0178",
+      "domain": "Material",
+      "line": 178,
+      "question_preview": "Formula-level dielectric reconciliation. Retrieve total/ionic/electronic relative-permittivity reports by formula and the candidate material IDs, then obtain al",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0179",
+      "domain": "Material",
+      "line": 179,
+      "question_preview": "Formula-level dielectric reconciliation. Retrieve total/ionic/electronic relative-permittivity reports by formula and the candidate material IDs, then obtain al",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0180",
+      "domain": "Material",
+      "line": 180,
+      "question_preview": "Periodic MOF site-neighborhood annotation. For the supplied real HKUST-1 CIF and anchor-site index, obtain the actual atom count/coordinates and anchor-neighbor",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0181",
+      "domain": "Material",
+      "line": 181,
+      "question_preview": "Periodic MOF site-neighborhood annotation. For the supplied real HKUST-1 CIF and anchor-site index, obtain the actual atom count/coordinates and anchor-neighbor",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0182",
+      "domain": "Material",
+      "line": 182,
+      "question_preview": "Periodic MOF site-neighborhood annotation. For the supplied real HKUST-1 CIF and anchor-site index, obtain the actual atom count/coordinates and anchor-neighbor",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0183",
+      "domain": "Chemical",
+      "line": 183,
+      "question_preview": "Named-compound identifier provenance and round-trip. Resolve the supplied ordinary solvent name to actual SMILES and CAS metadata, obtain standard InChI/InChIKe",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0184",
+      "domain": "Chemical",
+      "line": 184,
+      "question_preview": "Named-compound identifier provenance and round-trip. Resolve the supplied ordinary solvent name to actual SMILES and CAS metadata, obtain standard InChI/InChIKe",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0185",
+      "domain": "Chemical",
+      "line": 185,
+      "question_preview": "Named-compound identifier provenance and round-trip. Resolve the supplied ordinary solvent name to actual SMILES and CAS metadata, obtain standard InChI/InChIKe",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0186",
+      "domain": "Chemical",
+      "line": 186,
+      "question_preview": "3D autocorrelation descriptor cohort. Obtain the full native descriptor vector for each of the four supplied molecules in declared order. Construct the complete",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0187",
+      "domain": "Chemical",
+      "line": 187,
+      "question_preview": "3D autocorrelation descriptor cohort. Obtain the full native descriptor vector for each of the four supplied molecules in declared order. Construct the complete",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0188",
+      "domain": "Chemical",
+      "line": 188,
+      "question_preview": "EState-VSA descriptor cohort. Obtain the full native descriptor vector for each of the four supplied molecules in declared order. Construct the complete four-ro",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0189",
+      "domain": "Chemical",
+      "line": 189,
+      "question_preview": "EState-VSA descriptor cohort. Obtain the full native descriptor vector for each of the four supplied molecules in declared order. Construct the complete four-ro",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0190",
+      "domain": "Chemical",
+      "line": 190,
+      "question_preview": "EState-VSA descriptor cohort. Obtain the full native descriptor vector for each of the four supplied molecules in declared order. Construct the complete four-ro",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0191",
+      "domain": "Chemical",
+      "line": 191,
+      "question_preview": "Normalized inertia under different conformer protocols. For the supplied molecule, obtain normalized inertia ratios from the native unseeded MMFF-optimized work",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0192",
+      "domain": "Chemical",
+      "line": 192,
+      "question_preview": "Normalized inertia under different conformer protocols. For the supplied molecule, obtain normalized inertia ratios from the native unseeded MMFF-optimized work",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0193",
+      "domain": "Chemical",
+      "line": 193,
+      "question_preview": "Normalized inertia under different conformer protocols. For the supplied molecule, obtain normalized inertia ratios from the native unseeded MMFF-optimized work",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0194",
+      "domain": "Chemical",
+      "line": 194,
+      "question_preview": "Internally embedded conformer bond-recovery comparison. Compare connectivity reconstructed from the internal seed42 hydrogen-added conformer with bond-order ass",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0195",
+      "domain": "Chemical",
+      "line": 195,
+      "question_preview": "Internally embedded conformer bond-recovery comparison. Compare connectivity reconstructed from the internal seed42 hydrogen-added conformer with bond-order ass",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0196",
+      "domain": "Chemical",
+      "line": 196,
+      "question_preview": "Internally embedded conformer bond-recovery comparison. Compare connectivity reconstructed from the internal seed42 hydrogen-added conformer with bond-order ass",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0197",
+      "domain": "Material",
+      "line": 197,
+      "question_preview": "Volumetric-energy dimensional closure. Obtain volumetric and gravimetric capacities/energies plus average voltage. Test the proposed identity energy[Wh/L]=1000*",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0198",
+      "domain": "Material",
+      "line": 198,
+      "question_preview": "Volumetric-energy dimensional closure. Obtain volumetric and gravimetric capacities/energies plus average voltage. Test the proposed identity energy[Wh/L]=1000*",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0199",
+      "domain": "Material",
+      "line": 199,
+      "question_preview": "Volumetric-energy dimensional closure. Obtain volumetric and gravimetric capacities/energies plus average voltage. Test the proposed identity energy[Wh/L]=1000*",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0200",
+      "domain": "Chemical",
+      "line": 200,
+      "question_preview": "Encoding-sensitive analogue shortlist. Compare analogue ranking from complete native MACCS bit vectors, sparse atom-pair bit sets and topological-torsion count ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0201",
+      "domain": "Chemical",
+      "line": 201,
+      "question_preview": "Encoding-sensitive analogue shortlist. Compare analogue ranking from complete native MACCS bit vectors, sparse atom-pair bit sets and topological-torsion count ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0202",
+      "domain": "Chemical",
+      "line": 202,
+      "question_preview": "Encoding-sensitive analogue shortlist. Compare analogue ranking from complete native MACCS bit vectors, sparse atom-pair bit sets and topological-torsion count ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0203",
+      "domain": "Chemical",
+      "line": 203,
+      "question_preview": "Shape-only versus atom-type-conditioned conformer grouping. Compare shape-only12-coordinate Ultrafast Shape Recognition (USR) with60-coordinate atom-type-condit",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0204",
+      "domain": "Material",
+      "line": 204,
+      "question_preview": "Phonon branch-count and stability-evidence sufficiency. Assess whether the accessible published DFPT phonon report supports a soft-mode claim for the supplied m",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0205",
+      "domain": "Material",
+      "line": 205,
+      "question_preview": "Phonon branch-count and stability-evidence sufficiency. Assess whether the accessible published DFPT phonon report supports a soft-mode claim for the supplied m",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0206",
+      "domain": "Material",
+      "line": 206,
+      "question_preview": "Phonon branch-count and stability-evidence sufficiency. Assess whether the accessible published DFPT phonon report supports a soft-mode claim for the supplied m",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0207",
+      "domain": "Biology",
+      "line": 207,
+      "question_preview": "Audit the experimental structure with PDB ID 6EQX. Report (1) the number of polymer residues in chain A, (2) the full chain-A one-letter amino-acid sequence, (3",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0208",
+      "domain": "Biology",
+      "line": 208,
+      "question_preview": "Audit the protein-protein interface of the deposited structure 1CSE using only the returned values. Report the chain-chain interfaces with their heavy-atom cont",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0209",
+      "domain": "Biology",
+      "line": 209,
+      "question_preview": "Audit the RefSeq coding sequence of the human INS gene (NM_000207.3, CDS 60..392) supplied in the input. Report (1) the sequence length, (2) the GC content in p",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0210",
+      "domain": "Biology",
+      "line": 210,
+      "question_preview": "Build a property panel for the human insulin A chain (sequence GIVEQCCTSICSLYQLENYCN). Report the theoretical isoelectric point and average molar mass of the ch",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0211",
+      "domain": "Chemical",
+      "line": 211,
+      "question_preview": "Compare two real, marketed small-molecule drugs using PubChem as the only identity source. For 'atorvastatin' and 'rosuvastatin' report the canonical SMILES and",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0212",
+      "domain": "Biology",
+      "line": 212,
+      "question_preview": "Audit the deposited structure 1CRN with a chymotrypsin digest instead of a trypsin digest. Report the entry-wide polymer residue count, the chain-A one-letter s",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0213",
+      "domain": "Biology",
+      "line": 213,
+      "question_preview": "Audit the alpha chain of the deposited human haemoglobin structure 4HHB. Report how many chains the entry contains, the residue count and one-letter sequence of",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0214",
+      "domain": "Biology",
+      "line": 214,
+      "question_preview": "Characterise the human glucagon peptide (sequence HSQGTFTSDYSKYLDSRRAQDFVQWLMNT) as an unmodified linear peptide. Report its theoretical isoelectric point and m",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0215",
+      "domain": "Biology",
+      "line": 215,
+      "question_preview": "Compare the composition of the supplied unmodified linear oxytocin sequence (CYIQNCPLG) and the N-terminal-cysteine-deleted eight-residue comparison sequence YI",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0216",
+      "domain": "Chemical",
+      "line": 216,
+      "question_preview": "Compare a small-molecule antidiabetic and an oral antidiabetic peptide-mimetic using PubChem as the only identity source. For 'metformin' and 'sitagliptin' repo",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0217",
+      "domain": "Biology",
+      "line": 217,
+      "question_preview": "Audit the identity and membrane topology of the protein that a public name search resolves for 'glycophorin A'. Report the matched accession, the matched protei",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0218",
+      "domain": "Biology",
+      "line": 218,
+      "question_preview": "Audit the protease-inhibitor interface of the deposited complex 1PPE and reconcile it with the chain composition of the same entry. Report the chain-chain inter",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0219",
+      "domain": "Biology",
+      "line": 219,
+      "question_preview": "Audit the RefSeq coding sequence of human GAPDH (NM_002046.7, CDS 77..1084) supplied in the input. Report the sequence length, the GC content in percent, the tr",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0220",
+      "domain": "Biology",
+      "line": 220,
+      "question_preview": "Audit the RefSeq coding sequence of human myoglobin (NM_005368.3, CDS 73..537) supplied in the input. Report the sequence length in nucleotides, the GC content ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0221",
+      "domain": "Biology",
+      "line": 221,
+      "question_preview": "Extract the inhibitor chain of the deposited complex 1CSE and carry its sequence through a digestion and property chain. Report the residue count of every chain",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0222",
+      "domain": "Biology",
+      "line": 222,
+      "question_preview": "Carry the human insulin coding sequence supplied in the input through a full molecular chain. Report the sequence length in nucleotides and the translated prote",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0223",
+      "domain": "Chemical",
+      "line": 223,
+      "question_preview": "Derive a registry-independent identifier chain for two real compounds. For the PubChem name lookup of 'aspirin' and of 'salicylic acid', report the returned CID",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0224",
+      "domain": "Biology",
+      "line": 224,
+      "question_preview": "Audit the beta chain of the deposited haemoglobin structure 4HHB through a property chain. Report the chain identifiers in the entry, then the residue count and",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0225",
+      "domain": "Biology",
+      "line": 225,
+      "question_preview": "Build a structure-and-composition chain for the human insulin B chain (sequence FVNQHLCGSHLVEALYLVCGERGFFYTPKT). Convert the peptide to a structure and report i",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0226",
+      "domain": "Biology",
+      "line": 226,
+      "question_preview": "Audit the deposited bacteriophage lysozyme structure 2LZM and carry its chain through a digest chain. Report the entry-wide polymer residue count and the one-le",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0227",
+      "domain": "Biology",
+      "line": 227,
+      "question_preview": "Audit the deposited ubiquitin structure 1UBQ. Report how many chains the entry contains, the residue count and one-letter sequence of chain A, and its theoretic",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0228",
+      "domain": "Biology",
+      "line": 228,
+      "question_preview": "Carry the human beta-actin coding sequence supplied in the input through a molecular chain. Report the sequence length in nucleotides, the GC content in percent",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0229",
+      "domain": "Biology",
+      "line": 229,
+      "question_preview": "Build a property panel for the human angiotensin II octapeptide (sequence DRVYIHPF) as an unmodified linear peptide. Report its length, theoretical isoelectric ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0230",
+      "domain": "Biology",
+      "line": 230,
+      "question_preview": "Map the interaction neighbourhood of human insulin (UniProt P01308) using only returned records. From the OMA service report the total number of orthologs, the ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0231",
+      "domain": "Chemical",
+      "line": 231,
+      "question_preview": "Derive a registry-independent identifier chain for two related metabolites. For the PubChem name lookup of 'glucose' and of 'glucose 6-phosphate', report the re",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0232",
+      "domain": "MachineLearning",
+      "line": 232,
+      "question_preview": "Fit and validate a linear calibration on the supplied 36-observation ozone-monitor calibration dataset (predictor x and response y as labelled in the supplied b",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0233",
+      "domain": "Material",
+      "line": 233,
+      "question_preview": "Audit the electronic-structure record of the Materials Project entry mp-6930. Report its formula, the reported band gap in eV, the conduction-band minimum and t",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0234",
+      "domain": "Material",
+      "line": 234,
+      "question_preview": "Audit the structural and thermodynamic record of the Materials Project entry mp-149. Report its formula, the number of sites, the volume in cubic angstroms and ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0235",
+      "domain": "MachineLearning",
+      "line": 235,
+      "question_preview": "Run a reproducible standardization-then-regression check on the supplied 36-observation calibration dataset (x as predictor, y as response; the first 30 rows ar",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0236",
+      "domain": "Chemical",
+      "line": 236,
+      "question_preview": "Compare two natural methylxanthines using a live registry as the only identity source. For the names 'caffeine' and 'theobromine' report the returned registry i",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0237",
+      "domain": "Material",
+      "line": 237,
+      "question_preview": "Compare two Materials Project entries by their real identifiers: mp-6930 and mp-149. For each entry report the formula, the reported band gap in eV and the crys",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0238",
+      "domain": "MachineLearning",
+      "line": 238,
+      "question_preview": "Build a binary classification check on the supplied 36-observation calibration dataset (x = predictor, y = response; the first 30 rows are the training set and ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0239",
+      "domain": "Biology",
+      "line": 239,
+      "question_preview": "Compare two proteolytic treatments of one deposited chain. For PDB entry 1UBQ report the chain-A one-letter sequence, then digest that same sequence twice at ze",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0240",
+      "domain": "Biology",
+      "line": 240,
+      "question_preview": "Compare the chain-chain interfaces of two deposited complexes, 1CSE and 1PPE, from their experimental coordinates. For each entry report the number of interface",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0241",
+      "domain": "Biology",
+      "line": 241,
+      "question_preview": "Map the orthology and interaction evidence of human epidermal growth factor receptor (UniProt P00533) from returned records only. From the ortholog service repo",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0242",
+      "domain": "Biology",
+      "line": 242,
+      "question_preview": "Build a property panel for the human bradykinin nonapeptide (sequence RPPGFSPFR) as an unmodified linear peptide. Report its length, theoretical isoelectric poi",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0243",
+      "domain": "Biology",
+      "line": 243,
+      "question_preview": "Audit the RefSeq coding sequence of human TP53 (NM_000546.6) supplied in the input. Report the sequence length in nucleotides, the GC content in percent, the tr",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0244",
+      "domain": "Biology",
+      "line": 244,
+      "question_preview": "Carry the deposited crambin structure 1CRN through a four-stage chain. Report the chain-A one-letter sequence. Digest that sequence with the endopeptidase rule ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0245",
+      "domain": "Biology",
+      "line": 245,
+      "question_preview": "Carry the human haemoglobin beta coding sequence supplied in the input through a five-stage chain. Report the sequence length in nucleotides and the translated ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0246",
+      "domain": "Chemical",
+      "line": 246,
+      "question_preview": "Derive registry-independent identifiers for two related amino acids and compare them. For the PubChem name lookup of 'L-tyrosine' and of 'L-dopa' report the ret",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0247",
+      "domain": "Material",
+      "line": 247,
+      "question_preview": "Resolve a formula to a Materials Project entry and then audit that entry. Use the service to resolve the formula 'TiO2' to the identifiers it returns, take the ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0248",
+      "domain": "MachineLearning",
+      "line": 248,
+      "question_preview": "Compare two regularized and unregularized fits on the supplied 36-observation calibration dataset (x as predictor, y as response; the first 30 rows are the trai",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0249",
+      "domain": "Biology",
+      "line": 249,
+      "question_preview": "Build a two-stage structure chain for the human neurotensin tridecapeptide (sequence ELYENKPRRPYIL) treated as an unmodified linear peptide. Report the peptide'",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0250",
+      "domain": "Biology",
+      "line": 250,
+      "question_preview": "Compare two human proteins by their public interaction and orthology evidence. For P01308 (insulin) and P00533 (EGFR) use the interaction service at a stated mi",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0251",
+      "domain": "Biology",
+      "line": 251,
+      "question_preview": "Compare the deposited interfaces of two protease-inhibitor complexes. For 1PPE and 1CSE report the partner chains, the heavy-atom contact count, the interface r",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0252",
+      "domain": "Material",
+      "line": 252,
+      "question_preview": "Audit the electronic-structure record of the Materials Project entry mp-2420244. Report its formula, the reported band gap in eV, the conduction-band minimum an",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0253",
+      "domain": "Material",
+      "line": 253,
+      "question_preview": "Audit the supplied Materials Project entry. Report its formula, cell volume, density, crystal system and space-group symbol with units. Using the supplied atomi",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0254",
+      "domain": "MachineLearning",
+      "line": 254,
+      "question_preview": "Run the standardization check again on the supplied 36-observation calibration dataset, but split it as the first 24 rows for training and the last 12 rows for ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0255",
+      "domain": "Biology",
+      "line": 255,
+      "question_preview": "Audit the protein-protein interface of the deposited barnase-barstar complex 1BRS. Report the chain-chain interfaces with their heavy-atom contact counts, the n",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0256",
+      "domain": "Biology",
+      "line": 256,
+      "question_preview": "Compare the deposited interfaces of the barnase-barstar complex 1BRS and the protease-inhibitor complex 1PPE. For each entry report the partner chains, the heav",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0257",
+      "domain": "Biology",
+      "line": 257,
+      "question_preview": "Carry the deposited ubiquitin structure 1UBQ through a chain that uses a different protease rule. Report the chain-A one-letter sequence and digest it with the ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0258",
+      "domain": "MachineLearning",
+      "line": 258,
+      "question_preview": "Compare two ridge penalties and an unpenalized fit on the supplied 36-observation calibration dataset (x as predictor, y as response; first 30 rows training, la",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0259",
+      "domain": "Material",
+      "line": 259,
+      "question_preview": "Resolve the formula 'Al2O3' to a Materials Project entry and audit it. Use the service to resolve the formula, take the first identifier returned, and report th",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0260",
+      "domain": "MachineLearning",
+      "line": 260,
+      "question_preview": "Run the binary classification check on the supplied 36-observation calibration dataset (x = predictor, y = response; first 30 rows training, last 6 held out, in",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0261",
+      "domain": "MachineLearning",
+      "line": 261,
+      "question_preview": "Fit a ridge regression on standardized predictors for the supplied 36-observation calibration dataset (x as predictor, y as response; first 30 rows training, la",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0262",
+      "domain": "MachineLearning",
+      "line": 262,
+      "question_preview": "Evaluate ridge regression with shuffled K-fold cross-validation on the supplied 36-observation calibration dataset (x as predictor, y as response) using the cro",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0263",
+      "domain": "Material",
+      "line": 263,
+      "question_preview": "Audit the electronic-structure record of the Materials Project entry mp-149. Report its formula, the reported band gap in eV, the conduction-band minimum and th",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0264",
+      "domain": "Material",
+      "line": 264,
+      "question_preview": "Audit the supplied Materials Project entry. Report its formula, cell volume, density, crystal system and space-group symbol with units. Using the supplied atomi",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0265",
+      "domain": "Material",
+      "line": 265,
+      "question_preview": "Resolve the formula 'Fe2O3' to a Materials Project entry and audit it. Use the service to resolve the formula, take the first identifier returned, and report th",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0266",
+      "domain": "Biology",
+      "line": 266,
+      "question_preview": "Carry the deposited bacteriophage lysozyme structure 2LZM through a digest chain that uses a glutamate-specific rule. Report the entry-wide residue count and th",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0267",
+      "domain": "Biology",
+      "line": 267,
+      "question_preview": "Compare the orthology and interaction evidence of human TP53 (P04637) and human haemoglobin subunit alpha (P69905), using only returned records. For each access",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0268",
+      "domain": "Material",
+      "line": 268,
+      "question_preview": "Search the Materials Project for entries whose reported band gap lies in the interval 0.5 to 0.6 eV, take the first identifier the search returns, and audit it.",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0269",
+      "domain": "Chemical",
+      "line": 269,
+      "question_preview": "Derive registry-independent identifiers for two related sugar acids and account for their difference. For the PubChem name lookup of 'ascorbic acid' and of 'deh",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0270",
+      "domain": "Biology",
+      "line": 270,
+      "question_preview": "Characterise the supplied antibody heavy-chain variable sequence (a therapeutic IgG1 anti-HER2 heavy chain) using the antibody annotation tools. Report the leng",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0271",
+      "domain": "MachineLearning",
+      "line": 271,
+      "question_preview": "Evaluate the binary classifier on the supplied 36-observation calibration dataset (x = predictor, y = response; first 30 rows training, last 6 held out, in the ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0272",
+      "domain": "MachineLearning",
+      "line": 272,
+      "question_preview": "Repeat the ridge cross-validation on the supplied 36-observation calibration dataset (x as predictor, y as response) with 10 shuffled folds and the seed given i",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0273",
+      "domain": "Material",
+      "line": 273,
+      "question_preview": "Search the Materials Project for entries whose reported band gap lies in the interval 1.0 to 1.1 eV, take the first identifier the search returns, and audit it.",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0274",
+      "domain": "Material",
+      "line": 274,
+      "question_preview": "Search the Materials Project for entries whose reported band gap lies in the interval 2.4 to 2.5 eV, take the first identifier the search returns, and audit it.",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0275",
+      "domain": "Chemical",
+      "line": 275,
+      "question_preview": "Derive registry-independent identifiers for the NAD+/NADH redox pair. For the name lookups of 'NAD+' and of 'NADH' report the returned CID and canonical structu",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0276",
+      "domain": "Chemical",
+      "line": 276,
+      "question_preview": "Derive registry-independent identifiers for the glutathione redox pair. For the name lookups of 'glutathione' and of 'glutathione disulfide' report the returned",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0277",
+      "domain": "Biology",
+      "line": 277,
+      "question_preview": "Report the orthology and interaction evidence of human insulin (P01308) and human epidermal growth factor receptor (P00533) from returned records only. For each",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0278",
+      "domain": "MachineLearning",
+      "line": 278,
+      "question_preview": "Fit an ordinary least-squares line and a ridge regression with the penalty stated in the input on the supplied 36-observation calibration dataset (x as predicto",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0279",
+      "domain": "MachineLearning",
+      "line": 279,
+      "question_preview": "Evaluate the classification pipeline's stability on the supplied 36-observation calibration dataset (x = predictor, y = response). Label rows positive when the ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0280",
+      "domain": "Biology",
+      "line": 280,
+      "question_preview": "Audit the restriction sites and base composition of the supplied linear DNA sequence. Report the sequence length, the topology the site tool echoes and the GC c",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0281",
+      "domain": "Biology",
+      "line": 281,
+      "question_preview": "Compare the restriction-site tables of the supplied DNA sequence under the linear and the circular topology, and check the strand symmetry of the reported sites",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0282",
+      "domain": "Biology",
+      "line": 282,
+      "question_preview": "Audit the numbering and region annotation of the supplied antibody heavy-chain variable sequence under two numbering schemes. Report the sequence length, then n",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0283",
+      "domain": "MachineLearning",
+      "line": 283,
+      "question_preview": "Cluster the supplied 36-observation calibration dataset on its single predictor column (x) with a partitioning clustering tool using the number of clusters stat",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0284",
+      "domain": "MachineLearning",
+      "line": 284,
+      "question_preview": "Compare a polynomial least-squares fit of the stated degree against a straight-line fit on the first 30 rows of the supplied 36-observation calibration dataset ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0285",
+      "domain": "MachineLearning",
+      "line": 285,
+      "question_preview": "Test whether the predictor and the response of the supplied 36-observation calibration dataset are associated, using two different correlation measures. Report ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0286",
+      "domain": "Material",
+      "line": 286,
+      "question_preview": "Search the Materials Project for entries whose reported band gap lies in the interval 0.0 to 0.1 eV, take the first identifier the search returns, and audit it.",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0287",
+      "domain": "Biology",
+      "line": 287,
+      "question_preview": "Carry the deposited T4 lysozyme structure 2LZM through a chain that compares two protease rules. Report the chain-A one-letter sequence and its length, digest t",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0288",
+      "domain": "Biology",
+      "line": 288,
+      "question_preview": "Follow the deposited ubiquitin structure 1UBQ down to a registry-independent identifier for its largest tryptic peptide. Report the chain-A one-letter sequence ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0289",
+      "domain": "Biology",
+      "line": 289,
+      "question_preview": "Derive an identifier chain for the largest aspartate-specific peptide of the deposited protease-inhibitor complex 1PPE. Report the sequence and length of chain ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0290",
+      "domain": "MachineLearning",
+      "line": 290,
+      "question_preview": "Run an overfitting check on the supplied 36-observation calibration dataset (x as predictor, y as response; first 30 rows training, last 6 held out, in the give",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0291",
+      "domain": "Biology",
+      "line": 291,
+      "question_preview": "Carry the deposited barnase-barstar complex 1BRS from its interface down to a peptide identifier. Compute the interface geometry and report the partner chains, ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0292",
+      "domain": "Chemical",
+      "line": 292,
+      "question_preview": "Derive the full identifier chain for a sugar anomer pair. For the name lookups of 'alpha-D-glucose' and of 'beta-D-glucose' report the returned CID and canonica",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0293",
+      "domain": "Biology",
+      "line": 293,
+      "question_preview": "Follow the deposited crambin structure 1CRN from its sequence to two independent peptide identifiers. Report the chain-A sequence and length, digest it with the",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0294",
+      "domain": "Biology",
+      "line": 294,
+      "question_preview": "Characterise the deposited ubiquitin structure 1UBQ at three levels. Report its CATH classification as the service returns it, including the class, architecture",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0295",
+      "domain": "Biology",
+      "line": 295,
+      "question_preview": "Compare three computed property sets for the supplied protein sequence. Report the number of amino acids and the theoretical isoelectric point the parameter too",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0296",
+      "domain": "Biology",
+      "line": 296,
+      "question_preview": "Assess whether the supplied human protein is a secreted protein using three prediction tools. Run the signal-peptide tool with the eukaryotic type. If it does n",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0297",
+      "domain": "Biology",
+      "line": 297,
+      "question_preview": "Audit the post-translational modification landscape and the family assignment of the supplied protein. Report every sulfation site the sulfation tool returns wi",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0298",
+      "domain": "Biology",
+      "line": 298,
+      "question_preview": "Cross-check two independent routes to the molecular formula of one peptide. Retrieve chain A of the deposited crambin structure 1CRN and report its sequence and",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0299",
+      "domain": "Biology",
+      "line": 299,
+      "question_preview": "Assess the solution behaviour of the supplied protein sequence with three predictors. Report the solubility verdict the solubility tool returns together with ev",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0300",
+      "domain": "Biology",
+      "line": 300,
+      "question_preview": "Carry the deposited ubiquitin structure 1UBQ through a modification and family audit. Report the CATH classification as returned, retrieve chain A and report it",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0301",
+      "domain": "Biology",
+      "line": 301,
+      "question_preview": "Check whether the deposited crambin chain is predicted to be a secreted protein. Retrieve chain A of 1CRN and report its sequence and length, run the signal-pep",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0302",
+      "domain": "Biology",
+      "line": 302,
+      "question_preview": "Report the mass of the supplied DNA sequence in every combination of strand count and topology, without being told which calculator to use for which combination",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0303",
+      "domain": "Biology",
+      "line": 303,
+      "question_preview": "Two independent digestion tools are offered. Retrieve chain A of the deposited ubiquitin structure 1UBQ, report its sequence and length, then digest that return",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0304",
+      "domain": "Biology",
+      "line": 304,
+      "question_preview": "Compare three physicochemical views of the supplied protein sequence. Report the hydrophobicity and polarity values the first tool returns with their units, the",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0305",
+      "domain": "Biology",
+      "line": 305,
+      "question_preview": "Compare two protein sequences that differ at a single short stretch. Run the log-expectation comparison tool and the local alignment tool on the supplied pair a",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0306",
+      "domain": "Biology",
+      "line": 306,
+      "question_preview": "Audit one DNA sequence at three levels. Report the GC content the composition tool returns for the stated window size and base type, the double-stranded linear ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0307",
+      "domain": "Biology",
+      "line": 307,
+      "question_preview": "Compare two protease rules with the sequence-only digestion tool on the supplied protein sequence, and obtain the masses of the resulting peptides from the mass",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0308",
+      "domain": "Biology",
+      "line": 308,
+      "question_preview": "Design a primer check on the first 22 bases of the supplied DNA sequence and on their reverse complement. Report the reverse complement the complement tool retu",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0309",
+      "domain": "Chemical",
+      "line": 309,
+      "question_preview": "Check the internal consistency of a small-molecule structure pipeline on the supplied SMILES string. Report the SMILES the input is, then generate three-dimensi",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0310",
+      "domain": "Biology",
+      "line": 310,
+      "question_preview": "Audit one protein sequence for post-translational modification sites and motifs. Report every modification site the modification predictor returns with its resi",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0311",
+      "domain": "Biology",
+      "line": 311,
+      "question_preview": "Convert one binding free energy between units and relate it to a physicochemical property of the same protein. The affinity tool takes a free energy with a unit",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0312",
+      "domain": "Biology",
+      "line": 312,
+      "question_preview": "Reach a registry-independent identifier for the largest peptide that the glutamate-specific rule produces from the deposited T4 lysozyme structure 2LZM, by two ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0313",
+      "domain": "Biology",
+      "line": 313,
+      "question_preview": "Digest the first 30 residues of the supplied protein sequence with two different protease rules and compare the products by formula. Report the sequence you dig",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0314",
+      "domain": "Chemical",
+      "line": 314,
+      "question_preview": "Follow one small molecule from its registry name to a registry-independent identifier and a three-dimensional structure. Report the registry identifier and cano",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0315",
+      "domain": "Material",
+      "line": 315,
+      "question_preview": "Audit one Materials Project entry from its formula through to a derived optical quantity. Resolve the formula Al2O3 to a list of identifiers, report how many we",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0316",
+      "domain": "Chemical",
+      "line": 316,
+      "question_preview": "Carry one molecule down the identifier ladder and back up it. From the registry name 'aspirin', obtain the canonical structure, convert that structure to an InC",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0317",
+      "domain": "Chemical",
+      "line": 317,
+      "question_preview": "Compare two routes that start from the same registry-independent key. Obtain the InChIKey for the supplied structure string by converting it to an InChI and the",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0318",
+      "domain": "Biology",
+      "line": 318,
+      "question_preview": "Take the largest tryptic peptide of the deposited ubiquitin structure 1UBQ all the way to a registry-independent identifier and back. Report the chain-A sequenc",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0319",
+      "domain": "Material",
+      "line": 319,
+      "question_preview": "Resolve one formula to an entry and carry its structural record through a consistency check. Report the number of identifiers the resolver returns and select th",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0320",
+      "domain": "Chemical",
+      "line": 320,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table. Report the canonical structure and registry identifier the name lookup returns, ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0321",
+      "domain": "Chemical",
+      "line": 321,
+      "question_preview": "Compare two named molecules through their identifiers and a computed similarity. For each name report the registry identifier and canonical structure, convert e",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0322",
+      "domain": "Biology",
+      "line": 322,
+      "question_preview": "Carry a peptide from a deposited complex to a registry-independent identifier and back. Report the sequence and length of chain E of the deposited protease-inhi",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0323",
+      "domain": "Biology",
+      "line": 323,
+      "question_preview": "Digest one deposited chain with two tools and one rule, and compare what each returns. Report the sequence and length of chain A of the deposited T4 lysozyme st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0324",
+      "domain": "Biology",
+      "line": 324,
+      "question_preview": "Assemble subcellular-localisation evidence for the supplied protein sequence from three predictors. Report the binary localisation verdict and every value the f",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0325",
+      "domain": "Biology",
+      "line": 325,
+      "question_preview": "Audit one deposited structure at the level of its family assignment and its low-frequency dynamics. Report the entry's family classification as the classificati",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0326",
+      "domain": "Biology",
+      "line": 326,
+      "question_preview": "Characterise one protein by its domain architecture and its family relationships using the accession-driven services. Report the architecture the first service ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0327",
+      "domain": "Biology",
+      "line": 327,
+      "question_preview": "Cross-check two digest tools on a third deposited complex and verify a returned formula. Report the sequence and length of chain I of the deposited complex 1CSE",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0328",
+      "domain": "Chemical",
+      "line": 328,
+      "question_preview": "Compare three named small molecules pairwise by both identity and computed similarity. For each name report the registry identifier and canonical structure, con",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0329",
+      "domain": "Biology",
+      "line": 329,
+      "question_preview": "Carry a peptide from the deposited structure 1CRN to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0330",
+      "domain": "Biology",
+      "line": 330,
+      "question_preview": "Carry a peptide from the deposited structure 3EBX to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0331",
+      "domain": "Biology",
+      "line": 331,
+      "question_preview": "Carry a peptide from the deposited structure 1L2Y to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the chym",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0332",
+      "domain": "Chemical",
+      "line": 332,
+      "question_preview": "Carry the molecule named 'caffeine' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0333",
+      "domain": "Chemical",
+      "line": 333,
+      "question_preview": "Carry the molecule named 'ibuprofen' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0334",
+      "domain": "Biology",
+      "line": 334,
+      "question_preview": "Cross-check two digest tools on the beta chain of the deposited haemoglobin structure 4HHB. Report the chain-B sequence and length, digest it with the trypsin r",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0335",
+      "domain": "Biology",
+      "line": 335,
+      "question_preview": "Digest the inhibitor chain of the deposited complex 1CSE with the glutamate-specific rule at zero missed cleavages and account for the products. Report the chai",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0336",
+      "domain": "Chemical",
+      "line": 336,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0337",
+      "domain": "Biology",
+      "line": 337,
+      "question_preview": "Carry a peptide from the deposited structure 1BRS to a registry-independent identifier and back. Report the chain D sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0338",
+      "domain": "Biology",
+      "line": 338,
+      "question_preview": "Carry a peptide from the deposited structure 1MBN to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the chym",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0339",
+      "domain": "Chemical",
+      "line": 339,
+      "question_preview": "Carry the molecule named 'vanillin' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0340",
+      "domain": "Chemical",
+      "line": 340,
+      "question_preview": "Carry the molecule named 'glucose' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI t",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0341",
+      "domain": "Biology",
+      "line": 341,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 4HHB, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0342",
+      "domain": "Biology",
+      "line": 342,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 1MBN, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0343",
+      "domain": "Chemical",
+      "line": 343,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0344",
+      "domain": "Chemical",
+      "line": 344,
+      "question_preview": "Compare two named molecules through their identifiers and a computed similarity. For each name report the registry identifier and canonical structure, convert e",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0345",
+      "domain": "Biology",
+      "line": 345,
+      "question_preview": "Carry a peptide from the deposited structure 1LYZ to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0346",
+      "domain": "Biology",
+      "line": 346,
+      "question_preview": "Carry a peptide from the deposited structure 5CYT to a registry-independent identifier and back. Report the chain R sequence and length, digest it with the chym",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0347",
+      "domain": "Chemical",
+      "line": 347,
+      "question_preview": "Carry the molecule named 'menthol' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI t",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0348",
+      "domain": "Chemical",
+      "line": 348,
+      "question_preview": "Carry the molecule named 'lidocaine' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0349",
+      "domain": "Biology",
+      "line": 349,
+      "question_preview": "Report the sequence and length of chain D of the deposited structure 4HHB, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0350",
+      "domain": "Chemical",
+      "line": 350,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0351",
+      "domain": "Chemical",
+      "line": 351,
+      "question_preview": "Compare the two named molecules 'ethanol' and 'menthol' through their identifiers and a computed similarity. For each name report the registry identifier and ca",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0352",
+      "domain": "Chemical",
+      "line": 352,
+      "question_preview": "Compare the two named molecules 'theobromine' and 'caffeine' through their identifiers and a computed similarity. For each name report the registry identifier a",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0353",
+      "domain": "Biology",
+      "line": 353,
+      "question_preview": "Carry a peptide from the deposited structure 1AKI to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0354",
+      "domain": "Biology",
+      "line": 354,
+      "question_preview": "Carry a peptide from the deposited structure 2CI2 to a registry-independent identifier and back. Report the chain I sequence and length, digest it with the chym",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0355",
+      "domain": "Biology",
+      "line": 355,
+      "question_preview": "Carry a peptide from the deposited structure 5PTI to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0356",
+      "domain": "Chemical",
+      "line": 356,
+      "question_preview": "Carry the molecule named 'salicylic acid' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0357",
+      "domain": "Chemical",
+      "line": 357,
+      "question_preview": "Carry the molecule named 'citric acid' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InC",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0358",
+      "domain": "Biology",
+      "line": 358,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 1PPT, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0359",
+      "domain": "Chemical",
+      "line": 359,
+      "question_preview": "Compare the two named molecules 'naphthalene' and 'pyridine' through their identifiers and a computed similarity. For each name report the registry identifier a",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0360",
+      "domain": "Chemical",
+      "line": 360,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0361",
+      "domain": "Biology",
+      "line": 361,
+      "question_preview": "Carry a peptide from the deposited structure 1CTF to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0362",
+      "domain": "Biology",
+      "line": 362,
+      "question_preview": "Carry a peptide from the deposited structure 1PGB to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the chym",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0363",
+      "domain": "Biology",
+      "line": 363,
+      "question_preview": "Carry a peptide from the deposited structure 1SHG to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0364",
+      "domain": "Chemical",
+      "line": 364,
+      "question_preview": "Carry the molecule named 'urea' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI to a",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0365",
+      "domain": "Chemical",
+      "line": 365,
+      "question_preview": "Carry the molecule named 'phenol' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI to",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0366",
+      "domain": "Biology",
+      "line": 366,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 1TIT, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0367",
+      "domain": "Chemical",
+      "line": 367,
+      "question_preview": "Compare the two named molecules 'methanol' and 'acetone' through their identifiers and a computed similarity. For each name report the registry identifier and c",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0368",
+      "domain": "Chemical",
+      "line": 368,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0369",
+      "domain": "Biology",
+      "line": 369,
+      "question_preview": "Carry a peptide from the deposited structure 1BPI to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0370",
+      "domain": "Biology",
+      "line": 370,
+      "question_preview": "Carry a peptide from the deposited structure 2LYZ to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the chym",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0371",
+      "domain": "Biology",
+      "line": 371,
+      "question_preview": "Carry a peptide from the deposited structure 1LZ1 to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0372",
+      "domain": "Chemical",
+      "line": 372,
+      "question_preview": "Carry the molecule named 'benzoic acid' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the In",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0373",
+      "domain": "Chemical",
+      "line": 373,
+      "question_preview": "Carry the molecule named 'aniline' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI t",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0374",
+      "domain": "Biology",
+      "line": 374,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 3LZT, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0375",
+      "domain": "Chemical",
+      "line": 375,
+      "question_preview": "Compare the two named molecules 'styrene' and 'cyclohexane' through their identifiers and a computed similarity. For each name report the registry identifier an",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0376",
+      "domain": "Chemical",
+      "line": 376,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0377",
+      "domain": "Biology",
+      "line": 377,
+      "question_preview": "Carry a peptide from the deposited structure 1CHO to a registry-independent identifier and back. Report the chain I sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0378",
+      "domain": "Biology",
+      "line": 378,
+      "question_preview": "Carry a peptide from the deposited structure 2SOD to a registry-independent identifier and back. Report the chain O sequence and length, digest it with the chym",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0379",
+      "domain": "Biology",
+      "line": 379,
+      "question_preview": "Carry a peptide from the deposited structure 1RNT to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0380",
+      "domain": "Chemical",
+      "line": 380,
+      "question_preview": "Carry the molecule named 'ethyl acetate' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the I",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0381",
+      "domain": "Chemical",
+      "line": 381,
+      "question_preview": "Carry the molecule named 'fructose' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0382",
+      "domain": "Biology",
+      "line": 382,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 1HEW, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0383",
+      "domain": "Chemical",
+      "line": 383,
+      "question_preview": "Compare the two named molecules 'acetamide' and 'benzonitrile' through their identifiers and a computed similarity. For each name report the registry identifier",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0384",
+      "domain": "Chemical",
+      "line": 384,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0385",
+      "domain": "Biology",
+      "line": 385,
+      "question_preview": "Carry a peptide from the deposited structure 4LYZ to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0386",
+      "domain": "Biology",
+      "line": 386,
+      "question_preview": "Carry a peptide from the deposited structure 1ACX to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the chym",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0387",
+      "domain": "Biology",
+      "line": 387,
+      "question_preview": "Carry a peptide from the deposited structure 1PYP to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0388",
+      "domain": "Chemical",
+      "line": 388,
+      "question_preview": "Carry the molecule named 'benzaldehyde' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the In",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0389",
+      "domain": "Chemical",
+      "line": 389,
+      "question_preview": "Carry the molecule named 'pyridine' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0390",
+      "domain": "Biology",
+      "line": 390,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 1EGO, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0391",
+      "domain": "Chemical",
+      "line": 391,
+      "question_preview": "Compare the two named molecules 'furan' and 'thiophene' through their identifiers and a computed similarity. For each name report the registry identifier and ca",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0392",
+      "domain": "Chemical",
+      "line": 392,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0393",
+      "domain": "Biology",
+      "line": 393,
+      "question_preview": "Carry a peptide from the deposited structure 5RSA to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0394",
+      "domain": "Biology",
+      "line": 394,
+      "question_preview": "Carry a peptide from the deposited structure 1HEL to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the chym",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0395",
+      "domain": "Biology",
+      "line": 395,
+      "question_preview": "Carry a peptide from the deposited structure 1BP2 to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0396",
+      "domain": "Chemical",
+      "line": 396,
+      "question_preview": "Carry the molecule named 'acetophenone' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the In",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0397",
+      "domain": "Chemical",
+      "line": 397,
+      "question_preview": "Carry the molecule named 'benzamide' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0398",
+      "domain": "Biology",
+      "line": 398,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 2LYM, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0399",
+      "domain": "Chemical",
+      "line": 399,
+      "question_preview": "Compare the two named molecules 'hydroquinone' and 'resorcinol' through their identifiers and a computed similarity. For each name report the registry identifie",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0400",
+      "domain": "Chemical",
+      "line": 400,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0401",
+      "domain": "Biology",
+      "line": 401,
+      "question_preview": "Carry a peptide from the deposited structure 1CTI to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0402",
+      "domain": "Biology",
+      "line": 402,
+      "question_preview": "Carry a peptide from the deposited structure 1SBT to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0403",
+      "domain": "Biology",
+      "line": 403,
+      "question_preview": "Carry a peptide from the deposited structure 1TON to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0404",
+      "domain": "Chemical",
+      "line": 404,
+      "question_preview": "Carry the molecule named 'acetanilide' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InC",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0405",
+      "domain": "Chemical",
+      "line": 405,
+      "question_preview": "Carry the molecule named 'thymol' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI to",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0406",
+      "domain": "Biology",
+      "line": 406,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 2PTN, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0407",
+      "domain": "Chemical",
+      "line": 407,
+      "question_preview": "Compare the two named molecules 'anisaldehyde' and 'methyl salicylate' through their identifiers and a computed similarity. For each name report the registry id",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0408",
+      "domain": "Chemical",
+      "line": 408,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0409",
+      "domain": "Biology",
+      "line": 409,
+      "question_preview": "Carry a peptide from the deposited structure 1YPI to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0410",
+      "domain": "Biology",
+      "line": 410,
+      "question_preview": "Carry a peptide from the deposited structure 2SGA to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0411",
+      "domain": "Biology",
+      "line": 411,
+      "question_preview": "Carry a peptide from the deposited structure 1PPN to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0412",
+      "domain": "Chemical",
+      "line": 412,
+      "question_preview": "Carry the molecule named 'benzyl alcohol' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0413",
+      "domain": "Chemical",
+      "line": 413,
+      "question_preview": "Carry the molecule named 'cinnamaldehyde' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0414",
+      "domain": "Biology",
+      "line": 414,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 1YPI, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0415",
+      "domain": "Chemical",
+      "line": 415,
+      "question_preview": "Compare the two named molecules 'eugenol' and 'isoeugenol' through their identifiers and a computed similarity. For each name report the registry identifier and",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0416",
+      "domain": "Chemical",
+      "line": 416,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0417",
+      "domain": "Biology",
+      "line": 417,
+      "question_preview": "Carry a peptide from the deposited structure 1BTP to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0418",
+      "domain": "Biology",
+      "line": 418,
+      "question_preview": "Carry a peptide from the deposited structure 1MCT to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0419",
+      "domain": "Biology",
+      "line": 419,
+      "question_preview": "Carry a peptide from the deposited structure 1FMB to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0420",
+      "domain": "Chemical",
+      "line": 420,
+      "question_preview": "Carry the molecule named 'indole' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI to",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0421",
+      "domain": "Chemical",
+      "line": 421,
+      "question_preview": "Carry the molecule named 'quinoline' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0422",
+      "domain": "Biology",
+      "line": 422,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 1BTP, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0423",
+      "domain": "Chemical",
+      "line": 423,
+      "question_preview": "Compare the two named molecules 'anthracene' and 'phenanthrene' through their identifiers and a computed similarity. For each name report the registry identifie",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0424",
+      "domain": "Chemical",
+      "line": 424,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0425",
+      "domain": "Biology",
+      "line": 425,
+      "question_preview": "Carry a peptide from the deposited structure 1SGT to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0426",
+      "domain": "Biology",
+      "line": 426,
+      "question_preview": "Carry a peptide from the deposited structure 3EST to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0427",
+      "domain": "Biology",
+      "line": 427,
+      "question_preview": "Carry a peptide from the deposited structure 1AZW to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0428",
+      "domain": "Chemical",
+      "line": 428,
+      "question_preview": "Carry the molecule named 'fluorene' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0429",
+      "domain": "Chemical",
+      "line": 429,
+      "question_preview": "Carry the molecule named 'biphenyl' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0430",
+      "domain": "Biology",
+      "line": 430,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 1SGT, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0431",
+      "domain": "Chemical",
+      "line": 431,
+      "question_preview": "Compare the two named molecules 'azulene' and 'naphthalene' through their identifiers and a computed similarity. For each name report the registry identifier an",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0432",
+      "domain": "Chemical",
+      "line": 432,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0433",
+      "domain": "Biology",
+      "line": 433,
+      "question_preview": "Carry a peptide from the deposited structure 1BDD to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0434",
+      "domain": "Biology",
+      "line": 434,
+      "question_preview": "Carry a peptide from the deposited structure 1EZU to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0435",
+      "domain": "Biology",
+      "line": 435,
+      "question_preview": "Carry a peptide from the deposited structure 1NPC to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the chym",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0436",
+      "domain": "Chemical",
+      "line": 436,
+      "question_preview": "Carry the molecule named 'tryptophan' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InCh",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0437",
+      "domain": "Chemical",
+      "line": 437,
+      "question_preview": "Carry the molecule named 'serotonin' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0438",
+      "domain": "Biology",
+      "line": 438,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 1BDD, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0439",
+      "domain": "Chemical",
+      "line": 439,
+      "question_preview": "Compare the two named molecules 'tyrosine' and 'phenylalanine' through their identifiers and a computed similarity. For each name report the registry identifier",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0440",
+      "domain": "Chemical",
+      "line": 440,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0441",
+      "domain": "Biology",
+      "line": 441,
+      "question_preview": "Carry a peptide from the deposited structure 1IGD to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0442",
+      "domain": "Biology",
+      "line": 442,
+      "question_preview": "Carry a peptide from the deposited structure 1PTF to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0443",
+      "domain": "Biology",
+      "line": 443,
+      "question_preview": "Carry a peptide from the deposited structure 2GB1 to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0444",
+      "domain": "Chemical",
+      "line": 444,
+      "question_preview": "Carry the molecule named 'methionine' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InCh",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0445",
+      "domain": "Chemical",
+      "line": 445,
+      "question_preview": "Carry the molecule named 'cysteine' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0446",
+      "domain": "Biology",
+      "line": 446,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 1IGD, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0447",
+      "domain": "Chemical",
+      "line": 447,
+      "question_preview": "Compare the two named molecules 'leucine' and 'isoleucine' through their identifiers and a computed similarity. For each name report the registry identifier and",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0448",
+      "domain": "Chemical",
+      "line": 448,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0449",
+      "domain": "Biology",
+      "line": 449,
+      "question_preview": "Carry a peptide from the deposited structure 1PIN to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0450",
+      "domain": "Biology",
+      "line": 450,
+      "question_preview": "Carry a peptide from the deposited structure 1FKB to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0451",
+      "domain": "Biology",
+      "line": 451,
+      "question_preview": "Carry a peptide from the deposited structure 3CI2 to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0452",
+      "domain": "Chemical",
+      "line": 452,
+      "question_preview": "Carry the molecule named 'alanine' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI t",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0453",
+      "domain": "Chemical",
+      "line": 453,
+      "question_preview": "Carry the molecule named 'valine' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI to",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0454",
+      "domain": "Biology",
+      "line": 454,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 1PIN, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0455",
+      "domain": "Chemical",
+      "line": 455,
+      "question_preview": "Compare the two named molecules 'serine' and 'threonine' through their identifiers and a computed similarity. For each name report the registry identifier and c",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0456",
+      "domain": "Chemical",
+      "line": 456,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0457",
+      "domain": "Biology",
+      "line": 457,
+      "question_preview": "Carry a peptide from the deposited structure 1ROP to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0458",
+      "domain": "Biology",
+      "line": 458,
+      "question_preview": "Carry a peptide from the deposited structure 1RIS to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0459",
+      "domain": "Biology",
+      "line": 459,
+      "question_preview": "Carry a peptide from the deposited structure 1PGA to a registry-independent identifier and back. Report the chain A sequence and length, digest it with the tryp",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0460",
+      "domain": "Chemical",
+      "line": 460,
+      "question_preview": "Carry the molecule named 'aspartic acid' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the I",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0461",
+      "domain": "Chemical",
+      "line": 461,
+      "question_preview": "Carry the molecule named 'lysine' down the identifier ladder and back up it. Obtain the canonical structure, convert it to an InChI string, convert the InChI to",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0462",
+      "domain": "Biology",
+      "line": 462,
+      "question_preview": "Report the sequence and length of chain A of the deposited structure 1ROP, digest it with the trypsin rule at zero missed cleavages using both the sequence-only",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0463",
+      "domain": "Chemical",
+      "line": 463,
+      "question_preview": "Compare the two named molecules 'asparagine' and 'glutamine' through their identifiers and a computed similarity. For each name report the registry identifier a",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0464",
+      "domain": "Chemical",
+      "line": 464,
+      "question_preview": "Resolve one molecule from its registry name and carry it to a connection table, then reconcile the table against the molecule's formula. Report the canonical st",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0465",
+      "domain": "MachineLearning",
+      "line": 465,
+      "question_preview": "Six semiconductors and metals are named in the inputs by their Materials Project identifier. Fetch each entry's band gap and each entry's formula, and report th",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0466",
+      "domain": "MachineLearning",
+      "line": 466,
+      "question_preview": "The inputs name four entries whose returned band gap is zero and three entries whose returned band gap is above three electronvolts. Fetch every entry's band ga",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0467",
+      "domain": "MachineLearning",
+      "line": 467,
+      "question_preview": "For each of the six named entries, fetch the returned band gap and the returned density. Report both series in the order the inputs give them. Then compute the ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0468",
+      "domain": "MachineLearning",
+      "line": 468,
+      "question_preview": "For each of the five named entries, fetch the returned density and the returned band gap. Report both series. Sort the five entries by returned density ascendin",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0469",
+      "domain": "Material",
+      "line": 469,
+      "question_preview": "Take the three named entries. For each, fetch the returned formula, the returned bulk density and the returned atomic density. Report all nine returned values t",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0470",
+      "domain": "Material",
+      "line": 470,
+      "question_preview": "Resolve the supplied chemical formula and report the first identifier returned. Fetch the identifier-keyed properties and the formula-keyed band-gap listing. Re",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0471",
+      "domain": "MachineLearning",
+      "line": 471,
+      "question_preview": "For each of the six named entries fetch the returned density and the returned band gap. Build one record per entry with density as the predictor and band gap as",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0472",
+      "domain": "MachineLearning",
+      "line": 472,
+      "question_preview": "For each of the six named entries fetch the returned density and the returned band gap. Build the predictor matrix from the returned densities and the target ve",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0473",
+      "domain": "MachineLearning",
+      "line": 473,
+      "question_preview": "The inputs give a two-by-two contingency table of counts observed in a published breeding experiment: the four cells are the numbers of offspring in the two phe",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0474",
+      "domain": "MachineLearning",
+      "line": 474,
+      "question_preview": "Three groups of named entries are supplied. Fetch each entry's returned band gap once. Group one holds the entries whose returned gap is greater than zero but b",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0475",
+      "domain": "MachineLearning",
+      "line": 475,
+      "question_preview": "The inputs give a stoichiometric balance problem for the complete combustion of a named alkane. The fuel coefficient is fixed at one and the three unknowns are ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0476",
+      "domain": "MachineLearning",
+      "line": 476,
+      "question_preview": "For each of the six named entries fetch the returned band gap and the returned density. Assemble a six-by-two matrix whose first column is the returned gaps and",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0477",
+      "domain": "MachineLearning",
+      "line": 477,
+      "question_preview": "For each of the six named entries fetch the returned band gap and the returned density. Assemble a six-by-two matrix of returned gaps and densities in input ord",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0478",
+      "domain": "MachineLearning",
+      "line": 478,
+      "question_preview": "Five named entries have their returned density and returned band gap fetched. One further named entry is given without its band gap, which the inputs mark as ab",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0479",
+      "domain": "MachineLearning",
+      "line": 479,
+      "question_preview": "For each of the six named entries fetch the returned density and the returned band gap. Sort the entries by returned density ascending and report the sorted den",
+      "max_tool_calls": 34,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0480",
+      "domain": "MachineLearning",
+      "line": 480,
+      "question_preview": "For each of the six named entries fetch the returned band gap and the returned density. Label each entry one if its returned gap is exactly zero and zero otherw",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0481",
+      "domain": "MachineLearning",
+      "line": 481,
+      "question_preview": "The inputs carry a JSON document holding the counts of a published breeding experiment. Parse the document, then retrieve the four cell counts from the pointer ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0482",
+      "domain": "MachineLearning",
+      "line": 482,
+      "question_preview": "The inputs carry a CSV text block of real material properties: one column names the entry, one holds a returned band gap in electronvolts and one holds a return",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0483",
+      "domain": "MachineLearning",
+      "line": 483,
+      "question_preview": "For each of the six named entries fetch the returned density and the returned band gap. Assemble a six-by-one predictor matrix from the returned densities, in i",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0484",
+      "domain": "MachineLearning",
+      "line": 484,
+      "question_preview": "For each of the six named entries fetch the returned band gap and the returned density. Assemble a six-by-two matrix of returned gaps and densities in input ord",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0485",
+      "domain": "MachineLearning",
+      "line": 485,
+      "question_preview": "For each of the five named entries fetch the returned band gap and the returned density. Assemble a two-by-two matrix whose entries are the sums of squares and ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0486",
+      "domain": "Material",
+      "line": 486,
+      "question_preview": "Resolve the supplied chemical formula and report the first identifier returned. Fetch the identifier-keyed properties and the formula-keyed volume and density l",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0487",
+      "domain": "Material",
+      "line": 487,
+      "question_preview": "Resolve the supplied chemical formula and report the first identifier returned. Fetch the identifier-keyed properties and the formula-keyed volume and band-gap ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0488",
+      "domain": "Chemical",
+      "line": 488,
+      "question_preview": "The inputs name four molecules. For each, obtain the canonical structure, convert it to an InChI string, convert that to an InChIKey and obtain the molecular fo",
+      "max_tool_calls": 35,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0489",
+      "domain": "MachineLearning",
+      "line": 489,
+      "question_preview": "The inputs carry a JSON document holding the counts of a published three-by-two breeding classification. Parse the document, retrieve the table at the pointer t",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0490",
+      "domain": "MachineLearning",
+      "line": 490,
+      "question_preview": "For each of the six named entries fetch the returned density and the returned band gap. Assemble a predictor matrix from the returned densities and expand it to",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0491",
+      "domain": "MachineLearning",
+      "line": 491,
+      "question_preview": "For each of the six named entries fetch the returned density and the returned band gap. Report the two returned series. Fit a plain linear model on all six rows",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0492",
+      "domain": "MachineLearning",
+      "line": 492,
+      "question_preview": "For each of the six named entries fetch the returned density and the returned band gap. Assemble a six-by-two matrix of returned gaps and densities in input ord",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0493",
+      "domain": "MachineLearning",
+      "line": 493,
+      "question_preview": "For each of the six named entries fetch the returned band gap and the returned density. Assemble a six-by-two matrix in input order and report it as derived. St",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0494",
+      "domain": "MachineLearning",
+      "line": 494,
+      "question_preview": "The inputs carry a JSON document holding two numeric series of real material properties. Parse the document, retrieve the series object at the pointer the input",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0495",
+      "domain": "MachineLearning",
+      "line": 495,
+      "question_preview": "The inputs carry a CSV text block of real material properties with a name column, a band-gap column in electronvolts and a density column in grams per cubic cen",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0496",
+      "domain": "MachineLearning",
+      "line": 496,
+      "question_preview": "For each of the five named entries fetch the returned density and the returned band gap. Sort by returned density ascending and report the sorted abscissa and o",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0497",
+      "domain": "MachineLearning",
+      "line": 497,
+      "question_preview": "For each of the six named entries fetch the returned density and the returned band gap. Report both series in input order. Split the six rows with the supplied ",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0498",
+      "domain": "MachineLearning",
+      "line": 498,
+      "question_preview": "For each of the six named entries fetch the returned density and the returned band gap. Assemble a predictor matrix from the returned densities and expand it to",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0499",
+      "domain": "MachineLearning",
+      "line": 499,
+      "question_preview": "The inputs carry a JSON document holding three groups of real returned band gaps. Parse the document, retrieve the groups at the pointer the inputs give and rep",
+      "max_tool_calls": 32,
+      "has_files": false
+    },
+    {
+      "id": "FLOW-0500",
+      "domain": "Material",
+      "line": 500,
+      "question_preview": "Resolve the supplied chemical formula and report the first identifier returned. Fetch the identifier-keyed properties and the formula-keyed volume and density l",
+      "max_tool_calls": 32,
+      "has_files": false
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "repository": "https://github.com/HICAI-ZJU/SciToolAgent",
+  "commit": "ac1cf19fcef84e69f149db6da424afe4e9b2f11f",
+  "license": "MIT, Copyright (c) 2024 Jing Yu",
+  "implementation": "SciToolFlow adaptation, not a bit-for-bit reproduction",
+  "source_files": {
+    "scripts/custom_kg_retrievers.py": {
+      "url": "https://github.com/HICAI-ZJU/SciToolAgent/blob/ac1cf19fcef84e69f149db6da424afe4e9b2f11f/scripts/custom_kg_retrievers.py",
+      "sha256": "34fb07815fa2def022dd7e7a45025de399926dda46d59d06bc6d2e501d118028"
+    },
+    "scripts/retrieve_tool_info.py": {
+      "url": "https://github.com/HICAI-ZJU/SciToolAgent/blob/ac1cf19fcef84e69f149db6da424afe4e9b2f11f/scripts/retrieve_tool_info.py",
+      "sha256": "e924aa5cdfef38901923c6c40a9825cf5c337b3545cb73fabde3b10d8ff43cbe"
+    },
+    "app/llms/planning/tool_plan_executor.py": {
+      "url": "https://github.com/HICAI-ZJU/SciToolAgent/blob/ac1cf19fcef84e69f149db6da424afe4e9b2f11f/app/llms/planning/tool_plan_executor.py",
+      "sha256": "19a5eea857342e39cf41b6d45359b319e75ebb7d42c993b36b27d5ae5ddeab2d"
+    },
+    "app/llms/planning/prompt_templates.py": {
+      "url": "https://github.com/HICAI-ZJU/SciToolAgent/blob/ac1cf19fcef84e69f149db6da424afe4e9b2f11f/app/llms/planning/prompt_templates.py",
+      "sha256": "4da3265b3477cc60a1210f72842c5fa508fa487bcd8e62da8f7065d9ee461b43"
+    }
+  },
+  "adaptations": [
+    "Use current standalone catalogue, graph and text-embedding-3-large index.",
+    "Batch/cache query and contextual embeddings; bound graph exploration.",
+    "Replace text Plan Chain/Input/FinalAnswer parsing with shared typed JSON protocol.",
+    "Use same model/client, public task inputs, formatting guide, scientific budgets and scorer as ReAct.",
+    "Replace infinite execution retry with bounded role sessions and at most three plan rounds.",
+    "Count all role generations; count automatic per-tool contract reads as discovery.",
+    "Remove the additional baseline-only safety_gate callback; use the same tool dispatcher and its validations as ReAct. Legacy graph check annotations remain historical metadata and are excluded from retrieved candidate triples.",
+    "Enforce role tool permissions in both constrained JSON and dispatch; contracts are read automatically, not rediscovered by role sessions.",
+    "Pass original public task output schema, ordered plan, plan position and observed arguments across role sessions.",
+    "Use collision-free shared embedding cache writes and at most three deadline-bound transient request attempts."
+  ]
+}

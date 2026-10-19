@@ -1,0 +1,46 @@
+"""Project-local resources and compatibility runtime initialization."""
+
+from pathlib import Path
+import json
+import os
+import sys
+
+
+def project_root():
+    explicit = os.getenv("SCITOOLFLOW_ROOT")
+    return (
+        Path(explicit).expanduser().resolve()
+        if explicit
+        else Path(__file__).resolve().parents[1]
+    )
+
+
+def local_root():
+    return project_root() / ".local"
+
+
+def artifacts_root():
+    value = os.getenv("SCITOOLFLOW_ARTIFACTS_DIR")
+    return Path(value).resolve() if value else project_root() / "results/tool_artifacts"
+
+
+def work_root():
+    value = os.getenv("SCITOOLFLOW_WORK_DIR")
+    return Path(value).resolve() if value else local_root() / "work/tools"
+
+
+def load_environment():
+    from dotenv import load_dotenv
+
+    root = project_root()
+    load_dotenv(root / ".local/credentials/services.env", override=False)
+    load_dotenv(root / ".local/credentials/runtime.env", override=False)
+    os.environ.setdefault(
+        "SCITOOL_ENV_FILE", str(root / ".local/credentials/services.env")
+    )
+
+
+def bootstrap_runtime():
+    load_environment()
+    os.environ.setdefault("SCITOOL_TOOL_SCOPE", "all")
+    return project_root()

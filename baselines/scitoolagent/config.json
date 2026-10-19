@@ -1,0 +1,9 @@
+{
+  "similarity_top_k": 5,
+  "graph_depth": 3,
+  "graph_edge_limit": 1000,
+  "context_candidates_per_seed": 12,
+  "max_tools": 10,
+  "max_plan_rounds": 3,
+  "planner_max_steps": 8
+}

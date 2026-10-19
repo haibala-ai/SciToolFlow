@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-10-17T02:12:12.985626+00:00",
+  "public_tool_nodes": 547,
+  "scientific_tools": 546,
+  "discovery_tools": 1,
+  "nodes": 4342,
+  "directed_edges": 19260,
+  "relation_types": 42,
+  "all_public_contracts_linked": true,
+  "registered_aliases": 17,
+  "benchmark_content_read": false,
+  "legacy_tuples_modified": false,
+  "embedding": {
+    "identity": {
+      "backend": "openai",
+      "model": "text-embedding-3-large",
+      "dimension": 3072,
+      "api_base": "https://aihubmix.com/v1",
+      "provider": "openai_compatible",
+      "normalization": "client_l2"
+    },
+    "vectors": 546,
+    "reused": 526,
+    "encoded": 20,
+    "api_batches": [
+      {
+        "inputs": 20,
+        "tokens": 1053
+      }
+    ],
+    "prompt_tokens": 1053,
+    "duration_seconds": 6.2631356620113365,
+    "discovery_tool_not_embedded": "DescribeTools is always visible in the harness and has no task-planning role.",
+    "retrieval_probe": {
+      "query": "Calculate Pearson correlation coefficient and significance from two numeric vectors.",
+      "top5": [
+        {
+          "tool": "PearsonCorrelation",
+          "similarity": 0.5383814460169316
+        },
+        {
+          "tool": "SpearmanCorrelation",
+          "similarity": 0.45855237887549194
+        },
+        {
+          "tool": "PairedTTest",
+          "similarity": 0.33687445714314634
+        },
+        {
+          "tool": "WelchTTest",
+          "similarity": 0.3201510535996821
+        },
+        {
+          "tool": "ExtractNumericVector",
+          "similarity": 0.3169977940152049
+        }
+      ],
+      "query_tokens": 11,
+      "expected_pearson_in_top5": true
+    }
+  }
+}

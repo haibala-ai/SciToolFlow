@@ -1,0 +1,25 @@
+{
+  "embedding_model": "text-embedding-3-large",
+  "embedding_dimension": 3072,
+  "embedding_backend": "openai",
+  "embedding_identity": {
+    "backend": "openai",
+    "model": "text-embedding-3-large",
+    "dimension": 3072,
+    "api_base": "https://aihubmix.com/v1",
+    "provider": "openai_compatible",
+    "normalization": "client_l2"
+  },
+  "functionality_vectors": 546,
+  "text_sha256": "5480f0a1c0219c1e87df09357f38502c036c815419f9b1fda41f00591b5d8b90",
+  "contract_file": "tools/catalog.json",
+  "sync_report": "tools/graph/build_report.json",
+  "embedding_build_report": "tools/graph/build_report.json",
+  "project_version": "0.3.0",
+  "public_tools": 547,
+  "scientific_tools": 546,
+  "discovery_tools": 1,
+  "graph_nodes": 4342,
+  "graph_edges": 19260,
+  "catalog_sha256": "efd6e5bb5aec0c6df3b431be5fae0dfe779f4d576067c8b9dd292a750db06370"
+}

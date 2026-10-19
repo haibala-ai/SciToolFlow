@@ -1,0 +1,14 @@
+{
+  "recommended_agent_environment": "SciTool-Unified",
+  "recommended_profile": "integrated",
+  "profiles": {
+    "integrated": {
+      "SciTool": "SciTool-Unified",
+      "SciTool-Materials": "SciTool-Unified",
+      "SciTool-MOF": "SciTool-Unified"
+    }
+  },
+  "retired_profiles": {
+    "split": "旧物理环境按用户要求删除；使用 integrated 和 SciTool-Unified。"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "python": "/data/wuchenmin/Application/anaconda3/envs/SciTool-LLM/bin/python",
+  "model_path": ".local/models/Qwen3.5-9B",
+  "served_model_name": "Qwen3.5-9B",
+  "gpus": [
+    6,
+    7
+  ],
+  "port": 8016,
+  "gpu_memory_utilization": 0.95,
+  "max_model_len": 49152,
+  "max_num_seqs": 2,
+  "max_num_batched_tokens": 8192
+}

@@ -1,0 +1,6427 @@
+{
+  "commit": "ac1cf19fcef84e69f149db6da424afe4e9b2f11f",
+  "files": {
+    "KG/storage_graph_large/graph_store.json": {
+      "bytes": 205841,
+      "sha256": "d84c5c476ed633e825b9749f86425ad2345dd274a064bafea3c8932f123fc137"
+    },
+    "SciToolEval/README.md": {
+      "bytes": 1820,
+      "sha256": "9742f45c62298b807bd93cdef7cb590f6e92ae77dbb2c357f94378e4ce94af25"
+    },
+    "SciToolEval/data/level2_correct_answer.jsonl": {
+      "bytes": 109137,
+      "sha256": "695f8192837ee06393809d8aaa5465e67cd89fb8ed6bb55ce2e7c23ca22ed3af"
+    },
+    "SciToolEval/data/level2_question.jsonl": {
+      "bytes": 109135,
+      "sha256": "e2d41c618430ee2af942b3ad85c58bb01740a573cf856478517f9b5fe0c244ed"
+    },
+    "SciToolEval/eval/eval_accuracy.py": {
+      "bytes": 5257,
+      "sha256": "30f52bdfd221758f95b46ed578c1c22c6f0950d54c46760e5fe117c3360dc85d"
+    },
+    "SciToolEval/eval/eval_tool_path.py": {
+      "bytes": 6571,
+      "sha256": "db5ad957f4024a614ff0e382284ee842fa62d1cd5fa2569162adbc5964f993f7"
+    },
+    "ToolsAgent/ToolsFuns/tools_dict.py": {
+      "bytes": 17103,
+      "sha256": "dde04805bcbdbeb2f4244296c453b17207423042095c1fd685319abb21b64bef"
+    }
+  },
+  "gold_file": {
+    "fields": {
+      "Parameter": 281,
+      "question": 378,
+      "tool_path": 378
+    },
+    "nonempty_lines": 379,
+    "parse_errors": [
+      {
+        "column": 303,
+        "line": 372,
+        "message": "Expecting property name enclosed in double quotes"
+      }
+    ],
+    "rows_with_answer_field": 0,
+    "strict_json_valid_rows": 378,
+    "valid_questions_matching_question_file": 378
+  },
+  "kg_tool_domains": {
+    "AdaBoostClassifier": "Chemical",
+    "AddHydrogens": "Chemical",
+    "AddWavyBondsForStereoAny": "Chemical",
+    "AffinityCalculator": "Biology",
+    "AlanineScanningLibraryDesign": "Biology",
+    "AminoAcidStatistics": "Biology",
+    "AnalyzeAtomCount": "Biology",
+    "AnalyzeProteinCATHFromPDBID": "Biology",
+    "AnalyzeProteinLengthFromPDB": "Biology",
+    "AnalyzeProteinStructure": "Biology",
+    "AntibodySequenceNumbering": "Biology",
+    "AseTool": "Material",
+    "AssignAtomChiralTagsFromStructure": "Chemical",
+    "AssignCIPLabels": "Chemical",
+    "AssignOxidationNumbers": "Chemical",
+    "AssignPattyTypes": "Chemical",
+    "AssignRadicals": "Chemical",
+    "AssignStereoChemistry": "Chemical",
+    "BingSearch": "General",
+    "BuildAtomPairFpFromSmiles": "Chemical",
+    "BuildAvalonFpFromSmiles": "Chemical",
+    "BuildMorganFpFromSmiles": "Chemical",
+    "BuildPharm2DFpFromSmiles": "Chemical",
+    "BuildRdkitFpFromSmiles": "Chemical",
+    "BuildTorsionsFpFromSmiles": "Chemical",
+    "CASToPrice": "Material",
+    "CalculateAminoAcidbyDegenerateCodon": "Biology",
+    "CalculateAtomDistance": "Biology",
+    "CalculateAverageCoordinates": "Biology",
+    "CalculateCenterOfMass": "Biology",
+    "CalculateDensity": "Material",
+    "CalculateDistanceMatrix": "Chemical",
+    "CalculateDoubleCircleDNAMolecularWeight": "Biology",
+    "CalculateDoubleLinearDNAMolecularWeight": "Biology",
+    "CalculateEnergyFromSequence": "Biology",
+    "CalculateEstateIndices": "Chemical",
+    "CalculateEstateVsa": "Chemical",
+    "CalculateForceEnergyFromSequence": "Biology",
+    "CalculateFsp3": "Chemical",
+    "CalculateHydrophobicityAndPolarity": "Biology",
+    "CalculateMolecularCenter": "Chemical",
+    "CalculateMolecularWeight": "Biology",
+    "CalculatePBF": "Chemical",
+    "CalculatePMI1": "Chemical",
+    "CalculatePMI2": "Chemical",
+    "CalculatePMI3": "Chemical",
+    "CalculatePhi": "Chemical",
+    "CalculatePmi": "Chemical",
+    "CalculateProteinANM": "Biology",
+    "CalculateRDF": "Chemical",
+    "CalculateRadiusOfGyration": "Chemical",
+    "CalculateShapeSimilarity": "Chemical",
+    "CalculateSingleCircleDNAMolecularWeight": "Biology",
+    "CalculateSingleLinearDNAMolecularWeight": "Biology",
+    "CalculateSpherocityIndex": "Chemical",
+    "CalculateSymmetry": "Material",
+    "CalculateTPSA": "Chemical",
+    "CalculateUsrcatScores": "Chemical",
+    "CalculateWHIM": "Chemical",
+    "CanSerialize": "Chemical",
+    "CheckExplosiveness": "Chemical",
+    "CheckPatent": "Chemical",
+    "CheckValidRingCut": "Chemical",
+    "ClusterMolecules": "Chemical",
+    "CodeInterpreterTools": "General",
+    "CompareCircularDNA": "Biology",
+    "CompareSequenceByLogExpectation": "Biology",
+    "ComputeExtinctionCoefficient": "Biology",
+    "ComputePiMw": "Biology",
+    "ComputeProtPara": "Biology",
+    "ComputeProtScale": "Biology",
+    "CondenseAbbreviationSubstanceGroups": "Chemical",
+    "Convert3DMolecules2SMILES": "Biology",
+    "ConvertSdfToCsv": "Chemical",
+    "ConvertSmilesToInchi": "Chemical",
+    "ConvertingPeptide2SMILES": "Biology",
+    "CoordsFromSMILES": "Biology",
+    "CpGIslandPrediction": "Biology",
+    "CreateShingling": "Chemical",
+    "CustomPropertyVSA": "Chemical",
+    "CutPeptide": "Biology",
+    "DeepTMHMM": "Biology",
+    "DegenerateCodonCalculatorbyAminoAcid": "Biology",
+    "Deprotect": "Chemical",
+    "DesignProteinAlpha": "Biology",
+    "DesignProteinAlphaBeta": "Biology",
+    "DesignProteinBeta": "Biology",
+    "DesignProteinFromLength": "Biology",
+    "DetermineBondOrders": "Chemical",
+    "DetermineBonds": "Chemical",
+    "DoubleSequenceGlobalAlignment": "Biology",
+    "DoubleSequenceLocalAlignment": "Biology",
+    "DownloadPapers": "General",
+    "DrawProteinStructure": "Biology",
+    "EncodeMolecule": "Chemical",
+    "EncodeSECFP": "Chemical",
+    "Enumerate": "Chemical",
+    "ExplainAtomCode": "Chemical",
+    "ExplainAtomPairScore": "Chemical",
+    "ExtractRotatableDihedralsFromSdf": "Chemical",
+    "FetchProteinStructureFromPDBID": "Biology",
+    "FindORF": "Biology",
+    "FingerprintsFromSmiles": "Chemical",
+    "FixPDBFile": "Biology",
+    "FoldFingerprintFromSmiles": "Chemical",
+    "FuncGroups": "Chemical",
+    "GenerateElectricalDescriptorsFromCSV": "Chemical",
+    "GenerateEstateFingerprint": "Chemical",
+    "GenerateFraggleFragments": "Chemical",
+    "GenerateMolKeyFromSmiles": "Chemical",
+    "GenerateMoleculeDescription": "Biology",
+    "GenerateMorganfingerprintsFromCSV": "Chemical",
+    "GenerateRDKFingerprintsFromCSV": "Chemical",
+    "GenerateRandSequence": "Biology",
+    "GenerateSequenceFromEnergy": "Biology",
+    "GetAdjPairsByBatteryId": "Material",
+    "GetAdjacencyMatrix": "Chemical",
+    "GetAliphaticCarbocyclesNum": "Chemical",
+    "GetAliphaticHeterocyclesNum": "Chemical",
+    "GetAliphaticRingsNum": "Chemical",
+    "GetAllowNontetrahedralChirality": "Chemical",
+    "GetAlloyPairsByMaterialId": "Material",
+    "GetAmideBondsNum": "Chemical",
+    "GetAminoAcidFrequency": "Biology",
+    "GetAromaticCarbocyclesNum": "Chemical",
+    "GetAromaticHeterocyclesNum": "Chemical",
+    "GetAromaticRingsNum": "Chemical",
+    "GetAsphericity": "Chemical",
+    "GetAtomFeature": "Chemical",
+    "GetAtomPairCode": "Chemical",
+    "GetAtomPairFingerprint": "Chemical",
+    "GetAtomPairFingerprintAsBitVect": "Chemical",
+    "GetAtomStereoCentersNum": "Chemical",
+    "GetAtomicPositionsMaterialId": "Material",
+    "GetAtomsNum": "Chemical",
+    "GetAuthorsByMaterialId": "Material",
+    "GetAutocorrelation2D": "Chemical",
+    "GetAutocorrelation3D": "Chemical",
+    "GetAverageOxidationStatesByMaterialId": "Material",
+    "GetAverageVoltageByBatteryId": "Material",
+    "GetBCUT": "Chemical",
+    "GetBandGapByFormula": "Material",
+    "GetBandGapByMaterialId": "Material",
+    "GetBatteryFormulaByBatteryId": "Material",
+    "GetBondInfoByMaterialId": "Material",
+    "GetBondLengthStatsByMaterialId": "Material",
+    "GetBondTypesByMaterialId": "Material",
+    "GetBridgeheadAtomsNum": "Chemical",
+    "GetCapacityGravByBatteryId": "Material",
+    "GetCapacityVolByBatteryId": "Material",
+    "GetCbmByFormula": "Material",
+    "GetCbmByMaterialId": "Material",
+    "GetChargeByMoleculeId": "Chemical",
+    "GetChemicalSystemByMaterialId": "Material",
+    "GetChemsysByBatteryId": "Material",
+    "GetChemsysByMoleculeId": "Chemical",
+    "GetChi0n": "Chemical",
+    "GetChi0v": "Chemical",
+    "GetChi1n": "Chemical",
+    "GetChi1v": "Chemical",
+    "GetChi2n": "Chemical",
+    "GetChi2v": "Chemical",
+    "GetChi3n": "Chemical",
+    "GetChi3v": "Chemical",
+    "GetChi4n": "Chemical",
+    "GetChi4v": "Chemical",
+    "GetCompositionByMaterialId": "Material",
+    "GetCompositionByMoleculeId": "Chemical",
+    "GetConnectivityInvariants": "Chemical",
+    "GetConstituentMoleculesByMoleculeId": "Chemical",
+    "GetCoordHashByMoleculeId": "Chemical",
+    "GetCoordinationEnvsAnonymousByMaterialId": "Material",
+    "GetCoordinationEnvsByMaterialId": "Material",
+    "GetCoronaOrthologs": "Biology",
+    "GetCoulombMat": "Chemical",
+    "GetCreatedTimeByMaterialId": "Material",
+    "GetCrippenDescriptors": "Chemical",
+    "GetCrystalStructureByMaterialId": "Material",
+    "GetCrystalSystemByMaterialId": "Material",
+    "GetDensityAtomicByFormula": "Material",
+    "GetDensityAtomicByMaterialId": "Material",
+    "GetDensityByFormula": "Material",
+    "GetDensityByMaterialId": "Material",
+    "GetDeprecatedByMoleculeId": "Chemical",
+    "GetDeprecatedReasonsByBatteryId": "Material",
+    "GetDeprecationReasonsByMoleculeId": "Chemical",
+    "GetDescriptionByMaterialId": "Material",
+    "GetDielectricByMaterialId": "Material",
+    "GetDistanceMatrix": "Chemical",
+    "GetDocByMaterialId": "Material",
+    "GetEEMCharges": "Chemical",
+    "GetEElectronicByFormula": "Material",
+    "GetEElectronicByMaterialId": "Material",
+    "GetEIonicByFormula": "Material",
+    "GetEIonicByMaterialId": "Material",
+    "GetETotalByFormula": "Material",
+    "GetETotalByMaterialId": "Material",
+    "GetEccentricity": "Chemical",
+    "GetEfermiByFormula": "Material",
+    "GetEfermiByMaterialId": "Material",
+    "GetElectrodeObjectByBatteryId": "Material",
+    "GetElectronicEnergyByMoelculeId": "Chemical",
+    "GetElementComposition": "Material",
+    "GetElementsByBatteryId": "Material",
+    "GetElementsByMaterialId": "Material",
+    "GetElementsByMoleculeId": "Chemical",
+    "GetEnergyAboveHullByMaterialId": "Material",
+    "GetEnergyGravByBatteryId": "Material",
+    "GetEnergyPerAtomByFormula": "Material",
+    "GetEnergyPerAtomByMaterialId": "Material",
+    "GetEnergyVolumeByBatteryId": "Material",
+    "GetEntriesCompositionSummaryByBatteryId": "Material",
+    "GetEosInfoByMaterialId": "Material",
+    "GetEquilibriumReactionEnergyPerAtom": "Material",
+    "GetExactMolceularWeight": "Chemical",
+    "GetFASTAFromName": "Biology",
+    "GetFeatureInvariants": "Chemical",
+    "GetFloatingSolventMolecules": "Material",
+    "GetFormalCharge": "Chemical",
+    "GetFormalChargeOfAtoms": "Chemical",
+    "GetFormationEnergyPerAtomByFormula": "Material",
+    "GetFormationEnergyPerAtomByMaterialId": "Material",
+    "GetFormulaAlphabeticalByMoleculeId": "Chemical",
+    "GetFormulaAnonymousByBatteryId": "Material",
+    "GetFormulaAnonymousByFormula": "Material",
+    "GetFormulaAnonymousByMaterialId": "Material",
+    "GetFormulaAnonymousByMoleculeId": "Chemical",
+    "GetFormulaByMaterialId": "Material",
+    "GetFormulaChargeByBatteryId": "Material",
+    "GetFormulaDischargeByBatteryId": "Material",
+    "GetFormulaPrettyByMaterialId": "Material",
+    "GetFormulaPrettyByMoleculeId": "Chemical",
+    "GetFracAChargeByBatteryId": "Material",
+    "GetFractionCSP3": "Chemical",
+    "GetFraggleSimilarity": "Chemical",
+    "GetFrameworkByBatteryId": "Material",
+    "GetFrameworkFormulaByBatteryId": "Material",
+    "GetFreeEnergyByMoleculeId": "Chemical",
+    "GetFrequenciesByMoleculeId": "Chemical",
+    "GetFrequencyModesByMoleculeId": "Chemical",
+    "GetFsIdByTaskId": "Material",
+    "GetGETAWAY": "Chemical",
+    "GetHBANum": "Chemical",
+    "GetHBDNum": "Chemical",
+    "GetHallKierAlpha": "Chemical",
+    "GetHeavyAtomsNum": "Chemical",
+    "GetHeteroatomsNum": "Chemical",
+    "GetHeterocyclesNum": "Chemical",
+    "GetHostStructureByBatteryId": "Material",
+    "GetHybridization": "Chemical",
+    "GetIdChargeByBatteryId": "Material",
+    "GetIdDischargeByBatteryId": "Material",
+    "GetInchiByMoleculeId": "Chemical",
+    "GetInchikeyByMoleculeId": "Chemical",
+    "GetInertialShapeFactor": "Chemical",
+    "GetInitialStructuresByFormula": "Material",
+    "GetInitialStructuresByMaterialId": "Material",
+    "GetIrActivitiesByMoleculeId": "Chemical",
+    "GetIrIntensitiesByMoleculeId": "Chemical",
+    "GetKappa1": "Chemical",
+    "GetKappa2": "Chemical",
+    "GetKappa3": "Chemical",
+    "GetLabuteASA": "Chemical",
+    "GetLastUpdatedTimeByMoleculeId": "Chemical",
+    "GetLastUpdatedTimeByTaskId": "Material",
+    "GetLevelOfTheoryByMoleculeId": "Chemical",
+    "GetLipinskiHBANum": "Chemical",
+    "GetLipinskiHBDNum": "Chemical",
+    "GetLotSolventByMoleculeId": "Chemical",
+    "GetMACCSKeysFingerprint": "Chemical",
+    "GetMORSE": "Chemical",
+    "GetMagnetismInfoByMaterialId": "Material",
+    "GetMaterialIdByBatteryId": "Material",
+    "GetMaterialIdByFormula": "Material",
+    "GetMaxDeltaVolumeBatteryId": "Material",
+    "GetMaxVoltageStepByBatteryId": "Material",
+    "GetModifiedAtoms": "Chemical",
+    "GetModifiedBonds": "Chemical",
+    "GetMolFormula": "Chemical",
+    "GetMolFrags": "Chemical",
+    "GetMoleculeIdByFormula": "Chemical",
+    "GetMoleculeLevelsOfTheoryByMoleculeId": "Chemical",
+    "GetMorganFingerprint": "Chemical",
+    "GetNPR1": "Chemical",
+    "GetNPR2": "Chemical",
+    "GetNatomsByMoleculeId": "Chemical",
+    "GetNboPopulationByMoleculeId": "Chemical",
+    "GetNelectronsByMoleculeId": "Chemical",
+    "GetNelementsByBatteryId": "Material",
+    "GetNelementsByMoleculeId": "Chemical",
+    "GetNsitesByMaterialId": "Material",
+    "GetNumMagneticSitesByMaterialId": "Material",
+    "GetNumberOfElementsByMaterialId": "Material",
+    "GetOpenShellByMoleculeId": "Chemical",
+    "GetOrbitalsLevelsOfTheoryByMoleculeId": "Chemical",
+    "GetOrbitalsPropertyIdsByMoleculeId": "Chemical",
+    "GetOriginsByMaterialId": "Material",
+    "GetOriginsByMoleculeId": "Chemical",
+    "GetOxidationStateMethodByMaterialId": "Material",
+    "GetPairIdByMaterialId": "Material",
+    "GetPatternFingerprint": "Chemical",
+    "GetPatternFingerprintTemplate": "Chemical",
+    "GetPhononInfoByMaterialId": "Material",
+    "GetPhysicalPropertiesByMaterialId": "Material",
+    "GetPossibleSpeciesByMaterialId": "Material",
+    "GetPossibleValencesByMaterialId": "Material",
+    "GetPropertyIdByMoleculeId": "Chemical",
+    "GetPropertyNameByMaterialId": "Material",
+    "GetPropertyNameByMoleculeId": "Chemical",
+    "GetRdkFingerprintFromSmiles": "Chemical",
+    "GetReferencesByMaterialId": "Material",
+    "GetRemarksByMaterialId": "Material",
+    "GetReverseComplement": "Biology",
+    "GetRingSystems": "Chemical",
+    "GetRingsNum": "Chemical",
+    "GetRobocrystallographerData": "Material",
+    "GetRotatableBondsNum": "Chemical",
+    "GetRotationalEnthalpyByMoleculeId": "Chemical",
+    "GetRotationalEntropyByMoleculeId": "Chemical",
+    "GetSaturatedCarbocyclesNum": "Chemical",
+    "GetSaturatedHeterocyclesNum": "Chemical",
+    "GetSaturatedRingsNum": "Chemical",
+    "GetSimilarMoleculesByMoleculeId": "Chemical",
+    "GetSolventByMoleculeId": "Chemical",
+    "GetSpaceGroupSymbolByMaterialId": "Material",
+    "GetSpeciesHashByMoleculeId": "Chemical",
+    "GetSpinMultiplicityByMoleculeId": "Chemical",
+    "GetSpiroAtomsNum": "Chemical",
+    "GetStabilityChargeByBatteryId": "Material",
+    "GetStabilityDischargeByBatteryId": "Material",
+    "GetStereoCodeFromSmiles": "Chemical",
+    "GetStructureByMaterialId": "Material",
+    "GetStructureGraphByMaterialId": "Material",
+    "GetStructureInfo": "Material",
+    "GetSubstructMatches": "Chemical",
+    "GetSurfaceAnisotropyByMaterialId": "Material",
+    "GetSymmetryByMaterialId": "Material",
+    "GetSymmetryByMoleculeId": "Chemical",
+    "GetSynthesisDocByKeywords": "Material",
+    "GetTaskIdByFsId": "Material",
+    "GetTautomers": "Chemical",
+    "GetTemplateMolecule": "Chemical",
+    "GetTerminalIndices": "Material",
+    "GetThermoLevelsOfTheoryByMoleculeId": "Chemical",
+    "GetThermoPropertyIdsByMoelculeId": "Chemical",
+    "GetTopologicalTorsionFingerprint": "Chemical",
+    "GetTotalEnthalpyByMoleculeId": "Chemical",
+    "GetTotalEntropyByMoleculeId": "Chemical",
+    "GetTotalMagnetizationByMaterialId": "Material",
+    "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId": "Material",
+    "GetTotalMagnetizationNormalizedVolByMaterialId": "Material",
+    "GetTranslationalEnthalpyByMoleculeId": "Chemical",
+    "GetTranslationalEntropyByMoleculeId": "Chemical",
+    "GetUSR": "Chemical",
+    "GetUSRCAT": "Chemical",
+    "GetUncorrectedEnergyPerAtomByMaterialId": "Material",
+    "GetUniqueCalcTypesByMoleculeId": "Chemical",
+    "GetUniqueLevelsOfTheoryByMoleculeId": "Chemical",
+    "GetUniqueLotSolventsByMoleculeId": "Chemical",
+    "GetUniqueSolventsByMoleculeId": "Chemical",
+    "GetUniqueTaskTypesByMoleculeId": "Chemical",
+    "GetUnspecifiedAtomStereoCentersNum": "Chemical",
+    "GetUrlByFsId": "Material",
+    "GetUseLegacyStereoPerception": "Chemical",
+    "GetVbmByFormula": "Material",
+    "GetVbmByMaterialId": "Material",
+    "GetVibrationLevelsOfTheoryByMoleculeId": "Chemical",
+    "GetVibrationPropertyIdsByMoleculeId": "Chemical",
+    "GetVibrationalEnthalpyByMoelculeId": "Chemical",
+    "GetVibrationalEnthalpyByMoleculeId": "Chemical",
+    "GetVibrationalEntropyByMoleculeId": "Chemical",
+    "GetVolumeByFormula": "Material",
+    "GetVolumeByMaterialId": "Material",
+    "GetWarningsByBatteryId": "Material",
+    "GetWarningsByMoleculeId": "Chemical",
+    "GetWeightedSurfaceEnergyByMaterialId": "Material",
+    "GetWorkingIonByBatteryId": "Material",
+    "GetZeroPointEnergyByMoleculeId": "Chemical",
+    "HIPPIE": "Biology",
+    "HapticBondsToDative": "Chemical",
+    "HasQueryHs": "Chemical",
+    "INGAArchitecture": "Biology",
+    "INGAHomology": "Biology",
+    "INGAInteraction": "Biology",
+    "InChIKeyToInChI": "Chemical",
+    "InChIKeyToMOL": "Chemical",
+    "InChIKeyToMol": "Chemical",
+    "InChIKeyToSMILES": "Chemical",
+    "InChIToCSID": "Chemical",
+    "InChIToInChIKey": "Chemical",
+    "InChIToSMILES": "Chemical",
+    "InherentDisorderedRegionsPredictor": "Biology",
+    "IsDeprecated": "Material",
+    "IsMagneticByFormula": "Material",
+    "IsMagneticByMaterialId": "Material",
+    "IsMetalByFormula": "Material",
+    "IsMetalByMaterialId": "Material",
+    "IsStableByFormula": "Material",
+    "IsStableByMaterialId": "Material",
+    "IsSubstructof": "Chemical",
+    "IsValidInChIKey": "Chemical",
+    "Kekulize": "Chemical",
+    "LabelAntibody": "Biology",
+    "LengthSELFIES": "Chemical",
+    "MLPClassifier": "Chemical",
+    "MOFToSMILES": "Material",
+    "MergeQueryHs": "Chemical",
+    "MofBranchPoints": "Material",
+    "MofBridges": "Material",
+    "MofFractionalCoordinates": "Material",
+    "MofLattice": "Material",
+    "MofNeighborIndices": "Material",
+    "MolSimilarity": "Chemical",
+    "MurckoDecompose": "Chemical",
+    "MusiteDeep": "Biology",
+    "Mutabind2": "Biology",
+    "NameToSMILES": "Chemical",
+    "NeEMO": "Biology",
+    "NucleicAcidGCCalculator": "Biology",
+    "OverlapPeptideLibraryDesign": "Biology",
+    "PCRPrimerProperties": "Biology",
+    "PPI3DPDB": "Biology",
+    "PPI3DSingle": "Biology",
+    "PPI3DTwo": "Biology",
+    "PalindromicSequencesFinder": "Biology",
+    "PaperQA": "General",
+    "PerformBlastQuery": "Biology",
+    "PlotAdjacencyMatrix": "Material",
+    "PositionalScanningLibraryDesign": "Biology",
+    "PredictAdsorption": "Material",
+    "PredictDrugTargetInteraction": "Biology",
+    "PredictMyristoylation": "Biology",
+    "PredictPeptideMass": "Biology",
+    "PredictSignalPeptide": "Biology",
+    "PredictStability": "Material",
+    "PredictTransmembrane": "Biology",
+    "PredictYeastProteinInteraction": "Biology",
+    "ProcessFingerprintMol": "Chemical",
+    "ProteaseDigestion": "Biology",
+    "ProteinIsoelectricPointCalculator": "Biology",
+    "ProteinMotifAnalysis": "Biology",
+    "ProteinNuclearLocalizationSequencePrediction": "Biology",
+    "ProteinSolubilityPredictor": "Biology",
+    "RXNPredict": "Chemical",
+    "RXNRetrosynthetic": "Chemical",
+    "RandomDNAGeneration": "Biology",
+    "RandomForestClassifier": "Chemical",
+    "RandomMoelcule": "Chemical",
+    "RandomMutation": "Biology",
+    "RedundancyReduction": "Biology",
+    "RemoveHydrogens": "Chemical",
+    "RemoveStereochemistry": "Chemical",
+    "RepeatDNASequenceSearch": "Biology",
+    "RepeatProteinSequenceSearch": "Biology",
+    "RunSuZuKiReactionExperiment": "Chemical",
+    "SELFIEStoSMILES": "Chemical",
+    "SMILESToCAS": "Material",
+    "SMILESToInChI": "Chemical",
+    "SMILESToWeight": "Chemical",
+    "SMILEStoSELFIES": "Chemical",
+    "SafetySummary": "Chemical",
+    "ScanHamap": "Biology",
+    "SearchByBandGap": "Material",
+    "SearchCSV": "Material",
+    "SearchMaterialsByChemsys": "Material",
+    "SearchMaterialsContainingElements": "Material",
+    "SearchXasByFormula": "Material",
+    "SequenceSimilarityCalculator": "Biology",
+    "SequenceToPdb": "Biology",
+    "SetAromaticity": "Chemical",
+    "SetBondStereoFromDirections": "Chemical",
+    "ShowMol": "Chemical",
+    "SlnToSmiles": "Chemical",
+    "SmallMoleculeSimilarityCalculation": "Biology",
+    "SmilesToPdb": "Biology",
+    "SplitSELFIES": "Chemical",
+    "Sulfinator": "Biology",
+    "SummaryEnzymeCleavageSites": "Biology",
+    "TestMolecule": "Chemical",
+    "TexToMoleculeSELFIES": "Biology",
+    "TranslateDNAtoAminoAcidSequence": "Biology",
+    "TruncationLibraryDesign": "Biology",
+    "TypeAtomsInMolecule": "Chemical",
+    "UnitConverter": "Material",
+    "WolframAlpha": "General"
+  },
+  "registry_groups": {
+    "BiologyTools": [
+      "ComputeProtPara",
+      "ComputeProtScale",
+      "ComputeExtinctionCoefficient",
+      "ComputePiMw",
+      "SequenceToPdb",
+      "ComputeResidueAccuracy",
+      "GenerateRandomMutation",
+      "CipherOptimizer",
+      "CalculatorPeptideProperty",
+      "CalculatorOligonucleotide",
+      "PredictSignalPeptide",
+      "PredictTransmembraneRegion",
+      "ProteinCodonOptimization",
+      "DNARNACodonOptimization",
+      "ComputeHydrophilicity",
+      "PredictSignalPeptide",
+      "ComputeAnnealingTemperature",
+      "ConvertingPeptide2SMILES",
+      "ProteinIsoelectricPointCalculator",
+      "ComputeAffinity",
+      "PeptideWeightCalculator",
+      "PeptideFormulaCalculator",
+      "DegenerateCodonCalculatorbyAminoAcid",
+      "OverlapPeptideLibraryDesign",
+      "AlanineScanningLibraryDesign",
+      "TruncationLibraryDesign",
+      "PositionalScanningLibraryDesign",
+      "ProteaseDigestion",
+      "CDRLabelingAntibody",
+      "AntibodySequenceNumbering",
+      "CircularDNAAlignment",
+      "CompareSequenceByLogExpectation",
+      "DoubleSequenceGlobalAlignment",
+      "ProteinSolubilityPredictor",
+      "InherentDisorderedRegionsPredictor",
+      "DoubleSequenceLocalAlignment",
+      "ProteinMotifAnalysis",
+      "SequenceSimilarityCalculator",
+      "ORFFind",
+      "TranslateDNAtoAminoAcidSequence",
+      "RepeatDNASequenceSearch",
+      "RepeatProteinSequenceSearch",
+      "PalindromicSequencesFinder",
+      "CalculateAminoAcidbyDegenerateCodon",
+      "ProteinNuclearLocalizationSequencePrediction",
+      "SmallMoleculeSimilarityCalculation",
+      "DNAMolecularWeightCalculator",
+      "CpGIslandPrediction",
+      "PCRPrimerProperties",
+      "AminoAcidStatistics",
+      "SummaryEnzymeCleavageSites",
+      "RandomDNAGeneration",
+      "AnalyzeProteinCATHFromPDBID",
+      "AnalyzeProteinLengthFromPDB",
+      "AnalyzeProteinSeqFromPDB",
+      "FixPDBFile",
+      "FoldProtein",
+      "CalculateEnergyFromSequence",
+      "CalculateForceFromSequence",
+      "CalculateForceEnergyFromSequence",
+      "GenerateSequenceFromEnergy",
+      "GetFASTAFromName",
+      "CalculateProteinANM",
+      "AnalyzeProteinStructure",
+      "DesignProteinAlpha",
+      "DesignProteinBeta",
+      "DesignProteinAlphaBeta",
+      "DesignProteinFromLength",
+      "SaveToCSVFile",
+      "FetchProteinStructureFromPDBID",
+      "GenerateMoleculeDescription",
+      "TexToMoleculeSELFIES",
+      "PredictDrugTargetInteraction",
+      "PredictHumanProteinInteraction",
+      "PredictYeastProteinInteraction",
+      "PredictProteinSolubility",
+      "PredictProteinBinaryLocalization",
+      "AnalyzeAtomCount",
+      "CalculateMolecularWeight",
+      "CalculateCenterOfMass",
+      "CalculateAverageCoordinates",
+      "CalculateAtomDistance",
+      "GetAminoAcidFrequency",
+      "GetReverseComplement",
+      "CalculateHydrophobicityAndPolarity",
+      "PerformBlastQuery"
+    ],
+    "ChemicalTools": [
+      "NameToSMILES",
+      "SmilesToPdb",
+      "NameToCas",
+      "FuncGroups",
+      "RXNPredict",
+      "RXNRetrosynthetic",
+      "RXNPredictProperties",
+      "CheckPatent",
+      "SMILESToWeight",
+      "MolSimilarity",
+      "SafetySummary",
+      "CheckExplosiveness",
+      "SMILESToInChI",
+      "InChIKeyToSMILES",
+      "InChIKeyToInChI",
+      "InChIKeyToMOL",
+      "IsValidInChIKey",
+      "InChIToSMILES",
+      "InChIToInChIKey",
+      "InChIToCSID",
+      "SMILEStoSELFIES",
+      "SELFIEStoSMILES",
+      "RandomMoelcule",
+      "Length_SELFIES",
+      "Split_SELFIES",
+      "ExplainAtomPairScore",
+      "GetAtomPairFingerprintAsBitVect",
+      "AssignPattyTypes",
+      "ExplainAtomCode",
+      "TestMolecule",
+      "ConvertSdfToCsv",
+      "ShowMol",
+      "TypeAtomsInMolecule",
+      "CalculateEstateIndices",
+      "CalculateEstateVsa",
+      "GenerateEstateFingerprint",
+      "ExtractRotatableDihedralsFromSdf",
+      "CalculateMolecularCenter",
+      "CalculateUsrcatScores",
+      "CalculateShapeSimilarity",
+      "CalculatePmi",
+      "CalculateDistanceMatrix",
+      "ClusterMolecules",
+      "ProcessFingerprintMol",
+      "FingerprintsFromSmiles",
+      "FoldFingerprintFromSmiles",
+      "GetRdkFingerprintFromSmiles",
+      "GetFraggleSimilarity",
+      "GenerateFraggleFragments",
+      "CheckValidRingCut",
+      "BuildAtomPairFpFromSmiles",
+      "BuildTorsionsFpFromSmiles",
+      "BuildRdkitFpFromSmiles",
+      "BuildPharm2DFpFromSmiles",
+      "BuildMorganFpFromSmiles",
+      "BuildAvalonFpFromSmiles",
+      "ConvertSmilesToInchi",
+      "GenerateMolKeyFromSmiles",
+      "GetStereoCodeFromSmiles",
+      "DetermineBondOrders",
+      "DetermineBonds",
+      "GetPatternFingerprint",
+      "IsSubstructure",
+      "GetTemplateMolecule",
+      "GetTautomers",
+      "GetModifiedAtoms",
+      "GetModifiedBonds",
+      "GetSubstructMatches",
+      "GetPatternFingerprintTemplate",
+      "CanSerialize",
+      "AssignCIPLabels",
+      "Enumerate",
+      "Deprotect",
+      "CondenseAbbreviationSubstanceGroups",
+      "SlnToSmiles",
+      "CreateShingling",
+      "EncodeMolecule",
+      "EncodeSECFP",
+      "GetBCUT",
+      "GetAutocorrelation2D",
+      "GetAutocorrelation3D",
+      "GetAsphericity",
+      "GetChi0n",
+      "GetChi0v",
+      "GetChi1n",
+      "GetChi1v",
+      "GetChi2n",
+      "GetChi2v",
+      "GetChi3n",
+      "GetChi3v",
+      "GetChi4n",
+      "GetChi4v",
+      "GetCoulombMat",
+      "GetCrippenDescriptors",
+      "GetEEMCharges",
+      "GetEccentricity",
+      "GetExactMolceularWeight",
+      "GetFractionCSP3",
+      "GetGETAWAY",
+      "GetHallKierAlpha",
+      "GetInertialShapeFactor",
+      "GetKappa1",
+      "GetKappa2",
+      "GetKappa3",
+      "GetLabuteASA",
+      "GetMolFormula",
+      "GetMORSE",
+      "GetNPR1",
+      "GetNPR2",
+      "GetAliphaticCarbocyclesNum",
+      "GetAliphaticHeterocyclesNum",
+      "GetAliphaticRingsNum",
+      "GetAmideBondsNum",
+      "GetAromaticCarbocyclesNum",
+      "GetAromaticHeterocyclesNum",
+      "GetAromaticRingsNum",
+      "GetAtomStereoCentersNum",
+      "GetAtomsNum",
+      "GetBridgeheadAtomsNum",
+      "GetHydrogenAcceptorsNum",
+      "GetHBANum",
+      "GetHBDNum",
+      "GetHeavyAtomsNum",
+      "GetHeteroatomsNum",
+      "GetHeterocyclesNum",
+      "GetLipinskiHBANum",
+      "GetLipinskiHBDNum",
+      "GetRingsNum",
+      "GetRotatableBondsNum",
+      "GetSaturatedCarbocyclesNum",
+      "GetSaturatedHeterocyclesNum",
+      "GetSaturatedRingsNum",
+      "GetSpiroAtomsNum",
+      "GetUnspecifiedAtomStereoCentersNum",
+      "GenerateRDKFingerprintsFromCSV",
+      "GenerateMorganfingerprintsFromCSV",
+      "GenerateElectricalDescriptorsFromCSV",
+      "MLPClassifier",
+      "AdaBoostClassifier",
+      "RandomForestClassifier",
+      "RunSuZuKiReactionExperiment",
+      "AssignOxidationNumbers",
+      "CalculatePBF",
+      "CalculatePMI1",
+      "CalculatePMI2",
+      "CalculatePMI3",
+      "CalculatePhi",
+      "CalculateRDF",
+      "CalculateRadiusOfGyration",
+      "CalculateSpherocityIndex",
+      "CalculateTPSA",
+      "CalculateWHIM",
+      "CustomPropertyVSA",
+      "GetAtomFeature",
+      "GetAtomPairFingerprint",
+      "GetConnectivityInvariants",
+      "GetFeatureInvariants",
+      "GetAtomPairCode",
+      "GetHybridization",
+      "GetRingSystems",
+      "GetMACCSKeysFingerprint",
+      "GetMorganFingerprint",
+      "GetTopologicalTorsionFingerprint",
+      "GetUSR",
+      "GetUSRCAT",
+      "AddHydrogens",
+      "AddWavyBondsForStereoAny",
+      "AssignAtomChiralTagsFromStructure",
+      "AssignRadicals",
+      "AssignStereoChemistry",
+      "GetAdjacencyMatrix",
+      "GetAllowNontetrahedralChirality",
+      "GetDistanceMatrix",
+      "GetFormalCharge",
+      "GetFormalChargeOfAtoms",
+      "GetMolFrags",
+      "GetUseLegacyStereoPerception",
+      "HapticBondsToDative",
+      "HasQueryHs",
+      "Kekulize",
+      "MergeQueryHs",
+      "MurckoDecompose",
+      "RemoveHydrogens",
+      "RemoveStereochemistry",
+      "SetAromaticity",
+      "SetBondStereoFromDirections",
+      "DetermineBondOrders",
+      "DetermineBonds",
+      "GetPatternFingerprint",
+      "IsSubstructof",
+      "GetTemplateMolecule",
+      "GetTautomers",
+      "GetModifiedAtoms",
+      "GetModifiedBonds",
+      "GetSubstructMatches"
+    ],
+    "GeneralTools": [
+      "BingSearch",
+      "WolframAlpha",
+      "DownloadPapers",
+      "DownloadPapersMuti",
+      "PaperQA",
+      "CodeInterpreterTools"
+    ],
+    "MaterialTools": [
+      "CASToPrice",
+      "MOFToSMILES",
+      "SMILESToCAS",
+      "PredictStability",
+      "PredictAdsorption",
+      "MofLattice",
+      "MofFractionalCoordinates",
+      "MofNeighborIndices",
+      "MofBranchPoints",
+      "MofBridges",
+      "GetSymbolOfSite",
+      "PlotAdjacencyMatrix",
+      "GetTerminalIndices",
+      "GetFloatingSolventMolecules",
+      "SearchMaterialsContainingElements",
+      "SearchMaterialsByChemsys",
+      "GetDocByMaterialId",
+      "GetFormulaByMaterialId",
+      "GetMaterialIdByFormula",
+      "GetBandGapByMaterialId",
+      "GetBandGapByFormula",
+      "GetVolumeByFormula",
+      "GetVolumeByMaterialId",
+      "GetDensityByMaterialId",
+      "GetDensityByFormula",
+      "GetDensityAtomicByMaterialId",
+      "GetDensityAtomicByFormula",
+      "GetEnergyAboveHullByMaterialId",
+      "GetInitialStructuresByMaterialId",
+      "GetInitialStructuresByFormula",
+      "GetStructureByMaterialId",
+      "SearchByBandGap",
+      "SearchXasByFormula",
+      "GetCbmByMaterialId",
+      "GetCbmByFormula",
+      "GetEnergyPerAtomByMaterialId",
+      "GetEnergyPerAtomByFormula",
+      "GetEfermiByMaterialId",
+      "GetEfermiByFormula",
+      "GetVbmByMaterialId",
+      "GetVbmByFormula",
+      "GetFormationEnergyPerAtomByMaterialId",
+      "GetFormationEnergyPerAtomByFormula",
+      "GetETotalByMaterialId",
+      "GetETotalByFormula",
+      "GetEIonicByMaterialId",
+      "GetEIonicByFormula",
+      "GetEElectronicByMaterialId",
+      "GetEElectronicByFormula",
+      "GetEquilibriumReactionEnergyPerAtom",
+      "GetFormulaAnonymousByMaterialId",
+      "GetFormulaAnonymousByFormula",
+      "IsMagneticByMaterialId",
+      "IsMagneticByFormula",
+      "IsMetalByMaterialId",
+      "IsMagneticByFormula",
+      "IsMetalByFormula",
+      "IsStableByMaterialId",
+      "IsStableByFormula",
+      "GetNumMagneticSitesByMaterialId",
+      "GetTotalMagnetizationByMaterialId",
+      "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId",
+      "GetTotalMagnetizationNormalizedVolByMaterialId",
+      "GetUncorrectedEnergyPerAtomByMaterialId",
+      "GetEosInfoByMaterialId",
+      "GetPhononInfoByMaterialId",
+      "GetCrystalStructureByMaterialId",
+      "GetAtomicPositionsMaterialId",
+      "GetMagnetismInfoByMaterialId",
+      "GetCompositionByMaterialId",
+      "GetPhysicalPropertiesByMaterialId",
+      "GetNsitesByMaterialId",
+      "GetElementsByMaterialId",
+      "GetNumberOfElementsByMaterialId",
+      "GetDielectricByMaterialId",
+      "GetCrystalSystemByMaterialId",
+      "GetChemicalSystemByMaterialId",
+      "GetSpaceGroupSymbolByMaterialId",
+      "GetFormulaPrettyByMaterialId",
+      "GetSurfaceAnisotropyByMaterialId",
+      "GetStructureByMaterialId",
+      "GetWeightedSurfaceEnergyByMaterialId",
+      "GetRobocrystallographerData",
+      "GetPropertyNameByMaterialId",
+      "GetDescriptionByMaterialId",
+      "GetSynthesisDocByKeywords",
+      "GetBatteryFormulaByBatteryId",
+      "GetWorkingIonByBatteryId",
+      "GetMaxVoltageStepByBatteryId",
+      "GetFrameworkByBatteryId",
+      "GetFrameworkFormulaByBatteryId",
+      "GetElementsByBatteryId",
+      "GetNelementsByBatteryId",
+      "GetChemsysByBatteryId",
+      "GetFormulaAnonymousByBatteryId",
+      "GetWarningsByBatteryId",
+      "GetFormulaChargeByBatteryId",
+      "GetFormulaDischargeByBatteryId",
+      "GetEnergyVolumeByBatteryId",
+      "GetMaxDeltaVolumeBatteryId",
+      "GetAverageVoltageByBatteryId",
+      "GetCapacityGravByBatteryId",
+      "GetCapacityVolByBatteryId",
+      "GetEnergyGravByBatteryId",
+      "GetFracaChargeByBatteryId",
+      "GetStabilityChargeByBatteryId",
+      "GetStabilityDischargeByBatteryId",
+      "GetIdChargeByBatteryId",
+      "GetIdDischargeByBatteryId",
+      "GetHostStructureByBatteryId",
+      "GetAdjPairsByBatteryId",
+      "GetMaterialIdByBatteryId",
+      "GetEntriesCompositionSummaryByBatteryId",
+      "GetElectrodeObjectByBatteryId",
+      "IsDeprecated",
+      "GetDeprecatedReasonsByBatteryId",
+      "GetPossibleSpeciesByMaterialId",
+      "GetPossibleValencesByMaterialId",
+      "GetAverageOxidationStatesByMaterialId",
+      "GetPropertyNameByMaterialId",
+      "GetOxidationStateMethodByMaterialId",
+      "GetSymmetryByMaterialId",
+      "GetCreatedTimeByMaterialId",
+      "GetReferencesByMaterialId",
+      "GetAuthorsByMaterialId",
+      "GetRemarksByMaterialId",
+      "GetLastUpdatedTimeByTaskId",
+      "GetFsIdByTaskId",
+      "GetTaskIdByFsId",
+      "GetUrlByFsId",
+      "GetAlloyPairsByMaterialId",
+      "GetPairIdByMaterialId",
+      "GetBondInfoByMaterialId",
+      "GetBondTypesByMaterialId",
+      "GetBondLengthStatsByMaterialId",
+      "GetCoordinationEnvsByMaterialId",
+      "GetOriginsByMaterialId",
+      "GetCoordinationEnvsAnonymousByMaterialId",
+      "GetStructureGraphByMaterialId",
+      "GetChargeByMoleculeId",
+      "GetSpinMultiplicityByMoleculeId",
+      "GetNatomsByMoleculeId",
+      "GetElementsByMoleculeId",
+      "GetNelementsByMoleculeId",
+      "GetNelectronsByMoleculeId",
+      "GetCompositionByMoleculeId",
+      "GetFormulaAlphabeticalByMoleculeId",
+      "GetFormulaPrettyByMoleculeId",
+      "GetFormulaAnonymousByMoleculeId",
+      "GetChemsysByMoleculeId",
+      "GetSymmetryByMoleculeId",
+      "GetPropertyNameByMoleculeId",
+      "GetPropertyIdByMoleculeId",
+      "GetDeprecatedByMoleculeId",
+      "GetDeprecationReasonsByMoleculeId",
+      "GetLevelOfTheoryByMoleculeId",
+      "GetSolventByMoleculeId",
+      "GetLotSolventByMoleculeId",
+      "GetLastUpdatedTimeByMoleculeId",
+      "GetWarningsByMoleculeId",
+      "GetOriginsByMoleculeId",
+      "GetMoleculeIdByFormula",
+      "GetMoleculeLevelsOfTheoryByMoleculeId",
+      "GetSpeciesHashByMoleculeId",
+      "GetCoordHashByMoleculeId",
+      "GetInchiByMoleculeId",
+      "GetInchikeyByMoleculeId",
+      "GetSimilarMoleculesByMoleculeId",
+      "GetConstituentMoleculesByMoleculeId",
+      "GetUniqueCalcTypesByMoleculeId",
+      "GetUniqueTaskTypesByMoleculeId",
+      "GetUniqueLevelsOfTheoryByMoleculeId",
+      "GetUniqueSolventsByMoleculeId",
+      "GetUniqueLotSolventsByMoleculeId",
+      "GetThermoPropertyIdsByMoelculeId",
+      "GetThermoLevelsOfTheoryByMoleculeId",
+      "GetElectronicEnergyByMoelculeId",
+      "GetZeroPointEnergyByMoleculeId",
+      "GetTotalEnthalpyByMoleculeId",
+      "GetTotalEntropyByMoleculeId",
+      "GetTranslationalEnthalpyByMoleculeId",
+      "GetTranslationalEntropyByMoleculeId",
+      "GetRotationalEnthalpyByMoleculeId",
+      "GetRotationalEntropyByMoleculeId",
+      "GetVibrationalEnthalpyByMoleculeId",
+      "GetVibrationalEnthalpyByMoelculeId",
+      "GetVibrationalEntropyByMoleculeId",
+      "GetFreeEnergyByMoleculeId",
+      "GetVibrationPropertyIdsByMoleculeId",
+      "GetVibrationLevelsOfTheoryByMoleculeId",
+      "GetFrequenciesByMoleculeId",
+      "GetFrequencyModesByMoleculeId",
+      "GetIrIntensitiesByMoleculeId",
+      "GetIrActivitiesByMoleculeId",
+      "GetOrbitalsPropertyIdsByMoleculeId",
+      "GetOrbitalsLevelsOfTheoryByMoleculeId",
+      "GetOpenShellByMoleculeId",
+      "GetNboPopulationByMoleculeId",
+      "GetStructureInfo",
+      "CalculateDensity",
+      "GetElementComposition",
+      "CalculateSymmetry"
+    ]
+  },
+  "repository": "https://github.com/HICAI-ZJU/SciToolAgent",
+  "tasks": [
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "03e159708b4eb4b1cc1345ce55b5cd0757488674d88f2a4d1a28179ea9863643",
+      "row": 1,
+      "tool_path": [
+        "SMILESToInChI",
+        "InChIToInChIKey"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "f2f46933a24a4575c02594557f0392f7da9376acc93584ad99790f9c70095aeb",
+      "row": 2,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "SMILEStoSELFIES"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "77918218b807480043ccb58cc75177029c498e12ed9843131628f899a7951305",
+      "row": 3,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetMolFormula"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ca3305f8bd52c340da8e2c082fbda5122e082f54c2ef4d9cf00f02346208c96c",
+      "row": 4,
+      "tool_path": [
+        "InChIToSMILES",
+        "SMILEStoSELFIES"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "588b0a5984c858076ca24c4af07299419da15163170c75ee6240b336def38543",
+      "row": 5,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetMolFormula"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "758b749e8922320a11daf9b88112222264e3823ebff9b3ff2309886f129ad946",
+      "row": 6,
+      "tool_path": [
+        "ConvertingPeptide2SMILES",
+        "SMILESToInChI"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d10c066291cf5fb917d35cd75ef30385394b6fe2f9e664c2aac16253e46fc068",
+      "row": 7,
+      "tool_path": [
+        "ConvertingPeptide2SMILES",
+        "SMILEStoSELFIES"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "864f17b21f337eb66ae793dc837f3b8a08f2487559794cfbe0ed37623a818658",
+      "row": 8,
+      "tool_path": [
+        "ConvertingPeptide2SMILES",
+        "GetMolFormula"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "07683ffcb73c89cecf9737df78251d22bd415cbc47ad12b55d0fd1025bce7691",
+      "row": 9,
+      "tool_path": [
+        "SlnToSmiles",
+        "SMILESToInChI"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "84b159d72d1914538c7a5c1fcb1678732e2eb3790ac40e0200372fd71020c9f6",
+      "row": 10,
+      "tool_path": [
+        "SlnToSmiles",
+        "SMILEStoSELFIES"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a97f848bd7a73db6e4d4e8db3619002eb033f5c8b150ac0aa5fa308c09e5ebb2",
+      "row": 11,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetMolFormula"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "fdd46d09b74b16fceff69670dd0cb47815d51a71ec5ec7aa84defb38bfeb808b",
+      "row": 12,
+      "tool_path": [
+        "GetMoleculeIdByFormula",
+        "GetInchiByMoleculeId"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "62f6c1ce9a770f105d5bab9afe9bae9370f7e43a3fdcf5765d410413a7323a8f",
+      "row": 13,
+      "tool_path": [
+        "SlnToSmiles",
+        "CalculateEstateIndices"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "758277e02ad4d4124f10ed149defddcffdac7b6224d1f474f16e3d92b62794e1",
+      "row": 14,
+      "tool_path": [
+        "SlnToSmiles",
+        "FuncGroups"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a351aafc84d5ed37befc8530cd82fa7afdccfe56fd01cd62fcb9731a54d5f8ce",
+      "row": 15,
+      "tool_path": [
+        "SlnToSmiles",
+        "CalculatePBF"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7557cc19de397007f0c835b4454b4cf3e20e90f2d75c028bfb454b0963c546a9",
+      "row": 16,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetMolFrags"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "70f5cd93781de0e381af2d5c7945902d56d0310688c06b8ee4eb9b7cfb0f50b5",
+      "row": 17,
+      "tool_path": [
+        "SlnToSmiles",
+        "SMILESToCAS",
+        "CheckExplosiveness"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "bdf0c1a22da4327bb54d9f88aa7e3e62b61cddf8da068890130b1ee5f35331c1",
+      "row": 18,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetAtomStereoCentersNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "4e748a5204cdca84958392566777052b8c69984cae318067c5320c6f47c91f36",
+      "row": 19,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetNPR2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "8a0b2a56ae6a5fc3f14492f113e2cf13ba6bb0be15dae03577506e1496dccf01",
+      "row": 20,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetTopologicalTorsionFingerprint"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "5a5c01d625a5182c30dfdccbf94671c349984ecbe9c31442dbadc4e7aea77453",
+      "row": 21,
+      "tool_path": [
+        "SlnToSmiles",
+        "CalculatePmi"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "88ff093db16cf6e9e86b67325cc0753b65d7dd9ce6ff130a53be8af19f9b42ea",
+      "row": 22,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetHeteroatomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "86f4dc40ed8eab2781ca6a6e477bb970c5b898f566d25286f80ce3936a8c5149",
+      "row": 23,
+      "tool_path": [
+        "SlnToSmiles",
+        "GenerateMolKeyFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3698c537b20e576d85873d2c50750b8565e64204512b76d68af40daf30af4a12",
+      "row": 24,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "45035651ed857c902ece16e98035e1449c9e34f71eedec01e23f26cd901b5361",
+      "row": 25,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetLabuteASA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "593c1229531017dd199b93143f533fa1e41d2cfe3f791a2a315c31d1c11319cf",
+      "row": 26,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "4c45cc03bb1740235424d43f4e51a320398958ff82d76091da0ccb6f50a957a9",
+      "row": 27,
+      "tool_path": [
+        "SlnToSmiles",
+        "SMILESToInChI"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "32be214a6857457316050f14c2d0946498e82b7569ec912183aa4143c6bf561f",
+      "row": 28,
+      "tool_path": [
+        "SlnToSmiles",
+        "CreateShingling"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a2a2599b85063df95da085e5bdba0a754e357304ed0b12042c1ba2935a36ae5b",
+      "row": 29,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e5b754d0145c68861be547818dc2298bf2f52730c8aa23a3a12450ae3e4a8ef3",
+      "row": 30,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetRotatableBondsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "484a8b1c2b20adca9e2151ad7eba103779f9bfd4e95aeef60751f74e5873e32e",
+      "row": 31,
+      "tool_path": [
+        "SlnToSmiles",
+        "TypeAtomsInMolecule"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0ca5eda33e50ab6d701ce57d07ef93ffb270ca2fd3fb2789cdebd1df009f2e49",
+      "row": 32,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetEccentricity"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e11f6404f9d7e4fd6291c578de4684f4f7b50274b874c80db541b3ddef619905",
+      "row": 33,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetHybridization"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "656cb7c5031464f693c11e9d3b6367d826b3a81c320d5fbd8fcc59c90d9d598c",
+      "row": 34,
+      "tool_path": [
+        "SlnToSmiles",
+        "CalculateEstateVsa"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "21eaa910764ceebd84a36d01e67c623001a4b5c92face5ce2544989e470304a5",
+      "row": 35,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetAliphaticRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7850c49cf2e719e38ce1f506b49d770ccb3a402ff91bfa449ee6e3188ca45647",
+      "row": 36,
+      "tool_path": [
+        "SlnToSmiles",
+        "SMILESToInChI",
+        "InChIToInChIKey"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "cc17d7b0fc5bbe2bad535a3ad549771025e477b90b9176bcf2a0ddf9e0e4b92e",
+      "row": 37,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetFormalCharge"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "6fdb89c235ae55840ca55a168f584ac7df5953aa1f77a8bb4b850751ef7fd111",
+      "row": 38,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetBridgeheadAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "85e5f8d1c8c9c53a2267e69de136a7839299dcce7f73d9a5137e55299c603130",
+      "row": 39,
+      "tool_path": [
+        "ConvertingPeptide2SMILES",
+        "GetHeavyAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "944358b549328d892eb127723487cf33562cdf31c8790516ae116260fdf5c22e",
+      "row": 40,
+      "tool_path": [
+        "ConvertingPeptide2SMILES",
+        "CheckValidRingCut"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "9c694e05316555e995a43d8f00a8a8c81f5b2472ff4aad3eec90b0811e62ea6f",
+      "row": 41,
+      "tool_path": [
+        "SMILESToCAS",
+        "CheckExplosiveness"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3435f4d8332034120088b66daa0dac343bccada4988a1ed6723d3ea76eaa0c82",
+      "row": 42,
+      "tool_path": [
+        "SMILESToInChI",
+        "InChIToCSID"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7f1682c8fa0d5097b3e2c15a226f7d6f2a908ab42467048ca1d3164264fe1451",
+      "row": 43,
+      "tool_path": [
+        "SMILESToCAS",
+        "SafetySummary"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e5ccfd286005c41598003bedf7de4c47c087389bd22b1cd183ea0c0b42522beb",
+      "row": 44,
+      "tool_path": [
+        "SMILEStoSELFIES",
+        "LengthSELFIES"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "6ac842ae82a6074b80f068e6bcf214d7159567ce7701c0434fa09ee84213db27",
+      "row": 45,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "BuildMorganFpFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "2417b719ceb94b60fdbc1b68d49baa603a47af58facdbfa84d6a83c18dfcfb9c",
+      "row": 46,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "CanSerialize"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d0b39b7451550e6f6f152d016c798cd6fd0e1d7de0595ca9339e5d2e08cf722d",
+      "row": 47,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetBCUT"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a94fc8f7d0e686933adf8f22b3465d4830f97b381c5665631747502a161fb1ff",
+      "row": 48,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAromaticRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "6c7c2141596ba1ecfee2bc62af205a2ba9f46346b1abeaf74407624ea72e31ce",
+      "row": 49,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "CalculateEstateIndices"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "5949e40f2a81c36bd82a7697ceaca55fa36b62dde728db89d5caa90f67af2004",
+      "row": 50,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "FuncGroups"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e9dbd136cf76fa37204e9e5a2efec58c4beac934897a8b4bdf872d826ef2c0b8",
+      "row": 51,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "SMILESToCAS",
+        "CheckExplosiveness"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0dce61033deea317b56aeb8b56426c4a056e05c36a8aac22b6ddf79c33d21d69",
+      "row": 52,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAtomStereoCentersNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0f65316e7300a90b2d63fbe8e59e78303b5895e29740f33218ff928b176ea3ff",
+      "row": 53,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a4336eb9e13db339a7ecc3761cedd15c8714a749279dc5164b598fac6ef74b14",
+      "row": 54,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetNPR2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d2575428ac99a5d2e83b73d1e0c1fe1100e266033cd15c92614bf36e02edfd2a",
+      "row": 55,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "CalculatePmi"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "8885e2e11465e9f578e2443076bb585cbf813fd209d81dc64046e4e17ed909f4",
+      "row": 56,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetHeteroatomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "74a689cec4ad657985742ab39c63ca4a954bd593bd0afcf7adf4196de0dbe47a",
+      "row": 57,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetRdkFingerprintFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3c4a43e8160ad53d1ff7793c727ed11841834aa51c3aebbe97d074c3f9cedc3d",
+      "row": 58,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GenerateMolKeyFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "cace208995394c64e5fce73ac9c549f1d96196da79c3b3dc5ab15b15e70667f4",
+      "row": 59,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "AssignPattyTypes"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "cd11fe35eac2f861195a939e0cdf3e883f25ef48d3451e013b714650d59c9c95",
+      "row": 60,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "9da40b2ee0127fff61da57624467916283b22b1f1ff325d41c597fa1506833eb",
+      "row": 61,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetLabuteASA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7ec9e1c29236f759ed1ab2e94fde912a115cdb7050c68735979fc912ef4d218a",
+      "row": 62,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "BuildAvalonFpFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ffe14464a8b83ec152f4f76de8a4c34c84a89dfad2eb078d51ec13565d414942",
+      "row": 63,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "cac9292de1a1540920934c684ce74d5d18a3afb269a4c32cf733ba8104fa0554",
+      "row": 64,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "CreateShingling"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "c118a62ac45d452c84b81337e486e682c0e865c93039a94442cd58ed1ed57395",
+      "row": 65,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ecc60240a2dcf19e8706ebc5c5a557275e3a957cf9a0f2ddf2c1d4abb9c3a87f",
+      "row": 66,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetRotatableBondsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e7a08f822e12af2a0d53fd274c68fd65d49a50323fc5361ef22c2e5c8dfa97da",
+      "row": 67,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "TypeAtomsInMolecule"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a79153eb9c68ee91a3270f334e8ea0242782e8010e5bae77af53a0af79e1fc20",
+      "row": 68,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetEccentricity"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "bc704a52ff45eb88ce467388a39060d8dd2aa5d798c984dec98e57f0e8553535",
+      "row": 69,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "CalculateEstateVsa"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "c20d984d09004f35d781c4d117464e07de7516ff3fcb76166a90f317abbb9725",
+      "row": 70,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAromaticCarbocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7fb346a225de434473c39eb423a94fda2d45b0d8b96b2084715605765bddee77",
+      "row": 71,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetHallKierAlpha"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e8124337431adc3aa29bd8a596fb66868b7eb2ba4c4f19b29df8e2656e3214ee",
+      "row": 72,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetUnspecifiedAtomStereoCentersNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0e4a3307d5f5fe8ad41748f365c7f717fae76d24c0f8dcf9440a2e4931284e44",
+      "row": 73,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetFrtool_pathCSP3"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "79f62731838e61ead8599ede4da18d5a91d2d958ffa86d8069e9775c7c6ddba0",
+      "row": 74,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "EncodeSECFP"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "5522c0353ca854c798e7a14002167faf3e2e220be2230560df38f2dd662b6990",
+      "row": 75,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GenerateFraggleFragments"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3f1c3399e57c97068776598b0cbe52f9c1b91cf96c2f16cd36cbc8aad875c975",
+      "row": 76,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetInertialShapeFactor"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7b4be5904b2f455834190869c436def9f5678a913a1d7f1bd9ce91d8b5a5bf78",
+      "row": 77,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "BuildAtomPairFpFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "76f85daf21738c4fb58609cf845c2927d12212c060132b0da88a32fdd72742e3",
+      "row": 78,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetMORSE"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "68e97e977871478f22993d04a4425f213592abc114cd65f92a509d70e7aac1b2",
+      "row": 79,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAromaticHeterocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "f95167938c45c7b18a3916197d56d5bde5fb6934e8dfb22f19c1ab39d482c66e",
+      "row": 80,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAliphaticCarbocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "b8bb1fde357cb6deb5ea62e4451e9f69faf864599411fd1f9d2401677ad336d7",
+      "row": 81,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetCrippenDescriptors"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "34b0baedacfef4b50366b912fc26233395de589cc1ff6a26640d93e0d99b2b11",
+      "row": 82,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAliphaticHeterocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3597307eed97badc69cde166c71e840fb4cffee98ba36de160ae4a96da723400",
+      "row": 83,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAutocorrelation3D"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "b71fb26bcf18e11af0712b93f9cb6a0c07d3416483ca2d2a5fd5dc5bee4e138a",
+      "row": 84,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "TestMolecule"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "af4fed81f766dd4fede08539a356972241d97416b477cda9b5c5743bc00bea33",
+      "row": 85,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e74833fd85ef0d9c0803c2334b50c03840090d6940bbd176cd7ebf68f39b5bcf",
+      "row": 86,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7d6b663809f548679ccd0d7e05e21842c1ce058ef8c3c85cb030342cc355ddc6",
+      "row": 87,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetChi0n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ab3d7c6fca21a907f09b789c5b940c4825905f7642ca1fd6e046fb58b86a2e44",
+      "row": 88,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetNPR1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "36b192e73f99cfb22d90a86a0c5b2b3a7551dc00292aa1b76c3bad440ff854f6",
+      "row": 89,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "InChIKeyToSMILES",
+        "SmallMoleculeSimilarityCalculation"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "28ae7b53327cec67690d36935ffde934c4d68bd87f985892f241a18c261458a8",
+      "row": 90,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "InChIKeyToSMILES",
+        "GetKappa2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "20da85aa2c512b325f1aec70a53ffa5c740c763a20e5ee73072071b48a45f894",
+      "row": 91,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetHBDNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e9e97fa2659f33c900117a382845c17e57afd34e11ffd3550789e60da5877d16",
+      "row": 92,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAmideBondsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "2d21f687fb13e57ce36c6a9b331ade1de399c58429929f0fadaeada670a48e63",
+      "row": 93,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetLipinskiHBDNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ec96fe7bbbee0177b5653b7bd8dcf643d71edb460624d9078974ea5b2e44276a",
+      "row": 94,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "ProcessFingerprintMol"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a3bf195aa958d22e10f3a81ffad04abb4fb3c1722bc48de0b3f984676c78e48e",
+      "row": 95,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "57da415e8c5097ab5ca48a4d6b586d2140400455e9f367bcd36787ce1f9735ea",
+      "row": 96,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "SMILESToCAS"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "1cb7948dd2cf62521c52b2f634fda5e8c0a4deaa0f53aad008a85f64d8396401",
+      "row": 97,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetHBANum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "19b7f0293e6f8fec3742613c658271fb866b83c0444db3a77f5389f9414637d0",
+      "row": 98,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "SMILESToCAS",
+        "SafetySummary"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3c6a29fea1988bb37a98ddb6ba00c7a271a016299824158aee37f1b4faa2c266",
+      "row": 99,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "86ee20ef0d41d344267ce43bb78849aff88ae3b4e1f220ad733e27c0e8e9f3c5",
+      "row": 100,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a7ee460ca9b8b491ed7574a7b6663f6db22d2cfa5ca766077fa169da11330c50",
+      "row": 101,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetLipinskiHBANum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a336384c9b9ec35ba844c72f2ad2cbe2ab0789a651a8eb9e3a545de2703ed366",
+      "row": 102,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAsphericity"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "4767d054f66bf68b30bd1a5bbf842c9d9fc5441bb455361052c8769aed6e025b",
+      "row": 103,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GenerateEstateFingerprint"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "cc5a66a7ccfde1ef8eb779bdd3174a984ba1efc31cddc004da332aa9111cd04c",
+      "row": 104,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetSpiroAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d4d1e0c2f61f1c7de69f93c509b93b97d215ffb25f22e222e333f363de81619a",
+      "row": 105,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "533041faeef00e431496c5d0202f8fd39272797a1b033e4c5fa297a1592c6e85",
+      "row": 106,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetHeavyAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "b7a1ef3254f247c93ad916844f461d62f44f3f91e815179c7f22181a51ae2ec0",
+      "row": 107,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "CheckValidRingCut"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0e7a2c5a76b948c8cec60bbd53bd005ae808ea35d225caa8282f2af65cc47f7d",
+      "row": 108,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "955bea54f4e4cca3b54d657305c4f5ec21bd886eaef3855e90a1716fd5520403",
+      "row": 109,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a18addf1815c226809537cc5205ffe83ae20d58a8b2fcb4ae9d2f4075d3dd56c",
+      "row": 110,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetStereoCodeFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ded391bc852bf106bb780a402762e3b279235964439e307d1d4816a649386775",
+      "row": 111,
+      "tool_path": [
+        "NameToSMILES",
+        "CanSerialize"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "46257f04e0f0e3b819a774ccecf012033ecacf5190d75769d573f2c58324aa9e",
+      "row": 112,
+      "tool_path": [
+        "NameToSMILES",
+        "GetAromaticRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d76e567cf2202ed41a6966f0f07d2513b9be8f137c8a7888688cd9821002bc93",
+      "row": 113,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculatePBF"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e49786753654739f8dd27fc73e83e7ee1c6732007157022232d46f330e5b5ad0",
+      "row": 114,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3ce44d2037afed4b9d8823542aa1b02e19769e22d2124819402d199d79293555",
+      "row": 115,
+      "tool_path": [
+        "NameToSMILES",
+        "GetNPR2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "1f4458e6c6c0f7f3f99e94467d5a43c33249d40768d9f35c283ad9e64632dd09",
+      "row": 116,
+      "tool_path": [
+        "NameToSMILES",
+        "GetHeteroatomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "17705256b6adea6dbaae8bb7ed638bc051b7b47e6a4bc7f5c8e49a41fc7cf838",
+      "row": 117,
+      "tool_path": [
+        "NameToSMILES",
+        "SMILESToCAS",
+        "CASToPrice"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a7929f52f6ca58b7fc00b11be72682004dd4be1c93d030022864e1d635f0ce8a",
+      "row": 118,
+      "tool_path": [
+        "NameToSMILES",
+        "GenerateMolKeyFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "441861fd76e6c57b1e129f93cb2315e3a7494d131d8fa09f9064d6bd40324a1f",
+      "row": 119,
+      "tool_path": [
+        "NameToSMILES",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "1d045662cc8f4723c009662c8a8cc188683d8f39a28e618c7b4abb8bc93124f8",
+      "row": 120,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculateSpherocityIndex"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "5b4388352118ea8a40bd990fb4c035fe9293b66b670dc67abeef791c835bc5fd",
+      "row": 121,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "43ce9b61c465443e726831eba6d8d7839c265df4942d09b13d162f7841cea517",
+      "row": 122,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculateRadiusOfGyration"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "323256a170d5d54de3d0800881c7732dd067f3994a4377bf59c5580ae895725a",
+      "row": 123,
+      "tool_path": [
+        "NameToSMILES",
+        "SMILESToInChI"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "cfc7aa5bd029f4c6127cb53c3e1c07d7ae588ce345a46b698285061466560966",
+      "row": 124,
+      "tool_path": [
+        "NameToSMILES",
+        "CreateShingling"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "156d37d94896235f2732cd65e7ea2abdaa7b65865d30187674828f591f66120b",
+      "row": 125,
+      "tool_path": [
+        "NameToSMILES",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ea9ef18e2d3053d124dfcf47027abcc9c5b2500ba4300bdb08870e351c66e4d8",
+      "row": 126,
+      "tool_path": [
+        "NameToSMILES",
+        "GetRotatableBondsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "5f45e1cb76a485bc65a22bbc07338cf34f85adfbd2cfdbb2ffd2faaff4c31697",
+      "row": 127,
+      "tool_path": [
+        "NameToSMILES",
+        "GetEccentricity"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e492ebf2a87d314ea0f939adc4d40835ef2d350fcc8109475cf03a2f87d9e034",
+      "row": 128,
+      "tool_path": [
+        "NameToSMILES",
+        "GetHallKierAlpha"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "19fff272e85cb6cda94c70fe6398f644f668e251be4dd5786fc5fa0ea7aaa7f4",
+      "row": 129,
+      "tool_path": [
+        "NameToSMILES",
+        "GetFrtool_pathCSP3"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a0c79d571d1cc04f86b0ecc445e0212cb88acf9e564984911c56253c9232e9aa",
+      "row": 130,
+      "tool_path": [
+        "NameToSMILES",
+        "GetAtomFeature"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7d8bb38fe57e7aa67918d0689094685f15043c957ce8689ca429aa5892162fcd",
+      "row": 131,
+      "tool_path": [
+        "NameToSMILES",
+        "GetInertialShapeFactor"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3d6c9fe4d475cb8f95964e0532349e8b72e12e5707261d65d745a601a69c1f05",
+      "row": 132,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "06affecf4fc2704c1b17871a0915fc6f0d77c66f5c1a3d9c8e6d0d22623c61e1",
+      "row": 133,
+      "tool_path": [
+        "NameToSMILES",
+        "GetAromaticHeterocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "209af2b76ee3a823138dc228ae3eaabb3402d5425fda9afafcda5d375b4b8050",
+      "row": 134,
+      "tool_path": [
+        "NameToSMILES",
+        "GetAliphaticCarbocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "f3330ecfb53230dbce2e20d7386e94ac90ea3bf02072e7c7e6b14592ba2be77f",
+      "row": 135,
+      "tool_path": [
+        "NameToSMILES",
+        "GetCrippenDescriptors"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "45c6efb554dce95b2dd9c1640984915a767bfb04ee40a109a7cc417754569294",
+      "row": 136,
+      "tool_path": [
+        "NameToSMILES",
+        "GetDistanceMatrix"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7f11267b0fef791c5fad57ed374c7018718c6c966a53c14a9aec4c5f091ff6a6",
+      "row": 137,
+      "tool_path": [
+        "NameToSMILES",
+        "TestMolecule"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "03107a2827d79213df6a8d1dacbba1036bd870e2cb57fd8ca03fc34f75b78092",
+      "row": 138,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "c401e51a3b5e862d5de7e2a0ca9e94216011a85ea364bc44ab7a1ca5f99b8457",
+      "row": 139,
+      "tool_path": [
+        "NameToSMILES",
+        "GetAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "93144958a92045bd2b56868be674ce14108b37ebacb3bad4dcaf5c7b15514e8f",
+      "row": 140,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "249ade7bff86adb4dfcf00f6d39694fc7024b463ac46cdc79e649714410e9aff",
+      "row": 141,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculatePhi"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "eab1043eb60999cc610ca199bdadddb4210d6fe631da97c588857491e26fd5c9",
+      "row": 142,
+      "tool_path": [
+        "NameToSMILES",
+        "SmallMoleculeSimilarityCalculation"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "cde5158d4741f0e3387d6726986c2d5db29a17170d30eda5a5149854451fd746",
+      "row": 143,
+      "tool_path": [
+        "NameToSMILES",
+        "GetKappa2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "fe4fb3dda7b3b20cfcc1b6cbd64fd7af165747f5c26bdb593f35645586b8a816",
+      "row": 144,
+      "tool_path": [
+        "NameToSMILES",
+        "SMILEStoSELFIES"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "86e76059d8e1e3e15ae9e8c22d3bac17e325f88e131a90ba53c8a00ffb6178f1",
+      "row": 145,
+      "tool_path": [
+        "NameToSMILES",
+        "GetHBDNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "271db25f20cce8a09f336d116260bb0f8162a304931fd153ca588990c99b77e1",
+      "row": 146,
+      "tool_path": [
+        "NameToSMILES",
+        "SMILESToCAS"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0b798f8d4cd37875cd3b8cf0a07450a5f181a0aede20dd32d490f2e8446dbd37",
+      "row": 147,
+      "tool_path": [
+        "NameToSMILES",
+        "GetRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e113e686593064640f797ecef96a1ff3b758f1f3ddcb4ad0f9be2f426e39b50e",
+      "row": 148,
+      "tool_path": [
+        "NameToSMILES",
+        "GetHBANum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "2b62dc1642a9d3993b1ccf9382b8acbe45fb5b6d04a84f295bce9141308fc030",
+      "row": 149,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculatePMI2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "15dc9445d8198c77f84b775d45dcdc10e22f404212fe07039d2bb6ca7785ce6a",
+      "row": 150,
+      "tool_path": [
+        "NameToSMILES",
+        "SMILESToCAS",
+        "SafetySummary"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "05a8c712b4bc2004a8844715afb53c6a039a45d1c7c1a4b8a8e35d21a66f0ee6",
+      "row": 151,
+      "tool_path": [
+        "NameToSMILES",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ca0b47fe61772bf928dd8539bdf1ff49bce002a06410208570669f845f10929f",
+      "row": 152,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "c56d7d2a223923408432a65d422b87b5708652f898bdf4c7f8946f6aae4a98b5",
+      "row": 153,
+      "tool_path": [
+        "NameToSMILES",
+        "GetLipinskiHBANum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "412a2739eaad827d446a4d2422af31057adbe1a6fbec90fb1a9f2c8bb08c75db",
+      "row": 154,
+      "tool_path": [
+        "NameToSMILES",
+        "GetAsphericity"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ad1219a0587e3cfa4bf369af8a9a312c91b18da1f40b551efa60676d5dbe911a",
+      "row": 155,
+      "tool_path": [
+        "NameToSMILES",
+        "GetUSR"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0fa1e7644b79dd2ae430408ecbe475ed108975df4e367bfb798bf416514587a2",
+      "row": 156,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculatePMI3"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "18c50e52ffa0b7e376d6bb8ff1b85e569e5a0cdc21469a089cea6454a828d699",
+      "row": 157,
+      "tool_path": [
+        "NameToSMILES",
+        "GetHeavyAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "861bcd0a166d550f85451c2b2a61dd385995205fa4de59e773f8099e049ab5b2",
+      "row": 158,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "bde0ba2e69d1a51bed28c072888585c41989035bf6f9647e9d58ec74e8e4f7b3",
+      "row": 159,
+      "tool_path": [
+        "NameToSMILES",
+        "CustomPropertyVSA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0cfcd243da61f9664269c8ec9b6734c01d46cd5944ef7f0166cae4d771427a45",
+      "row": 160,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculateRDF"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "c7830396364a8cc24a49756211569dde93fdcb9d031c1f08ba124342c6444ee3",
+      "row": 161,
+      "tool_path": [
+        "NameToSMILES",
+        "GetUSRCAT"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "27f8543df24c890ce46173ff1ebcfe7f0213ee63186db3070f312b5a26a26ffb",
+      "row": 162,
+      "tool_path": [
+        "NameToSMILES",
+        "SMILESToWeight"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "2060ea2e0c7fceeab86806bc96a186053a386f1778c247af17b9a42298699192",
+      "row": 163,
+      "tool_path": [
+        "NameToSMILES",
+        "GetConnectivityInvariants"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "399d76ce82d6fbabae1d027473571afdb7c1cd06a303ae86cf71b08289287980",
+      "row": 164,
+      "tool_path": [
+        "NameToSMILES",
+        "SMILESToInChI"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7ce8092ac2d4abf57aefb7868ca2cadee6dd026239427125de8b1321c9d1ebcc",
+      "row": 165,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculateWHIM"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "08e14b4b4df42f2a9b32f89392ab68c66c8b0294f23a831ece9787ce06c07c42",
+      "row": 166,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetChi0v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a87973696bae2bd6c22f2fc3f0870c6ade3c5f177535d9008eb4585179511a24",
+      "row": 167,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetExactMolceularWeight"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "598c81b9ac7afb86db92207aabd0dd737a0cef983d84a027fd974ea90db23438",
+      "row": 168,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetGETAWAY"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "866e4be014b12356cd95e41c59090e4563ccdf5ef1dabf102ebed7f6ebf51447",
+      "row": 169,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAliphaticRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "53883e2f7c18588cdc76c7d03320f175f6d93c4dae891b476dbaf07c0b9bc14c",
+      "row": 170,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetBridgeheadAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "65bdf3f2e68700f84c121b5da0dc8e3d3c9f1b1eac8165758fb3aa1c433c9f5c",
+      "row": 171,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetHeterocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "f2ac3447cd5b2f49de088971ac4aeae1132893d30dd60d2d20c428ecd59f8a1e",
+      "row": 172,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "324b2d66e5c7b3af4eb2c8c131252987e6bd154a3f1fdaef0a9c395d03fcfc84",
+      "row": 173,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetSaturatedCarbocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7c6630228ba06af0d3e61b6e09e3cf19b769338580816a7da0527f12f6d0f26e",
+      "row": 174,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetSaturatedHeterocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "41858afc44b675b95d9906d4decd8f9628906a5f0467d3e9848e690a7c08dec7",
+      "row": 175,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetSaturatedRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "b3fae8a318e1111bfb77a70b1447671480366253a8af8e21765991951a4a8414",
+      "row": 176,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetChi0n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "dba96744fed59495e33d3a52e907e24bed4667f5b15a43c199b2fee1b0d2b7ab",
+      "row": 177,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetChi0v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ed2a459b0b6c7199ff81f129ff9dfe47450aec00cb2a77103c73f3ea1bd85942",
+      "row": 178,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d417e384a90b2d02e3b7bf3ea255f392d8c7e987131f75af06ceeea1b876046e",
+      "row": 179,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "01f3061a713b795a77c9a03fa99d4ddb54c0fb1e64b495a8c9868e95949aff8f",
+      "row": 180,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a53ceadb7c60c89ce9a74d5e1d2a813d888201900a28d4a2b5b132b972a05a11",
+      "row": 181,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "6374b20c00f03d381465d5d616434821f4edecb1c97b34024a996803340f1f40",
+      "row": 182,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "287f116dc2fa44847132700d6c99b4355197684fca0628d3221bae530e774cc6",
+      "row": 183,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d820cbadfb576f90135c09c8252e85e22faf2e3368c8a06d4f260f855626f9d9",
+      "row": 184,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "84b4d039c75d991afbb3558c16d68fc13d4e8fd4fa78cb77bfe216ae62435b11",
+      "row": 185,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetCoulombMat"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "f7ef013ffd47b92889f717a48b35fd4920c5f3de06bd487174eab8deca32a50f",
+      "row": 186,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetCrippenDescriptors"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "af1e0cea36a855df1c27ffda888f0a04f3aea2824eebf7b2792a2d4150472c07",
+      "row": 187,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d0e947f68fb68ff63e6e6dc50258effed782297d1c1bb655bacec776c31bb369",
+      "row": 188,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetEccentricity"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "bab49f58fd13051d11b5f337c2943653951dba2f5358dd55927b9a7179d4409f",
+      "row": 189,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetExactMolceularWeight"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ced59d3ebdf33686bcf7eacc6c35754d7252268a4bacc8588a5c5895b1efc92d",
+      "row": 190,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetFrtool_pathCSP3"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7467f7318ac8a6a7f43c0a15f1293ef7d8e925838aeccf7983f85cefa2a0fbeb",
+      "row": 191,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetGETAWAY"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "573352c6e6293cd227794a7e50a20b905b94bd0b8ff9e032da30a2a25050f674",
+      "row": 192,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetHallKierAlpha"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "30882e65cfd699b5eb25664d6e6d987321003215d914ad0f9bd5b89e9faac3f0",
+      "row": 193,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetInertialShapeFactor"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "cdf0b36973adf8894834adfedad82939673b2d23cb7da956d50df736b912237c",
+      "row": 194,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "212eeb81812b54edd71a1a82470fd5a95fbf8755187804766d0384cb5c10a05b",
+      "row": 195,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetKappa2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "44c87c8b8de759233765d0961ba9726857e984b2211bdcc3ad03ab7402473e9e",
+      "row": 196,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "187ae8b225e21d7f920a23d64fc06837fda2c76faa05d542a6926da29b1254a7",
+      "row": 197,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetLabuteASA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7404522665c59dde031cc49b453523b58759ace58234ccfffdb53de1be05ad7e",
+      "row": 198,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetMORSE"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0a2437afc15be960b74cc28eef4f801aeec21a6c74dbef7403b38d476aca75f5",
+      "row": 199,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetNPR1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "79fca81b056fdb2f671767a0b1e6b7d37d23afb77710cadd1fda00b2670f1403",
+      "row": 200,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetNPR2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "fd32dc52a005dac7d64474fc09623fa96ccd820a1a05516077c8271a84a9a79a",
+      "row": 201,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetAliphaticCarbocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3df8c358689acc5d966b390b77244ddf093b570cb2c299e30e2071f31902aa3c",
+      "row": 202,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetAliphaticHeterocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "f84fd33d046187ee2a7678a850c66e8c7307f1a7d216ddaae52510038cbe4846",
+      "row": 203,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetAliphaticRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "76cfa62506a188bfe2f36c148f03f607c9c243011b836211c3b88f5e5019b095",
+      "row": 204,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetAmideBondsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "8fcce6ade6241ec582ec216c091261a48ada06b2492d7867ea35c7b3378acfa9",
+      "row": 205,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetAromaticCarbocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ff1f2e22524d53b798fff798fb4a0168b7655d5d6ad16f348244f732b5a21056",
+      "row": 206,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetAromaticHeterocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ee6580093793a2281051fbe28f63c865618856b0cbd9f5192142112a8ea19df9",
+      "row": 207,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetAromaticRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e865560606c0f2be7e69e2af2aeea1793a507519e4d166d321514a08e3b664cf",
+      "row": 208,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetAtomStereoCentersNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "6a146e61660146a31c155785fd9d0cc36501a5fd32b7aa6e47f9fec2b6b8e98d",
+      "row": 209,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "1f7b0e18728831dc04e2d3f4ab0a0ac2afe60c7445d64c7bf349a40cf5682e13",
+      "row": 210,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetBridgeheadAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a9815b2be58effad43f09a81415fd0efaa44cfc1375be52b86da8d626d3aed77",
+      "row": 211,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetHBANum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "10e228095d82e017ae0b7d75b8b0027d0a32ae960a0642d9c26dcd6b0173f99f",
+      "row": 212,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetHeavyAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "aa8a9a5d3486300537f7cf3281247e91a2db34da61ba237ce30936d4747732c9",
+      "row": 213,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetHeteroatomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "26bf9d68761daab615d22f9bcdc83c29e46c43db4d64408b3388538093e01954",
+      "row": 214,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetHeterocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "acc718a4e7a67cff524b58fc14fd7d770e0d89905ae7f423ac923e3afa91b5f4",
+      "row": 215,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetLipinskiHBANum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "f369a412deeb2413a2b6367d5489dbd0f26e5c20fcf5510f78a068ff4abe50ac",
+      "row": 216,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetLipinskiHBDNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "305ed69bcc47476bc1215d8b772a8a4885340365ae8e9dccbbd389fa6538b39f",
+      "row": 217,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "c44087b844bde63be7807ce24d23bb016a453af5d667a4d8d414946ed42b4b6a",
+      "row": 218,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetRotatableBondsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "4ae8124d0c1e989af6678c12dbeb663632ad204fb0fb2d1280155101529b3e31",
+      "row": 219,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetSaturatedCarbocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "109781879ae4c3a189f80f415d61686576609d430bfebaad178951703391f5a1",
+      "row": 220,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetSaturatedHeterocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "af43ba5fde554a0e84e3f190a33f296925e45d513e4c1d3e4844d71dd1fb51ec",
+      "row": 221,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetSaturatedRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "44dcbdf7d710ce29c885bfaf9a347caa3f609166f4ec9263e673cd2ec7594c07",
+      "row": 222,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetSpiroAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "456c971575be159cb6a879be2c4297ed1e9fcda5f982c35a5a6514a156820cfd",
+      "row": 223,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetUnspecifiedAtomStereoCentersNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "cdd544585f9a93285904bd1868f8367985c5df85b40a6e6d915d7b1b4e079790",
+      "row": 224,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetAromaticHeterocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a28de7fd73778ccd160a63e92d6c58d71ee45b3afe1d122fa4cf20cf1f61a360",
+      "row": 225,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetAliphaticCarbocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "688a5b10406ff70cfa5f61a102dbc573e0644e5d4a1add9f67c18d4b7b1880f7",
+      "row": 226,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetCrippenDescriptors"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "6e3a48840ceeb3b715a6d8a846605c1660e7f7ffcde434da140d1003049b31a6",
+      "row": 227,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetAliphaticHeterocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "9478ec0110fcc85b9756bb6656d272efd40b1c66da0bc31db3e03740c78105ae",
+      "row": 228,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetAutocorrelation3D"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7683f40c333231ef4bf87b75297db96b0b72d2dedfaa441ccabad648ec27878a",
+      "row": 229,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "04b6226d9bfaf0cfb41d5fad2274a033e5f9ca9125d5f4b1ae248c1bb5c42f40",
+      "row": 230,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "5cc607f7478b7a99e03a0bfc5788e5ea8ab1d4ed2fd8984e72976246a0cc9ff3",
+      "row": 231,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetChi0n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "195b7f1f9b85bd301ac2a6c5bf6e01b778dfff3a528ed59000bbc33dff96f7f7",
+      "row": 232,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetNPR1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "78e494fae919abfb76b92ab2c522e06b571535d9cfba36442390cebfb8fcadbe",
+      "row": 233,
+      "tool_path": [
+        "SlnToSmiles",
+        "SMILEStoSELFIES",
+        "LengthSELFIES"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "8c80ce1efe963e2ad453622a5b6794bc7838cc37602ba857f42bac9d602ddef4",
+      "row": 234,
+      "tool_path": [
+        "SlnToSmiles",
+        "SMILESToInChI",
+        "InChIToCSID"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "fd00992457a66530fbe8b5cb3d31777034ceda142821bf8ae07f1ce9398797e8",
+      "row": 235,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetFeatureInvariants"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "49d6b43cdf51ff0c979d3ea34b2c43df3b60fc42c1675a6adb162d3ca4193c0f",
+      "row": 236,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetKappa2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3e809d274dd7e78ffffb4e2278fca2d22e7a2d6b54ddb539cd174892e925d9e8",
+      "row": 237,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetHBDNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "6b899285982da44226cc8943f5fade2f0d9244484fa137f8a3758c96c0ebefa1",
+      "row": 238,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetAmideBondsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "1321adb9a8279e20315101adedafeeafd1a9d800556492ad665c6ed5738af357",
+      "row": 239,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetLipinskiHBDNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "8a8bc141727919a14ad20b940b61c109ec400d26df877edbc7572d87faa33961",
+      "row": 240,
+      "tool_path": [
+        "SlnToSmiles",
+        "ProcessFingerprintMol"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "6a6b4279774dfa3fd0d5c6af77863289da8caa6956c2a660cea4628715fe3e99",
+      "row": 241,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "c50dee0c6b6496c990845ed9a2fad51dfcb2f36a694d683cd45b329287ad2255",
+      "row": 242,
+      "tool_path": [
+        "SlnToSmiles",
+        "SMILESToCAS"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "eb957529c069983286d1b7edf4fffcd83ab44c4474544628ae7d48c9b3986563",
+      "row": 243,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetAdjacencyMatrix"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "baab4f8a440429bee7d57ddae6f125d23e83890a7b98125e23d6271b98856e0a",
+      "row": 244,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d12415b20f30150f326bb80a8356ebb19a89a3d26142870f1b21642d68e7869d",
+      "row": 245,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetHBANum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "02512188b1852ed4f47c0e9dd4317dfc030632f36a19af3f7c2becebee314a48",
+      "row": 246,
+      "tool_path": [
+        "SlnToSmiles",
+        "CalculatePMI2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ef302e9ad48b375f8b2bb38c7ff02dbedec3a78fa1b66b6ba7308995116d25fb",
+      "row": 247,
+      "tool_path": [
+        "SlnToSmiles",
+        "SMILESToCAS",
+        "SafetySummary"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "b2d3b20531d425f5472628cd75a288983e98abd2c024d679a339da8820a4cf20",
+      "row": 248,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "91ab4271f8bcd80de6fc506e1e3ebcf5cd9f5aad74adcbf5f6f23ccea55bbc48",
+      "row": 249,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "fe8233504dcf1f6405c22b576728c9cb0b837500935e6389d943778a9c191320",
+      "row": 250,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetLipinskiHBANum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e426d4f834508958133c93d907ed0c84e848063f5d4d991c63c1aea5990b21aa",
+      "row": 251,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetAsphericity"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "93ee4a4e8e6e9fac0389a38153133d09740dcb2d359127ef0dc11c17ef78e451",
+      "row": 252,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetCoulombMat"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "55b5aa7c0d89351b451ead4021bb12012bb2ca32a0e592eb20f9962ddc198d31",
+      "row": 253,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetMACCSKeysFingerprint"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "c91ac958d28d538d84ec06fe890ce6235f95d2069b3fb6af95d39c35948dfc4a",
+      "row": 254,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetUSR"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3ace3f545a95e32927d638b0990de3d5bf7355072f36bb3d8cdf622978a91949",
+      "row": 255,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetSaturatedCarbocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "eb96f75149a2da8c254c551ea5d9aaf190b6e173458168d9cb2bf52d838173d6",
+      "row": 256,
+      "tool_path": [
+        "SlnToSmiles",
+        "GenerateEstateFingerprint"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "2cb8705eb5f312923b08494c9e18bd8c3ffbb2e9ffd9e48b8c1562cb0047ec65",
+      "row": 257,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetSpiroAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0f47f0f5b64955ccfd773bb4d22f9334236c40e6d7d98a0b449b6e6e26243b23",
+      "row": 258,
+      "tool_path": [
+        "SlnToSmiles",
+        "CalculatePMI3"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "252dd2c8e4ae0cdae53aa4857ad7334e311528638fa4f309c5057727bed7b4e6",
+      "row": 259,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0bfea149367748c67ca2509093787dd44514c68b9acda0689af4d99a0d12cc0f",
+      "row": 260,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetHeavyAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "9780eecf86ee84c1dfcc145b9f23d8d8a3b2393f42322f531d2d4532bd1328d6",
+      "row": 261,
+      "tool_path": [
+        "SlnToSmiles",
+        "CheckValidRingCut"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "b2bbde6e2873060b5314f2af9fac81a546bd4815a34ab61a08d90c16c446996e",
+      "row": 262,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "f89e31ccdbf9a3c1bc268ef218931835c591e805a746c32a7f208cb478b6f291",
+      "row": 263,
+      "tool_path": [
+        "SlnToSmiles",
+        "CustomPropertyVSA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "664910474181c0f656f996c6cec2ef72e145059d0ed94f018e86cacbd4824699",
+      "row": 264,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetStereoCodeFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "5bedd2812f0c00c91de05f1ba92fce975ce621b3b6ecb9bad8afbed452368b8e",
+      "row": 265,
+      "tool_path": [
+        "SlnToSmiles",
+        "SMILESToWeight"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ae646fc083fd68b1b6804e84a2f5cbd8e3bd04622839c8bea0a0abf9c8e3d0e6",
+      "row": 266,
+      "tool_path": [
+        "SlnToSmiles",
+        "GetSaturatedRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7aca5d43fb567d4058d35ed3cefb8f108e559551720ecd751e4c6c3fba280a4c",
+      "row": 267,
+      "tool_path": [
+        "NameToSMILES",
+        "GetBCUT"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e8bcd1f3234af9d0ee956f89b47f3cfc64ec07ed6761346b3bbee8f2a48fb978",
+      "row": 268,
+      "tool_path": [
+        "NameToSMILES",
+        "GetMolFrags"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "87f4351849f4bfb1bce7252bda96deb1aed9331aac83f6d6c994ca0d056b7c87",
+      "row": 269,
+      "tool_path": [
+        "NameToSMILES",
+        "GetRdkFingerprintFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "499646b11c1bf5a465417f6fa44bb15c05f13694459f75f260400e2664dd7cd9",
+      "row": 270,
+      "tool_path": [
+        "NameToSMILES",
+        "GetLabuteASA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "32f874f9026f8179cfd2e3b5f7056712731c8844a09eeb65e39f193b32e2de51",
+      "row": 271,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculateEstateVsa"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "f681e14510d9fc403cf07b097ab19c60152220366e63b2da6c1a7b3ff70e6703",
+      "row": 272,
+      "tool_path": [
+        "NameToSMILES",
+        "GetAtomPairFingerprint"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "c7ad9c2fddaecdc01672e88557e23648f8302ed5231b9d7c7f166dfb62f5bd2d",
+      "row": 273,
+      "tool_path": [
+        "NameToSMILES",
+        "GetFeatureInvariants"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "44b40fd1117377b5a27a56c0a734ede664f2b81d61caa30bd81442307b5f31ae",
+      "row": 274,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "1545c5da04817c95f55b88f1bacf6769d3d30091655dd85cd992e3eafa34faf2",
+      "row": 275,
+      "tool_path": [
+        "NameToSMILES",
+        "GetMACCSKeysFingerprint"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "5389d0242819ddf99ea1f4d4ea6e041578f34148fe1c606978498d11ab9b973e",
+      "row": 276,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "8bb7b62a90f3cc32698c2ce9f540bf29cb2698a34a2f563c9fda98268ecab676",
+      "row": 277,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1n"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "158ced52b317a312877158482ffd4655b77afc7bd20bd4eb0e6c0e6330b2db5a",
+      "row": 278,
+      "tool_path": [
+        "NameToSMILES",
+        "GetSaturatedRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "6712a7ea34a15b317d25c0ff37dba132b177bb731bf4cb480ba69f1076adac5f",
+      "row": 279,
+      "tool_path": [
+        "NameToSMILES",
+        "BuildAtomPairFpFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a7fd4d8641545f96aaa7a8daebfe4284351aaa7a7d142f248603fca4e2798574",
+      "row": 280,
+      "tool_path": [
+        "NameToSMILES",
+        "GenerateEstateFingerprint"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "8dd6da8dd8fc3e7c89708308cb4cc18f8af212a7dab2b538bdf9c14fd09981a6",
+      "row": 281,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculatePMI1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "Parameter",
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "9219ba4dda733a7aa1da6b28b1df61c10f83b64cc6ac439c4e23cd91c2fb7508",
+      "row": 282,
+      "tool_path": [
+        "NameToSMILES",
+        "GetCoulombMat"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d68b3fa73e97137d0a3f97606e1a788766d91249786bcc280f376ad52064dc13",
+      "row": 283,
+      "tool_path": [
+        "SELFIEStoSMILES",
+        "GetHBDNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "6933340ac5225b05ce16389a17609271dc6789eccf9ef50f8052b623e556a298",
+      "row": 284,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0n",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "42fde86b4de0bc9b9f90b71db16ec2fb7e5f8149e90503b17c367c489fcb67c5",
+      "row": 285,
+      "tool_path": [
+        "NameToSMILES",
+        "GetMolFormula",
+        "GetExactMolceularWeight"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ddcd7140b10424b69a02715b6b40556eccc66f96a041c8d064fd3928fa59f71f",
+      "row": 286,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculateTPSA",
+        "AssignOxidationNumbers"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e468a46822d4d5d79ee96806b159e8c0fdf36120b51a0aa52212d74224fdcdbd",
+      "row": 287,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0v",
+        "BuildMorganFpFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "07fc1118af62be07b1ded1cda2b81a1ffd625630b450832b9f71f3de76a3f550",
+      "row": 288,
+      "tool_path": [
+        "NameToSMILES",
+        "GetHeavyAtomsNum",
+        "GetRotatableBondsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "23ddc5bddd1d25085cd67741a990668c577d84cfc34c019255d2f29ba838b3d0",
+      "row": 289,
+      "tool_path": [
+        "NameToSMILES",
+        "GetAutocorrelation3D",
+        "CalculateRadiusOfGyration"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "b151afacd09fffb6791d5fab72faa3b5396a880ccb8ba52470285e45ecda8158",
+      "row": 290,
+      "tool_path": [
+        "NameToSMILES",
+        "GetAutocorrelation2D",
+        "GetCrippenDescriptors"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d24993631ad0a21d38343d1b02f7d601c5b864a8e09644efe42eea24a2e701db",
+      "row": 291,
+      "tool_path": [
+        "NameToSMILES",
+        "GetEEMCharges",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7c59c92dbedea09d84aca10171279ccfb0e153e5fc7c517fbe45e629589103da",
+      "row": 292,
+      "tool_path": [
+        "NameToSMILES",
+        "GetMolFormula",
+        "GetExactMolceularWeight"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "506cdd79687f5285371a27ed9b6cd60e02a207f1748c6c6fbced2d98a7d02b42",
+      "row": 293,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculatePhi",
+        "GetKappa2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "54e54d052b9b4e896f3ea60656bfe06e8a5d55934fca3e9771ff3136def4ff28",
+      "row": 294,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1n",
+        "GetExactMolceularWeight"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a8bcc9e58db2a686329a8086e77d969ca733de11e977fe3dadd5383e3c70d69f",
+      "row": 295,
+      "tool_path": [
+        "NameToSMILES",
+        "CalculatePMI2",
+        "GetNPR1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "80f43f9f796d4d3f600df461f7d7c8e44af633852205e52ab60d72d1101ece22",
+      "row": 296,
+      "tool_path": [
+        "NameToSMILES",
+        "GetNPR2",
+        "CalculateSpherocityIndex"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "2b5e9b8c571f28d0f07b00e649b36fda29d8138ecc9f5b1825932c9b1797be64",
+      "row": 297,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "2be040d0f12accb1f53ff8ff0bb54b2c96cf3af91c8948eeb2a9f2e7a54d8adc",
+      "row": 298,
+      "tool_path": [
+        "NameToSMILES",
+        "GetMACCSKeysFingerprint",
+        "GetHeavyAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "8057bd56d56051255a8f6f49284351ab8cdeef4b72e652abe2c3e7edb88c5570",
+      "row": 299,
+      "tool_path": [
+        "NameToSMILES",
+        "GetAtomsNum",
+        "GetAdjacencyMatrix"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "635574b3d0a32e2f8eab178b0a9ccaa6ff856240a28531422763b6c88378e3fb",
+      "row": 300,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0n",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "df47b81e28767db5f1a4242a51bb0d7cf865fc387bdd9123a43656d688246863",
+      "row": 301,
+      "tool_path": [
+        "NameToSMILES",
+        "GetKappa1",
+        "GetChi1v"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "65b62a85b738a167421aca80e155ad44498060f5639cb756b42684244e81e873",
+      "row": 302,
+      "tool_path": [
+        "NameToSMILES",
+        "NameToSMILES",
+        "GetFormalCharge",
+        "GetRotatableBondsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a24c1bd03ad21db2db1467bbc9016cb125a589cca30bf2d78546963fc586e279",
+      "row": 303,
+      "tool_path": [
+        "NameToSMILES",
+        "GetAliphaticCarbocyclesNum",
+        "GetAromaticCarbocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "cca71dfc43fd1029c054d3e2cc743ee81a42a3e403b0bd73a1bdbdfa12391ea1",
+      "row": 304,
+      "tool_path": [
+        "NameToSMILES",
+        "GetEccentricity",
+        "GetSpiroAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "8fd2e1cef7d8e28f9af43cf73ab38b537e015bb987c9007d481bdd1784cc522a",
+      "row": 305,
+      "tool_path": [
+        "NameToSMILES",
+        "GetMORSE",
+        "GetLabuteASA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "defd72f7195912b9b10a20ba44c643570b5ae68ab43ccadf8348438319a35e97",
+      "row": 306,
+      "tool_path": [
+        "NameToSMILES",
+        "GetKappa2",
+        "CalculateRadiusOfGyration"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3e5923015cbc24de813e958d11e84a344b23fa9aabfdb464b95fd862f9235844",
+      "row": 307,
+      "tool_path": [
+        "NameToSMILES",
+        "GetFormalChargeOfAtoms",
+        "GetMolFrags"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ec15accb5e8ce9ccdb1159b23db3a47a50feb001a48f14376e6087da96ac46aa",
+      "row": 308,
+      "tool_path": [
+        "NameToSMILES",
+        "GetTopologicalTorsionFingerprint",
+        "GetMolFormula"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "80bab6c4cf31eecf6c4d2b74fd003ca53c5a436576246bd8bccfc9fe3b51fda0",
+      "row": 309,
+      "tool_path": [
+        "NameToSMILES",
+        "GetHeteroatomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "db6f016ca42b6c20d29e9fd0dc37785c80af8b6f0f40711986e41e966dcfc191",
+      "row": 310,
+      "tool_path": [
+        "NameToSMILES",
+        "GetHBDNum",
+        "GetAromaticHeterocyclesNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e5421beb4b87ab9f270e44ee69b791761da028b06cf36c02d7a0d9bd66bd3530",
+      "row": 311,
+      "tool_path": [
+        "NameToSMILES",
+        "GetFrtool_pathCSP3",
+        "GetBridgeheadAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ac940fedc5f6c9f60de64fb36f935ddd6e02c44232de972720f60af2e9b38b02",
+      "row": 312,
+      "tool_path": [
+        "NameToSMILES",
+        "GetCrippenDescriptors"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "f19d65196d0fc5c474005db92c1a7fede6fe720f6cec561bd02ee6a3bc577299",
+      "row": 313,
+      "tool_path": [
+        "NameToSMILES",
+        "GetAliphaticRingsNum",
+        "GetLipinskiHBDNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "1391d2aaf44522fcd16e43d3e20cf18ab0ee36709157abcac40cef982f33799f",
+      "row": 314,
+      "tool_path": [
+        "NameToSMILES",
+        "GetKappa1",
+        "GetCrippenDescriptors"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e056043f65eca69ca6d10d23109569df44014ccf9f26915016b018726839e99b",
+      "row": 315,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0v",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "fb0691f3614df5eee0cc3ce284840968f3eaadf4befd6e800c0a52a9624e8306",
+      "row": 316,
+      "tool_path": [
+        "NameToSMILES",
+        "GetRotatableBondsNum",
+        "GetAutocorrelation3D"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0f020ef7a912f8cd85c9aa611921918e5e79c5722f0bbd11a7def4dfe4d6f218",
+      "row": 317,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0n",
+        "GetKappa1",
+        "CalculateTPSA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0a235f9cb9259c5ca7abe932e8e966229e4bfc40417a692938ec45d689286d2e",
+      "row": 318,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "CalculatePBF"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "25f24032b494aa68aee92149e0b94b7ada62c00332752573d5636921fd3a546e",
+      "row": 319,
+      "tool_path": [
+        "NameToSMILES",
+        "GetCrippenDescriptors",
+        "CalculateRadiusOfGyration"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0852bcd86de5c2f92aaab5cc8d368d9e95e38bd896d822581859bf8d1a9abb0a",
+      "row": 320,
+      "tool_path": [
+        "NameToSMILES",
+        "GetMolFormula",
+        "GetExactMolceularWeight",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "633cece3f4b93b4e88779e0bc51e5cabd30b91e5e409ba430a43e288398544d0",
+      "row": 321,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0n",
+        "GetMolFormula",
+        "GetExactMolceularWeight"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "bd4d5633cf154ac06f8f8366569e1d9332efb9980770b89d42afd963bd3c4763",
+      "row": 322,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "CalculateSpherocityIndex"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d5603699a4d0ffdc2e08853a211b863258f036b335fea585e0e1af38ee27b429",
+      "row": 323,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetCrippenDescriptors"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "586dff98295cc9e81f64aaa98794f36b1edb5df0ec10fa3fcabff2c16841ff16",
+      "row": 324,
+      "tool_path": [
+        "NameToSMILES",
+        "GetNPR1",
+        "GetNPR2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "c4e15829c2947e1d9449d8bf6e536e046217b3bc720efbe55d4534319ed9c64b",
+      "row": 325,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetKappa1",
+        "CalculateRadiusOfGyration"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0e477d7a8d3711cc76b8b0a6a96f68e0931160b4bfad9113edbf71ff27dd2f15",
+      "row": 326,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetKappa1",
+        "GetAutocorrelation2D"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "db7a2e8abbc764f2b039e01cd45555a3956631fd7c643aab3dd31b9607f96da0",
+      "row": 327,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1n",
+        "GetKappa1",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "1676a0cca9be202a66b133528b65d27a02a164e1edc27c964eca661df3727a42",
+      "row": 328,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetMolFormula",
+        "GetHeavyAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "6dbbb4d972400654fafd48af764bde3a686fb6ff955332721dcd585178e40243",
+      "row": 329,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0n",
+        "GetKappa1",
+        "GetAutocorrelation3D"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "833e5f8e2936d773a319c117168b3278eb2fdfb25f2860bbf271504d69f2ebf0",
+      "row": 330,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "CalculateTPSA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0054a6f7b513548dbe0466c5e97c311e4bcf395cd029e6229cf4e1331068d33e",
+      "row": 331,
+      "tool_path": [
+        "NameToSMILES",
+        "GetKappa1",
+        "CalculatePBF"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d99bc080f3bb57aeb900ac8fc3eebcf8f164a6cd06e65a514a5269a791099a52",
+      "row": 332,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetKappa1",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d4fbe74d7ba8f87ae9f6d67eabe8df4f91b5acd81791668660c40125c2bf734a",
+      "row": 333,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetKappa2",
+        "CalculateTPSA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "51ebae978a3b89f9131b35a85b5aa66c82937f4d8d22ad4d727c2dff69a268e8",
+      "row": 334,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetKappa1",
+        "GetHeavyAtomsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "627d032f45ba815544a21c9eeb894973eb5c64a9f9063a3f5743cefacd14d4ad",
+      "row": 335,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0n",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d612d9b786f2d73945d7f1a21bed708e86548214294f300221270a281e7f5fc4",
+      "row": 336,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "CalculatePBF"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "b360ccc2e9e8a07dbbae11eca7f7b9646d65fa0ec28e9ad4e3a32c3758c72e6b",
+      "row": 337,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0n",
+        "GetKappa1",
+        "CalculateTPSA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "622f7b25b910d475dc54ef858ea405f7eb62086a458188c95b261736290097ec",
+      "row": 338,
+      "tool_path": [
+        "NameToSMILES",
+        "GetMolFormula",
+        "GetExactMolceularWeight",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "2d5f7811d02bac167d09387dbec8f4d884a27eac770d913f6577142b726ab96a",
+      "row": 339,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "aa9bd5cac1382bd409fb30d9a76d094479e46e1baf5ed4ac8881d551515a165d",
+      "row": 340,
+      "tool_path": [
+        "NameToSMILES",
+        "GetMolFormula",
+        "GetExactMolceularWeight"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "5c61685ca155dba999ce10de097a2168b192afb4bbcc83dedfa3137dea0e81a7",
+      "row": 341,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "CalculateSpherocityIndex"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "fddf69bcafea28afe1ad2930847cd5ed445484b4bf33c6f7f52223134325cf2a",
+      "row": 342,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetNPR1",
+        "GetNPR2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "c773135931440291eed671ebb7a08ea4c227ecadacc05d72ee0bd9f31d057551",
+      "row": 343,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0n",
+        "CalculateTPSA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "827d6ac5a881fc67dae753e1c029d4d6c1bbce3add422355a328904c5e173131",
+      "row": 344,
+      "tool_path": [
+        "NameToSMILES",
+        "GetKappa2",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "5cf61f9fc1e95a319e6630ffcea67192b641a3954f93674c76c73ac702ae895f",
+      "row": 345,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetKappa2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "8d4f7da13711a48189f2a5e399d8023e5d719306ea0ff82a292658faf578755d",
+      "row": 346,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetKappa1",
+        "CalculateRadiusOfGyration"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "d67e4cfa47f3b831a646b82187fe36ef2b63ffdae2fe9efe0f08a143cffd3d33",
+      "row": 347,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetMolFormula"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a0bc4275606578f5461c9253d3411173b988af1ed679f8007f76e9fd84a01a66",
+      "row": 348,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetMolFormula",
+        "CalculateTPSA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "df9128f6e4bf8d5ea72175735b11257ad6fe1c22b3f688826253aca1563a61bd",
+      "row": 349,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetKappa2",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "0a15fbf061714feef46e1eada1a4ca52b1ddb73e3a7cef73e01ba23e1928f8d1",
+      "row": 350,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7a2888a6d298352c02a993b6c2a5e99c0c9ddd074edad334e9495f91d7c0fa6e",
+      "row": 351,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "6094b896152e9a7e8ec8ed442b8f5275c0f1454338ea5ffb3717feaf102f16cc",
+      "row": 352,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetCrippenDescriptors"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "afdf1ab904a7dec343a2b0fe257ea59d8666d88570c96b80ba66b92ab8d6d51b",
+      "row": 353,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0n",
+        "CalculateTPSA"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e2626aab4f757f29b8d121179cd23325d36378a50cfedbbccb301666e465064a",
+      "row": 354,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "CalculateRadiusOfGyration"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "b7a928075d21d00893adbf852ea50213166fd06326abb6fb16053b359c1360b1",
+      "row": 355,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetCrippenDescriptors"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "9e1ff83a79e68c262911e1219d27621ce43e9c1a5dfe76fea4b02e076ad37ad4",
+      "row": 356,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi0n",
+        "GetEEMCharges"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "262d832bf836ef8c07bf2927687c16ea42112e24f2dd7cc6d7f8d490d972e811",
+      "row": 357,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "CalculatePBF"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "f5955f4d741fb21a96b38d9dff564041925192726cac289bcf3ffc044fa6fcc0",
+      "row": 358,
+      "tool_path": [
+        "NameToSMILES",
+        "GetChi1v",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "69fc54142608e5a220d2d985f1d06de45753da3b6e97832188859a4fa2fd11c8",
+      "row": 359,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "SMILESToCAS",
+        "SMILESToCAS",
+        "CheckExplosiveness",
+        "CheckExplosiveness"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "93b5d247c9a14137cf8965738cb13b57dd52a9a49172b28232065cfb6c6b969a",
+      "row": 360,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "InChIToSMILES",
+        "GetKappa1",
+        "GetKappa1",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "7e804ce6cda8cfbb644b1109e0a7c2d3b2e3bacc9e318325528e61c1d02cd1db",
+      "row": 361,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "InChIToSMILES",
+        "GetMORSE",
+        "GetMORSE",
+        "GetMORSE"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "37d0b366644d2edb128a5da15da897d5ee1aa97bc5b8282d0eb764e79da9964a",
+      "row": 362,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAliphaticRingsNum",
+        "InChIToSMILES",
+        "GetAliphaticRingsNum",
+        "GetAliphaticRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ec20889195c187d9de31371322432292acbad919905fc05e21f9fee7718a5141",
+      "row": 363,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "InChIToSMILES",
+        "GetAmideBondsNum",
+        "GetAmideBondsNum",
+        "GetAmideBondsNum",
+        "GetCrippenDescriptors",
+        "GetCrippenDescriptors",
+        "GetCrippenDescriptors"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "09848648832bade3641d13731d8c87f92b1621299d9cca45fce7dbc2974240d0",
+      "row": 364,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "SMILESToCAS",
+        "SafetySummary",
+        "GetKappa1",
+        "InChIToSMILES",
+        "SMILESToCAS",
+        "SafetySummary",
+        "GetKappa1",
+        "SMILESToCAS",
+        "SafetySummary",
+        "GetKappa1"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "5914e1c03c966865b6b8dc91f3ac2523af20a5838cf02fd66bc06c78a8da296a",
+      "row": 365,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetStereoCodeFromSmiles",
+        "GetStereoCodeFromSmiles"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "101bdd3f6f2cb63339842e2169074d65ff89039948892292f89da26a8f707593",
+      "row": 366,
+      "tool_path": [
+        "NameToSMILES",
+        "InChIKeyToSMILES",
+        "GetFractionCSP3",
+        "GetFractionCSP3",
+        "MolSimilarity"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "f2ad642d5eba408b4a8566b58b2fed4e82b5ea4c98907bb1d9ccc777b5597187",
+      "row": 367,
+      "tool_path": [
+        "NameToSMILES",
+        "NameToSMILES",
+        "NameToSMILES",
+        "GetCrippenDescriptors",
+        "GetCrippenDescriptors",
+        "GetCrippenDescriptors",
+        "SafetySummary",
+        "SafetySummary",
+        "SafetySummary"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "1732f72447bf3abd5aeb5beec50365ebbaa73aa13d61aba9317254c2e67a0840",
+      "row": 368,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "InChIToSMILES",
+        "GetKappa2",
+        "GetKappa2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "a21155ef762a395ff2275520be7e3158b9c35a1914d1010fa9f03dc1681d5d92",
+      "row": 369,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetFractionCSP3",
+        "GetFractionCSP3"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "4407854853ea6555eb6371161fe6e216f390a254ffb63fb30096c59a083079fc",
+      "row": 370,
+      "tool_path": [
+        "NameToSMILES",
+        "NameToSMILES",
+        "InChIKeyToSMILES",
+        "GetAliphaticRingsNum",
+        "GetAliphaticRingsNum",
+        "GetAliphaticRingsNum"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "3bc235ea8d431b12428006e1287fd72da18baf887ec8ed6ca473f10c87af64e2",
+      "row": 371,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "InChIToSMILES",
+        "GetKappa1",
+        "GetKappa1",
+        "GetKappa1",
+        "GetKappa2",
+        "GetKappa2",
+        "GetKappa2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "4bacf24fc55aa8dc6d18b2e64786a35db400f5fb51e8bb935ee439133dd32cbd",
+      "row": 372,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetFractionCSP3",
+        "GetFractionCSP3"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "cba65fe30a56db79973541d48fdb9f14aee9eb40f1993eef410ebce191369154",
+      "row": 373,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetLabuteASA",
+        "GetLabuteASA",
+        "SMILESToCAS",
+        "SMILESToCAS",
+        "SafetySummary",
+        "SafetySummary"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "ca0150699663abcb7b8327e58815a24f4c590a0e273b7422afc73fc35102244c",
+      "row": 374,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "InChIToSMILES",
+        "GetAliphaticHeterocyclesNum",
+        "GetCrippenDescriptors",
+        "GetAliphaticHeterocyclesNum",
+        "GetCrippenDescriptors"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "e7deeb59c15cacd7fbc45c383ecc384403e430782ca260e59925cefd77bfd4c4",
+      "row": 375,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "InChIToSMILES",
+        "GetBCUT",
+        "GetBCUT",
+        "GetBCUT"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "2224306730f8c72cf3861612ab7dddc33cce91005933e488fe000609af3b065f",
+      "row": 376,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetMORSE",
+        "GetKappa2",
+        "GetMORSE",
+        "GetKappa2"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "9863227141272225b088d42c71b73489c154bc12e4de008d5485e8b5c5191b17",
+      "row": 377,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "InChIToSMILES",
+        "GetAmideBondsNum",
+        "GetAmideBondsNum",
+        "GetHallKierAlpha",
+        "GetHallKierAlpha"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "975b8710d44148ec8ea6204b927dde56c2f55887319c599d4c2a30293179a5f1",
+      "row": 378,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "InChIToSMILES",
+        "MolSimilarity",
+        "GetFractionCSP3",
+        "GetFractionCSP3"
+      ]
+    },
+    {
+      "has_answer": false,
+      "public_fields": [
+        "question",
+        "tool_path"
+      ],
+      "question_sha256": "65515ab58b3f1c9a6bd1c553b81f0b4eeee82e85b1a501f88ce477021da8405c",
+      "row": 379,
+      "tool_path": [
+        "InChIKeyToSMILES",
+        "GetAmideBondsNum",
+        "GetAmideBondsNum",
+        "GetLabuteASA",
+        "GetLabuteASA"
+      ]
+    }
+  ]
+}
