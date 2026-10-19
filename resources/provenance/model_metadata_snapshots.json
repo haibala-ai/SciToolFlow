@@ -1,0 +1,235 @@
+{
+  "checked_date": "2026-10-19",
+  "models": [
+    {
+      "repository": "lamm-mit/ProteinForceGPT",
+      "local_directory": "models/ProteinForceGPT",
+      "component": "metadata_proteinforcegpt",
+      "metadata_files_matched": [
+        "README.md",
+        "added_tokens.json",
+        "config.json",
+        "generation_config.json",
+        "special_tokens_map.json",
+        "tokenizer_config.json"
+      ],
+      "metadata_files_different_or_missing_upstream": [],
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1817061136,
+          "sha256": "bffe3c02d1f677f43138d6a6669c53ecc1881d9211fe15a35502d7a092cff4b5",
+          "bundled": false,
+          "matches_remote_lfs": true
+        }
+      ],
+      "verified_revision": "342569141fb643ac49fd9690e644a859a9c5f881"
+    },
+    {
+      "repository": "facebook/esmfold_v1",
+      "local_directory": "models/esmfold_v1",
+      "component": "metadata_esmfold_v1",
+      "metadata_files_matched": [
+        "README.md",
+        "config.json",
+        "special_tokens_map.json",
+        "tokenizer_config.json",
+        "vocab.txt"
+      ],
+      "metadata_files_different_or_missing_upstream": [],
+      "weight_files": [
+        {
+          "path": "pytorch_model.bin",
+          "bytes": 8442062570,
+          "sha256": "2ee07356b125d1e3e57503c204111fd7323347fc4735d41d3caac57c2a78e116",
+          "bundled": false,
+          "matches_remote_lfs": true
+        }
+      ],
+      "verified_revision": "75a3841ee059df2bf4d56688166c8fb459ddd97a"
+    },
+    {
+      "repository": "QizhiPei/biot5-base-dti-human",
+      "local_directory": "models/biot5-base-dti-human",
+      "component": "metadata_biot5_base_dti_human",
+      "metadata_files_matched": [
+        "README.md",
+        "added_tokens.json",
+        "config.json",
+        "generation_config.json",
+        "special_tokens_map.json",
+        "spiece.model",
+        "tokenizer.json",
+        "tokenizer_config.json"
+      ],
+      "metadata_files_different_or_missing_upstream": [],
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1008439240,
+          "sha256": "b1d0cdd4a491efebd6e8ff809aaafc43539bb66e314515a0b991c00e45c8ced7",
+          "bundled": false,
+          "matches_remote_lfs": true
+        }
+      ],
+      "verified_revision": "09c8c777f5d64595574231dd248ae25e4f799684"
+    },
+    {
+      "repository": "QizhiPei/biot5-base-peer-binloc",
+      "local_directory": "models/biot5-base-peer-binloc",
+      "component": "metadata_biot5_base_peer_binloc",
+      "metadata_files_matched": [
+        "README.md",
+        "added_tokens.json",
+        "config.json",
+        "generation_config.json",
+        "special_tokens_map.json",
+        "spiece.model",
+        "tokenizer.json",
+        "tokenizer_config.json"
+      ],
+      "metadata_files_different_or_missing_upstream": [],
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1008439240,
+          "sha256": "905575db70a80778ccc41df6b4488add26729612fba2d3b7faf4659a5372a278",
+          "bundled": false,
+          "matches_remote_lfs": true
+        }
+      ],
+      "verified_revision": "af582313f5c2a50ed16f16c3d0cc1e2129050e70"
+    },
+    {
+      "repository": "QizhiPei/biot5-base-peer-human_ppi",
+      "local_directory": "models/biot5-base-peer-human_ppi",
+      "component": "metadata_biot5_base_peer_human_ppi",
+      "metadata_files_matched": [
+        "README.md",
+        "added_tokens.json",
+        "config.json",
+        "generation_config.json",
+        "special_tokens_map.json",
+        "spiece.model",
+        "tokenizer.json",
+        "tokenizer_config.json"
+      ],
+      "metadata_files_different_or_missing_upstream": [],
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1008439240,
+          "sha256": "cc0a17d7b92d2e8db23e20e3fac5d0863d260564c359e4835cf1560a94766f26",
+          "bundled": false,
+          "matches_remote_lfs": true
+        }
+      ],
+      "verified_revision": "ef36a858815ca284956e75bfc5609984b870dd3a"
+    },
+    {
+      "repository": "QizhiPei/biot5-base-peer-solubility",
+      "local_directory": "models/biot5-base-peer-solubility",
+      "component": "metadata_biot5_base_peer_solubility",
+      "metadata_files_matched": [
+        "README.md",
+        "added_tokens.json",
+        "config.json",
+        "generation_config.json",
+        "special_tokens_map.json",
+        "spiece.model",
+        "tokenizer.json",
+        "tokenizer_config.json"
+      ],
+      "metadata_files_different_or_missing_upstream": [],
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1008439240,
+          "sha256": "885b1006677fa66239b9211d1b9fceba8b7779cda475f035af1e3746b235068c",
+          "bundled": false,
+          "matches_remote_lfs": true
+        }
+      ],
+      "verified_revision": "8243f70fb11b125da21ba145b9f51d8e7466df64"
+    },
+    {
+      "repository": "QizhiPei/biot5-base-peer-yeast_ppi",
+      "local_directory": "models/biot5-base-peer-yeast_ppi",
+      "component": "metadata_biot5_base_peer_yeast_ppi",
+      "metadata_files_matched": [
+        "README.md",
+        "added_tokens.json",
+        "config.json",
+        "generation_config.json",
+        "special_tokens_map.json",
+        "spiece.model",
+        "tokenizer.json",
+        "tokenizer_config.json"
+      ],
+      "metadata_files_different_or_missing_upstream": [],
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1008439240,
+          "sha256": "5576dbd97333a8e0d3e0e619db6155714610f569eaebce29bd7095feceb77ea4",
+          "bundled": false,
+          "matches_remote_lfs": true
+        }
+      ],
+      "verified_revision": "2643ff69d9ba0e8a0b1c8dea7e1fd49a2f54af39"
+    },
+    {
+      "repository": "QizhiPei/biot5-base-text2mol",
+      "local_directory": "models/biot5-base-text2mol",
+      "component": "metadata_biot5_base_text2mol",
+      "metadata_files_matched": [
+        "README.md",
+        "added_tokens.json",
+        "config.json",
+        "generation_config.json",
+        "special_tokens_map.json",
+        "spiece.model",
+        "tokenizer.json",
+        "tokenizer_config.json"
+      ],
+      "metadata_files_different_or_missing_upstream": [],
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1008439240,
+          "sha256": "0bdef8285618151920e2e12bbdebb299eeb66169bf26ba065b29a7504296b2e6",
+          "bundled": false,
+          "matches_remote_lfs": true
+        }
+      ],
+      "verified_revision": "a924f57898bbf2d32fd27a1e6270f8775654dccb"
+    },
+    {
+      "repository": "QizhiPei/biot5-plus-base-chebi20",
+      "local_directory": "models/biot5-plus-base-chebi20",
+      "component": "metadata_biot5_plus_base_chebi20",
+      "metadata_files_matched": [
+        "README.md",
+        "added_tokens.json",
+        "config.json",
+        "generation_config.json",
+        "special_tokens_map.json",
+        "spiece.model",
+        "tokenizer.json",
+        "tokenizer_config.json"
+      ],
+      "metadata_files_different_or_missing_upstream": [],
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1008457672,
+          "sha256": "5d0312d61b68701d1542691c5329431f812c3fa8e42f4355ef00756c66b09d25",
+          "bundled": false,
+          "matches_remote_lfs": true
+        }
+      ],
+      "verified_revision": "d9c77cf0ec4c4cd5e1caddf13d892de2e3b18044"
+    }
+  ],
+  "note": "SHA256 of bundled metadata is in manifest.json. Verified upstream revisions apply only when every included source file and the original large weight match official identities."
+}

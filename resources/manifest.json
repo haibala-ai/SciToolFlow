@@ -1,5 +1,5 @@
 {
-  "schema_version": "scitoolflow.resources.v1",
+  "schema_version": "scitoolflow.resources.v2",
   "install_root": ".local",
   "offline_install_command": "python scripts/prepare_resources.py",
   "components": [
@@ -15,7 +15,7 @@
       "id": "deeptmhmm2_source",
       "upstream": "https://github.com/fteufel/DeepTMHMM2",
       "license": "MIT (declared by upstream pyproject.toml)",
-      "notes": "Source revision 526f6c60f93c0868c7315413da8e669d12373cc3; upstream supplies an MIT classifier but no separate LICENSE file. Checkpoints and ESM2 weights are not included.",
+      "notes": "Source revision 526f6c60f93c0868c7315413da8e669d12373cc3; upstream supplies an MIT classifier but no separate LICENSE file. Checkpoints are provided by deeptmhmm2_checkpoints; ESM2 remains a separate download.",
       "file_count": 25,
       "bytes": 149551
     },
@@ -23,7 +23,7 @@
       "id": "rxn_sandbox_source",
       "upstream": "https://github.com/rxn4chemistry/rxn-sandbox",
       "license": "OpenMDW-1.1",
-      "notes": "Source, vocabulary and small SCScore support artifact included; two Pistachio2025Q2 prediction checkpoints are not included.",
+      "notes": "Source, vocabulary and small SCScore support artifact included; two Pistachio2025Q2 prediction checkpoints are provided by rxn_sandbox_weights.",
       "file_count": 80,
       "bytes": 4698710
     },
@@ -80,8 +80,8 @@
       "upstream": "https://github.com/haibala-ai/SciToolFlow",
       "license": "SciToolFlow metadata; original sources retain their terms",
       "notes": "Development snapshot provenance, not a claim that a new download has already been verified.",
-      "file_count": 2,
-      "bytes": 5040
+      "file_count": 3,
+      "bytes": 12760
     },
     {
       "id": "mp_public_snapshot",
@@ -90,6 +90,111 @@
       "notes": "Small public historical snapshot and charge-density index; does not imply full MP historical object coverage.",
       "file_count": 2,
       "bytes": 798446
+    },
+    {
+      "id": "deeptmhmm2_checkpoints",
+      "upstream": "https://github.com/fteufel/DeepTMHMM2/tree/526f6c60f93c0868c7315413da8e669d12373cc3/checkpoints",
+      "license": "MIT (declared by upstream pyproject.toml)",
+      "notes": "Ten original checkpoints, verified against the Git blob IDs in the bundled historical provenance. ESM2 backbone is still a separate download.",
+      "file_count": 10,
+      "bytes": 131097750
+    },
+    {
+      "id": "rxn_sandbox_weights",
+      "upstream": "https://huggingface.co/rxn4chemistry/rxn-sandbox",
+      "license": "OpenMDW-1.1",
+      "notes": "Original Pistachio2025Q2 forward and retro checkpoints, stored in ordered 48-MiB raw parts. Installer verifies each part and the original checkpoint SHA256; no model deserialization occurs.",
+      "file_count": 2,
+      "bytes": 310160462
+    },
+    {
+      "id": "metadata_proteinforcegpt",
+      "upstream": "https://huggingface.co/lamm-mit/ProteinForceGPT",
+      "license": "Apache-2.0",
+      "notes": "Exact configuration, tokenizer and model-card files used in development. Large model weights are excluded; metadata alone cannot run the model.",
+      "file_count": 7,
+      "bytes": 48341
+    },
+    {
+      "id": "metadata_esmfold_v1",
+      "upstream": "https://huggingface.co/facebook/esmfold_v1",
+      "license": "MIT",
+      "notes": "Exact configuration, tokenizer and model-card files used in development. Large model weights are excluded; metadata alone cannot run the model.",
+      "file_count": 6,
+      "bytes": 4120
+    },
+    {
+      "id": "metadata_biot5_base_dti_human",
+      "upstream": "https://huggingface.co/QizhiPei/biot5-base-dti-human",
+      "license": "MIT",
+      "notes": "Exact configuration, tokenizer and model-card files used in development. Large model weights are excluded; metadata alone cannot run the model.",
+      "file_count": 9,
+      "bytes": 3825881
+    },
+    {
+      "id": "metadata_biot5_base_peer_binloc",
+      "upstream": "https://huggingface.co/QizhiPei/biot5-base-peer-binloc",
+      "license": "MIT",
+      "notes": "Exact configuration, tokenizer and model-card files used in development. Large model weights are excluded; metadata alone cannot run the model.",
+      "file_count": 9,
+      "bytes": 3824693
+    },
+    {
+      "id": "metadata_biot5_base_peer_human_ppi",
+      "upstream": "https://huggingface.co/QizhiPei/biot5-base-peer-human_ppi",
+      "license": "MIT",
+      "notes": "Exact configuration, tokenizer and model-card files used in development. Large model weights are excluded; metadata alone cannot run the model.",
+      "file_count": 9,
+      "bytes": 3824689
+    },
+    {
+      "id": "metadata_biot5_base_peer_solubility",
+      "upstream": "https://huggingface.co/QizhiPei/biot5-base-peer-solubility",
+      "license": "MIT",
+      "notes": "Exact configuration, tokenizer and model-card files used in development. Large model weights are excluded; metadata alone cannot run the model.",
+      "file_count": 9,
+      "bytes": 3824701
+    },
+    {
+      "id": "metadata_biot5_base_peer_yeast_ppi",
+      "upstream": "https://huggingface.co/QizhiPei/biot5-base-peer-yeast_ppi",
+      "license": "MIT",
+      "notes": "Exact configuration, tokenizer and model-card files used in development. Large model weights are excluded; metadata alone cannot run the model.",
+      "file_count": 9,
+      "bytes": 3824689
+    },
+    {
+      "id": "metadata_biot5_base_text2mol",
+      "upstream": "https://huggingface.co/QizhiPei/biot5-base-text2mol",
+      "license": "MIT",
+      "notes": "Exact configuration, tokenizer and model-card files used in development. Large model weights are excluded; metadata alone cannot run the model.",
+      "file_count": 9,
+      "bytes": 3825714
+    },
+    {
+      "id": "metadata_biot5_plus_base_chebi20",
+      "upstream": "https://huggingface.co/QizhiPei/biot5-plus-base-chebi20",
+      "license": "MIT",
+      "notes": "Exact configuration, tokenizer and model-card files used in development. Large model weights are excluded; metadata alone cannot run the model.",
+      "file_count": 9,
+      "bytes": 4363207
+    },
+    {
+      "id": "dssp_ubuntu2204_packages",
+      "upstream": "https://packages.ubuntu.com/jammy/dssp",
+      "license": "DSSP/libcifpp BSD-2-Clause; Boost-1.0 and package-specific dictionary/data notices retained in the original Debian archives",
+      "notes": "Six original Ubuntu 22.04 amd64 .deb packages and a relocatable launcher. Offline extraction (dpkg-deb -x, without root) is required; this component does not claim compatibility with other architectures/distributions.",
+      "platform": "Linux x86_64 / Ubuntu 22.04",
+      "package_versions": {
+        "dssp": "4.0.4-1",
+        "libcifpp2": "2.0.5-1build1",
+        "libcifpp-data": "2.0.5-1build1",
+        "libboost-iostreams1.74.0": "1.74.0-14ubuntu3",
+        "libboost-program-options1.74.0": "1.74.0-14ubuntu3",
+        "libboost-regex1.74.0": "1.74.0-14ubuntu3"
+      },
+      "file_count": 7,
+      "bytes": 3034081
     }
   ],
   "files": {
@@ -8852,18 +8957,644 @@
       "bytes": 276287,
       "executable": false,
       "component": "mp_public_snapshot"
+    },
+    "external_sources/DeepTMHMM2/checkpoints/memtype_0.ckpt": {
+      "sha256": "271d08374d0cc77328eba3df279a2a7cdbaac7ac03248cd9b105fdec261510aa",
+      "bytes": 1378729,
+      "executable": false,
+      "component": "deeptmhmm2_checkpoints"
+    },
+    "external_sources/DeepTMHMM2/checkpoints/memtype_1.ckpt": {
+      "sha256": "2e758a6e7964dd5293bb9053831486c57671370f05864ae1686c81aebe5a97eb",
+      "bytes": 1378729,
+      "executable": false,
+      "component": "deeptmhmm2_checkpoints"
+    },
+    "external_sources/DeepTMHMM2/checkpoints/memtype_2.ckpt": {
+      "sha256": "f8513b413bb3f7f34f741f4ba7a71100798573e20f90fae2659fdea1af55af51",
+      "bytes": 1378729,
+      "executable": false,
+      "component": "deeptmhmm2_checkpoints"
+    },
+    "external_sources/DeepTMHMM2/checkpoints/memtype_3.ckpt": {
+      "sha256": "01738ba5a15a48c66946448cbf6728374638b3cc3ce58222cf05296c0ec61231",
+      "bytes": 1378729,
+      "executable": false,
+      "component": "deeptmhmm2_checkpoints"
+    },
+    "external_sources/DeepTMHMM2/checkpoints/memtype_4.ckpt": {
+      "sha256": "705cf7ffcb1eba6ee37e9750398241dcd5452ceeee521b5ef9772493de2ed218",
+      "bytes": 1378729,
+      "executable": false,
+      "component": "deeptmhmm2_checkpoints"
+    },
+    "external_sources/DeepTMHMM2/checkpoints/topology_0.ckpt": {
+      "sha256": "26a328dd56a2860c1de0df10bd59d2937b77ec44ed6ba87ea32c43babf0c7d4d",
+      "bytes": 24840821,
+      "executable": false,
+      "component": "deeptmhmm2_checkpoints"
+    },
+    "external_sources/DeepTMHMM2/checkpoints/topology_1.ckpt": {
+      "sha256": "76ad835b43204b7261d760706810292d927cb4dc17fc2f5555eda75ed16352fb",
+      "bytes": 24840821,
+      "executable": false,
+      "component": "deeptmhmm2_checkpoints"
+    },
+    "external_sources/DeepTMHMM2/checkpoints/topology_2.ckpt": {
+      "sha256": "51045cb02b522ff1ff1c16778b6f7a1064136f1f7de3626c0fab015ee6560cd6",
+      "bytes": 24840821,
+      "executable": false,
+      "component": "deeptmhmm2_checkpoints"
+    },
+    "external_sources/DeepTMHMM2/checkpoints/topology_3.ckpt": {
+      "sha256": "f55679c10d8e88261d044fff5b3c7133eb9503405662e40708a03ae2ed0d51a5",
+      "bytes": 24840821,
+      "executable": false,
+      "component": "deeptmhmm2_checkpoints"
+    },
+    "external_sources/DeepTMHMM2/checkpoints/topology_4.ckpt": {
+      "sha256": "ba86bade6a5da73c66bbf031d6f6ac1d01ed5cdc542ef4c2be1f8919311ec3eb",
+      "bytes": 24840821,
+      "executable": false,
+      "component": "deeptmhmm2_checkpoints"
+    },
+    "models/rxn-sandbox/models/forward/Pistachio2025Q2-Forward.ckpt": {
+      "sha256": "def72338009f6f82c4d64a55ed3c488cf3029e72f0a10c308d322e59257a10fe",
+      "bytes": 155080231,
+      "executable": false,
+      "component": "rxn_sandbox_weights",
+      "parts": [
+        {
+          "path": "chunks/rxn_sandbox/Pistachio2025Q2-Forward.part000",
+          "bytes": 50331648,
+          "sha256": "d35004f4697a66b647d100de1e50958b6c05cc341d7450dc7a5aa17c628e9a5f"
+        },
+        {
+          "path": "chunks/rxn_sandbox/Pistachio2025Q2-Forward.part001",
+          "bytes": 50331648,
+          "sha256": "2485827e3765e2ac600e43f627027c2bb9ebeefabe0107dcb027bcd9bb128dba"
+        },
+        {
+          "path": "chunks/rxn_sandbox/Pistachio2025Q2-Forward.part002",
+          "bytes": 50331648,
+          "sha256": "db0a087f8d4a81e9fcbc4aa85cd51dcd38bf8d6003f138db9da14a24804309d9"
+        },
+        {
+          "path": "chunks/rxn_sandbox/Pistachio2025Q2-Forward.part003",
+          "bytes": 4085287,
+          "sha256": "9bfdc2a8570c96751aa5c7f383037a222d334c38be5c8a0f094191dc467c689b"
+        }
+      ],
+      "upstream_revision": "25f9bfc363f14d424ad3c9324796dcbbf0afbcf2",
+      "upstream_path": "models/forward/Pistachio2025Q2-Forward.ckpt"
+    },
+    "models/rxn-sandbox/models/retrosynthesis/Pistachio2025Q2-Retro.ckpt": {
+      "sha256": "13d7fc03a9e4637ed19e18868de84dc86cdfc7764681604157d5a9796c30ba9c",
+      "bytes": 155080231,
+      "executable": false,
+      "component": "rxn_sandbox_weights",
+      "parts": [
+        {
+          "path": "chunks/rxn_sandbox/Pistachio2025Q2-Retro.part000",
+          "bytes": 50331648,
+          "sha256": "59dafe4ef662038f4810e85bc49e989560b1da6eee0245312a1a0b0b14715467"
+        },
+        {
+          "path": "chunks/rxn_sandbox/Pistachio2025Q2-Retro.part001",
+          "bytes": 50331648,
+          "sha256": "1f63b4ef303eb0c5176e5fc816731cd2ca47b16d5f4a28fe389a75efc8caf3ff"
+        },
+        {
+          "path": "chunks/rxn_sandbox/Pistachio2025Q2-Retro.part002",
+          "bytes": 50331648,
+          "sha256": "9ba0035593403a9833690a20e94689b63c634725ae0198ba2e0d5e3d7e324dd6"
+        },
+        {
+          "path": "chunks/rxn_sandbox/Pistachio2025Q2-Retro.part003",
+          "bytes": 4085287,
+          "sha256": "700d1caf621e516e4f5043c3af73b3a38f488097eff5ffdb8becd4dea61f9dbf"
+        }
+      ],
+      "upstream_revision": "25f9bfc363f14d424ad3c9324796dcbbf0afbcf2",
+      "upstream_path": "models/retrosynthesis/Pistachio2025Q2-Retro.ckpt"
+    },
+    "models/ProteinForceGPT/README.md": {
+      "sha256": "1532485de6f015eca12673b90f3e61af40bb25678442961ab44a86f272fd618b",
+      "bytes": 4816,
+      "executable": false,
+      "component": "metadata_proteinforcegpt"
+    },
+    "models/ProteinForceGPT/added_tokens.json": {
+      "sha256": "a5dc8aecb4a2ba7d41f7519465263fe5e9f27993cb0a33ac1ebe773d09ebc75b",
+      "bytes": 3018,
+      "executable": false,
+      "component": "metadata_proteinforcegpt"
+    },
+    "models/ProteinForceGPT/config.json": {
+      "sha256": "1c505935b2f49d96fc1027dd1f243712640f36da261bb9d937cac24dcdf2c963",
+      "bytes": 722,
+      "executable": false,
+      "component": "metadata_proteinforcegpt"
+    },
+    "models/ProteinForceGPT/generation_config.json": {
+      "sha256": "b75bca4140bdf0ad2557fef8598467e2935bbd164f3d1a1f42953497989a78c9",
+      "bytes": 133,
+      "executable": false,
+      "component": "metadata_proteinforcegpt"
+    },
+    "models/ProteinForceGPT/special_tokens_map.json": {
+      "sha256": "788f160beb44cea481db16b77690e6d83bb653529c6e7f41463bb3f8aca058ce",
+      "bytes": 2976,
+      "executable": false,
+      "component": "metadata_proteinforcegpt"
+    },
+    "models/ProteinForceGPT/tokenizer_config.json": {
+      "sha256": "c2e50d42c56e3aecaa8bcf2aae249ec0ce0a7cecd1c6babff045741469dabb08",
+      "bytes": 25318,
+      "executable": false,
+      "component": "metadata_proteinforcegpt"
+    },
+    "models/esmfold_v1/README.md": {
+      "sha256": "12c535c3711211dcd3947ff8164d2e1428ca3461ef8a631ea7b6419673322fe2",
+      "bytes": 696,
+      "executable": false,
+      "component": "metadata_esmfold_v1"
+    },
+    "models/esmfold_v1/config.json": {
+      "sha256": "6b98125e2685fef2875499f6bd7c83968a077993ab53f99bf5581113665f7cc6",
+      "bytes": 2103,
+      "executable": false,
+      "component": "metadata_esmfold_v1"
+    },
+    "models/esmfold_v1/special_tokens_map.json": {
+      "sha256": "9000546299e3cd9007b851ba512167b6f62d274e22fa74485c4ab52aabae0f35",
+      "bytes": 121,
+      "executable": false,
+      "component": "metadata_esmfold_v1"
+    },
+    "models/esmfold_v1/tokenizer_config.json": {
+      "sha256": "bfd8a81f4215e59174634eec71eea99aa1841d8692bdf5c60e9ecaa12904fde8",
+      "bytes": 40,
+      "executable": false,
+      "component": "metadata_esmfold_v1"
+    },
+    "models/esmfold_v1/vocab.txt": {
+      "sha256": "4c20cc7640bf894d2cdefaa6964ec702fd9b2e7a416abf2a50172d8763f3fc14",
+      "bytes": 72,
+      "executable": false,
+      "component": "metadata_esmfold_v1"
+    },
+    "models/biot5-base-dti-human/README.md": {
+      "sha256": "635b6db657e4a06adc389ee37006128ff7b739f19daf14ad23abd655f9a34d79",
+      "bytes": 1947,
+      "executable": false,
+      "component": "metadata_biot5_base_dti_human"
+    },
+    "models/biot5-base-dti-human/added_tokens.json": {
+      "sha256": "ba89ca4218fad656f6376c8c86627fb347f02815852bc4f8e89a915c28a1833d",
+      "bytes": 58345,
+      "executable": false,
+      "component": "metadata_biot5_base_dti_human"
+    },
+    "models/biot5-base-dti-human/config.json": {
+      "sha256": "beb8bb0f349c3779920df7261ef62bc1e83129e1a75bd850c4dd252927b54f0d",
+      "bytes": 792,
+      "executable": false,
+      "component": "metadata_biot5_base_dti_human"
+    },
+    "models/biot5-base-dti-human/generation_config.json": {
+      "sha256": "2508095b02ae6e71b162f0a70d3bf5a6ba87b13cc7847eff255ac1d667f768d7",
+      "bytes": 142,
+      "executable": false,
+      "component": "metadata_biot5_base_dti_human"
+    },
+    "models/biot5-base-dti-human/special_tokens_map.json": {
+      "sha256": "1dab924f3e4a82aec31e36366a548543b8b96fb373dea5c324b065abe97fe354",
+      "bytes": 2381,
+      "executable": false,
+      "component": "metadata_biot5_base_dti_human"
+    },
+    "models/biot5-base-dti-human/spiece.model": {
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "bytes": 791656,
+      "executable": false,
+      "component": "metadata_biot5_base_dti_human"
+    },
+    "models/biot5-base-dti-human/tokenizer.json": {
+      "sha256": "b992d299f3bdb73a0f1e2201cc63a658f5e91e75c7c7f3f5706bb3fa96d4a3eb",
+      "bytes": 2967178,
+      "executable": false,
+      "component": "metadata_biot5_base_dti_human"
+    },
+    "models/biot5-base-dti-human/tokenizer_config.json": {
+      "sha256": "1ce0402cf35c5950fa084deb3366fc65625c95cc5a4e77d69d8ebde9618d2bd4",
+      "bytes": 2374,
+      "executable": false,
+      "component": "metadata_biot5_base_dti_human"
+    },
+    "models/biot5-base-peer-binloc/README.md": {
+      "sha256": "06a98ea13de8204945451c19c68da3ec076fe6d4dde89e45f8f8da7fa97f4018",
+      "bytes": 759,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_binloc"
+    },
+    "models/biot5-base-peer-binloc/added_tokens.json": {
+      "sha256": "ba89ca4218fad656f6376c8c86627fb347f02815852bc4f8e89a915c28a1833d",
+      "bytes": 58345,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_binloc"
+    },
+    "models/biot5-base-peer-binloc/config.json": {
+      "sha256": "beb8bb0f349c3779920df7261ef62bc1e83129e1a75bd850c4dd252927b54f0d",
+      "bytes": 792,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_binloc"
+    },
+    "models/biot5-base-peer-binloc/generation_config.json": {
+      "sha256": "2508095b02ae6e71b162f0a70d3bf5a6ba87b13cc7847eff255ac1d667f768d7",
+      "bytes": 142,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_binloc"
+    },
+    "models/biot5-base-peer-binloc/special_tokens_map.json": {
+      "sha256": "1dab924f3e4a82aec31e36366a548543b8b96fb373dea5c324b065abe97fe354",
+      "bytes": 2381,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_binloc"
+    },
+    "models/biot5-base-peer-binloc/spiece.model": {
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "bytes": 791656,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_binloc"
+    },
+    "models/biot5-base-peer-binloc/tokenizer.json": {
+      "sha256": "b992d299f3bdb73a0f1e2201cc63a658f5e91e75c7c7f3f5706bb3fa96d4a3eb",
+      "bytes": 2967178,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_binloc"
+    },
+    "models/biot5-base-peer-binloc/tokenizer_config.json": {
+      "sha256": "1ce0402cf35c5950fa084deb3366fc65625c95cc5a4e77d69d8ebde9618d2bd4",
+      "bytes": 2374,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_binloc"
+    },
+    "models/biot5-base-peer-human_ppi/README.md": {
+      "sha256": "cad970f77c4bd8cea5801903a5f1fa61b02944651aa3168b2faba724e0736a1b",
+      "bytes": 755,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_human_ppi"
+    },
+    "models/biot5-base-peer-human_ppi/added_tokens.json": {
+      "sha256": "ba89ca4218fad656f6376c8c86627fb347f02815852bc4f8e89a915c28a1833d",
+      "bytes": 58345,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_human_ppi"
+    },
+    "models/biot5-base-peer-human_ppi/config.json": {
+      "sha256": "beb8bb0f349c3779920df7261ef62bc1e83129e1a75bd850c4dd252927b54f0d",
+      "bytes": 792,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_human_ppi"
+    },
+    "models/biot5-base-peer-human_ppi/generation_config.json": {
+      "sha256": "2508095b02ae6e71b162f0a70d3bf5a6ba87b13cc7847eff255ac1d667f768d7",
+      "bytes": 142,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_human_ppi"
+    },
+    "models/biot5-base-peer-human_ppi/special_tokens_map.json": {
+      "sha256": "1dab924f3e4a82aec31e36366a548543b8b96fb373dea5c324b065abe97fe354",
+      "bytes": 2381,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_human_ppi"
+    },
+    "models/biot5-base-peer-human_ppi/spiece.model": {
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "bytes": 791656,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_human_ppi"
+    },
+    "models/biot5-base-peer-human_ppi/tokenizer.json": {
+      "sha256": "b992d299f3bdb73a0f1e2201cc63a658f5e91e75c7c7f3f5706bb3fa96d4a3eb",
+      "bytes": 2967178,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_human_ppi"
+    },
+    "models/biot5-base-peer-human_ppi/tokenizer_config.json": {
+      "sha256": "1ce0402cf35c5950fa084deb3366fc65625c95cc5a4e77d69d8ebde9618d2bd4",
+      "bytes": 2374,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_human_ppi"
+    },
+    "models/biot5-base-peer-solubility/README.md": {
+      "sha256": "601383d485a47feb824c5705020b4035b7ca3687970dd277d0c2d5390dc13148",
+      "bytes": 767,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_solubility"
+    },
+    "models/biot5-base-peer-solubility/added_tokens.json": {
+      "sha256": "ba89ca4218fad656f6376c8c86627fb347f02815852bc4f8e89a915c28a1833d",
+      "bytes": 58345,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_solubility"
+    },
+    "models/biot5-base-peer-solubility/config.json": {
+      "sha256": "beb8bb0f349c3779920df7261ef62bc1e83129e1a75bd850c4dd252927b54f0d",
+      "bytes": 792,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_solubility"
+    },
+    "models/biot5-base-peer-solubility/generation_config.json": {
+      "sha256": "2508095b02ae6e71b162f0a70d3bf5a6ba87b13cc7847eff255ac1d667f768d7",
+      "bytes": 142,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_solubility"
+    },
+    "models/biot5-base-peer-solubility/special_tokens_map.json": {
+      "sha256": "1dab924f3e4a82aec31e36366a548543b8b96fb373dea5c324b065abe97fe354",
+      "bytes": 2381,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_solubility"
+    },
+    "models/biot5-base-peer-solubility/spiece.model": {
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "bytes": 791656,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_solubility"
+    },
+    "models/biot5-base-peer-solubility/tokenizer.json": {
+      "sha256": "b992d299f3bdb73a0f1e2201cc63a658f5e91e75c7c7f3f5706bb3fa96d4a3eb",
+      "bytes": 2967178,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_solubility"
+    },
+    "models/biot5-base-peer-solubility/tokenizer_config.json": {
+      "sha256": "1ce0402cf35c5950fa084deb3366fc65625c95cc5a4e77d69d8ebde9618d2bd4",
+      "bytes": 2374,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_solubility"
+    },
+    "models/biot5-base-peer-yeast_ppi/README.md": {
+      "sha256": "dfbf2b1c0ed768a9530d2927c4e8e30f787e033d0a4b8aa919ce904ac2e73219",
+      "bytes": 755,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_yeast_ppi"
+    },
+    "models/biot5-base-peer-yeast_ppi/added_tokens.json": {
+      "sha256": "ba89ca4218fad656f6376c8c86627fb347f02815852bc4f8e89a915c28a1833d",
+      "bytes": 58345,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_yeast_ppi"
+    },
+    "models/biot5-base-peer-yeast_ppi/config.json": {
+      "sha256": "beb8bb0f349c3779920df7261ef62bc1e83129e1a75bd850c4dd252927b54f0d",
+      "bytes": 792,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_yeast_ppi"
+    },
+    "models/biot5-base-peer-yeast_ppi/generation_config.json": {
+      "sha256": "2508095b02ae6e71b162f0a70d3bf5a6ba87b13cc7847eff255ac1d667f768d7",
+      "bytes": 142,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_yeast_ppi"
+    },
+    "models/biot5-base-peer-yeast_ppi/special_tokens_map.json": {
+      "sha256": "1dab924f3e4a82aec31e36366a548543b8b96fb373dea5c324b065abe97fe354",
+      "bytes": 2381,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_yeast_ppi"
+    },
+    "models/biot5-base-peer-yeast_ppi/spiece.model": {
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "bytes": 791656,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_yeast_ppi"
+    },
+    "models/biot5-base-peer-yeast_ppi/tokenizer.json": {
+      "sha256": "b992d299f3bdb73a0f1e2201cc63a658f5e91e75c7c7f3f5706bb3fa96d4a3eb",
+      "bytes": 2967178,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_yeast_ppi"
+    },
+    "models/biot5-base-peer-yeast_ppi/tokenizer_config.json": {
+      "sha256": "1ce0402cf35c5950fa084deb3366fc65625c95cc5a4e77d69d8ebde9618d2bd4",
+      "bytes": 2374,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_yeast_ppi"
+    },
+    "models/biot5-base-text2mol/README.md": {
+      "sha256": "00f9f6df4b31e610da6443ccdfe7d5a645e211e10b705859ec1434534ccae6d2",
+      "bytes": 1780,
+      "executable": false,
+      "component": "metadata_biot5_base_text2mol"
+    },
+    "models/biot5-base-text2mol/added_tokens.json": {
+      "sha256": "ba89ca4218fad656f6376c8c86627fb347f02815852bc4f8e89a915c28a1833d",
+      "bytes": 58345,
+      "executable": false,
+      "component": "metadata_biot5_base_text2mol"
+    },
+    "models/biot5-base-text2mol/config.json": {
+      "sha256": "beb8bb0f349c3779920df7261ef62bc1e83129e1a75bd850c4dd252927b54f0d",
+      "bytes": 792,
+      "executable": false,
+      "component": "metadata_biot5_base_text2mol"
+    },
+    "models/biot5-base-text2mol/generation_config.json": {
+      "sha256": "2508095b02ae6e71b162f0a70d3bf5a6ba87b13cc7847eff255ac1d667f768d7",
+      "bytes": 142,
+      "executable": false,
+      "component": "metadata_biot5_base_text2mol"
+    },
+    "models/biot5-base-text2mol/special_tokens_map.json": {
+      "sha256": "1dab924f3e4a82aec31e36366a548543b8b96fb373dea5c324b065abe97fe354",
+      "bytes": 2381,
+      "executable": false,
+      "component": "metadata_biot5_base_text2mol"
+    },
+    "models/biot5-base-text2mol/spiece.model": {
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "bytes": 791656,
+      "executable": false,
+      "component": "metadata_biot5_base_text2mol"
+    },
+    "models/biot5-base-text2mol/tokenizer.json": {
+      "sha256": "b992d299f3bdb73a0f1e2201cc63a658f5e91e75c7c7f3f5706bb3fa96d4a3eb",
+      "bytes": 2967178,
+      "executable": false,
+      "component": "metadata_biot5_base_text2mol"
+    },
+    "models/biot5-base-text2mol/tokenizer_config.json": {
+      "sha256": "1ce0402cf35c5950fa084deb3366fc65625c95cc5a4e77d69d8ebde9618d2bd4",
+      "bytes": 2374,
+      "executable": false,
+      "component": "metadata_biot5_base_text2mol"
+    },
+    "models/biot5-plus-base-chebi20/README.md": {
+      "sha256": "063da0e0aba3f1ab5ba00ea98f86e311559d36994baf3abcdd8e03cc39b97ec9",
+      "bytes": 699,
+      "executable": false,
+      "component": "metadata_biot5_plus_base_chebi20"
+    },
+    "models/biot5-plus-base-chebi20/added_tokens.json": {
+      "sha256": "e8b46ae9842d701154c7914f92192a55c454618d8146032938212b5647e59d8d",
+      "bytes": 58399,
+      "executable": false,
+      "component": "metadata_biot5_plus_base_chebi20"
+    },
+    "models/biot5-plus-base-chebi20/config.json": {
+      "sha256": "a85fc7e54245e4de97be178a57de7d0613596339684bbfe303afeaa9d2531dff",
+      "bytes": 792,
+      "executable": false,
+      "component": "metadata_biot5_plus_base_chebi20"
+    },
+    "models/biot5-plus-base-chebi20/generation_config.json": {
+      "sha256": "cccd54915349745d850553a92c1ba1f49129dcff37a664add432620803771476",
+      "bytes": 142,
+      "executable": false,
+      "component": "metadata_biot5_plus_base_chebi20"
+    },
+    "models/biot5-plus-base-chebi20/special_tokens_map.json": {
+      "sha256": "f501eccc36153f8000557cf8dbdf7b8deab2f2d2a07c758887b8a7047898845f",
+      "bytes": 4400,
+      "executable": false,
+      "component": "metadata_biot5_plus_base_chebi20"
+    },
+    "models/biot5-plus-base-chebi20/spiece.model": {
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "bytes": 791656,
+      "executable": false,
+      "component": "metadata_biot5_plus_base_chebi20"
+    },
+    "models/biot5-plus-base-chebi20/tokenizer.json": {
+      "sha256": "3b7ba5e3cf4c287a0304cfa4647d50bd22a173c714e09188c3d2dd62ce7edc46",
+      "bytes": 2969500,
+      "executable": false,
+      "component": "metadata_biot5_plus_base_chebi20"
+    },
+    "models/biot5-plus-base-chebi20/tokenizer_config.json": {
+      "sha256": "7a94d3e8ef129c489e7db3fc3ef1338c5225b23d887fac64ec623ab9c2eba3b5",
+      "bytes": 536553,
+      "executable": false,
+      "component": "metadata_biot5_plus_base_chebi20"
+    },
+    "models/ProteinForceGPT/LICENSE.Apache-2.0": {
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
+      "executable": false,
+      "component": "metadata_proteinforcegpt"
+    },
+    "models/esmfold_v1/LICENSE.MIT": {
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "bytes": 1088,
+      "executable": false,
+      "component": "metadata_esmfold_v1"
+    },
+    "models/biot5-base-dti-human/LICENSE.MIT": {
+      "sha256": "43ec52ac73545567b6ff133774382bf692c147bc2ded86f264863eb9a32c5706",
+      "bytes": 1066,
+      "executable": false,
+      "component": "metadata_biot5_base_dti_human"
+    },
+    "models/biot5-base-peer-binloc/LICENSE.MIT": {
+      "sha256": "43ec52ac73545567b6ff133774382bf692c147bc2ded86f264863eb9a32c5706",
+      "bytes": 1066,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_binloc"
+    },
+    "models/biot5-base-peer-human_ppi/LICENSE.MIT": {
+      "sha256": "43ec52ac73545567b6ff133774382bf692c147bc2ded86f264863eb9a32c5706",
+      "bytes": 1066,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_human_ppi"
+    },
+    "models/biot5-base-peer-solubility/LICENSE.MIT": {
+      "sha256": "43ec52ac73545567b6ff133774382bf692c147bc2ded86f264863eb9a32c5706",
+      "bytes": 1066,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_solubility"
+    },
+    "models/biot5-base-peer-yeast_ppi/LICENSE.MIT": {
+      "sha256": "43ec52ac73545567b6ff133774382bf692c147bc2ded86f264863eb9a32c5706",
+      "bytes": 1066,
+      "executable": false,
+      "component": "metadata_biot5_base_peer_yeast_ppi"
+    },
+    "models/biot5-base-text2mol/LICENSE.MIT": {
+      "sha256": "43ec52ac73545567b6ff133774382bf692c147bc2ded86f264863eb9a32c5706",
+      "bytes": 1066,
+      "executable": false,
+      "component": "metadata_biot5_base_text2mol"
+    },
+    "models/biot5-plus-base-chebi20/LICENSE.MIT": {
+      "sha256": "43ec52ac73545567b6ff133774382bf692c147bc2ded86f264863eb9a32c5706",
+      "bytes": 1066,
+      "executable": false,
+      "component": "metadata_biot5_plus_base_chebi20"
+    },
+    "external_sources/dssp/dssp_4.0.4-1_amd64.deb": {
+      "sha256": "820445b238be4c18036f11f8a2075941702e3800a9ca9213146b548af2381266",
+      "bytes": 511366,
+      "executable": false,
+      "component": "dssp_ubuntu2204_packages"
+    },
+    "external_sources/dssp/libboost-iostreams1.74.0_1.74.0-14ubuntu3_amd64.deb": {
+      "sha256": "144d169144544d103beba7da13b6d21d6bf4335d58e753aa91bf654b4b8f39ca",
+      "bytes": 245050,
+      "executable": false,
+      "component": "dssp_ubuntu2204_packages"
+    },
+    "external_sources/dssp/libboost-program-options1.74.0_1.74.0-14ubuntu3_amd64.deb": {
+      "sha256": "8b9611edde085371815615e3529fbbab3ad02965ec24b2cc46e0c1bb60cade5c",
+      "bytes": 310732,
+      "executable": false,
+      "component": "dssp_ubuntu2204_packages"
+    },
+    "external_sources/dssp/libboost-regex1.74.0_1.74.0-14ubuntu3_amd64.deb": {
+      "sha256": "5696a21d3225f499fa2cecf46fccd7264700085f4331f7dfe13a0ed398513bdc",
+      "bytes": 510978,
+      "executable": false,
+      "component": "dssp_ubuntu2204_packages"
+    },
+    "external_sources/dssp/libcifpp-data_2.0.5-1build1_all.deb": {
+      "sha256": "9217ec56f5d7fef168c1b5cb94914d842bed099fba5f6253ae8b66fa87558415",
+      "bytes": 436700,
+      "executable": false,
+      "component": "dssp_ubuntu2204_packages"
+    },
+    "external_sources/dssp/libcifpp2_2.0.5-1build1_amd64.deb": {
+      "sha256": "46e833810294f9260b6bce6667c73df8b6ef23ba60ddb36343333bf3df2c5c4a",
+      "bytes": 1018932,
+      "executable": false,
+      "component": "dssp_ubuntu2204_packages"
+    },
+    "external_sources/dssp/run_mkdssp": {
+      "sha256": "5d455e8ea163801c4f03bffa2ae221d8d82318699bc26222642994502fb1399e",
+      "bytes": 323,
+      "executable": true,
+      "component": "dssp_ubuntu2204_packages"
+    },
+    "provenance/model_metadata_snapshots.json": {
+      "sha256": "6f8805456c5fd259fbebcebc082263dce0da55e11902c589ac924d6d78d316d6",
+      "bytes": 7720,
+      "executable": false,
+      "component": "resource_provenance"
     }
   },
-  "total_files": 1460,
-  "total_bytes": 54551576,
+  "total_files": 1556,
+  "total_bytes": 526217624,
   "not_bundled": [
     "generation LLM weights",
-    "ProteinForceGPT, ESMFold, OmegaFold, BioT5 and Chroma large weights",
-    "DeepTMHMM2 checkpoints and ESM2 backbone",
-    "Pistachio2025Q2 forward and retrosynthesis checkpoints",
-    "HIPPIE 138719165-byte v2.4 snapshot",
-    "compiled RASPA2, Zeo++ and DSSP executables and platform libraries",
+    "ProteinForceGPT, ESMFold, OmegaFold, BioT5 and authorized Chroma large weights",
+    "ESM2 650M backbone and regression weights",
+    "HIPPIE 138719165-byte v2.4 snapshot (no explicit redistribution grant located on publisher pages)",
+    "compiled RASPA2 and Zeo++ executables; non-Ubuntu DSSP runtimes",
     "credentials, environment wheels, caches and run outputs"
   ],
-  "install_mtime_epoch": 1792368000
+  "install_mtime_epoch": 1792368000,
+  "stored_files": 1562,
+  "stored_bytes": 526217624,
+  "max_stored_file_bytes": 50331648
 }

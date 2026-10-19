@@ -37,10 +37,44 @@ def safe_path(base, relative):
     return path
 
 
+def source_parts(bundle, relative, record):
+    """Resolve raw files or ordered chunks; verify every stored byte first."""
+    parts = record.get("parts")
+    if parts is None:
+        parts = [
+            {"path": relative, "bytes": record["bytes"], "sha256": record["sha256"]}
+        ]
+    if not parts or sum(part["bytes"] for part in parts) != record["bytes"]:
+        raise ValueError("Invalid resource part sizes: " + relative)
+    paths, whole = [], hashlib.sha256()
+    for part in parts:
+        path = safe_path(bundle, part["path"])
+        if not path.is_file() or path.stat().st_size != part["bytes"]:
+            raise ValueError(
+                "Bundled resource failed SHA256 verification: " + part["path"]
+            )
+        checksum = hashlib.sha256()
+        with path.open("rb") as stream:
+            while block := stream.read(1024 * 1024):
+                checksum.update(block)
+                whole.update(block)
+        if checksum.hexdigest() != part["sha256"]:
+            raise ValueError(
+                "Bundled resource failed SHA256 verification: " + part["path"]
+            )
+        paths.append(path)
+    if whole.hexdigest() != record["sha256"]:
+        raise ValueError("Reassembled resource failed SHA256 verification: " + relative)
+    return paths
+
+
 def prepare(bundle, destination, selected=None, check=False):
     bundle, destination = Path(bundle).absolute(), Path(destination).absolute()
     manifest = json.loads((bundle / "manifest.json").read_text())
-    if manifest.get("schema_version") != "scitoolflow.resources.v1":
+    if manifest.get("schema_version") not in {
+        "scitoolflow.resources.v1",
+        "scitoolflow.resources.v2",
+    }:
         raise ValueError("Unsupported resource manifest")
     available = {c["id"] for c in manifest["components"]}
     chosen = set(selected) if selected else available
@@ -53,14 +87,8 @@ def prepare(bundle, destination, selected=None, check=False):
     for relative, record in manifest["files"].items():
         if record["component"] not in chosen:
             continue
-        source = safe_path(bundle, relative)
+        sources = source_parts(bundle, relative, record)
         target = safe_path(destination, relative)
-        if (
-            not source.is_file()
-            or source.stat().st_size != record["bytes"]
-            or digest(source) != record["sha256"]
-        ):
-            raise ValueError("Bundled resource failed SHA256 verification: " + relative)
         if target.exists():
             if (
                 target.is_file()
@@ -71,7 +99,7 @@ def prepare(bundle, destination, selected=None, check=False):
             else:
                 conflicts.append(relative)
         else:
-            pending.append((relative, source, target, record))
+            pending.append((relative, sources, target, record))
     result = {
         "components": sorted(chosen),
         "destination": str(destination),
@@ -84,7 +112,7 @@ def prepare(bundle, destination, selected=None, check=False):
     if check or conflicts:
         result["ready"] = not pending and not conflicts
         return result
-    for relative, source, target, record in pending:
+    for relative, sources, target, record in pending:
         target.parent.mkdir(parents=True, exist_ok=True)
         temporary = None
         try:
@@ -92,9 +120,10 @@ def prepare(bundle, destination, selected=None, check=False):
                 dir=target.parent, prefix=".resource-", delete=False
             ) as output:
                 temporary = Path(output.name)
-                with source.open("rb") as stream:
-                    while block := stream.read(1024 * 1024):
-                        output.write(block)
+                for source in sources:
+                    with source.open("rb") as stream:
+                        while block := stream.read(1024 * 1024):
+                            output.write(block)
             if digest(temporary) != record["sha256"]:
                 raise ValueError("Resource changed while copying: " + relative)
             temporary.chmod(0o755 if record.get("executable") else 0o644)

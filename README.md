@@ -203,14 +203,18 @@ SCITOOL_EMBEDDING_API_KEY=YOUR_EMBEDDING_API_KEY
 
 ### 准备科学工具依赖的文件
 
-科学工具使用的资源与驱动 Agent 的生成 LLM 分开配置。仓库已提供约 **52 MB 的小型资源包**，最大单文件约 **2.9 MB**；大模型权重、完整 HIPPIE 数据和平台相关二进制文件不随源码分发。
+科学工具使用的资源与驱动 Agent 的生成 LLM 分开配置。仓库直接提供约 **502 MiB** 的固定版本源码、参数、中型预测模型和 tokenizer／配置，尽量减少版本不一致。RXN 的较大权重以分块形式保存，离线准备脚本自动还原，**无需 Git LFS 或手动拼接**。精确体积和逐文件哈希见 [资源清单](resources/manifest.json)。
 
 **仓库已包含，无需另行下载：**
 
-- **MOFSimplify**：两个小型 HDF5 模型及配套训练／验证／测试表格，约 7.8 MB，位于 [resources/models/MOFSimplify](resources/models/MOFSimplify)。
+- **MOFSimplify**：两个小型 HDF5 模型及配套训练／验证／测试表格，约 7.8 MiB，位于 [resources/models/MOFSimplify](resources/models/MOFSimplify)。
+- **DeepTMHMM2 checkpoints**：固定版本的全部 10 个文件，约 125 MiB，已按历史来源记录核对 Git blob；ESM2 主干仍需下载。
+- **RXN 预测权重**：Pistachio2025Q2 Forward／Retro 两个完整 checkpoint，合计约 296 MiB，已核对官方 Hugging Face 的 LFS SHA256。准备脚本将分块还原到工具默认目录。
 - **外部源码**：OmegaFold、DeepTMHMM2、RXN Sandbox 的源码与 RXN 词表；RASPA2、Zeo++／Voro++ 的可编译源码，以及 Eigen 头文件，位于 [resources/external_sources](resources/external_sources)。RXN 同时包含其小型 SCScore 支持文件。
+- **模型配置与 tokenizer**：ProteinForceGPT、ESMFold 和七个 BioT5 模型的现用配置、词表、tokenizer 与来源许可。它们的大型权重仍需下载；文件哈希及可核验的上游版本见 [模型快照记录](resources/provenance/model_metadata_snapshots.json)。
+- **DSSP 固定安装包**：DSSP 4.0.4、libcifpp 及三个 Boost 库的六个 Ubuntu 22.04 amd64 安装包和相对路径启动器。无需系统级安装，按资源说明离线解包；其他平台安装匹配的版本。
 - **力场与参数**：本项目实际使用的 RASPA 力场定义、逐文件 SHA256 清单，以及对应 aiida-lsmo 参数／渲染器和许可。
-- **小型归档与来源记录**：MP 公开历史快照及电荷密度索引、DeepTMHMM2 和 HIPPIE 的历史来源记录。来源记录不代表相应的大文件已经包含。
+- **小型归档与来源记录**：MP 公开历史快照及电荷密度索引、DeepTMHMM2 和 HIPPIE 的历史来源记录。HIPPIE 原始数据未打包。
 - **公开任务输入**：Q-Chem 输出等任务附件已在 [tasks/assets](tasks/assets/) 中，无需重复下载。
 
 首次使用时执行一次离线准备，将资源放到工具要求的 `.local/` 路径：
@@ -224,18 +228,19 @@ python scripts/prepare_resources.py --check
 
 **仍需自行下载或安装：**
 
-- **用于 Agent／judge 的本地生成模型**：自由选择模型，按下文部署；使用远程生成 API 时无需下载其权重。
-- **ProteinForceGPT**：[lamm-mit/ProteinForceGPT](https://huggingface.co/lamm-mit/ProteinForceGPT)，完整模型和 tokenizer 放入 `.local/models/ProteinForceGPT/`。
-- **ESMFold**：[facebook/esmfold_v1](https://huggingface.co/facebook/esmfold_v1)，完整 Transformers 模型放入 `.local/models/esmfold_v1/`。
-- **OmegaFold 权重**：下载 [release1.pt](https://helixon.s3.amazonaws.com/release1.pt)，保存为 `.local/models/OmegaFold/release1.pt`。源码已提供，本工具使用 model 1。
-- **DeepTMHMM2 权重**：下载 [10 个 checkpoints](https://github.com/fteufel/DeepTMHMM2/tree/526f6c60f93c0868c7315413da8e669d12373cc3/checkpoints) 至 `.local/external_sources/DeepTMHMM2/checkpoints/`；另从 [ESM 官方模型清单](https://github.com/facebookresearch/esm#available-models)取得 `esm2_t33_650M_UR50D.pt` 与 contact-regression 文件，放入 `.local/models/torch_cache/hub/checkpoints/`。源码与历史版本记录已提供，权重须匹配所记录的版本。
-- **BioT5 权重**：分别下载 [dti-human](https://huggingface.co/QizhiPei/biot5-base-dti-human)、[peer-binloc](https://huggingface.co/QizhiPei/biot5-base-peer-binloc)、[peer-human_ppi](https://huggingface.co/QizhiPei/biot5-base-peer-human_ppi)、[peer-solubility](https://huggingface.co/QizhiPei/biot5-base-peer-solubility)、[peer-yeast_ppi](https://huggingface.co/QizhiPei/biot5-base-peer-yeast_ppi)、[text2mol](https://huggingface.co/QizhiPei/biot5-base-text2mol)和 [BioT5+ chebi20](https://huggingface.co/QizhiPei/biot5-plus-base-chebi20)，按完整仓库名最后一段建立 `.local/models/` 下的模型目录。
-- **Chroma 权重**：按 [generatebio/chroma](https://github.com/generatebio/chroma#get-started)申请 token 并配置 `CHROMA_KEY`；权重及校验缓存写入 `.local/models/chroma/`。
-- **RXN 预测权重**：从 [rxn4chemistry/rxn-sandbox](https://huggingface.co/rxn4chemistry/rxn-sandbox)下载实际模型文件，分别放到 `.local/models/rxn-sandbox/models/forward/Pistachio2025Q2-Forward.ckpt` 和 `retrosynthesis/Pistachio2025Q2-Retro.ckpt`。源码、词表与 SCScore 小文件已提供；不要使用 Git LFS 指针替代预测权重。
-- **HIPPIE 完整数据**：约 132 MB，从[官方历史版本页](https://cbdm-01.zdv.uni-mainz.de/hippienew/download/)选择 v2.4 TAB；当前工具读取 `.local/reference_data/HIPPIE/hippie_v2_4_20261013.tsv`。已提供的历史 SHA256 是核验依据；新的 `current` 文件或不同版本不能视为同一快照。
-- **科学程序的可执行文件**：RASPA2 和 Zeo++ 的源码已提供，需在目标机器编译；DSSP／`mkdssp` 从 [PDB-REDO/dssp](https://github.com/PDB-REDO/dssp)安装。具体命令和路径配置见 [资源说明](resources/README.md)。
+下列 ProteinForceGPT、ESMFold 和 BioT5 链接直接指向已核验版本的权重文件，配套配置无需重新下载。
 
-大模型的下载方法见 [Hugging Face 官方文档](https://huggingface.co/docs/huggingface_hub/guides/download)。MP 的完整归档仍从 [MP 官方 AWS 数据集](https://registry.opendata.aws/materials-project/)取得；仓库内的小型快照不代表全部历史对象。服务账号及密钥仍按前文单独申请和配置。
+- **用于 Agent／judge 的本地生成模型**：自由选择模型，按下文部署；使用远程生成 API 时无需下载其权重。
+- **ProteinForceGPT 大型权重**：[lamm-mit/ProteinForceGPT](https://huggingface.co/lamm-mit/ProteinForceGPT/resolve/342569141fb643ac49fd9690e644a859a9c5f881/model.safetensors?download=true)，将 `model.safetensors` 放入 `.local/models/ProteinForceGPT/`；配置与 tokenizer 已包含。
+- **ESMFold 大型权重**：[facebook/esmfold_v1](https://huggingface.co/facebook/esmfold_v1/resolve/75a3841ee059df2bf4d56688166c8fb459ddd97a/pytorch_model.bin?download=true)，将 `pytorch_model.bin` 放入 `.local/models/esmfold_v1/`；配置与词表已包含。
+- **OmegaFold 权重**：下载 [release1.pt](https://helixon.s3.amazonaws.com/release1.pt)，保存为 `.local/models/OmegaFold/release1.pt`。源码已提供，本工具使用 model 1。
+- **DeepTMHMM2 的 ESM2 主干**：从 [ESM 官方模型清单](https://github.com/facebookresearch/esm#available-models)取得 `esm2_t33_650M_UR50D.pt` 与 contact-regression 文件，放入 `.local/models/torch_cache/hub/checkpoints/`。10 个 DeepTMHMM2 checkpoints 无需再次下载。
+- **BioT5 大型权重**：分别下载 [dti-human](https://huggingface.co/QizhiPei/biot5-base-dti-human/resolve/09c8c777f5d64595574231dd248ae25e4f799684/model.safetensors?download=true)、[peer-binloc](https://huggingface.co/QizhiPei/biot5-base-peer-binloc/resolve/af582313f5c2a50ed16f16c3d0cc1e2129050e70/model.safetensors?download=true)、[peer-human_ppi](https://huggingface.co/QizhiPei/biot5-base-peer-human_ppi/resolve/ef36a858815ca284956e75bfc5609984b870dd3a/model.safetensors?download=true)、[peer-solubility](https://huggingface.co/QizhiPei/biot5-base-peer-solubility/resolve/8243f70fb11b125da21ba145b9f51d8e7466df64/model.safetensors?download=true)、[peer-yeast_ppi](https://huggingface.co/QizhiPei/biot5-base-peer-yeast_ppi/resolve/2643ff69d9ba0e8a0b1c8dea7e1fd49a2f54af39/model.safetensors?download=true)、[text2mol](https://huggingface.co/QizhiPei/biot5-base-text2mol/resolve/a924f57898bbf2d32fd27a1e6270f8775654dccb/model.safetensors?download=true)和 [BioT5+ chebi20](https://huggingface.co/QizhiPei/biot5-plus-base-chebi20/resolve/d9c77cf0ec4c4cd5e1caddf13d892de2e3b18044/model.safetensors?download=true)的 `model.safetensors`，放入 `.local/models/` 下对应同名模型目录；配套配置与 tokenizer 已包含。
+- **Chroma 权重**：按 [generatebio/chroma](https://github.com/generatebio/chroma#get-started)申请 token 并配置 `CHROMA_KEY`；权重及校验缓存写入 `.local/models/chroma/`。
+- **HIPPIE 完整数据**：约 132 MiB，从[官方下载页](https://cbdm-01.zdv.uni-mainz.de/~mschaefer/hippie/download.php)选择 v2.4 TAB；当前工具读取 `.local/reference_data/HIPPIE/hippie_v2_4_20261013.tsv`。尚未找到明确的再分发许可，因此不随仓库上传。已提供的历史 SHA256 是核验依据；新的 `current` 文件或不同版本不能视为同一快照。
+- **科学程序的可执行文件**：RASPA2 和 Zeo++ 在目标机器编译。Ubuntu 22.04 amd64 可直接解包附带的 DSSP 安装包；其他平台按 [DSSP 官方说明](https://github.com/PDB-REDO/dssp)安装。具体命令和路径配置见 [资源说明](resources/README.md)。
+
+大模型的下载方法见 [Hugging Face 官方文档](https://huggingface.co/docs/huggingface_hub/guides/download)。优先使用[模型快照记录](resources/provenance/model_metadata_snapshots.json)中核验过的 `verified_revision` 和权重 SHA256，避免下载新版权重却复用旧版配置；不要覆盖已提供的配置和 tokenizer。MP 的完整归档仍从 [MP 官方 AWS 数据集](https://registry.opendata.aws/materials-project/)取得；仓库内的小型快照不代表全部历史对象。服务账号及密钥仍按前文单独申请和配置。
 
 资源放到其他位置时，在 `runtime.env` 设置相应绝对路径：`FORCEGPT_MODEL_PATH`、`ESMFOLD_MODEL_PATH`、`OMEGAFOLD_MODEL_PATH`、`DEEPTMHMM_MODEL_PATH`、`QizhiPei_MODEL_PATH`、`SOLVENT_THERMAL_MODELS`、`RASPA_EXECUTABLE_PATH`、`SCITOOL_ZEOPP_EXECUTABLE`、`SCITOOL_DSSP_EXECUTABLE`。RXN 等固定目录资源保留上述结构。
 
@@ -382,7 +387,7 @@ LLM judge **只复核 pending**，不能把明确数值错误、缺字段或 sch
 
 ### 离线资源准备：`scripts/prepare_resources.py`
 
-将 `resources/manifest.json` 列出的资源复制到 `.local/`，全程不联网。先验证整批源文件 SHA256，再检查目标：相同文件复用；发现内容冲突则停止，不覆盖本地修改。准备完成只表示随仓库的小资源齐全，不表示大权重、密钥或编译程序已经配置。
+将 `resources/manifest.json` 列出的资源复制到 `.local/`，全程不联网。先验证整批源文件 SHA256，再检查目标：相同文件复用；发现内容冲突则停止，不覆盖本地修改。RXN 分块按记录顺序还原为原始 checkpoint，同时核对各块与完整文件 SHA256，不反序列化模型。准备完成只表示随仓库资源齐全，不表示另行下载的大权重、密钥或科学程序已经配置。
 
 ```bash
 python scripts/prepare_resources.py
