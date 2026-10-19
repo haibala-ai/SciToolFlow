@@ -8,9 +8,80 @@ SciToolFlow 提供 **500 道多工具任务、546 个任务工具和 ReAct / Sci
 - **统一工具接口**：工具实现、输入输出契约、图谱与功能向量随项目提供；DescribeTools 支持按需批量查询工具用法。
 - **可复现的实验流程**：两个 baseline 共用执行器与评分器，支持 API 和本地模型，分别报告运行完成、工具规划、答案和联合通过率。
 
-[与 SciToolEval Level2 的对比](docs/comparison/README.md) · [任务说明](tasks/README.md) · [工具接口](tools/README.md) · [评分细则](evaluation/README.md)
+[任务说明](tasks/README.md) · [工具接口](tools/README.md) · [评分细则](evaluation/README.md)
 
 使用流程为：**安装环境 → 配置工具与模型 → 运行 baseline → 评分与可选 LLM 复核**。下文命令均从 `SciToolFlow/` 根目录执行。
+
+## 与 SciToolEval Level2 的对比
+
+**覆盖更多科学工具，组合更长的执行链，并让答案与执行证据一起接受核验。**
+
+SciToolFlow 面向科学多工具调用：500 道任务、546 个科学工具，覆盖生物、化学、材料与数理计算。下表比较官方公开的 **SciToolEval Level2**；SciToolAgent 是其 agent 框架，二者名称不混用。
+
+| | SciToolEval Level2 | **SciToolFlow** | 变化 |
+| :--- | ---: | ---: | ---: |
+| 任务数 | 379 | **500** | **+31.9%** |
+| 科学工具池[^tool-pool] | 477 | **546** | **+69** |
+| 每题参考科学调用数 | 2.47 | **6.58** | **2.66×** |
+| 每题不同工具数 | 2.33 | **4.91** | **2.11×** |
+| 参考路径覆盖工具数[^coverage] | 114 | **322** | **2.82×** |
+| 工具覆盖率[^coverage] | 20.88% | **58.97%** | **+38.10 pp** |
+| 跨类别任务占比[^coverage] | 5.54% | **28.00%** | **+22.46 pp** |
+
+![任务规模、参考调用长度分布与工具覆盖](docs/comparison/overview.svg)
+
+### 更完整的多工具任务
+
+**90.2%** 的任务需要至少 4 次参考科学调用，原 Level2 为 **9.5%**；中位数从 **2 次**提高到 **6 次**，最长路径从 **11 次**扩展到 **20 次**。模型需要处理更多工具选择、参数衔接、分支结果与答案整合。
+
+这里统计的是参考路径中的科学调用，包含对不同对象的重复工具使用，排除 DescribeTools；它不是模型思考轮数，也不是串行依赖深度。更长的路径体现执行负担，不能单凭长度断言科学推理更深。
+
+### 从化学主导，扩展到四个科学学科
+
+![按相同工具目录比较的学科工具覆盖和多标签任务覆盖](docs/comparison/coverage.svg)
+
+| 学科／辅助类别 | 工具覆盖：Level2 → SciToolFlow[^coverage] | 涉及任务：Level2 → SciToolFlow[^task-incidence] |
+| :--- | :--- | :--- |
+| 生物 | 2/113 → **51/113** | 7/379 → **142/500** |
+| 化学 | **108/177** → 75/177 | 378/379 → 229/500 |
+| 材料 | 4/201 → **157/201** | 15/379 → **177/500** |
+| 机器学习／数理 | 0/40 → **33/40** | 0/379 → **67/500** |
+| 通用辅助 | 0/15 → **6/15** | 0/379 → **29/500** |
+
+SciToolFlow 的公开主学科分布为：化学 **159**、材料 **154**、生物 **140**、数理 **47**。同时提供 **40 个数理工具、15 个通用工具**，支持统计检验、回归、线性代数及结构化数据处理。546 个科学工具统一契约与执行绑定，另提供一个支持批量查询的 DescribeTools。
+
+### 从“给出答案”到“可以检查答案怎么得到”
+
+| 可复查内容 | 官方公开 Level2 文件[^upstream] | **SciToolFlow** |
+| :--- | :--- | :--- |
+| 答案接口 | 所比较的答案 JSONL 未含答案值字段 | **500 份结构化金标准、公开输出 schema、字段规则** |
+| 参考执行证据 | 所比较的两个 JSONL 不含逐步输出 | **500 份证据归档、3,344 条工具结果** |
+| 科学工具执行 | 本次未重新部署原环境 | **547/547 入口静态预检；隔离 worker、超时和明确错误反馈** |
+| 计划评价 | 参考工具路径与 LLM 判断 | **实际工具、实参、依赖与预算；支持独立分支换序** |
+| 答案评价 | 官方脚本使用 LLM 判断 | **字段类型、完整数组、显式数值容差；歧义单独复核** |
+| 结果报告 | Pass / Planning / Answer | **Completion / Planning / Answer / Joint；规则分与复核分分开** |
+
+**公开题目与私有参考分离，失败和缺失不从分母消失。** 两个 baseline 共用工具执行器和评分器；LLM 可选择 API 或本地模型，复核记录绑定参考与预测双哈希。
+
+<details>
+<summary><strong>已知限制与复现</strong></summary>
+
+**优势有边界：** 当前化学工具覆盖低于原集；有序工具路径为 257 种，少于原集的 335 种，尚无独立隐藏测试集。参考证据不全是完整模型对话；547 项静态预检不等于所有远端服务实时可用。以上比较支持覆盖、执行负担和工程可复查性的改进，不宣称科学质量或模型准确率全面领先。
+
+从本地并列的官方仓库重新提取元数据并绘图：
+
+```bash
+conda activate SciTool-Unified
+python scripts/compare_level2.py --refresh-upstream --upstream ../SciToolAgent
+# 无上游 checkout 时，默认使用已校验的元数据快照
+python scripts/compare_level2.py
+```
+
+脚本不调用科学工具或 LLM，不使用模型成败筛选任务。数据版本：`20261018-scientific-contract-audit`；统计可追溯至规范题库、参考和固定上游提交。
+
+[统计 JSON](docs/comparison/statistics.json) · [工具增删明细](docs/comparison/tool_delta.json) · [上游元数据](docs/comparison/sources/upstream_metadata.json) · [PNG 概览](docs/comparison/overview.png) · [PNG 覆盖图](docs/comparison/coverage.png)
+
+</details>
 
 ## 项目结构
 
@@ -41,9 +112,9 @@ Agent 运行时只加载公开题目、附件和工具契约；参考答案与�
 
 ### 1. 准备安装源
 
-安装 Conda，并在终端执行 `conda --version` 确认可用。[环境文件](configs/environments/)已列出 Python 和依赖版本，`conda env create` 会依次安装 Conda 与 pip 依赖。
+从 [Miniconda 官方安装说明](https://www.anaconda.com/docs/getting-started/miniconda/install)安装 Conda，并在终端执行 `conda --version` 确认可用。[环境文件](configs/environments/)已列出 Python 和依赖版本，`conda env create` 会依次安装 Conda 与 pip 依赖。
 
-GPU 依赖使用特定构建：需要为 Python 3.10／Linux x86_64 准备 **`vllm==0.21.0+cu129` wheel 和 `xformers==0.0.35` 的 cu128 wheel**。从对应官方发行包或已核验缓存取得 `.whl` 安装包后，放入 `.local/wheels/`；源码仓库不分发这些文件。完整版本见 [LLM 依赖](configs/services/requirements-qwen-vllm.txt)。
+GPU 依赖使用特定构建：需要为 Python 3.10／Linux x86_64 准备 **`vllm==0.21.0+cu129` wheel 和 `xformers==0.0.35` 的 cu128 wheel**。下载入口为 [vLLM v0.21.0 发行页](https://github.com/vllm-project/vllm/releases/tag/v0.21.0)和 [PyTorch cu128 的 xformers 安装包目录](https://download.pytorch.org/whl/cu128/xformers/)；选择对应版本与平台的 `.whl` 后放入 `.local/wheels/`。源码仓库不分发这些文件。完整版本见 [LLM 依赖](configs/services/requirements-qwen-vllm.txt)。
 
 ```bash
 mkdir -p .local/wheels
@@ -114,17 +185,17 @@ SCITOOL_LLM_PYTHON=/opt/conda/envs/SciTool-LLM/bin/python
 
 在 `services.env` 中，将以下变量的值替换为对应服务提供的真实密钥：
 
-- **Materials Project**：填写 `MP_KEY`，供材料数据查询工具使用。
-- **Brave Search**：填写 `BRAVE_SEARCH_API_KEY`，供名为 `BingSearch` 的搜索工具使用。
-- **ChemSpider**：填写 `CHEMSPIDER_API_KEY`，供 `InChIToCSID` 使用。
-- **Wolfram Alpha**：填写 `WOLFRAM_ALPHA_APPID`，供 `WolframAlpha` 使用。
-- **Chroma**：填写 `CHROMA_KEY`，供四个 Chroma 设计工具使用。
+- **Materials Project**：注册并登录 [Materials Project](https://materialsproject.org/)，在 [Dashboard](https://next-gen.materialsproject.org/dashboard)取得 API key，填入 `MP_KEY`。操作说明见[官方 API 入门](https://docs.materialsproject.org/downloading-data/using-the-api/getting-started)。
+- **Brave Search**：从 [Brave Search API](https://brave.com/search/api/)进入控制台，开通适用计划并在 API Keys 中创建密钥，填入 `BRAVE_SEARCH_API_KEY`。供名为 `BingSearch` 的工具使用；[官方授权说明](https://api-dashboard.search.brave.com/documentation/guides/authentication)。
+- **ChemSpider**：通过 [RSC Developer Portal](https://developer.rsc.org/)注册或登录，申请具有 ChemSpider／Compounds API 权限的密钥，填入 `CHEMSPIDER_API_KEY`，供 `InChIToCSID` 使用。门户可能要求登录；访问权限与申请条件以 RSC 为准。
+- **Wolfram Alpha**：在 [Developer Portal](https://developer.wolframalpha.com/)创建应用并取得 AppID，填入 `WOLFRAM_ALPHA_APPID`；[官方 AppID 获取说明](https://products.wolframalpha.com/api/documentation)。
+- **Chroma**：从官方仓库提供的[权重授权申请入口](https://chroma-weights.generatebiomedicines.com/)申请下载 token，填入 `CHROMA_KEY`。这是科学工具模型的权重授权；[官方说明](https://github.com/generatebio/chroma#get-started)。
 
 这些是科学工具的授权，与生成 LLM 的密钥分开。公共 HTTP 数据源还需要网络可达。每项配置对应的全部工具名称可查 [tool_resources.json](configs/tool_resources.json)。
 
 ### SciToolAgent 检索配置
 
-在 `services.env` 中设置：
+在 [AIHubMix 控制台](https://console.aihubmix.com/)创建有 embedding 调用权限的 API key，按[官方密钥管理说明](https://docs.aihubmix.com/cn/console/api-keys)配置。在 `services.env` 中设置：
 
 ```dotenv
 SCITOOL_EMBEDDING_API_BASE=https://aihubmix.com/v1
@@ -135,20 +206,47 @@ SCITOOL_EMBEDDING_API_KEY=YOUR_EMBEDDING_API_KEY
 
 ### 选择生成 LLM
 
-使用本地 Qwen 时，将权重放到 `.local/models/Qwen3.5-9B/`，按下一节启动 vLLM，**无需填写生成 API 密钥**。使用远程 API 时，在 `services.env` 填写 `SCITOOLFLOW_API_BASE`、`SCITOOLFLOW_API_KEY`、`SCITOOLFLOW_API_MODEL`，具体格式见下一节。可选 LLM judge 也使用这套生成配置；纯规则评分不需要 LLM。
+用于 baseline 和 LLM judge 的模型由使用者选择，**不限定模型系列，也不要求权重存放在 `.local/`**。本地部署可使用任意兼容的模型目录，通过 vLLM 的服务地址与模型名接入；远程 API 使用 `SCITOOLFLOW_API_BASE`、`SCITOOLFLOW_API_KEY`、`SCITOOLFLOW_API_MODEL`。具体启动方式见下文“配置生成模型”。纯规则评分不需要 LLM。
 
 ### 准备科学工具依赖的文件
 
-科学模型、外部程序及归档数据需要单独准备，安装 Python 依赖不会自动下载它们。按所用工具部署对应资源；默认目录如下：
+以下是**科学工具本身**依赖的模型和程序，与用于驱动 Agent 的生成 LLM 分开配置。仅需准备所选任务实际涉及的资源；源码仓库不附带这些大文件。
 
-- 将 ProteinForceGPT 放到 `.local/models/ProteinForceGPT/`，ESMFold 放到 `.local/models/esmfold_v1/`，OmegaFold 权重放到 `.local/models/OmegaFold/`。
-- 将 BioT5 的 `biot5-base-*`、`biot5-plus-base-chebi20` 模型目录，以及 Chroma 的 `chroma/` 目录放在 `.local/models/` 下。
-- 将 DeepTMHMM2 代码和 checkpoint 放到 `.local/external_sources/DeepTMHMM2/`，其主干权重缓存保留在 `.local/models/torch_cache/`；OmegaFold 代码保留在 `.local/external_sources/OmegaFold/`。
-- 将 RXN sandbox 代码放到 `.local/external_sources/rxn-sandbox/`，模型放到 `.local/models/rxn-sandbox/`。
-- 将 MOFSimplify 模型放到 `.local/models/MOFSimplify/`；RASPA2 程序、力场和其他科学程序保留在 `.local/external_sources/`。默认 RASPA 可执行文件为 `.local/external_sources/RASPA2/install/bin/simulate`。
-- 将 MP、QChem、HIPPIE 归档数据保留在 `.local/reference_data/`，其他缓存保留在 `.local/data/`。
+**模型下载地址与默认目录：**
 
-如果把这些资源放到其他位置，在 `runtime.env` 中填写对应的绝对路径：`FORCEGPT_MODEL_PATH`、`ESMFOLD_MODEL_PATH`、`OMEGAFOLD_MODEL_PATH`、`DEEPTMHMM_MODEL_PATH`、`QizhiPei_MODEL_PATH`、`SOLVENT_THERMAL_MODELS`、`RASPA_EXECUTABLE_PATH`。RXN sandbox 等代码中固定使用项目目录的资源应保留上述结构。模型及数据按原项目许可取得。
+- **ProteinForceGPT**：从 [lamm-mit/ProteinForceGPT](https://huggingface.co/lamm-mit/ProteinForceGPT)下载完整模型与 tokenizer，放入 `.local/models/ProteinForceGPT/`。
+- **ESMFold**：从 [facebook/esmfold_v1](https://huggingface.co/facebook/esmfold_v1)下载完整 Transformers 模型，放入 `.local/models/esmfold_v1/`。
+- **OmegaFold**：从 [HeliXonProtein/OmegaFold](https://github.com/HeliXonProtein/OmegaFold)取得代码，放入 `.local/external_sources/OmegaFold/`；下载官方 [release1.pt](https://helixon.s3.amazonaws.com/release1.pt)，保存为 `.local/models/OmegaFold/release1.pt`。本工具使用 model 1。
+- **DeepTMHMM2**：从 [fteufel/DeepTMHMM2](https://github.com/fteufel/DeepTMHMM2)取得代码与 [checkpoints](https://github.com/fteufel/DeepTMHMM2/tree/main/checkpoints)，代码放入 `.local/external_sources/DeepTMHMM2/`，权重保留其 `checkpoints/` 结构。另按 [ESM 官方模型清单](https://github.com/facebookresearch/esm#available-models)取得 `esm2_t33_650M_UR50D.pt` 与对应 contact-regression 文件，放入 `.local/models/torch_cache/hub/checkpoints/`。此实现使用 DeepTMHMM **2**。
+- **BioT5**：分别下载 [dti-human](https://huggingface.co/QizhiPei/biot5-base-dti-human)、[peer-binloc](https://huggingface.co/QizhiPei/biot5-base-peer-binloc)、[peer-human_ppi](https://huggingface.co/QizhiPei/biot5-base-peer-human_ppi)、[peer-solubility](https://huggingface.co/QizhiPei/biot5-base-peer-solubility)、[peer-yeast_ppi](https://huggingface.co/QizhiPei/biot5-base-peer-yeast_ppi)、[text2mol](https://huggingface.co/QizhiPei/biot5-base-text2mol)和 [BioT5+ chebi20](https://huggingface.co/QizhiPei/biot5-plus-base-chebi20)。每个模型按其完整仓库名的最后一段建立目录，例如 `.local/models/biot5-base-peer-solubility/`。
+- **Chroma**：按 [generatebio/chroma](https://github.com/generatebio/chroma#get-started)申请权重 token；本项目将下载的权重与校验记录保存在 `.local/models/chroma/`。科学工具环境中的 Chroma 包和 `CHROMA_KEY` 均需配置。
+- **RXN Sandbox**：从 [官方代码仓库](https://github.com/rxn4chemistry/rxn-sandbox)取得代码、从 [官方模型仓库](https://huggingface.co/rxn4chemistry/rxn-sandbox)取得模型。代码放入 `.local/external_sources/rxn-sandbox/`，模型放入 `.local/models/rxn-sandbox/models/`，须包含 `forward/Pistachio2025Q2-Forward.ckpt` 和 `retrosynthesis/Pistachio2025Q2-Retro.ckpt`；词表使用代码仓库的 `vocab/Pistachio2025Q2.txt`。Git LFS 模型必须下载实际权重，不能只保留指针文件。
+- **MOFSimplify**：从 [hjkgrp/MOFSimplify](https://github.com/hjkgrp/MOFSimplify)取得 `model/` 下的模型与特征／训练数据文件，保留为 `.local/models/MOFSimplify/model/`。
+
+Hugging Face 模型的具体下载方法见[官方文档](https://huggingface.co/docs/huggingface_hub/guides/download)。例如在已安装 `huggingface_hub` 的环境执行：
+
+```bash
+python - <<'PY'
+from huggingface_hub import snapshot_download
+snapshot_download("lamm-mit/ProteinForceGPT", local_dir=".local/models/ProteinForceGPT")
+PY
+```
+
+**外部科学程序：**
+
+- **RASPA2**：从 [iRASPA/RASPA2](https://github.com/iRASPA/RASPA2)取得源码，按[官方文档](https://iraspa.org/raspa/)编译。默认可执行文件为 `.local/external_sources/RASPA2/install/bin/simulate`，其他安装位置通过 `RASPA_EXECUTABLE_PATH` 指定。
+- **Zeo++**：MOFSimplify 依赖 [lsmo-epfl/zeopp-lsmo](https://github.com/lsmo-epfl/zeopp-lsmo) 的 `network` 程序，默认路径为 `.local/external_sources/zeopp-lsmo/zeo++/network`；可用 `SCITOOL_ZEOPP_EXECUTABLE` 覆盖。
+- **DSSP**：从 [PDB-REDO/dssp](https://github.com/PDB-REDO/dssp)安装 `mkdssp`，在 `runtime.env` 用 `SCITOOL_DSSP_EXECUTABLE` 指向实际可执行文件。默认入口为 `.local/external_sources/dssp/run_mkdssp`，适用于部署时另设的本地启动包装器。
+- **吸附模拟力场**：参数来源为 [lsmo-epfl/aiida-lsmo](https://github.com/lsmo-epfl/aiida-lsmo)。本项目使用的实际定义文件和逐文件 SHA256 清单位于 `.local/external_sources/raspa_forcefields/`；需要同时准备定义文件及 `manifest.json`，不能仅安装 RASPA2。
+
+**数据与来源记录：**
+
+- **Materials Project 归档**：开放数据下载入口为 [MP 官方 AWS 数据集](https://registry.opendata.aws/materials-project/)，本地归档目录为 `.local/reference_data/MP_public_static/`。在线查询使用上述 `MP_KEY`；开放快照的日期、字段与历史对象覆盖范围不能由 API key 保证。
+- **HIPPIE**：从[官方历史版本下载页](https://cbdm-01.zdv.uni-mainz.de/hippienew/download/)选择 **v2.4 TAB**。当前工具读取 `.local/reference_data/HIPPIE/hippie_v2_4_20261013.tsv`，并读取 `.local/provenance/hippie_dataset_download.json` 中的实际来源、版本、日期和 SHA256；最新 `current` 数据不等于该历史快照。
+- **Q-Chem 输出**：benchmark 所需公开输入附件已在 [tasks/assets](tasks/assets/) 中，解析时使用真实上传文件；无需为读取这些附件另购 Q-Chem。自有输出文件按任务输入提供，额外归档可放在 `.local/reference_data/QChem_public/`。
+- **来源与校验文件**：DeepTMHMM2 还读取 `.local/provenance/deeptmhmm2_source_weights_verified.json`，记录实际代码 revision 与权重校验；HIPPIE 和 RASPA 力场分别需要上述来源记录与 manifest。这些本地部署记录尚未作为可自动重建的资源包分发，完整部署时必须与对应资源一并准备。上游下载链接不等于已经恢复项目的完整历史快照。
+
+如果把这些资源放到其他位置，在 `runtime.env` 中填写对应的绝对路径：`FORCEGPT_MODEL_PATH`、`ESMFOLD_MODEL_PATH`、`OMEGAFOLD_MODEL_PATH`、`DEEPTMHMM_MODEL_PATH`、`QizhiPei_MODEL_PATH`、`SOLVENT_THERMAL_MODELS`、`RASPA_EXECUTABLE_PATH`、`SCITOOL_ZEOPP_EXECUTABLE`、`SCITOOL_DSSP_EXECUTABLE`。RXN sandbox 等代码中固定使用项目目录的资源应保留上述结构。模型及数据按原项目许可取得。
 
 ### 验证安装与工具配置
 
@@ -165,21 +263,32 @@ python cli.py call PearsonCorrelation --arguments '{"x":[1,2,3],"y":[2,4,6]}'
 
 两种方式都适用于 **ReAct、SciToolAgent，以及可选 LLM judge**；actor 与 judge 可以选不同后端和模型。
 
-### 本地模型：推荐 vLLM 常驻服务
+### 本地模型：通过 vLLM 接入自选模型
+
+模型可从其发布方或 [Hugging Face 模型库](https://huggingface.co/models)取得，保存到任意可访问目录。选择支持对话生成的模型，确认所安装 vLLM 版本支持其架构，参见 [vLLM 支持模型清单](https://docs.vllm.ai/en/latest/models/supported_models/)。模型系列、规模、量化方式、权重位置和 GPU 数量均由使用者决定。
+
+在独立终端或 tmux 中启动服务。以下 `/absolute/path/to/your-model` 是自选模型的实际目录，`scitoolflow-local` 是对外服务名：
 
 ```bash
-# 示例使用 GPU 0、1；按实际可用设备修改 --gpus。
-# 启动器自动寻找 SciTool-LLM 的解释器；也可传 --python 指定。
-tmux new-session -d -s scitoolflow-model -c "$PWD" \
-  "$CONDA_PREFIX/bin/python scripts/model_service.py start --foreground --gpus 0,1 --model-path .local/models/Qwen3.5-9B"
-python scripts/model_service.py status
-export SCITOOLFLOW_VLLM_BASE=http://127.0.0.1:8016/v1
-export SCITOOLFLOW_VLLM_MODEL=Qwen3.5-9B
+conda activate SciTool-LLM
+CUDA_VISIBLE_DEVICES=0,1 vllm serve /absolute/path/to/your-model \
+  --served-model-name scitoolflow-local \
+  --host 127.0.0.1 --port 8016 --tensor-parallel-size 2 \
+  --dtype auto --gpu-memory-utilization 0.90 --max-num-seqs 2
 ```
 
-该示例以 TP=2、BF16、显存预算 0.95、上下文 49,152 启动 Qwen3.5-9B，原生 thinking 默认关闭；完整参数见 [qwen_vllm.json](configs/services/qwen_vllm.json)。服务已启动时，`start` 不会修改其设置；更换设备或权重前，先执行 `python scripts/model_service.py stop`。其他模型可通过兼容的本地 vLLM 服务提供，再设置 base/model 变量。`--backend vllm` 连接本机 loopback 服务，不读取生成 API 密钥。
+例如单卡部署时，将 `CUDA_VISIBLE_DEVICES` 改为一个设备编号，并将 `--tensor-parallel-size` 改为 `1`。模型的 chat template、上下文上限和原生 reasoning 参数按其官方部署要求设置；[vLLM 服务文档](https://docs.vllm.ai/en/latest/serving/openai_compatible_server/)。
 
-`--backend local` 可直接运行 Qwen Transformers worker：配置 `SCITOOL_MODEL_PATH`、`SCITOOL_LLM_PYTHON`、`SCITOOL_LLM_GPU`，并发必须为 1。它不需要 HTTP 服务；如果同权重的 vLLM 服务已经驻留，会复用该服务。直接 Transformers 使用贪心解码，与 vLLM 采样及结构约束不完全一致，报告结果时须标明后端。
+在 `.local/credentials/services.env` 配置相同的地址和服务名，然后回到 `SciTool-Unified` 环境运行 baseline：
+
+```dotenv
+SCITOOLFLOW_VLLM_BASE=http://127.0.0.1:8016/v1
+SCITOOLFLOW_VLLM_MODEL=scitoolflow-local
+```
+
+`--backend vllm` 只连接本机 loopback 服务，不读取生成 API 密钥。使用远程自托管服务时，按下文 API 方式配置地址。运行参数 `--max-input-tokens` 与 `--max-output-tokens` 应为所选模型的上下文窗口预留足够空间；更换模型后使用新结果目录并记录模型版本和采样设置。
+
+项目另提供 [Qwen 部署配置](configs/services/qwen_vllm.json)及 `scripts/model_service.py`，用于已验证的 Qwen 启动参数；该脚本包含 Qwen 专用 reasoning 设置。`--backend local` 也属于 Qwen3.5 专用 Transformers worker，并发为 1，使用 `SCITOOL_MODEL_PATH`、`SCITOOL_LLM_PYTHON` 和 `SCITOOL_LLM_GPU` 配置，可能复用同权重常驻服务。**其他本地模型使用上面的通用 vLLM 接入方式**，不依赖这两个 Qwen 专用入口。
 
 ### 生成 API：OpenAI Chat Completions 兼容接口
 
@@ -279,10 +388,18 @@ LLM judge **只复核 pending**，不能把明确数值错误、缺字段或 sch
 
 ## 数据版本与使用范围
 
-题库版本为 `20261018-scientific-contract-audit`。500 条参考为经助手逐项审查的暂定版本，尚未划分独立隐藏测试集。任务覆盖和静态部署检查不代表所有外部接口持续可用；学科分布、比较口径与已知限制见[对比页](docs/comparison/README.md)。
+题库版本为 `20261018-scientific-contract-audit`。500 条参考为经助手逐项审查的暂定版本，尚未划分独立隐藏测试集。任务覆盖和静态部署检查不代表所有外部接口持续可用；学科分布、比较口径与已知限制见本页对比部分。
 
 报告实验时，应同时记录题库版本、baseline、模型、后端、采样、预算和是否使用 LLM 复核。规则分与复核分分别保留；不同题库或运行指纹的预测不应合并。已有运行与审查记录见 [results](results/README.md)。
 
 ## 许可与来源
 
 代码许可见 [LICENSE](LICENSE)。SciToolAgent baseline 适配自 [HICAI-ZJU/SciToolAgent](https://github.com/HICAI-ZJU/SciToolAgent)，来源、固定版本与实现差异见 [baseline 文档](baselines/scitoolagent/README.md)。外部模型、数据和科学程序遵循各自的许可与访问条件。
+
+[^tool-pool]: 工具池按 dispatcher 的去重注册名称计算：原项目 489 个列表槽位、477 个名称；当前 546 个科学工具，不含 DescribeTools。净增 69 包括新增名称、分类调整、别名合并与删除，不能解释为从零实现 69 个新算法。
+
+[^coverage]: 横向覆盖统计将原路径的正式别名映射到当前 **546 工具**的共同目录与分类，分母一致；原项目自身目录的原生覆盖率为 **113/477=23.69%**。跨类别包含通用辅助类别。机器学习原先没有独立注册组；新增范围与重新分类不能混为一谈。
+
+[^task-incidence]: 学科涉及任务按多标签统计：一题可计入多个学科，因此不能将各行相加作为总题数。两组比例的分母分别为 379、500，不将上游推断主学科与本项目人工标签混比。
+
+[^upstream]: 上游固定到 [`ac1cf19f`](https://github.com/HICAI-ZJU/SciToolAgent/tree/ac1cf19fcef84e69f149db6da424afe4e9b2f11f)，仅对该提交公开文件作结论，不推断作者内部数据缺失。[论文](https://arxiv.org/html/2507.20280v1#S2.SS2)报告 Level2 为 379 题，并有专家审核；本项目参考仍是助手审查版本。
