@@ -1,0 +1,6 @@
+{
+  "material_id": "mp-149",
+  "matching": "Read the published element-averaged oxidation assignment,and match its Si0+label to the corresponding CrystalNNcoordination-environment summary. Retain each source method and version;oxidation guesses and bond summaries are distinct calculations.",
+  "comparison": "A proposed model declares every local environment a regular tetrahedron from coordination count4and equal central-neighbor bond lengths alone. Report the matched coordination count,the mean and population standard deviation of the listed bond lengths,and whether those scalar facts alone determine all pairwise neighbor angles.",
+  "scope": "This is an information-sufficiency audit of the returned summaries. Do not infer measured oxidation numbers,atomic charges or angular geometry from a guessed average label."
+}

@@ -1,0 +1,27 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "species_order": [
+    "species_A",
+    "species_B"
+  ],
+  "intrinsic_growth_per_day": [
+    1.0,
+    1.0
+  ],
+  "competition_coefficients_per_density_day": [
+    [
+      1.0,
+      2.0
+    ],
+    [
+      2.0,
+      1.0
+    ]
+  ],
+  "model": "For positive densities dx_i/dt=x_i*(r_i-sum_j C_ij*x_j). All coefficients are fixed and public; no demographic noise, seasonal change or migration. Density units are one common controlled survey unit.",
+  "audit": "A strictly positive coexistence fixed point satisfies C*x=r. Local stability requires all eigenvalues of the full Jacobian to have negative real part; at an interior equilibrium J=-diag(x)*C. An invasion rate is the absent species per-capita growth when the resident alone is at r_resident/C_resident,resident. Report eigenvalues in increasing order. No initial density vector is supplied.",
+  "scope": "Controlled ecological competition and priority-effect interpretation. Positive equilibrium feasibility alone is not dynamical stability or a global coexistence guarantee."
+}

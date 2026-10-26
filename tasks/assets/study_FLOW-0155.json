@@ -1,0 +1,51 @@
+{
+  "data": [
+    {
+      "record_id": "trajectory_statistics",
+      "time_s": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ],
+      "zero_intercept_design": [
+        [
+          0.0
+        ],
+        [
+          1.0
+        ],
+        [
+          2.0
+        ],
+        [
+          3.0
+        ]
+      ],
+      "covariance_xx_nm2": [
+        0.0,
+        4.0,
+        8.0,
+        12.0
+      ],
+      "covariance_xy_nm2": [
+        0.0,
+        1.2,
+        2.4,
+        3.5999999999999996
+      ],
+      "covariance_yy_nm2": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "time seconds; centered displacement covariance nm²; diffusion nm²/s",
+    "original_observation_claim": false
+  }
+}

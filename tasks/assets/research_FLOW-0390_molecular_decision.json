@@ -1,0 +1,40 @@
+{
+  "origin": "Own anonymous molecular decision model with a correct ligand R and an incorrect ligand W. These labels are mathematical alternatives, not named proteins, sequences, organisms, medicines or experimental targets. All observations below are constructed exact ensemble summaries, not finite samples.",
+  "kinetic_network": "Row-vector continuous-time Markov convention. Transient states in order[E,B_R,C_R,B_W,C_W]; absorbing outcomesP_R,P_W. From freeE, binding to B_R and B_W each occurs at rate1. For each ligandL, B_L->E and C_L->E are rejection/reset channels with the SAME off-rate b_L, whereb_R=1,b_W=8. ActivationB_L->C_L has ratea, acceptanceC_L->P_L has ratek. All other transitions vanish. Thus rejected attempts can restart and choose a different ligand; count and timing begin atE at time0and end at the FIRST acceptance of either ligand. a andk are shared between ligands and satisfya+k=6,a>0,k>0. The diagonal transient generator entries include BOTH rejection and acceptance exits. The full7state generator includes the two absorbing states with zero rows.",
+  "observed_ensemble_summaries": {
+    "eventual_wrong_acceptance_probability": "4/43",
+    "mean_first_acceptance_time": "797/215",
+    "mean_number_of_activation_events_before_first_acceptance": "286/215"
+  },
+  "observation_and_identifiability_problem": "First use only the fate/time observations, NOT the activation count. Infer every positive(a,k)compatible with the output summaries undera+k=6; retain a COMPLETE registered polynomial root inventory before branch selection. Verify the mean time for each branch. Derive the entire joint fate/time Laplace transforms E[exp(-s*T)*1(outcome=P_L)] for every s>=0, by first-attempt renewal or an equivalent full-generator resolvent. Determine whether rate swapping preserves just the supplied moments or the COMPLETE fate-resolved decision-time distributions. A few matched time samples or moments cannot prove full-law equivalence. Then use the separate activation-count assay, counting EVERY activation on rejected as well as accepted attempts, to determine whether the rate ambiguity is resolved. Compare internal transient occupancy laws at a fixed time; full output equivalence need not identify internal state trajectories.",
+  "actual_generator_and_state_evidence": "For EACH output-only alias and the final cost-optimal design, retain actual complete registered linear-system outputs for all five-state vectors: correct absorption probabilityh_R, wrong probabilityh_W, mean first-acceptance timem, second momentm2, and expected activation countc. Equations are -Qh_L=r_L, -Qm=ones, -Qm2=2m using the ACTUAL returned m, and -Qc=r_A, where r_L is the acceptance exit-rate vector and r_A=[0,a,0,a,0]. Rewards are counts per time in each preactivation state, not a probability or one count per successful decision. Retain full registered7x7MatrixExponential outputs at time4for EACH of these three rate settings and registered products of the ACTUAL returned exponentials with the COMPLETE initial row(1,0,0,0,0,0,0). Report the entire7state probability rows in[E,B_R,C_R,B_W,C_W,P_R,P_W]order; distinguish transient occupancies from cumulative accepted outcomes. Verify normalization, nonnegativity and consistency with fate-resolved transforms/moments. No reference output may substitute an exponential waiting law for the actual recycled decision process.",
+  "bounded_design_problem": "Now vary the physical control over ALL0<a<6 withk=6-a. Require unconditional wrong-acceptance probability<=1/10 and unconditional mean first-acceptance time<=4. Characterize the COMPLETE feasible activation-rate set as two closed intervals, retaining full registered root inventories for BOTH boundary equations before physical selection. First find the complete activation-rate set minimizing error under the latency bound alone. Then minimize expected activation count under BOTH constraints; identify every optimum, report its(a,k), error, time and count, and determine which constraints are active. Prove the full continuous global result, including every disconnected branch and feasible endpoint; finite grids or a local numerical minimum are insufficient. Retain a COMPLETE registered root inventory for the activation-count objective derivative and certify its sign on the physical interval; complex roots are not additional feasible controls. Productp=a*kcan simplify output-only objectives but does not automatically identify count cost or stage order.",
+  "scientific_boundaries": "The network is an irreversible driven-selection idealization with no reverse activation or product steps. One activation is assigned one EVENT-COST unit. No fuel chemical affinity, backward microscopic rates or work-per-event is specified, so expected count is not a finite entropy-production/thermodynamic-work estimate, and detailed balance or equilibrium dissipation cannot be inferred from this model. The task concerns mechanism identification and timing/count tradeoffs, not designing a molecule or changing a biological sequence. Acceptance probabilities and times are unconditional fromE, including all resets; conditional-on-successful-single-binding calculations answer a different question.",
+  "interpretation_proposals": {
+    "A": "Mechanisms with identical complete outcome/time laws can still differ in hidden-state occupancy and activation-event cost.",
+    "B": "Matching the eventual error and mean time proves that every unobserved microscopic rate is identified.",
+    "C": "A renewal calculation must include rejected attempts and returns to the free state before first acceptance.",
+    "D": "One completed decision necessarily consumes exactly one activation because only the accepted trajectory matters.",
+    "E": "A disconnected feasible control set requires both branches and all physical endpoints in a global design certificate.",
+    "F": "Any complex stationary root supplies another real feasible experimental control.",
+    "G": "An activation-event count determines a finite thermodynamic work even when the driving affinity and reverse rates are absent.",
+    "H": "A separate counting assay can resolve an internal stage-order ambiguity that output-only timing cannot resolve at any sample size."
+  },
+  "reporting": "Use the public schema; numerical absolute tolerance1e-7. Rate-pair arrays are[a,k]and output-only aliases are ordered by increasinga. State rows retain the full7state identity order. Feasible intervals and minimum-error avalues are ascending and include endpoints. Full actual5state solves, all stationary/boundary root inventories, exponential row propagation and the complete renewal/globality/count-cost derivations remain part of the reference trajectory. Error, state probabilities and counts have their own meanings: probabilities lie in[0,1]and state rows sum1; counts need not lie below1. The stated ensemble observations are exact model constraints, not confidence bounds.",
+  "primary_context": [
+    {
+      "authors": "J. J. Hopfield",
+      "year": 1974,
+      "title": "Kinetic Proofreading: A New Mechanism for Reducing Errors in Biosynthetic Processes Requiring High Specificity",
+      "doi": "10.1073/pnas.71.10.4135",
+      "url": "https://www.princeton.edu/~wbialek/rome/refs/hopfield_74.pdf"
+    },
+    {
+      "authors": "J. Ninio",
+      "year": 1987,
+      "title": "Alternative to the steady-state method: derivation of reaction rates from first-passage times and pathway probabilities",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC304275/"
+    }
+  ],
+  "context_role": "Primary conceptual context for staged selection and first-passage/reset accounting. This question uses an own anonymous finite-state network, exact observations, bounded controls and event-cost objective; no source biomolecule, empirical performance, sequence, pathway implementation, source prose or finite-energy claim is reproduced."
+}

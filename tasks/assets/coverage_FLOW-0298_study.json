@@ -1,0 +1,9 @@
+{
+  "uniprot_accession": "P69905",
+  "retrievals": [
+    "all",
+    "interpro"
+  ],
+  "analysis": "Restrict to molecular-function rows identified by term prefix F:. Compare complete existing annotations with the InterPro-only filter. Return GOIDs retained by that filter,the IDs present in the all-evidence set but removed by the filter,and retained/all distinct molecular-function fraction.",
+  "scope": "InterProfilter means IEAevidence sourced toInterPro. It is not all experimental evidence,not a new sequence prediction,and a term absent after filtering is not a demonstrated biological absence. Use exact GOIDs,not name-substring equivalence."
+}

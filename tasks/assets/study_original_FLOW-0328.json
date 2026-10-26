@@ -1,0 +1,22 @@
+{
+  "parent_smiles": "n1ccccc1",
+  "ring_nitrogen_zero_based_atom_index": 0,
+  "reactive_sites": "All five carbon atoms,and only those atoms,are eligible equivalent-trajectory first-event sites. Group sites by shortest-path bond distance to the ring nitrogen.",
+  "class_order_by_N_graph_distance": [
+    1,
+    2,
+    3
+  ],
+  "molar_first_product_fractions_by_class": [
+    0.4,
+    0.2,
+    0.4
+  ],
+  "total_first_event_rate_per_s": 0.5,
+  "RT_kJ_per_mol": 2.5,
+  "model": "A stipulated low-conversion parallel first-event model assigns the SAME per-site pseudo-first-order rate r_dto every carbon in graph-distance class d. Class hazard equals its site multiplicity times r_d;the total hazard and molar first-product fractions are measured. No secondary event or class-dependent product detection occurs. Relative per-site activation free energy against class1is -RT*ln(r_d/r_1),assuming the same prefactor. Graph symmetry supplies multiplicity only;it does not prove equal chemical reactivity of different classes.",
+  "target": "Determine class multiplicities from the actual parent graph. Return absolute per-site rates and relative per-site activation free energies in class order,the fastest per-site class distance,and whether equal per-site rates reproduce the observed class product fractions.",
+  "provenance": {
+    "kind": "Explicit controlled chemical model/exact observations;no empirical mechanism or practical reaction recommendation is inferred."
+  }
+}

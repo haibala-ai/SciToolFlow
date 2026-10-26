@@ -1,0 +1,21 @@
+{
+  "stress_relaxation_times_s": [
+    0.0,
+    1.0,
+    2.0,
+    3.0
+  ],
+  "measured_relaxation_modulus_GPa": [
+    10.0,
+    4.943035529371539,
+    3.0826822658929016,
+    2.3982965469429116
+  ],
+  "model": "A causal passive standard-linear-solid working model with relaxation modulus G(t)=G_inf+(G_0-G_inf)*exp(-t/tau_relax),t>=0,G_0>G_inf>0. The listed exact relaxation data share one small-strain,tangent-temperature state. The initial value is directly observed at t=0. No aging,plasticity or extra relaxation branch is allowed.",
+  "creep_definition": "Creep compliance J(t) is strain response per unit constant stress applied at0under the SAME hereditary constitutive law sigma(t)=integral_0^t G(t-s)*d epsilon(s),including the initial jump in strain. It is not defined as pointwise1/G(t). Infer the relaxation parameters and derive the corresponding step-stress creep response.",
+  "target": "Return G_0,G_inf,relaxation time,creep retardation time and J(1s)in GPa^-1. Also report the pointwise reciprocal1/G(1s)and whether it equals actual J(1s). A fitted step-strain decay time is not automatically the step-stress retardation time.",
+  "scope": "Conditional linear viscoelastic response under the stated one-branch model,not a claim about arbitrary measured material memory.",
+  "provenance": {
+    "kind": "Explicit controlled material/device reporting model;not an experimental assembly or performance claim."
+  }
+}

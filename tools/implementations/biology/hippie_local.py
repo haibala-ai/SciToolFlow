@@ -1,5 +1,5 @@
 """Direct human interaction lookup in an actual, dated HIPPIE dataset snapshot."""
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import csv
 import json
 from pathlib import Path

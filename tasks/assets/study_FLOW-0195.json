@@ -1,0 +1,47 @@
+{
+  "data": [
+    {
+      "record_id": "image00",
+      "path_order": 0,
+      "structure_file": "migration_image_00.vasp"
+    },
+    {
+      "record_id": "image01",
+      "path_order": 1,
+      "structure_file": "migration_image_01.vasp"
+    },
+    {
+      "record_id": "image02",
+      "path_order": 2,
+      "structure_file": "migration_image_02.vasp"
+    },
+    {
+      "record_id": "image03",
+      "path_order": 3,
+      "structure_file": "migration_image_03.vasp"
+    },
+    {
+      "record_id": "image04",
+      "path_order": 4,
+      "structure_file": "migration_image_04.vasp"
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published computational NEB source projection",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "Cartesianandcellangstrom;atomindexzero-based;MICsame-cellfixedspeciescorrespondence",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "materialsproject/pymatgen-test-files",
+      "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/neb_analysis/neb2/neb_analysis2.json",
+      "accessed_at": "2026-10-20T11:56:08.396578+00:00",
+      "raw_sha256": "e4122d46af43b6eb1cb934cad1d8128d3dce872e78c5537a46b48ac761da0007",
+      "git_blob_sha1": "01c34f39829783b6fcdd074473dafeb21b0d2ebe",
+      "git_blob_verified": true,
+      "byte_count": 57848,
+      "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/neb_analysis/neb2/neb_analysis2.json",
+      "role": "Actual public scientific computational output; no expected answers used"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "reference_temperature_kelvin": 300.0,
+  "reference_saturation_pressure_pascal": 3500.0,
+  "calibration_temperatures_kelvin": [
+    280.0,
+    330.0
+  ],
+  "calibration_saturation_pressures_pascal": [
+    1100.3123272219586,
+    14723.377302055253
+  ],
+  "heldout_temperature_kelvin": 360.0,
+  "heldout_saturation_pressure_pascal": 47000.95634885138,
+  "gas_constant_j_per_mol_kelvin": 8.314462618,
+  "model": "Controlled coexistence curve with ideal vapor and negligible condensed molar volume: d ln(P_sat)/dT=DeltaH(T)/(R*T^2). Heat-capacity difference is constant, so DeltaH(T)=H_ref+DeltaCp*(T-T_ref). H_ref and DeltaCp are unknown. The integrated relation is ln(P/P_ref)=H_ref/R*(1/T_ref-1/T)+DeltaCp/R*(ln(T/T_ref)+T_ref/T-1).",
+  "analysis_policy": "Estimate the two unknown thermodynamic parameters using ONLY the two nonreference calibration observations and their common reference point. Predict the held-out pressure without using it to fit. For the constant-enthalpy shortcut retain the inferred H_ref but set DeltaCp=0. Relative error=(shortcut_pressure-prediction)/prediction.",
+  "scope": "Stipulated finite-window thermodynamics of a hypothetical benign phase pair, not new experimental vapor pressures or a global phase diagram."
+}

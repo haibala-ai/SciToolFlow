@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "point_ids": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "coordinates_meters": [
+    [
+      0.2,
+      0.2
+    ],
+    [
+      9.8,
+      0.2
+    ],
+    [
+      0.2,
+      9.8
+    ],
+    [
+      9.8,
+      9.8
+    ],
+    [
+      5.0,
+      5.0
+    ]
+  ],
+  "square_side_meters": 10.0,
+  "radii_meters": [
+    0.5,
+    1.0,
+    5.0
+  ],
+  "design": "These are stipulated locations in a periodic square simulation domain, not a bounded field plot with missing outside neighbors. The periodic distance uses min(abs(dx),L-abs(dx)) independently on each coordinate. Compare it with ordinary Euclidean distance on the same coordinates.",
+  "definition": "For each supplied radius count ordered distinct-point pairs with distance<=radius. K(r)=area*ordered_count/[n*(n-1)]. Exclude self pairs; preserve every location once. This is the declared finite-panel estimator, not n squared normalization. No random-label or complete-spatial-randomness null experiment is provided.",
+  "scope": "Use only this controlled spatial geometry; do not infer a significance level from whether estimated K exceeds pi*r^2."
+}

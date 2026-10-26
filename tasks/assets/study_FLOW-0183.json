@@ -1,0 +1,139 @@
+{
+  "data": [
+    {
+      "record_id": "probes",
+      "engineering_strain_design": [
+        [
+          0.0011339969552724334,
+          4.295105407779738e-05,
+          -0.00017912825691979186,
+          6.561533330180426e-05,
+          9.22521084454311e-05,
+          0.0001864149245553455
+        ],
+        [
+          0.0002947936794055091,
+          0.001099370360064942,
+          -0.00018719667182838523,
+          -6.720102698674839e-05,
+          -4.954867988729723e-05,
+          -1.858918977438773e-05
+        ],
+        [
+          0.00011724377573846373,
+          2.852873980834837e-06,
+          0.000796607182021672,
+          -0.00013192041708178645,
+          -0.00026030622021985334,
+          -0.00021085220589296718
+        ],
+        [
+          0.00020595567695466614,
+          -3.6049840623340434e-05,
+          7.369496040905598e-05,
+          0.0011410751592252604,
+          -0.00026994017549374137,
+          -0.00017447653831627563
+        ],
+        [
+          -0.0003352309277278765,
+          0.00012572556307405595,
+          -8.143839847396558e-05,
+          5.8902212501495336e-05,
+          0.0010689757875658118,
+          0.00020577180871736843
+        ],
+        [
+          0.00033537163740112765,
+          -5.4154479227818314e-05,
+          -0.00019066054989372202,
+          0.00010757919383091773,
+          -2.176152906808505e-05,
+          0.00085189557524681
+        ]
+      ],
+      "stress_responses_gpa": [
+        [
+          0.2869700573554533,
+          0.17660261711848388,
+          0.15688475924026743,
+          0.005839764663860579,
+          0.008210437651643367,
+          0.01659092828542575
+        ],
+        [
+          0.24260260431863678,
+          0.31946736762497974,
+          0.19268681882635136,
+          -0.005980891401820607,
+          -0.004409832509969454,
+          -0.001654437889920508
+        ],
+        [
+          0.17203601010073943,
+          0.16047111752729556,
+          0.23928728157481538,
+          -0.011740917120278993,
+          -0.023167253599566947,
+          -0.01876584632447408
+        ],
+        [
+          0.06294765176683206,
+          0.03864929385394676,
+          0.049925940510063334,
+          0.10155568917104818,
+          -0.024024675618942982,
+          -0.015528411910148532
+        ],
+        [
+          -0.08385156926627424,
+          -0.03779786594757529,
+          -0.05897755999628517,
+          0.005242296912633085,
+          0.09513884509335725,
+          0.01831369097584579
+        ],
+        [
+          0.04894088959318378,
+          0.00981536973057151,
+          -0.003027987990550702,
+          0.009574548250951678,
+          -0.0019367760870595695,
+          0.0758187061969661
+        ]
+      ],
+      "major_symmetry_tolerance_gpa": 0.5
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Strainunitless;stressGPa;Voigtorderxx,yy,zz,yz,xz,xy",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "Materials Project",
+      "url": "https://api.materialsproject.org/materials/elasticity/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_limit=20&_all_fields=true",
+      "accessed_at": "2026-10-20T08:07:40.768678+00:00",
+      "raw_sha256": "a7d7aff7db31c12a428e740d3c844cd9e7550c79a0064a489bf3bfe5595e46d8",
+      "record_count": 10,
+      "credentials_included": false,
+      "claims": "Authentic fresh API response; independent of prior benchmark answers."
+    },
+    "record_source_mapping": [
+      {
+        "capture": "mp_elasticity_candidates",
+        "upstream_record_identity": "mp-aaaaaaan",
+        "role": "controlled constitutive-study scale only, not newly computed DFT observations",
+        "source": {
+          "provider": "Materials Project",
+          "url": "https://api.materialsproject.org/materials/elasticity/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_limit=20&_all_fields=true",
+          "accessed_at": "2026-10-20T08:07:40.768678+00:00",
+          "raw_sha256": "a7d7aff7db31c12a428e740d3c844cd9e7550c79a0064a489bf3bfe5595e46d8",
+          "record_count": 10,
+          "credentials_included": false,
+          "claims": "Authentic fresh API response; independent of prior benchmark answers."
+        }
+      }
+    ]
+  }
+}

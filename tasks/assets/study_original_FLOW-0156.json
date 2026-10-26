@@ -1,0 +1,14 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study, not new experimental measurements.",
+    "scope": "Results are conditional on the complete stated model, measurement convention and units."
+  },
+  "orthogonal_four_terminal_resistances_ohm": [
+    100.0,
+    200.0
+  ],
+  "uniform_thickness_meters": 1e-07,
+  "independently_calibrated_principal_resistivity_ratio_x_over_y": 4.0,
+  "model": "A homogeneous simply connected thin sheet has point contacts on its boundary, no holes, negligible contact size and no Hall term. Its two positive orthogonal four-terminal resistances obey exp(-pi*R1/Rs)+exp(-pi*R2/Rs)=1. In this declared anisotropic extension Rs=sqrt(rho_x*rho_y)/thickness, and the labelled principal axes x,y are independently established.",
+  "comparison": "The shortcut is Rs_approx=pi*(R1+R2)/(2*ln(2)); relative error is (approx-exact)/exact. It is exact only for equal resistances. The identification question removes the independent anisotropy ratio while retaining both measured resistances and thickness. No contact-position information beyond this declared invariant equation is supplied."
+}

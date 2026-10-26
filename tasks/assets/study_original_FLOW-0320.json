@@ -1,0 +1,28 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "state_order": [
+    "cation",
+    "zwitterion",
+    "anion"
+  ],
+  "state_smiles": [
+    "[NH3+]CC(=O)O",
+    "[NH3+]CC(=O)[O-]",
+    "NCC(=O)[O-]"
+  ],
+  "stepwise_acid_dissociation_pKa": [
+    2.3,
+    9.7
+  ],
+  "ph_conditions": [
+    2.3,
+    6.0,
+    9.7
+  ],
+  "model": "Controlled ideal dilute diprotic ampholyte, with the three listed states only. Ka1 describes cation to zwitterion plus proton; Ka2 describes zwitterion to anion plus proton. pH is externally buffered and activities are approximated by concentrations. Fraction ratios cation:zwitterion:anion=10^(pKa1-pH):1:10^(pH-pKa2). Ignore conformer populations and activity corrections.",
+  "target": "Use each original state graph formal charge to obtain the ensemble mean charge at every pH. The isoelectric pH has zero mean charge in this model. A net-zero zwitterion still contains charged atoms; zero mean over an ensemble is separate from every member having zero net charge.",
+  "scope": "Stipulated protonation thermodynamics, not measured glycine pKa, a physiological effect or automatic pH prediction from a neutral graph."
+}

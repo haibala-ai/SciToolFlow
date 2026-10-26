@@ -1,0 +1,144 @@
+{
+  "data_origin": "A controlled structural-identifiability study for repeated census of a benign understory plant, with false-positive sensor classifications. All tables give exact rational POPULATION probabilities of detection counts from a constructed model, not finite sampled counts or measured field prevalence. Numerators and denominators encode probabilities; denominators are not numbers of independent sites. No empirical confidence interval is requested.",
+  "ecological_observation_model": "For habitat h, a random closed site is occupied with probability psi_h. Occupancy does not change across its visits. Conditional on its occupied/absent state, repeated visits to the SAME site are independent and identically distributed: a positive detection has probability p_h if occupied and alpha_h if absent. Distinct sites are independent. Parameters obey0<=psi_h<=1,0.4<=p_h<=0.95,0<=alpha_h<=0.15, so p_h>alpha_h fixes which mixture component means occupancy. No unmodelled persistent observer heterogeneity or time/weather dependence is allowed in this controlled model. These assumptions do not automatically hold in real censuses.",
+  "input_probabilities": [
+    {
+      "record_id": "A-3-1",
+      "habitat": "A",
+      "same_site_visit_count": 3,
+      "positive_detection_count": 1,
+      "probability_numerator": 3351,
+      "probability_denominator": 20000
+    },
+    {
+      "record_id": "A-2-2",
+      "habitat": "A",
+      "same_site_visit_count": 2,
+      "positive_detection_count": 2,
+      "probability_numerator": 59,
+      "probability_denominator": 200
+    },
+    {
+      "record_id": "A-3-0",
+      "habitat": "A",
+      "same_site_visit_count": 3,
+      "positive_detection_count": 0,
+      "probability_numerator": 7183,
+      "probability_denominator": 20000
+    },
+    {
+      "record_id": "C-2-2",
+      "habitat": "C",
+      "same_site_visit_count": 2,
+      "positive_detection_count": 2,
+      "probability_numerator": 3203,
+      "probability_denominator": 12500
+    },
+    {
+      "record_id": "C-2-0",
+      "habitat": "C",
+      "same_site_visit_count": 2,
+      "positive_detection_count": 0,
+      "probability_numerator": 7403,
+      "probability_denominator": 12500
+    },
+    {
+      "record_id": "B-2-0",
+      "habitat": "B",
+      "same_site_visit_count": 2,
+      "positive_detection_count": 0,
+      "probability_numerator": 1119,
+      "probability_denominator": 1600
+    },
+    {
+      "record_id": "B-2-2",
+      "habitat": "B",
+      "same_site_visit_count": 2,
+      "positive_detection_count": 2,
+      "probability_numerator": 199,
+      "probability_denominator": 1600
+    },
+    {
+      "record_id": "A-2-1",
+      "habitat": "A",
+      "same_site_visit_count": 2,
+      "positive_detection_count": 1,
+      "probability_numerator": 29,
+      "probability_denominator": 100
+    },
+    {
+      "record_id": "C-2-1",
+      "habitat": "C",
+      "same_site_visit_count": 2,
+      "positive_detection_count": 1,
+      "probability_numerator": 947,
+      "probability_denominator": 6250
+    },
+    {
+      "record_id": "A-2-0",
+      "habitat": "A",
+      "same_site_visit_count": 2,
+      "positive_detection_count": 0,
+      "probability_numerator": 83,
+      "probability_denominator": 200
+    },
+    {
+      "record_id": "A-3-3",
+      "habitat": "A",
+      "same_site_visit_count": 3,
+      "positive_detection_count": 3,
+      "probability_numerator": 4117,
+      "probability_denominator": 20000
+    },
+    {
+      "record_id": "A-3-2",
+      "habitat": "A",
+      "same_site_visit_count": 3,
+      "positive_detection_count": 2,
+      "probability_numerator": 5349,
+      "probability_denominator": 20000
+    },
+    {
+      "record_id": "B-2-1",
+      "habitat": "B",
+      "same_site_visit_count": 2,
+      "positive_detection_count": 1,
+      "probability_numerator": 141,
+      "probability_denominator": 800
+    }
+  ],
+  "inference_stages": "Use habitat A TWO-visit data alone first, without borrowing habitat B/C or the third-visit table. Recover the complete sharp marginal intervals for psi_A,p_A,alpha_A and the sharp range of the probability that visit3 is positive conditional on visits1and2 both negative. Establish completeness analytically over continuous parameters, not by accepting one local optimizer solution. Decide whether psi_A>0.55 follows for EVERY compatible model. Next audit the hypothesis that ANY selected pair of habitats shares ONE common p and ONE common alpha, while their occupancies remain distinct free parameters: report every compatible pair among AB,AC,BC and the shared parameters/occupancies for each compatible pair. Also decide whether ALL three habitats can share a calibration. Compatibility of a pair is not proof of a shared biological/observational mechanism. Finally add habitat A THREE-visit table, retain its marginal consistency with two visits, recover all identifiable parameters, and compute posterior occupancy after three negatives plus the probability of a fourth positive conditional on those three negatives. Determine whether the occupancy threshold is then identified. More independent sites alone do not supply a missing within-site third joint moment.",
+  "protocol_proposals": {
+    "P1": "Collect arbitrarily many more independent sites with the identical two-visit protocol and no additional calibration knowledge.",
+    "P2": "For the same closed habitat-A sites, add a third conditionally independent visit with unchanged p_A and alpha_A and obtain its exact joint count probabilities in the ideal limit.",
+    "P3": "Create three new independent one-visit site cohorts in A and retain only the three marginal positive fractions, with no within-site pairing.",
+    "P4": "Independently determine the exact false-positive probability alpha_A using verified truly absent A-like sites under the same observation conditions, then combine it with A two-visit probabilities.",
+    "P5": "Declare p and alpha equal across A,B,C without checking the supplied distributions and use a pooled fit."
+  },
+  "protocol_question": "Which complete protocol proposals structurally identify all three habitat-A parameters under their stated information/assumptions for this nondegenerate dataset? These are ideal probability/identifiability claims, not finite-sample precision guarantees. Report protocol IDs only; do not claim that three visits generically eliminate unmodelled dependence in real field data.",
+  "interpretation_proposals": {
+    "A": "A negative visit alone does not establish absence, and a positive visit need not establish occupancy when alpha is unknown.",
+    "B": "Under the expressly stated conditional-independent closed-site mixture, the three-visit A population probabilities identify its oriented two detection components and occupancy.",
+    "C": "The compatible AB shared-calibration fit proves habitat C has the same detector error rates.",
+    "D": "The exact probability denominator in a row is a finite independent-site sample size for a binomial significance test.",
+    "E": "Without modelling false positives, the two-visit A data still uniquely identify the correct occupancy.",
+    "F": "The requested posterior after repeated negatives is conditional on this declared mixture and observation assumptions; it is not a model-free field prevalence estimate."
+  },
+  "reporting": "Return two_visit_A_parameter_intervals with psi,p,alpha arrays[min,max]; two_visit_A_third_positive_after_two_negatives_interval; two_visit_A_psi_above_0_55_identified; compatible_shared_calibration_pairs (IDs sorted inside each pair and pairs sorted); shared_pair_fits keyed by concatenated pair such as AB with p,alpha,psi_by_habitat; all_three_share_calibration_compatible; three_visit_A_parameters with psi,p,alpha; three_visit_A_posterior_occupancy_after_three_negatives; three_visit_A_fourth_positive_after_three_negatives; three_visit_A_psi_above_0_55_identified; structurally_identifying_protocol_ids; valid_interpretation_proposal_ids. Continuous quantities tolerance absolute1e-7 plus relative1e-7; IDs, booleans and table identities exact. Parameter intervals are individual sharp projections of a coupled solution family, not an independent parameter box.",
+  "methodological_sources": [
+    {
+      "title": "Estimating site occupancy rates when detection probabilities are less than one",
+      "authors": "MacKenzie et al.",
+      "year": 2002,
+      "url": "https://armi.usgs.gov/content/?contentid=190",
+      "role": "Motivation for repeated-visit occupancy/detection separation; not a claim that the original no-false-positive model is the present model."
+    },
+    {
+      "title": "Designing occupancy studies when false-positive detections occur",
+      "year": 2016,
+      "doi": "10.1111/2041-210X.12617",
+      "url": "https://pubs.usgs.gov/publication/70179256",
+      "role": "Motivation for explicit false-positive observation and survey-design assumptions. No article data or text reproduced."
+    }
+  ]
+}

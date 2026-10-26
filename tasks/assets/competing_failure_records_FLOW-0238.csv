@@ -1,0 +1,13 @@
+unit_id,exit_time_hours,exit_type
+sensor_08,4,A
+sensor_01,1,A
+sensor_11,5,censored
+sensor_05,2,B
+sensor_03,1,censored
+sensor_12,6,censored
+sensor_09,4,B
+sensor_02,1,B
+sensor_10,5,A
+sensor_06,2,B
+sensor_04,2,A
+sensor_07,3,censored

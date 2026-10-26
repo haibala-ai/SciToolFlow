@@ -1,0 +1,40 @@
+{
+  "node_ids": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "undirected_adjacency": [
+    [
+      0.0,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ]
+  ],
+  "interpretation": "Four instrument stations and their symmetric coupling weights. All diagonal weights are zero. This is a finite unlabeled grouping model, not evidence that the station locations themselves form biological populations.",
+  "spectral_policy": "Use the UNNORMALIZED weighted Laplacian L=diag(degree)-A. Fiedler eigenvalue means the second smallest eigenvalue, counting multiplicity. Classify eigenvalues equal within1e-9. A normalized Fiedler vector is unique only up to sign when that eigenvalue is simple.",
+  "discrete_policy": "Independently assess ALL unordered bipartitions into exactly two groups of two stations. Cut cost is the sum of each undirected crossing-edge weight ONCE. Return every minimum-cost partition by its side containing A; sort the two IDs in each side lexically, but the order of returned sides is immaterial. Do not grade an arbitrary second eigenvector sign split as the unique discrete answer.",
+  "provenance": {
+    "data_origin": "Project-constructed numerical studies with explicit physical/statistical working assumptions; not experimental performance claims."
+  }
+}

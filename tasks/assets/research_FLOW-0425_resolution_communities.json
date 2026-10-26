@@ -1,0 +1,133 @@
+{
+  "origin": "Own fixed weighted8node network for method validation, generated from a seeded integer-weight construction and selected to distinguish objective optimization, resolution hierarchy and spectral rounding. It is not an observed social/biological network and has no supplied true community labels. The finite size deliberately permits complete exact certificates instead of heuristic quality claims.",
+  "node_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "weighted_adjacency": [
+    [
+      0,
+      7,
+      3,
+      6,
+      4,
+      7,
+      3,
+      0
+    ],
+    [
+      7,
+      0,
+      6,
+      9,
+      2,
+      4,
+      9,
+      1
+    ],
+    [
+      3,
+      6,
+      0,
+      6,
+      8,
+      1,
+      7,
+      6
+    ],
+    [
+      6,
+      9,
+      6,
+      0,
+      9,
+      8,
+      3,
+      6
+    ],
+    [
+      4,
+      2,
+      8,
+      9,
+      0,
+      9,
+      3,
+      3
+    ],
+    [
+      7,
+      4,
+      1,
+      8,
+      9,
+      0,
+      9,
+      0
+    ],
+    [
+      3,
+      9,
+      7,
+      3,
+      3,
+      9,
+      0,
+      6
+    ],
+    [
+      0,
+      1,
+      6,
+      6,
+      3,
+      0,
+      6,
+      0
+    ]
+  ],
+  "graph_convention": "Undirected nonnegative weighted graph, no self loops. All entries are exact integers. Degree d_i=sum_j W_ij; total undirected weightm=sum_i<j W_ij=half sum_i d_i. A community partition is an UNLABELLED partition of ALL8nodes into nonempty disjoint blocks, with no fixed community count and no restriction to a hierarchy, contiguous index groups or bisections. Canonical partitionID sorts node letters within each block, sorts block strings lexicographically, then joins with|. This removes arbitrary cluster numbers without imposing community structure.",
+  "modularity_definition": "For resolutiongamma>=0, Q_gamma(P)=sum_blocksC[ w_internal(C)/m-gamma*(volume(C)/(2m))^2 ], where internal weightcounts EACH undirected internal edgeONCE and volume(C)=sum_iinC d_i. Include singletons and the all-node partition. The null model uses the SAME observed degrees at every resolution. Derive the equivalent integer affine score4m\u00b2Q=4m*w_internal_total-gamma*sum_C volume(C)^2, retaining exact integer intercepts/slopes for every unlabelled partition. Do not mix definitions that double-count internal edges or replace m by node count.",
+  "complete_resolution_diagram": "Find the GLOBAL maximum over ALL partitions for EVERYgamma>=0. Enumerate unlabelled partitions exactly once (restricted-growth strings or another completeness proof), form the exact upper envelope of their affine scores, and retain exact rational intersection comparisons before reporting numeric boundaries. Give all POSITIVE critical boundaries ascending, EVERY maximizing partition on EACH successive open interval starting(0,firstboundary)andending(lastboundary,infinity), EVERY maximizing partition AT EACH exact boundary, and all maximizers atgamma0andgamma1. Include zero-width boundary-only maximizers even if an envelope routine discards a collinear line. A grid ofgamma, a local community algorithm or only the convex-hull interval representatives cannot certify boundary completeness. Also report the maximum Q atgamma1 and total distinct unlabelled partitions checked.",
+  "resolution_and_hierarchy": "Decide whether a single nested refinement hierarchy can contain all exact global optima asgamma increases, allowing all boundary ties but comparing the open-interval families. If it fails, report the FIRST critical resolution where the following open-interval optimum does not refine the preceding one, with one explicit before/after partition witness. A refinement may SPLIT former blocks only; it cannot put vertices from different former blocks back together. Merely increasing the number of communities is not a proof of nested refinement. Fully justify the first failure using the complete diagram.",
+  "global_two_way_normalized_cut": "For a nonempty proper subsetS, NCut(S)=cut(S,Sbar)*(1/volume(S)+1/volume(Sbar)). Treat complementarySas the SAME unlabelled bipartition. Enumerate EVERY such bipartition, give the global minimum, ALL minimizing IDs and total checked. Compare with the first positive modularity transition out of the all-node partition. Derive the relationship for GENERAL connected nonnegative undirected graphs under the stated modularity convention, using an arbitrary multiblock partition and not assuming the first competitor has exactlytwo blocks. State why the graph-specific equality is or is not accidental.",
+  "actual_graph_spectral_tools": "Construct a normalized weighted incidenceR with one row for each positive undirected edge(i,j): row has sqrt(W_ij)/sqrt(d_i)at i, -sqrt(W_ij)/sqrt(d_j)atj andzero elsewhere, withi<j. Retain actual MatrixSVD of the COMPLETE R and actual MatrixMultiply of R^T*R; propagate the actual product into SymmetricEigenDecomposition. The product equals L_sym=I-D^-1/2 W D^-1/2. Audit incidence rank, connected components, all eigenvalues/eigenvector residuals and its degree-weighted zero mode. Eigenvector sign and cluster integer labels are conventions, not answer evidence.",
+  "Fiedler_rounding": "Letu2be a unit eigenvector of L_sym for the second smallest eigenvalue and f_i=u2_i/sqrt(d_i). Sort f, sweep ALL7 nontrivial prefixes, and evaluate their ACTUAL graph NCut scores. This instance has a simple second eigenvalue and no tied f values. Reversing eigenvector sign only complements/reverses the same candidate bipartitions. Give all7canonical candidate IDs, the best sweep score, every best sweep ID and whether it equals the exhaustive global NCut optimum. Distinguish the continuous Rayleigh lower bound from an achieved discrete cut.",
+  "spectral_kmeans_baseline": "Independently take the TWO smallest eigenvectors from the actual returned eigensystem, form an8x2row matrix and normalize EACH ROW to Euclidean normone. Retain actual KMeansClustering on those8rows withclusters=2,seed=0. Translate its returned labels to a canonical partitionID and compute that partition NCut AND Q_gamma1 from the ORIGINAL graph. Do not treat Euclidean training inertia as either graph objective. Compare this heuristic with exhaustive NCut and modularity optima; do not infer a global Lloyd or graph-optimality guarantee merely from convergence. Sign flips of complete eigenvector columns preserve row distances and scientific partition meaning.",
+  "scientific_scope": "The task certifies which partitions optimize a declared graph objective, not whether those communities are scientifically true. Positive optimized modularity is not a significance test against a sampled graph null or evidence of causal/anatomical grouping. Degree corrections, resolution choices and spectral relaxations are distinct modeling/computation decisions. All exact global diagrams, ties, nonrefinement and objective comparisons belong in the trajectory.",
+  "interpretation_proposals": {
+    "A": "Higher resolution always refines the preceding global modularity optimum without regrouping vertices.",
+    "B": "Complete exact partition enumeration can certify a resolution diagram and all boundary ties for this finite graph.",
+    "C": "The second normalized-Laplacian eigenvalue must be the NCut value of an attained discrete bipartition.",
+    "D": "Spectral rounding can produce a suboptimal discrete cut even when its eigensystem is computed accurately.",
+    "E": "A two-cluster kmeans training inertia is the same objective as normalized cut on the original weighted graph.",
+    "F": "Under the stated null-model convention, the first modularity split threshold has a variational relationship to global two-way normalized cut.",
+    "G": "Positive maximum modularity proves the discovered blocks are the true scientific groups generating the network.",
+    "H": "Unlabelled partition identity and complete tie handling must be separated from arbitrary numeric cluster labels."
+  },
+  "reporting": "Use the public answer schema. Canonical partitionIDs as specified; unordered partition families may appear in any order, but resolution intervals/boundaries remain ordered. Boundary numbers reported to1e-7absolute and eigenvalues/objectives to1e-7; derive ties and regions using exact rational boundaries before rounding. Counts/booleans/IDsets exact. Do not infer array lengths from a template; derive them from the complete diagram. The first/last unbounded open intervals are included, with positive critical resolutions only in the boundary list. Full scientific arguments and actual receipts remain in the trajectory.",
+  "primary_context": [
+    {
+      "authors": "J.Reichardt and S.Bornholdt",
+      "year": 2006,
+      "title": "Statistical mechanics of community detection",
+      "doi": "10.1103/PhysRevE.74.016110",
+      "url": "https://doi.org/10.1103/PhysRevE.74.016110",
+      "role": "Primary context for resolution-dependent degree-corrected community objectives. The8node graph and complete diagram are own."
+    },
+    {
+      "authors": "S.Fortunato and M.Barthelemy",
+      "year": 2007,
+      "title": "Resolution limit in community detection",
+      "doi": "10.1073/pnas.0605965104",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1765466/",
+      "role": "Primary context for limitations of modularity-based grouping. No article networks, empirical measurements or numerical results are copied."
+    }
+  ]
+}

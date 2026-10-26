@@ -1,0 +1,61 @@
+{
+  "kind": "controlled_capacitance_geometry_study",
+  "observations": [
+    {
+      "specimen_id": "coupon_1",
+      "thickness_nm": 100,
+      "area_mm2": 1,
+      "capacitance_pf": 693.8786332506085,
+      "role": "train"
+    },
+    {
+      "specimen_id": "coupon_2",
+      "thickness_nm": 200,
+      "area_mm2": 1,
+      "capacitance_pf": 419.7538785049723,
+      "role": "train"
+    },
+    {
+      "specimen_id": "coupon_3",
+      "thickness_nm": 300,
+      "area_mm2": 2,
+      "capacitance_pf": 601.7711324783132,
+      "role": "train"
+    },
+    {
+      "specimen_id": "coupon_4",
+      "thickness_nm": 400,
+      "area_mm2": 3,
+      "capacitance_pf": 703.4497589171766,
+      "role": "train"
+    },
+    {
+      "specimen_id": "coupon_5",
+      "thickness_nm": 150,
+      "area_mm2": 2,
+      "capacitance_pf": 1046.1556911966206,
+      "role": "validation"
+    },
+    {
+      "specimen_id": "coupon_6",
+      "thickness_nm": 350,
+      "area_mm2": 1.5,
+      "capacitance_pf": 395.3496569791024,
+      "role": "validation"
+    },
+    {
+      "specimen_id": "coupon_7",
+      "thickness_nm": 250,
+      "area_mm2": 3,
+      "capacitance_pf": 1051.5484629895125,
+      "role": "validation"
+    }
+  ],
+  "epsilon0_f_m": 8.8541878128e-12,
+  "candidate_models": [
+    "distributed_series_interface",
+    "area_independent_parallel_parasitic"
+  ],
+  "validation_max_absolute_error_pf": 1e-06,
+  "physical_policy": "epsilon_bulk>0, series interface capacitance per area>0, parallel parasitic capacitance>=0. Reject nonphysical fits; do not clip."
+}

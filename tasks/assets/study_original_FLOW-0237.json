@@ -1,0 +1,36 @@
+{
+  "shared_calibration_coordinate_interval": [
+    -1.0,
+    1.0
+  ],
+  "candidates": [
+    {
+      "id": "A",
+      "E_GPa_intercept": 100.0,
+      "E_GPa_z_slope": 20.0,
+      "rho_g_per_cm3_intercept": 5.0,
+      "rho_g_per_cm3_z_slope": 1.0
+    },
+    {
+      "id": "B",
+      "E_GPa_intercept": 110.0,
+      "E_GPa_z_slope": 5.0,
+      "rho_g_per_cm3_intercept": 5.0,
+      "rho_g_per_cm3_z_slope": 1.0
+    },
+    {
+      "id": "C",
+      "E_GPa_intercept": 95.0,
+      "E_GPa_z_slope": 10.0,
+      "rho_g_per_cm3_intercept": 5.0,
+      "rho_g_per_cm3_z_slope": 1.0
+    }
+  ],
+  "model": "One scalar nuisance coordinate z is shared by modulus and density AND all candidates. Each candidate has E(z)=intercept+slope*z,rho(z)=intercept+slope*z as recorded. The full joint uncertainty set is exactly this one-dimensional interval,not the Cartesian box of separate marginal ranges. Specific modulus is E/rho in GPa*cm^3/g;all listed densities are strictly positive. Robust choice maximizes each candidate minimum E/rho over the full interval.",
+  "dominance_definition": "Ordered pair[X,Y]means E_X(z)/rho_X(z)>=E_Y(z)/rho_Y(z)for every admissible COMMON z,with strict inequality at least once. Report all such ordered pairs,without duplicates or self-pairs.",
+  "box_shortcut": "For each candidate independently minimize its E marginal and maximize its rho marginal,divide those two extrema,then choose the highest resulting lower bound. This intentionally ignores within-candidate correlation.",
+  "target": "Return the sharp joint-model worst specific modulus for each candidate in source order,the robust chosen ID,all uniform dominance pairs,the three box-shortcut values and its chosen ID,and whether that shortcut preserves the robust choice.",
+  "provenance": {
+    "kind": "Explicit controlled conditional material model;not a measured material claim."
+  }
+}

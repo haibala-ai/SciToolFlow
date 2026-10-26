@@ -1,0 +1,67 @@
+{
+  "reference_library": [
+    {
+      "id": "P01",
+      "sequence": "AGVAGKTLVLR"
+    },
+    {
+      "id": "P02",
+      "sequence": "AGVAGKFQNVK"
+    },
+    {
+      "id": "P03",
+      "sequence": "TLVLRFQNVK"
+    },
+    {
+      "id": "P04",
+      "sequence": "FQNVKVWAGDR"
+    },
+    {
+      "id": "P05",
+      "sequence": "AGVAGKVWAGDR"
+    },
+    {
+      "id": "P06",
+      "sequence": "AGVAGKTIVIR"
+    }
+  ],
+  "cleavage_model": {
+    "enzyme": "trypsin",
+    "missed_cleavages": 0,
+    "modifications": "none",
+    "termini": "unmodified linear free termini"
+  },
+  "mass_channels": [
+    {
+      "id": "channel_c",
+      "neutral_monoisotopic_mass_dalton": 634.3438604700999,
+      "calibrated_total_peptide_amount_nmol": 0.5
+    },
+    {
+      "id": "channel_a",
+      "neutral_monoisotopic_mass_dalton": 501.29109662125,
+      "calibrated_total_peptide_amount_nmol": 0.8
+    },
+    {
+      "id": "channel_d",
+      "neutral_monoisotopic_mass_dalton": 702.3449230992599,
+      "calibrated_total_peptide_amount_nmol": 0.2
+    },
+    {
+      "id": "channel_b",
+      "neutral_monoisotopic_mass_dalton": 600.3958960429599,
+      "calibrated_total_peptide_amount_nmol": 0.7
+    }
+  ],
+  "mass_matching_absolute_tolerance_dalton": 1e-06,
+  "quantitative_model": "An exact controlled linear-mixture model. Each potential product under the declared cleavage contributes one molecule per occurrence per parent molecule. The assay records the SUM of molar amounts of every peptide assigned to a mass channel; it does not distinguish peptide sequences in that channel. Every predicted product in this finite reference library is represented in a listed channel. The quantities are independently response-corrected molar amounts, NOT raw intensities. Assume complete cleavage/recovery, no modification, no unlisted parents and nonnegative continuous parent amounts. There is no sparsity, equal-abundance, equal-sharing or minimum-norm prior.",
+  "question_scope": "Infer sharp amount bounds and which individual library entries must have strictly positive amount in EVERY feasible mixture. A feasible optimizer alone is not evidence that its amounts are uniquely identified.",
+  "provenance": {
+    "kind": "Project-authored short benign reference-polypeptide and exact calibrated-mixture fixture for inference-method assessment; no natural protein, biological activity or real experimental yield is claimed.",
+    "method_basis": {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3317402/",
+      "read": "Introduction and methods discussion of shared-peptide abundance constraints and known detectability, not the biological application.",
+      "adaptation": "We stipulate exact already calibrated absolute molar channels, merge mass-indistinguishable sequences, and ask for sharp bounds rather than selecting one abundance fit. The sequences and numeric fixture are ours."
+    }
+  }
+}

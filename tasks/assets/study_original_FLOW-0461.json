@@ -1,0 +1,12 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "disconnected_formula_unit_smiles": "Cn1c(=O)c2c(ncn2C)n(C)c1=O.Cn1c(=O)c2c(ncn2C)n(C)c1=O.O=C(O)CC(O)(CC(=O)O)C(=O)O.O.O",
+  "quantified_component_smiles": "Cn1c(=O)c2c(ncn2C)n(C)c1=O",
+  "weighed_formula_unit_mass_milligrams": 25.0,
+  "model": "A controlled homogeneous cocrystal/hydrate formula unit is represented by the FULL disconnected SMILES, with each dot component occurrence carrying its actual stoichiometric multiplicity. There is no proton transfer, missing solvent, impurity or variable hydration. Use RDKit average atomic-weight molar masses consistently, not neutral monoisotopic mass. Every water and repeated component occurrence contributes to the weighed formula unit.",
+  "target": "Compute the average formula-unit molar mass, mass fraction of all occurrences identical to the quantified neutral caffeine graph, and corresponding analyte-equivalent mass in the supplied aliquot. This is analytical calibration accounting, not a treatment dose or biological effect.",
+  "scope": "Largest-fragment selection is a different representation and cannot preserve a multicomponent weighed material stoichiometry."
+}

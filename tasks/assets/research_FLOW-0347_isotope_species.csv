@@ -1,0 +1,4 @@
+species_id,isotope_smiles,first_isotope,second_isotope
+H2,[1H][1H],1H,1H
+HD,[1H][2H],1H,2H
+D2,[2H][2H],2H,2H

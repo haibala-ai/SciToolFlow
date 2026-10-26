@@ -1,0 +1,54 @@
+{
+  "origin": "Own exact two-site chemical-exchange NMR study. An anonymous molecule exchanges symmetrically between two resolved magnetic environments with equal equilibrium populations. The calibrated observations are deterministic summaries generated from the model below, not measured spectra or copied paper data. The question concerns parameter identifiability, experiment selection and distinct meanings of spectral versus dynamical coalescence.",
+  "physical_model": "The complex transverse magnetizations m=(m_A,m_B)^T obey dot m=B_plus*m, where B_plus=[[-r-k+i*delta,k],[k,-r-k-i*delta]], r=0.2 is an independently known intrinsic transverse relaxation rate, delta>0 is the half chemical-shift separation in angular-frequency units, and k>=0 is the rate in EACH direction. The total population exchange rate is2k; do not substitute2k for the off-diagonal matrix entries. The exact initial magnetization after preparation is p=(1/2,1/2)^T. Unknown parameters lie in the CLOSED rectangle delta in[0.5,1.5], k in[0,2]. These are positive-frequency and exchange conventions; environment relabeling is already removed by takingdelta>0.",
+  "spectral_observations": {
+    "definition": "S(omega)=Re[ (1,1)*(i*omega*I-B_plus)^(-1)*p ], the absorptive one-sided Fourier response with angular frequencyomega. No extra1/pi factor is used. S has time units, FID amplitudes below are dimensionless. Intrinsicr>0makes the whole real-frequency resolvent finite.",
+    "observed_points": [
+      {
+        "omega": 0,
+        "S_exact_fraction": "35/32"
+      },
+      {
+        "omega": 1,
+        "S_exact_fraction": "1245/1649"
+      }
+    ],
+    "task": "Find ALL parameter pairs in the stated rectangle reproducing both exact points. Derive a reduced elimination equation and retain complete registered polynomial roots including inadmissible candidates. A single local least-squares fit is not a complete inverse solution. At each admissible pair retain actual full registered linear-system solutions for the spectral resolvents atomega0and1, preserving their complex-to-real coordinate convention."
+  },
+  "one_frequency_design": "Before using the held-out echo, choose a single new spectral frequencyomega in the CLOSED interval[0,3]that globally maximizes the separation of the two fitted spectral means. The measurement noise is independent centered Gaussian with known standard deviation0.01in the same time units asS; both candidate models use that same noise law. Report the unique positive optimal frequency, both predicted spectral means, absolute contrast and expected one-measurement directionalKL (which is the same in either direction for equal Gaussian variance). Certify globality using every feasible stationary/zero/endpoint candidate, with complete registered root outputs for a suitable rational-function derivative, rather than an arbitrary frequency grid. Retain actual full spectral resolvent solves at the proposed frequency for both candidates. Do not select a frequency using knowledge of which alias the held-out measurement will favor.",
+  "time_domain_and_echo": {
+    "FID": "F(t)=Re[(1,1)*exp(B_plus*t)*p]. F is a coherent signed magnetization and may be negative; it is not a probability and must not be clipped to[0,1].",
+    "echo": "For an ideal instantaneous midpoint refocusing pulse use the toggling-frame definition E(t)=Re[(1,1)*exp(B_minus*t/2)*exp(B_plus*t/2)*p], where B_minus=conjugate(B_plus). The rightmost propagator acts first. The pulse reverses the chemical-shift term and leaves exchange and intrinsic relaxation unchanged. Retain the actual ordered products; the two generators need not commute. This definition excludes pulse imperfections and diffusion.",
+    "times": [
+      1,
+      2,
+      4
+    ],
+    "heldout_echo_at_t2": 0.4701372278740902,
+    "heldout_absolute_tolerance": 1e-10,
+    "task": "Compute complete FID and echo predictions at all three times for BOTH spectral aliases with actual full registered matrix exponentials and products. Compare the held-out echo with the two predictions to identify the unique parameter pair. Explain why reversing static shifts does not generally remove exchange dephasing and why exponentiating the average generator is not an exact echo calculation."
+  },
+  "spectral_versus_dynamical_coalescence": "After identifyingdelta, varyk in[0,2]while keeping thisdeltaand intrinsicr fixed. Determine the unique spectral coalescence rate at which two symmetric absorption maxima merge atomega0. Derive the even rational absorption shape and globally classify its positive-frequency stationary points, including the flat central maximum at the threshold; do not infer the threshold just from a plotted spectrum. Determine separately the rate of the dynamical exceptional point, where the TWO PHYSICAL COMPLEX magnetization modes coalesce defectively. Compare rates and compute all physical complex mode poles for k[0.6,0.8,1.0,1.2], plus each positive absorption-maximum frequency (report0if the only maximum is central). Report whether each sweep point has two distinct absorption maxima and whether its FID has oscillatory zero crossings. Retain complete registered roots for the coalescence polynomial and each physical two-mode characteristic polynomial. At the exceptional rate compute actual FID at t1,2,4 and the correct Jordan-limit expression; do not divide by a vanishing pole splitting or assume that a one-line spectrum implies nonoscillatory dynamics.",
+  "complex_linear_algebra": "Registered matrix primitives use real numeric matrices. You may represent a complex matrixC=R+iI as the4-by-4 real block matrix[[R,-I],[I,R]], with state order[Re m_A,Re m_B,Im m_A,Im m_B]and initial vector[.5,.5,0,0], or another explicitly declared equivalent realification. Keep all four components and actual full outputs through resolvent solves, exponentials and ordered products before taking the real total. The realification duplicates the two physical complex poles as a representation artifact; it does not create four distinct physical environments. No particular code or basis is prescribed, but complete actual data handoffs and independently checked scalar analytic limits are required.",
+  "interpretation_proposals": {
+    "A": "Two exact spectral observations can leave distinct physically admissible exchange/shift parameter pairs.",
+    "B": "Returning one converged local fit proves that no other parameter pair fits the observations.",
+    "C": "A calibrated time-domain refocusing measurement can resolve spectral aliases because it probes a different dynamical functional.",
+    "D": "The rate where two absorption peaks merge must equal the defective two-mode dynamical rate.",
+    "E": "A single absorption maximum can coexist with oscillatory free-induction dynamics.",
+    "F": "A negative coherent FID is an invalid probability and should be clipped tozero.",
+    "G": "An ideal refocusing pulse makes exchange and chemical-shift generators commute at every nonzero rate.",
+    "H": "Global measurement contrast, coherent pulse ordering and intrinsic relaxation must be evaluated with the same model and units."
+  },
+  "reporting": "Numeric absolute tolerance1e-7, except the held-out measurement qualification uses1e-10. Alias rows follow increasingk; each pair is[delta,k]. Time columns aret1,2,4; sweep order isk0.6,0.8,1.0,1.2. Physical mode pairs are[real,imaginary]with the plus-square-root branch first: choose nonnegative imaginary part for a negative discriminant and nonnegative real part for a nonnegative discriminant. Boolean sweep predicates refer to exact model behavior, not a finite plot window. Observed fractions are exact within the own model. Keep inverse completeness, complete root inventories, global contrast candidates, actual pulse products and exceptional-limit/scalar checks in the trajectory.",
+  "primary_context": [
+    {
+      "authors": "H. M. McConnell",
+      "year": 1958,
+      "title": "Reaction Rates by Nuclear Magnetic Resonance",
+      "doi": "10.1063/1.1744152",
+      "url": "https://mriquestions.com/uploads/3/4/5/7/34572113/mcconnell_relaxation_rates_nmr.pdf"
+    }
+  ],
+  "context_role": "Primary physical context for exchange-coupled magnetization dynamics. All matrix conventions, parameters, observations, alias-discrimination design and echo protocol are independently specified constructed inputs; the paper is not required at runtime and no source data or prose are reproduced."
+}

@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "record_id": "aliquot0-injection0",
+      "preparation_id": "prep0",
+      "concentration_mg_l": 99.68
+    },
+    {
+      "record_id": "aliquot0-injection1",
+      "preparation_id": "prep0",
+      "concentration_mg_l": 99.7
+    },
+    {
+      "record_id": "aliquot0-injection2",
+      "preparation_id": "prep0",
+      "concentration_mg_l": 99.72
+    },
+    {
+      "record_id": "aliquot1-injection0",
+      "preparation_id": "prep1",
+      "concentration_mg_l": 100.08
+    },
+    {
+      "record_id": "aliquot1-injection1",
+      "preparation_id": "prep1",
+      "concentration_mg_l": 100.1
+    },
+    {
+      "record_id": "aliquot1-injection2",
+      "preparation_id": "prep1",
+      "concentration_mg_l": 100.11999999999999
+    },
+    {
+      "record_id": "aliquot2-injection0",
+      "preparation_id": "prep2",
+      "concentration_mg_l": 100.18
+    },
+    {
+      "record_id": "aliquot2-injection1",
+      "preparation_id": "prep2",
+      "concentration_mg_l": 100.2
+    },
+    {
+      "record_id": "aliquot2-injection2",
+      "preparation_id": "prep2",
+      "concentration_mg_l": 100.22
+    },
+    {
+      "record_id": "aliquot3-injection0",
+      "preparation_id": "prep3",
+      "concentration_mg_l": 100.38000000000001
+    },
+    {
+      "record_id": "aliquot3-injection1",
+      "preparation_id": "prep3",
+      "concentration_mg_l": 100.4
+    },
+    {
+      "record_id": "aliquot3-injection2",
+      "preparation_id": "prep3",
+      "concentration_mg_l": 100.42
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "mg/L,reference100mg/L;equal-weightpreparationmeanestimand",
+    "original_observation_claim": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "component_diffusion_coefficients_scaled_units": [
+    0.5,
+    2.0
+  ],
+  "zero_gradient_signal_fractions": [
+    0.4,
+    0.6
+  ],
+  "diffusion_weightings_inverse_scaled_units": [
+    0.0,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "model": "Two noninterconverting components during gradient encoding give normalized attenuation S(b)=sum_i f_i*exp(-b*D_i), with sum f=1 and b>=0. Fast-exchange limit, for the deliberately separate model, uses D_fast=sum f_i*D_i. Fractions are stipulated signal fractions, not inferred mass fractions.",
+  "apparent_definition": "At each nonzero b report D_app(b)=-ln[S(b)]/b. Do not include a nonexistent b=0 log-ratio value in that array. A common D across all b would require exact single-exponential attenuation, not a one-point fit.",
+  "scope": "Controlled diffusion-observation models with no convection, relaxation weighting, exchange-rate estimate or real molecular size assignment."
+}

@@ -1,0 +1,70 @@
+{
+  "panels": [
+    {
+      "id": "positive_retention",
+      "cells": [
+        {
+          "A": 1,
+          "B": 0,
+          "retained_count": 200,
+          "retention_fraction": 0.8
+        },
+        {
+          "A": 0,
+          "B": 1,
+          "retained_count": 200,
+          "retention_fraction": 0.8
+        },
+        {
+          "A": 0,
+          "B": 0,
+          "retained_count": 25,
+          "retention_fraction": 0.1
+        },
+        {
+          "A": 1,
+          "B": 1,
+          "retained_count": 225,
+          "retention_fraction": 0.9
+        }
+      ]
+    },
+    {
+      "id": "zero_retention",
+      "cells": [
+        {
+          "A": 1,
+          "B": 0,
+          "retained_count": 200,
+          "retention_fraction": 0.8
+        },
+        {
+          "A": 0,
+          "B": 1,
+          "retained_count": 200,
+          "retention_fraction": 0.8
+        },
+        {
+          "A": 0,
+          "B": 0,
+          "retained_count": 0,
+          "retention_fraction": 0.0
+        },
+        {
+          "A": 1,
+          "B": 1,
+          "retained_count": 225,
+          "retention_fraction": 0.9
+        }
+      ]
+    }
+  ],
+  "count_model": "These are TWO DIFFERENT census populations. In each cell the retained count equals EXACTLY the known retention fraction times that cell population count. Fractions are known complete-cell release proportions, not Bernoulli sampling probability estimates. Full cell counts are nonnegative real amounts for this identification model; integer constraints do not change the requested bounds. No full population total or A/Bmarginal totals are supplied.",
+  "panel_scope": "No cell amount, marginal rate or association may be transferred between panels. The positive-retention panel is not auxiliary information for the zero-retention population.",
+  "association_definition": "Odds ratio OR=N11*N00/(N10*N01), using the named binary A/Bcell identities. The nonzero denominator is identified in both panels. A null upper bound means mathematically unbounded above, not missing data or an estimated confidence limit.",
+  "target": "For positive_retention, compare its retained-table OR with its identified full-population OR and decide whether those retained counts support non-unit association in the full population. For zero_retention, derive the SHARP lower and upper feasible full-population OR under every admissible unseen cell amount. Do not impute a zero-retention cell as population zero.",
+  "inference_scope": "Finite-population identification from exact release equations, not a sampling p-value, causal effect, confidence interval or randomization test.",
+  "provenance": {
+    "data_origin": "Explicit controlled benchmark model and exact numerical inputs; not an empirical laboratory, ecological or classifier-performance claim."
+  }
+}

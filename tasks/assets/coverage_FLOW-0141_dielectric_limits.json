@@ -1,0 +1,10 @@
+{
+  "requested_material_id": "mp-2534",
+  "source_identity": {
+    "resolved_material_id": "mp-aaaaadtm",
+    "last_updated": "2023-10-08T06:12:30.776000"
+  },
+  "device_model": "For this controlled scalar comparison only,use the published orientationally averaged permittivities as isotropic effective values. A lossless parallel-plate capacitor has area1.0e-6m^2,gap1.0e-6m,and C=epsilon0*epsilon_r*A/dwith epsilon0=8.8541878128e-12F/m. Static response includes electronic+ionic contributions;the declared high-frequency limit contains only the electronic contribution. This is not a tensor measurement or a prediction at an arbitrary optical frequency.",
+  "relative_capacitance_tolerance": 0.05,
+  "decision": "Decide if substituting the electronic-only value for the static value meets a relative-error ceiling of5percent,where error is normalized by the static value."
+}

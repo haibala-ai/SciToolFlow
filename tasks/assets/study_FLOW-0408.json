@@ -1,0 +1,180 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "measurement_records": [
+        {
+          "load_x": 150000,
+          "response_y": 0.11019
+        },
+        {
+          "load_x": 300000,
+          "response_y": 0.21956
+        },
+        {
+          "load_x": 450000,
+          "response_y": 0.32949
+        },
+        {
+          "load_x": 600000,
+          "response_y": 0.43899
+        },
+        {
+          "load_x": 750000,
+          "response_y": 0.54803
+        },
+        {
+          "load_x": 900000,
+          "response_y": 0.65694
+        },
+        {
+          "load_x": 1050000,
+          "response_y": 0.76562
+        },
+        {
+          "load_x": 1200000,
+          "response_y": 0.87487
+        },
+        {
+          "load_x": 1350000,
+          "response_y": 0.98292
+        },
+        {
+          "load_x": 1500000,
+          "response_y": 1.09146
+        },
+        {
+          "load_x": 1650000,
+          "response_y": 1.20001
+        },
+        {
+          "load_x": 1800000,
+          "response_y": 1.30822
+        },
+        {
+          "load_x": 1950000,
+          "response_y": 1.41599
+        },
+        {
+          "load_x": 2100000,
+          "response_y": 1.52399
+        },
+        {
+          "load_x": 2250000,
+          "response_y": 1.63194
+        },
+        {
+          "load_x": 2400000,
+          "response_y": 1.73947
+        },
+        {
+          "load_x": 2550000,
+          "response_y": 1.84646
+        },
+        {
+          "load_x": 2700000,
+          "response_y": 1.95392
+        },
+        {
+          "load_x": 2850000,
+          "response_y": 2.06128
+        },
+        {
+          "load_x": 3000000,
+          "response_y": 2.16844
+        },
+        {
+          "load_x": 150000,
+          "response_y": 0.11052
+        },
+        {
+          "load_x": 300000,
+          "response_y": 0.22018
+        },
+        {
+          "load_x": 450000,
+          "response_y": 0.32939
+        },
+        {
+          "load_x": 600000,
+          "response_y": 0.43886
+        },
+        {
+          "load_x": 750000,
+          "response_y": 0.54798
+        },
+        {
+          "load_x": 900000,
+          "response_y": 0.65739
+        },
+        {
+          "load_x": 1050000,
+          "response_y": 0.76596
+        },
+        {
+          "load_x": 1200000,
+          "response_y": 0.87474
+        },
+        {
+          "load_x": 1350000,
+          "response_y": 0.983
+        },
+        {
+          "load_x": 1500000,
+          "response_y": 1.0915
+        },
+        {
+          "load_x": 1650000,
+          "response_y": 1.20004
+        },
+        {
+          "load_x": 1800000,
+          "response_y": 1.30818
+        },
+        {
+          "load_x": 1950000,
+          "response_y": 1.41613
+        },
+        {
+          "load_x": 2100000,
+          "response_y": 1.52408
+        },
+        {
+          "load_x": 2250000,
+          "response_y": 1.63159
+        },
+        {
+          "load_x": 2400000,
+          "response_y": 1.73965
+        },
+        {
+          "load_x": 2550000,
+          "response_y": 1.84696
+        },
+        {
+          "load_x": 2700000,
+          "response_y": 1.95445
+        },
+        {
+          "load_x": 2850000,
+          "response_y": 2.06177
+        },
+        {
+          "load_x": 3000000,
+          "response_y": 2.16829
+        }
+      ],
+      "curve_policy": "Use the arithmetic mean response at each exact repeated observed load; evaluate adjacent-interval secant slopes (next mean minus previous mean)/(next load minus previous load) on the resulting strictly increasing measured load grid. A positive-grid-slope claim is about the piecewise-linear measured interpolation, not all continuous loads.",
+      "units": "Native source y per native source x",
+      "source_provenance": {
+        "dataset": "NIST Pontius observed repeats",
+        "source_url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Pontius.dat",
+        "raw_source_sha256": "de60baa5dc66fd804f9316f895bc5aa2b8f791c09d1ecc1ec39f8b199b8c15c7"
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

@@ -1,130 +1,24 @@
-import base64
-import glob
-import os
-import pickle
-import numpy as np
-import pandas as pd
-import functools
-import shlex
 from rdkit import Chem
-from rdkit.Chem import (
-    rdDetermineBonds,
-    rdCIPLabeler,
-    rdMolEnumerator,
-    rdDeprotect,
-    rdAbbreviations,
-    rdSLNParse,
-    rdMHFPFingerprint,
-    rdMolDescriptors,
-)
-from rdkit.Chem import AllChem, Descriptors
-from rdkit.Chem import rdMolDescriptors
-from rdkit.Chem import rdEHTTools
-from rdkit.Chem import rdTautomerQuery
-from rdkit.Chem.rdTautomerQuery import TautomerQuery
-from rdkit.Chem import Draw
+from rdkit.Chem import rdMolEnumerator, rdDeprotect, rdSLNParse, rdMHFPFingerprint
 
 
 # PatternFingerprintTemplate
 def get_pattern_fingerprint(smiles):
-    """
-    This tool is used to generate a pattern fingerprint for a molecule. The pattern fingerprint is a bit vector that encodes the presence or absence of particular substructures in the molecule. The substructures are defined by SMARTS patterns. The SMARTS patterns are converted to molecular fingerprints and then combined to generate the pattern fingerprint.
-
-    Args:
-        smiles (str): a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the fingerprint results， or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        query = rdTautomerQuery.TautomerQuery(mol)
-        result = query.PatternFingerprintTemplate()
-
-        markdown = f"""
-## Pattern Fingerprint Result
-{result}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+    'GetPatternFingerprintTemplate retired: One TautomerQuery construction supplies distinct inspection fields without repeated object setup. Use InspectTautomerQuery. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('GetPatternFingerprintTemplate retired: One TautomerQuery construction supplies distinct inspection fields without repeated object setup. Use InspectTautomerQuery. See the catalog migration feedback for explicit arguments.')
 
 
 # TautomerQueryCanSerialize
 def can_serialize(smiles):
-    """
-    This tool is used to check if a TautomerQuery object can be serialized.
-
-    Args:
-        smiles (str): a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the serialization result, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        result = rdTautomerQuery.TautomerQueryCanSerialize()
-        markdown = f"""
-## Tautomer Query Can Serialize?
-**Input SMILES:** {smiles}
-**Result:** {result}
-{result}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+    'CanSerialize retired: Process capabilities/configuration flags are not molecule-specific computations. Use RDKitCapabilities. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('CanSerialize retired: Process capabilities/configuration flags are not molecule-specific computations. Use RDKitCapabilities. See the catalog migration feedback for explicit arguments.')
 
 
 # AssignCIPLabels
-def assign_CIPlabels(smiles):
-    """
-    This tool is used to assign CIP labels to the atoms in a molecule. The CIP labels are used to describe the stereochemistry of the molecule. The labels are assigned based on the 3D structure of the molecule.
-
-    Args:
-        smiles (str): a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the CIP labels, or an error message.
-    """
-
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        Chem.rdCIPLabeler.AssignCIPLabels(mol)
-
-        markdown = f"""
-##Assign CIP Labels
-**Input SMILES:** {smiles}
-
-**Result** 
-**Output SMILES:**{Chem.MolToSmiles(mol)} 
-**Number of atoms:** {mol.GetNumAtoms()}
-**Bond Type:**
-"""
-        for bond in mol.GetBonds():
-            bond_type = bond.GetBondTypeAsDouble()
-            markdown += str(bond_type) + "\t"
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred assiging CIP labels: {e}"
-        return markdown
+def assign_CIPlabels(smiles: str) -> dict:
+    'Apply RDKit assign_cip_labels to the explicitly parsed SMILES graph; return a typed molecule report with atom/bond properties, canonical and Kekule SMILES, and a MOL connection table. No unknown stereochemistry, missing coordinates or experimental identity is inferred. Oxidation/CIP/radical assignments are exposed explicitly when present. Invalid input or backend failures raise errors.'
+    from .molecular_operations import graph_operation
+    return graph_operation(smiles, 'assign_cip_labels')
 
 
 # Enumerate
@@ -189,33 +83,8 @@ def deprotect(smiles: str):
 
 # CondenseAbbreviationSubstanceGroups
 def condense_abbreviation_substance_groups(smiles):
-    """
-    This tool finds and replaces abbreviation substance groups in a molecule, resulting in a compressed version of the molecule where the abbreviations are expanded.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the condensation results, or an error message.smiles = smiles.replace(" ", "").replace("\n", "").replace("\'", "").replace("\"", "").replace('.), '
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        condensed_mol = rdAbbreviations.CondenseAbbreviationSubstanceGroups(mol)
-        markdown = f"""
-## Condense Abbreviation Substance Groups
-**Input SMILES:** {smiles}
-
-**Result**
-**Condensed SMILES:** {Chem.MolToSmiles(condensed_mol)}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+    'CondenseAbbreviationSubstanceGroups retired: Abbreviation SGroups require an expressive source connection table. Use CondenseAbbreviations. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('CondenseAbbreviationSubstanceGroups retired: Abbreviation SGroups require an expressive source connection table. Use CondenseAbbreviations. See the catalog migration feedback for explicit arguments.')
 
 
 def sln_to_smiles(sln: str):
@@ -280,1662 +149,455 @@ def create_shingling(smiles: str):
 
 
 def encode_mol(smiles: str):
-    """
-    This tool creates an MHFP vector from a molecule  using MHFP encoder, capturing structural information of the molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the MinHashed Fingerprints.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        encoder = rdMHFPFingerprint.MHFPEncoder()
-        MHFP = encoder.EncodeMol(mol)
-
-        markdown = f"""
-##MinHashed Fingerprints
-**Input SMILES:** {smiles}
-
-**Result**
-**MHFP Size:**{len(MHFP)}
-**MHFP:**
-"""
-        for element in MHFP:
-            markdown += str(element) + ", "
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+    'EncodeMolecule retired: One declared fingerprint kernel replaces duplicate wrappers and implicit algorithm presets. Use MolecularFingerprint. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('EncodeMolecule retired: One declared fingerprint kernel replaces duplicate wrappers and implicit algorithm presets. Use MolecularFingerprint. See the catalog migration feedback for explicit arguments.')
 
 
 def encode_SECFP(smiles: str):
-    """
-    This tool creates an SECFP vector from a molecule using SECFP encoder, capturing structural information of the molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the SECFP vector, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        encoder = rdMHFPFingerprint.MHFPEncoder()
-        SECFP = encoder.EncodeSECFPMol(mol)
-
-        markdown = f"""
-## SECFP
-**Input SMILES:** {smiles}
-
-**Result**
-**SECFP Size:**{len(SECFP)}
-**SECFP:**
-"""
-        for element in SECFP:
-            markdown += str(element) + ", "
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+    'EncodeSECFP retired: One declared fingerprint kernel replaces duplicate wrappers and implicit algorithm presets. Use MolecularFingerprint. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('EncodeSECFP retired: One declared fingerprint kernel replaces duplicate wrappers and implicit algorithm presets. Use MolecularFingerprint. See the catalog migration feedback for explicit arguments.')
 
 
 # rdMolDescriptors.BCUT2D
-def get_BCUT(smiles: str):
-    """
-    This tool computes the 2D BCUT descriptors for a given molecule, representing mass, Gasteiger charge, Crippen logP, and Crippen MR values.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the BCUT2D descriptors, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        bcut2d = rdMolDescriptors.BCUT2D(mol)
-        markdown = f"""
-## BCUT2D
-**Input SMILES:** {smiles}
-
-**Result**
-**mass eigen value high:**{bcut2d[0]}
-**mass eigen value low:**{bcut2d[1]}
-**gasteiger charge eigenvalue high:**{bcut2d[2]}
-**gasteiger charge low:**{bcut2d[3]}
-**crippen lowgp eigenvalue high:**{bcut2d[4]}
-**crippen lowgp low:**{bcut2d[5]}
-**crippen mr eigenvalue high：**{bcut2d[6]}
-**crippen mr low:**{bcut2d[7]}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def get_BCUT(smiles: str) -> dict:
+    """Compute the ordered BCUT2D eigenvalue descriptor vector using RDKit mass, Gasteiger-charge
+    and Crippen atom-property weightings. No conformer is generated. Hydrogen policy:
+    remove. Return the scientific value with named backend, version and molecular
+    provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'BCUT2D', geometry=False, hydrogen_policy='remove')
 
 
 # CalcAUTOCORR2D
-def calculate_Autocorrelation2D(smiles: str):
-    """
-    This tool computes the 2D autocorrelation descriptors for a given molecule, capturing the spatial arrangement of atoms in the molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the 2D autocorrelation descriptors vector, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        autocorr_desc = rdMolDescriptors.CalcAUTOCORR2D(mol)
-        markdown = f"""
-## 2D Autocorrelation Descriptors
-**Input SMILES:** {smiles}
-
-**2D Autocorrelation descriptors vector**
-{autocorr_desc}
-"""
-        return markdown
-
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_Autocorrelation2D(smiles: str) -> dict:
+    """Compute the complete 2D molecular autocorrelation descriptor vector using graph distances.
+    No conformer is generated. Hydrogen policy: remove. Return the scientific value with
+    named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcAUTOCORR2D', geometry=False, hydrogen_policy='remove')
 
 
 # CalcAUTOCORR3D
-def calculate_Autocorrelation3D(smiles: str):
-    """
-    This tool computes the 3D autocorrelation descriptors for a given molecule, capturing the spatial arrangement of atoms in the molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the 3D autocorrelation descriptors vector, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        AllChem.EmbedMolecule(mol, randomSeed=42)
-        autocorr_desc = rdMolDescriptors.CalcAUTOCORR3D(mol)
-        markdown = f"""
-## 
-**Input SMILES:** {smiles}
-
-**3D Autocorrelation descriptors vector**
-{autocorr_desc}
-"""
-        return markdown
-
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_asphericity(smiles: str):
-    """
-    This tool calculates the asphericity descriptor for a molecule, which measures how much the molecule deviates from a perfectly spherical shape.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih asphericity descripto(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        AllChem.EmbedMolecule(mol, randomSeed=42)
-        asphericity = rdMolDescriptors.CalcAsphericity(mol)
-
-        markdown = f"""
-## Asphericity
-**Input SMILES:** {smiles}
-**Asphericity:** {asphericity}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_chi0n(smiles: str):
-    """
-    This tool calculates the chi^0 (chi-zero) cluster index, which represents a topological descriptor related to molecular branching.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih chi^0 (chi-zero) cluster index(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        # Calculate the chi^0 cluster index
-        chi0 = rdMolDescriptors.CalcChi0n(mol)
-        markdown = f"""
-##Calculta Chi-zero Cluster Index
-**Input SMILES:** {smiles}
-**Chi-zero Cluster Index:** {chi0}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_chi0v(smiles: str):
-    """
-    This function calculates the Chi^0v (Chi-zero-v) valence molecular graph index for a molecule, which is used to describe the topology of the molecule. It returns a float value.
-
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih chi^0 (chi-zero) cluster index(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        # Calculate the chi^0 cluster index
-        chi0 = rdMolDescriptors.CalcChi0v(mol)
-        markdown = f"""
-##Chi^0v (Chi-zero-v) valence molecular graph index 
-**Input SMILES:** {smiles}
-**Chi-zero-v Cluster Index:** {chi0}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_chi1n(smiles: str):
-    """
-    This tool calculates the chi^1 (chi-one) cluster index, which represents a topological descriptor related to molecular branching.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih chi^1 (chi-one) cluster index(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        # Calculate the chi^1 cluster index
-        chi1 = rdMolDescriptors.CalcChi1n(mol)
-        markdown = f"""
-##Calculta Chi-one Cluster Index
-**Input SMILES:** {smiles}
-**Chi-one Cluster Index:** {chi1}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_chi1v(smiles: str):
-    """
-    This function calculates the Chi^1v (Chi-one-v) valence molecular graph index for a molecule, which is used to describe the topology of the molecule. It returns a float value.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih chi^1 (chi-one) cluster index(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        # Calculate the chi^1 cluster index
-        chi1 = rdMolDescriptors.CalcChi1v(mol)
-        markdown = f"""##Chi^1v (Chi-one-v) valence molecular graph index
-**Input SMILES:** {smiles}
-**Chi-one-v Cluster Index:** {chi1}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_chi2n(smiles: str):
-    """
-    This tool calculates the chi^2 (chi-two) cluster index, which represents a topological descriptor related to molecular branching.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih chi^2 (chi-two) cluster index(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        # Calculate the chi^2 cluster index
-        chi2 = rdMolDescriptors.CalcChi2n(mol)
-        markdown = f"""##Calculta Chi-two Cluster Index
-**Input SMILES:** {smiles}
-**Chi-two Cluster Index:** {chi2}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_chi2v(smiles: str):
-    """
-    This function calculates the Chi^2v (Chi-two-v) valence molecular graph index for a molecule, which is used to describe the topology of the molecule. It returns a float value.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih chi^2 (chi-two) cluster index(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        # Calculate the chi^2 cluster index
-        chi2 = rdMolDescriptors.CalcChi2v(mol)
-        markdown = f"""##Chi^2v (Chi-two-v) valence molecular graph index
-**Input SMILES:** {smiles}
-**Chi-two-v Cluster Index:** {chi2}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_chi3n(smiles: str):
-    """
-    This tool calculates the chi^3 (chi-three) cluster index, which represents a topological descriptor related to molecular branching.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih chi^3 (chi-three) cluster index(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        # Calculate the chi^3 cluster index
-        chi3 = rdMolDescriptors.CalcChi3n(mol)
-        markdown = f"""##Calculta Chi-three Cluster Index
-**Input SMILES:** {smiles}
-**Chi-three Cluster Index:** {chi3}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_chi3v(smiles: str):
-    """
-    This function calculates the Chi^3v (Chi-three-v) valence molecular graph index for a molecule, which is used to describe the topology of the molecule. It returns a float value.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih chi^3 (chi-three) cluster index(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        # Calculate the chi^3 cluster index
-        chi3 = rdMolDescriptors.CalcChi3v(mol)
-        markdown = f"""##Chi^3v (Chi-three-v) valence molecular graph index
-**Input SMILES:** {smiles}
-**Chi-three-v Cluster Index:** {chi3}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_chi4n(smiles: str):
-    """
-    This tool calculates the chi^4 (chi-four) cluster index, which represents a topological descriptor related to molecular branching.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih chi^4 (chi-four) cluster index(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        # Calculate the chi^4 cluster index
-        chi4 = rdMolDescriptors.CalcChi4n(mol)
-        markdown = f"""##Calculta Chi-four Cluster Index
-**Input SMILES:** {smiles}
-**Chi-four Cluster Index:** {chi4}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_chi4v(smiles: str):
-    """
-    This function calculates the Chi^4v (Chi-four-v) valence molecular graph index for a molecule, which is used to describe the topology of the molecule. It returns a float value.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih chi^4 (chi-four) cluster index(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-
-        # Calculate the chi^4 cluster index
-        chi4 = rdMolDescriptors.CalcChi4v(mol)
-        markdown = f"""##Chi^4v (Chi-four-v) valence molecular graph index
-**Input SMILES:** {smiles}
-**Chi-four-v Cluster Index:** {chi4}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_coulombmatrix(smiles: str):
-    """
-    This tool calculates the Coulomb matrix for a molecule, which represents the electrostatic interactions between atoms in the molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the Coulomb matrix, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        mol = Chem.AddHs(mol)
-        AllChem.EmbedMolecule(mol, randomSeed=42)
-        coulomb_mat = rdMolDescriptors.CalcCoulombMat(mol)
-        markdown = f"""
-## Coulomb Matrix
-**Input SMILES:** {smiles}
-**Coulomb Matrix:** 
-"""
-        for i, matrix in enumerate(coulomb_mat):
-            markdown += f"Coulomb Matrix {i + 1}:\n"
-            coulomb_matrices_list = list(matrix)
-            markdown += f"{coulomb_matrices_list}\n"
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_crippen_descriptors(smiles: str):
-    """
-    This function calculates the Wildman-Crippen logP and MR (molecular refractivity) values for a given molecule in RDKit.
-      Args:
-          smiles: a SMILES string. Input SMILES directly without any other characters.
-      Returns:
-          str: A markdown string wtih the Wildman-Crippen logp and mr values, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        logp, mr = rdMolDescriptors.CalcCrippenDescriptors(mol)
-        markdown = f"""## Crippen Descriptors
-**Input SMILES:** {smiles}
-**LogP:** {logp}
-**MR:** {mr}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_EEMcharges(smiles: str):
-    """
-
-    This function computes the EEM (Electronegativity Equalization Method) atomic partial charges for a given molecule using its atomic properties.
-
-        Args:
-            smiles: a SMILES string. Input SMILES directly without any other characters.
-        Returns:
-            str: A markdown string wtih a list of partial charges assigned to each atom in the molecule, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        mol = Chem.AddHs(mol)
-        AllChem.EmbedMolecule(mol, randomSeed=42)
-        eem_charges = rdMolDescriptors.CalcEEMcharges(mol)
-
-        markdown = f"""## EEM Charges
-**Input SMILES:** {smiles}
-**EEM Charges:** {eem_charges}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_Eccentricity(smiles: str):
-    """
-    This function calculates the eccentricity of a molecule, which is a measure of its shape.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the eccentricity value(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        mol = Chem.AddHs(mol)
-        AllChem.EmbedMolecule(mol, randomSeed=42)
-        # Calculate eccentricity
-        eccentricity = rdMolDescriptors.CalcEccentricity(mol)
-        markdown = f"""
-## Eccentricity
-**Input SMILES:** {smiles}
-**Eccentricity:** {eccentricity}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_exact_molweight(smiles: str):
-    """
-    This function calculates the exact molecular weight of a molecule, which is the sum of the atomic weights of all atoms in the molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the exact molecular weight(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate exact molecular weight
-        exact_molweight = rdMolDescriptors.CalcExactMolWt(mol)
-        markdown = f"""## Exact Molecular Weight
-**Input SMILES:** {smiles}
-**Exact Molecular Weight:** {exact_molweight}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_FractionCSP3(smiles: str):
-    """
-    This function calculates the fraction of sp3-hybridized carbon atoms in a molecule, which is a measure of its shape.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the fraction of sp3-hybridized carbon atoms(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the fraction of sp3-hybridized carbon atoms
-        fraction_csp3 = rdMolDescriptors.CalcFractionCSP3(mol)
-        markdown = f"""## Fraction of SP3 hybridized carbon atoms
-**Input SMILES:** {smiles}
-**Fraction of sp3-hybridized Carbon Atoms:** {fraction_csp3}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_GETAWAY(smiles: str):
-    """
-    This function calculates the GETAWAY descriptors for a molecule, which capture the shape and size of the molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the GETAWAY descriptors, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        mol = Chem.AddHs(mol)
-        AllChem.EmbedMolecule(mol, randomSeed=42)
-        getaway = rdMolDescriptors.CalcGETAWAY(mol)
-        markdown = f"""## GETAWAY Descriptors
-**Input SMILES:** {smiles}
-**GETAWAY Descriptors:** {getaway}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_HallKierAlpha(smiles: str):
-    """
-    This function calculates the Hall-Kier alpha index for a molecule, which is a measure of its shape.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the Hall-Kier alpha index(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate Hall-Kier alpha index
-        alpha = rdMolDescriptors.CalcHallKierAlpha(mol)
-        markdown = f"""##Calculate Hall-Kier Alpha
-**Input SMILES:** {smiles}
-**Hall-Kier Alpha Index:** {alpha}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_InertialShapeFactor(smiles: str):
-    """
-
-    This function calculates the Inertial Shape Factor of a molecule, which is a measure of its shape. The Inertial Shape Factor ranges from 0 to 1, where values closer to 1 indicate a more spherical shape and values closer to 0 indicate a more linear shape.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the inertial shape factor(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        mol = Chem.AddHs(mol)
-        AllChem.EmbedMolecule(mol, randomSeed=42)
-        # Calculate inertial shape factor
-        inertial_shape_factor = rdMolDescriptors.CalcInertialShapeFactor(mol)
-        markdown = f"""## Inertial Shape Factor
-**Input SMILES:** {smiles}
-**Inertial Shape Factor:** {inertial_shape_factor}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_Kappa1(smiles: str):
-    """
-    This function computes the Kappa1 (κ1) value of a molecule, which is a topological descriptor representing its shape complexity or branching degree. The Kappa1 value is a floating-point number calculated based on the molecular graph topology.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the Kappa1 value(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate Kappa1 shape index
-        kappa1 = rdMolDescriptors.CalcKappa1(mol)
-        markdown = f"""##Calculate Kappa1
-**Input SMILES:** {smiles}
-**Kappa1 Shape Index:** {kappa1}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_Kappa2(smiles: str):
-    """
-    This function computes the Kappa2 (κ2) value of a molecule, which is a topological descriptor representing its shape complexity or branching degree. The Kappa2 value is a floating-point number calculated based on the molecular graph topology.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the Kappa2 value(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate Kappa2 shape index
-        kappa2 = rdMolDescriptors.CalcKappa2(mol)
-        markdown = f"""##Calculate Kappa2
-**Input SMILES:** {smiles}
-**Kappa2 Shape Index:** {kappa2}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_Kappa3(smiles: str):
-    """
-    This function computes the Kappa3 (κ3) value of a molecule, which is a topological descriptor representing its shape complexity or branching degree. The Kappa3 value is a floating-point number calculated based on the molecular graph topology.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the Kappa3 value(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate Kappa3 shape index
-        kappa3 = rdMolDescriptors.CalcKappa3(mol)
-        markdown = f"""##Calculate Kappa3
-**Input SMILES:** {smiles}
-**Kappa3 Shape Index:** {kappa3}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_LabuteASA(smiles: str):
-    """
-    This function calculates the Labute accessible surface area (ASA) value for a molecule, which is a measure of the solvent-accessible surface area of the molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the Labute ASA value(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate Labute ASA
-        labute_asa = rdMolDescriptors.CalcLabuteASA(mol)
-        markdown = f"""##Calculate Labute ASA
-**Input SMILES:** {smiles}
-**Labute ASA:** {labute_asa}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_MORSE(smiles: str):
-    """
-    This tool calculates the Molecule Representation of Structures based on Electron diffraction (MORSE) descriptors for a given molecule. MORSE descriptors provide a representation of molecular structures based on electron diffraction concepts.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih a list containing the calculated MORSE descriptors, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        mol = Chem.AddHs(mol)
-        AllChem.EmbedMolecule(mol, randomSeed=42)
-        morse = rdMolDescriptors.CalcMORSE(mol)
-        markdown = f"""##MORSE Descriptors
-**Input SMILES:** {smiles}
-**MORSE Descriptors:** {morse}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
-
-
-def calculate_MolFormula(smiles: str):
-    """
-    This function calculates the molecular formula of a molecule, which is a string representing the number and type of atoms in the molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the molecular formula, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate molecular formula
-        mol_formula = rdMolDescriptors.CalcMolFormula(mol)
-        markdown = f"""##Calculate Molecular Formula
-**Input SMILES:** {smiles}
-**Molecular Formula:** {mol_formula}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_Autocorrelation3D(smiles: str) -> dict:
+    """Compute the complete 3D molecular autocorrelation descriptor vector using the declared
+    conformer. Geometry uses one ETKDGv3 seed42 conformer without force-field
+    optimization; no ensemble or experimental structure is implied. Hydrogen policy:
+    remove. Return the scientific value with named backend, version and molecular
+    provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcAUTOCORR3D', geometry=True, hydrogen_policy='remove')
+
+
+def calculate_asphericity(smiles: str) -> dict:
+    """Compute the molecular asphericity shape descriptor. Geometry uses one ETKDGv3 seed42
+    conformer without force-field optimization; no ensemble or experimental structure is
+    implied. Hydrogen policy: remove. Return the scientific value with named backend,
+    version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcAsphericity', geometry=True, hydrogen_policy='remove')
+
+
+def calculate_chi0n(smiles: str) -> dict:
+    """Compute the RDKit Chi0n molecular connectivity index, preserving the named order and n/v
+    definition. No conformer is generated. Hydrogen policy: remove. Return the scientific
+    value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcChi0n', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_chi0v(smiles: str) -> dict:
+    """Compute the RDKit Chi0v molecular connectivity index, preserving the named order and n/v
+    definition. No conformer is generated. Hydrogen policy: remove. Return the scientific
+    value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcChi0v', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_chi1n(smiles: str) -> dict:
+    """Compute the RDKit Chi1n molecular connectivity index, preserving the named order and n/v
+    definition. No conformer is generated. Hydrogen policy: remove. Return the scientific
+    value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcChi1n', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_chi1v(smiles: str) -> dict:
+    """Compute the RDKit Chi1v molecular connectivity index, preserving the named order and n/v
+    definition. No conformer is generated. Hydrogen policy: remove. Return the scientific
+    value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcChi1v', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_chi2n(smiles: str) -> dict:
+    """Compute the RDKit Chi2n molecular connectivity index, preserving the named order and n/v
+    definition. No conformer is generated. Hydrogen policy: remove. Return the scientific
+    value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcChi2n', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_chi2v(smiles: str) -> dict:
+    """Compute the RDKit Chi2v molecular connectivity index, preserving the named order and n/v
+    definition. No conformer is generated. Hydrogen policy: remove. Return the scientific
+    value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcChi2v', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_chi3n(smiles: str) -> dict:
+    """Compute the RDKit Chi3n molecular connectivity index, preserving the named order and n/v
+    definition. No conformer is generated. Hydrogen policy: remove. Return the scientific
+    value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcChi3n', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_chi3v(smiles: str) -> dict:
+    """Compute the RDKit Chi3v molecular connectivity index, preserving the named order and n/v
+    definition. No conformer is generated. Hydrogen policy: remove. Return the scientific
+    value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcChi3v', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_chi4n(smiles: str) -> dict:
+    """Compute the RDKit Chi4n molecular connectivity index, preserving the named order and n/v
+    definition. No conformer is generated. Hydrogen policy: remove. Return the scientific
+    value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcChi4n', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_chi4v(smiles: str) -> dict:
+    """Compute the RDKit Chi4v molecular connectivity index, preserving the named order and n/v
+    definition. No conformer is generated. Hydrogen policy: remove. Return the scientific
+    value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcChi4v', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_coulombmatrix(smiles: str) -> dict:
+    """Return the complete RDKit Coulomb descriptor sequence without assuming an independently
+    verified matrix-axis convention or physical energy interpretation. Geometry uses one
+    ETKDGv3 seed42 conformer without force-field optimization; no ensemble or experimental
+    structure is implied. Hydrogen policy: explicit. Return the scientific value with
+    named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcCoulombMat', geometry=True, hydrogen_policy='explicit')
+
+
+def calculate_crippen_descriptors(smiles: str) -> dict:
+    """Retired pair wrapper; select MolLogP/MolMR on MolecularElectronicDescriptors."""
+    raise NotImplementedError("GetCrippenDescriptors retired; use MolecularElectronicDescriptors(smiles=smiles, descriptors=['MolLogP','MolMR']). Values are named descriptor fields rather than a positional value pair; no automatic signature/output alias is supplied")
+
+
+def calculate_EEMcharges(smiles: str) -> dict:
+    """Compute atom-indexed electronegativity-equalization-model partial charges. Geometry uses
+    one ETKDGv3 seed42 conformer without force-field optimization; no ensemble or
+    experimental structure is implied. Hydrogen policy: explicit. Return the scientific
+    value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcEEMcharges', geometry=True, hydrogen_policy='explicit')
+
+
+def calculate_Eccentricity(smiles: str) -> dict:
+    """Compute the molecular eccentricity shape descriptor. Geometry uses one ETKDGv3 seed42
+    conformer without force-field optimization; no ensemble or experimental structure is
+    implied. Hydrogen policy: explicit. Return the scientific value with named backend,
+    version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcEccentricity', geometry=True, hydrogen_policy='explicit')
+
+
+def calculate_exact_molweight(smiles: str) -> dict:
+    """Compute exact molecular mass in Da, retaining explicitly encoded isotope labels; this
+    differs from isotope-averaged mass and does not infer adduct m/z. No conformer is
+    generated. Hydrogen policy: remove. Return the scientific value with named backend,
+    version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcExactMolWt', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_FractionCSP3(smiles: str) -> dict:
+    """Compute the fraction of carbon atoms that are sp3 hybridized; this is a graph-composition
+    fraction, not a measured 3D shape. No conformer is generated. Hydrogen policy: remove.
+    Return the scientific value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcFractionCSP3', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_GETAWAY(smiles: str) -> dict:
+    """Compute the complete GETAWAY molecular descriptor vector; undefined components remain null
+    with explicit indices and partially_undefined status rather than zero imputation.
+    Geometry uses one ETKDGv3 seed42 conformer without force-field optimization; no
+    ensemble or experimental structure is implied. Hydrogen policy: explicit. Return the
+    scientific value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcGETAWAY', geometry=True, hydrogen_policy='explicit')
+
+
+def calculate_HallKierAlpha(smiles: str) -> dict:
+    """Compute the Hall-Kier alpha graph correction using the installed RDKit atomic conventions.
+    No conformer is generated. Hydrogen policy: remove. Return the scientific value with
+    named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcHallKierAlpha', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_InertialShapeFactor(smiles: str) -> dict:
+    """Compute the molecular inertial shape factor. Geometry uses one ETKDGv3 seed42 conformer
+    without force-field optimization; no ensemble or experimental structure is implied.
+    Hydrogen policy: explicit. Return the scientific value with named backend, version and
+    molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcInertialShapeFactor', geometry=True, hydrogen_policy='explicit')
+
+
+def calculate_Kappa1(smiles: str) -> dict:
+    """Compute the graph-based Kier Kappa1 molecular shape index. No conformer is generated.
+    Hydrogen policy: remove. Return the scientific value with named backend, version and
+    molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcKappa1', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_Kappa2(smiles: str) -> dict:
+    """Compute the graph-based Kier Kappa2 molecular shape index. No conformer is generated.
+    Hydrogen policy: remove. Return the scientific value with named backend, version and
+    molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcKappa2', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_Kappa3(smiles: str) -> dict:
+    """Compute the graph-based Kier Kappa3 molecular shape index. No conformer is generated.
+    Hydrogen policy: remove. Return the scientific value with named backend, version and
+    molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcKappa3', geometry=False, hydrogen_policy='remove')
+
+
+def calculate_LabuteASA(smiles: str, hydrogen_policy: str = "remove") -> dict:
+    """Compute the RDKit Labute approximate surface-area descriptor in angstrom^2 under an
+    explicit hydrogen policy; this is not custom-property VSA or a solvent-accessible
+    surface calculation. No conformer is generated. Hydrogen policy: caller-selected.
+    Return the scientific value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, "CalcLabuteASA", hydrogen_policy=hydrogen_policy)
+
+
+def calculate_MORSE(smiles: str) -> dict:
+    """Compute the complete 3D-MoRSE molecular descriptor vector from the declared conformer.
+    Geometry uses one ETKDGv3 seed42 conformer without force-field optimization; no
+    ensemble or experimental structure is implied. Hydrogen policy: explicit. Return the
+    scientific value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcMORSE', geometry=True, hydrogen_policy='explicit')
+
+
+def calculate_MolFormula(smiles: str) -> dict:
+    """Compute the molecular formula from the supplied molecular graph, retaining RDKit
+    isotope/charge notation; do not infer a different fragment, tautomer or protonation
+    state. No conformer is generated. Hydrogen policy: remove. Return the scientific value
+    with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcMolFormula', geometry=False, hydrogen_policy='remove')
 
 
 def calculate_NPR1(smiles: str):
-    """
-    This function calculates the NPR1 (Normalized Principal Moments Ratio) descriptor for a molecule, which serves as a descriptor for the distribution of charges within the molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the NPR1 value(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        mol = Chem.AddHs(mol)
-        AllChem.EmbedMolecule(mol, randomSeed=42)
-
-        # Calculate NPR1
-        npr1 = rdMolDescriptors.CalcNPR1(mol)
-        markdown = f"""##Calculate  Normalized Partial Charge(NPR1)
-**Input SMILES:** {smiles}
-**NPR1:** {npr1}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+    'GetNPR1 retired: One NPR1/NPR2 core exposes geometry and optimization policy explicitly. Use NormalizedPrincipalMoments. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('GetNPR1 retired: One NPR1/NPR2 core exposes geometry and optimization policy explicitly. Use NormalizedPrincipalMoments. See the catalog migration feedback for explicit arguments.')
 
 
 def calculate_NPR2(smiles: str):
-    """
-    This function calculates the NPR2 (Normalized Principal Moments Ratio) descriptor for a molecule, which serves as a descriptor for the distribution of charges within the molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih the NPR2 value(a float value), or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        mol = Chem.AddHs(mol)
-        AllChem.EmbedMolecule(mol, randomSeed=42)
-
-        # Calculate NPR2
-        npr2 = rdMolDescriptors.CalcNPR2(mol)
-        markdown = f"""##Calculate Normalized Partial Charge(NPR2)
-**Input SMILES:** {smiles}
-**NPR2:** {npr2}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+    'GetNPR2 retired: One NPR1/NPR2 core exposes geometry and optimization policy explicitly. Use NormalizedPrincipalMoments. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('GetNPR2 retired: One NPR1/NPR2 core exposes geometry and optimization policy explicitly. Use NormalizedPrincipalMoments. See the catalog migration feedback for explicit arguments.')
 
 
-def calculate_NumAliphaticCarbocycles(smiles: str):
-    """
-    This function calculates the number of aliphatic carbocycles in a molecule. Aliphatic carbocycles are cyclic structures that contain at least one non-aromatic bond.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the count of such carbocycles, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of aliphatic rings
-        num_aliphatic_rings = rdMolDescriptors.CalcNumAliphaticRings(mol)
-        markdown = f"""##The number of aliphatic carbocycles
-**Input SMILES:** {smiles}
-**Number of aliphatic carbocycles:** {num_aliphatic_rings}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumAliphaticCarbocycles(smiles: str) -> dict:
+    """Count RDKit nonaromatic rings containing only carbon atoms. No conformer is generated.
+    Hydrogen policy: remove. Return the scientific value with named backend, version and
+    molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumAliphaticCarbocycles', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumAliphaticHeterocycles(smiles: str):
-    """
-    This function calculates the number of aliphatic heterocycles in a molecule. Aliphatic heterocycles are cyclic structures that contain at least one non-aromatic bond and at least one heteroatom (an atom other than carbon).    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the count of such aliphatic heterocycles, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of aliphatic rings
-        num_aliphatic_rings = rdMolDescriptors.CalcNumAliphaticHeterocycles(mol)
-        markdown = f"""##The number of aliphatic heterocycles
-**Input SMILES:** {smiles}
-**Number of aliphatic heterocycles:** {num_aliphatic_rings}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumAliphaticHeterocycles(smiles: str) -> dict:
+    """Count RDKit nonaromatic rings containing at least one noncarbon ring atom. No conformer is
+    generated. Hydrogen policy: remove. Return the scientific value with named backend,
+    version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumAliphaticHeterocycles', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumAliphaticRings(smiles: str):
-    """
-    This tool calculates the number of aliphatic rings in a molecule. Aliphatic rings are ring structures that contain at least one non-aromatic bond.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the count of such aliphatic rings, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of aliphatic rings
-        num_aliphatic_rings = rdMolDescriptors.CalcNumAliphaticRings(mol)
-        markdown = f"""##The number of aliphatic rings
-**Input SMILES:** {smiles}
-**Number of aliphatic rings:** {num_aliphatic_rings}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumAliphaticRings(smiles: str) -> dict:
+    """Count RDKit nonaromatic rings, including carbon-only and heteroatom-containing rings. No
+    conformer is generated. Hydrogen policy: remove. Return the scientific value with
+    named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumAliphaticRings', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumAmideBonds(smiles: str):
-    """
-    This function calculates the number of amide bonds in a molecule. Amide bonds are chemical bonds formed between a carbonyl group and an amino group.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the count of such amide bonds, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of amide bonds
-        num_amide_bonds = rdMolDescriptors.CalcNumAmideBonds(mol)
-        markdown = f"""##The number of amide bonds
-**Input SMILES:** {smiles}
-**Number of amide bonds:** {num_amide_bonds}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumAmideBonds(smiles: str) -> dict:
+    """Count amide bonds using RDKit molecular substructure rules. No conformer is generated.
+    Hydrogen policy: remove. Return the scientific value with named backend, version and
+    molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumAmideBonds', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumAromaticCarbocycles(smiles: str):
-    """
-    This function calculates the number of aromatic carbocycles in a molecule. Aromatic carbocycles are cyclic structures composed entirely of carbon atoms with alternating single and double bonds (aromaticity) in at least one ring.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the count of such aromatic carbocycles, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of aromatic carbocycles
-        num_aromatic_carbocycles = rdMolDescriptors.CalcNumAromaticCarbocycles(mol)
-        markdown = f"""##The number of aromatic carbocycles
-**Input SMILES:** {smiles}
-**Number of aromatic carbocycles:** {num_aromatic_carbocycles}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumAromaticCarbocycles(smiles: str) -> dict:
+    """Count RDKit aromatic rings whose ring atoms are all carbon. No conformer is generated.
+    Hydrogen policy: remove. Return the scientific value with named backend, version and
+    molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumAromaticCarbocycles', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumAromaticHeterocycles(smiles: str):
-    """
-    This function calculates the number of aromatic heterocycles in a molecule. Aromatic heterocycles are cyclic structures that contain at least one heteroatom (an atom other than carbon) and exhibit aromaticity. es.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the count of such aromatic heterocycl, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of aromatic heterocycles
-        num_aromatic_heterocycles = rdMolDescriptors.CalcNumAromaticHeterocycles(mol)
-        markdown = f"""##The number of aromatic heterocycles
-**Input SMILES:** {smiles}
-**Number of aromatic heterocycles:** {num_aromatic_heterocycles}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumAromaticHeterocycles(smiles: str) -> dict:
+    """Count RDKit aromatic rings containing a noncarbon ring atom. No conformer is generated.
+    Hydrogen policy: remove. Return the scientific value with named backend, version and
+    molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumAromaticHeterocycles', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumAromaticRings(smiles: str):
-    """
-    This tool calculates the number of aromatic rings in a molecule. Aromatic rings are cyclic structures composed of alternating single and double bonds (aromaticity) and exhibit stability due to delocalization of electrons.     Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the count of such aromatic rings, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of aromatic rings
-        num_aromatic_rings = rdMolDescriptors.CalcNumAromaticRings(mol)
-        markdown = f"""##The number of aromatic rings
-**Input SMILES:** {smiles}
-**Number of aromatic rings:** {num_aromatic_rings}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumAromaticRings(smiles: str) -> dict:
+    """Count aromatic rings under RDKit ring perception. No conformer is generated. Hydrogen
+    policy: remove. Return the scientific value with named backend, version and molecular
+    provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumAromaticRings', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumAtomStereoCenters(smiles: str):
-    """
-    This function calculates the number of atom stereo centers in a molecule. Atom stereo centers are atoms that are chiral centers and are not part of a ring structure.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the total number of atomic stereocenters, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of atom stereo centers
-        num_atom_stereo_centers = rdMolDescriptors.CalcNumAtomStereoCenters(mol)
-        markdown = f"""##The number of atom stereo centers
-**Input SMILES:** {smiles}
-**Number of atom stereo centers:** {num_atom_stereo_centers}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumAtomStereoCenters(smiles: str) -> dict:
+    """Count RDKit atom stereocenters, including unspecified centers; this is not a count of
+    experimentally determined configurations. No conformer is generated. Hydrogen policy:
+    remove. Return the scientific value with named backend, version and molecular
+    provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumAtomStereoCenters', geometry=False, hydrogen_policy='remove')
 
 
 def calculate_NumAtoms(smiles: str):
-    """
-    This function calculates the number of atoms in a molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the total number of atoms in the molecule, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of atoms
-        num_atoms = mol.GetNumAtoms()
-        markdown = f"""##The number of atoms
-**Input SMILES:** {smiles}
-**Number of atoms:** {num_atoms}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+    'GetAtomsNum retired: One inventory-count API makes the atom subset and hydrogen/parser policy explicit. Use CountMolecularAtoms. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('GetAtomsNum retired: One inventory-count API makes the atom subset and hydrogen/parser policy explicit. Use CountMolecularAtoms. See the catalog migration feedback for explicit arguments.')
 
 
-def calculate_NumBridgeheadAtoms(smiles: str):
-    """
-    This function calculates the number of bridgehead atoms in a molecule. Bridgehead atoms are atoms that are part of a bridged ring structure.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the total number of bridgehead atoms, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of bridgehead atoms
-        num_bridgehead_atoms = rdMolDescriptors.CalcNumBridgeheadAtoms(mol)
-        markdown = f"""##The number of bridgehead atoms
-**Input SMILES:** {smiles}
-**Number of bridgehead atoms:** {num_bridgehead_atoms}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumBridgeheadAtoms(smiles: str) -> dict:
+    """Count bridgehead atoms under RDKit ring perception. No conformer is generated. Hydrogen
+    policy: remove. Return the scientific value with named backend, version and molecular
+    provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumBridgeheadAtoms', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumHBA(smiles: str):
-    """
-    This function calculates the number of hydrogen bond acceptors (HBA) in a molecule. Hydrogen bond acceptors are atoms capable of forming hydrogen bonds by accepting a hydrogen atom.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih integer representing the count of such hydrogen bond acceptors, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of hydrogen bond acceptors
-        num_h_acceptors = rdMolDescriptors.CalcNumHBA(mol)
-        markdown = f"""##The number of hydrogen bond acceptors
-**Input SMILES:** {smiles}
-**Number of hydrogen bond acceptors:** {num_h_acceptors}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumHBA(smiles: str) -> dict:
+    """Count hydrogen-bond acceptor sites using RDKit functional-group SMARTS rules; do not
+    substitute its simpler N/O Lipinski heuristic. No conformer is generated. Hydrogen
+    policy: remove. Return the scientific value with named backend, version and molecular
+    provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumHBA', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumHBD(smiles: str):
-    """
-    This function calculates the number of hydrogen bond donors (HBD) in a molecule. Hydrogen bond donors are atoms capable of forming hydrogen bonds by donating a hydrogen atom.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih integer representing the count of hydrogen bond donors, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of hydrogen bond donors
-        num_h_donors = rdMolDescriptors.CalcNumHBD(mol)
-        markdown = f"""##The number of hydrogen bond donors
-**Input SMILES:** {smiles}
-**Number of hydrogen bond donors:** {num_h_donors}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumHBD(smiles: str) -> dict:
+    """Count hydrogen-bond donor sites using RDKit functional-group SMARTS rules; this counts
+    donor sites rather than the simpler number of N/O-attached hydrogens. No conformer is
+    generated. Hydrogen policy: remove. Return the scientific value with named backend,
+    version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumHBD', geometry=False, hydrogen_policy='remove')
 
 
 def calculate_NumHeavyAtoms(smiles: str):
-    """
-    This tool calculates the number of heavy atoms in a molecule. Heavy atoms are atoms other than hydrogen.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih integer representing the number of heavy atoms for a molecule, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of heavy atoms
-        num_heavy_atoms = mol.GetNumHeavyAtoms()
-        markdown = f"""##The number of heavy atoms
-**Input SMILES:** {smiles}
-**Number of heavy atoms:** {num_heavy_atoms}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+    'GetHeavyAtomsNum retired: One inventory-count API makes the atom subset and hydrogen/parser policy explicit. Use CountMolecularAtoms. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('GetHeavyAtomsNum retired: One inventory-count API makes the atom subset and hydrogen/parser policy explicit. Use CountMolecularAtoms. See the catalog migration feedback for explicit arguments.')
 
 
 def calculate_NumHeteroatoms(smiles: str):
-    """
-    This tool calculates the number of heteroatoms in a molecule. Heteroatoms are atoms other than carbon and hydrogen.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the total number of heteroatoms in the molecule, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of heteroatoms
-        num_heteroatoms = rdMolDescriptors.CalcNumHeteroatoms(mol)
-        markdown = f"""##The number of heteroatoms
-**Input SMILES:** {smiles}
-**Number of heteroatoms:** {num_heteroatoms}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+    'GetHeteroatomsNum retired: One inventory-count API makes the atom subset and hydrogen/parser policy explicit. Use CountMolecularAtoms. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('GetHeteroatomsNum retired: One inventory-count API makes the atom subset and hydrogen/parser policy explicit. Use CountMolecularAtoms. See the catalog migration feedback for explicit arguments.')
 
 
-def calculate_NumHeterocycles(smiles: str):
-    """
-    This tool calculates the number of heterocycles in a molecule. Heterocycles are cyclic structures that contain at least one heteroatom (an atom other than carbon).
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the count of such heterocycles, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of heterocycles
-        num_heterocycles = rdMolDescriptors.CalcNumHeterocycles(mol)
-        markdown = f"""##The number of heterocycles
-**Input SMILES:** {smiles}
-**Number of heterocycles:** {num_heterocycles}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumHeterocycles(smiles: str) -> dict:
+    """Count RDKit rings containing at least one heteroatom. No conformer is generated. Hydrogen
+    policy: remove. Return the scientific value with named backend, version and molecular
+    provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumHeterocycles', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumLipinskiHBA(smiles: str):
-    """
-    This tool calculates the number of Lipinski hydrogen bond acceptors (HBA) in a molecule, which is a measure used in drug-likeness evaluation according to Lipinski's rule of five. Lipinski's rule suggests that molecules with no more than five hydrogen bond acceptors tend to have better oral bioavailability.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the number of Lipinski H-bond acceptors, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of hydrogen bond acceptors according to the Lipinski rule of five
-        num_lipinski_hba = rdMolDescriptors.CalcNumLipinskiHBA(mol)
-        markdown = f"""##The number of Lipinski H-bond acceptors
-**Input SMILES:** {smiles}
-**Number of Lipinski H-bond acceptors:** {num_lipinski_hba}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumLipinskiHBA(smiles: str) -> dict:
+    """Count nitrogen and oxygen atoms using RDKit CalcNumLipinskiHBA; this simple heuristic
+    differs from functional-group hydrogen-bond acceptor detection and does not itself
+    establish oral bioavailability. No conformer is generated. Hydrogen policy: remove.
+    Return the scientific value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumLipinskiHBA', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumLipinskiHBD(smiles: str):
-    """
-    This tool calculates the number of Lipinski hydrogen bond donors (HBD) in a molecule, which is a measure used in drug-likeness evaluation according to Lipinski's rule of five.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the number of Lipinski H-bond donors, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of hydrogen bond donors according to the Lipinski rule of five
-        num_lipinski_hbd = rdMolDescriptors.CalcNumLipinskiHBD(mol)
-        markdown = f"""##The number of Lipinski H-bond donors
-**Input SMILES:** {smiles}
-**Number of Lipinski H-bond donors:** {num_lipinski_hbd}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumLipinskiHBD(smiles: str) -> dict:
+    """Count hydrogens attached to nitrogen or oxygen using RDKit CalcNumLipinskiHBD; this
+    heuristic differs from functional-group donor-site counts and does not itself
+    establish oral bioavailability. No conformer is generated. Hydrogen policy: remove.
+    Return the scientific value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumLipinskiHBD', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumRings(smiles: str):
-    """
-    This tool calculates the number of rings in a molecule.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the total number of rings in the molecule, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of rings
-        num_rings = rdMolDescriptors.CalcNumRings(mol)
-        markdown = f"""##The number of rings
-**Input SMILES:** {smiles}
-**Number of rings:** {num_rings}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumRings(smiles: str) -> dict:
+    """Count rings in the RDKit SSSR-based ring-perception result; this is not a count of every
+    possible graph cycle. No conformer is generated. Hydrogen policy: remove. Return the
+    scientific value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumRings', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumRotatableBonds(smiles: str):
-    """
-    This tool calculates the number of rotatable bonds in a molecule. Rotatable bonds are single bonds that are not part of a ring structure and are not terminal (i.e., not connected to a hydrogen atom).
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the total number of rotatable bonds in the molecule, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of rotatable bonds
-        num_rotatable_bonds = rdMolDescriptors.CalcNumRotatableBonds(mol)
-        markdown = f"""##The number of rotatable bonds
-**Input SMILES:** {smiles}
-**Number of rotatable bonds:** {num_rotatable_bonds}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumRotatableBonds(smiles: str) -> dict:
+    """Count rotatable bonds using the installed RDKit default rotor definition; backend version
+    and hydrogen policy are reported. No conformer is generated. Hydrogen policy: remove.
+    Return the scientific value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumRotatableBonds', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumSaturatedCarbocycles(smiles: str):
-    """
-    This function calculates the number of saturated carbocycles in a molecule. Saturated carbocycles are cyclic structures composed entirely of carbon atoms with single bonds (no double bonds).
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the count of such saturated carbocycles, or an error message.
-    """
-    try:
-        cleaned_smiles = smiles.replace(" ", "").replace("\n", "")
-        mol = Chem.MolFromSmiles(cleaned_smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of saturated carbocycles
-        num_saturated_carbocycles = rdMolDescriptors.CalcNumSaturatedCarbocycles(mol)
-        markdown = f"""##The number of saturated carbocycles
-**Input SMILES:** {cleaned_smiles}
-**Number of saturated carbocycles:** {num_saturated_carbocycles}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumSaturatedCarbocycles(smiles: str) -> dict:
+    """Count RDKit saturated rings containing only carbon atoms. No conformer is generated.
+    Hydrogen policy: remove. Return the scientific value with named backend, version and
+    molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumSaturatedCarbocycles', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumSaturatedHeterocycles(smiles: str):
-    """
-    This function calculates the number of saturated heterocycles in a molecule. Saturated heterocycles are cyclic structures that contain at least one heteroatom (an atom other than carbon) and are composed entirely of single bonds (no double bonds).
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the count of such saturated heterocycles, or an error message.
-    """
-    try:
-        cleaned_smiles = smiles.replace(" ", "").replace("\n", "")
-        mol = Chem.MolFromSmiles(cleaned_smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of saturated heterocycles
-        num_saturated_heterocycles = rdMolDescriptors.CalcNumSaturatedHeterocycles(mol)
-        markdown = f"""##The number of saturated heterocycles
-**Input SMILES:** {cleaned_smiles}
-**Number of saturated heterocycles:** {num_saturated_heterocycles}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumSaturatedHeterocycles(smiles: str) -> dict:
+    """Count RDKit saturated rings containing a noncarbon ring atom. No conformer is generated.
+    Hydrogen policy: remove. Return the scientific value with named backend, version and
+    molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumSaturatedHeterocycles', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumSaturatedRings(smiles: str):
-    """
-    This tool calculates the number of saturated rings in a molecule. Saturated rings are ring structures composed entirely of single bonds (no double bonds).
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the count of such saturated rings, or an error message.
-    """
-    try:
-        cleaned_smiles = smiles.replace(" ", "").replace("\n", "")
-        mol = Chem.MolFromSmiles(cleaned_smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of saturated rings
-        num_saturated_rings = rdMolDescriptors.CalcNumSaturatedRings(mol)
-        markdown = f"""##The number of saturated rings
-**Input SMILES:** {cleaned_smiles}
-**Number of saturated rings:** {num_saturated_rings}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumSaturatedRings(smiles: str) -> dict:
+    """Count saturated rings under RDKit ring perception. No conformer is generated. Hydrogen
+    policy: remove. Return the scientific value with named backend, version and molecular
+    provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumSaturatedRings', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumSpiroAtoms(smiles: str):
-    """
-    This function calculates the number of spiro atoms in a molecule. Spiro atoms are atoms that are part of a spiro ring structure, which consists of two rings that share a single atom.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the total number of spiro atoms, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of spiro atoms
-        num_spiro_atoms = rdMolDescriptors.CalcNumSpiroAtoms(mol)
-        markdown = f"""##The number of spiro atoms
-**Input SMILES:** {smiles}
-**Number of spiro atoms:** {num_spiro_atoms}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumSpiroAtoms(smiles: str) -> dict:
+    """Count spiro atoms under RDKit ring perception. No conformer is generated. Hydrogen policy:
+    remove. Return the scientific value with named backend, version and molecular
+    provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumSpiroAtoms', geometry=False, hydrogen_policy='remove')
 
 
-def calculate_NumUnspecifiedAtomStereoCenters(smiles: str):
-    """
-    This tool calculates the number of unspecified atomic stereocenters in a molecule. Unspecified atomic stereocenters are atoms that have the potential to be stereocenters but lack explicit specification of their stereochemistry.
-    Args:
-        smiles: a SMILES string. Input SMILES directly without any other characters.
-    Returns:
-        str: A markdown string wtih an integer representing the total number of unspecified atom stereo centers, or an error message.
-    """
-    try:
-        smiles = (
-            smiles.replace(" ", "").replace("\n", "").replace("'", "").replace('"', "")
-        )
-
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            raise ValueError("Invalid SMILES string.")
-        # Calculate the number of unspecified atom stereo centers
-        num_unspecified_atom_stereo_centers = (
-            rdMolDescriptors.CalcNumUnspecifiedAtomStereoCenters(mol)
-        )
-        markdown = f"""##The number of unspecified atom stereo centers
-**Input SMILES:** {smiles}
-**Number of unspecified atom stereo centers:** {num_unspecified_atom_stereo_centers}
-"""
-        return markdown
-    except Exception as e:
-        markdown = f"An error occurred: {e}"
-        return markdown
+def calculate_NumUnspecifiedAtomStereoCenters(smiles: str) -> dict:
+    """Count RDKit atom stereocenters whose configuration is unspecified; do not assign a missing
+    configuration. No conformer is generated. Hydrogen policy: remove. Return the
+    scientific value with named backend, version and molecular provenance."""
+    from .molecular_analysis import descriptor_value
+    return descriptor_value(smiles, 'CalcNumUnspecifiedAtomStereoCenters', geometry=False, hydrogen_policy='remove')

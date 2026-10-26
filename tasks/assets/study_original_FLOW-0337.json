@@ -1,0 +1,23 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "pool_order": [
+    "fast",
+    "slow"
+  ],
+  "constant_carbon_inputs_kg_per_year": [
+    8.0,
+    2.0
+  ],
+  "independently_observed_steady_carbon_stocks_kg": [
+    16.0,
+    100.0
+  ],
+  "age_threshold_years": 20.0,
+  "model": "Two controlled PARALLEL,noncommunicating carbon pools have been stationary for an indefinitely long time. Each has constant input I_j of zero-age carbon and first-order well-mixed loss dC_j/dt=I_j-k_j*C_j,with unknown positive k_j. No exchange,nonstationary legacy,radioactive decay or age-dependent hazard is present. Every loss leaves the system; total outgoing flux equals total input at stationarity. Age is time since system entry,not molecular formation age.",
+  "age_balance": "For each pool,stationary stock mass density at age a>=0 is n_j(a)=I_j*exp(-k_j*a)kg per year of age. The outgoing carbon flux density by transit age is k_j*n_j(a). Integrate and normalize stock density by total stock,and normalize outgoing-age density by total outgoing flux. All pool identities and source order are fixed.",
+  "target": "Infer both loss rates from the independent steady inputs and stocks. Separately quantify the mean age of carbon PRESENT and the mean transit time of carbon LEAVING,and their fractions older than the supplied threshold. Audit the claim that total_stock/total_input is the mean age of carbon currently present. These are different sampling populations.",
+  "scope": "A stipulated ecosystem carbon-accounting example,not a field carbon-stock estimate,real soil measurement or prediction of an intervention."
+}

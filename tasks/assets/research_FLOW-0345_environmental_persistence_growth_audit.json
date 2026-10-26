@@ -1,0 +1,53 @@
+{
+  "data_origin": "Own controlled two-stage plant demographic model, not measured field vital rates. Each positive projection entry is an expected contribution; the adult-to-juvenile entry includes recruitment and may exceed1. The model is a density-independent continuous-abundance linear approximation with environmental randomness only: no demographic individual-level extinction process, immigration or carrying capacity is supplied. Do not describe its asymptotic growth sign as a proved population survival probability.",
+  "projection_convention": "Column vector n_t=[juveniles,adults] immediately after environment E_t. Update n_(t+1)=M_(E_(t+1)) n_t. CSV destination labels define rows; source labels define columns; preserve all entries and stage identities. Begin with strictly positive n_0. The supplied positive matrices happen to have exact algebraic rank1; discover and exploit this only after checking the original entries. The rank1 assumption means complete one-step stage-direction reset in this ideal model, not a claim about real plants.",
+  "environment": "The exogenous environment E_t is a stationary two-state Markov chain, independent of population state. In A,B order, transition P(p)=[[p,1-p],[1-p,p]], with rows previous and columns next environment,0<=p<1. Its stationary probabilities are1/2,1/2; p=0 is deterministic alternation, p=1/2 is IID, and p approaching1 gives long persistent spells. p=1 itself is excluded because the chain becomes reducible. The empirical uncertainty set of this controlled audit is the declared closed interval p in[0.16,0.20]; it is not estimated from a finite random sequence.",
+  "growth_estimands": "Typical log growth g(p)=lim_(t->infinity) log(||n_t||_1/||n_0||_1)/t almost surely under the environmental law. Expected-abundance factor lambda_mean(p)=lim_(t->infinity) (E||n_t||_1)^(1/t), with the positive stationary joint initialization; report its Perron value. A third quantity is rho((M_A+M_B)/2), a constant averaged-matrix counterfactual, not automatically either growth estimand at dependent p. Do not interchange expectation and logarithm. No Monte Carlo approximation is needed if exact matrix structure is used.",
+  "questions": [
+    "Read the complete source matrices with correct destination/source orientation, verify their ranks and individual Perron factors, and audit noncommutation. Derive the stationary conditional adult fraction immediately after each environment. Keep a rank1 factorization M_e=u_e v_e^T and its exact cross-environment scalar factors in the trajectory; their individual scaling is arbitrary and must not become a uniquely scored hidden answer.",
+    "Derive an exact formula g(p)=intercept+slope*p for the actual RANDOM MATRIX PRODUCT, retaining the stationary environment pair frequencies and all four cross factors. Verify both deterministic alternation and IID limits. Do not average separate matrix log-eigenvalues, which loses cross-environment stage reorganization. Independently derive the4x4 operator propagating m_t^e=E[n_t*1_(E_t=e)] under the stated next-environment convention and its rank-reduced2x2 representation; use their spectra to check lambda_mean.",
+    "At p=0,0.10,0.16,0.18,0.20,0.50 report [typical_log_growth,expected_abundance_factor]. Find the unique critical p for g(p)=0 and the unique critical p for lambda_mean(p)=1 in[0,1). Establish the signs on the complete intervals, not only a sampling grid. Identify which of the six supplied p values have positive EXPECTED growth but strictly negative TYPICAL growth. Keep the characteristic equation, unique physical-root selection and log-growth monotonicity proof in the trajectory.",
+    "Audit a controlled favorable-environment restoration factor s: replace the ENTIRE matrix M_A by s*M_A with s>=1, leave M_B and the Markov environment unchanged. This is an explicitly defined joint vital-contribution intervention, not an isolated fecundity change. Derive its exact effect on g, determine the infimum s guaranteeing strictly positive typical growth for every p in[0.16,0.20], and state whether equality at that infimum is sufficient. Distinguish a strict feasibility condition from an attained minimum.",
+    "Among the supplied discrete restoration policies, select the unique least-cost policy with strictly positive worst-case typical growth over the entire uncertainty interval. Report each policy's minimum g and the chosen worst-case expected-abundance factor using the appropriate joint operator. Assess whether the unmodified model already passes an expected-growth-only rule over that interval. This comparison must not be used as evidence that its typical growth is positive."
+  ],
+  "policies": [
+    {
+      "id": "P1",
+      "A_multiplier": 1.08,
+      "cost": 1
+    },
+    {
+      "id": "P2",
+      "A_multiplier": 1.115,
+      "cost": 1.5
+    },
+    {
+      "id": "P3",
+      "A_multiplier": 1.12,
+      "cost": 2
+    },
+    {
+      "id": "P4",
+      "A_multiplier": 1.15,
+      "cost": 4
+    }
+  ],
+  "interpretation_proposals": {
+    "A": "Rank1 structure makes the product growth depend on successive environment-pair frequencies and cross-environment stage transfer, not just separate Perron factors.",
+    "B": "Positive growth of expected abundance proves positive almost-sure log growth.",
+    "C": "The stationary environment mix stays1/2,1/2 when p changes, but serial ordering changes both relevant growth estimands.",
+    "D": "The strict robust-growth threshold is attained because a zero growth rate at the worst p is strictly positive.",
+    "E": "An increasing ensemble mean can coexist with almost-sure exponential decline in the same environmental model.",
+    "F": "The averaged projection matrix is a valid replacement at every p because the stationary environment frequencies are equal.",
+    "G": "The specified scalar restoration shifts typical log growth according to the frequency of environmentA; it does not remove environmental uncertainty.",
+    "H": "The present continuous-abundance model supplies a quantified probability of demographic extinction in a finite plant population."
+  },
+  "reporting": "Use matrix_perron_factors and matrix_ranks keyedA,B; conditional_adult_fractions keyedA,B; log_growth_affine_coefficients=[intercept,slope]; growth_by_p keyed0,0.10,0.16,0.18,0.20,0.50 with values[g,lambda_mean]; averaged_matrix_perron_factor; typical_zero_growth_p; expected_unit_growth_p; mean_grows_typical_declines_p_values as those same string keys; robust_strict_growth_multiplier_infimum; multiplier_at_infimum_is_strictly_feasible; minimum_log_growth_by_policy; selected_policy_id; selected_policy_worst_case_log_growth; selected_policy_worst_case_expected_factor; baseline_expected_only_rule_passes; valid_interpretation_proposal_ids. Floating absolute tolerance1e-8, ranks/booleans/IDs exact. No nonunique factorization or vector normalization is required in final_answer.",
+  "methodological_source": {
+    "authors": "Shripad Tuljapurkar and Steven Hecht Orzack",
+    "title": "Population dynamics in variable environments I. Long-run growth rates and extinction",
+    "year": 1980,
+    "url": "https://www.sciencedirect.com/science/article/pii/004058098090057X",
+    "role": "Primary motivation for distinguishing growth of random matrix products from other growth summaries in Markov environments. All supplied matrices, intervention factors and uncertainty intervals are own controlled problem definitions; no empirical plant data or paper text is redistributed."
+  }
+}

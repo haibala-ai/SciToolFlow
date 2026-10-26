@@ -1,0 +1,97 @@
+{
+  "data": [
+    {
+      "record_id": "site01",
+      "source_zero_based_ion_index": 0,
+      "element": "H",
+      "unsymmetrized_valence_shielding_tensor_ppm": [
+        [
+          -20.408256,
+          1.614767,
+          -0.135768
+        ],
+        [
+          0.749816,
+          -32.813171,
+          0.544445
+        ],
+        [
+          0.013758,
+          0.636513,
+          -20.512376
+        ]
+      ]
+    },
+    {
+      "record_id": "site02",
+      "source_zero_based_ion_index": 5,
+      "element": "H",
+      "unsymmetrized_valence_shielding_tensor_ppm": [
+        [
+          -20.410317,
+          -1.618272,
+          -0.134975
+        ],
+        [
+          -0.752929,
+          -32.811924,
+          -0.544686
+        ],
+        [
+          0.014122,
+          -0.636334,
+          -20.51207
+        ]
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published electronic shielding tensor projection",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "Shielding tensor entries ppm,Cartesian common crystal basis;source ion indices zero based",
+    "original_observation_claim": false,
+    "source_captures": [
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/nmr/cs/basic/hydromagnesite/OUTCAR",
+        "accessed_at": "2026-10-20T13:33:34.059191+00:00",
+        "raw_sha256": "41c1df9f50f5fe3b3168294f79cf93f3bf973f01270cf079a9c37ae9525c80df",
+        "git_blob_sha1": "fa0e7284e163f20f6e8dc6585dc9788124cfcf85",
+        "git_blob_verified": true,
+        "byte_count": 1936535,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/nmr/cs/basic/hydromagnesite/OUTCAR",
+        "role": "Genuine published scientific source artifact / library fixture; byte provenance verified, physical completeness and normalization require individual inspection; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/nmr/cs/basic/hydromagnesite/CONTCAR",
+        "accessed_at": "2026-10-20T13:33:33.283744+00:00",
+        "raw_sha256": "dec779afd3dfe9539ffd5216c7509e2733d65f254f6f3472e1da43fb7ab2cefa",
+        "git_blob_sha1": "3ae0d6400f90b2951dac06f6771d190d5003c29f",
+        "git_blob_verified": true,
+        "byte_count": 8465,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/nmr/cs/basic/hydromagnesite/CONTCAR",
+        "role": "Genuine published scientific source artifact / library fixture; byte provenance verified, physical completeness and normalization require individual inspection; no expected answers used"
+      }
+    ],
+    "shared_g0_tensor_ppm": [
+      [
+        -7.656428,
+        -2e-05,
+        0.016032
+      ],
+      [
+        -0.0,
+        -7.505309,
+        -4.3e-05
+      ],
+      [
+        0.025939,
+        -4.3e-05,
+        -7.616261
+      ]
+    ]
+  }
+}

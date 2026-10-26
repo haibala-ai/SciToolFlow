@@ -1,90 +1,22 @@
-# SciToolFlow vs. SciToolEval Level2
+# 与 SciToolEval Level2 的对比数据
 
-**覆盖更多科学工具，组合更长的执行链，并让答案与执行证据一起接受核验。**
+面向读者的对比图表、优势与限制统一展示在[项目 README](../../README.md#与-scitooleval-level2-的对比)。本目录提供其固定来源、统计与可复现图件。
 
-SciToolFlow 面向科学多工具调用：500 道任务、546 个科学工具，覆盖生物、化学、材料与数理计算。下表比较官方公开的 **SciToolEval Level2**；SciToolAgent 是其 agent 框架，二者名称不混用。
+| 文件 | 内容 |
+| --- | --- |
+| [current.json](current.json) | 当前正式题库与固定上游快照的统计、学科覆盖与差异 |
+| [current.svg](current.svg) | README 使用的矢量图 |
+| [current.png](current.png) / [current.pdf](current.pdf) | 320 dpi 位图与嵌入字体的 PDF |
+| [sources/upstream_metadata.json](sources/upstream_metadata.json) | 上游公开任务路径、注册名称、分类及固定提交身份 |
 
-| | SciToolEval Level2 | **SciToolFlow** | 变化 |
-| :--- | ---: | ---: | ---: |
-| 任务数 | 379 | **500** | **+31.9%** |
-| 科学工具池<sup>[1](#comparison-note-1)</sup> | 477 | **546** | **+69** |
-| 每题参考科学调用数 | 2.47 | **6.58** | **2.66×** |
-| 每题不同工具数 | 2.33 | **4.91** | **2.11×** |
-| 参考路径覆盖工具数<sup>[2](#comparison-note-2)</sup> | 114 | **322** | **2.82×** |
-| 工具覆盖率<sup>[2](#comparison-note-2)</sup> | 20.88% | **58.97%** | **+38.10 pp** |
-| 跨类别任务占比<sup>[2](#comparison-note-2)</sup> | 5.54% | **28.00%** | **+22.46 pp** |
+上游为 SciToolAgent 仓库提交 `ac1cf19fcef84e69f149db6da424afe4e9b2f11f` 中的 SciToolEval Level2。统计按各自的规范注册名称去重，排除当前 DescribeTools 文档查询。SciToolFlow 统计正式主参考中的实际调用；覆盖要求对应工具具有成功结果。原 Level2 统计其公开参考工具路径，未重新部署上游工具环境。
 
-![任务规模、参考调用长度分布与工具覆盖](overview.svg)
+两者使用各自工具池和原生学科分类，覆盖率是各自集合内的比例，不能解释为同一工具池的配对增益。调用长度包含不同对象上的重复使用，不等于串行依赖深度。上游公开文件的缺项只描述所比较快照，不推断作者内部资产。完整限定与来源链接见根 README 的统计注释。
 
-## 更完整的多工具任务
-
-**90.2%** 的任务需要至少 4 次参考科学调用，原 Level2 为 **9.5%**；中位数从 **2 次**提高到 **6 次**，最长路径从 **11 次**扩展到 **20 次**。模型需要处理更多工具选择、参数衔接、分支结果与答案整合。
-
-这里统计的是参考路径中的科学调用，包含对不同对象的重复工具使用，排除 DescribeTools；它不是模型思考轮数，也不是串行依赖深度。更长的路径体现执行负担，不能单凭长度断言科学推理更深。
-
-## 从化学主导，扩展到四个科学学科
-
-![按相同工具目录比较的学科工具覆盖和多标签任务覆盖](coverage.svg)
-
-| 学科／辅助类别 | 工具覆盖：Level2 → SciToolFlow<sup>[2](#comparison-note-2)</sup> | 涉及任务：Level2 → SciToolFlow<sup>[3](#comparison-note-3)</sup> |
-| :--- | :--- | :--- |
-| 生物 | 2/113 → **51/113** | 7/379 → **142/500** |
-| 化学 | **108/177** → 75/177 | 378/379 → 229/500 |
-| 材料 | 4/201 → **157/201** | 15/379 → **177/500** |
-| 机器学习／数理 | 0/40 → **33/40** | 0/379 → **67/500** |
-| 通用辅助 | 0/15 → **6/15** | 0/379 → **29/500** |
-
-SciToolFlow 的公开主学科分布为：化学 **159**、材料 **154**、生物 **140**、数理 **47**。同时提供 **40 个数理工具、15 个通用工具**，支持统计检验、回归、线性代数及结构化数据处理。546 个科学工具统一契约与执行绑定，另提供一个支持批量查询的 DescribeTools。
-
-## 从“给出答案”到“可以检查答案怎么得到”
-
-| 可复查内容 | 官方公开 Level2 文件<sup>[4](#comparison-note-4)</sup> | **SciToolFlow** |
-| :--- | :--- | :--- |
-| 答案接口 | 所比较的答案 JSONL 未含答案值字段 | **500 份结构化金标准、公开输出 schema、字段规则** |
-| 参考执行证据 | 所比较的两个 JSONL 不含逐步输出 | **500 份证据归档、3,344 条工具结果** |
-| 科学工具执行 | 本次未重新部署原环境 | **547/547 入口静态预检；隔离 worker、超时和明确错误反馈** |
-| 计划评价 | 参考工具路径与 LLM 判断 | **实际工具、实参、依赖与预算；支持独立分支换序** |
-| 答案评价 | 官方脚本使用 LLM 判断 | **字段类型、完整数组、显式数值容差；歧义单独复核** |
-| 结果报告 | Pass / Planning / Answer | **Completion / Planning / Answer / Joint；规则分与复核分分开** |
-
-**公开题目与私有参考分离，失败和缺失不从分母消失。** 两个 baseline 共用工具执行器和评分器；LLM 可选择 API 或本地模型，复核记录绑定参考与预测双哈希。
-
-<details>
-<summary><strong>已知限制与复现</strong></summary>
-
-**优势有边界：** 当前化学工具覆盖低于原集；有序工具路径为 257 种，少于原集的 335 种，尚无独立隐藏测试集。参考证据不全是完整模型对话；547 项静态预检不等于所有远端服务实时可用。以上比较支持覆盖、执行负担和工程可复查性的改进，不宣称科学质量或模型准确率全面领先。
-
-从本地并列的官方仓库重新提取元数据并绘图：
+从项目根目录重算，不调用科学工具或 LLM：
 
 ```bash
-conda activate SciTool-Unified
-python scripts/compare_level2.py --refresh-upstream --upstream ../SciToolAgent
-# 无上游 checkout 时，默认使用已校验的元数据快照
-python scripts/compare_level2.py
+python -m scripts.benchmark.compare_release
 ```
 
-脚本不调用科学工具或 LLM，不使用模型成败筛选任务。数据版本：`20261018-scientific-contract-audit`；统计可追溯至规范题库、参考和固定上游提交。
-
-[统计 JSON](statistics.json) · [工具增删明细](tool_delta.json) · [上游元数据](sources/upstream_metadata.json) · [PNG 概览](overview.png) · [PNG 覆盖图](coverage.png)
-
-</details>
-
-[安装与运行 →](../../README.md)
-
-## 统计口径
-
-<a id="comparison-note-1"></a>
-
-**[1] 工具池。** 工具池按 dispatcher 的去重注册名称计算：原项目 489 个列表槽位、477 个名称；当前 546 个科学工具，不含 DescribeTools。净增 69 包括新增名称、分类调整、别名合并与删除，不能解释为从零实现 69 个新算法。
-
-<a id="comparison-note-2"></a>
-
-**[2] 工具覆盖与分类。** 横向覆盖统计将原路径的正式别名映射到当前 **546 工具**的共同目录与分类，分母一致；原项目自身目录的原生覆盖率为 **113/477=23.69%**。跨类别包含通用辅助类别。机器学习原先没有独立注册组；新增范围与重新分类不能混为一谈。
-
-<a id="comparison-note-3"></a>
-
-**[3] 学科任务数。** 学科涉及任务按多标签统计：一题可计入多个学科，因此不能将各行相加作为总题数。两组比例的分母分别为 379、500，不将上游推断主学科与本项目人工标签混比。
-
-<a id="comparison-note-4"></a>
-
-**[4] 上游版本与证据范围。** 上游固定到 [`ac1cf19f`](https://github.com/HICAI-ZJU/SciToolAgent/tree/ac1cf19fcef84e69f149db6da424afe4e9b2f11f)，仅对该提交公开文件作结论，不推断作者内部数据缺失。[论文](https://arxiv.org/html/2507.20280v1#S2.SS2)报告 Level2 为 379 题，并有专家审核；本项目参考仍是助手审查版本。
+重算后检查根 README 的数据表与统计注释；输入身份记录在 `current.json`。题库本身的分布与工具覆盖详见[500 题分析](../benchmark_analysis/README.md)。

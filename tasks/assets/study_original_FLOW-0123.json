@@ -1,0 +1,10 @@
+{
+  "component_A_formula": "H2O",
+  "component_B_formula": "C2H6O",
+  "feed_mass_fraction_B": 0.3,
+  "regular_solution_chi": 3.0,
+  "mixing_free_energy_over_RT": "g(x)=x*ln(x)+(1-x)*ln(1-x)+chi*x*(1-x), where x is B mole fraction; both pure-state reference free energies are zero.",
+  "provenance": {
+    "kind": "Project-authored hypothetical binary-solution model. Formulas supply natural-average component masses only; this is not a claim about actual water/ethanol miscibility or its measured interaction parameter."
+  }
+}

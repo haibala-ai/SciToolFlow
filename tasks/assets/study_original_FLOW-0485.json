@@ -1,0 +1,25 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "state_order": [
+    "s1",
+    "s2",
+    "s3"
+  ],
+  "target_state_probabilities": [
+    0.7,
+    0.2,
+    0.1
+  ],
+  "signed_scientific_contrast_by_state": [
+    1.0,
+    -3.0,
+    5.0
+  ],
+  "independent_draw_budget": 400,
+  "model": "An exact finite-state Monte Carlo design problem. Choose one proposal q with q_j>0 and sum(q)=1. Each independent draw X~q contributes Y=p_X*f_X/q_X; the estimator is the arithmetic mean of Y over the fixed draw budget. Target p is normalized and known. This is ordinary unbiased importance sampling,not self-normalized importance sampling. All states have nonzero target contributions,so support cannot be dropped.",
+  "objective": "Globally minimize the EXACT variance per importance draw over the full admissible probability simplex,then obtain the standard error of the unbiased sample-mean estimator. Compare with direct sampling q=p. A proposed q proportional to the signed p*f is admissible only if all probabilities are positive; negative contributions do not authorize negative sampling probabilities. A zero-variance assertion must satisfy both the estimator and admissible-support conditions.",
+  "scope": "Controlled signed-contrast numerical integration and simulation allocation,not a finite-population survey,inverse-probability missing-response correction or empirical Monte Carlo run."
+}

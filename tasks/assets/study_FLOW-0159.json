@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "record_id": "design",
+      "active_snapshot_id": "mp-electrode-35131586ff4d88db1a74",
+      "active_discharge_formula": "Li2FePO4F",
+      "active_specific_energy_wh_kg": 1169.9159685799093,
+      "endpoint_volume_ang3_per_formula": 97.54381237978635,
+      "binder_mass_fraction": 0.1,
+      "binder_density_g_cm3": 2.0,
+      "porosity": 0.35
+    }
+  ],
+  "provenance": {
+    "kind": "declared computational design with authentic source-data inputs; not experimental observations",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Wh/kg active;g/cm³;dimensionless porosity and solid-mass fractions",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "Materials Project",
+      "url": "https://api.materialsproject.org/materials/insertion_electrodes/?working_ion=Li&_limit=12&_all_fields=true",
+      "accessed_at": "2026-10-20T07:58:32.146147+00:00",
+      "captured_file": "mp_battery_candidates_indexed.json",
+      "captured_sha256": "6933a0b358144a516073218a73a3d163b7f64d95d9ba79c27b9e9b9a17ffa9c0",
+      "upstream_raw_sha256": "dfdc74534d82c5c0e6be3cc26be4acbe41927aaef64c90cf3b4844e28f37100e"
+    },
+    "source_numeric_values_fabricated": false,
+    "source_record_selection": "snapshot_record_id mp-electrode-35131586ff4d88db1a74; local content identity, not official battery_id",
+    "derivation": "Exact source field projection and explicit common-framework volume normalization; hypothetical binder, porosity and density inputs remain declared study assumptions where present."
+  }
+}

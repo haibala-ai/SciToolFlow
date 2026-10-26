@@ -1,0 +1,306 @@
+{
+  "data": [
+    {
+      "record_id": "path00",
+      "path_order": 0,
+      "electronic_dipole_z_e_angstrom": -3.60393,
+      "ionic_dipole_z_e_angstrom": 43.93437,
+      "c_angstrom": 4.033044
+    },
+    {
+      "record_id": "path01",
+      "path_order": 1,
+      "electronic_dipole_z_e_angstrom": -3.77177,
+      "ionic_dipole_z_e_angstrom": 19.81697,
+      "c_angstrom": 4.053344
+    },
+    {
+      "record_id": "path02",
+      "path_order": 2,
+      "electronic_dipole_z_e_angstrom": -3.93397,
+      "ionic_dipole_z_e_angstrom": 19.76076,
+      "c_angstrom": 4.073644
+    },
+    {
+      "record_id": "path03",
+      "path_order": 3,
+      "electronic_dipole_z_e_angstrom": -4.08851,
+      "ionic_dipole_z_e_angstrom": 19.70306,
+      "c_angstrom": 4.093944
+    },
+    {
+      "record_id": "path04",
+      "path_order": 4,
+      "electronic_dipole_z_e_angstrom": 3.99662,
+      "ionic_dipole_z_e_angstrom": 19.64372,
+      "c_angstrom": 4.114244
+    },
+    {
+      "record_id": "path05",
+      "path_order": 5,
+      "electronic_dipole_z_e_angstrom": 3.90327,
+      "ionic_dipole_z_e_angstrom": -5.06619,
+      "c_angstrom": 4.134544
+    },
+    {
+      "record_id": "path06",
+      "path_order": 6,
+      "electronic_dipole_z_e_angstrom": 3.81998,
+      "ionic_dipole_z_e_angstrom": -5.18997,
+      "c_angstrom": 4.154844
+    },
+    {
+      "record_id": "path07",
+      "path_order": 7,
+      "electronic_dipole_z_e_angstrom": 3.74561,
+      "ionic_dipole_z_e_angstrom": -5.31457,
+      "c_angstrom": 4.175144
+    },
+    {
+      "record_id": "path08",
+      "path_order": 8,
+      "electronic_dipole_z_e_angstrom": 3.67949,
+      "ionic_dipole_z_e_angstrom": -5.44026,
+      "c_angstrom": 4.195444
+    },
+    {
+      "record_id": "path09",
+      "path_order": 9,
+      "electronic_dipole_z_e_angstrom": 3.61674,
+      "ionic_dipole_z_e_angstrom": -5.56684,
+      "c_angstrom": 4.215744
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published computational polarization-path projection",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "Dipolee*angstrom;cellangstrom;orderedpathindices0..9",
+    "original_observation_claim": false,
+    "source_captures": [
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/nonpolar_polarization/POSCAR",
+        "accessed_at": "2026-10-20T11:56:05.573178+00:00",
+        "raw_sha256": "ea4630f84c8fa68f928dec5ac22077151c3f32ca28e4f31077ad4cfc00249e7e",
+        "git_blob_sha1": "e062745622c943aadbec12ae02217f29f5fd75aa",
+        "git_blob_verified": true,
+        "byte_count": 264,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/nonpolar_polarization/POSCAR",
+        "role": "Actual public scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/nonpolar_polarization/OUTCAR",
+        "accessed_at": "2026-10-20T11:56:05.029626+00:00",
+        "raw_sha256": "36b211365f4c21928b8337fb2ee9533e893de06b6d7f696d281914c2a4d0f869",
+        "git_blob_sha1": "2037fb7d3d3e0eed26562aa43928a8316b2c40d1",
+        "git_blob_verified": true,
+        "byte_count": 158369,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/nonpolar_polarization/OUTCAR",
+        "role": "Actual public scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_8_polarization/POSCAR",
+        "accessed_at": "2026-10-20T11:56:12.758501+00:00",
+        "raw_sha256": "6ea62a3812103f380afd827d7f51757321b3598df8b15ff555df43f6e0a4446a",
+        "git_blob_sha1": "7f0dd022fc6a04598a283d1a93f59a96915e244e",
+        "git_blob_verified": true,
+        "byte_count": 264,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_8_polarization/POSCAR",
+        "role": "Actual public scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_8_polarization/OUTCAR",
+        "accessed_at": "2026-10-20T11:56:12.640097+00:00",
+        "raw_sha256": "226d74948182d7213ca91b3ec093f6f7230cf265ea3fd2dcd8ece8a6f0861108",
+        "git_blob_sha1": "d32cfcb22258884db15ea358d36214fa2eee5b14",
+        "git_blob_verified": true,
+        "byte_count": 164161,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_8_polarization/OUTCAR",
+        "role": "Actual public scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_7_polarization/POSCAR",
+        "accessed_at": "2026-10-20T11:56:11.430086+00:00",
+        "raw_sha256": "67f5bf88ccf03e2f97ac483348227b0d6c6de7ab5b718e96b4664b7ba87266d9",
+        "git_blob_sha1": "bcc5412d5dcfb5ff042229e287ad7177c5b7bcf2",
+        "git_blob_verified": true,
+        "byte_count": 264,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_7_polarization/POSCAR",
+        "role": "Actual public scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_7_polarization/OUTCAR",
+        "accessed_at": "2026-10-20T11:56:10.893993+00:00",
+        "raw_sha256": "4a5a97f7cacf4499e2e13edbd1eccc15f094cd157d505ce29a38ad6029595e66",
+        "git_blob_sha1": "1e4b6213b495d6208ab49403287dfaf54cf78674",
+        "git_blob_verified": true,
+        "byte_count": 164309,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_7_polarization/OUTCAR",
+        "role": "Actual public scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_6_polarization/POSCAR",
+        "accessed_at": "2026-10-20T11:56:09.844118+00:00",
+        "raw_sha256": "a9712c683381bd8bc203398c64d8caa4c16758cc75b33ee5ca5f767f6c7a1c45",
+        "git_blob_sha1": "7bd9101545f0f5dad7777ddaa6b87130b21ea45a",
+        "git_blob_verified": true,
+        "byte_count": 264,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_6_polarization/POSCAR",
+        "role": "Actual public scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_6_polarization/OUTCAR",
+        "accessed_at": "2026-10-20T11:49:26.024359+00:00",
+        "raw_sha256": "af62bd4a51748d0279f9daa4c3b7eb913767f406ea6d89f56967ad93511683fc",
+        "byte_count": 160479,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_6_polarization/OUTCAR",
+        "role": "Actual published raw scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_5_polarization/POSCAR",
+        "accessed_at": "2026-10-20T11:49:23.597051+00:00",
+        "raw_sha256": "4e888a7852c9a0329ff02358cace7e770f31752ab66365ff32966c84dbd771a9",
+        "byte_count": 264,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_5_polarization/POSCAR",
+        "role": "Actual published raw scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_5_polarization/OUTCAR",
+        "accessed_at": "2026-10-20T11:56:12.049418+00:00",
+        "raw_sha256": "6b868fa3132af4734639660c3293eac3f9a09347cf97d64929f9eca59d76124f",
+        "git_blob_sha1": "c7f29f0a2a91d56f126e9983dc55bf58e222508d",
+        "git_blob_verified": true,
+        "byte_count": 164161,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_5_polarization/OUTCAR",
+        "role": "Actual public scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_4_polarization/POSCAR",
+        "accessed_at": "2026-10-20T11:49:18.446179+00:00",
+        "raw_sha256": "bd7d36af2cd19a1b0cec5365d71369344ea46ddd72f4d053b68b3b7bc9a2d3a8",
+        "byte_count": 264,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_4_polarization/POSCAR",
+        "role": "Actual published raw scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_4_polarization/OUTCAR",
+        "accessed_at": "2026-10-20T11:49:17.383056+00:00",
+        "raw_sha256": "885914e2a9f9c40f017fe78e6c9d79b77e04f3ac63155d007e0064448081bd59",
+        "byte_count": 164161,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_4_polarization/OUTCAR",
+        "role": "Actual published raw scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_3_polarization/POSCAR",
+        "accessed_at": "2026-10-20T11:49:22.623370+00:00",
+        "raw_sha256": "34d3f597b544582f8f097543d958ffb390c19f730aea99203c43230258efb1f3",
+        "byte_count": 264,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_3_polarization/POSCAR",
+        "role": "Actual published raw scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_3_polarization/OUTCAR",
+        "accessed_at": "2026-10-20T11:48:36.215292+00:00",
+        "raw_sha256": "ba170704c59557b50e7e211ed1984a97b0595fe61998051e25fb5f4f6ad5a58a",
+        "byte_count": 164161,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_3_polarization/OUTCAR",
+        "role": "Actual published raw scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_2_polarization/POSCAR",
+        "accessed_at": "2026-10-20T11:48:32.697829+00:00",
+        "raw_sha256": "9e9be6df1594f5da8378f004bdb373ff760039bd76d860e84f078a185c5098ce",
+        "byte_count": 264,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_2_polarization/POSCAR",
+        "role": "Actual published raw scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_2_polarization/OUTCAR",
+        "accessed_at": "2026-10-20T11:56:08.794496+00:00",
+        "raw_sha256": "d2ce28b0f2d789be56db49c6c738f11b5c9d94f9d002db1067ca838b511b0c17",
+        "git_blob_sha1": "98343022187ec104b9223fe36036bee9fda0724c",
+        "git_blob_verified": true,
+        "byte_count": 164161,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_2_polarization/OUTCAR",
+        "role": "Actual public scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_1_polarization/POSCAR",
+        "accessed_at": "2026-10-20T11:56:07.950348+00:00",
+        "raw_sha256": "10dc442bc3c78932685762c6642e4d06d84aa741ce8916a26a1ac1db9270b826",
+        "git_blob_sha1": "c19c0b7f9dc5cc42f45e70f1c8374b63c48aaf50",
+        "git_blob_verified": true,
+        "byte_count": 264,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_1_polarization/POSCAR",
+        "role": "Actual public scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/interpolation_1_polarization/OUTCAR",
+        "accessed_at": "2026-10-20T11:49:15.936280+00:00",
+        "raw_sha256": "79bd36a8057234e703906111aef3cb3a84288892fbab09a9e3b2ec4d42f8f4e0",
+        "byte_count": 164161,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/interpolation_1_polarization/OUTCAR",
+        "role": "Actual published raw scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/polar_polarization/POSCAR",
+        "accessed_at": "2026-10-20T11:56:06.893170+00:00",
+        "raw_sha256": "caf3d1f515f967bd083c4f1d567de5536316e1e8ae98c62fb1c3a8dc39336781",
+        "git_blob_sha1": "22dc03c266ad7b05770fff117e2d5598f471e0ce",
+        "git_blob_verified": true,
+        "byte_count": 264,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/polar_polarization/POSCAR",
+        "role": "Actual public scientific computational output; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/BTO_221_99_polarization/polar_polarization/OUTCAR",
+        "accessed_at": "2026-10-20T11:56:06.355374+00:00",
+        "raw_sha256": "71e1e0ab3778e8b55940230843cb18d647c739b65765ffaa0d82e59da14b969c",
+        "git_blob_sha1": "9274af3d17b1a0a874299c80e38ae6c2a11363b5",
+        "git_blob_verified": true,
+        "byte_count": 232676,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/BTO_221_99_polarization/polar_polarization/OUTCAR",
+        "role": "Actual public scientific computational output; no expected answers used"
+      }
+    ]
+  }
+}

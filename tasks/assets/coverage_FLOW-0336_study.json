@@ -1,0 +1,15 @@
+{
+  "records": [
+    {
+      "id": "linear",
+      "smiles": "CCCCC"
+    },
+    {
+      "id": "branched",
+      "smiles": "CC(C)CC"
+    }
+  ],
+  "contract": "Compare the named hydrogen-suppressed Hall-Kier graph descriptors Kappa1,Kappa2,Kappa3 and Hall-Kier alpha. A differing index must differ by more than1e-10. Separately obtain the fraction of carbon atoms that are sp3;it is not a geometric shape observable.",
+  "question": "Report Kappa triples in source order,the two Hall-Kier alphas,and the names Kappa1/Kappa2/Kappa3 that distinguish the graphs. Decide whether equal sp3-carbon fractions rule out a branching difference.",
+  "scope": "Fixed-graph descriptor resolution only,not measured conformations,stability or an injective graph fingerprint."
+}

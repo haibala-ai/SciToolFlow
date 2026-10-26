@@ -1,0 +1,67 @@
+{
+  "data_origin": "Controlled molecular-kinetics learning problem with synthetic angular configurations and a finite positive lag-transition count table. No atomistic simulation, measured conformational rates, biological activity or physical force field is asserted. Infer properties of the fitted finite transfer operator under the stated definitions; exact algebraic consistency of this constructed operator is not statistical proof that an unknown real molecule is Markovian.",
+  "cloud_file": "asset://research_FLOW-0408_torsion_cloud.csv",
+  "lag_counts_file": "asset://research_FLOW-0408_lag_counts.csv",
+  "geometry": "theta and phi are separate periodic torsions in degrees, each physically equivalent modulo360. Sort unique frame IDs lexicographically before all calculations; every cloud frame is a distinct descriptor sample. A transition row only references those frames and its count is NOT an additional descriptor sample. Do not duplicate cloud rows by kinetic count or treat similarly valued distinct frame IDs as duplicate measurements.",
+  "candidate_cluster_pipelines": {
+    "R": {
+      "embedding": "[theta_degree,phi_degree] without wrapping or rescaling",
+      "eps": 8.0,
+      "min_samples": 3
+    },
+    "P": {
+      "embedding": "[sin(theta*pi/180),cos(theta*pi/180),sin(phi*pi/180),cos(phi*pi/180)]",
+      "eps": 0.1,
+      "min_samples": 3
+    },
+    "S": {
+      "embedding": "same four circular features as P",
+      "eps": 2.5,
+      "min_samples": 3
+    }
+  },
+  "pipeline_selection": "Use Euclidean DBSCAN as specified; min_samples includes the point itself. Compute silhouette separately in each pipeline feature space on non-noise labels only; one cluster gives undefined silhouette, represented null. A scientifically admissible microstate representation must be invariant under adding360degrees independently to any torsion of any frame, have at least2 nonnoise clusters, noise fraction<=0.05 and silhouette>=0.9. Return ALL admissible pipeline IDs. A larger raw-angle silhouette cannot override failure of physical equivalence, and silhouettes in different feature spaces are not universal physical validation.",
+  "canonical_microstate_order": "Use the unique admissible pipeline. Canonicalize nonnoise clusters by their lexicographically smallest member frame ID; call these S1,S2,... in that order. Frame order and arbitrary DBSCAN integer labels must not change any answer. Report each complete canonical cluster member list. Transition edges refer to anchor frame IDs; map them through cluster membership and aggregate the integer counts into C in canonical state order. Normalize each ROW to form the fitted lag operator P. Do not infer equilibrium weights from row totals: the sampling scheme deliberately balances origin-state counts and is not a stationary trajectory. The lag is10picoseconds.",
+  "kinetic_inference": "Find the normalized positive stationary row vector pi satisfying pi*P=pi. Verify detailed balance. For reversible P, a valid spectral route is diagonalizing diag(sqrt(pi))*P*diag(1/sqrt(pi)), not symmetrizing P by (P+P.T)/2. Sort eigenvalues decreasingly, including the Perron eigenvalue1 once. Define the slowest nontrivial relaxation time as -10/log(lambda2) picoseconds; all nontrivial eigenvalues here are positive. This fitted-operator relaxation time is not an error bar or an experimentally established molecular lifetime.",
+  "exact_coarse_graining": "Enumerate EVERY unordered partition of the canonical microstates into exactly2 or3 nonempty blocks. Strong lumpability means that for every source block G and target block H, sum_{j in H}P[i,j] is the same for every i in G (absolute tolerance1e-12). This is the criterion for block-state dynamics to be Markov for every initial microstate distribution under the fitted operator. Do not replace it by a pooled transition-count estimate, a high silhouette or agreement only in equilibrium. A qualifying quotient has Q[G,H] equal to that common block sum. Canonicalize blocks by sorted state numbers and then smallest member; encode as S1,S3|S2,S4 etc. Report all qualifying partitions and complete quotient matrices in the encoded block order.",
+  "selection_of_coarse_model": "Among strongly lumpable partitions with2or3blocks, keep those whose largest nontrivial quotient eigenvalue equals the full leading nontrivial eigenvalue within1e-10. Select the smallest number of blocks among these, retaining all ties. Return its quotient stationary probabilities and leading relaxation time. Do not assume the two-block partition is preferable merely because it is smaller.",
+  "nonlumpable_proposal": {
+    "blocks": [
+      [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    ],
+    "diagnostic": "For each source block and target block find the range of block-transition sums across source microstates, and return the maximum such range. Also report the probability of entering the second proposed block from S1 and separately from S3. Both start in the same proposed first block; unequal probabilities demonstrate unresolved memory of the initial microstate."
+  },
+  "interpretation_proposals": {
+    "A": "Euclidean clustering of raw degree coordinates can split physically neighboring configurations across a periodic boundary despite a high silhouette.",
+    "B": "Balanced origin-state row totals establish a uniform equilibrium distribution for the fitted kinetic operator.",
+    "C": "Strong lumpability controls all initial microstate distributions, whereas pooling counts alone does not establish this property.",
+    "D": "The smallest number of macrostate blocks necessarily preserves the slowest full-system relaxation mode.",
+    "E": "The unique selected coarse representation preserves the leading relaxation eigenvalue of the fitted operator under the stated criterion.",
+    "F": "The constructed count table and exact operator checks demonstrate experimentally that any real molecule has these kinetics."
+  },
+  "reporting": "Return cluster_counts_by_pipeline, noise_counts_by_pipeline, silhouette_by_pipeline (null when undefined), admissible_pipeline_ids, canonical_microstate_members, fitted_transition_matrix, stationary_probabilities, detailed_balance_max_absolute_residual, sorted_reversible_eigenvalues, full_slowest_relaxation_time_ps, all_strongly_lumpable_partition_keys, quotient_matrices_by_partition, selected_coarse_partition_keys, selected_coarse_stationary_probabilities keyed by selected partition, selected_coarse_slowest_relaxation_times_ps keyed likewise, nonlumpable_proposal_max_block_sum_range, nonlumpable_proposal_second_block_probabilities_from_S1_S3, valid_interpretation_proposal_ids. Every count, ID and partition exact. Probabilities/eigenvalues/quality metrics use absolute1e-8 and relative1e-8; times use absolute1e-6 and relative1e-8. A floating detailed-balance residual of magnitude<=1e-10 may be reported as0.",
+  "methodological_sources": [
+    {
+      "title": "Markov models of molecular kinetics: Generation and validation",
+      "authors": "Prinz et al.",
+      "year": 2011,
+      "doi": "10.1063/1.3565032",
+      "url": "https://publications.imp.fu-berlin.de/944/",
+      "role": "Primary transfer-operator and kinetic-validation motivation; no measured data or article figures reproduced."
+    },
+    {
+      "title": "scikit-learn DBSCAN documentation",
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html",
+      "role": "DBSCAN Euclidean radius, min_samples and noise conventions; task parameters are explicitly fixed."
+    }
+  ]
+}

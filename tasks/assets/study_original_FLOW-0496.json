@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific measurement/decision example; stipulated model inputs and observations, not new experimental findings.",
+    "scope": "All required information, units and inferential limits are in this document."
+  },
+  "row_ids": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12"
+  ],
+  "responses": [
+    10.0,
+    10.0,
+    16.0,
+    9.0,
+    10.0,
+    9.0,
+    14.0,
+    15.0,
+    13.0,
+    14.0,
+    15.0,
+    13.0
+  ],
+  "known_independent_noise_variance": 1.0,
+  "eligible_break_after_row_ids": [
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+  ],
+  "model": "Compare one unknown constant mean with a two-unknown-constant-mean model whose single breakpoint is one of the listed after-row positions. The noise variance is fixed and identical; readings are independent normal under either stipulated model. A position k puts rows1..k in the first segment and the rest in the second. Use the maximized loglikelihood improvement (RSS_constant-RSS_split)/(2*known_variance). No complexity penalty or null significance threshold is supplied. Ties within1e-10 use earlier source row.",
+  "scope": "Descriptive model-based breakpoint localization for this controlled panel. This does not attribute a cause, prove exactly one physical transition or provide a false-alarm rate after breakpoint search."
+}

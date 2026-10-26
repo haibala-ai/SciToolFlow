@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "environment_ids": [
+        "dry-cold",
+        "wet-cold",
+        "dry-warm",
+        "wet-warm"
+      ],
+      "model_ids": [
+        "model-A",
+        "model-B",
+        "model-C"
+      ],
+      "conditional_binary_loss_by_model": {
+        "model-A": [
+          0.02,
+          0.06,
+          0.1,
+          0.8
+        ],
+        "model-B": [
+          0.16,
+          0.18,
+          0.2,
+          0.22
+        ],
+        "model-C": [
+          0.08,
+          0.34,
+          0.28,
+          0.3
+        ]
+      },
+      "reference_evaluation_weights": [
+        0.55,
+        0.15,
+        0.25,
+        0.05
+      ],
+      "future_mix_constraints": {
+        "wet_fraction_interval": [
+          0.25,
+          0.55
+        ],
+        "warm_fraction_interval": [
+          0.35,
+          0.65
+        ],
+        "wet_warm_fraction_interval": [
+          0.1,
+          0.3
+        ]
+      },
+      "model_scope": "These are project-authored exact conditional population loss probabilities for four mutually exclusive and exhaustive operating environments of an industrial sensor classifier. Conditional losses are stipulated invariant under the future mixture. There is no finite-sample confidence calculation, training exercise or claim of empirical robustness certification.",
+      "mixture_semantics": "Future weights are nonnegative and sum to1. The wet fraction is the sum of wet-cold and wet-warm weights; the warm fraction is the sum of dry-warm and wet-warm weights. Enforce all three closed intervals jointly. Wet and warm need not be independent. The reference evaluation population is a separate fixed distribution and need not belong to the future ambiguity set.",
+      "decision_policy": "Among the three listed models minimize the largest expected loss over all admissible future mixtures. Separately minimize expected loss on the reference evaluation population. If a loss tie is within1e-12 absolute choose lexical model_id. For the robust choice minus the reference choice, bound their expected-loss difference using the SAME admissible future mixture for both models; determine whether the robust choice is no worse at EVERY admissible mixture. A minimax preference does not by itself establish such uniform dominance.",
+      "units": "All probabilities and risks are dimensionless fractions, not percentages. Use1e-8 absolute plus1e-7 relative reporting tolerance for numeric answer fields.",
+      "provenance": {
+        "kind": "Project-authored controlled computational sensitivity example; not measured sensor data.",
+        "original_observation_claim": false,
+        "method_context": "Finite-support expected-risk optimization over a polytope of joint environment probabilities. Weak LP duality plus feasible attainment can certify exact extrema.",
+        "method_sources": [
+          "https://docs.scipy.org/doc/scipy-1.15.3/reference/optimize.linprog-highs-ds.html"
+        ]
+      }
+    }
+  ]
+}

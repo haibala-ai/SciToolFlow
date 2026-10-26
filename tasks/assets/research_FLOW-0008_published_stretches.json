@@ -1,0 +1,99 @@
+{
+  "citation": {
+    "authors": [
+      "Xian Chen",
+      "Vijay Srivastava",
+      "Vivekanand Dabade",
+      "Richard D. James"
+    ],
+    "year": 2013,
+    "title": "Study of the cofactor conditions: conditions of supercompatibility between phases",
+    "doi": "10.1016/j.jmps.2013.08.004",
+    "version": "arXiv:1307.5930v1",
+    "source_url": "https://arxiv.org/pdf/1307.5930v1",
+    "table": "Table 2, PDF page 28 of the 35-page arXiv v1",
+    "retrieved_source_sha256": "68145e27cf6a4cfed5b525052176ecd01d504ae1c354ce56a1dd5c25ac0bc483"
+  },
+  "extraction_scope": "Factual numerical stretch matrices and one listed twofold axis per material, manually checked against the rendered original table. Original article prose, figures and PDF are not redistributed. CuAlMn uses the listed [011] option; AuCuZn uses [10-1], including its negative last component. Axes are directions in the same orthonormal coordinate basis as the displayed matrices and must be normalized. All matrices and axes are dimensionless.",
+  "records": [
+    {
+      "material_id": "CuAlMn",
+      "reported_composition": "Cu69Al24Mn7",
+      "transformation_stretch": [
+        [
+          1.1098,
+          0.0279,
+          0
+        ],
+        [
+          0.0279,
+          1.0062,
+          0
+        ],
+        [
+          0,
+          0,
+          0.8989
+        ]
+      ],
+      "twofold_axis_components": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "material_id": "AuCuZn",
+      "reported_composition": "Au25Cu30Zn45",
+      "transformation_stretch": [
+        [
+          1.0508,
+          0,
+          0.0142
+        ],
+        [
+          0,
+          0.9108,
+          0
+        ],
+        [
+          0.0142,
+          0,
+          1.0059
+        ]
+      ],
+      "twofold_axis_components": [
+        1,
+        0,
+        -1
+      ]
+    },
+    {
+      "material_id": "VO2",
+      "reported_composition": "VO2",
+      "transformation_stretch": [
+        [
+          1.0669,
+          0,
+          0.0421
+        ],
+        [
+          0,
+          0.9939,
+          0
+        ],
+        [
+          0.0421,
+          0,
+          0.9434
+        ]
+      ],
+      "twofold_axis_components": [
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "measurement_scope": "Rounded published quantities used as exact mathematical point inputs for this benchmark. This does not remove measurement uncertainty in the actual materials. In the source, the AuCuZn austenite measurement needed for U was supplied by the study authors, not attributed to the older lattice reference."
+}

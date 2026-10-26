@@ -1,6 +1,6 @@
 """Read genuine legacy file/task metadata from official public CHGCAR object envelopes."""
 
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 from datetime import datetime, timezone
 import gzip
 import hashlib

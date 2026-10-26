@@ -1,0 +1,47 @@
+{
+  "data": [
+    {
+      "material_id": "mp-aaaaakoq",
+      "total": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.027380006650973003,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.027379996902385004,
+          0.0,
+          0.0
+        ],
+        [
+          -0.10898001940104501,
+          -0.10897998059896101,
+          0.27594,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "totalpiezoC/m²,IEEEengineeringVoigtconvention",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "Materials Project",
+      "url": "https://api.materialsproject.org/materials/piezoelectric/?material_ids=mp-2133%2Cmp-7140%2Cmp-2657&_limit=10&_all_fields=true",
+      "accessed_at": "2026-10-20T09:33:30.369054+00:00",
+      "raw_sha256": "f3ef863c085acaa8bdadf5b36c53db6e73c69d59e96113f43fe6cd080dca5a19",
+      "record_count": 2,
+      "credentials_included": false
+    }
+  }
+}

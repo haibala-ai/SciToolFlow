@@ -1,0 +1,120 @@
+{
+  "data_origin": "Controlled inverse-scattering study of a candidate periodic heavy-atom basis. The Xe POSCAR files encode scattering sites in a declared orthorhombic reference cell; they are not experimentally established Xe phases or a prediction of thermodynamic stability. Geometry, ideal Bragg data and contrast observations are constructed. The six-point ambiguity is adapted from the attributed classical homometry example; the gain/contrast calibration study is new controlled input.",
+  "candidate_structures": [
+    {
+      "candidate_id": "A",
+      "structure_file": "asset://research_FLOW-0105_basis_A.vasp",
+      "addressed_site_index": 0
+    },
+    {
+      "candidate_id": "B",
+      "structure_file": "asset://research_FLOW-0105_basis_B.vasp",
+      "addressed_site_index": 0
+    },
+    {
+      "candidate_id": "C",
+      "structure_file": "asset://research_FLOW-0105_basis_C.vasp",
+      "addressed_site_index": 0
+    },
+    {
+      "candidate_id": "D",
+      "structure_file": "asset://research_FLOW-0105_basis_D.vasp",
+      "addressed_site_index": 0
+    }
+  ],
+  "geometric_conventions": "All files use the same orthorhombic108x18x22 angstrom cell. Six identical ordered scatterers occupy one line parallel to a. Fractional a coordinates lie on the known24-point grid to serialization accuracy1e-12. Other coordinates coincide. Compare structures up to periodic translations, same-species site permutations and lattice-preserving rigid transformations, including reversal along a; do not scale the cell or use broad default matching tolerances. In C the addressed site is co-translated with its structural basis: this is a representation change, not an external fixed-origin scatterer. Site indices are0-based.",
+  "untagged_model": "For oriented reciprocal index(h,0,0), divide out the common real single-atom scattering factor, Lorentz/polarization and geometry terms to obtain geometric intensity I_h=|sum_j exp(2*pi*i*h*x_j)|^2. The table reports I_h/I_6, h1..12. These are exact ideal constraints serialized numerically, not noisy fitted counts; use residual tolerance1e-8. Atomic amplitudes are real and identical, no anomalous phase contrast. A matching finite intensity list alone does not prove equality at all h: establish any claimed full homometry by the complete ordered cyclic pair-difference multiplicity on the24-point grid. Cyclic coefficient c[r] counts ordered site pairs with (n_j-n_i) mod24=r, including self pairs at r0.",
+  "untagged_observations": [
+    {
+      "h": 1,
+      "reduced_intensity_ratio_to_h6": 0.06881378215210267
+    },
+    {
+      "h": 2,
+      "reduced_intensity_ratio_to_h6": 0.624999999999998
+    },
+    {
+      "h": 3,
+      "reduced_intensity_ratio_to_h6": 0.7499999999999983
+    },
+    {
+      "h": 4,
+      "reduced_intensity_ratio_to_h6": 0.8749999999999968
+    },
+    {
+      "h": 5,
+      "reduced_intensity_ratio_to_h6": 0.06881378215210272
+    },
+    {
+      "h": 6,
+      "reduced_intensity_ratio_to_h6": 1.0
+    },
+    {
+      "h": 7,
+      "reduced_intensity_ratio_to_h6": 0.6811862178478933
+    },
+    {
+      "h": 8,
+      "reduced_intensity_ratio_to_h6": 0.37499999999999944
+    },
+    {
+      "h": 9,
+      "reduced_intensity_ratio_to_h6": 0.7499999999999994
+    },
+    {
+      "h": 10,
+      "reduced_intensity_ratio_to_h6": 0.6249999999999978
+    },
+    {
+      "h": 11,
+      "reduced_intensity_ratio_to_h6": 0.6811862178478961
+    },
+    {
+      "h": 12,
+      "reduced_intensity_ratio_to_h6": 0.4999999999999988
+    }
+  ],
+  "contrast_experiment": "A stipulated addressable reference scatterer is the site at addressed_site_index in each candidate. Change ONLY its real coherent scattering amplitude from1 to1+delta, with the same unknown delta in[0.5,1.5] in every reflection. These amplitudes define an ideal contrast experiment; no practical site-selective Xe chemistry is asserted. The relevant amplitude relative to that addressed site is F_h=sum_j exp(2*pi*i*h*(x_j-x_anchor)), so tagged intensity before gain is |F_h+delta|^2. The reported three tagged measurements share one positive unknown instrument gain G in[0.85,1.15]. Every measured true reduced intensity must lie in its closed reported interval, with G and delta held common across ALL reflections; no independent per-reflection gain or contrast fit is allowed. These are deterministic bounds, not a Gaussian confidence interval.",
+  "contrast_observations": [
+    {
+      "h": 2,
+      "lower_reduced_intensity": 9.830499999999995,
+      "upper_reduced_intensity": 9.930499999999997
+    },
+    {
+      "h": 4,
+      "lower_reduced_intensity": 11.930499999999986,
+      "upper_reduced_intensity": 12.030499999999988
+    },
+    {
+      "h": 7,
+      "lower_reduced_intensity": 10.44068405951748,
+      "upper_reduced_intensity": 10.540684059517481
+    }
+  ],
+  "inference_request": "First identify every candidate matching untagged Bragg constraints, partition them into genuine geometric equivalence classes and establish whether distinct compatible classes remain fully homometric. Then apply the common-gain/common-contrast data and determine ALL surviving candidate classes. For each surviving candidate report the SHARP marginal feasible interval of delta and of G, including endpoints. Prove completeness over the continuous calibration rectangle, not just a best-fit residual or a grid search. If the joint feasible set is curved/coupled, its two marginal intervals do not mean every Cartesian-product pair is feasible. You need not return the complete curved set or claim unique calibration. Verify any numerical geometric matcher with suitably strict tolerances or use complete discrete grid transformations. Ideal powder diffraction can be a useful cross-check, but no finite peak comparison alone is a proof of homometry.",
+  "interpretation_proposals": {
+    "A": "Distinct noncongruent candidate bases can give identical untagged ideal Bragg intensities at every reciprocal reflection.",
+    "B": "Collecting more untagged h values or changing wavelength while retaining the same real identical-atom kinematic model necessarily removes this full homometry.",
+    "C": "The specified anchored contrast data can reject a distinct homometric class while leaving coordinate-translated representations equivalent.",
+    "D": "The two reported marginal feasible calibration intervals imply their entire Cartesian product satisfies every measured interval.",
+    "E": "A unique lowest residual at a fitted point proves all other candidates infeasible under the stated interval model.",
+    "F": "An inverse-scattering fit by itself proves that a stable bulk Xe phase with these coordinates has been synthesized."
+  },
+  "reporting": "Return untagged_compatible_candidate_ids; untagged_geometric_equivalence_classes (sort IDs within each class and sort classes by first ID); shared_cyclic_pair_counts (24 exact integers for the compatible homometric classes); distinct_compatible_classes_are_fully_homometric (boolean); contrast_compatible_candidate_ids; calibration_marginal_intervals keyed by surviving candidate ID with delta:[min,max] and gain:[min,max]; valid_interpretation_proposal_ids. IDs, integer counts, classes and booleans exact; continuous bounds absolute1e-6 plus relative1e-6. The calibration marginals must be sharp, not one fitted point or an arbitrary smaller feasible box.",
+  "methodological_sources": [
+    {
+      "title": "A counterexample to a theorem of S. Piccard",
+      "author": "Gary S. Bloom",
+      "year": 1977,
+      "doi": "10.1016/0097-3165(77)90013-9",
+      "role": "Attribution of the two finite six-point homometric sets; no article text reproduced."
+    },
+    {
+      "title": "Homometric Point Sets and Inverse Problems",
+      "year": 2008,
+      "url": "https://arxiv.org/abs/0808.0094",
+      "role": "Primary research discussion of diffraction autocorrelation nonuniqueness. No paper measurements or figures reproduced."
+    }
+  ]
+}

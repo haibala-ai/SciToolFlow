@@ -1,0 +1,8 @@
+{
+  "coordinate_file": "asset://coverage_FLOW-0296_1OMP.pdb",
+  "pdb_id_for_annotation": "1omp",
+  "chain_id": "A",
+  "matching_policy": "Universe is every observed first-model chainA CAresidue,using integer author residue numbers with inclusive segment endpoints. Do not fill SEQRESgaps or join disjoint CATHsegments through another domain. These frozen coordinates and selected annotations have no insertion-code endpoints. Group mapping segments by their domain identifier,not merely CATHclassification code.",
+  "reporting": "Return one record per distinct mapped domain,its count of observed residues,and the number of observed residues falsely included if that domain is replaced by its enclosing contiguous interval. Also report distinct classification-code and domain counts and the fraction of observed CAresidues covered by the union of mapped segments.",
+  "scope": "Coordinate-annotation handoff only;CATHclass membership does not establish functional identity or a physical folding boundary."
+}

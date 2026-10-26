@@ -1,0 +1,7 @@
+{
+  "sequence": "TTCCPSIVARSNFNVCRLPGTPEAICATYTGCIIIPGATCPGDYAN",
+  "reference_pdb": "asset://coverage_FLOW-0310_1CRN.pdb",
+  "correspondence": "Use chainA,first model,CAatoms and author residue IDs1through46in both the predicted structure and frozen reference. Match these IDs explicitly;no rematching,reflection,scaling or residue trimming.",
+  "analysis": "Run one official local ESMFoldprediction. Compare its predicted coordinates with the fixed reference by an optimal proper rigid superposition and report CA-RMSDinangstrom. Report the arithmetic mean of its per-residue pLDDTand the fraction of residues with pLDDT>=50. Does pLDDTon0..100equal percent experimentally correct residues? Does one reference comparison calibrate accuracy for all future sequences?",
+  "scope": "Single-prediction/single-reference structural comparison. pLDDTis model confidence;the reference conformation and residue coverage define this RMSD,not a universal measure of biological function or all-state accuracy. Report RMSDto0.001angstromand confidence summaries to0.01."
+}

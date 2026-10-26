@@ -1,4 +1,6 @@
 import os
+import hashlib
+import io
 import MDAnalysis
 import numpy as np
 from tools.runtime.config import Config
@@ -27,41 +29,82 @@ def analyze_atom_count(file_name: str) -> str:
 
 def calculate_molecular_weight(file_name: str) -> str:
     """
-    Calculates the molecular weight of a structure in a PDB file using MDAnalysis.
+    Sum MDAnalysis masses of the atoms actually parsed from an uploaded PDB.
 
     Args:
-        pdb_file (str): The path to the PDB file.
+        file_name (str): Exact uploaded plain-PDB path or unique basename.
+            A basename without .pdb receives that suffix. Public task assets
+            and explicit current-task artifacts are also accepted.
 
     Returns:
-        str: A Markdown formatted string with the molecular weight or an error message if the calculation fails.
+        str: Legacy PDB File/Molecular Weight Markdown fields, plus source SHA256,
+            parsed atom count, MDAnalysis version and the atom-inventory basis.
+            Includes all topology atoms as parsed, including hetero atoms/water;
+            no missing hydrogens/atoms are added, no occupancy weighting or
+            protein-only selection is applied. This need not equal an intact
+            sequence molar mass. Unknown/zero/nonfinite atomic masses fail.
     """
     try:
-        pdb_file = os.path.join(Config().UPLOAD_FILES_BASE_PATH, file_name if file_name.endswith('.pdb') else file_name + '.pdb')
-        u = MDAnalysis.Universe(pdb_file)
+        from tools.implementations.general.research_data import _public_source_path
+
+        if not isinstance(file_name, str) or not file_name.strip():
+            raise ValueError("file_name must identify an uploaded PDB file")
+        name = file_name if file_name.lower().endswith('.pdb') else file_name + '.pdb'
+        pdb_file = _public_source_path(name)
+        raw = pdb_file.read_bytes()
+        if not raw or len(raw) > 25 * 1024 * 1024:
+            raise ValueError("PDB must be nonempty and at most25MiB")
+        # Parse precisely the hashed bytes; a later file change cannot create a
+        # mismatch between reported provenance and the atom inventory.
+        u = MDAnalysis.Universe(io.StringIO(raw.decode('ascii')), format='PDB')
         weights = u.atoms.masses
+        if len(weights) == 0 or not np.all(np.isfinite(weights)) or not np.all(weights > 0):
+            raise ValueError("PDB has no parsed atoms or contains unknown/nonpositive/nonfinite atomic masses")
         molecular_weight = sum(weights)
-        return f"## Molecular Weight Calculation\n\n- **PDB File**: `{file_name}`\n- **Molecular Weight**: `{molecular_weight:.2f} g/mol`\n"
+        if not np.isfinite(molecular_weight):
+            raise ValueError("Parsed atom-inventory mass is not finite")
+        sha = hashlib.sha256(raw).hexdigest()
+        return (f"## Molecular Weight Calculation\n\n- **PDB File**: `{file_name}`\n"
+                f"- **Molecular Weight**: `{molecular_weight:.2f} g/mol`\n"
+                f"- **Source SHA256**: `{sha}`\n"
+                f"- **Parsed Atom Count**: `{len(weights)}`\n"
+                f"- **MDAnalysis Version**: `{MDAnalysis.__version__}`\n"
+                "- **Mass Basis**: Sum of as-parsed topology atomic masses, including hetero atoms/water; no added hydrogens, missing atoms, occupancy weighting or protein-only selection. This is not necessarily the intact sequence molar mass.\n")
     except Exception as e:
         return f"Error occurred while calculating molecular weight: {str(e)}\n"
 
+def _pdb_inventory(file_name):
+    """Parse the exact hashed PDB bytes once, retaining all topology atoms/first frame."""
+    from tools.implementations.general.research_data import _public_source_path
+    if not isinstance(file_name, str) or not file_name.strip():
+        raise ValueError("file_name must identify an explicit plain PDB")
+    name = file_name if file_name.lower().endswith('.pdb') else file_name + '.pdb'
+    path = _public_source_path(name)
+    raw = path.read_bytes()
+    if not raw or len(raw) > 25 * 1024 * 1024:
+        raise ValueError("PDB must be nonempty and at most25MiB")
+    universe = MDAnalysis.Universe(io.StringIO(raw.decode('ascii')), format='PDB')
+    if not len(universe.atoms) or not np.isfinite(universe.atoms.positions).all():
+        raise ValueError("PDB requires parsed atoms and finite coordinates")
+    return universe, {"source_sha256": hashlib.sha256(raw).hexdigest(),
+                      "parsed_atom_count": len(universe.atoms), "coordinate_units": "angstrom",
+                      "inventory": "all as-parsed topology atoms including hetero atoms/water; first frame; no added atoms"}
+
+
 def calculate_center_of_mass(file_name: str) -> str:
-    """
-    Calculates the center of mass of the molecule in a PDB file using MDAnalysis.
+    """Mass-weighted center of all as-parsed PDB topology atoms in the first frame, angstrom."""
+    import json
+    universe, provenance = _pdb_inventory(file_name)
+    weights = universe.atoms.masses
+    if not np.isfinite(weights).all() or not (weights > 0).all():
+        raise ValueError("All as-parsed atomic masses must be positive and finite")
+    center = np.average(universe.atoms.positions.astype(float), axis=0, weights=weights)
+    if not np.isfinite(center).all():
+        raise ValueError("Mass-weighted center must be finite")
+    return json.dumps({**provenance, "center_of_mass": center.tolist(),
+                       "mass_basis": "MDAnalysis topology atomic masses, no occupancy weighting",
+                       "method": "sum(mass_i * coordinate_i)/sum(mass_i)"}, allow_nan=False)
 
-    Args:
-        pdb_file (str): The path to the PDB file.
-
-    Returns:
-        str: A Markdown formatted string with the center of mass coordinates or an error message if the calculation fails.
-    """
-    try:
-        pdb_file = os.path.join(Config().UPLOAD_FILES_BASE_PATH, file_name if file_name.endswith('.pdb') else file_name + '.pdb')
-        u = MDAnalysis.Universe(pdb_file)
-        center_of_mass = u.atoms.center_of_mass()
-        return f"## Center of Mass Calculation\n\n- **PDB File**: `{file_name}`\n- **Center of Mass**: `({center_of_mass[0]:.2f}, {center_of_mass[1]:.2f}, {center_of_mass[2]:.2f})`\n"
-    except Exception as e:
-        return f"Error occurred while calculating center of mass: {str(e)}\n"
-    
 def calculate_average_coordinates(file_name: str) -> str:
     """
     Calculates the average coordinates of all atoms in a PDB file using MDAnalysis.
@@ -82,28 +125,19 @@ def calculate_average_coordinates(file_name: str) -> str:
     except Exception as e:
         return f"Error occurred while calculating average coordinates: {str(e)}\n"
 
-def calculate_atom_distance(file_name: str) -> str:
-    """
-    Calculates the distance between the first two atoms in a PDB file using MDAnalysis.
-
-    Args:
-        pdb_file (str): The path to the PDB file.
-
-    Returns:
-        str: A Markdown formatted string with the distance or an error message if the calculation fails.
-    """
-    try:
-        pdb_file = os.path.join(Config().UPLOAD_FILES_BASE_PATH, file_name if file_name.endswith('.pdb') else file_name + '.pdb')
-        u = MDAnalysis.Universe(pdb_file)
-        if len(u.atoms) < 2:
-            return "Error: Not enough atoms in the PDB file to calculate distance.\n"
-
-        atom1_pos = u.atoms[0].position
-        atom2_pos = u.atoms[1].position
-        distance = np.linalg.norm(atom1_pos - atom2_pos)
-        return f"## Atom Distance Calculation\n\n- **PDB File**: `{file_name}`\n- **Distance between Atom 1 and Atom 2**: `{distance:.2f} Å`\n"
-    except Exception as e:
-        return f"Error occurred while calculating atom distance: {str(e)}\n"
+def calculate_atom_distance(file_name: str, atom_index_1: int = 0, atom_index_2: int = 1) -> str:
+    """Euclidean distance of two zero-based parsed PDB topology atom indices, angstrom; no periodic wrapping."""
+    import json
+    if type(atom_index_1) is not int or type(atom_index_2) is not int or min(atom_index_1, atom_index_2) < 0:
+        raise ValueError("Atom indices must be nonnegative integers")
+    universe, provenance = _pdb_inventory(file_name)
+    if max(atom_index_1, atom_index_2) >= len(universe.atoms):
+        raise ValueError("Atom index exceeds the parsed topology inventory")
+    atoms = universe.atoms[[atom_index_1, atom_index_2]]
+    distance = float(np.linalg.norm(atoms.positions[0].astype(float) - atoms.positions[1].astype(float)))
+    return json.dumps({**provenance, "atom_indices_zero_based": [atom_index_1, atom_index_2],
+                       "atom_ids": [int(atom.id) for atom in atoms], "atom_names": list(atoms.names),
+                       "distance_angstrom": distance, "periodic_boundary_conditions": False}, allow_nan=False)
 
 ## from Biopython
 
@@ -156,6 +190,11 @@ def get_reverse_complement(sequence: str) -> str:
         str: A Markdown formatted string with the reverse complement.
     """
     try:
+        if not isinstance(sequence, str):
+            raise ValueError("sequence must be a DNA string")
+        sequence = ''.join(sequence.split()).upper()
+        if not 1 <= len(sequence) <= 100000 or set(sequence) - set('ACGTRYSWKMBDHVN'):
+            raise ValueError("Require1..100000IUPAC DNA bases; RNA, gaps, stops and headers unsupported")
         seq = Seq(sequence)
         reverse_complement = seq.reverse_complement()
         return (f"## Reverse Complement Sequence\n\n"
@@ -165,37 +204,48 @@ def get_reverse_complement(sequence: str) -> str:
         return f"Error occurred while generating reverse complement: {str(e)}\n"   
 
 
+def _canonical_protein_sequence(sequence):
+    if not isinstance(sequence, str):
+        raise ValueError("sequence must be a string")
+    normalized = ''.join(sequence.split()).upper()
+    if not normalized or len(normalized) > 100000:
+        raise ValueError("sequence must contain1..100000 canonical residues")
+    invalid = sorted(set(normalized) - set('ACDEFGHIKLMNPQRSTVWY'))
+    if invalid:
+        raise ValueError("Noncanonical residues must be resolved by an explicit QC policy; not removed: " + ','.join(invalid))
+    return normalized
+
+
 def calculate_hydrophobicity_and_polarity(sequence: str) -> str:
     """
-    Calculates the hydrophobicity and polarity of a protein sequence.
+    Calculate GRAVY and estimated isoelectric point; pI is not molecular polarity.
+    The public legacy tool name is retained for compatibility.
 
     Args:
         sequence (str): The protein sequence.
 
     Returns:
-        str: A Markdown formatted string with hydrophobicity and polarity.
+        str: Markdown GRAVY and estimated pI; no polarity or functional prediction.
     """
     try:
-        # 清理序列，移除非氨基酸字符
-        sequence = ''.join(filter(lambda x: x in 'ACDEFGHIKLMNPQRSTVWY', sequence.upper()))
-        
-        if not sequence:
-            return "Error: The input sequence is empty or contains invalid characters.\n"
+        sequence = _canonical_protein_sequence(sequence)
         
         analyzed_seq = ProteinAnalysis(sequence)
         hydropathy_index = analyzed_seq.gravy()  # Hydropathy index (GRAVY)
-        polarity = analyzed_seq.isoelectric_point()  # Isoelectric point for polarity estimation
+        isoelectric_point = analyzed_seq.isoelectric_point()
 
-        return (f"## Hydrophobicity and Polarity Calculation\n\n"
+        return (f"## Hydropathy and Isoelectric Point\n\n"
                 f"- **Sequence**: `{sequence}`\n"
                 f"- **Hydropathy Index (GRAVY)**: `{hydropathy_index:.2f}`\n"
-                f"- **Estimated Isoelectric Point (pI)**: `{polarity:.2f}`\n")
+                f"- **Estimated Isoelectric Point (pI)**: `{isoelectric_point:.2f}`\n"
+                "- pI is not molecular polarity; these are sequence descriptors, not measured function.\n")
     except Exception as e:
         return f"Error occurred while calculating hydrophobicity and polarity: {str(e)}\n"
     
 def predict_secondary_structure(sequence: str) -> str:
     """
-    Predicts the secondary structure content (alpha helix, beta sheet) of a protein sequence.
+    Report composition-based helix/turn/sheet propensity fractions, not a fold prediction.
+    Fractions count overlapping residue groups and need not sum to one.
 
     Args:
         sequence (str): The protein sequence.
@@ -204,14 +254,16 @@ def predict_secondary_structure(sequence: str) -> str:
         str: A Markdown formatted string summarizing the predicted secondary structure.
     """
     try:
+        sequence = _canonical_protein_sequence(sequence)
         analyzed_seq = ProteinAnalysis(sequence)
-        helix_fraction = analyzed_seq.secondary_structure_fraction()[0]  # 计算α螺旋的比例
-        sheet_fraction = analyzed_seq.secondary_structure_fraction()[1]  # 计算β折叠的比例
+        helix_fraction, turn_fraction, sheet_fraction = analyzed_seq.secondary_structure_fraction()
         
-        return (f"## Secondary Structure Prediction\n\n"
+        return (f"## Residue Composition Propensity\n\n"
                 f"- **Sequence**: `{sequence}`\n"
-                f"- **Alpha Helix Fraction**: `{helix_fraction:.2%}`\n"
-                f"- **Beta Sheet Fraction**: `{sheet_fraction:.2%}`\n")
+                f"- **Helix-prone Residue Fraction**: `{helix_fraction:.2%}`\n"
+                f"- **Turn-prone Residue Fraction**: `{turn_fraction:.2%}`\n"
+                f"- **Sheet-prone Residue Fraction**: `{sheet_fraction:.2%}`\n"
+                "- Overlapping residue propensity groups; not predicted or observed secondary structure.\n")
     except Exception as e:
         return f"Error occurred while predicting secondary structure: {str(e)}\n"
 

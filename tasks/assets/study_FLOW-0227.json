@@ -1,0 +1,217 @@
+{
+  "data": [
+    {
+      "record_id": "slip01",
+      "plane_indices_in_supplied_primitive_basis": [
+        1,
+        0,
+        0
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        0,
+        1,
+        0
+      ],
+      "critical_resolved_shear_stress_mpa": 20.0
+    },
+    {
+      "record_id": "slip02",
+      "plane_indices_in_supplied_primitive_basis": [
+        1,
+        0,
+        0
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        0,
+        0,
+        1
+      ],
+      "critical_resolved_shear_stress_mpa": 16.0
+    },
+    {
+      "record_id": "slip03",
+      "plane_indices_in_supplied_primitive_basis": [
+        1,
+        0,
+        0
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        0,
+        1,
+        -1
+      ],
+      "critical_resolved_shear_stress_mpa": 31.0
+    },
+    {
+      "record_id": "slip04",
+      "plane_indices_in_supplied_primitive_basis": [
+        0,
+        1,
+        0
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        1,
+        0,
+        0
+      ],
+      "critical_resolved_shear_stress_mpa": 18.0
+    },
+    {
+      "record_id": "slip05",
+      "plane_indices_in_supplied_primitive_basis": [
+        0,
+        1,
+        0
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        0,
+        0,
+        1
+      ],
+      "critical_resolved_shear_stress_mpa": 24.0
+    },
+    {
+      "record_id": "slip13",
+      "plane_indices_in_supplied_primitive_basis": [
+        1,
+        0,
+        0
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        1,
+        0,
+        0
+      ],
+      "critical_resolved_shear_stress_mpa": 1.0
+    },
+    {
+      "record_id": "slip06",
+      "plane_indices_in_supplied_primitive_basis": [
+        0,
+        1,
+        0
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        1,
+        0,
+        -1
+      ],
+      "critical_resolved_shear_stress_mpa": 15.0
+    },
+    {
+      "record_id": "slip07",
+      "plane_indices_in_supplied_primitive_basis": [
+        0,
+        0,
+        1
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        1,
+        0,
+        0
+      ],
+      "critical_resolved_shear_stress_mpa": 27.0
+    },
+    {
+      "record_id": "slip08",
+      "plane_indices_in_supplied_primitive_basis": [
+        0,
+        0,
+        1
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        0,
+        1,
+        0
+      ],
+      "critical_resolved_shear_stress_mpa": 12.0
+    },
+    {
+      "record_id": "slip09",
+      "plane_indices_in_supplied_primitive_basis": [
+        0,
+        0,
+        1
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        1,
+        -1,
+        0
+      ],
+      "critical_resolved_shear_stress_mpa": 22.0
+    },
+    {
+      "record_id": "slip10",
+      "plane_indices_in_supplied_primitive_basis": [
+        1,
+        1,
+        1
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        1,
+        -1,
+        0
+      ],
+      "critical_resolved_shear_stress_mpa": 35.0
+    },
+    {
+      "record_id": "slip11",
+      "plane_indices_in_supplied_primitive_basis": [
+        1,
+        1,
+        1
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        1,
+        0,
+        -1
+      ],
+      "critical_resolved_shear_stress_mpa": 18.0
+    },
+    {
+      "record_id": "slip12",
+      "plane_indices_in_supplied_primitive_basis": [
+        1,
+        1,
+        1
+      ],
+      "direction_indices_in_supplied_primitive_basis": [
+        0,
+        1,
+        -1
+      ],
+      "critical_resolved_shear_stress_mpa": 29.0
+    },
+    {
+      "record_id": "study",
+      "structure_file": "Cu_mp30_core.vasp",
+      "structure_sha256": "dc4548de336569c90ba43486d577dcf138345ac4466b30f482fa588a8cd51484",
+      "source_requested_material_id": "mp-30",
+      "source_resolved_material_id": "mp-aaaaaabe",
+      "load_direction_cartesian": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "index_convention": "All Miller plane indices and lattice-direction indices refer to the exact attached primitive lattice basis,not an independently oriented conventional cubic basis. The uniaxial tensile direction is expressed in the SAME Cartesian frame as that file. Cell vectors are rows. Directions and plane normals are geometric axes,so simultaneous or independent sign reversal does not change the magnitude of resolved shear. The plane normal is reciprocal to the plane indices;in a nonorthogonal primitive basis a direction with components[h,k,l] is not generally the plane normal(hkl).",
+      "state_model": "This is an explicitly controlled hardened-state slip model on an authentic Cu lattice geometry. All positive CRSS values are prescribed computational inputs,not measurements or Materials Project predictions. Slip initiation occurs independently when absolute resolved shear reaches that row CRSS. Reject an index pair if its direction does not lie in the plane. Use only the remaining listed systems;do not invent missing mechanisms or change their thresholds.",
+      "scope": "Predict only first activation within the given ideal Schmid-type candidate model under increasing uniaxial tensile stress. This is not a complete plasticity,partial-dislocation,twinning,temperature,post-yield hardening or experimental yield-strength prediction. The source core structure is not evidence for the controlled CRSS state."
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published computational geometry with controlled constitutive-state candidate inputs",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "Lattice Å;indices dimensionless;load direction arbitrary positive scale;CRSS and tensile activation stress MPa.",
+    "original_observation_claim": false,
+    "source_capture": {
+      "source_actual_call_file": "mp_core_cu_mp30_call.json",
+      "source_endpoint": "https://api.materialsproject.org/materials/core/",
+      "requested_material_id": "mp-30",
+      "resolved_material_id": "mp-aaaaaabe",
+      "last_updated": "2023-10-08T08:21:15.123000",
+      "canonical_structure_sha256": "9146f055f5689cacbfdfc3d9f7b9097237eb7a682a9901fc0b45faa3e5fec35b",
+      "source_frame": "Exact provided Cartesian lattice row vectors retained;no conventional-cell transformation or rotation. POSCAR is a numerical representation derived from full official core Structure JSON.",
+      "sha256": "dc4548de336569c90ba43486d577dcf138345ac4466b30f482fa588a8cd51484"
+    }
+  }
+}

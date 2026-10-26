@@ -1,0 +1,7 @@
+{
+  "coordinate_file": "asset://coverage_FLOW-0266_CA_nodes.pdb",
+  "node_model": "Every parsed atom is one supplied CAposition;no missing residues/atoms are added. This is a controlled point-node network derived from1UBQ,not a complete protein or a B-factor fit. Use registered ANMwith cutoff50angstromand default unit springs. All source pairs lie below the cutoff and the pointset spans3D,so the complete network has exactly6rigid-motion zero modes. Determine Nfrom the actual coordinate inventory and request all3N-6positive internal modes.",
+  "reporting_uncertainty": "The ANMtool prints each positive eigenvalue to4decimal places. For this robust reporting audit,each true internal eigenvalue is allowed independently in the CLOSED interval[printed-0.00005,printed+0.00005]. No floating zero is substituted for a positive mode.",
+  "target": "Total dimensionless equilibrium fluctuation trace is proportional tosum(1/lambda). What sharp fraction interval is attributable to the three softest internal modes,over the independent rounding box? The numerator is part of the denominator;do not vary shared terms independently. Report whether a captured fraction ofat least1/2is guaranteed,ruled_out or unresolved under these bounds.",
+  "scope": "No empirical protein flexibility,pinning,temperature or absolute spring calibration is inferred."
+}

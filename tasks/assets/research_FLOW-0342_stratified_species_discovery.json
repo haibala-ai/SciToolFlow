@@ -1,0 +1,81 @@
+{
+  "data_origin": {
+    "source": "vegan2.7-6 BCI dataset: six fixed plot rows from the1982 Barro Colorado Island teaching table, stems at least10cm diameter at breast height. Each plot is1ha. These are actual tree counts, not percentage cover or simulated relative abundance.",
+    "selection": "Plot row identifiers1,11,21,31,41,50 span the source row range; all225 original species columns and literal source species identities are retained. The table is transposed for ingestion. No counts are modified, zero species are not imputed, and taxa are not renamed or merged.",
+    "source_url": "https://cran.r-project.org/src/contrib/vegan_2.7-6.tar.gz",
+    "source_package_sha256": "554a1a8c67bfd1d07534f9c5d59b7ee05254a597ab204888041d45ee6323ac0d",
+    "original_BCI_rda_sha256": "9730c9a9db6eb455ae97c61c863a2ca6a074f7d00a3062b9a3a9a873158a5fd1",
+    "documentation": "https://vegandevs.github.io/vegan/reference/BCI.html",
+    "license": "Source R package GPL-2; original package metadata, dataset documentation, attribution and GPL text are preserved in the revision resources/BCI_snapshot directory.",
+    "limits": "This teaching subset is not the complete or modern BCI census. The analysis is a retrospective finite-population resampling design conditional on these frozen observed populations. It does not infer current forest diversity, habitat causality, unknown future abundance, trees below10cm, species outside the table, or independent ecological replication of plots."
+  },
+  "input": {
+    "counts_file": "asset://research_FLOW-0342_BCI_six_plot_counts.csv",
+    "layout": "225 rows identified by species_id and six numeric count columns. Preserve species identity across plots, including literal zero counts. Columns, in final allocation order, are plot_1,plot_11,plot_21,plot_31,plot_41,plot_50. All counts are exact nonnegative integers.",
+    "zero_rows": "A species absent from all six plots contributes zero to discovery under every allowed design; omitting such species internally is equivalent only if the original source dimension and identity audit remains correct."
+  },
+  "initial_audit": "For each plot report [census_N,observed_richness,exp_Shannon,inverse_Simpson] in that order. Shannon uses natural logarithms and empirical count proportions; inverse Simpson is1/sum(p_s^2), not an unbiased pair estimator. Report full source species-row count. These descriptive diversity indices are checks and possible screening heuristics, not substitutes for a joint sampling-design objective.",
+  "sampling_design": {
+    "within_plot": "At plot i, draw n_i DISTINCT individual stems uniformly WITHOUT replacement from its fixed census of N_i stems. Samples from different plots are independent; within a plot, species-presence indicators are not independent. A species discovered in multiple plots counts ONCE in the union S.",
+    "allowed_draw_counts": [
+      0,
+      50,
+      100,
+      150,
+      200
+    ],
+    "total_draws": 300,
+    "maximum_active_plots": 3,
+    "plot_order": [
+      "plot_1",
+      "plot_11",
+      "plot_21",
+      "plot_31",
+      "plot_41",
+      "plot_50"
+    ],
+    "scientific_target": "The union number of species represented among the selected300 stems. A zero draw count means that plot is not sampled. There is no additional area, travel or activation cost; do not invent a requirement to activate exactly three plots. Every allowed allocation obeys n_i<=N_i from the actual census.",
+    "completeness": "Enumerate or otherwise certify the entire feasible allocation set. A greedy ranking by raw richness, Shannon, isolated rarefied richness or the sum of per-plot expected discoveries is insufficient because the union is nonadditive and identities overlap."
+  },
+  "exact_moments": "Derive the finite-population mean and variance of S under each allocation, retaining covariance of species-discovery indicators. An absent-at-all-selected-plots event factors across independently sampled plots, but not across different species within one plot. For one species with count c in a plot, its absence probability is choose(N-c,n)/choose(N,n); it is zero if N-c<n, and is1 for n=0. For two DISTINCT species use their combined count in the joint-absence event. The diagonal event is the original one-species event, not a fictitious species with double its count. Numerical cancellation should be controlled; negative variance is not a valid result.",
+  "optimization": {
+    "expected_discovery": "Find the allocation maximizing exact E[S]. Break numerical ties within1e-8 by the lexicographically smallest complete six-entry allocation vector. Report its mean and variance.",
+    "moment_certificate": "Independently select the allocation with the largest INTEGER lower discovery guarantee L that can be certified at probability at least0.90 using ONLY its exact first two moments and the one-sided Cantelli inequality. The failure event for an integer-valued S is S<=L-1. For t>0, Cantelli gives P(S-mu<=-t)<=sigma^2/(sigma^2+t^2). Derive the largest certified L, respecting the inclusive failure event and integer boundary; do not replace it by an empirical quantile, a normal approximation or a floor of a continuous lower bound without checking the event. L cannot be negative. Degenerate zero-variance cases must be handled by their deterministic support. If several allocations have the same best integer L, prefer greater E[S]; remaining means within1e-8 tie by the lexicographically smallest allocation vector.",
+    "interpretation": "The two selected allocations may coincide; report what the actual data support. The Cantelli-based guarantee is a sufficient moment certificate, not a claim that its integer lower bound equals the exact0.10quantile or that it is optimal among every possible tail inequality. Keep all allocation moments or an independently checkable global certificate in the trajectory."
+  },
+  "model_controls": {
+    "pooling": "For the selected Cantelli allocation, pool the COMPLETE census counts from its ACTIVE plots, then draw300 individuals uniformly without replacement from that one pooled population. Compute this DIFFERENT design mean, variance and largest Cantelli-certified integer L. It does not preserve the original prescribed number drawn from each active plot, so it is not the same scientific sampling model.",
+    "independent_species": "For the actual selected stratified design, compute the variance one would obtain by dropping all between-species covariance terms. Report it separately and decide whether it equals the exact variance. A conservative bound based on an overestimated variance may still be valid, but it is not the requested exact-moment optimum or an equality of the two sampling models."
+  },
+  "interpretation_proposals": {
+    "A": "The observed plot richness and Shannon effective number do not by themselves determine the expected distinct-species union after allocated subsampling.",
+    "B": "Two occurrences of one species in different sampled plots should be counted as two species in the union objective.",
+    "C": "Without-replacement absence probabilities must preserve actual count denominators and shared species identity.",
+    "D": "Independent sampling between plots implies independent presence of different species within a plot.",
+    "E": "A Cantelli certificate based on exact finite-population moments is conditional on the frozen resampling model, not an ecological causal or current-census claim.",
+    "F": "Pooling all active census stems and fixing the original per-plot sample allocations define the same distribution.",
+    "G": "A certified integer lower bound from two moments is not automatically the exact discrete sampling quantile.",
+    "H": "Every zero count in an observed plot is evidence that the taxon is absent from the entire forest."
+  },
+  "reporting": {
+    "fields": "source_species_row_count; plot_diversity_summary keyed by the six exact plot column names with [N,richness,exp_Shannon,inverse_Simpson]; feasible_allocation_count; expected_optimal_allocation; expected_optimal_mean_species; expected_optimal_variance_species2; Cantelli_optimal_allocation; Cantelli_optimal_mean_species; Cantelli_optimal_variance_species2; Cantelli_certified_lower_species_count; active_pooled_control_mean_species; active_pooled_control_variance_species2; active_pooled_control_Cantelli_lower_species_count; independent_species_variance_control; independent_species_variance_is_exact; Cantelli_certificate_alone_identifies_exact_sampling_quantile; valid_interpretation_proposal_ids. Allocations are six integers in the declared plot order, including zeros. Counts, allocation vectors, booleans and proposal IDs are exact. Descriptive effective-diversity numbers and exact moments use absolute tolerance1e-5 plus relative1e-7. Keep covariance, all-design and inclusive-tail derivations in the trajectory.",
+    "nonleakage": "No target design or objective value is supplied in the task input."
+  },
+  "methodological_sources": [
+    {
+      "title": "The Nonconcept of Species Diversity: A Critique and Alternative Parameters",
+      "author": "Stuart H. Hurlbert",
+      "year": 1971,
+      "doi": "10.2307/1934145",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28973811/",
+      "role": "Primary motivation for explicit finite-population species-discovery quantities instead of treating diversity indices as interchangeable."
+    },
+    {
+      "title": "Beta-diversity in tropical forest trees",
+      "authors": "Condit et al.",
+      "year": 2002,
+      "doi": "10.1126/science.1066854",
+      "role": "Original publication credited by the vegan teaching-table documentation; the task uses the frozen package subset, not a newly downloaded complete census."
+    }
+  ]
+}

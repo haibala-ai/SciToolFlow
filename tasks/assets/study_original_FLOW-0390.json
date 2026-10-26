@@ -1,0 +1,23 @@
+{
+  "species_ids": [
+    "high_yield",
+    "low_yield"
+  ],
+  "monoculture_yields": [
+    10.0,
+    2.0
+  ],
+  "planted_mixture_proportions": [
+    0.5,
+    0.5
+  ],
+  "observed_species_yields_in_mixture": [
+    6.0,
+    2.0
+  ],
+  "model": "Substitutive mixture design with common area and yield units. For Nspecies define RY_i=Y_i/M_i,DeltaRY_i=RY_i-p_i,and expected additive mixture yield sum(p_i*M_i). Loreau-Hector complementarity effect CE=N*mean(M)*mean(DeltaRY);selection effect SE=N*Cov_population(M,DeltaRY),where the covariance divides by N,NOT N-1. Net biodiversity effect is observed total yield minus the additive expectation and must equal CE+SE. Transgressive overyielding means total mixture yield STRICTLY exceeds the highest monoculture yield under this design.",
+  "target": "Return net biodiversity effect,complementarity and selection effects in yield units,and whether transgressive overyielding occurs. Report whether a positive net biodiversity effect implies a positive selection effect in these observations.",
+  "provenance": {
+    "kind": "Explicit small synthetic benign scientific model;data are conditional exact counts/means and do not establish empirical ecological,causal or functional claims."
+  }
+}

@@ -1,0 +1,1760 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "annotated_CDS_features": [
+        {
+          "locus_tag": "ArthCp001",
+          "gene_label": "rps12",
+          "protein_id": "NP_051037.1",
+          "decoded_location_expression": "join{[69610:69724](-), [98561:98793](-), [97998:98024](-)}",
+          "trans_splicing_qualifier_present": true,
+          "source_location_segments": [
+            {
+              "start_1based": 69611,
+              "end_1based": 69724,
+              "strand": -1
+            },
+            {
+              "start_1based": 98562,
+              "end_1based": 98793,
+              "strand": -1
+            },
+            {
+              "start_1based": 97999,
+              "end_1based": 98024,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp002",
+          "gene_label": "psbA",
+          "protein_id": "NP_051039.1",
+          "decoded_location_expression": "[382:1444](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 383,
+              "end_1based": 1444,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp003",
+          "gene_label": "matK",
+          "protein_id": "NP_051040.2",
+          "decoded_location_expression": "[2055:3570](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 2056,
+              "end_1based": 3570,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp004",
+          "gene_label": "rps16",
+          "protein_id": "NP_051041.1",
+          "decoded_location_expression": "join{[6148:6188](-), [5083:5283](-)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 6149,
+              "end_1based": 6188,
+              "strand": -1
+            },
+            {
+              "start_1based": 5084,
+              "end_1based": 5283,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp005",
+          "gene_label": "psbK",
+          "protein_id": "NP_051042.1",
+          "decoded_location_expression": "[7016:7202](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 7017,
+              "end_1based": 7202,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "PSII K protein"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp006",
+          "gene_label": "psbI",
+          "protein_id": "NP_051043.1",
+          "decoded_location_expression": "[7582:7693](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 7583,
+              "end_1based": 7693,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp007",
+          "gene_label": "atpA",
+          "protein_id": "NP_051044.1",
+          "decoded_location_expression": "[9937:11461](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 9938,
+              "end_1based": 11461,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "ATP synthase CF1 alpha chain; ATPase alpha subunit"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp008",
+          "gene_label": "atpF",
+          "protein_id": "NP_051045.1",
+          "decoded_location_expression": "join{[12653:12798](-), [11528:11938](-)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 12654,
+              "end_1based": 12798,
+              "strand": -1
+            },
+            {
+              "start_1based": 11529,
+              "end_1based": 11938,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "ATPase subunit I"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp009",
+          "gene_label": "atpH",
+          "protein_id": "NP_051046.1",
+          "decoded_location_expression": "[13261:13507](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 13262,
+              "end_1based": 13507,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "ATPase III subunit; ATP synthase CF0 C chain"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp010",
+          "gene_label": "atpI",
+          "protein_id": "NP_051047.1",
+          "decoded_location_expression": "[14020:14770](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 14021,
+              "end_1based": 14770,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "ATPase IV subunit; ATP synthase CF0 A chain"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp011",
+          "gene_label": "rps2",
+          "protein_id": "NP_051048.1",
+          "decoded_location_expression": "[15012:15723](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 15013,
+              "end_1based": 15723,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "30S ribosomal protein S2"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp012",
+          "gene_label": "rpoC2",
+          "protein_id": "NP_051049.1",
+          "decoded_location_expression": "[15937:20068](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 15938,
+              "end_1based": 20068,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "RNA polymerase beta'' chain; one of four subunits of the minimal PEP RNA polymerase catalytic core"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp013",
+          "gene_label": "rpoC1",
+          "protein_id": "NP_051050.1",
+          "decoded_location_expression": "join{[22652:23084](-), [20250:21861](-)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 22653,
+              "end_1based": 23084,
+              "strand": -1
+            },
+            {
+              "start_1based": 20251,
+              "end_1based": 21861,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "RNA polymerase beta' chain"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp014",
+          "gene_label": "rpoB",
+          "protein_id": "NP_051051.1",
+          "decoded_location_expression": "[23110:26329](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 23111,
+              "end_1based": 26329,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "RNA polymerase beta chain; one of four subunits of the minimal PEP RNA polymerase catalytic core"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp015",
+          "gene_label": "petN",
+          "protein_id": "NP_051052.1",
+          "decoded_location_expression": "[28088:28178](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 28089,
+              "end_1based": 28178,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "cytochrome b6/f complex subunit N"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp016",
+          "gene_label": "psbM",
+          "protein_id": "NP_051053.1",
+          "decoded_location_expression": "[28706:28811](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 28707,
+              "end_1based": 28811,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp017",
+          "gene_label": "psbD",
+          "protein_id": "NP_051054.1",
+          "decoded_location_expression": "[32710:33772](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 32711,
+              "end_1based": 33772,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp018",
+          "gene_label": "psbC",
+          "protein_id": "NP_051055.1",
+          "decoded_location_expression": "[33719:35141](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 33720,
+              "end_1based": 35141,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "PSII 43 kDa protein; CP43"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp019",
+          "gene_label": "psbZ",
+          "protein_id": "NP_051056.1",
+          "decoded_location_expression": "[35750:35939](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 35751,
+              "end_1based": 35939,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "photosystem II reaction center Z protein; YCF9"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp020",
+          "gene_label": "rps14",
+          "protein_id": "NP_051057.1",
+          "decoded_location_expression": "[36937:37240](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 36938,
+              "end_1based": 37240,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "30S ribosomal protein S14"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp021",
+          "gene_label": "psaB",
+          "protein_id": "NP_051058.1",
+          "decoded_location_expression": "[37374:39579](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 37375,
+              "end_1based": 39579,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "PSI P700 apoprotein A2; PsaB"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp022",
+          "gene_label": "psaA",
+          "protein_id": "NP_051059.1",
+          "decoded_location_expression": "[39604:41857](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 39605,
+              "end_1based": 41857,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "PSI P700 apoprotein A1; PsaA"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp023",
+          "gene_label": "ycf3",
+          "protein_id": "NP_051060.2",
+          "decoded_location_expression": "join{[44465:44591](-), [43523:43751](-), [42583:42736](-)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 44466,
+              "end_1based": 44591,
+              "strand": -1
+            },
+            {
+              "start_1based": 43524,
+              "end_1based": 43751,
+              "strand": -1
+            },
+            {
+              "start_1based": 42584,
+              "end_1based": 42736,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp024",
+          "gene_label": "rps4",
+          "protein_id": "NP_051061.1",
+          "decoded_location_expression": "[45222:45828](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 45223,
+              "end_1based": 45828,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp025",
+          "gene_label": "ndhJ",
+          "protein_id": "NP_051062.1",
+          "decoded_location_expression": "[48676:49153](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 48677,
+              "end_1based": 49153,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "NADH dehydrogenase 30 kDa subunit"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp026",
+          "gene_label": "ndhK",
+          "protein_id": "NP_051063.1",
+          "decoded_location_expression": "[49256:49934](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 49257,
+              "end_1based": 49934,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "NADH dehydrogenase 27 kDa subunit"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp027",
+          "gene_label": "ndhC",
+          "protein_id": "NP_051064.1",
+          "decoded_location_expression": "[50000:50363](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 50001,
+              "end_1based": 50363,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp028",
+          "gene_label": "atpE",
+          "protein_id": "NP_051065.1",
+          "decoded_location_expression": "[52264:52663](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 52265,
+              "end_1based": 52663,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "ATP synthase epsilon chain"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp029",
+          "gene_label": "atpB",
+          "protein_id": "NP_051066.1",
+          "decoded_location_expression": "[52659:54156](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 52660,
+              "end_1based": 54156,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "ATPase beta chain"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp030",
+          "gene_label": "rbcL",
+          "protein_id": "NP_051067.1",
+          "decoded_location_expression": "[54957:56397](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 54958,
+              "end_1based": 56397,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "RuBisCO large subunit"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp031",
+          "gene_label": "accD",
+          "protein_id": "NP_051068.1",
+          "decoded_location_expression": "[57074:58541](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 57075,
+              "end_1based": 58541,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp032",
+          "gene_label": "psaI",
+          "protein_id": "NP_051069.1",
+          "decoded_location_expression": "[59246:59360](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 59247,
+              "end_1based": 59360,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp033",
+          "gene_label": "ycf4",
+          "protein_id": "NP_051070.1",
+          "decoded_location_expression": "[59771:60326](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 59772,
+              "end_1based": 60326,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp034",
+          "gene_label": "cemA",
+          "protein_id": "NP_051071.1",
+          "decoded_location_expression": "[60740:61430](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 60741,
+              "end_1based": 61430,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "heme-binding protein"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp035",
+          "gene_label": "petA",
+          "protein_id": "NP_051072.1",
+          "decoded_location_expression": "[61656:62619](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 61657,
+              "end_1based": 62619,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "apocytochrome f precursor; component of cytochrome b6/f complex"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp036",
+          "gene_label": "psbJ",
+          "protein_id": "NP_051073.1",
+          "decoded_location_expression": "[63537:63660](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 63538,
+              "end_1based": 63660,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "photosystem II reaction center subunit X"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp037",
+          "gene_label": "psbL",
+          "protein_id": "NP_051074.1",
+          "decoded_location_expression": "[63803:63920](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 63804,
+              "end_1based": 63920,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "PSII reaction center subunit XII"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp038",
+          "gene_label": "psbF",
+          "protein_id": "NP_051075.1",
+          "decoded_location_expression": "[63941:64061](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 63942,
+              "end_1based": 64061,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "photosystem II reaction center subunit VI"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp039",
+          "gene_label": "psbE",
+          "protein_id": "NP_051076.1",
+          "decoded_location_expression": "[64070:64322](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 64071,
+              "end_1based": 64322,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "cytochrome b559 alpha subunit"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp040",
+          "gene_label": "petL",
+          "protein_id": "NP_051077.1",
+          "decoded_location_expression": "[65711:65807](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 65712,
+              "end_1based": 65807,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "ORF31"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp041",
+          "gene_label": "petG",
+          "protein_id": "NP_051078.1",
+          "decoded_location_expression": "[65997:66111](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 65998,
+              "end_1based": 66111,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "cytochrome B6-F complex subunit 5; required for the either the stability or assembly of the cytochrome b6/f complex"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp042",
+          "gene_label": "psaJ",
+          "protein_id": "NP_051079.1",
+          "decoded_location_expression": "[66928:67063](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 66929,
+              "end_1based": 67063,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp043",
+          "gene_label": "rpl33",
+          "protein_id": "NP_051080.1",
+          "decoded_location_expression": "[67487:67688](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 67488,
+              "end_1based": 67688,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp044",
+          "gene_label": "rps18",
+          "protein_id": "NP_051081.1",
+          "decoded_location_expression": "[67916:68222](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 67917,
+              "end_1based": 68222,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "30S ribosomal protein S18"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp045",
+          "gene_label": "rpl20",
+          "protein_id": "NP_051082.1",
+          "decoded_location_expression": "[68511:68865](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 68512,
+              "end_1based": 68865,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "50S ribosomal protein L20"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp047",
+          "gene_label": "rps12",
+          "protein_id": "NP_051038.1",
+          "decoded_location_expression": "join{[69610:69724](-), [139855:140087](+), [140624:140650](+)}",
+          "trans_splicing_qualifier_present": true,
+          "source_location_segments": [
+            {
+              "start_1based": 69611,
+              "end_1based": 69724,
+              "strand": -1
+            },
+            {
+              "start_1based": 139856,
+              "end_1based": 140087,
+              "strand": 1
+            },
+            {
+              "start_1based": 140625,
+              "end_1based": 140650,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "trans-spliced"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp048",
+          "gene_label": "clpP",
+          "protein_id": "NP_051083.1",
+          "decoded_location_expression": "join{[71811:71882](-), [70652:70944](-), [69909:70137](-)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 71812,
+              "end_1based": 71882,
+              "strand": -1
+            },
+            {
+              "start_1based": 70653,
+              "end_1based": 70944,
+              "strand": -1
+            },
+            {
+              "start_1based": 69910,
+              "end_1based": 70137,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp049",
+          "gene_label": "psbB",
+          "protein_id": "NP_051084.1",
+          "decoded_location_expression": "[72370:73897](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 72371,
+              "end_1based": 73897,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "photosystem II P680 chlorophyll A apoprotein; PSII 47 kDa protein"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp050",
+          "gene_label": "psbT",
+          "protein_id": "NP_051085.1",
+          "decoded_location_expression": "[74081:74183](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 74082,
+              "end_1based": 74183,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp051",
+          "gene_label": "psbN",
+          "protein_id": "NP_051086.1",
+          "decoded_location_expression": "[74248:74380](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 74249,
+              "end_1based": 74380,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "photosystem II reaction center N protein"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp052",
+          "gene_label": "psbH",
+          "protein_id": "NP_051087.1",
+          "decoded_location_expression": "[74484:74706](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 74485,
+              "end_1based": 74706,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "photosystem II reaction center protein H; photosystem II phosphoprotein"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp053",
+          "gene_label": "petB",
+          "protein_id": "NP_051088.1",
+          "decoded_location_expression": "join{[74840:74846](+), [75650:76292](+)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 74841,
+              "end_1based": 74846,
+              "strand": 1
+            },
+            {
+              "start_1based": 75651,
+              "end_1based": 76292,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp054",
+          "gene_label": "petD",
+          "protein_id": "NP_051089.1",
+          "decoded_location_expression": "join{[76480:76488](+), [77197:77672](+)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 76481,
+              "end_1based": 76488,
+              "strand": 1
+            },
+            {
+              "start_1based": 77198,
+              "end_1based": 77672,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "cytochrome b6/f complex subunit 4"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp055",
+          "gene_label": "rpoA",
+          "protein_id": "NP_051090.1",
+          "decoded_location_expression": "[77900:78890](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 77901,
+              "end_1based": 78890,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "RNA polymerase alpha chain"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp056",
+          "gene_label": "rps11",
+          "protein_id": "NP_051091.1",
+          "decoded_location_expression": "[78959:79376](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 78960,
+              "end_1based": 79376,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "30S ribosomal protein S11"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp057",
+          "gene_label": "rpl36",
+          "protein_id": "NP_051092.1",
+          "decoded_location_expression": "[79488:79602](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 79489,
+              "end_1based": 79602,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "50S ribosomal protein L36"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp058",
+          "gene_label": "rps8",
+          "protein_id": "NP_051093.1",
+          "decoded_location_expression": "[80067:80472](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 80068,
+              "end_1based": 80472,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "30S ribosomal protein S8"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp059",
+          "gene_label": "rpl14",
+          "protein_id": "NP_051094.1",
+          "decoded_location_expression": "[80695:81064](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 80696,
+              "end_1based": 81064,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "50S ribosomal protein L14"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp060",
+          "gene_label": "rpl16",
+          "protein_id": "NP_051095.1",
+          "decoded_location_expression": "join{[82643:82652](-), [81188:81587](-)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 82644,
+              "end_1based": 82652,
+              "strand": -1
+            },
+            {
+              "start_1based": 81189,
+              "end_1based": 81587,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp061",
+          "gene_label": "rps3",
+          "protein_id": "NP_051096.1",
+          "decoded_location_expression": "[82825:83482](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 82826,
+              "end_1based": 83482,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "30S ribosomal protein S3"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp062",
+          "gene_label": "rpl22",
+          "protein_id": "NP_051097.1",
+          "decoded_location_expression": "[83466:83949](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 83467,
+              "end_1based": 83949,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp063",
+          "gene_label": "rps19",
+          "protein_id": "NP_051098.1",
+          "decoded_location_expression": "[84004:84283](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 84005,
+              "end_1based": 84283,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "30S ribosomal protein S19"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp064",
+          "gene_label": "rpl2",
+          "protein_id": "NP_051099.1",
+          "decoded_location_expression": "join{[85453:85843](-), [84336:84771](-)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 85454,
+              "end_1based": 85843,
+              "strand": -1
+            },
+            {
+              "start_1based": 84337,
+              "end_1based": 84771,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "50S ribosomal protein L2"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp065",
+          "gene_label": "rpl23",
+          "protein_id": "NP_051100.1",
+          "decoded_location_expression": "[85861:86143](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 85862,
+              "end_1based": 86143,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "50S ribosomal protein L23"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp066",
+          "gene_label": "ycf2",
+          "protein_id": "NP_051101.1",
+          "decoded_location_expression": "[86473:93358](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 86474,
+              "end_1based": 93358,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "hypothetical protein RF2"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp068",
+          "gene_label": "ndhB",
+          "protein_id": "NP_051103.2",
+          "decoded_location_expression": "join{[96387:97164](-), [94940:95702](-)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 96388,
+              "end_1based": 97164,
+              "strand": -1
+            },
+            {
+              "start_1based": 94941,
+              "end_1based": 95702,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp069",
+          "gene_label": "rps7",
+          "protein_id": "NP_051104.1",
+          "decoded_location_expression": "[97477:97945](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 97478,
+              "end_1based": 97945,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "30S ribosomal protein S7"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp070",
+          "gene_label": "ycf1",
+          "protein_id": "NP_051105.1",
+          "decoded_location_expression": "[109404:110436](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 109405,
+              "end_1based": 110436,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp071",
+          "gene_label": "ndhF",
+          "protein_id": "NP_051106.1",
+          "decoded_location_expression": "[110397:112638](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 110398,
+              "end_1based": 112638,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp072",
+          "gene_label": "rpl32",
+          "protein_id": "NP_051107.1",
+          "decoded_location_expression": "[113448:113607](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 113449,
+              "end_1based": 113607,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp073",
+          "gene_label": "ccsA",
+          "protein_id": "NP_051108.1",
+          "decoded_location_expression": "[114460:115447](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 114461,
+              "end_1based": 115447,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp074",
+          "gene_label": "ndhD",
+          "protein_id": "NP_051109.2",
+          "decoded_location_expression": "[115664:117167](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 115665,
+              "end_1based": 117167,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp075",
+          "gene_label": "psaC",
+          "protein_id": "NP_051110.1",
+          "decoded_location_expression": "[117317:117563](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 117318,
+              "end_1based": 117563,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "photosystem I iron-sulfur center; 9 kDa protein"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp076",
+          "gene_label": "ndhE",
+          "protein_id": "NP_051111.1",
+          "decoded_location_expression": "[117803:118109](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 117804,
+              "end_1based": 118109,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp077",
+          "gene_label": "ndhG",
+          "protein_id": "NP_051112.1",
+          "decoded_location_expression": "[118376:118907](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 118377,
+              "end_1based": 118907,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp078",
+          "gene_label": "ndhI",
+          "protein_id": "NP_051113.1",
+          "decoded_location_expression": "[119243:119762](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 119244,
+              "end_1based": 119762,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "NADH dehydrogenase 18 kDa subunit"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp079",
+          "gene_label": "ndhA",
+          "protein_id": "NP_051114.1",
+          "decoded_location_expression": "join{[121456:122009](-), [119846:120376](-)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 121457,
+              "end_1based": 122009,
+              "strand": -1
+            },
+            {
+              "start_1based": 119847,
+              "end_1based": 120376,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp080",
+          "gene_label": "ndhH",
+          "protein_id": "NP_051115.1",
+          "decoded_location_expression": "[122010:123192](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 122011,
+              "end_1based": 123192,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "NADH dehydrogenase 49 kDa subunit"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp081",
+          "gene_label": "rps15",
+          "protein_id": "NP_051116.1",
+          "decoded_location_expression": "[123295:123562](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 123296,
+              "end_1based": 123562,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "Arthcp087",
+          "gene_label": "ycf1",
+          "protein_id": "NP_051117.1",
+          "decoded_location_expression": "[123883:129244](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 123884,
+              "end_1based": 129244,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp088",
+          "gene_label": "rps7",
+          "protein_id": "NP_051118.1",
+          "decoded_location_expression": "[140703:141171](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 140704,
+              "end_1based": 141171,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "30S ribosomal protein S7"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp086",
+          "gene_label": "ndhB",
+          "protein_id": "NP_051119.2",
+          "decoded_location_expression": "join{[141484:142261](+), [142946:143708](+)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 141485,
+              "end_1based": 142261,
+              "strand": 1
+            },
+            {
+              "start_1based": 142947,
+              "end_1based": 143708,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp083",
+          "gene_label": "ycf2",
+          "protein_id": "NP_051121.1",
+          "decoded_location_expression": "[145290:152175](-)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 145291,
+              "end_1based": 152175,
+              "strand": -1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "hypothetical protein RF2"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp084",
+          "gene_label": "rpl23",
+          "protein_id": "NP_051122.1",
+          "decoded_location_expression": "[152505:152787](+)",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 152506,
+              "end_1based": 152787,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "50S ribosomal protein L23"
+          ],
+          "pseudo_qualifier_present": false
+        },
+        {
+          "locus_tag": "ArthCp085",
+          "gene_label": "rpl2",
+          "protein_id": "NP_051123.1",
+          "decoded_location_expression": "join{[152805:153195](+), [153877:154312](+)}",
+          "trans_splicing_qualifier_present": false,
+          "source_location_segments": [
+            {
+              "start_1based": 152806,
+              "end_1based": 153195,
+              "strand": 1
+            },
+            {
+              "start_1based": 153878,
+              "end_1based": 154312,
+              "strand": 1
+            }
+          ],
+          "translation_present": true,
+          "annotation_note": [
+            "50S ribosomal protein L2"
+          ],
+          "pseudo_qualifier_present": false
+        }
+      ],
+      "annotated_translations": [
+        "MPTIKQLIRNTRQPIRNVTKSPALRGCPQRRGTCTRVYTITPKKPNSALRKVARVRLTSGFEITAYIPGIGHNLQEHSVVLVRGGRVKDLPGVRYHIVRGTLDAVGVKDRQQGRSKYGVKKPK",
+        "MTAILERRESESLWGRFCNWITSTENRLYIGWFGVLMIPTLLTATSVFIIAFIAAPPVDIDGIREPVSGSLLYGNNIISGAIIPTSAAIGLHFYPIWEAASVDEWLYNGGPYELIVLHFLLGVACYMGREWELSFRLGMRPWIAVAYSAPVAAATAVFLIYPIGQGSFSDGMPLGISGTFNFMIVFQAEHNILMHPFHMLGVAGVFGGSLFSAMHGSLVTSSLIRETTENESANEGYRFGQEEETYNIVAAHGYFGRLIFQYASFNNSRSLHFFLAAWPVVGIWFTALGISTMAFNLNGFNFNQSVVDSQGRVINTWADIINRANLGMEVMHERNAHNFPLDLAAVEAPSTNG",
+        "MDKFQGYLEFDGARQQSFLYPLFFREYIYVLAYDHGLNRLNRNRYIFLENADYDKKYSSLITKRLILRMYEQNRLIIPTKDVNQNSFLGHTSLFYYQMISVLFAVIVEIPFSLRLGSSFQGKQLKKSYNLQSIHSIFPFLEDKLGHFNYVLDVLIPYPIHLEILVQTLRYRVKDASSLHFFRFCLYEYCNWKNFYIKKKSILNPRFFLFLYNSHVCEYESIFFFLRKRSSHLRSTSYEVLFERIVFYGKIHHFFKVFVNNFPAILGLLKDPFIHYVRYHGRCILATKDTPLLMNKWKYYFVNLWQCYFSVWFQSQKVNINQLSKDNLEFLGYLSSLRLNPLVVRSQMLENSFLIDNVRIKLDSKIPISSIIGSLAKDKFCNVLGHPISKATWTDSSDSDILNRFVRICRNISHYYSGSSKKKNLYRIKYILRLCCVKTLARKHKSTVRTFLKRLGSGLLEEFLTGEDQVLSLIFPRSYYASKRLYRVRIWYLDILYLNDLVNHE",
+        "MVKLRLKRCGRKQRAVYRILAIDVRYRREGRDLSKVGFYDPITNQTFLNLSAILDFLKKGAQPTRTAHDISKKAGIFTE",
+        "MLNIFNLICIFFNSTLFSSTFLVAKLPEAYAFLNPIVDVMPVIPLFFLLLAFVWQAAVSFR",
+        "MLTLKLFVYTVVIFFVSLFIFGFLSNDPGRNPGREE",
+        "MVTIRADEISNIIRERIEQYNREVTIVNTGTVLQVGDGIARIYGLDEVMAGELVEFEEGTIGIALNLESNNVGVVLMGDGLMIQEGSSVKATGKIAQIPVSEAYLGRVINALANPIDGRGKISASESRLIESPAPGIISRRSVYEPLQTGLIAIDSMIPIGRGQRELIIGDRQTGKTAVATDTILNQQGQNVICVYVAIGQKASSVAQVVTSLQERGAMEYTIVVAETADSPATLQYLAPYTGAALAEYFMYREQHTLIIYDDLSKQAQAYRQMSLLLRRPPGREAYPGDVFYLHSRLLERAAKLSSQLGEGSMTALPIVETQSGDVSAYIPTNVISITDGQIFLSADLFNAGIRPAINVGISVSRVGSAAQIKAMKQVAGKLKLELAQFAELEAFSQFSSDLDKATQNQLARGQRLRELLKQSQSAPLTVEEQIMTIYTGTNGYLDGLEIGQVRKFLVQLRTYLKTNKPQFQEIIASTKTLTAEAESFLKEGIQEQLERFLLQEKV",
+        "MKNLTDSFVYLGHWPSAGSFGFNTDILATNPINLSVVFGVLIFFGKGVLNDLLDNRKQRILNTIRNSEELREGAIQQLENARARLRNVETEADKFRVNGYSEIEREKLNLINSTYKTLKQLENYKNETILFEQQRTINQVRERVFQQALQGAIGTLNSCLSNELHLRTINANIGMFGTMKEITD",
+        "MNPLVSAASVIAAGLAVGLASIGPGVGQGTAAGQAVEGIARQPEAEGKIRGTLLLSLAFMEALTIYGLVVALALLFANPFV",
+        "MNVLSCSINTLIKEGLYEISGVEVGQHFYWQIGGFQVHAQVLITSWVVIAILLGSAVLAIRNPQTIPTDGQNFFEFVLEFIRDVSKTQIGEEYGPWVPFIGTLFLFIFVSNWSGALLPWKIIQLPQGELAAPTNDINTTVALALLTSVAYFYAGLSKKGLGYFSKYIQPTPILLPINILEDFTKPLSLSFRLFGNILADELVVVVLVSLVPLVVPIPVMFLGLFTSGIQALIFATLAAAYIGESMEGHH",
+        "MTKRYWNIDLEEMMRAGVHFGHGTRKWNPRMAPYISAKRKGIHIINLTRTARFLSEACDLVFDAASRGKQFLIVGTKNKAADLVSRAAIRARCHYVNKKWLGGMLTNWSTTEKRLHKFRDLRTEQKTEGFNRLPKRDAAVLKRQLSRLETYLGGIKYMTGLPDIVIILDQQEEYTALRECITLGIPTISLIDTNCNPDLADISIPANDDAIASIRFILNKLVFAICEGRSSYIQNS",
+        "MAERANLVFHNKVIDGTAIKRLISRLIDHFGMAYTSHILDQVKTLGFQQATATSISLGIDDLLTIPSKGWLVQDAEQQSWILEKHHHYGNVHAVEKLRQSIEIWYATSEYLRQEMNPNFRMTDPFNPVHMMSFSGARGNASQVHQLVGMRGLMSDPQGQMIDLPIQSNLREGLSLTEYIISCYGARKGVVDTAVRTSDAGYLTRRLVEVVQHIVVRRTDCGTIRGISVSPRNKNRMMSERIFIQTLIGRVLADDIYIGSRCVAFRNQDLGIGLVNRLITFGTQSISIRTPFTCRSTSWICRLCYGRSPTHGDLVELGEAVGIIAGQSIGEPGTQLTLRTFHTGGVFTGGTAEHVRAPYNGKIKFNEDLVHPTRTRHGHPAFLCYIDLSVIIESEDIIHSVTIPPKSFLLVQNDQYVESEQVIAEIREGTYTFHFKERVRKYIYSDSEGEMHWSTDVSHAPEFTYSNVHLLPKTSHLWILSGGSCGSSLIRFSIHKDQDQMNIPFLSAERKSISSLSVNNDQVSQKFFSSDFADPKKLGIYDYSELNGNLGTSHYNLIYSAIFHENSDLLAKRRRNRFLIPFQSIQEQEKEFIPQSGISVEIPINGIFRRNSIFAFFDDPRYRRKSSGILKYGTLKADSIIQKEDMIEYRGVQKIKTKYEMKVDRFFFIPEEVHILPESSAIMVQNYSIIGVDTRLTLNIRSQVGGLIRVEKKKKRIELKIFSGDIHFPDKTDKISRHSGILIPPGRGKKNSKESKKFKNWIYVQRITPTKKKFFVLVRPVATYEIADSINLATLFPQDLFREKDNIQLRVFNYILYGNGKPTRGISDTSIQLVRTCLVLNWDKNSSLEEVRAFFVEVSTKGLIQDFIRIGLVKSHISYIRKRNNSPDSGLISADHMNPFYSISPKSGILQQSLRQNHGTIRMFLNRNKESQSLLILSSSNCFRMGPFNHVKHHNVINQSIKKNTLITIKNSSGPLGTATPISNFYSFLPLLTYNQISLIKYFQLDNLKYIFQKINSYLIDENGIILNLDPYSNVVLNPFKLNWYFLHQNYHHNYCEETSTIISLGQFFCENVCIAKKEPHLKSGQVLIVQRDSAVIRSAKPYLATPGAKVHGHYSEILYEGDTLVTFIYEKSRSGDITQGLPKVEQVLEVRSIDSISLNLEKRIKGWNKCITRILGIPWGFLIGAELTIVQSRISLVNKIQKVYRSQGVQIHNRHIEIIVRQITSKVLVSEEGMSNVFLPGELIGLLRAERTGRALEEAICYRAVLLGITRASLNTQSFISEASFQETARVLAKAALRGRIDWLKGLKENVVLGGVIPAGTGFNKGLVHCSRQHTNIILEKKTKNLALFEGDMRDILFYHREFCDSSISKSDFSRI",
+        "MIDRYKHQQLRIGLVSPQQISAWATKIIPNGEIVGEVTKPYTFHYKTNKPEKDGLFCERIFGPIKSGICACGNYRVIGDEKEDPKFCEQCGVEFVDSRIRRYQMGYIKLTCPVTHVWYLKRLPSYIANLLDKPLKELEGLVYCDFSFARPITKKPTFLRLRGSFEYEIQSWKYSIPLFFTTQGFDIFRNREISTGAGAIREQLADLDLRIIIENSLVEWKQLGEEGPTGNEWEDRKIVRRKDFLVRRMELAKHFIRTNIEPEWMVLCLLPVLPPELRPIIQIEGGKLMSSDINELYRRVIYRNNTLTDLLTTSRSTPGELVMCQEKLVQEAVDTLLDNGIRGQPMRDGHNKVYKSFSDVIEGKEGRFRETLLGKRVDYSGRSVIVVGPSLSLHRCGLPREIAIELFQTFVIRGLIRQHLASNIGVAKSQIREKKPIVWEILQEVMQGHPVLLNRAPTLHRLGIQSFQPILVEGRTICLHPLVCKGFNADFDGDQMAVHVPLSLEAQAEARLLMFSHMNLLSPAIGDPISVPTQDMLIGLYVLTSGTRRGICANRYNPCNRKNYQNERIYETNYKYTKEPFFCNSYDAIGAYRQKKINLDSPLWLRWQLDQRVIASREVPIEVHYESFGNYHEIYAHYLIVRSVKKENFCIYIRTTVGHISFYREIEEAIQGFSQACSYDT",
+        "MLGDEKEGTSAIPGFNQIQFEGFYRFIDQGLIEELAKFPKIEDIDHEIEFQLFVETYQLVEPLIKERDAVYESLTYSSELYVSAGLIWKTSRNMQEQRIFIGNIPLMNSLGTSIVNGIYRIVINQILQSPGIYYQSELDHNGISVYTGTIISDWGGRLELEIDKKARIWARVSRKQKISILVLSSAMGLNLREILENVCYPEIFLSFLTDKEKKKIGSKENAILEFYQQFSCVGGDPIFSESLCKELQKKFFHQRCELGRIGRRNINWRLNLNIPQNNIFLLPRDVLAAADHLIGMKFGMGTLDDMNHLKNKRIRSVADLLQDQLGLALARLENVVKGTISGAIRHKLIPTPQNLVTSTPLTTTYESFFGLHPLSQVLDRTNPLTQIVHGRKLSYLGPGGLTGRTANFRIRDIHPSHYGRICPIDTSEGINVGLIGSLSIHARIGDWGSLESPFYELFEKSKKARIRMLFLSPSQDEYYMIAAGNSLALNRGIQEEQAVPARYRQEFLTIAWEEVHLRSIFPFQYFSIGASLIPFIEHNDANRALMSSNMQRQAVPLSRSEKCIVGTGLERQVALDSGVPAIAEHEGKILYTDTEKIVFSGNGDTLSIPLIMYQRSNKNTCMHQKPQVRRGKCIKKGQILADGAATVGGELALGKNILVAYMPWEGYNFEDAVLISECLVYGDIYTSFHIRKYEIQTHVTTQGPERITKEIPHLEGRLLRNLDKNGIVMLGSWVETGDILVGKLTPQVAKESSYAPEDRLLRAILGIQVSTSKETCLKLPIGGRGRVIDVRWVQKKGGSSYNPEIIRVYISQKREIKVGDKVAGRHGNKGIISKILPRQDMPYLQDGRPVDMVFNPLGVPSRMNVGQIFECSLGLAGSLLDRHYRIAPFDERYEQEASRKLVFSELYEASKQTANPWVFEPEYPGKSRIFDGRTGDPFEQPVIIGKPYILKLIHQVDDKIHGRSSGHYALVTQQPLRGRSKQGGQRVGEMEVWALEGFGVAHILQEMLTYKSDHIRARQEVLGTTIIGGTIPKPEDAPESFRLLVRELRSLALELNHFLVSEKNFQINRKEV",
+        "MDIVSLAWAALMVVFTFSLSLVVWGRSGL",
+        "MEVNILAFIATALFILVPTAFLLIIYVKTVSQND",
+        "MTIALGKFTKDEKDLFDIMDDWLRRDRFVFVGWSGLLLFPCAYFALGGWFTGTTFVTSWYTHGLASSYLEGCNFLTAAVSTPANSLAHSLLLLWGPEAQGDFTRWCQLGGLWAFVALHGAFALIGFMLRQFELARSVQLRPYNAIAFSGPIAVFVSVFLIYPLGQSGWFFAPSFGVAAIFRFILFFQGFHNWTLNPFHMMGVAGVLGAALLCAIHGATVENTLFEDGDGANTFRAFNPTQAEETYSMVTANRFWSQIFGVAFSNKRWLHFFMLFVPVTGLWMSALGVVGLALNLRAYDFVSQEIRAAEDPEFETFYTKNILLNEGIRAWMAAQDQPHENLIFPEEVLPRGNAL",
+        "MKTLYSLRRFYHVETLFNGTLALAGRDQETTGFAWWAGNARLINLSGKLLGAHVAHAGLIVFWAGAMNLFEVAHFVPEKPMYEQGLILLPHLATLGWGVGPGGEVIDTFPYFVSGVLHLISSAVLGFGGIYHALLGPETLEESFPFFGYVWKDRNKMTTILGIHLILLGVGAFLLVFKALYFGGVYDTWAPGGGDVRKITNLTLSPSVIFGYLLKSPFGGEGWIVSVDDLEDIIGGHVWLGSICIFGGIWHILTKPFAWARRALVWSGEAYLSYSLAALSVCGFIACCFVWFNNTAYPSEFYGPTGPEASQAQAFTFLVRDQRLGANVGSAQGPTGLGKYLMRSPTGEVIFGGETMRFWDLRAPWLEPLRGPNGLDLSRLKKDIQPWQERRSAEYMTHAPLGSLNSVGGVATEINAVNYVSPRSWLSTSHFVLGFFLFVGHLWHAGRARAAAAGFEKGIDRDFEPVLSMTPLN",
+        "MTIAFQLAVFALIITSSILLISVPVVFASPDGWSSNKNVVFSGTSLWIGLVFLVGILNSLIS",
+        "MAKKSLIYREKKRQKLEKKYHLIRRSSKKEISKIPSLSEKWKIHGKLQSPPRNSAPTRLHRRCFSTGRPRANYRDFGLSGHILREMVQACLLPGATRSSW",
+        "MALRFPRFSQGLAQDPTTRRIWFGIATAHDFESHDDITEERLYQNIFASHFGQLAIIFLWTSGNLFHVAWQGNFETWVQDPLHVRPIAHAIWDPHFGQPAVEAFTRGGALGPVNIAYSGVYQWWYTIGLRTNEDLYTGALFLLFLSALSLIGGWLHLQPKWKPRVSWFKNAESRLNHHLSGLFGVSSLAWTGHLVHVAIPASRGEYVRWNNFLNVLPHPQGLGPLFTGQWNLYAQNPDSSSHLFGTSQGSGTAILTLLGGFHPQTQSLWLTDMAHHHLAIAILFLIAGHMYRTNFGIGHSIKDLLEAHIPPGGRLGRGHKGLYDTINNSIHFQLGLALASLGVITSLVAQHMYSLPAYAFIAQDFTTQAALYTHHQYIAGFIMTGAFAHGAIFFIRDYNPEQNEDNVLARMLDHKEAIISHLSWASLFLGFHTLGLYVHNDVMLAFGTPEKQILIEPIFAQWIQSAHGKTSYGFDVLLSSTSGPAFNAGRSIWLPGWLNAINENSNSLFLTIGPGDFLVHHAIALGLHTTTLILVKGALDARGSKLMPDKKDFGYSFPCDGPGRGGTCDISAWDAFYLAVFWMLNTIGWVTFYWHWKHITLWQGNVSQFNESSTYLMGWLRDYLWLNSSQLINGYNPFGMNSLSVWAWMFLFGHLVWATGFMFLISWRGYWQELIETLAWAHERTPLANLIRWKDKPVALSIVQARLVGLAHFSVGYIFTYAAFLIASTSGKFG",
+        "MIIRSPEPEVKILVDRDPIKTSFEEWAKPGHFSRTIAKGPDTTTWIWNLHADAHDFDSHTSDLEEISRKVFSAHFGQLSIIFLWLSGMYFHGARFSNYEAWLSDPTHIGPSAQVVWPIVGQEILNGDVGGGFRGIQITSGFFQIWRASGITSELQLYCTAIGALVFAALMLFAGWFHYHKAAPKLAWFQDVESMLNHHLAGLLGLGSLSWAGHQVHVSLPINQFLNAGVDPKEIPLPHEFILNRDLLAQLYPSFAEGATPFFTLNWSKYSEFLTFRGGLDPVTGGLWLTDIAHHHLAIAILFLIAGHMYRTNWGIGHGIKDILEAHKGPFTGQGHKGLYEILTTSWHAQLSLNLAMLGSLTIIVAHHMYSMPPYPYLATDYATQLSLFTHHMWIGGFLIVGAAAHAAIFMVRDYDPTNRYNDLLDRVLRHRDAIISHLNWVCIFLGFHSFGLYIHNDTMSALGRPQDMFSDTAIQLQPVFAQWIQNTHALAPGVTAPGETASTSLTWGGGELVAVGGKVALLPIPLGTADFLVHHIHAFTIHVTVLILLKGVLFARSSRLIPDKANLGFRFPCDGPGRGGTCQVSAWDHVFLGLFWMYNAISVVIFHFSWKMQSDVWGSISDQGVVTHITGGNFAQSSITINGWLRDFLWAQASQVIQSYGSSLSAYGLFFLGAHFVWAFSLMFLFSGRGYWQELIESIVWAHNKLKVAPATQPRALSIIQGRAVGVTHYLLGGIATTWAFFLARIIAVG",
+        "MPRSRINGNFIDKTFTIVADILLRVIPTTSGEKEAFTYYRDGMSAQSEGNYAEALQNYYEAMRLEIDPYDRSYILYNIGLIHTSNGEHTKALEYYFRALERNPFLPQAFNNMAVICHYRGEQAIQQGDSEMAEAWFAQAAEYWKQAITLTPGNYIEAQNWLTITRRFE",
+        "MSRYRGPRFKKIRRLGALPGLTSKRPKAGSDLRNQSRSVKKSQYRIRLEEKQKLRFHYGLTEHQLLKYVRIAGKAKGSTGQVLLQLLEMRLDNILFRLGMALTIPQARQLVNHGHILVNGRIVDIPSYRCKPRDIITVKDEQNSRTLVQNLLDSSAPEELPNHLTLHTFQYEGLVNQIIDRKCVGLKINELLVVEYYSRQT",
+        "MQGTLSVWLAKRGLVHRSLGFDYQGIETLQIKPEDWHSIAVILYVYGYNYLRSQCAYDVAPGGLLASVYHLTRIEYGVNQAEEVCIKVFTHRSNPRIPSVFWVWKSTDFQERESYDMLGITYDSHPRLKRILMPESWIGWPLRKDYIAPNFYEIQDAY",
+        "MNSIKFPILDRTTKNSVISTTLNDLSNWSRLSSLWPLLYGTSCCFIEFASLIGSRFDFDRYGLVPRSSPRQADLILTAGTVTMKMAPSLVRLYEQMPEPKYVIAMGACTITGGMFSTDSYSTVRGVDKLIPVDVYLPGCPPKPEAVIDAITKLRKKIAREIYKDRIRPQQGNRCFTTNHKFFVVRSPHIGNYDQELLYPPSSTSEISTETFFKYKSPVSSHELVN",
+        "MFLLYEYDIFWAFLLISSAIPVLAFLISGVLSPIRKGPEKLSSYESGIEPIGDAWLQFRIRYYMFALVFVVFDVETVFLYPWAMSFDVLGVSAFIEAFIFVLILILGLVYAWRKGALEWS",
+        "MTLNLCVLTPNRIVWDSEVKEIILSTNSGQIGVLANHAPIATAVDIGILKIRLANQWLTMALMGGFARIGNNEITILVNDAEKNSDIDPQEAQQTLEIAEANLRKAEGKRQTIEANLALRRARTRVEALNTI",
+        "MRTNPTTSNPEVSIREKKNLGRIAQIIGPVLDVAFPPGKMPNIYNALVVKGRDTLGQEINVTCEVQQLLGNNRVRAVAMSATEGLKRGMDVVDMGNPLSVPVGGATLGRIFNVLGEPVDNLGPVDTRTTSPIHKSAPAFIELDTKLSIFETGIKVVDLLAPYRRGGKIGLFGGAGVGKTVLIMELINNIAKAHGGVSVFGGVGERTREGNDLYMEMKESGVINEQNLAESKVALVYGQMNEPPGARMRVGLTALTMAEYFRDVNEQDVLLFIDNIFRFVQAGSEVSALLGRMPSAVGYQPTLSTEMGTLQERITSTKKGSITSIQAVYVPADDLTDPAPATTFAHLDATTVLSRGLAAKGIYPAVDPLDSTSTMLQPRIVGEEHYETAQQVKQTLQRYKELQDIIAILGLDELSEEDRLTVARARKIERFLSQPFFVAEVFTGSPGKYVGLAETIRGFNLILSGEFDSLPEQAFYLVGNIDEATAKATNLEMESKLKK",
+        "MSPQTETKASVGFKAGVKEYKLTYYTPEYETKDTDILAAFRVTPQPGVPPEEAGAAVAAESSTGTWTTVWTDGLTSLDRYKGRCYHIEPVPGEETQFIAYVAYPLDLFEEGSVTNMFTSIVGNVFGFKALAALRLEDLRIPPAYTKTFQGPPHGIQVERDKLNKYGRPLLGCTIKPKLGLSAKNYGRAVYECLRGGLDFTKDDENVNSQPFMRWRDRFLFCAEAIYKSQAETGEIKGHYLNATAGTCEEMIKRAVFARELGVPIVMHDYLTGGFTANTSLSHYCRDNGLLLHIHRAMHAVIDRQKNHGMHFRVLAKALRLSGGDHIHAGTVVGKLEGDRESTLGFVDLLRDDYVEKDRSRGIFFTQDWVSLPGVLPVASGGIHVWHMPALTEIFGDDSVLQFGGGTLGHPWGNAPGAVANRVALEACVQARNEGRDLAVEGNEIIREACKWSPELAAACEVWKEITFNFPTIDKLDGQE",
+        "MEKSWFNFMFSKGELEYRGELSKAMDSFAPGEKTTISQDRFIYDMDKNFYGWDERSSYSSSYSNNVDLLVSSKDIRNFISDDTFFVRDSNKNSYSIFFDKKKKIFEIDNDFSDLEKFFYSYCSSSYLNNRSKGDNDLHYDPYIKDTKYNCTNHINSCIDSYFRSYICIDNNFLIDSNNFNESYIYNFICSESGKIRESKNYKIRTNRNRSNLISSKDFDITQNYNQLWIQCDNCYGLMYKKVKMNVCEQCGHYLKMSSSERIELSIDPGTWNPMDEDMVSADPIKFHSKEEPYKNRIDSAQKTTGLTDAVQTGTGQLNGIPVALGVMDFRFMGGSMGSVVGEKITRLIEYATNQCLPLILVCSSGGARMQEGSLSLMQMAKISSVLCDYQSSKKLFYISILTSPTTGGVTASFGMLGDIIIAEPYAYIAFAGKRVIEQTLKKAVPEGSQAAESLLRKGLLDAIVPRNLLKGVLSELFQLHAFFPLNTN",
+        "MTTFNNLPSIFVPLVGLVFPAIAMASLFLHIQKNKIF",
+        "MSWRSESIWIEFITGSRKTSNFCWAFILFLGSLGFLLVGTSSYLGRNVISLFPSQQIIFFPQGIVMSFYGIAGLFISCYLWCTILWNVGSGYDLFDRKEGIVRIFRWGFPGKSRRIFLRFFMKDIQSIRIEVKEGVSARRVLYMEIRGQGAIPLIRTDENFTTREIEQKAAELAYFLRVPIEVF",
+        "MAKKKAFIPFFYFLSIVFLPWLISLCCNKSLKTWITNWWNTRQCETFLNDIQEKSFLEKFIQLEELFQLDEMIKEYPETNLQQFRLGIHKETIQFIKIHNEYNIHTILHFSTNLISFVILSGYSFWGKEKLFILNSWVQEFLYNLSDTIKAFSILLLTDLCIGFHSPHGWELMIGYIYKDFGFAHYEQILSGLVSTFPVILDTIFKYWIFRYLNRVSPSLVVIYHAIND",
+        "MQTRNTFSWIREEITRSISVSLIIYIITWASISSAYPIFAQQNYENPREATGRIVCANCHLANKPVDIEVPQTVLPDTVFEAVVKIPYDMQLKQVLANGKKGALNVGAVLILPEGFELAPPDRISPEMKEKIGNLSFQNYRPNKKNILVIGPVPGQKYSEITFPILAPDPATNKDVHFLKYPIYVGGNRGRGQIYPDGSKSNNTVYNATAGGIISKILRKEKGGYEITIVDASNGREVIDIIPRGLELLVSEGESIKLDQPLTSNPNVGGFGQGDAEIVLQDPLRVQGLLFFLGSVVLAQIFLVLKKKQFEKVQLSEMNF",
+        "MADTTGRIPLWVIGTVAGILVIGLIGIFFYGSYSGLGSSL",
+        "MTQSNPNEQSVELNRTSLYWGLLLIFVLAVLFSNYFFN",
+        "MTIDRTYPIFTVRWLAVHGLAVPTVSFLGSISAMQFIQR",
+        "MSGSTGERSFADIITSIRYWVIHSITIPSLFIAGWLFVSTGLAYDVFGSPRPNEYFTESRQGIPLITGRFDPLEQLDEFSRSF",
+        "MPTITSYFGFLLAALTITSVLFIGLSKIRLI",
+        "MIEVFLFGIVLGLIPITLAGLFVTAYLQYRRGDQLDF",
+        "MRDLKTYLSVAPVLSTLWFGSLAGLLIEINRLFPDALTFPFFSF",
+        "MAKGKDVRVTIILECTSCVRNDIKKEAAGISRYITQKNRHNTPSRLELRKFCPYCYKHTIHGEIKK",
+        "MNKSKRLFTKSKRSFRRRLPPIQSGDRIDYRNMSLISRFISEQGKILSRRVNRVTLKQQRLITIAIKQARILSLLPFLNNQKQFERSESTPRTTSLRTRKK",
+        "MTRIKRGYIARRRRTKLRLFASSFRGAHSRLTRTMTQQRIRALVSAHRDRGKRKRDFRRLWITRINAVIHEMGVFYSYNEFIHNLYKKQLLLNRKILAQIALLNRSCLYTISNDIKK",
+        "MPTIKQLIRNTRQPIRNVTKSPALRGCPQRRGTCTRVYTITPKKPNSALRKVARVRLTSGFEITAYIPGIGHNLQEHSVVLVRGGRVKDLPGVRYHIVRGTLDAVGVKDRQQGRSKYGVKKPK",
+        "MPIGVPKVPFRSPGEGDTSWVDIYNRLYRERLFFLGQEVDTEISNQLISLMIYLSIEKDTKDLYLFINSPGGWVISGMAIYDTMQFVRPDVQTICMGLAASIASFILVGGAITKRIAFPHARVMIHQPASSFYEAQTGEFILEAEELLKLRETITRVYVQRTGKPIWVISEDMERDVFMSATEAQAHGIVDLVAVQ",
+        "MGLPWYRVHTVVLNDPGRLLAVHIMHTALVAGWAGSMALYELAVFDPSDPVLDPMWRQGMFVIPFMTRLGITNSWGGWNITGGTITNPGLWSYEGVAGAHIVFSGLCFLAAIWHWVYWDLEIFCDERTGKPSLDLPKIFGIHLFLSGVACFGFGAFHVTGLYGPGIWVSDPYGLTGKVQPVNPAWGVEGFDPFVPGGIASHHIAAGTLGILAGLFHLSVRPPQRLYKGLRMGNIETVLSSSIAAVFFAAFVVAGTMWYGSATTPIELFGPTRYQWDQGYFQQEIYRRVSAGLAENQSLSEAWAKIPEKLAFYDYIGNNPAKGGLFRAGSMDNGDGIAVGWLGHPVFRNKEGRELFVRRMPTFFETFPVVLVDGDGIVRADVPFRRAESKYSVEQVGVTVEFYGGELNGVSYSDPATVKKYARRAQLGEIFELDRATLKSDGVFRSSPRGWFTFGHASFALLFFFGHIWHGARTLFRDVFAGIDPDLDAQVEFGAFQKLGDPTTKRQAV",
+        "MEALVYTFLLVSTLGIIFFAIFFREPPKISTKK",
+        "METATLVAIFISGLLVSFTGYALYTAFGQPSQQLRDPFEEHGD",
+        "MATQTVEDSSRSGPRSTTVGKLLKPLNSEYGKVAPGWGTTPLMGVAMALFAVFLSIILEIYNSSVLLDGISVN",
+        "MSKVYDWFEERLEIQAIADDITSKYVPPHVNIFYCLGGITLTCFLVQVATGFAMTFYYRPTVTEAFASVQYIMTEANFGWLIRSVHRWSASMMVLMMILHVFRVYLTGGFKKPRELTWVTGVVLGVLTASFGVTGYSLPWDQIGYWAVKIVTGVPDAIPVIGSPLVELLRGSASVGQSTLTRFYSLHTFVLPLLTAVFMLMHFLMIRKQGISGPL",
+        "MGVTKKPDLNDPVLRAKLAKGMGHNYYGEPAWPNDLLYIFPVVILGTIACNVGLAVLEPSMIGEPADPFATPLEILPEWYFFPVFQILRTVPNKLLGVLLMVSVPAGLLTVPFLENVNKFQNPFRRPVATTVFLIGTAAALWLGIGATLPIDKSLTLGLF",
+        "MVREKVKVSTRTLQWKCVESKRDSKRLYYGRFILSPLMKGQADTIGIAMRRALLGEIEGTCITRAKSENIPHDYSNIAGIQESVHEILMNLNEIVLRSNLYGTRNALICVQGPGYITARDIILPPAVEIIDNTQHIATLTEPIDLCIELKIERNRGYSLKMSNNFEDRSYPIDAVFMPVENANHSIHSYGNGNEKQEILFLEIWTNGSLTPKEALHQASRNLINLFIPFLHVEEETFYLENNQHQVTLPFFPFHNRLVNLRKKKKTKELAFQYIFIDQLELPPRIYNCLKKSNIHTLLDLLNNSQEDLIKIEHFHVEDVKKILDILEKK",
+        "MAKPILRIGSRKNTRSGSRKNVRRIPKGVIHVQASFNNTIVTVTDVRGRVISWSSAGTCGFRGTRRGTPFAAQTAAGNAIRAVVDQGMQRAEVRIKGPGLGRDAALRAIRRSGILLSFVRDVTPMPHNGCRPPKKRRV",
+        "MKIRASVRKICEKCRLIRRRGRIIVICSNPRHKQRQG",
+        "MGKDTIADIITSIRNADMNRKGTVRIGSTNITESIVKILLREGFIENVRKHRENNQYFLILTLRHRRNKKESYKTILNLKRISRPGLRIYSNSQRIPRILGGIGIVILSTSQGIMTDREARLKRIGGEILCYIW",
+        "MIQPQTYLNVADNSGARELMCIRIIGASNRRYAHIGDVIVAVIKEAIPNTPLERSEVIRAVIVRTCKELKRNNGTIIRYDDNAAVVIDQEGNPKGTRVFGAIPRELRQLNFTKIVSLAPEVL",
+        "MLSPKRTRFRKQHRGRLKGISSRGNRICFGRYALQTLEPAWITSRQIEAGRRAMTRNVRRGGKIWVRIFPDKPVTVRPAETRMGSGKGSPEYWVAVVKPGKILYEMGGVPENIARKAISIAASKMPIKTQFIISE",
+        "MGQKINPLGFRLGTTQSHHSLWFAQPKKYSEGLEEDKKIRDCIKNYVQKNIRISSGMEGIARIEIQKRIDLIQIIIYMGFPKLLIEDKPRRVEELQMNVQKELNCVNRKLNIAITRISNPYGDPNILAEFIAGQLKNRVSFRKAMKKAIELTEQANTKGIQVQIAGRIDGKEIARVEWIREGRVPLQTIEAKIDYCSYTVRTIYGVLGIKIWIFVDEE",
+        "MIKKRKKKSYTEVYALGQYISMSAHKARRVIDQIRGRSYEEALMILELMPYRGCYPIFKLVYSAAANASHNKGFKETNLVISKAEVNQGNTVKKLKPRARGRSYPIKRSTCHITIVLEDISFYQQYEEYLMYLKKPGCSNENRNLTCYDTYSSGGLWDKK",
+        "MTRSLKKNPFVAKHLLRKIEKLNTKAEKEIIITWSRASTIIPTMIGHTIAIHNGREHLPVYIIDLMVGHKLGEFSPTINFRGHAKNDNRSRR",
+        "MAIHLYKTSTPSTRNGAVDSQVKSNPRNNLICGQHHCGKGRNARGIITARHRGGGHKRLYRKIDFRRNAKDIYGRIVTIEYDPNRNAYICLIHYGDGEKRYILHPRGAIIGDTIVSGTEVPIKMGNALPLTDMPLGTAIHNIEITLGRGGQLARAAGAVAKLIAKEGKSATLKLPSGEVRLISKNCSATVGQVGNVGVNQKSLGRAGSKCWLGKRPVVRGVVMNPVDHPHGGGEGRAPIGRKKPVTPWGYPALGRRTRKRKKYSETLILRRRSK",
+        "MDGIKYAVFTDKSIRLLGKNQYTFNVESGSTRTEIKHWVELFFGVKVIAMNSHRLPGKVKRMGPILGHTMHYRRMIITLQPGYSIPPLRKKRT",
+        "MKGHQFKSWIFELREIVREIKNAHYFLDSWTQFNSVGSFIHIFFHQERFRKLLDPRIFSILLLRNSQGSTSNRYFTIKGVVLFVVAALLYRINNRNMVESKNLYLKGLLPIPMNSIGPRNDTSEESFGSCNINRLIVSLLYLTKGKKISESCFRDPKESTWVLPITQKCIMPESNWSSRWWRNWIGKKRGFCCKISNETVAGIDISFKEKDIKYLEFLFVYYMDDPIRKGHDWELFDRLSPSKRRNIINLNSGQLFEILVKDWICYLMFAFREKIPIEVEGFCKQQGAGSTIQSNDIEHVSHLFSRNKWAISLQNCAQFHMWQFHQDLFVSWGKNPHESDFFRKISRENWIWLDNVWLVNKDRFFSKVRNVSSNIQYDSTRSSFVQVTDSSQLNGSSDQFIDPFDSISNEDSEYHYHTLINQREIQQLKERSILLDPSFIQTEGREIESDRFPKYLSGYSSMPRLFTEREKRMNNHLLPEESEEFLGNPTRAIRSFFSDRWSELHLGSNPTERSTRDQKLLKKEQDVSFVPSRRSENKEIVNIFKIITYLQNTVSIHPISSDLGCDMVPKDELDMDSSNKISFLNKNPFFDLFHLFHERKRGGYTLRHESEERFQEMADLFTLSITEPDLVYHKGFAFSIDSYGLDQRQFLKEVFNFRDESKKKSLLVLPPIFYEENESFYRRLRKIWVRISCGNYLEDQKRVVFASNNIMEAVNQYRLIRNMIQIQFQYSPYGYIRNVLNRFFLMKRPDRNFEYGIQRDLIGNDTLNHRTIMKDTINQHLSNLKKSQKKWFDPLIFLSQTERSINRDPNAYRYKWSNGSKNFQEHLEHFVSERKSRFQVVFDQLCINQYSIDWSEVIDKKDLSKSLRFFLSKLLRFFLSKLLLFLSKLLLFLSNSLPFFFVSFENIPIHRSEIHIYELKGPNDQLCNQLLESIGLQIVHLKKLKPFLLDDHNTSQKSKFLINGGTISPFLFNKIPKWMIDSFHTRKNRRKSFDNTDSAYFSIVSHDQDNWLNPVKPFQRSSLISSFSKANRLRFLNNPHHFCFYCNKRFPFYVEKARLNNSDFTFTYGQFLTILFIHNKTFSSCGGKKKHAFLERDTISPSSIESQVSNIFISNDFPQSGDERYNLYKSFHFPIRSDPLVRRAIYSIADISGTPLIEGQRVNFERTYCQTLSDMNLSDSEEKSLHQYLNFNSNMGLIHTPCSEKYLQRKKRSLCLKKCVDKGQMDRTFQRDSAFSTLSKWNLFQTYMPWFFTSTGYKYLNLIFLDTFSDLLRILSSSQKFVSIFHDIMHGLDISWRILQKKLCLPQRNLISEISSKSLHNLLLSEEMIHRNNESSLISTHLRSPNVREVLYSILFLLLVAGYIVRTHLLFVSRAYSELQTEFEKIKSLMIPSYMIELRKLLDRYPTSELNSFWLKNLFLVALEQLGDCLEEIRGSGGNMLWGGDPAYGVKSIRSKKKDLKINFIDIIDLISIIPNPINRITFSRNTRHLSHTSKEIYSLIRKRKNVSGDWIDDKIESWVANSDSIDDKEREFLVQFSTLRAEKRIDQILLSLTHSDHLSKNDSGYQMIEQPGTIYLRYLVDIHKKYLMNYEFNTSCLAERRIFLAHYQTITYSQTSCGANSFHFPSHGKPFSLRLALSPSRSILVIGSIGTGRSYLVKYLATNSYVPFITVFLNKFLDNKPKGFFIDDIDIDDSDDIDASNDIDRELDTELELLTMMNALTMDMMLEIDRFYITLQFELAKAMSPCIIWIPNIHDLDVNESSYLALGLLVNSLSRDCERCSTRNILVIASTHIPQKVDPALIAPNKLNTCIKIRRLLIPQQRKHFFTLSYTRGFHLEKKMFHTNGFESITMGSSARDLVALTNEALSISITQKKSIIDTNTIRSALHRQTWDLRSQVRSVQDHGILFYQIGRAVAQNVLISNCPIDPISIYMKKKSCNEGDSYLYKWYFELGTSMKKFTILLYLLSCSAGSVAQDLWSLPVPDEKNRITSYGFVENDSDLVHGLLEVQGALVGSSRTEKDCSQFDNDRVTLLFRSEPRDPLYMMQDGSCSIVDQRFLYEKYESEFEEGEGEGVLDPQQIEEDLFNHIVWAPRIWRPRGFLFDCIERPNELGFPYSAGSFRGKRIIYDEKYELQENDSEFLQSGTMQYQRRDRSSKEQGFFRISQFIWDPADPLFFLFKDQPFVSVFSHREFFADEEMSKGLLTSQTDPPTSIYKRWFIKNTQEKHFELLIQRQRWLRTNSSLSNGFFRSNTRSESYQYLSNLFISNGTLLDRMTKTLLKKRWLFSDEMKIGFM",
+        "MIWHVQNENFILDSTRIFMKAFHLLLFDGSFIFPECILIFGLILLLMIDSTSDQKDIPWLYFISSTSFVMSITALLFRWREEPMISFSGNFQTNNFNEIFQFLILLCSTLCIPLSVEYIECTEMAITEFLLFILTATLGGMFLCGANDLITIFVAPECFSLCSYLLSGYTKKDIRSNEATMKYLLMGGASSSILVHGFSWLYGSSGGEIELQEIVNGLINTQMYNSPGISIALIFITVGIGFKLSLAPSHQWTPDVYEGSPTPVVAFLSVTSKVAASASATRIFDIPFYFSSNEWHLLLEILAILSMIFGNLIAITQTSMKRMLAYSSIGQIGYVIIGIIVGDSNGGYASMITYMLFYIAMNLGTFACIILFGLRTGTDNIRDYAGLYTKDPFLALSLALCLLSLGGLPPLAGFFGKLHLFWCGWQAGLYFLVSIGLLTSVLSIYYYLKIIKLLMTGRNQEITPHMRNYRISPLRSNNSIELSMIVCVIASTIPGISMNPIIAIAQDTLFSF",
+        "MSRRGTAEEKTAKSDPIYRNRLVNMLVNRILKHGKKSLAYQIIYRALKKIQQKTETNPLSVLRQAIRGVTPDIAVKARRVGGSTHQVPIEIGSTQGKALAIRWLLGASRKRPGRNMAFKLSSELVDAAKGSGDAIRKKEETHRMAEANRAFAHFR",
+        "MMVFQSFILGNLVSLCMKIINSVVVVGLYYGFLTTFSIGPSYLFLLRARVMDEGEEGTEKKVSATTGFIAGQLMMFISIYYAPLHLALGRPHTITVLALPYLLFHFFWNNHKHFFDYGSTTRNEMRNLRIQCVFLNNLIFQLFNHFILPSSMLARLVNIYMFRCNNKMLFVTSSFVGWLIGHILFMKWVGLVLVWIQQNNSIRSNVVIRSNKYKFLVSELRNSMARIFSILLFITCVYYLGRIPSPIFTKKLKGTSETGGTKQDQEVSTEEAPFPSLFSEEGEDLDKIDEMEEIRVNGKDKINKDDEFHVRTYYNYKTVSENLYGNKENSNLEFFKIKKKEDH",
+        "MEHTYQYSWIIPFIPLPVPILLGVGLLLFPTATKNLRRMWTFLSIFLLSIVMIFSIYLSIQQIFLSCIHQNVWSWTINNEFSFEFGYFIDPLTSIMSILITTVGILVLIYSDNYMSHDQGYLRFFAYMGFFNTSMLGLVTSSNLIQVYFFWELVGMCSYLLIGFWFTRPIAANACQKAFVTNRVGDFGLLLGILGLYWITGSFEFQDLFEIFNNLILNNRVNLLFLTLCAFLLFVGPIAKSAQFPLHVWLPDAMEGPTPISALIHAATMVAAGIFLVARLLPLFIVIPSIMYIISLIGIITVLLGATLALAQKDIKRGLAYSTMSQLGYMMLALGMGSYRSALFHLITHAYSKALLFLGSGSIIHSMEAIVGYSPDKSQNMILMGGLTKHVPITKTAFLIGTLSLCGIPPLACFWSKDEILNDSLLFSPIFAIIACSTAGLTAFYMFRIYLLTFEGHLNTYFLNYSGKKSGSFYSLSLWGKEEEKKLNKNFGLVPLLTMNNTKRASFFCNKTYKISNNVRNQIFITVENFGLNTRTFYYPHESDNTILFPMLILVLFTLFIGAIGIPFNQEGIDFDILSKFFTPSINLLHKNSQNFVDWYEFLRNATFSVSIAFFGIFIAYCLYKPFYSSLLNLTLLNSFQKWNSKRIHWEKLINFVYNWSYNRGYIDSFFKTSLIESIRRLAKQTTFFDKRIIDGITNGVGITSFFVGEVTKYIGGSRISSYLFLYLSYVLIFLMILFFFYFEKF",
+        "MAVPKKRTSISKKRIRKKIWKRKGYWTSLKAFSLGKSLSTGNSKSFFVQQNK",
+        "MIFSILEHILTHISFSVVSIVLTIYFLTLLVNLDEIIGFFDSSDKGIIITFFGITGLLLTRWIYSGHFPLSNLYESLIFLSWAFSIIHMVSYFNKKQQNKLNTITAPSVIFIQGFATSGLLNKMPQSAILVPALQSQWLMMHVSMMILGYGALLCGSLLSIALLVITFRKVGPTFWKKNIKKNFLLNELFSFDVLYYINERNSILLQQNINFSFSRNYYRYQLIQQLDFWSFRIISLGFIFLTVGILSGAVWANETWGSYWNWDPKETWAFITWTIFAIYLHIKTNRNVRGINSAIVALIGFILIWICYFGVNLLGIGLHSYGSFTSN",
+        "MNDFPWLTIIVVFPISAGSLMLFLPHRGNKVNKWYTICICILELLLTTYAFCYNFKMDDPLIQLSEDYKWIDFFDFYWRMGIDGLSIGTILLTGFITTLATLAAFPVTRDSRFFHFLMLAMYSGQIGSFSSRDLLLFFIMWELELIPVYLLLSMWGGKKRLYSATKFILYTAGSSIFLLIGVLGISLYGSNEPTLNLELLANKSYPVTLEILFYIGFLIAFAVKSPIIPLHTWLPDTHGEAHYSTCMLLAGILLKMGAYGLVRINMELLPHAHSMFSPWLLVVGTIQIIYAASTSPGQRNLKKRIAYSSVSHMGFIIIGISSITDPGLNGAILQIISHGFIGAALFFLAGTSYDRIRLVYLDEMGGMAISIPKIFTMFTILSMASLALPGMSGFIAEFIVFFGIITSQKYFLISKIFIIFVMAIGMILTPIYLLSMLRQMFYGYKLINIKNFSFFDSGPRELFLSISILLPIIGIGIYPDFVLSLASDKVESILSNYFYG",
+        "MSHSVKIYDTCIGCTQCVRACPTDVLEMIPWDGCKAKQIASAPRTEDCVGCKRCESACPTDFLSVRVYLWHETTRSMGLAY",
+        "MILEHVLVLSAYLFLIGLYGLITSRNMVRALMCLELILNAVNMNFVTFSDFFDNSQLKGEIFCIFVIAIAAAEAAIGLAIVSSIYRNRKSIRINQSTLLNK",
+        "MDLPGPIHDFLLVFLGSGLLVGGLGVVLLPNPIFSAFSLGFVLVCISLLYILSNSHFVAAAQLLIYVGAINVLIIFAVMFMNDSEYSTDFNLWTIGNGITSLVCTTILFLLMSTILDTSWYGVIWTTKLNQILEQDLISNSQQIGIHLSTDFFLPFELISIILLVALIGAISVARQ",
+        "MLPMITGFMNYGQQTLRAARYIGQGFMITLSHTNRLPVTIQYPYEKLITSERFRGRIHFEFDKCIACEVCVRVCPIDLPVVDWKLETNIRKKRLLNYSIDFGICIFCGNCVEYCPTNCLSMTEEYEFSTYDRHELNYNQIALGRLPMSVIDDYTIRTIWNSPQTKNGVNPLI",
+        "MIIYATAVQTINSFVKLESLKEVYGLIWIFVPIFSLVLGIITGVLVIVWLEREISAGIQQRIGPEYAGPLGILQALADGTKLLFKENLRPSRGNTPLFSIGPSIAVISILLSYSVIPFSNHLVLADLNIGIFLWIAISSIAPIGLLMSGYGSNNKYSFLGGLRAAAQSISYEIPLTLCVLSISLLSNSLSTVDIVEAQSKYGFWGWNLWRQPIGFIIFLISSLAECERLPFDLPEAEEELIAGYQTEYSGIKFGLFYVASYLNLLISSLFVTVLYLGGWNISIPYISILELFQRDQIFGTTIGIFITLAKTYLFLFVSIATRWTLPRLRMDQLLNLGWKFLLPISLGNLLLTTSFQLFSL",
+        "MKRPVTGKDLMIVNMGPHHPSMHGVLRLIVTLDGEDVVDCEPILGYLHRGMEKIAENRAIIQYLPYVTRWDYLATMFTEAITVNGPEQLGNIQVPKRASYIRVIMLELSRIASHLLWLGPFMADIGAQTPFFYIFREREFVYDLFEAATGMRMMHNFFRIGGIAADLPYGWIDKCLDFCDYFLTEVVEYQKLITRNPIFLERVEGVGIIGGEEAINWGLSGPMLRASGIPWDLRKIDRYESYDEFEWEIQWQKQGDSLARYLVRLSEMTESIKIIQQALEGLPGGPYENLESRGFDRKRNPEWNDFEYRFISKKPSPTFELSKQELYVRVEAPKGELGIFLIGDQSGFPWRWKIRPPGFINLQILPELVKRMKLADIMTILGSIDIIMGEVDR",
+        "MIKNIVISFEEQKEESRGSVEFQVFSFTNKIRRLTSHLELHRKDYLSQRGLRKILGKRQRLLAYLSKKNRVRYKELINQLNIRELKTR",
+        "MMVFQSFILGNLVSLCMKIINSVVVVGLYYGFLTTFSIGPSYLFLLRARVMDEGEEGTEKKVSATTGFIAGQLMMFISIYYAPLHLALGRPHTITVLALPYLLFHFFWNNHKHFFDYGSTTRNEMRNLRIQCVFLNNLIFQLFNHFILPSSMLARLVNIYMFRCNNKMLFVTSSFVGWLIGHILFMKWVGLVLVWIQQNNSIRSNVVIRSNKYKFLVSELRNSMARIFSILLFITCVYYLGRIPSPIFTKKLKGTSETGGTKQDQEVSTEEAPFPSLFSEEGEDLDKIDEMEEIRVNGKDKINKDDEFHVRTYYNYKTVSENLYGNKENSNLEFFKIKKKEDHFLWFEKPFVTLVFDYKRWNRPNRYIKNDKIENIVRNEMSQYFFYTCQSDGKERISFTYPPNLSTFFEMIQKRIPSFTKEKKTFDQVSTYWSLIHEEKRENLKKEFLNRIEALDKEWSVENILEKTTRFCYNEAKKEYLPKIYDPFLHGISRGRIKKLPPFQIITETYRKNNLGGSWINKIHGLLLKINYKKFEQTIEKFNRKSLSIEKKLSFFSEPQQEEKINSEEEIKTFKFLFDIVRTDSNDQTLIKNFMDFPEINKKVPRWSYKLISELEELEGENEENVPMEPGIRSRKAKRVVVFTDKEPHGEIYTNLKDNQNSDQNDEMALIRYSQQSDFRREIIKGSMRSQRRKTVIWEFFQAKVHSPLFFDRIDKLFFFSFDIWGLKKKIIKNFIWKKKIDKKEEEQSKREETRRIEIAETWDSFLFAQIIRGSLLVTQSILRKYIILPLLIIIKNSVRMLLFQFPEWSQDLKDWKREMHVKCTYNGVQLSETEFPRNWLTDGIQIKILFPFYLKPWHKSKFQASQKARLKKTKDKGEKNDFCFLTVWGMETELPFGSAQRKPSFFEPISKELKKRIKKLKKKSFVVLKIFKERAPIFLKVAKETKNWILKNFIFIKGISKRNLIPLFGPREIYELNEPKKDSIISNQMIHELSVQNKSLEWTNSSLSEKKIKNLIDRKKTIRNQIEEISKEKQNLTNSCTKLRYDSKIIESSKKIWQTFKRKNTRLIRKSIFFFKFCIEQMSIAIFLGIINIPRITTQLFFESTKKILDKYIYKNEENGEKKKNTLYFISTIKNLISNKKKMSYDLCSLSQAYVFYKLSQIKVSNFCKLKAVLEYNICITSFFVKNKIKVFFQEHGIFHYELKNKTFLNSEVNQWKNWLRSQYQYNLPQISWARLVTQNWKNKINKDSLVLNPSLTKEDSYEKKKFDNYKKQKFFEADSLLNPKHNVKKDSIYNLFCYKSIHSTEKNFDMSIGIALDNCLVSSFLEKYNIRGMGEIRHRKYLDWRILNFWFTKKVTIEPWVDTKSKKKYINTKVQNYQKIDKITQTDLANKKRNFFDWMGMNEEILNQRITNFEFFFFPEFFLFSSTYKMKPWVIPIKLLLLNFNENINVNKKIIRKKKGFIPSNEKESLRFYNLNKEEKESAGQVELESDKETKRNPEAARLNQEKNIEENFAESTIKKRKNKKQYKSNTEAELDLFLTRYSRFQLRWNCFFNQKILNNVKVYCLLVRLNNPNEIAVSSIERGEMSLDILMIEKNFTFAKLMKKGILIIEPVRLSVQNDGQLIIYRTIGISLVHKNKHKISKRYKKKSYINKKFFEKSITKYQNKTVNKKKNNYDFFVPEKILSPKRRREFRILICFNLKKKNARDTNSRFDKNIQNLTTVLHKKKDLDLDKDKNNLINLKSFLWPNFKLEDLACMNRYWFNTTNGNHFSMIRIRMYTRFPIP",
+        "MSRRGTAEEKTAKSDPIYRNRLVNMLVNRILKHGKKSLAYQIIYRALKKIQQKTETNPLSVLRQAIRGVTPDIAVKARRVGGSTHQVPIEIGSTQGKALAIRWLLGASRKRPGRNMAFKLSSELVDAAKGSGDAIRKKEETHRMAEANRAFAHFR",
+        "MIWHVQNENFILDSTRIFMKAFHLLLFDGSFIFPECILIFGLILLLMIDSTSDQKDIPWLYFISSTSFVMSITALLFRWREEPMISFSGNFQTNNFNEIFQFLILLCSTLCIPLSVEYIECTEMAITEFLLFILTATLGGMFLCGANDLITIFVAPECFSLCSYLLSGYTKKDIRSNEATMKYLLMGGASSSILVHGFSWLYGSSGGEIELQEIVNGLINTQMYNSPGISIALIFITVGIGFKLSLAPSHQWTPDVYEGSPTPVVAFLSVTSKVAASASATRIFDIPFYFSSNEWHLLLEILAILSMIFGNLIAITQTSMKRMLAYSSIGQIGYVIIGIIVGDSNGGYASMITYMLFYIAMNLGTFACIILFGLRTGTDNIRDYAGLYTKDPFLALSLALCLLSLGGLPPLAGFFGKLHLFWCGWQAGLYFLVSIGLLTSVLSIYYYLKIIKLLMTGRNQEITPHMRNYRISPLRSNNSIELSMIVCVIASTIPGISMNPIIAIAQDTLFSF",
+        "MKGHQFKSWIFELREIVREIKNAHYFLDSWTQFNSVGSFIHIFFHQERFRKLLDPRIFSILLLRNSQGSTSNRYFTIKGVVLFVVAALLYRINNRNMVESKNLYLKGLLPIPMNSIGPRNDTSEESFGSCNINRLIVSLLYLTKGKKISESCFRDPKESTWVLPITQKCIMPESNWSSRWWRNWIGKKRGFCCKISNETVAGIDISFKEKDIKYLEFLFVYYMDDPIRKGHDWELFDRLSPSKRRNIINLNSGQLFEILVKDWICYLMFAFREKIPIEVEGFCKQQGAGSTIQSNDIEHVSHLFSRNKWAISLQNCAQFHMWQFHQDLFVSWGKNPHESDFFRKISRENWIWLDNVWLVNKDRFFSKVRNVSSNIQYDSTRSSFVQVTDSSQLNGSSDQFIDPFDSISNEDSEYHYHTLINQREIQQLKERSILLDPSFIQTEGREIESDRFPKYLSGYSSMPRLFTEREKRMNNHLLPEESEEFLGNPTRAIRSFFSDRWSELHLGSNPTERSTRDQKLLKKEQDVSFVPSRRSENKEIVNIFKIITYLQNTVSIHPISSDLGCDMVPKDELDMDSSNKISFLNKNPFFDLFHLFHERKRGGYTLRHESEERFQEMADLFTLSITEPDLVYHKGFAFSIDSYGLDQRQFLKEVFNFRDESKKKSLLVLPPIFYEENESFYRRLRKIWVRISCGNYLEDQKRVVFASNNIMEAVNQYRLIRNMIQIQFQYSPYGYIRNVLNRFFLMKRPDRNFEYGIQRDLIGNDTLNHRTIMKDTINQHLSNLKKSQKKWFDPLIFLSQTERSINRDPNAYRYKWSNGSKNFQEHLEHFVSERKSRFQVVFDQLCINQYSIDWSEVIDKKDLSKSLRFFLSKLLRFFLSKLLLFLSKLLLFLSNSLPFFFVSFENIPIHRSEIHIYELKGPNDQLCNQLLESIGLQIVHLKKLKPFLLDDHNTSQKSKFLINGGTISPFLFNKIPKWMIDSFHTRKNRRKSFDNTDSAYFSIVSHDQDNWLNPVKPFQRSSLISSFSKANRLRFLNNPHHFCFYCNKRFPFYVEKARLNNSDFTFTYGQFLTILFIHNKTFSSCGGKKKHAFLERDTISPSSIESQVSNIFISNDFPQSGDERYNLYKSFHFPIRSDPLVRRAIYSIADISGTPLIEGQRVNFERTYCQTLSDMNLSDSEEKSLHQYLNFNSNMGLIHTPCSEKYLQRKKRSLCLKKCVDKGQMDRTFQRDSAFSTLSKWNLFQTYMPWFFTSTGYKYLNLIFLDTFSDLLRILSSSQKFVSIFHDIMHGLDISWRILQKKLCLPQRNLISEISSKSLHNLLLSEEMIHRNNESSLISTHLRSPNVREVLYSILFLLLVAGYIVRTHLLFVSRAYSELQTEFEKIKSLMIPSYMIELRKLLDRYPTSELNSFWLKNLFLVALEQLGDCLEEIRGSGGNMLWGGDPAYGVKSIRSKKKDLKINFIDIIDLISIIPNPINRITFSRNTRHLSHTSKEIYSLIRKRKNVSGDWIDDKIESWVANSDSIDDKEREFLVQFSTLRAEKRIDQILLSLTHSDHLSKNDSGYQMIEQPGTIYLRYLVDIHKKYLMNYEFNTSCLAERRIFLAHYQTITYSQTSCGANSFHFPSHGKPFSLRLALSPSRSILVIGSIGTGRSYLVKYLATNSYVPFITVFLNKFLDNKPKGFFIDDIDIDDSDDIDASNDIDRELDTELELLTMMNALTMDMMLEIDRFYITLQFELAKAMSPCIIWIPNIHDLDVNESSYLALGLLVNSLSRDCERCSTRNILVIASTHIPQKVDPALIAPNKLNTCIKIRRLLIPQQRKHFFTLSYTRGFHLEKKMFHTNGFESITMGSSARDLVALTNEALSISITQKKSIIDTNTIRSALHRQTWDLRSQVRSVQDHGILFYQIGRAVAQNVLISNCPIDPISIYMKKKSCNEGDSYLYKWYFELGTSMKKFTILLYLLSCSAGSVAQDLWSLPVPDEKNRITSYGFVENDSDLVHGLLEVQGALVGSSRTEKDCSQFDNDRVTLLFRSEPRDPLYMMQDGSCSIVDQRFLYEKYESEFEEGEGEGVLDPQQIEEDLFNHIVWAPRIWRPRGFLFDCIERPNELGFPYSAGSFRGKRIIYDEKYELQENDSEFLQSGTMQYQRRDRSSKEQGFFRISQFIWDPADPLFFLFKDQPFVSVFSHREFFADEEMSKGLLTSQTDPPTSIYKRWFIKNTQEKHFELLIQRQRWLRTNSSLSNGFFRSNTRSESYQYLSNLFISNGTLLDRMTKTLLKKRWLFSDEMKIGFM",
+        "MDGIKYAVFTDKSIRLLGKNQYTFNVESGSTRTEIKHWVELFFGVKVIAMNSHRLPGKVKRMGPILGHTMHYRRMIITLQPGYSIPPLRKKRT",
+        "MAIHLYKTSTPSTRNGAVDSQVKSNPRNNLICGQHHCGKGRNARGIITARHRGGGHKRLYRKIDFRRNAKDIYGRIVTIEYDPNRNAYICLIHYGDGEKRYILHPRGAIIGDTIVSGTEVPIKMGNALPLTDMPLGTAIHNIEITLGRGGQLARAAGAVAKLIAKEGKSATLKLPSGEVRLISKNCSATVGQVGNVGVNQKSLGRAGSKCWLGKRPVVRGVVMNPVDHPHGGGEGRAPIGRKKPVTPWGYPALGRRTRKRKKYSETLILRRRSK"
+      ],
+      "array_identity_policy": "The two arrays share source GenBank CDS-feature order. Index i identifies the annotation feature and its exact published translation. These are annotation records, not experimentally independent replicates or nonoverlapping genomic loci.",
+      "indexing_policy": "Compare three explicit indexing units: every annotated CDS feature; distinct exact gene qualifier strings; and distinct exact full published translation strings. Use exact whole-sequence identity, not a homology threshold, substring, truncated sequence, gene-name identity or product-name synonym mapping. Report source locus_tag groups for every repeated exact translation; encode each group by lexicographically sorting its locus tags and joining them with |; the order of the resulting group strings is irrelevant. Separately identify gene labels associated with more than one different full translation. Keep every CDS feature and report a missing translation as unassessable rather than inventing a sequence or treating absence of annotation as proof of no protein.",
+      "scientific_scope": "Historical whole-record annotation/indexing audit only. Equal encoded strings do not prove equal functions; repeated annotation features do not automatically establish independent genome copies. A shared exon in a trans-spliced annotation is not a new independent experiment. Original gene names, coordinates and all CDS records are retained without reannotation.",
+      "source_provenance": {
+        "record_accession": "NC_000932.1",
+        "organism": "Arabidopsis thaliana",
+        "record_annotation_date": "03-APR-2023",
+        "raw_genbank_sha256": "a5ad237da710526a1cbd01129ad35ab362ca439adc5656b37319fcfd040e6c73",
+        "record_url": "https://www.ncbi.nlm.nih.gov/nuccore/NC_000932.1",
+        "download_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NC_000932.1&rettype=gbwithparts&retmode=text",
+        "export_transformation": "All original CDS features in original order with exact translation strings and selected decoded gene/protein/locus/location metadata. decoded_location_expression is explicitly BioPython parsed representation, not the original GenBank location literal; source_location_segments give decoded1-based closed coordinates with strand, and trans_splicing_qualifier_present retains that original qualifier flag. No unique counts, clustering, duplicate labels or expected mismatch conclusion appears in public data.",
+        "reuse_policy_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+        "read_scope": "Complete actual source GenBank record and all original CDS qualifiers, not only a filtered collection of short proteins. NCBI molecular-data usage policy; original attribution and third-party rights caveats retained."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

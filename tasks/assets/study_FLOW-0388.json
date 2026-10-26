@@ -1,0 +1,132 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "model_nodes": {
+        "AppOK": {
+          "node_id": "AppOK",
+          "state_ids": [
+            "Correct",
+            "Incorrect_Corrupt"
+          ],
+          "parent_ids": [],
+          "root_probabilities": [
+            0.995,
+            0.005
+          ],
+          "conditional_rows": []
+        },
+        "DataFile": {
+          "node_id": "DataFile",
+          "state_ids": [
+            "Correct",
+            "Incorrect_Corrupt"
+          ],
+          "parent_ids": [],
+          "root_probabilities": [
+            0.995,
+            0.005
+          ],
+          "conditional_rows": []
+        },
+        "AppData": {
+          "node_id": "AppData",
+          "state_ids": [
+            "Correct",
+            "Incorrect_or_corrupt"
+          ],
+          "parent_ids": [
+            "AppOK",
+            "DataFile"
+          ],
+          "root_probabilities": null,
+          "conditional_rows": [
+            {
+              "cpt_row_id": "row_1",
+              "parent_states": {
+                "AppOK": "Correct",
+                "DataFile": "Correct"
+              },
+              "probabilities": [
+                0.9999,
+                0.0001
+              ]
+            },
+            {
+              "cpt_row_id": "row_2",
+              "parent_states": {
+                "AppOK": "Incorrect_Corrupt",
+                "DataFile": "Correct"
+              },
+              "probabilities": [
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "cpt_row_id": "row_3",
+              "parent_states": {
+                "AppOK": "Correct",
+                "DataFile": "Incorrect_Corrupt"
+              },
+              "probabilities": [
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "cpt_row_id": "row_4",
+              "parent_states": {
+                "AppOK": "Incorrect_Corrupt",
+                "DataFile": "Incorrect_Corrupt"
+              },
+              "probabilities": [
+                0.5,
+                0.5
+              ]
+            }
+          ]
+        },
+        "PrtPaper": {
+          "node_id": "PrtPaper",
+          "state_ids": [
+            "Has_Paper",
+            "No_Paper"
+          ],
+          "parent_ids": [],
+          "root_probabilities": [
+            0.98,
+            0.02
+          ],
+          "conditional_rows": []
+        }
+      },
+      "target_node_id": "DataFile",
+      "target_fault_state_id": "Incorrect_Corrupt",
+      "observed_evidence": {
+        "node_id": "AppData",
+        "state_id": "Incorrect_or_corrupt"
+      },
+      "candidate_measurement_ids": [
+        "AppOK",
+        "PrtPaper"
+      ],
+      "selection_policy": "Choose every equal-cost candidate measurement maximizing expected reduction of target-state entropy after the currently observed evidence. Measurements reveal that candidate node state without additional measurement noise; neither candidate is already observed. Ties within1e-10bits include all candidates. Report both prior-information and evidence-conditioned-information values separately. Here information is Shannon mutual information in bits; I(T;M|E=e) sums p(t,m|e)*log2(p(t,m|e)/(p(t|e)*p(m|e))) over states,with zero-mass terms interpreted by their continuous limit. Before evidence,report I(T;M). The expectation is over the possible state of the next measurement,not the single most favorable result.",
+      "model_scope": "Published WIN95PTS Bayesian-network benchmark probabilities for a technical diagnostic model,not newly observed printer trials or calibrated probabilities for a current device. The exported4-node subset is ancestral: all parents of AppData are included and the other3nodes are roots in the original model. All omitted descendants/unrelated nodes marginalize away when no evidence about them is supplied. Edges specify the supplied probabilistic factorization,not a validated real-world causal intervention model. Do not infer current Windows behavior,security weakness or a real-device recommendation.",
+      "source_provenance": {
+        "source_url": "https://www.bnlearn.com/bnrepository/win95pts/win95pts.bif.gz",
+        "archive_sha256": "a4987cf8c09d3aa034504b03ea3e5dc01c57ca20228e2bd79ec9a861c3aef684",
+        "member_sha256": "14d2195e0c4613e0beb1f06e9199c8cd39a1154171a215c38b47c0fd773d0b36",
+        "documentation": "https://www.bnlearn.com/bnrepository/discrete-large.html",
+        "attribution": "WIN95PTS network,as distributed in Marco Scutari Bayesian Network Repository; the repository documents76nodes/112arcs and574parameters. No empirical sample dataset or original network-author identity is invented.",
+        "repository_license_notice": "Repository page states Creative Commons Attribution-ShareAlike3.0 Unported: https://creativecommons.org/licenses/by-sa/3.0/ . Attribution and transformation notice retained for this small selected numerical CPT export; no broader permission claim is made for unrelated repository assets.",
+        "format_export": "Four original node state arrays,original parent lists,all original relevant root priors and all four AppData CPT rows are converted from BIF text without altering any probability. Original row state labels determine mapping; source CPT row order is not silently assumed to be Cartesian order. No marginal posterior,information gain,selection or fabricated observation dataset is exported.",
+        "read_scope": "Complete original BIF inspected for node states,parents and selected CPT normalization; official repository large-network metadata and linkedCCBYSA3.0notice read. This is a conditional-model calculation,not empirical evidence for the expert model."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

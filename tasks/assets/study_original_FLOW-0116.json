@@ -1,0 +1,25 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "times_seconds": [
+    0.0,
+    1.0,
+    2.0,
+    3.0
+  ],
+  "relaxation_modulus_mpa": [
+    4.5,
+    2.651219614496348,
+    1.9966404731708471,
+    1.7789520947627329
+  ],
+  "fixed_relaxation_times_seconds": [
+    1.0,
+    10.0
+  ],
+  "representation": "Fit G(t)=G_equilibrium+sum_j A_j*exp(-t/tau_j) by unweighted least squares over every supplied time. Relaxation times are fixed in the stated order and may not be refitted. This candidate generalized-Maxwell model is admitted only if G_equilibrium>=0 and every A_j>=0, to tolerance1e-10MPa.",
+  "sampling_policy": "Separately report whether every successive supplied G is smaller than its predecessor. Positivity or monotonicity at sampled times alone is not the nonnegative-spectrum criterion. The data are exact controlled values, not noisy observations requiring a significance test.",
+  "scope": "Qualification within the specified nonnegative discrete Maxwell representation. Rejection is not a proof that every conceivable viscoelastic or nonequilibrium model is impossible."
+}

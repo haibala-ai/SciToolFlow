@@ -1,0 +1,26 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "young_angle_interval_degrees": [
+    99.0,
+    101.0
+  ],
+  "observed_apparent_angle_interval_degrees": [
+    142.0,
+    148.0
+  ],
+  "roughness_factor": 1.5,
+  "independent_geometric_solid_fraction_interval": [
+    0.19,
+    0.21
+  ],
+  "models": {
+    "wenzel": "cos(theta_app)=r*cos(theta_Young) for the completely wetted rough surface.",
+    "cassie_baxter": "cos(theta_app)=f_s*(cos(theta_Young)+1)-1 for solid/air composite contact; f_s is projected solid area fraction."
+  },
+  "uncertainty_policy": "Angle intervals are inclusive independent deterministic bounds, not Gaussian standard errors. First bound f_s sharply over both complete angle intervals without applying its separate geometric measurement. A supplied model is compatible only if some choice of all its bounded inputs reproduces the apparent-angle interval and, for Cassie, f_s also lies in the independent geometric interval.",
+  "nominal_angle": "For the separate nominal Wenzel number use theta_Young=100degrees.",
+  "scope": "The two ideal wetting formulas are a finite model screen, not an exhaustive description of pinning, metastability, chemical heterogeneity or all possible surface states. Compatibility alone does not uniquely prove an actual microstructure."
+}

@@ -1,0 +1,176 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "trait_units": {
+        "height_mm": "mm",
+        "shoot_mass_mg": "mg",
+        "root_mass_mg": "mg",
+        "leaf_area_cm2": "cm2",
+        "leaf_count": "count",
+        "chlorophyll_index": "instrument index"
+      },
+      "arm_A_records": [
+        {
+          "block_id": "block-4",
+          "height_mm": 114,
+          "shoot_mass_mg": 25,
+          "root_mass_mg": 14,
+          "leaf_area_cm2": 37,
+          "leaf_count": 12,
+          "chlorophyll_index": 48
+        },
+        {
+          "block_id": "block-5",
+          "height_mm": 118,
+          "shoot_mass_mg": 29,
+          "root_mass_mg": 17,
+          "leaf_area_cm2": 39,
+          "leaf_count": 11,
+          "chlorophyll_index": 51
+        },
+        {
+          "block_id": "block-6",
+          "height_mm": 122,
+          "shoot_mass_mg": 29,
+          "root_mass_mg": 18,
+          "leaf_area_cm2": 39,
+          "leaf_count": 12,
+          "chlorophyll_index": 56
+        },
+        {
+          "block_id": "block-7",
+          "height_mm": 126,
+          "shoot_mass_mg": 33,
+          "root_mass_mg": 17,
+          "leaf_area_cm2": 41,
+          "leaf_count": 13,
+          "chlorophyll_index": 57
+        },
+        {
+          "block_id": "block-8",
+          "height_mm": 120,
+          "shoot_mass_mg": 33,
+          "root_mass_mg": 18,
+          "leaf_area_cm2": 45,
+          "leaf_count": 14,
+          "chlorophyll_index": 62
+        },
+        {
+          "block_id": "block-1",
+          "height_mm": 102,
+          "shoot_mass_mg": 21,
+          "root_mass_mg": 13,
+          "leaf_area_cm2": 31,
+          "leaf_count": 9,
+          "chlorophyll_index": 41
+        },
+        {
+          "block_id": "block-2",
+          "height_mm": 106,
+          "shoot_mass_mg": 21,
+          "root_mass_mg": 14,
+          "leaf_area_cm2": 31,
+          "leaf_count": 10,
+          "chlorophyll_index": 42
+        },
+        {
+          "block_id": "block-3",
+          "height_mm": 110,
+          "shoot_mass_mg": 25,
+          "root_mass_mg": 13,
+          "leaf_area_cm2": 33,
+          "leaf_count": 11,
+          "chlorophyll_index": 47
+        }
+      ],
+      "arm_B_records": [
+        {
+          "block_id": "block-8",
+          "height_mm": 121,
+          "shoot_mass_mg": 34,
+          "root_mass_mg": 19,
+          "leaf_area_cm2": 44,
+          "leaf_count": 15,
+          "chlorophyll_index": 61
+        },
+        {
+          "block_id": "block-7",
+          "height_mm": 118,
+          "shoot_mass_mg": 32,
+          "root_mass_mg": 18,
+          "leaf_area_cm2": 42,
+          "leaf_count": 14,
+          "chlorophyll_index": 58
+        },
+        {
+          "block_id": "block-6",
+          "height_mm": 115,
+          "shoot_mass_mg": 30,
+          "root_mass_mg": 17,
+          "leaf_area_cm2": 40,
+          "leaf_count": 13,
+          "chlorophyll_index": 55
+        },
+        {
+          "block_id": "block-5",
+          "height_mm": 112,
+          "shoot_mass_mg": 28,
+          "root_mass_mg": 16,
+          "leaf_area_cm2": 38,
+          "leaf_count": 12,
+          "chlorophyll_index": 52
+        },
+        {
+          "block_id": "block-4",
+          "height_mm": 109,
+          "shoot_mass_mg": 26,
+          "root_mass_mg": 15,
+          "leaf_area_cm2": 36,
+          "leaf_count": 11,
+          "chlorophyll_index": 49
+        },
+        {
+          "block_id": "block-3",
+          "height_mm": 106,
+          "shoot_mass_mg": 24,
+          "root_mass_mg": 14,
+          "leaf_area_cm2": 34,
+          "leaf_count": 10,
+          "chlorophyll_index": 46
+        },
+        {
+          "block_id": "block-2",
+          "height_mm": 103,
+          "shoot_mass_mg": 22,
+          "root_mass_mg": 13,
+          "leaf_area_cm2": 32,
+          "leaf_count": 9,
+          "chlorophyll_index": 43
+        },
+        {
+          "block_id": "block-1",
+          "height_mm": 100,
+          "shoot_mass_mg": 20,
+          "root_mass_mg": 12,
+          "leaf_area_cm2": 30,
+          "leaf_count": 8,
+          "chlorophyll_index": 40
+        }
+      ],
+      "randomization_design": "There are eight distinct matched blocks,each containing two distinct plants. Within each block a fair independent coin assigns one plant to armA and the other to armB. All six readouts are measured on those same plants;the same within-block label swap therefore changes the signs of ALL six paired differences together. Blocks have independent assignment coins. Rows must be associated by block_id,not table position. No Gaussian error model or independence of readouts is assumed.",
+      "sharp_null": "The global sharp null states that every plant would have the same value of every listed readout under either arm. It supports exact within-block label-swap randomization inference for this finite blocked experiment. A non-rejection is not evidence that all effects are zero,and a global rejection would not establish an effect in every readout.",
+      "statistic_policy": "For readout j let d_ij=armA-armB within block i. Use S_j=(sum_i d_ij)^2/sum_i(d_ij^2),with S_j=0only if the entire difference column is zero. Let M=max_j S_j. For every joint assignment use ONE shared sign per block across all readouts. Marginal two-sided p-values count assignments with S_j at least its observed value;the global p-value counts assignments with M at least observed M. Include ties and the observed assignment. Use exact enumeration,or an explicitly justified complete extreme-assignment certificate;MonteCarlo plus-one corrections and independent marginal histograms do not define this exact joint p-value. A1e-12absolute score tie tolerance may be used solely for floating roundoff.",
+      "significance_level": 0.05,
+      "reporting": "Report minimum_unadjusted_p_value,observed_global_max_score,global_sharp_null_p_value,global_sharp_null_rejected and any_unadjusted_test_rejects. The unadjusted flag describes a diagnostic at the same stated significance level,not a familywise-valid conclusion. Reject when the relevant p-value is at most the supplied level. Numeric answers use1e-8absolute plus1e-7relative accuracy;Booleans are exact. No individual effect direction or population extrapolation is requested.",
+      "provenance": {
+        "kind": "Project-authored controlled blocked-plant readout panel,not observed experiment data or a cultivation protocol.",
+        "original_observation_claim": false,
+        "method_sources": [
+          "https://docs.scipy.org/doc/scipy-1.15.3/reference/generated/scipy.stats.permutation_test.html"
+        ],
+        "method_read_scope": "Official1.15.3 paired sample-label permutation definitions and exact2**nassignments. Project-defined joint max-score/inclusive squared-statistic tails are explicit;not an assertion that the default SciPy two-sided convention is identical."
+      }
+    }
+  ]
+}

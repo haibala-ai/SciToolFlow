@@ -1,0 +1,16 @@
+{
+  "unlabelled_structure_smiles": "CC(=O)C",
+  "observed_13C_count_probabilities": [
+    0.4,
+    0.1,
+    0.1,
+    0.4
+  ],
+  "observation_model": "Only carbon isotope labels vary;all other atom isotopes are fixed. The exact normalized observation is the population probability of K=0,1,2,3heavy13Catoms in one intact molecule,not peak heights requiring ionization correction. Carbon-site labels do not alter connectivity. Obtain the number of carbon sites from the supplied molecular graph.",
+  "candidate_models": "Independent-site model:each carbon is13Cwith probability p,independently within and between molecules. Correlated mixture model:a fraction wof molecules belongs to an all-or-none population(half completely13Cand half completely12C);the remaining1-wbelongs to an independent p=0.5population. These two populations share the same mean number of heavy atoms. All mixture weights lie in[0,1].",
+  "target": "Infer the mean per-site heavy probability from the observed envelope;test whether ANY independent-site pcan reproduce all four probabilities exactly. Under the explicitly restricted correlated mixture model,find w. Also report the pairwise within-molecule carbon-label correlation implied by the exchangeable envelope. It is a correlation between distinct sites,not correlation across molecules or an atom-position assignment.",
+  "scope": "A finite isotope-count distribution audit. A fitted mixture parameter does not uniquely establish an underlying biochemical or chemical labeling mechanism.",
+  "provenance": {
+    "kind": "Explicit controlled analytical/kinetic model;no experimental procedure or empirical parameter claim."
+  }
+}

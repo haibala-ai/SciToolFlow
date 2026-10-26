@@ -1,0 +1,38 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "pair_ids": [
+    "calibration_contact",
+    "validation_contact",
+    "heldout_equal_distance_contact"
+  ],
+  "conformer_order": [
+    "A",
+    "B"
+  ],
+  "distances_angstrom_by_pair": [
+    [
+      2.0,
+      5.0
+    ],
+    [
+      4.0,
+      3.0
+    ],
+    [
+      3.0,
+      3.0
+    ]
+  ],
+  "calibration_NOE_proxy_scale": 100.0,
+  "observed_NOE_proxy_by_pair": [
+    0.47323,
+    0.10334616662379971,
+    0.1371742112482853
+  ],
+  "model": "Controlled two-conformer fast-exchange proxy S_j=scale*[f_A*r_jA^(-6)+(1-f_A)*r_jB^(-6)], with a common unknown equilibrium population f_A in[0,1]. Treat all distances and scale as exact. This explicitly stipulated proxy excludes spin diffusion, correlation-time differences and cross-relaxation sign changes; it is not a general quantitative NOE equation.",
+  "analysis_policy": "Infer f_A from the first contact only. Use the second to check the same inferred population and predict the third without fitting it. Effective distance is (S_first/scale)^(-1/6). No residence times or rate constants are observed.",
+  "scope": "Ensemble geometry and identifiability, without a claim about a named molecule or experimentally validated structure."
+}

@@ -1,0 +1,23 @@
+{
+  "material_id": "mp-204",
+  "controlled_scattering_model": "At Q=0 take real atomic scattering amplitudes f_Ce=58 and f_Fe=26 in electron units,ignore anomalous corrections,thermal motion and all angular structure. Amplitude is the coherent sum of all atoms in the supplied calculation cell;intensity is its square. This controlled electron-count limit is not an experimentally measured finite-Q diffraction pattern.",
+  "export_cards": [
+    {
+      "id": "cell_report",
+      "amplitude_electron_units": 220.0,
+      "intensity_electron_units_squared": 48400.0
+    },
+    {
+      "id": "reduced_formula_report",
+      "amplitude_electron_units": 110.0,
+      "intensity_electron_units_squared": 12100.0
+    },
+    {
+      "id": "incoherent_report",
+      "amplitude_electron_units": 220.0,
+      "intensity_electron_units_squared": 9432.0
+    }
+  ],
+  "request": "Use the published full calculation-cell composition,not only its reduced formula. Return all export cards consistent with both full-cell coherent amplitude and intensity,amplitude per atom,and the factor by which a reduced-formula-unit intensity must be multiplied to report the supplied cell coherently.",
+  "scope": "No finite-Q structure factor,phase identification or experimental intensity calibration is inferred."
+}

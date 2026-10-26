@@ -1,0 +1,17 @@
+{
+  "data": [
+    {
+      "record_id": "comparison",
+      "old_standard_pressure_atm": 1.0,
+      "new_standard_amount_concentration_mol_l": 1.0,
+      "gas_constant_l_atm_mol_k": 0.08205736608096,
+      "gas_constant_cal_mol_k": 1.9872042586408316
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Pressureatm,concentrationmol/L,Renergycal/(molK),entropycal/(molK),chemicalpotentialkcal/mol",
+    "original_observation_claim": false
+  }
+}

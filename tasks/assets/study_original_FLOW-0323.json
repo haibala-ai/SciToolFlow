@@ -1,0 +1,58 @@
+{
+  "reference_entries": [
+    {
+      "id": "P3",
+      "sequence": "ACDKMELK"
+    },
+    {
+      "id": "P1",
+      "sequence": "ACDKMELR"
+    },
+    {
+      "id": "P4",
+      "sequence": "ACDKMQLK"
+    },
+    {
+      "id": "P2",
+      "sequence": "ACDKMQLR"
+    }
+  ],
+  "cleavage": {
+    "enzyme": "trypsin",
+    "missed_cleavages": 0
+  },
+  "available_mass_channels": [
+    {
+      "id": "q03",
+      "neutral_monoisotopic_center_Da": 547.27881768539,
+      "cost": 2
+    },
+    {
+      "id": "q01",
+      "neutral_monoisotopic_center_Da": 435.17876929095,
+      "cost": 1
+    },
+    {
+      "id": "q05",
+      "neutral_monoisotopic_center_Da": 518.2886540930999,
+      "cost": 1
+    },
+    {
+      "id": "q02",
+      "neutral_monoisotopic_center_Da": 519.27266967579,
+      "cost": 5
+    },
+    {
+      "id": "q04",
+      "neutral_monoisotopic_center_Da": 546.2948021026999,
+      "cost": 2
+    }
+  ],
+  "matching_absolute_tolerance_Da": 1e-06,
+  "assay_model": "Exactly ONE intact reference polypeptide is present,OR the specimen is a blank. No mixture is allowed. Under complete stipulated cleavage,an ideal binary channel is1iff at least one generated unmodified free-terminus peptide has neutral monoisotopic mass within the stated inclusive tolerance of its center;otherwise0. No abundance,ionization,charge-state or missed-cleavage uncertainty is included.",
+  "target": "Choose a subset of the available channels with smallest TOTAL cost whose binary response vectors distinguish ALL five hypotheses:the four single-parent possibilities and blank. Return every minimum-cost subset,as arrays of channel IDs sorted lexicographically inside each subset;order of subsets is irrelevant. Also report the minimum total cost and whether the cheapest panel needs every parent to have a private positive mass channel.",
+  "scope": "Finite ideal assay-selection problem only. Abstract short fragments are identifiers for controlled analytical reasoning,not functional proteins or laboratory execution instructions.",
+  "provenance": {
+    "kind": "Explicit controlled abstract biological measurement/model fixture;not a real protein,diet or intervention claim."
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "jump_values": [
+        60.0,
+        60.0,
+        101.0,
+        37.0,
+        58.0,
+        42.0,
+        38.0,
+        40.0,
+        40.0,
+        250.0,
+        38.0,
+        115.0,
+        105.0,
+        50.0,
+        31.0,
+        120.0,
+        25.0,
+        80.0,
+        73.0,
+        43.0
+      ],
+      "weight_values": [
+        191.0,
+        189.0,
+        193.0,
+        162.0,
+        189.0,
+        182.0,
+        211.0,
+        167.0,
+        176.0,
+        154.0,
+        169.0,
+        166.0,
+        154.0,
+        247.0,
+        193.0,
+        202.0,
+        176.0,
+        157.0,
+        156.0,
+        138.0
+      ],
+      "participant_ids": [
+        "Linnerud-1",
+        "Linnerud-2",
+        "Linnerud-3",
+        "Linnerud-4",
+        "Linnerud-5",
+        "Linnerud-6",
+        "Linnerud-7",
+        "Linnerud-8",
+        "Linnerud-9",
+        "Linnerud-10",
+        "Linnerud-11",
+        "Linnerud-12",
+        "Linnerud-13",
+        "Linnerud-14",
+        "Linnerud-15",
+        "Linnerud-16",
+        "Linnerud-17",
+        "Linnerud-18",
+        "Linnerud-19",
+        "Linnerud-20"
+      ],
+      "measurement_review_flag": "Linnerud-10",
+      "flag_origin": "Derived data-audit flag on the largest recorded jump value; no original measurement is changed and no claim that the source record is erroneous.",
+      "sensitivity_policy": "Primary result retains all20participants. Sensitivity excludes only the flagged record and reports the descriptive Pearson coefficient. Compare signs; do not label the record invalid or select exclusion to maximize significance.",
+      "source_provenance": {
+        "dataset": "Authentic Linnerud observations,20 middle-aged men in a fitness club",
+        "source_url": "https://scikit-learn.org/stable/datasets/toy_dataset.html#linnerrud-dataset",
+        "citation": "Tenenhaus,M.(1998).La regression PLS:theorie et pratique.Paris:EditionsTechnic.",
+        "units": "Original source numeric units; the documentation does not specify a complete physical-unit table,so no unit conversion or clinical threshold is inferred.",
+        "licensing_note": "Redistributed by scikit-learn; original dataset page gives citation but no separate dataset-specific license statement.",
+        "new_experimental_claim": false
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

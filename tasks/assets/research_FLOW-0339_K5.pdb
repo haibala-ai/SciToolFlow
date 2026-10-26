@@ -1,0 +1,19 @@
+REMARK   Controlled frozen small-molecule conformer K5
+HETATM    1   O1 MOL A   1       2.031   1.095  -0.527  1.00  0.00           O  
+HETATM    2   C2 MOL A   1       1.514   0.144   0.394  1.00  0.00           C  
+HETATM    3   C3 MOL A   1       0.577  -0.829  -0.312  1.00  0.00           C  
+HETATM    4   C4 MOL A   1      -0.591  -0.155  -1.043  1.00  0.00           C  
+HETATM    5   C5 MOL A   1      -1.503   0.663  -0.137  1.00  0.00           C  
+HETATM    6   O6 MOL A   1      -2.018  -0.144   0.914  1.00  0.00           O  
+HETATM    7   H7 MOL A   1       2.565   0.608  -1.178  1.00  0.00           H  
+HETATM    8   H8 MOL A   1       2.356  -0.393   0.843  1.00  0.00           H  
+HETATM    9   H9 MOL A   1       1.003   0.684   1.196  1.00  0.00           H  
+HETATM   10  H10 MOL A   1       0.198  -1.557   0.414  1.00  0.00           H  
+HETATM   11  H11 MOL A   1       1.151  -1.393  -1.058  1.00  0.00           H  
+HETATM   12  H12 MOL A   1      -0.213   0.484  -1.849  1.00  0.00           H  
+HETATM   13  H13 MOL A   1      -1.184  -0.948  -1.517  1.00  0.00           H  
+HETATM   14  H14 MOL A   1      -0.973   1.510   0.308  1.00  0.00           H  
+HETATM   15  H15 MOL A   1      -2.347   1.066  -0.707  1.00  0.00           H  
+HETATM   16  H16 MOL A   1      -2.568  -0.835   0.505  1.00  0.00           H  
+TER
+END

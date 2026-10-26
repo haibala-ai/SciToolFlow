@@ -1,0 +1,58 @@
+{
+  "origin": "Own coarse-grained statistical-mechanics model of a short semiflexible biopolymer-like filament in a plane. This explicitly DISCRETE four-orientation phantom chain is a bounded model study, not a sequence, organism, synthesis problem or quantitative fit to real DNA. Literature on semiflexible biopolymer stretching motivates finite force/extension ensembles; no continuum three-dimensional wormlike-chain interpolation is assumed exact here.",
+  "microscopic_model": {
+    "tangent_order": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    "link_length": 1,
+    "kBT": 1,
+    "energy": "E=-kappa sum_{i=1}^{N-1} u_i dot u_{i+1}-f sum_{i=1}^N u_ix. Both chain ends have FREE orientations. There are N links and N-1 bending pairs; no periodic closure or self-avoidance. X=sumu_ix,Y=sumu_iy are integer projections. The force points along+x. Partition sum is over ALL4^N sequences, with weight exp(-E), no division by4 or other hidden normalization.",
+    "unknown_bending_parameter": "kappa is constant and lies in[0,log(10)]."
+  },
+  "independent_zero_force_calibration": {
+    "N": 8,
+    "exact_mean_squared_end_to_end_length": "1923904/78125",
+    "meaning": "Exact own ensemble expectation E[X\u00b2+Y\u00b2] atf0 with free ends. First derive the tangent correlation law and finite-N second-moment expression. Infer every kappa in the declared interval compatible with this rational datum, proving uniqueness/completeness. Use actual registered PolynomialRoots of the full correlation-calibration polynomial and retain all roots, including unphysical/complex roots; select a physical root only after applying the model domain. This identifies kappa inside the stated family, not a unique microscopic model for measured biological material."
+  },
+  "finite_chain": "Using the identified kappa, analyzeN12. Compute the COMPLETE zero-force joint endpoint weight g_N(X,Y) or an exactly equivalent generating representation with controlled coefficient extraction, not a Gaussian assumption. Retain the complete projection weight g_N(X)=sumYg_N(X,Y), and report its natural log for every integerXfrom-12through12. These are UNNORMALIZED Boltzmann weights: the sum isZ_N(0), not1. An exact scaled-integer recursion is permitted if every global scale factor is restored. Derive and check the parity and physical support of the joint endpoint vector. Obtain conditionalYstatistics at fixedX6 using this joint representation.",
+  "force_ensemble_and_validation": "Compute the full isotensional finite-chain distribution atf0,0.2,0.8 and at the UNIQUE finitef_star whose meanXis6. For each report[logZ_N(f),meanX,VarX,VarY,P(X>=9)]. Derive dlogZ/df=meanX and dmeanX/df=VarX, checking convergence/derivatives. Prove the unique finite force exists for mean6 and whether a finite force can reach mean12. Build the correct symmetric4x4 transfer matrix and free-end boundary vectors. At EACH of these4force values use actual registered SymmetricEigenDecomposition of the FULL transfer matrix and actual registered MatrixMultiply of its returned eigenvectors/boundary vectors (stacking permitted) to reconstruct the finite partition including all eigenmodes. Retain complete eigensystems; do not replace a finite free-end partition by trace(T^N), a periodic chain, or the Perron root alone. Verify full Z against endpoint weights and preserve actual spectral output handoffs.",
+  "extension_ensemble": "Let F_N(X)=-logg_N(X), with orientations and Y summed at fixed projectedX. AtX6 compute the CENTERED discrete force [F(7)-F(5)]/2 and centered stiffness F(7)-2F(6)+F(5). Compare this force withf_star, explaining finite ensemble inequivalence without asserting an uncomputed negative stiffness. AtX12 report the ONE-STEP endpoint force F(12)-F(11), and contrast its finiteness with the isotensional force needed to reach exact mean12. Also report Var(Y|X6) andP(Y0|X6). FixingX6 does NOT mean constraining the full end-to-end vector to(6,0); distinguish these ensembles and the separate probability conditioning.",
+  "Gaussian_diagnostic": "From exact zero-force VarX=chi0, construct the linear Gaussian force approximationX~Normal(chi0*f,chi0). At the ACTUALf_star report its mean, variance andP(X>12), using an actual registered StandardNormalDistribution survival probability and keeping the actual computed standardized threshold. Compare with the exact support bound for the finite chain. This Gaussian model is a local linear-response approximation; its tail beyond contour length is not a physical rare event of the exact finite chain and its normalized density must not replace discrete coefficients.",
+  "thermodynamic_limit": "For the same fixed kappa and each of the fourforce values, derive lim_N->infinity(logZ_N/N) andlim(meanX/N) from the full Perron-Frobenius eigenpair. Report both values. Prove analyticity/strict monotonicity on finite realforce and the appropriate fixed-projection-density/force ensemble equivalence in the large-N interior. Find the UNIQUE infinite-chain force whose extension density is0.5, distinguish it fromfinitef_star and the finite discrete force at6, and validate this limiting root with a retained actual registered full transfer eigensystem/eigenvector handoff. Derive exact zero-force susceptibility per link asN->infinity. Do not confuse this limit with taking force toinfinity at fixedN, or identify a finite-chain response as a thermodynamic phase transition.",
+  "interpretation_proposals": {
+    "A": "A finite phantom chain has a hard geometric support even though a Gaussian approximation has unbounded tails.",
+    "B": "Free-end and periodic transfer partitions are interchangeable at finite chain length.",
+    "C": "Fixing one endpoint projection leaves transverse endpoint fluctuations.",
+    "D": "A finite one-step Helmholtz difference guarantees a finite isotensional force reaches full mean extension.",
+    "E": "Finite force and extension ensembles can differ while their interior large-N constitutive laws agree.",
+    "F": "An inferred bending parameter proves a unique microscopic model for real DNA.",
+    "G": "All finite transfer modes and actual boundary overlaps matter in the exact partition.",
+    "H": "A continuum3D interpolation is exact for any discrete planar chain with an assigned persistence length."
+  },
+  "reporting": "Numerical absolute tolerance1e-7. Projection-log-weight orderX=-12..12, noomissions. Force rows orderf0,.2,.8,f_star. Every actual finite spectral reconstruction should agree with the endpoint partition to relative1e-10 and retain positive normalization; logs are signed quantities and are not a probability simplex. All final moment/tail statistics use the declared unnormalized partition with correct free-end factors. Retain full calibration-root selection, coefficient/support and derivative proofs, actual full spectral/boundary/Gaussian handoffs and finite-versus-asymptotic ensemble scope.",
+  "primary_context": [
+    {
+      "authors": "J.F.Marko and E.D.Siggia",
+      "year": 1995,
+      "title": "Stretching DNA",
+      "doi": "10.1021/ma00130a008",
+      "url": "https://pubs.acs.org/doi/10.1021/ma00130a008",
+      "role": "Primary semiflexible biopolymer stretching context only. The four-state planar phantom chain, rational calibration and finite ensemble questions above are own constructed inputs and do not assert this paper uses this lattice model."
+    }
+  ]
+}

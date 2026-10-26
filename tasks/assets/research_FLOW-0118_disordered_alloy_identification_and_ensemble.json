@@ -1,0 +1,95 @@
+{
+  "data_origin": "Own hypothetical fixed-lattice Na/K occupation model. CIFs supply actual parseable atomic inventories and geometry, but the cubic lattice, energy differences, interaction model and response probes are controlled assumptions, not measured or calculated properties of a real Na/K phase. Atomic mass accounting may use the parsed element identities. No chemical synthesis, real alloy stability or database property claim is made.",
+  "structures": {
+    "average": "research_FLOW-0118_average.cif",
+    "R1_layer": "research_FLOW-0118_R1_layer.cif",
+    "R2_tetra": "research_FLOW-0118_R2_tetra.cif",
+    "R3_pair": "research_FLOW-0118_R3_pair.cif",
+    "X1_exchange": "research_FLOW-0118_X1_exchange.cif"
+  },
+  "coordinate_convention": "The supplied8angstrom cubic cell is a2x2x2 repetition of a4angstrom simple-cubic site lattice. Identify sites by their actual fractional coordinates, not an assumed parser index or atom-label ordering. Canonical integer coordinates are l=2*fractional_position in{0,1}^3; lexicographic(x,y,z) order defines the optional canonical index. All ordered files have the SAME site geometry. Na is sigma=+1 and K is sigma=-1. The average CIF has Na/K occupancy1/2 at EVERY site, not16 fully occupied atoms. Use its actual occupancy-weighted composition, cell mass, volume and static density.",
+  "bond_convention": "For the ORIGINAL supplied8angstrom cell, shell1 contains geometric directed neighbors at distance4angstrom, shell2 at4sqrt(2), shell3 at4sqrt(3). Each periodic image edge is physically distinct, including two edges with the same endpoint indices but different image shifts. Define N_s=(1/2)*sum_over_ALL_directed_shell_s_edges sigma_i*sigma_j. The factor1/2 removes reverse-directed duplicates only; it must not collapse distinct parallel periodic-image bonds. Recover full shell multiplicities from an ORDERED reference structure and a sufficient geometric radius. The neighbor tool documents its input restrictions: use an ordered file for its geometric search, rather than assume support for the disordered average CIF. The ordered geometry represents every occupation in the fixed lattice.",
+  "Hamiltonian": "Energy per supplied8-site periodic cell is E=J1*N1+J2*N2+J3*N3 in eV. There is NO extra unknown constant, one-body composition field, strain, phonon, electronic, volume or magnetic term in THIS controlled model. The SAME three J apply to all supplied occupations, including the off-stoichiometric X1 exchange control. This restriction is an explicit model assumption, not a universal chemical energy model. Initial observations are only energy DIFFERENCES at4Na/4K, so do not assume an absolute energy value or a preferred minimum-norm coupling fit.",
+  "initial_energy_observations": [
+    {
+      "configuration": "R2_tetra",
+      "relative_to": "R1_layer",
+      "delta_E_eV": -0.016
+    },
+    {
+      "configuration": "R3_pair",
+      "relative_to": "R1_layer",
+      "delta_E_eV": -0.096
+    }
+  ],
+  "canonical_ensemble": "Use ALL microscopic assignments of exactly4Na and4K to these8 labeled lattice sites, each with its physical degeneracy. Lattice translations, global species exchange and geometric rotations may give equal energies but remain separate microstates in the partition sum; symmetry compression is valid ONLY if its degeneracy weights are retained. The average CIF is not one such microscopic assignment and has no independent-site configurational distribution by itself. Define DeltaE=E-E(R1_layer), Z_rel=sum_sigma exp(-DeltaE/(kB*T)), F_rel=-kB*T*log(Z_rel), meanDeltaE, entropy/kB=log(Z_rel)+meanDeltaE/(kB*T), and configurational Cv/kB=Var(DeltaE)/(kB*T)^2. Report mass-specific CONFIGURATIONAL Cv in J/(kg K) using the actual fixed-composition cell mass. This is Cv, not Cp or total material heat capacity.",
+  "temperatures_K": [
+    300,
+    600
+  ],
+  "concentration_structure_factor": "For each microscopic occupation, S(h)=(1/8)*abs(sum_j sigma_j*exp(i*pi*h dot l_j))^2. Ensemble-average this quantity with the canonical weights. Report cubic-symmetry representatives h=000,100,110,111 in that order; their wavevector multiplicities are1,3,3,1. These are dimensionless concentration-contrast fluctuations at reciprocal vectors pi/4angstrom timesh, not an X-ray powder pattern with atomic form factors. Retain both the fixed-composition zero mode and full Parseval sum check. Squaring the averaged CIF occupation contrast is generally not the average squared fluctuation.",
+  "follow_up_options": [
+    {
+      "id": "P1",
+      "cost": 1,
+      "observable": "One additional exact energy DIFFERENCE between any two4Na/4K occupations on this same cell."
+    },
+    {
+      "id": "P2",
+      "cost": 2,
+      "observable": "An arbitrary number of exact canonical pair-correlations or heat capacities at additional positive temperatures, still fixed4Na/4K."
+    },
+    {
+      "id": "P3",
+      "cost": 3,
+      "observable": "The calibrated model energy difference E(X1_exchange)-E(R1_layer). X1 is the actual supplied3Na/5K structure with site(0,0,0) changed fromNa toK. The Na/K reference chemical-potential difference is independently calibrated tozero in the controlled Hamiltonian convention, and no additional composition-field term is allowed."
+    },
+    {
+      "id": "P4",
+      "cost": 0.5,
+      "observable": "Exact static mass density of the disordered average CIF, without any energy or correlation measurement."
+    },
+    {
+      "id": "P5",
+      "cost": 5,
+      "observable": "The absolute model energy of R1_layer on the explicitly fixed Hamiltonian zero."
+    }
+  ],
+  "follow_up_readout": {
+    "option_id": "P3",
+    "delta_E_eV": -0.016,
+    "scope": "Exact controlled model readout after the initial identifiability analysis. Its composition change is real in the supplied files; do not substitute a composition-preserving pair exchange or an uncalibrated chemical potential."
+  },
+  "questions": [
+    "Ingest all supplied structures and the study. Recover occupancy-weighted composition,mass,volume,density and ordered shell multiplicities. Map actual site positions/species correctly and calculate the three shell sums for R1,R2,R3 and the exchange control, retaining image multiplicity.",
+    "Using ONLY the initial energy differences, determine the equality rank, the full affine coupling family and all identifiable combinations. Derive the exact fixed-composition bond-sum identity that generates the unobservable coupling direction. Explain whether canonical probabilities,F_rel,absolute free energy and static density identify that missing direction. Check all feasible assignments, not only the three calibration structures.",
+    "Enumerate the complete fixed4/4 occupation inventory or use a complete symmetry-weighted analytical count. Keep the full shell-sum degeneracy table. At300K and600K compute ground-microstate probability,relative free energy,mean relative energy,configurational entropy,Cv and mass-specificCv, nearest-shell mean sigma_i*sigma_j, and all four concentration structure factors. Prove all canonical outputs are invariant over the entire initial affine family.",
+    "Derive the infinite-temperature fixed-composition entropy,nearest-pair correlation and structure factors; distinguish them from independent-site random mixing. Determine the zero-temperature ground degeneracy and residual configurational entropy. Find the UNIQUE positive temperature where total probability of the complete ground-state manifold equals1/2, with a global monotonicity and endpoint argument. This finite-cell crossover is not automatically a bulk thermodynamic critical point.",
+    "Identify every listed follow-up that resolves the missing coupling direction, choose the unique least-cost resolving option, and use the actualP3 readout plus its true composition and reference convention to recover the three absolute couplings and ground energy. An absolute physical conclusion outside this declared Hamiltonian is not requested."
+  ],
+  "constants": {
+    "Boltzmann_J_per_K": 1.380649e-23,
+    "eV_J": 1.602176634e-19,
+    "atomic_mass_unit_kg": 1.6605390666e-27,
+    "scope": "Use these fixed task conventions for unit conversion. Geometric and occupancy-weighted mass values come from actual parsed structures."
+  },
+  "interpretation_proposals": {
+    "A": "At fixed composition an interaction-parameter direction can shift every microscopic energy equally and remain invisible to all canonical probabilities.",
+    "B": "A coupling fit of minimum Euclidean norm proves the physical interaction coefficients are uniquely identified.",
+    "C": "Equal average site occupancies and static density need not determine concentration fluctuation correlations.",
+    "D": "Symmetry-equivalent occupations should always be reduced to one unweighted state when computing entropy and heat capacity.",
+    "E": "Fixed4/4 random mixing has an exact finite-population anticorrelation, rather than independent-site zero correlation.",
+    "F": "A finite-cell ground-probability crossover proves a nonanalytic bulk phase transition at the same temperature.",
+    "G": "A genuinely composition-changing calibrated energy probe can resolve information absent from all fixed-composition canonical observables.",
+    "H": "A configuration-only heat capacity is the complete constant-pressure heat capacity of a physical alloy."
+  },
+  "reporting": "average_cell_element_amounts; cell_mass_u; cell_volume_angstrom3; static_density_g_per_cm3; undirected_periodic_shell_bond_counts as[shell1,shell2,shell3]; initial_energy_gap_rank; identifiable_J_combinations_eV as[J1-2J2,J1-4J3]; initial_couplings_unique; absolute_free_energy_identified_before_probe; fixed_composition_microstate_count; shell_sum_degeneracy_rows as sorted[N1,N2,N3,count] rows; ground_manifold_degeneracy; zero_temperature_entropy_over_kB; infinite_temperature_entropy_over_kB; infinite_temperature_nearest_pair_correlation; infinite_temperature_S_000_100_110_111; thermodynamics_by_temperature mapping string temperature to ground_probability,F_rel_eV,meanDeltaE_eV,entropy_over_kB,Cv_over_kB,Cv_J_per_kg_K,nearest_pair_correlation,S_000_100_110_111; ground_manifold_half_probability_temperature_K; resolving_follow_up_ids; least_cost_resolving_option_id; selected_J1_J2_J3_eV; selected_absolute_ground_energy_eV; valid_interpretation_proposal_ids. Counts/booleans/IDs exact. Numeric absolute tolerance1e-7 except mass-specificCv1e-4 and crossover temperature1e-5K. The affine family, complete identity and ensemble invariance proofs belong in the trajectory, not a forced final symbolic spelling.",
+  "methodological_source": {
+    "authors": "J. M. Sanchez,F. Ducastelle andD. Gratias",
+    "title": "Generalized cluster description of multicomponent systems",
+    "year": 1984,
+    "doi": "10.1016/0378-4371(84)90096-7",
+    "url": "https://www.sciencedirect.com/science/article/pii/0378437184900967",
+    "role": "Primary context for occupation/spin cluster variables and configurational thermodynamics. The8-site geometry,couplings,energy observations,exact finite ensemble and diagnostic probes here are own controlled constructions, not paper data or a bulk cluster-variation approximation."
+  }
+}

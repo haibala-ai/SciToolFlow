@@ -1,0 +1,45 @@
+{
+  "data": [
+    {
+      "record_id": "0",
+      "x": 0.0,
+      "concentration": 2.0,
+      "log_concentration": 0.6931471805599453,
+      "inverse_concentration": 0.5
+    },
+    {
+      "record_id": "1",
+      "x": 10.0,
+      "concentration": 1.2130613194252668,
+      "log_concentration": 0.1931471805599453,
+      "inverse_concentration": 0.8243606353500641
+    },
+    {
+      "record_id": "2",
+      "x": 20.0,
+      "concentration": 0.7357588823428847,
+      "log_concentration": -0.3068528194400547,
+      "inverse_concentration": 1.3591409142295225
+    },
+    {
+      "record_id": "3",
+      "x": 30.0,
+      "concentration": 0.44626032029685964,
+      "log_concentration": -0.8068528194400547,
+      "inverse_concentration": 2.2408445351690323
+    },
+    {
+      "record_id": "4",
+      "x": 40.0,
+      "concentration": 0.2706705664732254,
+      "log_concentration": -1.3068528194400546,
+      "inverse_concentration": 3.694528049465325
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "time x seconds; concentration mmol/L; logarithm uses concentration numerical value divided by1mmol/L",
+    "original_observation_claim": false
+  }
+}

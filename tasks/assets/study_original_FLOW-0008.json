@@ -1,0 +1,58 @@
+{
+  "semiconductor_records": [
+    {
+      "id": "A",
+      "VBM_relative_internal_reference_eV": -1.0,
+      "CBM_relative_internal_reference_eV": 1.0,
+      "vacuum_minus_internal_reference_eV": 5.0
+    },
+    {
+      "id": "B",
+      "VBM_relative_internal_reference_eV": -2.5,
+      "CBM_relative_internal_reference_eV": -0.5,
+      "vacuum_minus_internal_reference_eV": 3.0
+    },
+    {
+      "id": "C",
+      "VBM_relative_internal_reference_eV": -1.5,
+      "CBM_relative_internal_reference_eV": 0.5,
+      "vacuum_minus_internal_reference_eV": 5.0
+    },
+    {
+      "id": "D",
+      "VBM_relative_internal_reference_eV": 0.0,
+      "CBM_relative_internal_reference_eV": 2.0,
+      "vacuum_minus_internal_reference_eV": 3.0
+    },
+    {
+      "id": "E",
+      "VBM_relative_internal_reference_eV": -0.5,
+      "CBM_relative_internal_reference_eV": 0.5,
+      "vacuum_minus_internal_reference_eV": 5.0
+    }
+  ],
+  "candidate_pairs": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "A",
+      "C"
+    ],
+    [
+      "A",
+      "D"
+    ],
+    [
+      "A",
+      "E"
+    ]
+  ],
+  "model": "Five isolated nonmetal band-edge calculations have DIFFERENT arbitrary internal energy zeros. For each record E_relative_vacuum=E_relative_internal-(E_vacuum-E_internal). Use the declared ideal vacuum-level lineup with no interface dipole,band bending,chemical reaction,strain or charge-induced reconstruction. The actual interface would need separate evidence.",
+  "target": "For each pair report whether a positive common forbidden energy interval exists,and its width (zero if no positive overlap). For an electron injected into the two isolated conduction edges,its favored material has the LOWER vacuum-referenced CBM;for a hole at the valence edges,its favored material has the HIGHER vacuum-referenced VBM. Determine the electron/hole material IDs for each pair and select all pairs with a positive common gap AND separated favored electron/hole materials. A broken-gap alignment does not pass this isolated-band carrier-separation screen.",
+  "reporting": "Return vacuum-referenced[VBM,CBM]rows in source record order,common-gap widths and carrier IDs in pair order,and admissible pair IDs encoded by joining the source pair with|. All comparisons are exact for the supplied numbers. Equal individual band gaps do not establish equal absolute band edges.",
+  "provenance": {
+    "kind": "Explicit controlled electronic/transport model;not empirical phase or device performance evidence."
+  }
+}

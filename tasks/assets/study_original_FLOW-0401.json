@@ -1,0 +1,115 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "unoriented_filament_axis_representatives_by_panel": {
+    "panel_A": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        2.0,
+        0.0,
+        0.0
+      ],
+      [
+        -2.0,
+        0.0,
+        0.0
+      ],
+      [
+        3.0,
+        0.0,
+        0.0
+      ],
+      [
+        -3.0,
+        0.0,
+        0.0
+      ],
+      [
+        4.0,
+        0.0,
+        0.0
+      ],
+      [
+        -4.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.0,
+        0.0
+      ],
+      [
+        0.0,
+        -2.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        3.0
+      ],
+      [
+        0.0,
+        0.0,
+        -3.0
+      ]
+    ],
+    "panel_B": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        2.0,
+        0.0,
+        0.0
+      ],
+      [
+        -2.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.0,
+        0.0
+      ],
+      [
+        0.0,
+        -3.0,
+        0.0
+      ],
+      [
+        0.0,
+        4.0,
+        0.0
+      ],
+      [
+        0.0,
+        -4.0,
+        0.0
+      ]
+    ]
+  },
+  "model": "Controlled microscopy-axis summaries. Each vector is one equal-weight observed UNORIENTED filament axis: u and -u represent the same observation. Its printed length is arbitrary coordinate scaling,not filament length or weight. Normalize every vector to unit Euclidean length before forming Q=(1/N)*sum_i[(3/2)*u_i*u_i_transpose-(1/2)*I].",
+  "director": "The scalar order requested is the largest ALGEBRAIC eigenvalue of Q. Its maximizing director axis is unique only when that largest eigenvalue is simple; opposite vector signs denote one axis,not measured head-tail polarity. Count multiplicity within1e-10. Largest absolute eigenvalue is a different criterion.",
+  "scope": "Controlled filament orientation geometry,not a protein structure, measured biological polarity, dynamics, molecular reconstruction or a material phase assignment."
+}

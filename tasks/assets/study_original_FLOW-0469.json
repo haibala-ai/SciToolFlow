@@ -1,0 +1,20 @@
+{
+  "reference_formula_units_per_conventional_cell": 4,
+  "reference_cell_volume_angstrom3": 180.0,
+  "atomic_weights_g_per_mol": {
+    "Na": 22.98976928,
+    "Cl": 35.45
+  },
+  "Avogadro_per_mol": 6.02214076e+23,
+  "defective_cell_volume_over_reference": 1.01,
+  "measured_defective_mass_density_over_reference": 0.98,
+  "additional_Na_Frenkel_pair_fraction_interval": [
+    0.0,
+    0.05
+  ],
+  "model": "Bulk mean NaCl lattice with equal reference counts Nof regular Na and Cl sites. Schottky pair fraction s removes s*NNa atoms and s*NCl atoms from the specimen. Additional Na Frenkel fraction f transfers f*NNa atoms from regular Na sites into allowed interstitial sites,conserving specimen atoms and mass. No other mass change,substitution or defect species is allowed. Thus regular Na-vacancy fraction is s+f,Cl-vacancy fraction is s,and Na-interstitial count per reference regular Na site is f. The stated interval bounds f;no measured interstitial occupancy is supplied. Fractions refer to reference sites,not the remaining occupied sites. The measured volume ratio is independent data,not inferred from defect count.",
+  "target": "Return reference mass density in g/cm^3,the identified Schottky pair fraction,the sharp allowed f interval and sharp regular Na-vacancy-fraction interval. Report whether Frenkel-only defects can reproduce the measured mass-density AND volume ratios,and whether the data identify the total point-defect population. Treat noninteger per-cell averages as bulk mean occupancies.",
+  "provenance": {
+    "kind": "Explicit controlled conditional material model;not a measured material claim."
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "data": [
+    {
+      "record_id": "pair01",
+      "F_A": [
+        [
+          1.1,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.94,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.94
+        ]
+      ],
+      "F_B": [
+        [
+          0.94,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.1,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.94
+        ]
+      ]
+    },
+    {
+      "record_id": "pair02",
+      "F_A": [
+        [
+          1.1,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.94,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.94
+        ]
+      ],
+      "F_B": [
+        [
+          0.9285059228123804,
+          -0.17149407718761953,
+          0.0
+        ],
+        [
+          0.14654948414214758,
+          1.0865494841421475,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.94
+        ]
+      ]
+    },
+    {
+      "record_id": "study",
+      "reference_deformation_gradient": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "coordinate_and_correspondence": "All deformation gradients are dimensionless Cartesian column-vector maps x=F*X from the SAME undeformed reference basis and material correspondence. The supplied oriented F_B is fixed for the internal-interface test;do not independently rotate one constituent to rescue a rejected supplied orientation relationship. A single COMMON proper rotation of the whole laminate relative to the reference is permitted for the external-interface test.",
+      "mixture_model": "A first-order fine laminate with volume fraction f of the supplied state B has macroscopic gradient (1-f)*F_A+f*F_B,with 0<f<1. Admissible internal layers require a nonzero rank-one jump F_B-F_A. At the macroscopic reference interface require existence of Q in SO(3),nonzero shear vector h and unit reference normal n such that Q*F_bar-I=h outer n. This is the ideal limiting macroscopic compatibility condition,not a claim that each microscopic twin meets the reference without a boundary layer.",
+      "numerical_reporting": "Treat the printed controlled matrices as exact to their displayed precision. Use absolute singular-value tolerance 1e-9 for zero/rank and principal-stretch tolerance 1e-8 for unity. Return all physical fractions in ascending order;do not return the complementary fractions as two independent material phases.",
+      "scope": "Controlled cubic-to-tetragonal-style deformation model,not measured lattice parameters,identified real phases,a prediction of equilibrium phase fractions or proof of low transformation hysteresis. No energetics,interface energy,finite twin spacing or nucleation kinetics are supplied."
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "F,f,principal stretches and singular values dimensionless;common reference basis and orientation correspondence explicitly fixed.",
+    "original_observation_claim": false
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "solvent_densities_kg_per_cubic_meter": [
+    1000.0,
+    1100.0
+  ],
+  "radial_positions_meters": [
+    0.04,
+    0.05,
+    0.06
+  ],
+  "normalized_equilibrium_concentration_profiles": [
+    [
+      1.0,
+      1.554436235760041,
+      2.665124989155738
+    ],
+    [
+      1.0,
+      1.3796765175757169,
+      2.044636744219292
+    ]
+  ],
+  "angular_speed_radian_per_second": 300.0,
+  "temperature_kelvin": 298.15,
+  "gas_constant_j_per_mol_kelvin": 8.314462618,
+  "heldout_solvent_density_kg_per_cubic_meter": 1200.0,
+  "model": "Controlled ideal dilute sedimentation equilibrium. ln[c(r)/c(r0)]=M_b*omega^2*(r^2-r0^2)/(2*R*T), with buoyant molar mass M_b=M*(1-vbar*rho). True molar mass M and partial specific volume vbar are positive and common to all solvents; no association, nonideality or changing solvation. M is kg/mol and vbar is m^3/kg.",
+  "analysis_policy": "Use all radial positions in each of the two calibration solvents to infer their buoyant masses, then separate M and vbar using the independent density change. Predict the outer-to-inner ratio in the held-out solvent at the same speed and temperature without fitting a new mass.",
+  "scope": "Analytical buoyancy/mass inference from stipulated equilibrium profiles, not a centrifugation protocol or an actual molecular-weight measurement."
+}

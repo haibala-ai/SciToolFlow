@@ -1,0 +1,22 @@
+{
+  "motif_files": {
+    "motif_A": "asset://controlled_hand_FLOW-0002_motif_A.cif",
+    "motif_B": "asset://controlled_hand_FLOW-0002_motif_B.cif"
+  },
+  "reference_site_element": "C",
+  "ordered_neighbor_elements": [
+    "N",
+    "O",
+    "F"
+  ],
+  "wavelength_angstrom": 1.5406,
+  "two_theta_range_deg": [
+    10.0,
+    60.0
+  ],
+  "peak_angle_matching_tolerance_deg": 1e-08,
+  "relative_intensity_tolerance_on_100_scale": 1e-08,
+  "provenance": {
+    "kind": "Project-authored controlled labelled-point crystal motifs. Motif B is the inverted periodic geometry of motif A; same species and metric. This is not a validated stable compound, bonded-molecule assignment or experimental structure. Standard real atomic X-ray form factors are the declared non-anomalous model."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "reference_sequence": "ACDDEFG",
+  "query_sequence": "ACDEFG",
+  "molecule_type": "protein",
+  "scoring": {
+    "match_score": 2.0,
+    "mismatch_score": -1.0,
+    "open_gap_score": -2.0,
+    "extend_gap_score": -0.5
+  },
+  "objective": "Global complete-sequence alignment with the stated generic affine-gap score. A gap of lengthl>=1has score open+(l-1)*extend, including terminal gaps. Double-gap columns are not allowed. These short abstract fragments are supplied as an annotation-coordinate example, not a homology or functional prediction.",
+  "annotation_sites": [
+    {
+      "id": "repeat_site",
+      "reference_position_one_based": 3
+    },
+    {
+      "id": "nonrepeat_site",
+      "reference_position_one_based": 5
+    }
+  ],
+  "mapping_scope": "Consider EVERY globally maximum-score alignment, not just one alignment returned by a library. For each nominated reference site report every possible query residue position (one-based)and whether that reference residue can instead align to a gap in any optimum. Exact sequence character equality alone does not fix an annotation inside a repeat.",
+  "reporting": "Possible-position arrays contain distinct sorted integers. Number of optimal alignments counts distinct gap placements, not program tie-order or identical textual formatting. Do not interpret a missing mapped residue as query position0.",
+  "provenance": {
+    "data_origin": "Explicit small controlled benchmark models, sequences and traits; no empirical evolutionary, functional or conservation-outcome claim."
+  }
+}

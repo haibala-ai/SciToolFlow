@@ -1,0 +1,7 @@
+{
+  "material_id": "mp-149",
+  "source": "Use the published DFPTDOSartifact and the structure returned with that same phonon record. Do not replace its atom count or geometry with a current summary calculation.",
+  "controlled_projection": "Discard frequencies below0THz,insert0by linear interpolation and preserve all positive source grid points. Normalize that projected DOSso its trapezoid integral is3N,where Nis the atom count in the phonon record. This is an explicit projection,not evidence that the unmodified spectrum is dynamically stable.",
+  "response": "At300Kcompute Cv/kB=integral g_norm(nu)*x^2*exp(x)/(exp(x)-1)^2dnu withx=h*nu/(kB*T). Take x=0limit1,h=0.004135667696eV/THz,kB=8.617333262145e-5eV/K. Use trapezoids on the projected grid. Report the unnormalized full-source DOSintegral,positive projection normalization multiplier,and projected Cv/kBper source cell.",
+  "scope": "A declared harmonic positive-frequency projection,not an anharmonic or experimental heat capacity and not a certificate of original dynamical stability."
+}

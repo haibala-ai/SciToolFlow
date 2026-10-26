@@ -1,0 +1,16 @@
+{
+  "formula": "Si",
+  "absorbing_element": "Si",
+  "offset": 0,
+  "limit": 2,
+  "record_task_ids_in_order": [
+    "aaaaaabb",
+    "aaaaaabi"
+  ],
+  "energy_window_eV": [
+    1841.0,
+    1855.0
+  ],
+  "analysis": "Use the identified K-edge XANESrecords,not an arbitrary first phase for the formula. In each record find the maximum among original sampled points inside the inclusive window and report its energy. Integrate yover the full common window using piecewise-linear interpolation only at the two endpoints and the original interior grid. Return area(record0)/area(record1). No peak-energy alignment or intensity rescaling is allowed.",
+  "scope": "Published computed spectra and their own structures. Formula equality alone does not identify a polymorph,absorber environment or experimental calibration. Spectrum yuses the provider arbitrary intensity scale."
+}

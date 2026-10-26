@@ -1,0 +1,7 @@
+{
+  "query_smiles": "COc1ccccc1CCN",
+  "target_smiles": "COc1ccccc1CCO",
+  "tversky_threshold": 0.8,
+  "audit": "Generate the actual query fragmentations and obtain the fragment-based similarity. Check whether the reported best fragment belongs to that query fragmentation set,then apply the registered ring-cut validity predicate to that exact fragment. The predicate tests the supplied fragment;it does not generate cuts or certify whole-parent identity.",
+  "scope": "A fragment-retrieval result only. Score1does not logically imply identical complete molecular graphs,formulae,physical properties or biological activity."
+}

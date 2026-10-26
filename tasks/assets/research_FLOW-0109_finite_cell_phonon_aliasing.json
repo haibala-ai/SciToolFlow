@@ -1,0 +1,81 @@
+{
+  "data_origin": "Controlled scalar lattice-dynamics inverse problem. The supplied periodic Si-labelled geometry fixes only a one-dimensional site repeat, shell distances and image inventory. All force constants, finite-cell Hessians and elastic coefficients are constructed dimensionless model data, not silicon force constants or an actual first-principles phonon calculation.",
+  "primitive_geometry_file": "asset://research_FLOW-0109_chain_primitive.vasp",
+  "geometry_scope": "Read the actual primitive-cell longitudinal repeat a from the supplied structure. Neighbors up to3a+0.001angstrom are along x only; transverse cell lengths exceed the cutoff. Count all directed geometric neighbors of the primitive site by displacement shell r=1,2,3, including nonzero-image self neighbors. The cell contains one mass-m0 site. Only longitudinal scalar displacement u_l is modeled; this is not a three-dimensional acoustic/optical branch inventory.",
+  "energy_and_units": "V=(1/2)*sum_l sum_{r=1}^3 k_r*(u_{l+r}-u_l)^2 on an infinite chain, with dimensionless k_r in unitsK0 and displacements in a fixed length unit. Each positive-r bond appears once. All masses equalm0 and eigenvalues lambda=omega^2 are in unitsK0/m0. Negative individual k_r are allowed effective harmonic curvatures; stability must be decided for the complete quadratic form. Dimensionless wavevector q=k_x*a lies in[-pi,pi).",
+  "finite_cell_observations": {
+    "N2": {
+      "site_order": [
+        0,
+        1
+      ],
+      "mass_normalized_hessian": [
+        [
+          2.0,
+          -2.0
+        ],
+        [
+          -2.0,
+          2.0
+        ]
+      ]
+    },
+    "N3": {
+      "site_order": [
+        0,
+        1,
+        2
+      ],
+      "mass_normalized_hessian": [
+        [
+          -0.25,
+          0.125,
+          0.125
+        ],
+        [
+          0.125,
+          -0.25,
+          0.125
+        ],
+        [
+          0.125,
+          0.125,
+          -0.25
+        ]
+      ]
+    }
+  },
+  "periodic_folding": "The finite N-site cell applies u_{l+N}=u_l to the stated infinite-chain energy BEFORE taking its Hessian. Distinct r bonds that map onto the same finite pair must still contribute, while r multiples ofN have identically zero displacement difference. Do not truncate to one minimum-image neighbor or remove r>N/2 couplings. The normalized scalar Fourier modes have q=2*pi*j/N modulo2*pi. The uniform q0 mode is an exact translation zero; report finite-cell nontranslation eigenvalues separately. They are NOT independent primitive Gamma-point optical modes.",
+  "independent_long_wavelength_observation": {
+    "A": 1.0,
+    "definition": "lambda(q)=A*q^2+O(q^4) as q->0, with q dimensionless. This is a separately supplied exact scalar elastic coefficient, not a sampled finite-cell eigenvalue."
+  },
+  "inference": "First determine the rank of the coupling constraints supplied by the two finite Hessians alone, and their COMPLETE affine coupling family written k_r=intercept_r+slope_r*x with x=k1. Then include the independent A measurement and recover k1,k2,k3. Check both full Hessians and their translation sum rule. Use the full infinite-chain dispersion, not merely a finite q grid, to decide stability and find EVERY strict-negative interval, every marginal endpoint, and the global most-negative squared frequency and positive q where it occurs. Report the corresponding negative-q partner too. Positive elastic curvature and a positive zone-boundary mode do not by themselves imply global dynamical stability.",
+  "supercell_requests": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    8
+  ],
+  "stabilization_models": "Compare two expressly different ideal changes to the inferred quadratic model. Substrate pinning adds(kappa/2)*sum_l u_l^2, shifting every lambda by+kappa and breaking translation symmetry. A translation-preserving nearest-neighbor correction instead replaces k1 by k1+delta, leaving k2,k3 unchanged. Find the minimum nonnegative kappa and delta that make the ENTIRE infinite-chain spectrum nonnegative. Also decide whether the exactly threshold delta yields a strictly positive spectrum for every q other than the translation zero. Distinguish semidefinite stability from positive definiteness; at a threshold additional finite-q zeros can remain. No anharmonic phase, finite-temperature stabilization or actual substrate is inferred.",
+  "free_energy_scope": "For the original inferred unpinned model, decide whether fixing the uniform translation coordinate makes the N4 finite-cell configurational harmonic Gaussian partition function finite. Do not replace negative eigenvalues by their absolute values, discard them as numerical noise, or infer convergence from the stable N2 cell.",
+  "interpretation_proposals": {
+    "A": "A finite-cell Gamma Hessian contains folded primitive wavevectors and can miss an infinite-chain instability at wavevectors it does not sample.",
+    "B": "Positive long-wavelength curvature and positive q=pi squared frequency establish stability at every wavevector.",
+    "C": "The acoustic translation zero and genuine negative finite-q curvatures have different meanings.",
+    "D": "A stable finite-cell harmonic free energy can be obtained for an unstable N4 model by taking absolute values of imaginary frequencies.",
+    "E": "Onsite pinning and adding a nearest-neighbor stiffness have different q dependence and different translation symmetry.",
+    "F": "The smallest nonnegative-spectrum nearest-neighbor correction automatically makes every nontranslation mode strictly positive.",
+    "G": "The constructed scalar result proves the dynamical stability or instability of actual three-dimensional silicon."
+  },
+  "reporting": "Return primitive_repeat_angstrom; directed_neighbors_per_shell as integer vector[r1,r2,r3]; nontranslation_squared_frequencies_by_observed_cell keyed N2,N3 and sorted; finite_cell_coupling_constraint_rank; coupling_family_intercepts_and_slopes as rows[k1,k2,k3] with columns[intercept,slope]; identified_k1_k2_k3; long_wavelength_coefficient; zone_boundary_squared_frequency; strict_negative_q_intervals sorted by lower endpoint; interval_endpoints_are_included boolean; global_minimum_squared_frequency; minimizing_q_values sorted; negative_mode_count_by_requested_supercell keyed stringN; minimum_onsite_kappa_for_nonnegative_spectrum; minimum_extra_nn_delta_for_nonnegative_spectrum; threshold_nn_delta_is_strictly_stable_except_translation boolean; original_N4_harmonic_partition_finite_after_translation_fix boolean; valid_interpretation_proposal_ids. Every count, boolean, ID and rank exact. Continuous values tolerance absolute1e-7 plus relative1e-7. Intervals contain only strict negatives; an exact zero endpoint is not unstable.",
+  "methodological_sources": [
+    {
+      "title": "Phonopy formulations: dynamical matrices and commensurate points",
+      "url": "https://phonopy.github.io/phonopy/formulation.html",
+      "role": "Primary implementation documentation for force-constant Fourier transformation, periodic supercell folding and commensurate-wavevector conventions. No numerical phonon data are copied."
+    }
+  ]
+}

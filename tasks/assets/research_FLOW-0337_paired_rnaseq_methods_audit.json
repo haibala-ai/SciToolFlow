@@ -1,0 +1,62 @@
+{
+  "data_origin": "Actual published airway RNA-seq gene counts and sample annotations, preserved from Bioconductor airway1.32.0, release3.23, original63677genes by8samples. The public counts are an exact4096gene computational panel selected solely by SHA256(gene_ID), independent of counts, treatment and outcomes; no counts transformed and all selected rows including all-zero rows retained. Provenance, original RData, DESCRIPTION, license texts and reproducible extraction are retained in the revision airway_snapshot resource. The controlled methods-audit questions and focal choices are benchmark construction, not conclusions attributed to the original authors.",
+  "counts_file": "asset://research_FLOW-0337_airway_counts.tsv",
+  "metadata_file": "asset://research_FLOW-0337_airway_metadata.csv",
+  "source_package_url": "https://www.bioconductor.org/packages/3.23/data/experiment/src/contrib/airway_1.32.0.tar.gz",
+  "source_RData_sha256": "98d05e82867ae4bed92295eb8863ab6c1aa694876f2b29b455c30a559f801cd0",
+  "scope": "Four donor-derived airway smooth-muscle cell lines, each with one untreated and one treated library. Cell line is the paired biological unit; eight libraries are not eight independent donors. Count columns and annotation rows deliberately have different orders and must be matched by exact sample_id. The labels trt/untrt refer to the published dexamethasone condition. No patient clinical outcome, absolute RNA-per-cell change or functional intervention is inferred.",
+  "count_model": "Use the registered PyDESeq2 negative-binomial count-model operation on ALL4096provided gene rows. Paired analysis has additive categorical design factors cell and condition, signed contrast[condition,trt,untrt]. Request fit_type=parametric,cooks_filter=true; preserve the disclosed actual dispersion trend/fallback, no independent filtering, no count replacement and no LFC shrinkage. The unpaired comparator uses condition alone on the same complete panel. Then fit four leave-one-cell-line-out analyses: remove BOTH samples for that cell, retain all4096genes and use the paired cell+condition design on the remaining six samples. Do not preselect focal genes before normalization/dispersion fitting, alter count values or fit individual genes as unrelated normal-mean tests. Numerical cache use is allowed; it is not an independent experiment.",
+  "analysis_names": "Use paired,unpaired and leave_CELLID for each literal cell value in metadata. Within each analysis, an eligible hypothesis has testable=true, finite unadjusted p_value and converged fitted LFC as reported by the operation. Null/untested rows remain in the4096row result and are not assigned p=0, log2FC=0 or evidence of no change. Report each analysis eligible count.",
+  "complete_family_discovery": "For the paired result, apply BOTH BH and BY correction to its ENTIRE eligible gene family before looking at the focal panel. Call significance at adjusted p<=0.05. Report complete-family rejection counts and the focal significant gene IDs under each rule. BH relies on valid marginal p-values plus its dependence assumptions; its calculated rejection set is not proof of FDR control under arbitrary gene dependence. BY addresses arbitrary dependence given valid p-values, and both remain conditional on the fitted approximate Wald testing model. Do not adjust only eight focal p-values, include untestable zeros, use the original63677gene universe, or claim this4096panel is a full-transcriptome analysis.",
+  "simultaneous_effect_inference": "For effect-size classification use only paired and its four leave-one-cell-line-out fits, excluding the unpaired comparator. Let M be the SUM of eligible gene counts across these five analyses, retaining each gene-analysis hypothesis separately even though analyses overlap. Let z=Phi^{-1}(1-0.05/(2*M)). For every eligible row use the model-based approximate simultaneous interval[log2FC-z*SE,log2FC+z*SE]. Bonferroni does not require independent overlapping analyses, but approximate Wald marginal validity remains an assumption. Fixed practical threshold is one log2unit, corresponding to a twofold relative expression ratio. Classify a focal gene in the full paired fit as increase_gt_twofold if its interval lower bound is STRICTLY greater than1; decrease_gt_twofold if upper bound is STRICTLY below-1; within_twofold if BOTH interval bounds lie STRICTLY inside(-1,1); otherwise unresolved. A null/untestable focal row is untestable. Boundary equality is unresolved. An interval entirely inside(-1,1) can coexist with rejection of the exact zero-effect null; practical equivalence does not mean mathematically zero expression change.",
+  "leave_one_out_robustness": "A focal large-effect claim is robust only if its full paired fit AND all four leave-one-cell-line-out fits have the SAME direction-specific large-effect classification under the single simultaneous z above. A null row or crossing of the practical boundary in any fit prevents that robust claim. Do not combine overlapping-fit p-values as independent experiments; do not call a gene robust because all fitted point estimates have the same sign.",
+  "focal_gene_ids": [
+    "ENSG00000003987",
+    "ENSG00000004455",
+    "ENSG00000004866",
+    "ENSG00000004939",
+    "ENSG00000011454",
+    "ENSG00000081052",
+    "ENSG00000102554",
+    "ENSG00000272841"
+  ],
+  "focal_selection_scope": "The benchmark authors selected this small focal audit set after exploratory fits to expose different statistical decisions. It is not an independently prespecified confirmatory biological panel. Full-family corrections and simultaneous intervals are calculated before focal extraction; no biological mechanism, gene-function claim or newly confirmed target is scored.",
+  "interpretation_proposals": {
+    "A": "A statistically detectable nonzero relative effect may still lie within a declared practical-equivalence region.",
+    "B": "A null/untestable result is positive evidence of exactly zero expression change.",
+    "C": "Removing a cell-line pair in each sensitivity analysis preserves the paired observational structure, but overlapping fits are not independent studies.",
+    "D": "A BH rejection set automatically has an arbitrary-dependence FDR guarantee for real gene counts regardless of the Wald model.",
+    "E": "A paired log2fold change is a normalized relative count-model effect and does not by itself establish an absolute RNA-per-cell change.",
+    "F": "The eight sequencing libraries represent eight independent donor biological units.",
+    "G": "The complete eligible testing family must be corrected before selecting this focal report.",
+    "H": "Agreement of large fitted point estimates alone establishes robustness of their interval-based practical-effect claims."
+  },
+  "reporting": "Return biological_unit_count; paired_design_rank_and_residual_df as[rank,df]; eligible_gene_counts_by_analysis keyed exactly as above; paired_complete_family_rejection_counts keyed bh,by; focal_significant_gene_ids_by_correction keyed bh,by with sorted lists; simultaneous_effect_family_size; simultaneous_normal_critical_value; focal_paired_log2_fold_changes keyed by every focal ID, null if untestable; focal_paired_practical_effect_class keyed by every focal ID using the exact labels; focal_robust_large_effect_gene_ids sorted; valid_interpretation_proposal_ids. Counts, IDs, categories and nulls exact. Fold changes absolute1e-5 plus relative1e-5; z absolute1e-7 plus relative1e-7. Do not dump thousands of backend rows into the final answer; use full task-local model and correction artifacts for analysis and report these compact scientific decisions.",
+  "methodological_sources": [
+    {
+      "title": "RNA-Seq Transcriptome Profiling Identifies CRISPLD2 as a Glucocorticoid Responsive Gene that Modulates Cytokine Function in Airway Smooth Muscle Cells",
+      "authors": "Himes et al.",
+      "year": 2014,
+      "doi": "10.1371/journal.pone.0099625",
+      "url": "https://doi.org/10.1371/journal.pone.0099625",
+      "role": "Primary data publication. Counts are the fixed Bioconductor gene-count representation, not regenerated reads."
+    },
+    {
+      "title": "airway Bioconductor experiment data package",
+      "author": "Michael Love",
+      "doi": "10.18129/B9.bioc.airway",
+      "url": "https://www.bioconductor.org/packages/release/data/experiment/html/airway.html",
+      "version": "1.32.0",
+      "license": "LGPL",
+      "role": "Frozen raw integer count assay and paired cell/dex annotations; extraction and subset are separately documented."
+    },
+    {
+      "title": "Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2",
+      "authors": "Love, Huber and Anders",
+      "year": 2014,
+      "doi": "10.1186/s13059-014-0550-8",
+      "url": "https://doi.org/10.1186/s13059-014-0550-8",
+      "role": "Negative-binomial differential-count inference motivation. This case specifically uses the registered PyDESeq2 implementation and disclosed model settings."
+    }
+  ]
+}

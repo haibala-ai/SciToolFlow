@@ -1,0 +1,27 @@
+{
+  "source_smarts_query": "[N]([H])[H]",
+  "target_records": [
+    {
+      "id": "ethylamine",
+      "smiles": "CCN"
+    },
+    {
+      "id": "amide",
+      "smiles": "CC(=O)N"
+    },
+    {
+      "id": "secondary_amine",
+      "smiles": "CNC"
+    },
+    {
+      "id": "tertiary_amine",
+      "smiles": "CN(C)C"
+    },
+    {
+      "id": "ammonium",
+      "smiles": "C[NH3+]"
+    }
+  ],
+  "target_graph_policy": "Targets are parsed with hydrogen nodes suppressed while retaining attached-H counts. Query hydrogens are explicit graph nodes in the original SMARTS. Use the actual returned merged SMARTS for matching. The independent intended exact-count criterion is nitrogen H-count2,written[N;H2];this deliberately does not exclude amide nitrogens or require neutral charge.",
+  "scope": "Controlled graph-query curation for a hydrogen-count annotation;not NMR assignment or reactivity prediction."
+}

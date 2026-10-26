@@ -1,0 +1,60 @@
+{
+  "component_formulas": [
+    "SiO2",
+    "CaO",
+    "Al2O3"
+  ],
+  "specimen_records": [
+    {
+      "specimen_id": "specimen_1",
+      "component_masses_g": [
+        60.0,
+        40.0,
+        20.0
+      ]
+    },
+    {
+      "specimen_id": "specimen_2",
+      "component_masses_g": [
+        120.0,
+        80.0,
+        40.0
+      ]
+    },
+    {
+      "specimen_id": "specimen_3",
+      "component_masses_g": [
+        20.0,
+        60.0,
+        40.0
+      ]
+    },
+    {
+      "specimen_id": "specimen_4",
+      "component_masses_g": [
+        30.0,
+        30.0,
+        90.0
+      ]
+    },
+    {
+      "specimen_id": "specimen_5",
+      "component_masses_g": [
+        60.0,
+        20.0,
+        20.0
+      ]
+    },
+    {
+      "specimen_id": "specimen_6",
+      "component_masses_g": [
+        15.0,
+        30.0,
+        15.0
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "Project-authored controlled positive oxide-composition measurements, not an observed geological cohort or fitted material property. Different total masses are intentional; the scientific representation is composition."
+  }
+}

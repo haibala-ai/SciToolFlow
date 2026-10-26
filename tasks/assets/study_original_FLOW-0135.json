@@ -1,0 +1,23 @@
+{
+  "tautomer_records": [
+    {
+      "id": "keto",
+      "smiles": "CC(C)=O",
+      "organic_over_aqueous_partition_coefficient": 10.0
+    },
+    {
+      "id": "enol",
+      "smiles": "C=C(C)O",
+      "organic_over_aqueous_partition_coefficient": 0.1
+    }
+  ],
+  "aqueous_enol_over_keto_equilibrium_ratio": 3.0,
+  "aqueous_volume_L": 1.0,
+  "organic_volume_L": 0.5,
+  "initial_total_solute_mmol": 2.0,
+  "model": "Only the two listed neutral tautomers occur;both obey the same conserved molecule count. Equilibration fixes c_enol,aq/c_keto,aq=Kand independently c_i,org=P_i*c_i,aq. The finite phases are closed to solute,have fixed volumes,and partition coefficients and aqueous Kremain constant at the stated temperature. No activity correction,chemical degradation or separate kinetic trapping is included.",
+  "target": "Use the two molecular graphs to check the common molecular formula. Return aqueous and organic tautomer fractions in source order,total equilibrium solute concentrations of each phase in mmol/L,the overall organic/aqueous concentration ratio,and fraction of original solute molecules in the organic phase. Report whether an equally weighted average of the two pure-tautomer partition coefficients gives the correct distribution ratio.",
+  "provenance": {
+    "kind": "Explicit synthetic conditional scientific model and exact source observations;not a live experiment or empirical mechanism validation."
+  }
+}

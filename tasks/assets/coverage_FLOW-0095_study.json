@@ -1,0 +1,6 @@
+{
+  "smiles": "[CH3].[CH3]",
+  "spin_model": "The two disconnected radical centers each contribute spin1/2. In this explicitly ideal uncoupled-center model,enumerate allowed total spins by angular-momentum addition and report multiplicities2S+1. No exchange coupling,spatial pairing or state energy is supplied.",
+  "target": "Use actual parsed graph and radical assignments to count centers and assigned radical electrons. Retrieve its formula as an atom-inventory cross-check. Return the unordered allowed total-spin multiplicities and whether the radical-count report uniquely identifies a ground-state multiplicity.",
+  "scope": "This is formal graph bookkeeping plus an ideal spin-addition model,not a synthesis request,measured radical population,interaction energy or ground-state prediction."
+}

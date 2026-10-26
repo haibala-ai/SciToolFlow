@@ -1,0 +1,7 @@
+{
+  "uniprot_id": "P00558",
+  "max_results": 5,
+  "minimum_score": 0.0,
+  "analysis": "Within the actual returned records,report all OMAIDs tied for highest reported score within1e-8,and the returned/query sequence-length ratios in response order. Also report returned_orthologs/eligible_orthologs and whether the response is truncated.",
+  "scope": "OMArelationship types,scores and lengths are source metadata. Equal lengths do not establish100percent aligned sequence identity,and a capped returned subset does not establish complete taxonomic coverage. Do not submit an OMAIDas if it were a UniProt accession or call score a calibrated probability."
+}

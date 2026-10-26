@@ -1,0 +1,50 @@
+{
+  "data_origin": "Controlled molecular-magnet model of three distinguishable localized S=1/2 centers. The collinear values are exact EXPECTATIONS on declared product states from a synthetic effective-spin model, not published ab-initio calculations or claims about a real synthesized complex. A real broken-symmetry DFT-to-spin mapping requires additional validation; that issue is not silently assumed solved here.",
+  "hamiltonian_convention": "Spin operators are dimensionless with eigenvalues of S_i^z equal+/-1/2. In cm^-1, H_lambda(B)=E0*I+sum_(12,23,31) J_ij*[S_i^z*S_j^z+lambda*(S_i^x*S_j^x+S_i^y*S_j^y)]-g*(mu_B/(h*c))*B*sum_i S_i^z. Products on distinct centers mean tensor operators, not scalar multiplication of noncommuting components on one center. Antiferromagnetic J is POSITIVE in this convention; there is no hidden-2 prefactor. The two candidate operator models are Heisenberg(lambda=1) and Ising(lambda=0), each using the SAME E0,J inferred from collinear data. Center labels are fixed. The only field direction is the declared z axis; no powder-orientation average is requested.",
+  "collinear_data": "The CSV gives <s1,s2,s3|H_lambda(0)|s1,s2,s3> for every Sz product state. These are not quantum eigenlevels. Fit E0,J12,J23,J31, verify the complete table and determine whether collinear expectations identify lambda. Global spin-flipped product-state records are symmetry-related constraints, not additional independent experiments. No statistical confidence interval is requested.",
+  "constants": {
+    "g": 2.0,
+    "mu_B_over_hc_cm_inverse_per_tesla": 0.466864477,
+    "k_B_over_hc_cm_inverse_per_kelvin": 0.69503476
+  },
+  "independent_observations": [
+    {
+      "observable": "lowest_nonzero_distinct_zero_field_energy_gap_cm_inverse",
+      "lower": 3.463,
+      "upper": 3.465,
+      "scope": "A separately established energy-level-population gap, not an unqualified EPR transition line. No optical/magnetic transition selection rule is being inferred."
+    },
+    {
+      "observable": "magnetization_per_cluster_in_mu_B",
+      "field_tesla": 8.0,
+      "temperature_kelvin": 2.0,
+      "lower": 1.15,
+      "upper": 1.16
+    },
+    {
+      "observable": "magnetization_per_cluster_in_mu_B",
+      "field_tesla": 12.0,
+      "temperature_kelvin": 2.0,
+      "lower": 2.12,
+      "upper": 2.14
+    }
+  ],
+  "thermal_and_ground_conventions": "Use canonical quantum Gibbs probabilities with kBT in cm^-1 and the full8-dimensional state multiplicities. At B=0,T->0 the canonical density matrix is the normalized projector onto the ENTIRE ground eigenspace; do not arbitrarily assign zero entropy because a diagonalizer returned one vector. Report its residual entropy divided by k_B. Report each distinct B=0 excitation energy relative to the model ground level, with exact degeneracy. Magnetization is g*<sum_i S_i^z> in mu_B per cluster. Find the first strictly positive zero-temperature field at which the ground magnetization changes, for both models; finite-temperature curves need not show a discontinuous transition.",
+  "pair_entanglement_question": "For the Heisenberg model only, compute <S_i dot S_j> for pairs12,23,31 in its canonical zero-field T->0 state and at T=2K and12K. For ANY separable two-spin-1/2 state this scalar correlation is >=-1/4, so a STRICT value below-1/4 certifies pair entanglement. Report all certified pairs at each of those temperatures. Equality does NOT certify entanglement by this witness. Settle an exact threshold equality analytically or with a complete operator identity; a floating value such as-0.2500000000000001 is not evidence of a strict violation. This is a sufficient witness; absence of its violation is not an unrestricted statement about multipartite or other unmeasured quantum correlations.",
+  "interpretation_proposals": {
+    "A": "The collinear table alone cannot distinguish the specified Heisenberg and Ising operator models.",
+    "B": "Both candidate models have the same full zero-field quantum spectrum because their collinear product-state expectation values match.",
+    "C": "The supplied independent gap and magnetization bounds distinguish the two stipulated operator models.",
+    "D": "All antiferromagnetic exchange links must individually violate the pair entanglement witness at every positive temperature.",
+    "E": "A finite cluster magnetization crossover at2K must be a discontinuous thermodynamic phase transition at the computed zero-temperature crossing.",
+    "F": "Failure of this pair witness on one link proves there is no entanglement anywhere in the three-center state.",
+    "G": "The calibrated effective-spin constants alone prove the same magnetic response for an arbitrary real molecule or arbitrary additional anisotropy/intercluster interactions."
+  },
+  "reporting": "Return fitted_collinear_parameters keyed E0,J12,J23,J31; collinear_data_identifies_transverse_exchange boolean; zero_field_excitation_levels keyed Heisenberg/Ising, each ordered array of objects energy_cm_inverse and degeneracy; positive_zero_temperature_crossing_tesla keyed by model; magnetization_predictions keyed by model as arrays in the same order as the two magnetic observations; independently_compatible_model_ids; heisenberg_ground_entropy_over_k_B; heisenberg_pair_correlations keyed T0,T2,T12 and pair12,23,31; certified_entangled_pairs keyed T0,T2,T12; valid_interpretation_proposal_ids. IDs, booleans, degeneracies and witness classifications exact. Continuous energies, fields, fitted parameters and correlations tolerance absolute1e-7 plus relative1e-7. Strict witness decisions remain strict at exact boundaries and are not softened by numerical reporting tolerance.",
+  "methodological_source": {
+    "title": "The Hamiltonian of the V15 Spin System from first-principles Density-Functional Calculations",
+    "year": 2001,
+    "url": "https://arxiv.org/abs/cond-mat/0103031",
+    "role": "Primary molecular-magnetism motivation for separating an effective spin Hamiltonian from collinear electronic-energy information and comparing low-energy magnetic levels. This task uses a separately constructed three-spin fixture, not the V15 numerical model or paper data."
+  }
+}

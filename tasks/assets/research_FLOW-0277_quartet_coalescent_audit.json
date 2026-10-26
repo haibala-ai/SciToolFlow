@@ -1,0 +1,373 @@
+{
+  "data_origin": "Controlled quartet gene-tree analysis of anonymized plant populations P1,P2,P3 and outgroup O. Newick genealogies, orthology flags and duplicate export provenance are constructed benchmark data, not inferred histories of named taxa. No molecular functions, engineering targets or experimental procedures are involved.",
+  "records": [
+    {
+      "record_id": "R022",
+      "locus_id": "L022",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.131,(P2:0.252,(P3:0.191,O:0.332):0.06470000000000001):0.0242);"
+    },
+    {
+      "record_id": "R013",
+      "locus_id": "L013",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.0488,P2:0.0936):0.0144,(P3:0.0728,O:0.1256):0.00896);"
+    },
+    {
+      "record_id": "EXPORT4",
+      "locus_id": "L026",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.135,(P3:0.26,(P2:0.195,O:0.34):0.0675):0.025);"
+    },
+    {
+      "record_id": "R002",
+      "locus_id": "L002",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.111,(P2:0.212,(P3:0.171,O:0.292):0.050699999999999995):0.0202);"
+    },
+    {
+      "record_id": "EXPORT7",
+      "locus_id": "L025",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.0536,P3:0.1032):0.0168,(P2:0.0776,O:0.1352):0.00992);"
+    },
+    {
+      "record_id": "R026",
+      "locus_id": "L026",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.135,(P3:0.26,(P2:0.195,O:0.34):0.0675):0.025);"
+    },
+    {
+      "record_id": "R038",
+      "locus_id": "L038",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.147,(P3:0.284,(P2:0.207,O:0.364):0.0759):0.0274);"
+    },
+    {
+      "record_id": "EXPORT8",
+      "locus_id": "L026",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.135,(P3:0.26,(P2:0.195,O:0.34):0.0675):0.025);"
+    },
+    {
+      "record_id": "R012",
+      "locus_id": "L012",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.847,(P2:1.624,(P3:1.267,O:2.184):0.40390000000000004):0.1554);"
+    },
+    {
+      "record_id": "R043",
+      "locus_id": "L043",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.4,P2:0.2,P3:0.3,O:0.4);"
+    },
+    {
+      "record_id": "R025",
+      "locus_id": "L025",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.0536,P3:0.1032):0.0168,(P2:0.0776,O:0.1352):0.00992);"
+    },
+    {
+      "record_id": "R044",
+      "locus_id": "L044",
+      "orthology_status": "excluded_copy_number_ambiguity",
+      "newick": "((P1:0.1,P3:0.1):0.2,(P2:0.1,O:0.1):0.2);"
+    },
+    {
+      "record_id": "R027",
+      "locus_id": "L027",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.34,P3:0.655):0.1075,(P2:0.49,O:0.855):0.063);"
+    },
+    {
+      "record_id": "R039",
+      "locus_id": "L039",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P2:0.37,P3:0.715):0.1225,(P1:0.52,O:0.915):0.069);"
+    },
+    {
+      "record_id": "R009",
+      "locus_id": "L009",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.0472,P2:0.0904):0.0136,(P3:0.0712,O:0.1224):0.00864);"
+    },
+    {
+      "record_id": "R005",
+      "locus_id": "L005",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.0456,P2:0.0872):0.0128,(P3:0.0696,O:0.1192):0.00832);"
+    },
+    {
+      "record_id": "R034",
+      "locus_id": "L034",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.143,(P3:0.276,(P2:0.203,O:0.356):0.0731):0.0266);"
+    },
+    {
+      "record_id": "R020",
+      "locus_id": "L020",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.903,(P2:1.736,(P3:1.323,O:2.296):0.44310000000000005):0.1666);"
+    },
+    {
+      "record_id": "R029",
+      "locus_id": "L029",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.0552,P3:0.1064):0.0176,(P2:0.0792,O:0.1384):0.01024);"
+    },
+    {
+      "record_id": "R006",
+      "locus_id": "L006",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.115,(P2:0.22,(P3:0.175,O:0.3):0.053500000000000006):0.021);"
+    },
+    {
+      "record_id": "R030",
+      "locus_id": "L030",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.139,(P3:0.268,(P2:0.199,O:0.348):0.0703):0.0258);"
+    },
+    {
+      "record_id": "EXPORT3",
+      "locus_id": "L025",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.0536,P3:0.1032):0.0168,(P2:0.0776,O:0.1352):0.00992);"
+    },
+    {
+      "record_id": "R028",
+      "locus_id": "L028",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.959,(P3:1.848,(P2:1.379,O:2.408):0.4823):0.1778);"
+    },
+    {
+      "record_id": "R015",
+      "locus_id": "L015",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.31,P2:0.595):0.0925,(P3:0.46,O:0.795):0.057);"
+    },
+    {
+      "record_id": "R018",
+      "locus_id": "L018",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.127,(P2:0.244,(P3:0.187,O:0.324):0.0619):0.0234);"
+    },
+    {
+      "record_id": "EXPORT9",
+      "locus_id": "L023",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.33,P3:0.635):0.1025,(P2:0.48,O:0.835):0.061);"
+    },
+    {
+      "record_id": "R017",
+      "locus_id": "L017",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.0504,P2:0.0968):0.0152,(P3:0.0744,O:0.1288):0.00928);"
+    },
+    {
+      "record_id": "R003",
+      "locus_id": "L003",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.28,P2:0.535):0.0775,(P3:0.43,O:0.735):0.051);"
+    },
+    {
+      "record_id": "R042",
+      "locus_id": "L042",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.3,P2:0.2,P3:0.3,O:0.4);"
+    },
+    {
+      "record_id": "R010",
+      "locus_id": "L010",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.119,(P2:0.228,(P3:0.179,O:0.308):0.0563):0.0218);"
+    },
+    {
+      "record_id": "EXPORT5",
+      "locus_id": "L023",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.33,P3:0.635):0.1025,(P2:0.48,O:0.835):0.061);"
+    },
+    {
+      "record_id": "R014",
+      "locus_id": "L014",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.123,(P2:0.236,(P3:0.183,O:0.316):0.0591):0.0226);"
+    },
+    {
+      "record_id": "R004",
+      "locus_id": "L004",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.791,(P2:1.512,(P3:1.211,O:2.072):0.3647):0.1442);"
+    },
+    {
+      "record_id": "R001",
+      "locus_id": "L001",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.044,P2:0.084):0.012,(P3:0.068,O:0.116):0.008);"
+    },
+    {
+      "record_id": "R037",
+      "locus_id": "L037",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.0584,P3:0.1128):0.0192,(P2:0.0824,O:0.1448):0.01088);"
+    },
+    {
+      "record_id": "EXPORT6",
+      "locus_id": "L024",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.931,(P3:1.792,(P2:1.351,O:2.352):0.4627):0.1722);"
+    },
+    {
+      "record_id": "EXPORT1",
+      "locus_id": "L023",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.33,P3:0.635):0.1025,(P2:0.48,O:0.835):0.061);"
+    },
+    {
+      "record_id": "R024",
+      "locus_id": "L024",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.931,(P3:1.792,(P2:1.351,O:2.352):0.4627):0.1722);"
+    },
+    {
+      "record_id": "R033",
+      "locus_id": "L033",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.0568,P3:0.1096):0.0184,(P2:0.0808,O:0.1416):0.01056);"
+    },
+    {
+      "record_id": "R011",
+      "locus_id": "L011",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.3,P2:0.575):0.0875,(P3:0.45,O:0.775):0.055);"
+    },
+    {
+      "record_id": "R032",
+      "locus_id": "L032",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.987,(P3:1.904,(P2:1.407,O:2.464):0.5019):0.1834);"
+    },
+    {
+      "record_id": "EXPORT10",
+      "locus_id": "L024",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.931,(P3:1.792,(P2:1.351,O:2.352):0.4627):0.1722);"
+    },
+    {
+      "record_id": "R016",
+      "locus_id": "L016",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.875,(P2:1.68,(P3:1.295,O:2.24):0.4235):0.161);"
+    },
+    {
+      "record_id": "R045",
+      "locus_id": "L045",
+      "orthology_status": "excluded_copy_number_ambiguity",
+      "newick": "((P1:0.1,P3:0.1):0.2,(P2:0.1,O:0.1):0.2);"
+    },
+    {
+      "record_id": "R021",
+      "locus_id": "L021",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.052,P2:0.1):0.016,(P3:0.076,O:0.132):0.0096);"
+    },
+    {
+      "record_id": "R040",
+      "locus_id": "L040",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P2:1.043,(P3:2.016,(P1:1.463,O:2.576):0.5410999999999999):0.1946);"
+    },
+    {
+      "record_id": "R008",
+      "locus_id": "L008",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.819,(P2:1.568,(P3:1.239,O:2.128):0.3843):0.1498);"
+    },
+    {
+      "record_id": "R036",
+      "locus_id": "L036",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:1.015,(P3:1.96,(P2:1.435,O:2.52):0.5215000000000001):0.189);"
+    },
+    {
+      "record_id": "R035",
+      "locus_id": "L035",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.36,P3:0.695):0.1175,(P2:0.51,O:0.895):0.067);"
+    },
+    {
+      "record_id": "EXPORT2",
+      "locus_id": "L024",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.931,(P3:1.792,(P2:1.351,O:2.352):0.4627):0.1722);"
+    },
+    {
+      "record_id": "R007",
+      "locus_id": "L007",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.29,P2:0.555):0.0825,(P3:0.44,O:0.755):0.053);"
+    },
+    {
+      "record_id": "R019",
+      "locus_id": "L019",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.32,P2:0.615):0.0975,(P3:0.47,O:0.815):0.059);"
+    },
+    {
+      "record_id": "R031",
+      "locus_id": "L031",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.35,P3:0.675):0.1125,(P2:0.5,O:0.875):0.065);"
+    },
+    {
+      "record_id": "R023",
+      "locus_id": "L023",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "((P1:0.33,P3:0.635):0.1025,(P2:0.48,O:0.835):0.061);"
+    },
+    {
+      "record_id": "R041",
+      "locus_id": "L041",
+      "orthology_status": "confirmed_single_copy",
+      "newick": "(P1:0.2,P2:0.2,P3:0.3,O:0.4);"
+    }
+  ],
+  "quartet_topologies": {
+    "H1": [
+      [
+        "P1",
+        "P2"
+      ],
+      [
+        "P3",
+        "O"
+      ]
+    ],
+    "H2": [
+      [
+        "P1",
+        "P3"
+      ],
+      [
+        "P2",
+        "O"
+      ]
+    ],
+    "H3": [
+      [
+        "P2",
+        "P3"
+      ],
+      [
+        "P1",
+        "O"
+      ]
+    ]
+  },
+  "identity_and_sampling": "record_id identifies an export, while locus_id identifies the independent inherited locus. All exports with one locus_id must agree in their full Newick tree and orthology status; count that locus ONCE. Every confirmed single-copy locus is an independent genomic block, with equal likelihood weight regardless of its tree length or export count. Exclude copy-number-ambiguous loci before topology analysis. Retain unresolved loci in the reporting universe but not in the resolved topology counts. The single-copy and resolution ascertainment is assumed independent of topology under the null; no branch-length or consensus-driven filtering is permitted.",
+  "quartet_definition": "Each tree has exactly the four named tips. Root placement and branch-length scale can vary by locus; infer the unrooted quartet from the complete patristic metric or an equivalent tree-split argument. For four tips the sums d(P1,P2)+d(P3,O), d(P1,P3)+d(P2,O), d(P2,P3)+d(P1,O) correspond to H1,H2,H3 respectively: the unique smallest sum defines the split, while an all-equal sum is unresolved. Use tie tolerance1e-10 times max(1,largest sum) solely for floating roundoff of these exact input trees; source data have a wide gap from this tolerance. Do not use raw closest-tip pairs, root children, sequence row order or total branch length as substitute topology weights.",
+  "coalescent_model": "The specified simple neutral multispecies-coalescent quartet null has no migration, ancestral population structure or gene-tree reconstruction error. For a candidate species topology H and an internal branch t>=0 in coalescent units, p(H)=1-(2/3)*exp(-t), and each of the two discordant quartet probabilities is exp(-t)/3. Conditional on the eligible resolved independent loci, counts follow this three-category multinomial model. Independently fit EACH of H1,H2,H3 by maximizing the full multinomial log likelihood over t>=0. The reported log likelihood omits the common multinomial factorial coefficient. Retain all globally maximizing topology IDs, tying within1e-10 log-likelihood units; do not allow a negative fitted branch or convert substitution/site Newick lengths directly into coalescent time.",
+  "prespecified_test": "A separate reference species hypothesis H1 was specified before these gene trees were observed. Test its equal-discordant-probabilities implication conditionally on the total number n of H2 or H3 loci. Under this null, the H2 count is Binomial(n,0.5). Use an exact two-sided test: sum probabilities of every outcome k with P(X=k)<=P(X=observed H2 count), including equal-probability ties. This is an independently prespecified H1 test, not a p-value calibrated after selecting whichever topology looks most favorable. Reject the specified H1 coalescent model when p<0.01 (strict). Independently compute the log-likelihood-ratio statistic2*(max saturated three-category log likelihood - max specified H1 log likelihood); report the statistic, not an unrequested asymptotic chi-squared p-value.",
+  "scientific_scope": "A majority gene-tree topology and a fitted branch under a rejected model are still numerical summaries. Discordant imbalance can reject the specific null without uniquely identifying introgression: ancestral structure, nonindependence/ascertainment violations, paralogy or gene-tree error are other possible departures unless independently ruled out. The controlled orthology flags settle only the explicitly flagged exclusions here; they do not validate every historical demographic assumption. No mechanistic causal history is established by these counts alone.",
+  "reporting": "Report eligible_unique_locus_count (including unresolved), resolved_independent_locus_count, unresolved_locus_ids, excluded_unique_locus_ids, resolved_topology_counts, candidate_mle_branch_t and candidate_max_log_likelihood keyed by H1/H2/H3, best_fit_species_topology_ids, prespecified_H1_discordance_exact_p_value, H1_to_saturated_log_likelihood_ratio, reject_prespecified_H1_MSC_at_0_01, introgression_is_uniquely_identified, and source_substitution_lengths_equal_inferred_coalescent_t. IDs/counts/Booleans exact; continuous values absolute plus relative tolerance1e-7. Arrays of locus/topology IDs are unordered without duplicates. Infer complete null-model fits and scientific limits, rather than treating repeat exports as independent supporting evidence."
+}

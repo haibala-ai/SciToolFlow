@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "record_id": "mp-aaaaaaft",
+      "formula": "Si",
+      "volume_angstrom": 40.32952684741405,
+      "cell_composition": {
+        "Si": 2.0
+      },
+      "relative_permittivity": 13.003383160000025,
+      "volume_angstrom_per_formula": 20.164763423707026
+    },
+    {
+      "record_id": "mp-aaaaakoq",
+      "formula": "SiC",
+      "volume_angstrom": 41.27465862347238,
+      "cell_composition": {
+        "Si": 2.0,
+        "C": 2.0
+      },
+      "relative_permittivity": 10.555501999996862,
+      "volume_angstrom_per_formula": 20.63732931173619
+    },
+    {
+      "record_id": "design",
+      "mass_fraction_first_phase": 0.5
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Relativepermittivitydimensionless;cellvolumeangstrom³;compositionactualfullcell",
+    "original_observation_claim": false
+  }
+}

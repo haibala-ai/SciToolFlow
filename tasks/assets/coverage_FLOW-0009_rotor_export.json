@@ -1,0 +1,40 @@
+{
+  "molecule_smiles": "CCO",
+  "geometry_convention": {
+    "embedding": "ETKDGv3",
+    "seed": 42,
+    "force_field_optimization": "none",
+    "hydrogen_policy": "explicit",
+    "atomic_mass": "RDKit average isotope-abundance atom masses"
+  },
+  "export_cards": [
+    {
+      "id": "card_A",
+      "moments_reported": [
+        14.720236332289998,
+        52.79132681851656,
+        59.9447187159857
+      ],
+      "radius_reported_angstrom": 1.1761459896771984
+    },
+    {
+      "id": "card_B",
+      "moments_reported": [
+        14.720236332289998,
+        52.79132681851656,
+        59.9447187159857
+      ],
+      "radius_reported_angstrom": 1.2231918292642865
+    },
+    {
+      "id": "card_C",
+      "moments_reported": [
+        59.9447187159857,
+        14.720236332289998,
+        52.79132681851656
+      ],
+      "radius_reported_angstrom": 1.1761459896771984
+    }
+  ],
+  "column_contract": "The three columns must be ordered smallest,middle,largest central mass moments in Da*angstrom^2. A radius is the mass-weighted radius of gyration in angstrom. Cards are controlled export tests,not independent experimental conformers. A card is consistent only if its ordered moment triple and radius agree with the named conformer and the inertia trace identity. Relative agreement tolerance is1e-6."
+}

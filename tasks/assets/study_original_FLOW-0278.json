@@ -1,0 +1,49 @@
+{
+  "calibration_records": [
+    {
+      "setting": 3.0,
+      "response_interval": [
+        2.0,
+        2.4
+      ]
+    },
+    {
+      "setting": 0.0,
+      "response_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "setting": 6.0,
+      "response_interval": [
+        2.6,
+        3.2
+      ]
+    },
+    {
+      "setting": 1.0,
+      "response_interval": [
+        0.9,
+        1.1
+      ]
+    }
+  ],
+  "candidate_query_settings": [
+    4.0,
+    8.0,
+    2.0
+  ],
+  "required_response_floor": 2.35,
+  "function_class": "Every continuous, nondecreasing, concave real response function f on the entire setting interval[0,8] satisfying every supplied calibration response interval. Concavity and monotonicity are weak inequalities: linear stretches and plateaus are allowed. No parametric mean curve, smoothness bound, probability distribution or additional calibration point is assumed.",
+  "error_interpretation": "Response intervals are closed deterministic bounds on the true underlying response at each setting. Their centers are not exact observations. They are not confidence intervals and have no advertised probabilistic coverage. The zero-setting response is exactly zero.",
+  "decision_policy": "Among the listed query settings only, choose the smallest numerical setting whose response is at least the required floor for EVERY function in the declared class. If none qualifies, return null. Extrapolation past the last nonzero calibration setting is permitted only through the stated global shape assumptions on[0,8]; it is not empirical validation there.",
+  "joint_reporting_question": "For each query separately obtain its sharp feasible response interval. Then ask whether ONE admissible function can attain ALL the reported upper endpoints simultaneously. Marginal sharp bounds are not automatically a joint rectangular uncertainty set.",
+  "provenance": {
+    "kind": "Project-authored normalized detector-calibration uncertainty fixture for a shape-constrained inverse-method audit, not physical instrument validation or a statistical confidence claim.",
+    "method_context": {
+      "url": "https://dpapp.math.ncsu.edu/pub/shape_constrained_jcgs.pdf",
+      "read": "Indexed introduction excerpt discussing bounded, monotonic and convex/concave function constraints and optimization representations. Direct PDF retrieval timed out; no full-paper reading claimed. Our deterministic interval fixture, finite constraint equivalence and sharp bounds are independently derived."
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "data_origin": "Own controlled neutral-marker haplotype example for evolutionary-model auditing. Anonymous labels H1..H8 are fixed sampled haplotypes, not species targets, functional sequences, construct designs or experimental protocols. A/G characters are generic binary marker states; no marker has an assigned molecular function.",
+  "alignment_fasta_text": ">H1\nGGAGGAGGA\n>H2\nGGANAAAAA\n>H3\nAGAGGAAAA\n>H4\nAGAAAAGGA\n>H5\nAAGAGGAAA\n>H6\nAAGAAAAGG\n>H7\nAAAAGGANA\n>H8\nAAAAAAAGG\n",
+  "alignment_scope": "The9columns are already homologously aligned biallelic sites in their physical order. All eight labeled tips are retained. No gaps, indels or alignment optimization are part of this problem. N means one unknown A-or-G observation, not a third allele, a gap, heterozygosity or a new site. No outgroup or ancestral allele is known. Root placement and internal ancestral states are free; do not treatA as a known ancestral state. Apart from the two N cells, observed marker states are assumed exact within each specified model.",
+  "missing_state_completions": {
+    "C1": {
+      "H2_column4": "A",
+      "H7_column8": "A"
+    },
+    "C2": {
+      "H2_column4": "A",
+      "H7_column8": "G"
+    },
+    "C3": {
+      "H2_column4": "G",
+      "H7_column8": "A"
+    },
+    "C4": {
+      "H2_column4": "G",
+      "H7_column8": "G"
+    }
+  },
+  "global_single_tree_model": "For EACH completion search ALL unrooted fully bifurcating trees with these8LABELEDtips, ignoring branch lengths, planar order, internal node IDs and root placement. Binary state changes on each edge have equal cost1; gains and losses both allowed. For every tree independently minimize over internal ancestral A/G states, then sum over the9characters. Report the global minimum total changes, the number of distinct unrooted labeled binary topologies attaining it, and their STRICT consensus nontrivial edge splits (present in EVERY optimal topology). Distinct ancestral-state reconstructions are not extra topologies. A single neighbor-joining tree or one local tree-search optimum cannot certify the global count.",
+  "split_encoding": "For a nontrivial edge split both sides contain at least2tips. Choose the side with fewer tips; on equal sizes choose the lexicographically smaller sorted tip-ID list. Encode that side as a comma-joined string, e.g.H1,H3. Sort the complete strict-consensus split list. Complementary sides are the SAME unrooted split.",
+  "infinite_sites_block_model": "Separately allow a DIFFERENT unrooted genealogy in each contiguous marker block, with exactly one change per segregating site inside its block (infinite-sites/no-homoplasy interpretation). Two binary characters are incompatible on one tree precisely when all FOURgamete combinations occur among the completed haplotypes; without an outgroup, a three-gamete pattern alone is not an incompatibility. Count incompatible site pairs. Find the minimum number of contiguous blocks covering all9sites for which every block has compatible character splits. Report EVERY minimal cut set using1-based column indices AFTER which a breakpoint occurs; cuts can lie only after columns1..8. A cut after columnc separates sitesc andc+1. This is a marker-resolution representation, not a precisely localized physical DNA event.",
+  "event_interpretation": "Also report the Hudson-Kaplan recombination-event LOWERBOUND R_m from these incompatible site intervals under the infinite-sites model. It is the maximum number of mutually nonoverlapping required breakpoint intervals (equivalently the minimum number of cuts hitting every incompatible site interval in this1Dmarker problem). Do not identify this lower bound, or the minimum number of contiguous perfect-phylogeny blocks minus1, with the exact minimum number of events in a full ancestral recombination graph. A one-tree model with recurrent mutation and a multiple-block model with no recurrent mutation are competing explanations; neither a four-gamete violation nor a more parsimonious segmented representation by itself proves actual recombination instead of homoplasy, observation error or another violated assumption.",
+  "uncertainty_question": "Treat the four N completions as possible datasets, not independent experiments or equally probable posterior samples. Report the min/max of the single-tree parsimony minimum across completions and the min/max R_m across completions. Decide whether EVERY completion rejects a common tree with at most one change per segregating site, and whether the supplied data alone establish historical recombination over recurrent mutation. Do not fill N from an already chosen preferred genealogy before uncertainty analysis.",
+  "interpretation_proposals": {
+    "A": "With no known ancestor the unrooted four-gamete criterion is invariant to swappingA/Gat any one site.",
+    "B": "An incompatible site pair proves real recombination even if recurrent mutation is allowed as a competing explanation.",
+    "C": "The strict consensus retains only edge splits shared by every globally optimal labeled topology.",
+    "D": "Each different ancestral-state reconstruction of one topology counts as a different unrooted tree.",
+    "E": "A minimal marker cut set locates a boundary between informative columns, not the exact nucleotide coordinate of a historical event.",
+    "F": "The four completions are four independent replications and can be combined as evidence by multiplying their likelihoods.",
+    "G": "A lower bound on ancestral recombination events must not be reported as an exact full-ARG event count."
+  },
+  "reporting": "Return completion_summaries keyedC1..C4, each with minimum_single_tree_changes,optimal_unrooted_binary_topology_count,incompatible_site_pair_count,minimum_contiguous_infinite_sites_block_count,Hudson_Kaplan_event_lower_bound as exact integers; strict_consensus_splits_by_completion keyedC1..C4; all_minimal_breakpoint_cut_sets_by_completion keyedC1..C4, each a lexicographically sorted list of increasing integer cut lists; single_tree_minimum_change_range and Hudson_Kaplan_lower_bound_range as[min,max]; every_completion_rejects_single_tree_one_change_per_segregating_site boolean; data_alone_establish_recombination_over_homoplasy boolean; valid_interpretation_proposal_ids sorted. Counts, split sets, complete cut sets, labels and booleans exact. Keep the internal global search and completeness certificate in the trajectory; no list of thousands of trees is requested in the final answer.",
+  "methodological_sources": [
+    {
+      "title": "Statistical properties of the number of recombination events in the history of a sample of DNA sequences",
+      "authors": "Hudson and Kaplan",
+      "year": 1985,
+      "doi": "10.1093/genetics/111.1.147",
+      "url": "https://doi.org/10.1093/genetics/111.1.147",
+      "role": "Primary methods motivation for a lower bound based on incompatible marker intervals. The constructed task does not assert that the lower bound equals a full ancestral-recombination-graph optimum."
+    }
+  ]
+}

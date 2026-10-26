@@ -1,0 +1,74 @@
+{
+  "data_origin": "Controlled isotope-tracer inference on benign small-molecule graphs. All spectra and post-formation exchange kinetics are mathematically constructed finite observations, not a measured methyl-acetate mechanism, experimental exchange rate or synthesis protocol. The task tests which oxygen-routing conclusions the stated evidence can identify.",
+  "atom_mapping_problem": {
+    "reactant_mapped_smiles": "[CH3:1][C:2](=[O:3])[O:4][CH3:5].[OH2:6]",
+    "product_mapped_smiles": "[CH3:11][C:12](=[O:13])[OH:14].[CH3:15][OH:16]",
+    "fixed_carbon_correspondence": {
+      "1": 11,
+      "2": 12,
+      "5": 15
+    },
+    "remaining_bijection": "Enumerate every element-preserving bijection from reactant oxygen maps3,4,6 onto product oxygen maps13,14,16. Hydrogen transfers are excluded from the mapping cost, but each molecular formula and full reaction atom balance must remain correct. Atom-map labels are correspondence identities, not atom indices or isotope labels.",
+    "objective": "Cost is the size of the symmetric difference of unordered HEAVY-ATOM TYPED edges after mapping. A single and a double bond are different typed edges, so changing bond order counts one deletion plus one addition. Ignore hydrogen edges and do not replace typed edges with a binary adjacency matrix. Return every minimum-cost oxygen bijection. A minimum graph-edit map is not by itself an observed elementary mechanism."
+  },
+  "products": {
+    "acid": {
+      "neutral_smiles": "CC(=O)O",
+      "observed_ion": "[M-H]-",
+      "carbon_count": 2,
+      "oxygen_count": 2
+    },
+    "alcohol": {
+      "neutral_smiles": "CO",
+      "observed_ion": "[M+H]+",
+      "carbon_count": 1,
+      "oxygen_count": 1
+    }
+  },
+  "isotope_model": {
+    "initial_oxygen_18_fractions": {
+      "reactant_oxygen_map3": 0.4,
+      "reactant_oxygen_map4": 0.1,
+      "water_oxygen_map6": 0.8
+    },
+    "independent_carbon_13_probability": 0.0107,
+    "mass_constants_Da": {
+      "C12": 12.0,
+      "C13": 13.00335483507,
+      "O16": 15.99491461957,
+      "O18": 17.99915961286,
+      "proton": 1.007276466621
+    },
+    "scope": "For this ideal model only carbon12/13 and oxygen16/18 vary. All H are protium, and no17O, deuterium, adducts, charge-state ambiguity, isotope fractionation, loss or detector response distortion is present. Each isotope label is independently drawn at formation conditional on its source site. Carbon isotope choices are independent of all oxygen choices and subsequent exchange. The carbon13 probability is a fixed case assumption, not a universal isotope abundance."
+  },
+  "formation_routes": "At formation time0, fraction f in[0,1] routes ester oxygen4 into alcohol oxygen16 and water oxygen6 into acid hydroxyl oxygen14 (acyl-O cleavage at the graph level). The remaining fraction1-f routes oxygen4 into acid oxygen14 and water oxygen6 into alcohol16 (alkyl-O cleavage). Carbonyl oxygen3 initially remains acid oxygen13 in both routes. These are the two candidate oxygen routings; isotope data may support a mixture of them without proving detailed intermediates or reaction conditions.",
+  "post_formation_exchange": "One cohort is fully formed at time0, with no continued product formation or isotope-dependent yield. Each acid oxygen independently undergoes first-order replacement from a reservoir of constant18O fractionw=0.8, with a COMMON acid-site rate k_A>=0. Alcohol oxygen exchanges independently with the same reservoir at rate k_M>=0, which need not equal k_A. Carbon atoms never exchange. An oxygen with initial label probability p0 has p(t)=w+(p0-w)*exp(-k*t). No extra intramolecular oxygen permutation is added. Acid isotopologue count probabilities do not label its two oxygen sites; preserve every feasible site assignment when inverting a spectrum. This fixed kinetic observation model is a controlled hypothesis, not a claim about actual rates or positional stability in a real ester system.",
+  "peak_file": "asset://research_FLOW-0332_resolved_isotope_peaks.csv",
+  "observation_semantics": "The CSV contains complete resolved isotope fine-structure peak probabilities for each product separately at time1 and time2 in a declared arbitrary model-time unit. All four product/time groups are independently normalized to total probability1. Match peaks to the product graph and mass model with absolute m/z tolerance5e-6Da and probability tolerance1e-10. A single18O substitution and two13C substitutions have the same nominal+2 shift but different exact masses. Recover the O18-count probability vectors after accounting for the full carbon binomial distribution. Do not read a nominal+2 peak probability as a singly labelled oxygen fraction.",
+  "analysis": "First use ONLY the time1 spectra to enumerate every physical triple[f,r_A,r_M], where r_A=exp(-k_A),r_M=exp(-k_M), all in[0,1]. Return all solutions sorted by f; a numerical optimizer finding one branch does not establish uniqueness. Next predict time2 oxygen-count distributions for each preliminary solution using the SAME rates (retentions squared), and retain exactly those compatible with BOTH independently supplied time2 spectra. Return the final f and [k_A,k_M] in inverse model-time units; if more than one survived the answer would have to retain that ambiguity. Separately calculate the acid ion m/z values for exactlyone18O/no13C and exactlytwo13C/no18O (in that order). Define ideal resolving-power threshold for these two lines as the LARGER m/z divided by their absolute separation. This arithmetic threshold is not a guarantee of actual instrument peak resolution.",
+  "interpretation_proposals": {
+    "A": "Tied minimum typed-graph-edit maps do not establish a unique oxygen provenance or an elementary chemical mechanism.",
+    "B": "The larger probability at a nominal+2 mass shift is necessarily the singly18O-labelled fraction without carbon-isotope correction.",
+    "C": "Unresolved oxygen-site assignment can leave multiple physical kinetic/routing solutions even when a complete time1 isotope distribution is available.",
+    "D": "A single converged numerical fit is sufficient to discard other physical roots of the isotope inverse problem.",
+    "E": "The second-time spectra can distinguish time1 solutions by testing their common-rate predictions under the stipulated exchange model.",
+    "F": "The inferred routing fraction proves the microscopic elementary reaction mechanism and its intermediates in a real experiment.",
+    "G": "Post-formation exchange can change isotope incorporation, so late product labelling should not be equated directly to formation-time routing."
+  },
+  "reporting": "Return product_neutral_formulas keyed acid,alcohol; minimum_typed_heavy_atom_edit_count; minimum_oxygen_mapping_strings as sorted strings of reactant>product pairs ordered by reactant map (e.g.3>13|4>14|6>16); time1_oxygen_count_probabilities keyed acid(count0,1,2),alcohol(count0,1); time1_all_physical_solutions as rows[f,r_A,r_M] sorted by f; time2_compatible_preliminary_solution_indices as zero-based integer indices into those rows; final_formation_acyl_route_fraction; final_exchange_rates as[k_A,k_M]; acid_nominal_plus2_probability_at_time1 (sum of fine-structure channels whose nominal isotope shift is2); acid_two_close_plus2_ion_mz in[one18O,two13C]order; ideal_mass_resolving_power_threshold; valid_interpretation_proposal_ids. Counts/IDs/indices exact. Probabilities/retentions/rates absolute1e-8 and relative1e-8; m/z absolute5e-6Da; resolution threshold absolute0.05 and relative1e-7.",
+  "methodological_sources": [
+    {
+      "title": "Oxygen Exchange as Evidence for the Existence of an Intermediate in Ester Hydrolysis",
+      "author": "Myron L. Bender",
+      "year": 1951,
+      "doi": "10.1021/ja01148a063",
+      "url": "https://pubs.acs.org/doi/10.1021/ja01148a063",
+      "role": "Primary historical motivation for separating oxygen exchange from reaction-path inference. No original measurements or laboratory procedures are copied; the graph pair and kinetics here are controlled assumptions."
+    },
+    {
+      "title": "CIAAW carbon isotope masses and isotope-composition scope",
+      "url": "https://www.ciaaw.org/carbon.htm",
+      "role": "Primary isotope-mass reference and reminder that natural isotope compositions vary; the case fixes its own explicit isotope probabilities."
+    }
+  ]
+}

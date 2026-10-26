@@ -1,0 +1,14 @@
+{
+  "assembled_mass_g": 1.0,
+  "fixed_inactive_mass_g": 0.2,
+  "anode_reversible_capacity_mAh_per_g_active": 300.0,
+  "cathode_extractable_lithium_capacity_mAh_per_g_active": 150.0,
+  "anode_first_cycle_coulombic_efficiency": 0.9,
+  "constant_first_discharge_voltage_V": 3.2,
+  "model": "Choose nonnegative active masses m_a,m_c whose sum is assembled mass minus inactive mass. The only lithium source is the initial cathode inventory. Anode formation efficiency eta means reversible returned charge Q_rev=eta*Q_extracted;its irreversible loss consumes cathode lithium. Thus the first discharge must satisfy Q_rev<=C_a*m_a and Q_rev/eta<=C_c*m_c. The stated anode C_a is reversible capacity per gram active,not first-charge input capacity. No prelithiation,extra lithium,voltage variation or further cycling loss is included.",
+  "target": "Maximize first-discharge energy for the fixed1g assembled model. Return optimal anode and cathode active masses,first reversible discharge charge,irreversible lithium-loss charge at this optimum,and assembled specific energy in Wh/kg. Also report the actually attainable first discharge at masses selected by the incorrect reversible-only balance that omits eta,and whether that shortcut reaches the correct optimum.",
+  "scope": "Conditional inventory/mass accounting only. Passive mass contributes to the denominator and no physical cell or safety recommendation is inferred.",
+  "provenance": {
+    "kind": "Explicit controlled material/device reporting model;not an experimental assembly or performance claim."
+  }
+}

@@ -1,7 +1,8 @@
 """Actual current MusiteDeep2020 web backend; retired port5000 API is not used."""
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 from datetime import datetime, timezone
 import json
+import math
 from pathlib import Path
 import uuid
 import requests
@@ -13,7 +14,10 @@ ROOT = local_root()
 
 def predict_musite(sequence: str, cutoff: float = 0.5):
     """Real MusiteDeep2020 S/T phosphorylation scores; current public /cmd protocol, caller's cutoff applied to returned scores."""
-    sequence = "".join(sequence.split()).upper()
+    from tools.implementations.biology.sequence_primitives import canonical_sequence
+    sequence = canonical_sequence(sequence, maximum=5000)
+    if isinstance(cutoff, bool) or not isinstance(cutoff, (int, float)) or not math.isfinite(cutoff):
+        raise ValueError("cutoff must be a finite probability")
     if not 1 <= len(sequence) <= 5000 or set(sequence) - set("ACDEFGHIKLMNPQRSTVWY") or not 0 <= cutoff <= 1:
         raise ValueError("Require 1..5000 canonical amino acids and cutoff 0..1")
     directory = artifacts_root() / ("musite_" + uuid.uuid4().hex)

@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "record_id": "0",
+      "temperature_kelvin": 280.0,
+      "x": 0.0035714285714285713,
+      "y": -3.928571428571429,
+      "solubility_mol_l": 0.01967175499653908
+    },
+    {
+      "record_id": "1",
+      "temperature_kelvin": 290.0,
+      "x": 0.0034482758620689655,
+      "y": -3.620689655172413,
+      "solubility_mol_l": 0.02676421204904533
+    },
+    {
+      "record_id": "2",
+      "temperature_kelvin": 300.0,
+      "x": 0.0033333333333333335,
+      "y": -3.333333333333334,
+      "solubility_mol_l": 0.035673993347252374
+    },
+    {
+      "record_id": "3",
+      "temperature_kelvin": 310.0,
+      "x": 0.0032258064516129032,
+      "y": -2.5806451612903216,
+      "solubility_mol_l": 0.07572513333507039
+    },
+    {
+      "record_id": "4",
+      "temperature_kelvin": 320.0,
+      "x": 0.003125,
+      "y": -1.8750000000000002,
+      "solubility_mol_l": 0.15335496684492844
+    },
+    {
+      "record_id": "5",
+      "temperature_kelvin": 330.0,
+      "x": 0.0030303030303030303,
+      "y": -1.212121212121211,
+      "solubility_mol_l": 0.29756541014756566
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Tkelvin,x1/K,yln(S/(1mol/L)),Smol/L",
+    "original_observation_claim": false
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "training_feature_rows": [
+        [
+          8.6,
+          65.0
+        ],
+        [
+          11.4,
+          76.0
+        ],
+        [
+          17.9,
+          80.0
+        ],
+        [
+          10.8,
+          83.0
+        ],
+        [
+          10.5,
+          72.0
+        ],
+        [
+          12.9,
+          85.0
+        ],
+        [
+          16.3,
+          77.0
+        ],
+        [
+          13.3,
+          86.0
+        ],
+        [
+          13.7,
+          71.0
+        ],
+        [
+          11.2,
+          75.0
+        ],
+        [
+          13.8,
+          64.0
+        ],
+        [
+          17.3,
+          81.0
+        ],
+        [
+          14.2,
+          80.0
+        ],
+        [
+          18.0,
+          80.0
+        ],
+        [
+          11.3,
+          79.0
+        ],
+        [
+          11.1,
+          80.0
+        ],
+        [
+          18.0,
+          80.0
+        ],
+        [
+          12.9,
+          74.0
+        ],
+        [
+          20.6,
+          87.0
+        ],
+        [
+          11.0,
+          66.0
+        ],
+        [
+          10.7,
+          81.0
+        ]
+      ],
+      "training_volumes_ft3": [
+        10.3,
+        21.0,
+        58.3,
+        19.7,
+        16.4,
+        33.8,
+        42.6,
+        27.4,
+        25.7,
+        19.9,
+        24.9,
+        55.4,
+        31.7,
+        51.5,
+        24.2,
+        22.6,
+        51.0,
+        22.2,
+        77.0,
+        15.6,
+        18.8
+      ],
+      "test_feature_rows": [
+        [
+          11.0,
+          75.0
+        ],
+        [
+          11.4,
+          76.0
+        ],
+        [
+          16.0,
+          72.0
+        ],
+        [
+          14.5,
+          74.0
+        ],
+        [
+          11.7,
+          69.0
+        ],
+        [
+          12.0,
+          75.0
+        ],
+        [
+          17.5,
+          82.0
+        ],
+        [
+          8.3,
+          70.0
+        ],
+        [
+          8.8,
+          63.0
+        ],
+        [
+          14.0,
+          78.0
+        ]
+      ],
+      "test_volumes_ft3": [
+        18.2,
+        21.4,
+        38.3,
+        36.3,
+        21.3,
+        19.1,
+        55.7,
+        10.3,
+        10.2,
+        34.5
+      ],
+      "training_source_tree_ids": [
+        "2",
+        "12",
+        "28",
+        "6",
+        "4",
+        "17",
+        "25",
+        "18",
+        "19",
+        "10",
+        "20",
+        "26",
+        "22",
+        "29",
+        "11",
+        "9",
+        "30",
+        "16",
+        "31",
+        "7",
+        "5"
+      ],
+      "test_source_tree_ids": [
+        "8",
+        "13",
+        "24",
+        "23",
+        "14",
+        "15",
+        "27",
+        "1",
+        "3",
+        "21"
+      ],
+      "feature_order": [
+        "diameter_inch",
+        "height_foot"
+      ],
+      "protocol": "Use the same fitted log-linear allometry log(volume)=intercept+bD*log(diameter)+bH*log(height) for both reports. Logs are natural and use the numeric source units. Fit only the21 training trees. Compare naive exp(predictedlog) with training-residual smearing: multiply exp(predictedlog) by the arithmetic mean of exp(log(observed training volume)-predicted training log volume). Do not estimate that factor from test residuals or refit on test trees. Compare RMSE on original ft3 test volumes; keep all ties within1e-9. Pooled smearing has a mean-oriented interpretation under a shared residual distribution; it is not proof of unbiasedness under heteroscedasticity, or a carbon conversion.",
+      "unit_dictionary": "Original R Girth is actually diameter in inches, not circumference. Height is feet; recorded timber volume is ft3. No unit conversion is needed because fitted intercept accommodates these declared source units.",
+      "panel_derivation": "Unchanged31 measured trees; default_rng(212).permutation(31), first21train and remaining10test. Source tree IDs are one-based original R positions. No synthetic measurements or response edits.",
+      "source_provenance": {
+        "source_url": "https://svn.r-project.org/R/trunk/src/library/datasets/data/trees.R",
+        "sha256": "843b3a732a8e41af3edcc47a8bf9c9d435941a258d26199299af3382181e691a",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/trees.html",
+        "retrieved_utc_date": "2026-10-20",
+        "source": "Official R datasets SVN source,revision90725 listing",
+        "license": "R distribution GPL>=2; underlying observations cited by individual dataset documentation",
+        "claim_scope": "Historical public observations only; no new scientific observations or causal/representativeness assumption",
+        "decoded_json_sha256": "52afc2db399593aaef45ef8fe7bed18cb9de2aaa1fe4827d6d6e3a94feb0973e",
+        "decoder": "rdata0.11.2 RDA or bounded literal numeric c(...) parser,no R evaluation",
+        "raw_file": "trees.R",
+        "records": 31,
+        "converted_observation_sha256": "52afc2db399593aaef45ef8fe7bed18cb9de2aaa1fe4827d6d6e3a94feb0973e",
+        "observation_status": "Original historical values; no changed or synthetic observation."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "data": [
+    {
+      "record_id": "repeat01",
+      "neutral_formula": "C2H4O",
+      "neutral_mass_proxy_smiles": "C1CO1"
+    },
+    {
+      "record_id": "repeat02",
+      "neutral_formula": "C3H6O",
+      "neutral_mass_proxy_smiles": "CC1CO1"
+    },
+    {
+      "record_id": "repeat03",
+      "neutral_formula": "C6H10O2",
+      "neutral_mass_proxy_smiles": "O=C1OCCCCC1"
+    },
+    {
+      "record_id": "offset01",
+      "neutral_formula": "H2O",
+      "neutral_mass_proxy_smiles": "O"
+    },
+    {
+      "record_id": "offset02",
+      "neutral_formula": "C2H6O2",
+      "neutral_mass_proxy_smiles": "OCCO"
+    },
+    {
+      "record_id": "offset03",
+      "neutral_formula": "CH4O",
+      "neutral_mass_proxy_smiles": "CO"
+    },
+    {
+      "record_id": "cation01",
+      "charged_smiles": "[H+]",
+      "charge_e": 1
+    },
+    {
+      "record_id": "cation02",
+      "charged_smiles": "[Na+]",
+      "charge_e": 1
+    },
+    {
+      "record_id": "cation03",
+      "charged_smiles": "[K+]",
+      "charge_e": 1
+    },
+    {
+      "record_id": "peak0",
+      "ascending_ladder_index": 0,
+      "monoisotopic_mass_to_charge": 120.04693253809,
+      "carbon13_satellite_mass_to_charge_spacing": 0.50167742
+    },
+    {
+      "record_id": "peak1",
+      "ascending_ladder_index": 1,
+      "monoisotopic_mass_to_charge": 142.06003991209002,
+      "carbon13_satellite_mass_to_charge_spacing": 0.50167742
+    },
+    {
+      "record_id": "peak2",
+      "ascending_ladder_index": 2,
+      "monoisotopic_mass_to_charge": 164.07314728608998,
+      "carbon13_satellite_mass_to_charge_spacing": 0.50167742
+    },
+    {
+      "record_id": "peak3",
+      "ascending_ladder_index": 3,
+      "monoisotopic_mass_to_charge": 186.08625466009,
+      "carbon13_satellite_mass_to_charge_spacing": 0.50167742
+    },
+    {
+      "record_id": "peak4",
+      "ascending_ladder_index": 4,
+      "monoisotopic_mass_to_charge": 208.09936203409,
+      "carbon13_satellite_mass_to_charge_spacing": 0.50167742
+    },
+    {
+      "record_id": "study",
+      "carbon13_minus_carbon12_mass_u": 1.00335484,
+      "allowed_positive_charge_numbers": [
+        1,
+        2,
+        3
+      ],
+      "allowed_nonnegative_repeat_index_max": 30,
+      "absolute_mass_to_charge_tolerance": 1e-06,
+      "mass_model": "m/z=(n*neutral_repeat_mass+neutral_offset_mass+z*monovalent_cation_mass)/z;one cation identity per series"
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "m/z in u per elementary positive charge;neutral and ionic exact massesu;integercharge/ladder/indexdimensionless;ordinaryaverage masses are not monoisotopic masses",
+    "original_observation_claim": false
+  }
+}

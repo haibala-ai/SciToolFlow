@@ -1,0 +1,40 @@
+{
+  "species_order": [
+    "A",
+    "B"
+  ],
+  "resource_order": [
+    "R1",
+    "R2"
+  ],
+  "resource_supply_vector": [
+    4.0,
+    4.0
+  ],
+  "instantaneous_resource_depletion_matrix": [
+    [
+      1.0,
+      2.0
+    ],
+    [
+      2.0,
+      1.0
+    ]
+  ],
+  "per_capita_growth_resource_response_matrix": [
+    [
+      1.0,
+      0.25
+    ],
+    [
+      0.25,
+      1.0
+    ]
+  ],
+  "per_capita_loss_rate": 1.0,
+  "model": "A local reduced resource-competition model:R=S-C*N,and dN_i/dt=N_i*((G*R)_i-d). Columns of Care species and rows are resources;rows of Gare species. Interpret this as a local calibrated working model only in a neighborhood with N>0and R>0. A positive coexistence equilibrium solves G*R=d*ones and S-R=C*N. Local stability must use the density Jacobian of the full reduced equations,including resource feedback:at coexistence J=-diag(N)*G*C. A feasible intersection is not automatically stable. Do not extrapolate this local linear resource relation to negative-resource states or claim a global ecological outcome.",
+  "target": "Return the positive coexistence resource vector and population vector in source order,the local density Jacobian,and its largest real eigenvalue. Report whether that equilibrium is locally asymptotically stable.",
+  "provenance": {
+    "kind": "Explicit small synthetic benign scientific model;data are conditional exact counts/means and do not establish empirical ecological,causal or functional claims."
+  }
+}

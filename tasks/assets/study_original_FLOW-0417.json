@@ -1,0 +1,17 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "net_CO2_assimilation_micromol_per_square_meter_second": 10.0,
+  "water_flux_millimol_per_square_meter_second": 3.333333333333333,
+  "external_CO2_micromol_per_mol": 400.0,
+  "water_vapor_pressure_deficit_kilopascal": 2.0,
+  "total_pressure_kilopascal": 100.0,
+  "boundary_layer_water_conductance_mol_per_square_meter_second": 1.0,
+  "boundary_layer_CO2_conductance_mol_per_square_meter_second": 0.5,
+  "stomatal_water_to_CO2_conductance_ratio": 1.6,
+  "model": "Controlled steady leaf gas exchange,with both boundary and stomatal resistances in SERIES for each gas. E_water_mol=g_total_water*(VPD/P). 1/g_total_water=1/g_stomatal_water+1/g_boundary_water. Stomatal CO2conductance=g_stomatal_water/ratio;1/g_total_CO2=1/g_stomatal_CO2+1/g_boundary_CO2. A_micromol=g_total_CO2*(Ca-Ci)when concentrations are micromol/mol. No cuticular flux, storage, mesophyll resistance or boundary humidity correction beyond the supplied VPD.",
+  "comparison": "First infer stomatal water conductance from observed water flux WITH its finite boundary conductance. The specified naive Ci comparison retains that inferred stomatal value but sets only CO2boundary resistance to zero. Report naive_Ci-correct_Ci. Both requested water-use ratios use exactly their named denominators and units.",
+  "scope": "Stipulated paired-flux physiological accounting,not a species forecast, crop intervention or causal explanation of photosynthetic limitation."
+}

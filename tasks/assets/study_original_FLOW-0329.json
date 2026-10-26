@@ -1,0 +1,63 @@
+{
+  "reference_file": "2DN2_official.pdb",
+  "mobile_file": "2DN1_assembly1_protein_single_model.pdb",
+  "parsed_model_id": 0,
+  "selected_atom": "CA",
+  "selected_residue_ids_per_chain": [
+    "5",
+    "10",
+    "15",
+    "20",
+    "25",
+    "30",
+    "35",
+    "40",
+    "45",
+    "50",
+    "55",
+    "60",
+    "65",
+    "70",
+    "75",
+    "80",
+    "85",
+    "90",
+    "95",
+    "100",
+    "105",
+    "110",
+    "115",
+    "120",
+    "125",
+    "130",
+    "135"
+  ],
+  "chain_classes": [
+    [
+      "A",
+      "C"
+    ],
+    [
+      "B",
+      "D"
+    ]
+  ],
+  "global_rmsd_cutoff_angstrom": 0.75,
+  "correspondence_policy": "Reference chain orderA,B,C,D. Permute mobile chains only within each declared subunit class, considering all4class-preserving bijections. Within a chain, match the same original selected residue ID and verify its residue identity; no residue permutation or inferred missing coordinates. All4chains have the same27selected positions, so pooling is equal point weight.",
+  "model_comparison": "For every allowed mapping, minimize summed squared selected-point residuals first with one shared proper rigid transform for the entire4-chain cohort, and separately with one independent proper rigid transform per matched chain. Minimize each model over all allowed mappings. RMSD is sqrt(SSE/total_selected_points). Report1-minimum_independent_chain_SSE/minimum_global_SSE. Distinct best mappings or proper symmetry ties require no arbitrary chain-map answer.",
+  "representation_provenance": {
+    "reference": "Unchanged official2DN2deoxy PDB.",
+    "mobile": "Official2DN1oxy biological assembly1downloaded as2DN1.pdb1. Its two model records encode spatial assembly copies, not alternative conformers. The supplied protein-ATOM derivative flattens those copies into one model, maps model1A/BtoA/Band model2A/BtoC/D, and changes only chain/serial/record framing. Original protein atom coordinates, residue IDs, occupancies and altlocs are preserved. Hetero atoms and ANISOU records are outside this CA comparison.",
+    "official_assembly_source_sha256": "e6477125cc29a5bf2490ebddfe290f0e68f703b6dbe308f1a1b870b9b888216b"
+  },
+  "provenance": {
+    "kind": "Two actual deposited human hemoglobin structures from the same primary structural study; source-faithful assembly representation only, no regenerated coordinates.",
+    "reference_url": "https://files.rcsb.org/download/2DN2.pdb",
+    "mobile_official_assembly_url": "https://files.rcsb.org/download/2DN1.pdb1",
+    "entry_pages": [
+      "https://www.rcsb.org/structure/2DN1",
+      "https://www.rcsb.org/structure/2DN2"
+    ],
+    "primary_study_doi": "10.1016/j.jmb.2006.05.036"
+  }
+}

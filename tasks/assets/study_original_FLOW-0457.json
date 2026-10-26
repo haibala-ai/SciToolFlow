@@ -1,0 +1,15 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "rooted_species_topology": "((A,B),C)",
+  "stipulated_exact_gene_tree_proportions": {
+    "concordant_AB": 0.6,
+    "discordant_AC": 0.2,
+    "discordant_BC": 0.2
+  },
+  "model": "Controlled neutral three-taxon multispecies coalescent, one lineage sampled per species, with no gene flow and independent unlinked loci. For an internal species branch of length t>=0 coalescent units, concordant probability=1-(2/3)*exp(-t), and EACH discordant probability=(1/3)*exp(-t). These are exact stipulated limiting proportions, not finite-sample estimates requiring a confidence interval.",
+  "calibration": "No effective population size, generation time or absolute time calibration is given. Coalescent units are the model time scale; topology probabilities alone do not determine years.",
+  "target": "Invert the concordant probability, independently check both discordant probabilities and determine whether t is strictly positive under the stipulated model. Do not interpret the most frequent gene topology as the only permitted gene tree."
+}

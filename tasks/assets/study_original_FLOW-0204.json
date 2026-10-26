@@ -1,0 +1,31 @@
+{
+  "site_masses": [
+    1.0,
+    2.0,
+    1.0
+  ],
+  "reported_mass_weighted_dynamical_matrix": [
+    [
+      0.305,
+      -0.7000357133746821,
+      0.705
+    ],
+    [
+      -0.7000357133746821,
+      1.01,
+      -0.7000357133746821
+    ],
+    [
+      0.705,
+      -0.7000357133746821,
+      0.305
+    ]
+  ],
+  "model": "Three scalar Cartesian displacements at one sampled wavevector. D acts on mass-weighted coordinates q_i=sqrt(m_i)*u_i; its eigenvalues have common squared-frequency units. A rigid Cartesian translation therefore has q proportional to sqrt(m),not[1,1,1]. The supplied symmetric D contains numerical translational-sum-rule leakage.",
+  "correction_policy": "Let t be the UNIT mass-weighted rigid translation, P=I-t*t^T. Use D_ASR=P*D*P; this is the declared orthogonal sum-rule projection,not an arbitrary positive-semidefinite repair. Report ||D*t||_2 before projection. Assess only the internal subspace orthogonal to t.",
+  "uncertainty": "After projection an unknown symmetric perturbation on the internal subspace has spectral/operator2-norm at most0.01in the same squared-frequency units. Report the sharp attainable interval for the smallest internal eigenvalue and whether EVERY allowed perturbation still leaves a negative internal mode. Translation itself is a gauge zero,not a physical instability.",
+  "scope": "A sampled harmonic scalar model only; no whole-Brillouin-zone stability,finite-temperature lifetime or eigenfrequency obtained by taking absolute eigenvalues.",
+  "provenance": {
+    "kind": "Explicit controlled finite physical model; not a measured material or an upstream database calculation."
+  }
+}

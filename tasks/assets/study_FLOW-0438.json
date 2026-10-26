@@ -1,0 +1,226 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "quartet": [
+        {
+          "case_id": "1",
+          "points": [
+            [
+              10.0,
+              8.04
+            ],
+            [
+              8.0,
+              6.95
+            ],
+            [
+              13.0,
+              7.58
+            ],
+            [
+              9.0,
+              8.81
+            ],
+            [
+              11.0,
+              8.33
+            ],
+            [
+              14.0,
+              9.96
+            ],
+            [
+              6.0,
+              7.24
+            ],
+            [
+              4.0,
+              4.26
+            ],
+            [
+              12.0,
+              10.84
+            ],
+            [
+              7.0,
+              4.82
+            ],
+            [
+              5.0,
+              5.68
+            ]
+          ]
+        },
+        {
+          "case_id": "2",
+          "points": [
+            [
+              10.0,
+              9.14
+            ],
+            [
+              8.0,
+              8.14
+            ],
+            [
+              13.0,
+              8.74
+            ],
+            [
+              9.0,
+              8.77
+            ],
+            [
+              11.0,
+              9.26
+            ],
+            [
+              14.0,
+              8.1
+            ],
+            [
+              6.0,
+              6.13
+            ],
+            [
+              4.0,
+              3.1
+            ],
+            [
+              12.0,
+              9.13
+            ],
+            [
+              7.0,
+              7.26
+            ],
+            [
+              5.0,
+              4.74
+            ]
+          ]
+        },
+        {
+          "case_id": "3",
+          "points": [
+            [
+              10.0,
+              7.46
+            ],
+            [
+              8.0,
+              6.77
+            ],
+            [
+              13.0,
+              12.74
+            ],
+            [
+              9.0,
+              7.11
+            ],
+            [
+              11.0,
+              7.81
+            ],
+            [
+              14.0,
+              8.84
+            ],
+            [
+              6.0,
+              6.08
+            ],
+            [
+              4.0,
+              5.39
+            ],
+            [
+              12.0,
+              8.15
+            ],
+            [
+              7.0,
+              6.42
+            ],
+            [
+              5.0,
+              5.73
+            ]
+          ]
+        },
+        {
+          "case_id": "4",
+          "points": [
+            [
+              8.0,
+              6.58
+            ],
+            [
+              8.0,
+              5.76
+            ],
+            [
+              8.0,
+              7.71
+            ],
+            [
+              8.0,
+              8.84
+            ],
+            [
+              8.0,
+              8.47
+            ],
+            [
+              8.0,
+              7.04
+            ],
+            [
+              8.0,
+              5.25
+            ],
+            [
+              19.0,
+              12.5
+            ],
+            [
+              8.0,
+              5.56
+            ],
+            [
+              8.0,
+              7.91
+            ],
+            [
+              8.0,
+              6.89
+            ]
+          ]
+        }
+      ],
+      "audit_policy": "Each case has an intercept-plus-x design. Leverage is the diagonal of the orthogonal projector onto that design column space. Report maximum leverage for eachcase. For anycase with maximumleverage>0.9,remove its unique maximum-leverage row and check whether an intercept and slope remain separately identifiable. Do not use common R-squared or a fitted line alone as evidence of distributed predictor support.",
+      "data_status": "Published constructed diagnostic quartet,not experimental observations and not four independent scientific tasks.",
+      "source_provenance": {
+        "source_url": "https://svn.r-project.org/R/trunk/src/library/datasets/data/anscombe.R",
+        "sha256": "02f29379f282fcf909ff988b3fde2be2d5591975ba27ed0efd8714a91629223e",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/anscombe.html",
+        "retrieved_utc_date": "2026-10-20",
+        "source": "Official R datasets SVN source,revision90725 listing",
+        "license": "R distribution GPL>=2; underlying observations cited by individual dataset documentation",
+        "claim_scope": "Values from the original published constructed example are preserved;no empirical observation claim is made.",
+        "decoded_json_sha256": "81643b4210d67dc53b21e7dd76823efd7b261ec5f7b82d45235524f1c7f740f8",
+        "raw_source_sha256": "02f29379f282fcf909ff988b3fde2be2d5591975ba27ed0efd8714a91629223e",
+        "decoder": "Strict literal numeric vectors plus explicit factor-level label mapping; no R evaluation",
+        "records": 4,
+        "converted_observation_sha256": "81643b4210d67dc53b21e7dd76823efd7b261ec5f7b82d45235524f1c7f740f8",
+        "observation_status": "Original numeric values of the published deliberately constructed diagnostic quartet;not experimental measurements."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

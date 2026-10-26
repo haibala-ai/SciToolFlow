@@ -1,0 +1,31 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "scan_rates_volts_per_second": [
+    0.01,
+    0.04,
+    0.09,
+    0.16
+  ],
+  "peak_currents_amperes": [
+    5.325928275897076e-06,
+    1.0651856551794152e-05,
+    1.5977784827691225e-05,
+    2.1303713103588304e-05
+  ],
+  "peak_separations_millivolts": [
+    60.0,
+    61.0,
+    85.0,
+    120.0
+  ],
+  "electron_count": 1,
+  "electrode_area_cm2": 0.07,
+  "bulk_concentration_mol_per_cm3": 1e-06,
+  "randles_sevcik_coefficient_in_supplied_units": 269000.0,
+  "model": "At298K the supplied reversible-diffusion comparison equation is i_peak=coefficient*n^(3/2)*area*concentration*sqrt(D*v), with D in cm^2/s and v in V/s. Fit the current through the origin versus sqrt(v) to obtain its apparent D.",
+  "validation_policy": "For this controlled review, every supplied scan must have peak separation in[54,64]mV to qualify the entire current fit as a reversible-model diffusion estimate. This policy is a prespecified model check, not a universal sufficient test of reversibility. A good current fit alone does not override failed independent separation data.",
+  "scope": "Stipulated voltammetric summary; no actual synthesis, electrode intervention, correction of uncompensated resistance or kinetic-mechanism identification is requested."
+}

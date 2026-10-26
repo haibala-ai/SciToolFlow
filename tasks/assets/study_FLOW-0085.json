@@ -1,0 +1,85 @@
+{
+  "data": [
+    {
+      "record_id": "state",
+      "source_calculation_file": "nbo7_1.qout",
+      "matching_coordinate_file": "electrostatic_source_geometry.xyz",
+      "source_calculation_sha256": "cc840fa9ffe4473a55dec2796c67a1a375700b4c7ef83a32833e609b087f915e",
+      "matching_coordinate_sha256": "14a789c2afb4d8f2df8a2edfa9f810e8368c40cb048eac1526441674fd9afb2a",
+      "source_method": "wB97M-V/def2-TZVPD single point,source spelling wb97mv",
+      "declared_molecular_charge_e": -1,
+      "spin_multiplicity": 2,
+      "source_atom_numbers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "source_atom_elements": [
+        "Mg",
+        "O",
+        "C",
+        "C"
+      ],
+      "coordinate_units": "angstrom",
+      "origin_shift_old_coordinates_angstrom": [
+        10.0,
+        -5.0,
+        2.0
+      ],
+      "debye_per_e_angstrom": 4.80320471257
+    },
+    {
+      "record_id": "resp_charge_table",
+      "atom_numbers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "net_atomic_charges_e": [
+        -0.073821,
+        -0.505913,
+        -0.456511,
+        0.036244
+      ],
+      "source_block": "Merz-Kollman RESP Net Atomic Charges"
+    },
+    {
+      "record_id": "cartesian_density_reference",
+      "dipole_vector_debye": [
+        9.3212,
+        16.8504,
+        -19.7877
+      ],
+      "source_block": "Cartesian Multipole Moments / Dipole Moment (Debye)"
+    },
+    {
+      "record_id": "resp_related_report",
+      "dipole_vector_debye": [
+        9.3508,
+        15.8919,
+        -18.9002
+      ],
+      "source_block": "Related Dipole Moment below RESP charges",
+      "role": "Dipole implied by fitted atomic charges,not the independent total-density Cartesian reference"
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published same-state Q-Chem charge and multipole projection with controlled origin shift",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "Atomicchargee,sourcecoordinateangstrom,Cartesian/relateddipoleDebye;origin shiftangstrom;per-atomprintedchargeprecision retained without charge renormalization",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "materialsproject/pymatgen-test-files",
+      "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/qchem/new_qchem_files/nbo7_1.qout",
+      "accessed_at": "2026-10-20T11:46:46.047086+00:00",
+      "local_file": "tasks/assets/cc840fa9ffe4473a_nbo7_1.qout",
+      "source_sha256": "cc840fa9ffe4473a55dec2796c67a1a375700b4c7ef83a32833e609b087f915e",
+      "byte_equal": true,
+      "source_role": "Actual published computational NBO output,not benchmark gold"
+    },
+    "source_frame_check": "All4input coordinates exactly equal the printed Standard Nuclear Orientation;singlejob/onegeometry,source symmetry=false andsym_ignore=true. XYZ atom order follows these original rows."
+  }
+}

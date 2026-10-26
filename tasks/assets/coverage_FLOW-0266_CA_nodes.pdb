@@ -1,0 +1,12 @@
+HEADER    CONTROLLED CA-NODE SUBSET OF 1UBQ
+ATOM      1  CA  MET A   1      26.266  25.413   2.842  1.00 20.00          C  
+ATOM      2  CA  LEU A   8      29.607  41.180  19.467  1.00 20.00          C  
+ATOM      3  CA  GLU A  16      31.220  27.341   4.275  1.00 20.00          C  
+ATOM      4  CA  GLU A  24      35.031  21.722  17.069  1.00 20.00          C  
+ATOM      5  CA  ASP A  32      41.718  30.022  10.643  1.00 20.00          C  
+ATOM      6  CA  GLN A  40      37.738  31.637  23.712  1.00 20.00          C  
+ATOM      7  CA  LYS A  48      21.550  26.796  23.133  1.00 20.00          C  
+ATOM      8  CA  LEU A  56      25.594  21.109  13.072  1.00 20.00          C  
+ATOM      9  CA  GLU A  64      21.907  30.563   5.881  1.00 20.00          C  
+TER
+END

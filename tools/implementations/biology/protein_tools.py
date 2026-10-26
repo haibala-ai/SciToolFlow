@@ -1,4 +1,4 @@
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import subprocess
 import pandas as pd
 import json
@@ -67,23 +67,23 @@ def analyze_protein_CATH_from_PDBID(PDB_id: str) -> str:
     return markdown_output
 
 def _local_pdb(name):
-    """Resolve an uploaded/known PDB path; fetch a four-character PDB ID from RCSB when it is absent."""
-    filename = name if name.endswith('.pdb') else name + '.pdb'
-    base = Config().UPLOAD_FILES_BASE_PATH or code_dir
-    os.makedirs(base, exist_ok=True)
-    path = os.path.join(base, filename)
-    if os.path.exists(path):
-        return path
-    candidate = os.path.basename(name)
-    candidate = candidate[:-4] if candidate.lower().endswith('.pdb') else candidate
-    if not re.fullmatch(r"[0-9][A-Za-z0-9]{3}", candidate):
-        raise FileNotFoundError(f"No such file: '{path}' and '{candidate}' is not a PDB ID")
-    with requests.Session() as session:
-        session.trust_env = False
-        response = request_with_retries(session, "GET", f"https://files.rcsb.org/download/{candidate.upper()}.pdb", timeout=30)
-    response.raise_for_status()
-    Path(path).write_text(response.text)
-    return path
+    """Resolve explicit task/upload coordinates, or fetch a fresh PDB record.
+
+    Shared unversioned upload-directory caches are not consulted implicitly.
+    Reuse an explicit FetchPDBCoordinateFile artifact across analyses instead.
+    """
+    from tools.implementations.general.research_data import _public_source_path
+    from tools.implementations.biology.protein_records import fetch_pdb_coordinate_file
+    if not isinstance(name, str) or not name.strip():
+        raise ValueError("Require a coordinate file or bare PDB identifier")
+    filename = name if name.lower().endswith('.pdb') else name + '.pdb'
+    try:
+        return str(_public_source_path(filename))
+    except (PermissionError, FileNotFoundError):
+        identifier = name[:-4] if name.lower().endswith('.pdb') else name
+        if not re.fullmatch(r"[0-9][A-Za-z0-9]{3}", identifier):
+            raise
+        return fetch_pdb_coordinate_file(identifier)["pdb_path"]
 
 
 def analyze_protein_length_from_PDB(PDB_name: str, chain: str = "") -> str:
@@ -108,122 +108,91 @@ def analyze_protein_length_from_PDB(PDB_name: str, chain: str = "") -> str:
             f"- **Number of Residues in the whole entry:** {len(residues)}")
 
 def analyze_protein_seq_from_PDB(PDB_name: str) -> str:
-    """Read chain sequences from an uploaded PDB or a PDB ID fetched from RCSB."""
+    """Read observed first-model protein chains with exact byte provenance.
+
+    Args:
+        PDB_name: An explicitly uploaded PDB path, unique uploaded basename
+            (with or without .pdb), public task asset, or current-task artifact.
+            A bare four-character PDB ID may instead fetch the RCSB snapshot.
+            Arbitrary non-uploaded local paths are not accepted.
+
+    Returns:
+        JSON-encoded string retaining pdb (the original caller identifier) and
+        chain_sequences (chain ID to observed amino-acid sequence). Additional
+        source_sha256 is the hash of the same bytes parsed by Bio.PDB, model_id
+        is0, and sequence_basis states the first-model observed-residue scope.
+        Missing residues are not filled from SEQRES; MSE is mapped to M and
+        other recognized noncanonical residues use Bio.SeqUtils.seq1 defaults.
+        Empty nonprotein chains may remain empty; an entry without any observed
+        amino-acid residues fails. This is not a full-sequence completeness,
+        chemical modification, biological assembly or molecular-mass claim.
+
+    Raises:
+        ValueError/FileNotFoundError: Invalid identity, unauthorized local path,
+            empty/over25MiB/non-ASCII/invalid PDB, or no protein residues.
+    """
+    import hashlib
+    import io
     from Bio.PDB import PDBParser, is_aa
     from Bio.SeqUtils import seq1
-    path = _local_pdb(PDB_name)
-    structure = PDBParser(QUIET=True).get_structure('protein', path)
-    chains = {chain.id: ''.join(seq1(r.resname, custom_map={'MSE': 'M'}) for r in chain if is_aa(r)) for chain in structure[0]}
-    return json.dumps({'pdb': PDB_name, 'chain_sequences': chains})
+    from tools.implementations.general.research_data import _public_source_path
+
+    if not isinstance(PDB_name, str) or not PDB_name.strip():
+        raise ValueError("PDB_name must identify an uploaded PDB or a bare PDB ID")
+    filename = PDB_name if PDB_name.lower().endswith('.pdb') else PDB_name + '.pdb'
+    try:
+        path = _public_source_path(filename)
+    except (PermissionError, FileNotFoundError):
+        # Only an actual bare identifier can invoke the legacy RCSB fetch.
+        # An absolute/relative unuploaded path never becomes a remote-ID alias.
+        if not re.fullmatch(r"[0-9][A-Za-z0-9]{3}(?:\.pdb)?", PDB_name, flags=re.IGNORECASE):
+            raise
+        identifier = PDB_name[:-4] if PDB_name.lower().endswith('.pdb') else PDB_name
+        with requests.Session() as session:
+            session.trust_env = False
+            response = request_with_retries(session, "GET", f"https://files.rcsb.org/download/{identifier.upper()}.pdb", timeout=30)
+        response.raise_for_status()
+        # Keep remote bytes in memory: fetching a new ID must never write into
+        # the directory of an uploaded or immutable public task attachment.
+        raw = response.content
+    else:
+        raw = Path(path).read_bytes()
+    if not raw or len(raw) > 25 * 1024 * 1024:
+        raise ValueError("PDB must be nonempty and at most25MiB")
+    structure = PDBParser(QUIET=True).get_structure('protein', io.StringIO(raw.decode('ascii')))
+    if not len(structure):
+        raise ValueError("PDB contains no parsed model")
+    chains = {
+        chain.id: ''.join(seq1(r.resname, custom_map={'MSE': 'M'}) for r in chain if is_aa(r))
+        for chain in structure[0]
+    }
+    if not any(chains.values()):
+        raise ValueError("PDB contains no observed amino-acid residues")
+    return json.dumps({
+        'pdb': PDB_name,
+        'chain_sequences': chains,
+        'source_sha256': hashlib.sha256(raw).hexdigest(),
+        'model_id': 0,
+        'sequence_basis': 'First parsed model, observed amino-acid residues only; no SEQRES completion or missing-residue inference; MSE maps to M.',
+    })
 
 
 def calculate_energy_from_sequence(sequence):
-    """
-    Calculates the unfolding energy of a protein based on its amino acid sequence.
-    Args:
-        sequence (str): Amino acid sequence of the protein.
-    Returns:
-        str: A Markdown formatted string representing the calculated energy value.
-    """
-    _load_force_dependencies()
-    try:
-        prompt = f"CalculateEnergy<{sequence}>"
-        task = extract_task(prompt, end_task_token='>') + ' '
-        model, tokenizer = ForceGPTmodel(model_name=Config().FORCEGPT_MODEL_PATH, device=device)
-
-        sample_output = generate_output_from_prompt(model, device, tokenizer, prompt=task, num_return_sequences=1, num_beams=1, temperature=0.01)
-        for output in sample_output:
-            result = tokenizer.decode(output, skip_special_tokens=True)
-            energy_value = extract_start_and_end(result, start_token='[', end_token=']')
-        return f"### Energy Calculation Result\n\n- **Sequence**: `{sequence}`\n- **Calculated Energy**: `{energy_value}`"
-    except Exception as e:
-        return f"### Error\n\nAn error occurred during the energy calculation: {str(e)}"
+    """Retired imprecise mechanical-property contract."""
+    raise NotImplementedError('Unqualified physical-unit prediction retired; use PredictNormalizedProteinMechanics for dimensionless model estimates only')
 
 def calculate_force_from_sequence(sequence):
-    """
-    Calculates the unfolding force of a protein based on its amino acid sequence.
-    Args:
-        sequence (str): Amino acid sequence of the protein.
-    Returns:
-        str: A Markdown formatted string representing the calculated force value.
-    """
-    _load_force_dependencies()
-    try:
-        prompt = f"CalculateForce<{sequence}>"
-        task = extract_task(prompt, end_task_token='>') + ' '
-        model, tokenizer = ForceGPTmodel(model_name=Config().FORCEGPT_MODEL_PATH, device=device)
-
-        sample_output = generate_output_from_prompt(model, device, tokenizer, prompt=task, num_return_sequences=1, num_beams=1, temperature=0.01)
-        for output in sample_output:
-            result = tokenizer.decode(output, skip_special_tokens=True)
-            force_value = extract_start_and_end(result, start_token='[', end_token=']')
-        return f"### Force Calculation Result\n\n- **Sequence**: `{sequence}`\n- **Calculated Force**: `{force_value}`"
-    except Exception as e:
-        return f"### Error\n\nAn error occurred during the force calculation: {str(e)}"
+    """Retired imprecise mechanical-property contract."""
+    raise NotImplementedError('Unqualified physical-unit prediction retired; use PredictNormalizedProteinMechanics for dimensionless model estimates only')
 
 
 def calculate_force_energy_from_sequence(sequence):
-    """
-    Calculates both the unfolding force and energy of a protein based on its sequence.
-    Args:
-        sequence (str): Amino acid sequence of the protein.
-    Returns:
-        str: A Markdown formatted string representing the calculated force and energy values.
-    """
-    _load_force_dependencies()
-    try:
-        prompt = f"CalculateForceEnergy<{sequence}>"
-        task = extract_task(prompt, end_task_token='>') + ' '
-        model, tokenizer = ForceGPTmodel(model_name=Config().FORCEGPT_MODEL_PATH, device=device)
-
-        sample_output = generate_output_from_prompt(model, device, tokenizer, prompt=task, num_return_sequences=1, num_beams=1, temperature=0.01)
-        force, energy = None, None  # Initialize variables to hold force and energy values
-        for output in sample_output:
-            result = tokenizer.decode(output, skip_special_tokens=True)
-            data = extract_start_and_end(result, start_token='[', end_token=']')
-            # Assume the data format is "force,energy" and split it accordingly
-            values = data.split(',')
-            if len(values) == 2:
-                force, energy = values[0], values[1]
-            else:
-                raise ValueError("Expected force and energy values but got: " + data)
-        return f"### Force and Energy Calculation Result\n\n- **Sequence**: `{sequence}`\n\n- **Unfolding Force**: `{force}`\n- **Energy**: `{energy}`"
-    except Exception as e:
-        return f"### Error\n\nAn error occurred during the force and energy calculation: {str(e)}"
+    """Retired imprecise mechanical-property contract."""
+    raise NotImplementedError('Unqualified physical-unit prediction retired; use PredictNormalizedProteinMechanics for dimensionless model estimates only')
 
 def fix_pdb_file(original_pdb_path, fixed_pdb_path):
-    """
-    Inserts a CRYST1 record into a PDB file if it is missing.
-
-    Args:
-    original_pdb_path (str): Path to the original PDB file.
-    fixed_pdb_path (str): Path where the fixed PDB file will be saved.
-    """
-    with open(original_pdb_path, 'r') as file:
-        lines = file.readlines()
-
-    #print (lines)
-    # Check if the first record is CRYST1
-    CRYST1 = False
-    header = False
-    for line in lines:
-        LINE = str(line).split(sep=' ')
-        for item in LINE:
-            if re.search('CRYST1', item):
-                CRYST1 = True
-            if re.search('HEADER', item):
-                header = True
-
-    if (not CRYST1) and (not header):
-        # Define a dummy CRYST1 record with a large unit cell
-        # These numbers mean that the unit cell is a cube with 1000 Å edges.
-        cryst1_record = "CRYST1 1000.000 1000.000 1000.000  90.00  90.00  90.00 P 1           1\n"
-        lines.insert(0, cryst1_record)  # Insert the dummy CRYST1 record
-        #lines.insert(0, 'header \n')
-
-    with open(fixed_pdb_path, 'w') as file:
-        file.writelines(lines)
-    return f"Fixed PDB file written to {fixed_pdb_path}"
+    """Retired: a fabricated CRYST1 cell is not a scientific structure repair."""
+    raise NotImplementedError("FixPDBFile is retired: dummy crystallographic dimensions are not inferred data; retain source metadata or use explicit structure-quality inspection")
 
     #print(f"Fixed PDB file written to {fixed_pdb_path}")
         
@@ -253,27 +222,8 @@ def fold_protein(sequence):
     return f"{name}.pdb"
 
 def generate_sequence_from_energy(energy):
-    """
-    Generates a protein sequence based on the specified energy level.
-    Args:
-        energy (str): Energy level to base the sequence generation on.
-    Returns:
-        str: A Markdown formatted string representing the generated protein sequence.
-    """
-    _load_force_dependencies()
-    try:
-        temperature=0.01
-        prompt = f"GenerateEnergy<{energy}>"
-        task = extract_task(prompt, end_task_token='>') + ' '
-        model, tokenizer = ForceGPTmodel(model_name=Config().FORCEGPT_MODEL_PATH, device=device)
-
-        sample_output = generate_output_from_prompt(model, device, tokenizer, prompt=task, num_return_sequences=1, num_beams=1, temperature=float(temperature))
-        for output in sample_output:
-            result = tokenizer.decode(output, skip_special_tokens=True)
-            sequence = extract_start_and_end(result, start_token='[', end_token=']')
-        return f"### Sequence Generation from Energy\n\n- **Energy Level**: `{energy}`\n- **Generated Sequence**: `{sequence}`"
-    except Exception as e:
-        return f"### Error\n\nAn error occurred during sequence generation from energy: {str(e)}"
+    """Retired imprecise mechanical-property contract."""
+    raise NotImplementedError('GenerateEnergy task and inverse energy normalization are not established; capability retired')
 
 def get_FASTA_from_name(protein_name: str) -> str:
     """
@@ -602,35 +552,11 @@ def design_protein_from_length(length: str):
         error_md = f"Error occurred during protein design: {str(e)}"
         return error_md
 
-def save_to_csv_file(input_json):
-    """
-    Converts an input JSON string to a CSV file and saves it to the specified location.
+def save_to_csv_file(input_json: str) -> str:
+    """Export JSON table data through the General CSV primitive."""
+    from tools.implementations.general.csv_export import save_to_csv_file as export
+    return export(input_json)
 
-    Args:
-        input_json (str): A JSON string containing data to be saved.
-
-    Returns:
-        str: A Markdown formatted string summarizing the operation.
-    """
-
-    try:
-        data = json.loads(input_json)
-        if isinstance(data, dict) and not all(isinstance(value, list) for value in data.values()):
-            data = {key: [value] for key, value in data.items()}
-        
-        df = pd.DataFrame(data)
-        
-        target_directory = "DataFiles/csv"
-        os.makedirs(target_directory, exist_ok=True)
-        # protein_name = os.getenv('PROTEIN_NAME', '')
-        full_output_path = os.path.join(target_directory, f'_temp.csv')
-        
-        df.to_csv(full_output_path, index=False)
-        # os.environ['PROTEIN_NAME'] = ''
-        return f"_temp.csv has been save to {full_output_path}."
-    except Exception as e:
-        return f"### Error\n\nFailed to create CSV file due to: `{str(e)}`."
-    
 def fetch_protein_structure_from_PDBID(PDB_id: str) -> str:
     """
     Fetches the protein structure file (.pdb) for the given PDB ID and saves it to a specified directory.

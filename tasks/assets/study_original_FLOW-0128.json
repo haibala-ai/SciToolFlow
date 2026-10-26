@@ -1,0 +1,23 @@
+{
+  "temperature_K": 298.15,
+  "R_J_per_mol_K": 8.31446261815324,
+  "F_C_per_mol": 96485.33212,
+  "compartment_volumes_L": [
+    1.0,
+    1.0
+  ],
+  "total_mobile_inventory_mol": {
+    "Na_plus": 0.4,
+    "Cl_minus": 0.2
+  },
+  "inside_impermeant_solute": {
+    "amount_mol": 0.1,
+    "charge_number": -2
+  },
+  "model": "Two equal-volume well-mixed ideal dilute compartments at fixed temperature and fixed volumes. Only Na+and Cl-are membrane permeable;the impermeant dianion stays inside. Both bulk compartments are electroneutral. Mobile-ion electrochemical potentials equilibrate with identical standard chemical potentials across the membrane. No complexation,water ionization,activity correction or membrane surface excess is included.",
+  "target": "Find the nonnegative equilibrium ion concentrations,inside-minus-outside electrical potential and ideal inside-minus-outside osmotic pressure. Count impermeant MOLECULES,not charge equivalents,in osmotic particle concentration. This pressure difference is the hypothetical mechanical counterpressure needed to prevent water flow if water permeability were enabled;volumes do not change in the stipulated calculation.",
+  "reporting": "Concentrations in mol/L,in the order insideNa,insideCl,outsideNa,outsideCl. Electrical potential in V,osmotic pressure in Pa. A1mol/L particle concentration equals1000mol/m^3. Do not replace the finite outside compartment by an infinite bath.",
+  "provenance": {
+    "kind": "Explicit idealized controlled equilibrium study. Numbers are stipulated model inputs,not measured thermochemical or membrane data."
+  }
+}

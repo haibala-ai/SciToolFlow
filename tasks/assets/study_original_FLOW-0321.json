@@ -1,0 +1,12 @@
+{
+  "consumed_ethanol_millimol": 10.0,
+  "measured_CO2_millimol": 4.0,
+  "passed_charge_C": 9648.533212,
+  "Faraday_C_per_mol_electrons": 96485.33212,
+  "upper_total_oxygen_product_millimol": 12.0,
+  "model": "All consumed ethanol carbon ends in acetaldehyde A,acetate B,or CO2 C;no unmeasured carbon product exists. AandBare in millimol molecules and C=measured_CO2. Carbon balance:2A+2B+C=2*consumed_ethanol. Organic oxidation releases2A+4B+6Cmillimol electrons. The ONLY additional charge-consuming reaction produces O2at4millimol electrons per millimol O2. All product amounts are nonnegative;the supplied O2upper bound concerns the TOTALgas-plus-dissolved oxygen product,not only a recovered fraction. No charge efficiency or individual organic product is otherwise measured. Treat the continuous balances as exact bulk expectations.",
+  "target": "Return sharp intervals for acetaldehyde,acetate and total O2amounts in millimol,and the sharp organic-product Faradaic-efficiency interval(organic electron equivalents/total passed electron equivalents). Return CO2carbon selectivity(its carbon atoms/consumed ethanol carbon atoms),and report whether charge,conversion,CO2and the oxygen bound identify a unique organic-product Faradaic efficiency.",
+  "provenance": {
+    "kind": "Explicit controlled chemical model/exact observations;no empirical mechanism or practical reaction recommendation is inferred."
+  }
+}

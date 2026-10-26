@@ -1,0 +1,103 @@
+{
+  "data_origin": "Own controlled small-molecule ensemble inference using six frozen 1,4-butanediol conformers. RDKit ETKDGv3 seed57 generated a candidate pool; MMFF94 optimization supplies potential energies only. Selected original conformer indices0,1,2,3,5,6were rounded to0.001angstrom and frozen. This finite library, all synthetic spectroscopic observations and common-scale model are explicit benchmark assumptions, not an experimental conformer population, complete thermodynamic landscape or validated solution-state model.",
+  "structure_inputs": {
+    "ensemble_sdf": "asset://research_FLOW-0339_conformers.sdf",
+    "conformer_PDB_files": {
+      "K1": "asset://research_FLOW-0339_K1.pdb",
+      "K2": "asset://research_FLOW-0339_K2.pdb",
+      "K3": "asset://research_FLOW-0339_K3.pdb",
+      "K4": "asset://research_FLOW-0339_K4.pdb",
+      "K5": "asset://research_FLOW-0339_K5.pdb",
+      "K6": "asset://research_FLOW-0339_K6.pdb"
+    },
+    "identity": "SDF record0..5corresponds exactly toK1..K6; conformer_id and MMFF94_potential_kcalmol are record properties. Every record and every PDB has the same16explicit atoms in the same order. PDB atom serials are1based, scientific atom indices here are ZERO-based. Geometry is rounded identically in both formats; retain supplied coordinates and all parsed hydrogens. Re-embedding a shared SMILES or optimizing coordinates again changes the problem. PDB parser float precision is acceptable within reporting tolerances."
+  },
+  "geometry_audit": "First compare the SIX ACTUAL supplied SDF conformer geometries using USRCAT/GetUSRScore with conformer_policy=preserve,hydrogen_policy=as_parsed,optimization=none. Report the off-diagonal most-similar pair, naming its lower conformer ID first, and score. Do not mistake six copies of one regenerated canonical conformer for a coordinate-preserving comparison. A high global shape score does not guarantee equality of local proton-distance observables.",
+  "coupling_geometry": "The central heavy-atom torsion uses atom indices[1,2,3,4] in that order. For each conformer phi is the conventional signed dihedral; only cos(phi) is needed. Compute J(phi)=9*cos(phi)^2-cos(phi)+0.5 in Hz. Its fixed coefficients and use of this heavy-atom torsion are controlled response assumptions. Coordinates/distances determine J before population fitting; J of an averaged geometry is not the ensemble-averaged coupling. All six interatomic distances within the four-atom set suffice to reconstruct cos(phi) without an arbitrary sign convention.",
+  "ideal_NOE_model": "For a declared assigned proton pair(i,j), conformer response C_k=1000*(r_ij,k/angstrom)^(-6). Observed ideal intensity y=tau*sum_k p_k*C_k. p_k>=0,sum p=1 and one COMMON positive tau in[0.5,2]apply to every current and prospective NOE channel. tau is a dimensionless calibrated scale in this model; it is not independently fitted per pair or an experimentally estimated tumbling time. Assume this ideal r^-6ensemble average and no competing relaxation corrections by construction. Do not average distances first or mix complex amplitudes. Proton identities/assignments are fixed; swapping equivalent-looking hydrogen indices changes the supplied observable.",
+  "current_observations": {
+    "NOE1": {
+      "atom_indices": [
+        7,
+        11
+      ],
+      "intensity": 1.3596451519331811
+    },
+    "NOE2": {
+      "atom_indices": [
+        8,
+        12
+      ],
+      "intensity": 2.290533048804977
+    },
+    "ensemble_J_Hz": 5.9718759116057365,
+    "uncertainty": "Treat current observations as exact within numerical precision. The mixture J is sum p_k*J_k with NO tau factor."
+  },
+  "identified_set_question": "Use ALL current observations, positivity, normalization and shared scale. Report the rank of the complete linear equality system in[p_K1,..,p_K6,U]with U=1/tau, the SHARP marginal interval of every p_k, and the sharp tau interval. Define compact conformers by the ACTUAL proton distance r(7,13)<3angstrom and report their IDs and sharp total population interval. All endpoint claims require global optimality and feasible witnesses. A single least-squares, maximum-entropy or minimum-energy mixture is not proof of a unique population. Decide whether the marginal intervals form an independently selectable Cartesian joint feasible box; retain the coupled constraints.",
+  "prospective_probe_design": {
+    "probes": {
+      "P1": {
+        "atom_indices": [
+          7,
+          11
+        ],
+        "cost": 1
+      },
+      "P2": {
+        "atom_indices": [
+          8,
+          12
+        ],
+        "cost": 1
+      },
+      "P3": {
+        "atom_indices": [
+          7,
+          13
+        ],
+        "cost": 2
+      },
+      "P4": {
+        "atom_indices": [
+          8,
+          14
+        ],
+        "cost": 1
+      },
+      "P5": {
+        "atom_indices": [
+          7,
+          14
+        ],
+        "cost": 1
+      }
+    },
+    "hypotheses": "H_high means compact population>=0.50; H_low means compact population<=0.15. Both use the ENTIRE coupled current-data feasible set and shared tau. They are deliberately separated hypotheses, not an exhaustive division of all feasible mixtures. Do not assume the actual ensemble belongs to one of them.",
+    "future_absolute_error": 0.05,
+    "criterion": "For each probe compute its complete ideal intensity interval under each hypothesis, allowing populations AND the common scale to vary together subject to ALL existing observations. Raw interval gap=max(0,L_high-U_low,L_low-U_high). Positive raw gap alone is insufficient: future observed intensity intervals are each widened by0.05on both sides. Guaranteed discrimination requires raw gap STRICTLY greater than0.10; equality fails. Choose the lowest-cost probe meeting this criterion, breaking remaining ties by numeric probe ID. Report all raw-gap-positive and all noise-robust probe IDs separately. No actual follow-up observation is supplied, so do not infer which separated hypothesis is true."
+  },
+  "potential_energy_control": "Read the actual SDF potential energies and form a NAIVE unit-degeneracy Boltzmann population at298.15K, R=0.00198720425864083kcal/(mol*K), using relative energies. Report this six-entry population inK1..K6order, and whether it satisfies ALL current NOE/J observations with one tau in[0.5,2]. This is a test of an explicitly proposed potential-energy approximation; MMFF94 potential energies are NOT automatically conformer free energies or state entropies. Do not use this population as hidden truth when deriving identified bounds.",
+  "interpretation_proposals": {
+    "A": "The ideal NOE response averages inverse sixth powers at fixed proton identity, not the sixth inverse power of the mean distance.",
+    "B": "Six records sharing a molecular graph may be replaced by six copies of one regenerated geometry without changing the supplied ensemble problem.",
+    "C": "Common-scale uncertainty must remain coupled to populations when bounding an unmeasured probe.",
+    "D": "Any positive raw separation guarantees discrimination under the stated nonzero future error bounds.",
+    "E": "Marginal population bounds and one fitted mixture do not by themselves specify a unique joint ensemble.",
+    "F": "The two separated compact-population hypotheses exhaust all scientifically possible ensembles supported by the current data.",
+    "G": "A molecular mechanics potential-energy Boltzmann distribution is a proposed prior/model control, not a measured solution-state population."
+  },
+  "reporting": "Return actual_SDF_most_similar_conformer_pair,actual_SDF_USRCAT_similarity; conformer_J_Hz keyedK1..K6; compact_conformer_ids sorted; population_scale_equality_rank integer; identified_population_intervals_by_conformer keyedK1..K6; identified_tau_interval; identified_compact_population_interval; marginal_intervals_are_independent_joint_box boolean; prospective_intensity_intervals_by_probe_and_hypothesis keyedP1..P5thenH_high,H_low; raw_positive_gap_probe_ids sorted; noise_robust_probe_ids sorted; selected_probe_id; naive_MMFF_Boltzmann_populations as six numbers; naive_MMFF_ensemble_satisfies_all_current_observations boolean; valid_interpretation_proposal_ids sorted. IDs, rank and booleans exact. Shape score absolute1e-7. J and optimized bounds absolute2e-4plus relative1e-5 to allow PDB parser precision; naive Boltzmann populations absolute1e-7plus relative1e-6. Probabilities remain physical and endpoint ordering matters. Keep global completeness and endpoint evidence in the trajectory instead of listing every feasible mixture.",
+  "methodological_sources": [
+    {
+      "title": "Assessing the effect of conformational averaging on the measured values of observables",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11370777/",
+      "year": 2001,
+      "role": "Primary methods motivation for joint NOE/J ensemble inference. No measurement data or peptide sequences copied; this problem is a fixed benign small-molecule controlled model."
+    },
+    {
+      "title": "RDKit USRCAT conformer geometry descriptors",
+      "url": "https://www.rdkit.org/docs/source/rdkit.Chem.rdMolDescriptors.html",
+      "role": "Primary software documentation for the explicitly declared global shape comparison; it does not convert a shape score into experimental ensemble evidence."
+    }
+  ]
+}

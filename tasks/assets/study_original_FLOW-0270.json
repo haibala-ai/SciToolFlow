@@ -1,0 +1,24 @@
+{
+  "denaturant_concentrations_molar": [
+    0.0,
+    1.0,
+    2.0,
+    3.0,
+    4.0
+  ],
+  "measured_fluorescence_units": [
+    10.35972419924183,
+    14.026449674376,
+    21.0,
+    25.68876785775671,
+    25.856110320303266
+  ],
+  "RT_kJ_per_mol": 1.0,
+  "native_baseline": "F_N(c)=10+2*c",
+  "unfolded_baseline": "F_U(c)=30-c",
+  "model": "A reversible two-state monomer model at one temperature:DeltaG_unfold(c)=DeltaG0-m*c,and unfolded fraction u(c)=1/(1+exp(DeltaG_unfold/RT)). Observed fluorescence F(c)=(1-u)*F_N(c)+u*F_U(c). Both baseline functions are independently calibrated and hold on the listed range. Measurements are exact means;no third state,irreversibility or concentration-dependent association is included. Neither finite endpoint is declared a pure state.",
+  "target": "Infer DeltaG0in kJ/mol and min kJ/mol/M,return the denaturant midpoint where u=1/2,and native fraction at1M. Also report the naive unfolded fraction at1Mcomputed as(F(1)-10)/(30-10),and whether that naive normalization equals the model unfolded fraction there. Do not fit a logistic directly to raw fluorescence without handling the calibrated baselines.",
+  "provenance": {
+    "kind": "Explicit synthetic benign biological measurement model with exact source observations;not an empirical validation or sequence-design recommendation."
+  }
+}

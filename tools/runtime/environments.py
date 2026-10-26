@@ -9,7 +9,7 @@ from pathlib import Path
 
 @lru_cache(maxsize=1)
 def profiles():
-    from scitoolflow.paths import project_root
+    from src.utils.paths import project_root
 
     return json.loads(
         (project_root() / "configs/environments/routing.json").read_text()
@@ -17,11 +17,9 @@ def profiles():
 
 
 def selected_profile():
-    name = os.getenv("SCITOOL_ENV_PROFILE", "integrated")
+    name = os.getenv("SCITOOL_ENV_PROFILE", profiles()["recommended_profile"])
     if name not in profiles()["profiles"]:
-        raise ValueError(
-            f"Unknown or retired environment profile: {name}; use integrated"
-        )
+        raise ValueError(f"Unknown environment profile: {name}")
     return name
 
 

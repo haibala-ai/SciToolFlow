@@ -1,0 +1,39 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific measurement/decision example; stipulated model inputs and observations, not new experimental findings.",
+    "scope": "All required information, units and inferential limits are in this document."
+  },
+  "clusters": [
+    {
+      "cluster_id": "A",
+      "size": 2,
+      "mean_if_control": 1.0,
+      "mean_if_treated": 2.0
+    },
+    {
+      "cluster_id": "B",
+      "size": 3,
+      "mean_if_control": 2.0,
+      "mean_if_treated": 2.0
+    },
+    {
+      "cluster_id": "C",
+      "size": 5,
+      "mean_if_control": 3.0,
+      "mean_if_treated": 5.0
+    },
+    {
+      "cluster_id": "D",
+      "size": 10,
+      "mean_if_control": 4.0,
+      "mean_if_treated": 4.0
+    }
+  ],
+  "observed_treated_cluster_ids": [
+    "A",
+    "C"
+  ],
+  "assignment": "Uniformly choose exactly two of the four intact clusters for treatment; the other two are controls. All six assignments are equally likely. Potential means and cluster sizes in this controlled finite population are fixed; there is no interference between clusters and all units in a cluster share its assigned arm. These complete potential outcomes are public for design evaluation, not estimated from an actual trial.",
+  "target": "Finite-population average treatment effect over all20 units, weighted by cluster size. Define the Horvitz-Thompson estimator as1/N sum[Z_g*T_g(1)/.5-(1-Z_g)*T_g(0)/.5], with potential cluster total T_g(z)=size_g*mean_g(z). Separately define the ratio estimator as observed treated-unit mean minus observed control-unit mean. Evaluate design expectations and variance over all six assignments; do not replace the denominator by a realized arm size in the HT estimator.",
+  "scope": "A controlled generic clustered-intervention design; no recommendation or real causal estimate is implied."
+}

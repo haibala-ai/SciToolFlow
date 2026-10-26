@@ -1,7 +1,8 @@
 """Run the author's public MOFSimplify models with real RAC/Zeo++ features."""
 
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import json
+import hashlib
 import os
 from pathlib import Path
 import re
@@ -30,7 +31,6 @@ def _geometry(cif, directory):
     commands = {
         "pd": ["-ha", "-res"],
         "sa": ["-sa", "1.86", "1.86", "10000"],
-        "av": ["-ha", "-vol", "1.86", "1.86", "10000"],
         "pov": ["-volpo", "1.86", "1.86", "10000"],
     }
     paths = {}
@@ -76,12 +76,22 @@ def _geometry(cif, directory):
 
 
 def predict_stability(cif_file_name: str):
-    """Predict thermal decomposition temperature (Celsius) and solvent-removal stability with pinned author weights."""
+    """Predict thermal decomposition temperature (Celsius) and solvent-removal stability with configured MOFSimplify weights.
+
+    Returns a JSON string with the actual input CIF source_sha256, model
+    estimates and retained artifact path. These are computational model
+    predictions, not measured operating limits. A source changed during the
+    calculation raises an explicit error.
+    """
+    if not isinstance(cif_file_name, str) or not cif_file_name.strip():
+        raise ValueError("cif_file_name must be an explicit CIF attachment name/path")
     os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
     os.environ.setdefault("TF_NUM_INTRAOP_THREADS", "4")
     os.environ.setdefault("TF_NUM_INTEROP_THREADS", "2")
     import numpy as np
     import pandas as pd
+    import io
+    from importlib.metadata import version
     from tensorflow import keras
     from sklearn.preprocessing import StandardScaler
     from tools.runtime.config import Config
@@ -97,6 +107,10 @@ def predict_stability(cif_file_name: str):
     cif = Path(Config().UPLOAD_FILES_BASE_PATH) / filename
     if not cif.is_file():
         raise FileNotFoundError(str(cif))
+    source_sha256 = hashlib.sha256(cif.read_bytes()).hexdigest()
+    geometry_executable = Path(os.getenv("SCITOOL_ZEOPP_EXECUTABLE",
+        str(ROOT / "external_sources/zeopp-lsmo/zeo++/network")))
+    geometry_sha256 = hashlib.sha256(geometry_executable.read_bytes()).hexdigest()
     directory = artifacts_root() / ("mof_stability_" + uuid.uuid4().hex)
     directory.mkdir(parents=True)
     primitive = directory / "primitive.cif"
@@ -111,6 +125,8 @@ def predict_stability(cif_file_name: str):
         raise RuntimeError("MOF RAC featurization failed")
     features = dict(zip(names, values))
     features.update(_geometry(primitive, directory))
+    if hashlib.sha256(geometry_executable.read_bytes()).hexdigest() != geometry_sha256:
+        raise RuntimeError("Zeo++ executable changed during feature calculation")
     base = (
         Path(Config().SOLVENT_THERMAL_MODEL_PATH or str(ROOT / "models/MOFSimplify"))
         / "model"
@@ -131,7 +147,9 @@ def predict_stability(cif_file_name: str):
                 else "train.csv"
             )
         )
-        frame = pd.read_csv(training)
+        training_bytes = training.read_bytes()
+        training_sha256 = hashlib.sha256(training_bytes).hexdigest()
+        frame = pd.read_csv(io.BytesIO(training_bytes))
         frame = frame.loc[:, (frame != frame.iloc[0]).any()]
         author_geo = ["cell_v" if name == "rho" else name for name in geo]
         columns = [column for column in frame.columns if column in RACs + author_geo]
@@ -143,7 +161,11 @@ def predict_stability(cif_file_name: str):
         vector = np.array([[features[column] for column in columns]], dtype=float)
         if not np.isfinite(vector).all():
             raise RuntimeError("Non-finite MOF feature vector")
-        model = keras.models.load_model(base / kind / "ANN" / model_name, compile=False)
+        model_file = base / kind / "ANN" / model_name
+        model_sha256 = hashlib.sha256(model_file.read_bytes()).hexdigest()
+        model = keras.models.load_model(model_file, compile=False)
+        if hashlib.sha256(model_file.read_bytes()).hexdigest() != model_sha256:
+            raise RuntimeError("Configured MOFSimplify model changed while loading")
         if model.input_shape[-1] != len(columns):
             raise RuntimeError(
                 f"MOF {kind} feature dimension mismatch: model {model.input_shape[-1]}, table {len(columns)}"
@@ -159,21 +181,32 @@ def predict_stability(cif_file_name: str):
         results[kind] = value
         contracts[kind] = {
             "model": str(base / kind / "ANN" / model_name),
+            "model_sha256": model_sha256,
             "training_table": str(training),
+            "training_table_sha256": training_sha256,
             "feature_columns": columns,
             "training_rows": len(valid),
         }
     artifact = directory / "prediction.json"
     report = {
-        "source": "hjkgrp/MOFSimplify pinned author models",
+        "source": "hjkgrp/MOFSimplify method with explicitly configured model/training artifacts",
         "input_cif": str(cif),
+        "source_sha256": source_sha256,
         "thermal_decomposition_temperature_celsius": results["thermal"],
         "solvent_removal_stability_probability": results["solvent"],
         "feature_note": "The author's cell_v feature is cell volume in angstrom^3; earlier code called it rho, as corrected in the author README.",
         "geometric_samples": 10000,
         "features": features,
         "contracts": contracts,
+        "model_artifacts": {kind: {key: value for key, value in contract.items()
+                                    if key in ["model_sha256", "training_table_sha256"]}
+                            for kind, contract in contracts.items()},
+        "feature_software": {"zeopp_executable_sha256": geometry_sha256,
+                             "pymatgen_version": version("pymatgen"),
+                             "molsimplify_version": version("molSimplify")},
     }
+    if hashlib.sha256(cif.read_bytes()).hexdigest() != source_sha256:
+        raise RuntimeError("Input CIF changed during the stability calculation")
     artifact.write_text(json.dumps(report, indent=2, default=float))
     return json.dumps(
         {

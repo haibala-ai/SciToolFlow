@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "candidate_id": "EA",
+      "smiles": "CCOC(=O)C",
+      "label": "ethyl acetate"
+    },
+    {
+      "candidate_id": "MP",
+      "smiles": "CCC(=O)OC",
+      "label": "methyl propionate"
+    },
+    {
+      "candidate_id": "BA",
+      "smiles": "CCCC(=O)O",
+      "label": "butanoic acid"
+    },
+    {
+      "candidate_id": "BU",
+      "smiles": "CCCCO",
+      "label": "1-butanol"
+    }
+  ],
+  "provenance": {
+    "kind": "defined reference-structure panel",
+    "not_experimental_measurements": true
+  }
+}

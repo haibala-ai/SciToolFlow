@@ -1,0 +1,260 @@
+{
+  "data": [
+    {
+      "record_id": "cal01",
+      "kind": "refractometry",
+      "temperature_kelvin": 298.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01",
+      "mass_concentration_g_per_ml": [
+        0.0,
+        0.0005,
+        0.001,
+        0.0015,
+        0.002
+      ],
+      "solution_refractive_index": [
+        1.333,
+        1.3331024999999999,
+        1.333205,
+        1.3333074999999999,
+        1.33341
+      ]
+    },
+    {
+      "record_id": "cal02",
+      "kind": "refractometry",
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01",
+      "mass_concentration_g_per_ml": [
+        0.0,
+        0.0005,
+        0.001,
+        0.0015,
+        0.002
+      ],
+      "solution_refractive_index": [
+        1.333,
+        1.3330925,
+        1.333185,
+        1.3332775,
+        1.33337
+      ]
+    },
+    {
+      "record_id": "blank0",
+      "kind": "solvent_background",
+      "q_squared_nm_inverse_squared": 5e-05,
+      "rayleigh_ratio_cm_inverse": 1.2e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample00",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 5e-05,
+      "mass_concentration_g_per_ml": 0.0002,
+      "total_rayleigh_ratio_cm_inverse": 1.932195863988855e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample01",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 5e-05,
+      "mass_concentration_g_per_ml": 0.0005,
+      "total_rayleigh_ratio_cm_inverse": 2.9986673556651078e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample02",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 5e-05,
+      "mass_concentration_g_per_ml": 0.001,
+      "total_rayleigh_ratio_cm_inverse": 4.696039384373292e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample03",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 5e-05,
+      "mass_concentration_g_per_ml": 0.0015,
+      "total_rayleigh_ratio_cm_inverse": 6.300438689215774e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "blank1",
+      "kind": "solvent_background",
+      "q_squared_nm_inverse_squared": 0.0001,
+      "rayleigh_ratio_cm_inverse": 1.6000000000000003e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample10",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 0.0001,
+      "mass_concentration_g_per_ml": 0.0002,
+      "total_rayleigh_ratio_cm_inverse": 2.3283301447225865e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample11",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 0.0001,
+      "mass_concentration_g_per_ml": 0.0005,
+      "total_rayleigh_ratio_cm_inverse": 3.38933529982288e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample12",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 0.0001,
+      "mass_concentration_g_per_ml": 0.001,
+      "total_rayleigh_ratio_cm_inverse": 5.078409002718814e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample13",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 0.0001,
+      "mass_concentration_g_per_ml": 0.0015,
+      "total_rayleigh_ratio_cm_inverse": 6.675418368610973e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "blank2",
+      "kind": "solvent_background",
+      "q_squared_nm_inverse_squared": 0.0002,
+      "rayleigh_ratio_cm_inverse": 2e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample20",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 0.0002,
+      "mass_concentration_g_per_ml": 0.0002,
+      "total_rayleigh_ratio_cm_inverse": 2.7207198839224663e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample21",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 0.0002,
+      "mass_concentration_g_per_ml": 0.0005,
+      "total_rayleigh_ratio_cm_inverse": 3.7709587105892474e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample22",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 0.0002,
+      "mass_concentration_g_per_ml": 0.001,
+      "total_rayleigh_ratio_cm_inverse": 5.4436763684461025e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample23",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 0.0002,
+      "mass_concentration_g_per_ml": 0.0015,
+      "total_rayleigh_ratio_cm_inverse": 7.026106999070671e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "blank3",
+      "kind": "solvent_background",
+      "q_squared_nm_inverse_squared": 0.0004,
+      "rayleigh_ratio_cm_inverse": 2.4000000000000004e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample30",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 0.0004,
+      "mass_concentration_g_per_ml": 0.0002,
+      "total_rayleigh_ratio_cm_inverse": 3.105966709649603e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample31",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 0.0004,
+      "mass_concentration_g_per_ml": 0.0005,
+      "total_rayleigh_ratio_cm_inverse": 4.135315113730575e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample32",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 0.0004,
+      "mass_concentration_g_per_ml": 0.001,
+      "total_rayleigh_ratio_cm_inverse": 5.776251232878269e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "sample33",
+      "kind": "solution_scattering",
+      "q_squared_nm_inverse_squared": 0.0004,
+      "mass_concentration_g_per_ml": 0.0015,
+      "total_rayleigh_ratio_cm_inverse": 7.330304041799293e-05,
+      "temperature_kelvin": 310.0,
+      "vacuum_wavelength_nm": 633.0,
+      "solvent_id": "solvent01"
+    },
+    {
+      "record_id": "study",
+      "target_temperature_kelvin": 310.0,
+      "target_vacuum_wavelength_nm": 633.0,
+      "target_solvent_id": "solvent01",
+      "solvent_refractive_index": 1.333,
+      "avogadro_per_mol": 6.02214076e+23,
+      "optical_constant_definition": "K=4*pi^2*n0^2*(dn/dc)^2/(NA*lambda0^4),using lambda0 in cm and dn/dc in mL/g.",
+      "low_q_model_definition": "K*c/DeltaR=(1/Mw)*(1+q_squared*Rg_squared/3)+2*A2*c. q_squared is already supplied in nm^-2,Rg is reported in nm,c in g/mL.",
+      "simulation_boundary": "Exact controlled samples of the stated low-q first-virial-order model;no unmodelled concentration or angular term or observation noise is present. This representation is not an experimental validation of a real polymer.",
+      "fit_design": "Use the complete supplied solution panel for the joint zero-angle/zero-concentration extrapolation. Refractometry is an affine function of mass concentration at each separate supplied state."
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Wavelengthnm(opticalconstantrequirescm);q²nm^-2;c g/mL= g/cm³;Rayleighratio cm^-1;dn/dc mL/g;Mw g/mol;Rg nm;A2 mol*mL/g²",
+    "original_observation_claim": false
+  }
+}

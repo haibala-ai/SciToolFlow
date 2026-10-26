@@ -11,7 +11,7 @@ import subprocess
 import sys
 import time
 
-from scitoolflow.paths import project_root, work_root
+from src.utils.paths import project_root, work_root
 from tools.catalog import ToolCatalog
 
 ROOT = work_root()
@@ -39,6 +39,12 @@ def canonical_name(name):
 
 def descriptor(name):
     canonical = canonical_name(name)
+    if canonical in REGISTRY.get("retired_tools", {}):
+        raise ValueError(
+            "Retired tool: "
+            + str(name)
+            + ". Query DescribeTools for replacements and explicit migration guidance."
+        )
     if canonical not in REGISTRY["tools"]:
         raise KeyError(f"Unregistered tool: {name}")
     return canonical, REGISTRY["tools"][canonical]
@@ -53,7 +59,7 @@ def missing_resources(spec):
         value = os.getenv(key) or getattr(config, key, None)
         if not value or str(value).lower().startswith(("your", "placeholder")):
             missing.append(key)
-        elif "PATH" in key or "MODELS" in key:
+        elif "PATH" in key or "MODELS" in key or key.endswith("_PYTHON"):
             if not Path(value).exists():
                 missing.append(key)
     checkpoint = spec.get("checkpoint_subdirectory")
@@ -100,22 +106,53 @@ def invoke_here(name, input_str, file_path_list=None):
             for path in files
             if Path(path).suffix.lower() == final.suffix.lower()
         ]
-        if len({path.parent for path in selected}) != 1:
-            raise InputValidationError(
-                "Attachments of the selected file type must share a directory"
-            )
+        # Complete absolute paths are the attachment identity. Modern readers
+        # resolve their explicit allowlist and reject ambiguous basenames; they
+        # must not be blocked by a legacy convenience directory. Legacy tools
+        # retain the final attachment's base directory and can receive absolute
+        # filenames when their inputs reside in different directories.
         info = {
             "type": final.suffix.lstrip(".").lower(),
             "base_path": str(final.parent),
             "names": [path.name for path in selected],
             "paths": [str(path) for path in selected],
+            "all_paths": files,
         }
     token = UPLOAD_CONTEXT.set(info)
     try:
-        from tools.implementations.shared.common import parse_parameters
+        from tools.implementations.shared.common import (
+            InputValidationError,
+            parse_parameters,
+        )
 
+        _, spec = descriptor(name)
+        if spec.get("strict_arguments", False):
+            from tools.runtime.contracts import contract_errors
+
+            try:
+                supplied = (
+                    json.loads(input_str) if isinstance(input_str, str) else input_str
+                )
+            except (TypeError, ValueError) as error:
+                raise InputValidationError(
+                    "Expected a JSON object of tool arguments"
+                ) from error
+            if not isinstance(supplied, dict):
+                raise InputValidationError("Expected a JSON object of tool arguments")
+            errors = contract_errors(supplied, spec["input_schema"])
+            if errors:
+                raise InputValidationError(
+                    "Arguments violate the tool input schema: "
+                    + "; ".join(str(error) for error in errors[:8])
+                    + ". Query DescribeTools for the full contract."
+                )
         function = inspect.unwrap(resolve_function(name))
-        args, kwargs = parse_parameters(function, input_str)
+        args, kwargs = parse_parameters(
+            function,
+            input_str,
+            coerce_scalar_strings=not spec.get("strict_arguments", False),
+            coerce_integral_floats=bool(spec.get("strict_arguments", False)),
+        )
         return function(*args, **kwargs)
     finally:
         UPLOAD_CONTEXT.reset(token)
@@ -168,6 +205,15 @@ def execute(name, input_str, file_path_list=None, timeout=None):
                 error="Tool excluded from the requested non-biological execution scope",
             )
             return result
+        if spec.get("backend") == "host":
+            output = invoke_here(name, input_str, file_path_list)
+            result.update(
+                validate_result(output, spec),
+                canonical_tool=canonical,
+                environment="host",
+                logical_environment="host",
+            )
+            return result
         timeout = float(spec.get("timeout_seconds", 90) if timeout is None else timeout)
         if timeout <= 0:
             raise ValueError("timeout must be positive")
@@ -205,7 +251,9 @@ def execute(name, input_str, file_path_list=None, timeout=None):
             token = TOOL_DEADLINE.set(started + timeout)
             try:
                 result.update(
-                    normalize_output(invoke_here(canonical, input_str, file_path_list))
+                    validate_result(
+                        invoke_here(canonical, input_str, file_path_list), spec
+                    )
                 )
             finally:
                 TOOL_DEADLINE.reset(token)
@@ -402,3 +450,62 @@ def normalize_output(output):
             "error": text[:1500],
         }
     return {"status": "success", "output": output}
+
+
+def validate_result(output, spec):
+    """Apply the same finite JSON and output contract to every execution backend."""
+    from tools.runtime.contracts import contract_errors
+
+    result = normalize_output(output)
+    errors = contract_errors(output, {})
+    if not errors and result["status"] == "success":
+        errors = contract_errors(output, spec["output_schema"])
+        encoding = spec.get("output_encoding", {})
+        if (
+            not errors
+            and isinstance(output, str)
+            and (
+                encoding.get("decoded_schema")
+                or encoding.get("decoded_type") in {"json_object", "json_array"}
+            )
+        ):
+
+            def unique_object(pairs):
+                found = {}
+                for key, value in pairs:
+                    if key in found:
+                        raise ValueError("Duplicate JSON output key: " + key)
+                    found[key] = value
+                return found
+
+            def reject_constant(value):
+                raise ValueError("Nonfinite JSON output constant: " + value)
+
+            try:
+                decoded = json.loads(
+                    output,
+                    object_pairs_hook=unique_object,
+                    parse_constant=reject_constant,
+                )
+                schema = encoding.get("decoded_schema") or {
+                    "type": (
+                        "object"
+                        if encoding.get("decoded_type") == "json_object"
+                        else "array"
+                    )
+                }
+                errors = [
+                    "decoded output " + message
+                    for message in contract_errors(decoded, schema)
+                ]
+            except (ValueError, TypeError) as error:
+                errors = ["Invalid declared JSON output: " + str(error)]
+    if errors:
+        return dict(
+            status="error",
+            output=None,
+            error_type="InvalidOutput",
+            error="Result violates the finite JSON/public output contract: "
+            + "; ".join(errors),
+        )
+    return result

@@ -1,0 +1,47 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "first_stage_assays": 8,
+      "second_stage_assays_if_continued": 8,
+      "candidate_plans": [
+        {
+          "plan_id": "eager",
+          "first_look_success_threshold": 7,
+          "final_total_success_threshold": 12
+        },
+        {
+          "plan_id": "guarded",
+          "first_look_success_threshold": 7,
+          "final_total_success_threshold": 13
+        },
+        {
+          "plan_id": "deferred",
+          "first_look_success_threshold": 8,
+          "final_total_success_threshold": 12
+        },
+        {
+          "plan_id": "fixed",
+          "first_look_success_threshold": 9,
+          "final_total_success_threshold": 12
+        }
+      ],
+      "null_success_probability_upper_bound": 0.5,
+      "planning_alternative_success_probability": 0.75,
+      "maximum_type_I_error": 0.05,
+      "minimum_planning_power": 0.5,
+      "observation_model": "Each assay yields an independent binary pass indicator with the same fixed unknown probability p; assays in both stages obey this same Bernoulli model. These independence and stationarity assumptions are stipulated for a controlled design calculation, not established from observations. The null is p<=the supplied upper bound; the planning alternative is the supplied fixed p.",
+      "stopping_rule": "For each candidate, observe all first-stage assays. Reject the null immediately and stop if first-stage successes are at least first_look_success_threshold. Otherwise run all second-stage assays and reject iff total successes across both stages are at least final_total_success_threshold. There is no early futility stop, no other interim analysis and no later restart. A first threshold greater than the first-stage sample size simply prevents early rejection. An unobserved second-stage count may be represented by an independent hypothetical continuation count when calculating rejection probabilities, but those assays are NOT charged after early stopping.",
+      "selection_policy": "A candidate is admissible iff its maximum rejection probability over the entire null is at most maximum_type_I_error and its rejection probability at the planning alternative is at least minimum_planning_power. Among admissible listed candidates minimize expected number of actually performed assays under the planning alternative; ties within1e-12 absolute prefer lexical plan_id. Compute the actual stopping-rule rejection event, retaining dependence between the first count and the final cumulative count. Fixed-n final tails alone and adding the two marginal look probabilities are not the sequential error rate.",
+      "reporting": "Report every candidate maximum null rejection probability,admissible_plan_ids,the selected_plan_id,the selected planning power and selected expected actual assay count. All probabilities are fractions; expected count is a real expectation,not a rounded integer. Numeric accuracy1e-8 absolute plus1e-7 relative; IDs exact. Optional limitation prose is unscored.",
+      "provenance": {
+        "kind": "Project-authored controlled sequential process qualification design; no assay observations,real certification or empirical accuracy claim.",
+        "original_observation_claim": false,
+        "method_sources": [
+          "https://docs.scipy.org/doc/scipy-1.15.3/reference/generated/scipy.stats.binom.html"
+        ],
+        "method_context": "Exact finite Bernoulli path probabilities and a prespecified two-look stopping policy. The binomial primitive does not automatically correct optional stopping."
+      }
+    }
+  ]
+}

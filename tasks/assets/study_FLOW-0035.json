@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "record_id": "ethylene-glycol",
+      "smiles": "OCCO",
+      "formula": "C2H6O2"
+    },
+    {
+      "record_id": "propanediol",
+      "smiles": "OCCCO",
+      "formula": "C3H8O2"
+    },
+    {
+      "record_id": "glycerol",
+      "smiles": "OCC(O)CO",
+      "formula": "C3H8O3"
+    },
+    {
+      "record_id": "ethanol",
+      "smiles": "CCO",
+      "formula": "C2H6O"
+    },
+    {
+      "record_id": "diethylene-glycol",
+      "smiles": "OCCOCCO",
+      "formula": "C4H10O3"
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "SMILES identities; natural-abundance molar masses unless isotopes explicitly requested",
+    "original_observation_claim": false
+  }
+}

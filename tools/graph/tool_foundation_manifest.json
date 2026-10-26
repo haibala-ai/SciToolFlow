@@ -10,16 +10,18 @@
     "provider": "openai_compatible",
     "normalization": "client_l2"
   },
-  "functionality_vectors": 546,
-  "text_sha256": "5480f0a1c0219c1e87df09357f38502c036c815419f9b1fda41f00591b5d8b90",
-  "contract_file": "tools/catalog.json",
+  "functionality_vectors": 472,
+  "text_sha256": "d9c2a92ddcddd3c31aa8b34cb20cad7b99882f2a59140e3fb76a7ad2d6b23b0c",
+  "contract_file": "tools/catalog/catalog.json",
   "sync_report": "tools/graph/build_report.json",
   "embedding_build_report": "tools/graph/build_report.json",
-  "project_version": "0.3.0",
-  "public_tools": 547,
-  "scientific_tools": 546,
-  "discovery_tools": 1,
-  "graph_nodes": 4342,
-  "graph_edges": 19260,
-  "catalog_sha256": "efd6e5bb5aec0c6df3b431be5fae0dfe779f4d576067c8b9dd292a750db06370"
+  "project_version": "0.4.0",
+  "public_tools": 473,
+  "graph_nodes": 5090,
+  "graph_edges": 22042,
+  "catalog_sha256": "f625636a684fe9dd142852b6b8848d2ac983f8ff908cbab13cb53bad6e7626ca",
+  "indexed_tools": 472,
+  "excluded_graph_tools": [
+    "DescribeTools"
+  ]
 }

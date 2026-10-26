@@ -10,9 +10,16 @@ class InputValidationError(ValueError):
     """The supplied arguments do not satisfy the callable's input contract."""
 
 
-def parse_parameters(func, value):
+def parse_parameters(
+    func, value, *, coerce_scalar_strings=True, coerce_integral_floats=False
+):
     try:
-        return _parse_parameters(func, value)
+        return _parse_parameters(
+            func,
+            value,
+            coerce_scalar_strings=coerce_scalar_strings,
+            coerce_integral_floats=coerce_integral_floats,
+        )
     except InputValidationError:
         raise
     except (TypeError, ValueError) as error:
@@ -29,7 +36,9 @@ def _normalise_key(name):
     return re.sub(r"[^a-z0-9]", "", str(name).lower())
 
 
-def _parse_parameters(func, value):
+def _parse_parameters(
+    func, value, *, coerce_scalar_strings=True, coerce_integral_floats=False
+):
     """Bind JSON or legacy named arguments without splitting a bare molecule/sequence."""
     signature = inspect.signature(func)
     names = set(signature.parameters)
@@ -107,7 +116,7 @@ def _parse_parameters(func, value):
             and parameter.default is not inspect.Parameter.empty
         ):
             kind = type(parameter.default)
-        if isinstance(entry, str):
+        if coerce_scalar_strings and isinstance(entry, str):
             try:
                 if kind in (int, "int"):
                     entry = int(entry)
@@ -119,6 +128,16 @@ def _parse_parameters(func, value):
                     entry = entry.lower() in ("true", "1")
             except ValueError as error:
                 raise InputValidationError(f"{name}: expected {kind}") from error
+        if (
+            coerce_integral_floats
+            and kind in (int, "int")
+            and type(entry) is float
+            and math.isfinite(entry)
+            and entry.is_integer()
+        ):
+            # JSON numbers such as 448.0 are already exact integer values.
+            # Do not round fractional counts or parse strings implicitly.
+            entry = int(entry)
         if entry is None and parameter.default is None:
             continue
         expected = {

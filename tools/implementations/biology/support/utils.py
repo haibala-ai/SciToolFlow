@@ -268,7 +268,9 @@ def generate_output_from_prompt(model, device, tokenizer, prompt, print_output=F
     input_ids = torch.tensor(tokenizer.encode(prompt, add_special_tokens = False)).unsqueeze(0)
     input_ids = input_ids.to(device)
     
-    sample_outputs = model.generate(
+    from tools.implementations.biology.model_cache import inference_lock
+    with inference_lock(model):
+        sample_outputs = model.generate(
                                 input_ids, 
                                 #bos_token_id=random.randint(1,30000),
                                 #pad_token_id=tokenizer.eos_token_id,

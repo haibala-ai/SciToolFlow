@@ -1,0 +1,222 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "plot_records": [
+        {
+          "source_row_id": 1,
+          "block": "1",
+          "N": "0",
+          "P": "1",
+          "K": "1",
+          "yield": 49.5
+        },
+        {
+          "source_row_id": 2,
+          "block": "1",
+          "N": "1",
+          "P": "1",
+          "K": "0",
+          "yield": 62.8
+        },
+        {
+          "source_row_id": 3,
+          "block": "1",
+          "N": "0",
+          "P": "0",
+          "K": "0",
+          "yield": 46.8
+        },
+        {
+          "source_row_id": 4,
+          "block": "1",
+          "N": "1",
+          "P": "0",
+          "K": "1",
+          "yield": 57.0
+        },
+        {
+          "source_row_id": 5,
+          "block": "2",
+          "N": "1",
+          "P": "0",
+          "K": "0",
+          "yield": 59.8
+        },
+        {
+          "source_row_id": 6,
+          "block": "2",
+          "N": "1",
+          "P": "1",
+          "K": "1",
+          "yield": 58.5
+        },
+        {
+          "source_row_id": 7,
+          "block": "2",
+          "N": "0",
+          "P": "0",
+          "K": "1",
+          "yield": 55.5
+        },
+        {
+          "source_row_id": 8,
+          "block": "2",
+          "N": "0",
+          "P": "1",
+          "K": "0",
+          "yield": 56.0
+        },
+        {
+          "source_row_id": 9,
+          "block": "3",
+          "N": "0",
+          "P": "1",
+          "K": "0",
+          "yield": 62.8
+        },
+        {
+          "source_row_id": 10,
+          "block": "3",
+          "N": "1",
+          "P": "1",
+          "K": "1",
+          "yield": 55.8
+        },
+        {
+          "source_row_id": 11,
+          "block": "3",
+          "N": "1",
+          "P": "0",
+          "K": "0",
+          "yield": 69.5
+        },
+        {
+          "source_row_id": 12,
+          "block": "3",
+          "N": "0",
+          "P": "0",
+          "K": "1",
+          "yield": 55.0
+        },
+        {
+          "source_row_id": 13,
+          "block": "4",
+          "N": "1",
+          "P": "0",
+          "K": "0",
+          "yield": 62.0
+        },
+        {
+          "source_row_id": 14,
+          "block": "4",
+          "N": "1",
+          "P": "1",
+          "K": "1",
+          "yield": 48.8
+        },
+        {
+          "source_row_id": 15,
+          "block": "4",
+          "N": "0",
+          "P": "0",
+          "K": "1",
+          "yield": 45.5
+        },
+        {
+          "source_row_id": 16,
+          "block": "4",
+          "N": "0",
+          "P": "1",
+          "K": "0",
+          "yield": 44.2
+        },
+        {
+          "source_row_id": 17,
+          "block": "5",
+          "N": "1",
+          "P": "1",
+          "K": "0",
+          "yield": 52.0
+        },
+        {
+          "source_row_id": 18,
+          "block": "5",
+          "N": "0",
+          "P": "0",
+          "K": "0",
+          "yield": 51.5
+        },
+        {
+          "source_row_id": 19,
+          "block": "5",
+          "N": "1",
+          "P": "0",
+          "K": "1",
+          "yield": 49.8
+        },
+        {
+          "source_row_id": 20,
+          "block": "5",
+          "N": "0",
+          "P": "1",
+          "K": "1",
+          "yield": 48.8
+        },
+        {
+          "source_row_id": 21,
+          "block": "6",
+          "N": "1",
+          "P": "0",
+          "K": "1",
+          "yield": 57.2
+        },
+        {
+          "source_row_id": 22,
+          "block": "6",
+          "N": "1",
+          "P": "1",
+          "K": "0",
+          "yield": 59.0
+        },
+        {
+          "source_row_id": 23,
+          "block": "6",
+          "N": "0",
+          "P": "1",
+          "K": "1",
+          "yield": 53.2
+        },
+        {
+          "source_row_id": 24,
+          "block": "6",
+          "N": "0",
+          "P": "0",
+          "K": "0",
+          "yield": 56.0
+        }
+      ],
+      "units": "Pea yield pounds per1/70-acre plot. N/P/K0or1 are source factor levels,not recommended quantities.",
+      "analysis_policy": "First average yield within each block\u00d7N cell across observed P/K combinations. Report the equal-block mean of N1\u2212N0 and a conventional paired t test across six block differences. This descriptive observed-design contrast is not a complete interaction model or a prescription.",
+      "source_provenance": {
+        "source_url": "https://svn.r-project.org/R/trunk/src/library/datasets/data/npk.rda",
+        "sha256": "b388ecc7de1ff87789cb05c911e9d1d924f4835ab97da1574a55f7d969ff29bb",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/npk.html",
+        "retrieved_utc_date": "2026-10-20",
+        "source": "Official R datasets SVN source,revision90725 listing",
+        "license": "R distribution GPL>=2; underlying observations cited by individual dataset documentation",
+        "claim_scope": "Historical public observations only; no new scientific observations or causal/representativeness assumption",
+        "decoded_json_sha256": "66397c347206eaa015c7de0e9acff24670c73697aa5108365a24c1b8af4658dc",
+        "decoder": "rdata0.11.2 RDA or bounded literal numeric c(...) parser,no R evaluation",
+        "raw_file": "npk.rda",
+        "records": 24,
+        "converted_observation_sha256": "66397c347206eaa015c7de0e9acff24670c73697aa5108365a24c1b8af4658dc",
+        "observation_status": "Original historical values; no changed or synthetic observation."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

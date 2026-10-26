@@ -1,0 +1,44 @@
+{
+  "data_origin": "Controlled cubic nanocrystal equilibrium-shape and geometric compactness study. Surface grand-potential cards and shape observations are constructed exact benchmark inputs, not experimental surface energies for any named material. Macroscopic Wulff theory is assumed; no kinetic growth, edge/corner energy, elastic strain, gravity, support or size-dependent reconstruction is included.",
+  "axes_and_planes": "The laboratory frame is an orthonormal cubic frame. Use all six signed {100} UNIT normals and all eight signed {111} UNIT normals. Opposite faces are separate planes. At reservoir coordinate mu, the raw Wulff body is the intersection n dot r <= gamma(n,mu), with overall Wulff multiplier set to1. gamma has energy/area units but raw Wulff coordinates use the corresponding arbitrary common scale; only translations and unit-volume-normalized shape are observed. Normals must be normalized before using their plane distances. Facets have positive area; a plane touching only an edge/vertex is not an exposed facet.",
+  "allowed_reservoir_coordinate": [
+    -0.3,
+    1.2
+  ],
+  "surface_cards": {
+    "A": {
+      "gamma_100": "a(mu)=1+0.2*mu for each of the six signed100 normals",
+      "gamma_111": "b(mu)/sqrt(3), b(mu)=2.7-1.4*mu, for each signed111 normal"
+    },
+    "B": {
+      "definition": "gamma_B(n,mu)=gamma_A(n,mu)+n dot t(mu), t(mu)=[0.12*mu,0.05,-0.08] in the same raw Wulff scale"
+    },
+    "C": {
+      "definition": "gamma_C(n,mu)=1.3*gamma_A(n,mu) for every facet normal"
+    },
+    "D": {
+      "definition": "gamma_D equals A for100 planes and1.05*gamma_A for111 planes"
+    }
+  },
+  "shape_observations": [
+    {
+      "mu": -0.2,
+      "observed_111_area_fraction": 3.4504114952188065e-16,
+      "observed_unit_volume_total_area": 6.000000000000007
+    },
+    {
+      "mu": 0.5,
+      "observed_111_area_fraction": 0.5280930084870293,
+      "observed_unit_volume_total_area": 5.259169243185764
+    },
+    {
+      "mu": 1.1,
+      "observed_111_area_fraction": 1.0,
+      "observed_unit_volume_total_area": 5.71910575798162
+    }
+  ],
+  "observation_policy": "An eligible card must match BOTH reported shape observables at ALL three known reservoir coordinates, to absolute tolerance1e-7. An observation fixes only the translated shape rescaled to volume1; raw Wulff position/volume and absolute surface-energy scale are not measurements. Shape observations are controlled consistency tests of the supplied family, not empirical identification beyond it.",
+  "continuous_geometry_task": "For card A over the ENTIRE allowed mu range, determine every internal topology breakpoint where a positive-area facet family appears/disappears or the combinatorial vertex/edge pattern changes. Include the cuboctahedral transition at a nongeneric intermediate topology even when both facet families stay exposed. Return the increasing list of distinct internal breakpoints. Also return the open mu intervals on which100 facets have positive area and on which111 facets have positive area, intersected with the allowed range; use allowed endpoints as the interval infimum/supremum even when a family remains present at that allowed endpoint. This output encodes open-interval interiors; do not invent an isolated positive-area facet at a threshold.",
+  "robust_shape_design": "Choose a nominal setting u. Actual mu can be ANY value in [u-0.04,u+0.04], and that entire interval must lie in [-0.3,1.2]. Require that the111 surface-area fraction be within[0.60,0.75], inclusive, for EVERY actual mu. First report the complete feasible closed u interval, not just one grid point. Among feasible u, minimize the WORST-CASE total surface area of a particle with volume1 over this same actual-mu interval. This is a geometric compactness objective, not a claim that grand potentials at different reservoirs are directly comparable. Do not optimize raw Wulff area or raw volume. Return the minimizing u, worst-case actual mu, and minimized worst-case unit-volume area. Distinguish scaling/translation ambiguity of the surface card from changes in normalized facet exposure.",
+  "reporting": "Return eligible_surface_card_ids, internal_topology_breakpoints_mu, positive_area_100_mu_interval, positive_area_111_mu_interval, nominal_feasible_interval, optimal_nominal_setting, worst_case_actual_mu_at_optimum, worst_case_unit_volume_area_at_optimum, shape_observations_identify_absolute_surface_energy_scale, and shape_observations_identify_card_A_over_B. IDs/Booleans exact; continuous values absolute plus relative tolerance1e-7. Continuous completeness and a global optimum require analytic regime/derivative, exact geometric or equivalent certified arguments; a dense grid alone is not a proof. Vertex/facet enumeration is useful verification but does not by itself establish all reservoir intervals."
+}

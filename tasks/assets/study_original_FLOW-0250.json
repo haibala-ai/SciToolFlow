@@ -1,0 +1,49 @@
+{
+  "query_protein_order": [
+    "A",
+    "B",
+    "C"
+  ],
+  "query_interactions": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "A",
+      "C"
+    ]
+  ],
+  "coortholog_candidates": {
+    "A": [
+      "a1",
+      "a2"
+    ],
+    "B": [
+      "b1"
+    ],
+    "C": [
+      "c1",
+      "c2"
+    ]
+  },
+  "target_interactions": [
+    [
+      "a1",
+      "b1"
+    ],
+    [
+      "a2",
+      "c2"
+    ],
+    [
+      "b1",
+      "c1"
+    ]
+  ],
+  "model": "The records are complete within this small explicit graph universe;all edges are undirected. For a one-representative mapping,choose exactly ONE listed target coortholog for EACH query protein,and use that SAME choice for all incident query edges. A query edge is conserved only if its selected target pair is an actual listed edge. Separately,an edgewise-existential test may choose different coorthologs for the same query protein on different edges. Finally consider retaining one or more coorthologs per query protein:an edge is then covered if at least one actual target edge joins the retained sets. No sequence similarity or confidence score is a substitute for these exact edge records.",
+  "target": "Return edgewise-existential conservation booleans in query_interactions order,the sharp minimum/maximum number of simultaneously conserved query edges under a single coherent one-representative mapping,and whether both edges can be conserved under that mapping. For a multi-copy retained-set mapping that covers BOTH query edges,return the minimum total number of retained target proteins and minimum required number of Acoorthologs. Do not infer an empirical functional interaction beyond this supplied record model.",
+  "provenance": {
+    "kind": "Explicit small synthetic benign scientific model;data are conditional exact counts/means and do not establish empirical ecological,causal or functional claims."
+  }
+}

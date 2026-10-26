@@ -1,0 +1,34 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled measurement study; stated matrices/counts are stipulated model inputs, not new experimental observations.",
+    "scope": "No external factual retrieval is required. Source roles, axes and units are stated in the file."
+  },
+  "records": [
+    {
+      "stratum": "low",
+      "arm": "control",
+      "event": 10,
+      "nonevent": 90
+    },
+    {
+      "stratum": "high",
+      "arm": "treated",
+      "event": 90,
+      "nonevent": 10
+    },
+    {
+      "stratum": "high",
+      "arm": "control",
+      "event": 75,
+      "nonevent": 25
+    },
+    {
+      "stratum": "low",
+      "arm": "treated",
+      "event": 25,
+      "nonevent": 75
+    }
+  ],
+  "policy": "Use empirical event odds event/nonevent and treated-versus-control odds ratios. Every record refers to disjoint units. This is an explicit controlled contingency-table example, not a new clinical result. Compare each arm's stratum proportions before attributing marginal-versus-conditional differences to confounding. No significance test or treatment recommendation is requested.",
+  "interpretation": "The claim under audit is that a difference between a common within-stratum odds ratio and a marginal odds ratio, by itself, demonstrates imbalanced stratum composition. Report whether that argument is valid for this table, not whether unmeasured confounding is absent in a real study."
+}

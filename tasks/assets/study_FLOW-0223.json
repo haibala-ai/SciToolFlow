@@ -1,0 +1,65 @@
+{
+  "data": [
+    {
+      "record_id": "specimen1",
+      "crack_length_mm": 1.0,
+      "load_point_compliance_m_per_newton": 4.5000000000000006e-08,
+      "crack_resistance_joule_per_metre_squared": 250.0
+    },
+    {
+      "record_id": "specimen2",
+      "crack_length_mm": 2.0,
+      "load_point_compliance_m_per_newton": 1.4e-07,
+      "crack_resistance_joule_per_metre_squared": 300.0
+    },
+    {
+      "record_id": "specimen3",
+      "crack_length_mm": 3.0,
+      "load_point_compliance_m_per_newton": 3.65e-07,
+      "crack_resistance_joule_per_metre_squared": 350.0
+    },
+    {
+      "record_id": "specimen4",
+      "crack_length_mm": 4.0,
+      "load_point_compliance_m_per_newton": 7.8e-07,
+      "crack_resistance_joule_per_metre_squared": 400.0
+    },
+    {
+      "record_id": "specimen5",
+      "crack_length_mm": 5.0,
+      "load_point_compliance_m_per_newton": 1.4450000000000001e-06,
+      "crack_resistance_joule_per_metre_squared": 450.0
+    },
+    {
+      "record_id": "machine01",
+      "series_machine_compliance_m_per_newton": 0.0
+    },
+    {
+      "record_id": "machine02",
+      "series_machine_compliance_m_per_newton": 2e-07
+    },
+    {
+      "record_id": "machine03",
+      "series_machine_compliance_m_per_newton": 7e-07
+    },
+    {
+      "record_id": "study",
+      "initial_crack_length_mm": 2.0,
+      "specimen_thickness_metre": 0.01,
+      "authorized_crack_length_interval_mm": [
+        1.0,
+        5.0
+      ],
+      "curve_model": "Within the supplied interval,specimen compliance is an unknown global polynomial of degree at most three in crack length and crack resistance is an unknown affine function. The exact controlled tables identify those curves. Machine compliance is a positive or zero linear elastic element in series,independent of crack length.",
+      "loading_protocol": "For each machine,increase total actuator displacement quasi-statically until energy release first equals resistance at the same initial crack length. Then hold that actuator displacement fixed while evaluating the tendency of an infinitesimal crack extension. Crack area A=B*a is the one projected crack area,not twice the area.",
+      "decision_policy": "Select the largest listed machine compliance for which the initial equilibrium is locally stable. Stable means the first derivative with respect to crack length of G minus resistance is strictly negative at fixed total actuator displacement;zero is marginal. For machine03 also find the first larger crack length in the authorized interval at which G equals resistance with negative derivative of G minus resistance. Report null if no such larger equilibrium exists.",
+      "scope": "A controlled linear-elastic,one-crack-path,quasi-static energy-balance model. A later stable equilibrium is not a prediction that a dynamically accelerating crack arrests there;kinetic overshoot,rate effects,plasticity and branching are outside this study."
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "crack length mm must be converted to metre for derivative per crack area;specimen/machine compliance m/N;thickness m;resistance and energy release J/m²;load N.",
+    "original_observation_claim": false
+  }
+}

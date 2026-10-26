@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from contextvars import ContextVar
 from dotenv import load_dotenv
-from scitoolflow.paths import local_root, load_environment
+from src.utils.paths import local_root, load_environment
 
 load_environment()
 
@@ -13,6 +13,12 @@ class Config:
     def __init__(self):
         self.OPENAI_API_BASE = os.getenv("OPENAI_API_BASE")
         self.OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+        from src.models.config import Config as ModelConfig
+
+        models = ModelConfig()
+        self.SCITOOL_MODEL_PATH = models.LOCAL_MODEL_PATH
+        self.SCITOOL_EMBED_PATH = models.LOCAL_EMBED_PATH
+        self.SCITOOL_LLM_PYTHON = models.LLM_PYTHON
 
         self.BING_SUBSCRIPTION_KEY = os.getenv("BING_SUBSCRIPTION_KEY")
         self.BRAVE_SEARCH_API_KEY = os.getenv("BRAVE_SEARCH_API_KEY")
@@ -66,3 +72,6 @@ class Config:
         self.UPLOAD_FILES_BASE_PATH = upload.get("base_path", "")
         self.UPLOAD_FILES_NAMES = upload.get("names", [])
         self.UPLOAD_FILES_PATHS = upload.get("paths", [])
+        # Legacy paths/names retain the selected file type. Generic file readers
+        # need the complete explicit allowlist for mixed-format workflows.
+        self.ALL_UPLOAD_FILES_PATHS = upload.get("all_paths", self.UPLOAD_FILES_PATHS)

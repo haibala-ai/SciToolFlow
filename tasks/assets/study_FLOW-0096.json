@@ -1,0 +1,144 @@
+{
+  "data": [
+    {
+      "record_id": "buffer01",
+      "temperature_kelvin": 298.15,
+      "pH": 7.0,
+      "ionic_strength_mol_per_litre": 0.1,
+      "buffer_deprotonation_enthalpy_kj_per_mol": 5.0,
+      "time_seconds": [
+        0.0,
+        10.0,
+        20.0,
+        30.0,
+        40.0
+      ],
+      "sample_power_microwatt": [
+        -0.0,
+        -5.02,
+        -2.51,
+        -5.02,
+        -0.0
+      ],
+      "matched_dilution_blank_power_microwatt": [
+        0.0,
+        0.48,
+        0.24,
+        0.48,
+        0.0
+      ],
+      "complex_amount_before_nanomol": 2.0,
+      "complex_amount_after_nanomol": 7.0,
+      "total_injected_guest_nanomol": 20.0
+    },
+    {
+      "record_id": "buffer02",
+      "temperature_kelvin": 298.15,
+      "pH": 7.0,
+      "ionic_strength_mol_per_litre": 0.1,
+      "buffer_deprotonation_enthalpy_kj_per_mol": 30.0,
+      "time_seconds": [
+        0.0,
+        10.0,
+        20.0,
+        30.0,
+        40.0
+      ],
+      "sample_power_microwatt": [
+        -0.0,
+        -3.48,
+        -1.74,
+        -3.48,
+        -0.0
+      ],
+      "matched_dilution_blank_power_microwatt": [
+        0.0,
+        0.72,
+        0.36,
+        0.72,
+        0.0
+      ],
+      "complex_amount_before_nanomol": 1.0,
+      "complex_amount_after_nanomol": 8.0,
+      "total_injected_guest_nanomol": 20.0
+    },
+    {
+      "record_id": "buffer03",
+      "temperature_kelvin": 298.15,
+      "pH": 7.0,
+      "ionic_strength_mol_per_litre": 0.1,
+      "buffer_deprotonation_enthalpy_kj_per_mol": 75.0,
+      "time_seconds": [
+        0.0,
+        10.0,
+        20.0,
+        30.0,
+        40.0
+      ],
+      "sample_power_microwatt": [
+        0.0,
+        1.52,
+        0.76,
+        1.52,
+        0.0
+      ],
+      "matched_dilution_blank_power_microwatt": [
+        0.0,
+        0.32,
+        0.16,
+        0.32,
+        0.0
+      ],
+      "complex_amount_before_nanomol": 3.0,
+      "complex_amount_after_nanomol": 7.0,
+      "total_injected_guest_nanomol": 20.0
+    },
+    {
+      "record_id": "buffer04",
+      "temperature_kelvin": 298.15,
+      "pH": 8.0,
+      "ionic_strength_mol_per_litre": 0.1,
+      "buffer_deprotonation_enthalpy_kj_per_mol": 40.0,
+      "time_seconds": [
+        0.0,
+        10.0,
+        20.0,
+        30.0,
+        40.0
+      ],
+      "sample_power_microwatt": [
+        -0.0,
+        -2.2,
+        -1.1,
+        -2.2,
+        -0.0
+      ],
+      "matched_dilution_blank_power_microwatt": [
+        0.0,
+        1.0,
+        0.5,
+        1.0,
+        0.0
+      ],
+      "complex_amount_before_nanomol": 4.0,
+      "complex_amount_after_nanomol": 6.0,
+      "total_injected_guest_nanomol": 20.0
+    },
+    {
+      "record_id": "study",
+      "target_temperature_kelvin": 298.15,
+      "target_pH": 7.0,
+      "target_ionic_strength_mol_per_litre": 0.1,
+      "calorimetric_model": "The same generic nonbiological host and guest form a 1:1 complex. The source complex amounts before/after each perturbation are independently established exact equilibrium amounts. Observed traces contain binding-linked heat plus the attached matched dilution blank. Integrate the full supplied time window with piecewise-linear power,then normalize by the INCREASE in complex amount,not injected guest or final complex amount. Positive signed heat is absorbed by the chemical system.",
+      "buffer_linkage_model": "At fixed temperature,pH and ionic strength,the chemical equilibrium and binding-linked net proton uptake per newly formed complex are buffer-independent. Specific host/guest association with the buffer,other chemical reactions and differential mixing effects beyond the matched blank are excluded. Buffer ionization enthalpy is for BH→B+H+,not protonation. Net positive proton uptake is defined as protons transferred FROM the buffer TO the host–guest binding system.",
+      "interpretation_goal": "Estimate the buffer-independent observed binding enthalpy at the target pH and net proton uptake per newly formed complex. Separately assess whether these supplied observations uniquely identify the microscopic binding enthalpy for the fully unprotonated host and guest;their free/complex protonation microstate populations and protonation enthalpies are not otherwise measured here.",
+      "scope": "Exact controlled small-molecule calorimetric model,not measured protein data or a proposed laboratory protocol. Generic buffer IDs do not name real formulations,and their numerical ionization enthalpies are controlled inputs."
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "time s;power µW;integrated heat µJ;complex amount nmol;µJ/nmol=kJ/mol;buffer deprotonation and observed binding enthalpy kJ/mol;net proton uptake molH+/molcomplex.",
+    "original_observation_claim": false
+  }
+}

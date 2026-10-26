@@ -1,0 +1,17 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "incident_light_micromol_photons_per_square_meter_second": 500.0,
+  "independently_observed_below_canopy_to_above_light_ratio": 0.2,
+  "extinction_coefficient_per_leaf_area_index": 0.5,
+  "leaf_light_response_parameters": {
+    "saturating_assimilation": 20.0,
+    "half_saturation_light": 100.0,
+    "leaf_respiration": 1.5
+  },
+  "model": "Controlled homogeneous canopy: at cumulative leaf-area coordinate l>=0,I(l)=I0*exp(-k*l). Net leaf assimilation a(I)=Pmax*I/(K+I)-Rd in micromol CO2per leaf m^2per s. Total canopy net assimilation per ground area is integral from0toLAIof a(I(l))dl. All response and extinction parameters are independently known; only observed LAI is inferred from transmission.",
+  "optimization": "Separately maximize canopy net assimilation over all LAI>=0under this same fixed optical/leaf model. An added deep leaf layer contributes its own local a(I), not the top-leaf rate. Consider global behavior,not just a chosen grid.",
+  "scope": "Controlled light-distribution/assimilation coupling, not observed field productivity, a planting prescription or a causal species comparison."
+}

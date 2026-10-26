@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "coordinate_file": "coordinates_FLOW-0254.pdb",
+      "coordinate_chain_id": "A",
+      "model_id": 0,
+      "source_CRYST1_record": "CRYST1   50.840   42.770   28.950  90.00  90.00  90.00 P 21 21 21    4          ",
+      "unit_cell_edges_angstrom": [
+        50.84,
+        42.77,
+        28.95
+      ],
+      "unit_cell_angles_degree": [
+        90.0,
+        90.0,
+        90.0
+      ],
+      "symmetry_protein_copies_per_unit_cell": 4,
+      "analysis_policy": "The defined crystal-content estimate uses intact protein mass excluding solvent: assume one canonical unmodified linear chain A with free termini per asymmetric unit, and the stated4 symmetry copies in the orthorhombic unit cell. Use average molecular mass, not monoisotopic mass or a digest. Vm=unit-cell volume/(number of protein copies*single-chain mass), in A3/Da. Approximate solvent fraction=1-1.23/Vm, with1.23 A3/Da as the declared conventional protein partial-volume approximation. Also obtain the uploaded PDB's as-parsed atomic inventory mass, including every parsed topology atom; do not add hydrogens, strip waters or occupancy-weight that separate inventory calculation. Signed error means solvent fraction computed using inventory mass minus the defined intact-protein-based fraction. This is a reporting-basis audit; no claim that atom-inventory mass equals intact sequence mass or that this approximate fraction measures a solvent-channel geometry.",
+      "source_provenance": {
+        "entry": "1UBQ",
+        "source_url": "https://files.rcsb.org/download/1UBQ.pdb",
+        "original_source_sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+        "public_coordinate_sha256": "51d037294f063b7b520acac4d801caeae577ec4b60a96c9f61e5dd3207b50387",
+        "export_transformation": "Original complete ATOM/HETATM coordinates and CRYST1 retained. Only two REMARK280 lines reporting precomputed solvent/Matthews summaries were omitted to prevent answer copying; the deposited raw snapshot is preserved separately. This metadata projection is not a new experiment or a modified protein structure.",
+        "calculation_convention": "Free-terminus, unmodified canonical sequence average mass is an explicitly declared calculation convention, not an independent assay of every chemical state."
+      },
+      "formula_source": "https://www.iucr.org/__data/iucr/cifdic_html/2/mmcif_pdbx.dic/Iexptl_crystal.density_percent_sol.html"
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

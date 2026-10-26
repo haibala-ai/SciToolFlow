@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "record_id": "entry01",
+      "structure_file": "entry01_conformer.sdf",
+      "relative_g_kj_mol": 0.0,
+      "heavy_atom_indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "record_id": "entry02",
+      "structure_file": "entry02_conformer.sdf",
+      "relative_g_kj_mol": 0.0,
+      "heavy_atom_indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "record_id": "entry03",
+      "structure_file": "entry03_conformer.sdf",
+      "relative_g_kj_mol": 1.2,
+      "heavy_atom_indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "SDFangstrom;relativeGkJ/mol;temperature298.15K;unit statisticalweight per distinct conformer",
+    "original_observation_claim": false
+  }
+}

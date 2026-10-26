@@ -1,0 +1,36 @@
+{
+  "substrate_concentrations_micromolar": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "condition_records": [
+    {
+      "id": "control",
+      "inhibitor_concentration_micromolar": 0.0,
+      "initial_rates_micromolar_per_s": [
+        3.3333333333333335,
+        5.0,
+        6.666666666666667,
+        8.0
+      ]
+    },
+    {
+      "id": "inhibited",
+      "inhibitor_concentration_micromolar": 6.0,
+      "initial_rates_micromolar_per_s": [
+        1.4285714285714286,
+        2.5,
+        4.0,
+        5.714285714285714
+      ]
+    }
+  ],
+  "model": "Exact steady initial rates under the stipulated reversible mixed-inhibition family v=Vmax*S/[alpha*Km+alpha_prime*S],where alpha=1+I/Kicand alpha_prime=1+I/Kiu. Vmaxand Kmare common positive baseline parameters. Kicand Kiuare positive constants,with infinite Kallowed for no corresponding inhibition term. At controlI=0both alpha values are1. No cooperativity,substrate depletion,irreversible inactivation or measurement noise is included.",
+  "target": "Recover baseline Vmax,Kmand the inhibited alpha,alpha_primefrom ALL supplied rates,then infer Kicand Kiu. Encode an infinite inhibition constant as null,not0. Classify the conditional kinetic signature as competitive(alpha>1,alpha_prime=1),uncompetitive(alpha=1,alpha_prime>1),pure_noncompetitive(alpha=alpha_prime>1),or_mixed(other alpha>1,alpha_prime>1). Decide whether the kinetic signature alone establishes direct physical binding to a particular enzyme state in an actual experiment.",
+  "scope": "Finite conditional rate-model inference,not an actual enzyme identity,drug recommendation or procedure. Reciprocal linearization is algebraically exact here because the supplied rates have no noise;no general statistical superiority of reciprocal fits is claimed.",
+  "provenance": {
+    "kind": "Controlled abstract biological inference fixture;not empirical mechanism or intervention evidence."
+  }
+}

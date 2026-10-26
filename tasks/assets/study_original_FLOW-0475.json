@@ -1,0 +1,17 @@
+{
+  "candidate_phase_formulas": [
+    "FeO",
+    "Fe2O3",
+    "Fe3O4"
+  ],
+  "measured_oxygen_atoms_per_iron_atom": 1.3333333333333333,
+  "phase_fraction_basis": "fraction_of_total_iron_atoms_in_each_phase",
+  "additional_phase_detection_bound": {
+    "phase_formula": "FeO",
+    "maximum_fraction_of_iron_atoms": 0.1
+  },
+  "charge_model": "O is formally -2; all iron is formally +2 or +3 in the three supplied stoichiometric phases. No elemental Fe, vacancies, nonstoichiometry or other phases are admitted.",
+  "provenance": {
+    "kind": "Project-authored controlled phase-mixture identifiability example. Exact stipulated elemental ratio and independent FeO upper bound; not an empirical diffraction assignment or equilibrium calculation."
+  }
+}

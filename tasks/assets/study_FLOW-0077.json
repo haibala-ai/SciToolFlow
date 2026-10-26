@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "record_id": "entry01",
+      "neutral_smiles": "O=C(O)c1ccccc1",
+      "pka_definition": "neutral_acid_dissociation",
+      "pka_interval": [
+        4.0,
+        4.4
+      ]
+    },
+    {
+      "record_id": "entry02",
+      "neutral_smiles": "Nc1ccccc1",
+      "pka_definition": "conjugate_acid_dissociation",
+      "pka_interval": [
+        4.4,
+        4.8
+      ]
+    },
+    {
+      "record_id": "study",
+      "candidate_aqueous_ph_values": [
+        4.0,
+        4.6,
+        5.2,
+        6.0
+      ],
+      "organic_to_aqueous_phase_volume_ratio": 0.1
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Base10logP neutral octanol/water concentration ratio;dimensionless pH/pKa and phase-volume ratio;fractional amount transfer",
+    "original_observation_claim": false
+  }
+}

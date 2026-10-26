@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "record_id": "raw_crystal_metadata",
+      "original_structure_file": "MAGBON.cif",
+      "original_structure_sha256": "a9390130fbe2bc11a8f19f6b5ff8d1c5e3f8aabed3ff4f2a8e85bb13568dc2dd",
+      "source_formula_unit": "C20 H24 N O19 P2 Zn3",
+      "reported_formula_units_in_original_cell": 8,
+      "reported_space_group_symbol": "I-42d",
+      "reported_formula_weight_from_original_cif": 840.45,
+      "hydrogen_refinement_context": "Original CIF reports mixed hydrogen treatment;the graph and element composition alone do not assign missing protons or formal charges."
+    },
+    {
+      "record_id": "study",
+      "graph_convention": "Use the standard moffragmentor finite-component model for this digital preprocessing audit:its default MOF constructor may replace the original CIF cell by a primitive cell;VestaCutoffDictNN defines connectivity. Finite components are not automatically neutral solvent.",
+      "neutral_water_formula_for_mass_comparison": "H2O",
+      "review_policy": "Flag every observed finite-component composition other than a complete H2O molecule for protonation/charge review before any proposed automatic all-guest deletion. This screen does not assign their charge or decide that a connected framework remains neutral. Do not add unobserved hydrogens to complete O-only components.",
+      "mass_counterfactual": "Calculate only the fraction of modeled original-cell mass attributable to complete graph-identified H2O components. Use one consistent ordinary atomic-mass convention for the water and the full formula;the printed historical formula weight is not automatically the same convention. No isotope enrichment is requested.",
+      "scope": "Original published crystallographic model with its actual atom/hydrogen completeness,used for a controlled simulation-input readiness audit. Finite-component detection is a graph convention,not proof of thermal removal,neutrality,physical activation stability or a prediction of experimental mass loss."
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published crystallographic model with controlled digital preprocessing policy",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "Original and graph-cell volumes Å³;cell multiplicity dimensionless;ordinary mass units cancel in the water/full-formula mass fraction. Graph component counts must be placed on the original-cell basis before reporting.",
+    "original_observation_claim": false,
+    "source_capture": {
+      "url": "https://raw.githubusercontent.com/kjappelbaum/moffragmentor/0029c82314968c4f465cde7826ccd1142b1a8413/tests/test_files/MAGBON.cif",
+      "repository_commit": "0029c82314968c4f465cde7826ccd1142b1a8413",
+      "sha256": "a9390130fbe2bc11a8f19f6b5ff8d1c5e3f8aabed3ff4f2a8e85bb13568dc2dd",
+      "bytes": 14263,
+      "source_role": "Original official package crystallographic test fixture;its embedded original-publication metadata remains raw. Not new or independently refined crystallography."
+    }
+  }
+}

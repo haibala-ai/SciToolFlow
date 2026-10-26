@@ -1,0 +1,55 @@
+{
+  "data": [
+    {
+      "record_id": "std0",
+      "x": 0.0,
+      "response": 1.0,
+      "response_sd": 0.1,
+      "weighted_x": 0.0,
+      "weighted_constant": 10.0,
+      "weighted_response": 10.0
+    },
+    {
+      "record_id": "std1",
+      "x": 1.0,
+      "response": 3.0,
+      "response_sd": 0.1,
+      "weighted_x": 10.0,
+      "weighted_constant": 10.0,
+      "weighted_response": 30.0
+    },
+    {
+      "record_id": "std2",
+      "x": 2.0,
+      "response": 5.0,
+      "response_sd": 0.1,
+      "weighted_x": 20.0,
+      "weighted_constant": 10.0,
+      "weighted_response": 50.0
+    },
+    {
+      "record_id": "std3",
+      "x": 3.0,
+      "response": 7.5,
+      "response_sd": 1.0,
+      "weighted_x": 3.0,
+      "weighted_constant": 1.0,
+      "weighted_response": 7.5
+    },
+    {
+      "record_id": "std4",
+      "x": 4.0,
+      "response": 10.0,
+      "response_sd": 2.0,
+      "weighted_x": 2.0,
+      "weighted_constant": 0.5,
+      "weighted_response": 5.0
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "x mmol/L; response and SD same signal units; weighted residual dimensionless",
+    "original_observation_claim": false
+  }
+}

@@ -1,0 +1,4 @@
+REMARK Controlled donor/acceptor centroid placeholders; angstrom
+HETATM    1  C1  CEN A   1       0.000   0.000   0.000  1.00  0.00           C  
+HETATM    2  C2  CEN A   2       0.000  80.000   0.000  1.00  0.00           C  
+END

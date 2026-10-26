@@ -1,0 +1,220 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "reference_records": [
+        {
+          "unit_id": "matrix-A-aliquot-01",
+          "matrix_id": "matrix-A",
+          "reference_mmol_l": 1.2
+        },
+        {
+          "unit_id": "matrix-A-aliquot-02",
+          "matrix_id": "matrix-A",
+          "reference_mmol_l": 1.57
+        },
+        {
+          "unit_id": "matrix-A-aliquot-03",
+          "matrix_id": "matrix-A",
+          "reference_mmol_l": 1.94
+        },
+        {
+          "unit_id": "matrix-A-aliquot-04",
+          "matrix_id": "matrix-A",
+          "reference_mmol_l": 2.31
+        },
+        {
+          "unit_id": "matrix-A-aliquot-05",
+          "matrix_id": "matrix-A",
+          "reference_mmol_l": 2.68
+        },
+        {
+          "unit_id": "matrix-A-aliquot-06",
+          "matrix_id": "matrix-A",
+          "reference_mmol_l": 3.05
+        },
+        {
+          "unit_id": "matrix-A-aliquot-07",
+          "matrix_id": "matrix-A",
+          "reference_mmol_l": 3.42
+        },
+        {
+          "unit_id": "matrix-A-aliquot-08",
+          "matrix_id": "matrix-A",
+          "reference_mmol_l": 3.79
+        },
+        {
+          "unit_id": "matrix-A-aliquot-09",
+          "matrix_id": "matrix-A",
+          "reference_mmol_l": 4.16
+        },
+        {
+          "unit_id": "matrix-A-aliquot-10",
+          "matrix_id": "matrix-A",
+          "reference_mmol_l": 4.53
+        },
+        {
+          "unit_id": "matrix-B-aliquot-01",
+          "matrix_id": "matrix-B",
+          "reference_mmol_l": 1.2
+        },
+        {
+          "unit_id": "matrix-B-aliquot-02",
+          "matrix_id": "matrix-B",
+          "reference_mmol_l": 1.57
+        },
+        {
+          "unit_id": "matrix-B-aliquot-03",
+          "matrix_id": "matrix-B",
+          "reference_mmol_l": 1.94
+        },
+        {
+          "unit_id": "matrix-B-aliquot-04",
+          "matrix_id": "matrix-B",
+          "reference_mmol_l": 2.31
+        },
+        {
+          "unit_id": "matrix-B-aliquot-05",
+          "matrix_id": "matrix-B",
+          "reference_mmol_l": 2.68
+        },
+        {
+          "unit_id": "matrix-B-aliquot-06",
+          "matrix_id": "matrix-B",
+          "reference_mmol_l": 3.05
+        },
+        {
+          "unit_id": "matrix-C-aliquot-01",
+          "matrix_id": "matrix-C",
+          "reference_mmol_l": 1.2
+        },
+        {
+          "unit_id": "matrix-C-aliquot-02",
+          "matrix_id": "matrix-C",
+          "reference_mmol_l": 1.57
+        },
+        {
+          "unit_id": "matrix-C-aliquot-03",
+          "matrix_id": "matrix-C",
+          "reference_mmol_l": 1.94
+        },
+        {
+          "unit_id": "matrix-C-aliquot-04",
+          "matrix_id": "matrix-C",
+          "reference_mmol_l": 2.31
+        }
+      ],
+      "candidate_records": [
+        {
+          "unit_id": "matrix-A-aliquot-08",
+          "candidate_mmol_l": 3.755
+        },
+        {
+          "unit_id": "matrix-A-aliquot-10",
+          "candidate_mmol_l": 4.515
+        },
+        {
+          "unit_id": "matrix-B-aliquot-02",
+          "candidate_mmol_l": 1.555
+        },
+        {
+          "unit_id": "matrix-B-aliquot-04",
+          "candidate_mmol_l": 2.315
+        },
+        {
+          "unit_id": "matrix-B-aliquot-06",
+          "candidate_mmol_l": 3.075
+        },
+        {
+          "unit_id": "matrix-C-aliquot-02",
+          "candidate_mmol_l": 1.685
+        },
+        {
+          "unit_id": "matrix-C-aliquot-04",
+          "candidate_mmol_l": 2.445
+        },
+        {
+          "unit_id": "matrix-A-aliquot-01",
+          "candidate_mmol_l": 1.095
+        },
+        {
+          "unit_id": "matrix-A-aliquot-03",
+          "candidate_mmol_l": 1.855
+        },
+        {
+          "unit_id": "matrix-A-aliquot-05",
+          "candidate_mmol_l": 2.615
+        },
+        {
+          "unit_id": "matrix-A-aliquot-07",
+          "candidate_mmol_l": 3.375
+        },
+        {
+          "unit_id": "matrix-A-aliquot-09",
+          "candidate_mmol_l": 4.135
+        },
+        {
+          "unit_id": "matrix-B-aliquot-01",
+          "candidate_mmol_l": 1.175
+        },
+        {
+          "unit_id": "matrix-B-aliquot-03",
+          "candidate_mmol_l": 1.935
+        },
+        {
+          "unit_id": "matrix-B-aliquot-05",
+          "candidate_mmol_l": 2.695
+        },
+        {
+          "unit_id": "matrix-C-aliquot-01",
+          "candidate_mmol_l": 1.305
+        },
+        {
+          "unit_id": "matrix-C-aliquot-03",
+          "candidate_mmol_l": 2.065
+        },
+        {
+          "unit_id": "matrix-A-aliquot-02",
+          "candidate_mmol_l": 1.475
+        },
+        {
+          "unit_id": "matrix-A-aliquot-04",
+          "candidate_mmol_l": 2.235
+        },
+        {
+          "unit_id": "matrix-A-aliquot-06",
+          "candidate_mmol_l": 2.995
+        }
+      ],
+      "target_matrix_weights": {
+        "matrix-A": 0.5,
+        "matrix-B": 0.25,
+        "matrix-C": 0.25
+      },
+      "known_paired_difference_sd_mmol_l": {
+        "matrix-A": 0.08,
+        "matrix-B": 0.08,
+        "matrix-C": 0.08
+      },
+      "equivalence_margin_mmol_l": 0.1,
+      "one_sided_alpha": 0.05,
+      "statistical_model": "Within each matrix, the independent aliquot-level differences candidate minus reference are Gaussian with one unknown matrix mean and the supplied known population standard deviation. Aliquots and matrices are independent. The reference response is treated as exact for this controlled transfer model. Each unit has exactly one paired observation; table position is not an identity. The supplied SD is a stipulated known variance-model input, not an estimate to replace by the observed sample SD.",
+      "transfer_target": "Mean-difference equivalence inside the open interval (-margin,+margin). Audit both the prespecified target-population weighted mean difference and the claim that every listed matrix mean is equivalent. The target weights are fixed population proportions, not observed sample proportions. A failure to demonstrate equivalence is inconclusive about nonequivalence; a nonsignificant zero-difference test does not demonstrate equivalence. No claim concerns individual-sample agreement, exact chemical accuracy, other matrices or real method certification.",
+      "decision_rule": "For any requested scalar mean, perform both one-sided boundary tests using the known-normal standard error; the equivalence p-value is the larger boundary p-value. Equivalence is demonstrated when this p-value is strictly below one_sided_alpha. The all-matrix claim is an intersection of matrix equivalence claims; require every matrix to pass. Do not pool matrices before testing that all-matrix claim. Report the list of matrices not demonstrated equivalent, not a list proven nonequivalent.",
+      "units": {
+        "concentration": "mmol/L",
+        "weights": "dimensionless fixed population proportions",
+        "probabilities": "dimensionless"
+      },
+      "provenance": {
+        "kind": "project-authored controlled computational method-transfer panel; not laboratory observations",
+        "original_observation_claim": false,
+        "method_context": "Two one-sided boundary tests and intersection-union logic; the fixture uses known-normal variances, not a plug-in Student t model.",
+        "method_sources": [
+          "https://support.sas.com/documentation/cdl/en/statug/66103/HTML/default/statug_ttest_details19.htm",
+          "https://www.statsmodels.org/stable/generated/statsmodels.stats.weightstats.ttost_paired.html"
+        ]
+      }
+    }
+  ]
+}

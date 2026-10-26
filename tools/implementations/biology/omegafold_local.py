@@ -1,5 +1,5 @@
 """Invoke version-pinned author OmegaFold code and weights locally with bounded resources."""
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import json
 import os
 from pathlib import Path

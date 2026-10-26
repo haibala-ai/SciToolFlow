@@ -1,0 +1,1927 @@
+{
+  "data": [
+    {
+      "id": "central_0_006",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_006"
+    },
+    {
+      "id": "north_1_029",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_029"
+    },
+    {
+      "id": "north_0_068",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_068"
+    },
+    {
+      "id": "north_0_099",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_099"
+    },
+    {
+      "id": "north_1_001",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_001"
+    },
+    {
+      "id": "central_1_003",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_003"
+    },
+    {
+      "id": "north_0_016",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_016"
+    },
+    {
+      "id": "north_1_021",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_021"
+    },
+    {
+      "id": "north_0_007",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_007"
+    },
+    {
+      "id": "north_1_003",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_003"
+    },
+    {
+      "id": "central_0_011",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_011"
+    },
+    {
+      "id": "north_0_117",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_117"
+    },
+    {
+      "id": "south_0_026",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_026"
+    },
+    {
+      "id": "north_0_103",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_103"
+    },
+    {
+      "id": "north_0_136",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_136"
+    },
+    {
+      "id": "north_0_156",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_156"
+    },
+    {
+      "id": "south_0_005",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_005"
+    },
+    {
+      "id": "south_0_022",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_022"
+    },
+    {
+      "id": "north_1_023",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_023"
+    },
+    {
+      "id": "north_0_066",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_066"
+    },
+    {
+      "id": "central_0_009",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_009"
+    },
+    {
+      "id": "north_0_006",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_006"
+    },
+    {
+      "id": "north_0_119",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_119"
+    },
+    {
+      "id": "south_0_023",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_023"
+    },
+    {
+      "id": "north_1_011",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_011"
+    },
+    {
+      "id": "north_0_102",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_102"
+    },
+    {
+      "id": "north_1_048",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_048"
+    },
+    {
+      "id": "north_1_079",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_079"
+    },
+    {
+      "id": "north_0_001",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_001"
+    },
+    {
+      "id": "north_0_041",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_041"
+    },
+    {
+      "id": "central_0_021",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_021"
+    },
+    {
+      "id": "north_0_063",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_063"
+    },
+    {
+      "id": "north_1_024",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_024"
+    },
+    {
+      "id": "north_0_069",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_069"
+    },
+    {
+      "id": "north_0_013",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_013"
+    },
+    {
+      "id": "north_1_018",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_018"
+    },
+    {
+      "id": "north_0_044",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_044"
+    },
+    {
+      "id": "north_0_144",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_144"
+    },
+    {
+      "id": "central_1_012",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_012"
+    },
+    {
+      "id": "north_1_043",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_043"
+    },
+    {
+      "id": "central_0_012",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_012"
+    },
+    {
+      "id": "north_0_062",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_062"
+    },
+    {
+      "id": "north_1_047",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_047"
+    },
+    {
+      "id": "north_0_053",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_053"
+    },
+    {
+      "id": "south_0_027",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_027"
+    },
+    {
+      "id": "north_0_025",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_025"
+    },
+    {
+      "id": "north_0_118",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_118"
+    },
+    {
+      "id": "central_1_013",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_013"
+    },
+    {
+      "id": "north_0_008",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_008"
+    },
+    {
+      "id": "south_0_021",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_021"
+    },
+    {
+      "id": "north_1_007",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_007"
+    },
+    {
+      "id": "north_1_037",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_037"
+    },
+    {
+      "id": "north_0_143",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_143"
+    },
+    {
+      "id": "south_1_000",
+      "site": "south",
+      "reference_label": 1,
+      "specimen_id": "south_1_000"
+    },
+    {
+      "id": "north_1_002",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_002"
+    },
+    {
+      "id": "north_1_077",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_077"
+    },
+    {
+      "id": "south_1_003",
+      "site": "south",
+      "reference_label": 1,
+      "specimen_id": "south_1_003"
+    },
+    {
+      "id": "north_1_071",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_071"
+    },
+    {
+      "id": "north_0_107",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_107"
+    },
+    {
+      "id": "north_0_005",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_005"
+    },
+    {
+      "id": "south_0_020",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_020"
+    },
+    {
+      "id": "central_1_008",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_008"
+    },
+    {
+      "id": "central_1_001",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_001"
+    },
+    {
+      "id": "north_0_089",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_089"
+    },
+    {
+      "id": "north_0_003",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_003"
+    },
+    {
+      "id": "north_0_108",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_108"
+    },
+    {
+      "id": "north_0_126",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_126"
+    },
+    {
+      "id": "north_1_068",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_068"
+    },
+    {
+      "id": "north_0_045",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_045"
+    },
+    {
+      "id": "central_0_000",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_000"
+    },
+    {
+      "id": "north_1_075",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_075"
+    },
+    {
+      "id": "north_0_055",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_055"
+    },
+    {
+      "id": "north_0_106",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_106"
+    },
+    {
+      "id": "north_0_094",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_094"
+    },
+    {
+      "id": "south_0_017",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_017"
+    },
+    {
+      "id": "north_1_017",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_017"
+    },
+    {
+      "id": "north_0_152",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_152"
+    },
+    {
+      "id": "central_0_003",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_003"
+    },
+    {
+      "id": "north_0_091",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_091"
+    },
+    {
+      "id": "north_0_017",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_017"
+    },
+    {
+      "id": "central_0_002",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_002"
+    },
+    {
+      "id": "north_0_037",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_037"
+    },
+    {
+      "id": "central_0_022",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_022"
+    },
+    {
+      "id": "north_0_022",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_022"
+    },
+    {
+      "id": "north_0_111",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_111"
+    },
+    {
+      "id": "north_0_083",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_083"
+    },
+    {
+      "id": "north_0_031",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_031"
+    },
+    {
+      "id": "north_0_127",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_127"
+    },
+    {
+      "id": "north_0_122",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_122"
+    },
+    {
+      "id": "north_0_113",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_113"
+    },
+    {
+      "id": "north_0_086",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_086"
+    },
+    {
+      "id": "south_1_002",
+      "site": "south",
+      "reference_label": 1,
+      "specimen_id": "south_1_002"
+    },
+    {
+      "id": "south_0_008",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_008"
+    },
+    {
+      "id": "north_0_154",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_154"
+    },
+    {
+      "id": "north_0_076",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_076"
+    },
+    {
+      "id": "north_1_067",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_067"
+    },
+    {
+      "id": "north_0_133",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_133"
+    },
+    {
+      "id": "north_0_064",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_064"
+    },
+    {
+      "id": "central_0_013",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_013"
+    },
+    {
+      "id": "south_0_024",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_024"
+    },
+    {
+      "id": "north_0_059",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_059"
+    },
+    {
+      "id": "north_0_054",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_054"
+    },
+    {
+      "id": "south_0_007",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_007"
+    },
+    {
+      "id": "north_0_145",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_145"
+    },
+    {
+      "id": "north_0_042",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_042"
+    },
+    {
+      "id": "north_0_095",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_095"
+    },
+    {
+      "id": "central_1_015",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_015"
+    },
+    {
+      "id": "north_1_036",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_036"
+    },
+    {
+      "id": "north_0_110",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_110"
+    },
+    {
+      "id": "north_1_004",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_004"
+    },
+    {
+      "id": "south_1_004",
+      "site": "south",
+      "reference_label": 1,
+      "specimen_id": "south_1_004"
+    },
+    {
+      "id": "north_0_012",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_012"
+    },
+    {
+      "id": "north_1_025",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_025"
+    },
+    {
+      "id": "north_1_051",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_051"
+    },
+    {
+      "id": "north_1_050",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_050"
+    },
+    {
+      "id": "north_0_124",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_124"
+    },
+    {
+      "id": "north_1_054",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_054"
+    },
+    {
+      "id": "north_0_098",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_098"
+    },
+    {
+      "id": "north_1_000",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_000"
+    },
+    {
+      "id": "north_0_135",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_135"
+    },
+    {
+      "id": "north_1_057",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_057"
+    },
+    {
+      "id": "central_1_010",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_010"
+    },
+    {
+      "id": "north_0_015",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_015"
+    },
+    {
+      "id": "central_0_007",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_007"
+    },
+    {
+      "id": "north_1_019",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_019"
+    },
+    {
+      "id": "south_0_009",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_009"
+    },
+    {
+      "id": "central_0_008",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_008"
+    },
+    {
+      "id": "north_0_130",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_130"
+    },
+    {
+      "id": "north_0_002",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_002"
+    },
+    {
+      "id": "central_0_005",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_005"
+    },
+    {
+      "id": "north_0_149",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_149"
+    },
+    {
+      "id": "north_0_047",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_047"
+    },
+    {
+      "id": "north_0_021",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_021"
+    },
+    {
+      "id": "north_1_022",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_022"
+    },
+    {
+      "id": "north_0_157",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_157"
+    },
+    {
+      "id": "north_0_079",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_079"
+    },
+    {
+      "id": "north_0_105",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_105"
+    },
+    {
+      "id": "north_1_008",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_008"
+    },
+    {
+      "id": "south_1_005",
+      "site": "south",
+      "reference_label": 1,
+      "specimen_id": "south_1_005"
+    },
+    {
+      "id": "north_1_065",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_065"
+    },
+    {
+      "id": "south_0_013",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_013"
+    },
+    {
+      "id": "north_0_070",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_070"
+    },
+    {
+      "id": "north_0_056",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_056"
+    },
+    {
+      "id": "north_0_114",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_114"
+    },
+    {
+      "id": "north_0_138",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_138"
+    },
+    {
+      "id": "north_0_075",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_075"
+    },
+    {
+      "id": "north_0_074",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_074"
+    },
+    {
+      "id": "north_0_109",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_109"
+    },
+    {
+      "id": "north_0_159",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_159"
+    },
+    {
+      "id": "north_1_010",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_010"
+    },
+    {
+      "id": "north_0_065",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_065"
+    },
+    {
+      "id": "north_1_020",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_020"
+    },
+    {
+      "id": "central_0_010",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_010"
+    },
+    {
+      "id": "south_0_025",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_025"
+    },
+    {
+      "id": "north_1_013",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_013"
+    },
+    {
+      "id": "central_0_017",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_017"
+    },
+    {
+      "id": "south_0_012",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_012"
+    },
+    {
+      "id": "north_0_048",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_048"
+    },
+    {
+      "id": "north_0_100",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_100"
+    },
+    {
+      "id": "north_0_040",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_040"
+    },
+    {
+      "id": "north_0_009",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_009"
+    },
+    {
+      "id": "north_0_036",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_036"
+    },
+    {
+      "id": "north_1_072",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_072"
+    },
+    {
+      "id": "north_0_121",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_121"
+    },
+    {
+      "id": "north_0_078",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_078"
+    },
+    {
+      "id": "north_0_139",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_139"
+    },
+    {
+      "id": "central_0_023",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_023"
+    },
+    {
+      "id": "north_1_041",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_041"
+    },
+    {
+      "id": "north_0_150",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_150"
+    },
+    {
+      "id": "north_1_035",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_035"
+    },
+    {
+      "id": "central_1_005",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_005"
+    },
+    {
+      "id": "central_0_018",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_018"
+    },
+    {
+      "id": "north_1_040",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_040"
+    },
+    {
+      "id": "north_0_072",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_072"
+    },
+    {
+      "id": "north_0_131",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_131"
+    },
+    {
+      "id": "north_0_153",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_153"
+    },
+    {
+      "id": "north_0_051",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_051"
+    },
+    {
+      "id": "north_0_147",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_147"
+    },
+    {
+      "id": "north_1_028",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_028"
+    },
+    {
+      "id": "north_1_014",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_014"
+    },
+    {
+      "id": "south_0_011",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_011"
+    },
+    {
+      "id": "north_1_052",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_052"
+    },
+    {
+      "id": "central_0_016",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_016"
+    },
+    {
+      "id": "north_0_120",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_120"
+    },
+    {
+      "id": "north_1_061",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_061"
+    },
+    {
+      "id": "north_1_026",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_026"
+    },
+    {
+      "id": "north_0_137",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_137"
+    },
+    {
+      "id": "south_0_018",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_018"
+    },
+    {
+      "id": "north_0_090",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_090"
+    },
+    {
+      "id": "north_0_088",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_088"
+    },
+    {
+      "id": "north_0_155",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_155"
+    },
+    {
+      "id": "north_0_112",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_112"
+    },
+    {
+      "id": "central_0_001",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_001"
+    },
+    {
+      "id": "north_0_035",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_035"
+    },
+    {
+      "id": "north_1_055",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_055"
+    },
+    {
+      "id": "north_0_049",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_049"
+    },
+    {
+      "id": "north_1_074",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_074"
+    },
+    {
+      "id": "north_0_129",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_129"
+    },
+    {
+      "id": "south_0_028",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_028"
+    },
+    {
+      "id": "north_0_034",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_034"
+    },
+    {
+      "id": "north_0_014",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_014"
+    },
+    {
+      "id": "central_1_000",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_000"
+    },
+    {
+      "id": "north_1_015",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_015"
+    },
+    {
+      "id": "central_0_019",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_019"
+    },
+    {
+      "id": "central_0_015",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_015"
+    },
+    {
+      "id": "north_0_134",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_134"
+    },
+    {
+      "id": "north_0_151",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_151"
+    },
+    {
+      "id": "south_0_000",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_000"
+    },
+    {
+      "id": "north_1_063",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_063"
+    },
+    {
+      "id": "north_0_142",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_142"
+    },
+    {
+      "id": "north_0_000",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_000"
+    },
+    {
+      "id": "north_0_033",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_033"
+    },
+    {
+      "id": "north_1_044",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_044"
+    },
+    {
+      "id": "central_1_002",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_002"
+    },
+    {
+      "id": "north_0_071",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_071"
+    },
+    {
+      "id": "north_1_058",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_058"
+    },
+    {
+      "id": "north_1_027",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_027"
+    },
+    {
+      "id": "north_0_158",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_158"
+    },
+    {
+      "id": "central_1_006",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_006"
+    },
+    {
+      "id": "north_0_085",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_085"
+    },
+    {
+      "id": "north_1_066",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_066"
+    },
+    {
+      "id": "north_0_023",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_023"
+    },
+    {
+      "id": "north_0_028",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_028"
+    },
+    {
+      "id": "north_0_052",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_052"
+    },
+    {
+      "id": "north_1_034",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_034"
+    },
+    {
+      "id": "north_0_087",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_087"
+    },
+    {
+      "id": "north_0_073",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_073"
+    },
+    {
+      "id": "north_1_038",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_038"
+    },
+    {
+      "id": "central_1_004",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_004"
+    },
+    {
+      "id": "south_0_030",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_030"
+    },
+    {
+      "id": "north_0_123",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_123"
+    },
+    {
+      "id": "north_0_084",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_084"
+    },
+    {
+      "id": "north_1_053",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_053"
+    },
+    {
+      "id": "central_0_020",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_020"
+    },
+    {
+      "id": "north_1_070",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_070"
+    },
+    {
+      "id": "north_1_045",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_045"
+    },
+    {
+      "id": "south_0_004",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_004"
+    },
+    {
+      "id": "north_0_128",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_128"
+    },
+    {
+      "id": "south_1_007",
+      "site": "south",
+      "reference_label": 1,
+      "specimen_id": "south_1_007"
+    },
+    {
+      "id": "north_1_064",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_064"
+    },
+    {
+      "id": "north_0_030",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_030"
+    },
+    {
+      "id": "central_0_004",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_004"
+    },
+    {
+      "id": "north_0_125",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_125"
+    },
+    {
+      "id": "north_0_101",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_101"
+    },
+    {
+      "id": "north_1_032",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_032"
+    },
+    {
+      "id": "north_0_026",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_026"
+    },
+    {
+      "id": "central_1_007",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_007"
+    },
+    {
+      "id": "south_0_029",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_029"
+    },
+    {
+      "id": "north_0_140",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_140"
+    },
+    {
+      "id": "north_1_009",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_009"
+    },
+    {
+      "id": "central_1_009",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_009"
+    },
+    {
+      "id": "north_0_132",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_132"
+    },
+    {
+      "id": "north_1_056",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_056"
+    },
+    {
+      "id": "north_0_096",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_096"
+    },
+    {
+      "id": "north_1_060",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_060"
+    },
+    {
+      "id": "north_0_010",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_010"
+    },
+    {
+      "id": "north_1_042",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_042"
+    },
+    {
+      "id": "south_0_001",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_001"
+    },
+    {
+      "id": "north_0_141",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_141"
+    },
+    {
+      "id": "north_1_033",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_033"
+    },
+    {
+      "id": "north_1_031",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_031"
+    },
+    {
+      "id": "north_0_115",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_115"
+    },
+    {
+      "id": "south_0_016",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_016"
+    },
+    {
+      "id": "north_0_018",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_018"
+    },
+    {
+      "id": "north_0_061",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_061"
+    },
+    {
+      "id": "north_0_039",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_039"
+    },
+    {
+      "id": "north_0_024",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_024"
+    },
+    {
+      "id": "north_0_043",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_043"
+    },
+    {
+      "id": "north_0_092",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_092"
+    },
+    {
+      "id": "north_0_081",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_081"
+    },
+    {
+      "id": "north_1_059",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_059"
+    },
+    {
+      "id": "north_0_038",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_038"
+    },
+    {
+      "id": "north_0_093",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_093"
+    },
+    {
+      "id": "north_0_146",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_146"
+    },
+    {
+      "id": "central_0_014",
+      "site": "central",
+      "reference_label": 0,
+      "specimen_id": "central_0_014"
+    },
+    {
+      "id": "north_1_076",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_076"
+    },
+    {
+      "id": "south_0_019",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_019"
+    },
+    {
+      "id": "north_0_080",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_080"
+    },
+    {
+      "id": "north_0_020",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_020"
+    },
+    {
+      "id": "south_0_031",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_031"
+    },
+    {
+      "id": "north_0_032",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_032"
+    },
+    {
+      "id": "north_1_005",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_005"
+    },
+    {
+      "id": "north_0_148",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_148"
+    },
+    {
+      "id": "north_0_027",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_027"
+    },
+    {
+      "id": "north_0_077",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_077"
+    },
+    {
+      "id": "north_1_069",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_069"
+    },
+    {
+      "id": "north_0_097",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_097"
+    },
+    {
+      "id": "south_1_006",
+      "site": "south",
+      "reference_label": 1,
+      "specimen_id": "south_1_006"
+    },
+    {
+      "id": "north_0_104",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_104"
+    },
+    {
+      "id": "north_0_082",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_082"
+    },
+    {
+      "id": "north_1_012",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_012"
+    },
+    {
+      "id": "central_1_014",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_014"
+    },
+    {
+      "id": "south_0_014",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_014"
+    },
+    {
+      "id": "north_0_116",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_116"
+    },
+    {
+      "id": "south_0_006",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_006"
+    },
+    {
+      "id": "north_0_019",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_019"
+    },
+    {
+      "id": "north_1_046",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_046"
+    },
+    {
+      "id": "south_0_003",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_003"
+    },
+    {
+      "id": "north_1_078",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_078"
+    },
+    {
+      "id": "north_0_011",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_011"
+    },
+    {
+      "id": "north_0_029",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_029"
+    },
+    {
+      "id": "south_0_010",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_010"
+    },
+    {
+      "id": "north_0_058",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_058"
+    },
+    {
+      "id": "north_1_073",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_073"
+    },
+    {
+      "id": "north_1_016",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_016"
+    },
+    {
+      "id": "north_0_060",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_060"
+    },
+    {
+      "id": "central_1_011",
+      "site": "central",
+      "reference_label": 1,
+      "specimen_id": "central_1_011"
+    },
+    {
+      "id": "north_0_057",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_057"
+    },
+    {
+      "id": "north_1_006",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_006"
+    },
+    {
+      "id": "north_0_050",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_050"
+    },
+    {
+      "id": "north_1_030",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_030"
+    },
+    {
+      "id": "south_0_002",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_002"
+    },
+    {
+      "id": "north_1_039",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_039"
+    },
+    {
+      "id": "south_0_015",
+      "site": "south",
+      "reference_label": 0,
+      "specimen_id": "south_0_015"
+    },
+    {
+      "id": "south_1_001",
+      "site": "south",
+      "reference_label": 1,
+      "specimen_id": "south_1_001"
+    },
+    {
+      "id": "north_0_004",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_004"
+    },
+    {
+      "id": "north_1_049",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_049"
+    },
+    {
+      "id": "north_1_062",
+      "site": "north",
+      "reference_label": 1,
+      "specimen_id": "north_1_062"
+    },
+    {
+      "id": "north_0_067",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_067"
+    },
+    {
+      "id": "north_0_046",
+      "site": "north",
+      "reference_label": 0,
+      "specimen_id": "north_0_046"
+    }
+  ],
+  "provenance": {
+    "kind": "Controlled complete reference-label panel, not empirical observations."
+  }
+}

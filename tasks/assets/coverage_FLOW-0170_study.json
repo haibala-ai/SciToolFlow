@@ -1,0 +1,6 @@
+{
+  "material_id": "mp-aaaabdgk",
+  "report_context": "Use the current published summary records with canonical identity and source version. Check total magnetic moment M in mu_B,cell volume V in angstrom^3,reported moment per volume,and reported number of magnetic sites.",
+  "target": "Return M/V and the absolute residual against the separately published volume-normalized moment. Report the integer magnetic-site count,whether M/count defines a finite per-magnetic-site moment,and whether a positive M together with the reported zero site count is internally consistent as a site-normalized report.",
+  "scope": "Audit the returned database fields as published. Do not repair a zero denominator by guessing sites or infer ferro/antiferromagnetic ground state from an inconsistent summary."
+}

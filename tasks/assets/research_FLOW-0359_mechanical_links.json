@@ -1,0 +1,73 @@
+{
+  "origin": "Own idealized topological-chemistry audit inspired by mechanically interlocked macrocycles. All five diagrams represent the SAME three disconnected covalent12-carbon ring graphs, but their embedded centerline topology is specified separately by closed3strand braid words. Rings are ideal flexible zero-thickness closed centerlines without bond-length/angle/steric or energetic constraints. The task makes no claim that a particular cyclododecane conformer realizes these diagrams or that a stated cutting intervention is a chemical reaction. No synthesis route, coordination recipe or real mechanical stability/rate is supplied.",
+  "covalent_graph": {
+    "shared_smiles": "C1CCCCCCCCCCC1.C1CCCCCCCCCCC1.C1CCCCCCCCCCC1",
+    "ring_labels_in_initial_strand_order": [
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "atom_policy": "Implicit hydrogen removed for adjacency/atom counts; three connected components,each a12carbon single-bond ring. Ring labels identify the initial top strands in the separate braid diagram. Do not generate a new conformer or use graph atom chirality as a substitute for centerline linking."
+  },
+  "diagrams": {
+    "A": [],
+    "B": [
+      1,
+      1,
+      2,
+      2
+    ],
+    "C": [
+      1,
+      -2,
+      1,
+      -2,
+      1,
+      -2
+    ],
+    "D": [
+      1,
+      1,
+      -2,
+      1,
+      -2,
+      1,
+      -2,
+      -1
+    ],
+    "E": [
+      -1,
+      2,
+      -1,
+      2,
+      -1,
+      2
+    ]
+  },
+  "braid_convention": "A word is read from top to bottom. Positive integeri denotes generator sigma_i crossing the strand currently in positioni over the strand in positioni+1; negative-i is its inverse. Positions are1based, and after every crossing the two strand labels swap positions regardless of crossing sign. Close the final bottom positions to the corresponding top positions by standard noncrossing closure arcs outside the braid. All five supplied words are pure: their final permutation is identity, so each initial strand closes to one labelled ring. Orient every braid strand top-to-bottom and close consistently. Compute pairwise linking numbers as half the sum of oriented crossing signs BETWEEN THE SAME TWO TRACKED COMPONENT LABELS, not between fixed strand positions. Writhe is the sum of all oriented signed crossings.",
+  "chemical_identity_audit": "Retain actual GetMolFormula, GetAdjacencyMatrix, GetRingsNum, GetAtomStereoCentersNum and SMILESToInChI observations of the shared covalent SMILES. Use the actual adjacency to recover all covalent connected components and their sizes, graph cycles and lack of covalent connectivity between rings. Explain which of these observations is invariant across the five embeddings and why a standard graph InChI/atom stereocenter record does not encode their mechanical linkage. Calling one unchanged shared graph repeatedly is unnecessary; propagate its actual common result to all diagrams. Formula/ring/atom-chirality equality does not establish an unlink.",
+  "exact_Jones_convention": "Use variableA and delta=-A^2-A^(-2). In the Temperley-Lieb smoothing algebra a positive crossing is A*I+A^(-1)*e_i; a negative crossing is A^(-1)*I+A*e_i. I joins each top position straight to the corresponding bottom; e_i joins adjacent top endpointsi,i+1to each other and adjacent bottom endpointsi,i+1to each other, leaving other positions straight. Stack all layer smoothings and close top/bottom positions; a state withl closed loops contributes delta^(l-1), so the unknot bracket is1 and the3component unlink bracket isdelta^2. Multiply each state by its crossing coefficient and sum EXACT integer Laurent coefficients. Normalize V_L(A)=(-A^3)^(-writhe)*bracket(L). Return polynomials as JSON objects with exponent strings as keys and nonzero INTEGER coefficients; omit zero coefficients. No substitutiont=A^-4or alternative Jones normalization is used. Every one of2^(word length)states must be accounted for, or use an independently verified exact TL reduction yielding the same full polynomial.",
+  "invariant_validation": "Retain exact algebraic proof/verification of inverse-crossing cancellation and the braid relation, not only numerical agreement at oneA. For an independent actual matrix check specializeA=2,delta=-17/4and use the ordered5element TL3basis[I,e1,e2,e1e2,e2e1]. Derive the5x5left-multiplication operators for e1,e2frome_i^2=delta*e_i,e1e2e1=e1,e2e1e2=e2, then build S_i=2I+(1/2)E_i and S_i_inverse=(1/2)I+2E_i. Retain actual MatrixMultiply for S1*S1_inverse, S1*S2 and (S1*S2)*S1, S2*S1 and (S2*S1)*S2. Check cancellation identity and the complete matrix braid relation with actual returned products. Use these to audit your smoothing/sign/normalization implementation; evaluation atA=2is a useful independent check but is NOT a proof of full polynomial equality or link equivalence.",
+  "mechanical_link_identification": "Find all genuinely linked diagrams, every linked diagram with all pairwise linking numberszero, and every Brunnian diagram (the full link is nontrivial but deleting ANY one component leaves the remaining two unlinked). Nonzero pairwise linking proves a nontrivial link; zero pairwise linking does not prove an unlink. Unequal normalized Jones polynomial versus the correct3component unlink proves nontriviality. Equal Jones polynomials do NOT in general prove isotopy. Report every unordered equal-Jones diagram pair as alphabetically orderedA|B-style strings. Check mirror reciprocity VE(A)=VC(A^-1). The supplied conjugated word has an explicit closed-braid equivalence; do not turn every invariant equality into an equivalence or a chirality conclusion.",
+  "deletion_and_planning": "A permitted ideal intervention cuts and completely withdraws an entire selected ring, with costsR1=1,R2=3,R3=2; other rings remain embedded without crossing. For EVERY diagram enumerate all8subsets of removed rings, trace component labels through the original braid and derive the induced braid on remaining strands. Do not delete by original generator position alone. A remaining0or1ring is unlinked; for a remaining pure2strand braid, explicitly reduce inverse crossings to the integer exponent and establish unlinking only when the reduced word is empty. For full3rings, certify unlinking/nontriviality from the actual diagram and global invariant evidence, not just pairwise signs. Return minimum removal CARDINALITY, minimum total COST, and ALL cost-optimal removal sets for each diagram; these are different optimization questions. Ring names inside each set sorted; outer set order immaterial. A pairwise linking graph alone may miss a higher-order constraint and give a false no-cut plan.",
+  "required_evidence": "Acquire the complete source, retain all five actual chemical graph observations, a complete component-label/pairwise-crossing audit, exact full signed bracket/TL Laurent output for every supplied diagram, the five actual matrix-multiplication checks and their algebraic source construction, full induced-sublink/reduction inventory and exact optimization over every removal set. Retain state/loop or equivalent TL completeness and invariant/domain proofs. Do not use a finite coordinate projection, an atom-chirality count, a Jones numeric value or a graph connected-component count as a complete mechanical-link proof.",
+  "interpretation_proposals": {
+    "A": "Covalent-graph identity and atom stereocenter counts need not determine a multi-ring mechanical embedding.",
+    "B": "All pairwise linking numberszero always imply that a3component link is an unlink.",
+    "C": "Equal Jones polynomials in the specified convention always prove that two links are isotopic.",
+    "D": "Conjugating a braid gives an explicitly equivalent standard closed-braid link, with component labels tracked appropriately.",
+    "E": "A graph of nonzero pairwise linking numbers always contains every unlinking constraint needed for cost-optimal ring removal.",
+    "F": "A nontrivial link can become an unlink after deleting any one of its three components.",
+    "G": "Three disconnected covalent components imply that the corresponding embedded rings are mechanically unlinked.",
+    "H": "Exact signed diagram invariants and deletion certificates are mathematical evidence within this ideal model, not real synthesis, conformer feasibility or reaction-rate data."
+  },
+  "reporting": "Use the public answer schema. All polynomial exponents and coefficients, linking numbers, cardinalities, costs, state counts, diagram/ring labels and boolean claims are exact. TheA=2matrix audit may use1e-10absolute numerical residual tolerance. Return full nonzero Laurent coefficient maps; dictionary order immaterial. Complete sets cannot omit tied plans. Graph atom counts exclude implicit hydrogens; the molecular formula includes them. All derivations and actual observations remain in the trajectory, with no unrelated final nesting.",
+  "primary_context": {
+    "authors": "K.S.Chichak etal.",
+    "year": 2004,
+    "title": "Molecular Borromean Rings",
+    "doi": "10.1126/science.1096914",
+    "url": "https://www.science.org/doi/10.1126/science.1096914",
+    "role": "Primary molecular-topology context only. Own ideal C12ring graphs, braid words, polynomial convention and abstract deletion costs are not the experimental compound or its preparation; no source experimental protocol, data or figures are copied."
+  }
+}

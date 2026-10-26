@@ -1,0 +1,3504 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "measurement_columns": [
+        "chick_id",
+        "diet_id",
+        "day",
+        "weight_g"
+      ],
+      "measurements": [
+        {
+          "chick_id": "1",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "1",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 51.0
+        },
+        {
+          "chick_id": "1",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 59.0
+        },
+        {
+          "chick_id": "1",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 64.0
+        },
+        {
+          "chick_id": "1",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 76.0
+        },
+        {
+          "chick_id": "1",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 93.0
+        },
+        {
+          "chick_id": "1",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 106.0
+        },
+        {
+          "chick_id": "1",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 125.0
+        },
+        {
+          "chick_id": "1",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 149.0
+        },
+        {
+          "chick_id": "1",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 171.0
+        },
+        {
+          "chick_id": "1",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 199.0
+        },
+        {
+          "chick_id": "1",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 205.0
+        },
+        {
+          "chick_id": "2",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 40.0
+        },
+        {
+          "chick_id": "2",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "2",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 58.0
+        },
+        {
+          "chick_id": "2",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 72.0
+        },
+        {
+          "chick_id": "2",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 84.0
+        },
+        {
+          "chick_id": "2",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 103.0
+        },
+        {
+          "chick_id": "2",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 122.0
+        },
+        {
+          "chick_id": "2",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 138.0
+        },
+        {
+          "chick_id": "2",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 162.0
+        },
+        {
+          "chick_id": "2",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 187.0
+        },
+        {
+          "chick_id": "2",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 209.0
+        },
+        {
+          "chick_id": "2",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 215.0
+        },
+        {
+          "chick_id": "3",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 43.0
+        },
+        {
+          "chick_id": "3",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 39.0
+        },
+        {
+          "chick_id": "3",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 55.0
+        },
+        {
+          "chick_id": "3",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 67.0
+        },
+        {
+          "chick_id": "3",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 84.0
+        },
+        {
+          "chick_id": "3",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 99.0
+        },
+        {
+          "chick_id": "3",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 115.0
+        },
+        {
+          "chick_id": "3",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 138.0
+        },
+        {
+          "chick_id": "3",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 163.0
+        },
+        {
+          "chick_id": "3",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 187.0
+        },
+        {
+          "chick_id": "3",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 198.0
+        },
+        {
+          "chick_id": "3",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 202.0
+        },
+        {
+          "chick_id": "4",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "4",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "4",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 56.0
+        },
+        {
+          "chick_id": "4",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 67.0
+        },
+        {
+          "chick_id": "4",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 74.0
+        },
+        {
+          "chick_id": "4",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 87.0
+        },
+        {
+          "chick_id": "4",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 102.0
+        },
+        {
+          "chick_id": "4",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 108.0
+        },
+        {
+          "chick_id": "4",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 136.0
+        },
+        {
+          "chick_id": "4",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 154.0
+        },
+        {
+          "chick_id": "4",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 160.0
+        },
+        {
+          "chick_id": "4",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 157.0
+        },
+        {
+          "chick_id": "5",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "5",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "5",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 48.0
+        },
+        {
+          "chick_id": "5",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 60.0
+        },
+        {
+          "chick_id": "5",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 79.0
+        },
+        {
+          "chick_id": "5",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 106.0
+        },
+        {
+          "chick_id": "5",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 141.0
+        },
+        {
+          "chick_id": "5",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 164.0
+        },
+        {
+          "chick_id": "5",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 197.0
+        },
+        {
+          "chick_id": "5",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 199.0
+        },
+        {
+          "chick_id": "5",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 220.0
+        },
+        {
+          "chick_id": "5",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 223.0
+        },
+        {
+          "chick_id": "6",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "6",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "6",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 59.0
+        },
+        {
+          "chick_id": "6",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 74.0
+        },
+        {
+          "chick_id": "6",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 97.0
+        },
+        {
+          "chick_id": "6",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 124.0
+        },
+        {
+          "chick_id": "6",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 141.0
+        },
+        {
+          "chick_id": "6",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 148.0
+        },
+        {
+          "chick_id": "6",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 155.0
+        },
+        {
+          "chick_id": "6",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 160.0
+        },
+        {
+          "chick_id": "6",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 160.0
+        },
+        {
+          "chick_id": "6",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 157.0
+        },
+        {
+          "chick_id": "7",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "7",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "7",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 57.0
+        },
+        {
+          "chick_id": "7",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 71.0
+        },
+        {
+          "chick_id": "7",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 89.0
+        },
+        {
+          "chick_id": "7",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 112.0
+        },
+        {
+          "chick_id": "7",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 146.0
+        },
+        {
+          "chick_id": "7",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 174.0
+        },
+        {
+          "chick_id": "7",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 218.0
+        },
+        {
+          "chick_id": "7",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 250.0
+        },
+        {
+          "chick_id": "7",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 288.0
+        },
+        {
+          "chick_id": "7",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 305.0
+        },
+        {
+          "chick_id": "8",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "8",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 50.0
+        },
+        {
+          "chick_id": "8",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 61.0
+        },
+        {
+          "chick_id": "8",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 71.0
+        },
+        {
+          "chick_id": "8",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 84.0
+        },
+        {
+          "chick_id": "8",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 93.0
+        },
+        {
+          "chick_id": "8",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 110.0
+        },
+        {
+          "chick_id": "8",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 116.0
+        },
+        {
+          "chick_id": "8",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 126.0
+        },
+        {
+          "chick_id": "8",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 134.0
+        },
+        {
+          "chick_id": "8",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 125.0
+        },
+        {
+          "chick_id": "9",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "9",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 51.0
+        },
+        {
+          "chick_id": "9",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 59.0
+        },
+        {
+          "chick_id": "9",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 68.0
+        },
+        {
+          "chick_id": "9",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 85.0
+        },
+        {
+          "chick_id": "9",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 96.0
+        },
+        {
+          "chick_id": "9",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 90.0
+        },
+        {
+          "chick_id": "9",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 92.0
+        },
+        {
+          "chick_id": "9",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 93.0
+        },
+        {
+          "chick_id": "9",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 100.0
+        },
+        {
+          "chick_id": "9",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 100.0
+        },
+        {
+          "chick_id": "9",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 98.0
+        },
+        {
+          "chick_id": "10",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "10",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 44.0
+        },
+        {
+          "chick_id": "10",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 52.0
+        },
+        {
+          "chick_id": "10",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 63.0
+        },
+        {
+          "chick_id": "10",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 74.0
+        },
+        {
+          "chick_id": "10",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 81.0
+        },
+        {
+          "chick_id": "10",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 89.0
+        },
+        {
+          "chick_id": "10",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 96.0
+        },
+        {
+          "chick_id": "10",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 101.0
+        },
+        {
+          "chick_id": "10",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 112.0
+        },
+        {
+          "chick_id": "10",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 120.0
+        },
+        {
+          "chick_id": "10",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 124.0
+        },
+        {
+          "chick_id": "11",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 43.0
+        },
+        {
+          "chick_id": "11",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 51.0
+        },
+        {
+          "chick_id": "11",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 63.0
+        },
+        {
+          "chick_id": "11",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 84.0
+        },
+        {
+          "chick_id": "11",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 112.0
+        },
+        {
+          "chick_id": "11",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 139.0
+        },
+        {
+          "chick_id": "11",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 168.0
+        },
+        {
+          "chick_id": "11",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 177.0
+        },
+        {
+          "chick_id": "11",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 182.0
+        },
+        {
+          "chick_id": "11",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 184.0
+        },
+        {
+          "chick_id": "11",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 181.0
+        },
+        {
+          "chick_id": "11",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 175.0
+        },
+        {
+          "chick_id": "12",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "12",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "12",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 56.0
+        },
+        {
+          "chick_id": "12",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 62.0
+        },
+        {
+          "chick_id": "12",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 72.0
+        },
+        {
+          "chick_id": "12",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 88.0
+        },
+        {
+          "chick_id": "12",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 119.0
+        },
+        {
+          "chick_id": "12",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 135.0
+        },
+        {
+          "chick_id": "12",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 162.0
+        },
+        {
+          "chick_id": "12",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 185.0
+        },
+        {
+          "chick_id": "12",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 195.0
+        },
+        {
+          "chick_id": "12",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 205.0
+        },
+        {
+          "chick_id": "13",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "13",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 48.0
+        },
+        {
+          "chick_id": "13",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 53.0
+        },
+        {
+          "chick_id": "13",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 60.0
+        },
+        {
+          "chick_id": "13",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 65.0
+        },
+        {
+          "chick_id": "13",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 67.0
+        },
+        {
+          "chick_id": "13",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 71.0
+        },
+        {
+          "chick_id": "13",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 70.0
+        },
+        {
+          "chick_id": "13",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 71.0
+        },
+        {
+          "chick_id": "13",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 81.0
+        },
+        {
+          "chick_id": "13",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 91.0
+        },
+        {
+          "chick_id": "13",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 96.0
+        },
+        {
+          "chick_id": "14",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "14",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "14",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 62.0
+        },
+        {
+          "chick_id": "14",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 79.0
+        },
+        {
+          "chick_id": "14",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 101.0
+        },
+        {
+          "chick_id": "14",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 128.0
+        },
+        {
+          "chick_id": "14",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 164.0
+        },
+        {
+          "chick_id": "14",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 192.0
+        },
+        {
+          "chick_id": "14",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 227.0
+        },
+        {
+          "chick_id": "14",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 248.0
+        },
+        {
+          "chick_id": "14",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 259.0
+        },
+        {
+          "chick_id": "14",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 266.0
+        },
+        {
+          "chick_id": "15",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "15",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "15",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 56.0
+        },
+        {
+          "chick_id": "15",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 64.0
+        },
+        {
+          "chick_id": "15",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 68.0
+        },
+        {
+          "chick_id": "15",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 68.0
+        },
+        {
+          "chick_id": "15",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 67.0
+        },
+        {
+          "chick_id": "15",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 68.0
+        },
+        {
+          "chick_id": "16",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "16",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 45.0
+        },
+        {
+          "chick_id": "16",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "16",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 51.0
+        },
+        {
+          "chick_id": "16",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 57.0
+        },
+        {
+          "chick_id": "16",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 51.0
+        },
+        {
+          "chick_id": "16",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 54.0
+        },
+        {
+          "chick_id": "17",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "17",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 51.0
+        },
+        {
+          "chick_id": "17",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 61.0
+        },
+        {
+          "chick_id": "17",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 72.0
+        },
+        {
+          "chick_id": "17",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 83.0
+        },
+        {
+          "chick_id": "17",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 89.0
+        },
+        {
+          "chick_id": "17",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 98.0
+        },
+        {
+          "chick_id": "17",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 103.0
+        },
+        {
+          "chick_id": "17",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 113.0
+        },
+        {
+          "chick_id": "17",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 123.0
+        },
+        {
+          "chick_id": "17",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 133.0
+        },
+        {
+          "chick_id": "17",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 142.0
+        },
+        {
+          "chick_id": "18",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 39.0
+        },
+        {
+          "chick_id": "18",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 35.0
+        },
+        {
+          "chick_id": "19",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 43.0
+        },
+        {
+          "chick_id": "19",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 48.0
+        },
+        {
+          "chick_id": "19",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 55.0
+        },
+        {
+          "chick_id": "19",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 62.0
+        },
+        {
+          "chick_id": "19",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 65.0
+        },
+        {
+          "chick_id": "19",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 71.0
+        },
+        {
+          "chick_id": "19",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 82.0
+        },
+        {
+          "chick_id": "19",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 88.0
+        },
+        {
+          "chick_id": "19",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 106.0
+        },
+        {
+          "chick_id": "19",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 120.0
+        },
+        {
+          "chick_id": "19",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 144.0
+        },
+        {
+          "chick_id": "19",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 157.0
+        },
+        {
+          "chick_id": "20",
+          "diet_id": "1",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "20",
+          "diet_id": "1",
+          "day": 2,
+          "weight_g": 47.0
+        },
+        {
+          "chick_id": "20",
+          "diet_id": "1",
+          "day": 4,
+          "weight_g": 54.0
+        },
+        {
+          "chick_id": "20",
+          "diet_id": "1",
+          "day": 6,
+          "weight_g": 58.0
+        },
+        {
+          "chick_id": "20",
+          "diet_id": "1",
+          "day": 8,
+          "weight_g": 65.0
+        },
+        {
+          "chick_id": "20",
+          "diet_id": "1",
+          "day": 10,
+          "weight_g": 73.0
+        },
+        {
+          "chick_id": "20",
+          "diet_id": "1",
+          "day": 12,
+          "weight_g": 77.0
+        },
+        {
+          "chick_id": "20",
+          "diet_id": "1",
+          "day": 14,
+          "weight_g": 89.0
+        },
+        {
+          "chick_id": "20",
+          "diet_id": "1",
+          "day": 16,
+          "weight_g": 98.0
+        },
+        {
+          "chick_id": "20",
+          "diet_id": "1",
+          "day": 18,
+          "weight_g": 107.0
+        },
+        {
+          "chick_id": "20",
+          "diet_id": "1",
+          "day": 20,
+          "weight_g": 115.0
+        },
+        {
+          "chick_id": "20",
+          "diet_id": "1",
+          "day": 21,
+          "weight_g": 117.0
+        },
+        {
+          "chick_id": "21",
+          "diet_id": "2",
+          "day": 0,
+          "weight_g": 40.0
+        },
+        {
+          "chick_id": "21",
+          "diet_id": "2",
+          "day": 2,
+          "weight_g": 50.0
+        },
+        {
+          "chick_id": "21",
+          "diet_id": "2",
+          "day": 4,
+          "weight_g": 62.0
+        },
+        {
+          "chick_id": "21",
+          "diet_id": "2",
+          "day": 6,
+          "weight_g": 86.0
+        },
+        {
+          "chick_id": "21",
+          "diet_id": "2",
+          "day": 8,
+          "weight_g": 125.0
+        },
+        {
+          "chick_id": "21",
+          "diet_id": "2",
+          "day": 10,
+          "weight_g": 163.0
+        },
+        {
+          "chick_id": "21",
+          "diet_id": "2",
+          "day": 12,
+          "weight_g": 217.0
+        },
+        {
+          "chick_id": "21",
+          "diet_id": "2",
+          "day": 14,
+          "weight_g": 240.0
+        },
+        {
+          "chick_id": "21",
+          "diet_id": "2",
+          "day": 16,
+          "weight_g": 275.0
+        },
+        {
+          "chick_id": "21",
+          "diet_id": "2",
+          "day": 18,
+          "weight_g": 307.0
+        },
+        {
+          "chick_id": "21",
+          "diet_id": "2",
+          "day": 20,
+          "weight_g": 318.0
+        },
+        {
+          "chick_id": "21",
+          "diet_id": "2",
+          "day": 21,
+          "weight_g": 331.0
+        },
+        {
+          "chick_id": "22",
+          "diet_id": "2",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "22",
+          "diet_id": "2",
+          "day": 2,
+          "weight_g": 55.0
+        },
+        {
+          "chick_id": "22",
+          "diet_id": "2",
+          "day": 4,
+          "weight_g": 64.0
+        },
+        {
+          "chick_id": "22",
+          "diet_id": "2",
+          "day": 6,
+          "weight_g": 77.0
+        },
+        {
+          "chick_id": "22",
+          "diet_id": "2",
+          "day": 8,
+          "weight_g": 90.0
+        },
+        {
+          "chick_id": "22",
+          "diet_id": "2",
+          "day": 10,
+          "weight_g": 95.0
+        },
+        {
+          "chick_id": "22",
+          "diet_id": "2",
+          "day": 12,
+          "weight_g": 108.0
+        },
+        {
+          "chick_id": "22",
+          "diet_id": "2",
+          "day": 14,
+          "weight_g": 111.0
+        },
+        {
+          "chick_id": "22",
+          "diet_id": "2",
+          "day": 16,
+          "weight_g": 131.0
+        },
+        {
+          "chick_id": "22",
+          "diet_id": "2",
+          "day": 18,
+          "weight_g": 148.0
+        },
+        {
+          "chick_id": "22",
+          "diet_id": "2",
+          "day": 20,
+          "weight_g": 164.0
+        },
+        {
+          "chick_id": "22",
+          "diet_id": "2",
+          "day": 21,
+          "weight_g": 167.0
+        },
+        {
+          "chick_id": "23",
+          "diet_id": "2",
+          "day": 0,
+          "weight_g": 43.0
+        },
+        {
+          "chick_id": "23",
+          "diet_id": "2",
+          "day": 2,
+          "weight_g": 52.0
+        },
+        {
+          "chick_id": "23",
+          "diet_id": "2",
+          "day": 4,
+          "weight_g": 61.0
+        },
+        {
+          "chick_id": "23",
+          "diet_id": "2",
+          "day": 6,
+          "weight_g": 73.0
+        },
+        {
+          "chick_id": "23",
+          "diet_id": "2",
+          "day": 8,
+          "weight_g": 90.0
+        },
+        {
+          "chick_id": "23",
+          "diet_id": "2",
+          "day": 10,
+          "weight_g": 103.0
+        },
+        {
+          "chick_id": "23",
+          "diet_id": "2",
+          "day": 12,
+          "weight_g": 127.0
+        },
+        {
+          "chick_id": "23",
+          "diet_id": "2",
+          "day": 14,
+          "weight_g": 135.0
+        },
+        {
+          "chick_id": "23",
+          "diet_id": "2",
+          "day": 16,
+          "weight_g": 145.0
+        },
+        {
+          "chick_id": "23",
+          "diet_id": "2",
+          "day": 18,
+          "weight_g": 163.0
+        },
+        {
+          "chick_id": "23",
+          "diet_id": "2",
+          "day": 20,
+          "weight_g": 170.0
+        },
+        {
+          "chick_id": "23",
+          "diet_id": "2",
+          "day": 21,
+          "weight_g": 175.0
+        },
+        {
+          "chick_id": "24",
+          "diet_id": "2",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "24",
+          "diet_id": "2",
+          "day": 2,
+          "weight_g": 52.0
+        },
+        {
+          "chick_id": "24",
+          "diet_id": "2",
+          "day": 4,
+          "weight_g": 58.0
+        },
+        {
+          "chick_id": "24",
+          "diet_id": "2",
+          "day": 6,
+          "weight_g": 74.0
+        },
+        {
+          "chick_id": "24",
+          "diet_id": "2",
+          "day": 8,
+          "weight_g": 66.0
+        },
+        {
+          "chick_id": "24",
+          "diet_id": "2",
+          "day": 10,
+          "weight_g": 68.0
+        },
+        {
+          "chick_id": "24",
+          "diet_id": "2",
+          "day": 12,
+          "weight_g": 70.0
+        },
+        {
+          "chick_id": "24",
+          "diet_id": "2",
+          "day": 14,
+          "weight_g": 71.0
+        },
+        {
+          "chick_id": "24",
+          "diet_id": "2",
+          "day": 16,
+          "weight_g": 72.0
+        },
+        {
+          "chick_id": "24",
+          "diet_id": "2",
+          "day": 18,
+          "weight_g": 72.0
+        },
+        {
+          "chick_id": "24",
+          "diet_id": "2",
+          "day": 20,
+          "weight_g": 76.0
+        },
+        {
+          "chick_id": "24",
+          "diet_id": "2",
+          "day": 21,
+          "weight_g": 74.0
+        },
+        {
+          "chick_id": "25",
+          "diet_id": "2",
+          "day": 0,
+          "weight_g": 40.0
+        },
+        {
+          "chick_id": "25",
+          "diet_id": "2",
+          "day": 2,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "25",
+          "diet_id": "2",
+          "day": 4,
+          "weight_g": 62.0
+        },
+        {
+          "chick_id": "25",
+          "diet_id": "2",
+          "day": 6,
+          "weight_g": 78.0
+        },
+        {
+          "chick_id": "25",
+          "diet_id": "2",
+          "day": 8,
+          "weight_g": 102.0
+        },
+        {
+          "chick_id": "25",
+          "diet_id": "2",
+          "day": 10,
+          "weight_g": 124.0
+        },
+        {
+          "chick_id": "25",
+          "diet_id": "2",
+          "day": 12,
+          "weight_g": 146.0
+        },
+        {
+          "chick_id": "25",
+          "diet_id": "2",
+          "day": 14,
+          "weight_g": 164.0
+        },
+        {
+          "chick_id": "25",
+          "diet_id": "2",
+          "day": 16,
+          "weight_g": 197.0
+        },
+        {
+          "chick_id": "25",
+          "diet_id": "2",
+          "day": 18,
+          "weight_g": 231.0
+        },
+        {
+          "chick_id": "25",
+          "diet_id": "2",
+          "day": 20,
+          "weight_g": 259.0
+        },
+        {
+          "chick_id": "25",
+          "diet_id": "2",
+          "day": 21,
+          "weight_g": 265.0
+        },
+        {
+          "chick_id": "26",
+          "diet_id": "2",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "26",
+          "diet_id": "2",
+          "day": 2,
+          "weight_g": 48.0
+        },
+        {
+          "chick_id": "26",
+          "diet_id": "2",
+          "day": 4,
+          "weight_g": 57.0
+        },
+        {
+          "chick_id": "26",
+          "diet_id": "2",
+          "day": 6,
+          "weight_g": 74.0
+        },
+        {
+          "chick_id": "26",
+          "diet_id": "2",
+          "day": 8,
+          "weight_g": 93.0
+        },
+        {
+          "chick_id": "26",
+          "diet_id": "2",
+          "day": 10,
+          "weight_g": 114.0
+        },
+        {
+          "chick_id": "26",
+          "diet_id": "2",
+          "day": 12,
+          "weight_g": 136.0
+        },
+        {
+          "chick_id": "26",
+          "diet_id": "2",
+          "day": 14,
+          "weight_g": 147.0
+        },
+        {
+          "chick_id": "26",
+          "diet_id": "2",
+          "day": 16,
+          "weight_g": 169.0
+        },
+        {
+          "chick_id": "26",
+          "diet_id": "2",
+          "day": 18,
+          "weight_g": 205.0
+        },
+        {
+          "chick_id": "26",
+          "diet_id": "2",
+          "day": 20,
+          "weight_g": 236.0
+        },
+        {
+          "chick_id": "26",
+          "diet_id": "2",
+          "day": 21,
+          "weight_g": 251.0
+        },
+        {
+          "chick_id": "27",
+          "diet_id": "2",
+          "day": 0,
+          "weight_g": 39.0
+        },
+        {
+          "chick_id": "27",
+          "diet_id": "2",
+          "day": 2,
+          "weight_g": 46.0
+        },
+        {
+          "chick_id": "27",
+          "diet_id": "2",
+          "day": 4,
+          "weight_g": 58.0
+        },
+        {
+          "chick_id": "27",
+          "diet_id": "2",
+          "day": 6,
+          "weight_g": 73.0
+        },
+        {
+          "chick_id": "27",
+          "diet_id": "2",
+          "day": 8,
+          "weight_g": 87.0
+        },
+        {
+          "chick_id": "27",
+          "diet_id": "2",
+          "day": 10,
+          "weight_g": 100.0
+        },
+        {
+          "chick_id": "27",
+          "diet_id": "2",
+          "day": 12,
+          "weight_g": 115.0
+        },
+        {
+          "chick_id": "27",
+          "diet_id": "2",
+          "day": 14,
+          "weight_g": 123.0
+        },
+        {
+          "chick_id": "27",
+          "diet_id": "2",
+          "day": 16,
+          "weight_g": 144.0
+        },
+        {
+          "chick_id": "27",
+          "diet_id": "2",
+          "day": 18,
+          "weight_g": 163.0
+        },
+        {
+          "chick_id": "27",
+          "diet_id": "2",
+          "day": 20,
+          "weight_g": 185.0
+        },
+        {
+          "chick_id": "27",
+          "diet_id": "2",
+          "day": 21,
+          "weight_g": 192.0
+        },
+        {
+          "chick_id": "28",
+          "diet_id": "2",
+          "day": 0,
+          "weight_g": 39.0
+        },
+        {
+          "chick_id": "28",
+          "diet_id": "2",
+          "day": 2,
+          "weight_g": 46.0
+        },
+        {
+          "chick_id": "28",
+          "diet_id": "2",
+          "day": 4,
+          "weight_g": 58.0
+        },
+        {
+          "chick_id": "28",
+          "diet_id": "2",
+          "day": 6,
+          "weight_g": 73.0
+        },
+        {
+          "chick_id": "28",
+          "diet_id": "2",
+          "day": 8,
+          "weight_g": 92.0
+        },
+        {
+          "chick_id": "28",
+          "diet_id": "2",
+          "day": 10,
+          "weight_g": 114.0
+        },
+        {
+          "chick_id": "28",
+          "diet_id": "2",
+          "day": 12,
+          "weight_g": 145.0
+        },
+        {
+          "chick_id": "28",
+          "diet_id": "2",
+          "day": 14,
+          "weight_g": 156.0
+        },
+        {
+          "chick_id": "28",
+          "diet_id": "2",
+          "day": 16,
+          "weight_g": 184.0
+        },
+        {
+          "chick_id": "28",
+          "diet_id": "2",
+          "day": 18,
+          "weight_g": 207.0
+        },
+        {
+          "chick_id": "28",
+          "diet_id": "2",
+          "day": 20,
+          "weight_g": 212.0
+        },
+        {
+          "chick_id": "28",
+          "diet_id": "2",
+          "day": 21,
+          "weight_g": 233.0
+        },
+        {
+          "chick_id": "29",
+          "diet_id": "2",
+          "day": 0,
+          "weight_g": 39.0
+        },
+        {
+          "chick_id": "29",
+          "diet_id": "2",
+          "day": 2,
+          "weight_g": 48.0
+        },
+        {
+          "chick_id": "29",
+          "diet_id": "2",
+          "day": 4,
+          "weight_g": 59.0
+        },
+        {
+          "chick_id": "29",
+          "diet_id": "2",
+          "day": 6,
+          "weight_g": 74.0
+        },
+        {
+          "chick_id": "29",
+          "diet_id": "2",
+          "day": 8,
+          "weight_g": 87.0
+        },
+        {
+          "chick_id": "29",
+          "diet_id": "2",
+          "day": 10,
+          "weight_g": 106.0
+        },
+        {
+          "chick_id": "29",
+          "diet_id": "2",
+          "day": 12,
+          "weight_g": 134.0
+        },
+        {
+          "chick_id": "29",
+          "diet_id": "2",
+          "day": 14,
+          "weight_g": 150.0
+        },
+        {
+          "chick_id": "29",
+          "diet_id": "2",
+          "day": 16,
+          "weight_g": 187.0
+        },
+        {
+          "chick_id": "29",
+          "diet_id": "2",
+          "day": 18,
+          "weight_g": 230.0
+        },
+        {
+          "chick_id": "29",
+          "diet_id": "2",
+          "day": 20,
+          "weight_g": 279.0
+        },
+        {
+          "chick_id": "29",
+          "diet_id": "2",
+          "day": 21,
+          "weight_g": 309.0
+        },
+        {
+          "chick_id": "30",
+          "diet_id": "2",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "30",
+          "diet_id": "2",
+          "day": 2,
+          "weight_g": 48.0
+        },
+        {
+          "chick_id": "30",
+          "diet_id": "2",
+          "day": 4,
+          "weight_g": 59.0
+        },
+        {
+          "chick_id": "30",
+          "diet_id": "2",
+          "day": 6,
+          "weight_g": 72.0
+        },
+        {
+          "chick_id": "30",
+          "diet_id": "2",
+          "day": 8,
+          "weight_g": 85.0
+        },
+        {
+          "chick_id": "30",
+          "diet_id": "2",
+          "day": 10,
+          "weight_g": 98.0
+        },
+        {
+          "chick_id": "30",
+          "diet_id": "2",
+          "day": 12,
+          "weight_g": 115.0
+        },
+        {
+          "chick_id": "30",
+          "diet_id": "2",
+          "day": 14,
+          "weight_g": 122.0
+        },
+        {
+          "chick_id": "30",
+          "diet_id": "2",
+          "day": 16,
+          "weight_g": 143.0
+        },
+        {
+          "chick_id": "30",
+          "diet_id": "2",
+          "day": 18,
+          "weight_g": 151.0
+        },
+        {
+          "chick_id": "30",
+          "diet_id": "2",
+          "day": 20,
+          "weight_g": 157.0
+        },
+        {
+          "chick_id": "30",
+          "diet_id": "2",
+          "day": 21,
+          "weight_g": 150.0
+        },
+        {
+          "chick_id": "31",
+          "diet_id": "3",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "31",
+          "diet_id": "3",
+          "day": 2,
+          "weight_g": 53.0
+        },
+        {
+          "chick_id": "31",
+          "diet_id": "3",
+          "day": 4,
+          "weight_g": 62.0
+        },
+        {
+          "chick_id": "31",
+          "diet_id": "3",
+          "day": 6,
+          "weight_g": 73.0
+        },
+        {
+          "chick_id": "31",
+          "diet_id": "3",
+          "day": 8,
+          "weight_g": 85.0
+        },
+        {
+          "chick_id": "31",
+          "diet_id": "3",
+          "day": 10,
+          "weight_g": 102.0
+        },
+        {
+          "chick_id": "31",
+          "diet_id": "3",
+          "day": 12,
+          "weight_g": 123.0
+        },
+        {
+          "chick_id": "31",
+          "diet_id": "3",
+          "day": 14,
+          "weight_g": 138.0
+        },
+        {
+          "chick_id": "31",
+          "diet_id": "3",
+          "day": 16,
+          "weight_g": 170.0
+        },
+        {
+          "chick_id": "31",
+          "diet_id": "3",
+          "day": 18,
+          "weight_g": 204.0
+        },
+        {
+          "chick_id": "31",
+          "diet_id": "3",
+          "day": 20,
+          "weight_g": 235.0
+        },
+        {
+          "chick_id": "31",
+          "diet_id": "3",
+          "day": 21,
+          "weight_g": 256.0
+        },
+        {
+          "chick_id": "32",
+          "diet_id": "3",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "32",
+          "diet_id": "3",
+          "day": 2,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "32",
+          "diet_id": "3",
+          "day": 4,
+          "weight_g": 65.0
+        },
+        {
+          "chick_id": "32",
+          "diet_id": "3",
+          "day": 6,
+          "weight_g": 82.0
+        },
+        {
+          "chick_id": "32",
+          "diet_id": "3",
+          "day": 8,
+          "weight_g": 107.0
+        },
+        {
+          "chick_id": "32",
+          "diet_id": "3",
+          "day": 10,
+          "weight_g": 129.0
+        },
+        {
+          "chick_id": "32",
+          "diet_id": "3",
+          "day": 12,
+          "weight_g": 159.0
+        },
+        {
+          "chick_id": "32",
+          "diet_id": "3",
+          "day": 14,
+          "weight_g": 179.0
+        },
+        {
+          "chick_id": "32",
+          "diet_id": "3",
+          "day": 16,
+          "weight_g": 221.0
+        },
+        {
+          "chick_id": "32",
+          "diet_id": "3",
+          "day": 18,
+          "weight_g": 263.0
+        },
+        {
+          "chick_id": "32",
+          "diet_id": "3",
+          "day": 20,
+          "weight_g": 291.0
+        },
+        {
+          "chick_id": "32",
+          "diet_id": "3",
+          "day": 21,
+          "weight_g": 305.0
+        },
+        {
+          "chick_id": "33",
+          "diet_id": "3",
+          "day": 0,
+          "weight_g": 39.0
+        },
+        {
+          "chick_id": "33",
+          "diet_id": "3",
+          "day": 2,
+          "weight_g": 50.0
+        },
+        {
+          "chick_id": "33",
+          "diet_id": "3",
+          "day": 4,
+          "weight_g": 63.0
+        },
+        {
+          "chick_id": "33",
+          "diet_id": "3",
+          "day": 6,
+          "weight_g": 77.0
+        },
+        {
+          "chick_id": "33",
+          "diet_id": "3",
+          "day": 8,
+          "weight_g": 96.0
+        },
+        {
+          "chick_id": "33",
+          "diet_id": "3",
+          "day": 10,
+          "weight_g": 111.0
+        },
+        {
+          "chick_id": "33",
+          "diet_id": "3",
+          "day": 12,
+          "weight_g": 137.0
+        },
+        {
+          "chick_id": "33",
+          "diet_id": "3",
+          "day": 14,
+          "weight_g": 144.0
+        },
+        {
+          "chick_id": "33",
+          "diet_id": "3",
+          "day": 16,
+          "weight_g": 151.0
+        },
+        {
+          "chick_id": "33",
+          "diet_id": "3",
+          "day": 18,
+          "weight_g": 146.0
+        },
+        {
+          "chick_id": "33",
+          "diet_id": "3",
+          "day": 20,
+          "weight_g": 156.0
+        },
+        {
+          "chick_id": "33",
+          "diet_id": "3",
+          "day": 21,
+          "weight_g": 147.0
+        },
+        {
+          "chick_id": "34",
+          "diet_id": "3",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "34",
+          "diet_id": "3",
+          "day": 2,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "34",
+          "diet_id": "3",
+          "day": 4,
+          "weight_g": 63.0
+        },
+        {
+          "chick_id": "34",
+          "diet_id": "3",
+          "day": 6,
+          "weight_g": 85.0
+        },
+        {
+          "chick_id": "34",
+          "diet_id": "3",
+          "day": 8,
+          "weight_g": 107.0
+        },
+        {
+          "chick_id": "34",
+          "diet_id": "3",
+          "day": 10,
+          "weight_g": 134.0
+        },
+        {
+          "chick_id": "34",
+          "diet_id": "3",
+          "day": 12,
+          "weight_g": 164.0
+        },
+        {
+          "chick_id": "34",
+          "diet_id": "3",
+          "day": 14,
+          "weight_g": 186.0
+        },
+        {
+          "chick_id": "34",
+          "diet_id": "3",
+          "day": 16,
+          "weight_g": 235.0
+        },
+        {
+          "chick_id": "34",
+          "diet_id": "3",
+          "day": 18,
+          "weight_g": 294.0
+        },
+        {
+          "chick_id": "34",
+          "diet_id": "3",
+          "day": 20,
+          "weight_g": 327.0
+        },
+        {
+          "chick_id": "34",
+          "diet_id": "3",
+          "day": 21,
+          "weight_g": 341.0
+        },
+        {
+          "chick_id": "35",
+          "diet_id": "3",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "35",
+          "diet_id": "3",
+          "day": 2,
+          "weight_g": 53.0
+        },
+        {
+          "chick_id": "35",
+          "diet_id": "3",
+          "day": 4,
+          "weight_g": 64.0
+        },
+        {
+          "chick_id": "35",
+          "diet_id": "3",
+          "day": 6,
+          "weight_g": 87.0
+        },
+        {
+          "chick_id": "35",
+          "diet_id": "3",
+          "day": 8,
+          "weight_g": 123.0
+        },
+        {
+          "chick_id": "35",
+          "diet_id": "3",
+          "day": 10,
+          "weight_g": 158.0
+        },
+        {
+          "chick_id": "35",
+          "diet_id": "3",
+          "day": 12,
+          "weight_g": 201.0
+        },
+        {
+          "chick_id": "35",
+          "diet_id": "3",
+          "day": 14,
+          "weight_g": 238.0
+        },
+        {
+          "chick_id": "35",
+          "diet_id": "3",
+          "day": 16,
+          "weight_g": 287.0
+        },
+        {
+          "chick_id": "35",
+          "diet_id": "3",
+          "day": 18,
+          "weight_g": 332.0
+        },
+        {
+          "chick_id": "35",
+          "diet_id": "3",
+          "day": 20,
+          "weight_g": 361.0
+        },
+        {
+          "chick_id": "35",
+          "diet_id": "3",
+          "day": 21,
+          "weight_g": 373.0
+        },
+        {
+          "chick_id": "36",
+          "diet_id": "3",
+          "day": 0,
+          "weight_g": 39.0
+        },
+        {
+          "chick_id": "36",
+          "diet_id": "3",
+          "day": 2,
+          "weight_g": 48.0
+        },
+        {
+          "chick_id": "36",
+          "diet_id": "3",
+          "day": 4,
+          "weight_g": 61.0
+        },
+        {
+          "chick_id": "36",
+          "diet_id": "3",
+          "day": 6,
+          "weight_g": 76.0
+        },
+        {
+          "chick_id": "36",
+          "diet_id": "3",
+          "day": 8,
+          "weight_g": 98.0
+        },
+        {
+          "chick_id": "36",
+          "diet_id": "3",
+          "day": 10,
+          "weight_g": 116.0
+        },
+        {
+          "chick_id": "36",
+          "diet_id": "3",
+          "day": 12,
+          "weight_g": 145.0
+        },
+        {
+          "chick_id": "36",
+          "diet_id": "3",
+          "day": 14,
+          "weight_g": 166.0
+        },
+        {
+          "chick_id": "36",
+          "diet_id": "3",
+          "day": 16,
+          "weight_g": 198.0
+        },
+        {
+          "chick_id": "36",
+          "diet_id": "3",
+          "day": 18,
+          "weight_g": 227.0
+        },
+        {
+          "chick_id": "36",
+          "diet_id": "3",
+          "day": 20,
+          "weight_g": 225.0
+        },
+        {
+          "chick_id": "36",
+          "diet_id": "3",
+          "day": 21,
+          "weight_g": 220.0
+        },
+        {
+          "chick_id": "37",
+          "diet_id": "3",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "37",
+          "diet_id": "3",
+          "day": 2,
+          "weight_g": 48.0
+        },
+        {
+          "chick_id": "37",
+          "diet_id": "3",
+          "day": 4,
+          "weight_g": 56.0
+        },
+        {
+          "chick_id": "37",
+          "diet_id": "3",
+          "day": 6,
+          "weight_g": 68.0
+        },
+        {
+          "chick_id": "37",
+          "diet_id": "3",
+          "day": 8,
+          "weight_g": 80.0
+        },
+        {
+          "chick_id": "37",
+          "diet_id": "3",
+          "day": 10,
+          "weight_g": 83.0
+        },
+        {
+          "chick_id": "37",
+          "diet_id": "3",
+          "day": 12,
+          "weight_g": 103.0
+        },
+        {
+          "chick_id": "37",
+          "diet_id": "3",
+          "day": 14,
+          "weight_g": 112.0
+        },
+        {
+          "chick_id": "37",
+          "diet_id": "3",
+          "day": 16,
+          "weight_g": 135.0
+        },
+        {
+          "chick_id": "37",
+          "diet_id": "3",
+          "day": 18,
+          "weight_g": 157.0
+        },
+        {
+          "chick_id": "37",
+          "diet_id": "3",
+          "day": 20,
+          "weight_g": 169.0
+        },
+        {
+          "chick_id": "37",
+          "diet_id": "3",
+          "day": 21,
+          "weight_g": 178.0
+        },
+        {
+          "chick_id": "38",
+          "diet_id": "3",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "38",
+          "diet_id": "3",
+          "day": 2,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "38",
+          "diet_id": "3",
+          "day": 4,
+          "weight_g": 61.0
+        },
+        {
+          "chick_id": "38",
+          "diet_id": "3",
+          "day": 6,
+          "weight_g": 74.0
+        },
+        {
+          "chick_id": "38",
+          "diet_id": "3",
+          "day": 8,
+          "weight_g": 98.0
+        },
+        {
+          "chick_id": "38",
+          "diet_id": "3",
+          "day": 10,
+          "weight_g": 109.0
+        },
+        {
+          "chick_id": "38",
+          "diet_id": "3",
+          "day": 12,
+          "weight_g": 128.0
+        },
+        {
+          "chick_id": "38",
+          "diet_id": "3",
+          "day": 14,
+          "weight_g": 154.0
+        },
+        {
+          "chick_id": "38",
+          "diet_id": "3",
+          "day": 16,
+          "weight_g": 192.0
+        },
+        {
+          "chick_id": "38",
+          "diet_id": "3",
+          "day": 18,
+          "weight_g": 232.0
+        },
+        {
+          "chick_id": "38",
+          "diet_id": "3",
+          "day": 20,
+          "weight_g": 280.0
+        },
+        {
+          "chick_id": "38",
+          "diet_id": "3",
+          "day": 21,
+          "weight_g": 290.0
+        },
+        {
+          "chick_id": "39",
+          "diet_id": "3",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "39",
+          "diet_id": "3",
+          "day": 2,
+          "weight_g": 50.0
+        },
+        {
+          "chick_id": "39",
+          "diet_id": "3",
+          "day": 4,
+          "weight_g": 61.0
+        },
+        {
+          "chick_id": "39",
+          "diet_id": "3",
+          "day": 6,
+          "weight_g": 78.0
+        },
+        {
+          "chick_id": "39",
+          "diet_id": "3",
+          "day": 8,
+          "weight_g": 89.0
+        },
+        {
+          "chick_id": "39",
+          "diet_id": "3",
+          "day": 10,
+          "weight_g": 109.0
+        },
+        {
+          "chick_id": "39",
+          "diet_id": "3",
+          "day": 12,
+          "weight_g": 130.0
+        },
+        {
+          "chick_id": "39",
+          "diet_id": "3",
+          "day": 14,
+          "weight_g": 146.0
+        },
+        {
+          "chick_id": "39",
+          "diet_id": "3",
+          "day": 16,
+          "weight_g": 170.0
+        },
+        {
+          "chick_id": "39",
+          "diet_id": "3",
+          "day": 18,
+          "weight_g": 214.0
+        },
+        {
+          "chick_id": "39",
+          "diet_id": "3",
+          "day": 20,
+          "weight_g": 250.0
+        },
+        {
+          "chick_id": "39",
+          "diet_id": "3",
+          "day": 21,
+          "weight_g": 272.0
+        },
+        {
+          "chick_id": "40",
+          "diet_id": "3",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "40",
+          "diet_id": "3",
+          "day": 2,
+          "weight_g": 55.0
+        },
+        {
+          "chick_id": "40",
+          "diet_id": "3",
+          "day": 4,
+          "weight_g": 66.0
+        },
+        {
+          "chick_id": "40",
+          "diet_id": "3",
+          "day": 6,
+          "weight_g": 79.0
+        },
+        {
+          "chick_id": "40",
+          "diet_id": "3",
+          "day": 8,
+          "weight_g": 101.0
+        },
+        {
+          "chick_id": "40",
+          "diet_id": "3",
+          "day": 10,
+          "weight_g": 120.0
+        },
+        {
+          "chick_id": "40",
+          "diet_id": "3",
+          "day": 12,
+          "weight_g": 154.0
+        },
+        {
+          "chick_id": "40",
+          "diet_id": "3",
+          "day": 14,
+          "weight_g": 182.0
+        },
+        {
+          "chick_id": "40",
+          "diet_id": "3",
+          "day": 16,
+          "weight_g": 215.0
+        },
+        {
+          "chick_id": "40",
+          "diet_id": "3",
+          "day": 18,
+          "weight_g": 262.0
+        },
+        {
+          "chick_id": "40",
+          "diet_id": "3",
+          "day": 20,
+          "weight_g": 295.0
+        },
+        {
+          "chick_id": "40",
+          "diet_id": "3",
+          "day": 21,
+          "weight_g": 321.0
+        },
+        {
+          "chick_id": "41",
+          "diet_id": "4",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "41",
+          "diet_id": "4",
+          "day": 2,
+          "weight_g": 51.0
+        },
+        {
+          "chick_id": "41",
+          "diet_id": "4",
+          "day": 4,
+          "weight_g": 66.0
+        },
+        {
+          "chick_id": "41",
+          "diet_id": "4",
+          "day": 6,
+          "weight_g": 85.0
+        },
+        {
+          "chick_id": "41",
+          "diet_id": "4",
+          "day": 8,
+          "weight_g": 103.0
+        },
+        {
+          "chick_id": "41",
+          "diet_id": "4",
+          "day": 10,
+          "weight_g": 124.0
+        },
+        {
+          "chick_id": "41",
+          "diet_id": "4",
+          "day": 12,
+          "weight_g": 155.0
+        },
+        {
+          "chick_id": "41",
+          "diet_id": "4",
+          "day": 14,
+          "weight_g": 153.0
+        },
+        {
+          "chick_id": "41",
+          "diet_id": "4",
+          "day": 16,
+          "weight_g": 175.0
+        },
+        {
+          "chick_id": "41",
+          "diet_id": "4",
+          "day": 18,
+          "weight_g": 184.0
+        },
+        {
+          "chick_id": "41",
+          "diet_id": "4",
+          "day": 20,
+          "weight_g": 199.0
+        },
+        {
+          "chick_id": "41",
+          "diet_id": "4",
+          "day": 21,
+          "weight_g": 204.0
+        },
+        {
+          "chick_id": "42",
+          "diet_id": "4",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "42",
+          "diet_id": "4",
+          "day": 2,
+          "weight_g": 49.0
+        },
+        {
+          "chick_id": "42",
+          "diet_id": "4",
+          "day": 4,
+          "weight_g": 63.0
+        },
+        {
+          "chick_id": "42",
+          "diet_id": "4",
+          "day": 6,
+          "weight_g": 84.0
+        },
+        {
+          "chick_id": "42",
+          "diet_id": "4",
+          "day": 8,
+          "weight_g": 103.0
+        },
+        {
+          "chick_id": "42",
+          "diet_id": "4",
+          "day": 10,
+          "weight_g": 126.0
+        },
+        {
+          "chick_id": "42",
+          "diet_id": "4",
+          "day": 12,
+          "weight_g": 160.0
+        },
+        {
+          "chick_id": "42",
+          "diet_id": "4",
+          "day": 14,
+          "weight_g": 174.0
+        },
+        {
+          "chick_id": "42",
+          "diet_id": "4",
+          "day": 16,
+          "weight_g": 204.0
+        },
+        {
+          "chick_id": "42",
+          "diet_id": "4",
+          "day": 18,
+          "weight_g": 234.0
+        },
+        {
+          "chick_id": "42",
+          "diet_id": "4",
+          "day": 20,
+          "weight_g": 269.0
+        },
+        {
+          "chick_id": "42",
+          "diet_id": "4",
+          "day": 21,
+          "weight_g": 281.0
+        },
+        {
+          "chick_id": "43",
+          "diet_id": "4",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "43",
+          "diet_id": "4",
+          "day": 2,
+          "weight_g": 55.0
+        },
+        {
+          "chick_id": "43",
+          "diet_id": "4",
+          "day": 4,
+          "weight_g": 69.0
+        },
+        {
+          "chick_id": "43",
+          "diet_id": "4",
+          "day": 6,
+          "weight_g": 96.0
+        },
+        {
+          "chick_id": "43",
+          "diet_id": "4",
+          "day": 8,
+          "weight_g": 131.0
+        },
+        {
+          "chick_id": "43",
+          "diet_id": "4",
+          "day": 10,
+          "weight_g": 157.0
+        },
+        {
+          "chick_id": "43",
+          "diet_id": "4",
+          "day": 12,
+          "weight_g": 184.0
+        },
+        {
+          "chick_id": "43",
+          "diet_id": "4",
+          "day": 14,
+          "weight_g": 188.0
+        },
+        {
+          "chick_id": "43",
+          "diet_id": "4",
+          "day": 16,
+          "weight_g": 197.0
+        },
+        {
+          "chick_id": "43",
+          "diet_id": "4",
+          "day": 18,
+          "weight_g": 198.0
+        },
+        {
+          "chick_id": "43",
+          "diet_id": "4",
+          "day": 20,
+          "weight_g": 199.0
+        },
+        {
+          "chick_id": "43",
+          "diet_id": "4",
+          "day": 21,
+          "weight_g": 200.0
+        },
+        {
+          "chick_id": "44",
+          "diet_id": "4",
+          "day": 0,
+          "weight_g": 42.0
+        },
+        {
+          "chick_id": "44",
+          "diet_id": "4",
+          "day": 2,
+          "weight_g": 51.0
+        },
+        {
+          "chick_id": "44",
+          "diet_id": "4",
+          "day": 4,
+          "weight_g": 65.0
+        },
+        {
+          "chick_id": "44",
+          "diet_id": "4",
+          "day": 6,
+          "weight_g": 86.0
+        },
+        {
+          "chick_id": "44",
+          "diet_id": "4",
+          "day": 8,
+          "weight_g": 103.0
+        },
+        {
+          "chick_id": "44",
+          "diet_id": "4",
+          "day": 10,
+          "weight_g": 118.0
+        },
+        {
+          "chick_id": "44",
+          "diet_id": "4",
+          "day": 12,
+          "weight_g": 127.0
+        },
+        {
+          "chick_id": "44",
+          "diet_id": "4",
+          "day": 14,
+          "weight_g": 138.0
+        },
+        {
+          "chick_id": "44",
+          "diet_id": "4",
+          "day": 16,
+          "weight_g": 145.0
+        },
+        {
+          "chick_id": "44",
+          "diet_id": "4",
+          "day": 18,
+          "weight_g": 146.0
+        },
+        {
+          "chick_id": "45",
+          "diet_id": "4",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "45",
+          "diet_id": "4",
+          "day": 2,
+          "weight_g": 50.0
+        },
+        {
+          "chick_id": "45",
+          "diet_id": "4",
+          "day": 4,
+          "weight_g": 61.0
+        },
+        {
+          "chick_id": "45",
+          "diet_id": "4",
+          "day": 6,
+          "weight_g": 78.0
+        },
+        {
+          "chick_id": "45",
+          "diet_id": "4",
+          "day": 8,
+          "weight_g": 98.0
+        },
+        {
+          "chick_id": "45",
+          "diet_id": "4",
+          "day": 10,
+          "weight_g": 117.0
+        },
+        {
+          "chick_id": "45",
+          "diet_id": "4",
+          "day": 12,
+          "weight_g": 135.0
+        },
+        {
+          "chick_id": "45",
+          "diet_id": "4",
+          "day": 14,
+          "weight_g": 141.0
+        },
+        {
+          "chick_id": "45",
+          "diet_id": "4",
+          "day": 16,
+          "weight_g": 147.0
+        },
+        {
+          "chick_id": "45",
+          "diet_id": "4",
+          "day": 18,
+          "weight_g": 174.0
+        },
+        {
+          "chick_id": "45",
+          "diet_id": "4",
+          "day": 20,
+          "weight_g": 197.0
+        },
+        {
+          "chick_id": "45",
+          "diet_id": "4",
+          "day": 21,
+          "weight_g": 196.0
+        },
+        {
+          "chick_id": "46",
+          "diet_id": "4",
+          "day": 0,
+          "weight_g": 40.0
+        },
+        {
+          "chick_id": "46",
+          "diet_id": "4",
+          "day": 2,
+          "weight_g": 52.0
+        },
+        {
+          "chick_id": "46",
+          "diet_id": "4",
+          "day": 4,
+          "weight_g": 62.0
+        },
+        {
+          "chick_id": "46",
+          "diet_id": "4",
+          "day": 6,
+          "weight_g": 82.0
+        },
+        {
+          "chick_id": "46",
+          "diet_id": "4",
+          "day": 8,
+          "weight_g": 101.0
+        },
+        {
+          "chick_id": "46",
+          "diet_id": "4",
+          "day": 10,
+          "weight_g": 120.0
+        },
+        {
+          "chick_id": "46",
+          "diet_id": "4",
+          "day": 12,
+          "weight_g": 144.0
+        },
+        {
+          "chick_id": "46",
+          "diet_id": "4",
+          "day": 14,
+          "weight_g": 156.0
+        },
+        {
+          "chick_id": "46",
+          "diet_id": "4",
+          "day": 16,
+          "weight_g": 173.0
+        },
+        {
+          "chick_id": "46",
+          "diet_id": "4",
+          "day": 18,
+          "weight_g": 210.0
+        },
+        {
+          "chick_id": "46",
+          "diet_id": "4",
+          "day": 20,
+          "weight_g": 231.0
+        },
+        {
+          "chick_id": "46",
+          "diet_id": "4",
+          "day": 21,
+          "weight_g": 238.0
+        },
+        {
+          "chick_id": "47",
+          "diet_id": "4",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "47",
+          "diet_id": "4",
+          "day": 2,
+          "weight_g": 53.0
+        },
+        {
+          "chick_id": "47",
+          "diet_id": "4",
+          "day": 4,
+          "weight_g": 66.0
+        },
+        {
+          "chick_id": "47",
+          "diet_id": "4",
+          "day": 6,
+          "weight_g": 79.0
+        },
+        {
+          "chick_id": "47",
+          "diet_id": "4",
+          "day": 8,
+          "weight_g": 100.0
+        },
+        {
+          "chick_id": "47",
+          "diet_id": "4",
+          "day": 10,
+          "weight_g": 123.0
+        },
+        {
+          "chick_id": "47",
+          "diet_id": "4",
+          "day": 12,
+          "weight_g": 148.0
+        },
+        {
+          "chick_id": "47",
+          "diet_id": "4",
+          "day": 14,
+          "weight_g": 157.0
+        },
+        {
+          "chick_id": "47",
+          "diet_id": "4",
+          "day": 16,
+          "weight_g": 168.0
+        },
+        {
+          "chick_id": "47",
+          "diet_id": "4",
+          "day": 18,
+          "weight_g": 185.0
+        },
+        {
+          "chick_id": "47",
+          "diet_id": "4",
+          "day": 20,
+          "weight_g": 210.0
+        },
+        {
+          "chick_id": "47",
+          "diet_id": "4",
+          "day": 21,
+          "weight_g": 205.0
+        },
+        {
+          "chick_id": "48",
+          "diet_id": "4",
+          "day": 0,
+          "weight_g": 39.0
+        },
+        {
+          "chick_id": "48",
+          "diet_id": "4",
+          "day": 2,
+          "weight_g": 50.0
+        },
+        {
+          "chick_id": "48",
+          "diet_id": "4",
+          "day": 4,
+          "weight_g": 62.0
+        },
+        {
+          "chick_id": "48",
+          "diet_id": "4",
+          "day": 6,
+          "weight_g": 80.0
+        },
+        {
+          "chick_id": "48",
+          "diet_id": "4",
+          "day": 8,
+          "weight_g": 104.0
+        },
+        {
+          "chick_id": "48",
+          "diet_id": "4",
+          "day": 10,
+          "weight_g": 125.0
+        },
+        {
+          "chick_id": "48",
+          "diet_id": "4",
+          "day": 12,
+          "weight_g": 154.0
+        },
+        {
+          "chick_id": "48",
+          "diet_id": "4",
+          "day": 14,
+          "weight_g": 170.0
+        },
+        {
+          "chick_id": "48",
+          "diet_id": "4",
+          "day": 16,
+          "weight_g": 222.0
+        },
+        {
+          "chick_id": "48",
+          "diet_id": "4",
+          "day": 18,
+          "weight_g": 261.0
+        },
+        {
+          "chick_id": "48",
+          "diet_id": "4",
+          "day": 20,
+          "weight_g": 303.0
+        },
+        {
+          "chick_id": "48",
+          "diet_id": "4",
+          "day": 21,
+          "weight_g": 322.0
+        },
+        {
+          "chick_id": "49",
+          "diet_id": "4",
+          "day": 0,
+          "weight_g": 40.0
+        },
+        {
+          "chick_id": "49",
+          "diet_id": "4",
+          "day": 2,
+          "weight_g": 53.0
+        },
+        {
+          "chick_id": "49",
+          "diet_id": "4",
+          "day": 4,
+          "weight_g": 64.0
+        },
+        {
+          "chick_id": "49",
+          "diet_id": "4",
+          "day": 6,
+          "weight_g": 85.0
+        },
+        {
+          "chick_id": "49",
+          "diet_id": "4",
+          "day": 8,
+          "weight_g": 108.0
+        },
+        {
+          "chick_id": "49",
+          "diet_id": "4",
+          "day": 10,
+          "weight_g": 128.0
+        },
+        {
+          "chick_id": "49",
+          "diet_id": "4",
+          "day": 12,
+          "weight_g": 152.0
+        },
+        {
+          "chick_id": "49",
+          "diet_id": "4",
+          "day": 14,
+          "weight_g": 166.0
+        },
+        {
+          "chick_id": "49",
+          "diet_id": "4",
+          "day": 16,
+          "weight_g": 184.0
+        },
+        {
+          "chick_id": "49",
+          "diet_id": "4",
+          "day": 18,
+          "weight_g": 203.0
+        },
+        {
+          "chick_id": "49",
+          "diet_id": "4",
+          "day": 20,
+          "weight_g": 233.0
+        },
+        {
+          "chick_id": "49",
+          "diet_id": "4",
+          "day": 21,
+          "weight_g": 237.0
+        },
+        {
+          "chick_id": "50",
+          "diet_id": "4",
+          "day": 0,
+          "weight_g": 41.0
+        },
+        {
+          "chick_id": "50",
+          "diet_id": "4",
+          "day": 2,
+          "weight_g": 54.0
+        },
+        {
+          "chick_id": "50",
+          "diet_id": "4",
+          "day": 4,
+          "weight_g": 67.0
+        },
+        {
+          "chick_id": "50",
+          "diet_id": "4",
+          "day": 6,
+          "weight_g": 84.0
+        },
+        {
+          "chick_id": "50",
+          "diet_id": "4",
+          "day": 8,
+          "weight_g": 105.0
+        },
+        {
+          "chick_id": "50",
+          "diet_id": "4",
+          "day": 10,
+          "weight_g": 122.0
+        },
+        {
+          "chick_id": "50",
+          "diet_id": "4",
+          "day": 12,
+          "weight_g": 155.0
+        },
+        {
+          "chick_id": "50",
+          "diet_id": "4",
+          "day": 14,
+          "weight_g": 175.0
+        },
+        {
+          "chick_id": "50",
+          "diet_id": "4",
+          "day": 16,
+          "weight_g": 205.0
+        },
+        {
+          "chick_id": "50",
+          "diet_id": "4",
+          "day": 18,
+          "weight_g": 234.0
+        },
+        {
+          "chick_id": "50",
+          "diet_id": "4",
+          "day": 20,
+          "weight_g": 264.0
+        },
+        {
+          "chick_id": "50",
+          "diet_id": "4",
+          "day": 21,
+          "weight_g": 264.0
+        }
+      ],
+      "export_transformation": "Original578observations retained in the original row order;only column names and record-object serialization are changed. No endpoint,baseline cohort,missingness label or expected outcome was precomputed in the public source.",
+      "endpoint_policy": "At day21 summarize only the chicks actually measured at that exact day. Retention denominator is all unique chicks with a day0 record in the same diet. Do not replace missing day21 values by last observed weights,carry them forward as survivors,or infer death or withdrawal causes. Diet labels are historical source labels,not recommendations.",
+      "source_provenance": {
+        "source_url": "https://svn.r-project.org/R/trunk/src/library/datasets/data/ChickWeight.R",
+        "sha256": "f36e6df387aa39e0dfeae3a91b99bb45db187d2b8ddef1756b90a0ba19ae2b3d",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/ChickWeight.html",
+        "retrieved_utc_date": "2026-10-20",
+        "source": "Official R datasets SVN source,revision90725 listing",
+        "license": "R distribution GPL>=2; underlying observations cited by individual dataset documentation",
+        "claim_scope": "Historical public observations only; no new scientific observations or causal/representativeness assumption",
+        "decoded_json_sha256": "013ebda6b00a750eca5b9f84203efce6314e9ba339096912370ff31acfc44d39",
+        "raw_source_sha256": "f36e6df387aa39e0dfeae3a91b99bb45db187d2b8ddef1756b90a0ba19ae2b3d",
+        "decoder": "Strict literal numeric vectors plus explicit factor-level label mapping; no R evaluation",
+        "records": 578,
+        "converted_observation_sha256": "013ebda6b00a750eca5b9f84203efce6314e9ba339096912370ff31acfc44d39",
+        "observation_status": "Original historical values; no changed or synthetic observation."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

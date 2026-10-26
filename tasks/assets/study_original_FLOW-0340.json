@@ -1,0 +1,21 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "laser_wavenumber_cm_inverse": 18797.0,
+  "vibrational_shifts_cm_inverse": [
+    300.0,
+    600.0,
+    1000.0
+  ],
+  "observed_anti_stokes_to_stokes_energy_intensity_ratios": [
+    0.30896248490148776,
+    0.11933003892623506,
+    0.03357130097624778
+  ],
+  "second_radiation_constant_cm_kelvin": 1.438776877,
+  "model": "Controlled energy-intensity Raman thermometry: R_j=g*((nu_laser+nu_j)/(nu_laser-nu_j))^4*exp(-c2*nu_j/T), with one unknown positive T and one unknown wavelength-independent relative response gain g. Ratios refer to energy intensity rather than photon count; all shifts are positive and below laser wavenumber. No resonance change, mixture temperature or band-dependent response.",
+  "analysis_policy": "Infer T and g using ONLY the first two bands. Predict the third ratio without refitting. The single-band shortcut fixes g=1and uses the first band with the same fourth-power optical factor. The identifiability question removes the other bands and any gain calibration.",
+  "scope": "A controlled spectroscopic inverse model, not a measured temperature, a physical heating protocol or a chemical reaction recommendation."
+}

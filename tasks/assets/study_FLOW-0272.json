@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "reference_coordinate_file": "reference_FLOW-0272.pdb",
+      "mobile_coordinate_file": "mobile_FLOW-0272.pdb",
+      "requested_chain": "A",
+      "model_id": 0,
+      "coordinate_scope": "CA atom of observed canonical protein residues; exact shared residue IDs in either common joint row order; proper rigid rotations,not reflections.",
+      "coverage_policy": "Report fraction of the76-reference-residue scope represented by shared CA IDs. A full-reference comparison is supported only if coverage>=0.90; still report the descriptive fitted RMSD over the observed shared scope.",
+      "reference_scope_residue_count": 76,
+      "rmsd_limit_angstrom": 0.05,
+      "minimum_full_reference_fraction": 0.9,
+      "source_provenance": {
+        "entry": "1UBQ",
+        "source_url": "https://files.rcsb.org/download/1UBQ.pdb",
+        "raw_source_sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+        "data_scope": "Unmodified full reference PDB and a labelled derived coordinate audit file. The audit file is not a new experimental structure or a validated protein conformation."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

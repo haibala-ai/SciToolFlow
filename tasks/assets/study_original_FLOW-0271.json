@@ -1,0 +1,101 @@
+{
+  "candidate_rotation_models": [
+    {
+      "id": "clockwise_alias",
+      "angular_frequency_rad_per_second": -4.71238898038469
+    },
+    {
+      "id": "principal_branch",
+      "angular_frequency_rad_per_second": 1.5707963267948966
+    },
+    {
+      "id": "fast_alias",
+      "angular_frequency_rad_per_second": 7.853981633974483
+    }
+  ],
+  "training_response_records": [
+    {
+      "time_seconds": 3.0,
+      "fundamental_response_matrix": [
+        [
+          -1.996388010091221e-15,
+          0.7408182206817179
+        ],
+        [
+          -0.7408182206817179,
+          -1.996388010091221e-15
+        ]
+      ]
+    },
+    {
+      "time_seconds": 1.0,
+      "fundamental_response_matrix": [
+        [
+          2.7702656193662336e-16,
+          -0.9048374180359595
+        ],
+        [
+          0.9048374180359595,
+          2.7702656193662336e-16
+        ]
+      ]
+    },
+    {
+      "time_seconds": 4.0,
+      "fundamental_response_matrix": [
+        [
+          0.6703200460356393,
+          8.209052987818522e-16
+        ],
+        [
+          -8.209052987818522e-16,
+          0.6703200460356393
+        ]
+      ]
+    },
+    {
+      "time_seconds": 2.0,
+      "fundamental_response_matrix": [
+        [
+          -0.8187307530779818,
+          -5.013279980602262e-16
+        ],
+        [
+          5.013279980602262e-16,
+          -0.8187307530779818
+        ]
+      ]
+    }
+  ],
+  "validation_response_records": [
+    {
+      "time_seconds": 0.25,
+      "fundamental_response_matrix": [
+        [
+          -0.37323494475469604,
+          -0.9010688655783601
+        ],
+        [
+          0.9010688655783601,
+          -0.37323494475469604
+        ]
+      ]
+    }
+  ],
+  "initial_response_matrix": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "state_equation": "Column state vectors obey dx/dt=A*x, A=[[-gamma,-omega],[omega,-gamma]]. Gamma is one unknown common nonnegative decay rate, omega is fixed by a candidate. A response-matrix column is the measured state starting from the corresponding standard basis vector.",
+  "max_absolute_matrix_entry_error": 1e-08,
+  "fit_policy": "Infer the common decay rate using only the regular-grid training response matrices, freeze it and retain every candidate matching all training entries. Then validate every retained candidate on every held-out response entry without refitting gamma or omega. The displayed tiny near-zero entries are ordinary floating representations, not extra observed phases.",
+  "provenance": {
+    "kind": "Project-authored exact forward simulation of a stable2Dlinear quadrature-signal model for a sampling/identification audit, not an experimental transient or a Markov probability process."
+  }
+}

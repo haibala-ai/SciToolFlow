@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "lot_id": "lot-A",
+      "smiles": "C[C@H](O)C(=O)O",
+      "available": true
+    },
+    {
+      "lot_id": "lot-B",
+      "smiles": "C[C@@H](O)C(=O)O",
+      "available": true
+    },
+    {
+      "lot_id": "lot-C",
+      "smiles": "CC(O)C(=O)O",
+      "available": true
+    },
+    {
+      "lot_id": "lot-D",
+      "smiles": "C[C@H](O)C(=O)[O-].[Na+]",
+      "available": true
+    },
+    {
+      "lot_id": "lot-E",
+      "smiles": "C[C@H](O)C(=O)O",
+      "available": false
+    }
+  ],
+  "provenance": {
+    "kind": "defined chemical structures and hypothetical inventory availability; no experimental measurement claim"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "data": [
+    {
+      "record_id": "point0",
+      "liquid_mole_fraction_first": 0.05,
+      "vapor_mole_fraction_first": 0.058013444750000004,
+      "delta_y_minus_x": 0.00801344475
+    },
+    {
+      "record_id": "point1",
+      "liquid_mole_fraction_first": 0.1,
+      "vapor_mole_fraction_first": 0.113833369,
+      "delta_y_minus_x": 0.013833369
+    },
+    {
+      "record_id": "point2",
+      "liquid_mole_fraction_first": 0.15,
+      "vapor_mole_fraction_first": 0.16768477275,
+      "delta_y_minus_x": 0.017684772749999998
+    },
+    {
+      "record_id": "point3",
+      "liquid_mole_fraction_first": 0.2,
+      "vapor_mole_fraction_first": 0.219792656,
+      "delta_y_minus_x": 0.019792656
+    },
+    {
+      "record_id": "point4",
+      "liquid_mole_fraction_first": 0.25,
+      "vapor_mole_fraction_first": 0.27038201875,
+      "delta_y_minus_x": 0.020382018749999998
+    },
+    {
+      "record_id": "point5",
+      "liquid_mole_fraction_first": 0.3,
+      "vapor_mole_fraction_first": 0.319677861,
+      "delta_y_minus_x": 0.019677860999999998
+    },
+    {
+      "record_id": "point6",
+      "liquid_mole_fraction_first": 0.35,
+      "vapor_mole_fraction_first": 0.36790518274999995,
+      "delta_y_minus_x": 0.017905182749999998
+    },
+    {
+      "record_id": "point7",
+      "liquid_mole_fraction_first": 0.39999999999999997,
+      "vapor_mole_fraction_first": 0.41528898399999997,
+      "delta_y_minus_x": 0.015288984
+    },
+    {
+      "record_id": "point8",
+      "liquid_mole_fraction_first": 0.44999999999999996,
+      "vapor_mole_fraction_first": 0.46205426474999994,
+      "delta_y_minus_x": 0.012054264750000002
+    },
+    {
+      "record_id": "point9",
+      "liquid_mole_fraction_first": 0.49999999999999994,
+      "vapor_mole_fraction_first": 0.5084260249999999,
+      "delta_y_minus_x": 0.008426025
+    },
+    {
+      "record_id": "point10",
+      "liquid_mole_fraction_first": 0.5499999999999999,
+      "vapor_mole_fraction_first": 0.55462926475,
+      "delta_y_minus_x": 0.004629264750000003
+    },
+    {
+      "record_id": "point11",
+      "liquid_mole_fraction_first": 0.6,
+      "vapor_mole_fraction_first": 0.600888984,
+      "delta_y_minus_x": 0.0008889839999999997
+    },
+    {
+      "record_id": "point12",
+      "liquid_mole_fraction_first": 0.65,
+      "vapor_mole_fraction_first": 0.64743018275,
+      "delta_y_minus_x": -0.0025698172500000028
+    },
+    {
+      "record_id": "point13",
+      "liquid_mole_fraction_first": 0.7,
+      "vapor_mole_fraction_first": 0.694477861,
+      "delta_y_minus_x": -0.005522138999999999
+    },
+    {
+      "record_id": "point14",
+      "liquid_mole_fraction_first": 0.75,
+      "vapor_mole_fraction_first": 0.74225701875,
+      "delta_y_minus_x": -0.007742981250000001
+    },
+    {
+      "record_id": "point15",
+      "liquid_mole_fraction_first": 0.7999999999999999,
+      "vapor_mole_fraction_first": 0.7909926559999999,
+      "delta_y_minus_x": -0.009007343999999999
+    },
+    {
+      "record_id": "point16",
+      "liquid_mole_fraction_first": 0.85,
+      "vapor_mole_fraction_first": 0.84090977275,
+      "delta_y_minus_x": -0.009090227250000001
+    },
+    {
+      "record_id": "point17",
+      "liquid_mole_fraction_first": 0.9,
+      "vapor_mole_fraction_first": 0.892233369,
+      "delta_y_minus_x": -0.0077666309999999995
+    },
+    {
+      "record_id": "point18",
+      "liquid_mole_fraction_first": 0.95,
+      "vapor_mole_fraction_first": 0.94518844475,
+      "delta_y_minus_x": -0.004811555250000004
+    },
+    {
+      "record_id": "component01",
+      "formula": "C2H6O"
+    },
+    {
+      "record_id": "component02",
+      "formula": "H2O"
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "x/yamountfractions;naturalaverageformulamassesg/mol",
+    "original_observation_claim": false
+  }
+}

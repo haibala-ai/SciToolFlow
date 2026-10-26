@@ -1,0 +1,40 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "plant_ids": [
+    "p1",
+    "p2",
+    "p3"
+  ],
+  "pollinator_ids": [
+    "v1",
+    "v2",
+    "v3",
+    "v4"
+  ],
+  "binary_interaction_matrix": [
+    [
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "statistic": "For every unordered pair of distinct plant rows with UNEQUAL positive degrees, take shared_neighbors/min(degree_i,degree_j). Do the same for pollinator columns. The statistic is the arithmetic mean over those eligible row AND column pairs combined; equal-degree pairs and zero-degree denominators are omitted. This explicitly defined proxy is not a claim to match every named NODF implementation.",
+  "null_model": "Uniform over ALL3x4binary matrices with the EXACT observed row-degree vector and column-degree vector in original identity order. No permuting node labels, independent Bernoulli edges or unequal weighting of graphs. Enumerate the complete finite set. Exact upper tail includes every null statistic>=observed, including the observed matrix and ties within1e-12.",
+  "scope": "Controlled bipartite community-network geometry. A finite-ensemble tail fraction is conditional on this declared graph model, not a randomized ecological intervention or proof of coadaptation."
+}

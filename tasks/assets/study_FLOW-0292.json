@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "counts_file": "pasilla_counts.tsv",
+      "metadata_file": "pasilla_metadata.csv",
+      "design_factors": [
+        "condition",
+        "type"
+      ],
+      "contrast": [
+        "condition",
+        "treated",
+        "untreated"
+      ],
+      "metadata_sample_id_column": "file",
+      "metadata_id_suffix": "fb",
+      "identity_rule": "Exact count sample ID corresponds to metadata file value with suffix fb removed; metadata row order is not count-column order.",
+      "full_universe_policy": "Fit all14599 supplied genes together. Do not normalize or fit a selected reporting panel. Untested/null rows remain in the universe.",
+      "source_provenance": {
+        "dataset": "pasilla1.40.0 historical raw counts,14599genes7samples",
+        "source_url": "https://bioconductor.org/packages/release/data/experiment/html/pasilla.html",
+        "citation": "Huber and Reyes,doi:10.18129/B9.bioc.pasilla; Brooks etal.2011,PMID20921232",
+        "license": "LGPL, package DESCRIPTION",
+        "raw_counts_sha256": "ea0dafbfcc600559644cfe7dd5cc8de809d631eb64ba3089aaa25c2fa0954dad",
+        "raw_metadata_sha256": "1844f871ca5d750f41685c73b87bd7dda291ec0d52304c1afb46a17ae88db745",
+        "scope": "Unmodified historical observations. No laboratory procedure or new biological observation; no causal or mechanistic interpretation."
+      },
+      "method_scope": "Replicated bulk-count negative-binomial model, unshrunk signed tested/reference log2FC, two-sided Wald H0=0. No count replacement or independent filtering. Cook p filtering enabled. One CPU; no approximate mean-test substitute.",
+      "target_gene": "FBgn0000043",
+      "confidence_level": 0.95,
+      "minimum_positive_log2fc_claim": 1.0,
+      "uncertainty_policy": "Use the unshrunk coefficient +/-normal0.975\u00d7WaldSE as an approximate single-contrast95% interval, not a shrunken or simultaneous interval. A claimed positive effect greater than the margin is supported only if lower interval bound>margin."
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

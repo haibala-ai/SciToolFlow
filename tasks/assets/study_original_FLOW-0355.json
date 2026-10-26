@@ -1,0 +1,25 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "genotype_order": [
+    "AA",
+    "AB",
+    "BB"
+  ],
+  "initial_zygote_genotype_fractions": [
+    0.25,
+    0.5,
+    0.25
+  ],
+  "adult_survivor_genotype_fractions": [
+    0.2,
+    0.6,
+    0.2
+  ],
+  "independent_overall_zygote_to_adult_survival_probability": 0.5,
+  "model": "A closed cohort experiences genotype-specific viability only between these stages. No mutation,migration or genotype-call error; genotype labels do not change. Adults are a selected subset of the original cohort. Adult frequency_j=zygote_frequency_j*w_j/sum_k zygote_frequency_k*w_k. The separate overall survival calibration fixes that denominator and therefore absolute viability probabilities,not only relative fitness.",
+  "equilibrium_question": "For the separate idealized subsequent random-mating viability-selection model with the same w values, find the interior allele-A equilibrium when the heterozygote has higher viability than both homozygotes. Do not treat survivor genotype frequencies as zygote Hardy-Weinberg frequencies.",
+  "scope": "Controlled population-genetic accounting and selection-model interpretation,not a genetic intervention or an estimate from a named biological population."
+}

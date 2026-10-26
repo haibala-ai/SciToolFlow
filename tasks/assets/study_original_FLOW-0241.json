@@ -1,0 +1,36 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "reference_newick": "((oak:2,pine:2):1,(fern:1,moss:1):3);",
+  "taxon_order": [
+    "oak",
+    "pine",
+    "fern",
+    "moss"
+  ],
+  "sample_counts": {
+    "sample_A": [
+      80,
+      0,
+      20,
+      0
+    ],
+    "sample_B": [
+      0,
+      10,
+      0,
+      90
+    ],
+    "sample_C": [
+      0,
+      20,
+      0,
+      180
+    ]
+  },
+  "weighted_definition": "For every nonroot branch e, P_se is the sum of descendant-tip counts divided by that sample own total count. Normalized weighted UniFrac=sum_e length_e*abs(P_ae-P_be)/sum_e length_e*(P_ae+P_be). These denominators are sample-specific before any between-sample comparison.",
+  "unweighted_definition": "Use branch presence when any descendant tip count is positive. Unweighted UniFrac is branch length present in exactly one sample divided by branch length present in at least one sample. Shared internal branches remain shared even if the represented terminal taxa differ.",
+  "scope": "Controlled rooted-tree community-composition geometry, without a sampling-effort correction, unseen-taxon model, tree inference or statistical significance test. The fictional tip labels and lengths do not assert real phylogenetic relationships."
+}

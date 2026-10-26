@@ -1,0 +1,100 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "data_status": "Project-authored controlled numeric assay-reporting inputs. These are neither measured samples nor a reproduction of IUPAC experimental data.",
+      "matrix_free_external_standards": [
+        {
+          "standard_id": "external-1",
+          "concentration_ug_per_l": 0,
+          "response_mv": 0.151
+        },
+        {
+          "standard_id": "external-2",
+          "concentration_ug_per_l": 1,
+          "response_mv": 1.349
+        },
+        {
+          "standard_id": "external-3",
+          "concentration_ug_per_l": 2,
+          "response_mv": 2.551
+        },
+        {
+          "standard_id": "external-4",
+          "concentration_ug_per_l": 4,
+          "response_mv": 4.948
+        },
+        {
+          "standard_id": "external-5",
+          "concentration_ug_per_l": 6,
+          "response_mv": 7.352
+        }
+      ],
+      "instrument_blank_responses_mv": [
+        0.149,
+        0.151,
+        0.15,
+        0.15
+      ],
+      "sample_addition_aliquots": [
+        {
+          "aliquot_id": "addition-1",
+          "sample_volume_ml": 5.0,
+          "standard_volume_ml": 0,
+          "final_volume_ml": 5,
+          "response_mv": 2.714
+        },
+        {
+          "aliquot_id": "addition-2",
+          "sample_volume_ml": 5.0,
+          "standard_volume_ml": 0.2,
+          "final_volume_ml": 5.2,
+          "response_mv": 2.916231
+        },
+        {
+          "aliquot_id": "addition-3",
+          "sample_volume_ml": 5.0,
+          "standard_volume_ml": 0.5,
+          "final_volume_ml": 5.5,
+          "response_mv": 3.206545
+        },
+        {
+          "aliquot_id": "addition-4",
+          "sample_volume_ml": 5.0,
+          "standard_volume_ml": 1,
+          "final_volume_ml": 6,
+          "response_mv": 3.612667
+        },
+        {
+          "aliquot_id": "addition-5",
+          "sample_volume_ml": 5.0,
+          "standard_volume_ml": 1.5,
+          "final_volume_ml": 6.5,
+          "response_mv": 3.968385
+        },
+        {
+          "aliquot_id": "addition-6",
+          "sample_volume_ml": 5.0,
+          "standard_volume_ml": 2,
+          "final_volume_ml": 7,
+          "response_mv": 4.262286
+        }
+      ],
+      "addition_standard_concentration_ug_per_l": 10.0,
+      "response_model": "For the addition series y_i = B + k*(C0*V0 + Cs*Vs_i)/V_i. Here C0 is the original sample concentration, V0 the sample aliquot volume, Cs the known addition standard concentration, Vs the addition volume, V the actual final volume, k the sample-matrix sensitivity and B one common additive instrument offset. Volume ratios use one common volume unit.",
+      "conditional_assumptions": "Assume linear analyte response, complete stated volume accounting, no analyte contribution to instrument blanks, the same additive instrument offset for blanks/standards/additions, and one sample-matrix sensitivity across these additions despite dilution. These are stipulated audit conditions, not experimentally verified recovery, matrix invariance, selectivity or linearity. No further sample-specific additive interference is modeled.",
+      "analysis_policy": "Estimate B by the mean of the four instrument blank responses. Fit the full external panel by ordinary unweighted least squares with a free intercept. For standard additions fit z_i=(y_i-B)*V_i by ordinary unweighted least squares with a free intercept against Vs_i. This explicitly defines a descriptive transformed-response estimator; it is not claimed optimal under constant original-response noise. Use the supplied Cs and original aliquot volume to recover C0 from that fitted intercept and slope. Estimate sample sensitivity from the same fit. For comparison, apply the external fitted line to the actual unspiked addition aliquot response. Do not treat the two calibrations as interchangeable or replace actual final volumes with a common fictitious volume.",
+      "identifiability_question": "If the instrument blanks were absent and B were an unknown common offset, could this addition series alone identify C0, k and B sufficiently to recover a unique original concentration? Assess the full mean model, not a coefficient chosen by a rank-deficient software convention. In the linear parameterization use coefficients u=k*C0, v=k, w=B and rows [V0/V_i, Cs*Vs_i/V_i, 1].",
+      "reporting_scope": "Report point estimates conditional on the stated model, retaining ug/L, mV and actual volumes. No sampling confidence interval, certified material value, empirical proof of a matrix mechanism or method validation is established by this controlled panel.",
+      "method_references": {
+        "urls": [
+          "https://goldbook.iupac.org/terms/view/08030",
+          "https://goldbook.iupac.org/terms/view/08035",
+          "https://goldbook.iupac.org/terms/view/08005"
+        ],
+        "use": "Conceptual definitions of standard addition and multiplicative versus additive matrix effects only; all numeric inputs are authored by this project.",
+        "access_record": "Search-index excerpts were available on2026-10-21UTC; direct Gold Book pages returned403. No full-paper reading or original measurement extraction is claimed."
+      }
+    }
+  ]
+}

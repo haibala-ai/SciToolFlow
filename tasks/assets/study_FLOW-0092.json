@@ -1,0 +1,193 @@
+{
+  "data": [
+    {
+      "record_id": "electrode01_t20_r400",
+      "electrode_id": "electrode01",
+      "film_thickness_nm": 20.0,
+      "rotation_rpm": 400.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.5377030127425484
+    },
+    {
+      "record_id": "electrode01_t20_r900",
+      "electrode_id": "electrode01",
+      "film_thickness_nm": 20.0,
+      "rotation_rpm": 900.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.8742488123149472
+    },
+    {
+      "record_id": "electrode01_t20_r1600",
+      "electrode_id": "electrode01",
+      "film_thickness_nm": 20.0,
+      "rotation_rpm": 1600.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 2.1045528487058345
+    },
+    {
+      "record_id": "electrode01_t20_r2500",
+      "electrode_id": "electrode01",
+      "film_thickness_nm": 20.0,
+      "rotation_rpm": 2500.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 2.2720649963446475
+    },
+    {
+      "record_id": "electrode01_t40_r400",
+      "electrode_id": "electrode01",
+      "film_thickness_nm": 40.0,
+      "rotation_rpm": 400.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.3327635587813866
+    },
+    {
+      "record_id": "electrode01_t40_r900",
+      "electrode_id": "electrode01",
+      "film_thickness_nm": 40.0,
+      "rotation_rpm": 900.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.5784146365293756
+    },
+    {
+      "record_id": "electrode01_t40_r1600",
+      "electrode_id": "electrode01",
+      "film_thickness_nm": 40.0,
+      "rotation_rpm": 1600.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.7386456773831542
+    },
+    {
+      "record_id": "electrode01_t40_r2500",
+      "electrode_id": "electrode01",
+      "film_thickness_nm": 40.0,
+      "rotation_rpm": 2500.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.8514121274792823
+    },
+    {
+      "record_id": "electrode01_t80_r400",
+      "electrode_id": "electrode01",
+      "film_thickness_nm": 80.0,
+      "rotation_rpm": 400.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.0522764243529172
+    },
+    {
+      "record_id": "electrode01_t80_r900",
+      "electrode_id": "electrode01",
+      "film_thickness_nm": 80.0,
+      "rotation_rpm": 900.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.199692269140785
+    },
+    {
+      "record_id": "electrode01_t80_r1600",
+      "electrode_id": "electrode01",
+      "film_thickness_nm": 80.0,
+      "rotation_rpm": 1600.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.2900557178859784
+    },
+    {
+      "record_id": "electrode01_t80_r2500",
+      "electrode_id": "electrode01",
+      "film_thickness_nm": 80.0,
+      "rotation_rpm": 2500.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.351117180685815
+    },
+    {
+      "record_id": "electrode02_t20_r400",
+      "electrode_id": "electrode02",
+      "film_thickness_nm": 20.0,
+      "rotation_rpm": 400.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.6384830240381902
+    },
+    {
+      "record_id": "electrode02_t20_r900",
+      "electrode_id": "electrode02",
+      "film_thickness_nm": 20.0,
+      "rotation_rpm": 900.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 2.0261491152263886
+    },
+    {
+      "record_id": "electrode02_t20_r1600",
+      "electrode_id": "electrode02",
+      "film_thickness_nm": 20.0,
+      "rotation_rpm": 1600.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 2.298003654175056
+    },
+    {
+      "record_id": "electrode02_t20_r2500",
+      "electrode_id": "electrode02",
+      "film_thickness_nm": 20.0,
+      "rotation_rpm": 2500.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 2.49919866892794
+    },
+    {
+      "record_id": "electrode02_t40_r400",
+      "electrode_id": "electrode02",
+      "film_thickness_nm": 40.0,
+      "rotation_rpm": 400.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.6120695383171726
+    },
+    {
+      "record_id": "electrode02_t40_r900",
+      "electrode_id": "electrode02",
+      "film_thickness_nm": 40.0,
+      "rotation_rpm": 900.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.985911585213409
+    },
+    {
+      "record_id": "electrode02_t40_r1600",
+      "electrode_id": "electrode02",
+      "film_thickness_nm": 40.0,
+      "rotation_rpm": 1600.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 2.2463817201590794
+    },
+    {
+      "record_id": "electrode02_t40_r2500",
+      "electrode_id": "electrode02",
+      "film_thickness_nm": 40.0,
+      "rotation_rpm": 2500.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 2.4382616658305234
+    },
+    {
+      "record_id": "electrode02_t80_r400",
+      "electrode_id": "electrode02",
+      "film_thickness_nm": 80.0,
+      "rotation_rpm": 400.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.5617175911928514
+    },
+    {
+      "record_id": "electrode02_t80_r900",
+      "electrode_id": "electrode02",
+      "film_thickness_nm": 80.0,
+      "rotation_rpm": 900.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 1.9100478616770769
+    },
+    {
+      "record_id": "electrode02_t80_r1600",
+      "electrode_id": "electrode02",
+      "film_thickness_nm": 80.0,
+      "rotation_rpm": 1600.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 2.1497964511601015
+    },
+    {
+      "record_id": "electrode02_t80_r2500",
+      "electrode_id": "electrode02",
+      "film_thickness_nm": 80.0,
+      "rotation_rpm": 2500.0,
+      "background_corrected_reduction_current_magnitude_ma_per_cm_squared": 2.3248879619319336
+    },
+    {
+      "record_id": "study",
+      "temperature_kelvin": 298.15,
+      "diffusion_coefficient_cm_squared_per_second": 1.9e-05,
+      "kinematic_viscosity_cm_squared_per_second": 0.01,
+      "bulk_reactant_mol_per_cm_cubed": 1.2e-06,
+      "faraday_coulomb_per_mol": 96485.33212,
+      "levich_prefactor_for_angular_radians_per_second": 0.6208,
+      "comparison_film_thickness_nm": 40.0,
+      "comparison_rotation_rpm": 1600.0,
+      "film_interpretation": "Thickness is that of an inert permeable transport overlayer above an unchanged underlying active electrode,not a changing mass of catalyst. Zero thickness removes only this added transport layer.",
+      "kinematic_model": "For each electrode, inverse current-density magnitude = inverse intrinsic kinetic current density + thickness-proportional film resistance + inverse external Levich transport current density. The film-resistance coefficient and intrinsic kinetic current are independent of rotation. External Levich current uses the supplied D,nu,c and angular velocity in rad/s.",
+      "controlled_authorization": "The linear inverse-current dependence on film thickness is exact down to zero thickness in this controlled model;zero-thickness extrapolation is authorized. Film thickness does not change intrinsic active area or chemistry. Both electrodes share the same known transport parameters,but their electron numbers must be inferred rather than assumed equal.",
+      "claim_scope": "This is a finite controlled computational comparison of two generic electrodes,not a measurement of a named catalyst or proof that real films obey this representation."
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Current magnitude mA/cm²;thickness nm;rotation rpm converted to angular rad/s;D andnu cm²/s;c mol/cm³;F C/mol. Inverse-current resistance units cm²/mA.",
+    "original_observation_claim": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "projection_A": [
+    [
+      0.0,
+      4.0
+    ],
+    [
+      0.25,
+      0.0
+    ]
+  ],
+  "projection_B": [
+    [
+      0.0,
+      1.0
+    ],
+    [
+      1.0,
+      0.0
+    ]
+  ],
+  "stage_order": [
+    "juvenile",
+    "adult"
+  ],
+  "initial_stage_vector": [
+    1.0,
+    0.0
+  ],
+  "model": "Column stage-count vectors. Seasons repeat chronologically AthenB,so one complete-cycle projection is B*A. All entries are exact conditional demographic expectations,with no immigration or additional stage leakage. Compare the spectral radius of that cycle operator with the long-run multiplicative factor per complete cycle for the specified initial vector. Reducibility and accessibility from the initial support must be checked. The arithmetic-average shortcut uses (A+B)/2each season and squares its spectral radius to predict one-cycle growth.",
+  "target": "Return the complete-cycle matrix,its global spectral radius,the actual asymptotic growth factor per cycle from the stated initial stage vector,and the shortcut predicted factor per cycle. Report whether the global dominant mode is reachable from that initial support,and whether the shortcut predicts the correct sign of long-run growth relative to1.",
+  "provenance": {
+    "kind": "Explicit synthetic benign biological measurement model with exact source observations;not an empirical validation or sequence-design recommendation."
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "covariance_variable_order": [
+    "Y",
+    "X",
+    "Z"
+  ],
+  "population_covariance": [
+    [
+      49.0,
+      6.0,
+      15.0
+    ],
+    [
+      6.0,
+      1.0,
+      2.0
+    ],
+    [
+      15.0,
+      2.0,
+      5.0
+    ]
+  ],
+  "candidate_graphs": [
+    {
+      "id": "chain_X_Z_Y",
+      "edges": [
+        [
+          "X",
+          "Z"
+        ],
+        [
+          "Z",
+          "Y"
+        ]
+      ]
+    },
+    {
+      "id": "fork_Z",
+      "edges": [
+        [
+          "Z",
+          "X"
+        ],
+        [
+          "Z",
+          "Y"
+        ]
+      ]
+    },
+    {
+      "id": "chain_Y_Z_X",
+      "edges": [
+        [
+          "Y",
+          "Z"
+        ],
+        [
+          "Z",
+          "X"
+        ]
+      ]
+    },
+    {
+      "id": "collider_Z",
+      "edges": [
+        [
+          "X",
+          "Z"
+        ],
+        [
+          "Y",
+          "Z"
+        ]
+      ]
+    }
+  ],
+  "model_family": "Acyclic linear structural equations with zero means, mutually independent Gaussian additive errors, free coefficients on the listed edges and strictly positive error variances. There are no latent common causes, ordering measurements or intervention data. An absent edge has exactly zero coefficient.",
+  "compatibility_max_abs_covariance_error": 1e-09,
+  "intervention": "Replace the equation for X by X=x without altering any other equation or error distribution. Report the derivative of E[Y] with respect to x, holding this intervention value externally fixed.",
+  "provenance": {
+    "kind": "Project-authored exact population covariance and finite DAG family for a methodological identification audit, not sampled observational or intervention measurements."
+  }
+}

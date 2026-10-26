@@ -1,0 +1,41 @@
+{
+  "site_ids": [
+    "N",
+    "E",
+    "S",
+    "W"
+  ],
+  "route_distance_matrix_m": [
+    [
+      0.0,
+      1.0,
+      2.0,
+      1.0
+    ],
+    [
+      1.0,
+      0.0,
+      1.0,
+      2.0
+    ],
+    [
+      2.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    [
+      1.0,
+      2.0,
+      1.0,
+      0.0
+    ]
+  ],
+  "distance_scope": "Exact shortest travel distances around a four-link closed walkway; each link length is1m. These are route distances between sites, not measured straight-line Cartesian distances.",
+  "reporting_policy": "Assess existence of an exact Euclidean configuration in ANY dimension. For the fallback representation, form the centered classical squared-distance Gram matrix B=-0.5*H*(D elementwise squared)*H, H=I-11^T/n. Among centered symmetric positive-semidefinite matrices choose the nearest to B in Frobenius norm, without an imposed rank cap. Report its positive-eigenvalue rank and the largest absolute change of the six unordered off-diagonal distances reconstructed from that matrix.",
+  "numerical_policy": "Use1e-9 absolute tolerance to classify eigenvalues or distance equality. Sum the squared entrywise Gram differences over the FULL matrix for squared Frobenius error. Distances are sqrt(Bii+Bjj-2Bij), not square roots of individual Gram entries.",
+  "provenance": {
+    "data_origin": "Explicitly constructed numerical instrument/reporting studies for this benchmark; not measurements from a named laboratory or archive.",
+    "method_scope": "Conditional finite-dimensional linear measurement models. Scientific conclusions follow from the stated covariance/distance definitions; no distributional or causal interpretation beyond those assumptions."
+  }
+}

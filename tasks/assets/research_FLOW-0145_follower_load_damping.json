@@ -1,0 +1,88 @@
+{
+  "origin": "Own normalized linear model of a two-link elastic structural prototype under a tangential follower load. The mass/stiffness choices and robust damping-ratio design are controlled inputs, not measured properties or a nonlinear safety certification for a real structure. This is structural/materials mechanics, with explicitly nonconservative loading.",
+  "equations": {
+    "coordinate_order": [
+      "q1",
+      "q2"
+    ],
+    "equation": "M*qdd+C*qdot+K(p)*q=0",
+    "M": [
+      [
+        3,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "K0": [
+      [
+        2,
+        -1
+      ],
+      [
+        -1,
+        1
+      ]
+    ],
+    "load_matrix_D": [
+      [
+        -1,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "K_definition": "K(p)=K0+p*D, p>=0. Keep the antisymmetric part; the follower force has no quadratic potential with HessianK(p).",
+    "damping_definition": "c1=eps*r/(1+r),c2=eps/(1+r), C=[[c1+c2,-c2],[-c2,c2]]. eps=c1+c2 is a fixed positive damping budget, r=c1/c2>0. For the undamped comparison eps=0. Do not substitute an independently fixed c2 while varyingr.",
+    "normalization": "All matrices, generalized coordinates, load, time and damping are in the stipulated normalized model units."
+  },
+  "scientific_stability_definition": "For eps>0 require STRICT asymptotic stability: every characteristic exponent has strictly negative real part. A simple imaginary pair at a load boundary is not asymptotically stable. For eps=0 ask bounded linear motion of every initial condition; purely imaginary eigenvalues do not suffice if they have a nontrivial Jordan block. Stable oscillatory undamped motion is not asymptotic decay. Static divergence means an exponent reaches0; flutter means a nonzero imaginary pair loses stability.",
+  "global_load_audit": "Derive the full quartic det(lambda^2*M+lambda*C+K(p)) without symmetrizing K. For eps=0 determine the complete initial interval of bounded motion and its load supremum, then inspect the boundary algebraic/geometric multiplicities. For eps>0 derive a necessary-and-sufficient continuous-load stability condition from the full polynomial/Routh-Hurwitz or an equivalent exact global certificate. Determine whether a finite static-divergence load exists. Testing a mesh of loads or reporting a few eigenvalues alone is not a complete stability interval.",
+  "typed_evidence": "Retain actual typed symmetric eigendecompositions of M, K0, the damping matrix at eps=.1,r=1, and the SYMMETRIC PART of K atp=1.8. That last audit is a diagnostic only, never a replacement for the nonconservative dynamic law. Retain an actual MatrixInverse observation for M and an actual MatrixSVD report of the undamped2x2 dynamic pencil K(pcrit)-omega_crit^2*M to audit its geometric multiplicity. Obtain actual PolynomialRoots observations for the three supplied probe cases and for damped loads on both sides of the derived flutter boundary at r=1,eps=.1. All returned roots and eigenvalues must be interpreted in the declared stability sense.",
+  "probe_cases": [
+    {
+      "id": "undamped_p18",
+      "eps": 0,
+      "r": 1,
+      "p": 1.8
+    },
+    {
+      "id": "damped_equal_p18",
+      "eps": 0.1,
+      "r": 1,
+      "p": 1.8
+    },
+    {
+      "id": "damped_equal_p10",
+      "eps": 0.1,
+      "r": 1,
+      "p": 1.0
+    }
+  ],
+  "vanishing_damping": "Take eps down to0 at FIXED r. Compare the resulting positive-damping stability-boundary limit at r=1 to the strictly undamped bounded-motion supremum. Over ALL r>0 find every ratio that maximizes that vanishing-damping limit and its value, with a global certificate. Decide whether infinitesimal damping always has the same limit as setting eps=0, and whether EVERY possible ratio necessarily lowers the limiting threshold. The order/direction of this singular limit matters.",
+  "nominal_ratio_design": "At fixed eps=.1, choose r in CLOSED[1,20] to maximize the strict-asymptotic-stability load SUPREMUM. Find the full global maximizing-r set, boundary value and flutter frequency. Certify all physical stationary points and both ratio endpoints. Do not confuse a load supremum with an attained strictly stable maximum load.",
+  "robust_ratio_design": "The chosen nominal ratio r0 in[1,20] has multiplicative calibration uncertainty: actualr ranges over CLOSED[2*r0/3,3*r0/2]. The damping budget eps=.1 remains fixed for EVERY actualr, so c1+c2=.1 throughout. A load is robustly admissible only if the exact system is strictly asymptotically stable for ALL actualr in that interval, including both endpoints. Maximize the robust load supremum over the whole nominal-r continuum. Return every optimal nominal ratio, the corresponding actual-r interval, the limiting robust load, and whether that load itself is admissible. Prove the worst actual ratio over each interval rather than assuming a midpoint or testing a finite uncertainty grid.",
+  "interpretation_proposals": {
+    "A": "A positive damping matrix need not preserve the undamped stability threshold in a nonconservative follower-load system.",
+    "B": "Positive definite M,C and the symmetric part of K prove asymptotic stability of the full nonsymmetric dynamic system.",
+    "C": "A repeated imaginary exponent with a Jordan chain can yield unbounded motion even without a positive real exponent.",
+    "D": "Setting damping to zero is always equivalent to taking its magnitude to zero at an arbitrary fixed joint-damping ratio.",
+    "E": "The redistribution problem must preserve the stated total damping budget at every actual calibration ratio.",
+    "F": "A simple imaginary pair on the robust boundary satisfies the stipulated strict asymptotic-stability requirement.",
+    "G": "A complete continuous stability/design certificate must include branch multiplicity, physical domains and uncertainty endpoints.",
+    "H": "Linear normalized flutter analysis proves nonlinear or real-structure operational safety."
+  },
+  "reporting": "undamped_bounded_load_supremum; undamped_at_supremum_all_motion_bounded boolean; undamped_boundary_geometric_multiplicity_per_imaginary_root integer; finite_static_divergence_exists boolean; probe_case_ids and probe_classifications in source order (usebounded_oscillatory, asymptotically_stable orunbounded_unstable); equal_damping_eps01_load_supremum; fixed_equal_ratio_vanishing_damping_limit; all_optimal_vanishing_damping_ratios; best_vanishing_damping_load_supremum; arbitrary_ratio_limit_equals_undamped boolean; every_ratio_strictly_lowers_vanishing_limit boolean; all_nominal_optimal_ratios_eps01; nominal_optimal_load_supremum_eps01; nominal_optimal_flutter_frequency; all_robust_optimal_nominal_ratios; robust_actual_ratio_interval_at_optimum; robust_optimal_load_supremum; robust_supremum_load_admissible boolean; valid_interpretation_proposal_ids. Numeric absolute tolerance1e-7, counts/labels/booleans exact. Source matrix, characteristic coefficients, actual root/matrix receipts, full continuous stability proof and global ratio/uncertainty certificates belong in the trajectory. At every boundary distinguish strict decay, bounded neutral motion and defective growth.",
+  "methodological_source": {
+    "authors": "O.N. Kirillov and F. Verhulst",
+    "title": "Paradoxes of dissipation-induced destabilization or who opened Whitney\u2019s umbrella?",
+    "year": 2010,
+    "doi": "10.1002/zamm.200900315",
+    "url": "https://webspace.science.uu.nl/~verhu101/462_A.pdf",
+    "role": "Primary mathematical context for damping-induced destabilization of nonconservative systems. This task gives its own normalized matrices, fixed-budget and calibration-uncertainty design; no empirical structural data or nonlinear guarantee is extracted from the source."
+  }
+}

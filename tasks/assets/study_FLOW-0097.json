@@ -1,0 +1,164 @@
+{
+  "data": [
+    {
+      "record_id": "level01",
+      "analytical_concentration_mol_per_litre_of_monomer_units": 2e-05,
+      "optical_path_lengths_cm": [
+        0.5,
+        1.0
+      ],
+      "reference_spectral_power_relative_units": [
+        [
+          1.0,
+          0.8
+        ],
+        [
+          0.9,
+          1.1
+        ]
+      ],
+      "transmitted_spectral_power_relative_units": [
+        [
+          0.8383851096132617,
+          0.7356639888060653
+        ],
+        [
+          0.6326006328191168,
+          0.9301900857322744
+        ]
+      ]
+    },
+    {
+      "record_id": "level02",
+      "analytical_concentration_mol_per_litre_of_monomer_units": 5e-05,
+      "optical_path_lengths_cm": [
+        0.5,
+        1.0
+      ],
+      "reference_spectral_power_relative_units": [
+        [
+          1.0,
+          0.8
+        ],
+        [
+          0.9,
+          1.1
+        ]
+      ],
+      "transmitted_spectral_power_relative_units": [
+        [
+          0.7006344744694512,
+          0.6112880909924916
+        ],
+        [
+          0.44179980013357556,
+          0.6422506925127642
+        ]
+      ]
+    },
+    {
+      "record_id": "level03",
+      "analytical_concentration_mol_per_litre_of_monomer_units": 0.0001,
+      "optical_path_lengths_cm": [
+        0.5,
+        1.0
+      ],
+      "reference_spectral_power_relative_units": [
+        [
+          1.0,
+          0.8
+        ],
+        [
+          0.9,
+          1.1
+        ]
+      ],
+      "transmitted_spectral_power_relative_units": [
+        [
+          0.5623413251903491,
+          0.4247075553847907
+        ],
+        [
+          0.28460498941515416,
+          0.31002212243908994
+        ]
+      ]
+    },
+    {
+      "record_id": "level04",
+      "analytical_concentration_mol_per_litre_of_monomer_units": 0.0002,
+      "optical_path_lengths_cm": [
+        0.5,
+        1.0
+      ],
+      "reference_spectral_power_relative_units": [
+        [
+          1.0,
+          0.8
+        ],
+        [
+          0.9,
+          1.1
+        ]
+      ],
+      "transmitted_spectral_power_relative_units": [
+        [
+          0.40701629512691795,
+          0.18895645354623705
+        ],
+        [
+          0.14909603804895813,
+          0.06136718042257558
+        ]
+      ]
+    },
+    {
+      "record_id": "level05",
+      "analytical_concentration_mol_per_litre_of_monomer_units": 0.0005,
+      "optical_path_lengths_cm": [
+        0.5,
+        1.0
+      ],
+      "reference_spectral_power_relative_units": [
+        [
+          1.0,
+          0.8
+        ],
+        [
+          0.9,
+          1.1
+        ]
+      ],
+      "transmitted_spectral_power_relative_units": [
+        [
+          0.21115893859389046,
+          0.013361750491565136
+        ],
+        [
+          0.040129287613288565,
+          0.011000000000000001
+        ]
+      ]
+    },
+    {
+      "record_id": "study",
+      "temperature_kelvin": 298.15,
+      "wavelength_order": [
+        "lambda01",
+        "lambda02"
+      ],
+      "power_matrix_layout": "Outer row follows optical_path_lengths_cm;inner column follows wavelength_order. References are independently measured incident spectral powers in matching arbitrary linear power units,not absorbance or normalized transmittance.",
+      "species_model": "Only the ideal reversible equilibrium 2M⇌D is admitted over the stated analysis range. Total analytical concentration counts monomer units,so a dimer contributes two units. Define the association constant K=[D]/[M]^2 with concentrations in mol/L. Different wavelengths share exactly the same equilibrium species amounts. No photodegradation,higher aggregates,scattering or excited-state population is part of this controlled chemical model.",
+      "independent_spectroscopic_anchor": "At lambda01,the monomer decadic molar absorption coefficient is independently 10000 L/(molcm),and dimer absorption is exactly zero by the explicit controlled spectral model. This selectivity is stipulated independently;it is not inferred merely from having two wavelengths. At lambda02,both species coefficients are unknown and must be inferred.",
+      "qualification_policy": "Use a concentration level only if BOTH wavelengths satisfy relative agreement of path-normalized decadic absorbance:abs(A_short/l_short-A_long/l_long)/mean(A_short/l_short,A_long/l_long)<=0.005. Detector-limited records may be present,but the exact source/model cause of a rejected level need not be identified. Use all qualified concentration levels;either a qualified path or their mean may be used after the control. Passing this finite paired-path check is an operational qualification,not proof against every common-mode instrumental error.",
+      "prediction_analytical_concentration_mol_per_litre_of_monomer_units": 0.00015,
+      "scope": "Exact controlled small-molecule optical/equilibrium observations with finite numerical reporting. No real dye parameters,experimental degradation claim or new measured chemical equilibrium constant is supplied."
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Concentrations mol/L;paths cm;decadic molar absorption coefficients L/(molcm);K association L/mol;monomer-unit fraction in dimers dimensionless;relative spectral power units cancel in the measured ratio.",
+    "original_observation_claim": false
+  }
+}

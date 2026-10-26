@@ -1,0 +1,47 @@
+{
+  "candidate_mode_order": [
+    "mode_A",
+    "mode_B"
+  ],
+  "symmetric_Raman_tensors_in_common_units": [
+    [
+      [
+        2.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        2.1547005383792515,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.42264973081037416,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.42264973081037416
+      ]
+    ]
+  ],
+  "model": "Nonresonant powder Raman working convention for a symmetric derivative tensor R:a=trace(R)/3;gamma_squared=((Rxx-Ryy)^2+(Ryy-Rzz)^2+(Rzz-Rxx)^2+6*(Rxy^2+Rxz^2+Ryz^2))/2. Activity A=45*a^2+7*gamma_squared,and depolarization rho=3*gamma_squared/(45*a^2+4*gamma_squared). A proper orthogonal rotation transforms Rby Q*R*transpose(Q)and preserves its eigenvalues;equal activity and rho alone need not fix the entire eigenvalue spectrum. Tensor coordinate and normal-mode scaling conventions are identical for both candidates.",
+  "target": "Return powder activities and depolarization ratios in candidate order,and each tensor eigenvalue spectrum sorted ascending. Report whether the two powder scalar observations distinguish the candidates,and whether equality of those observations proves the tensors are related by a proper rotation.",
+  "provenance": {
+    "kind": "Explicit synthetic conditional chemical/physical measurement model;no empirical identification or practical process recommendation."
+  }
+}

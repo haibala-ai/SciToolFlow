@@ -1,0 +1,87 @@
+{
+  "data_origin": "Own exact finite validation system for rare-event simulation with a learned proposal. Twelve hypothetical repeated-load indicators have a declared Bernoulli law. The training CSV is a deliberately case-control-balanced synthetic precursor-prefix dataset generated from distinct full paths and their eventual union-event labels; it is not a prevalence-representative sample or real safety measurement. The small exact system permits exhaustive verification of methods intended for larger systems.",
+  "true_path_law": {
+    "horizon": 12,
+    "indicator_values": [
+      0,
+      1
+    ],
+    "interpretation": "1 denotes one overload indicator,0 its absence. Under the TRUE law P the indicators are mutually independent with P(1)=1/5 at every step. A binary prefix is ordered from earliest to latest. All2^12 paths are possible with their nonuniform true probabilities, not equiprobable.",
+    "probability_one_numerator": 1,
+    "probability_one_denominator": 5
+  },
+  "events": {
+    "E1": "At least9 overload indicators among all12 positions.",
+    "E2": "At least one run of5 consecutive overload indicators anywhere in the12-position path. Once the run has occurred, this event remains true even if the current trailing run later becomes zero.",
+    "scope": "These are different events and may overlap. Neither count alone nor the final trailing run identifies E2. Compute their two probabilities and their intersection underP."
+  },
+  "proposal_class": "Let pi_i=P(E_i). Q_i is the EXACT full-path conditional law P(.|E_i), i=1,2. Draw one component J with P(J=1)=alpha, then draw an ENTIRE path fromQ_J; repeat independently for each replicate. Thus Q_alpha=alpha Q1+(1-alpha)Q2 is a mixture of whole-path laws, with0<alpha<1. Derive the complete full-mixture likelihood and unbiased ordinary importance estimates of BOTH pi_i from every shared path. Do not self-normalize, silently discard cross-component paths, or divide by the selected component density. Full support outside E1 union E2 is unnecessary for these two particular event integrands; positive support on their union is necessary.",
+  "conditional_path_generation": "Construct valid time- and state-dependent conditional transitions for eachQ_i from backward event-probability functions h_i(prefix)=P(E_i|prefix) underP. Keep enough state for total count, trailing run and whetherE2 has EVER occurred. Never evaluate a zero-h conditional kernel on an unreachable prefix. Demonstrate why theQ2 process resumes the original Bernoulli transition after E2 has already occurred. As a separate way to sample the SAME whole-path mixture without retainingJ, derive the history-dependent posterior component weight and next-bit transition. A fixed alpha mixture of the two conditional transitions at every step is generally a different path law.",
+  "precision_design": {
+    "relative_error_tolerances": [
+      0.05,
+      0.1
+    ],
+    "total_failure_budget": 0.05,
+    "sampling": "N independent whole paths from one chosenQ_alpha, both probability estimates computed on those same paths. Use the exact per-path relative variances V_i(alpha)=Var_Q(Z_i)/pi_i^2.",
+    "certificate": "Use two-sided Chebyshev bounds P(|hatpi_i-pi_i|>=epsilon_i*pi_i)<=V_i/(N*epsilon_i^2), and a union bound with positive budgets delta1+delta2=.05. Jointly choose alpha and the two delta budgets to MINIMIZE the CONTINUOUS required-N certificate max_i V_i/(delta_i*epsilon_i^2). Then report the ceiling of that globally minimized bound as the certified integer replicate count. This is a conservative certificate, not the true joint failure probability or a claim that this integer is necessary for actual coverage. Do not claim uniqueness of all policies with the same integer ceiling; optimize the explicitly defined continuous objective.",
+    "required_proof": "Derive the exact first/second/cross moments, optimal failure-budget allocation, global convexity and the unique physical stationary point in0<alpha<1, including divergent endpoints. A grid/local optimizer alone is insufficient. Retain a bracket or independent objective-derivative check. Report the two optimal per-path relative variances, normalized cross covariance Cov(Z1,Z2)/(pi1*pi2), optimal failure budgets, continuous requiredN and its integer ceiling."
+  },
+  "algorithm_audits": [
+    {
+      "id": "component_denominator",
+      "rule": "At fixed alpha=1/2, drawJ once and a path fromQ_J as above, but incorrectly compute Z_i=I(E_i)*P(path)/Q_J(path) for bothi. Compute the two exact expectations of this algorithm under its actual joint component/path sampling law. State whether both estimates are unbiased. No self-normalization or cross-component sample exclusion is performed."
+    },
+    {
+      "id": "fixed_transition_mixture",
+      "rule": "At every next-bit decision, compute both validQ_i conditional kernels at the actual prefix. If both have positiveh_i, average their next-bit kernels with fixed weights1/2,1/2; if only one has positiveh_i, use that kernel alone. Generate the entire path this way. Then INCORRECTLY divide both event indicators by the ORIGINAL whole-path mixture ratio Q_(1/2)(path)/P(path), instead of using the actual product of the transition-mixture probabilities. Compute the resulting two exact expectations under the ACTUAL transition-mixture path law. State whether both estimates are unbiased. Also verify that weighting by the correct actual path product restores both expectations."
+    }
+  ],
+  "questions": [
+    "Ingest all public sources. Compute the three true event probabilities using the complete binomial count law and an independently verifiable weighted path or sufficient-state method for the run event and overlap. Keep probability and event-ever memory conventions explicit.",
+    "Train the prescribed model on source-derived aligned prefix features. Apply its exported preprocessing and class order to construct a strictly positive, locally normalized learned path proposal. Audit its full likelihood, unbiased moments, relative variances and conservative simultaneous precision bound by the ACTUAL generated law. Retain portable model and prediction evidence; the case-control training probabilities are only proposal scores.",
+    "Construct the two ideal conditional path proposals and the same whole-path mixture via history-dependent posterior weights. Evaluate all supplied partial histories at the optimal alpha, preserving total-count,trailing-run,event-ever information. Use the ideal family as a theoretical validation reference, not a free way to estimate unknown probabilities.",
+    "Derive exact ideal-mixture first/second/cross moments and jointly optimize its alpha and failure-budget allocation under the stated continuous Chebyshev/union certificate. Prove unique global optimality with endpoint and derivative checks. Then report the conservative integer ceiling without claiming it is empirically necessary.",
+    "Evaluate the two specified flawed weighting algorithms under their own complete sampling laws. Separately diagnose why the learned raw-h transition rule generally fails normalization, and show that its normalized counterpart with ACTUAL path-product weights remains unbiased despite an imperfect fitted score."
+  ],
+  "interpretation_proposals": {
+    "A": "For these two event integrands, a proposal can omit paths outside their union without destroying unbiasedness.",
+    "B": "A whole-path mixture is always equivalent to repeatedly mixing conditional kernels with unchanged prior component weights.",
+    "C": "The mixture denominator must include every component that can generate the observed path, including paths in both events.",
+    "D": "A proposal with zero variance for one event necessarily gives valid zero-variance estimates for every other event.",
+    "E": "Conditional mixture weights depend on the observed prefix and retain the event-ever flag when a run event is monitored.",
+    "F": "Chebyshev plus a union bound computes the exact joint error probability and the necessary simulation sample size.",
+    "G": "An exact small conditional sampler is a useful validation reference, but it uses event probabilities in its construction and is not a free practical oracle for an unknown rare probability.",
+    "H": "Independent generated paths imply the two event estimates computed on the same paths have zero covariance."
+  },
+  "reporting": "true_event_probabilities as[E1,E2]; true_intersection_probability; full_mixture_unbiased_for_both; optimal_alpha; optimal_failure_budgets as[delta1,delta2]; optimal_per_path_relative_variances as[V1,V2]; optimal_normalized_cross_covariance; optimal_continuous_required_N_bound; certified_integer_replicates; optimal_prefix_queries mapping every query ID to[h1,h2,posterior_component1,next_bit_probability_one]; component_denominator_exact_means as[E(Z1),E(Z2)]; component_denominator_unbiased_for_both; fixed_transition_mixture_wrong_denominator_exact_means; fixed_transition_wrong_denominator_unbiased_for_both; correct_transition_product_unbiased_for_both; learned_estimator_means as[E(Z1),E(Z2)]; learned_per_path_relative_variances; learned_continuous_required_N_bound; learned_is_unbiased_for_both; learned_prefix_kernel_checks mapping every query ID to[normalized_next_one_probability,invalid_raw_h_kernel_mass]; valid_interpretation_proposal_ids. Absolute tolerance1e-10 for true probabilities and exact analytical expectations;1e-7 for learned estimator means and prefix checks,1e-5 for learned relative variances and1e-2 for the learned continuous N bound,1e-8 for alpha/budgets/variance/covariance/prefix queries,1e-5 for the continuous N bound; replicate count exact. Complete recursion, support and convexity certificates belong in the trajectory rather than a forced final symbolic syntax.",
+  "methodological_sources": [
+    {
+      "authors": "Art B. Owen and Yi Zhou",
+      "title": "Safe and Effective Importance Sampling",
+      "year": 2000,
+      "doi": "10.1080/01621459.2000.10473909",
+      "role": "Primary context for combining importance proposals. Own finite model and certificate; no paper data copied."
+    },
+    {
+      "authors": "Art B. Owen",
+      "title": "Monte Carlo theory, methods and examples, Chapter9: Importance sampling",
+      "url": "https://artowen.su.domains/mc/Ch-var-is.pdf",
+      "role": "Author-hosted primary methodological reference for mixture importance sampling and integrand-specific support. Only link and attribution; no text or PDF redistributed."
+    },
+    {
+      "authors": "Jose H. Blanchet",
+      "title": "Efficient importance sampling for binary contingency tables",
+      "year": 2009,
+      "role": "Primary methodological context for finite-horizon conditional/zero-variance kernels; the present repeated-load model is an independent own construction."
+    }
+  ],
+  "learned_proposal": {
+    "training_data": "Use ALL320 source rows in their supplied order. Each row provides a binary prefix and its original full path union-event label. The full future paths are not needed or supplied. The two labels were sampled in equal numbers, so logistic probabilities must not be interpreted as calibrated true h functions or as unbiased estimates of the rare-event prevalence.",
+    "features": "Derive exactly[t,k,r,seen] in this order: prefix length, total ones, trailing run capped at5, and integer0/1 flag that a run of5 has EVER occurred. Preserve the labels and row alignment. Training prefixes have lengths4..8. Predicting other times is allowed as a stipulated proposal score, not an empirical accuracy or extrapolation-validity claim.",
+    "fit": "Fit one standardized L2 binary logistic model to these four numeric features, with positive class integer1, inverse regularization C=.7, max_iterations=500, unpenalized intercept, population-variance training standardization and a unit scale for any constant column. Use the project standardized logistic contract and preserve its exported class order, coefficients, mean and scale. No balanced class weights, test-time refitting, thresholding, alternative features, tuning or training-subset selection. Its training accuracy is not an evaluation metric for this task.",
+    "positive_score": "For a NONTERMINAL prefix, predict the exported model class1 probability z and set s(prefix)=eta+(1-2eta)*z with eta=.001. At a TERMINAL12-bit path, use s(path)=eta+(1-2eta)*I(E1 union E2), not the classifier terminal prediction. Thus all scores are positive; no true event probability or exact h enters this learned score.",
+    "normalized_sampler": "Construct a valid learned next-bit proposal by multiplying each original Bernoulli next-bit probability by its CHILD score, then normalizing across the two possible next bits. Do not divide by the current score unless that score actually obeys the backward harmonic identity. The same learned score law is used for every independent generated path; no latent ideal-mixture component is involved. Derive the resulting full path product L(path) and ordinary unbiased estimators I(Ei)*P(path)/L(path). No self-normalization or clipping of the final importance weights.",
+    "required_checks": "Retain the fitted portable model, source-derived training features/labels, actual model predictions used in the kernel and every conditional normalizer. Evaluate every complete path or an equivalent exact sufficient-state transport, proving total probability1 and positive support for all original paths. Report both estimator means, both per-path relative variances, and the continuous Chebyshev/union N bound after optimal failure-budget allocation with the same error tolerances. Verify the bound by the actual learned proposal, not by inserting ideal-mixture variances. For each supplied query prefix report the valid learned next-one probability and the mass that the INVALID raw-h kernel would have, namely sum_x P(x)*s(prefix+x)/s(prefix). A mass different from1 means this raw rule is not a transition probability."
+  }
+}

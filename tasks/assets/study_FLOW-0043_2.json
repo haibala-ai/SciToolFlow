@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "record_id": "solvent02-0",
+      "solvent_id": "solvent02",
+      "x": 1.0,
+      "y": 9.5e-05
+    },
+    {
+      "record_id": "solvent02-1",
+      "solvent_id": "solvent02",
+      "x": 2.0,
+      "y": 9e-05
+    },
+    {
+      "record_id": "solvent02-2",
+      "solvent_id": "solvent02",
+      "x": 4.0,
+      "y": 8e-05
+    },
+    {
+      "record_id": "solvent02-3",
+      "solvent_id": "solvent02",
+      "x": 6.0,
+      "y": 7e-05
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "c g/L;y mol/g;B2 mol*L/g²",
+    "original_observation_claim": false
+  }
+}

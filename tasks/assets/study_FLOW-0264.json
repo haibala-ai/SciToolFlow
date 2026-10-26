@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "coordinate_file": "coordinates_FLOW-0264.pdb",
+      "chain_id": "A",
+      "model_id": 0,
+      "annotated_pairs": [
+        {
+          "pair_id": "A:3|A:40",
+          "left_residue_id": "3",
+          "right_residue_id": "40",
+          "symmetry_left": "1555",
+          "symmetry_right": "1555"
+        },
+        {
+          "pair_id": "A:4|A:32",
+          "left_residue_id": "4",
+          "right_residue_id": "32",
+          "symmetry_left": "1555",
+          "symmetry_right": "1555"
+        },
+        {
+          "pair_id": "A:16|A:26",
+          "left_residue_id": "16",
+          "right_residue_id": "26",
+          "symmetry_left": "1555",
+          "symmetry_right": "1555"
+        }
+      ],
+      "audit_policy": "Audit the deposited SSBOND endpoint pool in chainA/model0: select the SG atom of each distinct annotated cysteine endpoint and measure Euclidean distances in the uploaded coordinates. Endpoints refer to source residue numbers/insertion codes, not atom serials, CA indices or sequence offsets. Symmetry code1555 is the identity; no periodic image or assembly expansion is required for this supplied scope. The declared screening band is1.8<=distance<=2.3angstrom, inclusive. Report every annotated pair and any additional unordered pair within the same endpoint pool falling in that band. Additional-pair IDs use ascending numeric residue order as A:left|A:right. Keep unannotated and annotated relationships distinct; do not infer a bond merely from proximity.",
+      "scientific_scope": "Historical deposited crambin coordinate/annotation consistency audit only. SSBOND annotations and proximity are model evidence, not independent proof of covalent chemistry, in-solution redox state, biological function or causal dynamics. The numeric band is a declared audit rule, not a universal bond law.",
+      "source_provenance": {
+        "entry": "1CRN",
+        "source_url": "https://files.rcsb.org/download/1CRN.pdb",
+        "raw_source_sha256": "42199a30a0701864a2a5cc76cd7f35cc544cd0e65fbcf63e03c166543249b811",
+        "public_coordinate_sha256": "560c912c939dcd42b79f246a3583e8306602921b276c5aa04e11fbadc01f82bb",
+        "projection": "All original atomic coordinates, connectivity and annotation endpoints are unchanged. Only columns74\u201378 of SSBOND records (precomputed bond-length summaries) are blanked to prevent copying the requested geometric results. Original raw snapshot retained separately; no new structure or altered observation is claimed.",
+        "format_documentation": "https://www.wwpdb.org/documentation/file-format-content/format33/sect6.html",
+        "read_scope": "Official SSBOND residue/symmetry/distance fixed-column definitions, alternate-linkage limitation and identity-symmetry convention; original RCSB1CRN deposited file."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

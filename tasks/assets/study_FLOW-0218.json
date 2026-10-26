@@ -1,0 +1,147 @@
+{
+  "data": [
+    {
+      "record_id": "atom00",
+      "source_atom_index_zero_based": 0,
+      "element": "Dy",
+      "raw_projected_collinear_moment_mu_B": 0.007
+    },
+    {
+      "record_id": "atom01",
+      "source_atom_index_zero_based": 1,
+      "element": "Dy",
+      "raw_projected_collinear_moment_mu_B": -0.0
+    },
+    {
+      "record_id": "atom02",
+      "source_atom_index_zero_based": 2,
+      "element": "Dy",
+      "raw_projected_collinear_moment_mu_B": 0.003
+    },
+    {
+      "record_id": "atom03",
+      "source_atom_index_zero_based": 3,
+      "element": "Dy",
+      "raw_projected_collinear_moment_mu_B": -0.0
+    },
+    {
+      "record_id": "atom04",
+      "source_atom_index_zero_based": 4,
+      "element": "Dy",
+      "raw_projected_collinear_moment_mu_B": 0.007
+    },
+    {
+      "record_id": "atom05",
+      "source_atom_index_zero_based": 5,
+      "element": "Co",
+      "raw_projected_collinear_moment_mu_B": -0.733
+    },
+    {
+      "record_id": "atom06",
+      "source_atom_index_zero_based": 6,
+      "element": "Ru",
+      "raw_projected_collinear_moment_mu_B": 0.697
+    },
+    {
+      "record_id": "atom07",
+      "source_atom_index_zero_based": 7,
+      "element": "O",
+      "raw_projected_collinear_moment_mu_B": -0.002
+    },
+    {
+      "record_id": "atom08",
+      "source_atom_index_zero_based": 8,
+      "element": "O",
+      "raw_projected_collinear_moment_mu_B": 0.064
+    },
+    {
+      "record_id": "atom09",
+      "source_atom_index_zero_based": 9,
+      "element": "O",
+      "raw_projected_collinear_moment_mu_B": 0.064
+    },
+    {
+      "record_id": "atom10",
+      "source_atom_index_zero_based": 10,
+      "element": "O",
+      "raw_projected_collinear_moment_mu_B": -0.002
+    },
+    {
+      "record_id": "atom11",
+      "source_atom_index_zero_based": 11,
+      "element": "O",
+      "raw_projected_collinear_moment_mu_B": 0.012
+    },
+    {
+      "record_id": "atom12",
+      "source_atom_index_zero_based": 12,
+      "element": "O",
+      "raw_projected_collinear_moment_mu_B": 0.003
+    },
+    {
+      "record_id": "atom13",
+      "source_atom_index_zero_based": 13,
+      "element": "O",
+      "raw_projected_collinear_moment_mu_B": -0.004
+    },
+    {
+      "record_id": "atom14",
+      "source_atom_index_zero_based": 14,
+      "element": "O",
+      "raw_projected_collinear_moment_mu_B": -0.062
+    },
+    {
+      "record_id": "atom15",
+      "source_atom_index_zero_based": 15,
+      "element": "O",
+      "raw_projected_collinear_moment_mu_B": -0.062
+    },
+    {
+      "record_id": "atom16",
+      "source_atom_index_zero_based": 16,
+      "element": "O",
+      "raw_projected_collinear_moment_mu_B": -0.004
+    },
+    {
+      "record_id": "atom17",
+      "source_atom_index_zero_based": 17,
+      "element": "O",
+      "raw_projected_collinear_moment_mu_B": 0.003
+    },
+    {
+      "record_id": "atom18",
+      "source_atom_index_zero_based": 18,
+      "element": "O",
+      "raw_projected_collinear_moment_mu_B": 0.012
+    },
+    {
+      "record_id": "study",
+      "source_task_id": "aaahgwzf",
+      "source_calculation_sha256": "fec2de1f7d8da8432cdccffdcdf5bf43fa2001ea63f913f1747d396dac4abc0c",
+      "same_task_structure_file": "same_task_magnetic_geometry.cif",
+      "same_task_structure_sha256": "b095ee3647406cde6280c62326981477ecd211e20d2f01ec53da6b7fddbc7305",
+      "method": "r2SCAN Static,source task entry",
+      "dominant_site_absolute_moment_min_mu_B": 0.5,
+      "ligand_element": "O",
+      "geometric_cutoff_angstrom": 2.4,
+      "alignment_tie_tolerance": 1e-08,
+      "image_and_index_convention": "Source atom indices are zero-based. Site order in the P1 CIF export is the original task order;terminal image shifts are integer triples in the exported cell-row basis.",
+      "follow_up_policy": "Prioritize the most nearly linear ligand bridge by the normalized dot product of successive directed metal-to-ligand and ligand-to-metal displacements. This is geometry-only triage,not a claim about exchange sign,strength,mechanism or the ground-state magnetic order."
+    }
+  ],
+  "provenance": {
+    "kind": "authentic same-task DFT geometry/moment projection with controlled geometric follow-up policy",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "Projected collinear moments Bohr magneton;CIF lengths angstrom;directed bridge alignment dimensionless;periodic images integercelltranslations",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "Materials Project",
+      "url": "https://api.materialsproject.org/materials/tasks/?task_ids=aaahgwzf&_all_fields=true&_limit=1",
+      "accessed_at": "2026-10-20T17:27:20.157931+00:00",
+      "raw_sha256": "fec2de1f7d8da8432cdccffdcdf5bf43fa2001ea63f913f1747d396dac4abc0c",
+      "record_count": 1,
+      "credentials_included": false
+    },
+    "source_order_check": "All19source indices preserved. The local task output structure equals its top-level structure;all19site magmom values equal corresponding raw outcar total magnetization rows. P1 export preserves element/fractional-position mapping uniquely;no symmetry reordering."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "body_radius_nm_by_pore": {
+    "A": 20.0,
+    "B": 30.0,
+    "C": 40.0,
+    "D": 50.0
+  },
+  "undirected_throats_endpoint_endpoint_radius_nm": [
+    [
+      "reservoir",
+      "A",
+      10.0
+    ],
+    [
+      "A",
+      "B",
+      2.0
+    ],
+    [
+      "reservoir",
+      "C",
+      5.0
+    ],
+    [
+      "C",
+      "B",
+      4.0
+    ],
+    [
+      "B",
+      "D",
+      3.0
+    ]
+  ],
+  "surface_tension_newton_per_meter": 0.072,
+  "nonwetting_contact_angle_degrees": 120.0,
+  "pressure_probes_mpa": [
+    15.0,
+    20.0,
+    25.0
+  ],
+  "model": "An initially empty connected network is invaded quasistatically from reservoir. Each cylindrical throat opens only at pressure P>=-2*gamma*cos(theta)/r. A pore body becomes accessible only when some complete reservoir path has ALL its throat thresholds satisfied. All supplied body radii exceed adjacent throat radii, so no additional body-entry barrier is imposed. Once accessible, its entire spherical body volume4*pi*r_body^3/3 is counted; ignore throat volumes, trapping, snap-off, compressibility and hysteresis.",
+  "protocol": "Find the first access pressure for every body using the complete network, including alternate paths. Intruded fraction is accessible body volume divided by the volume of all four bodies, not a count of reached pores.",
+  "scope": "Controlled capillary-access model. The inverse of a first-access pressure reflects a bottleneck of a reservoir path, and is not generally the radius of the newly accessed pore body."
+}

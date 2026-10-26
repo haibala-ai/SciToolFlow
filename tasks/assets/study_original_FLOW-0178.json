@@ -1,0 +1,54 @@
+{
+  "candidate_order": [
+    "cross_loss",
+    "coupled_loss",
+    "one_lossless_axis"
+  ],
+  "candidates": [
+    {
+      "id": "cross_loss",
+      "loss_tensor": [
+        [
+          0.04,
+          0.12
+        ],
+        [
+          0.12,
+          0.09
+        ]
+      ]
+    },
+    {
+      "id": "coupled_loss",
+      "loss_tensor": [
+        [
+          0.04,
+          0.03
+        ],
+        [
+          0.03,
+          0.09
+        ]
+      ]
+    },
+    {
+      "id": "one_lossless_axis",
+      "loss_tensor": [
+        [
+          0.1,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    }
+  ],
+  "convention": "At one common positive angular frequency, use exp(-i*omega*t). The supplied tensors are the real symmetric imaginary parts of reciprocal relative dielectric tensors in one common orthonormal2Dframe. Average dissipated power is(omega*epsilon0/2)*E^T*loss_tensor*E for a real field amplitude E. The common positive prefactor need not be evaluated.",
+  "eligibility": "A candidate satisfies the declared single-frequency passivity criterion exactly when its quadratic loss is nonnegative for EVERY real E. Eigenvalues of magnitude<=1e-10count as zero. A lossless direction is allowed. Positive tensor trace or positive diagonal entries alone are insufficient. This criterion at one frequency is not a proof of full-frequency causality or material stability.",
+  "selection": "Among eligible candidates choose the largest maximum dissipated-power factor at||E||2=1. Equal factors within1e-10tie; choose lexical candidate ID. Report the factor and E2/E1for its maximizing direction in ORIGINAL coordinates; simultaneous field sign reversal has no effect.",
+  "provenance": {
+    "data_origin": "Explicit benchmark-constructed model data. Energies and response tensors are conditional illustrative inputs, not claimed first-principles calculations or experimental properties of a named material."
+  }
+}

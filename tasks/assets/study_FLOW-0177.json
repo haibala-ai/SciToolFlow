@@ -1,0 +1,95 @@
+{
+  "data": [
+    {
+      "record_id": "phase",
+      "material_id": "mp-aaaaadeb",
+      "stiffness_ieee_gpa": [
+        [
+          193.0,
+          109.0,
+          88.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          109.0,
+          193.0,
+          88.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          88.0,
+          88.0,
+          198.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0,
+          0.0,
+          38.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0,
+          0.0,
+          -0.0,
+          38.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          0.0,
+          0.0,
+          0.0,
+          42.0
+        ]
+      ]
+    },
+    {
+      "record_id": "design",
+      "temperature_change_kelvin": -100.0,
+      "thermal_expansion_per_kelvin": [
+        5e-06,
+        5e-06,
+        8e-06,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "clamped_engineering_strain_indices": [
+        0,
+        1
+      ],
+      "zero_traction_stress_indices": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "CGPa,thermalalphaK^-1,strainunitless,engineeringVoigtorderxx,yy,zz,yz,xz,xy",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "Materials Project",
+      "url": "https://api.materialsproject.org/materials/elasticity/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_limit=20&_all_fields=true",
+      "accessed_at": "2026-10-20T08:07:40.768678+00:00",
+      "raw_sha256": "a7d7aff7db31c12a428e740d3c844cd9e7550c79a0064a489bf3bfe5595e46d8",
+      "record_count": 10,
+      "credentials_included": false,
+      "claims": "Authentic fresh API response; independent of prior benchmark answers."
+    }
+  }
+}

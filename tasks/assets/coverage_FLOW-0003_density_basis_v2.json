@@ -1,0 +1,18 @@
+{
+  "requested_material_ids_in_order": [
+    "mp-149",
+    "mp-204"
+  ],
+  "source_policy": "Use current published nondeprecated Materials Project summary records. Resolve each requested legacy alias to its returned material_id;compare fields only within the same returned identity and last_updated value. This task is conditioned on the published calculation record,not experimental bulk density. Preserve the input order in numeric answers;return the resolved canonical ID for winners.",
+  "unit_identity": "1u/angstrom^3 =1.66053906660g/cm^3. The provider field density_atomic is a packing volume in angstrom^3/atom,V/Nsites;its reciprocal is atomic number density Nsites/V. It is not a volume fraction or mass density. A mass-density ranking need not be a number-density ranking.",
+  "version_fingerprints": {
+    "mp-149": {
+      "resolved_material_id": "mp-aaaaaaft",
+      "last_updated": "2023-10-07T21:10:10.420000"
+    },
+    "mp-204": {
+      "resolved_material_id": "mp-aaaaaahw",
+      "last_updated": "2023-10-08T11:41:08.507000"
+    }
+  }
+}

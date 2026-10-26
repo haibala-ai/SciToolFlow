@@ -1,5 +1,5 @@
 """Adapt the live NovoPro forms; preserve raw scientific results and provenance."""
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import json
 from pathlib import Path
 import time
@@ -93,43 +93,24 @@ def nuclear_localization(sequence_threshold: str):
 
 
 def isoelectric_point(sequence: str):
-    """Current NovoPro ProtPIC auto-selects model; reports both requested protein/peptide type and actual mode.
+    """NovoPro ProtPIC pI with automatic upstream model choice, canonical sequence only.
 
-    The upstream service expects "<sequence>.<protein|peptide>".  A bare sequence is
-    accepted as a protein instead of failing with an unpacking error, so the contract is
-    usable without knowing the private suffix convention.
+    There is no protein/peptide model selector in this adapter. Suffixes,
+    modifications and unsupported alphabets fail rather than pretending to
+    enforce a model. Returns the unchanged provider result and provenance.
     """
-    text = str(sequence).strip()
-    if "." in text:
-        candidate, _, requested_type = text.rpartition(".")
-        if requested_type not in ["protein", "peptide"]:
-            raise ValueError("The suffix after the last '.' must be 'protein' or 'peptide', "
-                             "or pass a bare sequence (treated as protein)")
-        sequence = candidate
-    else:
-        sequence, requested_type = text, "protein"
-    if not sequence.strip():
-        raise ValueError("Require a protein or peptide sequence")
+    sequence = _peptide(sequence)
     item, path = _async("ipc", sequence)
     if "pI" not in item:
         raise RuntimeError("NovoPro returned no isoelectric point")
     return json.dumps({"provider": "NovoPro current ProtPIC (upstream model auto-selection)",
-                       "requested_type": requested_type, "requested_type_enforced": False,
+                       "model_selection": "upstream automatic; no local type override",
                        "result": item, "artifact": path})
 
 
-def peptide_properties(sq: str, aaCode: str = "0", nTerm: str = "", cTerm: str = "", disulphideBonds: str = ""):
-    """Current NovoPro linear peptide descriptors; this adapter supports canonical unmodified single-letter sequences."""
-    if str(aaCode) != "0" or nTerm or cTerm or disulphideBonds:
-        raise ValueError("Current adapter supports only unmodified linear peptides with aaCode=0")
-    sequence = _peptide(sq)
-    result = _request({"sr": "ppc", "seq": sequence, "ct": "linear", "p": "::"})
-    if not isinstance(result, dict) or result.get("status") != 1 or not result.get("properties"):
-        raise RuntimeError("Unexpected current NovoPro peptide descriptor schema")
-    path = _artifact("peptide_properties", result)
-    return json.dumps({"provider": "NovoPro current PeptideCalc", "sequence": sequence,
-                       "properties": result["properties"], "aggregation": result.get("aggregation"),
-                       "artifact": str(path)})
+def peptide_properties(sequence: str):
+    """Retired broad descriptor bundle; use molecular primitives or PeptideChargeProfile."""
+    raise NotImplementedError("Broad peptide descriptor report retired; construct explicit peptide SMILES then request one declared property, or use PeptideChargeProfile")
 
 
 def _repeats(sequence_length, kind):
@@ -189,6 +170,8 @@ def circular_dna_alignment(sequence: str):
         raise ValueError("Require 2-100 unambiguous DNA sequences separated by '.', '|', ',' or whitespace")
     if max(len(part) for part in sequences) > 5000:
         raise ValueError("Circular alignment supports at most 5000 bases per sequence")
+    if sum(len(sequences[0]) * len(part) for part in sequences[1:]) * 8 > 100000000:
+        raise ValueError("Circular alignment candidate work exceeds 100 million alignment cells")
     aligner = PairwiseAligner(mode="global", match_score=2, mismatch_score=-1,
                               open_gap_score=-2, extend_gap_score=-0.5)
 
@@ -224,7 +207,8 @@ def circular_dna_alignment(sequence: str):
                       "identity_percent": 100 * identical / len(columns) if columns else 0.0,
                       "alignment": str(alignment)})
     return json.dumps({"provider": "local rotation-aware circular DNA alignment",
-                       "algorithm": "k-mer seeded best rotation + Bio.Align.PairwiseAligner global",
+                       "algorithm": "k-mer seeded candidate rotation search + Bio.Align.PairwiseAligner global",
+                       "rotation_search": "up to eight highest-vote offsets; heuristic, not exhaustive or guaranteed globally optimal",
                        "scoring": {"match": 2, "mismatch": -1, "gap_open": -2, "gap_extend": -0.5},
                        "seed_length": min(10, max(1, min(len(sequences[0]), min(len(part) for part in sequences)) // 2)),
                        "reference_sequence": sequences[0], "pairwise_to_reference": pairs,

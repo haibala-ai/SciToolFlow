@@ -1,0 +1,109 @@
+{
+  "data_origin": "Controlled comparative-ecology and prospective digitization study using virtual taxa and explicitly supplied working covariance models. No empirical species-level adaptation or new sampling result is claimed.",
+  "tree_newick": "(((A:0.3,B:0.3):0.4,(C:0.4,D:0.4):0.3):0.5,((E:0.2,F:0.2):0.5,(G:0.3,H:0.3):0.4):0.5,(I:0.6,J:0.6):0.6);",
+  "observed_records": [
+    {
+      "taxon_id": "D",
+      "environment": 1.0,
+      "size_covariate": 2.0,
+      "trait": 4.8,
+      "measurement_variance": 0.02
+    },
+    {
+      "taxon_id": "A",
+      "environment": 0.2,
+      "size_covariate": 1.0,
+      "trait": 4.3,
+      "measurement_variance": 0.02
+    },
+    {
+      "taxon_id": "F",
+      "environment": 0.4,
+      "size_covariate": 1.4,
+      "trait": 4.1,
+      "measurement_variance": 0.02
+    },
+    {
+      "taxon_id": "B",
+      "environment": 0.3,
+      "size_covariate": 1.5,
+      "trait": 4.2,
+      "measurement_variance": 0.03
+    },
+    {
+      "taxon_id": "E",
+      "environment": 0.1,
+      "size_covariate": 0.6,
+      "trait": 3.2,
+      "measurement_variance": 0.05
+    },
+    {
+      "taxon_id": "C",
+      "environment": 0.8,
+      "size_covariate": 1.2,
+      "trait": 4.0,
+      "measurement_variance": 0.04
+    }
+  ],
+  "prospective_records": [
+    {
+      "taxon_id": "G",
+      "environment": 1.2,
+      "size_covariate": 1.2,
+      "measurement_variance": 0.03,
+      "cost": 2
+    },
+    {
+      "taxon_id": "H",
+      "environment": 0.15,
+      "size_covariate": 2.4,
+      "measurement_variance": 0.02,
+      "cost": 1
+    },
+    {
+      "taxon_id": "I",
+      "environment": 1.0,
+      "size_covariate": 0.5,
+      "measurement_variance": 0.04,
+      "cost": 3
+    },
+    {
+      "taxon_id": "J",
+      "environment": 2.0,
+      "size_covariate": 0.7,
+      "measurement_variance": 0.01,
+      "cost": 5
+    }
+  ],
+  "mean_model": "For each observed or prospective taxon, the conditional mean is beta0+beta_environment*environment+beta_size*size_covariate. All three coefficients are unknown and must be estimated jointly, including the intercept. Preserve exact taxon IDs; source record order differs from tree tip order.",
+  "covariance_models": [
+    {
+      "id": "independent",
+      "lambda": 0.0,
+      "sigma_squared": 0.5
+    },
+    {
+      "id": "mixed",
+      "lambda": 0.6,
+      "sigma_squared": 0.5
+    },
+    {
+      "id": "brownian",
+      "lambda": 1.0,
+      "sigma_squared": 0.5
+    }
+  ],
+  "covariance_definition": "Root state is fixed and root stem is absent. Let h_i be root-to-tip length and d_ij the complete tree path length, in the supplied common time unit. Brownian K_ij=(h_i+h_j-d_ij)/2, including K_ii=h_i. For each candidate covariance, C_ij=sigma_squared*[lambda*K_ij+(1-lambda)*I(i=j)*K_ii]+I(i=j)*measurement_variance_i. Residual mean is zero. Parameters lambda and sigma_squared are stipulated independent working-model calibrations and may NOT be refitted; measurement variances are known independent errors. Use the same definition for the augmented matrix with any prospective taxon, including its cross-covariances with observed taxa.",
+  "model_comparison": "Fit all three mean coefficients by generalized least squares for each covariance model. Gaussian maximized log likelihood uses the FULL log determinant and residual quadratic with the known covariance; AIC=-2*logL+2*3 because exactly three parameters are fitted. Retain every model with AIC at most min(AIC)+4.0 inclusive. The retention policy is conditional model screening, not validation of evolutionary truth.",
+  "uncertainty_summary": "For each retained covariance model compute the slope estimate plus/minus 1.959963984540054 times sqrt of the environment/environment entry of (X^T*C^-1*X)^-1. Report the smallest lower endpoint and largest upper endpoint as an envelope. It is a collection of model-conditional Gaussian intervals, not a post-selection simultaneous confidence interval, a model average or a causal effect.",
+  "planning_policy": {
+    "maximum_cost": 3,
+    "definition": "A proposed observation reveals the trait only in the future; its environmental/size coordinates and measurement variance are known now. Freeze the currently retained covariance family. Recompute the coefficient covariance from the augmented design and full correlated covariance, without inventing future trait values or reselecting models. For each affordable taxon, its gain is the MINIMUM over retained covariance models of 1-new_environment_slope_variance/current_environment_slope_variance. Select the largest gain; ties within 1e-10 use lower cost then lexical taxon ID. A taxon sharing ancestry with the observations is not an independent residual observation."
+  },
+  "reporting": "Return retained_covariance_ids; environment_slope_interval_envelope; environment_association_is_positive_across_all_retained_intervals (true only if EVERY lower endpoint is strictly positive); selected_taxon_id; worst_fractional_variance_reduction_by_affordable_taxon. Absolute 1e-7 plus relative 1e-7 numeric accuracy; ID arrays unordered. No prospective trait value, intervention claim, or biological adaptation mechanism is identified.",
+  "research_motivation": {
+    "url": "https://www.journals.uchicago.edu/doi/10.1086/284325",
+    "title": "Phylogenies and the Comparative Method",
+    "scope": "Shared evolutionary history motivates correlated comparative inference. The data, finite covariance family and robust planning policy here are controlled methodological inputs, not the paper experimental results."
+  }
+}

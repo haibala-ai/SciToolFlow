@@ -1,0 +1,19 @@
+REMARK   Controlled frozen small-molecule conformer K3
+HETATM    1   O1 MOL A   1      -2.521   0.604  -0.670  1.00  0.00           O  
+HETATM    2   C2 MOL A   1      -2.040  -0.394   0.218  1.00  0.00           C  
+HETATM    3   C3 MOL A   1      -0.645  -0.046   0.725  1.00  0.00           C  
+HETATM    4   C4 MOL A   1       0.407  -0.084  -0.382  1.00  0.00           C  
+HETATM    5   C5 MOL A   1       1.799   0.215   0.157  1.00  0.00           C  
+HETATM    6   O6 MOL A   1       2.726   0.148  -0.918  1.00  0.00           O  
+HETATM    7   H7 MOL A   1      -2.019   0.529  -1.500  1.00  0.00           H  
+HETATM    8   H8 MOL A   1      -2.056  -1.363  -0.292  1.00  0.00           H  
+HETATM    9   H9 MOL A   1      -2.736  -0.447   1.061  1.00  0.00           H  
+HETATM   10  H10 MOL A   1      -0.369  -0.754   1.515  1.00  0.00           H  
+HETATM   11  H11 MOL A   1      -0.660   0.957   1.167  1.00  0.00           H  
+HETATM   12  H12 MOL A   1       0.410  -1.067  -0.869  1.00  0.00           H  
+HETATM   13  H13 MOL A   1       0.168   0.640  -1.170  1.00  0.00           H  
+HETATM   14  H14 MOL A   1       2.092  -0.517   0.916  1.00  0.00           H  
+HETATM   15  H15 MOL A   1       1.842   1.218   0.593  1.00  0.00           H  
+HETATM   16  H16 MOL A   1       3.602   0.360  -0.553  1.00  0.00           H  
+TER
+END

@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "record_id": "layered_cell",
+      "source_material_id": "mp-aaaaaaan",
+      "source_formula": "Fe",
+      "structure_file": "slab_periodic_structure.cif",
+      "surface_miller_index": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "record_id": "bulk_reference",
+      "source_material_id": "mp-aaaaaaan",
+      "structure_file": "slab_bulk_reference.cif"
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published computational slab and bulk structure projections",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "CIF lengths angstrom;atomic-plane gaps refer to atom CENTER projections,not radii-adjusted free vacuum",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "Materials Project",
+      "url": "https://api.materialsproject.org/materials/surface_properties/?material_ids=mp-13%2Cmp-149%2Cmp-66&_limit=10&_all_fields=true",
+      "accessed_at": "2026-10-20T09:33:31.233942+00:00",
+      "raw_sha256": "332422f65efe8957a7f84d90adb6ca63a8afbd163d98423981e363e53936a537",
+      "record_count": 3,
+      "credentials_included": false
+    },
+    "projection": {
+      "record_material_id": "mp-aaaaaaan",
+      "surface_record_index": 0,
+      "keys": "surfaces[0].structure and top-level structure; allenergetic/shape target summaries excluded"
+    }
+  }
+}

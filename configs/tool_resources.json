@@ -1,6 +1,6 @@
 {
-  "source": "tools/catalog.json execution.requires",
-  "scope": "Declared runtime requirements, not an exhaustive license/OS dependency manifest; model weights, external program data and online reachability still need deployment checks.",
+  "source": "tools/catalog/catalog.json execution.requires",
+  "scope": "Declared runtime requirements, not an exhaustive license/OS dependency manifest; online reachability, checkpoint contents and external programs still require deployment checks.",
   "requirements": {
     "BRAVE_SEARCH_API_KEY": {
       "tool_count": 1,
@@ -15,12 +15,9 @@
       ]
     },
     "CHROMA_KEY": {
-      "tool_count": 4,
+      "tool_count": 1,
       "tools": [
-        "DesignProteinAlpha",
-        "DesignProteinAlphaBeta",
-        "DesignProteinBeta",
-        "DesignProteinFromLength"
+        "DesignProteinChroma"
       ]
     },
     "DEEPTMHMM_MODEL_PATH": {
@@ -30,40 +27,30 @@
       ]
     },
     "ESMFOLD_MODEL_PATH": {
-      "tool_count": 2,
+      "tool_count": 1,
       "tools": [
-        "ComputeResidueAccuracy",
         "SequenceToPdb"
       ]
     },
     "FORCEGPT_MODEL_PATH": {
-      "tool_count": 4,
+      "tool_count": 1,
       "tools": [
-        "CalculateEnergyFromSequence",
-        "CalculateForceEnergyFromSequence",
-        "CalculateForceFromSequence",
-        "GenerateSequenceFromEnergy"
+        "PredictNormalizedProteinMechanics"
       ]
     },
     "MP_KEY": {
-      "tool_count": 167,
+      "tool_count": 126,
       "tools": [
         "GetAdjPairsByBatteryId",
         "GetAlloyPairsByMaterialId",
-        "GetAtomicPositionsMaterialId",
         "GetAuthorsByMaterialId",
         "GetAverageOxidationStatesByMaterialId",
         "GetAverageVoltageByBatteryId",
-        "GetBandGapByFormula",
-        "GetBandGapByMaterialId",
         "GetBatteryFormulaByBatteryId",
-        "GetBondInfoByMaterialId",
         "GetBondLengthStatsByMaterialId",
         "GetBondTypesByMaterialId",
         "GetCapacityGravByBatteryId",
         "GetCapacityVolByBatteryId",
-        "GetCbmByFormula",
-        "GetCbmByMaterialId",
         "GetChargeByMoleculeId",
         "GetChemicalSystemByMaterialId",
         "GetChemsysByBatteryId",
@@ -75,72 +62,61 @@
         "GetCoordinationEnvsAnonymousByMaterialId",
         "GetCoordinationEnvsByMaterialId",
         "GetCreatedTimeByMaterialId",
-        "GetCrystalStructureByMaterialId",
-        "GetCrystalSystemByMaterialId",
-        "GetDensityAtomicByFormula",
-        "GetDensityAtomicByMaterialId",
-        "GetDensityByFormula",
-        "GetDensityByMaterialId",
         "GetDeprecatedByMoleculeId",
-        "GetDeprecatedReasonsByBatteryId",
         "GetDeprecationReasonsByMoleculeId",
-        "GetDescriptionByMaterialId",
-        "GetDielectricByMaterialId",
-        "GetDocByMaterialId",
-        "GetEElectronicByFormula",
-        "GetEElectronicByMaterialId",
-        "GetEIonicByFormula",
-        "GetEIonicByMaterialId",
-        "GetETotalByFormula",
-        "GetETotalByMaterialId",
-        "GetEfermiByFormula",
-        "GetEfermiByMaterialId",
         "GetElectrodeObjectByBatteryId",
-        "GetElectronicEnergyByMoelculeId",
         "GetElementsByBatteryId",
         "GetElementsByMaterialId",
         "GetElementsByMoleculeId",
         "GetEnergyAboveHullByMaterialId",
         "GetEnergyGravByBatteryId",
-        "GetEnergyPerAtomByFormula",
-        "GetEnergyPerAtomByMaterialId",
         "GetEnergyVolumeByBatteryId",
         "GetEntriesCompositionSummaryByBatteryId",
         "GetEosInfoByMaterialId",
         "GetEquilibriumReactionEnergyPerAtom",
-        "GetFormationEnergyPerAtomByFormula",
-        "GetFormationEnergyPerAtomByMaterialId",
         "GetFormulaAlphabeticalByMoleculeId",
         "GetFormulaAnonymousByBatteryId",
-        "GetFormulaAnonymousByFormula",
-        "GetFormulaAnonymousByMaterialId",
         "GetFormulaAnonymousByMoleculeId",
-        "GetFormulaByMaterialId",
         "GetFormulaChargeByBatteryId",
         "GetFormulaDischargeByBatteryId",
-        "GetFormulaPrettyByMaterialId",
         "GetFormulaPrettyByMoleculeId",
         "GetFracaChargeByBatteryId",
         "GetFrameworkByBatteryId",
         "GetFrameworkFormulaByBatteryId",
         "GetFreeEnergyByMoleculeId",
-        "GetFrequenciesByMoleculeId",
         "GetHostStructureByBatteryId",
         "GetIdChargeByBatteryId",
         "GetIdDischargeByBatteryId",
         "GetInchiByMoleculeId",
         "GetInchikeyByMoleculeId",
-        "GetInitialStructuresByFormula",
-        "GetInitialStructuresByMaterialId",
         "GetLastUpdatedTimeByMoleculeId",
         "GetLastUpdatedTimeByTaskId",
-        "GetLevelOfTheoryByMoleculeId",
-        "GetLotSolventByMoleculeId",
-        "GetMagnetismInfoByMaterialId",
+        "GetMaterialAnonymousFormula",
+        "GetMaterialBandGap",
+        "GetMaterialCBM",
+        "GetMaterialDensity",
+        "GetMaterialDeprecationStatus",
+        "GetMaterialDescription",
+        "GetMaterialElectronicPermittivity",
+        "GetMaterialEnergyPerAtom",
+        "GetMaterialFermiEnergy",
+        "GetMaterialFormationEnergyPerAtom",
+        "GetMaterialFormula",
         "GetMaterialIdByBatteryId",
-        "GetMaterialIdByFormula",
+        "GetMaterialInitialStructures",
+        "GetMaterialIonicPermittivity",
+        "GetMaterialMagneticStatus",
+        "GetMaterialMetallicStatus",
+        "GetMaterialPackingVolume",
+        "GetMaterialPermittivity",
+        "GetMaterialStabilityStatus",
+        "GetMaterialVBM",
+        "GetMaterialVolume",
+        "GetMaterialXASSpectrum",
         "GetMaxDeltaVolumeBatteryId",
         "GetMaxVoltageStepByBatteryId",
+        "GetMolecularElectronicEnergy",
+        "GetMolecularThermalEnthalpy",
         "GetMoleculeIdByFormula",
         "GetMoleculeLevelsOfTheoryByMoleculeId",
         "GetNatomsByMoleculeId",
@@ -153,23 +129,14 @@
         "GetOpenShellByMoleculeId",
         "GetOrbitalsLevelsOfTheoryByMoleculeId",
         "GetOrbitalsPropertyIdsByMoleculeId",
-        "GetOriginsByMaterialId",
         "GetOriginsByMoleculeId",
-        "GetOxidationStateMethodByMaterialId",
-        "GetPairIdByMaterialId",
-        "GetPhononInfoByMaterialId",
-        "GetPhysicalPropertiesByMaterialId",
         "GetPossibleSpeciesByMaterialId",
         "GetPossibleValencesByMaterialId",
         "GetPropertyIdByMoleculeId",
-        "GetPropertyNameByMaterialId",
         "GetPropertyNameByMoleculeId",
         "GetReferencesByMaterialId",
         "GetRemarksByMaterialId",
-        "GetRobocrystallographerData",
         "GetSimilarMoleculesByMoleculeId",
-        "GetSolventByMoleculeId",
-        "GetSpaceGroupSymbolByMaterialId",
         "GetSpeciesHashByMoleculeId",
         "GetSpinMultiplicityByMoleculeId",
         "GetStabilityChargeByBatteryId",
@@ -181,8 +148,7 @@
         "GetSymmetryByMoleculeId",
         "GetSynthesisDocByKeywords",
         "GetThermoLevelsOfTheoryByMoleculeId",
-        "GetThermoPropertyIdsByMoelculeId",
-        "GetTotalEnthalpyByMoleculeId",
+        "GetThermoPropertyIdsByMoleculeId",
         "GetTotalEntropyByMoleculeId",
         "GetTotalMagnetizationByMaterialId",
         "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId",
@@ -193,28 +159,14 @@
         "GetUniqueLotSolventsByMoleculeId",
         "GetUniqueSolventsByMoleculeId",
         "GetUniqueTaskTypesByMoleculeId",
-        "GetVbmByFormula",
-        "GetVbmByMaterialId",
         "GetVibrationLevelsOfTheoryByMoleculeId",
         "GetVibrationPropertyIdsByMoleculeId",
-        "GetVolumeByFormula",
-        "GetVolumeByMaterialId",
         "GetWarningsByBatteryId",
         "GetWarningsByMoleculeId",
         "GetWeightedSurfaceEnergyByMaterialId",
         "GetWorkingIonByBatteryId",
         "GetZeroPointEnergyByMoleculeId",
-        "IsDeprecated",
-        "IsMagneticByFormula",
-        "IsMagneticByMaterialId",
-        "IsMetalByFormula",
-        "IsMetalByMaterialId",
-        "IsStableByFormula",
-        "IsStableByMaterialId",
-        "SearchByBandGap",
-        "SearchMaterialsByChemsys",
-        "SearchMaterialsContainingElements",
-        "SearchXasByFormula"
+        "SearchMaterials"
       ]
     },
     "OMEGAFOLD_MODEL_PATH": {
@@ -224,15 +176,13 @@
       ]
     },
     "QizhiPei_MODEL_PATH": {
-      "tool_count": 8,
+      "tool_count": 6,
       "tools": [
         "GenerateMoleculeDescription",
-        "PredictDrugTargetInteraction",
-        "PredictHumanProteinInteraction",
-        "PredictProteinBinaryLocalization",
+        "PredictHumanDrugTargetInteraction",
+        "PredictHumanProteinPairInteraction",
         "PredictProteinSolubility",
-        "PredictYeastProteinInteraction",
-        "ProteinSolubilityPredictor",
+        "PredictYeastProteinPairInteraction",
         "TexToMoleculeSELFIES"
       ]
     },
@@ -245,8 +195,26 @@
     "RXN_SANDBOX_MODEL_PATH": {
       "tool_count": 2,
       "tools": [
-        "RXNPredict",
+        "PredictReactionProducts",
         "RXNRetrosynthetic"
+      ]
+    },
+    "SCITOOL_EMBED_PATH": {
+      "tool_count": 1,
+      "tools": [
+        "PaperQA"
+      ]
+    },
+    "SCITOOL_LLM_PYTHON": {
+      "tool_count": 1,
+      "tools": [
+        "PaperQA"
+      ]
+    },
+    "SCITOOL_MODEL_PATH": {
+      "tool_count": 1,
+      "tools": [
+        "PaperQA"
       ]
     },
     "SOLVENT_THERMAL_MODELS": {

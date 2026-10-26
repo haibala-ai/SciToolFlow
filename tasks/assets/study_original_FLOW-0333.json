@@ -1,0 +1,19 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "karplus_coefficients_hz": {
+    "A": 10.0,
+    "B": -1.0,
+    "C": 2.0
+  },
+  "observed_scalar_coupling_hz": 7.102196445215673,
+  "torsion_domain_degrees": [
+    -180.0,
+    180.0
+  ],
+  "independent_sign_observation": "sin(theta)>0, exact in this controlled scenario",
+  "model": "Scalar coupling is exactly J=A*cos(theta)^2+B*cos(theta)+C. Enumerate every solution in the closed torsion domain, using degrees in the report and radians for trigonometric evaluation. The independent sign observation filters those solutions; it is not an observed exact torsion.",
+  "scope": "Stipulated conformational inverse problem, not a fitted Karplus calibration, an experimental absolute stereochemical determination or a dynamic exchange measurement."
+}

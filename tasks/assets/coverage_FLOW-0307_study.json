@@ -1,0 +1,7 @@
+{
+  "sequence": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG",
+  "annotation_key": "UBIQUITIN_1:PS00299",
+  "coordinate_uncertainty": "The provider returns raw start/end pairs without a coordinate-origin field. For this audit admit exactly two interpretations:one-based inclusive endpoints,or zero-based inclusive endpoints converted by adding1to both. Do not choose one by guessing.",
+  "target": "For the selected actual motif match,report the inclusive bounding interval of residues certainly covered under both interpretations and the interval possibly covered under at least one,all in one-based source coordinates. Return both cardinalities and whether a unique residue-support set is identified.",
+  "scope": "This explicitly bounded coordinate-origin audit does not assert which convention the provider actually uses. A motif annotation is not an experimentally proven function or full-protein identity."
+}

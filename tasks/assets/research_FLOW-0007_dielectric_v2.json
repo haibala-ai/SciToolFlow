@@ -1,0 +1,221 @@
+{
+  "data_origin": "Controlled dielectric-film inference inputs with a genuine externally frozen crystallographic orientation-reference file. All film tensors and capacitor observations are hypothetical; none are claims about the reference material.",
+  "epsilon0_farad_per_meter": 8.8541878128e-12,
+  "training": [
+    {
+      "id": "T1",
+      "nominal_thickness_nm": 40,
+      "area_square_micrometers": 1.0,
+      "capacitance_femtofarads": 2.1081399554285714,
+      "electrical_thickness_absolute_error_nm": 0.04,
+      "miller_plane": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "T2",
+      "nominal_thickness_nm": 80,
+      "area_square_micrometers": 1.3,
+      "capacitance_femtofarads": 1.2846477853392857,
+      "electrical_thickness_absolute_error_nm": 0.04,
+      "miller_plane": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "T3",
+      "nominal_thickness_nm": 120,
+      "area_square_micrometers": 0.8,
+      "capacitance_femtofarads": 0.6439409318399998,
+      "electrical_thickness_absolute_error_nm": 0.04,
+      "miller_plane": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "T4",
+      "nominal_thickness_nm": 160,
+      "area_square_micrometers": 1.1,
+      "capacitance_femtofarads": 0.568902254327103,
+      "electrical_thickness_absolute_error_nm": 0.04,
+      "miller_plane": [
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "constitutive_candidates": [
+    {
+      "id": "R1",
+      "relative_permittivity_tensor": [
+        [
+          12,
+          3,
+          0
+        ],
+        [
+          3,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "R2",
+      "relative_permittivity_tensor": [
+        [
+          12,
+          -3,
+          0
+        ],
+        [
+          -3,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "R3",
+      "relative_permittivity_tensor": [
+        [
+          12,
+          0,
+          0
+        ],
+        [
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          14
+        ]
+      ]
+    },
+    {
+      "id": "R4",
+      "relative_permittivity_tensor": [
+        [
+          12,
+          11,
+          0
+        ],
+        [
+          11,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "id": "P1",
+      "nominal_thickness_nm": 60,
+      "cost": 2,
+      "electrical_thickness_absolute_error_nm": 0.08,
+      "miller_plane": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "P2",
+      "nominal_thickness_nm": 160,
+      "cost": 5,
+      "electrical_thickness_absolute_error_nm": 0.01,
+      "miller_plane": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "P3",
+      "nominal_thickness_nm": 160,
+      "cost": 1,
+      "electrical_thickness_absolute_error_nm": 0.01,
+      "miller_plane": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "P4",
+      "nominal_thickness_nm": 80,
+      "cost": 3,
+      "electrical_thickness_absolute_error_nm": 1.0,
+      "miller_plane": [
+        1,
+        -1,
+        0
+      ]
+    }
+  ],
+  "measurement_model": "For each Miller-plane normal, derive its normalized orthonormal-frame coordinates n from the CIF and coordinate_convention. Under a candidate tensor, eps_n=n^T eps n. Actual thickness is s*d_nm, with the SAME s across all specimens. The parallel-plate law is epsilon0*A/C=(s*d_nm/eps_n+b_nm)*1e-9 meters. The net series-interface parameter b_nm is shared and already represents both interfaces. Area is exact. Each candidate tensor must be strictly positive definite. Reference crystal chemistry supplies no film dielectric property.",
+  "parameter_bounds": {
+    "thickness_scale": [
+      0.9,
+      1.1
+    ],
+    "interface_equivalent_vacuum_thickness_nm": [
+      0.0,
+      3.0
+    ]
+  },
+  "error_model": "Convert each measured C and A to the nominal electrical thickness Y_nm=epsilon0*A/C*1e9. The error bound listed for that row is on Y_nm, not on C. Retain every s,b in the declared box whose model Y is within each inclusive row bound simultaneously. These are deterministic bounds, not standard deviations. Do not fit parameters separately by specimen or direction.",
+  "design_policy": {
+    "maximum_cost": 3,
+    "rule": "For each affordable follow-up, project EACH surviving candidate full joint feasible parameter set to its sharp predicted Y interval. Expand each prediction interval by the follow-up absolute measurement error on both ends. The separation margin is the minimum ordinary set-distance between any two distinct surviving model intervals: max(0, max(lower_i,lower_j)-min(upper_i,upper_j)). Select the affordable follow-up with maximum margin; ties within 1e-9 nm use lower cost, then lexical ID. No future measurement is observed."
+  },
+  "reporting": "Report all surviving candidate IDs; s and b sharp marginal intervals over the UNION of surviving candidate feasible sets; the selected follow-up and its margin. Assess whether the training directions identify the off-diagonal sign among the survivors. Numbers require 1e-7 absolute plus 1e-7 relative accuracy.",
+  "research_motivation": {
+    "url": "https://www.nature.com/articles/nature05148",
+    "scope": "The interfacial capacitance research question motivates this controlled tensor/measurement-design task. No values or empirical conclusions are reproduced."
+  },
+  "coordinate_reference_file": "asset://research_FLOW-0007_reference_cell.cif",
+  "coordinate_convention": "The attached CIF is a crystallographic ORIENTATION REFERENCE, not the dielectric-film composition. Capacitor normals are parallel to the indexed reference planes in the same pose. With supplied direct-lattice row vectors A, an hkl plane normal is proportional to hkl*(A^-1)^T. Build an orthonormal reporting frame: u=unit normal(100), w=unit normal(001), v=w cross u. For this hexagonal reference u and w are perpendicular; use the exact supplied cell metric without snapping its values. Candidate tensor rows/columns refer to (u,v,w), not to fractional axes or raw Cartesian coordinates. Project each normalized plane normal onto this frame before evaluating its quadratic dielectric response. The hypothetical films need not share the reference crystal composition or symmetry.",
+  "external_resource_provenance": {
+    "resource": "research_FLOW-0007_reference_cell.cif",
+    "source_repository": "https://github.com/materialsproject/pymatgen-core",
+    "source_url": "https://raw.githubusercontent.com/materialsproject/pymatgen-core/53b80df55750fa61290cad31bdb8bdd3862d7ccf/test-files/core/grain_boundary/Be_mp-87_conventional_standard.cif",
+    "source_commit": "53b80df55750fa61290cad31bdb8bdd3862d7ccf",
+    "source_path": "test-files/core/grain_boundary/Be_mp-87_conventional_standard.cif",
+    "sha256": "c44dd9fde0b35d8659e93daa3b92c7f7a92aadaa00d131f959c560162dd8ed9c",
+    "bytes": 737,
+    "retrieved_date": "2026-10-24",
+    "license_source_url": "https://raw.githubusercontent.com/materialsproject/pymatgen-core/53b80df55750fa61290cad31bdb8bdd3862d7ccf/LICENSE",
+    "license_sha256": "7e8f24f9b40be59291c7d82819edb8e93fb344f1d53997880e7db80bbc4f5d89",
+    "declared_repository_license": "MIT",
+    "attribution": "Pymatgen developers; fixture filename identifies Be mp-87. Only crystal geometry is reused; dielectric tensors and capacitor observations are controlled hypothetical inputs, not properties of elemental Be.",
+    "same_bytes_as_existing_release_fixture": true,
+    "retrieval_note": "GitHub REST endpoint returned anonymous rate-limit HTTP 403. Version resolved via public git ls-remote, then fetched from immutable raw commit URL."
+  }
+}

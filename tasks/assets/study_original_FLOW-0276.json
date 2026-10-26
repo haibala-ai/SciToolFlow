@@ -1,0 +1,12 @@
+{
+  "total_redox_moiety_concentration_millimolar": 1.0,
+  "mean_electrons_added_per_original_oxidized_moiety": 1.0,
+  "formal_potential_Q_plus_e_to_S_V": 0.1,
+  "formal_potential_S_plus_e_to_H_V": 0.3,
+  "RT_over_F_V": 0.07213475204444818,
+  "model": "Three forms of the same conserved redox moiety:Q,S,Hhave received0,1,2electrons respectively. Formal potentials are for the two stated one-electron reductions at the SAME fixed buffered conditions and common reference electrode. Ideal concentration ratios give E=E1-(RT/F)*ln([S]/[Q])=E2-(RT/F)*ln([H]/[S]). The closed equilibrated sample has the supplied total moiety concentration and fixed mean electron inventory;no external redox buffer fixes E,no precipitate or other form exists,and proton effects are already contained in the formal potentials.",
+  "target": "Return equilibrium concentrations in[Q,S,H]order in millimolar,the common equilibrium potential,and the dimensionless equilibrium constant for comproportionation Q+H<=>2S,defined Kcomp=[S]^2/([Q]*[H]). Report whether mean electron inventory1forces every moiety to be in form S. Use the positive physical root satisfying both inventories.",
+  "provenance": {
+    "kind": "Explicit synthetic conditional scientific model and exact source observations;not a live experiment or empirical mechanism validation."
+  }
+}

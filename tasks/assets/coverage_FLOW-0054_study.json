@@ -1,0 +1,15 @@
+{
+  "records": [
+    {
+      "id": "reference",
+      "smiles": "CCO"
+    },
+    {
+      "id": "comparison",
+      "smiles": "CCN"
+    }
+  ],
+  "descriptor_policy": "Use complete WHIMand3D-MoRSEvectors from their common default explicit-H ETKDGv3seed42unoptimized conformer policy. This controlled software-distance audit uses the raw reported descriptor scales;it does not claim statistically calibrated cross-family units.",
+  "distance_models": "For each family compute mean squared component difference MSE_f. The intended equal-family distance is sqrt((MSE_WHIM+MSE_MORSE)/2). A legacy export instead concatenates the vectors and takes one overall component RMS. Report vector lengths,the two family MSEs,and both distances.",
+  "scope": "No undefined components may be zero-filled and no partial vector may be substituted. Family weighting is explicit model choice,not evidence of physical molecular distance."
+}

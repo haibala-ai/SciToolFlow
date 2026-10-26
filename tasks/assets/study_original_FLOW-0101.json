@@ -1,0 +1,63 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "temperature_k": [
+    290.0,
+    300.0,
+    310.0
+  ],
+  "magnetic_flux_density_tesla": [
+    0.0,
+    1.0,
+    2.0,
+    3.0
+  ],
+  "magnetization_a_m2_kg_by_branch": {
+    "ascending": [
+      [
+        0.0,
+        11.0,
+        19.8,
+        26.4
+      ],
+      [
+        0.0,
+        10.0,
+        18.0,
+        24.0
+      ],
+      [
+        0.0,
+        9.0,
+        16.2,
+        21.6
+      ]
+    ],
+    "descending": [
+      [
+        0.0,
+        12.2,
+        21.4,
+        27.0
+      ],
+      [
+        0.0,
+        11.0,
+        19.0,
+        24.0
+      ],
+      [
+        0.0,
+        9.8,
+        16.6,
+        21.0
+      ]
+    ]
+  },
+  "axis_order": "Each branch matrix has temperature rows and increasing magnetic-flux-density columns. Descending branch values are stored in increasing field order for integration. These are reversible-work B-controlled conventions with demagnetizing effects neglected, not unconverted H readings.",
+  "protocol": "At300K estimate each dM/dT by the centered290-to310K difference. Integrate from0to3tesla with the trapezoid rule on the supplied field grid. Units A*m^2/kg times tesla per kelvin give J/(kg*K). Call each result a branch Maxwell proxy.",
+  "reporting_gate": "A reversible state entropy difference cannot be released from these branch-dependent data when the two calculated proxies differ by more than0.01J/(kg*K). Do not average incompatible branches to create a reversible state quantity.",
+  "scope": "An audit of reversibility evidence under a specified Maxwell-relation reporting gate. No hysteretic Maxwell proxy is asserted to be the actual thermodynamic entropy change."
+}

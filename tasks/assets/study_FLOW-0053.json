@@ -1,0 +1,82 @@
+{
+  "data": [
+    {
+      "record_id": "condition0",
+      "concentration_A_mmol_l": 1.0,
+      "concentration_B_mmol_l": 1.0,
+      "initial_rate_mmol_l_s": 0.17835131394090015,
+      "log_features": [
+        0.0,
+        0.0
+      ],
+      "x": 0.0,
+      "log_rate": -1.724
+    },
+    {
+      "record_id": "condition1",
+      "concentration_A_mmol_l": 2.0,
+      "concentration_B_mmol_l": 2.0,
+      "initial_rate_mmol_l_s": 0.7628719900946489,
+      "log_features": [
+        0.6931471805599453,
+        0.6931471805599453
+      ],
+      "x": 0.6931471805599453,
+      "log_rate": -0.27066503360171706
+    },
+    {
+      "record_id": "condition2",
+      "concentration_A_mmol_l": 3.0,
+      "concentration_B_mmol_l": 1.0,
+      "initial_rate_mmol_l_s": 0.40575204633028494,
+      "log_features": [
+        1.0986122886681098,
+        0.0
+      ],
+      "x": 1.0986122886681098,
+      "log_rate": -0.9020130292722798
+    },
+    {
+      "record_id": "condition3",
+      "concentration_A_mmol_l": 4.0,
+      "concentration_B_mmol_l": 3.0,
+      "initial_rate_mmol_l_s": 2.252494369070584,
+      "log_features": [
+        1.3862943611198906,
+        1.0986122886681098
+      ],
+      "x": 1.3862943611198906,
+      "log_rate": 0.8120382106395548
+    },
+    {
+      "record_id": "condition4",
+      "concentration_A_mmol_l": 5.0,
+      "concentration_B_mmol_l": 2.0,
+      "initial_rate_mmol_l_s": 1.5268811649787506,
+      "log_features": [
+        1.6094379124341003,
+        0.6931471805599453
+      ],
+      "x": 1.6094379124341003,
+      "log_rate": 0.4232272006664161
+    },
+    {
+      "record_id": "condition5",
+      "concentration_A_mmol_l": 6.0,
+      "concentration_B_mmol_l": 4.0,
+      "initial_rate_mmol_l_s": 4.566100058630091,
+      "log_features": [
+        1.791759469228055,
+        1.3862943611198906
+      ],
+      "x": 1.791759469228055,
+      "log_rate": 1.5186594617155258
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "A/Bmmol/L;rate mmol/(L*s);logsuse1mmol/Land1mmol/(L*s)references",
+    "original_observation_claim": false
+  }
+}

@@ -9,13 +9,13 @@ from uuid import uuid4
 
 from baselines.common.batch import iter_tasks
 
-from scitoolflow.paths import project_root, load_environment
+from src.utils.paths import project_root, load_environment
 from tools.catalog import ToolCatalog
-from tools.executor import execute
-from scitoolflow.benchmark.assets import load_agent_input
-from scitoolflow.models.client import GenerationClient
-from .runtime import run_react
-from .trajectory import atomic_json
+from tools import execute
+from tasks.assets import load_agent_input
+from src.models.client import GenerationClient
+from baselines.react.runtime import run_react
+from baselines.react.trajectory import atomic_json
 
 
 def select_tasks(rows, selection):
@@ -44,16 +44,16 @@ def actor_file_hashes(root):
     """Bind resume to public inputs and all executable actor/tool dependencies."""
     files = [
         root / "tasks/questions.jsonl",
-        root / "tools/catalog.json",
+        root / "cli.py",
+        root / "tools/catalog/catalog.json",
         root / "tools/graph/graph_store.json",
         root / "tools/graph/index_store.json",
         root / "tools/graph/tool_foundation_manifest.json",
-        root / "configs/project.json",
         root / "configs/environments/routing.json",
         root / "baselines/react/config.json",
         root / "baselines/react/system_prompt.md",
     ]
-    for directory in ["baselines", "tools", "scitoolflow"]:
+    for directory in ["baselines", "tools", "tasks", "src"]:
         files.extend((root / directory).rglob("*.py"))
     for directory in ["react", "scitoolagent"]:
         files.extend(
@@ -98,10 +98,16 @@ def run_task(payload):
         client.model = args.model
     try:
         task = load_agent_input(row, root / "tasks")
-        budget = task["max_tool_calls"]
-        if args.max_calls:
-            budget = min(budget, args.max_calls)
-        print("[run] " + task["id"] + " scientific_budget=" + str(budget), flush=True)
+        budget = args.max_calls
+        print(
+            "[run] "
+            + task["id"]
+            + " scientific_limit="
+            + (str(budget) if budget is not None else "unlimited")
+            + " model_requests="
+            + str(getattr(args, "max_model_requests", 400)),
+            flush=True,
+        )
         try:
             result = runtime(
                 task["question"],
@@ -114,6 +120,7 @@ def run_task(payload):
                 files=task["files"],
                 answer_schema=task["answer_schema"],
                 max_iterations=args.max_steps,
+                max_model_requests=getattr(args, "max_model_requests", 400),
                 max_calls=budget,
                 max_actions=args.max_actions,
                 max_protocol_errors=args.max_protocol_errors,
@@ -145,6 +152,8 @@ def run_task(payload):
                 ).hexdigest(),
                 "stats": result["stats"],
                 "duration_seconds": result["duration_seconds"],
+                "resource_usage": result["resource_usage"],
+                "embedding_usage": result.get("embedding_usage"),
             }
         except Exception as error:
             prediction = {
@@ -227,6 +236,16 @@ def run_batch(args):
         ),
         provider=provider,
         endpoint=provider["endpoint"],
+        resource_policy={
+            "version": "task-resources.v1",
+            "max_model_requests": getattr(args, "max_model_requests", 400),
+            "task_seconds": args.task_timeout,
+            "scientific_calls": args.max_calls,
+            "decisions": args.max_steps,
+            "discovery_calls": args.max_discovery_calls,
+            "think_steps": args.max_think_steps,
+            "consecutive_thinks": args.max_consecutive_thinks,
+        },
         execution_scope=os.getenv("SCITOOL_TOOL_SCOPE", "all"),
         task_isolation="independent_process_and_writable_directories",
     )

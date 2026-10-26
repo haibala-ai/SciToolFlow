@@ -1,0 +1,32 @@
+{
+  "records": [
+    {
+      "id": "alcohol_A",
+      "smiles": "CCO"
+    },
+    {
+      "id": "alcohol_duplicate",
+      "smiles": "OCC"
+    },
+    {
+      "id": "long_alcohol",
+      "smiles": "CCCO"
+    },
+    {
+      "id": "benzene",
+      "smiles": "c1ccccc1"
+    },
+    {
+      "id": "pyridine",
+      "smiles": "c1ccncc1"
+    }
+  ],
+  "cluster_policy": {
+    "algorithm": "morgan",
+    "options": null,
+    "method": "butina",
+    "threshold": 0.45
+  },
+  "selection": "Within each actual returned cluster choose one minimum average-molar-mass record. Break exact mass ties by the smallest zero-based source record index. Cluster label/order is arbitrary. Do not replace the declared Butina clusters with connected components or Ward clustering.",
+  "scope": "A computational reference-panel selection,not biological diversity or universal chemical coverage. Repeated SMILES spellings remain distinct source rows for tie-breaking."
+}

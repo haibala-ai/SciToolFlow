@@ -1,0 +1,84 @@
+{
+  "site_order": [
+    "A",
+    "B",
+    "C"
+  ],
+  "edge_order": [
+    "BC",
+    "AC",
+    "AB"
+  ],
+  "edges": [
+    {
+      "id": "BC",
+      "sites": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "id": "AC",
+      "sites": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "id": "AB",
+      "sites": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "training_records": [
+    {
+      "spins": [
+        1,
+        1,
+        1
+      ],
+      "energy_mev": 4.4
+    },
+    {
+      "spins": [
+        1,
+        1,
+        -1
+      ],
+      "energy_mev": 0.8
+    },
+    {
+      "spins": [
+        1,
+        -1,
+        1
+      ],
+      "energy_mev": 1.6
+    },
+    {
+      "spins": [
+        -1,
+        1,
+        1
+      ],
+      "energy_mev": 1.2
+    }
+  ],
+  "heldout_record": {
+    "spins": [
+      -1,
+      -1,
+      1
+    ],
+    "energy_mev": 0.84
+  },
+  "heldout_absolute_tolerance_mev": 0.01,
+  "hamiltonian": "Fit E(s)=E_offset+sum_edges J_edge*s_i*s_j for classical collinear s_i in{-1,+1},zero applied field,one magnetic site of each stated identity and each UNDIRECTED edge counted ONCE. Positive Jfavors antiparallel endpoints. All energies are per this same three-site model cell. Do not insert an extra minus sign,spin magnitude or bond multiplicity.",
+  "fit_and_scope": "Fit only the four training records, including the common offset. Enumerate every collinear state to obtain the CONDITIONAL MODEL ground energy and its degeneracy before checking the separate heldout observation. An exact training fit does not validate the model. A heldout rejection does not retroactively change the stipulated fitted Hamiltonian or authorize a refit.",
+  "frustration_reporting": "For every model ground state, an antiferromagnetic edge is unsatisfied if its endpoint spins are parallel. Return the set of edge IDs unsatisfied in ANY ground state, without duplicates. Global spin-inverted states count as different physical collinear configurations for degeneracy.",
+  "provenance": {
+    "data_origin": "Explicit benchmark-constructed model data. Energies and response tensors are conditional illustrative inputs, not claimed first-principles calculations or experimental properties of a named material."
+  }
+}

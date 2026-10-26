@@ -1,0 +1,17 @@
+{
+  "observation_duration_day": 1.0,
+  "initial_prey_counts": [
+    6.0664895634394735,
+    15.43318365404033
+  ],
+  "consumed_prey_counts": [
+    2.0,
+    4.0
+  ],
+  "prediction_initial_prey_count": 10.0,
+  "model": "Exact expected prey counts for one predator without prey replacement,under the Rogers random-predator working equation N_e=N_0*(1-exp(a*(h*N_e-T))). Attack coefficient ais positive,handling time h>=0,and0<=N_e<=min(N_0,T/h)when h>0. Observations have common duration T. There is no prey reproduction or unobserved prey loss. This depletion model is different from the constant-prey-density approximation N_e=a*N_0*T/(1+a*h*N_0). Counts here are continuous expectations,not rounded integer observations.",
+  "target": "Infer aand h,return the physically admissible predicted consumption at initial count10and T=1day,and the constant-density shortcut prediction for the same parameters. Report whether those predictions agree. The implicit model root must satisfy the depletion and handling constraints.",
+  "provenance": {
+    "kind": "Explicit small synthetic benign scientific model;data are conditional exact counts/means and do not establish empirical ecological,causal or functional claims."
+  }
+}

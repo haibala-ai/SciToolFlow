@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "x_A": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "y_A": [
+        2,
+        3,
+        3,
+        2
+      ],
+      "x_B": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "y_B": [
+        0,
+        2,
+        2,
+        0
+      ],
+      "A_baseline_to_subtract": 2,
+      "B_baseline_to_subtract": 0,
+      "x_units": "minute",
+      "y_units": "arbitrary response unit",
+      "comparison_policy": "shared observed interval only; signed baseline-corrected area; piecewise-linear observation model"
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

@@ -8,24 +8,6 @@ import math
 import warnings
 
 import numpy as np
-from scipy import stats
-from scipy.special import expit, softmax
-from sklearn.cluster import KMeans, DBSCAN
-from sklearn.decomposition import PCA
-from sklearn.exceptions import ConvergenceWarning
-from sklearn.impute import SimpleImputer
-from sklearn.linear_model import LinearRegression, Ridge, LogisticRegression
-from sklearn.metrics import (
-    mean_absolute_error,
-    mean_squared_error,
-    r2_score,
-    accuracy_score,
-    precision_recall_fscore_support,
-    confusion_matrix,
-)
-from sklearn.model_selection import train_test_split, KFold
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, PolynomialFeatures
 
 from tools.implementations.shared.common import InputValidationError
 from tools.implementations.shared.data_validation import (
@@ -67,6 +49,7 @@ def _transform(training_features, features):
 
 
 def _linear_artifact(estimator, kind, x, y):
+    from sklearn.metrics import mean_squared_error
     return result(
         model={
             "type": kind,
@@ -97,6 +80,7 @@ def describe_numeric_data(values: list) -> dict:
 
 def pearson_correlation(x: list, y: list) -> dict:
     """Calculate Pearson linear correlation and its two-sided p-value for paired nonconstant numeric vectors."""
+    from scipy import stats
     a, b = _paired(x, y)
     require(
         np.ptp(a) > 0 and np.ptp(b) > 0, "Correlation is undefined for constant vectors"
@@ -113,6 +97,7 @@ def pearson_correlation(x: list, y: list) -> dict:
 
 def spearman_correlation(x: list, y: list) -> dict:
     """Calculate Spearman rank correlation and its asymptotic two-sided p-value for paired nonconstant vectors."""
+    from scipy import stats
     a, b = _paired(x, y, 3)
     require(
         np.ptp(a) > 0 and np.ptp(b) > 0, "Correlation is undefined for constant vectors"
@@ -125,6 +110,7 @@ def spearman_correlation(x: list, y: list) -> dict:
 
 def welch_t_test(sample_a: list, sample_b: list) -> dict:
     """Compare independent numeric sample means with a two-sided Welch t-test, without assuming equal variances."""
+    from scipy import stats
     a, b = vector(sample_a, "sample_a", 2), vector(sample_b, "sample_b", 2)
     require(
         np.var(a, ddof=1) + np.var(b, ddof=1) > 0,
@@ -142,6 +128,7 @@ def welch_t_test(sample_a: list, sample_b: list) -> dict:
 
 def paired_t_test(sample_a: list, sample_b: list) -> dict:
     """Compare paired numeric measurements using a two-sided paired t-test on nonconstant differences."""
+    from scipy import stats
     a, b = _paired(sample_a, sample_b)
     require(
         np.var(a - b, ddof=1) > 0,
@@ -159,6 +146,7 @@ def paired_t_test(sample_a: list, sample_b: list) -> dict:
 
 def mann_whitney_u_test(sample_a: list, sample_b: list) -> dict:
     """Compare two independent numeric distributions with a two-sided Mann-Whitney U test and automatic tie-aware method selection."""
+    from scipy import stats
     a, b = vector(sample_a, "sample_a", 2), vector(sample_b, "sample_b", 2)
     test = stats.mannwhitneyu(a, b, alternative="two-sided", method="auto")
     return result(
@@ -170,6 +158,7 @@ def mann_whitney_u_test(sample_a: list, sample_b: list) -> dict:
 
 def one_way_anova(groups: list) -> dict:
     """Compare means of at least two independent numeric groups with classical one-way ANOVA, assuming equal variances."""
+    from scipy import stats
     require(isinstance(groups, list) and 2 <= len(groups) <= 20, "Require 2..20 groups")
     arrays = [vector(g, f"groups[{i}]", 2) for i, g in enumerate(groups)]
     require(sum(len(a) for a in arrays) <= 5000, "Too many observations")
@@ -188,6 +177,7 @@ def one_way_anova(groups: list) -> dict:
 
 def chi_square_independence(contingency_table: list) -> dict:
     """Test independence in a nonnegative integer contingency table with Pearson chi-square and no Yates correction."""
+    from scipy import stats
     a = matrix(contingency_table, "contingency_table", 2)
     require(
         a.shape[1] >= 2 and np.all(a >= 0) and np.all(a == np.floor(a)),
@@ -362,6 +352,7 @@ def split_train_test(
     stratify: bool = False,
 ) -> dict:
     """Split numeric feature rows and numeric or categorical targets into disjoint train/test sets with reproducible indices."""
+    from sklearn.model_selection import train_test_split
     x = matrix(features, minimum_rows=4)
     require(
         isinstance(targets, list) and len(targets) == len(x),
@@ -400,6 +391,7 @@ def split_train_test(
 
 def standardize_numeric_features(training_features: list, features: list) -> dict:
     """Fit feature means and population scales on training data only, then standardize another matrix using those parameters."""
+    from sklearn.preprocessing import StandardScaler
     train, data = _transform(training_features, features)
     scaler = StandardScaler().fit(train)
     return result(
@@ -412,6 +404,7 @@ def standardize_numeric_features(training_features: list, features: list) -> dic
 
 def minmax_scale_features(training_features: list, features: list) -> dict:
     """Fit feature minima/maxima on training rows and apply their zero-to-one scaling; out-of-training-range values are not clipped."""
+    from sklearn.preprocessing import MinMaxScaler
     train, data = _transform(training_features, features)
     scaler = MinMaxScaler().fit(train)
     return result(
@@ -426,6 +419,7 @@ def minmax_scale_features(training_features: list, features: list) -> dict:
 
 def median_impute_features(training_features: list, features: list) -> dict:
     """Fit per-feature medians on training data and replace explicit null cells in another numeric matrix; reject all-null training columns."""
+    from sklearn.impute import SimpleImputer
     train, data = matrix(training_features, "training_features", 2, True), matrix(
         features, allow_null=True
     )
@@ -446,6 +440,7 @@ def polynomial_features_transform(
     features: list, degree: int = 2, include_bias: bool = False
 ) -> dict:
     """Expand a numeric feature matrix into bounded polynomial interaction features and return the exponent table."""
+    from sklearn.preprocessing import PolynomialFeatures
     x = matrix(features)
     integer(degree, "degree", 1, 5)
     require(isinstance(include_bias, bool), "include_bias must be boolean")
@@ -463,6 +458,7 @@ def principal_component_projection(
     training_features: list, features: list, n_components: int = 2
 ) -> dict:
     """Fit PCA on training data only and project another matrix; return means, components and explained variance without automatic scaling."""
+    from sklearn.decomposition import PCA
     train, data = _transform(training_features, features)
     integer(n_components, "n_components", 1, min(train.shape))
     require(
@@ -482,6 +478,7 @@ def principal_component_projection(
 
 def fit_linear_regression(training_features: list, targets: list) -> dict:
     """Fit ordinary least-squares regression with an intercept and export a portable JSON linear-model artifact."""
+    from sklearn.linear_model import LinearRegression
     x, y = _training(training_features, targets)
     return _linear_artifact(LinearRegression().fit(x, y), "linear_regression", x, y)
 
@@ -490,6 +487,7 @@ def fit_ridge_regression(
     training_features: list, targets: list, alpha: float = 1.0
 ) -> dict:
     """Fit L2-regularized ridge regression with an unpenalized intercept and export its JSON coefficients; features are not automatically scaled."""
+    from sklearn.linear_model import Ridge
     x, y = _training(training_features, targets)
     require(number(alpha, "alpha") > 0, "alpha must be positive")
     return _linear_artifact(Ridge(alpha=alpha).fit(x, y), "ridge_regression", x, y)
@@ -502,6 +500,9 @@ def fit_logistic_regression(
     max_iterations: int = 200,
 ) -> dict:
     """Fit standardized L2 logistic classification on training data, exporting classes, coefficients and scaling parameters as JSON."""
+    from sklearn.exceptions import ConvergenceWarning
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.preprocessing import StandardScaler
     x, y = matrix(training_features, minimum_rows=4), labels(targets, "targets", 4)
     require(
         len(x) == len(y) and 2 <= len(np.unique(y)) <= 20,
@@ -560,6 +561,8 @@ def predict_linear_model(model: dict, features: list) -> dict:
 
 def predict_logistic_model(model: dict, features: list) -> dict:
     """Apply an exported standardized logistic JSON model, returning class predictions and probabilities in its declared class order."""
+    from scipy.special import expit
+    from scipy.special import softmax
     require(
         isinstance(model, dict) and model.get("type") == "logistic_regression",
         "Require an exported logistic model",
@@ -604,6 +607,9 @@ def predict_logistic_model(model: dict, features: list) -> dict:
 
 def regression_metrics(truth: list, predicted: list) -> dict:
     """Measure held-out regression predictions with MAE, MSE, RMSE and R squared; report null R squared for constant truth."""
+    from sklearn.metrics import mean_absolute_error
+    from sklearn.metrics import mean_squared_error
+    from sklearn.metrics import r2_score
     a, b = _paired(truth, predicted)
     mse = mean_squared_error(a, b)
     return result(
@@ -618,6 +624,9 @@ def regression_metrics(truth: list, predicted: list) -> dict:
 
 def classification_metrics(truth: list, predicted: list) -> dict:
     """Score categorical predictions with accuracy, macro precision/recall/F1 and a confusion matrix using an explicit label order."""
+    from sklearn.metrics import accuracy_score
+    from sklearn.metrics import confusion_matrix
+    from sklearn.metrics import precision_recall_fscore_support
     a, b = labels(truth, "truth"), labels(predicted, "predicted")
     require(
         len(a) == len(b) and a.dtype.kind == b.dtype.kind,
@@ -640,6 +649,7 @@ def classification_metrics(truth: list, predicted: list) -> dict:
 
 def kmeans_clustering(features: list, clusters: int = 2, seed: int = 42) -> dict:
     """Cluster finite numeric rows using reproducible Euclidean k-means with ten initializations; return labels, centroids and inertia."""
+    from sklearn.cluster import KMeans
     x = matrix(features, minimum_rows=2)
     integer(clusters, "clusters", 1, min(len(x), 100))
     integer(seed, "seed", 0, 2**32 - 1)
@@ -658,6 +668,7 @@ def kmeans_clustering(features: list, clusters: int = 2, seed: int = 42) -> dict
 
 def dbscan_clustering(features: list, eps: float = 0.5, min_samples: int = 5) -> dict:
     """Cluster a bounded numeric point cloud using Euclidean DBSCAN; labels minus one denote noise, not execution failure."""
+    from sklearn.cluster import DBSCAN
     x = matrix(features, minimum_rows=2)
     require(len(x) <= 2000, "DBSCAN is bounded to 2000 rows")
     require(number(eps, "eps") > 0, "eps must be positive")
@@ -674,6 +685,13 @@ def cross_validate_regressor(
     features: list, targets: list, folds: int = 5, alpha: float = 1.0, seed: int = 42
 ) -> dict:
     """Evaluate ridge regression with shuffled K-fold splits and train-only standardization inside every fold; return held-out metrics and indices."""
+    from sklearn.model_selection import KFold
+    from sklearn.linear_model import Ridge
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.pipeline import make_pipeline
+    from sklearn.metrics import mean_absolute_error
+    from sklearn.metrics import mean_squared_error
+    from sklearn.metrics import r2_score
     x, y = _training(features, targets)
     integer(folds, "folds", 2, 10)
     integer(seed, "seed", 0, 2**32 - 1)

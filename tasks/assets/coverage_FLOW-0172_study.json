@@ -1,0 +1,9 @@
+{
+  "candidate_material_ids_in_order": [
+    "mp-aaafhsgi",
+    "mp-aaafzwdj",
+    "mp-aaagjcbm"
+  ],
+  "screen": "A candidate is eligible iff its published formation energy per atom is strictly negative AND its hull distance is<=0.20eV/atom. Among eligible candidates retain all minimum-hull-distance IDs within1e-10eV/atom. Compare published hull-stable flags separately.",
+  "scope": "Current computed database reference states only. Negative formation energy relative to elements does not establish stability against every competing phase,finite-temperature stability or synthetic accessibility."
+}

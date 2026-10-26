@@ -1,0 +1,39 @@
+{
+  "calibration_records": [
+    {
+      "specimen_id": "cal_0",
+      "signed_temperature_offset_k": -2,
+      "response_volt": 0.3
+    },
+    {
+      "specimen_id": "cal_1",
+      "signed_temperature_offset_k": -1,
+      "response_volt": 0.4
+    },
+    {
+      "specimen_id": "cal_2",
+      "signed_temperature_offset_k": 0,
+      "response_volt": 0.5
+    },
+    {
+      "specimen_id": "cal_3",
+      "signed_temperature_offset_k": 1,
+      "response_volt": 0.6
+    },
+    {
+      "specimen_id": "cal_4",
+      "signed_temperature_offset_k": 2,
+      "response_volt": 0.7
+    }
+  ],
+  "known_independent_response_noise_variance_volt_squared": 0.4,
+  "target_noise_free_mean_response_volt": 0.0,
+  "physical_offset_domain_k": [
+    -20,
+    20
+  ],
+  "coefficient_uncertainty_radius_squared": 1.0,
+  "provenance": {
+    "kind": "Project-authored controlled inverse-calibration study with stipulated known instrument noise. Exact-line observed values do not imply zero noise. The coefficient ellipsoid is an explicit uncertainty set, not a claimed confidence level."
+  }
+}

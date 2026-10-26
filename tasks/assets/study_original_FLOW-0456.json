@@ -1,0 +1,41 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "candidate_smiles": {
+    "candidate_A": "O=CC(O)C(O)C(O)C(O)CO",
+    "candidate_B": "CC(O)C(O)C(O)C(O)CCO",
+    "candidate_C": "Cn1c(=O)c2[nH]cnc2n(C)c1=O"
+  },
+  "observed_nominal_mass_integer": 180,
+  "observed_M_plus_one_and_two_over_M": [
+    0.09200524717889877,
+    0.007906148909388974
+  ],
+  "isotope_probability_by_element_for_mass_shifts_0_1_2": {
+    "C": [
+      0.9893,
+      0.0107,
+      0.0
+    ],
+    "H": [
+      0.999885,
+      0.000115,
+      0.0
+    ],
+    "N": [
+      0.99636,
+      0.00364,
+      0.0
+    ],
+    "O": [
+      0.99757,
+      0.00038,
+      0.00205
+    ]
+  },
+  "model": "Use the original neutral candidate molecular graphs to obtain complete elemental formulas, including implicit hydrogen. Independent atom isotope draws obey exactly the supplied rounded probabilities. Nominal baseline isotopes are12C,1H,14N,16O. Compute coefficients0,1,2 of product over all atoms(p0+p1*z+p2*z^2); reported ratios are coefficient1/coefficient0 and coefficient2/coefficient0, not absolute probabilities. All listed candidate monoisotopic nominal masses round to180 by integer isotope masses.",
+  "decision": "A candidate is compatible iff both ratios differ from their supplied observations by<=1e-10. No exact-mass observation is provided and no database identity lookup may be invented. The carbon-only audit asks whether the equal7-carbon formulas B and C could be uniquely distinguished by carbon count alone.",
+  "scope": "Controlled natural-isotope probability model, not an instrument-resolution claim or reaction isotopic labeling procedure."
+}

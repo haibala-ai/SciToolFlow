@@ -1,0 +1,69 @@
+{
+  "origin": "Own abstract resource/energy-currency model for constraint-based metabolism. A,B,C are anonymous one-carbon-unit precursor pools, W an exported waste pool, and Q denotes one ATP-to-ADP-like work quantum. This is not an organism, gene manipulation, molecular synthesis or intervention design. All rates and chemical potentials use declared arbitrary consistent units; the task audits energy conservation and model scope.",
+  "flux_order": [
+    "u",
+    "v2",
+    "v3",
+    "v4",
+    "wB",
+    "wC",
+    "b",
+    "m"
+  ],
+  "reactions": {
+    "u": "External feed -> A,0<=u<=10. A is chemostatted atmuA=10; uptake is supplied by an explicit external reservoir, not an internal free-energy source.",
+    "R2": "A -> B+Q,fluxv2>=0.",
+    "R3": "B -> C+Q,fluxv3>=0.",
+    "R4": "C -> A,0<=fluxv4<=8.",
+    "R5": "B -> W+3Q,fluxwB>=0.",
+    "R6": "C -> W+4Q,0<=fluxwC<=r,where r is an oxidative export capacity.",
+    "biomass": "C+3Q -> exported biomass,fluxb>=0,biomass reservoir potential0.",
+    "maintenance": "Q -> heat,fluxm fixed by the supplied panel.",
+    "currency_meaning": "Q generation means ADP-like lower-work currency converts to an ATP-like higher-work currency; its chemical-potential difference is the given positiveg. ADP/ATP total pool is conserved and its net work-currency production must balance b andm consumption. Carbon is conserved internally and exits only viaW or biomass."
+  },
+  "steady_balance": "Derive all four steady balances for internal A,B,C and netQ from the reaction list, preserving the flux order. All fluxes are nonnegative. There are no other reactions, free ATP sources, biomass routes or hidden exchange fluxes. RawFBA enforces only these balances and rate capacities. Maximizeb at each statedr,m. Separately atzero feed andb0 maximize maintenance generationm withv4cap8, comparing rawFBA and physical thermodynamic feasibility.",
+  "thermodynamics": "SetmuW=muBiomass=0,muA=10, and require a SINGLE pair(muB,muC) in CLOSED[-20,20]^2 for every active reaction at the statedg. An irreversible reaction with strictly POSITIVE flux must have STRICTLY NEGATIVE DeltaG. A zero-flux reaction imposes no sign requirement. ForR2..R6 deriveDeltaG from stoichiometry andg; biomass hasDeltaG=-muC-3g and maintenance -g. Thermodynamic feasibility is existence of potentials for the entire active support, not separate potentials perreaction. In particular DeltaG=0 doesNOTpermitpositiveflux in this model. This is only a sign/stoichiometry model: it contains no enzyme rate law, finite equilibrium conductance or flux-to-driving-force bound.",
+  "complete_support_classification": "For process reactionsR2,R3,R4,R5,R6 ONLY, enumerate EVERY maximal-by-set-inclusion support admitting the strict potential inequalities, ignoring steady flux balance for this subproblem. Maximal means no other process reaction can be added while retaining strict feasibility; these are not automatically steady growth modes. Derive completeness across all32supports, and for every maximal support compute its maximum COMMON driving margineta subject to DeltaG_j<=-eta andmuB,muCbounds. Use actual registered SolveLinearProgram for each retained maximal support, preserving its full potential/margin solution and checking all original inequalities. Full32support enumeration may use additional actual LP calls or an independently justified exact difference-inequality certificate. Use exact cycle/path sums at boundary values; a solver output like1e-16 is not proof of strict positivity. Report support lists sorted lexicographically, each reaction list sorted, and corresponding maximum margins.",
+  "panel": {
+    "g_values_exact": [
+      "1",
+      "5/3",
+      "2",
+      "5/2"
+    ],
+    "oxidative_capacity_r_values": [
+      0,
+      1,
+      3
+    ],
+    "fixed_maintenance_m_values": [
+      0,
+      2
+    ],
+    "order": "Raw rows: r ascending thenm0,2. Physical rows: g in exact supplied order, thenr0,1,3, thenm0,2. Every physical flux row is the full8tuple in flux_order, or null if INFEASIBLE. A feasible zero-growth state has a numeric zero tuple and is not an infeasible case."
+  },
+  "physical_growth_and_registered_solutions": "For every panel case determine the GLOBAL thermodynamically feasible maximum growth and the COMPLETE optimal flux face. If the optimum is unique, report itsfull8tuple; if not, explicitly derive and retain itsfullparametricface in the trajectory and report its lexicographically smallest optimal8tuple in the final array. Use actual registered SolveLinearProgram on a proven complete union of thermodynamically admissible support modes (or an algebraically proven exact reduction), retaining actual original balances, nonnegativity and capacities. Identical LPs may be reused across panel cases only with an exact proved parameter/mode equivalence. Feed actual complete solver outputs into physical conservation and active-support potential checks; return null only after proving infeasibility. A raw LP success is not a thermodynamic certificate. State why merely deleting an internal recycling reaction may remain insufficient when the currency workgchanges.",
+  "continuous_regime_analysis": "Derive the entire piecewise growth law for continuousr>=0 andfixedm0or2 over continuousg in[1,5/2], including exact work-threshold equalities and oxygen-capacity switching values. Supply global upper certificates and attainable flux/potential witnesses for every valid regime, plus infeasibility certificates where required. Explain how maintenance shifts the yield/capacity switch. Distinguish flux-capacity plateaus from genuine kinetic predictions at arbitrarily small thermodynamic driving force.",
+  "robust_and_open_boundary": "For a SINGLE flux vector required feasible at everyg in CLOSED[1,2], with one common potential pair for allg, maximizeb at eachm0,2 and explain dependence onr. Separately for the process path{R2,R3,R6}, ask whether one potential pair supports strictly negative DeltaGs at EVERYg in[1,5/3) (right endpoint excluded), whether a UNIFORM positiveeta exists throughout that open interval, and whether a strict common witness exists on CLOSED[1,5/3]. Derive the distinctions analytically; replacing a pointwise strict condition on an open set with a uniform-margin condition changes the problem.",
+  "interpretation_proposals": {
+    "A": "A steady mass-balanced nonnegative flux can generate impossible work if thermodynamic cycles are ignored.",
+    "B": "Each reaction may choose a different chemical-potential vector within one steady state.",
+    "C": "Exact zero driving at a path-work threshold can change which positive supports are allowed.",
+    "D": "A positive flux automatically satisfies this model even atDeltaG0.",
+    "E": "Thermodynamic support classification and steady-state flux feasibility are separate constraints.",
+    "F": "Deleting one recycling edge proves all remaining pathways feasible at every external workg.",
+    "G": "Strict feasibility at every point of an open parameter interval need not supply a uniform positive driving margin.",
+    "H": "This sign-only flux model predicts finite enzymatic kinetics near equilibrium."
+  },
+  "reporting": "Absolute numerical tolerance1e-7 on nonzero finite rates/margins. Support membership, feasibility versusnull, equality boundaries and predicates are exact. The4exactrationalgvalues are not rounded experimental measurements. Fluxes are rates, not a probability simplex. Preserve all source balances, complete support/cycle/path certificates, actual complete LP/potential handoffs, optimal faces and continuous/robust/open-set reasoning. Unknown support counts are not supplied by schema. Do not conflate a thermodynamic sign constraint with a real-cell enzyme model.",
+  "primary_context": [
+    {
+      "authors": "J.Schellenberger,N.E.Lewis,B.O.Palsson",
+      "year": 2011,
+      "title": "Elimination of Thermodynamically Infeasible Loops in Steady-State Metabolic Models",
+      "doi": "10.1016/j.bpj.2010.12.3707",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3030201/",
+      "role": "Primary loopless flux-model context. The anonymous network, work intervals and strict-boundary/robust panel above are own constructed inputs, not a reconstruction of a real organism."
+    }
+  ]
+}

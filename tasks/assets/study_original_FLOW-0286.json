@@ -1,0 +1,13 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study, not new experimental measurements.",
+    "scope": "Results are conditional on the complete stated model, measurement convention and units."
+  },
+  "seebeck_coefficient_volt_per_kelvin": 0.0002,
+  "internal_electrical_resistance_ohm": 2.0,
+  "open_circuit_thermal_conductance_watt_per_kelvin": 7e-06,
+  "hot_reservoir_temperature_kelvin": 400.0,
+  "cold_reservoir_temperature_kelvin": 300.0,
+  "model": "One ideal thermoelectric leg has constant alpha,R,K and fixed reservoir temperatures, no contact losses or Thomson term, and symmetric partition of Joule heat. For load ratio m=R_load/R>0, current I=alpha*(Th-Tc)/(R*(1+m)), load power P=I^2*R*m, and absorbed hot heat Qh=alpha*Th*I-I^2*R/2+K*(Th-Tc). Efficiency is P/Qh.",
+  "analysis": "Globally maximize P and P/Qh separately over all positive m, retaining the same physical parameters. Check heat balance and limiting loads rather than choosing from a coarse grid. K is thermal conductance, not conductivity; no spatial dimensions or actual device performance are inferred."
+}

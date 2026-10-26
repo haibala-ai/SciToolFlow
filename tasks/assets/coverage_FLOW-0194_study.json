@@ -1,0 +1,16 @@
+{
+  "molecule_ids_in_order": [
+    "2c96eb4288d63b2a9437ddd4172e67f3-H2O1-0-1",
+    "2c96eb4288d63b2a9437ddd4172e67f3-H2O1-m1-2"
+  ],
+  "composition_each": {
+    "H": 2,
+    "O": 1
+  },
+  "atomic_numbers": {
+    "H": 1,
+    "O": 8
+  },
+  "rules": "Derive total electrons as sum(n*Z)-reported charge;do not parse charge or multiplicity from an IDsuffix. For an electronic spin label M=2S+1,an even-electron state requires odd positive M and an odd-electron state requires even positive M. This is a necessary parity constraint,not proof of a physically accurate ground state. Inspect the vacuum NONErow of the published open-shell flag.",
+  "scope": "Molecular record bookkeeping only. An open-shell flag does not uniquely determine multiplicity or magnetic ground-state energy;no missing electron-count field may be invented."
+}

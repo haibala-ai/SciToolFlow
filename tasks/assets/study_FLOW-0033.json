@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "record_id": "acetone",
+      "smiles": "CC(=O)C"
+    },
+    {
+      "record_id": "acetone-enol",
+      "smiles": "C=C(C)O"
+    },
+    {
+      "record_id": "acetaldehyde",
+      "smiles": "CC=O"
+    },
+    {
+      "record_id": "vinyl-alcohol",
+      "smiles": "C=CO"
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "SMILES identities; natural-abundance molar masses unless isotopes explicitly requested",
+    "original_observation_claim": false
+  }
+}

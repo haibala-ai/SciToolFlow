@@ -1,0 +1,67 @@
+{
+  "data": [
+    {
+      "record_id": "paired_observations",
+      "instrument_x_readings": [
+        8.0,
+        7.0,
+        19.0,
+        16.0,
+        29.0,
+        26.0,
+        38.0,
+        37.0,
+        47.0,
+        53.0
+      ],
+      "instrument_y_readings": [
+        10.0,
+        17.0,
+        19.0,
+        30.0,
+        32.0,
+        42.0,
+        46.0,
+        49.0,
+        63.0,
+        63.0
+      ],
+      "authorized_x_interval": [
+        10.0,
+        50.0
+      ]
+    },
+    {
+      "record_id": "repeatability_x",
+      "fixed_control_readings": [
+        96.0,
+        98.0,
+        99.0,
+        100.0,
+        100.0,
+        101.0,
+        102.0,
+        104.0
+      ]
+    },
+    {
+      "record_id": "repeatability_y",
+      "fixed_control_readings": [
+        192.0,
+        196.0,
+        198.0,
+        200.0,
+        200.0,
+        202.0,
+        204.0,
+        208.0
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Both instrument outputs share the same nominal concentration unit mmol/L;repeatabilityvariances(mmol/L)^2;transfer slope dimensionless,interceptmmol/L",
+    "original_observation_claim": false
+  }
+}

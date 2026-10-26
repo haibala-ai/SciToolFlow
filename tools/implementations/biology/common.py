@@ -50,30 +50,15 @@ def compute_pI_mW(protein):
 
 
 def compute_protein_parameters(protein):
-    """
-    Compute various physical and chemical parameters for a given protein sequence using Expasy ProtParam API.
-    Parameters include molecular weight, theoretical pI, amino acid composition, atomic composition, 
-    extinction coefficient, half-life, instability index, aliphatic index, and GRAVY.
-
-    Args:
-        protein (str): Protein sequence.
-
-    Returns:
-        str: Processed Markdown content.
-    """
-    try:
-        data = {"sequence": protein, "mandatory": ""}
-
-        response_text = send_expasy_request("https://web.expasy.org/cgi-bin/protparam/protparam", data)
-
-        # print(html_content)
-        processed_content = extract_and_process_protparam_html(response_text)
-        # Convert to Markdown
-        markdown_content = convert_protparam_to_markdown(processed_content)
-        return markdown_content
-
-    except Exception as e:
-        return f"Error computing protein parameters: {e}"
+    """Retired broad ProtParam report; select an explicit single-quantity tool."""
+    raise NotImplementedError(
+        "ComputeProtPara is retired. Choose ProteinInstabilityIndex, "
+        "ProteinAliphaticIndex, or ProteinNTerminalHalfLife (explicit system); "
+        "use ProteinIsoelectricPointCalculator, SequenceComposition, "
+        "ComputeExtinctionCoefficient, ProteinGRAVY, or peptide construction "
+        "followed by chemical formula/mass tools for those separate quantities. "
+        "The old combined report has no single-tool replacement."
+    )
     
 
 def predict_hydrophilicity(protein: str) -> str:
@@ -239,57 +224,76 @@ def predict_transmembrane(protein):
         return f"Error predicting transmembrane: {str(e)}"
 
 def compute_extinction_coefficient(protein):
-    """
-    This tool compute the molar extinction coefficient and protein concentration of the protein, 
-    and also provides information such as the protein isoelectric point. 
+    """Report theoretical A280 coefficients for two explicit cysteine endpoints.
 
-    Returns:
-        str: The Markdown content with molar extinction coefficient. 
+    Canonical unmodified linear chains only; whitespace is removed and letters
+    are uppercased. The water-model coefficients are5500 perTrp,1490 perTyr
+    and125 perCYSTINE PAIR, not perCys residue. The reduced endpoint has no
+    pairs; the fully paired endpoint has floor(nCys/2) intrachain pairs. No
+    chemical state is inferred. Average free-terminus reduced-chain mass uses
+    Bio.SeqUtils; a pair removes2.01588g/mol for the paired-mass endpoint.
+
+    Returns a Markdown string, preserving the legacy main coefficient label
+    (now explicitly the fully paired endpoint) and reduced mass in kDa. Both
+    endpoint masses and A280 at1g/L,1cm are explicit. Concentration cannot be
+    determined without measured absorbance/path length and is not fabricated.
+    This theoretical composition model does not certify concentration accuracy,
+    particularly for chains withoutTrp or with other chromophores/modifications.
     """
     try:
-        cleaned_protein = protein.replace('\n', '').replace(' ', '')
+        import math
+        from Bio.SeqUtils import molecular_weight
 
-        data = {
-            "sr": "pecc",
-            "sq": cleaned_protein
-        }
-
-        response = send_novopro_request(data)
-
-        try:
-            data_list = json.loads(response)  
-        except json.JSONDecodeError:
-            raise ValueError("Failed to parse server response. Response format may be invalid.")
-
-        
-        if len(data_list) <= 1 or not isinstance(data_list[1], list):
-            raise ValueError("Unexpected response structure.")
-
-        epsilon_molar = data_list[1][0]
-        molecular_weight = data_list[1][1]
-        a1mg_ml280nm = data_list[1][2]
-        protein_concentration = data_list[1][3]
-        protein_isoelectric_point = data_list[1][4]
-
-        generated_markdown = f'''
+        if not isinstance(protein, str):
+            raise ValueError("protein must be a string")
+        cleaned_protein = ''.join(protein.split()).upper()
+        if not 1 <= len(cleaned_protein) <= 100000:
+            raise ValueError("protein must contain1..100000 canonical amino-acid letters")
+        if any(c not in 'ACDEFGHIKLMNPQRSTVWY' for c in cleaned_protein):
+            raise ValueError("Only the20 canonical amino acids are supported; no ambiguous letters, stops, gaps or FASTA headers")
+        n_trp = cleaned_protein.count('W')
+        n_tyr = cleaned_protein.count('Y')
+        n_cys = cleaned_protein.count('C')
+        pairs = n_cys // 2
+        epsilon_reduced = 5500*n_trp + 1490*n_tyr
+        epsilon_paired = epsilon_reduced + 125*pairs
+        mass_reduced = molecular_weight(cleaned_protein, seq_type='protein', monoisotopic=False)
+        mass_paired = mass_reduced - 2.01588*pairs
+        if not all(math.isfinite(v) and v > 0 for v in [mass_reduced, mass_paired]):
+            raise ValueError("Calculated endpoint masses must be finite and positive")
+        return f'''
 **Input sequence:** 
 
 `{cleaned_protein}`
 
-**Molecular Weight (kDa):** {molecular_weight}
+**Molecular Weight (kDa):** {mass_reduced / 1000:.12g}
 
-**ε~molar~ (M^-1^cm^-1^):** {epsilon_molar}
+**ε~molar~ (M^-1^cm^-1^):** {epsilon_paired}
 
-**A^1mg/ml^~280nm~:** {a1mg_ml280nm}
+**Reduced epsilon (M^-1 cm^-1):** {epsilon_reduced}
 
-**Protein Concentration (mg/ml):** {protein_concentration}
+**Fully paired epsilon (M^-1 cm^-1):** {epsilon_paired}
 
-**Protein Isoelectric Point:** {protein_isoelectric_point}
+**Cystine pairs assumed:** {pairs}
+
+**Reduced-chain mass (g/mol):** {mass_reduced:.12g}
+
+**Fully paired-chain mass (g/mol):** {mass_paired:.12g}
+
+**A280 at 1 g/L, 1 cm (reduced):** {epsilon_reduced / mass_reduced:.12g}
+
+**A280 at 1 g/L, 1 cm (fully paired):** {epsilon_paired / mass_paired:.12g}
+
+**Protein Concentration (mg/ml):** Not determined; measured absorbance and path length are not inputs.
+
+**Convention:** The legacy main epsilon is the fully paired endpoint; the legacy molecular weight is the unmodified reduced-chain average mass. Each remaining odd Cys is unpaired. No actual redox state, assembly or concentration is inferred.
+
+**Scope:** Composition-based 280 nm water model; no other chromophores or modifications. Accuracy can be limited, especially without Trp.
+
+**Method:** https://web.expasy.org/protparam/protparam-doc.html
 '''
-
-        return generated_markdown
     except Exception as e:
-        return "Error compute extinction coefficient" 
+        return f"Error compute extinction coefficient: {e}"
     
 
 def sequence_to_pdb(sequence: str) -> dict:
@@ -357,6 +361,8 @@ def generate_random_mutation_tool(sequence: str):
         str: The residue accuracy of protein sequences.
     
     """
+    from tools.implementations.biology.sequence_primitives import canonical_sequence
+    sequence = canonical_sequence(sequence, maximum=10000)
     amino_acids = ['S', 'N', 'K', 'A', 'V', 'W', 'D', 'M', 'P', 'G', 'H', 'E', 'L', 'Y', 'C', 'I', 'F', 'R', 'T', 'Q']
     
     if not sequence:

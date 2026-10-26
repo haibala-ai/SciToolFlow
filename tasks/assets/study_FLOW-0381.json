@@ -1,0 +1,1277 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "frozen_recognizer": {
+        "type": "logistic_regression",
+        "n_features": 4,
+        "classes": [
+          0,
+          1
+        ],
+        "coefficients": [
+          [
+            0.4541592607657476,
+            -0.06285072188447909,
+            1.011759316059347,
+            -0.4606473226178177
+          ]
+        ],
+        "intercepts": [
+          0.07322798684345998
+        ],
+        "mean": [
+          79.225,
+          87.79166666666667,
+          65.25,
+          88.70833333333333
+        ],
+        "scale": [
+          18.40582448574364,
+          18.00458082143419,
+          22.438155747149395,
+          24.292795857116896
+        ]
+      },
+      "calibration_records": [
+        {
+          "record_id": "CAL-001",
+          "upper_left_sum": 74.0,
+          "upper_right_sum": 110.0,
+          "lower_left_sum": 40.0,
+          "lower_right_sum": 103.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-002",
+          "upper_left_sum": 57.0,
+          "upper_right_sum": 103.0,
+          "lower_left_sum": 44.0,
+          "lower_right_sum": 97.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-003",
+          "upper_left_sum": 67.0,
+          "upper_right_sum": 100.0,
+          "lower_left_sum": 63.0,
+          "lower_right_sum": 69.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-004",
+          "upper_left_sum": 60.0,
+          "upper_right_sum": 86.0,
+          "lower_left_sum": 79.0,
+          "lower_right_sum": 117.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-005",
+          "upper_left_sum": 86.0,
+          "upper_right_sum": 95.0,
+          "lower_left_sum": 33.0,
+          "lower_right_sum": 99.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-006",
+          "upper_left_sum": 53.0,
+          "upper_right_sum": 104.0,
+          "lower_left_sum": 36.0,
+          "lower_right_sum": 100.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-007",
+          "upper_left_sum": 87.0,
+          "upper_right_sum": 85.0,
+          "lower_left_sum": 50.0,
+          "lower_right_sum": 125.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-008",
+          "upper_left_sum": 125.0,
+          "upper_right_sum": 77.0,
+          "lower_left_sum": 64.0,
+          "lower_right_sum": 95.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-009",
+          "upper_left_sum": 93.0,
+          "upper_right_sum": 80.0,
+          "lower_left_sum": 57.0,
+          "lower_right_sum": 113.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-010",
+          "upper_left_sum": 39.0,
+          "upper_right_sum": 96.0,
+          "lower_left_sum": 41.0,
+          "lower_right_sum": 100.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-011",
+          "upper_left_sum": 80.0,
+          "upper_right_sum": 115.0,
+          "lower_left_sum": 35.0,
+          "lower_right_sum": 115.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-012",
+          "upper_left_sum": 75.0,
+          "upper_right_sum": 70.0,
+          "lower_left_sum": 51.0,
+          "lower_right_sum": 104.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-013",
+          "upper_left_sum": 81.0,
+          "upper_right_sum": 102.0,
+          "lower_left_sum": 42.0,
+          "lower_right_sum": 117.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-014",
+          "upper_left_sum": 51.0,
+          "upper_right_sum": 88.0,
+          "lower_left_sum": 31.0,
+          "lower_right_sum": 97.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-015",
+          "upper_left_sum": 73.0,
+          "upper_right_sum": 109.0,
+          "lower_left_sum": 48.0,
+          "lower_right_sum": 124.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-016",
+          "upper_left_sum": 70.0,
+          "upper_right_sum": 104.0,
+          "lower_left_sum": 55.0,
+          "lower_right_sum": 98.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-017",
+          "upper_left_sum": 68.0,
+          "upper_right_sum": 125.0,
+          "lower_left_sum": 49.0,
+          "lower_right_sum": 88.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-018",
+          "upper_left_sum": 101.0,
+          "upper_right_sum": 60.0,
+          "lower_left_sum": 37.0,
+          "lower_right_sum": 133.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-019",
+          "upper_left_sum": 45.0,
+          "upper_right_sum": 124.0,
+          "lower_left_sum": 30.0,
+          "lower_right_sum": 81.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-020",
+          "upper_left_sum": 49.0,
+          "upper_right_sum": 88.0,
+          "lower_left_sum": 37.0,
+          "lower_right_sum": 107.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-021",
+          "upper_left_sum": 70.0,
+          "upper_right_sum": 106.0,
+          "lower_left_sum": 46.0,
+          "lower_right_sum": 111.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-022",
+          "upper_left_sum": 82.0,
+          "upper_right_sum": 103.0,
+          "lower_left_sum": 39.0,
+          "lower_right_sum": 122.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-023",
+          "upper_left_sum": 89.0,
+          "upper_right_sum": 113.0,
+          "lower_left_sum": 42.0,
+          "lower_right_sum": 99.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-024",
+          "upper_left_sum": 81.0,
+          "upper_right_sum": 88.0,
+          "lower_left_sum": 53.0,
+          "lower_right_sum": 112.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-025",
+          "upper_left_sum": 76.0,
+          "upper_right_sum": 98.0,
+          "lower_left_sum": 55.0,
+          "lower_right_sum": 124.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-026",
+          "upper_left_sum": 42.0,
+          "upper_right_sum": 102.0,
+          "lower_left_sum": 37.0,
+          "lower_right_sum": 105.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-027",
+          "upper_left_sum": 39.0,
+          "upper_right_sum": 103.0,
+          "lower_left_sum": 43.0,
+          "lower_right_sum": 83.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-028",
+          "upper_left_sum": 53.0,
+          "upper_right_sum": 65.0,
+          "lower_left_sum": 49.0,
+          "lower_right_sum": 94.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-029",
+          "upper_left_sum": 88.0,
+          "upper_right_sum": 115.0,
+          "lower_left_sum": 44.0,
+          "lower_right_sum": 124.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-030",
+          "upper_left_sum": 75.0,
+          "upper_right_sum": 75.0,
+          "lower_left_sum": 27.0,
+          "lower_right_sum": 123.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-031",
+          "upper_left_sum": 63.0,
+          "upper_right_sum": 120.0,
+          "lower_left_sum": 38.0,
+          "lower_right_sum": 119.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-032",
+          "upper_left_sum": 68.0,
+          "upper_right_sum": 71.0,
+          "lower_left_sum": 37.0,
+          "lower_right_sum": 83.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-033",
+          "upper_left_sum": 48.0,
+          "upper_right_sum": 97.0,
+          "lower_left_sum": 43.0,
+          "lower_right_sum": 89.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-034",
+          "upper_left_sum": 99.0,
+          "upper_right_sum": 93.0,
+          "lower_left_sum": 63.0,
+          "lower_right_sum": 63.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-035",
+          "upper_left_sum": 63.0,
+          "upper_right_sum": 79.0,
+          "lower_left_sum": 58.0,
+          "lower_right_sum": 113.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-036",
+          "upper_left_sum": 64.0,
+          "upper_right_sum": 66.0,
+          "lower_left_sum": 51.0,
+          "lower_right_sum": 87.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-037",
+          "upper_left_sum": 86.0,
+          "upper_right_sum": 98.0,
+          "lower_left_sum": 35.0,
+          "lower_right_sum": 118.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-038",
+          "upper_left_sum": 46.0,
+          "upper_right_sum": 73.0,
+          "lower_left_sum": 45.0,
+          "lower_right_sum": 95.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-039",
+          "upper_left_sum": 97.0,
+          "upper_right_sum": 67.0,
+          "lower_left_sum": 71.0,
+          "lower_right_sum": 123.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-040",
+          "upper_left_sum": 84.0,
+          "upper_right_sum": 89.0,
+          "lower_left_sum": 66.0,
+          "lower_right_sum": 108.0,
+          "class_label": 0
+        },
+        {
+          "record_id": "CAL-041",
+          "upper_left_sum": 78.0,
+          "upper_right_sum": 84.0,
+          "lower_left_sum": 82.0,
+          "lower_right_sum": 92.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-042",
+          "upper_left_sum": 92.0,
+          "upper_right_sum": 63.0,
+          "lower_left_sum": 67.0,
+          "lower_right_sum": 91.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-043",
+          "upper_left_sum": 78.0,
+          "upper_right_sum": 86.0,
+          "lower_left_sum": 67.0,
+          "lower_right_sum": 88.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-044",
+          "upper_left_sum": 84.0,
+          "upper_right_sum": 85.0,
+          "lower_left_sum": 63.0,
+          "lower_right_sum": 87.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-045",
+          "upper_left_sum": 94.0,
+          "upper_right_sum": 76.0,
+          "lower_left_sum": 88.0,
+          "lower_right_sum": 64.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-046",
+          "upper_left_sum": 69.0,
+          "upper_right_sum": 110.0,
+          "lower_left_sum": 64.0,
+          "lower_right_sum": 59.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-047",
+          "upper_left_sum": 81.0,
+          "upper_right_sum": 67.0,
+          "lower_left_sum": 106.0,
+          "lower_right_sum": 39.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-048",
+          "upper_left_sum": 111.0,
+          "upper_right_sum": 85.0,
+          "lower_left_sum": 117.0,
+          "lower_right_sum": 41.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-049",
+          "upper_left_sum": 92.0,
+          "upper_right_sum": 90.0,
+          "lower_left_sum": 86.0,
+          "lower_right_sum": 70.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-050",
+          "upper_left_sum": 88.0,
+          "upper_right_sum": 89.0,
+          "lower_left_sum": 74.0,
+          "lower_right_sum": 55.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-051",
+          "upper_left_sum": 83.0,
+          "upper_right_sum": 87.0,
+          "lower_left_sum": 95.0,
+          "lower_right_sum": 73.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-052",
+          "upper_left_sum": 112.0,
+          "upper_right_sum": 88.0,
+          "lower_left_sum": 106.0,
+          "lower_right_sum": 45.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-053",
+          "upper_left_sum": 82.0,
+          "upper_right_sum": 112.0,
+          "lower_left_sum": 45.0,
+          "lower_right_sum": 90.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-054",
+          "upper_left_sum": 105.0,
+          "upper_right_sum": 124.0,
+          "lower_left_sum": 50.0,
+          "lower_right_sum": 127.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-055",
+          "upper_left_sum": 107.0,
+          "upper_right_sum": 63.0,
+          "lower_left_sum": 94.0,
+          "lower_right_sum": 81.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-056",
+          "upper_left_sum": 83.0,
+          "upper_right_sum": 84.0,
+          "lower_left_sum": 77.0,
+          "lower_right_sum": 57.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-057",
+          "upper_left_sum": 94.0,
+          "upper_right_sum": 62.0,
+          "lower_left_sum": 82.0,
+          "lower_right_sum": 81.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-058",
+          "upper_left_sum": 109.0,
+          "upper_right_sum": 83.0,
+          "lower_left_sum": 82.0,
+          "lower_right_sum": 99.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-059",
+          "upper_left_sum": 76.0,
+          "upper_right_sum": 93.0,
+          "lower_left_sum": 35.0,
+          "lower_right_sum": 89.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-060",
+          "upper_left_sum": 80.0,
+          "upper_right_sum": 88.0,
+          "lower_left_sum": 53.0,
+          "lower_right_sum": 96.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-061",
+          "upper_left_sum": 104.0,
+          "upper_right_sum": 95.0,
+          "lower_left_sum": 57.0,
+          "lower_right_sum": 117.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-062",
+          "upper_left_sum": 80.0,
+          "upper_right_sum": 86.0,
+          "lower_left_sum": 74.0,
+          "lower_right_sum": 50.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-063",
+          "upper_left_sum": 79.0,
+          "upper_right_sum": 91.0,
+          "lower_left_sum": 88.0,
+          "lower_right_sum": 90.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-064",
+          "upper_left_sum": 115.0,
+          "upper_right_sum": 86.0,
+          "lower_left_sum": 99.0,
+          "lower_right_sum": 44.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-065",
+          "upper_left_sum": 35.0,
+          "upper_right_sum": 102.0,
+          "lower_left_sum": 74.0,
+          "lower_right_sum": 71.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-066",
+          "upper_left_sum": 109.0,
+          "upper_right_sum": 86.0,
+          "lower_left_sum": 88.0,
+          "lower_right_sum": 75.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-067",
+          "upper_left_sum": 69.0,
+          "upper_right_sum": 62.0,
+          "lower_left_sum": 74.0,
+          "lower_right_sum": 67.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-068",
+          "upper_left_sum": 104.0,
+          "upper_right_sum": 80.0,
+          "lower_left_sum": 87.0,
+          "lower_right_sum": 75.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-069",
+          "upper_left_sum": 78.0,
+          "upper_right_sum": 77.0,
+          "lower_left_sum": 77.0,
+          "lower_right_sum": 71.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-070",
+          "upper_left_sum": 91.0,
+          "upper_right_sum": 100.0,
+          "lower_left_sum": 58.0,
+          "lower_right_sum": 96.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-071",
+          "upper_left_sum": 78.0,
+          "upper_right_sum": 77.0,
+          "lower_left_sum": 89.0,
+          "lower_right_sum": 68.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-072",
+          "upper_left_sum": 81.0,
+          "upper_right_sum": 96.0,
+          "lower_left_sum": 72.0,
+          "lower_right_sum": 75.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-073",
+          "upper_left_sum": 68.0,
+          "upper_right_sum": 83.0,
+          "lower_left_sum": 76.0,
+          "lower_right_sum": 35.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-074",
+          "upper_left_sum": 93.0,
+          "upper_right_sum": 75.0,
+          "lower_left_sum": 74.0,
+          "lower_right_sum": 40.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-075",
+          "upper_left_sum": 96.0,
+          "upper_right_sum": 91.0,
+          "lower_left_sum": 84.0,
+          "lower_right_sum": 112.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-076",
+          "upper_left_sum": 50.0,
+          "upper_right_sum": 98.0,
+          "lower_left_sum": 77.0,
+          "lower_right_sum": 85.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-077",
+          "upper_left_sum": 94.0,
+          "upper_right_sum": 82.0,
+          "lower_left_sum": 74.0,
+          "lower_right_sum": 104.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-078",
+          "upper_left_sum": 94.0,
+          "upper_right_sum": 115.0,
+          "lower_left_sum": 90.0,
+          "lower_right_sum": 86.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-079",
+          "upper_left_sum": 90.0,
+          "upper_right_sum": 66.0,
+          "lower_left_sum": 61.0,
+          "lower_right_sum": 91.0,
+          "class_label": 1
+        },
+        {
+          "record_id": "CAL-080",
+          "upper_left_sum": 89.0,
+          "upper_right_sum": 71.0,
+          "lower_left_sum": 87.0,
+          "lower_right_sum": 31.0,
+          "class_label": 1
+        }
+      ],
+      "unlabelled_batch_records": [
+        {
+          "record_id": "BATCH-001",
+          "upper_left_sum": 94.0,
+          "upper_right_sum": 85.0,
+          "lower_left_sum": 70.0,
+          "lower_right_sum": 104.0
+        },
+        {
+          "record_id": "BATCH-002",
+          "upper_left_sum": 101.0,
+          "upper_right_sum": 70.0,
+          "lower_left_sum": 68.0,
+          "lower_right_sum": 102.0
+        },
+        {
+          "record_id": "BATCH-003",
+          "upper_left_sum": 52.0,
+          "upper_right_sum": 125.0,
+          "lower_left_sum": 62.0,
+          "lower_right_sum": 110.0
+        },
+        {
+          "record_id": "BATCH-004",
+          "upper_left_sum": 73.0,
+          "upper_right_sum": 78.0,
+          "lower_left_sum": 58.0,
+          "lower_right_sum": 93.0
+        },
+        {
+          "record_id": "BATCH-005",
+          "upper_left_sum": 37.0,
+          "upper_right_sum": 98.0,
+          "lower_left_sum": 38.0,
+          "lower_right_sum": 86.0
+        },
+        {
+          "record_id": "BATCH-006",
+          "upper_left_sum": 45.0,
+          "upper_right_sum": 115.0,
+          "lower_left_sum": 44.0,
+          "lower_right_sum": 82.0
+        },
+        {
+          "record_id": "BATCH-007",
+          "upper_left_sum": 73.0,
+          "upper_right_sum": 77.0,
+          "lower_left_sum": 35.0,
+          "lower_right_sum": 91.0
+        },
+        {
+          "record_id": "BATCH-008",
+          "upper_left_sum": 75.0,
+          "upper_right_sum": 91.0,
+          "lower_left_sum": 72.0,
+          "lower_right_sum": 120.0
+        },
+        {
+          "record_id": "BATCH-009",
+          "upper_left_sum": 81.0,
+          "upper_right_sum": 103.0,
+          "lower_left_sum": 46.0,
+          "lower_right_sum": 112.0
+        },
+        {
+          "record_id": "BATCH-010",
+          "upper_left_sum": 53.0,
+          "upper_right_sum": 104.0,
+          "lower_left_sum": 47.0,
+          "lower_right_sum": 98.0
+        },
+        {
+          "record_id": "BATCH-011",
+          "upper_left_sum": 73.0,
+          "upper_right_sum": 100.0,
+          "lower_left_sum": 58.0,
+          "lower_right_sum": 113.0
+        },
+        {
+          "record_id": "BATCH-012",
+          "upper_left_sum": 50.0,
+          "upper_right_sum": 110.0,
+          "lower_left_sum": 55.0,
+          "lower_right_sum": 105.0
+        },
+        {
+          "record_id": "BATCH-013",
+          "upper_left_sum": 79.0,
+          "upper_right_sum": 119.0,
+          "lower_left_sum": 38.0,
+          "lower_right_sum": 103.0
+        },
+        {
+          "record_id": "BATCH-014",
+          "upper_left_sum": 61.0,
+          "upper_right_sum": 77.0,
+          "lower_left_sum": 64.0,
+          "lower_right_sum": 110.0
+        },
+        {
+          "record_id": "BATCH-015",
+          "upper_left_sum": 77.0,
+          "upper_right_sum": 58.0,
+          "lower_left_sum": 57.0,
+          "lower_right_sum": 102.0
+        },
+        {
+          "record_id": "BATCH-016",
+          "upper_left_sum": 65.0,
+          "upper_right_sum": 104.0,
+          "lower_left_sum": 29.0,
+          "lower_right_sum": 109.0
+        },
+        {
+          "record_id": "BATCH-017",
+          "upper_left_sum": 92.0,
+          "upper_right_sum": 86.0,
+          "lower_left_sum": 43.0,
+          "lower_right_sum": 123.0
+        },
+        {
+          "record_id": "BATCH-018",
+          "upper_left_sum": 35.0,
+          "upper_right_sum": 91.0,
+          "lower_left_sum": 44.0,
+          "lower_right_sum": 99.0
+        },
+        {
+          "record_id": "BATCH-019",
+          "upper_left_sum": 91.0,
+          "upper_right_sum": 103.0,
+          "lower_left_sum": 33.0,
+          "lower_right_sum": 119.0
+        },
+        {
+          "record_id": "BATCH-020",
+          "upper_left_sum": 70.0,
+          "upper_right_sum": 85.0,
+          "lower_left_sum": 37.0,
+          "lower_right_sum": 104.0
+        },
+        {
+          "record_id": "BATCH-021",
+          "upper_left_sum": 86.0,
+          "upper_right_sum": 86.0,
+          "lower_left_sum": 65.0,
+          "lower_right_sum": 104.0
+        },
+        {
+          "record_id": "BATCH-022",
+          "upper_left_sum": 44.0,
+          "upper_right_sum": 104.0,
+          "lower_left_sum": 80.0,
+          "lower_right_sum": 108.0
+        },
+        {
+          "record_id": "BATCH-023",
+          "upper_left_sum": 68.0,
+          "upper_right_sum": 116.0,
+          "lower_left_sum": 51.0,
+          "lower_right_sum": 94.0
+        },
+        {
+          "record_id": "BATCH-024",
+          "upper_left_sum": 91.0,
+          "upper_right_sum": 70.0,
+          "lower_left_sum": 63.0,
+          "lower_right_sum": 91.0
+        },
+        {
+          "record_id": "BATCH-025",
+          "upper_left_sum": 52.0,
+          "upper_right_sum": 104.0,
+          "lower_left_sum": 42.0,
+          "lower_right_sum": 75.0
+        },
+        {
+          "record_id": "BATCH-026",
+          "upper_left_sum": 47.0,
+          "upper_right_sum": 81.0,
+          "lower_left_sum": 33.0,
+          "lower_right_sum": 106.0
+        },
+        {
+          "record_id": "BATCH-027",
+          "upper_left_sum": 76.0,
+          "upper_right_sum": 85.0,
+          "lower_left_sum": 21.0,
+          "lower_right_sum": 83.0
+        },
+        {
+          "record_id": "BATCH-028",
+          "upper_left_sum": 62.0,
+          "upper_right_sum": 89.0,
+          "lower_left_sum": 63.0,
+          "lower_right_sum": 93.0
+        },
+        {
+          "record_id": "BATCH-029",
+          "upper_left_sum": 71.0,
+          "upper_right_sum": 81.0,
+          "lower_left_sum": 28.0,
+          "lower_right_sum": 90.0
+        },
+        {
+          "record_id": "BATCH-030",
+          "upper_left_sum": 59.0,
+          "upper_right_sum": 88.0,
+          "lower_left_sum": 16.0,
+          "lower_right_sum": 97.0
+        },
+        {
+          "record_id": "BATCH-031",
+          "upper_left_sum": 55.0,
+          "upper_right_sum": 83.0,
+          "lower_left_sum": 45.0,
+          "lower_right_sum": 86.0
+        },
+        {
+          "record_id": "BATCH-032",
+          "upper_left_sum": 74.0,
+          "upper_right_sum": 96.0,
+          "lower_left_sum": 32.0,
+          "lower_right_sum": 84.0
+        },
+        {
+          "record_id": "BATCH-033",
+          "upper_left_sum": 80.0,
+          "upper_right_sum": 97.0,
+          "lower_left_sum": 52.0,
+          "lower_right_sum": 110.0
+        },
+        {
+          "record_id": "BATCH-034",
+          "upper_left_sum": 75.0,
+          "upper_right_sum": 95.0,
+          "lower_left_sum": 31.0,
+          "lower_right_sum": 99.0
+        },
+        {
+          "record_id": "BATCH-035",
+          "upper_left_sum": 50.0,
+          "upper_right_sum": 90.0,
+          "lower_left_sum": 32.0,
+          "lower_right_sum": 91.0
+        },
+        {
+          "record_id": "BATCH-036",
+          "upper_left_sum": 78.0,
+          "upper_right_sum": 45.0,
+          "lower_left_sum": 78.0,
+          "lower_right_sum": 103.0
+        },
+        {
+          "record_id": "BATCH-037",
+          "upper_left_sum": 73.0,
+          "upper_right_sum": 85.0,
+          "lower_left_sum": 31.0,
+          "lower_right_sum": 103.0
+        },
+        {
+          "record_id": "BATCH-038",
+          "upper_left_sum": 73.0,
+          "upper_right_sum": 92.0,
+          "lower_left_sum": 21.0,
+          "lower_right_sum": 102.0
+        },
+        {
+          "record_id": "BATCH-039",
+          "upper_left_sum": 64.0,
+          "upper_right_sum": 93.0,
+          "lower_left_sum": 57.0,
+          "lower_right_sum": 92.0
+        },
+        {
+          "record_id": "BATCH-040",
+          "upper_left_sum": 64.0,
+          "upper_right_sum": 64.0,
+          "lower_left_sum": 41.0,
+          "lower_right_sum": 92.0
+        },
+        {
+          "record_id": "BATCH-041",
+          "upper_left_sum": 44.0,
+          "upper_right_sum": 109.0,
+          "lower_left_sum": 80.0,
+          "lower_right_sum": 132.0
+        },
+        {
+          "record_id": "BATCH-042",
+          "upper_left_sum": 70.0,
+          "upper_right_sum": 84.0,
+          "lower_left_sum": 41.0,
+          "lower_right_sum": 90.0
+        },
+        {
+          "record_id": "BATCH-043",
+          "upper_left_sum": 45.0,
+          "upper_right_sum": 99.0,
+          "lower_left_sum": 35.0,
+          "lower_right_sum": 96.0
+        },
+        {
+          "record_id": "BATCH-044",
+          "upper_left_sum": 54.0,
+          "upper_right_sum": 73.0,
+          "lower_left_sum": 44.0,
+          "lower_right_sum": 106.0
+        },
+        {
+          "record_id": "BATCH-045",
+          "upper_left_sum": 54.0,
+          "upper_right_sum": 112.0,
+          "lower_left_sum": 43.0,
+          "lower_right_sum": 117.0
+        },
+        {
+          "record_id": "BATCH-046",
+          "upper_left_sum": 45.0,
+          "upper_right_sum": 92.0,
+          "lower_left_sum": 69.0,
+          "lower_right_sum": 76.0
+        },
+        {
+          "record_id": "BATCH-047",
+          "upper_left_sum": 71.0,
+          "upper_right_sum": 62.0,
+          "lower_left_sum": 41.0,
+          "lower_right_sum": 99.0
+        },
+        {
+          "record_id": "BATCH-048",
+          "upper_left_sum": 89.0,
+          "upper_right_sum": 74.0,
+          "lower_left_sum": 57.0,
+          "lower_right_sum": 106.0
+        },
+        {
+          "record_id": "BATCH-049",
+          "upper_left_sum": 53.0,
+          "upper_right_sum": 90.0,
+          "lower_left_sum": 23.0,
+          "lower_right_sum": 100.0
+        },
+        {
+          "record_id": "BATCH-050",
+          "upper_left_sum": 66.0,
+          "upper_right_sum": 78.0,
+          "lower_left_sum": 46.0,
+          "lower_right_sum": 103.0
+        },
+        {
+          "record_id": "BATCH-051",
+          "upper_left_sum": 72.0,
+          "upper_right_sum": 86.0,
+          "lower_left_sum": 52.0,
+          "lower_right_sum": 108.0
+        },
+        {
+          "record_id": "BATCH-052",
+          "upper_left_sum": 53.0,
+          "upper_right_sum": 104.0,
+          "lower_left_sum": 25.0,
+          "lower_right_sum": 94.0
+        },
+        {
+          "record_id": "BATCH-053",
+          "upper_left_sum": 51.0,
+          "upper_right_sum": 104.0,
+          "lower_left_sum": 37.0,
+          "lower_right_sum": 96.0
+        },
+        {
+          "record_id": "BATCH-054",
+          "upper_left_sum": 59.0,
+          "upper_right_sum": 109.0,
+          "lower_left_sum": 74.0,
+          "lower_right_sum": 76.0
+        },
+        {
+          "record_id": "BATCH-055",
+          "upper_left_sum": 83.0,
+          "upper_right_sum": 95.0,
+          "lower_left_sum": 44.0,
+          "lower_right_sum": 124.0
+        },
+        {
+          "record_id": "BATCH-056",
+          "upper_left_sum": 51.0,
+          "upper_right_sum": 64.0,
+          "lower_left_sum": 50.0,
+          "lower_right_sum": 117.0
+        },
+        {
+          "record_id": "BATCH-057",
+          "upper_left_sum": 63.0,
+          "upper_right_sum": 93.0,
+          "lower_left_sum": 57.0,
+          "lower_right_sum": 100.0
+        },
+        {
+          "record_id": "BATCH-058",
+          "upper_left_sum": 49.0,
+          "upper_right_sum": 94.0,
+          "lower_left_sum": 67.0,
+          "lower_right_sum": 105.0
+        },
+        {
+          "record_id": "BATCH-059",
+          "upper_left_sum": 60.0,
+          "upper_right_sum": 91.0,
+          "lower_left_sum": 34.0,
+          "lower_right_sum": 92.0
+        },
+        {
+          "record_id": "BATCH-060",
+          "upper_left_sum": 95.0,
+          "upper_right_sum": 89.0,
+          "lower_left_sum": 47.0,
+          "lower_right_sum": 115.0
+        },
+        {
+          "record_id": "BATCH-061",
+          "upper_left_sum": 90.0,
+          "upper_right_sum": 58.0,
+          "lower_left_sum": 86.0,
+          "lower_right_sum": 62.0
+        },
+        {
+          "record_id": "BATCH-062",
+          "upper_left_sum": 56.0,
+          "upper_right_sum": 89.0,
+          "lower_left_sum": 74.0,
+          "lower_right_sum": 102.0
+        },
+        {
+          "record_id": "BATCH-063",
+          "upper_left_sum": 77.0,
+          "upper_right_sum": 82.0,
+          "lower_left_sum": 85.0,
+          "lower_right_sum": 59.0
+        },
+        {
+          "record_id": "BATCH-064",
+          "upper_left_sum": 88.0,
+          "upper_right_sum": 89.0,
+          "lower_left_sum": 76.0,
+          "lower_right_sum": 63.0
+        },
+        {
+          "record_id": "BATCH-065",
+          "upper_left_sum": 85.0,
+          "upper_right_sum": 80.0,
+          "lower_left_sum": 70.0,
+          "lower_right_sum": 56.0
+        },
+        {
+          "record_id": "BATCH-066",
+          "upper_left_sum": 91.0,
+          "upper_right_sum": 100.0,
+          "lower_left_sum": 100.0,
+          "lower_right_sum": 63.0
+        },
+        {
+          "record_id": "BATCH-067",
+          "upper_left_sum": 71.0,
+          "upper_right_sum": 79.0,
+          "lower_left_sum": 92.0,
+          "lower_right_sum": 94.0
+        },
+        {
+          "record_id": "BATCH-068",
+          "upper_left_sum": 77.0,
+          "upper_right_sum": 82.0,
+          "lower_left_sum": 35.0,
+          "lower_right_sum": 110.0
+        },
+        {
+          "record_id": "BATCH-069",
+          "upper_left_sum": 89.0,
+          "upper_right_sum": 91.0,
+          "lower_left_sum": 74.0,
+          "lower_right_sum": 68.0
+        },
+        {
+          "record_id": "BATCH-070",
+          "upper_left_sum": 109.0,
+          "upper_right_sum": 87.0,
+          "lower_left_sum": 84.0,
+          "lower_right_sum": 73.0
+        },
+        {
+          "record_id": "BATCH-071",
+          "upper_left_sum": 98.0,
+          "upper_right_sum": 99.0,
+          "lower_left_sum": 112.0,
+          "lower_right_sum": 82.0
+        },
+        {
+          "record_id": "BATCH-072",
+          "upper_left_sum": 104.0,
+          "upper_right_sum": 94.0,
+          "lower_left_sum": 65.0,
+          "lower_right_sum": 101.0
+        },
+        {
+          "record_id": "BATCH-073",
+          "upper_left_sum": 81.0,
+          "upper_right_sum": 98.0,
+          "lower_left_sum": 101.0,
+          "lower_right_sum": 56.0
+        },
+        {
+          "record_id": "BATCH-074",
+          "upper_left_sum": 121.0,
+          "upper_right_sum": 96.0,
+          "lower_left_sum": 95.0,
+          "lower_right_sum": 56.0
+        },
+        {
+          "record_id": "BATCH-075",
+          "upper_left_sum": 78.0,
+          "upper_right_sum": 103.0,
+          "lower_left_sum": 59.0,
+          "lower_right_sum": 100.0
+        },
+        {
+          "record_id": "BATCH-076",
+          "upper_left_sum": 101.0,
+          "upper_right_sum": 103.0,
+          "lower_left_sum": 84.0,
+          "lower_right_sum": 103.0
+        },
+        {
+          "record_id": "BATCH-077",
+          "upper_left_sum": 60.0,
+          "upper_right_sum": 86.0,
+          "lower_left_sum": 78.0,
+          "lower_right_sum": 90.0
+        },
+        {
+          "record_id": "BATCH-078",
+          "upper_left_sum": 71.0,
+          "upper_right_sum": 84.0,
+          "lower_left_sum": 85.0,
+          "lower_right_sum": 90.0
+        },
+        {
+          "record_id": "BATCH-079",
+          "upper_left_sum": 108.0,
+          "upper_right_sum": 86.0,
+          "lower_left_sum": 104.0,
+          "lower_right_sum": 57.0
+        },
+        {
+          "record_id": "BATCH-080",
+          "upper_left_sum": 82.0,
+          "upper_right_sum": 99.0,
+          "lower_left_sum": 94.0,
+          "lower_right_sum": 92.0
+        }
+      ],
+      "feature_columns": [
+        "upper_left_sum",
+        "upper_right_sum",
+        "lower_left_sum",
+        "lower_right_sum"
+      ],
+      "class_semantics": {
+        "0": "original digit3",
+        "1": "original digit8",
+        "positive_label": 1
+      },
+      "recognizer_scope": "Use this existing frozen standardized L2 logistic recognizer,including its supplied scaler,coefficients and class order. It operates on four 4x4-quadrant intensity sums from original 8x8 images. Do not refit it,change its decision rule or treat its probabilities as guaranteed calibrated posteriors. The empirical class-confusion mechanism must be measured on the separately labelled calibration cohort.",
+      "estimation_protocol": "Estimate the unlabelled batch positive-class mixture under the explicitly conditional working model that the frozen recognizer\u2019s class-conditional prediction probabilities transfer from calibration to batch. Use the complete disjoint calibration/batch cohorts and distinguish predicted-positive frequency from the mixture estimate. Report J=TPR-FPR. If abs(J)<=1e-8,report null prior estimate and false feasibility;otherwise report the unconstrained mixture solution and whether it lies in[0,1]. Never clip an out-of-range estimate into a seemingly feasible answer.",
+      "inference_scope": "This is a controlled archival label-mixture quantification activity,not a claim of exact finite-sample true-prior recovery. The batch is an unlabelled view of authentic observations,with its true labels withheld from task input. A nonzero empirical J establishes algebraic identifiability of this plug-in system,not proof that class-conditional transport holds or a population error guarantee. No medical,credit or individual decision application is made.",
+      "source_provenance": {
+        "dataset": "UCI Optical Recognition of Handwritten Digits;scikit-learn 1797-row test-set copy",
+        "doi": "10.24432/C50P49",
+        "source_url": "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits",
+        "documentation": "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html",
+        "license": "CC BY 4.0; E. Alpaydin and C. Kaynak (1998), UCI dataset attribution",
+        "raw_packaged_gzip_sha256": "09f66e6debdee2cd2b5ae59e0d6abbb73fc2b0e0185d2e1957e9ebb51e23aa22",
+        "original_shape": [
+          1797,
+          64
+        ],
+        "feature_transform": "Top-left,top-right,bottom-left,bottom-right sums of the original four non-overlapping4x4 pixel quadrants,using the8x8row-major image orientation. All source pixel integers are preserved in the archived original gzip;the four features are explicit deterministic summaries,not new observations.",
+        "model_creation": "Frozen artifact fitted before calibration/batch access on a separate 120-observation training cohort,standardized L2 logistic C=0.1, solver lbfgs, maximum 200 iterations. The modelling setup is a deliberately coarse baseline,not an original UCI model or report.",
+        "source_identity_scope": "CAL/BATCH IDs are task-local observation identities. The author\u2019s hidden source-row map preserves all original row identities and labels for independent reproducibility;batch labels are not leaked into this input.",
+        "method_source": "https://proceedings.mlr.press/v80/lipton18a.html",
+        "method_read_scope": "Original paper\u2019s fixed-predictor class-conditional confusion transport and plug-in linear mixture identity. This task estimates a prior;it does not use the paper\u2019s test or claim its asymptotic guarantees for one finite panel."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

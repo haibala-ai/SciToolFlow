@@ -1,0 +1,14 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "molar_absorptivity_liter_per_mol_cm": 100.0,
+  "path_length_cm": 1.0,
+  "independently_calibrated_stray_light_fraction_relative_to_reference": 0.01,
+  "sample_observed_absorbance": 1.9629286886244175,
+  "second_reported_transmission": 0.005,
+  "model": "Controlled additive unabsorbed stray-light model. Observed transmission T_obs=(10^(-epsilon*l*c)+f)/(1+f); A_obs=-log10(T_obs). The same positive f is independently calibrated, not fitted from this single sample. A finite nonnegative true concentration requires f/(1+f)<T_obs<=1.",
+  "target": "Invert the sample absorbance, compare with naive Beer-Lambert inversion, compute the asymptotic maximum observable absorbance and assess whether the second reported transmission is compatible with any finite nonnegative concentration under this model. Do not clamp a negative recovered true transmission to force a finite answer.",
+  "scope": "Stipulated optical instrument model, no scattering correction, new spectrum or real detection-limit claim."
+}

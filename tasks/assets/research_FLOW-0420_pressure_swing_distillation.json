@@ -1,0 +1,87 @@
+{
+  "origin": "Own constructed binary-fluid equilibrium and separation audit. Anonymous components obey the exact supplied pure-vapor and symmetric Margules model on300..500K; calibration records are model-generated inputs, not measured properties of named compounds. This study concerns liquid-vapor thermodynamics, differential material balances and limiting two-column circulation, not scattering or structural homometry.",
+  "units_and_model": {
+    "pressure": "kPa throughout; logarithms apply to numerical P/(1kPa), not a dimensioned pressure.",
+    "temperature": "K; amount basis1mol fresh feed.",
+    "vapor": "Ideal vapor, negligible Poynting correction, no reaction.",
+    "liquid": "One homogeneous liquid with g_mix/(RT)=x ln x+(1-x)ln(1-x)+A x(1-x), A constant across the temperature range. Derive ln gamma1=A(1-x)^2 and ln gamma2=A x^2 from this common molar free energy; do not fit independent inconsistent activity functions.",
+    "saturation_family": "ln(Psat_i/(1kPa))=a_i+b_i/T; infer all coefficients from the complete supplied calibration records.",
+    "equilibrium": "P=x gamma1 Psat1+(1-x)gamma2 Psat2, y1=x gamma1 Psat1/P. Bubble temperature must be solved at the actual pressure and composition; do not use a common azeotropic temperature along an entire isobar."
+  },
+  "pure_saturation_calibration": [
+    {
+      "T_K": 320.0,
+      "saturation_pressure_kPa": [
+        12.182493960703473,
+        6.941375821197035
+      ]
+    },
+    {
+      "T_K": 340.0,
+      "saturation_pressure_kPa": [
+        25.413845340135477,
+        15.874370371476594
+      ]
+    },
+    {
+      "T_K": 360.0,
+      "saturation_pressure_kPa": [
+        48.856571274987274,
+        33.11545195869231
+      ]
+    },
+    {
+      "T_K": 380.0,
+      "saturation_pressure_kPa": [
+        87.67915716484808,
+        63.93677707110299
+      ]
+    },
+    {
+      "T_K": 400.0,
+      "saturation_pressure_kPa": [
+        148.4131591025766,
+        115.58428452718766
+      ]
+    }
+  ],
+  "mixture_activity_calibration": [
+    {
+      "T_K": 360.0,
+      "liquid_mole_fraction_component1": 0.25,
+      "bubble_pressure_kPa": 52.31584048371959,
+      "vapor_mole_fraction_component1": 0.4850735865241777
+    },
+    {
+      "T_K": 360.0,
+      "liquid_mole_fraction_component1": 0.5,
+      "bubble_pressure_kPa": 56.72589613422936,
+      "vapor_mole_fraction_component1": 0.5960151933265169
+    },
+    {
+      "T_K": 360.0,
+      "liquid_mole_fraction_component1": 0.75,
+      "bubble_pressure_kPa": 56.94471334046098,
+      "vapor_mole_fraction_component1": 0.6979386742610463
+    }
+  ],
+  "registered_calibration": "Use actual FitLinearRegression and PredictLinearModel for EACH pure-component lnPsat versus1/T model and for the one common activity coefficient A. For activity calibration use each complete mixture(P,y,x,T) record and predictions from the actual saturation models in the original two component equilibria: ln gamma1=ln(y*P/(x*Psat1)) and ln gamma2=ln((1-y)*P/((1-x)*Psat2)). Fit all six inferred log activities against(1-x)^2 for component1 andx^2 for component2. Retain the fitted intercept and test whether it vanishes at source precision; no intercept is silently discarded. Predictions must carry the complete portable model from its corresponding fit and verify all source mixture data. All other science must consume these observed fitted/predicted coefficients or source-verified equivalent values.",
+  "phase_geometry": "Prove liquid stability over the entire composition interval0<x<1 from the full free-energy curvature and report its global minimum. For each pressure40,80,160,240kPa derive the complete azeotrope set in0<x<1 and300<=T<=500K. Eliminate inverse temperature from equality of the two equilibrium K values to form a polynomial inx; use actual registered PolynomialRoots for EACH pressure and retain ALL roots including extraneous nonphysical ones. Filter using the original saturation, temperature and mixture equations. Prove uniqueness and classify the azeotrope as minimum or maximum boiling by the full isobaric bubble geometry, not a pressure grid or pure boiling-point order. Report[x_az,T_az] in pressure order.",
+  "differential_batch_experiment": "At fixed pressure40kPa, a perfectly mixed equilibrium liquid initially hasN0=1mol. An infinitesimal vapor amount is removed without reflux; no feed, chemistry or mechanical entrainment occurs. Temperature follows the actual isobaric bubble curve as composition changes. Derive the signed Rayleigh balance dlnN=dx/(y1(x;P)-x). For each initial compositionx0=0.5,x_az-0.01,x_az-0.001,x_az-0.0001, stop at residual compositionxb=0.1. Report ln(Nb/N0) and the AVERAGE accumulated distillate composition from the original overall component balance. Compute actual bubble T/y also atx0.1,0.5,0.9. Do not substitute initial vapor composition for the accumulated distillate average.",
+  "batch_numerical_evidence": "The Rayleigh integral has an integrable interval with a nearby azeotropic singularity whenx0 approachesx_az. Use u=ln(x_az-x) or an analytically equivalent regularization and retain the complete original bubble residuals and transformed integration values. For EACH of the four initial states use actual registered NumericalTrapezoidIntegration on at least THREE nested grids, each <=1025 points and within tool limits; preserve coordinate order and the SIGN of the original balance. Use convergence analysis/Richardson extrapolation or a rigorously controlled equivalent error estimate to meet final accuracy. The tool integral outputs must feed the final estimates. A numerical integration done only in a code tool, a single grid without error checks, or an analytic azeotrope substituted for all bubble points does not supply these observations.",
+  "singular_batch_limit": "Derive the leading power law Nb/N0 proportional to(x_az-x0)^nu asx0 approachesx_az from below withxb fixed, and reportnu. Derive the local derivative of the actual isobaric y(x), accounting for the bubble-temperature constraint. Establish which side the liquid residue moves on either side of the azeotrope, whether it can cross under these fixed conditions, and what happens for an EXACT azeotropic initial liquid. Do not identify a very small but nonzero departure with the exactly fixed state or infer finite experimental robustness from an infinite-time/composition limit.",
+  "limiting_pressure_swing": "Two ideal LIMITING rectifiers are used as a material-balance model. The low-pressure column at40kPa takes fresh feedF=1mol withz=0.5 plus recycleD_H from the high-pressure column; its bottomsB2 is pure component2 and its distillateD_L has the low-pressure azeotropic composition. The high-pressure column at160kPa takesD_L; its bottomsB1 is pure component1 and its distillateD_H has the high-pressure azeotropic composition and recycles completely. Derive all four total/component equations with consistent stream directions and solve their complete registered SolveLinearSystem for[DL,DH,B1,B2]. Verify all original balances, nonnegative streams and the necessary relative placement of the two azeotropes. These are limiting composition/material balances, not a claim that finite trays or finite reflux achieve exact pure/azeotropic products. Explain the fixed-pressure distillation obstruction.",
+  "robust_continuous_design": "Keep the low pressure40kPa but choose ONE fixed high pressurePH in CLOSED[60,240]kPa BEFORE the fresh feed compositionz in CLOSED[0.45,0.55] is known. Both ideal columns adjust their stream amounts at thatz according to the SAME original limiting balances and their pressure-dependent azeotropes. RequireDL<=6mol per mol fresh feed for EVERYz. An auxiliary ideal-gas reversible isothermal compressor at350K raises the low-column azeotropic vaporDL from40kPa toPH; its stipulated work isW=DL*R*350*ln(PH/40),R=8.31446261815324J/(molK). Minimize worst-caseW overz subject to robust circulation capacity, over the ENTIRE continuous pressure interval. Derive all feasibility boundaries and prove the global optimum and activez; no pressure grid alone suffices. Use actual PolynomialRoots and original full registered stream balance solve at the derived optimum as independent handoff checks. ReportPH,activez,[DL,DH,B1,B2],worstW. This objective is auxiliary compressor work only, not total column/reboiler duty or an overall thermodynamic efficiency.",
+  "vanishing_pressure_difference": "For the same worst-case fresh-feed composition derive the one-sided limit ofW asPH decreases to40kPa while temporarily dropping the finite-circulation cap. Report the finite or divergent limit according to the full balance and equilibrium model, and separately state whether circulation stays finite. A vanishing log pressure ratio cannot be multiplied by an assumed finite circulation. Then reimpose the actual capacity when assessing the design optimum.",
+  "interpretation_proposals": {
+    "A": "Thermodynamically consistent activity coefficients and the isobaric bubble constraint matter for azeotropic separation.",
+    "B": "The initial equilibrium vapor fraction equals the average composition of all accumulated batch distillate.",
+    "C": "An exact azeotropic initial liquid and a nearby nonazeotropic batch have different limiting composition behavior.",
+    "D": "A zero compressor pressure ratio implies zero limiting work even with an unbounded internal recycle.",
+    "E": "A pressure-dependent azeotrope shift can permit a limiting separation impossible with a single pressure.",
+    "F": "One feed-specific capacity check establishes robust feasibility for every unknown feed composition.",
+    "G": "An active robust circulation constraint can determine a unique continuous optimum rather than a sampled best pressure.",
+    "H": "The stipulated auxiliary compressor objective is the total separation energy and proves exact products at finite column size."
+  },
+  "reporting": "Numerical absolute tolerance1e-6 for final real values and matrices; IDs/predicates and stream orientation exact. Batch rows use the four declared initial states, not independently selected numerical endpoints. Return logarithms of remaining amount, not clipped zero or a raw small fraction. Complete source calibration/model predictions, physical/extraneous roots, original equilibrium/stream residuals, nested actual quadrature receipts and global singular/robust proofs belong in the reference trajectory. Mole fractions obey[0,1]; signed log amounts, logarithmic model slopes and compressor work are not normalized probabilities."
+}

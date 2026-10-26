@@ -1,0 +1,40 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific measurement/decision example; stipulated model inputs and observations, not new experimental findings.",
+    "scope": "All required information, units and inferential limits are in this document."
+  },
+  "stratum_order": [
+    "A",
+    "B",
+    "C"
+  ],
+  "fixed_conditional_squared_error_by_model": {
+    "M": [
+      0.5,
+      2.0,
+      9.0
+    ],
+    "N": [
+      7.0,
+      4.0,
+      2.0
+    ]
+  },
+  "target_mixture_bounds": {
+    "A": [
+      0.2,
+      0.6
+    ],
+    "B": [
+      0.1,
+      0.5
+    ],
+    "C": [
+      0.0,
+      1.0
+    ]
+  },
+  "constraint": "Mixture weights are nonnegative and sum exactly1. All interval bounds hold simultaneously; their upper endpoints cannot necessarily be used together. Conditional model risks in each stratum are stipulated known and stable across this target-mixture shift. Each model must be chosen before the target mixture is revealed.",
+  "selection": "For each fixed model maximize its expected risk over the entire feasible mixture polytope, then choose the model minimizing that maximum. Compare with equal-stratum weighting, which is merely one feasible mixture. Ties within1e-10 use lexicographically smaller model ID.",
+  "scope": "Worst-case risk under this declared mixture set and invariant conditional risks; not a guarantee under arbitrary conditional distribution shift or uncertainty in the risk table."
+}

@@ -1,0 +1,305 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "model_artifact": {
+        "type": "logistic_regression",
+        "n_features": 2,
+        "classes": [
+          "versicolor",
+          "virginica"
+        ],
+        "coefficients": [
+          [
+            1.0582875846656308,
+            0.019403373032507252
+          ]
+        ],
+        "intercepts": [
+          0.022530554732484206
+        ],
+        "mean": [
+          6.311666666666665,
+          2.86
+        ],
+        "scale": [
+          0.6610828658765523,
+          0.33674916480965467
+        ]
+      },
+      "feature_order": [
+        "sepal_length_cm",
+        "sepal_width_cm"
+      ],
+      "validation_features": [
+        [
+          6.6,
+          3.0
+        ],
+        [
+          5.5,
+          2.5
+        ],
+        [
+          6.3,
+          2.9
+        ],
+        [
+          7.6,
+          3.0
+        ],
+        [
+          6.8,
+          2.8
+        ],
+        [
+          6.0,
+          2.2
+        ],
+        [
+          7.2,
+          3.6
+        ],
+        [
+          6.9,
+          3.1
+        ],
+        [
+          6.3,
+          3.3
+        ],
+        [
+          6.8,
+          3.2
+        ],
+        [
+          6.0,
+          3.0
+        ],
+        [
+          6.2,
+          2.8
+        ],
+        [
+          5.8,
+          2.7
+        ],
+        [
+          5.7,
+          2.8
+        ],
+        [
+          6.0,
+          2.9
+        ],
+        [
+          5.7,
+          2.6
+        ],
+        [
+          6.4,
+          2.8
+        ],
+        [
+          5.6,
+          3.0
+        ],
+        [
+          6.2,
+          3.4
+        ],
+        [
+          7.2,
+          3.0
+        ],
+        [
+          6.1,
+          3.0
+        ],
+        [
+          6.5,
+          3.0
+        ],
+        [
+          5.9,
+          3.2
+        ],
+        [
+          5.0,
+          2.0
+        ],
+        [
+          6.5,
+          3.0
+        ],
+        [
+          6.9,
+          3.1
+        ],
+        [
+          6.7,
+          3.3
+        ],
+        [
+          5.6,
+          2.7
+        ],
+        [
+          5.7,
+          3.0
+        ],
+        [
+          5.8,
+          2.7
+        ]
+      ],
+      "validation_truth": [
+        "versicolor",
+        "versicolor",
+        "virginica",
+        "virginica",
+        "versicolor",
+        "versicolor",
+        "virginica",
+        "virginica",
+        "versicolor",
+        "virginica",
+        "virginica",
+        "virginica",
+        "virginica",
+        "versicolor",
+        "versicolor",
+        "versicolor",
+        "virginica",
+        "versicolor",
+        "virginica",
+        "virginica",
+        "versicolor",
+        "virginica",
+        "versicolor",
+        "versicolor",
+        "virginica",
+        "virginica",
+        "virginica",
+        "versicolor",
+        "versicolor",
+        "versicolor"
+      ],
+      "validation_row_ids": [
+        "Iris-075",
+        "Iris-089",
+        "Iris-103",
+        "Iris-105",
+        "Iris-076",
+        "Iris-062",
+        "Iris-109",
+        "Iris-141",
+        "Iris-056",
+        "Iris-143",
+        "Iris-138",
+        "Iris-126",
+        "Iris-142",
+        "Iris-099",
+        "Iris-078",
+        "Iris-079",
+        "Iris-128",
+        "Iris-088",
+        "Iris-148",
+        "Iris-129",
+        "Iris-091",
+        "Iris-116",
+        "Iris-070",
+        "Iris-060",
+        "Iris-104",
+        "Iris-139",
+        "Iris-124",
+        "Iris-094",
+        "Iris-095",
+        "Iris-067"
+      ],
+      "positive_class": "virginica",
+      "threshold_grid": [
+        0.3,
+        0.5,
+        0.7
+      ],
+      "false_positive_cost": 1,
+      "false_negative_cost": 1,
+      "minimum_recall": 0.9,
+      "selection_policy": "Use the artifact class order to obtain the declared positive-class probability. Positive if probability>=threshold. Minimize total FP/FN cost among thresholds meeting any recall requirement. If costs tie choose the highest threshold. If recall cannot be estimated or no threshold meets it, select null; still report the minimum observed cost over all thresholds as a diagnostic, not a deployable selection.",
+      "source_provenance": {
+        "dataset": "Fisher Iris authentic measured sepal features",
+        "source_url": "https://scikit-learn.org/stable/datasets/toy_dataset.html#iris-plants-dataset",
+        "source_training_row_ids": [
+          "Iris-127",
+          "Iris-083",
+          "Iris-118",
+          "Iris-058",
+          "Iris-052",
+          "Iris-119",
+          "Iris-063",
+          "Iris-100",
+          "Iris-133",
+          "Iris-149",
+          "Iris-111",
+          "Iris-085",
+          "Iris-053",
+          "Iris-074",
+          "Iris-147",
+          "Iris-059",
+          "Iris-092",
+          "Iris-097",
+          "Iris-120",
+          "Iris-117",
+          "Iris-146",
+          "Iris-086",
+          "Iris-051",
+          "Iris-112",
+          "Iris-114",
+          "Iris-077",
+          "Iris-108",
+          "Iris-102",
+          "Iris-069",
+          "Iris-144",
+          "Iris-064",
+          "Iris-065",
+          "Iris-057",
+          "Iris-145",
+          "Iris-122",
+          "Iris-071",
+          "Iris-055",
+          "Iris-134",
+          "Iris-115",
+          "Iris-137",
+          "Iris-087",
+          "Iris-054",
+          "Iris-061",
+          "Iris-081",
+          "Iris-130",
+          "Iris-113",
+          "Iris-132",
+          "Iris-096",
+          "Iris-080",
+          "Iris-093",
+          "Iris-072",
+          "Iris-090",
+          "Iris-082",
+          "Iris-125",
+          "Iris-123",
+          "Iris-050",
+          "Iris-121",
+          "Iris-131",
+          "Iris-107",
+          "Iris-136"
+        ],
+        "artifact_training": "Training-only population standardization then L2 logistic,C=1,intercept; artifact is a derived public predictor,not original measured data.",
+        "heldout_scope": "Distinct historical observations, not a clinical or causal deployment claim",
+        "audit_change": "Documented heldout-subset and/or predictor-serialization audit; measurements are not fabricated."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

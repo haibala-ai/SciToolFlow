@@ -1,0 +1,26 @@
+{
+  "signal_bin_order": [
+    "mid",
+    "low",
+    "high"
+  ],
+  "conditional_bin_probability_given_good": [
+    0.3,
+    0.6,
+    0.1
+  ],
+  "conditional_bin_probability_given_defect": [
+    0.4,
+    0.1,
+    0.5
+  ],
+  "deployment_defect_prevalence": 0.02,
+  "false_alarm_cost": 1.0,
+  "missed_defect_cost": 10.0,
+  "sensitivity_policy": "Choose one flag probability q_j for EACH observed signal bin, independently constrained to0<=q_j<=1. Maximize conditional defect detection P(flag|defect)subject to P(flag|good)<=0.15. Randomization within a bin is explicitly allowed; do not restrict the search to deterministic thresholds or q in{0,1}.",
+  "cost_policy": "Separately minimize unconditional expected deployment cost over ALL such bin-wise randomized policies, WITHOUT the sensitivity-policy false-alarm constraint. The cost is C_FP*(1-prevalence)*P(flag|good)+C_FN*prevalence*P(no flag|defect). This is a different objective on the same known class-conditional model. Compare the two optimal q vectors and report the cost of each under this same deployment population.",
+  "model_scope": "Exact stipulated population probabilities of a controlled industrial defect-detection model, not estimated validation proportions or an empirical error-control guarantee. Source bin identities and probabilities remain paired.",
+  "provenance": {
+    "data_origin": "Project-constructed numerical studies with explicit physical/statistical working assumptions; not experimental performance claims."
+  }
+}

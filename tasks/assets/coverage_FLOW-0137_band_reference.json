@@ -1,0 +1,28 @@
+{
+  "requested_material_id": "mp-149",
+  "record_fingerprints": {
+    "GetMaterialVBM": {
+      "material_id": "mp-aaaaaaft",
+      "last_updated": "2023-10-07T21:10:10.420000"
+    },
+    "GetMaterialCBM": {
+      "material_id": "mp-aaaaaaft",
+      "last_updated": "2023-10-07T21:10:10.420000"
+    },
+    "GetMaterialFermiEnergy": {
+      "material_id": "mp-aaaaaaft",
+      "last_updated": "2023-10-07T21:10:10.420000"
+    },
+    "GetMaterialBandGap": {
+      "material_id": "mp-aaaaaaft",
+      "last_updated": "2023-10-07T21:10:10.420000"
+    },
+    "GetMaterialMetallicStatus": {
+      "material_id": "mp-aaaaaaft",
+      "last_updated": "2023-10-07T21:10:10.420000"
+    }
+  },
+  "comparison_convention": "For this scalar-summary consistency audit only,compare the reported VBM,CBMand Fermi-energy values in their quoted record energy-zero convention. A boundary Fermi value counts as in_reported_gap. Do not interpret a raw energy zero as vacuum alignment,work function,dopant concentration or an experimental carrier type.",
+  "gap_agreement_tolerance_eV": 1e-05,
+  "required_outputs": "Compare CBM-VBMwith the separately reported fundamental gap,check metallic-status consistency,and locate the reported Fermi scalar relative to the quoted interval. Report Fermi minus the gap midpoint."
+}

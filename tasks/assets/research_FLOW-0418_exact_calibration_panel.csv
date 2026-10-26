@@ -1,0 +1,10 @@
+calibration_id,mechanism_id,setting_id,positive_readout_probability_given_survival,sample_loss_probability
+H3_B,H3,B,0.5,0.02
+H1_C,H1,C,0.8,0.02
+H2_A,H2,A,0.1,0.05
+H3_C,H3,C,0.1,0.08
+H1_A,H1,A,0.9,0.01
+H2_C,H2,C,0.7,0.03
+H3_A,H3,A,0.5,0.02
+H1_B,H1,B,0.2,0.06
+H2_B,H2,B,0.8,0.01

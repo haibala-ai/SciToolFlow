@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "record_id": "phase_model",
+      "temperature_kelvin": [
+        298.15,
+        310.0,
+        330.0
+      ],
+      "gas_cp_j_mol_k": [
+        33.6,
+        33.8,
+        34.0
+      ],
+      "liquid_cp_j_mol_k": [
+        75.3,
+        75.6,
+        75.9
+      ],
+      "delta_cp_j_mol_k": [
+        -41.699999999999996,
+        -41.8,
+        -41.900000000000006
+      ],
+      "reference_enthalpy_kj_mol": 44.0,
+      "reference_temperature_kelvin": 298.15
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "CpJ/(molK),Tkelvin,HkJ/mol",
+    "original_observation_claim": false
+  }
+}

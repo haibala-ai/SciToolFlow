@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "record_id": "reference",
+      "structure_file": "variant_U.cif"
+    },
+    {
+      "record_id": "variant",
+      "structure_file": "variant_V.cif"
+    }
+  ],
+  "provenance": {
+    "kind": "declared computational design with authentic source-data inputs; not experimental observations",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "CIF lengths angstrom; natural-abundance masses",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "Materials Project",
+      "url": "https://api.materialsproject.org/materials/summary/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_fields=material_id%2Cformula_pretty%2Ccomposition%2Cdensity%2Cvolume%2Cnsites%2Cstructure%2Cband_gap%2Cis_metal%2Cis_magnetic%2Cenergy_above_hull%2Cformation_energy_per_atom%2Csymmetry%2Corigins%2Clast_updated&_limit=20",
+      "accessed_at": "2026-10-20T07:58:30.182854+00:00",
+      "captured_file": "mp_summary_candidates.json",
+      "captured_sha256": "1aac1aa3378751ebcfd8efca70992ab314b53c38693c4dea87b5102ce585e862"
+    },
+    "source_numeric_values_fabricated": false
+  }
+}

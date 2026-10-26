@@ -1,0 +1,47 @@
+{
+  "data": [
+    {
+      "record_id": "settings",
+      "reference_structure_file": "Si_reference_cell.cif",
+      "wavelength_angstrom": 1.5406,
+      "observed_two_theta_deg": [
+        28.201590105676683,
+        46.88689077102067,
+        55.61637578278652
+      ]
+    },
+    {
+      "record_id": "feature-0",
+      "hkl": [
+        0,
+        1,
+        0
+      ],
+      "two_theta_deg": 28.201590105676683
+    },
+    {
+      "record_id": "feature-1",
+      "hkl": [
+        1,
+        -1,
+        0
+      ],
+      "two_theta_deg": 46.88689077102067
+    },
+    {
+      "record_id": "feature-2",
+      "hkl": [
+        1,
+        2,
+        0
+      ],
+      "two_theta_deg": 55.61637578278652
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "two-theta degrees; wavelength angstrom",
+    "original_observation_claim": false
+  }
+}

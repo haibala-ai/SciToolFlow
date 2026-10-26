@@ -1,0 +1,15 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "temperature_kelvin": 298.15,
+  "gas_constant_j_per_mol_kelvin": 8.314462618,
+  "faraday_coulomb_per_mol": 96485.33212,
+  "standard_reduction_potential_volts": 0.7,
+  "reduction_half_reaction": "Ox+2H_plus+2electrons -> Red",
+  "activity_red_over_ox": 0.25,
+  "proton_activity": 0.001,
+  "model": "Dimensionless standard-state activities; Q=a_Red/(a_Ox*a_Hplus^2). E=E_standard-(R*T/(n*F))*ln(Q), n=2. Define pH=-log10(a_Hplus). Proton activity is an independent supplied observation, not inferred from a molecular graph.",
+  "target": "Report E, dE/dpH at fixed Red/Ox ratio, and E_wrong_minus_E_correct when the quotient mistakenly contains a_Hplus^1 while electron count remains2. No reference-electrode conversion or liquid junction correction is implied."
+}

@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "case_id": "spectral_mix",
+      "response_matrix": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "sample_response": [
+        0.3,
+        0.7,
+        1.4
+      ],
+      "component_order": [
+        "benign_reference_A",
+        "benign_reference_B"
+      ],
+      "concentration_units": "mmol/L",
+      "residual_norm_limit": 0.02
+    }
+  ],
+  "provenance": {
+    "kind": "controlled simulated linear analytical study",
+    "real_experimental_claim": false
+  }
+}

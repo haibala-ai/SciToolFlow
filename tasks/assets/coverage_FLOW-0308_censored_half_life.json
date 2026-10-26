@@ -1,0 +1,23 @@
+{
+  "cases": [
+    {
+      "id": "proline_yeast",
+      "sequence": "PAGST",
+      "system": "yeast_in_vivo"
+    },
+    {
+      "id": "arginine_yeast",
+      "sequence": "RAGST",
+      "system": "yeast_in_vivo"
+    },
+    {
+      "id": "proline_bacterial",
+      "sequence": "PAGST",
+      "system": "E_coli_in_vivo"
+    }
+  ],
+  "elapsed_time_hours": 2.0,
+  "conditional_model": "Transform only the published table information under R(t)=2^(-t/T),where every admissible half-life Tis finite and strictly positive. Treat a table_point as an exact number only within this computational teaching model,greater_than as a strict bound,and unknown as no information beyond0<T<infinity. This does not assert measured first-order kinetics or a sample-specific half-life.",
+  "terminal_policy": "Use the first supplied encoded residue literally;no cleavage,initiator-Met removal,PTM or mature-chain inference. These short strings are analytical index inputs,not functional sequence designs.",
+  "reporting": "Return sharp lower and upper remaining-fraction bounds and whether each endpoint is attained,in source case order. A point interval has both endpoints attained. Preserve tiny positive values;do not round them to zero. IDs are unordered."
+}

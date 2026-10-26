@@ -14,10 +14,15 @@ import time
 import uuid
 
 from baselines.common.session import SessionOptions
+from baselines.common.resources import (
+    TaskResources,
+    ResourceLimit,
+    remaining as quota_remaining,
+)
 from baselines.react.runtime import run_react
 from baselines.react.context import preview
-from scitoolflow.io import atomic_json
-from .retrieval import GraphRetriever
+from src.utils.io import atomic_json
+from baselines.scitoolagent.retrieval import GraphRetriever
 
 
 def run_scitoolagent(
@@ -31,18 +36,19 @@ def run_scitoolagent(
     inputs=None,
     files=None,
     answer_schema=None,
-    max_iterations=80,
-    max_calls=32,
+    max_iterations=None,
+    max_calls=None,
     max_actions=8,
-    max_discovery_calls=20,
-    max_reasoning_turns=8,
-    max_consecutive_thinks=2,
+    max_discovery_calls=None,
+    max_reasoning_turns=None,
+    max_consecutive_thinks=None,
     max_protocol_errors=5,
     max_failures_per_action=0,
     max_identical_tool_steps=10,
     answer_schema_guard=True,
     protocol_schema_guard=True,
-    task_timeout=1800,
+    task_timeout=7200,
+    max_model_requests=400,
     tool_timeout=180,
     max_context_chars=200000,
     max_output_tokens=4096,
@@ -56,7 +62,8 @@ def run_scitoolagent(
     config = json.loads((root / "baselines/scitoolagent/config.json").read_text())
     prompt = (root / "baselines/scitoolagent/system_prompt.md").read_text()
     started = time.monotonic()
-    deadline = started + task_timeout
+    resources = TaskResources(max_model_requests, task_timeout)
+    deadline = resources.deadline
     run_id = case_id + "-" + uuid.uuid4().hex[:12]
     path = Path(trace_dir) / run_id / "trajectory.json"
     stats = {
@@ -92,6 +99,8 @@ def run_scitoolagent(
         "preparations": [],
         "retrievals": [],
         "limits": {
+            "resource_policy": "task-resources.v1",
+            "model_requests": max_model_requests,
             "decisions": max_iterations,
             "scientific_calls": max_calls,
             "discovery_calls": max_discovery_calls,
@@ -118,6 +127,7 @@ def run_scitoolagent(
     interrupted = False
 
     def save():
+        trajectory["resource_usage"] = resources.snapshot()
         trajectory["stats"] = dict(stats)
         atomic_json(path, trajectory)
 
@@ -126,9 +136,10 @@ def run_scitoolagent(
     def remaining():
         if time.monotonic() >= deadline:
             raise RuntimeError("TaskDeadline")
-        if stats["model_turns"] >= max_iterations:
+        resources.check()
+        if max_iterations is not None and stats["model_turns"] >= max_iterations:
             raise RuntimeError("DecisionBudget")
-        return max_iterations - stats["model_turns"]
+        return quota_remaining(max_iterations, stats["model_turns"])
 
     def evidence():
         return [
@@ -209,6 +220,7 @@ def run_scitoolagent(
             yield_after_success=stop_after_success,
             persist=False,
             on_update=update,
+            resources=resources,
         )
 
         result = run_react(
@@ -222,14 +234,21 @@ def run_scitoolagent(
             files=files,
             answer_schema=schema,
             max_iterations=(
-                min(budget, config["planner_max_steps"])
-                if role == "planner"
+                min(
+                    budget if budget is not None else config["planner_max_steps"],
+                    config["planner_max_steps"],
+                )
+                if role == "planner" and config["planner_max_steps"] is not None
                 else budget
             ),
-            max_calls=max_calls - stats["scientific_calls"],
+            max_calls=quota_remaining(max_calls, stats["scientific_calls"]),
             max_actions=1 if role == "executor" else max_actions,
-            max_discovery_calls=max_discovery_calls - stats["discovery_calls"],
-            max_reasoning_turns=max_reasoning_turns - stats["think_steps"],
+            max_discovery_calls=quota_remaining(
+                max_discovery_calls, stats["discovery_calls"]
+            ),
+            max_reasoning_turns=quota_remaining(
+                max_reasoning_turns, stats["think_steps"]
+            ),
             max_consecutive_thinks=max_consecutive_thinks,
             max_protocol_errors=max_protocol_errors,
             max_failures_per_action=max_failures_per_action,
@@ -266,7 +285,11 @@ def run_scitoolagent(
                     "plan": {
                         "type": "array",
                         "minItems": 1,
-                        "maxItems": max(1, max_calls - stats["scientific_calls"]),
+                        "maxItems": (
+                            max(1, max_calls - stats["scientific_calls"])
+                            if max_calls is not None
+                            else resources.remaining_requests()
+                        ),
                         "items": {"type": "string", "enum": names},
                     }
                 },
@@ -282,9 +305,8 @@ def run_scitoolagent(
             )
             if planned["status"] != "completed":
                 failure = planned["failure_reason"] or "PlanningFailed"
-                if (
-                    failure == "DecisionBudget"
-                    and stats["model_turns"] < max_iterations
+                if failure == "DecisionBudget" and (
+                    max_iterations is None or stats["model_turns"] < max_iterations
                 ):
                     failure = "PlannerDecisionBudget"
                 break
@@ -294,10 +316,13 @@ def run_scitoolagent(
             execution_failed = False
             for plan_position, name in enumerate(plan, start=1):
                 remaining()
-                if stats["scientific_calls"] >= max_calls:
+                if max_calls is not None and stats["scientific_calls"] >= max_calls:
                     raise RuntimeError("ScientificCallBudget")
                 if name not in contracts:
-                    if stats["discovery_calls"] >= max_discovery_calls:
+                    if (
+                        max_discovery_calls is not None
+                        and stats["discovery_calls"] >= max_discovery_calls
+                    ):
                         raise RuntimeError("DiscoveryCallBudget")
                     before_read = time.monotonic()
                     row = invoke(
@@ -354,7 +379,13 @@ def run_scitoolagent(
                 # Protocol failures are terminal, not a reason to restart an unlimited agent loop.
                 if failure and (
                     "ProtocolError" in failure
-                    or failure in {"DecisionBudget", "TaskDeadline", "RepeatedToolLoop"}
+                    or failure
+                    in {
+                        "DecisionBudget",
+                        "TaskDeadline",
+                        "ModelRequestBudget",
+                        "RepeatedToolLoop",
+                    }
                 ):
                     break
                 continue
@@ -378,6 +409,7 @@ def run_scitoolagent(
                 "DecisionBudget",
                 "ScientificCallBudget",
                 "DiscoveryCallBudget",
+                "ModelRequestBudget",
             }
             else type(error).__name__ + ": " + str(error)[:800]
         )

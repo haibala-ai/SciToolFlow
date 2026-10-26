@@ -1,0 +1,76 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "department_ids": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "count_columns": [
+        "Male_admitted",
+        "Male_rejected",
+        "Female_admitted",
+        "Female_rejected"
+      ],
+      "counts": [
+        [
+          512,
+          313,
+          89,
+          19
+        ],
+        [
+          353,
+          207,
+          17,
+          8
+        ],
+        [
+          120,
+          205,
+          202,
+          391
+        ],
+        [
+          138,
+          279,
+          131,
+          244
+        ],
+        [
+          53,
+          138,
+          94,
+          299
+        ],
+        [
+          22,
+          351,
+          24,
+          317
+        ]
+      ],
+      "decomposition_policy": "Decompose the observed Male-minus-Female admission-rate difference using the symmetric two-component Kitagawa definition. For department d and archived group g, n[d,g]=admitted+rejected, r[d,g]=admitted/n[d,g], and w[d,g]=n[d,g]/sum_d n[d,g]. The within-department rate component is sum_d ((w[d,Male]+w[d,Female])/2)*(r[d,Male]-r[d,Female]). The department-composition component is sum_d ((r[d,Male]+r[d,Female])/2)*(w[d,Male]-w[d,Female]). Their sum must close to the marginal rate difference. Identify every department tied within1e-12 for the largest absolute individual department-composition contribution. Keep probability units,not percent points. Raw department count columns retain their named fixed basis; a row ordering change must retain the same department identity.",
+      "interpretation_scope": "Exact descriptive decomposition of the six largest departments in the1973archive. It is not individual-level causal discrimination,an effect of changing gender,an adjustment for unmeasured qualification,or a contemporary admissions claim. Original binary Gender labels are historical recorded categories and do not represent comprehensive gender identity. No sampling independence,p-value or uncertainty guarantee is asserted.",
+      "source_provenance": {
+        "source_url": "https://raw.githubusercontent.com/wch/r-source/trunk/src/library/datasets/data/UCBAdmissions.R",
+        "source_sha256": "86a5801b122ec1f172098303de35c9df9a8c4c09f2f81dc9f03bfafdde102d5e",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/UCBAdmissions.html",
+        "license": "R datasets GPL-2-or-later; original attribution retained.",
+        "original_attribution": "Bickel PJ,Hammel EA,OConnell JW(1975),Science187:398-404,DOI10.1126/science.187.4175.398. The official R documentation was read; the original Science paper was not read in full.",
+        "format_transformation": "All24 original R array counts are exported into6department rows and4explicitly named count columns. R column-major ordering and all group/decision/department labels are retained. No rate,denominator,weight,contribution or answer has been supplied as data.",
+        "method_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0321874",
+        "method_read_scope": "Original 2025 methodology article,section Exploring the link,MathML equations2-4 and denominator definitions. Two-component symmetric arithmetic averages,not regression-based causal interpretation. Original1955paper not read in full.",
+        "method_xml_sha256": "7a81f0d16a389c38ff9fdd3802e9f2bc360610f33cb738e0e238650bb3b985b7"
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "data": [
+    {
+      "record_id": "condition01",
+      "temperature_kelvin": 300.0,
+      "signed_carriers_per_unit_cell": 6.1e-07,
+      "sigma_over_tau_per_ohm_m_second": [
+        [
+          27048933000000.0,
+          7.5636631e-06,
+          1.6743649e-05
+        ],
+        [
+          7.5636631e-06,
+          8840530100000.0,
+          -3.4944612e-05
+        ],
+        [
+          1.6743649e-05,
+          -3.4944612e-05,
+          34217230000000.0
+        ]
+      ],
+      "seebeck_volt_per_kelvin": [
+        [
+          0.0012202843,
+          5.8453266e-22,
+          -7.0677297e-23
+        ],
+        [
+          1.99254e-22,
+          0.0011909296,
+          1.1813032e-22
+        ],
+        [
+          -4.6479069e-23,
+          2.9913065e-22,
+          0.0011509343
+        ]
+      ],
+      "zero_field_heat_coefficient_over_tau_watt_per_m_kelvin_second": [
+        [
+          12230076000.0,
+          7.0956909e-09,
+          5.9204407e-09
+        ],
+        [
+          7.0956909e-09,
+          3787184000.0,
+          -1.2216758e-08
+        ],
+        [
+          5.9204407e-09,
+          -1.2216758e-08,
+          13690528000.0
+        ]
+      ],
+      "axes": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "record_id": "condition02",
+      "temperature_kelvin": 300.0,
+      "signed_carriers_per_unit_cell": 0.06129756,
+      "sigma_over_tau_per_ohm_m_second": [
+        [
+          2.8480151e+18,
+          2.5654052,
+          0.69238072
+        ],
+        [
+          2.5654052,
+          9.0158328e+17,
+          -1.890465
+        ],
+        [
+          0.69238072,
+          -1.890465,
+          3.020453e+18
+        ]
+      ],
+      "seebeck_volt_per_kelvin": [
+        [
+          0.00023082757,
+          3.530148e-22,
+          -1.5803284e-23
+        ],
+        [
+          1.4783858e-22,
+          0.00019076596,
+          5.3647164e-23
+        ],
+        [
+          1.2244243e-24,
+          1.0861211e-22,
+          0.00015685057
+        ]
+      ],
+      "zero_field_heat_coefficient_over_tau_watt_per_m_kelvin_second": [
+        [
+          61140540000000.0,
+          8.3852388e-05,
+          1.8983564e-05
+        ],
+        [
+          8.3852388e-05,
+          12514439000000.0,
+          -1.6878895e-05
+        ],
+        [
+          1.8983564e-05,
+          -1.6878895e-05,
+          31431473000000.0
+        ]
+      ],
+      "axes": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "record_id": "condition03",
+      "temperature_kelvin": 300.0,
+      "signed_carriers_per_unit_cell": -0.06129756,
+      "sigma_over_tau_per_ohm_m_second": [
+        [
+          2.5280223e+18,
+          4.309764,
+          -1.1283581
+        ],
+        [
+          4.309764,
+          2.6890127e+18,
+          0.068720687
+        ],
+        [
+          -1.1283581,
+          0.068720687,
+          7.3623184e+17
+        ]
+      ],
+      "seebeck_volt_per_kelvin": [
+        [
+          -0.00021590572,
+          1.9976568e-22,
+          -2.605366e-22
+        ],
+        [
+          2.015608e-22,
+          -0.00020949649,
+          2.6854147e-22
+        ],
+        [
+          -4.2799003e-23,
+          7.1794597e-23,
+          -0.00014179936
+        ]
+      ],
+      "zero_field_heat_coefficient_over_tau_watt_per_m_kelvin_second": [
+        [
+          54096778000000.0,
+          -2.3999894e-05,
+          5.2889299e-06
+        ],
+        [
+          -2.3999894e-05,
+          49014224000000.0,
+          -1.2597778e-05
+        ],
+        [
+          5.2889299e-06,
+          -1.2597778e-05,
+          8725814500000.0
+        ]
+      ],
+      "axes": [
+        "x",
+        "y",
+        "z"
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published transport coefficient fixture with a declared coupled-response comparison",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "sigma/tau 1/(ohm*m*s); S V/K; K0/tau W/(m*K*s); signed carriers per UNIT CELL,not cm^-3",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "materialsproject/pymatgen-test-files",
+      "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/electronic_structure/boltztrap/transp/fort.26",
+      "accessed_at": "2026-10-20T12:33:25.553069+00:00",
+      "raw_sha256": "097923e14a52526f55c61406efaca073f2254e3f630354b5076999358f0076f4",
+      "git_blob_sha1": "f9edcc2d56519c4e32f715673612077f304984b5",
+      "git_blob_verified": true,
+      "byte_count": 45370,
+      "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/electronic_structure/boltztrap/transp/fort.26",
+      "role": "Genuine published scientific source artifact / library fixture; byte provenance verified, physical completeness and normalization require individual inspection; no expected answers used"
+    },
+    "projection": {
+      "source_temperature_kelvin": 300.0,
+      "zero_based_rows_within_that_temperature": [
+        0,
+        5,
+        11
+      ],
+      "column_layout": "T,signed_carriers_per_cell,sigma_over_tau rowmajor3x3,S rowmajor3x3,K0_over_tau rowmajor3x3,EF_Ry"
+    }
+  }
+}

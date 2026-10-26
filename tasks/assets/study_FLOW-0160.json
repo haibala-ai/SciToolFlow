@@ -1,0 +1,42 @@
+{
+  "data": [
+    {
+      "record_id": "cycle",
+      "snapshot_record_id": "mp-electrode-35131586ff4d88db1a74",
+      "framework_formula": "FePO4F",
+      "steps": [
+        {
+          "volume_charge_ang3": 93.19795000065858,
+          "volume_discharge_ang3": 90.70224354659534,
+          "mass_charge_g_mol": 169.8147652,
+          "mass_discharge_g_mol": 176.75576519999998
+        },
+        {
+          "volume_charge_ang3": 90.70224354659534,
+          "volume_discharge_ang3": 97.54381237978636,
+          "mass_charge_g_mol": 176.75576519999998,
+          "mass_discharge_g_mol": 183.69676520000002
+        }
+      ],
+      "charged_formula": "FePO4F",
+      "discharged_formula": "Li2FePO4F"
+    }
+  ],
+  "provenance": {
+    "kind": "declared computational design with authentic source-data inputs; not experimental observations",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "VolumeÅ³/framework unit;massg/mol/frameworkunit;not packed-electrode strain measurements",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "Materials Project",
+      "url": "https://api.materialsproject.org/materials/insertion_electrodes/?working_ion=Li&_limit=12&_all_fields=true",
+      "accessed_at": "2026-10-20T07:58:32.146147+00:00",
+      "captured_file": "mp_battery_candidates_indexed.json",
+      "captured_sha256": "6933a0b358144a516073218a73a3d163b7f64d95d9ba79c27b9e9b9a17ffa9c0",
+      "upstream_raw_sha256": "dfdc74534d82c5c0e6be3cc26be4acbe41927aaef64c90cf3b4844e28f37100e"
+    },
+    "source_numeric_values_fabricated": false,
+    "source_record_selection": "snapshot_record_id mp-electrode-35131586ff4d88db1a74; local content identity, not official battery_id",
+    "derivation": "Exact source field projection and explicit common-framework volume normalization; hypothetical binder, porosity and density inputs remain declared study assumptions where present."
+  }
+}

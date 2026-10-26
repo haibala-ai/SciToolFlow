@@ -1,0 +1,31 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "reproductive_ages_years_by_schedule": {
+    "schedule_A": [
+      2.0,
+      3.0,
+      4.0
+    ],
+    "schedule_B": [
+      3.0,
+      4.0,
+      5.0
+    ]
+  },
+  "survival_from_newborn_to_corresponding_age": [
+    0.6,
+    0.4,
+    0.2
+  ],
+  "mean_daughters_per_survivor_at_corresponding_age": [
+    1.0,
+    3.0,
+    2.0
+  ],
+  "model": "Controlled renewal-demography model with reproduction only at the listed exact ages. Newborn survival is1; only the supplied reproductive ages contribute offspring. Age-specific expected daughters per newborn are l_x*m_x. Intrinsic log growth r uniquely solves sum_x l_x*m_x*exp(-r*x)=1. This equation and source time convention define the model; no stochastic persistence calculation or stable-stage initial condition is requested.",
+  "generation_time": "The UNDISCOUNTED life-table generation time is sum(x*l_x*m_x)/R0,where R0=sum(l_x*m_x). The requested shortcut is r_approx=ln(R0)/this_generation_time. It need not equal the Euler-Lotka root. Report signed relative error=(shortcut-r)/r for each schedule.",
+  "scope": "Two complete controlled reproductive schedules with identical lifetime expected offspring but different timing,not fitted real species life histories."
+}

@@ -1,4 +1,4 @@
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import logging
 import time
 import requests
@@ -18,130 +18,19 @@ from tools.implementations.shared.http_clients import send_novopro_request
 from tools.implementations.chemistry.utils import *
 
 
-def query_name_to_smiles(molecule_name: str) -> str:
-    """
-    Query PubChem for a molecule name and return canonical SMILES, CID and dated source provenance.
-    Uses a genuine structure-response cache for one day (up to seven days only on transient errors).
-
-    Args:
-        molecule_name (str): The name of the molecule to query.
-
-    Returns:
-        str: A Markdown formatted string containing the molecule's SMILES and additional information.
-    """
-    try:
-        record = pubchem_properties(molecule_name)
-        smi = smiles_property(record)
-        source = record["_scitool_source"]
-        canonical_smiles = Chem.CanonSmiles(largest_mol(smi))
-
-        markdown_result = f"""
-### Molecule: {molecule_name}
-
-#### SMILES
-
-- **SMILES**: `{canonical_smiles}`
-
-#### More Information
-
-- [PubChem Compound](https://pubchem.ncbi.nlm.nih.gov/compound/{record['CID']})
-- **Source**: {source['source_url']}
-- **Fetched at (UTC)**: {source['fetched_at']}
-- **Response mode**: {source['mode']}
-- **Response SHA256**: {source['response_sha256']}
-"""
-        return markdown_result
-
-    except PubChemUnavailable:
-        raise
-
-    except requests.exceptions.RequestException as e:
-        logging.error(f"Network error occurred: {e}")
-        return "Network error occurred. Unable to process the request."
-
-    except KeyError:
-        return f"Could not find a molecule matCHing the name: {molecule_name}."
-
-    except Exception as e:
-        logging.error(f"Error occurred: {e}")
-        return f"An error occurred while processing the request for: {molecule_name}."
+def query_name_to_smiles(molecule_name: str):
+    'NameToSMILES retired: One PubChem structure resolver exposes namespace, output representation and ambiguous-record policy. Use ResolveChemicalIdentifier. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('NameToSMILES retired: One PubChem structure resolver exposes namespace, output representation and ambiguous-record policy. Use ResolveChemicalIdentifier. See the catalog migration feedback for explicit arguments.')
 
 
-def query_name_to_cas(molecule_name: str) -> str:
-    """
-    Query a molecule name and return its CAS number in Markdown format.
-    """
-    try:
-        mode = "name"
-        if is_smiles(molecule_name):
-            mode = "smiles"
-        url_cid = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/{mode}/{molecule_name}/cids/JSON"
-        cid_response = requests.get(url_cid)
-        cid_response.raise_for_status()
-        cid = cid_response.json()["IdentifierList"]["CID"][0]
-
-        url_data = (
-            f"https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/{cid}/JSON"
-        )
-        data_response = requests.get(url_data)
-        data_response.raise_for_status()
-        data = data_response.json()
-
-        cas_number = None
-        for section in data["Record"]["Section"]:
-            if section.get("TOCHeading") == "Names and Identifiers":
-                for subsection in section["Section"]:
-                    if subsection.get("TOCHeading") == "Other Identifiers":
-                        for subsubsection in subsection["Section"]:
-                            if subsubsection.get("TOCHeading") == "CAS":
-                                cas_number = subsubsection["Information"][0]["Value"][
-                                    "StringWithMarkup"
-                                ][0]["String"]
-                                break
-
-        if cas_number:
-            markdown_result = f"""
-### Molecule: {molecule_name}
-
-#### CAS Number
-
-- **CAS**: `{cas_number}`
-
-#### More Information
-
-- [PubChem Compound](https://pubchem.ncbi.nlm.nih.gov/compound/{cid})
-"""
-            return markdown_result
-        else:
-            return "CAS number not found."
-
-    except (requests.exceptions.RequestException, KeyError):
-        return "Invalid molecule input, no Pubchem entry."
+def query_name_to_cas(molecule_name: str):
+    'NameToCas retired: One PubChem structure resolver exposes namespace, output representation and ambiguous-record policy. Use ResolveChemicalIdentifier. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('NameToCas retired: One PubChem structure resolver exposes namespace, output representation and ambiguous-record policy. Use ResolveChemicalIdentifier. See the catalog migration feedback for explicit arguments.')
 
 
-def check_patent_status(smiles: str) -> str:
-    """
-    Check if a molecule (represented by SMILES) is patented, and return the result in Markdown format.
-    """
-    try:
-        # is_patented = molbloom.buy(smiles, canonicalize=True, catalog="surechembl")
-        is_patented = molbloom.buy(smiles)
-        patent_status = "Patented" if is_patented else "Novel"
-        markdown_result = f"""
-### Molecule: {smiles}
-
-#### Patent Status
-
-- **Status**: `{patent_status}`
-
-#### More Information
-
-- [SureChEMBL](https://www.surechembl.org/search/?query={smiles})
-"""
-        return markdown_result
-
-    except:
-        return "Invalid SMILES string or error in patent check."
+def check_patent_status(smiles: str):
+    'CheckPatent retired: Old CheckPatent used a commercial ZINC Bloom filter and incorrectly labeled it patent status. Use QueryMoleculeCatalog. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('CheckPatent retired: Old CheckPatent used a commercial ZINC Bloom filter and incorrectly labeled it patent status. Use QueryMoleculeCatalog. See the catalog migration feedback for explicit arguments.')
 
 
 def predict_reaction(reactants: str) -> str:
@@ -296,62 +185,9 @@ def create_and_start_synthesis(sequence_id: str) -> str:
     return markdown_result
 
 
-def calculate_molecule_similarity(smiles_pair: str) -> str:
-    """
-    Calculate the Tanimoto similarity between two molecules given their SMILES strings.
-
-    Args:
-        smiles_pair (str): Two SMILES strings separated by a dot '.'.
-
-    Returns:
-        str: A Markdown formatted string containing the similarity result.
-    """
-    smi_list = smiles_pair.split(".")
-    if len(smi_list) != 2:
-        return "Input error, please input two smiles strings separated by '.'"
-    else:
-        smiles1, smiles2 = smi_list
-
-    try:
-        mol1 = Chem.MolFromSmiles(smiles1)
-        mol2 = Chem.MolFromSmiles(smiles2)
-        fp1 = AllChem.GetMorganFingerprintAsBitVect(mol1, 2, nBits=2048)
-        fp2 = AllChem.GetMorganFingerprintAsBitVect(mol2, 2, nBits=2048)
-        similarity = DataStructs.TanimotoSimilarity(fp1, fp2)
-
-        sim_score = {
-            0.9: "very similar",
-            0.8: "similar",
-            0.7: "somewhat similar",
-            0.6: "not very similar",
-            0: "not similar",
-        }
-        if similarity == 1:
-            return "Error: Input Molecules Are Identical"
-        else:
-            val = sim_score[
-                max(key for key in sim_score.keys() if key <= round(similarity, 1))
-            ]
-            message = f"The Tanimoto similarity between {smiles1} and {smiles2} is {round(similarity, 4)},\
-            indicating that the two molecules are {val}."
-
-        markdown_result = f"""
-### Molecule Similarity
-
-#### Input Molecules
-
-- **SMILES 1**: `{smiles1}`
-- **SMILES 2**: `{smiles2}`
-
-#### Similarity Result
-
-- **Tanimoto Similarity**: `{round(similarity, 4)}`
-- **Interpretation**: {val}
-
-"""
-        return markdown_result
-    except (TypeError, ValueError, AttributeError) as e:
-        return "Error: Not a valid SMILES string"
+def calculate_molecule_similarity(smiles_pair: str):
+    'MolSimilarity retired: Pair and matrix similarity/distance share one fingerprint comparison kernel. Use CompareMolecularFingerprints. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('MolSimilarity retired: Pair and matrix similarity/distance share one fingerprint comparison kernel. Use CompareMolecularFingerprints. See the catalog migration feedback for explicit arguments.')
 
 
 def calculate_molecular_weight(smiles: str) -> str:
@@ -387,143 +223,60 @@ def calculate_molecular_weight(smiles: str) -> str:
     return markdown_result
 
 
-def list_functional_groups(smiles: str) -> str:
-    """
-    Identify and list the functional groups in a molecule given its SMILES string.
 
-    Args:
-        smiles (str): The SMILES string of the molecule.
 
-    Returns:
-        str: A Markdown formatted string listing the functional groups.
-    """
-    # A dictionary of functional groups
-    dict_fgs = {
-        "furan": "o1cccc1",
-        "aldehydes": " [CX3H1](=O)[#6]",
-        "esters": " [#6][CX3](=O)[OX2H0][#6]",
-        "ketones": " [#6][CX3](=O)[#6]",
-        "amides": " C(=O)-N",
-        "thiol groups": " [SH]",
-        "alcohol groups": " [OH]",
-        "methylamide": "*-[N;D2]-[C;D3](=O)-[C;D1;H3]",
-        "carboxylic acids": "*-C(=O)[O;D1]",
-        "carbonyl methylester": "*-C(=O)[O;D2]-[C;D1;H3]",
-        "terminal aldehyde": "*-C(=O)-[C;D1]",
-        "amide": "*-C(=O)-[N;D1]",
-        "carbonyl methyl": "*-C(=O)-[C;D1;H3]",
-        "isocyanate": "*-[N;D2]=[C;D2]=[O;D1]",
-        "isothiocyanate": "*-[N;D2]=[C;D2]=[S;D1]",
-        "nitro": "*-[N;D3](=[O;D1])[O;D1]",
-        "nitroso": "*-[N;R0]=[O;D1]",
-        "oximes": "*=[N;R0]-[O;D1]",
-        "Imines": "*-[N;R0]=[C;D1;H2]",
-        "terminal azo": "*-[N;D2]=[N;D2]-[C;D1;H3]",
-        "hydrazines": "*-[N;D2]=[N;D1]",
-        "diazo": "*-[N;D2]#[N;D1]",
-        "cyano": "*-[C;D2]#[N;D1]",
-        "primary sulfonamide": "*-[S;D4](=[O;D1])(=[O;D1])-[N;D1]",
-        "methyl sulfonamide": "*-[N;D2]-[S;D4](=[O;D1])(=[O;D1])-[C;D1;H3]",
-        "sulfonic acid": "*-[S;D4](=O)(=O)-[O;D1]",
-        "methyl ester sulfonyl": "*-[S;D4](=O)(=O)-[O;D2]-[C;D1;H3]",
-        "methyl sulfonyl": "*-[S;D4](=O)(=O)-[C;D1;H3]",
-        "sulfonyl chloride": "*-[S;D4](=O)(=O)-[Cl]",
-        "methyl sulfinyl": "*-[S;D3](=O)-[C;D1]",
-        "methyl thio": "*-[S;D2]-[C;D1;H3]",
-        "thiols": "*-[S;D1]",
-        "thio carbonyls": "*=[S;D1]",
-        "halogens": "*-[#9,#17,#35,#53]",
-        "t-butyl": "*-[C;D4]([C;D1])([C;D1])-[C;D1]",
-        "tri fluoromethyl": "*-[C;D4](F)(F)F",
-        "acetylenes": "*-[C;D2]#[C;D1;H]",
-        "cyclopropyl": "*-[C;D3]1-[C;D2]-[C;D2]1",
-        "ethoxy": "*-[O;D2]-[C;D2]-[C;D1;H3]",
-        "methoxy": "*-[O;D2]-[C;D1;H3]",
-        "side-chain hydroxyls": "*-[O;D1]",
-        "ketones": "*=[O;D1]",
-        "primary amines": "*-[N;D1]",
-        "nitriles": "*#[N;D1]",
-    }
+from functools import lru_cache
 
-    def _is_fg_in_mol(mol_smiles, fg_smarts):
-        fgmol = Chem.MolFromSmarts(fg_smarts)
-        mol = Chem.MolFromSmiles(mol_smiles.strip())
-        return len(Chem.Mol.GetSubstructMatches(mol, fgmol, uniquify=True)) > 0
+_FUNCTIONAL_GROUP_PATTERNS = {'furan': 'o1cccc1', 'aldehydes': ' [CX3H1](=O)[#6]', 'esters': ' [#6][CX3](=O)[OX2H0][#6]', 'ketones': ' [#6][CX3](=O)[#6]', 'amides': ' C(=O)-N', 'thiol groups': ' [SH]', 'alcohol groups': '[CX4][OX2H]', 'methylamide': '*-[N;D2]-[C;D3](=O)-[C;D1;H3]', 'carboxylic acids': '[CX3](=O)[OX2H1]', 'carbonyl methylester': '*-C(=O)[O;D2]-[C;D1;H3]', 'terminal aldehyde': '[CX3H1](=O)[#6]', 'amide': '*-C(=O)-[N;D1]', 'carbonyl methyl': '*-C(=O)-[C;D1;H3]', 'isocyanate': '*-[N;D2]=[C;D2]=[O;D1]', 'isothiocyanate': '*-[N;D2]=[C;D2]=[S;D1]', 'nitro': '*-[N;D3](=[O;D1])[O;D1]', 'nitroso': '*-[N;R0]=[O;D1]', 'oximes': '*=[N;R0]-[O;D1]', 'Imines': '*-[N;R0]=[C;D1;H2]', 'terminal azo': '*-[N;D2]=[N;D2]-[C;D1;H3]', 'hydrazines': '[NX3][NX3]', 'diazo': '[C]=[N+]=[N-]', 'cyano': '*-[C;D2]#[N;D1]', 'primary sulfonamide': '*-[S;D4](=[O;D1])(=[O;D1])-[N;D1]', 'methyl sulfonamide': '*-[N;D2]-[S;D4](=[O;D1])(=[O;D1])-[C;D1;H3]', 'sulfonic acid': '*-[S;D4](=O)(=O)-[O;D1]', 'methyl ester sulfonyl': '*-[S;D4](=O)(=O)-[O;D2]-[C;D1;H3]', 'methyl sulfonyl': '*-[S;D4](=O)(=O)-[C;D1;H3]', 'sulfonyl chloride': '*-[S;D4](=O)(=O)-[Cl]', 'methyl sulfinyl': '*-[S;D3](=O)-[C;D1]', 'methyl thio': '*-[S;D2]-[C;D1;H3]', 'thiols': '*-[S;D1]', 'thio carbonyls': '*=[S;D1]', 'halogens': '*-[#9,#17,#35,#53]', 't-butyl': '*-[C;D4]([C;D1])([C;D1])-[C;D1]', 'tri fluoromethyl': '*-[C;D4](F)(F)F', 'acetylenes': '*-[C;D2]#[C;D1;H]', 'cyclopropyl': '*-[C;D3]1-[C;D2]-[C;D2]1', 'ethoxy': '*-[O;D2]-[C;D2]-[C;D1;H3]', 'methoxy': '*-[O;D2]-[C;D1;H3]', 'side-chain hydroxyls': '[CX4][OX2H]', 'carbonyl groups': '[CX3]=[OX1]', 'primary amines': '[NX3H2;!$(N-C(=O));!$(N-S(=O)(=O))][#6]', 'nitriles': '*#[N;D1]'}
 
-    try:
-        fgs_in_molec = [
-            name for name, fg in dict_fgs.items() if _is_fg_in_mol(smiles, fg)
-        ]
-        if not fgs_in_molec:
-            return "No functional groups identified."
-        elif len(fgs_in_molec) == 1:
-            fgs_list = fgs_in_molec[0]
+@lru_cache(maxsize=1)
+def _functional_group_queries():
+    by_pattern = {}
+    for label, smarts in _FUNCTIONAL_GROUP_PATTERNS.items():
+        smarts = smarts.strip()
+        if smarts not in by_pattern:
+            pattern = Chem.MolFromSmarts(smarts)
+            if pattern is None:
+                raise RuntimeError("Invalid internal functional-group SMARTS: " + label)
+            by_pattern[smarts] = [label, [], pattern]
         else:
-            fgs_list = f"{', '.join(fgs_in_molec[:-1])}, and {fgs_in_molec[-1]}"
+            by_pattern[smarts][1].append(label)
+    return tuple((name, tuple(aliases), smarts, pattern) for smarts, (name, aliases, pattern) in by_pattern.items())
 
-        markdown_result = f"""
-### Functional Groups Analysis
+def list_functional_groups(smiles: str) -> dict:
+    """Return a nonexhaustive named SMARTS functional-group screen with indexed evidence.
 
-#### Input Molecule
-
-- **SMILES**: `{smiles}`
-
-#### Identified Functional Groups
-
-- **Functional Groups**: {fgs_list}
-
-"""
-        return markdown_result
-    except Exception as e:
-        return f"Error: {e}"
-
-
-def safety_summary(cas: str) -> str:
-    """Return extractive PubChem safety sections without a hosted LLM call."""
+    Parse the molecule once and compile/cache the fixed query library once.
+    Exact duplicate SMARTS labels are aliases within one group; different patterns
+    remain separate and can overlap. No fragment removal or reaction inference.
+    Atom indices use the hydrogen-suppressed graph; matching is chirality-agnostic.
+    An empty group list is a successful negative screen, not proof of absence of
+    all chemically possible functional groups.
+    """
+    from .core import molecule
+    import hashlib
     import json
-    from pathlib import Path
-
-    safety = MoleculeSafety(llm=None)
-    data = safety._get_safety_data(cas)
-    data = [section for section in data if section]
-    if not data:
-        raise ValueError("No PubChem safety sections available for this identifier")
-    directory = artifacts_root()
-    directory.mkdir(parents=True, exist_ok=True)
-    path = directory / (
-        "pubchem_safety_" + "".join(c for c in cas if c.isalnum() or c == "-") + ".json"
-    )
-    report = json.dumps(data, ensure_ascii=False, indent=2)
-    path.write_text(report)
-    return (
-        f"PubChem safety record for {cas}. Full source sections: {path}\n"
-        + report[:12000]
-        + (
-            "\n[Preview truncated; full record saved above]"
-            if len(report) > 12000
-            else ""
-        )
-    )
+    mol = molecule(smiles, "remove")
+    groups = []
+    for name, aliases, smarts, pattern in _functional_group_queries():
+        matches = mol.GetSubstructMatches(pattern, uniquify=True, useChirality=False)
+        if matches:
+            groups.append({"name": name, "aliases": list(aliases), "smarts": smarts,
+                           "matches": [list(m) for m in matches], "match_count": len(matches)})
+    return {"groups": groups, "canonical_smiles": Chem.MolToSmiles(mol),
+            "library_sha256": hashlib.sha256(json.dumps(_FUNCTIONAL_GROUP_PATTERNS, sort_keys=True).encode()).hexdigest(),
+            "operation_counts": {"molecule_parses": 1, "unique_patterns": len(_functional_group_queries())},
+            "limitations": ["Fixed nonexhaustive overlapping SMARTS library", "No assay evidence"]}
 
 
-def check_explosiveness(cas: str) -> str:
-    """Report the explosive pictogram evidence in PubChem, without inferring absent hazards."""
-    import json
+def safety_summary(cas: str):
+    'SafetySummary retired: One genuine PubChem record supplies raw safety sections and targeted GHS evidence. Use PubChemSafety. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('SafetySummary retired: One genuine PubChem record supplies raw safety sections and targeted GHS evidence. Use PubChemSafety. See the catalog migration feedback for explicit arguments.')
 
-    classification = MoleculeSafety(llm=None).ghs_classification(cas)
-    if not isinstance(classification, list) or not classification:
-        raise ValueError("No PubChem GHS classification available")
-    return json.dumps(
-        {
-            "cas": cas,
-            "source": "PubChem",
-            "ghs_classification": classification,
-            "explosive_pictogram_reported": any(
-                "explos" in value.lower() for value in classification
-            ),
-            "interpretation": "Reports database annotations only; absence of a pictogram is not proof of absence of a hazard.",
-        }
-    )
+
+def check_explosiveness(cas: str):
+    'CheckExplosiveness retired: One genuine PubChem record supplies raw safety sections and targeted GHS evidence. Use PubChemSafety. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('CheckExplosiveness retired: One genuine PubChem record supplies raw safety sections and targeted GHS evidence. Use PubChemSafety. See the catalog migration feedback for explicit arguments.')
 
 
 def smiles_to_pdb(smiles):

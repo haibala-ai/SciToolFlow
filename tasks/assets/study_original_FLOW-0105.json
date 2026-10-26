@@ -1,0 +1,18 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "rotational_temperature_k": 2.88,
+  "temperatures_k": [
+    2.0,
+    10.0,
+    30.0,
+    100.0
+  ],
+  "maximum_rotational_quantum_number": 30,
+  "state_model": "E_J/kB=theta_rot*J*(J+1), statistical weight2*J+1 for every integer J=0..30. No nuclear-spin restrictions, electronic/vibrational states or rotational symmetry division. This finite state list is the exact declared comparison model; it is not an ortho/para mixture of a named molecule.",
+  "quantum_definitions": "q=sum_J weight*exp(-E_J/(kB*T)); Cv/R=Var(E_J/kB)/T^2 with normalized Boltzmann weights. Classical high-temperature approximations are q_classical=T/theta_rot and Cv_classical/R=1.",
+  "qualification": "A listed temperature qualifies only when BOTH abs(q_classical/q_quantum-1)<=.01 and abs(Cv_classical/Cv_quantum-1)<=.01. Return the lowest qualifying listed temperature. Only the listed temperatures are candidates.",
+  "scope": "Rotational freezing and classical-approximation qualification in the stated finite model, without experimental spin conversion or extrapolating its state cutoff to arbitrarily high T."
+}

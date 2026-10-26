@@ -1,0 +1,323 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "candidate_models": {
+        "candidate_A": {
+          "type": "logistic_regression",
+          "n_features": 2,
+          "classes": [
+            "versicolor",
+            "virginica"
+          ],
+          "coefficients": [
+            [
+              1.0582875846656308,
+              0.019403373032507252
+            ]
+          ],
+          "intercepts": [
+            0.022530554732484206
+          ],
+          "mean": [
+            6.311666666666665,
+            2.86
+          ],
+          "scale": [
+            0.6610828658765523,
+            0.33674916480965467
+          ]
+        },
+        "candidate_B": {
+          "type": "logistic_regression",
+          "n_features": 2,
+          "classes": [
+            "versicolor",
+            "virginica"
+          ],
+          "coefficients": [
+            [
+              3.1748627539968926,
+              0.05821011909752176
+            ]
+          ],
+          "intercepts": [
+            0.06759166419745262
+          ],
+          "mean": [
+            6.311666666666665,
+            2.86
+          ],
+          "scale": [
+            0.6610828658765523,
+            0.33674916480965467
+          ]
+        }
+      },
+      "feature_order": [
+        "sepal_length_cm",
+        "sepal_width_cm"
+      ],
+      "validation_features": [
+        [
+          6.6,
+          3.0
+        ],
+        [
+          5.5,
+          2.5
+        ],
+        [
+          6.3,
+          2.9
+        ],
+        [
+          7.6,
+          3.0
+        ],
+        [
+          6.8,
+          2.8
+        ],
+        [
+          6.0,
+          2.2
+        ],
+        [
+          7.2,
+          3.6
+        ],
+        [
+          6.9,
+          3.1
+        ],
+        [
+          6.3,
+          3.3
+        ],
+        [
+          6.8,
+          3.2
+        ],
+        [
+          6.0,
+          3.0
+        ],
+        [
+          6.2,
+          2.8
+        ],
+        [
+          5.8,
+          2.7
+        ],
+        [
+          5.7,
+          2.8
+        ],
+        [
+          6.0,
+          2.9
+        ],
+        [
+          5.7,
+          2.6
+        ],
+        [
+          6.4,
+          2.8
+        ],
+        [
+          5.6,
+          3.0
+        ],
+        [
+          6.2,
+          3.4
+        ],
+        [
+          7.2,
+          3.0
+        ],
+        [
+          6.1,
+          3.0
+        ],
+        [
+          6.5,
+          3.0
+        ],
+        [
+          5.9,
+          3.2
+        ],
+        [
+          5.0,
+          2.0
+        ],
+        [
+          6.5,
+          3.0
+        ],
+        [
+          6.9,
+          3.1
+        ],
+        [
+          6.7,
+          3.3
+        ],
+        [
+          5.6,
+          2.7
+        ],
+        [
+          5.7,
+          3.0
+        ],
+        [
+          5.8,
+          2.7
+        ]
+      ],
+      "validation_truth": [
+        "versicolor",
+        "versicolor",
+        "virginica",
+        "virginica",
+        "versicolor",
+        "versicolor",
+        "virginica",
+        "virginica",
+        "versicolor",
+        "virginica",
+        "virginica",
+        "virginica",
+        "virginica",
+        "versicolor",
+        "versicolor",
+        "versicolor",
+        "virginica",
+        "versicolor",
+        "virginica",
+        "virginica",
+        "versicolor",
+        "virginica",
+        "versicolor",
+        "versicolor",
+        "virginica",
+        "virginica",
+        "virginica",
+        "versicolor",
+        "versicolor",
+        "versicolor"
+      ],
+      "validation_row_ids": [
+        "Iris-075",
+        "Iris-089",
+        "Iris-103",
+        "Iris-105",
+        "Iris-076",
+        "Iris-062",
+        "Iris-109",
+        "Iris-141",
+        "Iris-056",
+        "Iris-143",
+        "Iris-138",
+        "Iris-126",
+        "Iris-142",
+        "Iris-099",
+        "Iris-078",
+        "Iris-079",
+        "Iris-128",
+        "Iris-088",
+        "Iris-148",
+        "Iris-129",
+        "Iris-091",
+        "Iris-116",
+        "Iris-070",
+        "Iris-060",
+        "Iris-104",
+        "Iris-139",
+        "Iris-124",
+        "Iris-094",
+        "Iris-095",
+        "Iris-067"
+      ],
+      "positive_class": "virginica",
+      "probability_policy": "For probability reporting,lower binary Brier mean squared probability error is better; choose all candidates within1e-9of the minimum. Use the artifact class order to obtain virginica probability. Do not refit or calibrate on these validation labels. Hard decision accuracy and threshold utility are different estimands.",
+      "source_provenance": {
+        "dataset": "Authentic Iris sepal measurements and fixed derived predictor-export audit",
+        "source_url": "https://scikit-learn.org/stable/datasets/toy_dataset.html#iris-plants-dataset",
+        "training_row_ids": [
+          "Iris-127",
+          "Iris-083",
+          "Iris-118",
+          "Iris-058",
+          "Iris-052",
+          "Iris-119",
+          "Iris-063",
+          "Iris-100",
+          "Iris-133",
+          "Iris-149",
+          "Iris-111",
+          "Iris-085",
+          "Iris-053",
+          "Iris-074",
+          "Iris-147",
+          "Iris-059",
+          "Iris-092",
+          "Iris-097",
+          "Iris-120",
+          "Iris-117",
+          "Iris-146",
+          "Iris-086",
+          "Iris-051",
+          "Iris-112",
+          "Iris-114",
+          "Iris-077",
+          "Iris-108",
+          "Iris-102",
+          "Iris-069",
+          "Iris-144",
+          "Iris-064",
+          "Iris-065",
+          "Iris-057",
+          "Iris-145",
+          "Iris-122",
+          "Iris-071",
+          "Iris-055",
+          "Iris-134",
+          "Iris-115",
+          "Iris-137",
+          "Iris-087",
+          "Iris-054",
+          "Iris-061",
+          "Iris-081",
+          "Iris-130",
+          "Iris-113",
+          "Iris-132",
+          "Iris-096",
+          "Iris-080",
+          "Iris-093",
+          "Iris-072",
+          "Iris-090",
+          "Iris-082",
+          "Iris-125",
+          "Iris-123",
+          "Iris-050",
+          "Iris-121",
+          "Iris-131",
+          "Iris-107",
+          "Iris-136"
+        ],
+        "artifact_scope": "Derived audit predictors,not separate new experimental observations. Source training and heldout records are disjoint. Both candidate artifacts are explicit immutable input objects.",
+        "units": "cm features; dimensionless probabilities"
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

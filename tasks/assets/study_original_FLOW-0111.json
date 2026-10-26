@@ -1,0 +1,15 @@
+{
+  "provenance": {
+    "kind": "Authentic completed Q-Chem file with an explicitly project-authored analysis protocol. No new calculation or experiment is claimed.",
+    "source": "Q-Chem output preserved by the project asset manifest; temperature, geometry and units belong to that calculation only."
+  },
+  "response_model": "For every source mode i, the controlled broadened spectrum is I_i/(sigma*sqrt(2*pi))*exp(-(nu-nu_i)^2/(2*sigma^2)). Source I_i is its integrated line strength in km/mol; nu and sigma use cm^-1. These are normalized Gaussian areas, not Gaussian peak heights. Include every source mode, including centers outside the integration window. This is an explicitly stipulated visualization response, not an experimental linewidth model inferred from the calculation.",
+  "gaussian_sigma_cm_inverse": 100.0,
+  "window_cm_inverse": [
+    1600.0,
+    1800.0
+  ],
+  "mode_identity": "Source mode numbering starts at1 in the complete matching frequency/intensity order from the same file.",
+  "selection": "Choose the individual mode contributing the largest integrated area inside the closed window. Tie within1e-12 by earlier source mode number. The finite endpoints have zero mass under the continuous response.",
+  "scope": "No solvent, anharmonic or instrument broadening inference beyond the specified Gaussian model."
+}

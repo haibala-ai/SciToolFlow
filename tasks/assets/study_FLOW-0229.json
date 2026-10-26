@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "fully_reversed_amplitude_mpa": [
+        100,
+        150,
+        200,
+        250,
+        300
+      ],
+      "cycles_to_failure": [
+        1000000,
+        300000,
+        100000,
+        40000,
+        20000
+      ],
+      "ultimate_tensile_strength_mpa": 600,
+      "maximum_block_usage": 0.3,
+      "load_schedules": [
+        {
+          "schedule_id": "schedule01",
+          "counted_bins": [
+            {
+              "bin_id": "bin01",
+              "minimum_stress_mpa": -80,
+              "maximum_stress_mpa": 160,
+              "cycle_count": 20000
+            },
+            {
+              "bin_id": "bin02",
+              "minimum_stress_mpa": -100,
+              "maximum_stress_mpa": 220,
+              "cycle_count": 10000
+            }
+          ]
+        },
+        {
+          "schedule_id": "schedule02",
+          "counted_bins": [
+            {
+              "bin_id": "bin01",
+              "minimum_stress_mpa": 20,
+              "maximum_stress_mpa": 300,
+              "cycle_count": 15000
+            },
+            {
+              "bin_id": "bin02",
+              "minimum_stress_mpa": -100,
+              "maximum_stress_mpa": 340,
+              "cycle_count": 12000
+            }
+          ]
+        },
+        {
+          "schedule_id": "schedule03",
+          "counted_bins": [
+            {
+              "bin_id": "bin01",
+              "minimum_stress_mpa": 100,
+              "maximum_stress_mpa": 500,
+              "cycle_count": 5000
+            }
+          ]
+        }
+      ],
+      "method": "The supplied rows are already counted full-cycle bins for one proposed load block; do not infer a time sequence or count cycles again. For each bin, amplitude=(maximum_stress-minimum_stress)/2 and mean=(maximum_stress+minimum_stress)/2 in MPa. The declared Goodman correction is equivalent_fully_reversed_amplitude=amplitude/(1-mean/ultimate_tensile_strength). This model is admissible only for mean<ultimate_tensile_strength and for a corrected amplitude inside the inclusive supplied calibration range. For an admissible bin, interpolate log(cycles_to_failure) linearly against log(amplitude) between the adjacent calibration knots, using one consistent logarithm base. Its Miner usage is cycle_count/cycles_to_failure. Sum the complete bin contributions for one block. No extension of the curve, below-range endurance plateau, alternative mean-stress correction, runout treatment or sequence correction is supplied.",
+      "decision_policy": "If any bin is outside this declared model support, classify its entire schedule as unsupported and report null block_usage; do not sum only its supported bins or replace the unsupported usage with zero. Otherwise classify a schedule as within_budget if total block_usage<=maximum_block_usage, and exceeds_budget if it is greater. Report all unsupported bin IDs per schedule, with an empty list for supported schedules. This is an audit of the stipulated finite model and planning budget, not a safety certificate or an estimated population failure probability.",
+      "source_provenance": {
+        "kind": "controlled methodological fatigue calibration and pre-counted load blocks, not material-test observations",
+        "construction": "Five explicitly authored monotone S-N calibration knots and five cycle-count bins define three distinct support/budget decisions. No measured alloy, sampling uncertainty or estimated endurance limit is implied.",
+        "method_sources": [
+          "https://doc.comsol.com/6.4/doc/com.comsol.help.fatigue/fatigue_ug_sme.4.25.html",
+          "https://doc.comsol.com/6.4/doc/com.comsol.help.fatigue/fatigue_ug_sme.4.28.html"
+        ],
+        "read_scope": "Official COMSOL cumulative-damage sections on counted amplitude/mean bins, Palmgren-Miner usage, finite S-N support and sequence-effect limitations; mean-stress correction section on Goodman and ultimate strength. The exact operational formula, finite interpolation policy, controlled inputs and planning budget are declared here by the project, rather than asserted to be source measurements."
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "hold_up_time_minutes": 1.0,
+  "isothermal_retention_times_minutes": {
+    "alkane_8": 5.0,
+    "alkane_9": 9.0,
+    "analyte": 7.0
+  },
+  "reference_alkane_carbon_counts": [
+    8,
+    9
+  ],
+  "model": "All retention times come from one isothermal run. Adjusted retention t_prime=t_retention-t_hold_up>0. Define Kovats I=100*[n+(ln(t_prime_analyte)-ln(t_prime_n))/(ln(t_prime_(n+1))-ln(t_prime_n))]. The analyte lies between the adjacent n-alkanes.",
+  "comparison": "The wrong comparison requested is linear interpolation of the ORIGINAL unadjusted times between those same anchors, with indices800and900. It is a different numerical descriptor, not the isothermal index. No temperature-programmed method, co-injection or structural spectrum is provided.",
+  "scope": "A reproducible chromatographic descriptor can be identified without uniquely identifying a molecule. No unprovided candidate registry lookup should be substituted."
+}

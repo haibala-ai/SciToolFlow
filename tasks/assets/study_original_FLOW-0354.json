@@ -1,0 +1,26 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "genotype_order": [
+    "AA",
+    "AB",
+    "BB"
+  ],
+  "genotype_tallies_by_habitat": {
+    "habitat_A": [
+      64.0,
+      32.0,
+      4.0
+    ],
+    "habitat_B": [
+      4.0,
+      32.0,
+      64.0
+    ]
+  },
+  "data_status": "Controlled exact genotype proportions scaled to100individuals per habitat. Treat equality of the model proportions as deterministic here; no finite-sample p-value is requested.",
+  "definitions": "For one habitat p_A=(2*n_AA+n_AB)/(2*N),H_observed=n_AB/N,and H_HWE=2*p_A*(1-p_A). Use F_deficit=1-H_observed/H_HWE for the separately pooled table. To assess each habitat, compare its whole genotype frequency vector to[p_A^2,2*p_A*(1-p_A),(1-p_A)^2]within1e-12.",
+  "scope": "A pooled heterozygote deficit can reflect mixing habitats with different allele frequencies, even if each habitat matches Hardy-Weinberg proportions. It does not alone identify within-population pedigree inbreeding, selection or assay errors."
+}

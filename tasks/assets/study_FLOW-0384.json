@@ -1,0 +1,127 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "counts": [
+        [
+          50,
+          19,
+          26,
+          8,
+          7,
+          11,
+          6,
+          2
+        ],
+        [
+          16,
+          40,
+          34,
+          18,
+          11,
+          20,
+          8,
+          3
+        ],
+        [
+          12,
+          35,
+          65,
+          66,
+          35,
+          88,
+          23,
+          21
+        ],
+        [
+          11,
+          20,
+          58,
+          110,
+          40,
+          183,
+          64,
+          32
+        ],
+        [
+          2,
+          8,
+          12,
+          23,
+          25,
+          46,
+          28,
+          12
+        ],
+        [
+          12,
+          28,
+          102,
+          162,
+          90,
+          554,
+          230,
+          177
+        ],
+        [
+          0,
+          6,
+          19,
+          40,
+          21,
+          158,
+          143,
+          71
+        ],
+        [
+          0,
+          3,
+          14,
+          32,
+          15,
+          126,
+          91,
+          106
+        ]
+      ],
+      "origin_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "destination_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "table_scope": "Rows are father occupational origin and columns are son occupational destination, in the displayed ID order. These are paired cross-classification counts, not two independent samples and not measured time-transition events. Original category IDs are retained; do not replace them by a presumed numeric distance scale.",
+      "analysis_definition": "Construct simple correspondence geometry from the full table. P=counts/N, r=row proportions and c=column proportions; S[i,j]=(P[i,j]-r[i]*c[j])/sqrt(r[i]*c[j]). Total association inertia=sum(S[i,j]^2). The first axis is the largest singular-value axis of S; its inertia fraction is its squared singular value divided by total inertia. The minimum display dimension reaches at least 90% cumulative association inertia. Origin and destination contributions to the first axis are the squared entries of its unit left and right singular vectors, respectively. Return all IDs tied for the maximum contribution within 1e-12. Axis signs are arbitrary and do not affect contributions. Use the source table order to attach IDs to coordinates.",
+      "interpretation_scope": "Describe the departure from independence in this archived paired table. Large contribution identifies influence on this particular association display, not a higher occupational value, a causal effect, a trajectory, inherited status or statistical representativeness. No population p-value, independence sampling claim or future-transition forecast is requested.",
+      "source_provenance": {
+        "source_url": "https://raw.githubusercontent.com/wch/r-source/trunk/src/library/datasets/data/occupationalStatus.R",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/occupationalStatus.html",
+        "source_sha256": "ba4fa022ec20c06207271948138deb78846da0dfe33e054f1af05e16801682fe",
+        "original_attribution": "Goodman LA (1979), Simple Models for the Analysis of Association in Cross-Classifications Having Ordered Categories, JASA 74(367),537-552, DOI10.1080/01621459.1979.10481650; data supplied to R datasets through gnm authors.",
+        "license": "R source datasets GPL-2-or-later; attribution retained.",
+        "export": "Complete original 64 integer counts; the R column-major literal is exported as eight explicitly named row arrays, with origin and destination IDs unchanged. No observations are simulated, fitted or removed.",
+        "method_source": "https://raw.githubusercontent.com/cran/MASS/master/R/corresp.R",
+        "method_documentation": "https://stat.ethz.ch/R-manual/R-devel/library/MASS/html/corresp.html",
+        "method_read_scope": "corresp.matrix lines41-63: positive marginal masses, independence-centered probability table, inverse-square-root marginal scaling and SVD. Official corresp documentation warns that joint row/column maps do not have a generic inner-product interpretation."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

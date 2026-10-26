@@ -1,0 +1,81 @@
+{
+  "schema_version": "finite_molecular_geometry_source.v1",
+  "source_file": "electrostatic_source_geometry.xyz",
+  "source_sha256": "14a789c2afb4d8f2df8a2edfa9f810e8368c40cb048eac1526441674fd9afb2a",
+  "original_format": "XYZ, first and only frame",
+  "atom_count": 4,
+  "atom_indices_zero_based": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "elements": [
+    "Mg",
+    "O",
+    "C",
+    "C"
+  ],
+  "atomic_numbers": [
+    12,
+    8,
+    6,
+    6
+  ],
+  "positions_angstrom": [
+    [
+      -1.889964,
+      -5.551495,
+      6.006429
+    ],
+    [
+      -1.976601,
+      -2.267282,
+      2.970177
+    ],
+    [
+      -1.923103,
+      -4.088321,
+      4.65825
+    ],
+    [
+      -1.949272,
+      -3.162238,
+      3.798671
+    ]
+  ],
+  "coordinate_tokens": [
+    [
+      "-1.889964",
+      "-5.551495",
+      "6.006429"
+    ],
+    [
+      "-1.976601",
+      "-2.267282",
+      "2.970177"
+    ],
+    [
+      "-1.923103",
+      "-4.088321",
+      "4.658250"
+    ],
+    [
+      "-1.949272",
+      "-3.162238",
+      "3.798671"
+    ]
+  ],
+  "coordinate_units": "angstrom",
+  "coordinate_unit_provenance": "The original public scientific protocol declares angstrom; this format transport performs no unit conversion.",
+  "atom_formal_charges_e": null,
+  "molecular_formal_charge_e": null,
+  "source_charge_codes": null,
+  "charge_scope": "XYZ does not encode formal or total charge; null is preserved. Any same-state charge is supplied separately by the public study metadata and must not be inferred from coordinates.",
+  "provenance": {
+    "operation": "Source-text field transport only; no geometry embedding, optimization, reordering, centering, alignment, isotope/default-mass assignment or scientific answer computation.",
+    "atom_order": "Exact original SDF atom-block / XYZ atom-line order. Every atom retained, including hydrogen.",
+    "original_utf8_text": "4\nMg1 C2 O1\nMg -1.889964 -5.551495 6.006429\nO -1.976601 -2.267282 2.970177\nC -1.923103 -4.088321 4.658250\nC -1.949272 -3.162238 3.798671",
+    "source_geometry_role": "Same immutable original supplied computational geometry; not an experimental measurement or newly generated conformer."
+  }
+}

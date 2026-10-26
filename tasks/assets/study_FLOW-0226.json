@@ -1,0 +1,111 @@
+{
+  "data": [
+    {
+      "record_id": "volume01",
+      "source_series_index": -5,
+      "volume_angstrom_cubed": 140.03,
+      "static_electronic_energy_ev_per_8atom_cell": -42.132246
+    },
+    {
+      "record_id": "volume02",
+      "source_series_index": -4,
+      "volume_angstrom_cubed": 144.5,
+      "static_electronic_energy_ev_per_8atom_cell": -42.600974
+    },
+    {
+      "record_id": "volume03",
+      "source_series_index": -3,
+      "volume_angstrom_cubed": 149.06,
+      "static_electronic_energy_ev_per_8atom_cell": -42.949142
+    },
+    {
+      "record_id": "volume04",
+      "source_series_index": -2,
+      "volume_angstrom_cubed": 153.72,
+      "static_electronic_energy_ev_per_8atom_cell": -43.188162
+    },
+    {
+      "record_id": "volume05",
+      "source_series_index": -1,
+      "volume_angstrom_cubed": 158.47,
+      "static_electronic_energy_ev_per_8atom_cell": -43.326751
+    },
+    {
+      "record_id": "volume06",
+      "source_series_index": 0,
+      "volume_angstrom_cubed": 163.32,
+      "static_electronic_energy_ev_per_8atom_cell": -43.375124
+    },
+    {
+      "record_id": "volume07",
+      "source_series_index": 1,
+      "volume_angstrom_cubed": 168.27,
+      "static_electronic_energy_ev_per_8atom_cell": -43.339884
+    },
+    {
+      "record_id": "volume08",
+      "source_series_index": 2,
+      "volume_angstrom_cubed": 173.32,
+      "static_electronic_energy_ev_per_8atom_cell": -43.230619
+    },
+    {
+      "record_id": "volume09",
+      "source_series_index": 3,
+      "volume_angstrom_cubed": 178.47,
+      "static_electronic_energy_ev_per_8atom_cell": -43.054343
+    },
+    {
+      "record_id": "volume10",
+      "source_series_index": 4,
+      "volume_angstrom_cubed": 183.72,
+      "static_electronic_energy_ev_per_8atom_cell": -42.817825
+    },
+    {
+      "record_id": "volume11",
+      "source_series_index": 5,
+      "volume_angstrom_cubed": 189.07,
+      "static_electronic_energy_ev_per_8atom_cell": -42.527932
+    },
+    {
+      "record_id": "study",
+      "volume_coordinate_origin_angstrom_cubed": 163.32,
+      "volume_coordinate_scale_angstrom_cubed": 10.0,
+      "one_ev_per_cell_in_kj_per_mol_of_cells": 96.48533212331,
+      "reporting_temperature_centers_kelvin": [
+        60,
+        300
+      ],
+      "central_difference_half_width_kelvin": 20,
+      "reporting_model": "For this explicitly finite-data reanalysis,use the unweighted least-squares degree 4 polynomial in u=(V-origin)/scale over all 11 supplied volumes for each requested free-energy curve. At each temperature minimize static electronic energy plus phonon Helmholtz free energy at zero pressure. For the static reference use only electronic energy. Do not add zero-point energy again:the archived phonon free energy already includes it. This polynomial reporting model is not the original Vinet equation-of-state algorithm.",
+      "derivative_convention": "For each reporting center,use the central finite difference of equilibrium volume at T±20K divided by40K and by the equilibrium volume at the center to define volumetric beta. Compute the isothermal bulk-modulus surrogate as B=V*d²F/dV² at that same center. Linearly interpolate the actual source constant-volume heat capacity across V at the actual equilibrium volume. Define the effective thermodynamic Gruneisen indicator as beta*B*V/Cv in one consistent energy/cell basis;this is not a mode-resolved frequency Gruneisen parameter.",
+      "normalization": "Electronic energies/volumes and every archived phonon property refer to the SAME 8-atom conventional Si cell. The original README explicitly says no primitive-axis reduction. A mole means a mole of those 8-atom cells for phonon free energy and Cv,not a mole of atoms. No electronic finite-temperature free-energy term is supplied.",
+      "scope": "Authentic published computational example data reanalyzed with an explicitly prescribed finite-volume polynomial surrogate. No experimental lattice parameters,full anharmonic dynamics,source Vinet reproduction or mode-resolved Gruneisen values are claimed."
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published computational source projection with an explicit finite-data reanalysis policy",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "volume Å³ per 8-atom cell;electronic energy eV per 8-atom cell;polynomial u dimensionless;temperature K.",
+    "original_observation_claim": false,
+    "source_captures": [
+      {
+        "url": "https://raw.githubusercontent.com/phonopy/phonopy/c145fccf0d440bef14e6e3544218a7d2b31a37ae/example/Si-QHA/e-v.dat",
+        "repository_commit": "c145fccf0d440bef14e6e3544218a7d2b31a37ae",
+        "source_relative_path": "example/Si-QHA/e-v.dat",
+        "sha256": "5809386c54939e75501d68b666cd758826aa1fd3eec8b73f4ab9a2fa3d4a8cb3",
+        "retrieved_utc": "2026-10-20T20:27:06.193090+00:00",
+        "bytes": 264,
+        "role": "Original published computational example data,no synthetic observations."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/phonopy/phonopy/c145fccf0d440bef14e6e3544218a7d2b31a37ae/example/Si-QHA/README",
+        "repository_commit": "c145fccf0d440bef14e6e3544218a7d2b31a37ae",
+        "source_relative_path": "example/Si-QHA/README",
+        "sha256": "e719696f189390e37af579db57452818b6198da9fa89bab24bd1bdb770ecee1b",
+        "retrieved_utc": "2026-10-20T20:27:06.251940+00:00",
+        "bytes": 751,
+        "role": "Original published computational example data,no synthetic observations."
+      }
+    ]
+  }
+}

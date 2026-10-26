@@ -1,0 +1,16 @@
+{
+  "two_capture_observed_cells": {
+    "captured_both": 20,
+    "first_only": 20,
+    "second_only": 30
+  },
+  "conditional_capture_dependence_odds_ratio_interval": [
+    0.5,
+    2.0
+  ],
+  "model": "A closed finite population is classified by whether it was captured in each of two campaigns. The only unknown count is n00,missed by both;all observed cells are exact and all counts are nonnegative integers. Conditional dependence is constrained by the stipulated odds-ratio bound theta=(n11*n00)/(n10*n01). This is a scientific sensitivity assumption,not a confidence interval estimated from these data. The independence shortcut fixes theta=1. No upper population limit or external census is otherwise given.",
+  "target": "Return the number of distinct observed individuals,the sharp integer interval of possible total population sizes under the dependence bound,the independence-point estimate,and whether that point estimate is uniquely identified by the bounded-dependence model. Report the sharp interval for unseen individuals as well.",
+  "provenance": {
+    "kind": "Explicit small synthetic benign scientific model;data are conditional exact counts/means and do not establish empirical ecological,causal or functional claims."
+  }
+}

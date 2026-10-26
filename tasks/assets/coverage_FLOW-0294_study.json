@@ -1,0 +1,12 @@
+{
+  "sequence": "ACGTACGTGGCCATAT",
+  "measurement": {
+    "blank_corrected_A260": 0.31,
+    "path_length_cm": 0.5,
+    "dilution_factor": 10.0,
+    "original_stock_volume_uL": 200
+  },
+  "interpretation": "Use the provider epsilon260with Beer-Lambert A=epsilon*c*lfor the measured diluted aliquot. Dilution factor means stock concentration divided by aliquot concentration. Return original-stock micromolar concentration and total nanomoles in the stated stock volume.",
+  "printed_conversion_check": "The reported nmol_per_OD260_1mlis rounded to the nearest0.01. Its exact value is allowed in the closed interval[printed-0.005,printed+0.005]. Report the implied interval for epsilon*conversion/1e6and whether1lies inside.",
+  "scope": "Unmodified single-stranded canonical DNA under the provider optical model. Its undisclosed end-group mass assumptions cannot establish equality to another DNA mass convention;no experimental purity or concentration accuracy claim."
+}

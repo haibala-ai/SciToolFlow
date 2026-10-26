@@ -1,0 +1,28 @@
+{
+  "layers": [
+    {
+      "id": "lower",
+      "z_interval_mm": [
+        -1.0,
+        0.0
+      ],
+      "axial_modulus_GPa": 1.0,
+      "free_thermal_strain": 0.0
+    },
+    {
+      "id": "upper",
+      "z_interval_mm": [
+        0.0,
+        1.0
+      ],
+      "axial_modulus_GPa": 3.0,
+      "free_thermal_strain": 0.01
+    }
+  ],
+  "model": "Perfectly bonded unit-width free bilayer under small-strain Euler-Bernoulli kinematics. Axial strain is epsilon(z)=epsilon0+kappa*z,with zthe supplied thickness coordinate in mm. Each layer stress is E_i*(epsilon0+kappa*z-free_thermal_strain_i). There is no applied axial force or bending moment,so integrals of stress and z*stress over the full thickness both vanish. No substrate,plane-strain correction or interface slip is included.",
+  "target": "Return midplane strain epsilon0,curvature kappa in mm^-1,and outer surface stresses at z=-1and z=+1in GPa. Find the layer containing the maximum tensile stress over the entire piecewise-linear stress field,checking both sides of the interface. For comparison,force the beam flat(kappa=0)and choose epsilon0to make only net axial force zero;report the resulting internal bending-moment resultant integral(z*sigma dz)in GPa*mm²and whether that flat state is a free equilibrium.",
+  "scope": "A specified one-dimensional bilayer tangent model only;internal stresses need not vanish in a free heterogeneous body even when force/moment resultants vanish.",
+  "provenance": {
+    "kind": "Controlled conditional solid-state model;inputs are stipulated,not experimental structural assignments."
+  }
+}

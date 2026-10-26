@@ -1,0 +1,14 @@
+{
+  "monomer_formula": "C2H4O2",
+  "feed_monomer_equivalent_mass_g": 15.0,
+  "initial_volume_l": 10.0,
+  "temperature_k": 300.0,
+  "gas_constant_l_bar_mol_k": 0.08314462618,
+  "standard_pressure_bar": 1.0,
+  "dimensionless_dimerization_Kp": 1.2,
+  "added_inert_gas_mol": 0.5,
+  "equilibrium_model": "Ideal gas, 2 M <-> D; Kp=(p_D/p_standard)/(p_M/p_standard)^2, with exactly two monomer units per dimer. The inert gas participates in no reaction.",
+  "provenance": {
+    "kind": "Project-authored controlled ideal-gas association model, with stipulated Kp and monomer empirical formula. Not an experimental assignment, operating procedure or claim about actual acetic-acid vapor."
+  }
+}

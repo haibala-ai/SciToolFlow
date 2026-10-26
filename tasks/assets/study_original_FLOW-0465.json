@@ -1,0 +1,56 @@
+{
+  "state_order": [
+    "compartment_1",
+    "compartment_2"
+  ],
+  "generator_per_second": [
+    [
+      -1.0,
+      1.0
+    ],
+    [
+      1.0,
+      -1.0
+    ]
+  ],
+  "baseline_readings": [
+    {
+      "time_s": 0.0,
+      "reported_amount": 8.0
+    },
+    {
+      "time_s": 0.34657359027997264,
+      "reported_amount": 7.0
+    },
+    {
+      "time_s": 0.6931471805599453,
+      "reported_amount": 6.5
+    }
+  ],
+  "measurement_model": "Closed two-compartment linear exchange: dx/dt=K*x for COLUMN state x, with the supplied known K. The baseline sensor reports x_1(t)+b. Both initial amounts and one constant additive instrument offset b are unknown. All source readings are exact for this identification study; no noise model or regularization is authorized. Nonnegative initial amounts are allowed but not assumed to resolve missing information.",
+  "candidate_followups": [
+    {
+      "id": "second_compartment",
+      "cost": 1,
+      "measurement": "x_2(0)+b",
+      "reported_value": 4.0
+    },
+    {
+      "id": "total_inventory",
+      "cost": 2,
+      "measurement": "x_1(0)+x_2(0)",
+      "reported_value": 10.0
+    },
+    {
+      "id": "zero_reference",
+      "cost": 1,
+      "measurement": "b",
+      "reported_value": 1.0
+    }
+  ],
+  "selection_policy": "Add exactly ONE follow-up to all baseline readings. Eligible means it uniquely identifies BOTH initial amounts AND b from the full measurement model. Choose the lowest-cost eligible follow-up; lexical ID breaks a cost tie. Source order of followups is not a priority. Report eligible IDs without duplicates.",
+  "identification_policy": "Baseline identifiability asks whether a quantity is constant over every nonnegative initial state and real b compatible with all baseline observations. A finite minimum-norm estimate is not a proof of identification. For the selected follow-up return initial amounts in state_order and b.",
+  "provenance": {
+    "data_origin": "Project-constructed numerical studies with explicit physical/statistical working assumptions; not experimental performance claims."
+  }
+}

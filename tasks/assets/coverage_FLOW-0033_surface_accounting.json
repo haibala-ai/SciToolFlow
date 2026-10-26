@@ -1,0 +1,6 @@
+{
+  "smiles": "CC(=O)NCCO",
+  "reporting_model": "The11EState_VSA bins allocate the hydrogen-suppressed graph atom surface contributions by EState intervals;their units areangstrom². The full registered LabuteASA includes its separate hydrogen correction. EState atomic indices and their type-index sums are dimensionless empirical descriptors,not surface areas or formal charges.",
+  "request": "Return the highest atomic-EState-index atom ID,in zero-based parsed H-suppressed atom order;the sum of all11surface bins;the full ASAminus that bin sum;and whether replacing bin areas by the sum of atomic EState indices preserves the stated area denominator. All bins must be retained,including zeros.",
+  "scope": "Controlled descriptor-accounting audit,not a measured solvent-accessible surface or atomic charge analysis."
+}

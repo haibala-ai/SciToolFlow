@@ -1,0 +1,24 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study, not new experimental measurements.",
+    "scope": "Results are conditional on the complete stated model, measurement convention and units."
+  },
+  "gauge_angles_degrees_from_x": [
+    0.0,
+    45.0,
+    90.0
+  ],
+  "observed_total_gauge_strains": [
+    0.0013,
+    0.001,
+    0.00010000000000000005
+  ],
+  "independent_temperature_change_kelvin": 25.0,
+  "isotropic_linear_expansion_per_kelvin": 1.2e-05,
+  "young_modulus_gpa": 200.0,
+  "poisson_ratio": 0.3,
+  "yield_screen_stress_gpa": 0.25,
+  "model": "Equal-depth gauges on one homogeneous isotropic plane-stress patch measure total strain epsilon(theta)=epsilon_xx*cos(theta)^2+epsilon_yy*sin(theta)^2+gamma_xy*sin(theta)*cos(theta)+alpha*DeltaT. Unknown epsilons are MECHANICAL strains, gamma_xy is ENGINEERING shear. The independent temperature observation fixes the common thermal term. No bending, gauge bias or temperature-dependent modulus.",
+  "constitutive_law": "sigma_x=E/(1-nu^2)*(epsilon_x+nu*epsilon_y), sigma_y=E/(1-nu^2)*(epsilon_y+nu*epsilon_x), tau_xy=E*gamma_xy/(2*(1+nu)). Plane-stress von Mises is sqrt(sigma_x^2-sigma_x*sigma_y+sigma_y^2+3*tau_xy^2).",
+  "reporting": "The major principal axis is an unoriented axis. Report its angle in [-90,90) degrees from x; opposite eigenvector signs are identical. Yield screen passes at von Mises<=threshold. In the naive comparison set the thermal correction to zero but keep all measured readings and other inputs."
+}

@@ -14,7 +14,7 @@ def install():
     destination = os.getenv("SCITOOL_CONSTRUCTION_READ_AUDIT")
     if not destination or _installed:
         return
-    from scitoolflow.paths import project_root
+    from src.utils.paths import project_root
 
     root = project_root()
     directory = Path(destination).resolve()

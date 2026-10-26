@@ -1,0 +1,61 @@
+{
+  "data": [
+    {
+      "record_id": "lambda-A",
+      "augmented_response_matrix": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          4.0
+        ],
+        [
+          1.0,
+          2.0
+        ]
+      ]
+    },
+    {
+      "record_id": "lambda-B",
+      "augmented_response_matrix": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          4.0
+        ],
+        [
+          3.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "record_id": "lambda-C",
+      "augmented_response_matrix": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          4.0
+        ],
+        [
+          0.1,
+          3.0
+        ]
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Response per commonconcentrationunit;singularvaluesonthestatedunscaledbasis",
+    "original_observation_claim": false
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "data": [
+    {
+      "record_id": "source_phase",
+      "material_id": "mp-aaaaadyf",
+      "formula": "TiO2",
+      "ieee_stiffness_gpa": [
+        [
+          426.0,
+          2.0,
+          149.0,
+          -0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          2.0,
+          426.0,
+          149.0,
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        [
+          149.0,
+          149.0,
+          470.0,
+          -0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          -0.0,
+          113.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0,
+          0.0,
+          -0.0,
+          113.0,
+          -0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          -0.0,
+          0.0,
+          -0.0,
+          43.0
+        ]
+      ],
+      "voigt_component_order": [
+        "xx",
+        "yy",
+        "zz",
+        "yz",
+        "xz",
+        "xy"
+      ],
+      "engineering_strain_vector": [
+        "epsilon_xx",
+        "epsilon_yy",
+        "epsilon_zz",
+        "2epsilon_yz",
+        "2epsilon_xz",
+        "2epsilon_xy"
+      ],
+      "source_isotropic_poisson_ratio": 0.28,
+      "applied_stress_gpa": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published elasticity tensor with controlled constitutive probe",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "C andstressGPa,strain andPoissonratiosdimensionless;IEEECartesian axes,engineering shear convention",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "Materials Project",
+      "url": "https://api.materialsproject.org/materials/elasticity/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_limit=20&_all_fields=true",
+      "accessed_at": "2026-10-20T08:07:40.768678+00:00",
+      "raw_sha256": "a7d7aff7db31c12a428e740d3c844cd9e7550c79a0064a489bf3bfe5595e46d8",
+      "record_count": 10,
+      "credentials_included": false,
+      "claims": "Authentic fresh API response; independent of prior benchmark answers."
+    },
+    "source_response_sha256": "a7d7aff7db31c12a428e740d3c844cd9e7550c79a0064a489bf3bfe5595e46d8"
+  }
+}

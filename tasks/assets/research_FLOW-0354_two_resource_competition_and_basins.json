@@ -1,0 +1,65 @@
+{
+  "data_origin": "Own controlled resource-competition experiment with anonymous photosynthetic populations A and B. Every table is an exact model-mean calibration, not noisy observations or measured values for a named organism. Communities U and V share the same growth-response curves but have different fixed biomass resource quotas. This is an ecological inference and dynamical-system audit; no organism design, culturing protocol or genetic change is requested.",
+  "assay_calibration": "Each calibration_id has its own affine map signal=a+b*resource_concentration, with positive b. Recover all four maps from all actual standards and verify exact consistency. In each closed-batch row, convert initial and final signals using THEIR respective plate calibration IDs before taking resource loss. There is no supply, mortality, adsorption, background uptake, recycling or volume change in these calibration batches. The only resource losses are c_Ni*DeltaX_i and c_Pi*DeltaX_i inumol/L, with DeltaX inmg/L. Fit or otherwise recover each true quota vector inumol/mg from every row, and validate mass balance and a zero resource-loss intercept. Neither raw signal differences nor a calibration copied from another plate is a physical resource loss.",
+  "growth_response": "For each response_id fit the exact Monod curve f_ij(R)=m_ij*R/(K_ij+R) inperday, with positive parameters. All concentrations in this separate growth table are already calibrated. The other resource is explicitly nonlimiting for the measured single-resource response. Recover every m_ij and K_ij and check that the two resources share the same maximum growth rate for each species, as required by the declared Liebig model. An exact reciprocal-linear identity is a valid way to fit these noiseless model means; it does not imply that unweighted reciprocal regression is a statistically correct noise model for real assays. Do not interpret an exact fit as biological uncertainty quantification.",
+  "competition_model": "Both resources are independently essential. In each community i in{A,B} has mu_i(RN,RP)=min(f_iN(RN),f_iP(RP)), not the sum or product of the two responses. With dilutionD=0.2perday, dXi/dt=(mu_i-D)*Xi and dRj/dt=D*(Sj-Rj)-sum_i c_ji*mu_i*Xi. Rj and Sj areumol/L, Xi ismg/L, c_ji is the fixed source-derived quota inumol/mg. Biomass dilution/mortality leaves the vessel; there is no recycling or variable internal storage. Community-specific quotas do not change the shared intrinsic growth curves. All conclusions concern these specified models, not a claim of real ecological mechanism identification from a small exact table.",
+  "resource_budget": "Derive the dynamics of Tj=Rj+sum_i c_ji*Xi. Because supply and biomass dilution share the SAME D, the budget plane Tj=Sj is invariant and off-plane deviations decay atD. Use it to obtain a two-population reduction for global basin arguments. Initial-condition conclusions below are requested ONLY on this specified budget plane; do not silently extend its exact separatrix to arbitrary off-plane resource inventories. The full four-state local stability must nevertheless account for both resource-budget modes.",
+  "baseline_supply_umol_per_L": [
+    10,
+    10
+  ],
+  "initial_conditions": [
+    {
+      "id": "I1",
+      "X_A_mg_per_L": 0.5,
+      "X_B_mg_per_L": 0.2
+    },
+    {
+      "id": "I2",
+      "X_A_mg_per_L": 0.2,
+      "X_B_mg_per_L": 0.5
+    },
+    {
+      "id": "I3",
+      "X_A_mg_per_L": 0.4,
+      "X_B_mg_per_L": 0.4
+    }
+  ],
+  "initial_resource_rule": "For each initial-condition row and community separately, set actual initial Rj=Sj-c_jA*XA-c_jB*XB. Check both resources are nonnegative. These are different actual resource inventories in U and V even for the same initial biomasses. Perfect equality in I3 is exact; no stochastic perturbation is assumed.",
+  "questions": [
+    "Prepare and validate the full reusable calibration hand-off, then recover every biomass quota and Monod curve with actual registered-tool evidence. Derive the four single-resource R-star thresholds at which growth equals D. Decide whether growth tradeoffs and the supply point alone imply stable coexistence in both communities.",
+    "At supply(10,10), find EVERY biologically feasible equilibrium of the full model in each community, including washout, both one-species equilibria and coexistence. Verify actual limiting-resource branches and nonnegative resources. For each one-species equilibrium compute the missing species invasion exponent. Compute all four local eigenvalues of the coexistence equilibrium without pretending that the full Jacobian is symmetric. Classify stable coexistence versus a positive but unstable coexistence point with alternative stable exclusion outcomes.",
+    "For all three specified initial biomasses in both communities determine the exact asymptotic population outcome and biomass values on the invariant budget plane. Give a GLOBAL basin argument, not just a local eigenvalue or finite-time integration. In particular, determine the exact separatrix in the priority-effects community, whether an exactly balanced initial condition reaches the saddle, and why this does not make it locally attracting. For U justify attraction of the interior equilibrium for every strictly positive feasible initial biomass on this plane. Address boundary equilibria and exclude a hidden periodic attractor or another positive equilibrium.",
+    "Now vary the constant supply asSN=rho,SP=20-rho for4<=rho<=16, keeping every other parameter fixed. Find the complete OPEN rho interval with both biomasses strictly positive at coexistence in each community and decide where coexistence is linearly asymptotically stable. Equality endpoints with one species absent or zero invasion exponent are not strict coexistence. For U, optimize the local recovery rate gamma=-max_real_part(full_four_state_eigenvalues) over its strict stable-coexistence interval. Derive a global continuous optimum and its uniqueness, checking the two additional budget modes and the limiting behavior at both interval endpoints. A grid is not a global certificate."
+  ],
+  "reporting": "inverse_assay_maps maps all four calibration IDs to[intercept,slope] for concentration=intercept+slope*signal; resource_quotas_umol_per_mg mapsU_A,U_B,V_A,V_B to[N,P]; monod_parameters_by_response mapsA_N,A_P,B_N,B_P to[maximum_growth_per_day,K_umol_per_L]; single_resource_Rstar_umol_per_L mapsA,B to[N,P]; growth_tradeoff_alone_proves_stable_coexistence_both asboolean; equilibria_by_community mapsU,V to objects whose washout,A_only,B_only,coexistence fields are[R_N,R_P,X_A,X_B]; invasion_exponents_A_into_B_and_B_into_A_per_day mapsU,V to ordered pairs; coexistence_full_eigenvalues_per_day mapsU,V to ascending arrays of four real eigenvalues; community_classification mapsU,V to stable_coexistence orpriority_effects; initial_asymptotic_biomass_by_community mapsU,V to objects with I1,I2,I3 ordered[XA,XB] values; exact_priority_separatrix_is_equal_biomass_on_budget_plane asboolean; positive_coexistence_rho_open_interval_by_community mapsU,V to[lower,upper]; stable_coexistence_rho_open_interval_by_community mapsU,V to an endpoint pair ornull if empty; optimal_U_rho; optimal_U_recovery_rate_per_day; rho_interval_endpoints_are_strict_coexistence asboolean; valid_interpretation_proposal_ids. Numeric absolute tolerance1e-6, except calibrated slopes/intercepts and quotas1e-7; IDs/booleans exact. Full fits, budget derivation, branch tests, basin/uniqueness arguments and continuous recovery-rate proof remain in the trajectory.",
+  "interpretation_proposals": {
+    "A": "The response and consumption-impact vectors are distinct evidence; the same R-star tradeoff can support stable coexistence or priority effects.",
+    "B": "Any intersection of zero-growth isoclines with positive equilibrium biomasses must be a stable ecological coexistence state.",
+    "C": "Equal dilution of resources and biomass makes the source-derived total-resource budget coordinates exponentially relax to supply.",
+    "D": "The exact equal-biomass separatrix on the stated budget plane must remain exact for every arbitrary off-plane initial resource inventory.",
+    "E": "An exactly balanced point can approach a saddle along its stable manifold without making that equilibrium attracting to a neighborhood.",
+    "F": "A zero-invasion boundary with one species absent is already strict stable coexistence.",
+    "G": "A robust local recovery design must retain the budget-mode eigenvalues as well as the reduced population eigenvalues.",
+    "H": "Noiseless affine and reciprocal fits prove that the biological parameters of real organisms have no sampling or model uncertainty."
+  },
+  "methodological_sources": [
+    {
+      "author": "David Tilman",
+      "year": 1977,
+      "title": "Resource Competition between Plankton Algae:An Experimental and Theoretical Approach",
+      "doi": "10.2307/1935608",
+      "url": "https://esajournals.onlinelibrary.wiley.com/doi/10.2307/1935608",
+      "role": "Primary motivation for connecting single-population nutrient responses with ecological competition; no original species parameters or experimental observations are copied."
+    },
+    {
+      "author": "David Tilman",
+      "year": 1980,
+      "title": "Resources:A Graphical-Mechanistic Approach to Competition and Predation",
+      "doi": "10.1086/283633",
+      "url": "https://www.journals.uchicago.edu/doi/10.1086/283633",
+      "role": "Primary conceptual context for distinguishing resource sensitivity, consumption impact, supply and coexistence stability. All calibrations, communities and numerical models in this task are own constructions."
+    }
+  ],
+  "calibration_hand_off": "The scientific analysis must also produce a reusable calibration hand-off for a second analyst using this project's documented typed linear-model evaluator. Deliver four portable ordinary-least-squares regression model reports, one for each actual assay calibration ID, with an intercept and one signal feature fitted against ALL of that ID's standards. Use those actual model reports to evaluate EVERY before/after resource-assay endpoint in the batch data, preserving its calibration ID and source-row order. Keep the complete model reports and their successful evaluator outputs as observed tool evidence in the trajectory, so another analyst can reuse the models and trace converted concentrations back to their input records. Merely printing inferred coefficient pairs in the final answer does not deliver or validate this hand-off. Select the appropriate catalog fitting/evaluation capabilities from their contracts; numerical code remains available for independent verification, quota/growth inference and dynamical proofs. Do not replace ordinary regression with a regularized or nonlinear fit or silently share one plate model across different calibration IDs."
+}

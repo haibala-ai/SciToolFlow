@@ -1,0 +1,87 @@
+{
+  "origin": "Own exact five-variable linear-Gaussian scientific causal-discovery audit. Variables are anonymous normalized scientific channels, not patient outcomes or empirical measurements. The CSV is a deterministic equally weighted32point SECOND-MOMENT QUADRATURE representing a centered Gaussian covariance, not32IID samples or a discrete true distribution. Its higher moments and individual support must not be used as non-Gaussian causal evidence. No sampling estimation/testing uncertainty is part of this oracle problem.",
+  "source_axes": {
+    "variable_order": [
+      "X1",
+      "X2",
+      "X3",
+      "X4",
+      "X5"
+    ],
+    "moment_quadrature": "asset://research_FLOW-0421_moment_quadrature.csv",
+    "moment_convention": "Compute centered Gaussian covariance by equal point weights1/32 (population denominator32), not sample denominator31. The input describes an exact zero-mean Gaussian law through its covariance.",
+    "existing_intervention": "The following exact covariance is from a perfect interventiondo(X2=0), withX2deterministically zero and no residual exogenous noise at that target. Other structural equations/noise laws are unchanged. This experiment cost is sunk and is not repeated.",
+    "existing_do_X2_covariance": [
+      [
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        2.0,
+        2.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        2.0,
+        3.0,
+        2.0
+      ],
+      [
+        1.0,
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ]
+    ]
+  },
+  "model_family": "A candidate is X=B*X+epsilon with an ACYCLIC directed graph, independent centered Gaussian exogenous errors and strictly positive observational error variances. There is no latent confounding, selection or measurement error in the stipulated family. Do NOT impose faithfulness, causal minimality beyond zero coefficients, a sparsity guarantee or equal error variances. Enumerate ALL120variable orders. For each order, regress each variable on all earlier variables under the exact observed Gaussian covariance; root means are0. Delete exactly zero population coefficients; the resulting lower-triangular SEM and diagonal positive residual-variance matrix reconstruct the observational law. Deduplicate identical labeledB/residual-variance matrices before counting, assigning priors, selecting sparse models or designing experiments. Distinct compatible numerical SEMs are not automatically graph-Markov-equivalent under faithfulness.",
+  "canonical_identity": "The canonical order of a distinct SEM is the lexicographically smallest topological order compatible with its nonzero directed coefficients. ID isD followed by its five1based variable numbers, e.g.D12345. IDs refer to numerical SEMs here, not to ordering multiplicities. Verify coefficient zeros from exact population quantities or audited numerical residual/tolerance; no arbitrary edge penalty can replace the declared family. All candidate generation, reconstruction residuals, canonical IDs, edge counts and rejected possibilities belong in the trajectory.",
+  "existing_data_and_causal_effects": "Retain precisely the candidate SEMs whose complete predicted perfectdo(X2=0) covariance matches the provided matrix. For each intervention, zero the target structural row AND its exogenous variance, then recompute the downstream covariance; do not substitute observational conditioning. Assess whether the observationally sparsest models survive. Across all surviving SEMs, report the complete DISTINCT possible total-effect values for X1->X5, X3->X5 andX4->X5. A total effect is the derivative of the equilibrium structural mean of the outcome underdo(cause=a), with respect toa, keeping other exogenous means0; it equals the corresponding(I-B)^-1 entry. Return the finite value set, not just its convex hull or an arbitrarily selected DAG.",
+  "new_intervention_design": {
+    "targets_and_costs": {
+      "X1": 1,
+      "X3": 2,
+      "X4": 4,
+      "X5": 3
+    },
+    "observation": "Each new experiment perfectly clamps one targetto0 and returns the FULL exact five-variable covariance including its zero row/column. Its outcome is deterministic given the candidate SEM. Costs add. The target cannot be repeated within a path; already observedX2 is unavailable. Group surviving SEMs by identical predicted full matrices to form each experiment partition.",
+    "prior": "Use a uniform prior over DISTINCT surviving numerical SEMs, not over120orders. Conditional on an experiment outcome, renormalize over that partition cell.",
+    "goal": "Identify the exact surviving numerical SEM with certainty. A terminal branch may stop only when its compatible set is a singleton. No deliberate failure, guessing or collapsing observationally equivalent but intervention-distinct models is allowed.",
+    "required_global_comparisons": "Enumerate every allowed nonadaptive target subset and report ALL minimum-cost separating subsets. Then find the globally minimum expected total cost adaptive policy and every first target that can achieve it; independently find minimum worst-case adaptive cost and every first target that can achieve that minimax cost. Retain complete outcome partitions and a finite Bellman/exhaustive decision-tree optimality certificate, not one successful greedy path.",
+    "greedy_comparison": "At each current posterior set choose the available target with largest conditional outcome entropy(in nats) divided by immediate cost. Break exact ties lexicographically by variable name. Continue until exact identification; report its expected total cost and all tied initial maximizers before tie breaking. Compare with the GLOBAL expected-cost optimum. Entropy-gain per cost is a heuristic, not the stated optimization objective."
+  },
+  "typed_evidence": "Retain actual FitLinearRegression observations using all32quadrature rows for every distinct(target,sorted earlier-parent set) needed by the reference orderX1,X2,X3,X4,X5 AND by every observationally minimum-edge SEM canonical order discovered. Reuse an actual model when the target and parent set are identical; feature order is ascending variable name. Retain each portable model and verify predictions/residual variances against population covariance. Root zero means/variances need not be fit with empty features. Also retain actual SymmetricEigenDecomposition for the full observational covariance, and actual MatrixInverse ofI-B for EVERY distinct SEM surviving the existing intervention. Scientific enumeration, covariance reconstruction, perfect intervention, effect sets and global decision calculations must use actual source and tool receipts. Numerical code is allowed for complete enumeration and global proofs, not for replacing the required typed fitted models or inverses.",
+  "interpretation_proposals": {
+    "A": "Equal observational Gaussian distributions can conceal different intervention predictions when no faithfulness assumption is imposed.",
+    "B": "The sparsest compatible observational SEM must be the correct intervention model in this task, regardless of extra assumptions.",
+    "C": "Perfect intervention removes a target equation/noise and generally differs from conditioning on an observed target value.",
+    "D": "Uniform weights on120orders induce the same prior as uniform weights on distinct numerical SEMs.",
+    "E": "Exact certainty and expected identification cost depend on complete experiment outcome partitions and downstream choices.",
+    "F": "The largest immediate information gain per cost always gives the globally cheapest adaptive scientific identification policy.",
+    "G": "Within this bounded candidate family, finite possible causal-effect values should retain nonconvex ambiguity rather than report one selected DAG.",
+    "H": "Exact oracle results establish robustness to sampling noise, latent variables, nonlinear mechanisms or real instruments."
+  },
+  "reporting": "Use public schema. Covariances in source variable order; numerical SEM IDs and sets use canonical definitions. Sort members of each partition cell and each target/effect set; the order of cells and of sets is immaterial. Numeric absolute tolerance1e-8 for covariances, effects and costs; counts/IDs/booleans exact. Edge-count histogram keys are decimal edge counts. Full posterior SEMs, source regressions, every prediction partition and complete global expected/minimax/greedy policy certificate belong in the trajectory.",
+  "primary_context": {
+    "authors": "Alain Hauser and PeterBuehlmann",
+    "year": 2012,
+    "title": "Characterization and Greedy Learning of Interventional Markov Equivalence Classes of Directed Acyclic Graphs",
+    "url": "https://jmlr.org/papers/v13/hauser12a.html",
+    "role": "Primary context for intervention-based causal-model identification. The finite unfaithful Gaussian instance, complete numerical-SEM family, cost comparisons and quadrature are own construction. Do not apply graph-equivalence theorems that require additional assumptions to all distribution-compatible numerical SEMs."
+  }
+}

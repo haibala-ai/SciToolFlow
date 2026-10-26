@@ -1,0 +1,39 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "state_order": [
+    "entry",
+    "mobile",
+    "trap"
+  ],
+  "row_generator_per_second": [
+    [
+      -1.0,
+      1.0,
+      0.0
+    ],
+    [
+      1.0,
+      -3.0,
+      1.0
+    ],
+    [
+      0.0,
+      0.01,
+      -0.01
+    ]
+  ],
+  "absorbing_exit": "Not included as a transient row/column. Row deficits are the rate of absorption. Initial state is entry, and the experiment stops on the first visit to exit.",
+  "upgrades": {
+    "increase_exit_rate": {
+      "replacement_mobile_to_exit_per_second": 2.0
+    },
+    "close_trap_entry": {
+      "replacement_mobile_to_trap_per_second": 0.0
+    }
+  },
+  "protocol": "Apply each equal-cost upgrade separately to the original process. The unchanged mobile-to-entry rate is1/s and trap-to-mobile rate.01/s. Recompute the mobile diagonal as minus its total outgoing rate, including exit. Mean absorption time t satisfies -Q*t=ones for each transient row generator. Choose the upgrade minimizing the entry-state mean time, tie within1e-10s by lexical ID.",
+  "scope": "Continuous-time memoryless hopping in a controlled finite transport network with a slow reversible trap. This is a first-passage endpoint, not a stationary population or inverse of a single outgoing rate."
+}

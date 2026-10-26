@@ -6,9 +6,6 @@
 !*.env.example
 results/*
 !results/README.md
-!results/reports/
-results/reports/*
-!results/reports/tool_preflight.json
 __pycache__/
 *.pyc
 *.egg-info/

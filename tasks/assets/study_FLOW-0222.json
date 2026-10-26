@@ -1,0 +1,171 @@
+{
+  "data": [
+    {
+      "record_id": "network",
+      "node_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "contact_conductance_adjacency_w_per_kelvin": [
+        [
+          0.0,
+          3.0,
+          1.0,
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          3.0,
+          0.0,
+          0.4,
+          0.0,
+          0.5,
+          0.0,
+          0.2,
+          0.0
+        ],
+        [
+          1.0,
+          0.4,
+          0.0,
+          0.0,
+          2.0,
+          0.8,
+          0.0,
+          0.0
+        ],
+        [
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          0.15,
+          2.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.5,
+          2.0,
+          0.15,
+          0.0,
+          0.3,
+          0.0,
+          2.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.8,
+          2.5,
+          0.3,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.2,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          1.4
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          0.0,
+          1.4,
+          0.0
+        ]
+      ],
+      "hot_boundary_node": 0,
+      "cold_boundary_node": 7,
+      "hot_temperature_rise_kelvin": 1.0,
+      "cold_temperature_rise_kelvin": 0.0,
+      "node_interpretation": "Each node is one internally isothermal lumped grain;the symmetric edge weight is the total contact thermal conductance,not conductivity or thermal resistance."
+    },
+    {
+      "record_id": "contact01",
+      "endpoint_zero_based_indices": [
+        1,
+        4
+      ],
+      "conductance_increment_w_per_kelvin": 1.0,
+      "relative_modification_cost": 1.0
+    },
+    {
+      "record_id": "contact02",
+      "endpoint_zero_based_indices": [
+        0,
+        2
+      ],
+      "conductance_increment_w_per_kelvin": 1.0,
+      "relative_modification_cost": 1.0
+    },
+    {
+      "record_id": "contact03",
+      "endpoint_zero_based_indices": [
+        2,
+        4
+      ],
+      "conductance_increment_w_per_kelvin": 1.0,
+      "relative_modification_cost": 1.0
+    },
+    {
+      "record_id": "contact04",
+      "endpoint_zero_based_indices": [
+        5,
+        6
+      ],
+      "conductance_increment_w_per_kelvin": 1.0,
+      "relative_modification_cost": 1.0
+    },
+    {
+      "record_id": "contact05",
+      "endpoint_zero_based_indices": [
+        4,
+        7
+      ],
+      "conductance_increment_w_per_kelvin": 1.0,
+      "relative_modification_cost": 1.0
+    },
+    {
+      "record_id": "contact06",
+      "endpoint_zero_based_indices": [
+        3,
+        4
+      ],
+      "conductance_increment_w_per_kelvin": 1.0,
+      "relative_modification_cost": 1.0
+    },
+    {
+      "record_id": "study",
+      "steady_state_model": "At each internal node the net conductive heat flow is zero. Each contact has heat flow g_ij*(T_i-T_j);the two boundary node temperatures remain fixed. No heat source,radiation,convection or contact nonlinearity is included.",
+      "design_rule": "Choose exactly one listed contact and add its conductance increment. Do not add increments to any other contact. Maximize the effective hot-to-cold conductance after all internal temperatures re-equilibrate. Candidate costs are equal;lexical contact ID resolves an exact tie.",
+      "reporting": "Effective conductance is total heat leaving the hot boundary divided by its fixed temperature difference from the cold boundary. Report conductance W/K,not bulk thermal conductivity W/(m K);no specimen geometry is supplied.",
+      "scope": "Controlled hypothetical grain/contact network. Contact values are model inputs,not measurements of a named material or a prediction from an atomistic force field."
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Contact and effective conductance W/K;temperature rise K;heat flowW;adjacency weights are conductances,not resistances. No spatial length is available to infer bulk conductivity.",
+    "original_observation_claim": false
+  }
+}

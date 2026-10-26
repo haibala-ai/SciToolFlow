@@ -1,0 +1,389 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "measurements": [
+        {
+          "specimen_id": "1",
+          "length_native": 4.2,
+          "supplement": "VC",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "2",
+          "length_native": 11.5,
+          "supplement": "VC",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "3",
+          "length_native": 7.3,
+          "supplement": "VC",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "4",
+          "length_native": 5.8,
+          "supplement": "VC",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "5",
+          "length_native": 6.4,
+          "supplement": "VC",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "6",
+          "length_native": 10.0,
+          "supplement": "VC",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "7",
+          "length_native": 11.2,
+          "supplement": "VC",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "8",
+          "length_native": 11.2,
+          "supplement": "VC",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "9",
+          "length_native": 5.2,
+          "supplement": "VC",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "10",
+          "length_native": 7.0,
+          "supplement": "VC",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "11",
+          "length_native": 16.5,
+          "supplement": "VC",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "12",
+          "length_native": 16.5,
+          "supplement": "VC",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "13",
+          "length_native": 15.2,
+          "supplement": "VC",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "14",
+          "length_native": 17.3,
+          "supplement": "VC",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "15",
+          "length_native": 22.5,
+          "supplement": "VC",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "16",
+          "length_native": 17.3,
+          "supplement": "VC",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "17",
+          "length_native": 13.6,
+          "supplement": "VC",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "18",
+          "length_native": 14.5,
+          "supplement": "VC",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "19",
+          "length_native": 18.8,
+          "supplement": "VC",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "20",
+          "length_native": 15.5,
+          "supplement": "VC",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "21",
+          "length_native": 23.6,
+          "supplement": "VC",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "22",
+          "length_native": 18.5,
+          "supplement": "VC",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "23",
+          "length_native": 33.9,
+          "supplement": "VC",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "24",
+          "length_native": 25.5,
+          "supplement": "VC",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "25",
+          "length_native": 26.4,
+          "supplement": "VC",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "26",
+          "length_native": 32.5,
+          "supplement": "VC",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "27",
+          "length_native": 26.7,
+          "supplement": "VC",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "28",
+          "length_native": 21.5,
+          "supplement": "VC",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "29",
+          "length_native": 23.3,
+          "supplement": "VC",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "30",
+          "length_native": 29.5,
+          "supplement": "VC",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "31",
+          "length_native": 15.2,
+          "supplement": "OJ",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "32",
+          "length_native": 21.5,
+          "supplement": "OJ",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "33",
+          "length_native": 17.6,
+          "supplement": "OJ",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "34",
+          "length_native": 9.7,
+          "supplement": "OJ",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "35",
+          "length_native": 14.5,
+          "supplement": "OJ",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "36",
+          "length_native": 10.0,
+          "supplement": "OJ",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "37",
+          "length_native": 8.2,
+          "supplement": "OJ",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "38",
+          "length_native": 9.4,
+          "supplement": "OJ",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "39",
+          "length_native": 16.5,
+          "supplement": "OJ",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "40",
+          "length_native": 9.7,
+          "supplement": "OJ",
+          "dose_mg_per_day": 0.5
+        },
+        {
+          "specimen_id": "41",
+          "length_native": 19.7,
+          "supplement": "OJ",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "42",
+          "length_native": 23.3,
+          "supplement": "OJ",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "43",
+          "length_native": 23.6,
+          "supplement": "OJ",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "44",
+          "length_native": 26.4,
+          "supplement": "OJ",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "45",
+          "length_native": 20.0,
+          "supplement": "OJ",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "46",
+          "length_native": 25.2,
+          "supplement": "OJ",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "47",
+          "length_native": 25.8,
+          "supplement": "OJ",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "48",
+          "length_native": 21.2,
+          "supplement": "OJ",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "49",
+          "length_native": 14.5,
+          "supplement": "OJ",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "50",
+          "length_native": 27.3,
+          "supplement": "OJ",
+          "dose_mg_per_day": 1.0
+        },
+        {
+          "specimen_id": "51",
+          "length_native": 25.5,
+          "supplement": "OJ",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "52",
+          "length_native": 26.4,
+          "supplement": "OJ",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "53",
+          "length_native": 22.4,
+          "supplement": "OJ",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "54",
+          "length_native": 24.5,
+          "supplement": "OJ",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "55",
+          "length_native": 24.8,
+          "supplement": "OJ",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "56",
+          "length_native": 30.9,
+          "supplement": "OJ",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "57",
+          "length_native": 26.4,
+          "supplement": "OJ",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "58",
+          "length_native": 27.3,
+          "supplement": "OJ",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "59",
+          "length_native": 29.4,
+          "supplement": "OJ",
+          "dose_mg_per_day": 2.0
+        },
+        {
+          "specimen_id": "60",
+          "length_native": 23.0,
+          "supplement": "OJ",
+          "dose_mg_per_day": 2.0
+        }
+      ],
+      "contrast_policy": "Retrospective contrast: (OJminusVC at2mg/day) minus(OJminusVC at0.5mg/day). Distinct animals are treated as independent for this explicitly approximate normal contrast interval. Use unpooled within-cell sample variances and SE=sqrt(sum(s_cell_squared/n_cell)) over the four endpoint-dose cells. Report estimate plus/minus1.959963984540054SE. This is not an exact small-sample interval.",
+      "equivalence_policy": "The claim that this endpoint-dose contrast is negligible is supported only if its entire declared95%interval lies within[-2,2]native response units. Neither a point estimate alone nor a nonsignificant zero test establishes equivalence.",
+      "units": "Dose is historical vitaminCmg/day. Response is original odontoblast-length numeric scale;the official source does not provide a verified physical length unit here. No treatment advice or new experimental action.",
+      "source_provenance": {
+        "source_url": "https://svn.r-project.org/R/trunk/src/library/datasets/data/ToothGrowth.R",
+        "raw_source_sha256": "4c9d05b39608d6ab6b089947cc001cc7582652ee6432ee62d23a3c7d8cecf6a1",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/ToothGrowth.html",
+        "retrieved_utc_date": "2026-10-20",
+        "license": "R distribution GPL>=2; original historical data sources cited in official manual",
+        "claim_scope": "Historical archived observations only; no new experimental action or causal representativeness claim.",
+        "decoded_json_sha256": "5ba0202364d7611ca23cf8401e24e1a5dd03ac501711fdea49e3463eee898c6c",
+        "decoder": "Strict literal numeric vectors plus explicit factor-level label mapping; no R evaluation",
+        "records": 60,
+        "converted_observation_sha256": "5ba0202364d7611ca23cf8401e24e1a5dd03ac501711fdea49e3463eee898c6c",
+        "observation_status": "Original historical values; no changed or synthetic observation."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

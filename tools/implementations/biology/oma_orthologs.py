@@ -6,9 +6,10 @@ and orthologs as output.  This adapter performs that real retrieval: it resolves
 the identifier through OMA, downloads the ortholog list, and keeps the source
 URLs, species and OMA relationship types for every returned row.
 """
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 from datetime import datetime, timezone
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -52,7 +53,9 @@ def _entry(session, identifier, directory):
     if len(candidates) > 1:
         exact = [row for row in candidates if str(row.get("canonicalid", "")).upper() == identifier
                  or str(row.get("omaid", "")).upper() == identifier]
-        candidates = exact or candidates
+        if len(exact) != 1:
+            raise ValueError("OMA identifier resolution is ambiguous; provide an exact OMA/canonical identifier")
+        candidates = exact
     (directory / "oma_resolution.json").write_text(json.dumps(candidates[:10], indent=2))
     return candidates[0]
 
@@ -65,9 +68,9 @@ def get_corona_orthologs(uniprot_id: str, max_results: int = 100, minimum_score:
     explicit absence, not as a fabricated ortholog list.
     """
     identifier = _identifier(uniprot_id)
-    if not 1 <= max_results <= 10000:
+    if type(max_results) is not int or not 1 <= max_results <= 10000:
         raise ValueError("Require 1..10000 maximum results")
-    if minimum_score < 0:
+    if isinstance(minimum_score, bool) or not isinstance(minimum_score, (int, float)) or not math.isfinite(minimum_score) or minimum_score < 0:
         raise ValueError("minimum_score must not be negative")
     directory = artifacts_root() / ("oma_" + identifier + "_" + uuid.uuid4().hex[:8])
     directory.mkdir(parents=True, exist_ok=True)
@@ -111,6 +114,7 @@ def get_corona_orthologs(uniprot_id: str, max_results: int = 100, minimum_score:
         "source_urls": {"entry": f"{API}/protein/{identifier}/",
                         "orthologs": f"{API}/protein/{entry_number}/orthologs/"},
         "retrieved_at": datetime.now(timezone.utc).isoformat(),
+        "total_provider_orthologs": len(orthologs), "eligible_orthologs": len(rows),
         "total_orthologs": len(rows), "returned_orthologs": len(rows[:max_results]),
         "truncated": len(rows) > max_results, "minimum_score": minimum_score,
         "orthologs_by_species": dict(sorted(by_species.items(), key=lambda item: -item[1])),

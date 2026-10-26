@@ -1,0 +1,8 @@
+{
+  "reference": "ACGTACGT",
+  "second": "TACGTACG",
+  "tool_input": "ACGTACGT.TACGTACG",
+  "exact_control": "Both strings have equal length. Independently enumerate every zero-based left rotation offset k of the second string;exact origin equivalence requires second[k:]+second[:k]==reference. Reverse complement is not part of this comparison.",
+  "score_audit": "Use the actual registered circular-aligner report with its declared match score2. For exact equality the attainable global alignment score is2*length. Return all exact-equality offsets,the reported-score shortfall from that attainable score,and whether the reported chosen rotation itself equals the reference.",
+  "scope": "The registered aligner explicitly uses a limited heuristic candidate-rotation search. Its returned score is an observation to audit,not a guaranteed optimum or evidence against exact origin equivalence."
+}

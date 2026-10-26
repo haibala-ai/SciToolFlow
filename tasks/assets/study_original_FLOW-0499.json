@@ -1,0 +1,30 @@
+{
+  "reports": [
+    {
+      "report_id": "independent_C",
+      "estimate_mv": 98.0,
+      "independent_error_sd_mv": 3.0,
+      "shared_offset_loading": 0.0
+    },
+    {
+      "report_id": "calibrated_A",
+      "estimate_mv": 100.0,
+      "independent_error_sd_mv": 1.0,
+      "shared_offset_loading": 1.0
+    },
+    {
+      "report_id": "calibrated_B",
+      "estimate_mv": 102.0,
+      "independent_error_sd_mv": 2.0,
+      "shared_offset_loading": 2.0
+    }
+  ],
+  "known_shared_offset_variance_mv2": 3.0,
+  "model": "Each report estimates the SAME unknown fixed voltage theta: y_i=theta+loading_i*z+epsilon_i. z and all epsilon_i have zero mean, are mutually independent, and have the stated known variances. Report values are one realized panel. There are no unknown variance components to estimate.",
+  "pooling_policy": "Among ALL linear unbiased estimates sum_i w_i*y_i with sum_i w_i=1, minimize the true variance. Signed weights are allowed: they are coefficients of estimators, not physical mixture fractions. Preserve source report order for the returned weights.",
+  "comparison_policy": "The proposed independence report uses inverse-MARGINAL-variance weights (including each shared-offset contribution on its diagonal) but ignores every off-diagonal covariance. Its reported variance is the reciprocal of the sum of these marginal precisions. Separately compute the ACTUAL variance of that SAME naive-weight estimator under the true joint model. Do not compare the naive reported variance with the optimal estimator variance as if they described one estimator.",
+  "provenance": {
+    "data_origin": "Explicitly constructed numerical instrument/reporting studies for this benchmark; not measurements from a named laboratory or archive.",
+    "method_scope": "Conditional finite-dimensional linear measurement models. Scientific conclusions follow from the stated covariance/distance definitions; no distributional or causal interpretation beyond those assumptions."
+  }
+}

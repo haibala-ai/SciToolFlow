@@ -1,0 +1,44 @@
+{
+  "origin": "Own synthetic finite-scale helicity study inspired by weak-vortex renormalization near a BKT transition. The supplied normal form is the exact mathematical model for this task, not an assertion that leading-order recursion is exact for a real material at arbitrary fugacity. No measured sample, Monte Carlo dataset, microscopic core energy or numerical result from a paper is used.",
+  "raw_measurements": "The CSV has sample_id,ell,raw_helicity. ell=log(L/L0) is a logarithmic length scale, not length itself. Each sample is observed at ell0,4,8,12,16. A single unknown affine instrument law raw_helicity=a+b*K applies to every record; K is the dimensionless helicity stiffness. Three exact independent standards are supplied below. All displayed CSV values are binary64-rounded exact synthetic observations; assess residuals at absolute tolerance1e-12 rather than treating their last digit as physical noise.",
+  "calibration_standards": [
+    {
+      "known_K": 0.5,
+      "raw_helicity": 0.63
+    },
+    {
+      "known_K": 0.65,
+      "raw_helicity": 0.81
+    },
+    {
+      "known_K": 0.8,
+      "raw_helicity": 0.99
+    }
+  ],
+  "normal_form": "Define x=pi*K-2 and a rescaled nonnegative vortex fugacity y. The specified autonomous flow is dx/dell=-y\u00b2, dy/dell=-x*y. All three samples have independently known exact initial y(0)=0.06. Their exact initial x is unknown but is independently certified to lie on the preparation grid {j*0.001: j is an integer,-100<=j<=100}; identify the unique grid value per sample compatible with the calibrated ell0 record and all remaining observations at the declared1e-12raw tolerance. Grid membership is part of the synthetic preparation model, not a rounding rule for a continuously unknown parameter. Preserve the unconstrained reconstruction and its residual before using the identified exact grid value. The normalization of y is absorbed into these equations. Derive and use the first integral and retain the sign branch of x. The quasi-long-range branch has y\u21920,x\u2192positive constant; the critical separatrix has y=x>0 with both tending to0; the runaway branch reaches larger fugacity. Positive invariant alone is not sufficient when x<0. This task concerns flow-based quasi-long-range classification, not an inference of nonzero spontaneous magnetization.",
+  "coupling_scope": "For quantitative interpretation of any runaway flow, stop at its FIRST forward-time y=ym with ym0.15 unless another threshold is explicitly stated. Only the continuous pre-matching branch is valid for this weak-coupling study. The finite positive critical-scale drift cannot be discarded by replacing an observed finite-scale K with its infinite-scale limit. A formal Riccati pole may be reported as a property of the normal form but is beyond the quantitative matching scope; later trigonometric branches or a negative/divergent K are not physical weak-vortex predictions. Do not assign a numerical thermodynamic stiffness to the runaway sample from post-matching extrapolation.",
+  "finite_scale_questions": "Fit the common affine calibration using an actual registered least-squares output, reconstruct all initial x, and propagate both x and y at every observed scale. Preserve all records and sample identities. Derive a linear2state projective representation of the scalar Riccati evolution, use actual registered matrix exponentials and products for complete finite-scale propagation, then compare with the raw data and a separate analytic/invariant check. Retain full linear propagators, their actual propagated initial vectors and the projective normalization, not only fitted final constants. Classify each sample using its whole forward flow and invariant/sign branch. Report thermodynamic K only for the quasi-long-range and critical samples. For S3report the first zero crossing of x, the first matching scale at y0.15, the corresponding K, and the formal first pole scale, distinguishing all four quantities.",
+  "control_paths": "For epsilon>0 approaching0, compare two precisely specified bare paths with y(0)=0.06: P_transverse has x(0)=0.06-0.02*epsilon; P_tangent has x(0)=0.06-0.02*epsilon\u00b2. They approach the SAME positive critical separatrix. At epsilon[0.1,0.05,0.02,0.01], compute ell_match for the first forward crossing y0.15; report log(xi_match/L0)=ell_match, never exponentiate enormous lengths. Fit log(ell_match) versus log(epsilon), with an intercept and equal point weights, using registered least squares and report the negative fitted slopes for each four-point path. These are finite-window fit summaries, not asymptotic exponents. Derive the actual essential singularity ell_match~A*epsilon^(-p)for each path, with p and A, from the conserved flow and a complete first-crossing branch formula. Prove the limit rather than infer it from four points. Determine whether the distinct exponents with respect to this chosen control imply distinct physical universality classes.",
+  "matching_scale_sensitivity": "Repeat the asymptotic argument for threshold ym0.12. Both thresholds exceed the initial fugacity and remain fixed positive as epsilon\u21920. For either path, find lim[ell_match(ym0.15)-ell_match(ym0.12)] and decide whether changing the matching convention changes the leading essential singularity. Establish which endpoint on the invariant hyperbola is first reached and why the positive-x solution at ym is not an admissible forward crossing. Distinguish a finite change in log matching length from equality of the two matching lengths.",
+  "interpretation_proposals": {
+    "A": "Finite-scale stiffness above its critical limiting value does not by itself distinguish all asymptotic flow regimes.",
+    "B": "Every invariant-positive initial condition is on the quasi-long-range branch, regardless of the sign of x.",
+    "C": "A control path tangent to the critical manifold can alter the fitted essential exponent with respect to that control without changing the underlying flow universality.",
+    "D": "The first normal-form pole and the first weak-coupling matching scale are identical physical predictions.",
+    "E": "Matching conventions can change finite offsets in log length while preserving its leading diverging term.",
+    "F": "A finite-window least-squares slope is by definition the exact critical exponent.",
+    "G": "A periodic continuation of the Riccati tangent beyond its pole restores a physically valid weak-coupling trajectory.",
+    "H": "Instrument calibration, logarithmic length coordinates and the correct invariant/sign branch must be resolved before comparing finite-size data with thermodynamic claims."
+  },
+  "reporting": "Numeric absolute tolerance1e-7 unless the CSV residual check explicitly uses1e-12. x/y flow rows follow sampleS1,S2,S3 and columnsell0,4,8,12,16. Path rows follow transverse,tangent and epsilon columns0.1,0.05,0.02,0.01. Finite fitted slopes are magnitudes of the specified negative loglog slopes; asymptotic exponents and leading amplitudes are separate fields. No stochastic sampling or external model is required. Keep complete actual calibration and propagation observations and analytic branch/asymptotic certificates in the trajectory.",
+  "primary_context": [
+    {
+      "authors": "J. M. Kosterlitz",
+      "year": 1974,
+      "title": "The critical properties of the two-dimensional xy model",
+      "doi": "10.1088/0022-3719/7/6/005",
+      "url": "https://doi.org/10.1088/0022-3719/7/6/005"
+    }
+  ],
+  "context_role": "Primary physical context for vortex-flow essential singularities and finite-size versus infinite-scale behavior. The rescaled leading normal form, calibration, sample trajectories and two control paths are independently specified constructed inputs; the paper is not needed at runtime and no paper numerical table or prose is reproduced."
+}

@@ -1,0 +1,25 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "temperature_k": 800.0,
+  "boltzmann_constant_j_k": 1.380649e-23,
+  "joule_per_electronvolt": 1.602176634e-19,
+  "phases": [
+    {
+      "phase_id": "A",
+      "bulk_driving_force_j_m3": 20000000.0,
+      "interfacial_energy_j_m2": 0.02,
+      "relative_attempt_rate": 1.0
+    },
+    {
+      "phase_id": "B",
+      "bulk_driving_force_j_m3": 18000000.0,
+      "interfacial_energy_j_m2": 0.018,
+      "relative_attempt_rate": 0.8
+    }
+  ],
+  "model": "Each candidate forms a spherical nucleus with DeltaG(r)=4*pi*r^2*gamma-(4*pi/3)*r^3*Delta_g_v, where the supplied positive Delta_g_v is the magnitude of bulk free-energy lowering per volume. Infer its positive critical radius and maximum barrier. Independently competing rare-event Poisson rates are proportional to the supplied relative_attempt_rate times exp(-barrier/(kBT)). The unknown common rate multiplier cancels in the identity of the first event.",
+  "scope": "Conditional homogeneous classical-nucleation comparison, without a real material assignment, heterogeneous substrate, depletion or subsequent growth. Larger bulk lowering alone does not determine which nucleus appears first."
+}

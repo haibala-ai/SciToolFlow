@@ -1,3 +1,4 @@
+import ast
 import logging
 import requests
 import json
@@ -21,7 +22,7 @@ def _novopro_result(response, operation):
         payload = json.loads(response)
     except Exception:
         try:
-            payload = eval(response, {"__builtins__": {}}, {})
+            payload = ast.literal_eval(response)
         except Exception as exc:
             raise RuntimeError(f"NovoPro {operation} reply was not decodable: {str(response)[:160]}") from exc
     if not isinstance(payload, list) or len(payload) < 2:
@@ -64,11 +65,11 @@ def protein_condonoptimizer(protein):
             'sec-ch-ua-platform': '"Windows"'
         }
 
-        response = requests.request("POST", url, headers=headers, data=payload)
+        response = requests.request("POST", url, headers=headers, data=payload, timeout=30)
 
         data = response.text
 
-        data_list = eval(data)
+        data_list = _novopro_result(data, 'protein_condonoptimizer')
 
         # Gets the value in the list
         new_sequence = data_list[1][0]
@@ -125,11 +126,11 @@ def DNA_condonoptimizer(protein):
 
         }
 
-        response = requests.request("POST", url, headers=headers, data=payload)
+        response = requests.request("POST", url, headers=headers, data=payload, timeout=30)
 
         data = response.text
 
-        data_list = eval(data)
+        data_list = _novopro_result(data, 'DNA_condonoptimizer')
 
         # Gets the value in the list
         new_sequence = data_list[1][0]
@@ -185,7 +186,7 @@ def compute_hydrophilicity(protein) -> str:
 
     }
 
-        response = requests.request("POST", url, headers=headers, data=payload)
+        response = requests.request("POST", url, headers=headers, data=payload, timeout=30)
 
         data = response.text
 
@@ -283,40 +284,11 @@ def compute_tm(protein) -> str:
 # Polypeptide sequence is converted to SMILES
         # Surface the failure instead of falling through to an implicit None.
         raise RuntimeError(f"Error compute annealing temperature: {e}") from e
-def convert_polypeptide_to_smiles(protein) -> str:
-    """
-    This tool translate the polypeptide sequence to SMILES.
-    Args:
-        protein: polypeptide sequence
+def convert_polypeptide_to_smiles(protein: str) -> dict:
+    """Construct an explicit unmodified linear L-peptide molecular graph locally, without a remote descriptor bundle."""
+    from tools.implementations.biology.peptide_molecule import peptide_to_smiles
+    return peptide_to_smiles(protein)
 
-    Returns:
-        str: The Markdown content with SMILES.
-
-    """
-    try:
-        data = {
-            "sr": "psmi",
-            "seq": protein,
-            "ct": "linear",
-            "p": ""
-        }
-
-        response = send_novopro_request(data)
-        data_list = _novopro_result(response, "convert_polypeptide_to_smiles")
-        smiles = data_list[1][0][1]
-        generated_markdown = f'''
-**Input Sequence:** {protein}
-
-**SMILES:** {smiles}
-    
-'''
-        return generated_markdown
-    except Exception as e:
-        logging.error(f"Error translate polypeptide to smiles: {e}")
-
-
-        # Surface the failure instead of falling through to an implicit None.
-        raise RuntimeError(f"Error translate polypeptide to smiles: {e}") from e
 def compute_isoelectric_point(sequence):
     """
     This tool compute the isoelectric point of the protein or peptide.
@@ -387,7 +359,7 @@ def compute_affinity(dg, temperature, unit):
     response = send_novopro_request({"sr": "dg2kd", "dg": value, "t": kelvin, "u": token})
     if not response:
         raise RuntimeError("NovoPro did not answer the affinity request")
-    data_list = json.loads(response)
+    data_list = _novopro_result(response, 'compute_affinity')
     if not isinstance(data_list, list) or len(data_list) < 2 or data_list[0] != 1 or not isinstance(data_list[1], (int, float)):
         raise RuntimeError("NovoPro rejected the affinity request: " + str(data_list)[:200])
     return json.dumps({"provider": "NovoPro dg2kd", "gibbs_free_energy": value,
@@ -518,7 +490,7 @@ def design_overlappeptidelibrary(pretein):
         }
 
         response = send_novopro_request(data)
-        data = json.loads(response)
+        data = _novopro_result(response, 'design_overlappeptidelibrary')
         content = data[1]
         markdown = f'''
 **Overlapping Peptide Library. Each line is one result.**
@@ -554,7 +526,7 @@ def design_alaninescanninglibrary(protein):
         }
 
         response = send_novopro_request(data)
-        data = json.loads(response)
+        data = _novopro_result(response, 'design_alaninescanninglibrary')
         content = data[1]
         markdown = f'''
 **Alanine Scanning Library. Each line is one result.**
@@ -591,7 +563,7 @@ def design_truncationlibrary(protein):
         }
 
         response = send_novopro_request(data)
-        data = json.loads(response)
+        data = _novopro_result(response, 'design_truncationlibrary')
         content = data[1]
         markdown = f'''
     **Truncation Library. Each line is one result.**
@@ -624,13 +596,13 @@ def design_positionalscanninglibrary(protein_residueposition):
         position = position.replace("，", ",")
         data = {
             "sr": "plibdsg",
-            "seq": cleaned_sequence,
+            "seq": sequence,
             "lt": "positional",
             "p": position
         }
 
         response = send_novopro_request(data)
-        data = json.loads(response)
+        data = _novopro_result(response, "positional scanning library")
         content = data[1]
         markdown = f'''
     **Positional Scanning Library. Each line is one result.**
@@ -729,7 +701,7 @@ def CDR_LabelingAntibody(sq, nskm, dskm):
         }
 
         response = send_novopro_request(data)
-        parsed_data = json.loads(response)
+        parsed_data = _novopro_result(response, 'CDR_LabelingAntibody')
 
 
 
@@ -786,7 +758,7 @@ Input sequence: {sq}
 '''
 
         response = send_novopro_request(data)
-        data = json.loads(response)
+        data = _novopro_result(response, 'number_antibodysequence')
 
         for i in range(len(data[1])):
 
@@ -835,7 +807,7 @@ input sequence: {fasta}
 **Results in ClustalW format**
 '''
         response = send_novopro_request(data)
-        data = json.loads(response)
+        data = _novopro_result(response, 'align_circularDNA')
         markdown += f"{data[1][0]}\n"
         markdown += f"Sum of pairs score: {data[2]}\n"
         for i in range(len(data[1])-4):
@@ -876,7 +848,7 @@ input sequence: {fasta}
 **Results in ClustalW format**
 '''
         response = send_novopro_request(data)
-        data = json.loads(response)
+        data = _novopro_result(response, 'compare_multiple_sequence')
         markdown += f"{data[1][0]}\n"
         for i in range(len(data[1])-4):
             markdown += f"{data[1][i+3]}\n"
@@ -956,7 +928,7 @@ def predict_protein_solubility(sequence: str) -> str:
         }
 
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'predict_protein_solubility')
         markdown = f'''
 ***Solubility Prediction***
 input sequence: {cleaned_sequence}
@@ -988,10 +960,10 @@ def predict_inherent_disordered_regions(sequence: str):
         }
 
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'predict_inherent_disordered_regions')
         temp_list = data_list[1].split('/')
         path ="https://www.novopro.cn/plus/tmp/" + temp_list[1]
-        image = Image.open(requests.get(path, stream=True).raw)
+        image = Image.open(requests.get(path, stream=True, timeout=30).raw)
         return image
     except Exception as e:
         logging.error(f"Error predict inherent disordered regions: {e}")
@@ -1019,7 +991,7 @@ def align_double_sequence_local(sequence: str) -> str:
         }
 
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'align_double_sequence_local')
         markdown = f'''
 ***Local alignment of two sequences***
 input sequence: \n{fasta}   
@@ -1058,7 +1030,7 @@ input sequence: {cleaned_sequence}
 '''
         response = send_novopro_request(data)
 
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'analyse_protein_moti')
 
         for key, value in data_list[1].items():
             markdown += f"Motif type: {key};\n"
@@ -1103,7 +1075,7 @@ def calculate_sequence_similarity(sequence_group: str) -> str:
         }
 
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'calculate_sequence_similarity')
 
 
         markdown = f'''
@@ -1151,7 +1123,7 @@ def find_orf(sequence_prolen: str) -> str:
         }
 
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'find_orf')
         result = data_list[1].replace('<div class="info">', '').replace('</div>&gt;', '\n>').replace('<br />', '\n').replace('<br>', '').replace('<br/>', '').replace('&gt;', '>').replace("\n\n",'\n')
         markdown = f'''
 ***ORF Results***
@@ -1191,7 +1163,7 @@ def DNA_to_AminoAcid(sequence: str)-> str:
         }
 
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'DNA_to_AminoAcid')
         result = data_list[1].replace('&gt;rf 1 Untitled<br />\n', '')
         result = result.replace('<br/>', '').replace('<br />', '')
         markdown = f'''
@@ -1238,7 +1210,7 @@ Minimum repeat sequence length: {length}
 **Results**
 '''
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'search_repeat_DNAsequence')
         result = data_list[1]
         for item, value in result:
             markdown += f"sequence: {item}\t length: {len(item)}\t position(s): {[x + 1 for x in value]}\n"
@@ -1279,7 +1251,7 @@ Minimum repeat sequence length: {length}
 **Results**
 '''
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'search_repeat_proteinsequence')
         result = data_list[1]
         for item, value in result:
             markdown += f"sequence: {item}\t length: {len(item)}\t position(s): {[x + 1 for x in value]}\n"
@@ -1355,7 +1327,7 @@ input degenerate codon: {cleaned_condon}
 **Results**
 '''
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'degcon2aa')
         result = data_list[1]
 
         for key in result:
@@ -1396,7 +1368,7 @@ input sequence: {sequence}
 **Results**
 '''
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'predict_nls')
         result = data_list[1]
         if result == 1:
             return "The protein does not have a nuclear localization sequence under the current posterior probability threshold."
@@ -1430,7 +1402,7 @@ def compute_smiles_similarity(smiles: str) -> str:
         }
 
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'compute_smiles_similarity')
         result = data_list[1]
         if result == '':
             return "No similarity."
@@ -1442,7 +1414,7 @@ input SMILES:
         for i in range(len(smiles_list)):
              markdown += f"No.{i + 1} {smiles_list[i]}\n"
         markdown += f"\n***Similarity Resultes***\n"
-        result = eval(result)
+        result = ast.literal_eval(result)
         for i in range(len(result)):
             markdown += str(result[i]).replace('[\'', '').replace('\',', '\t\tSimilarity(%)').replace(']', '\n')
 
@@ -1485,7 +1457,7 @@ def calculate_DNA_weight(sequence_para: str) -> str:
         }
 
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'calculate_DNA_weight')
         result = data_list[1]
         result = result.replace('<div class="info">', '\n').replace('</div>', '\n')
         markdown = f'''
@@ -1518,7 +1490,7 @@ def predict_cpg(sequence: str) -> str:
         }
 
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'predict_cpg')
         result = data_list[1]
 
         markdown = f'''
@@ -1550,8 +1522,7 @@ def compute_primer_properties(sequence: str) -> str:
         cleaned_sequence = sequence.replace(' ', '').replace('\n', '')
         sequence_list = cleaned_sequence.split('.')
         fasta = ''
-        i = 0
-        for item in sequence_list:
+        for i, item in enumerate(sequence_list):
             name = f"sequence{i}"
             fasta += f">{name}\n{item}\n"
         data = {
@@ -1561,7 +1532,7 @@ def compute_primer_properties(sequence: str) -> str:
         }
 
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'compute_primer_properties')
         result = data_list[1]
         result = result.replace('<br />', '').replace('<br/>', '\n')
         markdown = f'''
@@ -1597,7 +1568,7 @@ def count_amino_acid(protein: str) -> str:
         }
 
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'count_amino_acid')
         result = data_list[1]
         result = result.replace('<tr><td>', '').replace('</td><td>', ' \t\t\t').replace('</td></tr>', '\n').replace('<div class="info">', '').replace('</div><table border="1" width="100%" cellspacing="0" cellpadding="2"><tbody><tr><td class="title">Pattern:</td><td class="title">Times found:</td><td class="title">Percentage:\n<br />', '').replace('"Untitled" ','')
         result = result.replace('</tbody></table><br />\n<br /><br />\n<br /><br />','')
@@ -1638,7 +1609,7 @@ def summary_enzyme_cleavage_sites(sequence_type: str) -> str:
             "top": type,
         }
         response = send_novopro_request(data)
-        data_list = json.loads(response)
+        data_list = _novopro_result(response, 'summary_enzyme_cleavage_sites')
         result = data_list[1]
 
         h = html2text.HTML2Text()

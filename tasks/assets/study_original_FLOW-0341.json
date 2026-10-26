@@ -1,0 +1,18 @@
+{
+  "baseline_enzyme_amounts_E1_E2": [
+    1.0,
+    1.0
+  ],
+  "baseline_intermediate_X": 1.0,
+  "baseline_steady_flux": 1.0,
+  "E1_doubled_record": {
+    "E1": 2.0,
+    "E2": 1.0,
+    "steady_flux": 1.0526315789473684
+  },
+  "model": "A fixed-reservoir two-step local metabolic model:v1=E1*(a-b*X),v2=E2*c*Xwith unknown positive a,b,c. At steady state v1=v2=J. E1,E2are dimensionless relative enzyme amounts;Xand flux use common fixed source units. Neither step is declared irreversible saturated capacity. Define local enzyme flux-control coefficients C_i=partial log(J)/partial log(E_i)holding the other enzyme and a,b,c fixed. For a finite doubling,resolve the new steady intermediate rather than extrapolating a differential coefficient as an exact finite law.",
+  "target": "Infer a,b,c,return baseline control coefficients in E1,E2order and their sum,and predict steady flux and intermediate Xwhen E2is doubled from baseline with E1held fixed. Report whether the larger local control coefficient means that all flux control belongs to that one enzyme.",
+  "provenance": {
+    "kind": "Explicit small synthetic benign scientific model;data are conditional exact counts/means and do not establish empirical ecological,causal or functional claims."
+  }
+}

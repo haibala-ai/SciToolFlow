@@ -1,0 +1,19 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "initial_oxygen_demand_mg_per_liter": 20.0,
+  "initial_oxygen_deficit_mg_per_liter": 2.0,
+  "saturation_oxygen_mg_per_liter": 9.0,
+  "demand_decay_rate_per_day": 0.2,
+  "reaeration_rate_per_day": 0.5,
+  "closed_time_window_days": [
+    0.0,
+    10.0
+  ],
+  "minimum_acceptable_oxygen_mg_per_liter": 5.0,
+  "model": "Controlled downstream-time biogeochemical model dL/dt=-k_d*L,dD/dt=k_d*L-k_r*D, where L is remaining biochemical oxygen demand and D=O_saturation-O. Saturation and both positive rates are fixed. No extra loading, changing flow or oxygen-dependent rate suppression.",
+  "target": "Find the global minimum O(t)over the complete closed time window, checking endpoints as well as every physical stationary point. Report remaining demand at that minimum. The largest L(t)is not itself the oxygen minimum because deficit reflects both demand and reaeration.",
+  "scope": "A stipulated water-quality response model, not a real river forecast, pollutant release or remediation protocol."
+}

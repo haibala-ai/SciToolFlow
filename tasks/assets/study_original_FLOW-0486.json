@@ -1,0 +1,50 @@
+{
+  "Fx": [
+    [
+      1.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "Fy": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "initial_material_unit_line": [
+    0.0,
+    0.0,
+    1.0
+  ],
+  "order_labels": [
+    "Fx_then_Fy",
+    "Fy_then_Fx"
+  ],
+  "model": "Finite homogeneous deformations act on COLUMN material vectors;the later deformation left-multiplies the earlier gradient. Fx and Fy are imposed in the same fixed Cartesian spatial basis. For each chronological order compute the composed total F,the right Cauchy-Green tensor C=transpose(F)*F,the largest principal stretch sqrt(largest eigenvalue(C)),volume ratio det(F),and final length of the initial unit line. No infinitesimal-strain truncation or additive displacement-gradient approximation is permitted.",
+  "target": "Return both total gradients in order_labels order,the corresponding largest principal stretches,volume ratios and initial-line stretch factors. Report whether the orders commute and whether preservation of volume guarantees preservation of that line length. Principal stretches are nonnegative;do not return arbitrary eigenvector signs as unique scientific outputs.",
+  "provenance": {
+    "kind": "Explicit controlled conditional material model;not a measured material claim."
+  }
+}

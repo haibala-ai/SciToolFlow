@@ -1,0 +1,118 @@
+{
+  "data_origin": "Controlled Gaussian-process inference and batch design for a calorimetric response deviation, not actual measured material properties. The response is a heat-capacity DEVIATION from a known reference, in J mol^-1 K^-1; it can have either sign. Point identities, measurements, model priors and noise assumptions are fixed public inputs, not hyperparameters to optimize using hidden outcomes.",
+  "points": [
+    {
+      "point_id": "T0",
+      "scaled_temperature": 0.0,
+      "temperature_kelvin": 300.0
+    },
+    {
+      "point_id": "T5",
+      "scaled_temperature": 0.75,
+      "temperature_kelvin": 525.0
+    },
+    {
+      "point_id": "T7",
+      "scaled_temperature": 1.0,
+      "temperature_kelvin": 600.0
+    },
+    {
+      "point_id": "T3",
+      "scaled_temperature": 0.45,
+      "temperature_kelvin": 435.0
+    },
+    {
+      "point_id": "T4",
+      "scaled_temperature": 0.6,
+      "temperature_kelvin": 480.0
+    },
+    {
+      "point_id": "T2",
+      "scaled_temperature": 0.3,
+      "temperature_kelvin": 390.0
+    },
+    {
+      "point_id": "T6",
+      "scaled_temperature": 0.9,
+      "temperature_kelvin": 570.0
+    },
+    {
+      "point_id": "T1",
+      "scaled_temperature": 0.15,
+      "temperature_kelvin": 345.0
+    }
+  ],
+  "observations": [
+    {
+      "measurement_id": "M3",
+      "point_id": "T5",
+      "run_id": "initial",
+      "response": 2.03
+    },
+    {
+      "measurement_id": "M1",
+      "point_id": "T0",
+      "run_id": "initial",
+      "response": 2.12
+    },
+    {
+      "measurement_id": "M2",
+      "point_id": "T2",
+      "run_id": "initial",
+      "response": 2.25
+    },
+    {
+      "measurement_id": "M4",
+      "point_id": "T7",
+      "run_id": "initial",
+      "response": 2.3
+    }
+  ],
+  "coordinate_rule": "Use scaled_temperature x=(temperature_kelvin-300)/300 as the GP coordinate. The same numeric length scale is NOT in kelvin. Join observations by point_id; table row order is not temperature or observation order.",
+  "prior_models": [
+    {
+      "model_id": "rough",
+      "length_scale": 0.2,
+      "prior_probability": 0.5
+    },
+    {
+      "model_id": "smooth",
+      "length_scale": 0.6,
+      "prior_probability": 0.5
+    }
+  ],
+  "latent_prior": "Conditional on model m, the eight latent responses f at the declared points have a jointly Gaussian prior with constant mean2.2 and covariance K_ij=0.7^2*exp(-(x_i-x_j)^2/(2*ell_m^2)). Model prior probabilities are stated in prior_models. These are two discrete competing scientific smoothness assumptions, not a point estimate of a tunable ell. No extra trend or fitted kernel parameter is permitted.",
+  "observation_model": "All four initial measurements share ONE additive offset b_initial~Normal(0,0.25^2), independent of the latent process and of independent individual read noise epsilon_j~Normal(0,0.08^2). y_j=f(x_j)+b_initial+epsilon_j. Integrate over the offset, do not fit it as an unconstrained intercept or replace it by four independent offset errors. When computing model marginal likelihood, include the full normalized four-dimensional Gaussian density with the correlated observation covariance. Conditioning concerns LATENT f, not a future noisy reading.",
+  "estimand": "L is the fixed composite-trapezoid average of latent response over the scaled-temperature interval[0,1]: L=sum_(successive x_i<x_(i+1)) (x_(i+1)-x_i)*(f_i+f_(i+1))/2. Its units remain J mol^-1 K^-1. This finite-grid linear functional is the scientific target; no additional between-grid interpolation or continuum quadrature-error claim is granted. The threshold is L>2.2 in these units.",
+  "inference_request": "For EACH prior model compute log marginal likelihood of the initial observations; posterior model probability; posterior mean and variance of L; and posterior probability L>2.2. Then report model-averaged mean, variance and threshold probability using the ACTUAL two-component posterior mixture. Include between-model mean dispersion in mixture variance. A Gaussian with the same mean and variance is not in general the same posterior distribution and must not replace its tail probability.",
+  "future_batch_design": {
+    "available_point_ids": [
+      "T1",
+      "T3",
+      "T4",
+      "T6"
+    ],
+    "batch_size": 2,
+    "allow_repeated_point": true,
+    "future_noise": "The two future readings share ONE NEW offset b_future~Normal(0,0.25^2), independent of b_initial, the latent process and both individual future noises. Each individual future epsilon has independent variance0.08^2, including at a repeated point. Conditional latent responses at repeated point refer to the SAME random f, not independent latent copies. No future outcomes are supplied or assumed to equal their predictive means.",
+    "objective": "Enumerate every unordered size-two multiset of available point IDs, including exact replicate pairs. For each model and panel compute the posterior variance of the SAME latent L after those readings, conditional on the initial data and model, correctly marginalizing the shared future offset. Under each fixed Gaussian model this variance is independent of the unobserved future values. Score a panel by the MAXIMUM of its two conditional model variances, NOT a posterior-probability-weighted average. Choose the minimum worst-case panel; record every panel within1e-10 of the smallest score, with IDs sorted within panels and panel list sorted lexicographically. This is a robust conditional-Gaussian design criterion, not an expected posterior variance of the model mixture after future model-weight updating."
+  },
+  "interpretation_proposals": {
+    "A": "The initial shared offset must induce correlated observation noise when integrating it out.",
+    "B": "The latent-process posterior includes uncertainty remaining after marginalizing the unknown offset; this is different from treating the observed readings as exact latent values.",
+    "C": "Two repeated measurements at one point have independent latent-process values and independent offset errors, so all their uncertainties halve independently.",
+    "D": "Selecting the two largest marginal point variances necessarily minimizes uncertainty in this integrated functional under the stated correlated two-point design criterion.",
+    "E": "The mixture threshold probability is exactly the tail of a normal distribution having the reported mixture mean and variance.",
+    "F": "The selected panel minimizes the EXPECTED posterior mixture variance after future observations even though future posterior model weights have not been integrated out.",
+    "G": "Because the design criterion is the worst conditional-model variance, a model is retained in its maximum even when it has lower current posterior probability.",
+    "H": "The computed variance is a rigorous error bound for the true continuum thermodynamic integral including unknown between-grid model discrepancy."
+  },
+  "reporting": "Return trapezoid_weights_by_point_id; model_inference keyed by rough/smooth with log_marginal_likelihood,posterior_model_probability,L_mean,L_variance,L_exceedance_probability; mixture_L_mean,mixture_L_variance,mixture_L_exceedance_probability; panel_conditional_variances keyed by joined sorted IDs such as T1+T3, each mapping rough/smooth to variance; robust_optimal_panels; optimal_worst_case_variance; valid_interpretation_proposal_ids. All continuous outputs use absolute1e-7 plus relative1e-7 tolerance; point/model/panel identities exact. Report every legal panel, not only the winning one. No sampling API or Monte Carlo estimate is needed for the given Gaussian linear target.",
+  "methodological_source": {
+    "title": "Gaussian Processes for Machine Learning, Chapter2",
+    "authors": "Rasmussen and Williams",
+    "year": 2006,
+    "url": "https://gaussianprocess.org/gpml/chapters/RW2.pdf",
+    "role": "Primary reference for Gaussian conditioning, marginal likelihood and decision-theoretic prediction; this controlled correlated-offset and minimax-batch fixture is separately constructed, with no book figures or text reproduced."
+  }
+}

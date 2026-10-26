@@ -1,0 +1,18 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "temperature_k": 80.0,
+  "boltzmann_constant_ev_k": 8.617333262145e-05,
+  "valence_edge_ev": 0.0,
+  "conduction_edge_ev": 1.12,
+  "donor_binding_below_conduction_ev": 0.045,
+  "donor_density_cm_inverse_cubed": 1e+17,
+  "effective_conduction_state_density_cm_inverse_cubed": 3.855776117203938e+18,
+  "effective_valence_state_density_cm_inverse_cubed": 1.432145415056891e+18,
+  "ionization_degeneracy_factor": 2.0,
+  "model": "Use nondegenerate carriers n=Nc*exp((EF-Ec)/(kBT)),p=Nv*exp((Ev-EF)/(kBT)); singly ionized donors Nd_plus=Nd/(1+g*exp((EF-Ed)/(kBT))). Ed=Ec-binding. Charge neutrality is n=p+Nd_plus. No acceptors, band-gap narrowing or additional carrier reservoirs. The state densities are already evaluated at this temperature; do not rescale them again.",
+  "root_policy": "Find the neutral solution with Ev<EF<Ec; charge residual n-p-Nd_plus is strictly increasing here. Quantities are conditional on these stipulated donor and Boltzmann models, not an experimental freeze-out calibration.",
+  "error_convention": "Fully ionized shortcut predicts electron density Nd. Report abs(Nd/n-1), using the neutral model solution in the denominator."
+}

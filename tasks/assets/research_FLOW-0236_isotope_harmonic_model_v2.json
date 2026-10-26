@@ -1,0 +1,66 @@
+{
+  "data_origin": "One real completed Q-Chem 6.1.1 water frequency output from the MIT-licensed pymatgen-core test archive, kept byte-for-byte after lossless gzip decompression. The following regularized harmonic reconstruction is an explicitly defined model for using its rounded Cartesian displacement table, not a recovery of the unavailable full-precision ab initio Hessian. Predictions for isotope masses and the vibrational-only exchange factor are conditional model calculations, not experimental frequencies or a full equilibrium constant.",
+  "qchem_file": "asset://research_FLOW-0236_water_frequency.qcout",
+  "source_geometry": {
+    "atom_ids": [
+      1,
+      2,
+      3
+    ],
+    "elements": [
+      "O",
+      "H",
+      "H"
+    ],
+    "cartesian_angstrom": [
+      [
+        0.1825093492,
+        1.9982356762,
+        0.3462438878
+      ],
+      [
+        1.0251599245,
+        1.719964667,
+        -0.0243739112
+      ],
+      [
+        -0.4433491748,
+        1.9155221064,
+        -0.3791616702
+      ]
+    ],
+    "atomic_masses_u": [
+      15.99491,
+      1.00783,
+      1.00783
+    ],
+    "extraction": "Literal initial/standard nuclear orientation and printed atom masses in this same output; atom numbering is preserved. Do not replace these by an idealized planar water geometry or use an optimized geometry from another calculation."
+  },
+  "isotope_mass_cards_u": {
+    "H2O": [
+      15.99491,
+      1.00783,
+      1.00783
+    ],
+    "DHO": [
+      15.99491,
+      2.014101778,
+      1.00783
+    ],
+    "HDO": [
+      15.99491,
+      1.00783,
+      2.014101778
+    ],
+    "D2O": [
+      15.99491,
+      2.014101778,
+      2.014101778
+    ]
+  },
+  "reconstruction_definition": "Acquire the THREE positive frequencies nu_j in cm^-1 and their three-atom signed Cartesian displacement vectors from the completed source. Flatten each displacement column in atom-major x,y,z order to V (9 by3), preserving frequency correspondence. For this controlled reconstruction treat the printed vectors as Cartesian displacements. Use the base masses M0, repeated over Cartesian components. Form the six mass-weighted rigid-body columns: translation in each Cartesian direction and e_axis cross (r_i-r_COM) rotation about each axis, with each atom block multiplied by sqrt(m0_i). With their matrix B, P=I-B*(B.T*B)^-1*B.T projects out rigid motions. Set W=P*sqrt(M0)*V; G=W.T*W; L=W*G^-1/2 using the UNIQUE SYMMETRIC positive-definite inverse square root. Define the mass-independent Cartesian force operator K=sqrt(M0)*L*diag(nu_j^2)*L.T*sqrt(M0), in the declared scaled mass/wavenumber convention. QR or Gram-Schmidt can be used internally to compute the same projector or symmetric factor, but replacing symmetric orthonormalization by an arbitrary ordered orthonormal basis while keeping the original frequency diagonal changes this specified model.",
+  "isotope_prediction": "For each mass card construct D_iso=M_iso^-1/2*K*M_iso^-1/2. Its THREE positive eigenvalues determine the model vibrational frequencies sqrt(lambda) in cm^-1; the other six modes are rigid-body zeros and must not enter the vibrational partition function. Sort the three positive frequencies increasingly for each card. Use no empirical isotope scaling factor. The Born-Oppenheimer mass-independent force-operator approximation is assumed only within this constructed harmonic model. Do not regenerate molecular geometry or substitute a scalar average molecular mass for atom-resolved masses.",
+  "quantum_thermodynamics": "For each card use F_vib(T)=sum_j [0.5*hcNA*nu_j + R*T*log(1-exp(-hcNA*nu_j/(R*T)))] kJ/mol, R=0.00831446261815324 kJ/(mol K), hcNA=0.0119626565638697 kJ mol^-1 per cm^-1. Include zero-point energy, and use stable logarithms. For the atom-site-labelled exchange H2O + D2O -> DHO + HDO, define DeltaF_vib(T)=F_DHO+F_HDO-F_H2O-F_D2O and factor_vib(T)=exp(-DeltaF_vib/(R*T)). This is ONLY the vibrational contribution under the specified site labelling. No extra factor 2 or4 is inserted: rotational symmetry, positional degeneracy, translation, electronic, nuclear-spin, standard-state and anharmonic contributions are deliberately outside this defined factor. The supplied output reports thermal quantities for its own original H2O run; it is not a completed isotope calculation.",
+  "audit_questions": "Can multiplying every H2O mode by sqrt(m_H/m_D) give the D2O spectrum of this fixed full-molecule force operator? Are the raw printed Cartesian columns already orthonormal under the base mass metric? Does the computed vibrational-only exchange factor determine the full measurable isotope equilibrium constant? These three statements must be judged from the model and the source, rather than adopting terminology from a tool name.",
+  "reporting": "Report source_frequency_count (exact integer), retained_vibrational_dimension (exact integer), frequencies_cm_inverse for ALL four mass cards, base_zpe_recomputed_kcal_per_mol from its frequencies using 1kcal=4.184kJ, exchange_results as objects at temperatures100,298.15,600K with temperature_k,delta_f_vib_kj_per_mol,factor_vib, and the three Boolean audit fields in answer_schema. Frequency tolerance absolute1e-4 cm^-1; recomputed energy/DeltaF/factor absolute plus relative1e-7. Use sign-invariant spectral results; a normal-mode column or eigenvector sign has no physical meaning here."
+}

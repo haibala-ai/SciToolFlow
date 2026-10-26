@@ -1,0 +1,5 @@
+{
+  "coordinate_file": "asset://coverage_FLOW-0241_1UBQ.pdb",
+  "inventory": "First model/frame,all as-parsed topology atoms including HETATM/water;no atom completion,occupancy weighting or protein-only selection. Both coordinate centers must use exactly this inventory.",
+  "controlled_mechanics": "Treat this fixed coordinate inventory as one rigid analytical point-mass body for a frame-reporting test only. A net force[5,-3,2]pNacts through its mass center,with no independent couple. Thus torque about its mass center iszero. Determine the torque about its unweighted geometric atom centroid using tau=(r_mass-r_origin)crossF. Position vectors are angstrom;report torque in pN*nm. This controlled mechanical illustration is not a prediction of loading or rigidity of ubiquitin/water in solution."
+}

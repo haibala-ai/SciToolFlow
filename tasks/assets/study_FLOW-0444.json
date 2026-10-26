@@ -1,0 +1,99 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "node_order": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "existing_pairs": [
+        {
+          "pair_id": "edge01",
+          "from_node": "A",
+          "to_node": "B",
+          "error_variance_seconds_squared": 0.04
+        },
+        {
+          "pair_id": "edge02",
+          "from_node": "B",
+          "to_node": "C",
+          "error_variance_seconds_squared": 0.09
+        },
+        {
+          "pair_id": "edge03",
+          "from_node": "A",
+          "to_node": "C",
+          "error_variance_seconds_squared": 0.01
+        },
+        {
+          "pair_id": "edge04",
+          "from_node": "D",
+          "to_node": "E",
+          "error_variance_seconds_squared": 0.04
+        },
+        {
+          "pair_id": "edge05",
+          "from_node": "E",
+          "to_node": "F",
+          "error_variance_seconds_squared": 0.04
+        },
+        {
+          "pair_id": "edge06",
+          "from_node": "D",
+          "to_node": "F",
+          "error_variance_seconds_squared": 0.09
+        }
+      ],
+      "candidate_pairs": [
+        {
+          "pair_id": "candidate01",
+          "from_node": "B",
+          "to_node": "E",
+          "error_variance_seconds_squared": 0.04
+        },
+        {
+          "pair_id": "candidate02",
+          "from_node": "C",
+          "to_node": "D",
+          "error_variance_seconds_squared": 0.0025
+        },
+        {
+          "pair_id": "candidate03",
+          "from_node": "A",
+          "to_node": "D",
+          "error_variance_seconds_squared": 0.01
+        },
+        {
+          "pair_id": "candidate04",
+          "from_node": "B",
+          "to_node": "C",
+          "error_variance_seconds_squared": 0.0001
+        }
+      ],
+      "target_contrast": {
+        "positive_node": "F",
+        "negative_node": "A"
+      },
+      "measurement_model": "Each independent observation is y_ij=theta_j-theta_i+error_ij in seconds. Every listed existing pair has one observation. Select exactly one independent additional observation of one listed candidate pair; even a repeated pair adds its independent precision rather than replacing an existing observation.",
+      "noise_protocol": "Errors have zero mean and are mutually uncorrelated, including the future candidate observation. All strictly positive variances are stipulated known design quantities. No Gaussian distribution is needed for the requested best linear unbiased estimator variance. There are no physical absolute clock anchors.",
+      "coordinate_protocol": "Node labels identify the same unknowns across pairs. For numerical arrays retain node_order unless a consistent labelled basis conversion is explicitly tracked. One gauge may be fixed to compute an identifiable relative contrast; fixing an unrelated gauge in each disconnected component does not identify a contrast between components.",
+      "units": {
+        "node_offset": "second",
+        "measurement_error_variance": "second squared",
+        "contrast_variance": "second squared"
+      },
+      "source_provenance": {
+        "kind": "project-authored controlled prospective measurement-design fixture, not clock observations",
+        "construction": "Two finite relative-measurement subnetworks with heterogeneous known noise and four competing one-observation additions. No measured offsets, empirical noise estimates or observed performance claims.",
+        "method_source": "https://www.iitg.ac.in/pbarooah/publications/PB_JH_TSP_08.pdf",
+        "citation": "Barooah and Hespanha (2008), IEEE Transactions on Signal Processing56(6),2181-2193, DOI10.1109/TSP.2007.912270.",
+        "read_scope": "Introduction/SectionII zero-mean uncorrelated relative errors and additive gauge; SectionIV.A Lemma4 and finite electrical analogy; SectionIV.B Theorem6, pp2186-2187, reduced incidence information and BLU covariance; Remark1 edge direction invariance. Companion author preprint sectionsII-III confirms explicit covariance formula. Infinite-graph proofs and experiments are not used.",
+        "access_limits": "Author-hosted PDFs and text extraction accessible. Attempted page6 screenshot failed because the web tool did not support that PDF screenshot; no visual reading of that page is claimed."
+      }
+    }
+  ]
+}

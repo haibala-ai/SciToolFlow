@@ -1,0 +1,26 @@
+{
+  "records": [
+    {
+      "id": "amide_alcohol",
+      "smiles": "CC(=O)NCCO"
+    },
+    {
+      "id": "tri_ether",
+      "smiles": "COCCOCCOC"
+    },
+    {
+      "id": "ether_alcohol",
+      "smiles": "COCCOCCO"
+    },
+    {
+      "id": "diamine",
+      "smiles": "NCCN"
+    },
+    {
+      "id": "ethanol",
+      "smiles": "CCO"
+    }
+  ],
+  "calibration_domain": "This controlled analytical calibration accepts only records with RDKit CalcNumHBAin[2,3],CalcNumHBD<=2and CalcTPSAin[25,60]angstrom². Limits are inclusive. These are named graph descriptors,not counts of hetero atoms or donor hydrogens and not the distinct CalcNumLipinskiHBA/HBDdefinitions.",
+  "selection": "Among eligible records choose every minimum average molar-mass candidate. Do not trade a failed descriptor constraint against a lower mass. No measured solubility,binding,permeability or biological activity is claimed."
+}

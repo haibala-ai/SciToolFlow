@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "record_id": "target",
+      "material_id": "mp-aaacpgaj",
+      "formula": "Fe3O4",
+      "thermo_type": "GGA_GGA+U",
+      "formation_energy_ev_atom": -1.6048517339285706
+    },
+    {
+      "record_id": "phase0",
+      "material_id": "mp-aaacunat",
+      "formula": "FeO",
+      "thermo_type": "GGA_GGA+U",
+      "formation_energy_ev_atom": -1.4815193874999997
+    },
+    {
+      "record_id": "phase1",
+      "material_id": "mp-aaaabdgk",
+      "formula": "Fe2O3",
+      "thermo_type": "GGA_GGA+U",
+      "formation_energy_ev_atom": -1.7070913529999998
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "FormationenergyeV/atom;phasefractionsonatomnotformulaunitbasis",
+    "original_observation_claim": false,
+    "source_captures": [
+      {
+        "provider": "Materials Project",
+        "url": "https://api.materialsproject.org/materials/thermo/?chemsys=Fe-O&thermo_types=GGA_GGA%2BU&_limit=40&_all_fields=true",
+        "accessed_at": "2026-10-20T10:12:54.106707+00:00",
+        "raw_sha256": "e9046f7f79faf3d8700da766340cbd0dcef9f1685ca5b2734e3e8639597c8a26",
+        "record_count": 40,
+        "credentials_included": false
+      },
+      {
+        "provider": "Materials Project",
+        "url": "https://api.materialsproject.org/materials/thermo/?chemsys=Fe-O&thermo_types=GGA_GGA%2BU&is_stable=true&_limit=30&_all_fields=true",
+        "accessed_at": "2026-10-20T10:14:04.060903+00:00",
+        "raw_sha256": "9621ef58ad8bbb03a42a61da798ef64006f7cbdb8abb1cf0c3946367e83af788",
+        "record_count": 2,
+        "credentials_included": false
+      }
+    ]
+  }
+}

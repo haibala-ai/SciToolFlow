@@ -1,0 +1,6 @@
+species,smiles,Tmin_K,Tmax_K,A,B,C,D,E,F,G,H,source_url
+H2,[H][H],298,1000,33.066178,-11.363417,11.432816,-2.772874,-0.158558,-9.980797,172.707974,0.0,https://webbook.nist.gov/cgi/cbook.cgi?ID=C1333740&Units=SI&Mask=1&Type=JANAFG&Table=on
+CO2,O=C=O,298,1200,24.99735,55.18696,-33.69137,7.948387,-0.136638,-403.6075,228.2431,-393.5224,https://webbook.nist.gov/cgi/cbook.cgi?ID=C124389&Units=SI&Mask=1&Type=JANAFG&Table=on
+CH4,C,298,1300,-0.703029,108.4773,-42.52157,5.862788,0.678565,-76.84376,158.7163,-74.8731,https://webbook.nist.gov/cgi/cbook.cgi?ID=C74828&Units=SI&Mask=1&Type=JANAFG&Table=on
+CO,[C-]#[O+],298,1300,25.56759,6.09613,4.054656,-2.671301,0.131021,-118.0089,227.3665,-110.5271,https://webbook.nist.gov/cgi/cbook.cgi?ID=C630080&Units=SI&Mask=1&Type=JANAFG&Table=on
+H2O,O,500,1700,30.092,6.832514,6.793435,-2.53448,0.082139,-250.881,223.3967,-241.8264,https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Units=SI&Mask=1&Type=JANAFG&Table=on

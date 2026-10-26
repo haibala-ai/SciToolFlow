@@ -1,0 +1,21 @@
+{
+  "dark_A_to_B_rate_per_s": 0.1,
+  "dark_B_to_A_rate_per_s": 0.2,
+  "illuminated_stationary_records": [
+    {
+      "dimensionless_photon_flux": 1.0,
+      "B_fraction": 0.625
+    },
+    {
+      "dimensionless_photon_flux": 3.0,
+      "B_fraction": 0.7222222222222222
+    }
+  ],
+  "prediction_flux": 2.0,
+  "dark_recovery_time_s": 5.0,
+  "model": "AandBare the only forms and their total concentration is conserved. At calibrated dimensionless light flux I,the first-order rates are k_AB=dark_AB+alpha_AB*Iand k_BA=dark_BA+alpha_BA*I. Both alphas are nonnegative constants at the same temperature. Stationary means k_AB*[A]=k_BA*[B]. Each alpha is an absorption-cross-section times quantum-yield product in the fixed flux calibration;neither factor is measured separately. After reaching stationarity at prediction_flux,light is switched off instantaneously,and only the two supplied dark rates act.",
+  "target": "Infer both alpha coefficients in source AtoB,BtoAorder. Return stationary Bfraction at prediction_flux,the dark-equilibrium Bfraction,and Bfraction at dark_recovery_time_safter switch-off. Report whether the stationary illuminated fractions identify the two separate quantum yields without cross-section data,and whether an illuminated stationary ratio must equal the dark equilibrium ratio.",
+  "provenance": {
+    "kind": "Explicit synthetic conditional scientific model and exact source observations;not a live experiment or empirical mechanism validation."
+  }
+}

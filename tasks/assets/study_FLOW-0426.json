@@ -1,0 +1,82 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "observations": [
+        [
+          77.6,
+          10.07
+        ],
+        [
+          114.9,
+          14.73
+        ],
+        [
+          141.1,
+          17.94
+        ],
+        [
+          190.8,
+          23.93
+        ],
+        [
+          239.9,
+          29.61
+        ],
+        [
+          289.0,
+          35.18
+        ],
+        [
+          332.8,
+          40.02
+        ],
+        [
+          378.4,
+          44.82
+        ],
+        [
+          434.8,
+          50.76
+        ],
+        [
+          477.3,
+          55.05
+        ],
+        [
+          536.8,
+          61.01
+        ],
+        [
+          593.1,
+          66.4
+        ],
+        [
+          689.1,
+          75.47
+        ],
+        [
+          760.0,
+          81.78
+        ]
+      ],
+      "column_order": [
+        "x",
+        "y"
+      ],
+      "analysis_policy": "Fit the nonnegative exponential-approach mean a*(1-exp(-b*x)) by unweighted native-response least squares,without an offset. Assess the fitted fractional gap from its asymptote at the largest observed pressure; this reporting panel calls the observed pressure range near saturation only when that gap<=0.10. Suggested feasible start a500,b0.0001; other converged solutions are valid.",
+      "units": "Original archive pressure/adsorbed-volume numbers; no unstated physical unit conversion.",
+      "source_provenance": {
+        "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1a.dat",
+        "raw_sha256": "9d3194d537d9a6bbf92eb819504070923a1885d0191f40b6b3aaeedd130b98e2",
+        "read_scope": "Dataset description,variable definitions,observed rows and declared family; certified result block is never exported to public task assets.",
+        "source_kind": "US NIST Statistical Reference Datasets public observations; original study reference retained in source",
+        "reuse": "Attributed public numeric reference data; no claim of authorship or endorsement"
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

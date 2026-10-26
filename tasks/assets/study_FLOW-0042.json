@@ -1,0 +1,65 @@
+{
+  "data": [
+    {
+      "record_id": "CaCO3",
+      "formula": "CaCO3"
+    },
+    {
+      "record_id": "CaO",
+      "formula": "CaO"
+    },
+    {
+      "record_id": "CO2",
+      "formula": "CO2"
+    },
+    {
+      "record_id": "NaHCO3",
+      "formula": "NaHCO3"
+    },
+    {
+      "record_id": "Na2CO3",
+      "formula": "Na2CO3"
+    },
+    {
+      "record_id": "H2O",
+      "formula": "H2O"
+    },
+    {
+      "record_id": "eq01",
+      "reactants": {
+        "CaCO3": 1
+      },
+      "products": {
+        "CaO": 1,
+        "CO2": 1
+      }
+    },
+    {
+      "record_id": "eq02",
+      "reactants": {
+        "NaHCO3": 2
+      },
+      "products": {
+        "Na2CO3": 1,
+        "CO2": 1,
+        "H2O": 1
+      }
+    },
+    {
+      "record_id": "eq03",
+      "reactants": {
+        "NaHCO3": 2
+      },
+      "products": {
+        "Na2CO3": 1,
+        "CO2": 1
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Formula atom counts; dimensionless positive stoichiometric coefficients",
+    "original_observation_claim": false
+  }
+}

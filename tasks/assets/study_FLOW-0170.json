@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "record_id": "temperature0",
+      "temperature_kelvin": 400.0,
+      "carrier_density_m3": 9405783589087400.0,
+      "x": 0.0025,
+      "y": 27.792904349755176
+    },
+    {
+      "record_id": "temperature1",
+      "temperature_kelvin": 450.0,
+      "carrier_density_m3": 6.608301930188985e+16,
+      "x": 0.0022222222222222222,
+      "y": 29.565816840547587
+    },
+    {
+      "record_id": "temperature2",
+      "temperature_kelvin": 500.0,
+      "carrier_density_m3": 3.19667881302823e+17,
+      "x": 0.002,
+      "y": 30.984146833181512
+    },
+    {
+      "record_id": "temperature3",
+      "temperature_kelvin": 550.0,
+      "carrier_density_m3": 1.1769712350663086e+18,
+      "x": 0.0018181818181818182,
+      "y": 32.14459864533654
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Tkelvin,nm^-3,xK^-1,y=ln[(n/1m^-3)/(T/1K)^1.5]",
+    "original_observation_claim": false
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "data_origin": "Own controlled finite inverse disulfide-connectivity benchmark. The short synthetic sequence is an abstract analytical substrate, not a functional protein or a proposal to synthesize, optimize or experimentally manipulate one. All peak observations are constructed exact model predictions; no measured biological activity, fold, protein-family identity or native disulfide architecture is asserted.",
+  "sequence": "ACFWCGKDCYACLRGCWTCMKSCFAVCWY",
+  "sequence_semantics": "One canonical unmodified linear chain with free N/C termini and no PTMs. Every Cys participates in exactly one intramolecular disulfide, no free thiols, interchain bonds, scrambling or other covalent links. A candidate is a perfect matching of all Cys residue positions, numbered one-based along this sequence. Do not infer nearest-neighbor or sequence-local disulfides.",
+  "cleavage_operators": {
+    "T": {
+      "enzyme": "trypsin",
+      "expasy_regex": "([KR](?=[^P]))|((?<=W)K(?=P))|((?<=M)R(?=P))",
+      "missed_cleavages": 0
+    },
+    "C": {
+      "enzyme": "chymotrypsin high specificity",
+      "expasy_regex": "([FY](?=[^P]))|(W(?=[^MP]))",
+      "missed_cleavages": 0
+    },
+    "P": {
+      "enzyme": "pepsin ph1.3",
+      "expasy_regex": "((?<=[^HKR][^P])[^R](?=[FL][^P]))|((?<=[^HKR][^P])[FL](?=\\w[^P]))",
+      "missed_cleavages": 0
+    }
+  },
+  "cleavage_semantics": "Use complete potential cleavage sites from the supplied Pyteomics ExPASy regular expressions on the original full sequence, with no exception filter, no missed cleavages and no accessibility corrections. A match cuts after its final matched residue. These are mathematical sequence-cleavage operators, not a claim of complete enzymatic activity. Preserve all peptide instances, including Cys-free fragments, and their source intervals. The original disulfides remain covalent edges between peptide nodes or inside a node. The nonreducing products are the connected components of this graph, not the individually cut backbone segments and not separate molecules for each bond.",
+  "mass_semantics": "Linear free-terminus peptide neutral monoisotopic mass includes one water. For each disulfide subtract two neutral hydrogen atoms from the sum of its component peptide masses, including bonds internal to a single peptide. Neither a disulfide nor a peptide join deletes a water in this accounting. Positive-ion m/z=(neutral_mass+z*proton_mass)/z; z is explicitly known for every listed peak. Compare complete sorted neutral-mass multisets, retaining multiplicities, with absolute mass tolerance2e-5 Da. No intensities, average masses, sodium adducts or unresolved isotopic envelopes are present.",
+  "mass_constants_Da": {
+    "neutral_hydrogen": 1.00782503223,
+    "proton": 1.007276466621,
+    "water": 18.01056468403
+  },
+  "nonreducing_peak_lists": {
+    "T": [
+      {
+        "charge": 1,
+        "mz": 3453.3067555084103,
+        "molar_product_multiplicity": 1
+      }
+    ],
+    "C": [
+      {
+        "charge": 1,
+        "mz": 2305.8778258083807,
+        "molar_product_multiplicity": 1
+      },
+      {
+        "charge": 3,
+        "mz": 273.1062274337276,
+        "molar_product_multiplicity": 1
+      },
+      {
+        "charge": 2,
+        "mz": 103.05221528340098,
+        "molar_product_multiplicity": 1
+      },
+      {
+        "charge": 1,
+        "mz": 182.08116968287098,
+        "molar_product_multiplicity": 1
+      }
+    ],
+    "P": [
+      {
+        "charge": 1,
+        "mz": 132.101905127451,
+        "molar_product_multiplicity": 1
+      },
+      {
+        "charge": 2,
+        "mz": 1670.614983998951,
+        "molar_product_multiplicity": 1
+      }
+    ]
+  },
+  "observation_order": [
+    "T",
+    "C",
+    "P"
+  ],
+  "observation_semantics": "These are complete peak-product multisets for three SEPARATE aliquots of the same unique covalent species. Every listed chemical product occurs once per parent under the ideal model. Peaks list all products and known charges; list order has no chemical meaning. Apply observations cumulatively in the declared order. Enumerate the complete remaining perfect matchings, not a single arbitrary fit. Intact mass and a complete reducing digest may be considered additional controls, but their ability to distinguish these matchings must be justified rather than assumed.",
+  "prospective_operator_design": "For a new single aliquot, a nonempty enzyme subset applies the UNION of its potential cut sites computed on the original sequence. It then measures the resulting complete nonreducing product-mass multiset under exactly the same graph/mass model. This ideal simultaneous union operator is a computational information limit, not a validated laboratory protocol or a claim that separate digests can simply be pooled. Evaluate every nonempty subset of T,C,P on all candidates remaining after all existing observations. Count distinct predicted signatures (2e-5 Da equivalence). A panel resolves connectivity only if all remaining candidates have distinct signatures. Costs add once per enzyme: T2,C3,P1. Return ALL minimum-cost resolving subsets, writing keys in T,C,P order (e.g. TC). Predict the complete sorted neutral product masses for the chosen minimum-cost panel keyed by every remaining bond-map string. No new observed peak data are supplied for this prospective operator.",
+  "interpretation_proposals": {
+    "A": "A complete product-mass inventory may determine some disulfide edges while leaving the full connectivity nonidentifiable.",
+    "B": "The complete three separate mass lists establish a unique bond matching without additional site-resolving evidence.",
+    "C": "A multi-enzyme union on one aliquot can carry information absent from simply combining the separate-aliquot observations.",
+    "D": "Every disulfide removes one water from the sum of free-terminus peptide masses.",
+    "E": "A highly connected disulfide-linked component must be reported as one separate mass peak for each covalent edge.",
+    "F": "The mathematical resolving panel does not establish real cleavage efficiency or absence of disulfide scrambling in a future experiment.",
+    "G": "A residue-position label can be replaced by its ordinal peptide index when constructing disulfide edges."
+  },
+  "reporting": "Return cysteine_positions; candidate_count_after_each_observation in T,C,P order; compatible_bond_maps as sorted strings, each pair smaller endpoint first, pairs sorted numerically by first endpoint, joined with |; forced_bonds as sorted [residue,residue] pairs common to every survivor; all_bonds_identified boolean; reducing_peptide_counts keyed T,C,P; nonreducing_component_counts keyed T,C,P; recovered_neutral_mass_lists keyed T,C,P, each sorted; extra_water_count_relative_to_oxidized_intact keyed T,C,P from the complete digest mass balance; distinct_signatures_by_union_panel keyed T,C,P,TC,TP,CP,TCP; minimum_resolving_union_panels as strings; minimum_panel_cost; predicted_minimum_panel_neutral_mass_lists keyed by surviving bond-map; valid_interpretation_proposal_ids. All positions, counts, IDs, sets, booleans and panel costs exact. Real masses use absolute tolerance2e-5 Da. The component count is not the number of original backbone fragments.",
+  "methodological_sources": [
+    {
+      "title": "Complete mapping of a cystine knot and nested disulfides of recombinant human arylsulfatase A by multi-enzyme digestion and LC-MS analysis using CID and ETD",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23208745/",
+      "role": "Primary analytical motivation only. No human protein sequence, protocol, measurements or biological findings are copied into this controlled study."
+    },
+    {
+      "title": "Pyteomics parser source and documented indexed cleavage semantics",
+      "url": "https://pyteomics.readthedocs.io/en/latest/_modules/pyteomics/parser.html",
+      "role": "Potential cleavage and coordinate conventions; regex strings are frozen explicitly above."
+    }
+  ]
+}

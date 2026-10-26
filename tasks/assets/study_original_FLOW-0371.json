@@ -1,0 +1,43 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "daily_mean_temperature_celsius_by_year": {
+    "year_A": [
+      2.0,
+      7.0,
+      3.0,
+      10.0,
+      20.0,
+      9.0,
+      15.0,
+      18.0,
+      8.0,
+      12.0
+    ],
+    "year_B": [
+      7.0,
+      10.0,
+      20.0,
+      9.0,
+      15.0,
+      18.0,
+      8.0,
+      12.0,
+      2.0,
+      3.0
+    ]
+  },
+  "chill_condition_inclusive_celsius": [
+    0.0,
+    5.0
+  ],
+  "required_chill_days": 2,
+  "forcing_base_celsius": 5.0,
+  "forcing_upper_cap_celsius": 20.0,
+  "required_post_release_degree_days": 40.0,
+  "model": "Controlled sequential phenology. Starting dormant on day1, accumulate one chill unit on each day in the inclusive chill interval; other dormant days add zero. Dormancy releases at the END of the first day reaching the chill target. Beginning the following day, daily forcing=max(0,min(T,cap)-base); dormant forcing is never banked. First flowering is the first complete day whose eligible forcing reaches or exceeds the target. No within-day interpolation.",
+  "window_policy": "Report day numbers one-based within the supplied window. If flowering has not occurred, report null rather than a guessed later day. No temperatures after the window are given.",
+  "scope": "Stipulated chilling/forcing mechanism,not observed phenology, a calibrated species forecast or an environmental intervention."
+}

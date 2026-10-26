@@ -1,0 +1,64 @@
+{
+  "origin": "Own discrete unpaired-distribution alignment study. Two separately sampled populations have exact constructed score marginals, but no paired subject identity or exchangeability assumption across populations is supplied. X andY use the same meaningful fixed score units. This is an identification and distribution-alignment problem, not causal treatment identification or empirical evidence that an entropy-selected matching is the real pairing.",
+  "marginals": {
+    "X_support": [
+      0,
+      1,
+      3
+    ],
+    "X_probabilities": [
+      0.2,
+      0.5,
+      0.3
+    ],
+    "Y_support": [
+      0,
+      2,
+      4
+    ],
+    "Y_probabilities": [
+      0.4,
+      0.1,
+      0.5
+    ]
+  },
+  "joint_constraints": "An admissible joint tablePi_ij>=0 has ROW marginalsPX and COLUMN marginalsPY in the exact supplied support orders; its entries sum1. Define C_ij=(Y_j-X_i)\u00b2 and E_ij=1{Y_j-X_i>=2}. Mean squared displacement B=sumPi C is a possible independent paired-moment summary; do NOT replace an EXACT specifiedB with an upper bound. The target tail probability isR=sumPi E. Marginals alone do not assert independence, monotone matching, a causal intervention or an entropy principle.",
+  "sharp_geometry": "Determine the COMPLETE projected feasible polygon of(B,R) over ALL joint tables, not just a few optimized couplings. Derive and certify its vertices and all sharp lower/upper piecewise-linear envelopes as functions of EXACTB, including every change of slope, boundary attainability and infeasibility outside the cost interval. A finite B grid or one transport optimum cannot establish completeness. Retain an exhaustive basic-feasible-table argument, exact supporting inequalities, or an equivalently complete convex/dual certificate. Report polygon vertices in counterclockwise boundary order, starting from lexicographically smallest[B,R]. Collinear nonvertices are omitted. Unknown number ofvertices is not provided by schema.",
+  "registered_LP_panel": {
+    "exact_B_values": [
+      2.4,
+      2.6,
+      2.8,
+      4.0,
+      6.0,
+      7.6,
+      8.4,
+      8.8
+    ],
+    "requirement": "Use actual registered SolveLinearProgram to obtain BOTH sharpR bounds at EACH suppliedB, with full original nonnegative9table variables, all marginal constraints and the exact mean cost. Retain complete original solutions, validate nonnegativity, both marginals and cost using actual outputs, and provide matching global supporting/dual inequalities. Redundant one-column marginal may be eliminated algebraically, but its residual must still be verified. Do not accept solver success as scientific proof of the projected polygon."
+  },
+  "identified_moments": "Derive what the marginals identify about E[Y-X], then what EXACTB4 additionally identifies about Var(Y-X), E[XY] and correlation(X,Y). Determine whether the entire joint table or the improvement probability becomes point identified atB4. Report its complete sharp probability interval, not the value of an arbitrary optimal vertex.",
+  "entropy_alignment": "Independently considerPi_epsilon=argmin_{Pi with the same marginals} sumPi C + epsilon*KL(Pi||PX outer PY), for epsilon>0. This is an explicitly chosen alignment criterion, not another observed constraint. Derive existence, strict uniqueness, positivity and the correct Sinkhorn scaling equations with their gauge freedom. Compute epsilon0.2,1,5 solutions with controlled row/column residuals and convergence. Report NATURAL LOG of everyPi entry to preserve small positive masses, and for each epsilon report[mean cost,event probability,KL relative to independent table]. Never clip or round small positive entries to zero before computing logs or KL. Registered numerical execution must retain actual scaling factors/kernels and convergence checks.",
+  "registered_scaling_and_sensitivity": "For epsilon1and5, use actual registered MatrixMultiply to pass the complete actual Sinkhorn kernel and computed scaling factors through the row/column reconstruction; both marginal orders must be clear. Derive d(mean cost)/d epsilon by differentiating the constrained KKT system. Retain actual registered SolveLinearSystem for the full independent row/column potential normal system at EACH epsilon0.2,1,5, handling the additive gauge explicitly, and feed actual potential solutions into the projected cost-residual sensitivity. Report the NATURAL LOG of the strictly positive derivative for every epsilon0.2,1,5; a small positive response must not be replaced byzero. Establish strict positivity analytically for this non-additively-separable cost matrix, rather than inferring monotonicity from3numeric values or incorrectly using an unconstrained variance formula. Validate with a controlled finite-difference or differentiated-scaling calculation.",
+  "regularization_limits_and_inverse": "Prove the zero- and infinite-epsilon coupling limits for this finite support, including uniqueness or possible optimal-face selection atzero and independence atinfinity. State the limiting mean cost and event probability atinfinity. Using the proven monotonicity and endpoint costs, decide whether a UNIQUE POSITIVE epsilon produces exact mean cost4. If it exists compute it, its complete log-coupling table and improvement probability with a convergence/error check. Explain why a unique calibrated regularized table remains an assumption-selected point within the sharp identification region and does not identify actual pairings or causality.",
+  "interpretation_proposals": {
+    "A": "Unpaired marginals can leave a nontrivial sharp region for a paired tail probability even after a displacement moment is known.",
+    "B": "An exact moment equality can always be replaced by an upper bound without changing sharp bounds.",
+    "C": "Full convex supporting certificates can establish bounds beyond a finite solver grid.",
+    "D": "A unique entropy-regularized optimizer is necessarily the true data-generating pairing.",
+    "E": "Constrained sensitivity must remove row/column additive cost components.",
+    "F": "The infinite-temperature coupling minimizes raw transport cost.",
+    "G": "Small positive coupling entries matter for logarithms and finite-temperature optimality.",
+    "H": "This unpaired score alignment establishes an individual causal effect."
+  },
+  "reporting": "Absolute tolerance1e-7 for final values, row/column/cost residuals<=1e-10 in scientific evidence. Final tables use suppliedXrow andYcolumn order. Entropic table outputs are LOG probabilities, so they are signed log arrays and must not be normalized or tested as a probability simplex; exponentials recover physical masses. Polygon coordinates are ordered counterclockwise from lexmin, while each bound row is[lower,upper]. Scalar event probabilities are genuine probabilities. Full strict-positive sensitivity and global envelope/limit proofs, exact moment scope and actual original LP/scaling/potential handoffs belong in the trajectory.",
+  "primary_context": [
+    {
+      "authors": "M.Cuturi",
+      "year": 2013,
+      "title": "Sinkhorn Distances: Lightspeed Computation of Optimal Transport",
+      "url": "https://papers.nips.cc/paper/2013/hash/af21d0c97db2e27e13572cbf59eb343d-Abstract.html",
+      "role": "Primary entropy-regularized transport and scaling context. Supports, marginals, exact-moment sharp-bound geometry and inverse-temperature study above are own constructed inputs."
+    }
+  ]
+}

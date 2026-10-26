@@ -1,0 +1,792 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "plant_records": [
+        {
+          "source_row_id": 1,
+          "Plant": "Qn1",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 95.0,
+          "uptake": 16.0
+        },
+        {
+          "source_row_id": 2,
+          "Plant": "Qn1",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 175.0,
+          "uptake": 30.4
+        },
+        {
+          "source_row_id": 3,
+          "Plant": "Qn1",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 250.0,
+          "uptake": 34.8
+        },
+        {
+          "source_row_id": 4,
+          "Plant": "Qn1",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 350.0,
+          "uptake": 37.2
+        },
+        {
+          "source_row_id": 5,
+          "Plant": "Qn1",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 500.0,
+          "uptake": 35.3
+        },
+        {
+          "source_row_id": 6,
+          "Plant": "Qn1",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 675.0,
+          "uptake": 39.2
+        },
+        {
+          "source_row_id": 7,
+          "Plant": "Qn1",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 1000.0,
+          "uptake": 39.7
+        },
+        {
+          "source_row_id": 8,
+          "Plant": "Qn2",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 95.0,
+          "uptake": 13.6
+        },
+        {
+          "source_row_id": 9,
+          "Plant": "Qn2",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 175.0,
+          "uptake": 27.3
+        },
+        {
+          "source_row_id": 10,
+          "Plant": "Qn2",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 250.0,
+          "uptake": 37.1
+        },
+        {
+          "source_row_id": 11,
+          "Plant": "Qn2",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 350.0,
+          "uptake": 41.8
+        },
+        {
+          "source_row_id": 12,
+          "Plant": "Qn2",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 500.0,
+          "uptake": 40.6
+        },
+        {
+          "source_row_id": 13,
+          "Plant": "Qn2",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 675.0,
+          "uptake": 41.4
+        },
+        {
+          "source_row_id": 14,
+          "Plant": "Qn2",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 1000.0,
+          "uptake": 44.3
+        },
+        {
+          "source_row_id": 15,
+          "Plant": "Qn3",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 95.0,
+          "uptake": 16.2
+        },
+        {
+          "source_row_id": 16,
+          "Plant": "Qn3",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 175.0,
+          "uptake": 32.4
+        },
+        {
+          "source_row_id": 17,
+          "Plant": "Qn3",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 250.0,
+          "uptake": 40.3
+        },
+        {
+          "source_row_id": 18,
+          "Plant": "Qn3",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 350.0,
+          "uptake": 42.1
+        },
+        {
+          "source_row_id": 19,
+          "Plant": "Qn3",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 500.0,
+          "uptake": 42.9
+        },
+        {
+          "source_row_id": 20,
+          "Plant": "Qn3",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 675.0,
+          "uptake": 43.9
+        },
+        {
+          "source_row_id": 21,
+          "Plant": "Qn3",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "conc": 1000.0,
+          "uptake": 45.5
+        },
+        {
+          "source_row_id": 22,
+          "Plant": "Qc1",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 95.0,
+          "uptake": 14.2
+        },
+        {
+          "source_row_id": 23,
+          "Plant": "Qc1",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 175.0,
+          "uptake": 24.1
+        },
+        {
+          "source_row_id": 24,
+          "Plant": "Qc1",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 250.0,
+          "uptake": 30.3
+        },
+        {
+          "source_row_id": 25,
+          "Plant": "Qc1",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 350.0,
+          "uptake": 34.6
+        },
+        {
+          "source_row_id": 26,
+          "Plant": "Qc1",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 500.0,
+          "uptake": 32.5
+        },
+        {
+          "source_row_id": 27,
+          "Plant": "Qc1",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 675.0,
+          "uptake": 35.4
+        },
+        {
+          "source_row_id": 28,
+          "Plant": "Qc1",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 1000.0,
+          "uptake": 38.7
+        },
+        {
+          "source_row_id": 29,
+          "Plant": "Qc2",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 95.0,
+          "uptake": 9.3
+        },
+        {
+          "source_row_id": 30,
+          "Plant": "Qc2",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 175.0,
+          "uptake": 27.3
+        },
+        {
+          "source_row_id": 31,
+          "Plant": "Qc2",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 250.0,
+          "uptake": 35.0
+        },
+        {
+          "source_row_id": 32,
+          "Plant": "Qc2",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 350.0,
+          "uptake": 38.8
+        },
+        {
+          "source_row_id": 33,
+          "Plant": "Qc2",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 500.0,
+          "uptake": 38.6
+        },
+        {
+          "source_row_id": 34,
+          "Plant": "Qc2",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 675.0,
+          "uptake": 37.5
+        },
+        {
+          "source_row_id": 35,
+          "Plant": "Qc2",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 1000.0,
+          "uptake": 42.4
+        },
+        {
+          "source_row_id": 36,
+          "Plant": "Qc3",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 95.0,
+          "uptake": 15.1
+        },
+        {
+          "source_row_id": 37,
+          "Plant": "Qc3",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 175.0,
+          "uptake": 21.0
+        },
+        {
+          "source_row_id": 38,
+          "Plant": "Qc3",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 250.0,
+          "uptake": 38.1
+        },
+        {
+          "source_row_id": 39,
+          "Plant": "Qc3",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 350.0,
+          "uptake": 34.0
+        },
+        {
+          "source_row_id": 40,
+          "Plant": "Qc3",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 500.0,
+          "uptake": 38.9
+        },
+        {
+          "source_row_id": 41,
+          "Plant": "Qc3",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 675.0,
+          "uptake": 39.6
+        },
+        {
+          "source_row_id": 42,
+          "Plant": "Qc3",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "conc": 1000.0,
+          "uptake": 41.4
+        },
+        {
+          "source_row_id": 43,
+          "Plant": "Mn1",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 95.0,
+          "uptake": 10.6
+        },
+        {
+          "source_row_id": 44,
+          "Plant": "Mn1",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 175.0,
+          "uptake": 19.2
+        },
+        {
+          "source_row_id": 45,
+          "Plant": "Mn1",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 250.0,
+          "uptake": 26.2
+        },
+        {
+          "source_row_id": 46,
+          "Plant": "Mn1",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 350.0,
+          "uptake": 30.0
+        },
+        {
+          "source_row_id": 47,
+          "Plant": "Mn1",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 500.0,
+          "uptake": 30.9
+        },
+        {
+          "source_row_id": 48,
+          "Plant": "Mn1",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 675.0,
+          "uptake": 32.4
+        },
+        {
+          "source_row_id": 49,
+          "Plant": "Mn1",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 1000.0,
+          "uptake": 35.5
+        },
+        {
+          "source_row_id": 50,
+          "Plant": "Mn2",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 95.0,
+          "uptake": 12.0
+        },
+        {
+          "source_row_id": 51,
+          "Plant": "Mn2",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 175.0,
+          "uptake": 22.0
+        },
+        {
+          "source_row_id": 52,
+          "Plant": "Mn2",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 250.0,
+          "uptake": 30.6
+        },
+        {
+          "source_row_id": 53,
+          "Plant": "Mn2",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 350.0,
+          "uptake": 31.8
+        },
+        {
+          "source_row_id": 54,
+          "Plant": "Mn2",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 500.0,
+          "uptake": 32.4
+        },
+        {
+          "source_row_id": 55,
+          "Plant": "Mn2",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 675.0,
+          "uptake": 31.1
+        },
+        {
+          "source_row_id": 56,
+          "Plant": "Mn2",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 1000.0,
+          "uptake": 31.5
+        },
+        {
+          "source_row_id": 57,
+          "Plant": "Mn3",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 95.0,
+          "uptake": 11.3
+        },
+        {
+          "source_row_id": 58,
+          "Plant": "Mn3",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 175.0,
+          "uptake": 19.4
+        },
+        {
+          "source_row_id": 59,
+          "Plant": "Mn3",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 250.0,
+          "uptake": 25.8
+        },
+        {
+          "source_row_id": 60,
+          "Plant": "Mn3",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 350.0,
+          "uptake": 27.9
+        },
+        {
+          "source_row_id": 61,
+          "Plant": "Mn3",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 500.0,
+          "uptake": 28.5
+        },
+        {
+          "source_row_id": 62,
+          "Plant": "Mn3",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 675.0,
+          "uptake": 28.1
+        },
+        {
+          "source_row_id": 63,
+          "Plant": "Mn3",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "conc": 1000.0,
+          "uptake": 27.8
+        },
+        {
+          "source_row_id": 64,
+          "Plant": "Mc1",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 95.0,
+          "uptake": 10.5
+        },
+        {
+          "source_row_id": 65,
+          "Plant": "Mc1",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 175.0,
+          "uptake": 14.9
+        },
+        {
+          "source_row_id": 66,
+          "Plant": "Mc1",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 250.0,
+          "uptake": 18.1
+        },
+        {
+          "source_row_id": 67,
+          "Plant": "Mc1",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 350.0,
+          "uptake": 18.9
+        },
+        {
+          "source_row_id": 68,
+          "Plant": "Mc1",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 500.0,
+          "uptake": 19.5
+        },
+        {
+          "source_row_id": 69,
+          "Plant": "Mc1",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 675.0,
+          "uptake": 22.2
+        },
+        {
+          "source_row_id": 70,
+          "Plant": "Mc1",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 1000.0,
+          "uptake": 21.9
+        },
+        {
+          "source_row_id": 71,
+          "Plant": "Mc2",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 95.0,
+          "uptake": 7.7
+        },
+        {
+          "source_row_id": 72,
+          "Plant": "Mc2",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 175.0,
+          "uptake": 11.4
+        },
+        {
+          "source_row_id": 73,
+          "Plant": "Mc2",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 250.0,
+          "uptake": 12.3
+        },
+        {
+          "source_row_id": 74,
+          "Plant": "Mc2",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 350.0,
+          "uptake": 13.0
+        },
+        {
+          "source_row_id": 75,
+          "Plant": "Mc2",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 500.0,
+          "uptake": 12.5
+        },
+        {
+          "source_row_id": 76,
+          "Plant": "Mc2",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 675.0,
+          "uptake": 13.7
+        },
+        {
+          "source_row_id": 77,
+          "Plant": "Mc2",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 1000.0,
+          "uptake": 14.4
+        },
+        {
+          "source_row_id": 78,
+          "Plant": "Mc3",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 95.0,
+          "uptake": 10.6
+        },
+        {
+          "source_row_id": 79,
+          "Plant": "Mc3",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 175.0,
+          "uptake": 18.0
+        },
+        {
+          "source_row_id": 80,
+          "Plant": "Mc3",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 250.0,
+          "uptake": 17.9
+        },
+        {
+          "source_row_id": 81,
+          "Plant": "Mc3",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 350.0,
+          "uptake": 17.9
+        },
+        {
+          "source_row_id": 82,
+          "Plant": "Mc3",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 500.0,
+          "uptake": 17.9
+        },
+        {
+          "source_row_id": 83,
+          "Plant": "Mc3",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 675.0,
+          "uptake": 18.9
+        },
+        {
+          "source_row_id": 84,
+          "Plant": "Mc3",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "conc": 1000.0,
+          "uptake": 19.9
+        }
+      ],
+      "source_provenance": {
+        "source_url": "https://svn.r-project.org/R/trunk/src/library/datasets/data/CO2.rda",
+        "sha256": "ed7a9018ffb3e9e0a1a90e700589ba35ab21b990705ff57e6c8c8e46d5ba2aa3",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/zCO2.html",
+        "retrieved_utc_date": "2026-10-20",
+        "source": "R official datasets source archive",
+        "license": "R distribution GPL>=2; underlying data sources cited by individual dataset documentation",
+        "claim_scope": "Historical public observations only; no scientific causal or representativeness assumptions inferred",
+        "decoded_json_sha256": "06cd5f805bfeae48408694ee9698ba4eb04a52a784571b05bca9adee8facd9ad",
+        "decoder": "rdata0.11.2 RDA or bounded literal numeric c(...) parser,no R evaluation",
+        "raw_file": "CO2.rda",
+        "records": 84,
+        "read_scope": "OfficialzCO2.Rd fullvariable definitions/repeatedplants/units;sourcehistoricalconcunitmL/Lretainedwithoutconversionorphysicalextrapolation.",
+        "converted_observation_sha256": "06cd5f805bfeae48408694ee9698ba4eb04a52a784571b05bca9adee8facd9ad",
+        "observation_status": "Original historical values; no changed or synthetic observation."
+      },
+      "units": "uptake in source micromol/m²/sec. The seven historical conc values define the observed grid only; the source describes conc as mL/L, retained as historical metadata without physical concentration conversion or extrapolation.",
+      "uncertainty_policy": "Target the fixed-weight sum of four Type-by-Treatment stratum population means of a plant-specific concentration-grid average. Each observed plant contributes its arithmetic mean over all seven recorded concentrations. Weights are fixed at1/4 per stratum, with3independent plants observed in each stratum. Under a working model, plants are independent across units and exchangeable only within their stratum; those assumptions are not established by this historical archive. Bootstrap entire plants independently within each stratum, retaining3plants per stratum per replicate. Combine the four resampled stratum means with the fixed weights. This estimates sampling variation of that stipulated mixture target, not uncertainty in the already observed finite-panel average and not uncertainty from random treatment/region composition.",
+      "stratum_design": [
+        {
+          "stratum": "Mississippi_chilled",
+          "Type": "Mississippi",
+          "Treatment": "chilled",
+          "weight": 0.25
+        },
+        {
+          "stratum": "Mississippi_nonchilled",
+          "Type": "Mississippi",
+          "Treatment": "nonchilled",
+          "weight": 0.25
+        },
+        {
+          "stratum": "Quebec_chilled",
+          "Type": "Quebec",
+          "Treatment": "chilled",
+          "weight": 0.25
+        },
+        {
+          "stratum": "Quebec_nonchilled",
+          "Type": "Quebec",
+          "Treatment": "nonchilled",
+          "weight": 0.25
+        }
+      ],
+      "plant_stratum_index": [
+        {
+          "Plant": "Mc1",
+          "stratum": "Mississippi_chilled"
+        },
+        {
+          "Plant": "Mc2",
+          "stratum": "Mississippi_chilled"
+        },
+        {
+          "Plant": "Mc3",
+          "stratum": "Mississippi_chilled"
+        },
+        {
+          "Plant": "Mn1",
+          "stratum": "Mississippi_nonchilled"
+        },
+        {
+          "Plant": "Mn2",
+          "stratum": "Mississippi_nonchilled"
+        },
+        {
+          "Plant": "Mn3",
+          "stratum": "Mississippi_nonchilled"
+        },
+        {
+          "Plant": "Qc1",
+          "stratum": "Quebec_chilled"
+        },
+        {
+          "Plant": "Qc2",
+          "stratum": "Quebec_chilled"
+        },
+        {
+          "Plant": "Qc3",
+          "stratum": "Quebec_chilled"
+        },
+        {
+          "Plant": "Qn1",
+          "stratum": "Quebec_nonchilled"
+        },
+        {
+          "Plant": "Qn2",
+          "stratum": "Quebec_nonchilled"
+        },
+        {
+          "Plant": "Qn3",
+          "stratum": "Quebec_nonchilled"
+        }
+      ],
+      "bootstrap_protocol": {
+        "confidence": 0.95,
+        "resamples": 2000,
+        "seed": 42,
+        "random_protocol": "PCG64(seed). Sort strata and global plant IDs by(type name,string value). Process consecutive chunks of128replicates; within each chunk visit strata in canonical order and draw an integer-index array of shape(chunk_size,observed_plant_count_in_stratum), sampling uniformly with replacement. Average selected plant means within stratum, then sum using fixed stratum weights. Lower/upper percentiles use linear interpolation. This protocol is independently reproducible and does not claim R RNG equivalence.",
+        "scientific_scope": "Approximate fixed-stratum cluster percentile interval under a working within-stratum exchangeability model. No finite-population correction, estimated mixture weights or empirical coverage guarantee."
+      },
+      "design_provenance": {
+        "kind": "Project-authored fixed-stratum inference target and resampling protocol on unchanged historical observations.",
+        "plant_stratum_index": "Deterministic metadata from each original plant Type and Treatment; no response-derived strata or synthetic observations.",
+        "method_url": "https://raw.githubusercontent.com/cran/boot/master/man/boot.Rd",
+        "read_scope": "Description and strata argument: multisample nonparametric resampling occurs within prespecified strata. Does not claim the stated PCG64 algorithm is R boot output. Official RzCO2 documentation describes sixplants perorigin, half chilled; original data verify3percrossedstratum."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

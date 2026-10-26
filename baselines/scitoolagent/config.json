@@ -5,5 +5,5 @@
   "context_candidates_per_seed": 12,
   "max_tools": 10,
   "max_plan_rounds": 3,
-  "planner_max_steps": 8
+  "planner_max_steps": null
 }

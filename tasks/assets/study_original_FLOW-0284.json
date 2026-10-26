@@ -1,0 +1,41 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled measurement study; stated matrices/counts are stipulated model inputs, not new experimental observations.",
+    "scope": "No external factual retrieval is required. Source roles, axes and units are stated in the file."
+  },
+  "predictor_order": [
+    "A",
+    "B"
+  ],
+  "observed_predictor_covariance": [
+    [
+      5.0,
+      1.0
+    ],
+    [
+      1.0,
+      2.0
+    ]
+  ],
+  "observed_predictor_response_covariance": [
+    2.8,
+    1.9
+  ],
+  "observed_response_variance": 4.0,
+  "replicate_difference_order": [
+    "B",
+    "A"
+  ],
+  "replicate_difference_covariance": [
+    [
+      1.0,
+      0.4
+    ],
+    [
+      0.4,
+      2.0
+    ]
+  ],
+  "model": "All variables are centered in their declared common arbitrary measurement units. X_observed=X_latent+u. The scalar response equals beta dot X_latent+epsilon and is measured without additional response error. u is independent of X_latent and epsilon. Replicate errors have the same covariance, are independent conditional on the same latent object, and do not change the object. The supplied difference is replicate1 minus replicate2; no division by sqrt(2) has been applied. epsilon is uncorrelated with X_latent. Treat these population working moments as known, not estimated-sample inference.",
+  "goal": "Recover the latent linear-regression coefficient vector and its residual variance. Check admissibility of the recovered predictor covariance and residual variance; a negative variance must not be truncated to zero."
+}

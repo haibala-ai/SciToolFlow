@@ -1,0 +1,60 @@
+{
+  "data": [
+    {
+      "record_id": "entry01",
+      "source_material_id": "mp-aaaaadeb",
+      "formula": "ZnO",
+      "structure_file": "local_model_structure_1.cif",
+      "structure_sha256": "0988e26a382eb096c41557997b62b3dfd9073cacd5f802eb9544be444607ff70",
+      "cation": "Zn",
+      "cation_formal_valence": 2.0,
+      "oxygen_formal_valence_magnitude": 2.0,
+      "cation_oxygen_R0_angstrom": 1.684,
+      "cation_oxygen_B_angstrom": 0.383,
+      "declared_heteronuclear_cutoff_angstrom": 2.5
+    },
+    {
+      "record_id": "entry02",
+      "source_material_id": "mp-aaaaadyf",
+      "formula": "TiO2",
+      "structure_file": "local_model_structure_2.cif",
+      "structure_sha256": "1e610eed945d43ec046a0a4ded703eaefba7b8968730f67f15321b4a123bf633",
+      "cation": "Ti",
+      "cation_formal_valence": 4.0,
+      "oxygen_formal_valence_magnitude": 2.0,
+      "cation_oxygen_R0_angstrom": 1.819,
+      "cation_oxygen_B_angstrom": 0.342,
+      "declared_heteronuclear_cutoff_angstrom": 2.5
+    }
+  ],
+  "provenance": {
+    "kind": "authentic computational-structure and published empirical-parameter source projections",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "Distances,R0,B angstrom;bond valence and formal valence magnitude in valence units;residual dimensionless",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "Materials Project",
+      "url": "https://api.materialsproject.org/materials/summary/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_fields=material_id%2Cformula_pretty%2Ccomposition%2Cdensity%2Cvolume%2Cnsites%2Cstructure%2Cband_gap%2Cis_metal%2Cis_magnetic%2Cenergy_above_hull%2Cformation_energy_per_atom%2Csymmetry%2Corigins%2Clast_updated&_limit=20",
+      "accessed_at": "2026-10-20T07:58:30.182854+00:00",
+      "raw_sha256": "1aac1aa3378751ebcfd8efca70992ab314b53c38693c4dea87b5102ce585e862",
+      "record_count": 10,
+      "claims": "Authentic fresh API response. Not copied from old benchmark gold. Source units/method semantics need review before task construction.",
+      "credentials_included": false
+    },
+    "cif_export": "Lossless selected MP source structure exported to CIF;CIF rounding errors are below requested reporting tolerances.",
+    "parameter_table": {
+      "url": "https://journals.iucr.org/b/issues/2015/05/00/yb5007/",
+      "location": "Gagne&Hawthorne2015 Table4,Zn2+ and Ti4+ rows",
+      "selected_values": {
+        "Zn2+_O2-": {
+          "R0_angstrom": 1.684,
+          "B_angstrom": 0.383
+        },
+        "Ti4+_O2-": {
+          "R0_angstrom": 1.819,
+          "B_angstrom": 0.342
+        }
+      }
+    }
+  }
+}

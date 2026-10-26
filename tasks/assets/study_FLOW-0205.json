@@ -1,0 +1,183 @@
+{
+  "data": [
+    {
+      "record_id": "response01",
+      "deformation_gradient": [
+        [
+          1.0,
+          0.06,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "applied_shear_parameter": 0.06,
+      "reported_stress_tensor_archive_units": [
+        [
+          1.87387709,
+          -15.64220633,
+          0.0
+        ],
+        [
+          -15.64235504,
+          0.42254163,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.69618518
+        ]
+      ],
+      "source_zero_based_index": 3,
+      "positive_shear_squared": 0.0036
+    },
+    {
+      "record_id": "response02",
+      "deformation_gradient": [
+        [
+          1.0,
+          0.03,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "applied_shear_parameter": 0.03,
+      "reported_stress_tensor_archive_units": [
+        [
+          0.87047414,
+          -8.24155698,
+          0.0
+        ],
+        [
+          -8.24155864,
+          0.53543935,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.95847476
+        ]
+      ],
+      "source_zero_based_index": 8,
+      "positive_shear_squared": 0.0009
+    },
+    {
+      "record_id": "response03",
+      "deformation_gradient": [
+        [
+          1.0,
+          -0.06,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "applied_shear_parameter": -0.06,
+      "reported_stress_tensor_archive_units": [
+        [
+          1.87385479,
+          15.64138613,
+          0.0
+        ],
+        [
+          15.64133049,
+          0.42265506,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.69619394
+        ]
+      ],
+      "source_zero_based_index": 13
+    },
+    {
+      "record_id": "response04",
+      "deformation_gradient": [
+        [
+          1.0,
+          -0.03,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "applied_shear_parameter": -0.03,
+      "reported_stress_tensor_archive_units": [
+        [
+          0.87058812,
+          8.24082877,
+          0.0
+        ],
+        [
+          8.24086761,
+          0.53541738,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.95853014
+        ]
+      ],
+      "source_zero_based_index": 15
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published elastic response fixture with explicitly declared local odd-response model",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "Deformation gradients dimensionless;all stress tensors share common archive units and sign convention;reported ratios dimensionless",
+    "original_observation_claim": false,
+    "derived_coordinate_metadata": {
+      "positive_shear_squared": "Square of the positive applied F_xy entry; a mechanical predictor coordinate,not an extrapolated response or acceptance label."
+    },
+    "source_capture": {
+      "provider": "materialsproject/pymatgen-test-files",
+      "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/analysis/elasticity/Sn_def_stress.json",
+      "accessed_at": "2026-10-20T12:33:24.878886+00:00",
+      "raw_sha256": "83af35a65fb43158db645a6180d369f83425eef25c19c344031f2f053147f1a9",
+      "git_blob_sha1": "69713aa610995042cb41fb0ecabeeba21d5671c4",
+      "git_blob_verified": true,
+      "byte_count": 3322,
+      "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/analysis/elasticity/Sn_def_stress.json",
+      "role": "Genuine published scientific source artifact / library fixture; byte provenance verified, physical completeness and normalization require individual inspection; no expected answers used"
+    }
+  }
+}

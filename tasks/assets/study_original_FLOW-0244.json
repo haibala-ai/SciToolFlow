@@ -1,0 +1,14 @@
+{
+  "unmodified_linear_protein_sequence": "AAAKAAAKAAA",
+  "enzyme_rule": "trypsin",
+  "measured_fragment_amounts_mol_per_initial_parent_mol": {
+    "AAAK": 1.04,
+    "AAA": 0.3
+  },
+  "neutral_monoisotopic_water_mass_Da": 18.010564684,
+  "model": "First establish the complete zero-missed-cleavage trypsin products and their source coordinates. In the actual partial digest,each of the TWO cleavage sites is cut independently with unknown probabilities p_left,p_right in source-sequence order. Products have free N/C termini;no other reaction,loss,modification or intermolecular exchange occurs. The calibrated measured AAAK amount combines every separate product instance with that same sequence;AAA is the terminal fragment. Amounts are molar product amounts per initial mole of parent molecules,not fractions normalized over final peptide molecules. Hydrolysis consumes one water per actual cleaved peptide bond.",
+  "target": "Return complete-digest peptide-instance count and unique product-sequence count,infer the two cleavage probabilities,then return expected total peptide molecules per initial parent,probability an initial parent is fully cleaved,probability it remains intact,and mole fraction of AAAK among ALL final peptide molecules. Return the expected increase in the summed neutral peptide masses per parent in Da,accounting for consumed water. Do not collapse repeated product instances before interpreting amounts.",
+  "provenance": {
+    "kind": "Explicit synthetic benign biological measurement model with exact source observations;not an empirical validation or sequence-design recommendation."
+  }
+}

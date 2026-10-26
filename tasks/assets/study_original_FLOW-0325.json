@@ -1,0 +1,52 @@
+{
+  "newick_tree": "(((a:1,b:1):1,c:2):8,((d:1,e:1):1,f:2):8,(g:8,h:8):2);",
+  "archive_panels": [
+    {
+      "panel_id": "panel_A",
+      "tip_ids": [
+        "a",
+        "b",
+        "c"
+      ],
+      "cost_units": 3
+    },
+    {
+      "panel_id": "panel_B",
+      "tip_ids": [
+        "a",
+        "d"
+      ],
+      "cost_units": 3
+    },
+    {
+      "panel_id": "panel_C",
+      "tip_ids": [
+        "g",
+        "h"
+      ],
+      "cost_units": 4
+    },
+    {
+      "panel_id": "panel_D",
+      "tip_ids": [
+        "e",
+        "f"
+      ],
+      "cost_units": 2
+    },
+    {
+      "panel_id": "panel_E",
+      "tip_ids": [
+        "b",
+        "e",
+        "g"
+      ],
+      "cost_units": 7
+    }
+  ],
+  "budget_units": 6,
+  "maximum_panels": 2,
+  "provenance": {
+    "kind": "Project-authored controlled archive-prioritization model with virtual taxa. Branch lengths are stipulated diversity units, not dated evolutionary evidence or real conservation priorities."
+  }
+}

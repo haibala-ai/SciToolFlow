@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "record_id": "entry01",
+      "formula": "Na",
+      "charge_number": 1,
+      "mass_concentration_mg_l": 23.0
+    },
+    {
+      "record_id": "entry02",
+      "formula": "Ca",
+      "charge_number": 2,
+      "mass_concentration_mg_l": 40.0
+    },
+    {
+      "record_id": "entry03",
+      "formula": "Cl",
+      "charge_number": -1,
+      "mass_concentration_mg_l": 35.5
+    },
+    {
+      "record_id": "entry04",
+      "formula": "SO4",
+      "charge_number": -2,
+      "mass_concentration_mg_l": 48.0
+    },
+    {
+      "record_id": "missing_candidate",
+      "formula": "HCO3",
+      "charge_number": -1
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "mg/L,molar massesg/mol,chargeequivalentsmmol/L",
+    "original_observation_claim": false
+  }
+}

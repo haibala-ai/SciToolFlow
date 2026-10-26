@@ -1,0 +1,19 @@
+{
+  "records": [
+    {
+      "id": "ethanol_left",
+      "smiles": "CCO"
+    },
+    {
+      "id": "ethanol_right",
+      "smiles": "OCC"
+    },
+    {
+      "id": "ether",
+      "smiles": "COC"
+    }
+  ],
+  "cache_contract": "Cache the complete default unhashed MHFPshingles as sets of strings. Compare the first two equivalent graph spellings by set equality,not list order. Separately compare their actual MolKey results with the third constitutional isomer.",
+  "target": "Report the unordered source IDs sharing the first record MolKey;distinct shingle counts in source order;and Jaccard(first,third)=intersection_size/union_size. State whether the first two raw shingle lists may differ in order while representing the same cache set.",
+  "scope": "MolKeyis the named RDKitMolKeyalgorithm,not standard InChIKey. A finite fragment set alone is not asserted to be an injective molecular identity map;no chemical normalization beyond the tools is assumed."
+}

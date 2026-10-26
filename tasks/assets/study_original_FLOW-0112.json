@@ -1,0 +1,27 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "angles_degrees_from_film_normal": [
+    0.0,
+    30.0,
+    60.0,
+    90.0
+  ],
+  "critical_fields_tesla": [
+    2.0,
+    2.263194565219755,
+    3.4440069923444825,
+    7.999999999999998
+  ],
+  "normal_direction_field_tesla": 2.0,
+  "in_plane_field_tesla": 8.0,
+  "flux_quantum_weber": 2.067833848e-15,
+  "models": {
+    "anisotropic_gl": "(B*cos(theta)/B_perp)^2+(B*sin(theta)/B_parallel)^2=1.",
+    "thin_film_tinkham": "abs(B*cos(theta)/B_perp)+(B*sin(theta)/B_parallel)^2=1."
+  },
+  "screen": "Both endpoint fields are fixed by the attached observations and may not be reoptimized. A model is compatible only if the maximum absolute equation residual over ALL supplied angles is<=1e-8. The coherence-length convention in either model is B_perp=Phi0/(2*pi*xi_ab^2).",
+  "scope": "Controlled angular orbital-critical-field discrimination at one fixed temperature. No Pauli limiting, flux pinning, measured dimensionality proof or extrapolation to zero temperature; compatibility concerns only this supplied finite model set."
+}

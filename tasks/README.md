@@ -1,52 +1,31 @@
-# SciToolFlow 任务集
+# SciToolFlow公开任务
 
-这里是 benchmark 的公开入口，共 **500 道多工具任务**。Agent 只能读取本目录的公开输入和工具契约；参考答案与参考轨迹位于 `../evaluation/`，不提供给 Agent。
+正式版本为`20261026`：**500题，化学143、材料144、生物／生态111、机器学习／数理102**。当前不划分dev/test；重复使用研究队列不应被解释为独立测试样本。
 
-| 学科 | 任务数 |
-| --- | ---: |
-| Chemical | 159 |
-| Material | 154 |
-| Biology | 140 |
-| MachineLearning | 47 |
-
-| 文件 | 用途 |
+| 文件 | 内容 |
 | --- | --- |
-| [questions.jsonl](questions.jsonl) | 唯一正式题库，一行一个任务 |
-| [index.json](index.json) | 轻量浏览索引：ID、学科、题目预览、所在行、预算和附件标记 |
-| [schema.json](schema.json) | 公开任务记录的字段结构 |
-| [assets/](assets/) | 公开输入附件；不混入工具生成结果 |
-| [asset_manifest.json](asset_manifest.json) | `asset://` 附件 URI、字节数和 SHA256 |
-| [metadata.json](metadata.json) | 学科统计、工作流组、覆盖和数据集说明 |
+| [questions.jsonl](questions.jsonl) | 唯一正式题库，一行一题，按FLOW-0001至0500排列 |
+| [index.json](index.json) | ID、学科、任务类别、行号、题目预览与附件标记 |
+| [schema.json](schema.json) | 公开任务记录结构 |
+| [assets](assets/)与[asset_manifest.json](asset_manifest.json) | 836 份已登记附件（当前 500 题使用其中 676 份）及SHA256、字节数和来源 |
+| [metadata.json](metadata.json) | 当前版本、学科数与统一评分政策 |
 
-一个任务的结构为：
+每题包含`id`、`domain`、`question`、`inputs`、`files`和`answer_schema`。`Parameter`是inputs的兼容JSON字符串，`unit_annotations`补充必要单位与整题范围说明。仅含非空 `description` 的对象说明整题约定；字段级单位标注必须含可解析的 `path`。加载器将asset://URI解析为经过内容哈希校验的本地文件。
 
-```json
-{
-  "id": "FLOW-xxxx",
-  "domain": "MachineLearning",
-  "question": "任务要求",
-  "question_language": "en",
-  "inputs": {},
-  "files": [],
-  "answer_schema": {},
-  "unit_annotations": [],
-  "max_tool_calls": 32,
-  "Parameter": "兼容旧执行器的 inputs JSON 字符串"
-}
-```
-
-`inputs` 是正式结构化输入；`Parameter` 是保留的兼容字段。`answer_schema` 仅规定答案结构和类型，不含正确值。`max_tool_calls` 是任务工具预算；DescribeTools、think 和 inspect 不占此预算，但分别受 harness 限制。附件由公开加载器校验哈希后解析，不依赖父项目目录。
-
-在 SciToolFlow 根目录查看题目：
+answer_schema规定字段、类型、已公开的维度和比较语义，不含正确值。标识符和科学数组的次序由题文与契约规定；无序集合和数值容差通过x-scoring-semantics明确。不要从展示模板的示例数组长度推断正确答案。
 
 ```bash
 python cli.py task FLOW-0285
 python cli.py task --domain MachineLearning
-python scripts/index_tasks.py
+python -m scripts.benchmark.index_tasks
 ```
 
-任务的对应关系为：`questions.jsonl[id]` → `evaluation/references.jsonl[id]` → 参考记录的 `reference_trace`。参考记录同时包含金标准、字段评分规则、必要工具路径和证据依赖；新模型轨迹另存 `results/`。
+运行资源由统一实验配置管理：默认每题 400 次生成请求、7,200 秒，不在题目中保存逐题执行额度。科学调用、DescribeTools 与 think 无独立次数上限；各次执行仍记录并参与相应的成本统计。题文规定的实验次数、采样次数、样本量等科学约束仍须遵守。详见[运行资源策略](../docs/execution_policy.md)。
 
-当前没有 dev/test 划分。数据版本为 `20261018-scientific-contract-audit`：500 条逐项审查的修订范围、理由与限制见 [报告](../results/reports/full_run_audit_20261018/README.md)。原始必要路径与工具输出未重生成；部分题意、输入来源/常量、答案契约、参考解释和评分规则已修订，不能沿用旧版本分数。
+Agent只读取公开题目、附件、工具契约及运行配置。金标准、能力依赖、参考与独立审核位于[evaluation](../evaluation/README.md)，不提供给Agent。[500题分析](../docs/benchmark_analysis/README.md)解释学科、工具覆盖、参考来源与限制。旧任务版本的预测不能套用新评分器。
 
-运行 observation 标签属于可选证据元数据；它们不是必填科学量。题目中的科学单位、对象、数组次序、训练/验证边界和推理比较仍需满足。公开包交给 Agent 时，只提供本目录、工具目录及公开运行配置。
+## 加载与格式校验接口
+
+`assets.py` 负责解析公开 `asset://` 附件并核对内容哈希，`schema.py` 提供公开答案格式的构建和校验函数。两者只处理公开任务，不读取参考答案。`schema.json` 是任务记录格式，`schema.py` 是 Python 校验实现，职责不同。
+
+任务按设计目标分为高难度题、工具组合题和正常题，完整题号与摘要统一见 [CATEGORIES.md](CATEGORIES.md)。`index.json` 的 category 字段便于程序分组；这些标签不改变评分标准。

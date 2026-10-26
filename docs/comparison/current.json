@@ -1,0 +1,161 @@
+{
+  "release": "20261026",
+  "upstream_commit": "ac1cf19fcef84e69f149db6da424afe4e9b2f11f",
+  "upstream": {
+    "tasks": 379,
+    "scientific_tools": 477,
+    "reference_calls_mean": 2.4722955145118735,
+    "reference_calls_median": 2,
+    "reference_calls_max": 11,
+    "at_least_four_calls": 36,
+    "reference_call_histogram": {
+      "2": 274,
+      "3": 69,
+      "4": 19,
+      "5": 9,
+      "6": 3,
+      "7": 1,
+      "8": 2,
+      "9": 1,
+      "11": 1
+    },
+    "covered_registered_tools": 113,
+    "reference_tool_coverage": 0.23689727463312368,
+    "domain_table": {
+      "Chemical": {
+        "registered_tools": 187,
+        "covered_tools": 107,
+        "tasks_using_domain": 378
+      },
+      "Material": {
+        "registered_tools": 199,
+        "covered_tools": 4,
+        "tasks_using_domain": 15
+      },
+      "Biology": {
+        "registered_tools": 85,
+        "covered_tools": 2,
+        "tasks_using_domain": 7
+      },
+      "MachineLearning": {
+        "registered_tools": 0,
+        "covered_tools": 0,
+        "tasks_using_domain": 0
+      },
+      "General": {
+        "registered_tools": 6,
+        "covered_tools": 0,
+        "tasks_using_domain": 0
+      }
+    }
+  },
+  "scitoolflow": {
+    "tasks": 500,
+    "scientific_tools": 472,
+    "reference_calls_mean": 11.888,
+    "reference_calls_median": 7.0,
+    "reference_calls_max": 156,
+    "at_least_four_calls": 445,
+    "reference_call_histogram": {
+      "2": 13,
+      "3": 42,
+      "4": 65,
+      "5": 62,
+      "6": 46,
+      "7": 41,
+      "8": 25,
+      "9": 24,
+      "10": 27,
+      "11": 17,
+      "12": 13,
+      "13": 17,
+      "14": 9,
+      "15": 6,
+      "16": 4,
+      "17": 5,
+      "18": 6,
+      "19": 8,
+      "20": 4,
+      "21": 3,
+      "22": 6,
+      "23": 6,
+      "24": 1,
+      "25": 5,
+      "26": 2,
+      "27": 3,
+      "29": 5,
+      "30": 2,
+      "31": 1,
+      "32": 3,
+      "34": 3,
+      "35": 1,
+      "36": 1,
+      "37": 2,
+      "38": 4,
+      "40": 1,
+      "42": 1,
+      "43": 1,
+      "44": 1,
+      "49": 1,
+      "52": 1,
+      "54": 1,
+      "58": 1,
+      "60": 1,
+      "69": 1,
+      "70": 1,
+      "71": 1,
+      "76": 1,
+      "90": 1,
+      "113": 1,
+      "124": 1,
+      "147": 1,
+      "156": 1
+    },
+    "covered_registered_tools": 260,
+    "reference_tool_coverage": 0.5508474576271186,
+    "domain_table": {
+      "Chemical": {
+        "registered_tools": 134,
+        "covered_tools": 67,
+        "tasks_using_domain": 64
+      },
+      "Material": {
+        "registered_tools": 162,
+        "covered_tools": 74,
+        "tasks_using_domain": 90
+      },
+      "Biology": {
+        "registered_tools": 86,
+        "covered_tools": 40,
+        "tasks_using_domain": 58
+      },
+      "MachineLearning": {
+        "registered_tools": 65,
+        "covered_tools": 58,
+        "tasks_using_domain": 287
+      },
+      "General": {
+        "registered_tools": 25,
+        "covered_tools": 21,
+        "tasks_using_domain": 499
+      }
+    }
+  },
+  "definitions": {
+    "upstream_length": "Tool names in supplied public reference paths; not newly executed.",
+    "current_length": "Actual primary-reference scientific calls, including failures; DescribeTools excluded.",
+    "coverage": "Each side uses its own registered-name pool. Upstream is path occurrence; current is successful execution. Different taxonomies; no one-to-one capability or availability claim.",
+    "domains": "Multi-label task incidence, using each side's registered tool categories. An absent original MachineLearning group is not a claim that the original algorithms lack numerical capabilities."
+  },
+  "source_sha256": {
+    "docs/comparison/sources/upstream_metadata.json": "372aacea4b4eb71c66db8f46c59058a952c4f09d373f8991cd65eaf2f542c221",
+    "docs/benchmark_analysis/statistics.json": "6833a368f623436d776278556a21f09fe7485ea06b4118eae1695c0cae9a95ca"
+  },
+  "change": {
+    "task_increase_percent": 31.92612137203166,
+    "reference_mean_ratio": 4.808486659551761,
+    "reference_median_ratio": 3.5,
+    "four_call_share_increase_pp": 79.50131926121372,
+    "own_registry_coverage_increase_pp": 31.395018299399492
+  }
+}

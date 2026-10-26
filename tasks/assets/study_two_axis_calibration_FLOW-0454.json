@@ -1,0 +1,161 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "repeatability_records": [
+        {
+          "instrument": "x",
+          "standard_id": "X-high",
+          "reading_id": "X-high-1",
+          "value": 6
+        },
+        {
+          "instrument": "x",
+          "standard_id": "X-high",
+          "reading_id": "X-high-2",
+          "value": 7
+        },
+        {
+          "instrument": "x",
+          "standard_id": "X-high",
+          "reading_id": "X-high-3",
+          "value": 8
+        },
+        {
+          "instrument": "y",
+          "standard_id": "Y-low",
+          "reading_id": "Y-low-1",
+          "value": 8
+        },
+        {
+          "instrument": "y",
+          "standard_id": "Y-low",
+          "reading_id": "Y-low-2",
+          "value": 10
+        },
+        {
+          "instrument": "y",
+          "standard_id": "Y-low",
+          "reading_id": "Y-low-3",
+          "value": 12
+        },
+        {
+          "instrument": "y",
+          "standard_id": "Y-mid",
+          "reading_id": "Y-mid-1",
+          "value": 16
+        },
+        {
+          "instrument": "y",
+          "standard_id": "Y-mid",
+          "reading_id": "Y-mid-2",
+          "value": 18
+        },
+        {
+          "instrument": "y",
+          "standard_id": "Y-mid",
+          "reading_id": "Y-mid-3",
+          "value": 20
+        },
+        {
+          "instrument": "y",
+          "standard_id": "Y-high",
+          "reading_id": "Y-high-1",
+          "value": 24
+        },
+        {
+          "instrument": "y",
+          "standard_id": "Y-high",
+          "reading_id": "Y-high-2",
+          "value": 26
+        },
+        {
+          "instrument": "y",
+          "standard_id": "Y-high",
+          "reading_id": "Y-high-3",
+          "value": 28
+        },
+        {
+          "instrument": "x",
+          "standard_id": "X-low",
+          "reading_id": "X-low-1",
+          "value": -1
+        },
+        {
+          "instrument": "x",
+          "standard_id": "X-low",
+          "reading_id": "X-low-2",
+          "value": 0
+        },
+        {
+          "instrument": "x",
+          "standard_id": "X-low",
+          "reading_id": "X-low-3",
+          "value": 1
+        },
+        {
+          "instrument": "x",
+          "standard_id": "X-mid",
+          "reading_id": "X-mid-1",
+          "value": 2
+        },
+        {
+          "instrument": "x",
+          "standard_id": "X-mid",
+          "reading_id": "X-mid-2",
+          "value": 4
+        }
+      ],
+      "calibration_pairs": [
+        {
+          "specimen_id": "cal-6",
+          "x_reading": 6,
+          "y_reading": 10
+        },
+        {
+          "specimen_id": "cal-5",
+          "x_reading": 5,
+          "y_reading": 8
+        },
+        {
+          "specimen_id": "cal-4",
+          "x_reading": 4,
+          "y_reading": 8
+        },
+        {
+          "specimen_id": "cal-3",
+          "x_reading": 3,
+          "y_reading": 4
+        },
+        {
+          "specimen_id": "cal-2",
+          "x_reading": 2,
+          "y_reading": 4
+        },
+        {
+          "specimen_id": "cal-1",
+          "x_reading": 1,
+          "y_reading": 2
+        }
+      ],
+      "latent_x_query": 4.5,
+      "units": {
+        "x": "instrument X coordinate unit",
+        "y": "instrument Y coordinate unit",
+        "variance_x": "squared X coordinate unit",
+        "variance_y": "squared Y coordinate unit"
+      },
+      "repeatability_policy": "For each instrument, estimate the common single-reading error variance by pooling within-standard sums of squared deviations from the respective standard means. Divide their total by the sum of the corresponding replicate counts minus one. Each standard contributes its own residual degrees of freedom. X and Y repeatability panels are independent ancillary standards; their standard IDs do not define cross-instrument specimen pairs. Between-standard variation is not measurement-error variance.",
+      "model_policy": "For calibration specimen i, use the functional model x_i = xi_i + ex_i and y_i = a + b xi_i + ey_i, with unknown fixed latent coordinates xi_i. Errors are independent between specimens and axes, Gaussian, zero mean, and homoscedastic within each instrument. Define lambda = Var(ey)/Var(ex). Treat its estimate from the separate repeatability panels as fixed for this conditional audit. Fit a, b and the latent coordinates by minimizing sum_i [(x_i-xi_i)^2 + (y_i-a-b*xi_i)^2/lambda]. Select the finite global minimum. Preserve the observed specimen pairs. The variance ratio is determined by within-standard repeatability, rather than total calibration scatter. No confidence interval or claim that a small repeatability panel determines lambda without uncertainty is requested.",
+      "reporting_policy": "Report repeatability_variance_x, repeatability_variance_y, variance_ratio_y_over_x, structural_slope_y_per_x, structural_intercept_y, structural_y_at_latent_x_query, ols_is_the_stated_two_axis_fit, and conditional_future_y_at_observed_x_identified. Evaluate the fitted structural line at the supplied latent X coordinate. Distinguish this quantity from the conditional mean of a future Y reading given a noisy observed X reading. No probability law or prior for future latent X values is specified. Numerical accuracy is 1e-8 absolute plus 1e-7 relative error; Booleans are exact. Optional limitation prose is unscored.",
+      "provenance": {
+        "kind": "Project-authored controlled instrument-coordinate and repeatability panel;not observed laboratory measurements or a clinical comparison.",
+        "original_observation_claim": false,
+        "method_sources": [
+          "https://search.r-project.org/CRAN/refmans/MethComp/html/Deming.html"
+        ],
+        "method_read_scope": "Official MethComp1.30.0 Deming reference:fixed latent functional relationship and variance ratio Var(errorY)/Var(errorX). The project explicitly supplies independent repeatability pooling and conditional plug-in objective;no original measurement data or uncertainty interval imported."
+      }
+    }
+  ]
+}

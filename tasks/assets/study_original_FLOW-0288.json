@@ -1,0 +1,55 @@
+{
+  "stage_order": [
+    "seeds",
+    "juveniles",
+    "adults"
+  ],
+  "parameter_records": [
+    {
+      "id": "juvenile_fecundity",
+      "value": 2.0,
+      "matrix_entry_zero_based": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "adult_fecundity",
+      "value": 3.0,
+      "matrix_entry_zero_based": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "seed_to_juvenile_survival",
+      "value": 0.5,
+      "matrix_entry_zero_based": [
+        1,
+        0
+      ]
+    },
+    {
+      "id": "juvenile_to_adult_survival",
+      "value": 0.4,
+      "matrix_entry_zero_based": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": "adult_annual_survival",
+      "value": 0.1,
+      "matrix_entry_zero_based": [
+        2,
+        2
+      ]
+    }
+  ],
+  "model": "Annual closed three-stage plant-population projection n(t+1)=L*n(t)with COLUMN stage counts. Every unspecified matrix entry is zero. Source fecundities are already effective per-census entries; do not multiply them again by survival. The five source parameters vary independently for LOCALsensitivity, and the model remains in its positive-parameter neighborhood.",
+  "target": "Report the asymptotic annual population multiplier, the normalized positive right-eigenvector adult fraction, and each source parameter elasticity dlog(lambda)/dlog(parameter). Select ALL largest elasticities within1e-9, without confusing right-eigenvector stage abundance with left-eigenvector reproductive value or largest raw parameter.",
+  "scope": "This is a conditional linear-model sensitivity assessment, not a finite intervention prediction, actual field-management recommendation or evidence of density-independent growth forever. Stage counts and census conventions are held fixed.",
+  "provenance": {
+    "data_origin": "Explicit small controlled benchmark models, sequences and traits; no empirical evolutionary, functional or conservation-outcome claim."
+  }
+}

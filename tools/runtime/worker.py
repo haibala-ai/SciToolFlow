@@ -7,7 +7,7 @@ import traceback
 from tools.runtime.audit import install
 
 install()
-from tools.runtime.dispatch import invoke_here, normalize_output
+from tools.runtime.dispatch import REGISTRY, invoke_here, validate_result
 from tools.implementations.shared.materials_api import (
     MissingScientificData,
     UnavailableScientificEndpoint,
@@ -23,7 +23,7 @@ if __name__ == "__main__":
             output = invoke_here(
                 request["tool"], request["input"], request.get("files", [])
             )
-        result = normalize_output(output)
+        result = validate_result(output, REGISTRY["tools"][request["tool"]])
     except (ImportError, ModuleNotFoundError) as error:
         result = {
             "status": "blocked",
@@ -42,7 +42,7 @@ if __name__ == "__main__":
             "error_type": type(error).__name__,
             "error": str(error),
         }
-    except InputValidationError as error:
+    except (InputValidationError, ValueError, TypeError, SyntaxError) as error:
         result = {
             "status": "error",
             "output": None,
@@ -50,11 +50,35 @@ if __name__ == "__main__":
             "error": str(error),
         }
     except Exception as error:
-        traceback.print_exc(file=sys.stderr)
+        import requests
+
+        if isinstance(error, (requests.Timeout, requests.ConnectionError)):
+            category, state = "UpstreamConnectionError", "blocked"
+        elif isinstance(error, requests.HTTPError):
+            code = error.response.status_code if error.response is not None else None
+            category = (
+                "UpstreamRateLimit"
+                if code == 429
+                else (
+                    "UpstreamAuthenticationRequired"
+                    if code in {401, 403}
+                    else "UpstreamHTTPError"
+                )
+            )
+            state = (
+                "blocked"
+                if code in {401, 403, 429} or code is not None and code >= 500
+                else "error"
+            )
+        else:
+            category, state = type(error).__name__, "error"
+            traceback.print_exc(file=sys.stderr)
         result = {
-            "status": "error",
+            "status": state,
             "output": None,
-            "error_type": type(error).__name__,
+            "error_type": category,
             "error": str(error),
         }
-    print(json.dumps({"toolkg_result": result}, default=str), flush=True)
+    print(
+        json.dumps({"toolkg_result": result}, default=str, allow_nan=False), flush=True
+    )

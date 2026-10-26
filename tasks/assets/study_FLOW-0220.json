@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "record_id": "phase01",
+      "volume_per_atom_angstrom_cubed": [
+        14.8,
+        15.4,
+        16.0,
+        16.6,
+        17.2
+      ],
+      "energy_per_atom_ev": [
+        -4.966295850997912,
+        -4.991573962749478,
+        -5.0,
+        -4.991573962749478,
+        -4.966295850997912
+      ],
+      "composition_basis": "Same nominal composition and one-atom energy/volume basis;common electronic energy reference and controlled method."
+    },
+    {
+      "record_id": "phase02",
+      "volume_per_atom_angstrom_cubed": [
+        13.6,
+        14.3,
+        15.0,
+        15.7,
+        16.4
+      ],
+      "energy_per_atom_ev": [
+        -4.913299926642171,
+        -4.940824981660543,
+        -4.95,
+        -4.940824981660543,
+        -4.913299926642171
+      ],
+      "composition_basis": "Same nominal composition and one-atom energy/volume basis;common electronic energy reference and controlled method."
+    },
+    {
+      "record_id": "study",
+      "temperature_kelvin": 0.0,
+      "pressure_interval_gpa": [
+        0.0,
+        8.0
+      ],
+      "gpa_per_ev_per_angstrom_cubed": 160.2176634,
+      "representation": "Each supplied E(V) curve is exactly quadratic over its full tabulated volume interval for this controlled study. At a given pressure minimize E(V)+P*V separately for each phase,then compare the resulting relaxed enthalpies.",
+      "domain_boundary": "Every equilibrium volume used for a phase comparison must stay inside that phase tabulated support;no extrapolation of the quadratic EOS is authorized. Compare only these two nominal phases.",
+      "missing_physics": "Vibrational zero-point and thermal free energies,kinetic barriers and all unsupplied competing phases are excluded."
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Energy eV/atom;volume angstrom³/atom;pressureGPa,with explicit conversion to eV/angstrom³ before P*V;volumejumpfraction dimensionless",
+    "original_observation_claim": false
+  }
+}

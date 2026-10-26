@@ -1,0 +1,298 @@
+{
+  "data_origin": "A constructed methodological realization of a two-stage scientific assay selection study, not empirical laboratory performance. The companion CSV is a lossless histogram of N independently sampled complete episodes, not a sample of independent histogram rows. Rows are deliberately shuffled. The controlled generator is withheld; no transition or reward regression model is granted.",
+  "scientific_question": "Choose a new two-stage materials-characterization policy for a prospective collection of samples using logged randomized assay episodes. A quick or deep initial characterization changes the information and cost available for choosing follow-up assay X or Y. Maximize expected final binary validation reward minus both declared assay costs while certifying improvement over the logging policy, under the given assumptions.",
+  "episode_semantics": {
+    "initial_state": [
+      "A",
+      "B"
+    ],
+    "first_action": [
+      "quick",
+      "deep"
+    ],
+    "intermediate_signal": [
+      "low",
+      "high"
+    ],
+    "second_action": [
+      "X",
+      "Y"
+    ],
+    "reward": [
+      0,
+      1
+    ],
+    "time_order": "state -> first action -> intermediate signal -> second action -> reward; the first cost is incurred immediately after first action, before signal and second action. Each histogram count is the number of complete independent episodes having those exact values. No unknown record is missing from this histogram."
+  },
+  "costs": {
+    "first_action": {
+      "quick": 0.02,
+      "deep": 0.08
+    },
+    "second_action": {
+      "X": 0.05,
+      "Y": 0.18
+    },
+    "units": "validation-reward equivalents, same scale as binary terminal reward"
+  },
+  "behavior_policy": {
+    "p_deep_by_initial_state": {
+      "A": 0.5,
+      "B": 0.5
+    },
+    "second_decision": [
+      {
+        "history_id": "A-deep-high",
+        "initial_state": "A",
+        "first_action": "deep",
+        "intermediate_signal": "high",
+        "p_X": 0.5
+      },
+      {
+        "history_id": "B-quick-high",
+        "initial_state": "B",
+        "first_action": "quick",
+        "intermediate_signal": "high",
+        "p_X": 0.5
+      },
+      {
+        "history_id": "B-deep-high",
+        "initial_state": "B",
+        "first_action": "deep",
+        "intermediate_signal": "high",
+        "p_X": 0.5
+      },
+      {
+        "history_id": "B-deep-low",
+        "initial_state": "B",
+        "first_action": "deep",
+        "intermediate_signal": "low",
+        "p_X": 1.0
+      },
+      {
+        "history_id": "A-quick-high",
+        "initial_state": "A",
+        "first_action": "quick",
+        "intermediate_signal": "high",
+        "p_X": 0.5
+      },
+      {
+        "history_id": "A-quick-low",
+        "initial_state": "A",
+        "first_action": "quick",
+        "intermediate_signal": "low",
+        "p_X": 0.5
+      },
+      {
+        "history_id": "A-deep-low",
+        "initial_state": "A",
+        "first_action": "deep",
+        "intermediate_signal": "low",
+        "p_X": 0.5
+      },
+      {
+        "history_id": "B-quick-low",
+        "initial_state": "B",
+        "first_action": "quick",
+        "intermediate_signal": "low",
+        "p_X": 0.5
+      }
+    ],
+    "provenance": "Exact randomized logging probabilities, not fitted empirical frequencies. A p_X=1 row is a structural prohibition of Y for that history, not an accidental empty cell."
+  },
+  "candidate_policies": [
+    {
+      "policy_id": "P3",
+      "p_deep_by_initial_state": {
+        "A": 0.85,
+        "B": 0.65
+      },
+      "second_decision": [
+        {
+          "history_id": "B-quick-low",
+          "p_Y": 0.0
+        },
+        {
+          "history_id": "B-deep-high",
+          "p_Y": 0.75
+        },
+        {
+          "history_id": "B-quick-high",
+          "p_Y": 0.75
+        },
+        {
+          "history_id": "A-quick-low",
+          "p_Y": 0.0
+        },
+        {
+          "history_id": "A-quick-high",
+          "p_Y": 0.75
+        },
+        {
+          "history_id": "B-deep-low",
+          "p_Y": 0.0
+        },
+        {
+          "history_id": "A-deep-high",
+          "p_Y": 0.75
+        },
+        {
+          "history_id": "A-deep-low",
+          "p_Y": 0.0
+        }
+      ]
+    },
+    {
+      "policy_id": "P2",
+      "p_deep_by_initial_state": {
+        "A": 0.25,
+        "B": 0.75
+      },
+      "second_decision": [
+        {
+          "history_id": "B-deep-low",
+          "p_Y": 0.2
+        },
+        {
+          "history_id": "B-quick-high",
+          "p_Y": 0.8
+        },
+        {
+          "history_id": "A-quick-low",
+          "p_Y": 0.2
+        },
+        {
+          "history_id": "A-deep-high",
+          "p_Y": 0.8
+        },
+        {
+          "history_id": "B-quick-low",
+          "p_Y": 0.2
+        },
+        {
+          "history_id": "B-deep-high",
+          "p_Y": 0.8
+        },
+        {
+          "history_id": "A-quick-high",
+          "p_Y": 0.8
+        },
+        {
+          "history_id": "A-deep-low",
+          "p_Y": 0.2
+        }
+      ]
+    },
+    {
+      "policy_id": "P1",
+      "p_deep_by_initial_state": {
+        "A": 0.5,
+        "B": 0.5
+      },
+      "second_decision": [
+        {
+          "history_id": "B-quick-high",
+          "p_Y": 1.0
+        },
+        {
+          "history_id": "A-quick-low",
+          "p_Y": 0.0
+        },
+        {
+          "history_id": "B-quick-low",
+          "p_Y": 0.0
+        },
+        {
+          "history_id": "A-deep-high",
+          "p_Y": 1.0
+        },
+        {
+          "history_id": "B-deep-low",
+          "p_Y": 0.0
+        },
+        {
+          "history_id": "A-deep-low",
+          "p_Y": 0.0
+        },
+        {
+          "history_id": "A-quick-high",
+          "p_Y": 1.0
+        },
+        {
+          "history_id": "B-deep-high",
+          "p_Y": 1.0
+        }
+      ]
+    },
+    {
+      "policy_id": "P4",
+      "p_deep_by_initial_state": {
+        "A": 0.0,
+        "B": 0.0
+      },
+      "second_decision": [
+        {
+          "history_id": "B-quick-high",
+          "p_Y": 1.0
+        },
+        {
+          "history_id": "B-deep-low",
+          "p_Y": 1.0
+        },
+        {
+          "history_id": "A-quick-high",
+          "p_Y": 1.0
+        },
+        {
+          "history_id": "A-deep-low",
+          "p_Y": 1.0
+        },
+        {
+          "history_id": "A-deep-high",
+          "p_Y": 1.0
+        },
+        {
+          "history_id": "B-quick-low",
+          "p_Y": 1.0
+        },
+        {
+          "history_id": "B-deep-high",
+          "p_Y": 1.0
+        },
+        {
+          "history_id": "A-quick-low",
+          "p_Y": 1.0
+        }
+      ]
+    }
+  ],
+  "environment_and_identification": "Episodes are i.i.d. under the logging policy. The initial population is unchanged under every target policy and both initial states have positive probability. At each of the eight possible state/first-action prefixes, both low and high signals have strictly positive unknown probability. Both reward outcomes are possible at every legal history. Initial and follow-up actions are randomized by the declared logging probabilities, with consistency and no hidden action confounding. Transitions and reward laws are invariant across policies; no parametric or mechanistic law relating different actions or states is assumed. Positivity must be checked only at histories reachable under the TARGET policy. Unsupported target actions may not be repaired by epsilon probabilities, by using empirical zero frequencies as structural probabilities, by dropping the forbidden cell or by silently fitting an outcome model.",
+  "estimands_and_estimators": "For each fully supported policy, compute the ordinary full-trajectory importance-sampling estimate of expected total net reward, and the ordinary PER-DECISION estimate that assigns each incurred cost or reward only the action-probability ratios preceding it. The first cost precedes the second decision. Do not normalize either ordinary estimator. Also report the self-normalized full-trajectory estimate and its trajectory-weight ESS=(sum weights)^2/sum squared weights as diagnostics; they do not replace the requested per-decision estimate or the independent sample size. Estimate baseline value by the ordinary episode-average total net reward. Estimate improvement by pairing, on each same logged episode, its per-decision target contribution with its baseline net reward. Do not estimate this as a difference of independent samples.",
+  "certification": "For each fully supported policy derive the SHARP global minimum a and maximum b of its paired single-episode improvement score over ALL logging-positive state/action/signal/reward histories allowed by this document, including unobserved histories if there were any. Reward may be0 or1. Do not use empirical extrema as a substitute for deriving this support. Let m be number of fully supported predeclared candidates and N the total independent episode count. Use one-sided union-bounded Hoeffding lower bound L=mean_paired_improvement-(b-a)*sqrt(log(m/0.05)/(2*N)). These bounds jointly cover all m fixed policy improvements with probability at least0.95 under the assumptions; policies need not be independent of one another. Choose the supported policy with largest L if that L is strictly positive, otherwise report null and retain the logging policy. Break differences<=1e-12 lexicographically. Also identify which supported policy has largest point per-decision value. An unsupported policy has no identified full value under this model and receives no invented finite full-value certificate.",
+  "interpretation_proposals": {
+    "A": "The Hoeffding selection provides a conservative familywise95% lower-confidence improvement claim for the selected supported policy under the stated i.i.d., consistency, logging and invariance assumptions.",
+    "B": "The largest point estimate is necessarily the policy selected by the declared conservative lower-bound rule.",
+    "C": "A zero logging probability is harmless whenever that action is absent from the finite data; replace it by a small epsilon to evaluate every policy.",
+    "D": "The trajectory-weight ESS is the number of independent episodes to insert into the prescribed Hoeffding formula.",
+    "E": "Every policy with a positive Y probability at B-deep-low lacks overlap, even if the target chooses deep with probability zero in B.",
+    "F": "A self-normalized trajectory estimate is generally finite-sample biased and is a diagnostic here, not the prescribed unbiased ordinary estimate.",
+    "G": "The results prove the same improvement for an arbitrary new sample population or changed downstream assay response law."
+  },
+  "reporting": "Return independent_episode_count; supported_policy_ids and unsupported_policy_ids; baseline_value; estimates keyed by supported policy ID with ordinary_trajectory_value, per_decision_value, self_normalized_trajectory_value, trajectory_weight_ess, paired_improvement, global_score_min, global_score_max, simultaneous_lower_bound; best_point_policy_id; certified_selected_policy_id (null if none); valid_interpretation_proposal_ids. Counts and IDs exact, real values absolute1e-7 plus relative1e-7. Do not claim an expected value for an unsupported candidate.",
+  "methodological_sources": [
+    {
+      "title": "Eligibility Traces for Off-Policy Policy Evaluation",
+      "authors": "Precup, Sutton and Singh",
+      "year": 2000,
+      "url": "https://web.eecs.umich.edu/~baveja/Papers/OffPolicy.pdf",
+      "role": "Importance and per-decision weighting framework; no paper data or text reproduced."
+    },
+    {
+      "title": "High Confidence Policy Improvement",
+      "authors": "Thomas, Theocharous and Ghavamzadeh",
+      "year": 2015,
+      "url": "https://proceedings.mlr.press/v37/thomas15.html",
+      "role": "Motivation for conservative logged-policy selection. This task explicitly prescribes elementary union-bounded Hoeffding rather than claiming to reproduce that paper algorithm."
+    }
+  ]
+}

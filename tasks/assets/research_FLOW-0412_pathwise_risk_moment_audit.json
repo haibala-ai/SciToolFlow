@@ -1,0 +1,42 @@
+{
+  "data_origin": "Own exact finite-distribution thought experiment for path-dependent risk under incomplete temporal information. The CSV gives population pair marginals, not sampled observations. Rows from different time pairs are unlinked: there are no observed six-step trajectories or hidden jointly sampled records. Every pair has four equiprobable states. Do not interpret the table as 60 independent experiments or attach sampling p-values to its exact probabilities.",
+  "process": "Six increments X_1,...,X_6 each take values -1 or +1. Set S_0=0 and S_t=sum_{i=1}^t X_i. Time order is part of the event. The only distributional information is the attached pair-marginal table and global coherence of a single joint law on all 64 paths. All single-time probabilities follow from those pair marginals. Do not assume mutual independence, a Markov transition law, stationarity beyond the supplied constraints, or the martingale conditional-mean property.",
+  "inputs": {
+    "pair_marginals": "asset://research_FLOW-0412_unlinked_pair_marginals.csv",
+    "path_order": "For reproducible matrices, enumerate all length-six tuples lexicographically with -1 before +1. Feature order is constant 1, six single increments in time order, then the 15 pair products with (i,j) in lexicographic order. Alternative internally consistent orders are equally valid."
+  },
+  "pair_diagnostic": "Calculate the population Pearson coefficient for each declared two-time marginal. For a four-row equally weighted table this can be checked using the four paired states as a numeric vector calculation. If a software tool also returns an inferential p-value, it has no sampling interpretation here. Report the 15 coefficients using keys 1-2,...,5-6. Zero pair correlation is exact for these binary fair marginals; explain its limited implication through the interpretation proposals.",
+  "events": {
+    "hit": "H = {max(S_1,...,S_6) >= 3}. This is an inclusive first-passage event; a path can hit and later return below the barrier.",
+    "terminal": "T = {S_6 >= 3}. Because of parity, the terminal event is S_6 >= 4, but the pathwise barrier is still 3."
+  },
+  "research_questions": [
+    "Construct the complete joint-law moment system from the actual CSV. Report its equality rank, including normalization and the first- and second-order moments. Determine the SHARP lower and upper probability of H over every nonnegative coherent joint law satisfying all pair marginals.",
+    "Independently determine the sharp probability interval for T under the same distribution class. Do not replace a maximum-over-time event with a terminal tail or apply reflection arguments that require stronger independence.",
+    "Give the IID fair-increment control probabilities of H and T by exact finite path counting. IID is one feasible closure, not a consequence of the available pair information. Compare it with the robust bounds.",
+    "Certify global sharpness rather than returning an optimizer without scientific checks. Retain in the trajectory a feasible joint-law endpoint witness and a matching dual moment-polynomial certificate for EACH of the four event endpoints. A dual certificate is a degree-at-most-two polynomial in X whose value bounds the event indicator on every one of the 64 paths. Its expectation is fixed by the available moments. Check all paths, primal nonnegativity, every supplied pair marginal, normalization and primal/dual equality. Certificates and endpoint laws need not be unique; do not treat one support as the only correct answer.",
+    "Find an explicit feasible joint law and a positive-probability history prefix for which the conditional mean of the NEXT increment is nonzero, or give a complete proof that none exists. Keep the witness and prefix calculation in the trajectory. This tests whether pairwise temporal independence licenses martingale reasoning; pairwise correlations alone cannot establish a conditional-mean property.",
+    "A proposed reliability claim requires P(H) <= 0.30 for EVERY joint law allowed by the supplied information. Decide whether the claim is guaranteed and whether the IID control alone would accept it. This is a bounded mathematical reliability study, not a fitted real-world deployment certificate."
+  ],
+  "interpretation_proposals": {
+    "A": "For these two-valued fair variables, each zero pair covariance establishes independence of that particular pair, but not mutual independence of all six increments.",
+    "B": "The 15 independent-looking pair tables can be multiplied together to obtain the unique joint six-step trajectory distribution.",
+    "C": "A coherent nonnegative path-law optimization is needed to obtain sharp path-event bounds from these incomplete marginals.",
+    "D": "An IID reflection-principle result applies to every process consistent with the pair table.",
+    "E": "A first-passage event can have larger probability than the corresponding terminal event because paths can cross and then return.",
+    "F": "Pairwise uncorrelated zero-mean increments automatically form martingale differences in their full natural filtration.",
+    "G": "Matching feasible primal and globally valid dual certificates establishes a sharp bound without making the endpoint joint law unique.",
+    "H": "A p-value printed from a software correlation call quantifies uncertainty in the exact declared population table."
+  },
+  "reporting": {
+    "fields": "pair_correlations_by_time_pair; joint_moment_equality_rank; sharp_hit_probability_interval; sharp_terminal_probability_interval; iid_hit_probability; iid_terminal_probability; all_feasible_laws_satisfy_hit_limit; iid_control_satisfies_hit_limit; pair_information_guarantees_martingale; valid_interpretation_proposal_ids. Use exact booleans and rank; numeric probabilities absolute tolerance 1e-8, coefficients 1e-10. Probabilities must remain in [0,1] and intervals ordered. Keep alternative endpoint laws and dual coefficients in the trajectory rather than forcing a particular nonunique witness into final_answer."
+  },
+  "methodological_source": {
+    "title": "Optimal Inequalities in Probability Theory: A Convex Optimization Approach",
+    "authors": "Dimitris Bertsimas and Ioana Popescu",
+    "year": 2005,
+    "doi": "10.1137/S1052623401399903",
+    "url": "https://www.mit.edu/~dbertsim/papers/MomentProblems/Optimal-inequalities-in-probability-theory-A-convex-optimization-approach-SIAM15.pdf",
+    "role": "Primary motivation for optimizing event probabilities subject to moment information. This task is a finite binary specialization solved exactly by linear inequalities; it does not require or claim semidefinite relaxation or use measurements from the paper."
+  }
+}

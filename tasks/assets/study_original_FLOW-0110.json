@@ -1,0 +1,68 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "period_angstrom": 12.0,
+  "site_coordinates_angstrom_by_candidate": {
+    "A": [
+      0,
+      1,
+      4,
+      6
+    ],
+    "B": [
+      0,
+      1,
+      3,
+      7
+    ],
+    "C": [
+      0,
+      1,
+      4,
+      7
+    ]
+  },
+  "reciprocal_integer_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "ordinary_observed_intensities": [
+    16.0,
+    2.000000000000001,
+    3.9999999999999982,
+    2.0000000000000004,
+    4.000000000000002,
+    2.0000000000000004,
+    4.0,
+    1.9999999999999991,
+    3.9999999999999947,
+    1.9999999999999916,
+    4.000000000000009,
+    1.9999999999999782
+  ],
+  "ordinary_scattering_model": "All four sites have the same real unit scattering amplitude. F_k=sum_j exp(2*pi*i*k*x_j/L),I_k=abs(F_k)^2. This is an ideal one-dimensional periodic coherent-scattering problem with no powder averaging, finite size or instrumental envelope. Coordinates are modulo L.",
+  "compatibility_absolute_tolerance": 1e-10,
+  "geometric_equivalence": "Compare complete site sets under any common translation modulo L and inversion x->-x; labels/order do not define distinct structures.",
+  "contrast_followup": {
+    "candidate_reflection_indices": [
+      1,
+      2,
+      3
+    ],
+    "scattering_change": "The known anchored site at x=0 has amplitude2 instead of1; all other sites retain1, so add1 to each F_k. Only A and B remain for this contrast choice.",
+    "objective": "Maximize abs(I_A_contrast-I_B_contrast), tie within1e-10 by smaller integer k. No contrast outcome has yet been observed."
+  },
+  "scope": "Ordinary complete integer-index intensities can leave genuinely distinct homometric bases. The controlled anchored contrast removes a stated ambiguity; no claim of a general crystallographic phase solution."
+}

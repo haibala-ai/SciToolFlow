@@ -1,0 +1,44 @@
+{
+  "reaction_order": [
+    "A_ADP_Pi_to_B_ATP",
+    "B_to_A",
+    "ATP_export_drain"
+  ],
+  "steady_state_matrix": [
+    [
+      1.0,
+      -1.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      -1.0
+    ]
+  ],
+  "steady_state_rhs": [
+    0.0,
+    0.0
+  ],
+  "flux_bounds": [
+    [
+      0.0,
+      10.0
+    ],
+    [
+      0.0,
+      10.0
+    ],
+    [
+      0.0,
+      10.0
+    ]
+  ],
+  "ATP_over_ADP_plus_Pi_chemical_potential_kJ_per_mol": 5.0,
+  "required_forward_free_energy_upper_bound_kJ_per_mol": -0.1,
+  "model": "Let d=mu_B-mu_Abe one COMMON otherwise unconstrained chemical-potential difference. R1produces ATPfrom ADP+Piand has DeltaG1=d+5;R2has DeltaG2=-d. Any strictly positive forward internal reaction flux requires its own DeltaG<=-0.1kJ/mol. The first steady-state row balances A/Band the second balances the ATPpool before export. An exported ATPdrain is the objective,not a free-energy input. There is no external A/Bfeed,light,electrical work or coupled fuel reaction. The comparison model imposes only the given linear balances and bounds.",
+  "target": "Return the maximal ATPexport flux under stoichiometry alone and under the additional common-potential feasibility requirement. Return the upper bound on drequired for positive R1and lower bound on drequired for positive R2,and whether a common dcan support both. Report whether this closed cycle supplies its own free-energy source.",
+  "provenance": {
+    "kind": "Explicit small synthetic benign scientific model;data are conditional exact counts/means and do not establish empirical ecological,causal or functional claims."
+  }
+}

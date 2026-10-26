@@ -1,0 +1,18 @@
+{
+  "state_order": [
+    "near",
+    "far"
+  ],
+  "coordinate_attachment_names": [
+    "FRET_centroids_FLOW-0242_near.pdb",
+    "FRET_centroids_FLOW-0242_far.pdb"
+  ],
+  "coordinate_scope": "Each attached two-point PDB contains donor then acceptor centroid coordinates in angstrom, in that topology order. Carbon symbols are placeholders for distance software, not claims of carbon-atom positions or molecular masses. The two states are the complete allowed structural mixture model.",
+  "R0_angstrom": 50.0,
+  "observed_normalized_ensemble_efficiency": 0.2402644885598566,
+  "model": "For each static state,transfer efficiency is E(r)=1/(1+(r/R0)^6). States do not interconvert during one donor excited-state lifetime;ensemble absorption and donor excitation/detection weighting are equal across states. Thus measured normalized efficiency is the population-weighted mean of the two state efficiencies. R0and backgrounds are independently calibrated;no orientation-factor or brightness uncertainty is included.",
+  "target": "Recover the actual two centroid distances from the attachments and infer the near-state population fraction. Report the population mean distance and the single-distance surrogate obtained by inverting the ensemble efficiency through the same E(r)law. Assess whether the surrogate establishes that every molecule is at one intermediate distance. Use angstrom for all distances.",
+  "provenance": {
+    "kind": "Controlled abstract biological inference fixture;not empirical mechanism or intervention evidence."
+  }
+}

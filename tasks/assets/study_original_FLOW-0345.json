@@ -1,0 +1,18 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "barcode_space_size": 100,
+  "observed_distinct_barcode_count_by_library": {
+    "library_A": 60,
+    "library_B": 90
+  },
+  "sequenced_read_count_by_library": {
+    "library_A": 1000,
+    "library_B": 900
+  },
+  "model": "Each original captured molecule independently receives one of B barcodes uniformly before amplification. All occupied barcodes are detected at least once and reads of the same barcode are collapsed; there is no sequencing error, barcode bias or library cross-talk. Amplification can produce any positive read multiplicity and is not an independent molecule counter.",
+  "estimator": "Use the occupancy moment E[U|M]=B*(1-(1-1/B)^M). Invert it at observed U to obtain a REAL-VALUED method-of-moments estimate. Do not round it into an exact count or call it a maximum-likelihood estimator. The occupancy is stochastic, so inversion does not identify the actual realized original M.",
+  "scope": "Controlled measurement-count collision correction, not a wet-lab design or a claim of complete recovery of unobserved organisms."
+}

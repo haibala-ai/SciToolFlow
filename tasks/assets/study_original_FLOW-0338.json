@@ -1,0 +1,32 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "taxon_order": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "counts_by_community": {
+    "community_A": [
+      60,
+      10,
+      10,
+      10,
+      10
+    ],
+    "community_B": [
+      25,
+      25,
+      25,
+      25,
+      0
+    ]
+  },
+  "definitions": "For within-community proportions p_j>0, Hill D0=number of positive categories,D1=exp(-sum p_j*ln(p_j)),D2=1/sum p_j^2. Higher diversity is preferred at each order. Zero-count named categories are not observed species; they add no entropy or concentration.",
+  "policy": "Evaluate ALL three prespecified orders and report the preferred community separately. Declare one community dominant only if it has at least as high diversity at every declared order and is strictly higher in at least one. The target orders were not selected after seeing which community they favor.",
+  "scope": "Controlled complete observed community profiles. No unseen-species inference, sampling-effort adjustment or universal conservation preference is claimed."
+}

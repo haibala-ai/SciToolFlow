@@ -1,0 +1,87 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "participant_ids": [
+        "Linnerud-1",
+        "Linnerud-2",
+        "Linnerud-3",
+        "Linnerud-4",
+        "Linnerud-5",
+        "Linnerud-6",
+        "Linnerud-7",
+        "Linnerud-8",
+        "Linnerud-9",
+        "Linnerud-10",
+        "Linnerud-11",
+        "Linnerud-12",
+        "Linnerud-13",
+        "Linnerud-14",
+        "Linnerud-15",
+        "Linnerud-16",
+        "Linnerud-17",
+        "Linnerud-18",
+        "Linnerud-19",
+        "Linnerud-20"
+      ],
+      "chin_counts": [
+        5.0,
+        2.0,
+        12.0,
+        12.0,
+        13.0,
+        4.0,
+        8.0,
+        6.0,
+        15.0,
+        17.0,
+        17.0,
+        13.0,
+        14.0,
+        1.0,
+        6.0,
+        12.0,
+        4.0,
+        11.0,
+        15.0,
+        2.0
+      ],
+      "body_weight_values": [
+        191.0,
+        189.0,
+        193.0,
+        162.0,
+        189.0,
+        182.0,
+        211.0,
+        167.0,
+        176.0,
+        154.0,
+        169.0,
+        166.0,
+        154.0,
+        247.0,
+        193.0,
+        202.0,
+        176.0,
+        157.0,
+        156.0,
+        138.0
+      ],
+      "association_policy": "Two-sided monotonic rank association on matched participants,using conventional asymptotic Spearman p with ties; no equal physical scaling or linear relationship is assumed.",
+      "alpha": 0.05,
+      "source_provenance": {
+        "dataset": "Authentic Linnerud observations,20 middle-aged men in a fitness club",
+        "source_url": "https://scikit-learn.org/stable/datasets/toy_dataset.html#linnerrud-dataset",
+        "citation": "Tenenhaus,M.(1998).La regression PLS:theorie et pratique.Paris:EditionsTechnic.",
+        "units": "Original source numeric units; the documentation does not specify a complete physical-unit table,so no unit conversion or clinical threshold is inferred.",
+        "licensing_note": "Redistributed by scikit-learn; original dataset page gives citation but no separate dataset-specific license statement.",
+        "new_experimental_claim": false
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

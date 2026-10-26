@@ -1,0 +1,144 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "records": [
+        {
+          "subject_id": "1",
+          "wright_first": 494,
+          "wright_second": 490,
+          "mini_first": 512,
+          "mini_second": 525
+        },
+        {
+          "subject_id": "2",
+          "wright_first": 395,
+          "wright_second": 397,
+          "mini_first": 430,
+          "mini_second": 415
+        },
+        {
+          "subject_id": "3",
+          "wright_first": 516,
+          "wright_second": 512,
+          "mini_first": 520,
+          "mini_second": 508
+        },
+        {
+          "subject_id": "4",
+          "wright_first": 434,
+          "wright_second": 401,
+          "mini_first": 428,
+          "mini_second": 444
+        },
+        {
+          "subject_id": "5",
+          "wright_first": 476,
+          "wright_second": 470,
+          "mini_first": 500,
+          "mini_second": 500
+        },
+        {
+          "subject_id": "6",
+          "wright_first": 557,
+          "wright_second": 611,
+          "mini_first": 600,
+          "mini_second": 625
+        },
+        {
+          "subject_id": "7",
+          "wright_first": 413,
+          "wright_second": 415,
+          "mini_first": 364,
+          "mini_second": 460
+        },
+        {
+          "subject_id": "8",
+          "wright_first": 442,
+          "wright_second": 431,
+          "mini_first": 380,
+          "mini_second": 390
+        },
+        {
+          "subject_id": "9",
+          "wright_first": 650,
+          "wright_second": 638,
+          "mini_first": 658,
+          "mini_second": 642
+        },
+        {
+          "subject_id": "10",
+          "wright_first": 433,
+          "wright_second": 429,
+          "mini_first": 445,
+          "mini_second": 432
+        },
+        {
+          "subject_id": "11",
+          "wright_first": 417,
+          "wright_second": 420,
+          "mini_first": 432,
+          "mini_second": 420
+        },
+        {
+          "subject_id": "12",
+          "wright_first": 656,
+          "wright_second": 633,
+          "mini_first": 626,
+          "mini_second": 605
+        },
+        {
+          "subject_id": "13",
+          "wright_first": 267,
+          "wright_second": 275,
+          "mini_first": 260,
+          "mini_second": 227
+        },
+        {
+          "subject_id": "14",
+          "wright_first": 478,
+          "wright_second": 492,
+          "mini_first": 477,
+          "mini_second": 467
+        },
+        {
+          "subject_id": "15",
+          "wright_first": 178,
+          "wright_second": 165,
+          "mini_first": 259,
+          "mini_second": 268
+        },
+        {
+          "subject_id": "16",
+          "wright_first": 423,
+          "wright_second": 372,
+          "mini_first": 350,
+          "mini_second": 370
+        },
+        {
+          "subject_id": "17",
+          "wright_first": 427,
+          "wright_second": 421,
+          "mini_first": 451,
+          "mini_second": 443
+        }
+      ],
+      "units": "litres per minute for all four raw flow readings and all differences/interval endpoints",
+      "difference_orientation": "Wright reading minus mini-Wright reading, paired by the same subject and replicate.",
+      "primary_protocol": "One reading per instrument. Use the first reading of each method for every subject; second readings are not additional independent subjects and must not be pooled into this primary analysis.",
+      "comparison_protocol": "A separate protocol averages each subject's two Wright readings and separately averages that subject's two mini-Wright readings before forming their difference. Assess the distribution of these 17 subject-level differences, retaining within-subject dependence through the actual averages. Do not assume averaging divides the difference variance by2.",
+      "working_model": "For nominal intervals assume independent subject-level differences with one common normal distribution separately for each protocol. This is a stipulated descriptive/reference model, not verified population sampling or observed normality. Neither method is a true reference standard.",
+      "interval_policy": "Bias is the sample mean of paired differences. Use the sample SD with divisor n-1. For first-reading mean bias, report mean +/- tcrit*SD/sqrt(n), with tcrit=2.1199052992210112 for 16 degrees of freedom. Normal-reference95% limits of agreement for either protocol are mean +/-1.96*SD. These are plug-in population-difference limits under the working model, not confidence bounds for the estimated limits or an exact finite-sample prediction interval. Intervals are ordered [lower,upper].",
+      "project_acceptance_rule": "The primary single-reading protocol meets the illustrative project rule only if both estimated limits of agreement lie within[-50,+50] litres/minute, inclusively. This bound is a project reporting-audit condition, not a clinical threshold, original-author endorsement or real deployment recommendation. A narrow confidence interval for mean bias cannot substitute for individual-reading agreement.",
+      "source_provenance": {
+        "author_copy_url": "https://www-users.york.ac.uk/~mb55/meas/ba.pdf",
+        "pdf_sha256": "79695cfcf1468719845c7aa89d6ab04c82135d104c24f4fbd44645fe4f1d4286",
+        "table": "Table 1,17 subjects, four original readings and original subject labels; values unchanged.",
+        "citation": "Bland,J.M.andAltman,D.G.(1986),Statistical methods for assessing agreement between two methods of clinical measurement,Lancet1:307-310.",
+        "sampling_scope": "Author's colleagues and family, chosen for a broad range, explicitly not representative of a defined population; source describes the observations as a statistical demonstration without instrument-comparability evidence.",
+        "project_derivations": "Only the two analysis protocols, nominal interval constants and illustrative acceptance criterion are project choices. No readings were repeated, repaired or imputed."
+      },
+      "interpretation_scope": "Audit statistical estimands in a published demonstration. No causal effect, general clinical suitability, population representativeness or exact coverage is established. The averaged-reading comparison cannot silently change the proposed one-reading protocol."
+    }
+  ]
+}

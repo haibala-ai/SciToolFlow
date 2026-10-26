@@ -1,0 +1,16 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "candidate_smiles": {
+    "fused_panel": "c1ccc2ccccc2c1",
+    "spiro_panel": "C1CCC2(CC1)CCCC2",
+    "bridged_panel": "C1CC2CCC1C2",
+    "linked_panel": "c1ccccc1-c1ccccc1"
+  },
+  "graph_convention": "Original heavy-atom molecular graph, with every bond treated as one undirected edge regardless of aromaticity/order. For a connected graph independent cycle rank is E-V+1. It is not the number of all simple cycles and is not chosen from an arbitrary ring basis.",
+  "cycle_edge_components": "An edge is cyclic iff it lies on at least one simple cycle, equivalently iff it is not a graph bridge. Build the subgraph containing ONLY cyclic edges and their endpoint vertices; count connected components. Ignore isolated noncyclic vertices. An articulation in that cyclic-edge graph is an atom whose removal increases its component count; report entries with at least one such atom.",
+  "theta_graph_policy": "For ONLY the supplied fused_panel and bridged_panel, identify the two degree3 atoms. Their three internally vertex-disjoint paths partition the entire graph; report their edge lengths sorted increasingly. A length1path means the two ring junction atoms share an edge; paths all longer than1 give a bridged arrangement in this finite graph. No arbitrary smallest-ring basis defines these lengths.",
+  "scope": "Molecular topology interpretation, not ring strain, conformational energy or reactivity inference. Entry labels name bookkeeping roles and do not supply the numerical graph invariants."
+}

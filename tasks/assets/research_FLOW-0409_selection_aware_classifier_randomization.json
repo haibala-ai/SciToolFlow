@@ -1,0 +1,88 @@
+{
+  "data_origin": "Own controlled paired spectroscopy-classification audit. Six generic numeric sensor features and repeated technical readings were generated with NumPy seed606. They are not actual spectra, biological sequences or published measurements. The scientific question concerns a complete model-selection randomization procedure and probability-score interpretation, not a claim about a real compound or assay.",
+  "files": {
+    "readings": "asset://research_FLOW-0409_spectral_replicates.csv",
+    "units": "asset://research_FLOW-0409_randomization_units.csv"
+  },
+  "sampling_and_null": "There are12independent randomized pairs, each containing two physical measurement units assigned opposite states-1,+1. Each unit has3technical repeat readings of the same6features. The stated sharp null leaves every unit feature vector fixed under exchanging the state assignments within each pair, with all2^12pair sign assignments equally likely. Pair randomizations are independent; technical repeats are not independently randomized physical units. This is an explicitly assumed experimental randomization model, not a conclusion deduced from exchangeability of arbitrary rows.",
+  "identity_and_aggregation": "Join readings to annotations by literal unit_id, irrespective of CSV order. Average each feature across exactly3technical readings per unit before model fitting. Retain all24units, ordered lexicographically by unit_id;12pair IDs are ordered lexicographically. The pair_id/unit_id/record_id and technical replicate index are metadata, not predictive features. Never split a physical pair between training and test.",
+  "candidate_models": {
+    "M1": {
+      "features": [
+        "f1",
+        "f2"
+      ],
+      "alpha": 0.1
+    },
+    "M2": {
+      "features": [
+        "f1",
+        "f2"
+      ],
+      "alpha": 1.0
+    },
+    "M3": {
+      "features": [
+        "f1",
+        "f2"
+      ],
+      "alpha": 10.0
+    },
+    "M4": {
+      "features": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "alpha": 0.1
+    },
+    "M5": {
+      "features": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "alpha": 1.0
+    },
+    "M6": {
+      "features": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "alpha": 10.0
+    }
+  },
+  "fixed_training_pipeline": "For each candidate separately, leave one COMPLETE pair out, fit on the remaining22unit means and predict the two held-out unit means. In each fold fit feature means and POPULATION standard deviations from those22training rows only; standardize training and test with these same quantities. Fit ridge least squares to signed targets-1,+1 with objective sum_i(y_i-b-Z_i beta)^2+alpha*||beta||^2, unpenalized interceptb and the declared alpha. Every training fold has both labels balanced. Predict+1 iff the held-out continuous ridge score is >=0, otherwise-1. Count correct predictions over all24units. Fit and predict every fold, not a single model on all24rows. All six candidate families, feature sets and penalties are fixed in this source before evaluation.",
+  "selection_statistic": "The observed statistic is the MAXIMUM number of correct out-of-pair predictions across the six candidates. Select the smallest numeric model ID among observed tied maxima solely to name the reported winner. Under EACH allowed pair-label assignment, recompute the entire supervised fitting/prediction pipeline and TAKE THE MAX over the same six candidates. Exhaustively enumerate ALL4096assignments, including the observed assignment. Report the25bin histogram keyed0..24of the null maximum-correct count, its number >=the observed maximum, and exact inclusive p=extreme_count/4096. Do not apply a Monte Carlo+1 correction to full enumeration. Labels, labels in every training fold, held-out truths and data-driven model choice must all track the same assignment. Linear-operator precomputation is allowed if it is proved equivalent to the fold-wise ridge refits for EVERY allowed labeling; it must not freeze fitted coefficients or predictions.",
+  "frozen_winner_control": "Also compute the exact inclusive tail count and p using only the OBSERVED winning candidate under every assignment, without maximizing over the family. This is a control calculation; because the winner was selected from the observed outcomes, it does not replace the selection-aware family p-value. A binomial tail for24independent held-out successes is not justified merely by having24predictions: training folds overlap, candidate selection is adaptive and assignments are paired.",
+  "probability_audit": "For the observed winner only, preserve unit order and continuous held-out scores s_i. Compare TWO explicitly declared probability mappings p_i=1/(1+exp(-c*s_i)) with c=1 andc=4. Neither mapping is fitted or certified as a calibrated probability model by ridge least squares. Use positive_label=+1, report Brier and natural-log loss across the24unit-level observations for each mapping, and report whether their threshold0.5predicted labels are identical. Also report the winner confusion matrix with rows and columns in label order[-1,+1]. Same classification labels or significance of a randomization test does not imply the same proper scores or genuine probability calibration. These cross-fitted predictions also participated in winner selection; this audit is descriptive, not an untouched external test of the chosen winner.",
+  "interpretation_proposals": {
+    "A": "A complete randomization statistic must repeat all label-dependent training and the same candidate maximization under each allowed assignment.",
+    "B": "Permuting the72technical rows independently preserves the actual randomized experimental units.",
+    "C": "Training-fold-only scaling and leaving the complete pair out avoid using held-out pair feature estimates in training.",
+    "D": "Once the observed best model is selected, its fixed-model permutation p-value automatically accounts for selection from the six-model family.",
+    "E": "Two monotone score-to-probability maps can have identical class decisions and different proper probability scores.",
+    "F": "A significant classifier randomization test establishes that its sigmoid-transformed predictions are calibrated probabilities.",
+    "G": "The4096assignments form a complete conditional randomization distribution; cross-validation dependence does not require pretending its24predictions are independent Bernoulli trials."
+  },
+  "reporting": "Return technical_reading_count, physical_unit_count, independent_randomized_pair_count; correct_unit_counts_by_model; observed_winner_model_id; observed_max_correct_unit_count; complete_assignment_count; maximum_statistic_histogram as25integers in order0..24; selection_aware_tail_count and selection_aware_exact_p; frozen_observed_winner_tail_count and frozen_observed_winner_exact_p; winner_confusion_matrix_label_order_minus1_plus1; probability_scores_by_mapping keyed slope1,slope4, each with brier and log_loss; probability_mapping_class_labels_identical boolean; valid_interpretation_proposal_ids sorted. Counts, histograms, IDs and booleans exact. Probability fractions absolute1e-12; continuous proper scores absolute1e-8 plus relative1e-8. No hundreds of per-permutation rows are required in the final answer; retain actual complete enumeration evidence in the trajectory.",
+  "methodological_sources": [
+    {
+      "title": "Permutation Tests for Studying Classifier Performance",
+      "authors": "Ojala and Garriga",
+      "year": 2010,
+      "url": "https://www.jmlr.org/beta/papers/v11/ojala10a.html",
+      "role": "Primary methods motivation for rerunning supervised classifier procedures under an appropriate null. The task itself specifies a paired experimental randomization and a selection-max statistic, rather than copying unpaired row exchangeability from the paper."
+    }
+  ]
+}

@@ -1,0 +1,685 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/haibala-ai/SciToolFlow/evaluation/workflow/schema.json",
+  "title": "SciToolFlow workflow.v1 hidden evaluation contract",
+  "description": "Validates structural shape. evaluation.workflow.validate_workflow additionally validates DAGs, evidence identities and branch provenance.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "nodes",
+    "outcomes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "workflow.v1"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      },
+      "minItems": 1
+    },
+    "outcomes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/outcome"
+      },
+      "minItems": 1
+    },
+    "branches": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/branch"
+      }
+    },
+    "efficiency": {
+      "type": "object",
+      "properties": {
+        "free_recovery_calls": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "free_disambiguation_calls": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "disambiguation_tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "recovery_tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "capability_groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/capability_group"
+      }
+    },
+    "constants": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "description": "Content-addressed private literal operands. Keys equal the canonical JSON SHA256 of their values."
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "operand": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "value"
+          ],
+          "properties": {
+            "value": {}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "source"
+          ],
+          "properties": {
+            "source": {
+              "enum": [
+                "inputs",
+                "answer",
+                "node",
+                "node_arguments",
+                "call_arguments",
+                "call_output",
+                "call_error"
+              ]
+            },
+            "node": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string",
+              "pattern": "^(/.*)?$"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "operation",
+            "args"
+          ],
+          "properties": {
+            "operation": {
+              "enum": [
+                "abs",
+                "add",
+                "subtract",
+                "multiply",
+                "divide",
+                "length",
+                "sum",
+                "mean",
+                "min",
+                "max",
+                "argmin",
+                "argmax",
+                "curve_spec",
+                "common_interval",
+                "slice",
+                "record_value",
+                "json_value",
+                "paired_rows",
+                "partition_profile",
+                "coordinate_set_for_id",
+                "matrix_value_by_ids",
+                "python_literal_value",
+                "python_literal_lines",
+                "numeric_receipt_tokens",
+                "python_literal_assignments",
+                "reviewed_program_identity",
+                "numeric_value_for_row",
+                "average_ranks",
+                "integer_translation_span",
+                "column",
+                "join",
+                "records_columns",
+                "record_field_presence",
+                "scalar_array",
+                "source_file_labels",
+                "public_asset_paths",
+                "records_matching",
+                "records_nonnull",
+                "matrix_axis_profile",
+                "natural_log",
+                "exponential",
+                "array",
+                "numeric_rows",
+                "column_affine",
+                "count_occurrences",
+                "interval_union",
+                "normalize_protein_strings",
+                "zero_pad_numeric_matrix",
+                "text_between",
+                "inchi_identifier",
+                "numeric_matrix",
+                "linear_algebra_witness",
+                "closed_numeric_expression",
+                "coalesce_number",
+                "linear_projection_values",
+                "complete_record_rows",
+                "value_at_pointer",
+                "named_numeric_port",
+                "molecular_formula_counts",
+                "ordered_integer_intersection",
+                "select_if_text_equal",
+                "record_values_by_path",
+                "object_member_or_null",
+                "literal_constant"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/operand"
+              },
+              "minItems": 1,
+              "maxItems": 10000
+            },
+            "id_path": {
+              "type": "string",
+              "pattern": "^(/.*)?$"
+            },
+            "value_path": {
+              "type": "string",
+              "pattern": "^(/.*)?$"
+            },
+            "preserve_component_order": {
+              "type": "boolean"
+            },
+            "atol": {
+              "type": "number",
+              "minimum": 0
+            },
+            "rtol": {
+              "type": "number",
+              "minimum": 0
+            },
+            "tie_atol": {
+              "type": "number",
+              "minimum": 0
+            },
+            "tie_rtol": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "operation": {
+                    "enum": [
+                      "array",
+                      "scalar_array",
+                      "numeric_rows"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 10000
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "args": {
+                    "maxItems": 4
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "rule": {
+      "type": "object",
+      "required": [
+        "op"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(/.*)?$"
+        },
+        "left": {
+          "$ref": "#/$defs/operand"
+        },
+        "op": {
+          "enum": [
+            "eq",
+            "ne",
+            "lt",
+            "le",
+            "gt",
+            "ge",
+            "one_of",
+            "set_equal",
+            "multiset_equal",
+            "subset",
+            "exists",
+            "finite",
+            "type",
+            "curve_equivalent"
+          ]
+        },
+        "right": {
+          "$ref": "#/$defs/operand"
+        },
+        "value": {},
+        "atol": {
+          "type": "number",
+          "minimum": 0
+        },
+        "rtol": {
+          "type": "number",
+          "minimum": 0
+        },
+        "casefold": {
+          "type": "boolean"
+        },
+        "x_atol": {
+          "type": "number",
+          "minimum": 0
+        },
+        "x_rtol": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "op": {
+                "const": "type"
+              }
+            },
+            "required": [
+              "op"
+            ]
+          },
+          "then": {
+            "required": [
+              "value"
+            ],
+            "properties": {
+              "value": {
+                "enum": [
+                  "number",
+                  "integer",
+                  "string",
+                  "array",
+                  "object",
+                  "boolean",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "alternative": {
+      "type": "object",
+      "required": [
+        "tools",
+        "output_rules"
+      ],
+      "properties": {
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "not": {
+              "const": "DescribeTools"
+            }
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "statuses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "input_rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rule"
+          }
+        },
+        "output_rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rule"
+          },
+          "minItems": 1
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/binding"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "binding": {
+      "type": "object",
+      "required": [
+        "argument",
+        "source_node",
+        "output"
+      ],
+      "properties": {
+        "argument": {
+          "type": "string",
+          "pattern": "^(/.*)?$"
+        },
+        "source_node": {
+          "type": "string"
+        },
+        "output": {
+          "type": "string",
+          "pattern": "^(/.*)?$"
+        },
+        "atol": {
+          "type": "number",
+          "minimum": 0
+        },
+        "rtol": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "node": {
+      "type": "object",
+      "required": [
+        "id",
+        "alternatives"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "alternatives": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/alternative"
+          },
+          "minItems": 1
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/binding"
+          }
+        },
+        "branch": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "capability": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observation_reuse_group": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "description": "Nodes in the same explicit group may independently validate different scientific predicates on one actual observation. Every predicate and strict dependency ordering still applies; calls are charged once. Absent this field, observations cannot be shared across nodes."
+        }
+      },
+      "additionalProperties": false
+    },
+    "outcome": {
+      "type": "object",
+      "required": [
+        "id",
+        "left",
+        "op",
+        "evidence_nodes"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(/.*)?$"
+        },
+        "left": {
+          "$ref": "#/$defs/operand"
+        },
+        "op": {
+          "enum": [
+            "eq",
+            "ne",
+            "lt",
+            "le",
+            "gt",
+            "ge",
+            "one_of",
+            "set_equal",
+            "multiset_equal",
+            "subset",
+            "exists",
+            "finite",
+            "type",
+            "curve_equivalent"
+          ]
+        },
+        "right": {
+          "$ref": "#/$defs/operand"
+        },
+        "value": {},
+        "atol": {
+          "type": "number",
+          "minimum": 0
+        },
+        "rtol": {
+          "type": "number",
+          "minimum": 0
+        },
+        "casefold": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "evidence_nodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "branch": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "x_atol": {
+          "type": "number",
+          "minimum": 0
+        },
+        "x_rtol": {
+          "type": "number",
+          "minimum": 0
+        },
+        "evidence_groups": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "scientific_domains": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1000,
+          "items": {
+            "type": "object",
+            "required": [
+              "path"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "pattern": "^/.*$"
+              },
+              "minimum": {
+                "type": "number"
+              },
+              "maximum": {
+                "type": "number"
+              }
+            },
+            "additionalProperties": false,
+            "anyOf": [
+              {
+                "required": [
+                  "minimum"
+                ]
+              },
+              {
+                "required": [
+                  "maximum"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "properties": {
+            "evidence_nodes": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "evidence_groups"
+          ],
+          "properties": {
+            "evidence_groups": {
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    },
+    "branch": {
+      "type": "object",
+      "required": [
+        "id",
+        "when"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "when": {
+          "$ref": "#/$defs/rule"
+        }
+      },
+      "additionalProperties": false
+    },
+    "capability_group": {
+      "type": "object",
+      "required": [
+        "id",
+        "alternatives"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alternatives": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

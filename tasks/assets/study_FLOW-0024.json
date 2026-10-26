@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "record_id": "std-0",
+      "x": 0.0,
+      "internal_standard_response": 100.0,
+      "analyte_response": 5.0
+    },
+    {
+      "record_id": "std-1",
+      "x": 1.0,
+      "internal_standard_response": 80.0,
+      "analyte_response": 44.0
+    },
+    {
+      "record_id": "std-2",
+      "x": 2.0,
+      "internal_standard_response": 120.0,
+      "analyte_response": 126.0
+    },
+    {
+      "record_id": "std-3",
+      "x": 3.0,
+      "internal_standard_response": 60.0,
+      "analyte_response": 93.0
+    },
+    {
+      "record_id": "sample-A",
+      "internal_standard_response": 60.0,
+      "analyte_response": 78.0,
+      "dilution_factor": 4.0
+    },
+    {
+      "record_id": "sample-B",
+      "internal_standard_response": 0.0,
+      "analyte_response": 50.0,
+      "dilution_factor": 4.0
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "x mmol/L; both responses same detector units; dimensionless ratio/dilution",
+    "original_observation_claim": false
+  }
+}

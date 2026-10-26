@@ -1,0 +1,7 @@
+{
+  "sdf_file": "asset://coverage_FLOW-0098_controlled_coordinates.sdf",
+  "source_graph_smiles": "CC(=O)NCCO",
+  "coordinate_policy": "Use record0and hydrogen-suppressed atom order. Coordinates are a project-authored test geometry in angstrom,not an optimized conformer. Return the unweighted centroid of these actual source positions without generating new coordinates.",
+  "candidate_policy": "Inspect the registered loose dihedral-candidate predicate and report its count and the actual central bond pairs. Identify every candidate central bond that is an amide C(=O)-Nlinkage. Treat pair orientation and pair-list order as immaterial;indices are exact.",
+  "scope": "A candidate index quadruplet is not evidence of free rotation or a torsional barrier. Do not relabel this loose predicate as a Strictrotatable-bond count."
+}

@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "historical_pressure_raw": [
+        77.6,
+        114.9,
+        141.1,
+        190.8,
+        239.9,
+        289.0,
+        332.8,
+        378.4,
+        434.8,
+        477.3,
+        536.8,
+        593.1,
+        689.1,
+        760.0
+      ],
+      "pressure_reference_raw": 760.0,
+      "nominal_parameters": {
+        "amplitude": 240.0,
+        "dimensionless_rate": 0.418
+      },
+      "response_standard_deviation": 0.1,
+      "candidate_programs": [
+        {
+          "program_id": "split",
+          "additional_pressure_raw": [
+            114.9,
+            760.0
+          ]
+        },
+        {
+          "program_id": "interior",
+          "additional_pressure_raw": [
+            378.4,
+            593.1
+          ]
+        },
+        {
+          "program_id": "low",
+          "additional_pressure_raw": [
+            77.6,
+            114.9
+          ]
+        },
+        {
+          "program_id": "over_budget",
+          "additional_pressure_raw": [
+            689.1,
+            760.0
+          ]
+        }
+      ],
+      "additional_pressure_sum_budget_raw": 1000.0,
+      "model": "q=p/pressure_reference_raw; E[y|q]=A*(1-exp(-r*q)). The parameter order is (A,r). The target is dimensionless rate r, not the raw-pressure rate r/pressure_reference_raw.",
+      "planning_assumptions": "Independent homoscedastic Gaussian response errors of the stated known standard deviation; negligible pressure error; the given nominal point is fixed for local design. Both A and r are estimated jointly in the main analysis. The assumptions and nominal values are project planning choices, not established by the source archive.",
+      "precision_policy": "Each candidate appends its two independent prospective measurements to all 14 historical pressure coordinates. Use the local expected Fisher information of this joint nonlinear model; approximate parameter covariance by its inverse. Do not rescale by a fitted residual variance, fit invented future responses, omit the amplitude nuisance parameter or treat the inverse rate information diagonal as the joint rate variance. Compare feasible programs by their r variance; ties within1e-11 prefer smaller additional pressure sum, then lexical program_id.",
+      "allocation_policy": "Only additional measurements count toward the raw pressure-sum budget. A program is feasible if both pressures lie in the closed historical pressure range and their sum is at most the budget. Repeated historical pressure coordinates represent new independent readouts, not duplicate data accidentally counted twice. Do not select an infeasible program even if its unconstrained local variance is lower.",
+      "known_amplitude_comparison": "For a separate sensitivity comparison only, hold A exactly known at its nominal value, estimate r alone using the same 16 pressure coordinates and known noise, and select the feasible program with the smallest local r variance. This is a different information problem, not the main joint-parameter answer.",
+      "interpretation_scope": "Prospective local precision planning on an archived monomolecular adsorption model. No future measurements have been observed. Information-based variances are local approximations under the planning model, not exact finite-sample confidence guarantees, evidence of model adequacy or validated physical performance. The NIST source calls its predictor pressure and response volume but does not specify physical units; raw pressure and response coordinates are retained without inventing kPa or mL.",
+      "source_provenance": {
+        "data_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Misra1a.dat",
+        "method_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/c-kirby2.shtml",
+        "raw_sha256": "9d3194d537d9a6bbf92eb819504070923a1885d0191f40b6b3aaeedd130b98e2",
+        "historical_use": "All14 original pressure coordinates, unchanged and in original order. Source response observations are not refitted in this prospective nominal-design task.",
+        "planning_derivation": "Project-chosen nominal A=240, r=0.418, reference pressure760 and response noise0.1; these are not the NIST certified coefficient estimates or newly measured quantities. Candidate programs and allocation cap are project constraints.",
+        "citation": "Misra,D.,NIST(1978),Dental Research Monomolecular Adsorption Study; NIST StRD Misra1a."
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study, not new experimental measurements.",
+    "scope": "Results are conditional on the complete stated model, measurement convention and units."
+  },
+  "particle_ids": [
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+  ],
+  "normalized_parent_weights": [
+    0.7,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "frozen_parent_response": [
+    0.0,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "number_of_children": 4,
+  "particle_order_policy": "Retain the supplied parent order in the cumulative weight intervals. Endpoint ties have zero probability under the continuous offset law. No new propagation, mutation or independent scientific observations are introduced.",
+  "systematic_resampling": "Draw ONE U uniformly on [0,1/N), then child j=0,...,N-1 inherits the first parent whose cumulative weight is >= U+j/N. The same U is shared by all children. Each child receives weight1/N. Integrate over the full continuous U distribution by its exact finite breakpoint partition, not Monte Carlo or a few trial offsets.",
+  "multinomial_resampling": "Each of the N children independently draws one parent with the given categorical probabilities and receives weight1/N. Repeated draws of one parent are repeated copies of its same frozen response, not independent parent lineages.",
+  "estimands": "Weight effective sample size is1/sum(normalized_weight_i^2). Distinct-parent count means the number of unique original particle IDs represented among children. Response-mean variance is the variance over the stated resampling randomness, conditional on these fixed parents, of the equally weighted child response mean. It is not the variance of individual responses or new scientific measurement noise."
+}

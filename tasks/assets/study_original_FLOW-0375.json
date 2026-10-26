@@ -1,0 +1,22 @@
+{
+  "relative_pressures_p_over_p0": [
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "adsorbed_amount_millimol_per_g_as_received": [
+    1.0796221322537112,
+    1.532567049808429,
+    2.083333333333333,
+    2.55863539445629
+  ],
+  "dry_solid_mass_fraction_of_as_received_sample": 0.8,
+  "adsorptive_molecular_footprint_nm2": 0.162,
+  "Avogadro_per_mol": 6.02214076e+23,
+  "model": "Exact conditional BETuptake q=qm*C*x/((1-x)*(1+(C-1)*x)),where x=p/p0and qmis in the SAMEper-as-received-mass basis as q. Fit the BETline y=x/[q*(1-x)]versusx. The surface-area convention is dry-specific monolayer molecules times the supplied footprint;dry mass fraction is a separate gravimetric measurement. Check ONLYthese declared necessary fit criteria:C>0,q*(1-x)increases over the whole listed interval,and the BETmonolayer pressure x_m=1/(1+sqrt(C))lies in the fitted relative-pressure range. Passing them is not a sufficient empirical BETvalidity test or a unique pore-geometry reconstruction.",
+  "target": "Return qmon as-received and dry mass bases,C,the dry-specific area in m^2/g,and monolayer relative pressure. Report whether all declared necessary criteria pass,and whether that area uniquely determines pore geometry.",
+  "provenance": {
+    "kind": "Explicit synthetic conditional chemical/physical measurement model;no empirical identification or practical process recommendation."
+  }
+}

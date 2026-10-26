@@ -6,7 +6,7 @@ and when the caller's wait budget is exhausted the same query is run against
 EBI's NCBI BLAST+ service (UniProtKB/Swiss-Prot) so the tool still returns real
 alignments.  Every result states its provider and database.
 """
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import hashlib
 import json
 import os

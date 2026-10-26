@@ -1,0 +1,29 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "vacuum_wavelength_nm": 1500.0,
+  "unit_cells": {
+    "contrast_stack": [
+      {
+        "index": 1.5,
+        "thickness_nm": 250.0
+      },
+      {
+        "index": 2.5,
+        "thickness_nm": 150.0
+      }
+    ],
+    "uniform_surrogate": [
+      {
+        "index": 1.875,
+        "thickness_nm": 400.0
+      }
+    ]
+  },
+  "model": "Lossless nonmagnetic positive-index layers at normal incidence. One layer has characteristic matrix[[cos(delta),i*sin(delta)/n],[i*n*sin(delta),cos(delta)]],delta=2*pi*n*d/lambda. Multiply matrices in listed order. Each unit-cell matrix has determinant1. An infinite periodic medium has an evanescent Bloch gap when abs(trace(M)/2)>1; equality is a band edge, not a gap.",
+  "decay_definition": "For a gap cell the decaying Bloch eigenvalue magnitude is exp(-arcosh(abs(trace(M)/2))). Find the smallest positive integer N for which its magnitude^N<=.01. This is the field-amplitude ratio of one decaying Bloch eigenmode, not incident-light power transmission.",
+  "boundary_information": "No external incident/substrate refractive indices, stack termination phase or boundary coupling are supplied, so an incident-wave finite-stack transmittance cannot be released from this Bloch multiplier alone.",
+  "scope": "Controlled one-dimensional coherent photonic model at one wavelength. The uniform surrogate has the same total thickness and optical path but need not have the same gap response."
+}

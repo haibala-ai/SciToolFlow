@@ -1,6 +1,6 @@
 """Public PubChem queries with bounded retries and genuine, dated structure-response caches."""
 
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 import hashlib

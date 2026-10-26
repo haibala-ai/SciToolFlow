@@ -1,6 +1,8 @@
 """New implementations for basic KG nodes, with narrow, explicit scientific contracts."""
 
 import json
+import hashlib
+import math
 from pathlib import Path
 import re
 
@@ -20,6 +22,8 @@ def convert_units(query: str):
     """Pint unit conversion, input '25 degree_Celsius to kelvin'; supports numeric physical units, not currency."""
     from pint import UnitRegistry
 
+    if not isinstance(query, str) or len(query) > 512:
+        raise ValueError("query must be text of at most512characters")
     match = re.fullmatch(
         r"\s*([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)\s+(.+?)\s+to\s+(.+?)\s*",
         query,
@@ -29,6 +33,8 @@ def convert_units(query: str):
     value, source, target = match.groups()
     units = UnitRegistry()
     converted = units.Quantity(float(value), source).to(target)
+    if not math.isfinite(float(value)) or not math.isfinite(float(converted.magnitude)):
+        raise ValueError("Input and converted values must be finite")
     return json.dumps(
         {
             "implementation": "Pint",
@@ -65,10 +71,15 @@ def search_csv(csv_file: str, column: str, value: str, max_results: int = 20):
 
 
 def ase_properties(structure_file: str):
-    """ASE static structure properties: formula, mass, volume, cell, periodicity, atom numbers/coordinates; no simulated energies."""
+    """ASE static structure properties with source byte hash; no simulated energies.
+
+    Returns the existing JSON-string format, including source_file and
+    source_sha256 for portable provenance, formula, cell and coordinates.
+    """
     from ase.io import read
 
-    atoms = read(str(_file(structure_file)))
+    source = _file(structure_file)
+    atoms = read(str(source))
     if not len(atoms):
         raise ValueError("Structure contains no atoms")
     for site in atoms.info.get("occupancy", {}).values():
@@ -83,7 +94,8 @@ def ase_properties(structure_file: str):
     return json.dumps(
         {
             "implementation": "ASE",
-            "source_file": str(_file(structure_file)),
+            "source_file": str(source),
+            "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
             "atoms": len(atoms),
             "formula": atoms.get_chemical_formula(),
             "mass_u": mass,
@@ -97,6 +109,53 @@ def ase_properties(structure_file: str):
             "positions_angstrom": atoms.positions.tolist(),
         }
     )
+
+
+def calculate_density(file_name: str) -> dict:
+    """Calculate static periodic-cell mass density with complete source provenance.
+
+    Args:
+        file_name: Existing periodic structure file supported by pymatgen,
+            such as CIF or POSCAR; absolute path or task attachment name.
+            The supplied cell must have finite positive volume and mass.
+
+    Returns:
+        density_g_per_cm3, mass_u and volume_angstrom_cubed as unrounded finite
+        numbers; sites, formula, source_file, source_sha256 and method. Density
+        uses occupancy-weighted cell mass and the supplied cell volume. It is
+        not a measured bulk/powder density, porosity estimate or relaxed state.
+
+    Raises:
+        FileNotFoundError: Missing source file.
+        ValueError: Unreadable structure, nonpositive/nonfinite volume or mass,
+            or a source file that changes while it is being read. No error is
+            returned as a successful density observation.
+    """
+    from pymatgen.core import Structure
+
+    path = _file(file_name)
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    try:
+        structure = Structure.from_file(path)
+        volume = float(structure.volume)
+        mass = float(structure.composition.weight)
+        density = float(structure.density)
+    except Exception as exc:
+        raise ValueError("Cannot calculate periodic-cell density: " + str(exc)) from exc
+    if not all(math.isfinite(v) and v > 0 for v in [volume, mass, density]):
+        raise ValueError("Cell volume, occupancy-weighted mass and density must be finite and positive")
+    if hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+        raise ValueError("Source structure changed while density was being calculated")
+    return {
+        "density_g_per_cm3": density,
+        "mass_u": mass,
+        "volume_angstrom_cubed": volume,
+        "sites": len(structure),
+        "formula": structure.composition.formula,
+        "source_file": path.name,
+        "source_sha256": digest,
+        "method": "pymatgen static periodic-cell density; occupancy-weighted cell mass / cell volume",
+    }
 
 
 def structure_to_smiles(structure_file: str):

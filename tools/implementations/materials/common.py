@@ -219,7 +219,10 @@ def get_mof_lattice(cif_file_name: str) -> str:
     """
     Obtain lattice structure information from the provided MOF cif file name.
     Note: Please directly pass the cif file name, such as 'HKUST-1', as Action Input. The function will construct the file path based on a predefined directory.
-    The function returns the information in a Markdown table format.
+    The existing Markdown table describes the default moffragmentor cell, which
+    may be primitive rather than the original CIF cell. Lengths are angstrom,
+    angles degrees and volume angstrom cubed. A source_sha256 line identifies
+    the exact input-file bytes; differing pre/post-parse bytes fail explicitly.
     """
     try:
         cif_file_path = os.path.join(
@@ -230,7 +233,13 @@ def get_mof_lattice(cif_file_name: str) -> str:
         if not cif_file_path:
             return "File does not exist: Please check the cif file name and directory."
 
+        import hashlib
+
+        source_bytes = Path(cif_file_path).read_bytes()
+        source_sha256 = hashlib.sha256(source_bytes).hexdigest()
         mof = MOF.from_cif(str(cif_file_path))
+        if hashlib.sha256(Path(cif_file_path).read_bytes()).hexdigest() != source_sha256:
+            raise ValueError("CIF file bytes changed during MOF parsing")
         lattice = mof.lattice
 
         markdown_table = f"""
@@ -245,6 +254,7 @@ def get_mof_lattice(cif_file_name: str) -> str:
 | C vector     | {', '.join(map(str, lattice.matrix[2]))} |
 | Periodic BCs | {lattice.pbc}                          |
 """
+        markdown_table += f"\n**source_sha256:** {source_sha256}\n"
     except Exception as e:
         markdown_table = f"Error occurred: {e}"
 

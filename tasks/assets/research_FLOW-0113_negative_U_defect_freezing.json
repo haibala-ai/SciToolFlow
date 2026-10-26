@@ -1,0 +1,72 @@
+{
+  "data_origin": "Own controlled negative-U defect thermodynamics in a hypothetical semiconductor. Formation energies, charge degeneracies, density of states, donor densities and temperature dependence are explicit model assumptions, not parameters or stability claims for a named actual material. Annealed/frozen states below are mathematical equilibrium constraints; no fabrication or thermal protocol is requested.",
+  "units_and_parameters": {
+    "Boltzmann_eV_per_K": 8.617333262145e-05,
+    "valence_band_edge_eV": 0.0,
+    "conduction_band_edge_eV": 1.0,
+    "site_density_per_cm3": 1e+20,
+    "high_temperature_K": 600.0,
+    "low_temperature_K": 300.0,
+    "Nc_at_high_temperature_per_cm3": 1e+19,
+    "Nv_at_high_temperature_per_cm3": 2e+19,
+    "density_of_states_temperature_rule": "Nc(T)=Nc_high*(T/T_high)^(3/2), Nv(T)=Nv_high*(T/T_high)^(3/2). Gap and formation-energy intercepts are fixed by assumption."
+  },
+  "site_states": [
+    {
+      "state": "host",
+      "charge": 0,
+      "formation_intercept_eV": 0.0,
+      "degeneracy": 1
+    },
+    {
+      "state": "defect_plus",
+      "charge": 1,
+      "formation_intercept_eV": -0.2,
+      "degeneracy": 1
+    },
+    {
+      "state": "defect_neutral",
+      "charge": 0,
+      "formation_intercept_eV": 0.45,
+      "degeneracy": 2
+    },
+    {
+      "state": "defect_minus",
+      "charge": -1,
+      "formation_intercept_eV": 0.8,
+      "degeneracy": 1
+    }
+  ],
+  "equilibrium_statistics": "Each site has EXACTLY one of the four mutually exclusive states; use the full single-site partition function Z_site=1+sum_q g_q*exp(-(a_q+q*E_F)/(k_B*T)) over ALL three defect charges. State energy references share one fixed atomic reservoir. Atomic defect fraction theta=sum_q w_q/Z_site. Conditional defect charge fractions f_q=w_q/sum_q w_q in order[+1,0,-1]. The neutral defect is different from the pristine host despite both having charge0. Do not replace the finite-T partition sum by only the zero-temperature lower envelope or use three independent site pools.",
+  "carriers_and_neutrality": "Use nondegenerate model carriers n=Nc(T)*exp(-(Eg-E_F)/(k_B*T)), p=Nv(T)*exp(-E_F/(k_B*T)). N_D is a permanently ionized uniform POSITIVE donor density; charge neutrality is p-n+Ns*theta*(f_plus-f_minus)+N_D=0. Donors are outside the common defect site pool and are not an unknown Fermi-dependent defect charge state. Find all physically admissible roots E_F in[0,Eg]; prove completeness/uniqueness rather than assume a local root is the only one. Independently check n/Nc<0.1 and p/Nv<0.1 at every reported physical state as a declared self-consistency diagnostic; passing this does not empirically validate Boltzmann statistics for an actual material.",
+  "donor_cases_per_cm3": {
+    "D0": 0.0,
+    "D1": 2e+18,
+    "D2": 2e+19
+  },
+  "three_physical_constraints": "For every donor case first solve the full-site EQUILIBRIUM model at T_high. Then consider two DIFFERENT low-T limits. FROZEN: the TOTAL atomic defect fraction theta is fixed to its own donor-case high-T value, but the three charge states and carriers equilibrate at T_low. Conditional charge fractions still follow their normalized three defect weights at T_low; do NOT freeze each individual charge concentration or normalize with the host state again. REANNEALED: all four site states may equilibrate at T_low using Z_site, with no fixed defect number. Donor charges remain fixed in all limits. No assertion of real kinetic accessibility is made.",
+  "dilute_control": "At T_high solve a separate dilute-approximation neutrality equation with c_q/Ns=w_q independently and no common-site normalization, retaining all three charges and the same carriers/donors. Report E_F and theta_dilute=sum_q w_q. Label this approximation acceptable for a donor case ONLY if the EXACT high-T theta<=0.01 and the relative error |theta_dilute/theta_exact-1|<=0.01. All bounds are inclusive; do not accept it merely because its charge residual is small. Do not reinterpret theta_dilute>1 as a physical occupancy.",
+  "charge_transition_question": "For the three DEFECT charge states only, identify every zero-temperature lower-envelope charge transition E_F in[0,Eg] and the charge sequence with increasing E_F. Give U=a_plus+a_minus-2*a_neutral in eV. Decide whether neutral defect fraction can be exactly omitted at a finite positive temperature merely because q0 never minimizes the bare formation energy. Host-vs-defect creation is separate from this conditional charge-transition diagram.",
+  "interpretation_proposals": {
+    "A": "Common-site competition and charge neutrality must be solved together, rather than assigning independent saturated site pools to the charge states.",
+    "B": "A neutral charge state absent from the zero-temperature lower envelope has exactly zero finite-temperature Boltzmann weight.",
+    "C": "Fixing total atomic defect number while permitting charge exchange is a different constraint from fixing each charge-state concentration.",
+    "D": "Frozen and reannealed low-temperature defect populations must always agree because both use the same formation energies.",
+    "E": "For positive temperature the defect mean-charge derivative is minus a charge variance divided by kBT; free carriers make the stated neutrality function strictly decreasing.",
+    "F": "A small residual of an approximate dilute equation by itself proves its finite-site concentrations are accurate.",
+    "G": "These hypothetical model parameters establish a real material processing protocol or actual defect yield."
+  },
+  "reporting": "Return conditional_zero_temperature_charge_sequence as integer list, conditional_charge_transition_levels_eV ordered, negative_U_eV; high_equilibrium_rows_by_donor,low_frozen_rows_by_donor,low_reannealed_rows_by_donor each keyedD0,D1,D2 with rows[E_F_eV,theta,f_plus,f_neutral,f_minus,n/Ns,p/Ns]; high_dilute_EF_and_theta_by_donor keyedD0,D1,D2; acceptable_dilute_case_ids sorted; all_reported_physical_roots_unique boolean; all_reported_physical_states_pass_declared_nondegeneracy_diagnostic boolean; neutral_charge_can_be_exactly_dropped_at_positive_T boolean; valid_interpretation_proposal_ids sorted. Physical rows exclude the approximate dilute control for the root-diagnostic flags. IDs, charge integers and booleans exact. E_F and transition/U energies absolute1e-7, fractions absolute1e-10 plus relative1e-6. Keep probabilities nonnegative and normalized; freeze total theta, not the high-T charge fractions. Retain complete numerical/analytic root evidence in trajectory, not a raw model log dump.",
+  "methodological_sources": [
+    {
+      "title": "doped thermodynamics: finite-site equilibrium and frozen defect approximations",
+      "url": "https://doped.readthedocs.io/en/latest/doped.thermodynamics.html",
+      "role": "Primary implementation documentation motivating site competition, self-consistent charge neutrality and total-defect freeze-in with charge re-equilibration. No numerical defect parameters copied."
+    },
+    {
+      "title": "The defect-equilibrium model",
+      "url": "https://py-sc-fermi.readthedocs.io/en/latest/theory.html",
+      "role": "Primary implementation theory for charge-neutrality and concentration constraints. This task fully specifies its own finite-site statistical model."
+    }
+  ]
+}

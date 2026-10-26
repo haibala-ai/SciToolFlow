@@ -1,0 +1,28 @@
+{
+  "species_tree_newick": "((S1:1,S2:1)S12:1,S3:2)ROOT;",
+  "gene_tree_newick": "((g1:1,g2:1)X:1,(g3:1,g4:1)Y:1)GROOT;",
+  "gene_to_species": [
+    {
+      "gene_id": "g3",
+      "species_id": "S1"
+    },
+    {
+      "gene_id": "g2",
+      "species_id": "S2"
+    },
+    {
+      "gene_id": "g4",
+      "species_id": "S3"
+    },
+    {
+      "gene_id": "g1",
+      "species_id": "S1"
+    }
+  ],
+  "reconciliation_rule": "Map each gene-tree tip to its supplied species tip. Map an internal gene node to the species-tree lowest common ancestor of all its descendant mapped species. An internal gene node is a duplication iff its mapped species node is the SAME as the mapping of at least one immediate gene child;otherwise classify it as speciation. Use the supplied rooted topologies exactly. Branch lengths are serialization inputs,not calibrated duplication times.",
+  "pair_rule": "Two distinct genes are orthologs iff their gene-tree most recent common ancestor is classified as speciation under the given reconciliation. If that ancestor is duplication they are paralogs. Membership in different species alone does not decide orthology.",
+  "target": "Return all inferred duplication node labels,their count,and every unordered ortholog gene pair,with each pair sorted lexicographically. Report whether g2andg4are orthologs and whether genes from different species are necessarily orthologs in this fixture. No gene loss count,horizontal transfer or species-tree inference is requested.",
+  "provenance": {
+    "kind": "Controlled abstract biological inference fixture;not empirical mechanism or intervention evidence."
+  }
+}

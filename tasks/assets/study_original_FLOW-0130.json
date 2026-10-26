@@ -1,0 +1,25 @@
+{
+  "pH": 7.0,
+  "analytical_solute_concentration_mol_L": 0.01,
+  "site_order": [
+    "A",
+    "B"
+  ],
+  "intrinsic_site_pKa": [
+    6.0,
+    8.0
+  ],
+  "double_occupancy_weight_factor": 0.01,
+  "microstates": [
+    "empty",
+    "A_only",
+    "B_only",
+    "A_and_B"
+  ],
+  "model": "One dissolved molecule has two distinguishable proton-binding sites. At fixed pH let a=10^(pKa_A-pH),b=10^(pKa_B-pH). The four equilibrium statistical weights are[1,a,b,c*a*b],where c=0.01is a stipulated penalty for double occupancy. Divide by their sum for microstate probabilities. Site pKa values specify intrinsic single-site weights from the unprotonated state;they are not the two macroscopic sequential pKa values.",
+  "target": "Return both macroscopic sequential proton-association pKa values,defined by the binding polynomial1+K1*h+K1*K2*h^2with h=10^(-pH),then the mean bound-proton number per molecule and site occupancies[A,B]at source pH. Return the solute-only differential buffer capacity beta=-d(bound-proton concentration)/dpH in mol/L per pH unit. The derivative changes pH while holding the intrinsic parameters,c and analytical concentration fixed. Exclude free-water H+/OH-and other buffers.",
+  "comparison": "Also return the incorrect beta obtained by treating the sites as independent(c=1)at the same intrinsic pKa,pH and concentration. Classify whether that independent-site shortcut overstates beta for this source state;do not assume the direction for every parameter setting.",
+  "provenance": {
+    "kind": "Explicit idealized controlled equilibrium study. Numbers are stipulated model inputs,not measured thermochemical or membrane data."
+  }
+}

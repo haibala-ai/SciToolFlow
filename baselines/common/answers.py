@@ -182,7 +182,7 @@ def protocol_decision_schema(
     max_actions=8,
     answer_schema=None,
     known_inputs=None,
-    allow_think=True
+    allow_think=True,
 ):
     """Public wire syntax plus input types already revealed by discovery/feedback.
 

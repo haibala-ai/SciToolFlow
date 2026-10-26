@@ -1,0 +1,17 @@
+{
+  "molecule_id": "2c96eb4288d63b2a9437ddd4172e67f3-H2O1-0-1",
+  "solvent_row_order": [
+    "NONE",
+    "SOLVENT=WATER",
+    "DIELECTRIC=18,500;N=1,415;ALPHA=0,000;BETA=0,735;GAMMA=20,200;PHI=0,000;PSI=0,000",
+    "DIELECTRIC=7,230;N=1,410;ALPHA=0,000;BETA=0,859;GAMMA=36,830;PHI=0,000;PSI=0,000"
+  ],
+  "readable_aliases": {
+    "custom_A": "DIELECTRIC=18,500;N=1,415;ALPHA=0,000;BETA=0,735;GAMMA=20,200;PHI=0,000;PSI=0,000",
+    "custom_B": "DIELECTRIC=7,230;N=1,410;ALPHA=0,000;BETA=0,859;GAMMA=36,830;PHI=0,000;PSI=0,000"
+  },
+  "bookkeeping_convention": "Interpret the reported total_enthalpy field as the complete enthalpy correction Hcorrto the electronic energy,including zero-point energy. The published working identity isG=Eelectronic+Hcorr-T*S. Infer Tfrom the actual reported quantities;do not assume it in advance. A proposed alternative adds ZPEagain. All energies are reported ineVand entropy ineV/K.",
+  "context_policy": "Within one solvent row,E,Hcorr,S,Gand ZPEmust retain the same molecular identity,level_of_theoryand thermo property_id. Across solvent rows,compare a free-energy difference only when the displayed electronic-structure/solvation level matches;different solvent calculations naturally have different property_ids. Do not identify an absent solvent label or mix values from different row keys.",
+  "difference": "Return G(custom_A)-G(custom_B)as the explicitly method-matched computed row difference. Do not call any vacuum-to-solution subtraction an experimentally calibrated solvation free energy or standard-state correction.",
+  "source_version": "2024-08-01T11:48:21.659000"
+}

@@ -4,16 +4,27 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "scitoolflow"
-version = "0.3.0"
-description = "SciToolFlow multi-tool benchmark with tasks, evaluation and a ReAct baseline"
+version = "0.4.0"
+description = "SciToolFlow scientific tool orchestration benchmark with executable tools, baselines and evidence-based evaluation"
 requires-python = ">=3.10"
 dependencies = ["requests>=2.31", "python-dotenv>=1", "jsonschema>=4.20"]
 
+[project.optional-dependencies]
+test = ["pytest", "pytest-subtests"]
+plots = ["matplotlib>=3.9"]
+
 [project.scripts]
-scitoolflow = "scitoolflow.cli:main"
+scitoolflow = "cli:main"
+
+[tool.setuptools]
+py-modules = ["cli"]
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["scitoolflow*", "baselines*", "evaluation*", "tools*"]
+include = ["tasks*", "src*", "baselines*", "evaluation*", "tools*", "scripts*"]
 namespaces = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = [".git", ".local", "resources", "results"]
 

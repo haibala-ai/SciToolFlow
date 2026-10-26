@@ -1,0 +1,161 @@
+{
+  "data": [
+    {
+      "record_id": "constitutive_model",
+      "reference_elastic_stiffness_gpa": [
+        [
+          274.0,
+          175.0,
+          175.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          175.0,
+          274.0,
+          175.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          175.0,
+          175.0,
+          274.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          89.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          89.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          89.0
+        ]
+      ],
+      "deformation_gradient": [
+        [
+          1.08,
+          0.16,
+          0.0
+        ],
+        [
+          0.02,
+          0.94,
+          0.05
+        ],
+        [
+          0.0,
+          0.0,
+          1.03
+        ]
+      ],
+      "voigt_order": [
+        "xx",
+        "yy",
+        "zz",
+        "yz",
+        "xz",
+        "xy"
+      ],
+      "strain_shear_convention": "engineering shear2Eij",
+      "model": "explicit controlled StVenant-Kirchhoff reference model with fixed stiffness coefficients,not validated finite-strain behavior of the source material"
+    },
+    {
+      "record_id": "export01",
+      "stress_matrix_gpa": [
+        [
+          24.818812000000015,
+          19.649056000000005,
+          0.7654
+        ],
+        [
+          16.442788,
+          7.790924000000001,
+          4.70059
+        ],
+        [
+          0.09167,
+          4.30849,
+          15.795874000000012
+        ]
+      ]
+    },
+    {
+      "record_id": "export02",
+      "stress_matrix_gpa": [
+        [
+          28.731115852488596,
+          18.23243301738363,
+          0.7563241106719366
+        ],
+        [
+          18.23243301738363,
+          7.566823189684945,
+          4.644851778656125
+        ],
+        [
+          0.7563241106719366,
+          4.644851778656125,
+          15.608571146245069
+        ]
+      ]
+    },
+    {
+      "record_id": "export03",
+      "stress_matrix_gpa": [
+        [
+          20.45410000000001,
+          17.052400000000002,
+          0.089
+        ],
+        [
+          17.052400000000002,
+          7.702900000000001,
+          4.183
+        ],
+        [
+          0.089,
+          4.183,
+          15.335800000000011
+        ]
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational study with authentic source inputs",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "AllstressGPa;Fdimensionless;GreenstrainE=(F^TF-I)/2;energyperreferencevolumeGPa",
+    "original_observation_claim": false,
+    "source_captures": [
+      {
+        "provider": "Materials Project",
+        "url": "https://api.materialsproject.org/materials/elasticity/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_limit=20&_all_fields=true",
+        "accessed_at": "2026-10-20T08:07:40.768678+00:00",
+        "raw_sha256": "a7d7aff7db31c12a428e740d3c844cd9e7550c79a0064a489bf3bfe5595e46d8",
+        "record_count": 10,
+        "credentials_included": false,
+        "claims": "Authentic fresh API response; independent of prior benchmark answers."
+      }
+    ]
+  }
+}

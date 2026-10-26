@@ -1,0 +1,39 @@
+{
+  "newick_tree": "((spA:1,spB:1):99,(spC:1,spD:1):99,(spE:1,spF:1):99);",
+  "trait_records": [
+    {
+      "species_id": "spF",
+      "trait_x_mm": 10,
+      "trait_y_mm": 10
+    },
+    {
+      "species_id": "spB",
+      "trait_x_mm": 2,
+      "trait_y_mm": 2
+    },
+    {
+      "species_id": "spD",
+      "trait_x_mm": 6,
+      "trait_y_mm": 6
+    },
+    {
+      "species_id": "spA",
+      "trait_x_mm": 1,
+      "trait_y_mm": 3
+    },
+    {
+      "species_id": "spE",
+      "trait_x_mm": 9,
+      "trait_y_mm": 11
+    },
+    {
+      "species_id": "spC",
+      "trait_x_mm": 5,
+      "trait_y_mm": 7
+    }
+  ],
+  "residual_model": "Cov(y|x)=sigma_squared*C; Cij is length of the shared root-to-MRCA path, conditioned on the fixed serialized root state. Root stem contributes zero.",
+  "provenance": {
+    "kind": "Project-authored controlled comparative-trait example; virtual taxa and stipulated Brownian residual covariance, not observed plant data or an inferred evolutionary tree."
+  }
+}

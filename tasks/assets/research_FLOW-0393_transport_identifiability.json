@@ -1,0 +1,279 @@
+{
+  "data_origin": "Controlled six-compartment tracer transport identification study. Capacities, undirected conductance reference graphs and sensor observations are methodological benchmark inputs, not a claim about any empirical transport network.",
+  "node_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "capacities": {
+    "values": [
+      1.0,
+      2.0,
+      1.5,
+      1.2,
+      2.2,
+      0.8
+    ],
+    "units": "liters",
+    "interpretation": "Known node storage capacities. State u is concentration; stored mass is diag(capacities)*u."
+  },
+  "candidate_reference_graphs": [
+    {
+      "id": "base",
+      "edges": [
+        [
+          "A",
+          "B",
+          1.0
+        ],
+        [
+          "B",
+          "C",
+          0.6
+        ],
+        [
+          "A",
+          "C",
+          0.4
+        ],
+        [
+          "C",
+          "D",
+          0.25
+        ],
+        [
+          "D",
+          "E",
+          1.2
+        ],
+        [
+          "E",
+          "F",
+          0.8
+        ],
+        [
+          "D",
+          "F",
+          0.3
+        ]
+      ]
+    },
+    {
+      "id": "double_reference",
+      "edges": [
+        [
+          "A",
+          "B",
+          2.0
+        ],
+        [
+          "B",
+          "C",
+          1.2
+        ],
+        [
+          "A",
+          "C",
+          0.8
+        ],
+        [
+          "C",
+          "D",
+          0.5
+        ],
+        [
+          "D",
+          "E",
+          2.4
+        ],
+        [
+          "E",
+          "F",
+          1.6
+        ],
+        [
+          "D",
+          "F",
+          0.6
+        ]
+      ]
+    },
+    {
+      "id": "disconnected",
+      "edges": [
+        [
+          "A",
+          "B",
+          1.0
+        ],
+        [
+          "B",
+          "C",
+          0.6
+        ],
+        [
+          "A",
+          "C",
+          0.4
+        ],
+        [
+          "D",
+          "E",
+          1.2
+        ],
+        [
+          "E",
+          "F",
+          0.8
+        ],
+        [
+          "D",
+          "F",
+          0.3
+        ]
+      ]
+    },
+    {
+      "id": "alternate_bridge",
+      "edges": [
+        [
+          "A",
+          "B",
+          1.0
+        ],
+        [
+          "B",
+          "C",
+          0.6
+        ],
+        [
+          "A",
+          "C",
+          0.4
+        ],
+        [
+          "D",
+          "E",
+          1.2
+        ],
+        [
+          "E",
+          "F",
+          0.8
+        ],
+        [
+          "D",
+          "F",
+          0.3
+        ],
+        [
+          "B",
+          "E",
+          0.25
+        ]
+      ]
+    }
+  ],
+  "edge_weight_definition": "Nonnegative undirected reference capacity factors in liters. Multiplying an edge weight by k (hour^-1) gives its conductance in liters/hour, so C^-1*L is dimensionless and T has units hour^-1. Graph labels describe reference normalizations; they are not distinguishable physical mechanisms by declaration.",
+  "candidate_generator_families": [
+    {
+      "id": "left_capacity_inverse",
+      "definition": "T=-k*C^-1*L"
+    },
+    {
+      "id": "right_capacity_inverse",
+      "definition": "T=-k*L*C^-1"
+    }
+  ],
+  "physical_admissibility": "Before using fit quality, require conservative transport in the declared concentration state: c^T*T=0 for every concentration vector, where c is the known capacity vector. L=diag(A row sums)-A for each candidate symmetric weighted adjacency A and C=diag(c). Off-diagonal transport coefficients must be nonnegative. Uniform first-order decay is separate: du/dt=(T-decay*I)*u. Candidate families that violate the stated mass balance are inadmissible even if a finite sensor subset could fit.",
+  "kinetic_scale_grid_per_hour": [
+    0.4,
+    0.8,
+    1.2
+  ],
+  "decay_grid_per_hour": [
+    0.0,
+    0.15,
+    0.3
+  ],
+  "initial_condition": "Total tracer mass at t=0 is exactly 1 mass unit, all at node A or F: m(0)=f*e_A+(1-f)*e_F, 0<=f<=1; u(0)=C^-1*m(0). f is unknown and continuous. Every experiment uses this same initial partition. There is no unknown detector baseline, source replenishment, or per-row calibration.",
+  "observations": [
+    {
+      "observation_id": "o08",
+      "time_hours": 2.8,
+      "node_id": "E",
+      "concentration": 0.0599108239443245,
+      "known_sigma": 0.0002
+    },
+    {
+      "observation_id": "o01",
+      "time_hours": 0.25,
+      "node_id": "B",
+      "concentration": 0.04900447215836624,
+      "known_sigma": 0.00025
+    },
+    {
+      "observation_id": "o10",
+      "time_hours": 4.0,
+      "node_id": "E",
+      "concentration": 0.051487069356729406,
+      "known_sigma": 0.0002
+    },
+    {
+      "observation_id": "o03",
+      "time_hours": 0.7,
+      "node_id": "B",
+      "concentration": 0.09241194734089106,
+      "known_sigma": 0.00025
+    },
+    {
+      "observation_id": "o06",
+      "time_hours": 1.4,
+      "node_id": "E",
+      "concentration": 0.06510828792449319,
+      "known_sigma": 0.0002
+    },
+    {
+      "observation_id": "o04",
+      "time_hours": 0.7,
+      "node_id": "E",
+      "concentration": 0.05358345033858945,
+      "known_sigma": 0.0002
+    },
+    {
+      "observation_id": "o07",
+      "time_hours": 2.8,
+      "node_id": "B",
+      "concentration": 0.09188877994945865,
+      "known_sigma": 0.00025
+    },
+    {
+      "observation_id": "o02",
+      "time_hours": 0.25,
+      "node_id": "E",
+      "concentration": 0.027640129171197236,
+      "known_sigma": 0.0002
+    },
+    {
+      "observation_id": "o09",
+      "time_hours": 4.0,
+      "node_id": "B",
+      "concentration": 0.07527976451589476,
+      "known_sigma": 0.00025
+    },
+    {
+      "observation_id": "o05",
+      "time_hours": 1.4,
+      "node_id": "B",
+      "concentration": 0.10757373650908626,
+      "known_sigma": 0.00025
+    }
+  ],
+  "observation_model": "All records are concentrations at their named node and time in hours. Preserve identities; source record order is deliberately shuffled. For a fixed graph/family/k/decay, predict u(t)=expm((T-decay*I)*t)*u(0), using the full matrix exponential. known_sigma is a strictly positive residual scale, not a fit parameter.",
+  "compatibility_policy": "Retain EVERY physically admissible discrete graph/family/k/decay combination for which some f in [0,1] gives sum_over_all_observations[((predicted-observed)/known_sigma)^2] <= 9.0 inclusive. This fixed deterministic residual-tolerance policy is NOT a confidence-region claim. The entire continuous compatible f set must be retained for each discrete case; minimizing residuals alone does not establish point identification. Graph labels and k are separate reported parameters even if only their product is identifiable.",
+  "physical_quantities": "For any retained case, effective bridge conductance in liters/hour is k times the reference edge weight specifically on the unordered edge C-D (zero when absent). Under conservative transport and uniform decay, total tracer mass at time t is sum_i c_i*u_i(t), in the same mass unit as the initial unit pulse. Report sharp envelopes over all retained cases and continuous compatible f values, not over one chosen fit.",
+  "reporting": "Return admissible_generator_family_ids (the family passes mass balance for every provided graph), compatible_parameter_cases as unordered objects with graph_id,k_per_hour,decay_per_hour, initial_A_mass_fraction_interval (smallest and largest attainable f), reference_kinetic_scale_is_point_identified, effective_C_D_conductance_liters_per_hour_interval, and total_mass_at_4_hours_interval. Each interval is closed, lower then upper, and may be a degenerate interval. Absolute plus relative numeric tolerance 1e-7 each. Do not infer distinct microscopic networks or estimate future sensor concentrations from a single best-fit representative when the complete compatible set says otherwise."
+}

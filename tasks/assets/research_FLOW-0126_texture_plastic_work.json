@@ -1,0 +1,86 @@
+{
+  "origin": "Own controlled two-grain, rate-independent crystal-plasticity model. The attached hypothetical conventional FCC Al cell fixes lattice axes, metric, composition and static mass density. It is not an experimental specimen, and the critical resolved shear stress below is an assigned model parameter, not a measured value for aluminium. No hardening, elasticity, twinning, grain-boundary mechanism or temperature dependence is included.",
+  "geometry": "Parse the supplied conventional cell without primitive reduction. Construct the physical FCC slip systems: four unoriented {111} planes and three unoriented <110> directions lying in each plane. Use Cartesian unit plane normals and unit slip directions. Identifying n with -n and s with -s leaves12 physical systems; a signed slip rate already permits both senses, so reversed representatives must not be counted as extra systems. P=(s tensor n+n tensor s)/2 is the symmetric Schmid tensor. Trace(P)=0. Hydrostatic stress does no work on these volume-preserving rates.",
+  "texture": {
+    "volume_fractions": [
+      0.4,
+      0.6
+    ],
+    "crystal_to_sample_rotations": [
+      [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      [
+        [
+          0.11111111111111116,
+          0.4444444444444444,
+          0.8888888888888888
+        ],
+        [
+          0.4444444444444444,
+          0.7777777777777778,
+          -0.4444444444444444
+        ],
+        [
+          -0.8888888888888888,
+          0.4444444444444444,
+          -0.11111111111111116
+        ]
+      ]
+    ],
+    "rotation_convention": "Active proper orthogonal matrices: sample vectors=R times crystal Cartesian vectors. Rotate BOTH slip direction and plane normal. Volume fractions are not mass fractions; both grains share the same cell/density. The second rotation comes from the unit quaternion(2,1,2,0)/3 in scalar-first convention."
+  },
+  "coordinates": "Use the five-dimensional orthonormal trace-free symmetric tensor basis B1=diag(1,-1,0)/sqrt(2), B2=diag(1,1,-2)/sqrt(6), B3=(ey tensor ez+ez tensor ey)/sqrt(2), B4=(ex tensor ez+ez tensor ex)/sqrt(2), B5=(ex tensor ey+ey tensor ex)/sqrt(2). Tensor components are contractions Bk:P or Bk:D. These are work-conjugate Mandel coordinates, not unscaled engineering shear components. Verify each grain slip matrix has rank5. Deviatoric dual stress has five free real components; fixing nonzero hydrostatic stress or bounding the deviatoric stress coordinates by an arbitrary box changes the problem.",
+  "loading": "Let D(theta)=sqrt(3/2)*(B1 cos(theta)+B2 sin(theta)), theta in the CLOSED interval[0,pi/2]. Then sqrt((2/3)*D:D)=1 for every direction. This is a fixed von-Mises strain-rate norm, not an affine interpolation between endpoint strain tensors. The common critical resolved shear stress is tau_c=20 MPa on every physical system. Define normalized work functions by dividing plastic work per unit equivalent strain by tau_c. All global comparisons use this continuous loading family.",
+  "bounds": "For a grain g define phi_g(D)=min sum_alpha |gamma_g,alpha| subject sum_alpha P_g,alpha*gamma_g,alpha=D. Taylor uniform-strain work is T(D)=sum_g v_g phi_g(D). Define the relaxed work S(D)=min sum_g v_g sum_alpha |gamma_g,alpha| subject sum_g v_g sum_alpha P_g,alpha*gamma_g,alpha=D, allowing arbitrary local deviatoric strain rates. Derive the correct primal and dual programs. Taylor has a separate admissible deviatoric stress for each grain; the relaxed dual has ONE common stress satisfying every grain slip inequality. Rates may be split into nonnegative positive/negative variables; unbounded signed-rate variables with a linear signed sum are not an L1 dissipation model. Derive S<=T and state what these bounds do and do not establish about a real compatible polycrystal.",
+  "evidence": "Retain source-linked geometry and density, complete slip matrices and their tensor convention. At theta=0,pi/4,pi/2 retain actual catalog linear-optimization observations for the three single-grain programs per direction (two Taylor grains and the common-stress relaxed dual), or mathematically equivalent primal/dual formulations. Verify feasibility and strong-duality work certificates, not only an optimizer success flag. Nonunique slip/stress witnesses are allowed: only the physical optimum and valid certificates matter. Numerical programs may construct models, audit witnesses and perform global geometry, but a printed list of ungrounded optimum values does not constitute the reusable optimization audit.",
+  "global_certificate": "Determine global minima and maxima of BOTH T(theta) and S(theta), and every attaining angle in[0,90] degrees. Also find the global maximum T/S and all attaining angles. Retain a complete certificate, not a dense angle grid. One route projects each full five-dimensional dual polytope to the two work coordinates (sqrt(3/2)*stress1,sqrt(3/2)*stress2). The Taylor projected set is the volume-weighted Minkowski sum of the two grain projections. The relaxed projected set must project the intersection of the FULL five-dimensional grain stress sets. Intersecting their separate two-dimensional projections need not give that set: hidden stress components must be common. Projected polygons may be certified by a feasible lifting for each vertex and full-dimensional support LP certificates for every edge, or by a complete justified vertex/facet enumeration. On an active support sector, h(theta)=a cos(theta)+b sin(theta), with h positive and h second derivative=-h. Examine all sector boundaries and all admissible stationary angles. For T/S, partition by the union of their support-sector boundaries and justify the extremum rule on every sector. Do not infer a global result from three probe loads.",
+  "questions": [
+    "Reconstruct physical slips, work-conjugate models and source-based mass density. Report the slip count and ranks, then certify both normalized and physical plastic work bounds at all three probe loads.",
+    "Find complete continuous-direction extrema and the largest relative upper/lower gap. State whether the Taylor and relaxed programs are interchangeable and whether either bound is proven to equal the actual response of an unspecified physical aggregate.",
+    "Convert probe work to J/kg for an equivalent plastic strain increment0.01 using the actual source density. Keep strain rate, accumulated strain and specific work distinct; the model is homogeneous and rate independent."
+  ],
+  "interpretation_proposals": {
+    "A": "Signed slip rates already include reverse shear senses; duplicating sign representatives is not a new physical slip system.",
+    "B": "The Taylor upper bound and common-stress relaxed lower bound are identical variational problems for every textured polycrystal.",
+    "C": "A separate stress in each grain is compatible with the Taylor dual, while the relaxed dual requires one common stress.",
+    "D": "Intersecting the separately projected stress polygons always gives the projection of their full stress intersection.",
+    "E": "Keeping the von-Mises loading norm fixed is necessary for a meaningful comparison of directional work.",
+    "F": "An exact relaxed-bound solution alone proves the actual strain field is compatible across all grain interfaces.",
+    "G": "A valid nonunique primal or dual witness can certify the same physical optimum as another witness.",
+    "H": "Static unit-cell density is a measured powder density, and a prescribed slip stress is an experimentally established material strength."
+  },
+  "reporting": "physical_slip_system_count_per_grain and grain_slip_matrix_ranks are exact integers. cell_mass_u,cell_volume_angstrom3,static_density_g_per_cm3 are source quantities. probe_work maps string angles0,45,90 to Taylor_MPa,relaxed_MPa,Taylor_J_per_kg_for_0p01_strain,relaxed_J_per_kg_for_0p01_strain. Taylor_directional_extrema and relaxed_directional_extrema each contain minimum,minimum_angles_deg,maximum,maximum_angles_deg, with work values normalized by tau_c and angle arrays listing all attaining angles. largest_Taylor_to_relaxed_ratio and largest_ratio_angles_deg cover the full closed interval. Taylor_proven_actual_response and relaxed_proven_actual_response are booleans. valid_interpretation_proposal_ids is a set-like array. Numerical absolute tolerance1e-6 except angles1e-5 degrees. Counts and booleans are exact. Complete geometry, LP witnesses and global certificates belong in the trajectory rather than requiring one arbitrary witness spelling in the final answer.",
+  "methodological_sources": [
+    {
+      "authors": "J. F. W. Bishop and R. Hill",
+      "title": "A theory of the plastic distortion of a polycrystalline aggregate under combined stresses",
+      "year": 1951,
+      "doi": "10.1080/14786445108561065",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/14786445108561065",
+      "role": "Primary variational context for crystal slip and aggregate plastic distortion. No numerical specimen data copied."
+    },
+    {
+      "authors": "J. F. W. Bishop and R. Hill",
+      "title": "A theoretical derivation of the plastic properties of a polycrystalline face-centred metal",
+      "year": 1951,
+      "doi": "10.1080/14786444108561385",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/14786444108561385",
+      "role": "Primary context for FCC multiple slip and equal-deformation work. The controlled two-grain texture and bounded inference problem are own constructions."
+    }
+  ]
+}

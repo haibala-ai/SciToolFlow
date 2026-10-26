@@ -1,0 +1,19 @@
+{
+  "candidate_ids": [
+    "setting_A",
+    "setting_B",
+    "setting_C"
+  ],
+  "observed_independent_z_values": [
+    2.2,
+    1.9,
+    -0.4
+  ],
+  "alpha": 0.05,
+  "model": "Z_i are independent Gaussian observations with unknown means mu_i and known variance1. The analyst observes all three,selects the index with the largest SIGNED Z(not absolute value),then reports evidence for a positive selected mean. Ties have probability0under this model.",
+  "targets": "Report three distinct one-sided p-values:(1)the naive unselected N(0,1)upper tail at the selected observation;(2)the exact selected-coordinate upper-tail p-value for H0:mu_selected=0,conditional on the other two observed Zvalues AND the event that this coordinate was selected;(3)the max-statistic p-value for the GLOBAL complete null mu_A=mu_B=mu_C=0,with no conditioning on the other observations.",
+  "reporting": "Use the candidate IDs literally and report each p-value and its reject-at-alpha flag. Conditional selected-coordinate inference treats the other means as unrestricted nuisance parameters and conditions on their observed coordinates;the global null is a different scientific claim. Do not identify a selected effect merely because some mean differs under a global test.",
+  "provenance": {
+    "kind": "Explicit controlled statistical study with stated working assumptions;not empirical population evidence."
+  }
+}

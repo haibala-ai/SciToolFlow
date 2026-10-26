@@ -1,0 +1,9 @@
+environment,destination_stage,source_stage,expected_contribution_per_step
+A,juvenile,juvenile,0.2
+A,juvenile,adult,2.4
+A,adult,juvenile,0.02
+A,adult,adult,0.24
+B,juvenile,juvenile,0.4
+B,juvenile,adult,0.05
+B,adult,juvenile,0.5
+B,adult,adult,0.0625

@@ -1,0 +1,22 @@
+{
+  "internal_state_order": [
+    "plus",
+    "minus"
+  ],
+  "velocity_by_state_m_per_s": [
+    2.0,
+    -1.0
+  ],
+  "diffusivity_by_state_m2_per_s": [
+    0.3,
+    0.6
+  ],
+  "switch_rate_plus_to_minus_per_s": 2.0,
+  "switch_rate_minus_to_plus_per_s": 1.0,
+  "model": "A particle has a continuous-time two-state Markov internal process J(t). Position follows dX=v[J(t)]dt+sqrt(2*D[J(t)])dW(t),where W is independent of the switching process. Switching does not cause an instantaneous position jump. Initial internal state is drawn from the stationary distribution and initial X=0. Rates,velocities and state diffusivities are fixed.",
+  "target": "Return the stationary state probabilities in source order,the long-time mean velocity,the effective long-time diffusion coefficient defined by lim Var(X(t))/(2t),and Var(X(1s)). Separate the stationary mean of microscopic diffusivities from the additional dispersion due to persistent switching velocities. Also report whether merely averaging the microscopic Dvalues gives the correct effective diffusion.",
+  "scope": "Conditional stationary switching-advection-diffusion model,not a jump-length migration rate,barrier-only mobility estimate or finite-time-asymptotic identity. Use the full velocity autocovariance integral for the1svariance.",
+  "provenance": {
+    "kind": "Explicit controlled electronic/transport model;not empirical phase or device performance evidence."
+  }
+}

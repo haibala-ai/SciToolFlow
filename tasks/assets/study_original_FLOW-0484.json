@@ -1,0 +1,32 @@
+{
+  "channel_order": [
+    "channel_1",
+    "channel_2"
+  ],
+  "observed_covariance_mv2": [
+    [
+      10.0,
+      2.0
+    ],
+    [
+      2.0,
+      5.0
+    ]
+  ],
+  "known_independent_measurement_noise_covariance_mv2": [
+    [
+      9.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "working_model": "A centered physical signal s and centered additive readout error e are independent, and the observed readout is s+e. The supplied population covariance matrices are exact under this model, not finite-sample estimates. No unknown noise variance is to be fitted.",
+  "decision_policy": "A nonzero linear readout a^T*(s+e)has signal-to-noise variance ratio(a^T*Cov(s)*a)/(a^T*Cov(e)*a). Optimize this ratio over every real nonzero a. Report a2/a1in ORIGINAL channel coordinates; simultaneous sign and magnitude scaling of a has no effect. Do not optimize total observed variance or rescale the noise covariance without transforming signal as well.",
+  "interpretation": "Assess whether subtracting the known noise leaves a physically admissible signal covariance and report its rank using1e-9eigenvalue tolerance. A rank-one signal covariance is not proof of a unique biological or mechanical cause.",
+  "provenance": {
+    "data_origin": "Explicit controlled benchmark model and exact numerical inputs; not an empirical laboratory, ecological or classifier-performance claim."
+  }
+}

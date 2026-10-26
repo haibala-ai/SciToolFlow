@@ -1,0 +1,133 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "observations": [
+        {
+          "unit_id": "unit01",
+          "encouragement": 0,
+          "baseline": -2,
+          "exposure": 0.2,
+          "response": 0.8,
+          "post_response_proxy": 0.95
+        },
+        {
+          "unit_id": "unit02",
+          "encouragement": 0,
+          "baseline": -1,
+          "exposure": 0.9,
+          "response": 4.2,
+          "post_response_proxy": 5.15
+        },
+        {
+          "unit_id": "unit03",
+          "encouragement": 0,
+          "baseline": 0,
+          "exposure": 1.0,
+          "response": 4.0,
+          "post_response_proxy": 5.0
+        },
+        {
+          "unit_id": "unit04",
+          "encouragement": 0,
+          "baseline": 0,
+          "exposure": 1.2,
+          "response": 5.2,
+          "post_response_proxy": 6.45
+        },
+        {
+          "unit_id": "unit05",
+          "encouragement": 0,
+          "baseline": 1,
+          "exposure": 1.1,
+          "response": 3.8,
+          "post_response_proxy": 4.85
+        },
+        {
+          "unit_id": "unit06",
+          "encouragement": 0,
+          "baseline": 2,
+          "exposure": 1.6,
+          "response": 6.0,
+          "post_response_proxy": 7.6
+        },
+        {
+          "unit_id": "unit07",
+          "encouragement": 1,
+          "baseline": -1,
+          "exposure": 1.0,
+          "response": 2.9,
+          "post_response_proxy": 3.85
+        },
+        {
+          "unit_id": "unit08",
+          "encouragement": 1,
+          "baseline": 0,
+          "exposure": 1.7,
+          "response": 6.3,
+          "post_response_proxy": 8.05
+        },
+        {
+          "unit_id": "unit09",
+          "encouragement": 1,
+          "baseline": 1,
+          "exposure": 1.8,
+          "response": 6.1,
+          "post_response_proxy": 7.9
+        },
+        {
+          "unit_id": "unit10",
+          "encouragement": 1,
+          "baseline": 1,
+          "exposure": 2.0,
+          "response": 7.3,
+          "post_response_proxy": 9.35
+        },
+        {
+          "unit_id": "unit11",
+          "encouragement": 1,
+          "baseline": 2,
+          "exposure": 1.9,
+          "response": 5.9,
+          "post_response_proxy": 7.75
+        },
+        {
+          "unit_id": "unit12",
+          "encouragement": 1,
+          "baseline": 3,
+          "exposure": 2.4,
+          "response": 8.1,
+          "post_response_proxy": 10.5
+        }
+      ],
+      "variable_roles": {
+        "encouragement": "Instrument Z is assigned using the pre-assignment baseline W. Its admissibility in this controlled audit is stipulated by the linear-projection moment in the model, rather than inferred from a fitted correlation. Assignment need not be independent of W.",
+        "baseline": "Pre-assignment nuisance covariate W; use the same intercept and linear baseline adjustment in the two moment projections.",
+        "exposure": "Potentially endogenous variable X; ordinary response-on-exposure regression is not the stipulated instrument estimand.",
+        "response": "Outcome Y.",
+        "post_response_proxy": "Recorded after exposure and response. It is not an eligible pre-assignment control; its data availability does not justify adjustment."
+      },
+      "units": {
+        "exposure": "exposure unit",
+        "response": "response unit",
+        "encouragement": "dimensionless0/1 assignment",
+        "baseline": "baseline unit",
+        "direct_effect": "response units per assignment contrast",
+        "structural_effect": "response units per exposure unit"
+      },
+      "model": "The sensitivity model is Y=alpha+beta*X+eta*W+gamma*Z+U. Let R_Z be the residual of the population least-squares linear projection of Z on an intercept and W. This audit stipulates E[R_Z*U]=0 and a nonzero conditional first-stage coefficient. The nuisance basis is the declared linear projection; it is not replaced with an unspecified conditional-expectation function. The proposed exact-exclusion report sets gamma=0. The audit instead permits every gamma in the supplied direct_effect_interval, retaining the other assumptions. Neither a strong first stage nor a good fitted response proves the exclusion restriction.",
+      "direct_effect_interval": [
+        -0.1,
+        0.2
+      ],
+      "analysis_policy": "Use all twelve paired observations. Fit exposure on encouragement and baseline with an intercept to obtain the conditional first-stage assignment coefficient pi, and fit response on the same variables to obtain rho. Treat these fitted coefficients as the specified plug-in moments: rho=beta*pi+gamma. The naive exact-exclusion estimate sets gamma=0. Determine the full sorted beta range over the supplied gamma interval, whether it is strictly positive throughout, and whether the supplied policy uniquely determines beta. Equivalent partialling-out or just-identified two-stage calculations are scientifically valid when they retain the same cohorts, intercept, eligible baseline and instrument moments. No sampling standard error, confidence interval, causal validation from fit, or estimate of gamma from these moments is requested.",
+      "source_provenance": {
+        "kind": "controlled methodological encouragement-study export, not physical or population observations",
+        "construction": "Twelve distinct project-authored observational rows with baseline imbalance across assignment groups and an explicitly ineligible post-response proxy. Latent construction coefficients are retained in the private builder for independent source/math review, not supplied as scientific inputs.",
+        "method_source": "https://raw.githubusercontent.com/damiancclarke/plausexog/master/plausexog2.0.0/plausexog.hlp",
+        "read_scope": "Maintainer's primary help text, lines56\u2013105, on the structural direct-instrument effect and relaxing exact exclusion. This task derives a simple conditional plug-in sensitivity range from the declared moment identity; it does not implement or claim the help's UCI/LTZ confidence procedures.",
+        "access_limits": "Original author publication page returned502 and original-paper PDF links were inaccessible. No full-paper reading or empirical replication is claimed."
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "independent_site_families": [
+    {
+      "capacity_mmol_per_g": 1.0,
+      "b_A_per_bar": 10.0,
+      "b_B_per_bar": 1.0
+    },
+    {
+      "capacity_mmol_per_g": 5.0,
+      "b_A_per_bar": 0.1,
+      "b_B_per_bar": 1.0
+    }
+  ],
+  "total_pressures_bar": [
+    0.02,
+    2.0
+  ],
+  "model": "Binary equimolar ideal-gas feed:p_A=p_B=P_total/2. Each site family has a shared competitive capacity q_s,and q_i=sum_s q_s*b_si*p_i/(1+b_sA*p_A+b_sB*p_B). Families do not interact and the supplied constants are exact. Mixture selectivity S_A_over_B=(q_A/q_B)/(p_A/p_B),which here equals q_A/q_B. For a PURE-component comparison,omit the absent component from each site denominator and use the same numerical pressure p=1bar for the present component.",
+  "target": "Return mixture A-over-Bselectivity at each listed total pressure,all strictly positive total pressures where mixture selectivity equals1,and which component is preferred at each listed pressure. Return the ratio of pure-Ato pure-Bloadings at p=1bar each,and report whether that pure-component ratio equals the actual mixture selectivity at total pressure2bar. Do not label the pure-component comparison a mixture experiment.",
+  "provenance": {
+    "kind": "Explicit synthetic conditional scientific model and exact source observations;not a live experiment or empirical mechanism validation."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "record_id": "acid",
+      "formula": "C2H4O2",
+      "analytical_role": "neutral monoprotic HA;acetic-acid formula used only for ordinary mass accounting",
+      "reference_inventory_mass_g": 0.6005195999999999
+    },
+    {
+      "record_id": "salt",
+      "formula": "C2H3NaO2",
+      "analytical_role": "fully dissociated sodium A salt;one Na+ and one acid moiety per formula unit",
+      "reference_inventory_mass_g": 0.8203378928000001
+    },
+    {
+      "record_id": "state01",
+      "fraction_of_each_reference_inventory": 1.0,
+      "final_volume_litre": 0.1
+    },
+    {
+      "record_id": "state02",
+      "fraction_of_each_reference_inventory": 0.0001,
+      "final_volume_litre": 0.1
+    },
+    {
+      "record_id": "state03",
+      "fraction_of_each_reference_inventory": 1e-06,
+      "final_volume_litre": 0.1
+    },
+    {
+      "record_id": "study",
+      "temperature_kelvin": 298.15,
+      "ka_numeric_mol_per_litre": 1.8e-05,
+      "kw_numeric_mol_squared_per_litre_squared": 1e-14,
+      "standard_concentration_mol_per_litre": 1.0,
+      "reporting_pH_difference_threshold": 0.05,
+      "model": "Closed ideal aqueous monoprotic acid/sodium-salt system with no CO2,other ions,precipitation or activity-coefficient corrections. Constant water activity,all volumes additive and inventory fractions exact. Ka and Kw are explicit adopted study constants,not new measurements.",
+      "counterfactual": "To isolate the numerical role ofwater autoprotolysis,repeat the SAME mass/charge/speciation model with Kw=0 while keepingacid and sodium analytical inventories unchanged.",
+      "shortcut": "Use pKa+log10(reference salt moles/reference neutral-acid moles),withanalytical inventory moles rather than equilibrium species concentrations;dilution multiplies both inventories equally."
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Massg;ordinaryformulaweightg/mol;inventorymol;volumeL;H/OHmol/L;Ka numericconcentrationconstantmol/L andKw(mol/L)^2;reportpH=-log10(H/(1mol/L))",
+    "original_observation_claim": false
+  }
+}

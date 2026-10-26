@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "record_id": "point0",
+      "x": -4.0,
+      "current_ampere": 0.0001,
+      "observed_overpotential_volt": 0.123318699371443,
+      "corrected_overpotential_volt": 0.118318699371443
+    },
+    {
+      "record_id": "point1",
+      "x": -3.5228787452803374,
+      "current_ampere": 0.0003,
+      "observed_overpotential_volt": 0.18977106567234442,
+      "corrected_overpotential_volt": 0.1747710656723444
+    },
+    {
+      "record_id": "point2",
+      "x": -3.0,
+      "current_ampere": 0.001,
+      "observed_overpotential_volt": 0.286637398742886,
+      "corrected_overpotential_volt": 0.236637398742886
+    },
+    {
+      "record_id": "point3",
+      "x": -2.5228787452803374,
+      "current_ampere": 0.003,
+      "observed_overpotential_volt": 0.4430897650437874,
+      "corrected_overpotential_volt": 0.2930897650437874
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "I A,eta V,x=log10(I/1A),resistanceohm; n=1",
+    "original_observation_claim": false
+  }
+}

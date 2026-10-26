@@ -19,3 +19,4 @@ class SessionOptions:
     yield_after_success: bool = False
     persist: bool = True
     on_update: Optional[Callable] = None
+    resources: object = None

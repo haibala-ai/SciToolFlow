@@ -1,0 +1,6 @@
+{
+  "cif_file": "asset://coverage_FLOW-0229_HKUST1.cif",
+  "inventory_policy": "Use all returned linker instances,including repeated chemical identities. Canonicalize graph identity before counting unique linker types;calculate the formula of each unique returned fragment under its actual capping/radical representation.",
+  "analysis": "Return linker instance count,unique graph-type count,the unordered fragment formula set,and total carbon atoms summed over all linker instances. Do not multiply a unique-type count as if it were the instance inventory.",
+  "scope": "Linker fragments are not a molecular formula for the complete periodic framework. Fragment-cut radical markers are representation artifacts and do not alone prove physical framework paramagnetism or a ground-state spin."
+}

@@ -1,0 +1,16 @@
+{
+  "bandgap_eV": 2.0,
+  "kBT_eV": 0.1,
+  "Nv_per_m3": 1e+25,
+  "Nc_per_m3": 1e+25,
+  "donor_site_density_per_m3": 1e+28,
+  "acceptor_site_density_per_m3": 1e+28,
+  "donor_plus_formation_intercept_eV": 0.1,
+  "acceptor_minus_formation_intercept_eV": 1.3,
+  "model": "EF is referenced to VBM0,CBM=Eg. Nondegenerate mobile carriers:p=Nv*exp(-EF/kBT),n=Nc*exp(-(Eg-EF)/kBT). Dilute independent singly charged donor and acceptor defects:Dplus=Nd*exp(-(eD0+EF)/kBT),Aminus=Na*exp(-(eA0-EF)/kBT). Site densities are separate reservoirs,degeneracy factors1. These are the only charged species:charge neutrality requires p+Dplus=n+Aminus. No fixed external EF,dopant charge,other defect or additional degeneracy is allowed.",
+  "consistency_criteria": "Evaluate both declared necessary working-model criteria at the solution:EF and Eg-EF must EACH be >=3*kBT,and Dplus/Nd and Aminus/Na must EACH be <=0.01. Passing these criteria is not a sufficient microscopic validation.",
+  "target": "Find the self-consistent EF,return mobile densities in[n,p]order and charged-defect densities in[Dplus,Aminus]order in m^-3. Report whether all declared consistency criteria pass,and whether full charge neutrality implies n=p in this model.",
+  "provenance": {
+    "kind": "Explicit controlled conditional material model;not a measured material claim."
+  }
+}

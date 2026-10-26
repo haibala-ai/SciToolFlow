@@ -22,4 +22,7 @@ Follow the readable finish template exactly for nesting, and replace every type 
 with a supported typed value. The template is structure only, never an answer. Do not place
 answer fields beside finish or nest sibling fields inside another sibling. If the schema
 cannot honestly express unavailable evidence, stop. Formatting feedback requires rewriting
-the JSON structure, not rerunning successful tools. remaining_budget bounds every role.
+the JSON structure, not rerunning successful tools. remaining_budget reports a single task-wide generation/time ledger shared by every role.
+A null scientific-call, discovery or think limit means no independent cap. Planner,
+executor, summarizer, corrections and replanning all consume the shared model requests.
+The task's scientific experiment or acquisition costs remain binding.

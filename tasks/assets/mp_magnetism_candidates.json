@@ -1,0 +1,764 @@
+{
+  "data": [
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "991e960c-2909-4a8b-9156-7fb189f3a4bd",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T03:20:06.349000",
+        "license": null
+      },
+      "nsites": 2,
+      "elements": [
+        "Fe"
+      ],
+      "nelements": 1,
+      "composition": {
+        "Fe": 2.0
+      },
+      "composition_reduced": {
+        "Fe": 1.0
+      },
+      "formula_pretty": "Fe",
+      "formula_anonymous": "A",
+      "chemsys": "Fe",
+      "volume": 23.468168469356993,
+      "density": 7.902858241785766,
+      "density_atomic": 11.734084234678496,
+      "symmetry": {
+        "crystal_system": "Cubic",
+        "symbol": "Im-3m",
+        "hall": "-I 4 2 3",
+        "number": 229,
+        "point_group": "mmm",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaaaan",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2026-05-31T03:20:06.349000",
+      "origins": [
+        {
+          "name": "magnetism",
+          "task_id": "aaafzwec",
+          "last_updated": "2021-07-24T19:15:26.927000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "magnetism",
+      "ordering": "FM",
+      "is_magnetic": true,
+      "exchange_symmetry": 229,
+      "num_magnetic_sites": 1,
+      "num_unique_magnetic_sites": 1,
+      "types_of_magnetic_species": [
+        "Fe"
+      ],
+      "magmoms": [
+        2.8
+      ],
+      "total_magnetization": 5.289892,
+      "total_magnetization_normalized_vol": 0.22540710865047486,
+      "total_magnetization_normalized_formula_units": 2.644946
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "991e960c-2909-4a8b-9156-7fb189f3a4bd",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T03:18:37.066000",
+        "license": null
+      },
+      "nsites": 2,
+      "elements": [
+        "C"
+      ],
+      "nelements": 1,
+      "composition": {
+        "C": 2.0
+      },
+      "composition_reduced": {
+        "C": 1.0
+      },
+      "formula_pretty": "C",
+      "formula_anonymous": "A",
+      "chemsys": "C",
+      "volume": 11.286587893379405,
+      "density": 3.5341481027718786,
+      "density_atomic": 5.6432939466897025,
+      "symmetry": {
+        "crystal_system": "Cubic",
+        "symbol": "Fd-3m",
+        "hall": "F 4d 2 3 -1d",
+        "number": 227,
+        "point_group": "m-3m",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaaaco",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2026-05-31T03:18:37.066000",
+      "origins": [
+        {
+          "name": "magnetism",
+          "task_id": "aaaekyha",
+          "last_updated": "2021-03-14T06:21:02.136000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "magnetism",
+      "ordering": "Unknown",
+      "is_magnetic": false,
+      "exchange_symmetry": 227,
+      "num_magnetic_sites": 0,
+      "num_unique_magnetic_sites": 0,
+      "types_of_magnetic_species": [],
+      "magmoms": [
+        0.0,
+        0.0
+      ],
+      "total_magnetization": 0.0,
+      "total_magnetization_normalized_vol": 0.0,
+      "total_magnetization_normalized_formula_units": 0.0
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "991e960c-2909-4a8b-9156-7fb189f3a4bd",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T03:18:41.163000",
+        "license": null
+      },
+      "nsites": 2,
+      "elements": [
+        "Si"
+      ],
+      "nelements": 1,
+      "composition": {
+        "Si": 2.0
+      },
+      "composition_reduced": {
+        "Si": 1.0
+      },
+      "formula_pretty": "Si",
+      "formula_anonymous": "A",
+      "chemsys": "Si",
+      "volume": 40.32952684741405,
+      "density": 2.3128002565764314,
+      "density_atomic": 20.164763423707026,
+      "symmetry": {
+        "crystal_system": "Cubic",
+        "symbol": "Fd-3m",
+        "hall": "F 4d 2 3 -1d",
+        "number": 227,
+        "point_group": "m-3m",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaaaft",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2026-05-31T03:18:41.163000",
+      "origins": [
+        {
+          "name": "magnetism",
+          "task_id": "aaaeguxu",
+          "last_updated": "2021-03-05T11:47:03.084000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "magnetism",
+      "ordering": "Unknown",
+      "is_magnetic": false,
+      "exchange_symmetry": 227,
+      "num_magnetic_sites": 0,
+      "num_unique_magnetic_sites": 0,
+      "types_of_magnetic_species": [],
+      "magmoms": [
+        0.0,
+        0.0
+      ],
+      "total_magnetization": 0.0,
+      "total_magnetization_normalized_vol": 0.0,
+      "total_magnetization_normalized_formula_units": 0.0
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "991e960c-2909-4a8b-9156-7fb189f3a4bd",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T03:18:27.186000",
+        "license": null
+      },
+      "nsites": 10,
+      "elements": [
+        "Al",
+        "O"
+      ],
+      "nelements": 2,
+      "composition": {
+        "Al": 4.0,
+        "O": 6.0
+      },
+      "composition_reduced": {
+        "Al": 2.0,
+        "O": 3.0
+      },
+      "formula_pretty": "Al2O3",
+      "formula_anonymous": "A2B3",
+      "chemsys": "Al-O",
+      "volume": 87.42001939959368,
+      "density": 3.8734991245808144,
+      "density_atomic": 8.74200193995937,
+      "symmetry": {
+        "crystal_system": "Trigonal",
+        "symbol": "R-3c",
+        "hall": "-R 3 2\"c",
+        "number": 167,
+        "point_group": "-3m",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaabrz",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2026-05-31T03:18:27.186000",
+      "origins": [
+        {
+          "name": "magnetism",
+          "task_id": "aaaegyio",
+          "last_updated": "2021-03-05T07:48:42.795000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "magnetism",
+      "ordering": "Unknown",
+      "is_magnetic": false,
+      "exchange_symmetry": 167,
+      "num_magnetic_sites": 0,
+      "num_unique_magnetic_sites": 0,
+      "types_of_magnetic_species": [],
+      "magmoms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "total_magnetization": 0.0,
+      "total_magnetization_normalized_vol": 0.0,
+      "total_magnetization_normalized_formula_units": 0.0
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "991e960c-2909-4a8b-9156-7fb189f3a4bd",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T03:19:19.034000",
+        "license": null
+      },
+      "nsites": 4,
+      "elements": [
+        "O",
+        "Zn"
+      ],
+      "nelements": 2,
+      "composition": {
+        "Zn": 2.0,
+        "O": 2.0
+      },
+      "composition_reduced": {
+        "Zn": 1.0,
+        "O": 1.0
+      },
+      "formula_pretty": "ZnO",
+      "formula_anonymous": "AB",
+      "chemsys": "O-Zn",
+      "volume": 47.397148259900405,
+      "density": 5.7042178148357205,
+      "density_atomic": 11.849287064975101,
+      "symmetry": {
+        "crystal_system": "Hexagonal",
+        "symbol": "P6_3mc",
+        "hall": "P 6c -2c",
+        "number": 186,
+        "point_group": "6mm",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaadeb",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2026-05-31T03:19:19.034000",
+      "origins": [
+        {
+          "name": "magnetism",
+          "task_id": "aaaehkzh",
+          "last_updated": "2021-03-04T21:27:22.600000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "magnetism",
+      "ordering": "Unknown",
+      "is_magnetic": false,
+      "exchange_symmetry": 186,
+      "num_magnetic_sites": 0,
+      "num_unique_magnetic_sites": 0,
+      "types_of_magnetic_species": [],
+      "magmoms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "total_magnetization": 0.0,
+      "total_magnetization_normalized_vol": 0.0,
+      "total_magnetization_normalized_formula_units": 0.0
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "991e960c-2909-4a8b-9156-7fb189f3a4bd",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T03:18:27.247000",
+        "license": null
+      },
+      "nsites": 2,
+      "elements": [
+        "As",
+        "Ga"
+      ],
+      "nelements": 2,
+      "composition": {
+        "Ga": 1.0,
+        "As": 1.0
+      },
+      "composition_reduced": {
+        "Ga": 1.0,
+        "As": 1.0
+      },
+      "formula_pretty": "GaAs",
+      "formula_anonymous": "AB",
+      "chemsys": "As-Ga",
+      "volume": 47.531859385343836,
+      "density": 5.053200369484521,
+      "density_atomic": 23.765929692671918,
+      "symmetry": {
+        "crystal_system": "Cubic",
+        "symbol": "F-43m",
+        "hall": "F -4 2 3",
+        "number": 216,
+        "point_group": "-43m",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaadtm",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2026-05-31T03:18:27.247000",
+      "origins": [
+        {
+          "name": "magnetism",
+          "task_id": "aaaegyjh",
+          "last_updated": "2021-03-05T09:11:14.420000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "magnetism",
+      "ordering": "Unknown",
+      "is_magnetic": false,
+      "exchange_symmetry": 216,
+      "num_magnetic_sites": 0,
+      "num_unique_magnetic_sites": 0,
+      "types_of_magnetic_species": [],
+      "magmoms": [
+        0.0,
+        0.0
+      ],
+      "total_magnetization": 0.0,
+      "total_magnetization_normalized_vol": 0.0,
+      "total_magnetization_normalized_formula_units": 0.0
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "991e960c-2909-4a8b-9156-7fb189f3a4bd",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T03:20:06.130000",
+        "license": null
+      },
+      "nsites": 12,
+      "elements": [
+        "O",
+        "Ti"
+      ],
+      "nelements": 2,
+      "composition": {
+        "Ti": 4.0,
+        "O": 8.0
+      },
+      "composition_reduced": {
+        "Ti": 1.0,
+        "O": 2.0
+      },
+      "formula_pretty": "TiO2",
+      "formula_anonymous": "AB2",
+      "chemsys": "O-Ti",
+      "volume": 125.22506013556851,
+      "density": 4.236221760308243,
+      "density_atomic": 10.435421677964042,
+      "symmetry": {
+        "crystal_system": "Tetragonal",
+        "symbol": "P4_2/mnm",
+        "hall": "-P 4n 2n",
+        "number": 136,
+        "point_group": "4/mmm",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaadyf",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2026-05-31T03:20:06.130000",
+      "origins": [
+        {
+          "name": "magnetism",
+          "task_id": "aaafzwck",
+          "last_updated": "2021-07-24T06:37:18.146000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "magnetism",
+      "ordering": "NM",
+      "is_magnetic": false,
+      "exchange_symmetry": 136,
+      "num_magnetic_sites": 0,
+      "num_unique_magnetic_sites": 0,
+      "types_of_magnetic_species": [],
+      "magmoms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "total_magnetization": 0.0,
+      "total_magnetization_normalized_vol": 0.0,
+      "total_magnetization_normalized_formula_units": 0.0
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "991e960c-2909-4a8b-9156-7fb189f3a4bd",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T03:19:16.550000",
+        "license": null
+      },
+      "nsites": 5,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "nelements": 3,
+      "composition": {
+        "Sr": 1.0,
+        "Ti": 1.0,
+        "O": 3.0
+      },
+      "composition_reduced": {
+        "Sr": 1.0,
+        "Ti": 1.0,
+        "O": 3.0
+      },
+      "formula_pretty": "SrTiO3",
+      "formula_anonymous": "ABC3",
+      "chemsys": "O-Sr-Ti",
+      "volume": 59.90045030664282,
+      "density": 5.08651173086108,
+      "density_atomic": 11.980090061328564,
+      "symmetry": {
+        "crystal_system": "Cubic",
+        "symbol": "Pm-3m",
+        "hall": "-P 4 2 3",
+        "number": 221,
+        "point_group": "m-3m",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaahtd",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2026-05-31T03:19:16.550000",
+      "origins": [
+        {
+          "name": "magnetism",
+          "task_id": "aaaemmig",
+          "last_updated": "2021-03-13T08:36:33.834000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "magnetism",
+      "ordering": "Unknown",
+      "is_magnetic": false,
+      "exchange_symmetry": 221,
+      "num_magnetic_sites": 0,
+      "num_unique_magnetic_sites": 0,
+      "types_of_magnetic_species": [],
+      "magmoms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "total_magnetization": 0.0,
+      "total_magnetization_normalized_vol": 0.0,
+      "total_magnetization_normalized_formula_units": 0.0
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "991e960c-2909-4a8b-9156-7fb189f3a4bd",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T03:19:06.820000",
+        "license": null
+      },
+      "nsites": 64,
+      "elements": [
+        "Al",
+        "K",
+        "O"
+      ],
+      "nelements": 3,
+      "composition": {
+        "K": 16.0,
+        "Al": 16.0,
+        "O": 32.0
+      },
+      "composition_reduced": {
+        "K": 1.0,
+        "Al": 1.0,
+        "O": 2.0
+      },
+      "formula_pretty": "KAlO2",
+      "formula_anonymous": "ABC2",
+      "chemsys": "Al-K-O",
+      "volume": 911.9685842080944,
+      "density": 2.8573512560318233,
+      "density_atomic": 14.249509128251475,
+      "symmetry": {
+        "crystal_system": "Orthorhombic",
+        "symbol": "Pbca",
+        "hall": "-P 2ac 2ab",
+        "number": 61,
+        "point_group": "mmm",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaaien",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2026-05-31T03:19:06.820000",
+      "origins": [
+        {
+          "name": "magnetism",
+          "task_id": "aaaevzip",
+          "last_updated": "2022-04-30T01:30:57.146000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "magnetism",
+      "ordering": "Unknown",
+      "is_magnetic": false,
+      "exchange_symmetry": 61,
+      "num_magnetic_sites": 0,
+      "num_unique_magnetic_sites": 0,
+      "types_of_magnetic_species": [],
+      "magmoms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "total_magnetization": 0.0,
+      "total_magnetization_normalized_vol": 0.0,
+      "total_magnetization_normalized_formula_units": 0.0
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "991e960c-2909-4a8b-9156-7fb189f3a4bd",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T03:18:20.357000",
+        "license": null
+      },
+      "nsites": 4,
+      "elements": [
+        "C",
+        "Si"
+      ],
+      "nelements": 2,
+      "composition": {
+        "Si": 2.0,
+        "C": 2.0
+      },
+      "composition_reduced": {
+        "Si": 1.0,
+        "C": 1.0
+      },
+      "formula_pretty": "SiC",
+      "formula_anonymous": "AB",
+      "chemsys": "C-Si",
+      "volume": 41.27465862347238,
+      "density": 3.2262559563541067,
+      "density_atomic": 10.318664655868094,
+      "symmetry": {
+        "crystal_system": "Hexagonal",
+        "symbol": "P6_3mc",
+        "hall": "P 6c -2c",
+        "number": 186,
+        "point_group": "6mm",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaakoq",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2026-05-31T03:18:20.357000",
+      "origins": [
+        {
+          "name": "magnetism",
+          "task_id": "aaaehejl",
+          "last_updated": "2021-03-05T16:46:03.318000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "magnetism",
+      "ordering": "Unknown",
+      "is_magnetic": false,
+      "exchange_symmetry": 186,
+      "num_magnetic_sites": 0,
+      "num_unique_magnetic_sites": 0,
+      "types_of_magnetic_species": [],
+      "magmoms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "total_magnetization": 0.0,
+      "total_magnetization_normalized_vol": 0.0,
+      "total_magnetization_normalized_formula_units": 0.0
+    }
+  ],
+  "meta": {
+    "api_version": "0.88.0rc4",
+    "time_stamp": "2026-10-20T08:07:38.861152+00:00",
+    "total_doc": 10,
+    "facet": null,
+    "max_limit": 1000,
+    "default_fields": [
+      "material_id",
+      "last_updated"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "sequence": "MDEDEDEDEK",
+  "method": "biopython",
+  "reporting": "Canonical unmodified linear sequence with free termini. Use the returned Bjellqvist pKa tables and terminal adjustments to compute theoretical charge atpH3.0,4.0and7.0. For a basic group use n/(1+10^(pH-pKa));for an acidic group subtract n/(1+10^(pKa-pH)). Count the stated source sequence;no PTMs or disulfide corrections.",
+  "criterion": "A scalar pIexport=4.05is acceptable only if its absolute discrepancy from the current named model root is<=0.01pHunit. Return the pI,three net charges in proton-charge units,and an accept/reject boolean.",
+  "scope": "Theoretical model qualification,not an experimental titration or pH recommendation."
+}

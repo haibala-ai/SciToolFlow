@@ -1,0 +1,662 @@
+{
+  "data": [
+    {
+      "record_id": "mp-aaabsbkp",
+      "material_id": "mp-aaabsbkp",
+      "reduced_formula": "Fe23O32",
+      "source_full_composition": {
+        "Fe": 23.0,
+        "O": 32.0
+      },
+      "iron_atomic_fraction": 0.41818181818181815,
+      "oxygen_atomic_fraction": 0.5818181818181818,
+      "corrected_formation_energy_ev_per_atom": -1.4794740807272733,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaabsedj",
+      "material_id": "mp-aaabsedj",
+      "reduced_formula": "Fe23O32",
+      "source_full_composition": {
+        "Fe": 23.0,
+        "O": 32.0
+      },
+      "iron_atomic_fraction": 0.41818181818181815,
+      "oxygen_atomic_fraction": 0.5818181818181818,
+      "corrected_formation_energy_ev_per_atom": -1.5590120105454555,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaabsevm",
+      "material_id": "mp-aaabsevm",
+      "reduced_formula": "Fe2O3",
+      "source_full_composition": {
+        "Fe": 16.0,
+        "O": 24.0
+      },
+      "iron_atomic_fraction": 0.4,
+      "oxygen_atomic_fraction": 0.6,
+      "corrected_formation_energy_ev_per_atom": -1.5840697992499997,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaabthxj",
+      "material_id": "mp-aaabthxj",
+      "reduced_formula": "FeO2",
+      "source_full_composition": {
+        "Fe": 4.0,
+        "O": 8.0
+      },
+      "iron_atomic_fraction": 0.3333333333333333,
+      "oxygen_atomic_fraction": 0.6666666666666666,
+      "corrected_formation_energy_ev_per_atom": -1.2181207625,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaabthzw",
+      "material_id": "mp-aaabthzw",
+      "reduced_formula": "FeO2",
+      "source_full_composition": {
+        "Fe": 4.0,
+        "O": 8.0
+      },
+      "iron_atomic_fraction": 0.3333333333333333,
+      "oxygen_atomic_fraction": 0.6666666666666666,
+      "corrected_formation_energy_ev_per_atom": -1.242750721666667,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaabtmov",
+      "material_id": "mp-aaabtmov",
+      "reduced_formula": "Fe10O11",
+      "source_full_composition": {
+        "Fe": 10.0,
+        "O": 11.0
+      },
+      "iron_atomic_fraction": 0.47619047619047616,
+      "oxygen_atomic_fraction": 0.5238095238095238,
+      "corrected_formation_energy_ev_per_atom": -0.8233716192857136,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaabusyz",
+      "material_id": "mp-aaabusyz",
+      "reduced_formula": "FeO2",
+      "source_full_composition": {
+        "Fe": 1.0,
+        "O": 2.0
+      },
+      "iron_atomic_fraction": 0.3333333333333333,
+      "oxygen_atomic_fraction": 0.6666666666666666,
+      "corrected_formation_energy_ev_per_atom": -1.1480066466666667,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaabwiyj",
+      "material_id": "mp-aaabwiyj",
+      "reduced_formula": "FeO",
+      "source_full_composition": {
+        "Fe": 12.0,
+        "O": 12.0
+      },
+      "iron_atomic_fraction": 0.5,
+      "oxygen_atomic_fraction": 0.5,
+      "corrected_formation_energy_ev_per_atom": -1.3777199291666673,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaabwjsw",
+      "material_id": "mp-aaabwjsw",
+      "reduced_formula": "FeO2",
+      "source_full_composition": {
+        "Fe": 2.0,
+        "O": 4.0
+      },
+      "iron_atomic_fraction": 0.3333333333333333,
+      "oxygen_atomic_fraction": 0.6666666666666666,
+      "corrected_formation_energy_ev_per_atom": -1.277397556666667,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaabxdcm",
+      "material_id": "mp-aaabxdcm",
+      "reduced_formula": "FeO3",
+      "source_full_composition": {
+        "Fe": 2.0,
+        "O": 6.0
+      },
+      "iron_atomic_fraction": 0.25,
+      "oxygen_atomic_fraction": 0.75,
+      "corrected_formation_energy_ev_per_atom": -0.526560505,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaabxdtu",
+      "material_id": "mp-aaabxdtu",
+      "reduced_formula": "Fe32O35",
+      "source_full_composition": {
+        "Fe": 32.0,
+        "O": 35.0
+      },
+      "iron_atomic_fraction": 0.47761194029850745,
+      "oxygen_atomic_fraction": 0.5223880597014925,
+      "corrected_formation_energy_ev_per_atom": -1.4752070547014917,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaachpgf",
+      "material_id": "mp-aaachpgf",
+      "reduced_formula": "FeO2",
+      "source_full_composition": {
+        "Fe": 8.0,
+        "O": 16.0
+      },
+      "iron_atomic_fraction": 0.3333333333333333,
+      "oxygen_atomic_fraction": 0.6666666666666666,
+      "corrected_formation_energy_ev_per_atom": -1.0318821595833338,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacilzg",
+      "material_id": "mp-aaacilzg",
+      "reduced_formula": "FeO2",
+      "source_full_composition": {
+        "Fe": 1.0,
+        "O": 2.0
+      },
+      "iron_atomic_fraction": 0.3333333333333333,
+      "oxygen_atomic_fraction": 0.6666666666666666,
+      "corrected_formation_energy_ev_per_atom": -1.165954956666667,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaaciufc",
+      "material_id": "mp-aaaciufc",
+      "reduced_formula": "Fe2O3",
+      "source_full_composition": {
+        "Fe": 2.0,
+        "O": 3.0
+      },
+      "iron_atomic_fraction": 0.4,
+      "oxygen_atomic_fraction": 0.6,
+      "corrected_formation_energy_ev_per_atom": -0.847481741,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacjjfl",
+      "material_id": "mp-aaacjjfl",
+      "reduced_formula": "Fe2O3",
+      "source_full_composition": {
+        "Fe": 4.0,
+        "O": 6.0
+      },
+      "iron_atomic_fraction": 0.4,
+      "oxygen_atomic_fraction": 0.6,
+      "corrected_formation_energy_ev_per_atom": -1.4706406040000004,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaackikc",
+      "material_id": "mp-aaackikc",
+      "reduced_formula": "Fe5O7",
+      "source_full_composition": {
+        "Fe": 5.0,
+        "O": 7.0
+      },
+      "iron_atomic_fraction": 0.4166666666666667,
+      "oxygen_atomic_fraction": 0.5833333333333334,
+      "corrected_formation_energy_ev_per_atom": -1.49997127625,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaackkul",
+      "material_id": "mp-aaackkul",
+      "reduced_formula": "FeO2",
+      "source_full_composition": {
+        "Fe": 2.0,
+        "O": 4.0
+      },
+      "iron_atomic_fraction": 0.3333333333333333,
+      "oxygen_atomic_fraction": 0.6666666666666666,
+      "corrected_formation_energy_ev_per_atom": -1.147006668333334,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaackwbs",
+      "material_id": "mp-aaackwbs",
+      "reduced_formula": "Fe3O4",
+      "source_full_composition": {
+        "Fe": 6.0,
+        "O": 8.0
+      },
+      "iron_atomic_fraction": 0.42857142857142855,
+      "oxygen_atomic_fraction": 0.5714285714285714,
+      "corrected_formation_energy_ev_per_atom": -0.5768742178571428,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacnhtz",
+      "material_id": "mp-aaacnhtz",
+      "reduced_formula": "Fe2O5",
+      "source_full_composition": {
+        "Fe": 8.0,
+        "O": 20.0
+      },
+      "iron_atomic_fraction": 0.2857142857142857,
+      "oxygen_atomic_fraction": 0.7142857142857143,
+      "corrected_formation_energy_ev_per_atom": -0.8447807164285714,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpayq",
+      "material_id": "mp-aaacpayq",
+      "reduced_formula": "FeO",
+      "source_full_composition": {
+        "Fe": 4.0,
+        "O": 4.0
+      },
+      "iron_atomic_fraction": 0.5,
+      "oxygen_atomic_fraction": 0.5,
+      "corrected_formation_energy_ev_per_atom": -1.4694833324999985,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpayx",
+      "material_id": "mp-aaacpayx",
+      "reduced_formula": "FeO",
+      "source_full_composition": {
+        "Fe": 4.0,
+        "O": 4.0
+      },
+      "iron_atomic_fraction": 0.5,
+      "oxygen_atomic_fraction": 0.5,
+      "corrected_formation_energy_ev_per_atom": -1.1814521512499994,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpazf",
+      "material_id": "mp-aaacpazf",
+      "reduced_formula": "FeO",
+      "source_full_composition": {
+        "Fe": 12.0,
+        "O": 12.0
+      },
+      "iron_atomic_fraction": 0.5,
+      "oxygen_atomic_fraction": 0.5,
+      "corrected_formation_energy_ev_per_atom": -1.3702516412500003,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpbeu",
+      "material_id": "mp-aaacpbeu",
+      "reduced_formula": "Fe2O3",
+      "source_full_composition": {
+        "Fe": 16.0,
+        "O": 24.0
+      },
+      "iron_atomic_fraction": 0.4,
+      "oxygen_atomic_fraction": 0.6,
+      "corrected_formation_energy_ev_per_atom": -1.5942362397500005,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpfny",
+      "material_id": "mp-aaacpfny",
+      "reduced_formula": "Fe4O13",
+      "source_full_composition": {
+        "Fe": 4.0,
+        "O": 13.0
+      },
+      "iron_atomic_fraction": 0.23529411764705882,
+      "oxygen_atomic_fraction": 0.7647058823529411,
+      "corrected_formation_energy_ev_per_atom": -0.3103702120588239,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpfoe",
+      "material_id": "mp-aaacpfoe",
+      "reduced_formula": "Fe3O4",
+      "source_full_composition": {
+        "Fe": 3.0,
+        "O": 4.0
+      },
+      "iron_atomic_fraction": 0.42857142857142855,
+      "oxygen_atomic_fraction": 0.5714285714285714,
+      "corrected_formation_energy_ev_per_atom": -1.5210500314285704,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpfqx",
+      "material_id": "mp-aaacpfqx",
+      "reduced_formula": "Fe4O13",
+      "source_full_composition": {
+        "Fe": 4.0,
+        "O": 13.0
+      },
+      "iron_atomic_fraction": 0.23529411764705882,
+      "oxygen_atomic_fraction": 0.7647058823529411,
+      "corrected_formation_energy_ev_per_atom": -0.3296018732352939,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpfrx",
+      "material_id": "mp-aaacpfrx",
+      "reduced_formula": "FeO",
+      "source_full_composition": {
+        "Fe": 1.0,
+        "O": 1.0
+      },
+      "iron_atomic_fraction": 0.5,
+      "oxygen_atomic_fraction": 0.5,
+      "corrected_formation_energy_ev_per_atom": -0.42865644749999987,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpfwc",
+      "material_id": "mp-aaacpfwc",
+      "reduced_formula": "Fe3O4",
+      "source_full_composition": {
+        "Fe": 12.0,
+        "O": 16.0
+      },
+      "iron_atomic_fraction": 0.42857142857142855,
+      "oxygen_atomic_fraction": 0.5714285714285714,
+      "corrected_formation_energy_ev_per_atom": -1.5692549735714283,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpfxa",
+      "material_id": "mp-aaacpfxa",
+      "reduced_formula": "Fe3O4",
+      "source_full_composition": {
+        "Fe": 12.0,
+        "O": 16.0
+      },
+      "iron_atomic_fraction": 0.42857142857142855,
+      "oxygen_atomic_fraction": 0.5714285714285714,
+      "corrected_formation_energy_ev_per_atom": -1.5126567192857132,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpgaj",
+      "material_id": "mp-aaacpgaj",
+      "reduced_formula": "Fe3O4",
+      "source_full_composition": {
+        "Fe": 12.0,
+        "O": 16.0
+      },
+      "iron_atomic_fraction": 0.42857142857142855,
+      "oxygen_atomic_fraction": 0.5714285714285714,
+      "corrected_formation_energy_ev_per_atom": -1.6048517339285706,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpgeo",
+      "material_id": "mp-aaacpgeo",
+      "reduced_formula": "FeO2",
+      "source_full_composition": {
+        "Fe": 8.0,
+        "O": 16.0
+      },
+      "iron_atomic_fraction": 0.3333333333333333,
+      "oxygen_atomic_fraction": 0.6666666666666666,
+      "corrected_formation_energy_ev_per_atom": -1.2423727408333332,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpggj",
+      "material_id": "mp-aaacpggj",
+      "reduced_formula": "Fe3O4",
+      "source_full_composition": {
+        "Fe": 24.0,
+        "O": 32.0
+      },
+      "iron_atomic_fraction": 0.42857142857142855,
+      "oxygen_atomic_fraction": 0.5714285714285714,
+      "corrected_formation_energy_ev_per_atom": -1.5967490999999998,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpggu",
+      "material_id": "mp-aaacpggu",
+      "reduced_formula": "Fe2O3",
+      "source_full_composition": {
+        "Fe": 4.0,
+        "O": 6.0
+      },
+      "iron_atomic_fraction": 0.4,
+      "oxygen_atomic_fraction": 0.6,
+      "corrected_formation_energy_ev_per_atom": -1.538964844,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpgwj",
+      "material_id": "mp-aaacpgwj",
+      "reduced_formula": "Fe3O4",
+      "source_full_composition": {
+        "Fe": 24.0,
+        "O": 32.0
+      },
+      "iron_atomic_fraction": 0.42857142857142855,
+      "oxygen_atomic_fraction": 0.5714285714285714,
+      "corrected_formation_energy_ev_per_atom": -1.5205054574999994,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpgxd",
+      "material_id": "mp-aaacpgxd",
+      "reduced_formula": "Fe3O4",
+      "source_full_composition": {
+        "Fe": 24.0,
+        "O": 32.0
+      },
+      "iron_atomic_fraction": 0.42857142857142855,
+      "oxygen_atomic_fraction": 0.5714285714285714,
+      "corrected_formation_energy_ev_per_atom": -1.5928055798214282,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacphgx",
+      "material_id": "mp-aaacphgx",
+      "reduced_formula": "Fe8O17",
+      "source_full_composition": {
+        "Fe": 16.0,
+        "O": 34.0
+      },
+      "iron_atomic_fraction": 0.32,
+      "oxygen_atomic_fraction": 0.68,
+      "corrected_formation_energy_ev_per_atom": -1.1151560439999992,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpjyu",
+      "material_id": "mp-aaacpjyu",
+      "reduced_formula": "Fe3O",
+      "source_full_composition": {
+        "Fe": 6.0,
+        "O": 2.0
+      },
+      "iron_atomic_fraction": 0.75,
+      "oxygen_atomic_fraction": 0.25,
+      "corrected_formation_energy_ev_per_atom": 0.7701936050000011,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpljo",
+      "material_id": "mp-aaacpljo",
+      "reduced_formula": "Fe3O4",
+      "source_full_composition": {
+        "Fe": 24.0,
+        "O": 32.0
+      },
+      "iron_atomic_fraction": 0.42857142857142855,
+      "oxygen_atomic_fraction": 0.5714285714285714,
+      "corrected_formation_energy_ev_per_atom": -1.586393616071428,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpqkk",
+      "material_id": "mp-aaacpqkk",
+      "reduced_formula": "Fe4O5",
+      "source_full_composition": {
+        "Fe": 8.0,
+        "O": 10.0
+      },
+      "iron_atomic_fraction": 0.4444444444444444,
+      "oxygen_atomic_fraction": 0.5555555555555556,
+      "corrected_formation_energy_ev_per_atom": -1.5192371644444447,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaacpwmm",
+      "material_id": "mp-aaacpwmm",
+      "reduced_formula": "Fe3O4",
+      "source_full_composition": {
+        "Fe": 12.0,
+        "O": 16.0
+      },
+      "iron_atomic_fraction": 0.42857142857142855,
+      "oxygen_atomic_fraction": 0.5714285714285714,
+      "corrected_formation_energy_ev_per_atom": -1.5364137264285713,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 0
+    },
+    {
+      "record_id": "mp-aaaabdgk",
+      "material_id": "mp-aaaabdgk",
+      "reduced_formula": "Fe2O3",
+      "source_full_composition": {
+        "Fe": 4.0,
+        "O": 6.0
+      },
+      "iron_atomic_fraction": 0.4,
+      "oxygen_atomic_fraction": 0.6,
+      "corrected_formation_energy_ev_per_atom": -1.7070913529999998,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 1
+    },
+    {
+      "record_id": "mp-aaacunat",
+      "material_id": "mp-aaacunat",
+      "reduced_formula": "FeO",
+      "source_full_composition": {
+        "Fe": 4.0,
+        "O": 4.0
+      },
+      "iron_atomic_fraction": 0.5,
+      "oxygen_atomic_fraction": 0.5,
+      "corrected_formation_energy_ev_per_atom": -1.4815193874999997,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 1
+    },
+    {
+      "record_id": "mp-aaaaaaan",
+      "material_id": "mp-aaaaaaan",
+      "reduced_formula": "Fe",
+      "source_full_composition": {
+        "Fe": 1.0
+      },
+      "iron_atomic_fraction": 1.0,
+      "oxygen_atomic_fraction": 0.0,
+      "corrected_formation_energy_ev_per_atom": 0.0,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 2
+    },
+    {
+      "record_id": "mp-aaaaatej",
+      "material_id": "mp-aaaaatej",
+      "reduced_formula": "O2",
+      "source_full_composition": {
+        "O": 8.0
+      },
+      "iron_atomic_fraction": 0.0,
+      "oxygen_atomic_fraction": 1.0,
+      "corrected_formation_energy_ev_per_atom": 0.0,
+      "thermo_type": "GGA_GGA+U",
+      "source_capture_index": 2
+    },
+    {
+      "record_id": "study",
+      "candidate_material_id": "mp-aaacpgaj",
+      "relative_mu_lower_bound_ev_per_atom": -8.0,
+      "relative_mu_upper_bound_ev_per_atom": 0.0,
+      "chemical_potential_axes": [
+        "Fe",
+        "O"
+      ],
+      "energy_convention": "Already corrected source formation energies per atom under GGA_GGA+U;do not correct a second time."
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published compatible computational formation-energy cohort",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "Formation energy and relative atomic chemical potentialeV/atom;atomic fractionsdimensionless;ordinary massesg/mol",
+    "original_observation_claim": false,
+    "source_captures": [
+      {
+        "provider": "Materials Project",
+        "url": "https://api.materialsproject.org/materials/thermo/?chemsys=Fe-O&thermo_types=GGA_GGA%2BU&_limit=40&_all_fields=true",
+        "accessed_at": "2026-10-20T10:12:54.106707+00:00",
+        "raw_sha256": "e9046f7f79faf3d8700da766340cbd0dcef9f1685ca5b2734e3e8639597c8a26",
+        "record_count": 40,
+        "credentials_included": false
+      },
+      {
+        "provider": "Materials Project",
+        "url": "https://api.materialsproject.org/materials/thermo/?chemsys=Fe-O&thermo_types=GGA_GGA%2BU&is_stable=true&_limit=30&_all_fields=true",
+        "accessed_at": "2026-10-20T10:14:04.060903+00:00",
+        "raw_sha256": "9621ef58ad8bbb03a42a61da798ef64006f7cbdb8abb1cf0c3946367e83af788",
+        "record_count": 2,
+        "credentials_included": false
+      },
+      {
+        "provider": "Materials Project",
+        "url": "https://api.materialsproject.org/materials/thermo/?material_ids=mp-13%2Cmp-12957&thermo_types=GGA_GGA%2BU&_limit=20&_all_fields=true",
+        "accessed_at": "2026-10-20T10:14:04.040743+00:00",
+        "raw_sha256": "1dde8e8960c57cfaede815bb5d2378fbd8cb037dc09c3d4df72b5945cea74d04",
+        "record_count": 2,
+        "credentials_included": false
+      }
+    ],
+    "source_boundary": "Exactly44supplied distinct records;no claim of complete MP Fe-O enumeration or experimental finite-temperature equilibrium. Relative elemental reference energies are the provider convention,not an O2 standard gas chemical potential."
+  }
+}

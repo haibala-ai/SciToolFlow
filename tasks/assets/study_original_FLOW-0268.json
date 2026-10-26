@@ -1,0 +1,40 @@
+{
+  "target_phase": {
+    "formula": "AB2",
+    "formation_energy_ev_per_formula_unit": -3.0
+  },
+  "competing_phases": [
+    {
+      "id": "A2B",
+      "stoichiometry": [
+        2,
+        1
+      ],
+      "formation_energy_ev_per_formula_unit": -4.0
+    },
+    {
+      "id": "AB",
+      "stoichiometry": [
+        1,
+        1
+      ],
+      "formation_energy_ev_per_formula_unit": -1.2
+    }
+  ],
+  "reservoir_model": "Chemical potentials mu_A,mu_B are relative to their elemental references and each is<=0. Equilibrium with target AB2requires mu_A+2mu_B=-3eV. Avoid precipitation of each supplied competitor by n_A*mu_A+n_B*mu_B<=its formation energy. This finite supplied reservoir/phase model is complete for the task; do not introduce other phases.",
+  "neutral_defect_models": [
+    {
+      "id": "V_A",
+      "formation_energy_ev": "2+mu_A"
+    },
+    {
+      "id": "V_B",
+      "formation_energy_ev": "1+mu_B"
+    }
+  ],
+  "target": "Find the full host-compatible mu_B interval and the subset where BOTH declared neutral-defect formation energies are nonnegative,including zero endpoints. Also report the B-rich(host-compatible largest mu_B)defect energies and whether a negative formation energy there invalidates treating both defects as rare dilute excitations.",
+  "scope": "Nonnegative formation energies are a necessary consistency check,not sufficient proof of a dilute equilibrium population. Negative energies flag breakdown of the stipulated pristine-host dilute-defect expansion; they are not concentrations. No kinetic claim,charged defect or missing competitor is inferred.",
+  "provenance": {
+    "kind": "Explicit controlled finite physical model; not a measured material or an upstream database calculation."
+  }
+}

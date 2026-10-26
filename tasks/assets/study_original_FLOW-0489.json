@@ -1,0 +1,16 @@
+{
+  "training_coordinate": 0.0,
+  "training_response": 2.0,
+  "kernel_length_scale": 1.0,
+  "kernel_marginal_variance": 1.0,
+  "uncertain_future_coordinate": {
+    "mean": 1.0,
+    "variance": 0.5
+  },
+  "model": "A zero-mean scalar Gaussian-process prior with k(x,xprime)=exp(-(x-xprime)^2/2),conditioned on ONE NOISE-FREE observation f(0)=2. Future Xis independent of the conditioned function and distributed N(1,0.5),where0.5is VARIANCE. The target is the random latent f(X),not a noisy observation and not f(E[X]).",
+  "target": "Return E[f(X)]and Var(f(X))under the posterior and uncertain coordinate. Decompose total variance into E_X[Var(f(X)|X,data)]and Var_X[E(f(X)|X,data)]. Also return the plug-in posterior mean and variance obtained by setting X=1,and whether both plug-in moments equal the actual mixture moments.",
+  "scope": "Exact conditional model moments;no hyperparameter fitting,input optimization,additional observation noise or Gaussian approximation to the full mixture distribution is requested.",
+  "provenance": {
+    "kind": "Explicit controlled statistical/model fixture with exact specified assumptions."
+  }
+}

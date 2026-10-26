@@ -1,0 +1,6 @@
+HEADER    OWN RIGID-ROTOR MODEL; NOT AN EXPERIMENTAL STRUCTURE
+HETATM    1  H1  H2  A   1       0.000   0.000   0.000  1.00  0.00           H  
+HETATM    2  H2  H2  A   1       0.742   0.000   0.000  1.00  0.00           H  
+CONECT    1    2
+CONECT    2    1
+END

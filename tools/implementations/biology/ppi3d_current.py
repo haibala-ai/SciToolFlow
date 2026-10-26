@@ -1,5 +1,5 @@
 """Real PPI3D structure/sequence queries, including normal browser AJAX headers and resumable jobs."""
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import hashlib
 import json
 from pathlib import Path
@@ -20,10 +20,18 @@ DEFAULTS = {"sequence": "", "uniprot_ac": "", "job_name": "ToolKG_call_validatio
             "mask_lowercase_letters": "0", "filter_low_complexity": "0", "use_soft_masking": "1", "pseudocount": "0"}
 
 
+def _is_pending(text):
+    """Recognize the service's explicit queue/progress message before result cues."""
+    return bool(re.search(r"\bquery\s+(?:is\s+)?queued\b|\bprocessing\s+your\s+query\b", text, re.I))
+
+
 def _report(html, url, directory, scope):
     path = directory / "results.html"
     path.write_text(html)
     soup = BeautifulSoup(html, "html.parser")
+    text = soup.get_text(" ", strip=True)
+    if _is_pending(text):
+        raise TimeoutError("PPI3D job is still queued/processing; retained response: " + str(path))
     tables = []
     for table in soup.find_all("table"):
         headers = [cell.get_text(" ", strip=True) for cell in table.find_all("th")]
@@ -31,10 +39,10 @@ def _report(html, url, directory, scope):
                 for row in table.find_all("tr") if row.find_all("td", recursive=False)]
         if headers and rows:
             tables.append({"headers": headers, "rows": rows[:50], "total_rows": len(rows), "truncated": len(rows) > 50})
-    text = soup.get_text(" ", strip=True)
-    if not tables and not re.search(r"no (?:interactions|results|matches|binding sites)", text, re.I):
+    negative = bool(re.search(r"no (?:protein-protein )?(?:interactions|results|matches|binding sites)", text, re.I))
+    if not tables and not negative:
         raise RuntimeError("No completed PPI3D scientific result table or explicit negative result: " + str(path))
-    return json.dumps({"source": "PPI3D current public service", "completed": True, "scope": scope,
+    return json.dumps({"source": "PPI3D current public service", "completed": True, "negative_result": negative, "scope": scope,
                        "source_url": url, "tables": tables, "source_report": text[:30000],
                        "source_report_truncated": len(text) > 30000, "raw_response": str(path)})
 
@@ -99,16 +107,17 @@ def _query(sequence, second_sequence, wait_seconds):
         response.raise_for_status()
         (directory / "last_response.html").write_text(response.text)
         text = BeautifulSoup(response.text, "html.parser").get_text(" ", strip=True)
-        if "Summary of results" in text or re.search(r"no (?:interactions|results|matches|binding sites)", text, re.I):
+        if _is_pending(text):
+            time.sleep(min(10, max(0, deadline - time.monotonic())))
+            continue
+        if "Summary of results" in text or re.search(r"no (?:protein-protein )?(?:interactions|results|matches|binding sites)", text, re.I):
             report = json.loads(_report(response.text, state["url"], directory,
                               "interactions of homologs to two query proteins" if second_sequence else "binding sites of query protein homologs"))
             report["search_parameters"] = data
             state["status"] = "completed"
             state_path.write_text(json.dumps(state, indent=2))
             return json.dumps(report)
-        if "Query queued" not in text and "Processing your query" not in text:
-            raise RuntimeError("Unexpected PPI3D job state; retained response: " + str(directory))
-        time.sleep(min(10, max(0, deadline - time.monotonic())))
+        raise RuntimeError("Unexpected PPI3D job state; retained response: " + str(directory))
     raise TimeoutError("PPI3D job remains queued; repeat same inputs to resume: " + str(state_path))
 
 
@@ -120,3 +129,21 @@ def ppi3d_single(sequence: str, wait_seconds: int = 240):
 def ppi3d_two(sequence: str, second_sequence: str, wait_seconds: int = 240):
     """Real PPI3D BLAST search for interfaces between two query proteins or their homologs; persistent job ID."""
     return _query(sequence, second_sequence, wait_seconds)
+
+
+def search_ppi3d_interfaces(query: str, second_query: str | None = None, wait_seconds: int = 240):
+    """Search PPI3D homolog structural interfaces for one or two explicit queries.
+
+    Each query is a canonical protein sequence or a UniProt accession. One
+    query finds homolog binding sites; a second restricts partner homologs.
+    This transfers existing structural evidence, not de novo pair interaction
+    prediction or experimental validation. Queued jobs raise TimeoutError and
+    persist request state for a repeated identical call; no queued success.
+    """
+    if not isinstance(query, str) or not query.strip():
+        raise ValueError("query must be a nonempty sequence/accession string")
+    if second_query is not None and (not isinstance(second_query, str) or not second_query.strip()):
+        raise ValueError("second_query must be null or a nonempty sequence/accession string")
+    if type(wait_seconds) is not int or not 0 <= wait_seconds <= 600:
+        raise ValueError("wait_seconds must be integer0..600")
+    return _query(query, second_query, wait_seconds)

@@ -12,14 +12,16 @@ NeEMO service workflow:
    stability change in kcal/mol.
 
 A persisted PID lets a slow upstream job be resumed by repeating the same call.
-When the upstream has not finished inside the caller's budget, an explicitly
-labelled local structure preparation is returned instead of a fabricated
-stability value.
+When the upstream has not finished inside the caller's budget, top-level status
+is queued. A queued structure job includes explicitly labelled local isolated-
+chain absolute solvent-accessible areas, not NeEMO relative accessibility or a
+completed NeEMO prediction. Stability changes are never estimated locally.
 """
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 from datetime import datetime, timezone
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -77,7 +79,7 @@ def _finished(html):
         return False
     text = _plain(html)
     status, _ = _status(html)
-    if status and "running" not in status.lower() and "queue" not in status.lower():
+    if status.lower().strip(" .") in {"done", "finished", "completed", "success"}:
         return True
     return (("Processed structure" in text and "Relative Accessibility" in text) or
             ("Stability change" in text and "Available files" in text))
@@ -98,6 +100,8 @@ def _poll(session, pid, directory, wait_seconds, poll_seconds, tag):
         html = response.text
         (directory / f"neemo_{tag}_status.html").write_text(html)
         status, text = _status(html)
+        if any(token in status.lower() for token in ("failed", "error", "aborted", "invalid")):
+            raise RuntimeError("NeEMO job failed; retained status: " + str(directory / f"neemo_{tag}_status.html"))
         if _finished(html):
             return True, html, text, (status or "finished")
         time.sleep(poll_seconds)
@@ -169,12 +173,19 @@ def _submit_mutation(session, processed, mutation, temperature, ph, directory):
             "backid": fields.get("backid", ""), "sequence": fields.get("sequence", ""),
             "mutationtext": mutation, "pdbfile": fields.get("pdbfile", ""),
             "temp": str(temperature), "ph": str(ph)}
+    request_key = hashlib.sha256(json.dumps(data, sort_keys=True).encode()).hexdigest()
+    state_path = directory / ("neemo_mutation_" + request_key + ".json")
+    if state_path.exists():
+        state = json.loads(state_path.read_text())
+        if state.get("request_sha256") == request_key and state.get("pid"):
+            return state["pid"]
     response = request_with_retries(session, "POST", MUTATE, timeout=180, data=data, files={"dummy": ("", b"")})
     (directory / "neemo_mutation_submission.html").write_text(response.text)
     response.raise_for_status()
     match = re.search(r"pid:\s*<span class=\"userinfo\">(\d+)</span>", response.text)
     if not match:
         raise RuntimeError("NeEMO mutation submission returned no PID: " + _plain(response.text)[:400])
+    state_path.write_text(json.dumps({"request_sha256": request_key, "pid": match.group(1)}, indent=2))
     return match.group(1)
 
 
@@ -221,6 +232,7 @@ def _local_preparation(session, pdb_id, chain, directory):
             "available_chains": available, "residue_count": len(residues),
             "source_structure": str(raw),
             "accessibility_method": "Shrake-Rupley on the isolated chain",
+            "accessibility_units": "angstrom^2; absolute area, not NeEMO relative accessibility percent",
             "residues": [{"residue_number": residue.id[1], "residue": _one(residue.resname),
                           "accessible_area": round(float(getattr(residue, "sasa", 0.0)), 3)}
                          for residue in residues]}
@@ -238,25 +250,30 @@ def neemo(pdb_id: str, chain: str = "", mutation: str = "", temperature: float =
 
     ``mutation`` accepts one or more mutations (``I16A`` or ``I16A,A17G``).  The
     structure job PID is persisted, so repeating the same call resumes and collects
-    a job that was still queued inside the previous wait budget.
+    a job that was still queued inside the previous wait budget. Top-level status
+    is queued until all requested NeEMO jobs finish, then completed. Local
+    preparation while queued reports isolated-chain Shrake-Rupley absolute area
+    in angstrom squared, not NeEMO relative accessibility or stability changes.
     """
     identifier = _pdb_id(pdb_id)
-    if not 0 <= wait_seconds <= 1800:
+    if type(wait_seconds) is not int or not 0 <= wait_seconds <= 1800:
         raise ValueError("Require 0..1800 wait seconds")
-    if not 3 <= poll_seconds <= 60:
+    if type(poll_seconds) is not int or not 3 <= poll_seconds <= 60:
         raise ValueError("Require 3..60 poll seconds")
-    if not -20 <= temperature <= 100:
+    if isinstance(temperature, bool) or not isinstance(temperature, (int, float)) or not math.isfinite(temperature) or not -20 <= temperature <= 100:
         raise ValueError("Require a temperature between -20 and 100 Celsius")
-    if not 0 <= ph <= 14:
+    if isinstance(ph, bool) or not isinstance(ph, (int, float)) or not math.isfinite(ph) or not 0 <= ph <= 14:
         raise ValueError("Require a pH between 0 and 14")
     encoded, labels = (_mutation_text(mutation) if mutation else (None, []))
+    if not isinstance(chain, str) or not re.fullmatch(r"[A-Za-z0-9]?", chain.strip()):
+        raise ValueError("Require an empty or one-character PDB chain identifier")
     # Deterministic artifact directory: the persisted NeEMO PID is reused, so a job
     # that was still queued inside the previous wait budget resumes on the next call.
     key = hashlib.sha256(json.dumps({"pdb_id": identifier, "chain": chain.strip().upper()},
                                     sort_keys=True).encode()).hexdigest()[:16]
     directory = artifacts_root() / f"neemo_{identifier}_{key}"
     directory.mkdir(parents=True, exist_ok=True)
-    result = {"source": "NeEMO public service (NEtwork Enthalpic MOdelling)", "pdb_id": identifier,
+    result = {"status": "queued", "source": "NeEMO public service (NEtwork Enthalpic MOdelling)", "pdb_id": identifier,
               "requested_chain": chain.strip().upper() or None, "requested_mutations": labels,
               "retrieved_at": datetime.now(timezone.utc).isoformat()}
     with _session() as session:
@@ -267,7 +284,10 @@ def neemo(pdb_id: str, chain: str = "", mutation: str = "", temperature: float =
         result["structure_job_status"] = state["status"]
         result["structure_status_text"] = text[:1500]
         if finished:
+            result["status"] = "completed"
             processed = _parse_processed(html)
+            if not processed["sequence"] or not processed["residues"]:
+                raise RuntimeError("NeEMO marked the structure complete but its processed residue table was absent; retained response: " + str(directory))
             result["processed_structure"] = processed
             result["processed_structure_source"] = "NeEMO job " + state["pid"]
         else:
@@ -288,12 +308,23 @@ def neemo(pdb_id: str, chain: str = "", mutation: str = "", temperature: float =
                                           "temperature_celsius": temperature, "ph": ph,
                                           "status_url": STATUS.format(pid=mutation_pid)}
                 result["mutation_status_text"] = mutation_text[:1500]
+                result["status"] = "completed" if mutation_finished else "queued"
                 result["stability_changes"] = _parse_stability(mutation_html) if mutation_finished else []
+                if mutation_finished and not result["stability_changes"]:
+                    raise RuntimeError("NeEMO marked the mutation job complete but no stability values were parseable; retained response: " + str(directory))
                 result["stability_change_status"] = ("NeEMO reported the changes below in kcal/mol"
                                                      if result["stability_changes"] else
                                                      "NeEMO mutation job still running; repeat this call to collect the result")
         else:
-            result["stability_change_status"] = "no mutation requested; the processed structure is the NeEMO output"
-    result["scope"] = ("Structure preparation and relative accessibility are NeEMO outputs; stability changes are only "
-                       "reported when the NeEMO mutation job finished. No value is estimated locally.")
+            result["stability_change_status"] = ("no mutation requested; the processed structure is the NeEMO output"
+                                                 if finished else
+                                                 "no mutation requested; NeEMO structure job remains queued")
+    result["scope"] = (
+        "Processed structure and relative accessibility percent are NeEMO outputs. "
+        if finished else
+        "NeEMO structure job remains queued. Processed structure is local preparation from the first PDB model; "
+        "Shrake-Rupley computes absolute solvent-accessible area in angstrom^2 on the isolated selected chain, "
+        "not NeEMO relative accessibility percent or a completed NeEMO prediction. "
+    ) + ("Stability changes are reported only from a completed NeEMO mutation job; "
+         "no stability change is estimated locally.")
     return json.dumps(result, ensure_ascii=False)

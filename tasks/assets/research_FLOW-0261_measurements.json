@@ -1,0 +1,2884 @@
+{
+  "data": [
+    {
+      "record_id": "r0101",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S4",
+      "light_peak_area": 398.59683428571435,
+      "heavy_peak_area": 1158.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0137",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S0",
+      "light_peak_area": 2001.3855839999999,
+      "heavy_peak_area": 1199.4399999999998,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0177",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S0",
+      "light_peak_area": 2746.893600000001,
+      "heavy_peak_area": 1135.0800000000002,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0183",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S6",
+      "light_peak_area": 144.450675,
+      "heavy_peak_area": 1335.96,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0172",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S3",
+      "light_peak_area": 481.68648,
+      "heavy_peak_area": 1144.0,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0001",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S0",
+      "light_peak_area": 970.0,
+      "heavy_peak_area": 1000.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0075",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S2",
+      "light_peak_area": 2055.058005,
+      "heavy_peak_area": 1079.0,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0019",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S2",
+      "light_peak_area": 872.35335,
+      "heavy_peak_area": 1231.9199999999998,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0118",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S5",
+      "light_peak_area": 596.6592239999999,
+      "heavy_peak_area": 1379.24,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0265",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S0",
+      "light_peak_area": 2399.586,
+      "heavy_peak_area": 1085.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0275",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S2",
+      "light_peak_area": 2084.1517620000004,
+      "heavy_peak_area": 1238.76,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0057",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S0",
+      "light_peak_area": 1318.0320000000002,
+      "heavy_peak_area": 1098.3600000000001,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0272",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S7",
+      "light_peak_area": 148.63317988235292,
+      "heavy_peak_area": 1302.0,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0244",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S3",
+      "light_peak_area": 225.4556076923077,
+      "heavy_peak_area": 1178.0,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0164",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S3",
+      "light_peak_area": 312.27292800000004,
+      "heavy_peak_area": 1327.04,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0288",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S7",
+      "light_peak_area": 183.0793023952941,
+      "heavy_peak_area": 1510.32,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0025",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S0",
+      "light_peak_area": 1940.0,
+      "heavy_peak_area": 1000.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0060",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S3",
+      "light_peak_area": 298.7778461538462,
+      "heavy_peak_area": 1198.8000000000002,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0071",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S6",
+      "light_peak_area": 155.41286324999996,
+      "heavy_peak_area": 1395.4799999999998,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0168",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S7",
+      "light_peak_area": 101.46086978823531,
+      "heavy_peak_area": 1470.8799999999999,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0004",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S3",
+      "light_peak_area": 220.19746153846154,
+      "heavy_peak_area": 1093.0,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0072",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S7",
+      "light_peak_area": 98.35003228235293,
+      "heavy_peak_area": 1431.4399999999998,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0194",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S1",
+      "light_peak_area": 179.09304000000003,
+      "heavy_peak_area": 1099.0,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0219",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S2",
+      "light_peak_area": 1702.7639475000003,
+      "heavy_peak_area": 1130.0,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0067",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S2",
+      "light_peak_area": 1120.3054147999999,
+      "heavy_peak_area": 1251.6399999999999,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0029",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S4",
+      "light_peak_area": 962.5614857142859,
+      "heavy_peak_area": 1124.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0006",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S5",
+      "light_peak_area": 522.8299999999999,
+      "heavy_peak_area": 1155.0,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0032",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S7",
+      "light_peak_area": 124.99305882352941,
+      "heavy_peak_area": 1217.0,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0233",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S0",
+      "light_peak_area": 2545.712568,
+      "heavy_peak_area": 1238.8799999999999,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0017",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S0",
+      "light_peak_area": 1194.8,
+      "heavy_peak_area": 1160.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0085",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S4",
+      "light_peak_area": 1539.9979199999998,
+      "heavy_peak_area": 1232.28,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0139",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S2",
+      "light_peak_area": 1581.6150662400003,
+      "heavy_peak_area": 1271.36,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0121",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S0",
+      "light_peak_area": 1624.8276,
+      "heavy_peak_area": 1034.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0276",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S3",
+      "light_peak_area": 476.94320307692306,
+      "heavy_peak_area": 1272.24,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0080",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S7",
+      "light_peak_area": 119.76841058823528,
+      "heavy_peak_area": 1234.0,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0184",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S7",
+      "light_peak_area": 155.91074400000002,
+      "heavy_peak_area": 1369.44,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0192",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S7",
+      "light_peak_area": 172.48347864000002,
+      "heavy_peak_area": 1470.8799999999999,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0077",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S4",
+      "light_peak_area": 1383.14628,
+      "heavy_peak_area": 1141.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0169",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S0",
+      "light_peak_area": 2467.1174000000005,
+      "heavy_peak_area": 1051.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0175",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S6",
+      "light_peak_area": 129.73810625,
+      "heavy_peak_area": 1237.0,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0166",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S5",
+      "light_peak_area": 739.676784,
+      "heavy_peak_area": 1398.9599999999998,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0278",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S5",
+      "light_peak_area": 1424.9088,
+      "heavy_peak_area": 1339.2,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0073",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S0",
+      "light_peak_area": 2485.9548,
+      "heavy_peak_area": 1017.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0024",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S7",
+      "light_peak_area": 96.22532647058821,
+      "heavy_peak_area": 1411.7199999999998,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0255",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S6",
+      "light_peak_area": 148.421025,
+      "heavy_peak_area": 1372.68,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0079",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S6",
+      "light_peak_area": 126.17214374999998,
+      "heavy_peak_area": 1203.0,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0162",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S1",
+      "light_peak_area": 237.8703424,
+      "heavy_peak_area": 1255.12,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0266",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S1",
+      "light_peak_area": 350.02792145454544,
+      "heavy_peak_area": 1116.0,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0157",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S4",
+      "light_peak_area": 562.3482857142856,
+      "heavy_peak_area": 1269.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0050",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S1",
+      "light_peak_area": 186.30772363636362,
+      "heavy_peak_area": 1048.0,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0064",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S7",
+      "light_peak_area": 88.90026352941176,
+      "heavy_peak_area": 1332.72,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0031",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S6",
+      "light_peak_area": 124.38916249999998,
+      "heavy_peak_area": 1186.0,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0159",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S6",
+      "light_peak_area": 144.450675,
+      "heavy_peak_area": 1335.96,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0202",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S1",
+      "light_peak_area": 199.40256000000002,
+      "heavy_peak_area": 1186.92,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0030",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S5",
+      "light_peak_area": 1045.6599999999999,
+      "heavy_peak_area": 1155.0,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0070",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S5",
+      "light_peak_area": 784.1711359999999,
+      "heavy_peak_area": 1359.52,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0286",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S5",
+      "light_peak_area": 1576.371328,
+      "heavy_peak_area": 1438.3999999999999,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0220",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S3",
+      "light_peak_area": 466.6242080769231,
+      "heavy_peak_area": 1161.0,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0127",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S6",
+      "light_peak_area": 127.95512499999998,
+      "heavy_peak_area": 1220.0,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0199",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S6",
+      "light_peak_area": 131.52108749999996,
+      "heavy_peak_area": 1254.0,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0143",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S6",
+      "light_peak_area": 157.60905499999996,
+      "heavy_peak_area": 1415.1999999999998,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0237",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S4",
+      "light_peak_area": 1338.17982336,
+      "heavy_peak_area": 1382.7199999999998,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0149",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S4",
+      "light_peak_area": 505.07207142857135,
+      "heavy_peak_area": 1175.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0284",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S3",
+      "light_peak_area": 527.6404991076922,
+      "heavy_peak_area": 1366.48,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0270",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S5",
+      "light_peak_area": 1279.7792,
+      "heavy_peak_area": 1240.0,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0013",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S4",
+      "light_peak_area": 468.22628571428584,
+      "heavy_peak_area": 1213.92,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0186",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S1",
+      "light_peak_area": 404.3795820800001,
+      "heavy_peak_area": 1255.12,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0230",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S5",
+      "light_peak_area": 1229.7020400000001,
+      "heavy_peak_area": 1320.8400000000001,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0209",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S0",
+      "light_peak_area": 1339.84872,
+      "heavy_peak_area": 1238.8799999999999,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0023",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S6",
+      "light_peak_area": 153.2166715,
+      "heavy_peak_area": 1375.76,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0109",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S4",
+      "light_peak_area": 443.7985371428572,
+      "heavy_peak_area": 1250.64,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0257",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S0",
+      "light_peak_area": 1231.5400999999997,
+      "heavy_peak_area": 1258.6,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0018",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S1",
+      "light_peak_area": 223.97069090909088,
+      "heavy_peak_area": 1195.9599999999998,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0252",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S3",
+      "light_peak_area": 251.02273846153844,
+      "heavy_peak_area": 1272.24,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0249",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S0",
+      "light_peak_area": 1113.21,
+      "heavy_peak_area": 1171.8000000000002,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0195",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S2",
+      "light_peak_area": 822.8970750000001,
+      "heavy_peak_area": 1130.0,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0228",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S3",
+      "light_peak_area": 519.5403553846154,
+      "heavy_peak_area": 1253.88,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0045",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S4",
+      "light_peak_area": 1185.637590857143,
+      "heavy_peak_area": 1303.84,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0108",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S3",
+      "light_peak_area": 227.51529230769233,
+      "heavy_peak_area": 1217.16,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0051",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S2",
+      "light_peak_area": 909.5214699999999,
+      "heavy_peak_area": 1079.0,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0008",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S7",
+      "light_peak_area": 78.12066176470587,
+      "heavy_peak_area": 1217.0,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0156",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S3",
+      "light_peak_area": 282.26880000000006,
+      "heavy_peak_area": 1235.52,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0182",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S5",
+      "light_peak_area": 1470.9340800000002,
+      "heavy_peak_area": 1302.48,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0235",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S2",
+      "light_peak_area": 2097.3838809000003,
+      "heavy_peak_area": 1310.8,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0213",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S4",
+      "light_peak_area": 615.2550912,
+      "heavy_peak_area": 1382.7199999999998,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0033",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S0",
+      "light_peak_area": 2160.0,
+      "heavy_peak_area": 1080.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0119",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S6",
+      "light_peak_area": 157.60905499999996,
+      "heavy_peak_area": 1415.1999999999998,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0226",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S1",
+      "light_peak_area": 259.223328,
+      "heavy_peak_area": 1186.92,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0208",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S7",
+      "light_peak_area": 84.85988823529412,
+      "heavy_peak_area": 1387.8000000000002,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0034",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S1",
+      "light_peak_area": 323.9214545454546,
+      "heavy_peak_area": 1113.48,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0027",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S2",
+      "light_peak_area": 1510.8720000000003,
+      "heavy_peak_area": 1062.0,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0224",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S7",
+      "light_peak_area": 99.0817769117647,
+      "heavy_peak_area": 1285.0,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0005",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S4",
+      "light_peak_area": 420.5365714285715,
+      "heavy_peak_area": 1124.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0105",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S0",
+      "light_peak_area": 1005.0479999999999,
+      "heavy_peak_area": 1116.72,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0124",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S3",
+      "light_peak_area": 388.25063307692307,
+      "heavy_peak_area": 1127.0,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0231",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S6",
+      "light_peak_area": 146.43585,
+      "heavy_peak_area": 1354.3200000000002,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0106",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S1",
+      "light_peak_area": 180.68596363636365,
+      "heavy_peak_area": 1150.2,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0165",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S4",
+      "light_peak_area": 622.1238257142855,
+      "heavy_peak_area": 1363.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0055",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S6",
+      "light_peak_area": 126.17214374999998,
+      "heavy_peak_area": 1203.0,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0141",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S4",
+      "light_peak_area": 954.1947262628573,
+      "heavy_peak_area": 1343.28,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0138",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S1",
+      "light_peak_area": 279.8490973090909,
+      "heavy_peak_area": 1235.3999999999999,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0170",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S1",
+      "light_peak_area": 328.2961120000001,
+      "heavy_peak_area": 1082.0,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0132",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S3",
+      "light_peak_area": 432.2790553846154,
+      "heavy_peak_area": 1217.16,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0054",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S5",
+      "light_peak_area": 636.6304,
+      "heavy_peak_area": 1172.0,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0021",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S4",
+      "light_peak_area": 517.9970057142858,
+      "heavy_peak_area": 1303.84,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0042",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S1",
+      "light_peak_area": 358.3531054545454,
+      "heavy_peak_area": 1195.9599999999998,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0161",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S0",
+      "light_peak_area": 1381.3082800000002,
+      "heavy_peak_area": 1219.1599999999999,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0236",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S3",
+      "light_peak_area": 574.7655709384615,
+      "heavy_peak_area": 1346.76,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0125",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S4",
+      "light_peak_area": 774.6642822857144,
+      "heavy_peak_area": 1158.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0250",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S1",
+      "light_peak_area": 216.51211636363635,
+      "heavy_peak_area": 1205.28,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0264",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S7",
+      "light_peak_area": 101.71072355294116,
+      "heavy_peak_area": 1510.32,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0093",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S4",
+      "light_peak_area": 1703.6939952,
+      "heavy_peak_area": 1323.56,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0193",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S0",
+      "light_peak_area": 1087.758,
+      "heavy_peak_area": 1068.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0167",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S6",
+      "light_peak_area": 159.80524674999995,
+      "heavy_peak_area": 1434.9199999999998,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0248",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S7",
+      "light_peak_area": 82.57398882352939,
+      "heavy_peak_area": 1302.0,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0201",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S0",
+      "light_peak_area": 1211.112,
+      "heavy_peak_area": 1153.44,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0028",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S3",
+      "light_peak_area": 418.37517692307694,
+      "heavy_peak_area": 1093.0,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0082",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S1",
+      "light_peak_area": 311.1531054545455,
+      "heavy_peak_area": 1131.8400000000001,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0227",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S2",
+      "light_peak_area": 1895.8608900000006,
+      "heavy_peak_area": 1220.4,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0271",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S6",
+      "light_peak_area": 133.30406874999997,
+      "heavy_peak_area": 1271.0,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0211",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S2",
+      "light_peak_area": 1013.605593,
+      "heavy_peak_area": 1310.8,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0259",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S2",
+      "light_peak_area": 883.1315412333332,
+      "heavy_peak_area": 1330.52,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0120",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S7",
+      "light_peak_area": 85.46137327058821,
+      "heavy_peak_area": 1451.1599999999999,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0114",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S1",
+      "light_peak_area": 199.8922123636363,
+      "heavy_peak_area": 1235.3999999999999,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0234",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S1",
+      "light_peak_area": 286.77780767999997,
+      "heavy_peak_area": 1274.84,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0268",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S3",
+      "light_peak_area": 428.3656546153845,
+      "heavy_peak_area": 1178.0,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0153",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S0",
+      "light_peak_area": 1248.5880000000002,
+      "heavy_peak_area": 1135.0800000000002,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0150",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S5",
+      "light_peak_area": 600.5076,
+      "heavy_peak_area": 1206.0,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0136",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S7",
+      "light_peak_area": 108.14998023529412,
+      "heavy_peak_area": 1351.0800000000002,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0126",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S5",
+      "light_peak_area": 871.91748,
+      "heavy_peak_area": 1189.0,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0081",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S0",
+      "light_peak_area": 2767.8672,
+      "heavy_peak_area": 1098.3600000000001,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0111",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S6",
+      "light_peak_area": 142.4655,
+      "heavy_peak_area": 1317.6000000000001,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0269",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S4",
+      "light_peak_area": 1300.624583142857,
+      "heavy_peak_area": 1209.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0022",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S5",
+      "light_peak_area": 643.9971999999999,
+      "heavy_peak_area": 1339.8,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0174",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S5",
+      "light_peak_area": 1321.11672,
+      "heavy_peak_area": 1206.0,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0239",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S6",
+      "light_peak_area": 162.00143849999998,
+      "heavy_peak_area": 1454.6399999999999,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0035",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S2",
+      "light_peak_area": 1682.2080000000005,
+      "heavy_peak_area": 1146.96,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0100",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S3",
+      "light_peak_area": 204.34243846153845,
+      "heavy_peak_area": 1127.0,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0154",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S1",
+      "light_peak_area": 215.01504000000006,
+      "heavy_peak_area": 1168.5600000000002,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0196",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S3",
+      "light_peak_area": 245.5916884615385,
+      "heavy_peak_area": 1161.0,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0076",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S3",
+      "light_peak_area": 509.85886153846144,
+      "heavy_peak_area": 1110.0,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0048",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S7",
+      "light_peak_area": 153.96052235294118,
+      "heavy_peak_area": 1411.7199999999998,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0037",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S4",
+      "light_peak_area": 1071.7179428571433,
+      "heavy_peak_area": 1213.92,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0198",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S5",
+      "light_peak_area": 581.2919,
+      "heavy_peak_area": 1223.0,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0274",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S1",
+      "light_peak_area": 389.7218094545454,
+      "heavy_peak_area": 1205.28,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0256",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S7",
+      "light_peak_area": 91.9380494117647,
+      "heavy_peak_area": 1406.16,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0007",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S6",
+      "light_peak_area": 124.38916249999998,
+      "heavy_peak_area": 1186.0,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0216",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S7",
+      "light_peak_area": 93.88018005882353,
+      "heavy_peak_area": 1490.6,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0133",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S4",
+      "light_peak_area": 862.5128091428573,
+      "heavy_peak_area": 1250.64,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0246",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S5",
+      "light_peak_area": 533.2413333333333,
+      "heavy_peak_area": 1240.0,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0281",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S0",
+      "light_peak_area": 2955.6962399999998,
+      "heavy_peak_area": 1258.6,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0065",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S0",
+      "light_peak_area": 1458.13392,
+      "heavy_peak_area": 1179.72,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0059",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S2",
+      "light_peak_area": 1012.6630800000001,
+      "heavy_peak_area": 1165.3200000000002,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0115",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S2",
+      "light_peak_area": 821.0570016,
+      "heavy_peak_area": 1271.36,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0036",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S3",
+      "light_peak_area": 465.8197846153846,
+      "heavy_peak_area": 1180.44,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0015",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S6",
+      "light_peak_area": 138.49515,
+      "heavy_peak_area": 1280.88,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0122",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S1",
+      "light_peak_area": 227.1958690909091,
+      "heavy_peak_area": 1065.0,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0092",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S3",
+      "light_peak_area": 628.0199667692307,
+      "heavy_peak_area": 1287.6,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0046",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S5",
+      "light_peak_area": 1287.9943999999998,
+      "heavy_peak_area": 1339.8,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0245",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S4",
+      "light_peak_area": 420.1724057142857,
+      "heavy_peak_area": 1209.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0287",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S6",
+      "light_peak_area": 164.19763024999997,
+      "heavy_peak_area": 1474.36,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0147",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S2",
+      "light_peak_area": 838.2271974999999,
+      "heavy_peak_area": 1113.0,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0214",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S5",
+      "light_peak_area": 716.007796,
+      "heavy_peak_area": 1418.6799999999998,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0215",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S6",
+      "light_peak_area": 162.00143849999998,
+      "heavy_peak_area": 1454.6399999999999,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0104",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S7",
+      "light_peak_area": 69.38193176470587,
+      "heavy_peak_area": 1251.0,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0253",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S4",
+      "light_peak_area": 467.82082285714284,
+      "heavy_peak_area": 1305.72,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0210",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S1",
+      "light_peak_area": 220.59831359999998,
+      "heavy_peak_area": 1274.84,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0258",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S1",
+      "light_peak_area": 239.52655243636363,
+      "heavy_peak_area": 1294.56,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0251",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S2",
+      "light_peak_area": 798.2775899999999,
+      "heavy_peak_area": 1238.76,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0099",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S2",
+      "light_peak_area": 666.57624,
+      "heavy_peak_area": 1096.0,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0144",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S7",
+      "light_peak_area": 119.64592257882353,
+      "heavy_peak_area": 1451.1599999999999,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0066",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S1",
+      "light_peak_area": 229.4850187636363,
+      "heavy_peak_area": 1215.6799999999998,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0102",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S5",
+      "light_peak_area": 484.39859999999993,
+      "heavy_peak_area": 1189.0,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0091",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S2",
+      "light_peak_area": 2531.3229942000003,
+      "heavy_peak_area": 1251.6399999999999,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0179",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S2",
+      "light_peak_area": 2192.611113000001,
+      "heavy_peak_area": 1202.0400000000002,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0098",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S1",
+      "light_peak_area": 162.28276363636365,
+      "heavy_peak_area": 1065.0,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0238",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S5",
+      "light_peak_area": 1360.4148123999998,
+      "heavy_peak_area": 1418.6799999999998,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0160",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S7",
+      "light_peak_area": 91.71220235294119,
+      "heavy_peak_area": 1369.44,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0243",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S2",
+      "light_peak_area": 716.9715391666666,
+      "heavy_peak_area": 1147.0,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0088",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S7",
+      "light_peak_area": 133.35039529411765,
+      "heavy_peak_area": 1332.72,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0197",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S4",
+      "light_peak_area": 499.49567999999994,
+      "heavy_peak_area": 1192.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0026",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S1",
+      "light_peak_area": 290.9294545454546,
+      "heavy_peak_area": 1031.0,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0218",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S1",
+      "light_peak_area": 232.82095199999998,
+      "heavy_peak_area": 1099.0,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0112",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S7",
+      "light_peak_area": 77.24998588235295,
+      "heavy_peak_area": 1351.0800000000002,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0052",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S3",
+      "light_peak_area": 268.3467692307692,
+      "heavy_peak_area": 1110.0,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0003",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S2",
+      "light_peak_area": 708.2212499999999,
+      "heavy_peak_area": 1062.0,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0094",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S5",
+      "light_peak_area": 1646.7593855999999,
+      "heavy_peak_area": 1359.52,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0113",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S0",
+      "light_peak_area": 1111.8808799999997,
+      "heavy_peak_area": 1199.4399999999998,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0185",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S0",
+      "light_peak_area": 3038.878216,
+      "heavy_peak_area": 1219.1599999999999,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0129",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S0",
+      "light_peak_area": 1809.0864000000001,
+      "heavy_peak_area": 1116.72,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0140",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S3",
+      "light_peak_area": 478.2287179384615,
+      "heavy_peak_area": 1307.32,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0056",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S7",
+      "light_peak_area": 79.84560705882352,
+      "heavy_peak_area": 1234.0,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0043",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S2",
+      "light_peak_area": 1861.02048,
+      "heavy_peak_area": 1231.9199999999998,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0206",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S5",
+      "light_peak_area": 647.2116000000001,
+      "heavy_peak_area": 1320.8400000000001,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0130",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S1",
+      "light_peak_area": 252.9603490909091,
+      "heavy_peak_area": 1150.2,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0095",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S6",
+      "light_peak_area": 155.41286324999996,
+      "heavy_peak_area": 1395.4799999999998,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0148",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S3",
+      "light_peak_area": 253.5192,
+      "heavy_peak_area": 1144.0,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0038",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S5",
+      "light_peak_area": 1164.24,
+      "heavy_peak_area": 1247.4,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0176",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S7",
+      "light_peak_area": 140.030946,
+      "heavy_peak_area": 1268.0,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0189",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S4",
+      "light_peak_area": 1640.0242980000003,
+      "heavy_peak_area": 1363.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0116",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S3",
+      "light_peak_area": 251.6993252307692,
+      "heavy_peak_area": 1307.32,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0110",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S5",
+      "light_peak_area": 539.3303999999999,
+      "heavy_peak_area": 1284.1200000000001,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0002",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S1",
+      "light_peak_area": 181.8309090909091,
+      "heavy_peak_area": 1031.0,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0146",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S1",
+      "light_peak_area": 193.11536000000004,
+      "heavy_peak_area": 1082.0,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0171",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S2",
+      "light_peak_area": 1969.2896107500003,
+      "heavy_peak_area": 1113.0,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0049",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S0",
+      "light_peak_area": 1183.788,
+      "heavy_peak_area": 1017.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0074",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S1",
+      "light_peak_area": 279.46158545454546,
+      "heavy_peak_area": 1048.0,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0188",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S3",
+      "light_peak_area": 593.3185632,
+      "heavy_peak_area": 1327.04,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0277",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S4",
+      "light_peak_area": 1448.1180925714284,
+      "heavy_peak_area": 1305.72,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0262",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S5",
+      "light_peak_area": 656.8213866666665,
+      "heavy_peak_area": 1438.3999999999999,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0205",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S4",
+      "light_peak_area": 556.1395200000002,
+      "heavy_peak_area": 1287.3600000000001,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0173",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S4",
+      "light_peak_area": 1331.4559500000003,
+      "heavy_peak_area": 1175.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0181",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S4",
+      "light_peak_area": 1482.4458000000004,
+      "heavy_peak_area": 1269.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0155",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S2",
+      "light_peak_area": 933.2838900000002,
+      "heavy_peak_area": 1202.0400000000002,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0011",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S2",
+      "light_peak_area": 788.5350000000002,
+      "heavy_peak_area": 1146.96,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0212",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S3",
+      "light_peak_area": 302.5081952307692,
+      "heavy_peak_area": 1346.76,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0044",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S3",
+      "light_peak_area": 515.3347024615384,
+      "heavy_peak_area": 1267.8799999999999,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0012",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S3",
+      "light_peak_area": 245.1683076923077,
+      "heavy_peak_area": 1180.44,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0187",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S2",
+      "light_peak_area": 2425.6775535300003,
+      "heavy_peak_area": 1291.08,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0097",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S0",
+      "light_peak_area": 902.6819999999999,
+      "heavy_peak_area": 1034.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0151",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S6",
+      "light_peak_area": 129.73810625,
+      "heavy_peak_area": 1237.0,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0068",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S3",
+      "light_peak_area": 330.5368246153846,
+      "heavy_peak_area": 1287.6,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0142",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S5",
+      "light_peak_area": 1073.9866032,
+      "heavy_peak_area": 1379.24,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0062",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S5",
+      "light_peak_area": 708.8255999999999,
+      "heavy_peak_area": 1265.76,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0200",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S7",
+      "light_peak_area": 76.21675147058824,
+      "heavy_peak_area": 1285.0,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0180",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S3",
+      "light_peak_area": 536.31072,
+      "heavy_peak_area": 1235.52,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0267",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S2",
+      "light_peak_area": 1871.8770455000001,
+      "heavy_peak_area": 1147.0,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0260",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S3",
+      "light_peak_area": 277.7055258461539,
+      "heavy_peak_area": 1366.48,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0225",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S0",
+      "light_peak_area": 2301.1128000000003,
+      "heavy_peak_area": 1153.44,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0221",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S4",
+      "light_peak_area": 1086.4031039999998,
+      "heavy_peak_area": 1192.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0207",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S6",
+      "light_peak_area": 146.43585,
+      "heavy_peak_area": 1354.3200000000002,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0084",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S3",
+      "light_peak_area": 567.6779076923077,
+      "heavy_peak_area": 1198.8000000000002,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0047",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S6",
+      "light_peak_area": 153.2166715,
+      "heavy_peak_area": 1375.76,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0163",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S2",
+      "light_peak_area": 1032.4885109,
+      "heavy_peak_area": 1291.08,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0261",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S4",
+      "light_peak_area": 517.5484436571429,
+      "heavy_peak_area": 1402.4399999999998,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0010",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S1",
+      "light_peak_area": 202.4509090909091,
+      "heavy_peak_area": 1113.48,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0053",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S4",
+      "light_peak_area": 557.8120799999999,
+      "heavy_peak_area": 1141.0,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0103",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S6",
+      "light_peak_area": 127.95512499999998,
+      "heavy_peak_area": 1220.0,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0178",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S1",
+      "light_peak_area": 365.52556800000013,
+      "heavy_peak_area": 1168.5600000000002,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0263",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S6",
+      "light_peak_area": 164.19763024999997,
+      "heavy_peak_area": 1474.36,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0190",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S5",
+      "light_peak_area": 1627.2889248,
+      "heavy_peak_area": 1398.9599999999998,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0247",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S6",
+      "light_peak_area": 133.30406874999997,
+      "heavy_peak_area": 1271.0,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0131",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S2",
+      "light_peak_area": 1429.6487040000004,
+      "heavy_peak_area": 1183.68,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0058",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S1",
+      "light_peak_area": 207.43540363636365,
+      "heavy_peak_area": 1131.8400000000001,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0158",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S5",
+      "light_peak_area": 668.6064,
+      "heavy_peak_area": 1302.48,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0069",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S4",
+      "light_peak_area": 687.0864671999999,
+      "heavy_peak_area": 1323.56,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0191",
+      "pair_id": "plant_4",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S6",
+      "light_peak_area": 159.80524674999995,
+      "heavy_peak_area": 1434.9199999999998,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0086",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S5",
+      "light_peak_area": 1488.5337599999998,
+      "heavy_peak_area": 1265.76,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0229",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S4",
+      "light_peak_area": 1209.603456,
+      "heavy_peak_area": 1287.3600000000001,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0203",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S2",
+      "light_peak_area": 916.2153000000001,
+      "heavy_peak_area": 1220.4,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0241",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S0",
+      "light_peak_area": 999.8275,
+      "heavy_peak_area": 1085.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0040",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S7",
+      "light_peak_area": 139.16752941176472,
+      "heavy_peak_area": 1314.3600000000001,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0107",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S2",
+      "light_peak_area": 742.1673600000001,
+      "heavy_peak_area": 1183.68,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0039",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S6",
+      "light_peak_area": 138.49515,
+      "heavy_peak_area": 1280.88,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0089",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S0",
+      "light_peak_area": 3062.081232,
+      "heavy_peak_area": 1179.72,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0083",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S2",
+      "light_peak_area": 2288.1058200000007,
+      "heavy_peak_area": 1165.3200000000002,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0242",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S1",
+      "light_peak_area": 194.45995636363634,
+      "heavy_peak_area": 1116.0,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0087",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S6",
+      "light_peak_area": 140.480325,
+      "heavy_peak_area": 1299.24,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0232",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S7",
+      "light_peak_area": 110.31785470588237,
+      "heavy_peak_area": 1387.8000000000002,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0152",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S7",
+      "light_peak_area": 82.37114470588236,
+      "heavy_peak_area": 1268.0,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0285",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S4",
+      "light_peak_area": 1602.0476824114285,
+      "heavy_peak_area": 1402.4399999999998,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0061",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S4",
+      "light_peak_area": 621.06912,
+      "heavy_peak_area": 1232.28,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0279",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S6",
+      "light_peak_area": 148.421025,
+      "heavy_peak_area": 1372.68,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0254",
+      "pair_id": "plant_6",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S5",
+      "light_peak_area": 593.712,
+      "heavy_peak_area": 1339.2,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0078",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S5",
+      "light_peak_area": 1336.9238399999997,
+      "heavy_peak_area": 1172.0,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0009",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S0",
+      "light_peak_area": 1080.0,
+      "heavy_peak_area": 1080.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0273",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S0",
+      "light_peak_area": 2671.704,
+      "heavy_peak_area": 1171.8000000000002,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0014",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S5",
+      "light_peak_area": 582.12,
+      "heavy_peak_area": 1247.4,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0117",
+      "pair_id": "plant_3",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S4",
+      "light_peak_area": 490.9726779428572,
+      "heavy_peak_area": 1343.28,
+      "heavy_standard_fmol": 1.4
+    },
+    {
+      "record_id": "r0145",
+      "pair_id": "plant_4",
+      "condition": "control",
+      "injection_id": "inj_1",
+      "channel_id": "S0",
+      "light_peak_area": 1121.417,
+      "heavy_peak_area": 1051.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0041",
+      "pair_id": "plant_1",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S0",
+      "light_peak_area": 2389.6,
+      "heavy_peak_area": 1160.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0063",
+      "pair_id": "plant_2",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S6",
+      "light_peak_area": 140.480325,
+      "heavy_peak_area": 1299.24,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0223",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S6",
+      "light_peak_area": 131.52108749999996,
+      "heavy_peak_area": 1254.0,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0134",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S5",
+      "light_peak_area": 970.79472,
+      "heavy_peak_area": 1284.1200000000001,
+      "heavy_standard_fmol": 1.5
+    },
+    {
+      "record_id": "r0282",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S1",
+      "light_peak_area": 431.1477943854545,
+      "heavy_peak_area": 1294.56,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0128",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S7",
+      "light_peak_area": 97.13470447058822,
+      "heavy_peak_area": 1251.0,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0123",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S2",
+      "light_peak_area": 1284.0363360000003,
+      "heavy_peak_area": 1096.0,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0217",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S0",
+      "light_peak_area": 2066.7402,
+      "heavy_peak_area": 1068.0,
+      "heavy_standard_fmol": 1.0
+    },
+    {
+      "record_id": "r0240",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S7",
+      "light_peak_area": 122.04423407647057,
+      "heavy_peak_area": 1490.6,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0204",
+      "pair_id": "plant_5",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S3",
+      "light_peak_area": 273.44229230769236,
+      "heavy_peak_area": 1253.88,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0283",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S2",
+      "light_peak_area": 2305.6893752200003,
+      "heavy_peak_area": 1330.52,
+      "heavy_standard_fmol": 1.2
+    },
+    {
+      "record_id": "r0096",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S7",
+      "light_peak_area": 147.5250484235294,
+      "heavy_peak_area": 1431.4399999999998,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0135",
+      "pair_id": "plant_3",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S6",
+      "light_peak_area": 142.4655,
+      "heavy_peak_area": 1317.6000000000001,
+      "heavy_standard_fmol": 1.6
+    },
+    {
+      "record_id": "r0280",
+      "pair_id": "plant_6",
+      "condition": "treated",
+      "injection_id": "inj_2",
+      "channel_id": "S7",
+      "light_peak_area": 165.48848894117646,
+      "heavy_peak_area": 1406.16,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0020",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_3",
+      "channel_id": "S3",
+      "light_peak_area": 271.2287907692308,
+      "heavy_peak_area": 1267.8799999999999,
+      "heavy_standard_fmol": 1.3
+    },
+    {
+      "record_id": "r0090",
+      "pair_id": "plant_2",
+      "condition": "treated",
+      "injection_id": "inj_3",
+      "channel_id": "S1",
+      "light_peak_area": 344.2275281454545,
+      "heavy_peak_area": 1215.6799999999998,
+      "heavy_standard_fmol": 1.1
+    },
+    {
+      "record_id": "r0016",
+      "pair_id": "plant_1",
+      "condition": "control",
+      "injection_id": "inj_2",
+      "channel_id": "S7",
+      "light_peak_area": 86.97970588235295,
+      "heavy_peak_area": 1314.3600000000001,
+      "heavy_standard_fmol": 1.7000000000000002
+    },
+    {
+      "record_id": "r0222",
+      "pair_id": "plant_5",
+      "condition": "treated",
+      "injection_id": "inj_1",
+      "channel_id": "S5",
+      "light_peak_area": 1104.45461,
+      "heavy_peak_area": 1223.0,
+      "heavy_standard_fmol": 1.5
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "component_order": [
+    "fast",
+    "slow"
+  ],
+  "initial_intensity_amplitudes": [
+    0.8,
+    0.2
+  ],
+  "lifetimes_nanoseconds": [
+    1.0,
+    5.0
+  ],
+  "model": "Controlled fully observed decay I(t)=sum A_i*exp(-t/tau_i), t>=0, with constant detector response and no background or instrument convolution. Initial amplitudes are not automatically molecular fractions because component radiative brightness is not supplied.",
+  "definitions": "Amplitude-weighted lifetime=sum(A*tau)/sum(A). Integrated photon fractions=A_i*tau_i/sum(A*tau). Mean photon arrival time=integral(t*I)/integral(I)=sum(A*tau^2)/sum(A*tau). Distinguish these two lifetime summaries; neither determines molecule fractions without brightness information.",
+  "scope": "Decay-observation moments, not assignment of named molecular species, kinetics of interconversion or a general fluorescence lifetime fit."
+}

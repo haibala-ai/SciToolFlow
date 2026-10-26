@@ -1,0 +1,12 @@
+{
+  "pdb_id": "1ubq",
+  "coordinate_file": "asset://coverage_FLOW-0316_1UBQ.pdb",
+  "local_policy": {
+    "model_id": 0,
+    "distance_cutoff": 5.0,
+    "minimum_contacts": 1,
+    "compute_buried_surface": false
+  },
+  "analysis": "Count observed protein chains in the selected coordinate model and unordered distinct-chain pairs. Compare the local interface scan with the completed PPI3Dentry report. A recognized explicit negative report is valid evidence about this entry;an absent/queued/error response is not.",
+  "scope": "Neither a single-chain deposited coordinate entry nor a completed negative template-interface report proves the protein never interacts in other assemblies,conditions or partners."
+}

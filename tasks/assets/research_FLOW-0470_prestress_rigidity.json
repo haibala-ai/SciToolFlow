@@ -1,0 +1,80 @@
+{
+  "origin": "Own ideal two-dimensional hinged framework and controlled quasistatic force study. Coordinates, spring constants and rest lengths are exact constructed inputs. Bars transmit both tension and compression, remain straight, have no bending energy and are modeled only as axial Hookean springs when finite stiffness is introduced. No Euler buckling of an individual bar, experimental dataset or device performance is asserted.",
+  "geometry": {
+    "pinned_nodes": {
+      "A": [
+        -1,
+        0
+      ],
+      "B": [
+        1,
+        0
+      ]
+    },
+    "free_reference_nodes": {
+      "P": [
+        0,
+        0
+      ],
+      "Q": [
+        0,
+        1
+      ]
+    },
+    "bars_in_declared_order": [
+      [
+        "A",
+        "P"
+      ],
+      [
+        "B",
+        "P"
+      ],
+      [
+        "P",
+        "Q"
+      ]
+    ],
+    "free_coordinate_order": [
+      "P_x",
+      "P_y",
+      "Q_x",
+      "Q_y"
+    ],
+    "length_unit": "reference bar length",
+    "spring_constant_unit": "all three axial stiffnesses equal1"
+  },
+  "kinematics": "First treat each bar as exactly inextensible at its reference length1 and both anchors as pinned. Derive the full linear compatibility matrix C that maps free velocities to first derivatives of the three bar lengths, in the declared orders. Retain its actual complete registered singular values and the actual full symmetric spectra/products used to establish both nullspaces. Report rank, infinitesimal flex dimension, self-stress dimension and their Maxwell-Calladine difference. Report the UNIQUE orthogonal projectors onto the free-coordinate nullspace of C and bar-space nullspace of C^T, not arbitrary singular-vector bases. A count for a generic embedding need not describe this collinear embedding. Check projectors by full registered products, including annihilation and idempotence.",
+  "finite_vs_infinitesimal": "Determine the dimension of the actual local smooth configuration manifold preserving ALL three lengths exactly. For the normalized common-vertical velocity z_v=(0,1,0,1)/sqrt2 and the Q-horizontal velocity z_h=(0,0,1,0), decide separately whether each can be the tangent of a smooth exact inextensible motion. Retain the full second-order compatibility equation C*a=-b(v), with b_e=|relative_velocity_e|\u00b2-(first_length_derivative_e)\u00b2 at unit reference lengths. Use the state of self-stress whose AP and BP tensions are both+1 and PQ tension0 to report its dot product with b(z_v). Prove any claimed obstruction or finite flex from the exact constraints; a zero singular value is not a proof of an integrable finite mechanism. The dimension of obstructed infinitesimal directions means the codimension of the subspace that passes this second-order test in the first-order nullspace.",
+  "prestress": "Now replace the three constraints by axial Hookean energies one half(length-rest_length)\u00b2. AP and BP have rest length r0=1-T, PQ has rest length1. At the SAME reference coordinates P=(0,0),Q=(0,1), the net forces on each free node vanish for every prescribed T; anchors support the reactions. For T in[-0.25,0,0.25], derive material and geometric parts of the COMPLETE physical4-by-4 tangent stiffness H. Retain actual registered matrix products and full symmetric eigendecompositions, giving ascending spectra, negative counts and zero counts. Determine which infinitesimal direction tension stabilizes and whether it removes the genuine finite rotation of PQ. At T0 evaluate energy along the affine displacement epsilon*z_v and derive lim E/epsilon^4; keep the normalization of z_v fixed. Exact inextensible rigidity, quadratic stiffness and nonlinear energetic stability are distinct notions.",
+  "guided_force_experiment": "For this last experiment ONLY, impose extra ideal vertical guides P_x=Q_x=0, write P_y=y,Q_y=z, and apply a dead force f in the positive z direction at Q. Work on the branch z>y, so the PQ length is z-y. The exact potential is E(y,z)=(sqrt(1+y\u00b2)-r0)\u00b2+0.5*(z-y-1)\u00b2-f*z. The original pins are still fixed. For each r0 in[0.75,1,1.25] and f=0.1 eliminate z by its force equation, derive the original UNSQUARED scalar y force balance and a polynomial candidate equation. Retain ALL registered polynomial roots, including complex roots and real roots that fail the original force equation. Report the physical stationary y roots ascending, extraneous real polynomial roots ascending, and the derivative of the ORIGINAL force function at each physical root in the same order. Determine the GLOBAL minimizing y, comparing the complete stationary inventory and coercive tails. The eliminated additive energy constant may be omitted only consistently in comparisons. This guided experiment has a different admissible displacement space from the initial unguided framework.",
+  "bifurcation_and_limit": "At r0=1.25 derive ALL zero-load stationary y, classify stable versus unstable, and derive the two load-controlled folds as y and f in matching ascending-y order. Establish the complete root count and stability regimes from the unsquared force law and its derivative, not merely from a plotted quartic. At r0=1 derive the small-positive-force asymptotic y/f^(1/3) and decide nonlinear stability at zero load even though linear vertical stiffness vanishes. Do not turn a squared-equation root into a physical equilibrium without the original sign/residual test, or infer uniqueness from one root finder initialization.",
+  "interpretation_proposals": {
+    "A": "A self-stress can obstruct an infinitesimal length-preserving direction at second order.",
+    "B": "Every first-order zero mode is tangent to a smooth finite inextensible motion.",
+    "C": "Geometric stiffness depends on prestress and can change stability without changing the compatibility rank.",
+    "D": "Tension in AP and BP necessarily removes every motion of Q.",
+    "E": "A quartic energy minimum can be nonlinearly stable even when its quadratic stiffness vanishes.",
+    "F": "Squaring force balance preserves the set of physical equilibria without any additional check.",
+    "G": "Changing supports changes the configuration space and must be tracked when comparing stiffness and finite mechanisms.",
+    "H": "This ideal axial-spring calculation establishes the Euler buckling load of each real bar."
+  },
+  "reporting": "Use the exact coordinate/bar/r0/T orders above. Dictionary keys for r0 are strings0.75,1,1.25 (the middle key is1, not1.0). Numerical absolute tolerance1e-7, integer counts and booleans exact. Epsilon multiplies the UNIT common-vertical vector; its energy coefficient is not the coefficient for unnormalized displacements y=z-1. Report global minimizers only after checking every physical stationary root and the large-|y| tails. Retain complete matrices, original second-order/force derivations, actual spectral and polynomial outputs, root filtering, energetic comparisons and fold/asymptotic arguments in the trajectory.",
+  "primary_context": [
+    {
+      "authors": "S. Pellegrino and C. R. Calladine",
+      "year": 1986,
+      "title": "Matrix analysis of statically and kinematically indeterminate frameworks",
+      "doi": "10.1016/0020-7683(86)90014-4",
+      "url": "https://www.its.caltech.edu/~sslab/PUBLICATIONS/matrix%20analysis.pdf"
+    },
+    {
+      "authors": "R. Connelly and W. Whiteley",
+      "year": 1996,
+      "title": "Second-Order Rigidity and Prestress Stability for Tensegrity Frameworks",
+      "doi": "10.1137/S0895480192229236",
+      "url": "https://connellytensegrity.com/pdf/10.1137_S0895480192229236.pdf"
+    }
+  ],
+  "context_role": "Primary context for compatibility/self-stress, higher-order rigidity and prestress stability. The tiny anchored geometry, nonlinear load experiment and all requested quantitative results are own constructed specifications. No paper geometry, data or quoted passages are used."
+}

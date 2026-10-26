@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "record_id": "state-U",
+      "structure_file": "lattice_state_U.cif",
+      "temperature_kelvin": 300.0
+    },
+    {
+      "record_id": "state-V",
+      "structure_file": "lattice_state_V.cif",
+      "temperature_kelvin": 400.0
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "TemperatureK,CIFangstrom;secantlinearcoefficientsK^-1",
+    "original_observation_claim": false
+  }
+}

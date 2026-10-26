@@ -1,0 +1,21 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "sum_of_partner_radii_meters": 5e-10,
+  "sum_of_partner_diffusion_m2_per_second_by_medium": [
+    1e-09,
+    2e-09,
+    4e-09
+  ],
+  "observed_second_order_rate_liter_per_mol_second_by_medium": [
+    2153858742.212442,
+    3010764986.8780155,
+    3758398844.3173413
+  ],
+  "avogadro_per_mol": 6.02214076e+23,
+  "model": "Controlled isotropic encounter approximation k_diff=4*pi*(D_A+D_B)*(r_A+r_B)*N_A*1000 in L/(mol*s). A finite common intrinsic contact rate obeys1/k_observed=1/k_diff+1/k_intrinsic in every medium. All radii and diffusion sums are independently supplied; no change of contact chemistry is assumed without testing.",
+  "target": "Recover the common positive intrinsic rate and check every medium, rather than assigning k_observed=k_diff or fitting an independent intrinsic parameter to each observation.",
+  "scope": "Stipulated transport/finite-contact model, not an actual reactive mechanism, synthesis rate recommendation or proof of diffusion-limited chemistry."
+}

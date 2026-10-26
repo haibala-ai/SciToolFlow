@@ -1,0 +1,21 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study, not new experimental measurements.",
+    "scope": "Results are conditional on the complete stated model, measurement convention and units."
+  },
+  "calibration_pressures_bar": [
+    1.0,
+    3.0
+  ],
+  "calibration_compressibility_factors": [
+    0.966,
+    0.934
+  ],
+  "heldout_pressure_bar": 4.0,
+  "heldout_compressibility_factor": 0.9359999999999999,
+  "target_pressure_bar": 5.0,
+  "temperature_kelvin": 298.15,
+  "gas_constant_j_per_mol_kelvin": 8.314462618,
+  "model": "A hypothetical single gas phase obeys exactly Z(P)=1+b*P+c*P^2 on 0<=P<=5 bar. Pressure is entered numerically in bar, so b is per bar and c per bar squared. Both coefficients are unknown. Fit only the two calibration observations; the heldout Z is a check. The ideal-gas limit is Z(0)=1.",
+  "thermodynamic_definition": "At this fixed temperature, ln(phi(P))=integral_0^P[(Z(p)-1)/p]dp, f=phi*P and mu-mu_ideal=R*T*ln(phi). Use the continuous finite integrand at p=0. A value of Z-1 is not itself ln(phi). The one-observation identification question removes all other pressure observations and any coefficient calibration."
+}

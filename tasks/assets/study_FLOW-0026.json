@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "record_id": "0",
+      "temperature_kelvin": 285.0,
+      "x": 0.0035087719298245615,
+      "y": -4.982317514821105,
+      "rate_s_inverse": 0.006858150261251152
+    },
+    {
+      "record_id": "1",
+      "temperature_kelvin": 295.0,
+      "x": 0.003389830508474576,
+      "y": -4.267049271913326,
+      "rate_s_inverse": 0.014023100521771902
+    },
+    {
+      "record_id": "2",
+      "temperature_kelvin": 305.0,
+      "x": 0.003278688524590164,
+      "y": -3.598683864606059,
+      "rate_s_inverse": 0.027359707841130364
+    },
+    {
+      "record_id": "3",
+      "temperature_kelvin": 315.0,
+      "x": 0.0031746031746031746,
+      "y": -2.9727543561754466,
+      "rate_s_inverse": 0.051162197169453395
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "T kelvin; rate s^-1; log numericalk/(1s^-1)",
+    "original_observation_claim": false
+  }
+}

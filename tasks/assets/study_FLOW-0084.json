@@ -1,0 +1,45 @@
+{
+  "data": [
+    {
+      "record_id": "monomer01",
+      "smiles": "C=Cc1ccccc1",
+      "formula": "C8H8"
+    },
+    {
+      "record_id": "monomer02",
+      "smiles": "C=COC(C)=O",
+      "formula": "C4H6O2"
+    },
+    {
+      "record_id": "composition01",
+      "monomer01_feed_mass_fraction": 0.12,
+      "monomer01_instantaneous_repeat_unit_mass_fraction": 0.14919146535857625
+    },
+    {
+      "record_id": "composition02",
+      "monomer01_feed_mass_fraction": 0.28,
+      "monomer01_instantaneous_repeat_unit_mass_fraction": 0.3005409369816712
+    },
+    {
+      "record_id": "composition03",
+      "monomer01_feed_mass_fraction": 0.45,
+      "monomer01_instantaneous_repeat_unit_mass_fraction": 0.4302968041818063
+    },
+    {
+      "record_id": "composition04",
+      "monomer01_feed_mass_fraction": 0.66,
+      "monomer01_instantaneous_repeat_unit_mass_fraction": 0.5803514711232062
+    },
+    {
+      "record_id": "composition05",
+      "monomer01_feed_mass_fraction": 0.86,
+      "monomer01_instantaneous_repeat_unit_mass_fraction": 0.7631827589494112
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Feed and instantaneous incorporated-repeat-unit compositions are MASS fractions;terminal-model f and F are MOLE fractions,ordinary average molecular massg/mol;reactivity ratios and normalized sequence correlation dimensionless",
+    "original_observation_claim": false
+  }
+}

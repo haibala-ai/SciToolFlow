@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "record_id": "atom01",
+      "source_zero_based_atom_index": 0,
+      "born_charge_e": [
+        [
+          2.54988,
+          -0.38491,
+          -0.38491
+        ],
+        [
+          -0.385,
+          2.54981,
+          -0.385
+        ],
+        [
+          -0.38488,
+          -0.38488,
+          2.54991
+        ]
+      ]
+    },
+    {
+      "record_id": "atom02",
+      "source_zero_based_atom_index": 1,
+      "born_charge_e": [
+        [
+          -2.35452,
+          0.36467,
+          0.36467
+        ],
+        [
+          0.36471,
+          -2.35444,
+          0.36471
+        ],
+        [
+          0.36465,
+          0.36465,
+          -2.35455
+        ]
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published DFPT dynamical-charge tensor projection",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "Born effective charges elementary-charge units e;rows polarization/electric-field direction,columns sublattice displacement direction;Cartesian common basis",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "materialsproject/pymatgen-test-files",
+      "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/outputs/OUTCAR.lepsilon.gz",
+      "accessed_at": "2026-10-20T13:33:34.774927+00:00",
+      "raw_sha256": "fc088160ca86dffa55e70861015c296e9e906c2472b29215dae1bb936d08c06f",
+      "git_blob_sha1": "547365799acb696801f2884becedf634534b5da7",
+      "git_blob_verified": true,
+      "byte_count": 512491,
+      "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/outputs/OUTCAR.lepsilon.gz",
+      "role": "Genuine published scientific source artifact / library fixture; byte provenance verified, physical completeness and normalization require individual inspection; no expected answers used"
+    }
+  }
+}

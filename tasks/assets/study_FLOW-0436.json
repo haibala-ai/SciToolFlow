@@ -1,0 +1,1410 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "daily_records": [
+        {
+          "source_row_id": 0,
+          "Ozone": 41.0,
+          "Solar.R": 190.0,
+          "Wind": 7.4,
+          "Temp": 67,
+          "Month": 5,
+          "Day": 1
+        },
+        {
+          "source_row_id": 1,
+          "Ozone": 36.0,
+          "Solar.R": 118.0,
+          "Wind": 8.0,
+          "Temp": 72,
+          "Month": 5,
+          "Day": 2
+        },
+        {
+          "source_row_id": 2,
+          "Ozone": 12.0,
+          "Solar.R": 149.0,
+          "Wind": 12.6,
+          "Temp": 74,
+          "Month": 5,
+          "Day": 3
+        },
+        {
+          "source_row_id": 3,
+          "Ozone": 18.0,
+          "Solar.R": 313.0,
+          "Wind": 11.5,
+          "Temp": 62,
+          "Month": 5,
+          "Day": 4
+        },
+        {
+          "source_row_id": 4,
+          "Ozone": null,
+          "Solar.R": null,
+          "Wind": 14.3,
+          "Temp": 56,
+          "Month": 5,
+          "Day": 5
+        },
+        {
+          "source_row_id": 5,
+          "Ozone": 28.0,
+          "Solar.R": null,
+          "Wind": 14.9,
+          "Temp": 66,
+          "Month": 5,
+          "Day": 6
+        },
+        {
+          "source_row_id": 6,
+          "Ozone": 23.0,
+          "Solar.R": 299.0,
+          "Wind": 8.6,
+          "Temp": 65,
+          "Month": 5,
+          "Day": 7
+        },
+        {
+          "source_row_id": 7,
+          "Ozone": 19.0,
+          "Solar.R": 99.0,
+          "Wind": 13.8,
+          "Temp": 59,
+          "Month": 5,
+          "Day": 8
+        },
+        {
+          "source_row_id": 8,
+          "Ozone": 8.0,
+          "Solar.R": 19.0,
+          "Wind": 20.1,
+          "Temp": 61,
+          "Month": 5,
+          "Day": 9
+        },
+        {
+          "source_row_id": 9,
+          "Ozone": null,
+          "Solar.R": 194.0,
+          "Wind": 8.6,
+          "Temp": 69,
+          "Month": 5,
+          "Day": 10
+        },
+        {
+          "source_row_id": 10,
+          "Ozone": 7.0,
+          "Solar.R": null,
+          "Wind": 6.9,
+          "Temp": 74,
+          "Month": 5,
+          "Day": 11
+        },
+        {
+          "source_row_id": 11,
+          "Ozone": 16.0,
+          "Solar.R": 256.0,
+          "Wind": 9.7,
+          "Temp": 69,
+          "Month": 5,
+          "Day": 12
+        },
+        {
+          "source_row_id": 12,
+          "Ozone": 11.0,
+          "Solar.R": 290.0,
+          "Wind": 9.2,
+          "Temp": 66,
+          "Month": 5,
+          "Day": 13
+        },
+        {
+          "source_row_id": 13,
+          "Ozone": 14.0,
+          "Solar.R": 274.0,
+          "Wind": 10.9,
+          "Temp": 68,
+          "Month": 5,
+          "Day": 14
+        },
+        {
+          "source_row_id": 14,
+          "Ozone": 18.0,
+          "Solar.R": 65.0,
+          "Wind": 13.2,
+          "Temp": 58,
+          "Month": 5,
+          "Day": 15
+        },
+        {
+          "source_row_id": 15,
+          "Ozone": 14.0,
+          "Solar.R": 334.0,
+          "Wind": 11.5,
+          "Temp": 64,
+          "Month": 5,
+          "Day": 16
+        },
+        {
+          "source_row_id": 16,
+          "Ozone": 34.0,
+          "Solar.R": 307.0,
+          "Wind": 12.0,
+          "Temp": 66,
+          "Month": 5,
+          "Day": 17
+        },
+        {
+          "source_row_id": 17,
+          "Ozone": 6.0,
+          "Solar.R": 78.0,
+          "Wind": 18.4,
+          "Temp": 57,
+          "Month": 5,
+          "Day": 18
+        },
+        {
+          "source_row_id": 18,
+          "Ozone": 30.0,
+          "Solar.R": 322.0,
+          "Wind": 11.5,
+          "Temp": 68,
+          "Month": 5,
+          "Day": 19
+        },
+        {
+          "source_row_id": 19,
+          "Ozone": 11.0,
+          "Solar.R": 44.0,
+          "Wind": 9.7,
+          "Temp": 62,
+          "Month": 5,
+          "Day": 20
+        },
+        {
+          "source_row_id": 20,
+          "Ozone": 1.0,
+          "Solar.R": 8.0,
+          "Wind": 9.7,
+          "Temp": 59,
+          "Month": 5,
+          "Day": 21
+        },
+        {
+          "source_row_id": 21,
+          "Ozone": 11.0,
+          "Solar.R": 320.0,
+          "Wind": 16.6,
+          "Temp": 73,
+          "Month": 5,
+          "Day": 22
+        },
+        {
+          "source_row_id": 22,
+          "Ozone": 4.0,
+          "Solar.R": 25.0,
+          "Wind": 9.7,
+          "Temp": 61,
+          "Month": 5,
+          "Day": 23
+        },
+        {
+          "source_row_id": 23,
+          "Ozone": 32.0,
+          "Solar.R": 92.0,
+          "Wind": 12.0,
+          "Temp": 61,
+          "Month": 5,
+          "Day": 24
+        },
+        {
+          "source_row_id": 24,
+          "Ozone": null,
+          "Solar.R": 66.0,
+          "Wind": 16.6,
+          "Temp": 57,
+          "Month": 5,
+          "Day": 25
+        },
+        {
+          "source_row_id": 25,
+          "Ozone": null,
+          "Solar.R": 266.0,
+          "Wind": 14.9,
+          "Temp": 58,
+          "Month": 5,
+          "Day": 26
+        },
+        {
+          "source_row_id": 26,
+          "Ozone": null,
+          "Solar.R": null,
+          "Wind": 8.0,
+          "Temp": 57,
+          "Month": 5,
+          "Day": 27
+        },
+        {
+          "source_row_id": 27,
+          "Ozone": 23.0,
+          "Solar.R": 13.0,
+          "Wind": 12.0,
+          "Temp": 67,
+          "Month": 5,
+          "Day": 28
+        },
+        {
+          "source_row_id": 28,
+          "Ozone": 45.0,
+          "Solar.R": 252.0,
+          "Wind": 14.9,
+          "Temp": 81,
+          "Month": 5,
+          "Day": 29
+        },
+        {
+          "source_row_id": 29,
+          "Ozone": 115.0,
+          "Solar.R": 223.0,
+          "Wind": 5.7,
+          "Temp": 79,
+          "Month": 5,
+          "Day": 30
+        },
+        {
+          "source_row_id": 30,
+          "Ozone": 37.0,
+          "Solar.R": 279.0,
+          "Wind": 7.4,
+          "Temp": 76,
+          "Month": 5,
+          "Day": 31
+        },
+        {
+          "source_row_id": 31,
+          "Ozone": null,
+          "Solar.R": 286.0,
+          "Wind": 8.6,
+          "Temp": 78,
+          "Month": 6,
+          "Day": 1
+        },
+        {
+          "source_row_id": 32,
+          "Ozone": null,
+          "Solar.R": 287.0,
+          "Wind": 9.7,
+          "Temp": 74,
+          "Month": 6,
+          "Day": 2
+        },
+        {
+          "source_row_id": 33,
+          "Ozone": null,
+          "Solar.R": 242.0,
+          "Wind": 16.1,
+          "Temp": 67,
+          "Month": 6,
+          "Day": 3
+        },
+        {
+          "source_row_id": 34,
+          "Ozone": null,
+          "Solar.R": 186.0,
+          "Wind": 9.2,
+          "Temp": 84,
+          "Month": 6,
+          "Day": 4
+        },
+        {
+          "source_row_id": 35,
+          "Ozone": null,
+          "Solar.R": 220.0,
+          "Wind": 8.6,
+          "Temp": 85,
+          "Month": 6,
+          "Day": 5
+        },
+        {
+          "source_row_id": 36,
+          "Ozone": null,
+          "Solar.R": 264.0,
+          "Wind": 14.3,
+          "Temp": 79,
+          "Month": 6,
+          "Day": 6
+        },
+        {
+          "source_row_id": 37,
+          "Ozone": 29.0,
+          "Solar.R": 127.0,
+          "Wind": 9.7,
+          "Temp": 82,
+          "Month": 6,
+          "Day": 7
+        },
+        {
+          "source_row_id": 38,
+          "Ozone": null,
+          "Solar.R": 273.0,
+          "Wind": 6.9,
+          "Temp": 87,
+          "Month": 6,
+          "Day": 8
+        },
+        {
+          "source_row_id": 39,
+          "Ozone": 71.0,
+          "Solar.R": 291.0,
+          "Wind": 13.8,
+          "Temp": 90,
+          "Month": 6,
+          "Day": 9
+        },
+        {
+          "source_row_id": 40,
+          "Ozone": 39.0,
+          "Solar.R": 323.0,
+          "Wind": 11.5,
+          "Temp": 87,
+          "Month": 6,
+          "Day": 10
+        },
+        {
+          "source_row_id": 41,
+          "Ozone": null,
+          "Solar.R": 259.0,
+          "Wind": 10.9,
+          "Temp": 93,
+          "Month": 6,
+          "Day": 11
+        },
+        {
+          "source_row_id": 42,
+          "Ozone": null,
+          "Solar.R": 250.0,
+          "Wind": 9.2,
+          "Temp": 92,
+          "Month": 6,
+          "Day": 12
+        },
+        {
+          "source_row_id": 43,
+          "Ozone": 23.0,
+          "Solar.R": 148.0,
+          "Wind": 8.0,
+          "Temp": 82,
+          "Month": 6,
+          "Day": 13
+        },
+        {
+          "source_row_id": 44,
+          "Ozone": null,
+          "Solar.R": 332.0,
+          "Wind": 13.8,
+          "Temp": 80,
+          "Month": 6,
+          "Day": 14
+        },
+        {
+          "source_row_id": 45,
+          "Ozone": null,
+          "Solar.R": 322.0,
+          "Wind": 11.5,
+          "Temp": 79,
+          "Month": 6,
+          "Day": 15
+        },
+        {
+          "source_row_id": 46,
+          "Ozone": 21.0,
+          "Solar.R": 191.0,
+          "Wind": 14.9,
+          "Temp": 77,
+          "Month": 6,
+          "Day": 16
+        },
+        {
+          "source_row_id": 47,
+          "Ozone": 37.0,
+          "Solar.R": 284.0,
+          "Wind": 20.7,
+          "Temp": 72,
+          "Month": 6,
+          "Day": 17
+        },
+        {
+          "source_row_id": 48,
+          "Ozone": 20.0,
+          "Solar.R": 37.0,
+          "Wind": 9.2,
+          "Temp": 65,
+          "Month": 6,
+          "Day": 18
+        },
+        {
+          "source_row_id": 49,
+          "Ozone": 12.0,
+          "Solar.R": 120.0,
+          "Wind": 11.5,
+          "Temp": 73,
+          "Month": 6,
+          "Day": 19
+        },
+        {
+          "source_row_id": 50,
+          "Ozone": 13.0,
+          "Solar.R": 137.0,
+          "Wind": 10.3,
+          "Temp": 76,
+          "Month": 6,
+          "Day": 20
+        },
+        {
+          "source_row_id": 51,
+          "Ozone": null,
+          "Solar.R": 150.0,
+          "Wind": 6.3,
+          "Temp": 77,
+          "Month": 6,
+          "Day": 21
+        },
+        {
+          "source_row_id": 52,
+          "Ozone": null,
+          "Solar.R": 59.0,
+          "Wind": 1.7,
+          "Temp": 76,
+          "Month": 6,
+          "Day": 22
+        },
+        {
+          "source_row_id": 53,
+          "Ozone": null,
+          "Solar.R": 91.0,
+          "Wind": 4.6,
+          "Temp": 76,
+          "Month": 6,
+          "Day": 23
+        },
+        {
+          "source_row_id": 54,
+          "Ozone": null,
+          "Solar.R": 250.0,
+          "Wind": 6.3,
+          "Temp": 76,
+          "Month": 6,
+          "Day": 24
+        },
+        {
+          "source_row_id": 55,
+          "Ozone": null,
+          "Solar.R": 135.0,
+          "Wind": 8.0,
+          "Temp": 75,
+          "Month": 6,
+          "Day": 25
+        },
+        {
+          "source_row_id": 56,
+          "Ozone": null,
+          "Solar.R": 127.0,
+          "Wind": 8.0,
+          "Temp": 78,
+          "Month": 6,
+          "Day": 26
+        },
+        {
+          "source_row_id": 57,
+          "Ozone": null,
+          "Solar.R": 47.0,
+          "Wind": 10.3,
+          "Temp": 73,
+          "Month": 6,
+          "Day": 27
+        },
+        {
+          "source_row_id": 58,
+          "Ozone": null,
+          "Solar.R": 98.0,
+          "Wind": 11.5,
+          "Temp": 80,
+          "Month": 6,
+          "Day": 28
+        },
+        {
+          "source_row_id": 59,
+          "Ozone": null,
+          "Solar.R": 31.0,
+          "Wind": 14.9,
+          "Temp": 77,
+          "Month": 6,
+          "Day": 29
+        },
+        {
+          "source_row_id": 60,
+          "Ozone": null,
+          "Solar.R": 138.0,
+          "Wind": 8.0,
+          "Temp": 83,
+          "Month": 6,
+          "Day": 30
+        },
+        {
+          "source_row_id": 61,
+          "Ozone": 135.0,
+          "Solar.R": 269.0,
+          "Wind": 4.1,
+          "Temp": 84,
+          "Month": 7,
+          "Day": 1
+        },
+        {
+          "source_row_id": 62,
+          "Ozone": 49.0,
+          "Solar.R": 248.0,
+          "Wind": 9.2,
+          "Temp": 85,
+          "Month": 7,
+          "Day": 2
+        },
+        {
+          "source_row_id": 63,
+          "Ozone": 32.0,
+          "Solar.R": 236.0,
+          "Wind": 9.2,
+          "Temp": 81,
+          "Month": 7,
+          "Day": 3
+        },
+        {
+          "source_row_id": 64,
+          "Ozone": null,
+          "Solar.R": 101.0,
+          "Wind": 10.9,
+          "Temp": 84,
+          "Month": 7,
+          "Day": 4
+        },
+        {
+          "source_row_id": 65,
+          "Ozone": 64.0,
+          "Solar.R": 175.0,
+          "Wind": 4.6,
+          "Temp": 83,
+          "Month": 7,
+          "Day": 5
+        },
+        {
+          "source_row_id": 66,
+          "Ozone": 40.0,
+          "Solar.R": 314.0,
+          "Wind": 10.9,
+          "Temp": 83,
+          "Month": 7,
+          "Day": 6
+        },
+        {
+          "source_row_id": 67,
+          "Ozone": 77.0,
+          "Solar.R": 276.0,
+          "Wind": 5.1,
+          "Temp": 88,
+          "Month": 7,
+          "Day": 7
+        },
+        {
+          "source_row_id": 68,
+          "Ozone": 97.0,
+          "Solar.R": 267.0,
+          "Wind": 6.3,
+          "Temp": 92,
+          "Month": 7,
+          "Day": 8
+        },
+        {
+          "source_row_id": 69,
+          "Ozone": 97.0,
+          "Solar.R": 272.0,
+          "Wind": 5.7,
+          "Temp": 92,
+          "Month": 7,
+          "Day": 9
+        },
+        {
+          "source_row_id": 70,
+          "Ozone": 85.0,
+          "Solar.R": 175.0,
+          "Wind": 7.4,
+          "Temp": 89,
+          "Month": 7,
+          "Day": 10
+        },
+        {
+          "source_row_id": 71,
+          "Ozone": null,
+          "Solar.R": 139.0,
+          "Wind": 8.6,
+          "Temp": 82,
+          "Month": 7,
+          "Day": 11
+        },
+        {
+          "source_row_id": 72,
+          "Ozone": 10.0,
+          "Solar.R": 264.0,
+          "Wind": 14.3,
+          "Temp": 73,
+          "Month": 7,
+          "Day": 12
+        },
+        {
+          "source_row_id": 73,
+          "Ozone": 27.0,
+          "Solar.R": 175.0,
+          "Wind": 14.9,
+          "Temp": 81,
+          "Month": 7,
+          "Day": 13
+        },
+        {
+          "source_row_id": 74,
+          "Ozone": null,
+          "Solar.R": 291.0,
+          "Wind": 14.9,
+          "Temp": 91,
+          "Month": 7,
+          "Day": 14
+        },
+        {
+          "source_row_id": 75,
+          "Ozone": 7.0,
+          "Solar.R": 48.0,
+          "Wind": 14.3,
+          "Temp": 80,
+          "Month": 7,
+          "Day": 15
+        },
+        {
+          "source_row_id": 76,
+          "Ozone": 48.0,
+          "Solar.R": 260.0,
+          "Wind": 6.9,
+          "Temp": 81,
+          "Month": 7,
+          "Day": 16
+        },
+        {
+          "source_row_id": 77,
+          "Ozone": 35.0,
+          "Solar.R": 274.0,
+          "Wind": 10.3,
+          "Temp": 82,
+          "Month": 7,
+          "Day": 17
+        },
+        {
+          "source_row_id": 78,
+          "Ozone": 61.0,
+          "Solar.R": 285.0,
+          "Wind": 6.3,
+          "Temp": 84,
+          "Month": 7,
+          "Day": 18
+        },
+        {
+          "source_row_id": 79,
+          "Ozone": 79.0,
+          "Solar.R": 187.0,
+          "Wind": 5.1,
+          "Temp": 87,
+          "Month": 7,
+          "Day": 19
+        },
+        {
+          "source_row_id": 80,
+          "Ozone": 63.0,
+          "Solar.R": 220.0,
+          "Wind": 11.5,
+          "Temp": 85,
+          "Month": 7,
+          "Day": 20
+        },
+        {
+          "source_row_id": 81,
+          "Ozone": 16.0,
+          "Solar.R": 7.0,
+          "Wind": 6.9,
+          "Temp": 74,
+          "Month": 7,
+          "Day": 21
+        },
+        {
+          "source_row_id": 82,
+          "Ozone": null,
+          "Solar.R": 258.0,
+          "Wind": 9.7,
+          "Temp": 81,
+          "Month": 7,
+          "Day": 22
+        },
+        {
+          "source_row_id": 83,
+          "Ozone": null,
+          "Solar.R": 295.0,
+          "Wind": 11.5,
+          "Temp": 82,
+          "Month": 7,
+          "Day": 23
+        },
+        {
+          "source_row_id": 84,
+          "Ozone": 80.0,
+          "Solar.R": 294.0,
+          "Wind": 8.6,
+          "Temp": 86,
+          "Month": 7,
+          "Day": 24
+        },
+        {
+          "source_row_id": 85,
+          "Ozone": 108.0,
+          "Solar.R": 223.0,
+          "Wind": 8.0,
+          "Temp": 85,
+          "Month": 7,
+          "Day": 25
+        },
+        {
+          "source_row_id": 86,
+          "Ozone": 20.0,
+          "Solar.R": 81.0,
+          "Wind": 8.6,
+          "Temp": 82,
+          "Month": 7,
+          "Day": 26
+        },
+        {
+          "source_row_id": 87,
+          "Ozone": 52.0,
+          "Solar.R": 82.0,
+          "Wind": 12.0,
+          "Temp": 86,
+          "Month": 7,
+          "Day": 27
+        },
+        {
+          "source_row_id": 88,
+          "Ozone": 82.0,
+          "Solar.R": 213.0,
+          "Wind": 7.4,
+          "Temp": 88,
+          "Month": 7,
+          "Day": 28
+        },
+        {
+          "source_row_id": 89,
+          "Ozone": 50.0,
+          "Solar.R": 275.0,
+          "Wind": 7.4,
+          "Temp": 86,
+          "Month": 7,
+          "Day": 29
+        },
+        {
+          "source_row_id": 90,
+          "Ozone": 64.0,
+          "Solar.R": 253.0,
+          "Wind": 7.4,
+          "Temp": 83,
+          "Month": 7,
+          "Day": 30
+        },
+        {
+          "source_row_id": 91,
+          "Ozone": 59.0,
+          "Solar.R": 254.0,
+          "Wind": 9.2,
+          "Temp": 81,
+          "Month": 7,
+          "Day": 31
+        },
+        {
+          "source_row_id": 92,
+          "Ozone": 39.0,
+          "Solar.R": 83.0,
+          "Wind": 6.9,
+          "Temp": 81,
+          "Month": 8,
+          "Day": 1
+        },
+        {
+          "source_row_id": 93,
+          "Ozone": 9.0,
+          "Solar.R": 24.0,
+          "Wind": 13.8,
+          "Temp": 81,
+          "Month": 8,
+          "Day": 2
+        },
+        {
+          "source_row_id": 94,
+          "Ozone": 16.0,
+          "Solar.R": 77.0,
+          "Wind": 7.4,
+          "Temp": 82,
+          "Month": 8,
+          "Day": 3
+        },
+        {
+          "source_row_id": 95,
+          "Ozone": 78.0,
+          "Solar.R": null,
+          "Wind": 6.9,
+          "Temp": 86,
+          "Month": 8,
+          "Day": 4
+        },
+        {
+          "source_row_id": 96,
+          "Ozone": 35.0,
+          "Solar.R": null,
+          "Wind": 7.4,
+          "Temp": 85,
+          "Month": 8,
+          "Day": 5
+        },
+        {
+          "source_row_id": 97,
+          "Ozone": 66.0,
+          "Solar.R": null,
+          "Wind": 4.6,
+          "Temp": 87,
+          "Month": 8,
+          "Day": 6
+        },
+        {
+          "source_row_id": 98,
+          "Ozone": 122.0,
+          "Solar.R": 255.0,
+          "Wind": 4.0,
+          "Temp": 89,
+          "Month": 8,
+          "Day": 7
+        },
+        {
+          "source_row_id": 99,
+          "Ozone": 89.0,
+          "Solar.R": 229.0,
+          "Wind": 10.3,
+          "Temp": 90,
+          "Month": 8,
+          "Day": 8
+        },
+        {
+          "source_row_id": 100,
+          "Ozone": 110.0,
+          "Solar.R": 207.0,
+          "Wind": 8.0,
+          "Temp": 90,
+          "Month": 8,
+          "Day": 9
+        },
+        {
+          "source_row_id": 101,
+          "Ozone": null,
+          "Solar.R": 222.0,
+          "Wind": 8.6,
+          "Temp": 92,
+          "Month": 8,
+          "Day": 10
+        },
+        {
+          "source_row_id": 102,
+          "Ozone": null,
+          "Solar.R": 137.0,
+          "Wind": 11.5,
+          "Temp": 86,
+          "Month": 8,
+          "Day": 11
+        },
+        {
+          "source_row_id": 103,
+          "Ozone": 44.0,
+          "Solar.R": 192.0,
+          "Wind": 11.5,
+          "Temp": 86,
+          "Month": 8,
+          "Day": 12
+        },
+        {
+          "source_row_id": 104,
+          "Ozone": 28.0,
+          "Solar.R": 273.0,
+          "Wind": 11.5,
+          "Temp": 82,
+          "Month": 8,
+          "Day": 13
+        },
+        {
+          "source_row_id": 105,
+          "Ozone": 65.0,
+          "Solar.R": 157.0,
+          "Wind": 9.7,
+          "Temp": 80,
+          "Month": 8,
+          "Day": 14
+        },
+        {
+          "source_row_id": 106,
+          "Ozone": null,
+          "Solar.R": 64.0,
+          "Wind": 11.5,
+          "Temp": 79,
+          "Month": 8,
+          "Day": 15
+        },
+        {
+          "source_row_id": 107,
+          "Ozone": 22.0,
+          "Solar.R": 71.0,
+          "Wind": 10.3,
+          "Temp": 77,
+          "Month": 8,
+          "Day": 16
+        },
+        {
+          "source_row_id": 108,
+          "Ozone": 59.0,
+          "Solar.R": 51.0,
+          "Wind": 6.3,
+          "Temp": 79,
+          "Month": 8,
+          "Day": 17
+        },
+        {
+          "source_row_id": 109,
+          "Ozone": 23.0,
+          "Solar.R": 115.0,
+          "Wind": 7.4,
+          "Temp": 76,
+          "Month": 8,
+          "Day": 18
+        },
+        {
+          "source_row_id": 110,
+          "Ozone": 31.0,
+          "Solar.R": 244.0,
+          "Wind": 10.9,
+          "Temp": 78,
+          "Month": 8,
+          "Day": 19
+        },
+        {
+          "source_row_id": 111,
+          "Ozone": 44.0,
+          "Solar.R": 190.0,
+          "Wind": 10.3,
+          "Temp": 78,
+          "Month": 8,
+          "Day": 20
+        },
+        {
+          "source_row_id": 112,
+          "Ozone": 21.0,
+          "Solar.R": 259.0,
+          "Wind": 15.5,
+          "Temp": 77,
+          "Month": 8,
+          "Day": 21
+        },
+        {
+          "source_row_id": 113,
+          "Ozone": 9.0,
+          "Solar.R": 36.0,
+          "Wind": 14.3,
+          "Temp": 72,
+          "Month": 8,
+          "Day": 22
+        },
+        {
+          "source_row_id": 114,
+          "Ozone": null,
+          "Solar.R": 255.0,
+          "Wind": 12.6,
+          "Temp": 75,
+          "Month": 8,
+          "Day": 23
+        },
+        {
+          "source_row_id": 115,
+          "Ozone": 45.0,
+          "Solar.R": 212.0,
+          "Wind": 9.7,
+          "Temp": 79,
+          "Month": 8,
+          "Day": 24
+        },
+        {
+          "source_row_id": 116,
+          "Ozone": 168.0,
+          "Solar.R": 238.0,
+          "Wind": 3.4,
+          "Temp": 81,
+          "Month": 8,
+          "Day": 25
+        },
+        {
+          "source_row_id": 117,
+          "Ozone": 73.0,
+          "Solar.R": 215.0,
+          "Wind": 8.0,
+          "Temp": 86,
+          "Month": 8,
+          "Day": 26
+        },
+        {
+          "source_row_id": 118,
+          "Ozone": null,
+          "Solar.R": 153.0,
+          "Wind": 5.7,
+          "Temp": 88,
+          "Month": 8,
+          "Day": 27
+        },
+        {
+          "source_row_id": 119,
+          "Ozone": 76.0,
+          "Solar.R": 203.0,
+          "Wind": 9.7,
+          "Temp": 97,
+          "Month": 8,
+          "Day": 28
+        },
+        {
+          "source_row_id": 120,
+          "Ozone": 118.0,
+          "Solar.R": 225.0,
+          "Wind": 2.3,
+          "Temp": 94,
+          "Month": 8,
+          "Day": 29
+        },
+        {
+          "source_row_id": 121,
+          "Ozone": 84.0,
+          "Solar.R": 237.0,
+          "Wind": 6.3,
+          "Temp": 96,
+          "Month": 8,
+          "Day": 30
+        },
+        {
+          "source_row_id": 122,
+          "Ozone": 85.0,
+          "Solar.R": 188.0,
+          "Wind": 6.3,
+          "Temp": 94,
+          "Month": 8,
+          "Day": 31
+        },
+        {
+          "source_row_id": 123,
+          "Ozone": 96.0,
+          "Solar.R": 167.0,
+          "Wind": 6.9,
+          "Temp": 91,
+          "Month": 9,
+          "Day": 1
+        },
+        {
+          "source_row_id": 124,
+          "Ozone": 78.0,
+          "Solar.R": 197.0,
+          "Wind": 5.1,
+          "Temp": 92,
+          "Month": 9,
+          "Day": 2
+        },
+        {
+          "source_row_id": 125,
+          "Ozone": 73.0,
+          "Solar.R": 183.0,
+          "Wind": 2.8,
+          "Temp": 93,
+          "Month": 9,
+          "Day": 3
+        },
+        {
+          "source_row_id": 126,
+          "Ozone": 91.0,
+          "Solar.R": 189.0,
+          "Wind": 4.6,
+          "Temp": 93,
+          "Month": 9,
+          "Day": 4
+        },
+        {
+          "source_row_id": 127,
+          "Ozone": 47.0,
+          "Solar.R": 95.0,
+          "Wind": 7.4,
+          "Temp": 87,
+          "Month": 9,
+          "Day": 5
+        },
+        {
+          "source_row_id": 128,
+          "Ozone": 32.0,
+          "Solar.R": 92.0,
+          "Wind": 15.5,
+          "Temp": 84,
+          "Month": 9,
+          "Day": 6
+        },
+        {
+          "source_row_id": 129,
+          "Ozone": 20.0,
+          "Solar.R": 252.0,
+          "Wind": 10.9,
+          "Temp": 80,
+          "Month": 9,
+          "Day": 7
+        },
+        {
+          "source_row_id": 130,
+          "Ozone": 23.0,
+          "Solar.R": 220.0,
+          "Wind": 10.3,
+          "Temp": 78,
+          "Month": 9,
+          "Day": 8
+        },
+        {
+          "source_row_id": 131,
+          "Ozone": 21.0,
+          "Solar.R": 230.0,
+          "Wind": 10.9,
+          "Temp": 75,
+          "Month": 9,
+          "Day": 9
+        },
+        {
+          "source_row_id": 132,
+          "Ozone": 24.0,
+          "Solar.R": 259.0,
+          "Wind": 9.7,
+          "Temp": 73,
+          "Month": 9,
+          "Day": 10
+        },
+        {
+          "source_row_id": 133,
+          "Ozone": 44.0,
+          "Solar.R": 236.0,
+          "Wind": 14.9,
+          "Temp": 81,
+          "Month": 9,
+          "Day": 11
+        },
+        {
+          "source_row_id": 134,
+          "Ozone": 21.0,
+          "Solar.R": 259.0,
+          "Wind": 15.5,
+          "Temp": 76,
+          "Month": 9,
+          "Day": 12
+        },
+        {
+          "source_row_id": 135,
+          "Ozone": 28.0,
+          "Solar.R": 238.0,
+          "Wind": 6.3,
+          "Temp": 77,
+          "Month": 9,
+          "Day": 13
+        },
+        {
+          "source_row_id": 136,
+          "Ozone": 9.0,
+          "Solar.R": 24.0,
+          "Wind": 10.9,
+          "Temp": 71,
+          "Month": 9,
+          "Day": 14
+        },
+        {
+          "source_row_id": 137,
+          "Ozone": 13.0,
+          "Solar.R": 112.0,
+          "Wind": 11.5,
+          "Temp": 71,
+          "Month": 9,
+          "Day": 15
+        },
+        {
+          "source_row_id": 138,
+          "Ozone": 46.0,
+          "Solar.R": 237.0,
+          "Wind": 6.9,
+          "Temp": 78,
+          "Month": 9,
+          "Day": 16
+        },
+        {
+          "source_row_id": 139,
+          "Ozone": 18.0,
+          "Solar.R": 224.0,
+          "Wind": 13.8,
+          "Temp": 67,
+          "Month": 9,
+          "Day": 17
+        },
+        {
+          "source_row_id": 140,
+          "Ozone": 13.0,
+          "Solar.R": 27.0,
+          "Wind": 10.3,
+          "Temp": 76,
+          "Month": 9,
+          "Day": 18
+        },
+        {
+          "source_row_id": 141,
+          "Ozone": 24.0,
+          "Solar.R": 238.0,
+          "Wind": 10.3,
+          "Temp": 68,
+          "Month": 9,
+          "Day": 19
+        },
+        {
+          "source_row_id": 142,
+          "Ozone": 16.0,
+          "Solar.R": 201.0,
+          "Wind": 8.0,
+          "Temp": 82,
+          "Month": 9,
+          "Day": 20
+        },
+        {
+          "source_row_id": 143,
+          "Ozone": 13.0,
+          "Solar.R": 238.0,
+          "Wind": 12.6,
+          "Temp": 64,
+          "Month": 9,
+          "Day": 21
+        },
+        {
+          "source_row_id": 144,
+          "Ozone": 23.0,
+          "Solar.R": 14.0,
+          "Wind": 9.2,
+          "Temp": 71,
+          "Month": 9,
+          "Day": 22
+        },
+        {
+          "source_row_id": 145,
+          "Ozone": 36.0,
+          "Solar.R": 139.0,
+          "Wind": 10.3,
+          "Temp": 81,
+          "Month": 9,
+          "Day": 23
+        },
+        {
+          "source_row_id": 146,
+          "Ozone": 7.0,
+          "Solar.R": 49.0,
+          "Wind": 10.3,
+          "Temp": 69,
+          "Month": 9,
+          "Day": 24
+        },
+        {
+          "source_row_id": 147,
+          "Ozone": 14.0,
+          "Solar.R": 20.0,
+          "Wind": 16.6,
+          "Temp": 63,
+          "Month": 9,
+          "Day": 25
+        },
+        {
+          "source_row_id": 148,
+          "Ozone": 30.0,
+          "Solar.R": 193.0,
+          "Wind": 6.9,
+          "Temp": 70,
+          "Month": 9,
+          "Day": 26
+        },
+        {
+          "source_row_id": 149,
+          "Ozone": null,
+          "Solar.R": 145.0,
+          "Wind": 13.2,
+          "Temp": 77,
+          "Month": 9,
+          "Day": 27
+        },
+        {
+          "source_row_id": 150,
+          "Ozone": 14.0,
+          "Solar.R": 191.0,
+          "Wind": 14.3,
+          "Temp": 75,
+          "Month": 9,
+          "Day": 28
+        },
+        {
+          "source_row_id": 151,
+          "Ozone": 18.0,
+          "Solar.R": 131.0,
+          "Wind": 8.0,
+          "Temp": 76,
+          "Month": 9,
+          "Day": 29
+        },
+        {
+          "source_row_id": 152,
+          "Ozone": 20.0,
+          "Solar.R": 223.0,
+          "Wind": 11.5,
+          "Temp": 68,
+          "Month": 9,
+          "Day": 30
+        }
+      ],
+      "feature_definitions": {
+        "Temp": "DegreesFahrenheit,maximumdailytemperatureatLaGuardia.",
+        "Wind": "mph,morningreadingsatLaGuardia.",
+        "Ozone": "ppb,afternoonRooseveltIslandreading."
+      },
+      "model_policy": "Descriptive OLS with intercept forOzoneonTempandWind,using days with nonmissing model variables. Report the conditional temperature association per10degreesCelsius,holding recorded Wind fixed. Temp_C=(Temp_F-32)*5/9. Either fitting inFthenconverting the slope or fitting inCanswers the same model;do not reinterpret the coefficient as an intervention or addSolar.R.",
+      "source_provenance": {
+        "source_url": "https://svn.r-project.org/R/trunk/src/library/datasets/data/airquality.tab",
+        "sha256": "0d9453a2e5196f06fa3b2ede9fcea8ab309ad147f64940dc0f4eb685857ed048",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html",
+        "retrieved_utc_date": "2026-10-20",
+        "source": "Official R datasets SVN source,revision90725 listing",
+        "license": "R distribution GPL>=2; underlying observations cited by individual dataset documentation",
+        "claim_scope": "Historical public observations only; no new scientific observations or causal/representativeness assumption",
+        "converted_json_sha256": "07de6b58fe19cbdd6b26aee13c14c20faffa070533cddb95063e4240f6c54ac2",
+        "rows": 153,
+        "conversion": "Pandas2.2.2 delimiter parsing;literalNA becomes JSONnull;no numeric observation altered.",
+        "converted_observation_sha256": "07de6b58fe19cbdd6b26aee13c14c20faffa070533cddb95063e4240f6c54ac2",
+        "observation_status": "Original historical values; no changed or synthetic observation."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

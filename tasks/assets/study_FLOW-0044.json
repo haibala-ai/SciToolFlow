@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "record_id": "fraction01",
+      "formula": "C2H6",
+      "number_count": 3
+    },
+    {
+      "record_id": "fraction02",
+      "formula": "C6H14",
+      "number_count": 2
+    },
+    {
+      "record_id": "fraction03",
+      "formula": "C10H22",
+      "number_count": 1
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Relative molecule counts; natural-abundance mass g/mol",
+    "original_observation_claim": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "peptide_records": [
+    {
+      "id": "acidic",
+      "sequence": "DE",
+      "relative_molecule_amount": 2.0
+    },
+    {
+      "id": "basic",
+      "sequence": "KK",
+      "relative_molecule_amount": 1.0
+    }
+  ],
+  "simplified_pKa_convention": {
+    "free_N_terminus": 9.0,
+    "free_C_terminus": 2.0,
+    "D_and_E_side_chain": 4.0,
+    "K_side_chain": 10.0
+  },
+  "model": "Canonical unmodified linear peptides have free N/C termini. Under THIS declared simplified independent-site convention,a basic site contributes +1/(1+10^(pH-pKa)),an acidic site contributes -1/(1+10^(pKa-pH));there are no other charges. Individual pI is the root of its own charge;the mixture zero-total-charge pH is the root of the MOLECULE-AMOUNT-weighted sum of peptide charges. Do not substitute a backend pKa convention or average individual pIs to define the mixture root. All roots lie in[0,14].",
+  "target": "Determine each sequence composition,return the mixture zero-total-charge pH,individual pIs in source order,the molecule-amount-weighted arithmetic mean of those pIs,and both individual peptide charges at the mixture root. Report whether zero total mixture charge means that every peptide species is individually neutral. This equilibrium charge calculation does not predict a single electrophoretic band.",
+  "provenance": {
+    "kind": "Explicit synthetic benign biological measurement model with exact source observations;not an empirical validation or sequence-design recommendation."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "half_occupancy_records": [
+    {
+      "nominal_protein_total_nanomolar": 2.0,
+      "ligand_total_nanomolar": 3.0
+    },
+    {
+      "nominal_protein_total_nanomolar": 10.0,
+      "ligand_total_nanomolar": 5.0
+    }
+  ],
+  "prediction_nominal_protein_total_nanomolar": 10.0,
+  "prediction_ligand_total_nanomolar": 1.0,
+  "model": "One reversible1:1binding site per ACTIVE protein. A constant unknown fraction fof nominal protein is active,0<f<=1;the inactive fraction does not bind. At a common unknown positive Kd,complex B obeys Kd=(E_active-B)*(L_total-B)/Bwith E_active=f*E_nominal,and0<=B<=min(E_active,L_total). The two calibrated records each mark exactly half occupancy of ACTIVE sites,B=E_active/2. The ligand is depleted by binding;the listed ligand totals are not free ligand concentrations. No cooperativity or nonspecific binding is included.",
+  "target": "Infer the active fraction and Kd,then at the prediction totals return active-protein occupied fraction and free ligand concentration. Report whether substituting total ligand for free ligand in L/(Kd+L)gives the correct prediction. No activity inhibition or cellular potency is inferred.",
+  "provenance": {
+    "kind": "Explicit synthetic benign biological measurement model with exact source observations;not an empirical validation or sequence-design recommendation."
+  }
+}

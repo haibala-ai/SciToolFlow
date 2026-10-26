@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "record_id": "study",
+      "target_encoded_smiles": "CC(=O)OCc1ccccc1",
+      "inventory_encoded_pool": "O=C(O[K])O[K].CN(C)C=O.CC(=O)O.BrCc1ccccc1",
+      "inventory_semantics": "Virtual graph-token inventory. Every disconnected fragment is retained;tautomers,formal charges and stereochemistry are preserved. Covalent alkali-carbonate graph tokens are intentional model encodings,not a claim about ionic vendor stock. A one-step route is stock-compatible only if its complete encoded precursor pool has the same all-fragment graph identity as this pool. No fragment may be silently discarded.",
+      "maximum_search_depth": 2,
+      "selection_policy": "Among accepted one-step model proposals,select the highest route score compatible with the complete virtual inventory. Scores are model outputs,not experimental success probabilities.",
+      "forward_protocol": "Submit the selected proposal original metadata.reactants token string verbatim to the forward checkpoint. Graph equivalence is used for stock and target comparison;neural tokenization is not assumed invariant under alternative equivalent SMILES encodings.",
+      "model_scope": "Fixed CPU digital prediction audit only;agreement between two learned models does not establish experimental feasibility,selectivity,yield or safe laboratory conditions. No laboratory action is requested.",
+      "retro_checkpoint": "Pistachio2025Q2-Retro",
+      "forward_checkpoint": "Pistachio2025Q2-Forward",
+      "retro_checkpoint_sha256": "13d7fc03a9e4637ed19e18868de84dc86cdfc7764681604157d5a9796c30ba9c",
+      "forward_checkpoint_sha256": "def72338009f6f82c4d64a55ed3c488cf3029e72f0a10c308d322e59257a10fe"
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Route scores and model confidence are dimensionless;SMILES denote exact graph-token encodings under the declared complete-fragment policy.",
+    "original_observation_claim": false
+  }
+}

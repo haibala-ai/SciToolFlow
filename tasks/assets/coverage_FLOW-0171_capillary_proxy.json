@@ -1,0 +1,12 @@
+{
+  "requested_material_ids_in_order": [
+    "mp-23",
+    "mp-134"
+  ],
+  "canonical_ids_in_order": [
+    "mp-aaaaaaax",
+    "mp-aaaaaafe"
+  ],
+  "conditional_model": "For a controlled common-driving-force comparison,use each published Wulff-weighted surface energy gamma only as an explicitly isotropic effective input. Let positive bulk driving-force magnitudeDelta_g=1e9J/m^3andT=300K. The spherical capillary proxy is r*=2gamma/Delta_gandDeltaG*=16*pi*gamma^3/(3*Delta_g^2). Use kB=1.380649e-23J/K;report radius in nm and barrier divided bykB*T. This is a model comparison,not a predicted experimental nucleation rate or an exact anisotropic barrier.",
+  "scope_check": "Also inspect the separate published surface-anisotropy field for each phase. Report all source IDs with a strictly nonzero published value,and assess whether the two scalar observations specify exact orientation-resolved surface energies. No guessed facet energies or prefactors may be supplied."
+}

@@ -1,0 +1,17 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "site_order": [
+    "site_A",
+    "site_B"
+  ],
+  "independent_association_constants_per_micromolar": [
+    1.0,
+    0.01
+  ],
+  "model": "One host has two independent NONEQUIVALENT ligand sites. Free ligand concentration L is externally buffered, so no depletion equation is needed. Site occupancy theta_i=K_i*L/(1+K_i*L); total site fractional occupancy Y=(theta_A+theta_B)/2. There is no coupling between sites.",
+  "hill_definition": "The local slope n_H=d ln[Y/(1-Y)]/d ln L at Y=1/2. It is not the exponent of an assumed global Hill fit. Differentiate the actual sum of two Langmuir occupancies or use an independently justified derivative.",
+  "scope": "Controlled binding heterogeneity. A slope below1 can occur without negative cooperativity and does not count sites. No microscopic binding mechanism or real host design is inferred."
+}

@@ -1,0 +1,11 @@
+# Compatible with SciTool-Unified Python 3.10; no core numerical upgrades.
+numpy==1.26.4
+scipy==1.15.3
+pandas==2.2.2
+scikit-learn==1.5.2
+matplotlib==3.9.2
+h5py==3.16.0
+pydeseq2==0.4.12
+anndata==0.10.8
+array-api-compat==1.15.0
+natsort==8.4.0

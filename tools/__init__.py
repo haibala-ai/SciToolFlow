@@ -1,6 +1,6 @@
-"""Scientific tool catalogue, discovery and isolated execution."""
+"""Public API for tool contracts and isolated execution."""
 
 from .catalog import ToolCatalog
-from .executor import execute
+from .runtime.executor import execute
 
 __all__ = ["ToolCatalog", "execute"]

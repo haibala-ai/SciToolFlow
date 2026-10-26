@@ -1,0 +1,109 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "body1_heat_capacity_j_k": 4.0,
+      "body2_calibration": {
+        "time_s": [
+          0,
+          2,
+          5,
+          10
+        ],
+        "heater_power_w": [
+          2,
+          4,
+          3,
+          1
+        ],
+        "temperature_rise_k": 5.0,
+        "conditions": "Separate body2-only calibration. All supplied heater power enters this body, heat loss and stored heater energy are negligible, and its heat capacity is constant over the calibration and comparison range. Power is piecewise linear between every supplied knot."
+      },
+      "comparison_time_s": [
+        0,
+        5,
+        10,
+        20,
+        40,
+        60,
+        80
+      ],
+      "runs": [
+        {
+          "run_id": "run01",
+          "body_temperatures_c": [
+            [
+              80.0,
+              20.0
+            ],
+            [
+              72.08700985424935,
+              25.97206803452879
+            ],
+            [
+              66.00522518439412,
+              30.56209420045726
+            ],
+            [
+              57.73824790305713,
+              36.80132233731537
+            ],
+            [
+              49.970037126112324,
+              42.66412292368881
+            ],
+            [
+              47.25932961251422,
+              44.70993991508361
+            ],
+            [
+              46.31343158846921,
+              45.42382521624965
+            ]
+          ]
+        },
+        {
+          "run_id": "run02",
+          "body_temperatures_c": [
+            [
+              80.0,
+              20.0
+            ],
+            [
+              72.03700985424935,
+              25.922068034528788
+            ],
+            [
+              65.90522518439413,
+              30.46209420045726
+            ],
+            [
+              57.538247903057126,
+              36.601322337315366
+            ],
+            [
+              49.570037126112325,
+              42.26412292368881
+            ],
+            [
+              46.65932961251422,
+              44.10993991508361
+            ],
+            [
+              45.51343158846921,
+              44.62382521624965
+            ]
+          ]
+        }
+      ],
+      "inverse_model": "Two spatially uniform bodies exchange heat only with each other through one constant positive conductance G: C1*dT1/dt=-G*(T1-T2), C2*dT2/dt=+G*(T1-T2). Thus C1*T1+C2*T2 must stay constant, and a nonzero temperature difference decays exponentially at rate G*(1/C1+1/C2). Celsius or consistently shifted kelvin coordinates give the same energy changes. No phase change, external heater during comparison, heat-capacity variation or internal temperature gradients are part of this candidate model.",
+      "admissibility_policy": "Audit every supplied comparison sample. A run is admissible only if max over times of abs(C1*(T1(t)-T1(0))+C2*(T2(t)-T2(0))) is at most1e-7 J. A matching exponential difference alone is insufficient. Only an admissible run may receive a conductance estimate. For an admissible run, use an ordinary least-squares line for log(T1-T2) versus time across all supplied positive differences, with a fitted intercept. Report G in W/K; for a nonadmissible run report null rather than an isolated-model conductance. No extrapolation to real contact experiments or general identifiability claim is requested.",
+      "source_provenance": {
+        "kind": "controlled methodological thermal histories and calorimetric inputs, not physical measurements",
+        "construction_scope": "An explicitly authored comparison of two possible thermal histories; run condition labels and latent conductance are withheld from the public input. The independent calorimetric power samples and heat-capacity reference are disclosed inputs. Private builder records retain exact construction parameters for source/math audit.",
+        "method_source": "https://web.mit.edu/16.unified/www/FALL/thermodynamics/notes/node129.html",
+        "read_scope": "MIT section18.3, equations18.14\u201318.18: spatially uniform lump approximation, first-law heat balance and exponential response. Equal/opposite interbody fluxes and this inverse two-body audit are a project synthesis of those balances, not a claim that the source supplied these histories."
+      }
+    }
+  ]
+}

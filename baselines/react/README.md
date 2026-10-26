@@ -1,89 +1,79 @@
 # ReAct baseline
 
-生成支持 `--backend api|vllm|local`、`--model`。API 使用 `SCITOOLFLOW_API_BASE/KEY/MODEL`，不读取 embedding 密钥；本地推荐常驻 vLLM，直接 Qwen worker 也可用但并发为 1。API JSON Schema 需要供应商支持并显式开启，普通 JSON 模式仍经相同本地协议和答案校验。安装、配置与完整命令统一见[交付 README](../../README.md)。
+ReAct 既是 SciToolFlow 的测试 harness，也是 baseline。它只读取公开任务、输入附件和工具契约，通过统一工具执行器获取证据，以结构化答案提交结果。
 
-本目录是 baseline 的公开使用入口：
+## 启动与输出
 
-| 文件 | 用途 |
-| --- | --- |
-| [run.py](run.py) | 从项目根目录运行 baseline |
-| [system_prompt.md](system_prompt.md) | 唯一的 system prompt |
-| [config.json](config.json) | CLI 直接读取的默认决策/时间/token 预算 |
-
-本目录包含实际实现：runner.py 管理批次与续跑，runtime.py 实现决策循环，context.py 管理上下文，trajectory.py 处理轨迹。公共模型客户端位于 scitoolflow/models/；项目 CLI 复用本目录代码。
+从项目根目录执行：
 
 ```bash
-python baselines/react/run.py --tasks FLOW-0285,FLOW-0481 --concurrency 2 --output results/demo/predictions.json
-python baselines/react/run.py --tasks FLOW-0285,FLOW-0481 --concurrency 2 --output results/demo/predictions.json --resume
+python baselines/react/run.py --backend vllm --model YOUR_MODEL \
+  --tasks FLOW-0285,FLOW-0481 --concurrency 2 --output results/demo/predictions.json
+python baselines/react/run.py --backend vllm --model YOUR_MODEL \
+  --tasks FLOW-0285,FLOW-0481 --concurrency 2 --output results/demo/predictions.json --resume
 ```
 
-新轨迹位于 `results/<experiment>/trajectories/<task-run>/trajectory.json`。历史实验的原路径字符串保留；当前浏览路径以 `results/index.json` 为准。此次路径重组会改变 checkpoint 指纹，旧实验应保留，新实验使用新的输出目录。
+生成后端支持 `api`、常驻 `vllm` 和直接加载权重的 `local`。API 使用 `SCITOOLFLOW_API_BASE/KEY/MODEL`；vLLM 使用独立的服务地址、模型名和采样配置；direct-local 仅支持并发 1，其 GPU 依次采用 `SCITOOL_LLM_GPU`、继承的 `CUDA_VISIBLE_DEVICES`、单卡 `0`。模型选择与部署见[安装说明](../../docs/setup.md)。
 
-## 协议
+`predictions.json` 保存预测；同目录的 `experiment.json` 和 `progress.json` 保存实验身份及进度。完整轨迹位于 `trajectories/<task-run>/trajectory.json`，工具产物位于 `tool_artifacts/`。轨迹与预测逐步原子保存；同指纹 `--resume` 复用已记录任务，只有显式 `--retry-failed` 才重试失败任务。代码、任务、工具实现、prompt、模型、采样和并发设置改变后，应新建实验目录。
 
-ReAct 是本项目测试 harness，也是 baseline。运行器不读取 references.jsonl；只加载公开
-tasks/questions.jsonl、公开工具契约和调用预算。其他 baseline 可复用工具执行器并输出同一预测格式。
+## 模型交互
 
-初始 system 消息包含按学科分类的工具名、DescribeTools 的输入形式、五种决策格式与限制。
-它不包含科学工具的描述、实参类型或参考路径。DescribeTools 按需查询；合法的直接调用无需查询历史。批量查询可一次获得多个工具契约，后续无需重复查询。参数错误会指出问题并返回该工具的公开输入 schema；不会伪造成功 observation。
+初始消息展示按学科分类的工具名、任务输入和公开答案格式，不展示科学工具的完整参数，也不读取参考答案。模型可以直接合法调用工具，或通过 `DescribeTools` 查询单个名称或最多 20 个名称的完整契约。已有契约可以复用；参数错误返回公开输入 schema 以供修正。
 
-- 调用：`{"actions":[{"tool":"DescribeTools","arguments":{"tools":["ParseJSONDocument"]}}]}`
-- 思考：`{"think":"需要先确认输入格式，再读取结果。"}`
-- 检视：`{"inspect":{"observation_id":"o001","field":["document"],"offset":0}}`
-- 结束：`{"finish":{"value":7}}`，内部字段必须符合该题公开答案 schema。
-- 无法完成：`{"stop":{"reason":"必需证据不可用"}}`，记录为失败，不计完成。
+每次响应选择一种决策：
 
-DescribeTools 可接单个字符串或 1–20 个名字。未知名返回建议，不自动执行相似名字。
-aliases 只按已登记映射解析。科学 observation 使用 o001 等标识，查询使用 d001，
-错误保持 error/blocked/skipped，不把失败内容当科学结果。批量动作默认串行执行；单项校验错误写入 action_errors，合法独立动作仍执行，结果用 action_index 对应原始动作；
-它们的输入必须在该轮前准备好，不能引用同一批中新产生的结果。
+| 决策 | 示例与含义 |
+| --- | --- |
+| 调用工具 | `{"actions":[{"tool":"DescribeTools","arguments":{"tools":["ParseJSONDocument"]}}]}` |
+| 简短思考 | `{"think":"先检查输入，再决定下一步。"}`，可选，不要求输出内部 reasoning |
+| 检视观察 | `{"inspect":{"observation_id":"o001","field":["document"],"offset":0}}` |
+| 提交答案 | `{"finish":{"value":7}}`，finish 内部必须符合当前题的 answer_schema |
+| 无法完成 | `{"stop":{"reason":"必需证据不可用"}}`，记录失败并保留证据 |
 
-思考步是可选的独立决策，仅写简短工作状态；不要求导出模型内部 reasoning。
-它使用一次模型请求，消耗时间和 token，无 observation、无科学调用。总量和连续量
-均有限制，剩余额度回给模型。原生模型 reasoning 由 client 的独立开关控制。
+独立动作可合成一批，默认顺序执行。每个动作的输入必须在这一轮开始前准备好，不能引用同批次刚生成的输出。单项校验失败记录在 `action_errors`，不阻止其余合法动作，结果以 `action_index` 对应原动作。文档查询观察使用 `d001`，科学工具观察使用 `o001`；失败保持 `error`／`blocked`／`skipped`，不充当科学结果。
 
-每个 trajectory.json 包含 initial_messages、limits、steps、stats、status、最终答案/失败。
-step.type 有 tools、think、inspect、finish、stop、error；一个响应只有一个 step。
-tools step 自带实际 calls/output/error/duration，不再拆出大量 event 或重复消息。
-观察预览受限时可 inspect；完整输出保留。DescribeTools 的文档完整回给模型。
+## 历史、观察与答案格式
 
-运行中逐步原子保存轨迹；batch 也逐题原子保存预测。resume 绑定公开输入、工具实现、
-prompt、client 和采样设置，失败任务不会暗中重跑；只有 --retry-failed 才重试。
-采样使用 SCITOOLFLOW_VLLM_TEMPERATURE/TOP_P/TOP_K/REPETITION_PENALTY 等配置。
-API 后端可以独立设置 SCITOOLFLOW_API_BASE/API_KEY/MODEL；评分不使用这些凭据。
+`context.py` 管理实际传给模型的消息和输入额度；上下文预览不是完整轨迹。每个科学输出完整落盘，过长预览通过 `inspect` 读取；`field` 指定对象键或数组索引路径，`offset` 是序列化 JSON 的字符偏移，`next_offset` 指示后续页。观察引用复制真实完整值，不执行计算；`decode: "json_array"` 只解码实际观察中已有的完整数组。DescribeTools 文档完整返回。
 
-## 默认预算与本轮审查
+公开 `answer_schema` 生成必填字段索引、缩进结构和同级字段表。答案格式错误指出具体缺失或类型不符的路径，不填值、不重排字段、不提供参考答案。合法 null 与完成的负结果按科学契约保留，未取得必需证据时使用 stop。
 
-默认 80 轮、每批 8 动作、20 次查询、8 次显式思考（连续最多 2 次）、连续协议错误最多 5 次、每次输出 4096 tokens；科学调用仍使用公开题目的 32/34/35 次额度。每轮显示所有剩余预算，用户可以用 CLI 调整。Ctrl-C 保留中断轨迹并终止本次生成，不触发后续 judge。
+在支持结构化输出的后端，`--protocol-schema-guard` 从首轮约束操作和登记工具名，只对已经展示的参数契约施加参数约束，未知契约仍允许直接调用。默认 `--answer-schema-guard` 在首次答案格式错误后启用答案结构约束：仅取公开字段、类型与必填层级，不复制科学枚举、常量、默认值、示例、范围或数组长度，仍允许取证、思考和停止。当前 vLLM 支持此机制；API 须由提供商支持且显式启用结构化输出；direct-local 使用文本格式说明与本地校验。两项 guard 均有 `--no-...` 对照开关，轨迹记录约束来源与 SHA256。
 
-前 251 条历史轨迹的审查、预算依据与限制见 [2026-10-17 报告](../../results/reports/react_review_20261017/README.md)。旧协议预测和新协议预测必须使用独立实验目录，不能直接 resume 或拼接。
+## 资源与终止
 
-公开输入附带由 answer_schema 生成的 required_answer_fields 索引，仅列必填路径和类型。答案校验指出缺失字段的完整路径及同名字段已出现的位置；不会重排模型答案或补充科学值。
+默认配置来自 [config.json](config.json)：
 
-## 连续同参循环终止
+| 项目 | 默认值 |
+| --- | ---: |
+| 每题生成请求 | 400 次 |
+| 每题墙钟时间 | 7,200 秒 |
+| 单次工具超时 | 180 秒 |
+| 单批动作 | 最多 8 个 |
+| 连续协议错误 | 最多 5 次 |
+| 单次模型输出 | 最多 4,096 tokens |
+| 连续相同工具及实参 | 10 个决策步后终止 |
 
-默认 `--max-identical-tool-steps 10`。一个模型决策对应一个 step；若连续 10 步都有实际执行的工具调用、且每步全部调用都为同一规范工具名和同一组实参，则第 10 步执行后结束当前任务，返回 `RepeatedToolLoop`。成功/失败结果不影响此规则；时间及调用预算仍可能更早生效；默认不再按历史累计失败次数禁用某组参数。所有实际调用和费用保留，任务不计完成；批次继续其他任务。
+科学调用、DescribeTools 与 think 没有独立的默认总次数上限；所有模型请求共用生成与时间额度。token 记录缺失时为未知，不设置累计 token 上限。第 400 次请求可合法完成，不发送第 401 次；答案必须在截止时间前通过格式校验。完整资源含义见[执行策略](../../docs/execution_policy.md)。
 
-工具别名先规范化，观察引用先展开；参数字典键顺序不影响判断，参数值和数组顺序不同会清零。换工具、换实参、混合批次、think、inspect、finish、stop、拒绝/无效步骤均中断连续计数，不累计分散复用。单步批量重复多次只算一个决策步。DescribeTools 也适用。轨迹记录 consecutive_identical_tool_steps、loop_termination 及 error；stats 记录 max_consecutive_identical_tool_steps。
+若连续 10 个决策步实际调用同一规范工具、实参完全相同，且每步内所有调用均相同，则以 `RepeatedToolLoop` 结束当前题；成功和失败调用均计入。别名与观察引用先展开，字典键顺序无关；参数值、数组顺序、工具或决策类型改变都会中断连续计数，分散复用不累计。单批重复多次只计一个步。默认不按历史累计失败次数禁用实参；实验可通过 `max_failures_per_action` 指定累计失败阈值，与连续循环规则独立。
 
-## 可读的答案格式与纠错约束
+## 轨迹与并发
 
-初始提示和 AnswerFormatError 反馈给出公开 answer_schema 的缩进 finish 结构及对象同级字段表。占位符不是答案；数组示例不暗示长度，模型自行填写真实证据。
+每份轨迹包含 `initial_messages`、`limits`、`steps`、`stats`、`status` 及答案／失败。每个模型响应对应一个 step，类型为 tools、think、inspect、finish、stop 或 error；工具步内保留实参、输出、错误与耗时。think 消耗一次生成请求与时间，没有科学 observation。原生模型 reasoning 由客户端的独立配置控制。
 
-默认启用 `--answer-schema-guard`。在 vLLM 后端首次答案格式错误后，后续决策使用由公开字段、类型和必填层级生成的 schema 约束；不复制科学枚举/常量/默认值/示例/说明/范围或数组长度，不读取参考答案。它仍允许全部五种决策及观察引用，模型可以继续取证或 stop，不会被强制 finish。从首轮起另有公开协议约束，限制操作语法与登记工具名；已查询/反馈展示的参数契约才用于参数约束，未知契约仍允许合法直接调用。观察引用先验证并展开，再按原始答案 schema 校验；harness 不填值、不搬字段。
+`--concurrency` 默认 1，控制不同任务的并行数，单题内工具仍按顺序执行。每题有独立进程和模型客户端，可写工作区隔离到 `.local/work/batches/<batch>/<task>/tools`。主进程唯一写入预测；`progress.json` 的已记录数包含失败任务。Ctrl-C 终止本次生成并保留中断轨迹，尚未写入预测的题可在同指纹续跑时重新执行。
 
-用 `--no-answer-schema-guard` 可关闭约束用于对照。当前只有经过验证的 vLLM 后端声明支持结构化约束；API/direct-local 使用同级字段表、具体错误路径及本地校验。格式错误仍计入协议/轮次预算，每次纠错模型请求都有成本；stats.answer_schema_guard_requests 和 step.model.response_schema_sha256/source 记录约束使用情况。
+## 代码入口
 
-与 [SciToolAgent](../scitoolagent/README.md) 共用此机制；SciToolAgent 跨角色追踪连续决策，RepeatedToolLoop 为终止失败，不触发重规划。科学调用预算和评分规则未改。新代码/prompt 改变续跑指纹，应新建实验，不能直接续跑旧 500 题。实际验收见 [本轮报告](../../results/reports/react_loop_format_20261017/README.md)。
+| 文件 | 职责 |
+| --- | --- |
+| run.py / runner.py | 独立 CLI、批次、续跑和预测保存 |
+| runtime.py | 模型决策循环与反馈 |
+| context.py | 消息历史、输入额度与观察预览 |
+| trajectory.py | 实际执行轨迹与统计 |
+| system_prompt.md | 唯一 system prompt |
+| config.json | CLI 默认策略与资源参数 |
 
-## 任务并发
-
-`--concurrency` 默认 1，本地常驻 vLLM 推荐先用 2，与服务 max_num_seqs 匹配。并发作用于不同任务，单题内的动作仍顺序执行。每题独立进程和模型客户端；可写工具目录隔离到 `.local/work/batches/<batch>/<task>/tools`，产物保存到本次结果的 `tool_artifacts/<task>/<batch>/`。模型和只读资源复用，工具环境路由不变。直接加载权重的 `--backend local` 仅支持并发 1。
-
-主进程是 predictions.json 的唯一写入者，逐题原子保存、按选择顺序排列。progress.json 给出已记录数、已提交数和活动任务；失败也计入已记录数。并发数进入续跑指纹，不同代码/设置不能混用旧结果。中断后停止活动进程并保留其轨迹，未写入预测的任务可在同指纹 resume 时重新运行。
-
-## 2026-10-18 的协议与数据版本
-
-默认 `max_failures_per_action=0`（不累计禁用）。正数保留为旧策略对照开关，连续同参 10 步终止规则独立保留。`--protocol-schema-guard` 在支持的 vLLM 后端首轮生效，约束操作、工具名、预算允许的操作与已展示参数类型；`--no-protocol-schema-guard` 关闭该约束。它不读取私有参考或计算科学参数。worker 的环境/缺资源/错误诊断保留在轨迹中。
-
-inspect、观察引用与短数组预览机制仍可使用；`decode: "json_array"` 只能解码实际观察中完整的数组，不执行计算。输出摘要哈希不是源文件哈希。当前数据契约已修订，必须新建实验目录。完整审查见 [报告](../../results/reports/full_run_audit_20261018/README.md)。
+[SciToolAgent](../scitoolagent/README.md) 复用公共协议、格式说明、资源与重复循环检测。科学评分位于独立的 [evaluation](../../evaluation/README.md)，不会把 DescribeTools 计入科学工具路径。

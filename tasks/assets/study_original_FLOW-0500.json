@@ -1,0 +1,38 @@
+{
+  "site_ids": [
+    "s0",
+    "s1",
+    "s2",
+    "s3"
+  ],
+  "undirected_edges_once": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      0
+    ]
+  ],
+  "composition": {
+    "A_count": 2,
+    "B_count": 2
+  },
+  "unlike_neighbor_energy_mev": 10.0,
+  "thermal_energy_kBT_mev": 10.0,
+  "model": "Four LABELLED lattice sites on a periodic ring. Each occupancy configuration has exactly two Aand two B. Its energy is10meV times the number of unlike nearest-neighbor edges,each listed edge counted once. No other interaction,kinetic or vibrational entropy is included.",
+  "ensemble": "Canonical equilibrium over every distinct labelled occupancy assignment at the fixed composition. Rotating a configuration does not create a new energy class,but the different labelled assignments remain different microstates contributing their degeneracy. Do not sum all2^4compositions or give each rotation orbit equal statistical weight.",
+  "reporting": "Return total allowed microstate count,distinct energies sorted ascending and corresponding degeneracies,probability of an alternating A/B configuration(total over all such microstates),mean energy,S_config/k_B,and C_config/k_B at the stated kBT. Entropy is of the complete labelled fixed-composition canonical distribution; heat capacity is the fixed-parameter canonical derivative or equivalent energy variance.",
+  "provenance": {
+    "kind": "Explicit controlled finite physical model; not a measured material or an upstream database calculation."
+  }
+}

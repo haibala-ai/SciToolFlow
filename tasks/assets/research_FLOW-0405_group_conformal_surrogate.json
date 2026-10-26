@@ -1,0 +1,678 @@
+{
+  "data_origin": "Controlled surrogate-regression and prospective calibration study for a temperature-dependent materials response. All numeric rows are a constructed methodological realization, not published materials measurements. Temperature is already dimensionless in the declared experimental scale; response has arbitrary but consistent instrument units.",
+  "records": [
+    {
+      "record_id": "T1-4",
+      "batch_id": "T1",
+      "partition": "training",
+      "region": "coastal",
+      "scaled_temperature": 1.8499999999999999,
+      "optical_proxy": -1.3199999999999998,
+      "response": 5.049625,
+      "post_assay_quality_index": 5.069624999999999
+    },
+    {
+      "record_id": "T1-1",
+      "batch_id": "T1",
+      "partition": "training",
+      "region": "coastal",
+      "scaled_temperature": -1.85,
+      "optical_proxy": -1.3199999999999998,
+      "response": 1.6396250000000006,
+      "post_assay_quality_index": 1.6296250000000005
+    },
+    {
+      "record_id": "K5-3",
+      "batch_id": "K5",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": 0.7,
+      "optical_proxy": 0.12,
+      "response": 2.6285,
+      "post_assay_quality_index": 2.6384999999999996
+    },
+    {
+      "record_id": "K3-2",
+      "batch_id": "K3",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": -0.5499999999999999,
+      "optical_proxy": 0.40800000000000003,
+      "response": 1.5016250000000002,
+      "post_assay_quality_index": 1.5016250000000002
+    },
+    {
+      "record_id": "K7-2",
+      "batch_id": "K7",
+      "partition": "calibration",
+      "region": "coastal",
+      "scaled_temperature": -0.65,
+      "optical_proxy": -0.45599999999999996,
+      "response": 1.1196249999999999,
+      "post_assay_quality_index": 1.1196249999999999
+    },
+    {
+      "record_id": "T4-4",
+      "batch_id": "T4",
+      "partition": "training",
+      "region": "coastal",
+      "scaled_temperature": 1.8499999999999999,
+      "optical_proxy": 0.9600000000000001,
+      "response": 5.959625,
+      "post_assay_quality_index": 5.9796249999999995
+    },
+    {
+      "record_id": "K6-2",
+      "batch_id": "K6",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": -0.5499999999999999,
+      "optical_proxy": 1.008,
+      "response": 1.991625,
+      "post_assay_quality_index": 1.991625
+    },
+    {
+      "record_id": "T5-4",
+      "batch_id": "T5",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": 1.9,
+      "optical_proxy": -0.72,
+      "response": 5.4565,
+      "post_assay_quality_index": 5.4765
+    },
+    {
+      "record_id": "T3-4",
+      "batch_id": "T3",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": 1.95,
+      "optical_proxy": -0.12,
+      "response": 5.946625,
+      "post_assay_quality_index": 5.966625
+    },
+    {
+      "record_id": "T3-1",
+      "batch_id": "T3",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": -1.75,
+      "optical_proxy": -0.12,
+      "response": 2.0556249999999996,
+      "post_assay_quality_index": 2.045625
+    },
+    {
+      "record_id": "K9-2",
+      "batch_id": "K9",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": -0.5499999999999999,
+      "optical_proxy": 1.8479999999999999,
+      "response": 2.301625,
+      "post_assay_quality_index": 2.301625
+    },
+    {
+      "record_id": "K5-2",
+      "batch_id": "K5",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": -0.6,
+      "optical_proxy": 0.36,
+      "response": 1.534,
+      "post_assay_quality_index": 1.534
+    },
+    {
+      "record_id": "T2-3",
+      "batch_id": "T2",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": 0.7,
+      "optical_proxy": 0.36,
+      "response": 2.7685,
+      "post_assay_quality_index": 2.7784999999999997
+    },
+    {
+      "record_id": "K3-4",
+      "batch_id": "K3",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": 1.95,
+      "optical_proxy": 0.648,
+      "response": 6.2666249999999994,
+      "post_assay_quality_index": 6.286624999999999
+    },
+    {
+      "record_id": "K1-1",
+      "batch_id": "K1",
+      "partition": "calibration",
+      "region": "coastal",
+      "scaled_temperature": -1.85,
+      "optical_proxy": -1.44,
+      "response": 1.5896250000000007,
+      "post_assay_quality_index": 1.5796250000000007
+    },
+    {
+      "record_id": "K5-1",
+      "batch_id": "K5",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": -1.8,
+      "optical_proxy": 0.24,
+      "response": 2.206,
+      "post_assay_quality_index": 2.196
+    },
+    {
+      "record_id": "T3-2",
+      "batch_id": "T3",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": -0.5499999999999999,
+      "optical_proxy": -0.36,
+      "response": 1.181625,
+      "post_assay_quality_index": 1.181625
+    },
+    {
+      "record_id": "T5-3",
+      "batch_id": "T5",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": 0.7,
+      "optical_proxy": -0.84,
+      "response": 2.2285,
+      "post_assay_quality_index": 2.2384999999999997
+    },
+    {
+      "record_id": "K1-3",
+      "batch_id": "K1",
+      "partition": "calibration",
+      "region": "coastal",
+      "scaled_temperature": 0.6499999999999999,
+      "optical_proxy": -1.2000000000000002,
+      "response": 2.129625,
+      "post_assay_quality_index": 2.1396249999999997
+    },
+    {
+      "record_id": "T6-1",
+      "batch_id": "T6",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": -1.75,
+      "optical_proxy": 0.72,
+      "response": 2.3656249999999996,
+      "post_assay_quality_index": 2.355625
+    },
+    {
+      "record_id": "T6-4",
+      "batch_id": "T6",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": 1.95,
+      "optical_proxy": 0.72,
+      "response": 6.256625,
+      "post_assay_quality_index": 6.276624999999999
+    },
+    {
+      "record_id": "K7-1",
+      "batch_id": "K7",
+      "partition": "calibration",
+      "region": "coastal",
+      "scaled_temperature": -1.85,
+      "optical_proxy": -0.576,
+      "response": 2.149625000000001,
+      "post_assay_quality_index": 2.139625000000001
+    },
+    {
+      "record_id": "K1-4",
+      "batch_id": "K1",
+      "partition": "calibration",
+      "region": "coastal",
+      "scaled_temperature": 1.8499999999999999,
+      "optical_proxy": -1.44,
+      "response": 4.999625,
+      "post_assay_quality_index": 5.019625
+    },
+    {
+      "record_id": "K6-3",
+      "batch_id": "K6",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": 0.75,
+      "optical_proxy": 1.128,
+      "response": 3.1706250000000002,
+      "post_assay_quality_index": 3.180625
+    },
+    {
+      "record_id": "K4-2",
+      "batch_id": "K4",
+      "partition": "calibration",
+      "region": "coastal",
+      "scaled_temperature": -0.65,
+      "optical_proxy": -0.768,
+      "response": 1.0296249999999998,
+      "post_assay_quality_index": 1.0296249999999998
+    },
+    {
+      "record_id": "K4-4",
+      "batch_id": "K4",
+      "partition": "calibration",
+      "region": "coastal",
+      "scaled_temperature": 1.8499999999999999,
+      "optical_proxy": -0.888,
+      "response": 5.1896249999999995,
+      "post_assay_quality_index": 5.209624999999999
+    },
+    {
+      "record_id": "K6-1",
+      "batch_id": "K6",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": -1.75,
+      "optical_proxy": 1.2479999999999998,
+      "response": 2.5856249999999994,
+      "post_assay_quality_index": 2.5756249999999996
+    },
+    {
+      "record_id": "T1-3",
+      "batch_id": "T1",
+      "partition": "training",
+      "region": "coastal",
+      "scaled_temperature": 0.6499999999999999,
+      "optical_proxy": -1.08,
+      "response": 2.179625,
+      "post_assay_quality_index": 2.189625
+    },
+    {
+      "record_id": "K4-1",
+      "batch_id": "K4",
+      "partition": "calibration",
+      "region": "coastal",
+      "scaled_temperature": -1.85,
+      "optical_proxy": -0.888,
+      "response": 2.0596250000000005,
+      "post_assay_quality_index": 2.0496250000000007
+    },
+    {
+      "record_id": "T4-1",
+      "batch_id": "T4",
+      "partition": "training",
+      "region": "coastal",
+      "scaled_temperature": -1.85,
+      "optical_proxy": 0.9600000000000001,
+      "response": 2.829625000000001,
+      "post_assay_quality_index": 2.819625000000001
+    },
+    {
+      "record_id": "K8-3",
+      "batch_id": "K8",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": 0.7,
+      "optical_proxy": 0.624,
+      "response": 3.0785,
+      "post_assay_quality_index": 3.0885
+    },
+    {
+      "record_id": "K2-1",
+      "batch_id": "K2",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": -1.8,
+      "optical_proxy": 0.12,
+      "response": 2.1959999999999997,
+      "post_assay_quality_index": 2.186
+    },
+    {
+      "record_id": "T6-2",
+      "batch_id": "T6",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": -0.5499999999999999,
+      "optical_proxy": 0.48,
+      "response": 1.7716250000000002,
+      "post_assay_quality_index": 1.7716250000000002
+    },
+    {
+      "record_id": "K9-1",
+      "batch_id": "K9",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": -1.75,
+      "optical_proxy": 2.0879999999999996,
+      "response": 2.8956249999999994,
+      "post_assay_quality_index": 2.8856249999999997
+    },
+    {
+      "record_id": "K6-4",
+      "batch_id": "K6",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": 1.95,
+      "optical_proxy": 1.2479999999999998,
+      "response": 6.476624999999999,
+      "post_assay_quality_index": 6.496624999999999
+    },
+    {
+      "record_id": "K3-1",
+      "batch_id": "K3",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": -1.75,
+      "optical_proxy": 0.648,
+      "response": 2.375625,
+      "post_assay_quality_index": 2.365625
+    },
+    {
+      "record_id": "T3-3",
+      "batch_id": "T3",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": 0.75,
+      "optical_proxy": -0.24,
+      "response": 2.640625,
+      "post_assay_quality_index": 2.650625
+    },
+    {
+      "record_id": "K5-4",
+      "batch_id": "K5",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": 1.9,
+      "optical_proxy": 0.24,
+      "response": 5.8565,
+      "post_assay_quality_index": 5.876499999999999
+    },
+    {
+      "record_id": "K9-3",
+      "batch_id": "K9",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": 0.75,
+      "optical_proxy": 1.9679999999999997,
+      "response": 3.480625,
+      "post_assay_quality_index": 3.4906249999999996
+    },
+    {
+      "record_id": "T5-2",
+      "batch_id": "T5",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": -0.6,
+      "optical_proxy": -0.6,
+      "response": 1.134,
+      "post_assay_quality_index": 1.134
+    },
+    {
+      "record_id": "K4-3",
+      "batch_id": "K4",
+      "partition": "calibration",
+      "region": "coastal",
+      "scaled_temperature": 0.6499999999999999,
+      "optical_proxy": -0.648,
+      "response": 2.3196250000000003,
+      "post_assay_quality_index": 2.329625
+    },
+    {
+      "record_id": "T1-2",
+      "batch_id": "T1",
+      "partition": "training",
+      "region": "coastal",
+      "scaled_temperature": -0.65,
+      "optical_proxy": -1.2,
+      "response": 0.8896249999999999,
+      "post_assay_quality_index": 0.8896249999999999
+    },
+    {
+      "record_id": "T2-2",
+      "batch_id": "T2",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": -0.6,
+      "optical_proxy": 0.6,
+      "response": 1.674,
+      "post_assay_quality_index": 1.674
+    },
+    {
+      "record_id": "K2-4",
+      "batch_id": "K2",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": 1.9,
+      "optical_proxy": 0.12,
+      "response": 5.8465,
+      "post_assay_quality_index": 5.866499999999999
+    },
+    {
+      "record_id": "T6-3",
+      "batch_id": "T6",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": 0.75,
+      "optical_proxy": 0.6,
+      "response": 2.950625,
+      "post_assay_quality_index": 2.960625
+    },
+    {
+      "record_id": "T5-1",
+      "batch_id": "T5",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": -1.8,
+      "optical_proxy": -0.72,
+      "response": 1.8059999999999998,
+      "post_assay_quality_index": 1.7959999999999998
+    },
+    {
+      "record_id": "K3-3",
+      "batch_id": "K3",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": 0.75,
+      "optical_proxy": 0.528,
+      "response": 2.9606250000000003,
+      "post_assay_quality_index": 2.970625
+    },
+    {
+      "record_id": "T2-1",
+      "batch_id": "T2",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": -1.8,
+      "optical_proxy": 0.48,
+      "response": 2.346,
+      "post_assay_quality_index": 2.3360000000000003
+    },
+    {
+      "record_id": "K1-2",
+      "batch_id": "K1",
+      "partition": "calibration",
+      "region": "coastal",
+      "scaled_temperature": -0.65,
+      "optical_proxy": -1.32,
+      "response": 0.8396249999999998,
+      "post_assay_quality_index": 0.8396249999999998
+    },
+    {
+      "record_id": "K8-1",
+      "batch_id": "K8",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": -1.8,
+      "optical_proxy": 0.744,
+      "response": 2.376,
+      "post_assay_quality_index": 2.366
+    },
+    {
+      "record_id": "K2-2",
+      "batch_id": "K2",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": -0.6,
+      "optical_proxy": 0.24,
+      "response": 1.524,
+      "post_assay_quality_index": 1.524
+    },
+    {
+      "record_id": "K8-2",
+      "batch_id": "K8",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": -0.6,
+      "optical_proxy": 0.864,
+      "response": 1.704,
+      "post_assay_quality_index": 1.704
+    },
+    {
+      "record_id": "T4-3",
+      "batch_id": "T4",
+      "partition": "training",
+      "region": "coastal",
+      "scaled_temperature": 0.6499999999999999,
+      "optical_proxy": 1.2000000000000002,
+      "response": 3.0896250000000003,
+      "post_assay_quality_index": 3.099625
+    },
+    {
+      "record_id": "K7-4",
+      "batch_id": "K7",
+      "partition": "calibration",
+      "region": "coastal",
+      "scaled_temperature": 1.8499999999999999,
+      "optical_proxy": -0.576,
+      "response": 5.279624999999999,
+      "post_assay_quality_index": 5.299624999999999
+    },
+    {
+      "record_id": "T2-4",
+      "batch_id": "T2",
+      "partition": "training",
+      "region": "inland",
+      "scaled_temperature": 1.9,
+      "optical_proxy": 0.48,
+      "response": 5.9965,
+      "post_assay_quality_index": 6.0165
+    },
+    {
+      "record_id": "K9-4",
+      "batch_id": "K9",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": 1.95,
+      "optical_proxy": 2.0879999999999996,
+      "response": 6.786625,
+      "post_assay_quality_index": 6.8066249999999995
+    },
+    {
+      "record_id": "K2-3",
+      "batch_id": "K2",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": 0.7,
+      "optical_proxy": 0.0,
+      "response": 2.6184999999999996,
+      "post_assay_quality_index": 2.6284999999999994
+    },
+    {
+      "record_id": "K8-4",
+      "batch_id": "K8",
+      "partition": "calibration",
+      "region": "inland",
+      "scaled_temperature": 1.9,
+      "optical_proxy": 0.744,
+      "response": 6.0264999999999995,
+      "post_assay_quality_index": 6.046499999999999
+    },
+    {
+      "record_id": "K7-3",
+      "batch_id": "K7",
+      "partition": "calibration",
+      "region": "coastal",
+      "scaled_temperature": 0.6499999999999999,
+      "optical_proxy": -0.33599999999999997,
+      "response": 2.409625,
+      "post_assay_quality_index": 2.419625
+    },
+    {
+      "record_id": "T4-2",
+      "batch_id": "T4",
+      "partition": "training",
+      "region": "coastal",
+      "scaled_temperature": -0.65,
+      "optical_proxy": 1.08,
+      "response": 1.7996249999999998,
+      "post_assay_quality_index": 1.7996249999999998
+    }
+  ],
+  "future_batch": [
+    {
+      "record_id": "F-1",
+      "batch_id": "F",
+      "region": "coastal",
+      "scaled_temperature": -1.4,
+      "optical_proxy": 0.1
+    },
+    {
+      "record_id": "F-2",
+      "batch_id": "F",
+      "region": "coastal",
+      "scaled_temperature": -0.2,
+      "optical_proxy": 0.1
+    },
+    {
+      "record_id": "F-3",
+      "batch_id": "F",
+      "region": "coastal",
+      "scaled_temperature": 0.8,
+      "optical_proxy": 0.1
+    },
+    {
+      "record_id": "F-4",
+      "batch_id": "F",
+      "region": "coastal",
+      "scaled_temperature": 1.7,
+      "optical_proxy": 0.1
+    }
+  ],
+  "candidate_models": [
+    {
+      "id": "linear",
+      "features": [
+        "scaled_temperature"
+      ]
+    },
+    {
+      "id": "quadratic",
+      "features": [
+        "scaled_temperature",
+        "scaled_temperature_squared"
+      ]
+    },
+    {
+      "id": "proxy",
+      "features": [
+        "scaled_temperature",
+        "optical_proxy"
+      ]
+    },
+    {
+      "id": "post_assay",
+      "features": [
+        "scaled_temperature",
+        "post_assay_quality_index"
+      ]
+    }
+  ],
+  "feature_availability": "scaled_temperature and optical_proxy are observed before the response assay, including for future batch F. scaled_temperature_squared means the square of the same row temperature, no refit or independent measurement. post_assay_quality_index is computed only after measuring that same row response, is not available on future samples and may not be substituted by a fitted value. The candidate model using it is scientifically ineligible; high training accuracy does not override availability.",
+  "learning_rule": "For each eligible candidate use ridge regression with alpha=1 exactly, an unpenalized intercept, and no other regularization or imputation. For EVERY fit, form that candidate feature matrix, fit population standard deviations (ddof=0) and means to that fit training rows ONLY, map a zero scale to 1, standardize training and prediction rows by those values, then minimize sum squared residuals + sum squared non-intercept coefficients in standardized coordinates. Response is not standardized.",
+  "model_selection": "Use only partition=training. Perform exact leave-ONE-BATCH-out cross-validation over the six named T batches. Within each fold all rows of the held-out batch are withheld from fitting AND scaling. Score a candidate by the unweighted mean across six held-out batches of that batch mean squared prediction error. Select the smallest score, resolving differences <=1e-10 by lexicographic candidate ID. Do not tune on calibration or future labels. Refit the selected candidate once on all T training rows, including refitting its scaler, and keep it fixed thereafter.",
+  "calibration_assumptions": "Conditional on training, the nine complete K batch blocks and ONE future batch block are exchangeable. Each has four jointly observed specimens; dependence within a batch is arbitrary. Region is a recorded covariate, not a guarantee that calibration residual distributions are equal conditional on region. The future batch is coastal. No conditional-on-region coverage theorem or independence of specimens is granted. The dataset is one realization; interval guarantees follow only under these expressly assumed sampling conditions.",
+  "calibration_rule": "For each K batch, score = maximum over its four specimens of absolute error from the fixed training-only selected model. For nominal simultaneous coverage 1-alpha for ALL four response values in ONE new exchangeable batch, set k=ceil((n+1)*(1-alpha)) where n is number of calibration batches, and q=the kth smallest batch score if k<=n; otherwise q=+infinity. Intervals are [prediction-q,prediction+q] for each requested future row. This finite-rank split-conformal rule includes ties; do not interpolate a sample percentile. Report the 90% global-batch q and interval bounds. For an infinite radius, report null, not a fabricated large finite value.",
+  "audit_proposals": {
+    "A": "Keep the training-only fitted model, use one maximum residual per calibration batch, and apply the declared n=9 batch rank at alpha=0.1. Claim at least 90% marginal probability that all four responses in ONE future batch lie in their intervals, under stated exchangeability.",
+    "B": "Keep the same training-only fit, pool all 36 individual calibration residuals, apply ceil((36+1)*0.9), and claim at least 90% probability that all four future responses lie in their intervals under the stated arbitrary within-batch dependence.",
+    "C": "After looking at K responses, choose whichever eligible candidate has the smallest 90% maximum-batch residual quantile; refit its predictor including K labels and reuse those same K labels as split-conformal calibration. Claim the same theorem without any further adjustment.",
+    "D": "Use proposal A and claim at least 90% coverage conditional on coastal region merely because future features include that region.",
+    "E": "Keep the fixed training-only model but calibrate ONLY on coastal K batches and assume coastal blocks exchangeable with future coastal block. Apply the same finite-rank rule at alpha=0.1. Claim a finite 90% radius from those blocks.",
+    "F": "Keep the model and all nine K batch scores. For simultaneous coverage at least 90% over TWO future batch blocks, use Bonferroni alpha=0.05 per batch with the same finite-rank rule. Dependence between the two future blocks is unrestricted. Claim that the resulting radius is finite."
+  },
+  "reporting": "Report eligible_model_ids, the three eligible leave-batch-out MSEs keyed by model ID, selected_model_id, independent_calibration_batch_count, global_90pct_rank, global_90pct_radius, future_predictions as objects with record_id,mean,lower,upper in original future_batch order, coastal_calibration_batch_count, coastal_90pct_rank, coastal_90pct_radius (null for infinity), two_future_batches_90pct_per_batch_rank, two_future_batches_90pct_radius (null for infinity), and valid_claim_proposal_ids. An audit proposal is valid only if its ENTIRE statement, including finiteness and conditioning claims, follows from the declared assumptions. Continuous quantities tolerance absolute1e-6 plus relative1e-6; IDs, counts, ranks, nulls exact. These are distribution-free marginal predictive intervals under the stated block-exchangeability assumption, not causal effects, parameter confidence intervals or empirical 90% coverage measured from this one small dataset."
+}

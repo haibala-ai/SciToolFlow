@@ -1,0 +1,15 @@
+{
+  "allowed_individual_body_masses_g": [
+    1.0,
+    5.0,
+    9.0
+  ],
+  "individual_count": 100,
+  "total_body_mass_g": 500.0,
+  "individual_metabolic_exponent": 0.75,
+  "model": "Every individual belongs to one of the three exact listed body-mass classes;unknown class counts are nonnegative integers. Individual metabolic rate is m^0.75in a common normalized rate unit for min grams,and community rate is the SUMof individual rates. The observed total count and total mass are exact. No unknown class-specific coefficient or inter-individual interaction is allowed. Compare all feasible class allocations,not only a single assumed representative distribution.",
+  "target": "Return the sharp interval of possible summed community metabolic rates,the rate obtained by incorrectly applying the individual allometry directly to the total500g biomass,and whether that latter value is a valid community aggregate under this model. Report whether count and total biomass identify the class distribution.",
+  "provenance": {
+    "kind": "Explicit small synthetic benign scientific model;data are conditional exact counts/means and do not establish empirical ecological,causal or functional claims."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "variable_order": [
+    "X",
+    "Y"
+  ],
+  "structural_feedback_coefficients": {
+    "X_from_Y": 0.4,
+    "Y_from_X": 0.5
+  },
+  "exogenous_noise_covariance": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "model": "A local linear steady-state regulatory working model:X=0.4*Y+epsilon_X,Y=0.5*X+epsilon_Y,with independent unit-variance zero-mean exogenous noises. The stable baseline solution uses both equations. An ideal clamp do(X=x)REPLACES the Xequation while leaving the Yequation unchanged. A different additive perturbation replaces epsilon_Xby epsilon_X+uand leaves BOTH feedback equations active. All reported effects are equilibrium changes in means;these are different mathematical interventions,not laboratory protocols.",
+  "target": "Return the baseline covariance matrix in variable_order,the observational regression slope of YonX,the ideal-clamp slope dE[Y|do(X=x)]/dx,and the change in mean Yafter additive input u=1to the Xequation. Return the spectral radius of the off-diagonal feedback matrix,and report whether the observational slope equals the ideal-clamp slope.",
+  "provenance": {
+    "kind": "Explicit small synthetic benign scientific model;data are conditional exact counts/means and do not establish empirical ecological,causal or functional claims."
+  }
+}

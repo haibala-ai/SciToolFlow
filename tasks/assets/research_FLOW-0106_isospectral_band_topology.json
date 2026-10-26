@@ -1,0 +1,122 @@
+{
+  "data_origin": "Controlled two-orbital band-topology investigation, based on a standard lattice Hamiltonian family. All spectral and coherent-loop observations are constructed exact model values serialized numerically, not measured properties of a specific material. Momentum orientation, orbital basis conventions and occupied band are fixed explicitly.",
+  "hamiltonian": "H(kx,ky)=a*sin(kx)*sigma_x+b*sin(ky)*sigma_y+[m+cos(kx)+cos(ky)]*sigma_z, with Pauli matrices in the ordered two-orbital basis; a=sin_kx_sign,b=sin_ky_sign,m=mass in each card. Energies use one common hopping unit, hbar is absorbed, and the lower band is occupied at zero temperature and Fermi energy0. The Brillouin torus is kx,ky in[-pi,pi), oriented by increasing kx then increasing ky. No interactions, extra bands, disorder, finite-temperature filling or physical Hall-sign convention beyond the defined invariant is inferred.",
+  "model_cards": [
+    {
+      "model_id": "A",
+      "mass": -1.0,
+      "sin_kx_sign": 1,
+      "sin_ky_sign": 1
+    },
+    {
+      "model_id": "B",
+      "mass": -1.0,
+      "sin_kx_sign": 1,
+      "sin_ky_sign": -1
+    },
+    {
+      "model_id": "C",
+      "mass": 3.0,
+      "sin_kx_sign": 1,
+      "sin_ky_sign": 1
+    },
+    {
+      "model_id": "D",
+      "mass": 0.0,
+      "sin_kx_sign": 1,
+      "sin_ky_sign": 1
+    },
+    {
+      "model_id": "E",
+      "mass": -1.0,
+      "sin_kx_sign": -1,
+      "sin_ky_sign": -1
+    }
+  ],
+  "spectral_observations": [
+    {
+      "observation_id": "K0",
+      "kx": 0,
+      "ky": 0,
+      "lower_band_energy": -1.0,
+      "upper_band_energy": 1.0
+    },
+    {
+      "observation_id": "K1",
+      "kx": 3.141592653589793,
+      "ky": 0,
+      "lower_band_energy": -1.0,
+      "upper_band_energy": 1.0
+    },
+    {
+      "observation_id": "K2",
+      "kx": 3.141592653589793,
+      "ky": 3.141592653589793,
+      "lower_band_energy": -3.0,
+      "upper_band_energy": 3.0
+    },
+    {
+      "observation_id": "K3",
+      "kx": 0.37,
+      "ky": -1.11,
+      "lower_band_energy": -1.0369004091514358,
+      "upper_band_energy": 1.0369004091514358
+    }
+  ],
+  "spectral_semantics": "Treat energy constraints as exact numerical values with residual tolerance1e-8. Identify every matching card. Establish any full isospectral claim analytically rather than assuming four sampled momenta determine an entire band function. Distinguish a constant unitary orbital-basis change from complex conjugation under the fixed momentum orientation.",
+  "geometric_invariant_definition": "For a globally gapped occupied band, set the lower-band rank-one projector P(k)=[I-H(k)/|d(k)|]/2. On each oriented plaquette k00->k10->k11->k01->k00 take flux=Arg Tr[P00*P10*P11*P01] in(-pi,pi]. Equivalently use the product of successive normalized occupied-eigenvector overlaps; arbitrary local U(1) phases cancel. On the periodic N by N mesh k_i=-pi+2*pi*i/N, i0..N-1, including wraparound plaquettes, the specified signed lattice Chern number is the sum of these fluxes divided by2*pi. This sign convention and orientation control all reported signs. A zero trace/link or a globally closed gap must be handled, not assigned an arbitrary phase. For gapped cards compute N12 and N24, verify nonzero links and convergence, and justify the continuum invariant analytically. For a gapless occupied band the invariant is undefined: report null, even if some odd mesh misses its band-touching points.",
+  "coherent_loop_observation": {
+    "ordered_k_vertices": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.5235987755982988,
+        0.0
+      ],
+      [
+        0.5235987755982988,
+        0.5235987755982988
+      ],
+      [
+        0.0,
+        0.5235987755982988
+      ]
+    ],
+    "phase_interval_radians": [
+      -0.1429983478422716,
+      -0.1409983478422716
+    ],
+    "meaning": "A separately specified gauge-invariant occupied-state coherent-loop phase in the exact trace-product convention above, not an energy measurement. Use principal phase in(-pi,pi]; this small interval does not cross the branch cut. Compare only cards already compatible with the spectral data. No arbitrary orbital relabeling or momentum reversal can change the detector convention."
+  },
+  "continuous_deformation": "For the path from A to B, keep mass=-1 and sin(kx) coefficient+1, but continuously set the sin(ky) coefficient to eta(t)=1-2t for t in[0,1]. Determine every gap-closing t and momentum in the specified Brillouin torus, the sharp minimum direct gap over k at every t, and the invariant on each gapped side. Report gaps at t0,0.25,0.5,0.75,1. Also decide whether ANY continuous gapped deformation of isolated occupied/unoccupied two-band projectors at fixed Brillouin orientation can connect A and B; finding a closure on one arbitrary path alone would not prove this stronger topological statement.",
+  "interpretation_proposals": {
+    "A": "An entire energy dispersion can agree while the oriented occupied-band invariant differs.",
+    "B": "Matching finite-mesh integer results alone proves a global spectral gap, even for a model with an analytically known unsampled band touching.",
+    "C": "A constant unitary orbital-basis rotation leaves the trace-loop invariant unchanged.",
+    "D": "Complex conjugation of all orbital states is merely a local U(1) gauge and cannot reverse the specified oriented invariant.",
+    "E": "The two spectroscopically compatible cards retained by the coherent phase can still represent the same physics in different constant orbital bases.",
+    "F": "Opposite values of the defined invariant can be connected by a globally gapped isolated-band deformation under the stipulated fixed orientation without changing the occupied rank.",
+    "G": "These constructed tight-binding conclusions establish the same phase for an arbitrary real material with unspecified interactions or disorder."
+  },
+  "reporting": "Return spectral_compatible_model_ids; fully_isospectral_model_groups (maximal groups with at least2 cards, sorted); coherent_loop_compatible_model_ids; minimum_direct_gap_by_model; chern_mesh_12 and chern_mesh_24 keyed by every model, with integers for gapped cards and null for gapless cards; minimum_link_overlap_squared_mesh_12 keyed only by gapped cards, defined min over all periodic nearest-neighbor edges Tr(P_i*P_j); A_to_B_closing_t_values; A_to_B_closing_momenta as [kx,ky] sorted lexicographically in[-pi,pi); A_to_B_gap_at_requested_t_values in the declared t order; A_to_B_chern_before_closing and A_to_B_chern_after_closing; any_gapped_fixed_orientation_A_to_B_deformation_exists boolean; valid_interpretation_proposal_ids. IDs, nulls, integers and booleans exact. Real gaps, momenta and overlap diagnostics tolerance absolute1e-7 plus relative1e-7. Do not round a singular model into a topological integer.",
+  "methodological_sources": [
+    {
+      "title": "Topological quantization of the spin Hall effect in two-dimensional paramagnetic semiconductors",
+      "authors": "Qi, Wu and Zhang",
+      "year": 2006,
+      "doi": "10.1103/PhysRevB.74.085308",
+      "url": "https://arxiv.org/abs/cond-mat/0505308",
+      "role": "Primary lattice two-band topology motivation. No material measurements or figure data reproduced."
+    },
+    {
+      "title": "Chern Numbers in Discretized Brillouin Zone: Efficient Method of Computing (Spin) Hall Conductances",
+      "authors": "Fukui, Hatsugai and Suzuki",
+      "year": 2005,
+      "doi": "10.1143/JPSJ.74.1674",
+      "url": "https://arxiv.org/abs/cond-mat/0503172",
+      "role": "Gauge-invariant lattice-link approach; the task fixes its own explicit oriented trace-product convention to remove sign ambiguity."
+    }
+  ]
+}

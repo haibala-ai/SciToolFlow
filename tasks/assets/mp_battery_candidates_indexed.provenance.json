@@ -1,0 +1,17 @@
+{
+  "provider": "Materials Project",
+  "url": "https://api.materialsproject.org/materials/insertion_electrodes/?working_ion=Li&_limit=12&_all_fields=true",
+  "accessed_at": "2026-10-20T07:58:32.146147+00:00",
+  "raw_sha256": "6933a0b358144a516073218a73a3d163b7f64d95d9ba79c27b9e9b9a17ffa9c0",
+  "record_count": 12,
+  "claims": "Derived identity-annotated authentic source-data copy; all original fields preserved. Local snapshot IDs do not claim to be official MP battery IDs.",
+  "credentials_included": false,
+  "upstream_raw_sha256": "dfdc74534d82c5c0e6be3cc26be4acbe41927aaef64c90cf3b4844e28f37100e",
+  "transformation": {
+    "kind": "add_local_content_identity",
+    "upstream_file": "mp_battery_candidates.json",
+    "upstream_sha256": "dfdc74534d82c5c0e6be3cc26be4acbe41927aaef64c90cf3b4844e28f37100e",
+    "record_identity": "sha256(canonical JSON source record) prefix20; not an official MP battery_id",
+    "source_numeric_values_modified": false
+  }
+}

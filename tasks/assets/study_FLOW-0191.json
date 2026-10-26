@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "record_id": "candidate01",
+      "material_id": "mp-aaaaaaco",
+      "structure_file": "periodic_network_01.cif",
+      "geometric_radius_angstrom": 1.8
+    },
+    {
+      "record_id": "candidate02",
+      "material_id": "mp-aaaaaabw",
+      "structure_file": "periodic_network_02.cif",
+      "geometric_radius_angstrom": 1.8
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published computational source projection",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "CIFangstrom;integercellimages;dimensionranks0..3",
+    "original_observation_claim": false,
+    "source_captures": [
+      {
+        "provider": "Materials Project",
+        "url": "https://api.materialsproject.org/materials/summary/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_fields=material_id%2Cformula_pretty%2Ccomposition%2Cdensity%2Cvolume%2Cnsites%2Cstructure%2Cband_gap%2Cis_metal%2Cis_magnetic%2Cenergy_above_hull%2Cformation_energy_per_atom%2Csymmetry%2Corigins%2Clast_updated&_limit=20",
+        "accessed_at": "2026-10-20T07:58:30.182854+00:00",
+        "raw_sha256": "1aac1aa3378751ebcfd8efca70992ab314b53c38693c4dea87b5102ce585e862",
+        "record_count": 10,
+        "claims": "Authentic fresh API response. Not copied from old benchmark gold. Source units/method semantics need review before task construction.",
+        "credentials_included": false
+      },
+      {
+        "provider": "Materials Project",
+        "url": "https://api.materialsproject.org/materials/summary/?material_ids=mp-48&_limit=1&_all_fields=true",
+        "accessed_at": "2026-10-20T11:36:13.972474+00:00",
+        "raw_sha256": "11bb1068889a365a5ce6fd74bd63d3bdbbdfcd71cc355998abfe05600e5f32d1",
+        "record_count": 1,
+        "credentials_included": false
+      }
+    ]
+  }
+}

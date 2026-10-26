@@ -1,0 +1,25 @@
+{
+  "axisymmetric_diffusion_tensor_um2_per_ms": [
+    [
+      0.2,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.2,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.4
+    ]
+  ],
+  "prediction_b_ms_per_um2": 1.0,
+  "model": "Each microscopic domain has Gaussian diffusion with this same intrinsic tensor,and domain orientations are uniform and independent in space. The normalized powder signal at fixed bis S(b)=integral_0^1 exp(-b*(D_perp+(D_parallel-D_perp)*u^2))du. Here uis the cosine to the symmetry axis and uniform on[0,1]. Use E[u^2]=1/3,E[u^4]=1/5. The small-bfirst cumulant Dbar=E[D(u)]and diffusion-kurtosis convention K=3*Var(D(u))/Dbar^2follow logS=-b*Dbar+(K/6)*(b*Dbar)^2+O(b^3). No intradomain non-Gaussian motion is included.",
+  "target": "Return Dbarin um^2/ms,the directional-Dvariance in(um^2/ms)^2,the apparent powder diffusion kurtosis K,and S(1). Compare S(1)with exp(-Dbar)from a single isotropic tensor with the same mean,and report whether nonzero powder kurtosis proves intradomain non-Gaussian diffusion in this model.",
+  "provenance": {
+    "kind": "Explicit synthetic conditional chemical/physical measurement model;no empirical identification or practical process recommendation."
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "origin": "Own Gaussian feature-coupling and exact conditional signed-statistic experiment for controlled variable selection. No biological assay or causal claim is involved. The covariance model and finite magnitude/null-support panel are exact constructed inputs. The Gaussian construction checks feature exchangeability; the subsequent conditional W experiment explicitly supplies its sign law and is not claimed to be an observed fitted statistic from the diagnosticx vector.",
+  "Gaussian_features": {
+    "p": 8,
+    "mean": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "covariance_rule": "Sigma_ij=(3/5)^abs(i-j), using1-based feature positions.",
+    "joint_covariance": "G_s=[[Sigma,Sigma-sI],[Sigma-sI,Sigma]],s>=0. The intended pair(X,Xtilde) is jointly Gaussian and must be invariant under swapping X_j withXtilde_j for ANY subset of coordinates, not just simultaneous exchange of the two complete vectors.",
+    "diagnostic_x": [
+      0.2,
+      -0.4,
+      0.1,
+      0.7,
+      -0.3,
+      0.5,
+      -0.8,
+      0.6
+    ]
+  },
+  "coupling_feasibility": "Derive the COMPLETE feasible scalar s interval for positive-semidefiniteG_s and find its maximal value. Use actual registered full SymmetricEigenDecomposition ofSigma, ofG_s at that maximum and ofG_(1.05smax); retain complete eigensystems and classify the boundary rank analytically, treating roundoff-sized eigenvalues according to the exact PSD theorem rather than declaring a valid singular coupling invalid. Prove every coordinate-subset swap invariance from the covariance structure and Gaussianity. An oversizeds must be rejected as an invalid covariance, not rescued by clipping a materially negative eigenvalue.",
+  "conditional_sampler": "Derive the full Gaussian conditional mean mapB and conditional noise covarianceV for Xtilde givenX, allowing V singular at the maximal feasible boundary. Use actual registered SolveLinearSystem for the complete8basis right-hand-sides ofSigma (or a full algebraically equivalent solve representation), actual MatrixMultiply to verify all inverse/covariance identities, and actual full SymmetricEigenDecomposition ofV. Retain actual outputs and verify G_s is reconstructed from the conditional law, including cross covariance and full conditional variance, not just marginal variances. Compute Bx for the supplied deterministicx through actual MatrixMultiply. No sample simulation or assumed inverse values replace those handoffs. Explain why the s0 coupling is valid but statistically uninformative and why independent feature permutation generally fails the required conditional correlation structure.",
+  "from_coupling_to_statistics": "Explain what additional conditions onY, the knockoff construction and the statisticW are required for null-coordinate flip-sign symmetry. In particular knockoffs must be generated without usingY conditionalonX and W must flip only coordinatej under swapping(X_j,Xtilde_j), with the appropriate invariance for other coordinates. A PSD Gaussian feature covariance alone is not a guarantee for arbitrary score construction. Conditional on allmagnitudes and the nonnull signs, the exact nullsignlaw below is the object to analyze; do not infer independent nullsigns from mere marginal symmetry.",
+  "conditional_finite_experiment": {
+    "magnitudes_absW_in_feature_order": [
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "nonnull_feature_IDs": [
+      "3",
+      "6"
+    ],
+    "nonnull_signs": "Bothpositive deterministically. All other6features are null.",
+    "valid_null_sign_law": "All2^6 null sign vectors have equalprobability1/64, jointly conditional on the fixed magnitudes and nonnull signs. Enumerate all64 patterns exactly, not MonteCarlo.",
+    "risk_panel_q_exact": [
+      "1/4",
+      "1/2"
+    ],
+    "offsets": [
+      0,
+      1
+    ]
+  },
+  "selection_rule": "For offseta in{0,1} andq>0 defineT=min{t in POSITIVE observed absoluteWvalues : (a+#{j:W_j<=-t})/(#{j:W_j>=t} vee1)<=q}. If no such t exists makeNOdiscoveries; otherwise discover everyj withW_j>=T. The minimum is the SMALLEST numerical admissible magnitude, not the first admissible prefix when traversing descending magnitudes unless that traversal is completed correctly. Inequality equality is accepted. Retain each sign pattern, actual selectedset and full threshold-candidate comparisons in numerical evidence. Report for eachq/offset[ E R, E V, E(V/(R vee1)), E true_discoveries/2, E(V/(R+1/q)) ]. HereVcounts true null discoveries, Ris totalcount; FDR is expectation of the RANDOM ratio with0whenR0, not ratio of expectations.",
+  "global_q_calibration": "For EACHoffset derive the complete finite breakpoints of its selection/risk rule over CLOSEDq in[0.1,0.5], with exact rational comparisons at eachbreakpoint. Certify the supremum FDR(q)/q over the entire continuous interval and report ALLq values attaining it in ascendingorder. Unknownnumberofmaximizers is not provided byschema. A qgrid or just the two panellevels is insufficient: betweenbreakpoints the exact FDR is constant while1/q changes, and inclusion at equalities matters. Compare ordinary FDR with the separately reported modified-FDR functional, without relabeling one as the other. State the scope of the offset1 guarantee under the supplied joint conditional sign law and avoid interpreting one finite law as proof for invalid scores.",
+  "invalid_sign_law_diagnostic": "Keep the same magnitudes and two positive nonnull signs but replace the six independent null signs with ONE shared fair signZ, allsix positive ifZ+ and allsix negative ifZ-, each withprobability1/2. Each marginal nullsign remains fair. Compute the EXACT offset1 FDR and expected totaldiscoveries atq1/4, and use actual complete two-pattern enumeration to explain whether joint flip-sign symmetry and nominal FDR control survive. Do not dismiss this as finite MonteCarlo noise or confuse marginal fairness with exchangeability under arbitrary coordinate flips.",
+  "interpretation_proposals": {
+    "A": "A singular but PSD Gaussian knockoff coupling can define a valid conditional sampler.",
+    "B": "Any symmetric real covariance block can be used even with a materially negative eigenvalue.",
+    "C": "Conditional joint nullsign symmetry is stronger than marginal fair signs.",
+    "D": "FDR is the ratio of the expected false count to the expected total count.",
+    "E": "The offset and exact threshold equality conventions change finite-sample selection risk.",
+    "F": "Feature covariance exchangeability validates any chosen prediction score without a swap property.",
+    "G": "Finite exact breakpoints can certify a continuous q-domain worst risk ratio.",
+    "H": "An observed performance difference between two scoring methods establishes a causal feature effect."
+  },
+  "reporting": "Absolute numerical tolerance1e-7 for matrices and finite numerical summaries; true ranks, exact sign laws, selectedsets, qthreshold equality and predicates exact. All feature/matrix rows follow1..8 order. Risk rows orderq1/4offset0,offset1,thenq1/2offset0,offset1, with the5columns above. Covariance/mean maps are signed real matrices, not probabilities. FDR,power andmodifiedFDR are distinct scalarfunctionals. Complete eigensystems, actual original solve/matrix handoffs, all64/two-pattern tables, continuous breakpoint proof and scope of conditional exchangeability belong in the trajectory.",
+  "primary_context": [
+    {
+      "authors": "R.F.Barber and E.J.Candes",
+      "year": 2015,
+      "title": "Controlling the false discovery rate via knockoffs",
+      "doi": "10.1214/15-AOS1337",
+      "url": "https://arxiv.org/abs/1404.5609",
+      "role": "Primary knockoff threshold and sign-symmetry context. The Gaussian conditional coupling, finite null/non-null configuration and exact global q-study here are own constructed inputs; model-X conditional independence assumptions are stated explicitly above."
+    }
+  ]
+}

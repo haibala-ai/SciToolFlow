@@ -1,0 +1,61 @@
+{
+  "data_origin": "Own exact controlled continuum inverse problem for a hypothetical orthotropic coating. Coupon masses, volumes, phase speeds and follow-up polarization are declared ideal inputs, not measurements of a named real material. Their limited decimal representation is reporting roundoff, not an unspecified statistical noise model. No microscopic atomistic structure or out-of-plane elastic constants are supplied.",
+  "constitutive_model": "An effective in-plane volumetric linear elastic law, with C entries in GPa and bulk mass density in kg/m^3. Stress vector [sigma_xx,sigma_yy,sigma_xy]^T=C*[epsilon_xx,epsilon_yy,2epsilon_xy]^T where C=[[C11,C12,0],[C12,C22,0],[0,0,C66]]. The original x,y material axes are known. This is the complete defined2D model; do not impose isotropy, a three-dimensional symmetry completion, an extra unknown thickness, or an isotropic Poisson-ratio bound. Full homogeneous strain-energy stability means C is positive definite in this declared engineering-shear convention.",
+  "acoustic_observation": "The CSV gives BOTH sorted in-plane PHASE speeds for propagation n=(cos(theta),sin(theta)) in known material axes. These are not group velocities. Their squared speeds times mass density are the eigenvalues of Gamma(n) in Pa, where Gamma=[[C11 nx^2+C66 ny^2,(C12+C66)nx ny],[(C12+C66)nx ny,C66 nx^2+C22 ny^2]]. Before follow-up there are NO polarization observations. The density CSV supplies exact mass/volume calibration with the stated units; all three coupon ratios should agree. Preserve both acoustic branches; do not label one permanently longitudinal in an anisotropic solid.",
+  "follow_up_options": [
+    {
+      "id": "P1",
+      "cost": 1,
+      "observable": "Both phase speeds at an additional angle22.5degrees, no displacement polarization."
+    },
+    {
+      "id": "P2",
+      "cost": 2,
+      "observable": "Both phase speeds on an arbitrarily dense set of extra in-plane propagation directions, no displacement polarization."
+    },
+    {
+      "id": "P3",
+      "cost": 3,
+      "observable": "Signed component ratio p_y/p_x of the real FAST-mode displacement axis at theta45degrees. Both channels have calibrated relative signs; multiplying the whole eigenvector by-1 leaves the ratio unchanged."
+    },
+    {
+      "id": "P4",
+      "cost": 5,
+      "observable": "Transverse-to-axial strain ratio under known uniaxial stress sigma_xx with sigma_yy=sigma_xy=0, in the same material axes."
+    }
+  ],
+  "follow_up_readout": {
+    "option_id": "P3",
+    "propagation_angle_degrees": 45,
+    "mode": "larger_eigenvalue_fast",
+    "signed_displacement_ratio_py_over_px": -0.46837494598444235,
+    "scope": "This is additional declared data, not an arbitrary eigenvector sign convention. First determine which available observable distinguishes the speed-compatible candidates and the least-cost choice; then use this measured relative ratio to resolve the remaining ambiguity."
+  },
+  "directional_compliance": "For any in-plane tensile loading axis n=(cos(theta),sin(theta)), let m=(-sin(theta),cos(theta)). Apply uniaxial stress tensor sigma*n*n^T with all other imposed stress components zero. Poisson ratio is nu(n,m)=-epsilon_mm/epsilon_nn; engineering shear must be converted consistently to tensor shear when rotating strains. Report global ranges over every theta in[0,180degrees), not merely a grid or the principal axes. Equivalent sign-reversed axes represent the same direction. For reported extremizing angles use the unique representative in[0,90degrees], including its endpoints.",
+  "questions": [
+    "Read and reconcile all density coupons with their true units. Recover EVERY real orthotropic C compatible with the complete phase-speed table under the stated acoustic model, retaining only homogeneous energy-stable candidates. Prove the candidate list complete using principal-direction branch matching and the oblique spectral invariants; a local least-squares fit or one favorite root is insufficient.",
+    "Establish whether an arbitrarily dense, exact in-plane phase-speed experiment could distinguish the remaining candidates. Give a full-angle algebraic argument, not only matching the supplied seven directions. Do not infer elastic compliance or auxeticity from isospectral acoustic tensors alone.",
+    "For each compatible stable C, invert the declared engineering-shear stiffness, derive nu(theta), and determine its SHARP global minimum and maximum with all physical stationary directions and boundary axes checked. Keep the complete continuous certificate in the trajectory, for example a rational function of t=tan^2(theta) with all nonnegative stationary roots and both t=0,infinity boundaries. State whether the speed data alone identify complete in-plane auxeticity (nu<0 for every direction).",
+    "Predict which listed follow-up options resolve the candidate ambiguity, choose the unique least-cost resolving option, and use the actual provided P3 readout to identify C12. Then report the selected material's global minimum and maximum Poisson ratio and their extremizing angles. A global eigenvector sign cannot erase a measured RELATIVE component sign.",
+    "Audit a separate CONTROL tensor with C11=9,C22=4,C66=1,C12=-6.5GPa. Decide independently whether Gamma(n) is positive definite for EVERY in-plane n and whether its homogeneous strain energy is positive definite. Supply a continuous all-angle acoustic certificate and the energy density for engineering strain vector[2,3,0]. This dimensionless vector is a quadratic-form witness; scale it arbitrarily small to remain within linear theory. Do not interpret that unscaled vector as a proposed physical finite deformation."
+  ],
+  "interpretation_proposals": {
+    "A": "The missing sign of the acoustic off-diagonal coupling can remain invisible to all phase-speed eigenvalues while changing directional compliance.",
+    "B": "Two stable materials with identical phase speeds for all in-plane directions must have identical Poisson ratios.",
+    "C": "Mass density and consistent velocity/stiffness units are necessary to recover dimensional elastic constants.",
+    "D": "A stable anisotropic material cannot have a principal-direction Poisson ratio at or below-1 because the isotropic bound applies unchanged.",
+    "E": "A calibrated relative polarization component ratio can distinguish candidates even though the global sign of a real eigenvector is arbitrary.",
+    "F": "Positive acoustic eigenvalues for all directions automatically make the complete homogeneous strain-energy quadratic form positive.",
+    "G": "Full-angle auxeticity and elastic stability require the appropriate continuous compliance and energy tests, not a finite-angle visual impression.",
+    "H": "Complete auxeticity in the declared plane establishes auxeticity for all directions in a three-dimensional solid."
+  },
+  "reporting": "density_kg_per_m3; recovered_C11_C22_C66_GPa as[C11,C22,C66] in GPa; compatible_stable_C12_GPa as sorted candidates; all_angle_speed_data_distinguish_candidates; global_Poisson_ranges_by_C12 keyed by the decimal C12 labels with values[minimum,maximum]; speed_data_alone_identify_complete_auxeticity; resolving_follow_up_ids; least_cost_resolving_option_id; selected_C12_GPa; selected_complete_inplane_auxeticity; selected_global_Poisson_range; selected_extreme_angles_degrees as[minimum_angle,maximum_angle] in[0,90]; control_all_angle_acoustic_positive; control_homogeneous_energy_positive; control_energy_witness_GPa; valid_interpretation_proposal_ids. Numeric absolute tolerance1e-7 except angles1e-5degrees; booleans and IDs exact. No nonunique eigenvector phase or tensor representation is required in final_answer.",
+  "methodological_source": {
+    "authors": "T. C. T. Ting and Tungyang Chen",
+    "title": "Poisson's ratio for anisotropic elastic materials can have no bounds",
+    "year": 2005,
+    "doi": "10.1093/qjmamj/hbh021",
+    "url": "https://doi.org/10.1093/qjmamj/hbh021",
+    "role": "Primary context for avoiding isotropic Poisson bounds in anisotropic elasticity. The2D acoustic ambiguity, continuum matrices, measurements and negative-energy control here are own model constructions, not numerical examples or material data copied from the paper."
+  }
+}

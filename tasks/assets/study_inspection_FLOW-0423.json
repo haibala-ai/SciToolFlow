@@ -1,0 +1,66 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "number_on_test": 20,
+      "inspection_records": [
+        {
+          "lower_hours": 0,
+          "upper_hours": 100,
+          "new_failures": 1
+        },
+        {
+          "lower_hours": 100,
+          "upper_hours": 200,
+          "new_failures": 1
+        },
+        {
+          "lower_hours": 200,
+          "upper_hours": 300,
+          "new_failures": 3
+        },
+        {
+          "lower_hours": 300,
+          "upper_hours": 400,
+          "new_failures": 5
+        },
+        {
+          "lower_hours": 400,
+          "upper_hours": 500,
+          "new_failures": 0
+        }
+      ],
+      "right_censored_survivors": 10,
+      "administrative_stop_hours": 500,
+      "forecast_time_hours": 600,
+      "conditional_extension_start_hours": 500,
+      "constant_hazard_working_model": {
+        "survival_function": "S(t)=exp(-rate_per_hour*t), t in hours; one nonnegative constant rate for the whole test and forecast.",
+        "assumptions": "Independent unit lifetimes; every unit enters at time zero; failures are detected without error at the listed inspections; no other removals, competing modes, delayed entry or repairs. The administrative stop is fixed and independent of lifetimes. These are working assumptions, not empirical validations."
+      },
+      "observation_protocol": "Each new_failures count records units that failed in the interval (lower_hours, upper_hours], not at the upper endpoint. The ten surviving units are right-censored at hour 500. All units share this readout schedule. Exact within-interval event times are unavailable in this task. There are no observations beyond hour 500.",
+      "comparison_protocol": "The endpoint-imputation analyst treats every detected failure as an exact event at its interval upper endpoint and fits an exponential model by failures divided by that imputed total exposure, including all survivors to the stop. Report (endpoint_imputation_rate / correct_interval_likelihood_rate) - 1 as a signed fraction, not a percentage. This calculation audits a different observation model; it is not an alternative valid fit to the readout data.",
+      "interpretation_scope": "This is a controlled observation-model audit. The source lifetimes were NIST-simulated under a Weibull model, not measured hardware failures. The project discarded exact times to create inspection-only observations. Fit the stipulated exponential working model to these observations; do not substitute the source generation parameters. Forecasts are conditional extrapolations under that working model. No claim of demonstrated exponential adequacy or real-product reliability is warranted.",
+      "source_provenance": {
+        "example_url": "https://www.itl.nist.gov/div898/handbook/apr/section2/apr221.htm",
+        "likelihood_method_url": "https://www.itl.nist.gov/div898/handbook/apr/section4/apr412.htm",
+        "facts_record_sha256": "b8a1d7b99bda1468e30d51f567a50401e73c078d0a21c267c9c1c0bac8de4a60",
+        "original_html_captures": [
+          {
+            "url": "https://www.itl.nist.gov/div898/handbook/apr/section2/apr221.htm",
+            "file": "design/research_workflows/source_data/nist_reliability_simulated_failure_example.html",
+            "sha256": "444ef10483589076b414bf7e17a1fa5e3ff9db37d6e850e04a214e29e0ab6941",
+            "bytes": 19574
+          },
+          {
+            "url": "https://www.itl.nist.gov/div898/handbook/apr/section4/apr412.htm",
+            "file": "design/research_workflows/source_data/nist_censored_likelihood_method.html",
+            "sha256": "3405f8102ba15f017371face9b98f0bc15f4ed41085b2d6e223a6a35ad40fd18",
+            "bytes": 11103
+          }
+        ],
+        "derivation": "Coarsened the ten published nearest-hour simulated failures into five 100-hour inspection intervals; ten survivors remain censored at 500 hours. No extra observations generated."
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "nbo_output_file": "cc840fa9ffe4473a_nbo7_1.qout",
+  "nuclear_atomic_numbers": {
+    "Mg": 12,
+    "O": 8,
+    "C": 6
+  },
+  "rounding_half_width_electrons": 5e-06,
+  "rounding_model": "Each printed combined natural spin density is a closed interval of half-width5e-6electrons. Impose the exact total alpha-minus-beta electron count implied by the source charge and multiplicity; all other constraints in the spin bounds come from these intervals. Alpha/beta and combined printed tables are alternative views, not independent additive populations.",
+  "provenance": {
+    "kind": "Unchanged genuine completed open-shell Q-Chem/NBO output. Nuclear charges and the conservative closed rounding intervals are supplied audit conventions. Source SHA256 is cc840fa9ffe4473a55dec2796c67a1a375700b4c7ef83a32833e609b087f915e."
+  }
+}

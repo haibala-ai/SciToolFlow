@@ -1,0 +1,12 @@
+{
+  "frequency_output_file": "9ec2e3a66e36ae94_6.1.1.freq.out.gz",
+  "gas_constant_j_mol_k": 8.31446261815324,
+  "hc_over_kb_k_cm": 1.4387768775039338,
+  "thermochemical_j_per_cal": 4.184,
+  "printed_vibrational_entropy_rounding_half_width_cal_mol_k": 0.0005,
+  "classical_per_mode_capacity_fraction_floor": 0.95,
+  "model": "Independent quantum harmonic molecular vibrations with unscaled positive printed wavenumbers. Keep the spectrum fixed for the formal temperature extrapolation. Translation, rotation and electronic states are excluded.",
+  "provenance": {
+    "kind": "Unchanged genuine completed Q-Chem calculation; only the audit constants, accuracy criterion and extrapolation convention are project-authored. Source output SHA256 is 9ec2e3a66e36ae94f078e4e40e819eb495659464aebc514428dc2252d8900f5c."
+  }
+}

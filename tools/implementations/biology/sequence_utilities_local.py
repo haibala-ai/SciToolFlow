@@ -1,5 +1,5 @@
 """Explicit local contracts for five KG tools absent from the upstream implementation."""
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import json
 from pathlib import Path
 import random
@@ -11,15 +11,11 @@ AMINO_ACIDS = "ACDEFGHIKLMNPQRSTVWY"
 # Common names a caller may reasonably use, mapped to the ExPASy rule that implements them.
 ENZYME_ALIASES = {
     "trypsin": "trypsin",
-    "trypsin/p": "trypsin",
-    "trypsinp": "trypsin",
     "chymotrypsin": "chymotrypsin high specificity",
     "chymotrypsin high specificity": "chymotrypsin high specificity",
     "chymotrypsin low specificity": "chymotrypsin low specificity",
-    "lys-c": "lys-c",
-    "lysc": "lys-c",
-    "lys-n": "lys-n",
-    "lysn": "lys-n",
+    "lys-c": "lysc",
+    "lysc": "lysc",
     "arg-c": "arg-c",
     "argc": "arg-c",
     "asp-n": "asp-n",
@@ -27,36 +23,36 @@ ENZYME_ALIASES = {
     "glu-c": "glutamyl endopeptidase",
     "gluc": "glutamyl endopeptidase",
     "glutamyl endopeptidase": "glutamyl endopeptidase",
-    "pepsin": "pepsina",
-    "pepsina": "pepsina",
     "thermolysin": "thermolysin",
     "cnbr": "cnbr",
     "cyanogen bromide": "cnbr",
     "formic acid": "formic acid",
     "hydroxylamine": "hydroxylamine",
-    "iodosobenzoate": "iodosobenzoate",
+    "iodosobenzoate": "iodosobenzoic acid",
     "proline endopeptidase": "proline endopeptidase",
-    "staphylococcal protease": "staphylococcal protease",
-    "v8 protease": "staphylococcal protease",
-    "no cleavage": "no cleavage",
-    "unspecific cleavage": "unspecific cleavage",
+    "staphylococcal protease": "staphylococcal peptidase i",
+    "v8 protease": "staphylococcal peptidase i",
 }
 
 
 def resolve_enzyme(enzyme, rules):
     """Accept the common enzyme names as well as the exact ExPASy rule keys."""
-    key = str(enzyme).strip()
+    if not isinstance(enzyme, str) or not enzyme.strip():
+        raise ValueError("enzyme must be a nonempty rule name")
+    key = enzyme.strip()
     if key in rules:
         return key
     alias = ENZYME_ALIASES.get(key.lower())
     if alias and alias in rules:
         return alias
     raise ValueError("Unsupported enzyme '%s'. Use one of: %s"
-                     % (enzyme, ", ".join(sorted(set(ENZYME_ALIASES) & set(rules))))) 
+                     % (enzyme, ", ".join(sorted(rules))))
 
 
 def _sequence(sequence):
-    value = "".join(str(sequence).split()).upper()
+    if not isinstance(sequence, str):
+        raise ValueError("sequence must be a string")
+    value = "".join(sequence.split()).upper()
     # A translated protein may carry a terminal stop symbol; it is not a residue.
     value = value.rstrip("*")
     if not value or len(value) > 10000 or set(value) - set(AMINO_ACIDS):
@@ -65,29 +61,66 @@ def _sequence(sequence):
     return value
 
 
-def generate_random_sequence(length: int = None, sequence: str = "", seed: int = 42):
-    """Uniform independent canonical amino acids, specified length or template length; seeded, no biological design claim."""
+def generate_random_sequence(length: int = None, sequence: str = "", seed: int = 42,
+                             molecule_type: str = "protein"):
+    """Uniform independent canonical protein/DNA/RNA symbols; seeded, no biological design claim."""
+    from tools.implementations.biology.sequence_primitives import ALPHABETS, canonical_sequence
+    if molecule_type not in ALPHABETS:
+        raise ValueError("molecule_type must be protein, DNA or RNA")
     if length is None:
-        length = len(_sequence(sequence))
+        length = len(_sequence(sequence) if molecule_type == "protein" else canonical_sequence(sequence, molecule_type, 10000))
     elif sequence:
         raise ValueError("Specify length or a sequence template, not both")
-    if not 1 <= length <= 10000:
+    if type(length) is not int or not 1 <= length <= 10000:
         raise ValueError("Require integer length 1..10000")
+    if type(seed) is not int or not 0 <= seed <= 2147483647:
+        raise ValueError("seed must be integer0..2147483647")
     rng = random.Random(seed)
-    result = "".join(rng.choice(AMINO_ACIDS) for _ in range(length))
-    return json.dumps({"sequence": result, "length": length, "seed": seed,
-                       "method": "uniform independent sampling of 20 canonical amino acids"})
+    result = "".join(rng.choice(ALPHABETS[molecule_type]) for _ in range(length))
+    return json.dumps({"sequence": result, "length": length, "seed": seed, "molecule_type": molecule_type,
+                       "method": "uniform independent sampling of the canonical symbol alphabet"})
 
 
 def _digest(sequence, enzyme, missed_cleavages):
     from pyteomics import parser
     sequence = _sequence(sequence)
-    enzyme = resolve_enzyme(enzyme, parser.expasy_rules)
-    if not 0 <= missed_cleavages <= 5:
+    if enzyme == "no cleavage":
+        enzyme = "no cleavage"
+    else:
+        enzyme = resolve_enzyme(enzyme, parser.expasy_rules)
+    if type(missed_cleavages) is not int or not 0 <= missed_cleavages <= 5:
         raise ValueError("Require 0..5 missed cleavages")
-    peptides = list(parser.icleave(sequence, parser.expasy_rules[enzyme], missed_cleavages=missed_cleavages))
+    peptides = ([(0, sequence)] if enzyme == "no cleavage" else
+                list(parser.icleave(sequence, parser.expasy_rules[enzyme], missed_cleavages=missed_cleavages)))
     return sequence, enzyme, [{"sequence": peptide, "start": start, "end": start + len(peptide)}
                               for start, peptide in peptides]
+
+
+def digest_protein(sequence: str, enzyme: str = "trypsin", missed_cleavages: int = 0,
+                   include_masses: bool = False):
+    """ExPASy-rule potential cleavage, optionally neutral monoisotopic product masses.
+
+    One canonical unmodified sequence, <=10000 residues; a trailing stop is
+    ignored explicitly. Rule names are Pyteomics ExPASy keys/common aliases or
+    'no cleavage'; separate exception filters are not applied.
+    trypsin/P is not silently treated as trypsin. Missed cleavages0..5.
+    Coordinates are zero-based half-open. Masses, when requested, are neutral
+    linear free-terminus monoisotopic Da, not average mass or m/z. No actual
+    enzyme activity, modification or experimental digest is inferred.
+    """
+    if type(include_masses) is not bool:
+        raise ValueError("include_masses must be a strict Boolean")
+    sequence, enzyme, peptides = _digest(sequence, enzyme, missed_cleavages)
+    if include_masses:
+        from pyteomics import mass
+        for peptide in peptides:
+            peptide["neutral_monoisotopic_mass_dalton"] = mass.fast_mass(peptide["sequence"], ion_type="M", charge=0)
+    return json.dumps({"method": "Pyteomics ExPASy sequence-cleavage rules",
+                       "sequence_length": len(sequence), "enzyme": enzyme,
+                       "missed_cleavages": missed_cleavages, "peptides": peptides,
+                       "coordinate_convention": "zero-based half-open",
+                       "mass_basis": "neutral monoisotopic linear free-terminus peptides, Da" if include_masses else None,
+                       "experimental_cleavage_verified": False}, allow_nan=False)
 
 
 def cut_peptide(sequence: str, enzyme: str = "trypsin", missed_cleavages: int = 0):
@@ -112,13 +145,26 @@ def predict_peptide_mass(sequence: str, enzyme: str = "trypsin", missed_cleavage
 
 
 def redundancy_reduction(sequences: list[str], identity_threshold: float = 1.0):
-    """Greedy sequence clustering by global alignment identity; first representative retained, input order matters."""
+    """Greedy canonical-protein clustering with an explicit identity definition.
+
+    Require 1..100 string sequences and a numeric non-bool threshold in (0,1].
+    Exact threshold 1 compares normalized strings without alignment and supports
+    up to 10000 residues per sequence. Thresholds below 1 use global alignment
+    and retain the 2000-residue cap. First representative wins; input order can
+    affect non-exact greedy clusters. Returned JSON preserves every input index
+    and representative sequence. Identical sequence does not establish identical
+    biological function, independent genomic copy number or experimental units.
+    """
     from Bio.Align import PairwiseAligner
-    if not 1 <= len(sequences) <= 100 or not 0 < identity_threshold <= 1:
-        raise ValueError("Require 1..100 sequences and identity threshold in (0,1]")
+    if (not isinstance(sequences, list) or not 1 <= len(sequences) <= 100
+            or any(not isinstance(sequence, str) for sequence in sequences)
+            or type(identity_threshold) not in (int, float)
+            or not 0 < identity_threshold <= 1):
+        raise ValueError("Require 1..100 string sequences and numeric non-bool identity threshold in (0,1]")
     values = [_sequence(sequence) for sequence in sequences]
-    if any(len(sequence) > 2000 for sequence in values):
-        raise ValueError("Clustering supports at most 2000 residues per sequence")
+    maximum_length = 10000 if identity_threshold == 1 else 2000
+    if any(len(sequence) > maximum_length for sequence in values):
+        raise ValueError("Exact clustering supports 10000 residues; alignment clustering supports 2000")
     aligner = PairwiseAligner(mode="global", match_score=2, mismatch_score=-1,
                              open_gap_score=-2, extend_gap_score=-0.5)
     clusters = []
@@ -137,8 +183,10 @@ def redundancy_reduction(sequences: list[str], identity_threshold: float = 1.0):
         else:
             clusters.append({"representative_index": index, "sequence": sequence,
                              "members": [{"index": index, "identity_to_representative": 1.0}]})
-    return json.dumps({"method": "input-order greedy global-alignment identity clustering",
-                       "identity_definition": "identical non-gap columns / all aligned columns including gaps",
+    return json.dumps({"method": ("input-order exact normalized-string equality clustering"
+                                  if identity_threshold == 1 else "input-order greedy global-alignment identity clustering"),
+                       "identity_definition": ("exact normalized-string equality, with repeated observations retained"
+                                               if identity_threshold == 1 else "identical non-gap columns / all aligned columns including gaps"),
                        "alignment_scoring": {"match": 2, "mismatch": -1, "gap_open": -2, "gap_extend": -0.5},
                        "identity_threshold": identity_threshold, "input_count": len(values), "clusters": clusters})
 

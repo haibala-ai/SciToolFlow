@@ -1,0 +1,35 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "environmental_axis_order": [
+    "temperature_standard_units",
+    "moisture_standard_units"
+  ],
+  "covariance_by_habitat": {
+    "habitat_A": [
+      [
+        4.0,
+        1.8
+      ],
+      [
+        1.8,
+        1.0
+      ]
+    ],
+    "habitat_B": [
+      [
+        2.56,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "model": "A controlled bivariate normal utilization density in each habitat, with the same physical axis units and no additional scaling. The 95 percent joint ellipse consists of x such that (x-mu)^T Sigma_inverse (x-mu)<=c, with c=-2*ln(0.05) for two dimensions. Its area is pi*c*sqrt(det(Sigma)); translations do not affect area.",
+  "target": "Compare actual joint ellipse areas and, separately, the product of the two marginal standard deviations. Do not decorrelate by independently standardizing habitats or replace the joint ellipse by a rectangular product of marginal 95 percent intervals.",
+  "scope": "Covariance geometry under an explicit utilization model, not inferred environmental tolerance, niche causality or a species distribution prediction."
+}

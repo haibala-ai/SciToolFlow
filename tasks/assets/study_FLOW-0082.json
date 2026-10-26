@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "record_id": "component01",
+      "smiles": "c1ccccc1"
+    },
+    {
+      "record_id": "component02",
+      "smiles": "Cc1ccccc1"
+    },
+    {
+      "record_id": "component03",
+      "smiles": "CCO"
+    },
+    {
+      "record_id": "study01",
+      "ordered_component_ids": [
+        "component01",
+        "component02"
+      ],
+      "refractive_index_interval": [
+        1.4936609201512991,
+        1.494060920151299
+      ],
+      "density_g_per_cm3_interval": [
+        0.8598,
+        0.8602
+      ]
+    },
+    {
+      "record_id": "study02",
+      "ordered_component_ids": [
+        "component02",
+        "component03"
+      ],
+      "refractive_index_interval": [
+        1.4259544466561966,
+        1.4263544466561966
+      ],
+      "density_g_per_cm3_interval": [
+        0.8498,
+        0.8502
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Refractiveindexdimensionless,densityg/cm³,WildmanCrippenmolarrefractionnumericconventioncm³/mol,average molecular massg/mol,massfractiondimensionless",
+    "original_observation_claim": false
+  }
+}

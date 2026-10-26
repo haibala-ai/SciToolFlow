@@ -1,0 +1,57 @@
+{
+  "fully_specified_structure_records": [
+    {
+      "id": "form1",
+      "smiles": "O=C(O)[C@H](O)[C@@H](O)C(=O)O"
+    },
+    {
+      "id": "form2",
+      "smiles": "O=C(O)[C@@H](O)[C@H](O)C(=O)O"
+    },
+    {
+      "id": "form3",
+      "smiles": "O=C(O)[C@@H](O)[C@@H](O)C(=O)O"
+    },
+    {
+      "id": "form4",
+      "smiles": "O=C(O)[C@H](O)[C@H](O)C(=O)O"
+    }
+  ],
+  "resolved_peak_order": [
+    "peak1",
+    "peak2",
+    "peak3"
+  ],
+  "resolved_peak_records": [
+    {
+      "id": "peak1",
+      "assigned_structure_record": "form1",
+      "area": 0.2,
+      "response_per_mole": 1.0
+    },
+    {
+      "id": "peak2",
+      "assigned_structure_record": "form2",
+      "area": 0.4,
+      "response_per_mole": 2.0
+    },
+    {
+      "id": "peak3",
+      "assigned_structure_record": "form3",
+      "area": 0.4,
+      "response_per_mole": 1.0
+    }
+  ],
+  "calibrated_pure_form_normalized_rotations": {
+    "form1": 10.0,
+    "form2": -10.0,
+    "form3": 0.0,
+    "form4": 0.0
+  },
+  "measured_normalized_mixture_rotation": 0.0,
+  "model": "Every graph has fully encoded stereochemistry. Determine actual stereochemical molecular identity,not literal SMILES equality or a stereo-stripped identifier. All resolved peaks exhaust the mixture and are assigned by the supplied independent calibration;one chemical identity is represented by one peak even if two source record strings encode it. The calibrated normalized rotation is the molecule-fraction-weighted sum because these are equal-formula isomers under the same concentration convention. Peak area equals response_per_mole times amount;unequal responses must be removed before normalization. An exactly zero bulk rotation alone is not a measurement of individual stereoisomer fractions.",
+  "target": "Return the molecular-identity equivalence classes of source IDs as an unordered list of unordered ID lists,and the number of distinct fully specified stereoisomers. Return molar peak fractions in resolved_peak_order,the predicted normalized mixture rotation,and whether zero bulk rotation alone proves a pure achiral form.",
+  "provenance": {
+    "kind": "Explicit synthetic conditional chemical/physical measurement model;no empirical identification or practical process recommendation."
+  }
+}

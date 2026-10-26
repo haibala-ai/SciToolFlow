@@ -1,0 +1,68 @@
+{
+  "origin": "Own exact three-example, two-feature classification study, designed to diagnose optimizer-dependent implicit bias rather than empirical generalization performance. Feature/label values are constructed inputs, all model parameters are dimensionless and there is no intercept. The small data size permits an exact global phase diagram and a delicate degenerate-asymptotic analysis; scientific difficulty is not dataset size.",
+  "training_examples": [
+    {
+      "id": "1",
+      "x": [
+        1,
+        0
+      ],
+      "y": 1
+    },
+    {
+      "id": "2",
+      "x": [
+        0,
+        -1
+      ],
+      "y": -1
+    },
+    {
+      "id": "3",
+      "x": [
+        0.4,
+        0.4
+      ],
+      "y": 1
+    }
+  ],
+  "model_and_loss": "For physical-coordinate weightsw=(w1,w2), logits arew dotx and L(w)=sum_i log[1+exp(-y_i*w dotx_i)], an UNAVERAGED sum. There is no regularizer, intercept, stochastic sampling or finite-step optimizer. Each run startsw(0)=(0,0). The prescribed continuous gradient flow is dw/dt=-Q_q grad_w L, Q_q=diag(q,1),q>0. The supplied q panel uses EXACT rational fractions; numerical tool decimals approximate those exact values only for finite-time computation. This is Euclidean flow after the linear parameterizationw=diag(sqrt(q),1)*theta. The physical feature coordinates and physical test points remain fixed whenq changes; transforming them inconsistently changes the experiment.",
+  "global_implicit_direction": "Derive the signed-margin feature rowsz_i=y_i*x_i and verify strict separability. Establish the optimizer-metric hard-margin variational problem governing the leading flow direction, with constraintsz_i dotwhat>=1 and objective0.5*what^T Q_q^-1 what. Justify the logistic-tail/max-margin connection for THIS positive-metric continuous flow, and do not substitute a finite L2-regularized logistic fit or finite-step intercept model. Derive the ENTIREq>0piecewise solution and all transitionq values by full primal/dual KKT feasibility, including both boundary values. Distinguish tight margin constraints from those with a strictly positive dual multiplier. Retain actual complete registered KKT linear-system solutions at every requestedq, plus full registered matrix products verifying stationarity and margins. Strict convexity must establish global uniqueness; a numerical grid or a candidate active set alone does not.",
+  "q_panel_in_order": [
+    "1/2",
+    "2/3",
+    "1",
+    "3/2",
+    "2"
+  ],
+  "dual_convention": "Use multipliersalpha_i>=0 forconstraints1-z_i dotwhat<=0, soQ_q^-1 what=sum_i alpha_i*z_i. Report all threealpha_i in exampleID order1,2,3. ID sets are unordered subsets of the PUBLIC IDs1,2,3; tightness and strict positivity are exact mathematical properties, not solver tolerance labels.",
+  "degenerate_learning_asymptotics": "For each q in the panel derive the two leading scales w(t)=what(q)*log(t)+eta(q)*log(log(t))+O(1) as t tends to infinity. Determine eta, including the transition cases where a tight constraint has zero dual weight. Justify any loglog correction from the actual flow and its residual/transverse dynamics or an applicable theorem with its conditions; do not assume an O(1) residual at a degenerate boundary because generic data have one. A three-time regression is not an asymptotic proof. Constants inside the leading log differ under changes of time normalization and initialization, so retain the prescribed loss sum and flow.",
+  "finite_flow_verification": "Independently integrate the exact coupled flow from0and report both weights and the NATURAL LOGARITHM of the UNAVERAGED summed logistic loss at tau=log(1+t) equal10,30,80 for eachq. Compute log(sum_i log[1+exp(-z_i dotw)]), not the sum of logarithms of individual losses and not the log of an averaged loss. Log reporting resolves the exponentially small positive loss without an absolute-tolerance zero. The change of variables means t=exp(tau)-1; integrate d w/d tau=exp(tau)*d w/dt, with actual stable logistic-tail arithmetic, convergence/refinement and all requested components retained. These trajectories verify the asymptotic mechanism but do not define its coefficients. Do not silently replace log(t) by t or interpret finite-tau residuals as the exact eta limit.",
+  "OOD_boundary_diagnostic": "This part asks model LOGITS, not correctness against unavailable labels. At q=2/3use the fixed physical pointx=(1,-2/3);at q=3/2usex=(1,-3/2). For each, derive lim[w(t) dotx/log(log(t))]. Their leading what dotx can vanish while the unnormalized logit still diverges. Separately at q=0.5usex=(1,-2/3),and at q=2usex=(1,-3/2); derive each finite limiting unnormalized logit from the exact positive-dual regime residual equations and prescribed loss convention. Explain why normalized-direction agreement on a boundary does not settle logistic probability calibration there. No claimed test accuracy or causal effect follows without labels.",
+  "interpretation_proposals": {
+    "A": "A linear reparameterization can change the implicit norm and classifier direction while leaving the loss infimum unchanged.",
+    "B": "Every tight hard-margin constraint necessarily has a positive KKT multiplier.",
+    "C": "A degenerate support constraint can produce a loglog-time correction absent in a generic bounded-residual approximation.",
+    "D": "A zero leading normalized test margin forces the unnormalized test logit to converge tozero.",
+    "E": "Exact active-set feasibility and strict convexity establish a global margin solution beyond a finiteq grid.",
+    "F": "A regularized finite logistic estimator is automatically the same scientific object as unregularized infinite-time flow.",
+    "G": "Prediction direction, unnormalized logits and probability calibration are distinct asymptotic questions.",
+    "H": "Three unlabeled diagnostic points establish scientific generalization accuracy for a population."
+  },
+  "reporting": "All q rows follow the supplied panel and all time rows tau10,30,80; weight coordinatesw1,w2. Counts/ID sets and predicates are exact; numeric absolute tolerance1e-7. Public set cardinalities do not reveal the active set; report full mathematical sets and keep complete KKT solutions/stationarity checks. Preserve source rows and labels, the correct metric/loss/time conventions, complete refined coupled integrations and controlled boundary-asymptotic derivations in the trajectory. Do not apply probability normalization to weight, multiplier or logit lists.",
+  "primary_context": [
+    {
+      "authors": "D. Soudry, E. Hoffer, M. S. Nacson, S. Gunasekar and N. Srebro",
+      "year": 2018,
+      "title": "The Implicit Bias of Gradient Descent on Separable Data",
+      "url": "https://jmlr.csail.mit.edu/papers/volume19/18-188/18-188.pdf"
+    },
+    {
+      "authors": "S. Gunasekar, J. D. Lee, D. Soudry and N. Srebro",
+      "year": 2018,
+      "title": "Characterizing Implicit Bias in Terms of Optimization Geometry",
+      "url": "https://proceedings.mlr.press/v80/gunasekar18a.html"
+    }
+  ],
+  "context_role": "Primary context for separable logistic implicit bias and optimization geometry. The data, continuous-time metric panel, explicit degenerate active sets, logtime integration and diagnostic logits are own constructed questions; the task does not identify a finite-step result with continuous flow without checking conditions."
+}

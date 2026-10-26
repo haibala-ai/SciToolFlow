@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "record_id": "silica",
+      "formula": "SiO2",
+      "oxide_moles": 0.65
+    },
+    {
+      "record_id": "alumina",
+      "formula": "Al2O3",
+      "oxide_moles": 0.15
+    },
+    {
+      "record_id": "soda",
+      "formula": "Na2O",
+      "oxide_moles": 0.2
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Oxidemoles on1moltotaloxidebasis;atomcountsfromactualformulas",
+    "original_observation_claim": false
+  }
+}

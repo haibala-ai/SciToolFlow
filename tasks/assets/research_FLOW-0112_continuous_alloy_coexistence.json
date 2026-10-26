@@ -1,0 +1,89 @@
+{
+  "data_origin": "Own controlled binary substitutional-alloy thermodynamic model at one fixed temperature and pressure. Al and Cu labels determine composition and mean atomic masses only. Energies are constructed free energies per TOTAL atom, not measured or calculated phase energies of actual Al-Cu materials. No temperature-dependent phase diagram is inferred.",
+  "composition_and_energy": "x is Cu atomic fraction on a fixed total number of substitutional sites; x is in the CLOSED interval[0,1]. Every branch g(x) is eV per total atom, all in a common reference. A macroscopic mixture has nonnegative atomic-number phase fractions f_i with sum f_i=1 and sum f_i*x_i=z. Neglect interfacial/coherency/finite-size energies. Minimize sum f_i*g_i(x_i), allowing any branch and any continuous composition. Phase fractions count atoms, not unit cells, weight or volume.",
+  "curve_representation": {
+    "x_knots": [
+      0.0,
+      0.3,
+      0.65,
+      1.0
+    ],
+    "branches": {
+      "alpha": {
+        "values": [
+          0.045,
+          0.045,
+          0.5,
+          1.4449999999999998
+        ],
+        "derivatives": [
+          -0.6,
+          0.6,
+          2.0,
+          3.4
+        ]
+      },
+      "beta": {
+        "values": [
+          1.1037499999999998,
+          0.4737500000000001,
+          0.07999999999999997,
+          0.053750000000000006
+        ],
+        "derivatives": [
+          -2.55,
+          -1.6500000000000001,
+          -0.5999999999999999,
+          0.45000000000000007
+        ]
+      },
+      "gamma": {
+        "values": [
+          0.12,
+          -0.005999999999999995,
+          -0.016499999999999994,
+          0.12
+        ],
+        "derivatives": [
+          -0.6,
+          -0.24,
+          0.18000000000000002,
+          0.6
+        ]
+      }
+    },
+    "definition": "Each branch is DEFINED on the complete interval by piecewise cubic Hermite interpolation of its supplied values and first derivatives. Derivatives mean dg/dx, not a force. No extrapolation. Determine the continuous interpolants, not just the lower convex hull of the four sampled knot values. Interpolation that preserves values but discards derivative constraints is a different model."
+  },
+  "calibration_offset": "Nominal eta=0. An uncertain common offset eta in eV/atom is added to the ENTIRE gamma branch only; its derivatives are unchanged. Consider eta over[-0.02,0.05]. Alpha and beta are unchanged. This is a controlled calibration uncertainty, not a temperature sweep or a claim about actual alloy composition errors.",
+  "global_phase_question": "At nominal eta, enumerate every physical pairwise common tangent with one contact on each branch and distinct contact compositions inside[0,1]. A tangent is globally supporting only if its line lies at or below EVERY branch for ALL x in[0,1]. An equality of two branch chemical potentials alone is insufficient. Report the three pair contact-composition rows and slopes, and identify which pair tangents actually belong to the equilibrium lower convex envelope. Order a row by increasing contact x, and use pair names alpha|beta,alpha|gamma,beta|gamma with each contact vector in that named branch order (the beta|gamma row can consequently have decreasing named-order x).",
+  "closed_batches": {
+    "Al7Cu3": "Elemental atom ratio of the complete closed batch, NOT a pre-existing homogeneous phase.",
+    "AlCu": "Elemental atom ratio of the complete closed batch, NOT a pre-existing homogeneous phase.",
+    "AlCu3": "Elemental atom ratio of the complete closed batch, NOT a pre-existing homogeneous phase."
+  },
+  "closed_batch_reporting": "For each closed batch at nominal eta report z, equilibrium g and phase-number fractions in fixed order[alpha,beta,gamma]. A phase with zero fraction is absent. Where one phase alone is stable, its composition equals z; do not force it to the bottom of its branch. Also report phase WEIGHT fractions in the same order using M(x)=(1-x)*26.9815385+x*63.546 in u per atom and w_i=f_i*M(x_i)/M(z). Use these fixed average atomic masses; phase number and weight fractions generally differ.",
+  "reservoir_question": "A substitutional reservoir exchanges Al and Cu while keeping TOTAL sites fixed. Its independent field is Delta_mu=mu_Cu-mu_Al. At nominal eta and Delta_mu=0 minimize g_i(x)-Delta_mu*x over all branches and x. Report every equilibrium phase/composition and the minimum per-total-site semigrand potential. This is not insertion of Cu into a fixed number of Al host atoms.",
+  "offset_research_question": "Find the unique eta in the declared uncertainty interval at which one line is tangent to all three branches and globally supporting. Report eta, common slope, and the three phase compositions in order[alpha,beta,gamma]. For closed z=0.5 at this critical eta, determine the COMPLETE family of atomic-number phase fractions. Parameterize it as f=intercept+slope*t, t=f_gamma, in order[alpha,beta,gamma], and report its closed feasible t interval. Report whether gamma is forced to have positive fraction at this exact critical eta. Separately find the LAST eta where a pure gamma phase at z=0.5 is an equilibrium, and state whether a DISTINCT equilibrium with at least two strictly positive phase fractions already exists AT that boundary. Distinguish an attained competing equilibrium from an infimum of offsets with positive mixtures. Across the full eta uncertainty interval, list all phase assemblages that occur as the EXACT set of strictly positive phase fractions in at least one equilibrium at z=0.5. Include degenerate coexistence at the critical offset. A zero-fraction phase is not part of an assemblage. Use alphabetical phase IDs joined by | for assemblage labels.",
+  "interpretation_proposals": {
+    "A": "The continuous lower convex envelope, rather than the minimum of branch energies at a fixed homogeneous composition, sets the closed macroscopic equilibrium.",
+    "B": "Every physical pairwise common tangent is globally stable even if a third branch lies below its line.",
+    "C": "At triple coexistence, fixed overall composition and normalization need not identify all three phase fractions uniquely.",
+    "D": "Phase weight fractions can always be substituted directly for atomic-number fractions in the composition lever rule.",
+    "E": "At fixed total substitutional sites the relevant imposed chemical-potential field is the species difference.",
+    "F": "At a critical offset where gamma touches the alpha-beta supporting line, gamma must occur with positive fraction in every equilibrium at overall x=0.5.",
+    "G": "The constructed free energies establish the actual experimental phase diagram of aluminum-copper alloys."
+  },
+  "reporting": "Return pair_contact_compositions and pair_tangent_slopes keyed alpha|beta,alpha|gamma,beta|gamma; globally_supporting_pair_ids as a sorted list; batch_Cu_atomic_fractions, batch_equilibrium_free_energies, batch_phase_number_fractions and batch_phase_weight_fractions keyed each batch formula; zero_field_semigrand_equilibrium as a list of objects with phase,x; zero_field_semigrand_minimum; triple_offset; triple_common_slope; triple_phase_compositions; triple_fraction_intercepts_and_slopes as three rows[intercept,slope]; triple_t_range; gamma_forced_positive_at_triple boolean; pure_gamma_last_stable_offset; distinct_positive_mixture_exists_at_pure_gamma_boundary boolean; possible_positive_phase_assemblages_at_half sorted; valid_interpretation_proposal_ids sorted. IDs and booleans exact, continuous values absolute1e-7 plus relative1e-7. The fraction family must describe ALL feasible equilibria, not a single arbitrarily chosen witness or independent min/max boxes.",
+  "methodological_sources": [
+    {
+      "title": "Materials Project: phase-diagram thermodynamic stability methodology",
+      "url": "https://docs.materialsproject.org/methodology/materials-methodology/thermodynamic-stability/phase-diagrams-pds",
+      "role": "Primary implementation methodology for convex-hull phase stability; no numerical materials energies copied."
+    },
+    {
+      "title": "pymatgen phase diagrams and Legendre-transform grand potentials",
+      "url": "https://pymatgen.org/pymatgen.analysis",
+      "role": "Primary implementation documentation motivating global supporting-plane and chemical-potential duality. This controlled task explicitly uses a fixed-total-site semigrand transform and continuous solid-solution branches."
+    }
+  ]
+}

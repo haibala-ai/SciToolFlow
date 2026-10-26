@@ -1,0 +1,16 @@
+{
+  "null_probability_upper_bound": 0.2,
+  "declared_family_error_limit": 0.1,
+  "cumulative_look_sizes": [
+    5,
+    10,
+    15
+  ],
+  "working_model": "Independent identically distributed Bernoulli defect indicators with one constant unknown probability p. Null hypothesis is the COMPLETE interval0<=p<=0.2. At a look with n cumulative observations and k cumulative defects, use the exact one-sided upper-tail p-value P[Binomial(n,0.2)>=k].",
+  "nominal_protocol": "At each declared look, reject if its exact p-value is <=the declared family error limit. Stop at the FIRST rejection; otherwise continue to the final declared look. Report the first-crossing probabilities specifically at the null BOUNDARY p=0.2. These are UNCONDITIONAL probabilities at that parameter value, not probabilities conditional on reaching a look and not separate maxima over p for each look.",
+  "adjusted_protocol": "Use the same looks and stopping rule but compare every p-value with the declared family error limit DIVIDED BY the total number of declared looks. The look schedule is fixed before data. Do not divide by the number actually reached.",
+  "reporting": "For each protocol report the actual worst-case null probability of at least one rejection, not a union-bound substitute, Monte Carlo estimate or sum of overlapping marginal rejection probabilities. A count threshold n+1means no attainable count rejects. Threshold and first-crossing arrays follow cumulative_look_sizes.",
+  "provenance": {
+    "data_origin": "Explicit controlled benchmark model and exact numerical inputs; not an empirical laboratory, ecological or classifier-performance claim."
+  }
+}

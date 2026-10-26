@@ -1,0 +1,95 @@
+{
+  "data": [
+    {
+      "record_id": "site01",
+      "source_zero_based_ion_index": 2,
+      "element": "Al",
+      "raw_electric_field_gradient_volt_per_angstrom_squared": [
+        [
+          11.11,
+          1.371,
+          2.652
+        ],
+        [
+          1.371,
+          3.635,
+          -3.572
+        ],
+        [
+          2.652,
+          -3.572,
+          -14.746
+        ]
+      ],
+      "nuclear_spin": 2.5,
+      "quadrupole_moment_millibarn": 146.6
+    },
+    {
+      "record_id": "site02",
+      "source_zero_based_ion_index": 8,
+      "element": "Al",
+      "raw_electric_field_gradient_volt_per_angstrom_squared": [
+        [
+          2.404,
+          -0.588,
+          -6.83
+        ],
+        [
+          -0.588,
+          10.435,
+          3.159
+        ],
+        [
+          -6.83,
+          3.159,
+          -12.839
+        ]
+      ],
+      "nuclear_spin": 2.5,
+      "quadrupole_moment_millibarn": 146.6
+    },
+    {
+      "record_id": "spectrum",
+      "simulated_transition_frequencies_mhz": [
+        0.9842,
+        1.6209
+      ],
+      "absolute_line_tolerance_mhz": 0.002,
+      "elementary_charge_coulomb": 1.602176634e-19,
+      "planck_joule_second": 6.62607015e-34
+    }
+  ],
+  "provenance": {
+    "kind": "authentic raw EFG-source projection plus explicitly simulated spectroscopic comparison",
+    "generation": "Original published computational source values combined with explicitly labeled simulated comparison inputs. Source captures identify the genuine raw data; simulated observations are study inputs,not experimental measurements.",
+    "units": "EFG V/angstrom^2,Q millibarn=1e-31m^2,spin dimensionless,H/h and frequencies MHz",
+    "original_observation_claim": false,
+    "source_captures": [
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/nmr/efg/AlPO4/OUTCAR",
+        "accessed_at": "2026-10-20T13:34:25.614460+00:00",
+        "raw_sha256": "5527bb4bec19b1268df7035a067c9be1ee8b07cc8a60659000cbce8ccc451072",
+        "git_blob_sha1": "248c1ad491595550f3a249c8f20c4c5f61c36b10",
+        "git_blob_verified": true,
+        "byte_count": 274379,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/nmr/efg/AlPO4/OUTCAR",
+        "role": "Genuine published scientific source artifact / library fixture; byte provenance verified, physical completeness and normalization require individual inspection; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/vasp/fixtures/nmr/efg/AlPO4/CONTCAR",
+        "accessed_at": "2026-10-20T13:34:47.180860+00:00",
+        "raw_sha256": "569f0b692db16155152aa6d4694ec8ce6f52e18902b3ab0e40d4d83f7c497a31",
+        "git_blob_sha1": "7f15e3884403e4d3f084ee31ebd8ce5279bebc76",
+        "git_blob_verified": true,
+        "byte_count": 4956,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/vasp/fixtures/nmr/efg/AlPO4/CONTCAR",
+        "role": "Genuine published scientific source artifact / library fixture; byte provenance verified, physical completeness and normalization require individual inspection; no expected answers used"
+      }
+    ],
+    "source_identity_caution": "Archive folder name AlPO4 is not a certified composition label; actual companion structure verifies only that the selected ions are Al."
+  }
+}

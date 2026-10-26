@@ -1,0 +1,14 @@
+{
+  "records": [
+    {
+      "id": "record_A",
+      "sequence": "GDDAIPLLKSTNEQHQECRYKGTMFVNHWIPASVWYMRCF"
+    },
+    {
+      "id": "record_B",
+      "sequence": "EAAPMDSCTYGLRPWYKNVTWFICRENQLIMVSQGHKHDF"
+    }
+  ],
+  "comparison": "These are artificial analytical sequence records containing the same residue multiset. They are not proposed functional proteins or engineered biological interventions.",
+  "reporting_rule": "The purely computational report flags index<40 under the Guruprasad1990 definition. Exactly40 does not qualify. Composition-only checks are Kyte-Doolittle mean hydropathy and Ikai aliphatic index;neither establishes experimental stability."
+}

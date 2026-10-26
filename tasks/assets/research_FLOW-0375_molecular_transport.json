@@ -1,0 +1,128 @@
+{
+  "origin": "Own spinless noninteracting wide-band molecular-bridge model with one side-group orbital. It is an ideal coherent single-electron scattering and linear thermoelectric model, not an ab-initio prediction for a named molecule. Energies and temperature are in one fixed dimensionless energy unit; k_B,charge magnitude e and Planck h are set to1, and no extra spin factor is included. Electron charge is negative; the Seebeck sign convention is specified below.",
+  "Hamiltonian": {
+    "orbital_order": [
+      "left_backbone",
+      "right_backbone",
+      "side_group"
+    ],
+    "H": [
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.6
+      ],
+      [
+        0.0,
+        0.6,
+        0.3
+      ]
+    ],
+    "Gamma_L": 0.8,
+    "Gamma_R": 0.8,
+    "left_contact_orbital": 0,
+    "right_contact_orbital": 1,
+    "probe_contact_orbital": 2,
+    "retarded_definition": "G^r(E)=[E*I-H+i*diag(Gamma_L,Gamma_R,gamma)/2]^-1; all physical contact broadenings are nonnegative. GammaL=GammaR=.8, backbone hoppingt=1, side hoppingv=.6, side energyepsilon=.3."
+  },
+  "probe_model": "The probe is an ENERGY-RESOLVED DEPHASING reservoir: at each real E its net spectral particle current vanishes, with f_P(E) chosen from that equation. It is not specified as a thermal voltage probe with a single fitted chemical potential. Derive the effective two-terminal transmission by eliminating f_P from the three-terminal Landauer currents. For i!=j,T_ij=Gamma_i*Gamma_j*|G_ij|\u00b2. At gamma0 the probe is disconnected and contributes no current. Adding a negative imaginary self-energy while dropping reinjection describes absorption, not this current-conserving probe. Derive full positivity/passivity and reciprocity checks, using a complete scattering or Green identity rather than a single transmission entry alone.",
+  "registered_scattering_verification": {
+    "probe_cases_in_order": [
+      {
+        "E": 0.3,
+        "gamma": 0
+      },
+      {
+        "E": 0.3,
+        "gamma": 0.2
+      },
+      {
+        "E": 0.3,
+        "gamma": 2
+      },
+      {
+        "E": 0.35,
+        "gamma": 0.2
+      }
+    ],
+    "task": "For EVERY listed case form the complete complex3-by-3retarded inverse problem. Use the declared real coordinate order[Re psi0,Re psi1,Re psi2,Im psi0,Im psi1,Im psi2], derive the correct6-by-6realification, and retain complete actual registered linear-system solutions for ALL THREE unit-source columns. Verify the full complex original inverse residual and current conservation, including imaginary signs. Retain full complex Green matrices and report T_LR,T_LP,T_RP,T_effective in that order. A conjugated inverse with the same scalar transmission is not the specified retarded Green function."
+  },
+  "interference_questions": "Derive a closed rational expression for the effective transmission for arbitrary real E and nonnegative gamma, and check it against every full registered inverse. Locate the exact coherent antiresonance and prove it is a transmission zero, not a pole or a missing state. Derive C in tau(E,gamma0)=C*(E-epsilon)\u00b2+o((E-epsilon)\u00b2), and B in tau(E=epsilon,gamma)=B*gamma+o(gamma) asgamma->0+. State why changing only the sign of v is an orbital-basis gauge change for this tree Hamiltonian, not a transport-identifiable molecular chirality or flux. Also explain the large-gamma side-orbital-decoupling limit and compare it with the direct backbone bridge.",
+  "thermoelectric_definitions": "For thermal temperaturetheta>0 and common chemical potentialmu, define L_n=integral over all real E of(E-mu)^n*tau_effective(E)*[-df(E;mu,theta)/dE]dE,n0,1,2,where f=1/[1+exp((E-mu)/theta)]. In the linear-response convention here G=L0,Seebeck S=-L1/(theta*L0),open-circuit ELECTRONIC heat conductance kappa=(L2-L1\u00b2/L0)/theta,and Lorenz ratio kappa/(G*theta). No phonon heat current is included. The zero-charge-current condition is essential: L2/theta alone is generally a different heat coefficient. Because the dephasing probe is eliminated separately at each energy, the same effective transmission enters all three moments.",
+  "thermal_cases_in_order": [
+    {
+      "mu": 0.3,
+      "theta": 0.02,
+      "gamma": 0.0
+    },
+    {
+      "mu": 0.3,
+      "theta": 0.02,
+      "gamma": 0.2
+    },
+    {
+      "mu": 0.3,
+      "theta": 0.08,
+      "gamma": 0.0
+    },
+    {
+      "mu": 0.3,
+      "theta": 0.08,
+      "gamma": 0.2
+    },
+    {
+      "mu": 0.35,
+      "theta": 0.02,
+      "gamma": 0.0
+    },
+    {
+      "mu": 0.35,
+      "theta": 0.02,
+      "gamma": 0.2
+    },
+    {
+      "mu": 0.35,
+      "theta": 0.08,
+      "gamma": 0.0
+    },
+    {
+      "mu": 0.35,
+      "theta": 0.08,
+      "gamma": 0.2
+    }
+  ],
+  "thermal_computation": "Compute all three moments for every listed case using the full energy-dependent transmission, and report S,kappa,Lorenz. Retain converged registered numerical integration and an explicit control of both thermal tails and mesh/refinement; do not replace a node by a constant transmission or use the regular Sommerfeld formula through a transmission zero. Changing variablesx=(E-mu)/theta is permitted. Verify positivity of G,kappa and the moment determinant L0L2-L1\u00b2, as well as particle-current conservation. Formula-derived integration is acceptable only after its complete Green-function/scattering checks; copied target numbers are not evidence.",
+  "controlled_low_temperature_limits": "At coherent gamma0 letmu=epsilon+alpha*theta with alpha in[-1,0,1] held fixed whiletheta->0+. Derive each limiting S and Lorenz ratio from the exact thermal kernel moments, and give the coefficients lim L0/theta\u00b2 and lim kappa/theta\u00b3 for the EXACT node alpha0. Compare the exact-node low-temperature Lorenz limit with that obtained at any fixed nonzero gamma before sending gamma tozero; decide whether these limits commute. Finally keepmu=epsilon and letgamma=c*theta\u00b2 with c in[0,1,100]. Derive the three limiting Lorenz ratios and the continuous crossover formula for arbitrary fixedc>=0. A fit to finite thermal cases does not prove these asymptotics; justify the joint expansion and thermal moment/tail control. Do not interchange limits without checking the node regularity.",
+  "interpretation_proposals": {
+    "A": "A side-orbital interference zero can invalidate a regular nonzero-transmission Sommerfeld limit.",
+    "B": "Any imaginary self-energy automatically represents a conserving reservoir even if no particles are reinjected.",
+    "C": "An energy-resolved zero-current probe generally requires a nonequilibrium distribution rather than one Fermi function.",
+    "D": "The heat coefficient at fixed electrical driving is always identical to open-circuit heat conductance.",
+    "E": "An orbital gauge transformation can reverse a tree hopping sign without changing physical transmissions.",
+    "F": "Scalar transmission agreement makes a conjugated advanced Green function an acceptable retarded inverse.",
+    "G": "The thermal and dephasing limits can depend on their order or on a joint scaling path.",
+    "H": "A finite spinless model with no phonons establishes a measured total thermal conductance for a real device."
+  },
+  "reporting": "Absolute numerical tolerance1e-7 on all reported finite and limiting quantities; declared case order and alpha/corder are mandatory. Seebeck can be signed and is not a probability. Individual scattering transmissions are nonnegative and bounded by1; results for different contacts/energies are not a normalized probability list. Retain all original complex signs and full source columns, the conserving probe derivation, complete numerical integrations with tail/refinement bounds and controlled limit arguments. The public schema gives formats, not hidden intermediate results.",
+  "primary_context": [
+    {
+      "authors": "M. Buettiker",
+      "year": 1986,
+      "title": "Role of quantum coherence in series resistors",
+      "doi": "10.1103/PhysRevB.33.3020",
+      "url": "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.33.3020"
+    },
+    {
+      "title": "Giant thermopower and figure of merit in single-molecule devices",
+      "year": 2009,
+      "doi": "10.1103/PhysRevB.79.033405",
+      "url": "https://doi.org/10.1103/PhysRevB.79.033405"
+    }
+  ],
+  "context_role": "Primary context for reservoir descriptions of decoherence and molecular side-group Fano thermoelectrics. The specified energy-resolved probe, three-orbital inputs, finite panel and joint-scaling questions are own constructed specifications; they do not reproduce a paper calculation or substitute an inelastic thermal reservoir for the defined dephasing condition."
+}

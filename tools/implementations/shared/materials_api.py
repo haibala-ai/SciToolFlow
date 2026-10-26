@@ -1,10 +1,33 @@
 """Bounded, authenticated requests and explicit molecule schema migration."""
 
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import os
 import requests
 import json
+import threading
 from pathlib import Path
+
+_TRANSPORT = threading.local()
+
+
+def _session(key):
+    """Reuse HTTP connections within one worker/thread, without caching data."""
+    proxy = os.getenv("SCITOOL_MP_USE_PROXY", "0") == "1"
+    identity = (key, proxy)
+    if getattr(_TRANSPORT, "identity", None) != identity:
+        previous = getattr(_TRANSPORT, "session", None)
+        if previous is not None:
+            previous.close()
+        session = requests.Session()
+        session.trust_env = proxy
+        _TRANSPORT.identity, _TRANSPORT.session = identity, session
+    return _TRANSPORT.session
+
+
+def response_payload(response):
+    """Reuse the already validated JSON object, without a second decode."""
+    cached = getattr(response, "_scitool_mp_payload", None)
+    return cached if isinstance(cached, dict) else response.json()
 
 
 class MissingScientificData(LookupError):
@@ -52,19 +75,24 @@ def xas_by_formula(formula_absorbing_element):
     )
 
 
-def get(url, *, headers=None, params=None, timeout=25):
+def get(url, *, headers=None, params=None, timeout=25, allow_empty=False):
     from tools.runtime.config import Config
 
-    session = requests.Session()
-    session.trust_env = os.getenv("SCITOOL_MP_USE_PROXY", "0") == "1"
-    session.headers.update(headers or {})
-    session.headers["X-API-KEY"] = Config().MP_KEY
+    key = Config().MP_KEY
+    if not key:
+        raise UnavailableScientificEndpoint("Materials Project API key is not configured")
+    session = _session(key)
+    request_headers = dict(headers or {})
+    request_headers["X-API-KEY"] = key
     query = dict(params or {})
     if "/molecules/" in url:
         # The live OpenAPI schema no longer accepts this query parameter.
         query.pop("deprecated", None)
-    with session:
-        response = session.get(url, params=query, timeout=timeout)
+    try:
+        response = session.get(url, headers=request_headers, params=query, timeout=timeout)
+    except requests.RequestException as error:
+        # Never expose authenticated request objects or URLs containing inputs.
+        raise UnavailableScientificEndpoint("Materials Project transport failed: " + type(error).__name__) from None
     if not response.ok:
         # Avoid requests' exception representation exposing URL query strings.
         if response.status_code == 404:
@@ -74,11 +102,17 @@ def get(url, *, headers=None, params=None, timeout=25):
         raise RuntimeError(
             f"Materials Project HTTP {response.status_code} at {url.split('?')[0]}"
         )
-    payload = response.json()
-    if "data" not in payload:
-        raise RuntimeError("Materials Project response has no data field")
-    if not payload["data"]:
+    try:
+        payload = response.json()
+    except (ValueError, TypeError):
+        raise RuntimeError("Materials Project response is not valid JSON") from None
+    if not isinstance(payload, dict) or not isinstance(payload.get("data"), list):
+        raise RuntimeError("Materials Project response has no record array")
+    if payload.get("errors"):
+        raise RuntimeError("Materials Project response reports query errors")
+    if not payload["data"] and not allow_empty:
         raise MissingScientificData("No matching Materials Project records")
+    response._scitool_mp_payload = payload
     return response
 
 
@@ -219,15 +253,12 @@ THERMO_FIELDS = {
 VIBRATION_FIELDS = {"frequencies", "frequency_modes", "ir_intensities", "ir_activities"}
 ORBITAL_FIELDS = {"open_shell", "nbo_population"}
 
-MOLECULE_COLLECTION_FIELDS = {
-    "level_of_theory": "unique_levels_of_theory",
-    "solvent": "unique_solvents",
-    "lot_solvent": "unique_lot_solvents",
-}
-
-
 def molecule_property(molecule_id, property_name):
-    """Keep solvent-labelled values; never substitute total for component energy."""
+    """Read the exact requested field; never substitute unique/total for a missing scalar/component.
+
+    Public collection primitives use unique_* explicitly. Legacy singular
+    registrations are retired, rather than disguising a collection as a scalar.
+    """
     group = None
     nested_name = property_name
     if property_name in THERMO_FIELDS:
@@ -242,7 +273,7 @@ def molecule_property(molecule_id, property_name):
                 group, nested_name = candidate, "property_id"
             elif property_name == candidate + "_levels_of_theory":
                 group, nested_name = candidate, "level_of_theory"
-    field = group or MOLECULE_COLLECTION_FIELDS.get(property_name, property_name)
+    field = group or property_name
     requested_fields = (
         field + ",deprecated" if property_name == "deprecation_reasons" else field
     )
@@ -266,12 +297,6 @@ def molecule_property(molecule_id, property_name):
             raise MissingScientificData(
                 f"{field} is unavailable for molecule {molecule_id}"
             )
-        if property_name in MOLECULE_COLLECTION_FIELDS:
-            return {
-                "source_field": field,
-                "scope": "all unique values published for this molecule",
-                "values": record[field],
-            }
         return record[field]
     section = record.get(group)
     if not isinstance(section, dict) or not section:

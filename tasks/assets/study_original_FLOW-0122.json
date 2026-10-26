@@ -1,0 +1,25 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled two-site excitonic linear-response model, not measured material data."
+  },
+  "site_order": [
+    "bright_site",
+    "dark_site"
+  ],
+  "bare_site_excitation_energies_ev": [
+    1.98,
+    2.02
+  ],
+  "observed_peak_energies_ev": [
+    1.95,
+    2.05
+  ],
+  "hamiltonian": "A real symmetric two-by-two matrix with the supplied site energies on the diagonal and an unknown real intersite coupling V on both off-diagonals. No dissipative width or extra states. The two observed peak energies are exact eigenvalues for the energy inversion.",
+  "oscillator_model": "Only the first basis state has transition amplitude from the ground state; the second is dark, with no direct amplitude. Normalized peak oscillator strength is squared first-basis component of its normalized eigenvector. Sum of the two fractions is1. Changing the arbitrary phase of the dark basis changes V sign but no stated observable.",
+  "additional_observation": {
+    "lower_peak_bright_fraction": 0.71,
+    "absolute_tolerance": 0.005,
+    "criterion": "Compatible if absolute predicted-minus-observed fraction is no greater than the tolerance. Do not refit the exact site energies or peak positions to accommodate this observation."
+  },
+  "scope": "Infer what this finite Hamiltonian and the supplied observables identify; no claim about real exciton localization or arbitrary additional optical transitions."
+}

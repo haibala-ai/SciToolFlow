@@ -1,0 +1,25 @@
+{
+  "candidate_radii_nm": [
+    10.0,
+    50.0
+  ],
+  "correlation_times_s": [
+    0.0,
+    1.0,
+    2.0,
+    3.0
+  ],
+  "measured_intensity_autocorrelation_g2": [
+    1.5,
+    1.1049047654623811,
+    1.0293624562530455,
+    1.011188880526344
+  ],
+  "coherence_factor_beta": 0.5,
+  "field_decay_rate_times_radius_nm_per_s": 10.0,
+  "model": "Two dilute noninteracting spherical size classes,with the same optical contrast and density,obey the declared Rayleigh approximation. Per-particle scattered intensity is proportional to r^6. At fixed scattering vector and solvent,the normalized field correlation is g1(t)=w_small*exp(-Gamma_small*t)+w_large*exp(-Gamma_large*t),w_small+w_large=1,and Gamma_i=10/r_i in s^-1 for radius in nm. The supplied real positive field correlation obeys the Siegert relation g2(t)=1+beta*g1(t)^2. No extra relaxation mode or number-weighted amplitude assumption is allowed.",
+  "target": "Recover the large-class scattered-intensity fraction and particle-NUMBER fraction. Return the number-weighted mean radius,the first-cumulant apparent hydrodynamic radius10/Gamma_bar,and the second field-decay cumulant in s^-2. Report whether a truly monodisperse single-exponential model exactly reproduces all supplied correlations. The cumulant radius is not defined as the arithmetic intensity-weighted radius.",
+  "provenance": {
+    "kind": "Explicit synthetic conditional scientific model and exact source observations;not a live experiment or empirical mechanism validation."
+  }
+}

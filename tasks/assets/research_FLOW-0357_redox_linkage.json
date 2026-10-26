@@ -1,0 +1,80 @@
+{
+  "origin": "Own restricted ideal-solution thermodynamic problem inspired by quinone/semiquinone/hydroquinone proton-coupled redox chemistry. Molecular graphs identify six admitted thermodynamic species; ALL supplied calibration values, concentrations, pKa values and standard potentials are constructed exact model inputs, not measurements or recommended conditions for real benzoquinone. The six-state restricted model is authoritative only for this task. No rate law, electrochemical protocol, biological inference, solvent correction, oxygen chemistry or radical reaction pathway is supplied.",
+  "constants": {
+    "temperature_K": 298.15,
+    "gas_constant_J_per_mol_K": "8.31446261815324",
+    "Faraday_C_per_mol": "96485.33212",
+    "standard_concentration_mol_per_L": 1,
+    "pKw": 14,
+    "potential_reference": "One common declared electron reference; absolute offset arbitrary but identical for every edge."
+  },
+  "chemical_species": [
+    {
+      "id": "Q",
+      "smiles": "O=C1C=CC(=O)C=C1",
+      "added_electrons_relative_to_Q": 0,
+      "bound_protons_relative_to_Q": 0,
+      "charge": 0
+    },
+    {
+      "id": "S",
+      "smiles": "[O-]C1=C[CH]C(=O)C=C1",
+      "added_electrons_relative_to_Q": 1,
+      "bound_protons_relative_to_Q": 0,
+      "charge": -1
+    },
+    {
+      "id": "SH",
+      "smiles": "OC1=C[CH]C(=O)C=C1",
+      "added_electrons_relative_to_Q": 1,
+      "bound_protons_relative_to_Q": 1,
+      "charge": 0
+    },
+    {
+      "id": "R",
+      "smiles": "[O-]c1ccc([O-])cc1",
+      "added_electrons_relative_to_Q": 2,
+      "bound_protons_relative_to_Q": 0,
+      "charge": -2
+    },
+    {
+      "id": "RH",
+      "smiles": "[O-]c1ccc(O)cc1",
+      "added_electrons_relative_to_Q": 2,
+      "bound_protons_relative_to_Q": 1,
+      "charge": -1
+    },
+    {
+      "id": "RH2",
+      "smiles": "Oc1ccc(O)cc1",
+      "added_electrons_relative_to_Q": 2,
+      "bound_protons_relative_to_Q": 2,
+      "charge": 0
+    }
+  ],
+  "species_convention": "Q is neutral quinone; S and SH are one-electron semiquinone species (unprotonated anion and neutral protonated radical); R,RH,RH2 are the two-electron family with0,1,2added protons. A listed SMILES is one valid representative resonance structure, not a required localized spin measurement. Symmetry, spin and proton-location degeneracy are already included in these species standard free energies/calibration constants; do not multiply any weight by an additional combinatorial factor. The two semiquinone proton locations are not additional independent states. Suppressed protonated quinones and other redox/chemical species are outside the restricted model.",
+  "calibration_file": "asset://research_FLOW-0357_calibration.csv",
+  "calibration_handoff": "Regroup all CSV rows into the five named series. For each acid series y=log10([protonated]/[conjugate_base]), x=pH at equilibrium. acid_SH means SH/S, acid_RH means RH/R, acid_RH2 means RH2/RH. For each electron series y is equilibrium electrode potential inV, x=log10([reduced]/[oxidized]) of ONLY the named unprotonated species; electron_Q_S means S/Q and electron_S_R means R/S. All standard acid/redox edges refer to one ideal standard state and temperature. Retain actual FitLinearRegression for each complete series and actual PredictLinearModel evaluations of its exported model on all its original source x rows. Check slope/intercept, all residuals and one-electron Nernst units/sign. Use slope/intercept rounded to12decimals for numerical reconstruction, with reporting tolerances below; retain the exact stipulated R,T,F constants for thermodynamic conversion. These exact linear laws hold in the declared mathematical domain; no empirical extrapolation claim follows.",
+  "cycle_audit": "Five trusted directed standard edges are Q->S by adding one electron; S->R by adding one electron; S->SH by adding one proton; R->RH by adding one proton; RH->RH2 by adding one proton. A sixth UNTRUSTED reported electron edge SH->RH claims standard potential -0.120000V. Infer its thermodynamically consistent potential from the five trusted calibrations. Audit the oriented cycle S->R->RH->SH->S: electron reduction contributes -F*Estandard; reverse electron edge +F*Estandard; proton binding contributes -R*T*ln(10)*pKa and proton dissociation the opposite. Report the closure residual using the UNTRUSTED edge, inJ/mol, with that exact orientation. Do not silently replace a trusted calibration to make the inconsistent graph close. Build the complete6state/6edge incidence matrix, retain actual MatrixSVD and establish rank, independent state-energy differences and one cycle. Fix standard g_Q=0 and use actual SolveLinearSystem to obtain the other five dimensionless standard free energies g_i=G_i\u00b0/(R*T) from the five trusted edges; validate the repaired sixth edge and every trusted edge.",
+  "equilibrium_ensembles": "At fixed electrode potentialE and externally clamped pH, each admitted species has grand weight exp[-g_i-n_i*F*E/(R*T)-h_i*ln(10)*pH]. Normalize all six together; activities are dimensionless ratios to1M. Define oxidation families Q, totalS=(S+SH), totalR=(R+RH+RH2). Apparent sequential potentials E1_app(pH),E2_app(pH) are the potentials where the corresponding total adjacent-family concentrations are equal in a pairwise equilibrium ratio, without excluding the third family from the final six-state ensemble. Half reduction is mean added electrons=1, not necessarily totalS=1/2. For every pH in ordered grid[4,7,8,10,12], report both apparent potentials, the potential giving mean electrons1, and the GLOBAL maximum possible totalS fraction over all realE. Prove the maximizing condition and existence/uniqueness, including infinite-potential limits. Find every potential-inversion boundary E1_app=E2_app and every pH boundary at which totalS can exceed1/2, over closed pH domain[4,12]. Retain full physical polynomial roots in x=10^(-pH), domain restrictions and strict/inclusive endpoint decisions. The majority interval encodes its mathematical closure plus a separate boolean for inclusion of its lower endpoint; a strict majority excludes an equality boundary.",
+  "closed_buffer": "Now abandon externally clampedpH. At fixedvolume the quinone-family total is0.002M and an independent ideal monoprotic buffer has total0.010M,pKa7.5. Its protonated fraction is fB=1/(1+10^(pH-7.5)). Water has[H+]=10^(-pH)M and[OH-]=10^(pH-14)M. Total excess titratable protons, relative to unprotonated Q/S/R and buffer base, is fixed at0.006M: 0.002*mean(h)+0.010*fB+[H+]-[OH-]=0.006. An inert supporting countercharge initially fixes electroneutrality; electrode electron exchange is balanced by supporting-ion exchange without changing this proton inventory, adding no additional acid/base equation or redox species. Find the unique physical pH/E at which mean added electrons=1 while this proton balance holds, within pH[4,12]. Retain all six species fractions and mean bound protons. Prove uniqueness/physical normalization and both conservation residuals; a local root alone is insufficient.",
+  "differential_response": "At that SAME closed-buffer reference state, varyE infinitesimally while keeping total titratable protons, both analytical concentrations, volume,T and standard energies fixed. Derive dpH/dE and d(mean electrons)/d(-E). Compare the latter to the susceptibility at the SAME E,pH with pH externally clamped. Report both in1/V and the closed-buffer differential charge F*0.002*d(mean electrons)/d(-E) inC/(L*V). Use the full covariance of electron/proton numbers and the buffer plus water proton capacity; do not hold protonation fixed during a redox derivative or equate the two ensembles. Retain an actual MatrixInverse of the2x2 coupled covariance/response matrix in a clearly stated, dimensionally consistent convention and use it to check the coupled derivative. Positive definiteness/Schur-complement and finite-difference checks must explain signs and uniqueness, not just a scalar numerical slope.",
+  "required_typed_observations": "Actual GetMolFormula for all six representative SMILES must support the same C6/O2 skeleton, bound-H increments and formal-charge balance of each proton/electron edge; molecular formula does not supply pKa or standard potential. Retain all five actual fitted regressions and their actual exported-model predictions, the complete incidence MatrixSVD, the gauge-fixed energy SolveLinearSystem, full PolynomialRoots for BOTH physical pH-boundary equations, and actual coupled-response MatrixInverse. Acquire full source arrays, propagate actual tool observations and retain all cycle/equilibrium/global/susceptibility checks in the native trajectory. The graph and matrix tools alone do not certify a kinetic mechanism.",
+  "interpretation_proposals": {
+    "A": "A thermodynamic square must close in one common reference state; a redundant inconsistent edge can be diagnosed from trusted free-energy differences.",
+    "B": "A finite proton inventory is equivalent to externally fixing pH for any small redox change.",
+    "C": "Electron/proton covariance and finite proton capacity change a constrained differential-charge response.",
+    "D": "Closing an equilibrium proton/electron cycle establishes that the microscopic reaction is kinetically concerted.",
+    "E": "Apparent redox-potential ordering and maximum semiquinone population can change with pH even for fixed standard species energies.",
+    "F": "Half reduction necessarily means that precisely half the molecules are semiquinone.",
+    "G": "Species-level macroscopic calibration constants can already include degeneracy and must not receive an unexplained extra multiplicity.",
+    "H": "Positive model susceptibilities establish the listed numerical pKa values and electrochemical performance for a real quinone solution."
+  },
+  "reporting": "Return only the supplied answer schema. State orderQ,S,SH,R,RH,RH2 is fixed. All-pH-boundary arrays and interval sets must be complete. PotentialsV, standard energies dimensionlessG/(RT), concentrationsM; useJ notkJ for R/F conversion. Absolute tolerance1e-7 for potentials, fractions and standard energies,1e-6 for pH/derivatives/charge,1e-3J/mol for cycle residual; exact booleans, integer counts and ID sets. Species fractions must be nonnegative and sum to1 within1e-8; equality boundaries do not count as strict majorities. Full derivations and proof certificates belong in the trajectory, not extra answer nesting.",
+  "primary_context": {
+    "title": "Proton-Coupled Electron Transfer Guidelines, Fair and Square",
+    "doi": "10.1021/jacs.0c09106",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7880575/",
+    "role": "Primary paper on thermodynamic coupling/square schemes and distinction from kinetic inference. This task uses own restricted six-state constants and closed-buffer response; source paper numerical measurements or figures are not copied."
+  }
+}

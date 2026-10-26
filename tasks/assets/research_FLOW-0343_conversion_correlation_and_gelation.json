@@ -1,0 +1,87 @@
+{
+  "data_origin": "Own controlled theoretical connectivity experiment using six ordinary molecular graphs. The SMILES define actual constitutions, whereas reaction selectivity, conversion laws, random pairing and cure offers are explicit model assumptions, not measured chemical kinetics or a laboratory synthesis protocol. No external experimental dataset is claimed.",
+  "reactive_site_policy": "For this model only, an A site is a neutral hydroxyl oxygen bearing one hydrogen and bonded to an sp3 carbon. Aromatic phenolic OH is inactive. A B site is one neutral carboxylic acid carbon bearing one double-bonded oxygen and one OH oxygen. Esters and alcohol oxygens are not B sites. The whole connected precursor graph matters. Determine both A and B site counts for every actual record with indexed molecular evidence, and confirm that the designated A/B feed pools are genuinely bipartite. Do not count all oxygens or every OH as a reactive site. Sites may have different real kinetics; their equal specified marginal conversion here is a model calibration, not an empirical universal chemical claim.",
+  "feed": "Within each pool the molecule fractions are the exact numerator/denominator pairs in the CSV, not functional-group fractions. Choose the overall number ratio N_B/N_A so that the initial A and B site totals are equal. The formulation is held fixed thereafter. All reported giant fractions are fractions of ORIGINAL PRECURSOR MOLECULE COUNTS, not dry polymer mass, lost condensate, bonds, elastic modulus or finite-vessel gel probability.",
+  "degree_ensemble": "At any fixed p in(0,1], a precursor with h active sites has a reacted degree D in{0,...,h}. Every type separately has exact mean E[D|type]=p*h. Site identities within a molecule are exchangeable, so any nonnegative degree probabilities with this mean can be realized by uniformly selecting D of its h sites. Reaction states of different precursor molecules are independent apart from asymptotic stub balance; reactions WITHIN a precursor may be arbitrarily correlated. After degrees are selected, pair A and B reacted stubs uniformly across the two pools, conditioned on equal totals. The balanced feed and common p make totals agree asymptotically. There are no A-A or B-B links, spatial restrictions, preferential partner mixing, pre-existing networks or extensive density of short loops. Use the infinite locally tree-like bipartite configuration-model limit. This is a random connectivity model, not an assertion that physical condensation lacks cyclization. The zero-conversion case p=0 has no edges and must be handled separately.",
+  "gel_definition": "A gel means a positive limiting fraction of precursor molecules in a giant connected component. Derive the correct size-biased two-pool branching condition and select the SMALLEST nonnegative coupled extinction fixed point in[0,1]^2 for giant fractions. The all-one solution always exists and is not automatically the physical extinction probability in the supercritical regime. The declared feed has a positive fraction of degree-one B molecules at all p>0, avoiding the exceptional pure-degree-two critical ensemble. Treat equality at the branching threshold as critical, not strictly gelled.",
+  "assay": "The initial conversion assay gives p=3/5 and the stated type-specific means. It contains no second-factorial-moment or within-molecule independence measurement. Derive SHARP lower and upper bounds for each pool excess-degree mean kappa=E[D(D-1)]/E[D], and for their product, over every allowed degree law. Exhibit full conditional degree laws attaining both product bounds, so nonidentification is demonstrated by chemically consistent populations rather than a loose inequality. In parallel evaluate the extra ASSUMPTION of independent site reaction D|h~Binomial(h,p). Decide whether this assumption alone would predict a gel and whether that result is identified by the actual assay.",
+  "continuous_cure_design": "For the same feed and assumptions, determine the exact first conversion p_star such that EVERY admissible degree law is strictly gelled for p>p_star, while a nongelled law remains attainable for p<=p_star. Derive and inspect the complete piecewise-convex moment envelope on0<p<=1, all breakpoints and physical polynomial roots; a grid or a single guessed interval is insufficient. State whether p=p_star is itself a strict robust-gel guarantee and whether ANY strictly positive conversion guarantees absence of a gel for every admissible correlation law. Separate an infimum threshold from an attained strict guarantee.",
+  "cure_offers": [
+    {
+      "id": "C1",
+      "conversion": 0.7,
+      "cost": 1
+    },
+    {
+      "id": "C2",
+      "conversion": 0.72,
+      "cost": 2
+    },
+    {
+      "id": "C3",
+      "conversion": 0.725,
+      "cost": 3
+    },
+    {
+      "id": "C4",
+      "conversion": 0.74,
+      "cost": 4
+    }
+  ],
+  "specified_size_cases": [
+    {
+      "id": "L06",
+      "p": 0.6,
+      "law": "For each type independently, use the conditional degree law supported on floor(p*h) and ceil(p*h), with their unique probabilities giving mean p*h. A single support point is used at an integer."
+    },
+    {
+      "id": "I06",
+      "p": 0.6,
+      "law": "Independent per-site Bernoulli conversion: D|h~Binomial(h,p)."
+    },
+    {
+      "id": "U06",
+      "p": 0.6,
+      "law": "All-or-none molecular conversion: P(D=h|h)=p and P(D=0|h)=1-p for every type."
+    },
+    {
+      "id": "L074",
+      "p": 0.74,
+      "law": "The same adjacent-integer degree law as L06, now at p=.74."
+    }
+  ],
+  "questions": [
+    "Recover reactive functionalities from every actual precursor graph and use the true molecule fractions to balance initial sites. Retain indexed structural evidence and the feed calculation.",
+    "For p=.6 derive sharp pool excess-degree ranges, their sharp product range and the independent-binomial product. Retain both complete extremal conditional degree laws and their feasibility. Determine exactly what the assay identifies about gel formation.",
+    "Derive the sharp full-conversion robust-gel threshold and its critical equality case, checking every piece of the continuous moment envelope. Identify every cure offer guaranteeing a gel for all admissible correlation laws and the unique cheapest such offer. Determine whether any positive conversion universally certifies no gel.",
+    "For each of the four specified degree-law cases derive source-consistent pool generating functions and solve the physical extinction equations. Retain a globally justified root selection or monotone branching-process limit. Report fractions of A, B and all precursor molecules in the giant, in that order, with the true feed ratio used for the total. For positive-size cases keep independently verifiable fixed-point residuals and reject the spurious all-one solution."
+  ],
+  "interpretation_proposals": {
+    "A": "The reacted-degree second factorial moment is size-biased in the branching process; molecule-average functionality alone is insufficient.",
+    "B": "Equal type-specific site conversions force independent Bernoulli reactions within every precursor.",
+    "C": "Arbitrary within-molecule reaction correlations can make gel formation unidentifiable even with exact conversion and known precursor constitution.",
+    "D": "The all-one extinction fixed point proves no giant exists whenever it solves the equations.",
+    "E": "A correlation-robust threshold requires both a global lower bound and a feasible nongelled law below the boundary.",
+    "F": "The reported precursor-count giant fraction is automatically the dry-gel mass fraction or elastic modulus.",
+    "G": "The total giant fraction must weight the two molecule pools by the site-balanced feed ratio rather than averaging their fractions equally.",
+    "H": "A strict robust-gel guarantee holds at its critical infimum merely because the branching product reaches one."
+  },
+  "reporting": "reactive_sites_by_precursor maps every precursor ID to[A_sites,B_sites]; balanced_NB_over_NA; p06_kappa_A_range; p06_kappa_B_range; p06_branching_product_range; p06_independent_branching_product; assay_identifies_gel as a boolean; independent_model_predicts_gel; robust_strict_gel_conversion_infimum; equality_is_strict_robust_gel; any_positive_conversion_guarantees_no_gel; robust_gel_cure_ids; cheapest_robust_gel_cure_id; giant_precursor_fractions_by_case mapping each supplied case ID to[A_fraction,B_fraction,total_fraction]; valid_interpretation_proposal_ids. Numeric tolerance1e-7 absolute except sharp conversion threshold1e-9. Counts, booleans and IDs exact. Full degree witnesses, complete continuous proofs, generating functions and root certificates belong in the trajectory, not a forced symbolic final-answer spelling.",
+  "methodological_sources": [
+    {
+      "title": "Theory of Molecular Size Distribution and Gel Formation in Branched-Chain Polymers",
+      "author": "Walter H. Stockmayer",
+      "year": 1943,
+      "doi": "10.1063/1.1723803",
+      "role": "Historical primary context for branched-polymer connectivity and the limitations of assumptions used in gel calculations; none of its numerical examples or experimental data is copied."
+    },
+    {
+      "title": "Random graphs with arbitrary degree distributions and their applications",
+      "authors": "M. E. J. Newman, S. H. Strogatz and D. J. Watts",
+      "year": 2001,
+      "doi": "10.1103/PhysRevE.64.026118",
+      "url": "https://doi.org/10.1103/PhysRevE.64.026118",
+      "role": "Primary framework for size-biased generating functions and bipartite random connectivity. All molecular inputs, correlation-law uncertainty, cure offers and calculations here are own constructions."
+    }
+  ]
+}

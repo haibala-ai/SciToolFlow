@@ -1,0 +1,180 @@
+{
+  "data": [
+    {
+      "record_id": "column01",
+      "velocity_cm_second": [
+        0.25,
+        0.35,
+        0.5,
+        0.65,
+        0.85,
+        1.1
+      ],
+      "plate_height_cm": [
+        0.00195,
+        0.0017071428571428572,
+        0.0015999999999999999,
+        0.0016115384615384616,
+        0.0017029411764705883,
+        0.0018727272727272729
+      ],
+      "column_length_cm": 10.0,
+      "retention_factor_early": 2.0,
+      "retention_factor_late": 2.25,
+      "pressure_limited_maximum_velocity_cm_second": 1.0,
+      "authorized_velocity_interval_cm_second": [
+        0.25,
+        1.1
+      ],
+      "derived_ols_matrix": [
+        [
+          1.0,
+          4.0,
+          0.25
+        ],
+        [
+          1.0,
+          2.857142857142857,
+          0.35
+        ],
+        [
+          1.0,
+          2.0,
+          0.5
+        ],
+        [
+          1.0,
+          1.5384615384615383,
+          0.65
+        ],
+        [
+          1.0,
+          1.1764705882352942,
+          0.85
+        ],
+        [
+          1.0,
+          0.9090909090909091,
+          1.1
+        ]
+      ],
+      "derived_nonconstant_features": [
+        [
+          4.0,
+          0.25
+        ],
+        [
+          2.857142857142857,
+          0.35
+        ],
+        [
+          2.0,
+          0.5
+        ],
+        [
+          1.5384615384615383,
+          0.65
+        ],
+        [
+          1.1764705882352942,
+          0.85
+        ],
+        [
+          0.9090909090909091,
+          1.1
+        ]
+      ]
+    },
+    {
+      "record_id": "column02",
+      "velocity_cm_second": [
+        0.25,
+        0.35,
+        0.5,
+        0.65,
+        0.85,
+        1.1
+      ],
+      "plate_height_cm": [
+        0.00104,
+        0.0012628571428571428,
+        0.00152,
+        0.0017415384615384615,
+        0.0020141176470588234,
+        0.0023381818181818182
+      ],
+      "column_length_cm": 10.0,
+      "retention_factor_early": 2.0,
+      "retention_factor_late": 2.25,
+      "pressure_limited_maximum_velocity_cm_second": 1.0,
+      "authorized_velocity_interval_cm_second": [
+        0.25,
+        1.1
+      ],
+      "derived_ols_matrix": [
+        [
+          1.0,
+          4.0,
+          0.25
+        ],
+        [
+          1.0,
+          2.857142857142857,
+          0.35
+        ],
+        [
+          1.0,
+          2.0,
+          0.5
+        ],
+        [
+          1.0,
+          1.5384615384615383,
+          0.65
+        ],
+        [
+          1.0,
+          1.1764705882352942,
+          0.85
+        ],
+        [
+          1.0,
+          0.9090909090909091,
+          1.1
+        ]
+      ],
+      "derived_nonconstant_features": [
+        [
+          4.0,
+          0.25
+        ],
+        [
+          2.857142857142857,
+          0.35
+        ],
+        [
+          2.0,
+          0.5
+        ],
+        [
+          1.5384615384615383,
+          0.65
+        ],
+        [
+          1.1764705882352942,
+          0.85
+        ],
+        [
+          0.9090909090909091,
+          1.1
+        ]
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "H and L cm,u cm/s,t second,k dimensionless;Acm,Bcm²/s,Cs",
+    "original_observation_claim": false
+  }
+}

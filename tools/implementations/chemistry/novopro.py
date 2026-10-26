@@ -52,32 +52,21 @@ SMILES={cleaned_smiles}
 
 
 # InChIKeyToSMILES
-def inchikey_to_smiles(inchikey: str) -> str:
-    """Resolve an InChIKey through public PubChem and return its SMILES."""
-    from tools.implementations.shared.pubchem import properties, smiles_property
-
-    return smiles_property(properties(inchikey.strip(), "inchikey"))
+def inchikey_to_smiles(inchikey: str):
+    'InChIKeyToSMILES retired: One PubChem structure resolver exposes namespace, output representation and ambiguous-record policy. Use ResolveChemicalIdentifier. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('InChIKeyToSMILES retired: One PubChem structure resolver exposes namespace, output representation and ambiguous-record policy. Use ResolveChemicalIdentifier. See the catalog migration feedback for explicit arguments.')
 
 
 # InChIKeyToInChI
-def inchikey_to_inchi(inchikey: str) -> str:
-    """Resolve an InChIKey through public PubChem and return its InChI."""
-    from tools.implementations.shared.pubchem import properties
-
-    return properties(inchikey.strip(), "inchikey")["InChI"]
+def inchikey_to_inchi(inchikey: str):
+    'InChIKeyToInChI retired: One PubChem structure resolver exposes namespace, output representation and ambiguous-record policy. Use ResolveChemicalIdentifier. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('InChIKeyToInChI retired: One PubChem structure resolver exposes namespace, output representation and ambiguous-record policy. Use ResolveChemicalIdentifier. See the catalog migration feedback for explicit arguments.')
 
 
 # InChIKeyToMOL
-def inchikey_to_mol(inchikey: str) -> str:
-    """Resolve an InChIKey through PubChem and return an explicit MOL connection table."""
-    from tools.implementations.shared.pubchem import get
-    from urllib.parse import quote
-
-    sdf = get(f'rest/pug/compound/inchikey/{quote(inchikey.strip(), safe="")}/SDF').text
-    molecule = Chem.MolFromMolBlock(sdf.split("$$$$")[0])
-    if molecule is None:
-        raise ValueError("PubChem returned an invalid MOL record")
-    return Chem.MolToMolBlock(molecule)
+def inchikey_to_mol(inchikey: str):
+    'InChIKeyToMOL retired: One PubChem structure resolver exposes namespace, output representation and ambiguous-record policy. Use ResolveChemicalIdentifier. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('InChIKeyToMOL retired: One PubChem structure resolver exposes namespace, output representation and ambiguous-record policy. Use ResolveChemicalIdentifier. See the catalog migration feedback for explicit arguments.')
 
 
 # InChIToSMILES
@@ -199,77 +188,18 @@ Input: {selfies}
 
 
 # RandomMoelcule
-def generate_random_molecule(length: str) -> str:
-    """
-    Generates a random molecule.
-    Args:
-        length(int): The length of the SELFIES you want. You should only input a integer. example：‘10’
-    Return:
-        str: The Markdown content with SELFIES.
-    """
-    try:
-        # Extract a number from length
-        length = int(re.findall(r"\d+", length)[0])
-
-        alphabet = (
-            sf.get_semantic_robust_alphabet()
-        )  # Gets the alphabet of robust symbols
-        rnd_selfies = "".join(random.sample(list(alphabet), length))
-        rnd_smiles = sf.decoder(rnd_selfies)
-        markdown = f"""
-**Random SELFIES**
-Input: {length}
-
-**Reuslt**
-SELFIES: {rnd_selfies}
-SMILES: {rnd_smiles}
-"""
-        return markdown
-    except Exception as e:
-        logging.error(f"Error random SELFIES: {e}")
+def generate_random_molecule(length: str):
+    'RandomMoelcule retired: Random SELFIES sampling now declares token length, seed and replacement policy. Use GenerateRandomSELFIES. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('RandomMoelcule retired: Random SELFIES sampling now declares token length, seed and replacement policy. Use GenerateRandomSELFIES. See the catalog migration feedback for explicit arguments.')
 
 
 # Length_SELFIES
-def length_selfies(selfies: str) -> str:
-    """
-    Computes the length of a SELFIES string.
-    Args:
-        selfies: SELFIES string.
-    Return:
-        str: The Markdown content with length.
-    """
-    try:
-        length = sf.len_selfies(selfies)
-        markdown = f"""
-**Length of SELFIES**
-Input: {selfies}
-
-**Reuslt**
-length: {length}
-"""
-        return markdown
-    except Exception as e:
-        logging.error(f"Error length of SELFIES: {e}")
+def length_selfies(selfies: str):
+    'Length_SELFIES retired: One token inspection returns both tokens and the installed semantic-symbol count. Use InspectSELFIES. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('Length_SELFIES retired: One token inspection returns both tokens and the installed semantic-symbol count. Use InspectSELFIES. See the catalog migration feedback for explicit arguments.')
 
 
 # Split_SELFIES
-def split_selfies(selfies: str) -> str:
-    """
-    Splits a SELFIES string into its individual tokens.
-    Args:
-        selfies: SELFIES string.
-    Return:
-        str: The Markdown content with tokens.
-    """
-    try:
-        tokens = list(sf.split_selfies(selfies))
-        markdown = f"""
-**Split SELFIES**
-Input: {selfies}
-
-**Reuslt**
-tokens: {tokens}
-"""
-        return markdown
-    except Exception as e:
-        logging.error(f"Error split SELFIES: {e}")
+def split_selfies(selfies: str):
+    'Split_SELFIES retired: One token inspection returns both tokens and the installed semantic-symbol count. Use InspectSELFIES. See the catalog migration feedback for explicit arguments.'
+    raise ValueError('Split_SELFIES retired: One token inspection returns both tokens and the installed semantic-symbol count. Use InspectSELFIES. See the catalog migration feedback for explicit arguments.')

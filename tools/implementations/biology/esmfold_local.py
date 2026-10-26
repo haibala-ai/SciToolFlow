@@ -1,5 +1,5 @@
 """Official ESMFold v1 inference on local CPU; reported confidence is not measured accuracy."""
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import json
 from pathlib import Path
 import uuid
@@ -17,11 +17,15 @@ def _prediction(sequence):
     if len(sequence) > 1024:
         raise ValueError("This local ESMFold adapter supports at most 1024 residues per call")
     torch.set_num_threads(4)
-    model = EsmForProteinFolding.from_pretrained(Config().ESMFOLD_MODEL_PATH, local_files_only=True)
-    model.esm.float()  # CPU execution: avoid the constructor's half-precision ESM encoder.
-    model.trunk.set_chunk_size(32)
-    model.eval()
-    with torch.inference_mode():
+    from tools.implementations.biology.model_cache import cached_resource, inference_lock
+    def load():
+        model = EsmForProteinFolding.from_pretrained(Config().ESMFOLD_MODEL_PATH, local_files_only=True)
+        model.esm.float()  # Preserve original CPU precision/settings.
+        model.trunk.set_chunk_size(32)
+        model.eval()
+        return model
+    model = cached_resource("esmfold_v1", Config().ESMFOLD_MODEL_PATH, load, ("cpu", "float_encoder", 32))
+    with inference_lock(model), torch.inference_mode():
         prediction = model.infer(sequence)
     # Transformers 4.57 categorical_lddt returns a mean in [0,1]. The
     # conventional pLDDT/B-factor display uses [0,100]; normalize before PDB export.

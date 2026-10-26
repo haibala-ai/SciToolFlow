@@ -1,0 +1,72 @@
+{
+  "data": [
+    {
+      "record_id": "candidate01",
+      "atomic_isotope_masses_u": [
+        15.99491461957,
+        1.00782503223,
+        1.00782503223
+      ]
+    },
+    {
+      "record_id": "candidate02",
+      "atomic_isotope_masses_u": [
+        15.99491461957,
+        2.01410177812,
+        1.00782503223
+      ]
+    },
+    {
+      "record_id": "candidate03",
+      "atomic_isotope_masses_u": [
+        15.99491461957,
+        1.00782503223,
+        2.01410177812
+      ]
+    },
+    {
+      "record_id": "candidate04",
+      "atomic_isotope_masses_u": [
+        15.99491461957,
+        2.01410177812,
+        2.01410177812
+      ]
+    },
+    {
+      "record_id": "study",
+      "observed_rotational_constants_A_B_C_MHz": [
+        690965.9,
+        270701.1,
+        194501.0
+      ],
+      "absolute_constant_tolerance_MHz": 100.0,
+      "planck_joule_second": 6.62607015e-34,
+      "atomic_mass_unit_kg": 1.6605390666e-27,
+      "source_atom_order": [
+        "O",
+        "H",
+        "H"
+      ],
+      "coordinate_file": "geometry.xyz"
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published geometry plus explicitly simulated rigid-rotor observation",
+    "generation": "Original published computational source values combined with explicitly labeled simulated comparison inputs. Source captures identify the genuine raw data; simulated observations are study inputs,not experimental measurements.",
+    "units": "Cartesian positions angstrom,atomic massesu,inertiau*angstrom²,rotational constantsMHz,PlanckconstantJ*s",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "materialsproject/pymatgen-test-files",
+      "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/io/qchem/6.1.1.freq.out.gz",
+      "accessed_at": "2026-10-20T14:25:45.083654+00:00",
+      "raw_sha256": "9ec2e3a66e36ae94f078e4e40e819eb495659464aebc514428dc2252d8900f5c",
+      "git_blob_sha1": "de4d0ba6ae38410218f6951cdff892923ad3bf73",
+      "git_blob_verified": true,
+      "byte_count": 6990,
+      "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/io/qchem/6.1.1.freq.out.gz",
+      "role": "Genuine published scientific source artifact / library fixture; byte provenance verified, physical completeness and normalization require individual inspection; no expected answers used"
+    },
+    "coordinate_export_sha256": "6997e93ef77236dd9214eb98d643d1ee423925e208f4c3af70d73218d51814d2"
+  }
+}

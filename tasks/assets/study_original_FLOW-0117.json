@@ -1,0 +1,20 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "angles_degrees_from_surface_normal": [
+    0.0,
+    60.0,
+    75.0
+  ],
+  "relative_substrate_intensities": [
+    0.5575156088200097,
+    0.39473469826562896,
+    0.31469308580727245
+  ],
+  "attenuation_length_nm": 2.0,
+  "model": "A laterally patchy overlayer covers area fraction f in[0,1] with one positive thickness d and leaves1-f bare. Normalized substrate intensity at takeoff angle theta from the surface normal is(1-f)+f*exp(-d/(lambda*cos(theta))). Each observation is normalized to the corresponding bare-substrate intensity at that same angle. Ignore elastic scattering, diffraction and lateral attenuation at island boundaries.",
+  "fit_and_validate": "Use only0and60degree observations to infer f and d. Hold75degrees out of that inversion and predict its normalized intensity. Compare the uniform alternative f=1: infer its single d from the normal observation and require every supplied angle to agree within1e-8absolute intensity.",
+  "scope": "A controlled planar-attenuation model comparison, not a unique microscopic island-shape reconstruction. Lambda is an input, not jointly fitted."
+}

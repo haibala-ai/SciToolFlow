@@ -1,0 +1,45 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "candidate_pairs": [
+        {
+          "id": "export_A",
+          "sequence_pair": [
+            "CGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAGGATCATTGATGAGACCGTGGAATAAACGATCGAGTGAATCCGGAGGACCGGTGTACTCAGCTCACCGGGGGCATTGCTCCCGTGGTGACCCTGATTTGTTGTTGGGCCGCCTCGGGAGCGTCCATGGCGGGTTTGAACCTCTAGCCCGGCGCAGTTTGGGCGCCAAGCCATATGAAAGCATCACCGGCGAATGGCATTGTCTTCCCCAAAACCCGGAGCGGCGGCGTGCTGTCGCGTGCCCAATGAATTTTGATGACTCTCGCAAACGGGAATCTTGGCTCTTTGCATCGGATGGAAGGACGCAGCGAAATGCGATAAGTGGTGTGAATTGCAAGATCCCGTGAACCATCGAGTCTTTTGAACGCAAGTTGCGCCCGAGGCCATCAGGCTAAGGGCACGCCTGCTTGGGCGTCGCGCTTCGTCTCTCTCCTGCCAATGCTTGCCCGGCATACAGCCAGGCCGGCGTGGTGCGGATGTGAAAGATTGGCCCCTTGTGCCTAGGTGCGGCGGGTCCAAGAGCTGGTGTTTTGATGGCCCGGAACCCGGCAAGAGGTGGACGGATGCTGGCAGCAGCTGCCGTGCGAATCCCCCATGTTGTCGTGCTTGTCGGACAGGCAGGAGAACCCTTCCGAACCCCAATGGAGGGCGGTTGACCGCCATTCGGATGTGACCCCAGGTCAGGCGGGGGCACCCGCTGAGTTTACGC",
+            "CACACCACTTATCGCATTTCGCTGCGTCCTTCCATCCGATGCAAAGAGCCAAGATTCCCGTTTGCGAGAGTCATCAAAATTCATTGGGCACGCGACAGCACGCCGCCGCTCCGGGTTTTGGGGAAGACAATGCCATTCGCCGGTGATGCTTTCATATGGC"
+          ]
+        },
+        {
+          "id": "export_B",
+          "sequence_pair": [
+            "CGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAGGATCATTGATGAGACCGTGGAATAAACGATCGAGTGAATCCGGAGGACCGGTGTACTCAGCTCACCGGGGGCATTGCTCCCGTGGTGACCCTGATTTGTTGTTGGGCCGCCTCGGGAGCGTCCATGGCGGGTTTGAACCTCTAGCCCGGCGCAGTTTGGGCGCCAAGCCATATGAAAGCATCACCGGCGAATGGCATTGTCTTCCCCAAAACCCGGAGCGGCGGCGTGCTGTCGCGTGCCCAATGAATTTTGATGACTCTCGCAAACGGGAATCTTGGCTCTTTGCATCGGATGGAAGGACGCAGCGAAATGCGATAAGTGGTGTGAATTGCAAGATCCCGTGAACCATCGAGTCTTTTGAACGCAAGTTGCGCCCGAGGCCATCAGGCTAAGGGCACGCCTGCTTGGGCGTCGCGCTTCGTCTCTCTCCTGCCAATGCTTGCCCGGCATACAGCCAGGCCGGCGTGGTGCGGATGTGAAAGATTGGCCCCTTGTGCCTAGGTGCGGCGGGTCCAAGAGCTGGTGTTTTGATGGCCCGGAACCCGGCAAGAGGTGGACGGATGCTGGCAGCAGCTGCCGTGCGAATCCCCCATGTTGTCGTGCTTGTCGGACAGGCAGGAGAACCCTTCCGAACCCCAATGGAGGGCGGTTGACCGCCATTCGGATGTGACCCCAGGTCAGGCGGGGGCACCCGCTGAGTTTACGC",
+            "GCCATATGAAAGCATCACCGGCGAATGGCATTGTCTTCCCCAAAACCCGGAGCGGCGGCGTGCTGTCGCGTGCCCAATGAATTTTGATGACTCTCGCAAACGGGAATCTTGGCTCTTTGCATCGGATGGAAGGACGCAGCGAAATGCGATAAGTGGTGTG"
+          ]
+        }
+      ],
+      "reference_record_id": "gi|2765658|emb|Z78533.1|CIZ78533",
+      "reference_description": "gi|2765658|emb|Z78533.1|CIZ78533 C.irapeanum 5.8S rRNA gene and ITS1 and ITS2 DNA",
+      "read_length": 160,
+      "reference_length": 740,
+      "provenance": {
+        "raw_sha256": "ea19b38ca97622a601f281439c87ba3edad1f060d9bee05bc0c66536acb6ae09",
+        "source_url": "https://raw.githubusercontent.com/biopython/biopython/master/Doc/examples/ls_orchid.fasta",
+        "documentation_url": "https://biopython.org/docs/latest/Tutorial/chapter_seqio.html",
+        "read_scope": "94plant rRNA/ITS sequence records andoriginal FASTA identifiers/descriptions,not engineered sequences or lab protocols",
+        "data_status": "Authentic Biopython public GenBank example snapshot; no new measurements"
+      },
+      "derivation_scope": "Two orientation exports of the same unmodified contiguouspublicplantsequencefragment;this is a labelled read-mapping audit,not new sequencing observations or an engineered sequence. Export identity doesnot indicate orientation.",
+      "mapping_policy": "Assess a local match of the complete read within the supplied longerreference. Generic scoringmatch2,mismatch-1,gapopen-2,gapextend-0.5. A qualifying export must have localscore/readlength>=1.9 andread-coordinate-span/readlength>=0.99. Report the qualified reference-coordinate span fraction;do not call this fragment a full-reference validation. Coordinates are0-basedhalf-open.",
+      "source_provenance": {
+        "source_url": "https://raw.githubusercontent.com/biopython/biopython/master/Doc/examples/ls_orchid.fasta",
+        "raw_source_sha256": "ea19b38ca97622a601f281439c87ba3edad1f060d9bee05bc0c66536acb6ae09",
+        "data_status": "Authentic publicorchidGenBankexample;explicitorientation-exportauditonly"
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

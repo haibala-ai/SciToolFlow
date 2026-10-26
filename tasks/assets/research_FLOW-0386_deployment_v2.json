@@ -1,0 +1,77 @@
+{
+  "data_origin": "Controlled frozen-score release study. All conclusions are conditional empirical risks under the declared class-conditional transport assumption; no population confidence or realized deployment guarantee is requested.",
+  "labels_file": "asset://research_FLOW-0386_labels_v2.json",
+  "predictions_file": "asset://research_FLOW-0386_predictions.json",
+  "join_policy": "Join the two record sets by their common specimen_id. The label-table id is an identical source-row identity; prediction-table id is a unique candidate/specimen record identity. Source row order is arbitrary. Each candidate must have exactly one prediction per labelled specimen. Code 1 is the positive class.",
+  "candidate_availability": [
+    {
+      "id": "candidate_A",
+      "uses_only_prediction_time_features": true
+    },
+    {
+      "id": "candidate_B",
+      "uses_only_prediction_time_features": true
+    },
+    {
+      "id": "candidate_C",
+      "uses_only_prediction_time_features": false,
+      "unavailable_feature": "A retrospective adjudication flag recorded after the target outcome."
+    }
+  ],
+  "thresholds": [
+    0.35,
+    0.65
+  ],
+  "threshold_rule": "Predict positive iff positive_probability>=threshold. A single candidate and threshold must be frozen for all sites; no site-specific switching or score refitting.",
+  "deployment_set": {
+    "site_order": [
+      "north",
+      "central",
+      "south"
+    ],
+    "site_mass_bounds": {
+      "north": [
+        0.15,
+        0.5
+      ],
+      "central": [
+        0.2,
+        0.5
+      ],
+      "south": [
+        0.2,
+        0.6
+      ]
+    },
+    "positive_fraction_within_site_bounds": {
+      "north": [
+        0.4,
+        0.8
+      ],
+      "central": [
+        0.2,
+        0.6
+      ],
+      "south": [
+        0.1,
+        0.5
+      ]
+    },
+    "overall_positive_mass_bounds": [
+      0.35,
+      0.45
+    ],
+    "definition": "A deployment distribution assigns nonnegative masses q(site,label) to the six site/class cells, summing to one. Site total mass must satisfy site_mass_bounds. Within each site, positive mass divided by its total is constrained by positive_fraction_within_site_bounds. The SUM of positive cell masses must satisfy overall_positive_mass_bounds. All constraints apply JOINTLY; site masses and prevalences cannot be maximized separately."
+  },
+  "costs": {
+    "false_positive": 1.0,
+    "false_negative": 5.0
+  },
+  "transport_assumption": "For each candidate/threshold/site, use the observed reference panel FALSE-NEGATIVE RATE conditional on reference_label=1 and FALSE-POSITIVE RATE conditional on reference_label=0 as fixed working conditional error probabilities. Deployment can change site/class masses only. All present site/class denominators are positive. Do not use joint error fractions as conditional rates.",
+  "selection_policy": "First exclude candidates using unavailable prediction-time information. For every remaining candidate and threshold, maximize expected decision cost over the entire joint deployment set. Select the smallest worst-case cost; ties within 1e-9 use lower threshold then lexical candidate ID. Separately choose a naive policy by minimum unweighted per-reference-specimen decision cost among the SAME eligible policies, using the same tie rule.",
+  "reporting": "Return eligible_candidate_ids; worst_case_cost_by_policy using keys candidate_A@0.35 etc for all and only eligible policies; selected_candidate_id; selected_threshold; selected_policy_worst_case_cost; naive_selected_candidate_id; naive_selected_threshold; and naive_policy_is_robust_optimal. No statistical significance statement is requested. Absolute 1e-7 plus relative 1e-7 accuracy.",
+  "research_motivation": {
+    "url": "https://jmlr.org/papers/volume24/22-0881/22-0881.pdf",
+    "scope": "Distributionally robust classification motivates evaluating policies under an explicit distribution set. This task neither reproduces the paper dataset nor claims its algorithm."
+  }
+}

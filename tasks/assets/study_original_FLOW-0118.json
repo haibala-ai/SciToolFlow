@@ -1,0 +1,15 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "conducting_phase_conductivity_s_m": 100.0,
+  "weak_phase_conductivity_s_m": 1e-06,
+  "conducting_volume_fractions": [
+    0.2,
+    0.4
+  ],
+  "self_consistent_model": "For positive constituent conductivities use the unique positive solution sigma of f*(sigma1-sigma)/(sigma1+2*sigma)+(1-f)*(sigma2-sigma)/(sigma2+2*sigma)=0. This is the three-dimensional isotropic spherical Bruggeman effective-medium approximation, not an exact microstructure solution.",
+  "limit_policy": "For the separate ideal-insulator question take sigma2->0 from positive values at fixed sigma1. The effective conductivity tends to0 below the model threshold and is positive above it. Do not insert sigma=0 into the original rational expression and cancel an undefined denominator.",
+  "scope": "Conditional effective-medium and high-contrast limit predictions; not a proof of a real geometric percolation threshold or of isotropic connectivity for an arbitrary composite."
+}

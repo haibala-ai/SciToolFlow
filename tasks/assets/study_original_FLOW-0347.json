@@ -1,0 +1,18 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "neutral_distribution_ratio_organic_over_water": 3.0,
+  "constant_aqueous_phase_volume_milliliters": 100.0,
+  "total_available_fresh_organic_volume_milliliters": 60.0,
+  "candidate_equal_fresh_stage_counts": [
+    1,
+    2,
+    3,
+    6
+  ],
+  "model": "Controlled dilute neutral-solute partitioning with constant concentration ratio K=C_organic/C_water at equilibrium. Each stage uses a fresh organic phase of total_available_volume/n, equilibrates with the unchanged aqueous volume, then completely removes that organic aliquot before the next stage. No evaporation, entrained phase, chemical reaction, pH change or saturation.",
+  "target": "Compare final aqueous AMOUNT remaining after the entire fresh-stage protocol, relative to starting amount. Only listed finite stage counts are candidates; no extra solvent may be spent in any design. A one-stage concentration ratio is not itself a recovered amount fraction.",
+  "scope": "Theoretical stagewise mass-balance analysis, not an operational separation protocol or a forecast of real extraction efficiency."
+}

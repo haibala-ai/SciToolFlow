@@ -1,0 +1,41 @@
+{
+  "smiles": "CC(=O)NCCO",
+  "indexed_pairs": [
+    [
+      0,
+      6
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      5,
+      2
+    ]
+  ],
+  "export_cards": [
+    {
+      "id": "export_A",
+      "pair_index": 0,
+      "pair_code": 1590309
+    },
+    {
+      "id": "export_B",
+      "pair_index": 0,
+      "pair_code": 1590305
+    },
+    {
+      "id": "export_C",
+      "pair_index": 1,
+      "pair_code": 1721411
+    },
+    {
+      "id": "export_D",
+      "pair_index": 2,
+      "pair_code": 1721411
+    }
+  ],
+  "coding_convention": "Zero-based H-suppressed input graph indices. Use non-chiral atom-pair atom codes. The pair kernel uses the actual unweighted graph shortest-path distance. Current packed representation stores distance in5low bits,smaller atom code above it,and larger atom code after9more atom-code bits:score=distance+(smaller_code<<5)+(larger_code<<14). Candidate exported codes are untrusted.",
+  "scope": "A molecular graph-feature certificate,not a3Ddistance,atom identity hash or experimental interaction measurement."
+}

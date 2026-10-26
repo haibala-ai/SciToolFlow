@@ -1,0 +1,12 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "background_1_to_1_salt_mol_per_liter": 0.1,
+  "activity_solubility_product": 1e-08,
+  "Davies_A": 0.509,
+  "model": "Controlled dissolution MX(s)->M_plus+X_minus into a fully dissociated1:1 background salt sharing X_minus. If dissolved amount is s>0, [M]=s,[X]=c_background+s, background countercation=c_background. Ionic strength I=one_half*sum(c_i*z_i^2)=c_background+s. All mobile charges have magnitude1 and share gamma=10^[-A*(sqrt(I)/(1+sqrt(I))-0.3*I)]. Use Ksp=gamma^2*s*(c_background+s) with concentrations divided by1mol/L standard concentration.",
+  "domain": "Seek the positive root in0<s<0.001mol/L; within that interval this stipulated Davies calculation is the complete model. No ion pairing, hydrolysis, complexation or solid solution is included.",
+  "comparison": "For the ideal comparison set gamma=1 but retain the same common-ion mass balance. Signed relative error=(ideal_s-activity_s)/activity_s. Treat A and Ksp as stipulated, not measurements for a named salt."
+}

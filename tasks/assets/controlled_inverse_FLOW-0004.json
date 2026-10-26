@@ -1,0 +1,40 @@
+{
+  "kind": "controlled_low_field_two_carrier_study",
+  "hall_rows": [
+    {
+      "field_t": -0.2,
+      "transverse_voltage_v": 0.006259375865820309
+    },
+    {
+      "field_t": -0.1,
+      "transverse_voltage_v": 0.0033296879329101545
+    },
+    {
+      "field_t": 0.1,
+      "transverse_voltage_v": -0.002529687932910154
+    },
+    {
+      "field_t": 0.2,
+      "transverse_voltage_v": -0.0054593758658203085
+    }
+  ],
+  "current_a": 1e-05,
+  "film_thickness_m": 1e-06,
+  "resistivity_ohm_m": 0.04458220767471974,
+  "charge_magnitude_c": 1.602176634e-19,
+  "mobility_assignments": [
+    {
+      "id": "assignment_A",
+      "electron_mobility_m2_v_s": 0.1,
+      "hole_mobility_m2_v_s": 0.02
+    },
+    {
+      "id": "assignment_B",
+      "electron_mobility_m2_v_s": 0.02,
+      "hole_mobility_m2_v_s": 0.1
+    }
+  ],
+  "maximum_authorized_mu_B": 0.05,
+  "conductivity_relative_closure_tolerance": 1e-07,
+  "hall_absolute_closure_tolerance_m3_c": 1e-10
+}

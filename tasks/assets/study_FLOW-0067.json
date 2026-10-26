@@ -1,0 +1,55 @@
+{
+  "data": [
+    {
+      "record_id": "component01",
+      "formula": "C6H14",
+      "feed_mass_fraction": 0.45,
+      "temperature_kelvin": [
+        330.0,
+        350.0,
+        370.0
+      ],
+      "model_saturation_pressure_bar": [
+        0.8,
+        1.6,
+        2.6
+      ]
+    },
+    {
+      "record_id": "component02",
+      "formula": "C7H16",
+      "feed_mass_fraction": 0.35,
+      "temperature_kelvin": [
+        330.0,
+        350.0,
+        370.0
+      ],
+      "model_saturation_pressure_bar": [
+        0.38,
+        0.88,
+        1.62
+      ]
+    },
+    {
+      "record_id": "component03",
+      "formula": "C8H18",
+      "feed_mass_fraction": 0.2,
+      "temperature_kelvin": [
+        330.0,
+        350.0,
+        370.0
+      ],
+      "model_saturation_pressure_bar": [
+        0.07,
+        0.2,
+        0.48
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Tkelvin,pressurebar,feedmassfractionsdimensionless;ordinaryaverageformulamassg/mol",
+    "original_observation_claim": false
+  }
+}

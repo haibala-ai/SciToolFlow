@@ -1,0 +1,12 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "external_medium_refractive_index": 1.0,
+  "external_incidence_angle_degrees": 60.0,
+  "normal_fringe_spacing_cm_inverse": 5000.0,
+  "oblique_fringe_spacing_cm_inverse": 5547.001962252291,
+  "model": "An optically uniform plane-parallel film has unknown positive thickness d and constant real refractive index n>1 in this measured band. Normal-incidence adjacent interference maxima have wavenumber spacing1/(2*n*d), with d in cm. At external angle theta, Snell law gives sin(theta_internal)=sin(theta)/n and spacing1/(2*n*d*cos(theta_internal)). Both observations refer to the same film and same dispersion-free band; reflection phase offsets are constant with wavenumber and do not affect adjacent spacings.",
+  "scope": "Invert this controlled coherent-fringe model only; no roughness, absorption, birefringence, thickness gradients or wavelength-dependent index fitting."
+}

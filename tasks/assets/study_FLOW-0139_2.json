@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "observation_id": "synthetic_powder",
+      "two_theta_deg": [
+        28.37434,
+        47.18522
+      ],
+      "wavelength_angstrom": 1.5406,
+      "position_tolerance_deg": 0.02
+    }
+  ],
+  "provenance": {
+    "kind": "controlled forward-simulated ideal diffraction peak subset",
+    "not_experimental_measurement": true,
+    "unlisted_peaks": "unobserved, not asserted absent",
+    "near_coincident_peak_policy": "Group supplied ideal lines whose cluster max-minus-min is at most0.02degrees, use the unweighted position mean rounded to5decimalplaces; not instrument broadening or independent repeated measurements.",
+    "upstream_artifact_sha256": "9e8f35e0730b441a495cffacafdacfa8a2669e65ea9b3603c6e6b3c1552e9069"
+  }
+}

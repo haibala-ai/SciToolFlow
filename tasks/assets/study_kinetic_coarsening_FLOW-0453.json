@@ -1,0 +1,93 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "microstate_order": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "generator_per_second": [
+        [
+          -5,
+          1,
+          1,
+          0
+        ],
+        [
+          3,
+          -3,
+          0,
+          1
+        ],
+        [
+          2,
+          0,
+          -2,
+          4
+        ],
+        [
+          0,
+          2,
+          1,
+          -5
+        ]
+      ],
+      "observation_candidates": [
+        {
+          "observation_id": "x_sensor",
+          "ordered_blocks": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "observation_id": "y_sensor",
+          "ordered_blocks": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ]
+          ]
+        },
+        {
+          "observation_id": "parity_sensor",
+          "ordered_blocks": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "generator_convention": "The exact, time-homogeneous continuous-time generator uses column probabilities: dp/dt = K p. For i != j, K[i,j] is the rate from state j to state i, in inverse seconds. A zero off-diagonal entry denotes an absent transition. The finite microstate chain is irreducible. Infer its unique normalized stationary law from the generator; no stationary probabilities are supplied as observations.",
+      "observation_policy": "An observation is admissible if its aggregate process is a time-homogeneous Markov chain for every initial microstate distribution. Apply strong lumpability: two microstates in the same observed block must have equal total rates into each other observed block. Construct each admissible column generator in the listed block order. Matching stationary block fractions or using stationary-averaged rates does not establish this dynamic property. This is an exact model-reduction audit; there is no measurement-noise or finite-time discrimination objective.",
+      "irreversibility_policy": "At stationarity define the directed probability flux F(i->j) = pi[i] K[j,i]. For each unordered connected pair, include exactly one contribution (F(i->j) - F(j->i)) ln(F(i->j)/F(j->i)). Their sum I is the process irreversibility rate. All connected pairs here have positive rates in both directions. Omit absent pairs; do not evaluate logarithms of zero. A sum over both directed orientations requires a factor of one half. Use natural logarithms. Evaluate I for the microstate process and for each admissible reduced generator at its own stationary law. I has units of inverse seconds and measures stochastic time-reversal asymmetry. No local detailed-balance assumption, temperature or reservoir model is provided, so I is not a physical heat or power estimate. Determine separately whether a vanishing reduced I certifies microscopic reversibility.",
+      "reporting": "Return admissible_observation_ids, coarse_generator_per_second_by_observation, microscopic_irreversibility_rate_per_second, coarse_irreversibility_rate_per_second_by_observation, micro_reversible and coarse_zero_certifies_micro_reversibility. Generator rows and columns follow each candidate's listed block order. Treat observation-ID arrays as sets. Report numbers within 1e-8 absolute plus 1e-7 relative error; Booleans are exact. Optional limitation prose is unscored.",
+      "provenance": {
+        "kind": "Project-authored exact abstract four-state kinetic model and digital observation partitions;not an experimental reaction,biological mechanism or operating protocol.",
+        "original_observation_claim": false,
+        "method_sources": [
+          "https://www.dais.unive.it/~srossi/Papers/acta16.pdf",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC7711514/"
+        ],
+        "method_read_scope": "Marin/Rossi author-hosted manuscript Definition1andProposition5on PDFpage8:strong lumpability and all-initial-distribution aggregate Markov property. Cocconi etal2020Section2Eqs2and4b:finite jump-process master equation,paired-flux irreversibility and physical-interpretation condition. The project specifies a column convention and unordered-pair sum;source conventions are reconciled explicitly. No original numerical observations imported."
+      }
+    }
+  ]
+}

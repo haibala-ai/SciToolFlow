@@ -1,0 +1,20 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "fundamental_anisotropy": 0.4,
+  "fluorescence_lifetimes_nanoseconds": [
+    1.0,
+    4.0,
+    10.0
+  ],
+  "observed_steady_anisotropies": [
+    0.26666666666666666,
+    0.13333333333333333,
+    0.06666666666666667
+  ],
+  "model": "Controlled isotropic single-exponential rotational decorrelation with fixed fundamental anisotropy r0 and steady Perrin relation r=r0/(1+tau/theta). The measured fluorescence lifetime tau differs across samples; the rotational correlation time theta may be tested for a common positive value. No orientational restriction, multiexponential lifetime or changing r0.",
+  "heldout_lifetime_nanoseconds": 8.0,
+  "scope": "Do not convert theta into viscosity or hydrodynamic size without a separately supplied model/calibration. Anisotropy differences alone need not identify rotation changes when lifetime varies."
+}

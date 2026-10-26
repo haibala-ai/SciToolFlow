@@ -1,0 +1,101 @@
+{
+  "data_origin": "The two original RCSB PDB coordinate files are real deposited crystal structures of wild-type maltose/maltodextrin-binding protein. The geometric comparison is an analysis of those particular coordinates. The six virtual C-alpha distance readouts, affine detector bounds and prospective discrimination criterion below are controlled benchmark assumptions; they are NOT measured FRET efficiencies or evidence that labelling these positions is feasible.",
+  "structures": {
+    "O": {
+      "pdb_id": "1OMP",
+      "file": "asset://research_FLOW-0270_1OMP.pdb",
+      "entry_version": "1.5 (2024-02-14)",
+      "chain_id": "A",
+      "model_id": 0,
+      "state_description": "Unliganded crystal structure",
+      "citation_doi": "10.1021/bi00159a003"
+    },
+    "C": {
+      "pdb_id": "1ANF",
+      "file": "asset://research_FLOW-0270_1ANF.pdb",
+      "entry_version": "2.2 (2024-05-22)",
+      "chain_id": "A",
+      "model_id": 0,
+      "state_description": "Maltose-bound crystal structure",
+      "citation_doi": "10.1016/S0969-2126(97)00253-0"
+    }
+  },
+  "coordinate_policy": "Use only observed chain-A model-0 C-alpha coordinates. Match exact residue-number/insertion-code identity AND amino-acid identity between structures before comparison; exclude all water, sugar and other hetero atoms. Equal unit weight per matched residue. Do not infer correspondence from raw atom-list order or add unresolved residues. PDB coordinates are the fixed point inputs here; B factors are not supplied positional confidence intervals.",
+  "domain_definition": {
+    "N": {
+      "inclusive_residue_ranges": [
+        [
+          1,
+          108
+        ],
+        [
+          263,
+          311
+        ]
+      ]
+    },
+    "C": {
+      "inclusive_residue_ranges": [
+        [
+          113,
+          258
+        ],
+        [
+          320,
+          370
+        ]
+      ]
+    },
+    "rationale": "Operational core masks follow the N-terminal and C-terminal domains used by Stockner et al. (2005), A Salt-Bridge Motif Involved in Ligand Binding and Large-Scale Domain Motions of the Maltose-Binding Protein, Biophysical Journal 89(5), 3362-3371, https://doi.org/10.1529/biophysj.105.069443. Hinge/linker residues outside these masks remain in the whole-chain fit but not in either core fit."
+  },
+  "fit_definition": "Find least-squares PROPER rotations and unconstrained translations mapping O coordinates to C coordinates, independently for the entire common chain, N core and C core. RMSD=sqrt(mean squared Cartesian residual). Let the row-vector rotations be R_N and R_C (x_aligned=x@R+t). Relative domain rotation is acos(clamp((trace(R_N.T@R_C)-1)/2,-1,1)) in degrees. The angle is an unsigned net three-dimensional rotation, not separate bending and twisting angles. Reversing both fit directions must give the same reported angle.",
+  "geometric_decision": "The declared two-rigid-core approximation is supported for these two coordinate sets exactly when the optimal whole-chain RMSD exceeds 3 angstrom AND each independently fitted core RMSD is below 1 angstrom. This is an operational geometric criterion, not a significance test or a claim of exact rigidity.",
+  "virtual_readouts": [
+    {
+      "id": "S1",
+      "residue_ids": [
+        "25",
+        "205"
+      ]
+    },
+    {
+      "id": "S2",
+      "residue_ids": [
+        "55",
+        "205"
+      ]
+    },
+    {
+      "id": "S3",
+      "residue_ids": [
+        "25",
+        "355"
+      ]
+    },
+    {
+      "id": "S4",
+      "residue_ids": [
+        "40",
+        "205"
+      ]
+    },
+    {
+      "id": "S5",
+      "residue_ids": [
+        "10",
+        "100"
+      ]
+    },
+    {
+      "id": "S6",
+      "residue_ids": [
+        "150",
+        "230"
+      ]
+    }
+  ],
+  "virtual_readout_physics": "For readout S with its matched C-alpha pair, compute d_state,S in angstrom directly within that state and E_state,S=1/(1+(d_state,S/50)^6). For a future single unknown state, ideal detector mean is y_S=g*E_state,S+b. Within one panel g and b are COMMON to every channel; 0.8<=g<=1.2 and -0.05<=b<=0.05. An observation has arbitrary channelwise additive error |eta_S|<=rho. This ideal C-alpha isotropic-transfer proxy ignores dyes/linkers/orientational averaging and carries no real assay validation claim.",
+  "panel_design": "A panel contains exactly three DISTINCT readout IDs from S1..S6; consider all 20 unordered panels. Under O and C hypotheses separately refit the unknown common gain and offset within the same bounds, because only one unknown-state sample will be observed. For panel P define Delta(P)=min over g_O,b_O,g_C,b_C of max_{S in P}|g_O*E_O,S+b_O-g_C*E_C,S-b_C|. This is the L-infinity distance between the two closed sets of ideal means. Report EVERY maximizing panel, comparing Delta values with absolute tie tolerance 1e-8. Return each panel as its sorted ID list; order between panels is immaterial. No experimental outcomes are available yet.",
+  "discrimination_definition": "The two state sets with independent channelwise error bounded by rho are guaranteed disjoint iff Delta(P)>2*rho (strict). The supremum of tolerable rho for an optimal panel is Delta_max/2; this supremum itself need not be attainable. Compare the optimal panel(s) with the nominal-motion panel consisting of the three largest |E_C,S-E_O,S| (ties by ID), both at rho=0.02. Coordinate differences and virtual-readout calculations do not establish a unique kinetic transition pathway or whether binding precedes closure.",
+  "reporting": "Report the compact answer_schema fields. Continuous RMSDs and degrees allow absolute tolerance 1e-5; dimensionless panel margins and noise radii allow absolute tolerance 1e-7. Count/Boolean/ID fields are exact. Explain the source match, proper-rotation test and common-calibration minimax calculation in your ReAct work, without inventing measured intensities."
+}

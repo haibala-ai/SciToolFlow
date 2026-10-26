@@ -1,0 +1,6 @@
+{
+  "input_smiles": "c1ccccc1",
+  "handoff": "First obtain a Kekule graph report. Feed its actual returned kekule_smiles to aromaticity assignment. Then calculate hydrogen-suppressed connectivity and feature invariant vectors on the original source and the re-aromatized graph. For this symmetric six-carbon source compare invariant multisets;do not claim canonical serialization preserves arbitrary atom indices.",
+  "target": "Return the Kekule double-bond count,re-aromatized aromatic-bond count,whether each invariant multiset is preserved,and the number of distinct feature tokens for the six source atoms. Does a shared atom feature token uniquely identify one atomic site?",
+  "scope": "Software graph-representation consistency,not localized alternating experimental bond lengths. Feature invariant integers are algorithm tokens,not atomic numbers or unique physical atom identities."
+}

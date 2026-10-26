@@ -1,0 +1,25 @@
+{
+  "requested_task_id": "mp-2246557",
+  "export_cards": [
+    {
+      "id": "historical_pair",
+      "task_id": "mp-2246557",
+      "fs_id": "629a8e82a9bd90a4d2680ecf",
+      "source_url": "https://materialsproject-parsed.s3.amazonaws.com/chgcars/mp-2246557.json.gz"
+    },
+    {
+      "id": "invented_numeric_file",
+      "task_id": "mp-2246557",
+      "fs_id": "000000000000000000000001",
+      "source_url": "https://materialsproject-parsed.s3.amazonaws.com/chgcars/mp-2246557.json.gz"
+    },
+    {
+      "id": "task_file_swapped",
+      "task_id": "mp-149",
+      "fs_id": "629a8e82a9bd90a4d2680ecf",
+      "source_url": "https://materialsproject-parsed.s3.amazonaws.com/chgcars/mp-2246557.json.gz"
+    }
+  ],
+  "audit": "Resolve the official task envelope,then use its actual returned legacy fs_id for a reverse lookup. Accept a card only if task,file IDand object URLall match this verified relationship. Preserve the verified Chgcardata class and downloaded-object hash.",
+  "scope": "This tool returns dated metadata,not charge-density grid arrays. Historical forward/reverse coverage is incomplete;one working pair does not certify every task or file ID. Do not infer charge integrals from metadata."
+}

@@ -1,0 +1,37 @@
+{
+  "source_records": [
+    {
+      "id": "leaf",
+      "C12_mmol_per_g": 30.0,
+      "N14_mmol_per_g": 1.0,
+      "delta_C_permil": -28.0,
+      "delta_N_permil": 2.0
+    },
+    {
+      "id": "seed",
+      "C12_mmol_per_g": 40.0,
+      "N14_mmol_per_g": 5.0,
+      "delta_C_permil": -20.0,
+      "delta_N_permil": 8.0
+    },
+    {
+      "id": "fungal",
+      "C12_mmol_per_g": 20.0,
+      "N14_mmol_per_g": 2.0,
+      "delta_C_permil": -24.0,
+      "delta_N_permil": 4.0
+    }
+  ],
+  "consumer_delta_C_permil": -23.96551724137931,
+  "consumer_delta_N_permil": 8.428571428571429,
+  "known_consumer_minus_diet_calibration_shift_permil": {
+    "C": 1.0,
+    "N": 3.0
+  },
+  "model": "Exactly three sources form a diet with nonnegative DRY-MASS fractions summing to1. Source amounts specify moles of the LIGHT isotope(12C or14N)per gram dry matter,not total elemental mass or dietary fraction. For each element,delta=1000*(heavy/light ratio divided by its fixed reference ratio minus1). Ratios mix by the supplied LIGHT-isotope amounts;therefore diet delta is their corresponding light-isotope-weighted average. No other source,isotope fractionation or loss is allowed beyond the explicitly known additive consumer-minus-diet calibration shifts.",
+  "target": "Infer the three dry-mass fractions in source order. Also solve the incorrect model that directly dry-mass-averages both source delta values after applying the same calibration shifts. Return those unconstrained naive fractions without clipping or renormalization and whether they form a nonnegative diet. Classify whether the actual light-isotope-weighted model identifies a unique nonnegative diet.",
+  "scope": "Conditional isotope mass-balance exercise with exact supplied ratios and known calibration. It does not establish actual dietary causation,real discrimination factors or field uncertainty.",
+  "provenance": {
+    "kind": "Explicit controlled abstract biological measurement/model fixture;not a real protein,diet or intervention claim."
+  }
+}

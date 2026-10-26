@@ -1,0 +1,21 @@
+{
+  "path_order": [
+    "path_A",
+    "path_B"
+  ],
+  "total_pseudo_first_order_rate_H_per_s": 10.0,
+  "total_pseudo_first_order_rate_D_per_s": 8.0,
+  "intrinsic_path_H_over_D_rate_ratios": [
+    2.0,
+    0.5
+  ],
+  "intrinsic_path_activation_energies_kJ_per_mol": [
+    10.0,
+    30.0
+  ],
+  "model": "Two independent parallel routes share the same reactant concentration and exhaust the observed first-order loss. At the reference temperature,k_H,total=k_H,A+k_H,Band k_D,i=k_H,i/KIE_i. All path rates are nonnegative. Each corresponding H/Dpath pair has the same supplied Arrhenius activation energy and differs only in a temperature-independent prefactor. Apparent total activation energy is the local -R*dln(k_total)/d(1/T),not an unweighted average. No change in route set or hidden isotope-dependent concentration is allowed.",
+  "target": "Infer Hroute-rate contributions and Droute-rate contributions in path order,and their respective normalized route fractions. Return the overall H/Drate ratio and apparent total activation energies for HandD. Report whether an overall ratio above1means every contributing path has an intrinsic normal isotope effect above1.",
+  "provenance": {
+    "kind": "Explicit controlled chemical model/exact observations;no empirical mechanism or practical reaction recommendation is inferred."
+  }
+}

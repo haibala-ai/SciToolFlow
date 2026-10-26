@@ -8,7 +8,7 @@ import signal
 import tempfile
 import time
 
-from scitoolflow.io import atomic_json
+from src.utils.io import atomic_json
 
 
 def _worker(function, payload, destination):

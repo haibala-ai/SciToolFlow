@@ -1,0 +1,21 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "wavelengths_micrometers": [
+    2.0,
+    4.0,
+    6.0
+  ],
+  "observed_spectral_radiances_watt_per_square_meter_steradian_micrometer": [
+    1678.7683031281952,
+    1966.5981132673166,
+    918.9477301532962
+  ],
+  "first_radiation_constant_in_supplied_units": 119104297.2,
+  "second_radiation_constant_micrometer_kelvin": 14387.76877,
+  "model": "Controlled gray surface with wavelength-independent emissivity0<epsilon<=1. L(lambda)=epsilon*c1/[lambda^5*(exp(c2/(lambda*T))-1)]. Use lambda in micrometers and the supplied c1; spectral radiance is per micrometer, not wavelength-integrated radiated power. No reflected background, transmission or temperature mixture.",
+  "analysis_policy": "Infer T in[300,3000]K and one common emissivity using ONLY the first two wavelengths. The third is a held-out spectral check. Separately infer the four-micrometer brightness temperature when epsilon is incorrectly fixed to1. The one-radiance identifiability question removes all other wavelength observations and any emissivity calibration.",
+  "scope": "Controlled radiometric inverse model, not a real temperature measurement or a recommendation to heat a material."
+}

@@ -1,0 +1,98 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "strata": [
+        {
+          "stratum_id": "small",
+          "population_size": 15,
+          "drawn_sample_size": 6
+        },
+        {
+          "stratum_id": "large",
+          "population_size": 16,
+          "drawn_sample_size": 4
+        }
+      ],
+      "sampled_trees": [
+        {
+          "tree_id": "R01",
+          "stratum_id": "small",
+          "diameter_inches": 8.3,
+          "volume_ft3": 10.3
+        },
+        {
+          "tree_id": "R02",
+          "stratum_id": "small",
+          "diameter_inches": 8.6,
+          "volume_ft3": 10.3
+        },
+        {
+          "tree_id": "R06",
+          "stratum_id": "small",
+          "diameter_inches": 10.8,
+          "volume_ft3": 19.7
+        },
+        {
+          "tree_id": "R11",
+          "stratum_id": "small",
+          "diameter_inches": 11.3,
+          "volume_ft3": 24.2
+        },
+        {
+          "tree_id": "R12",
+          "stratum_id": "small",
+          "diameter_inches": 11.4,
+          "volume_ft3": 21.0
+        },
+        {
+          "tree_id": "R14",
+          "stratum_id": "small",
+          "diameter_inches": 11.7,
+          "volume_ft3": 21.3
+        },
+        {
+          "tree_id": "R19",
+          "stratum_id": "large",
+          "diameter_inches": 13.7,
+          "volume_ft3": 25.7
+        },
+        {
+          "tree_id": "R20",
+          "stratum_id": "large",
+          "diameter_inches": 13.8,
+          "volume_ft3": 24.9
+        },
+        {
+          "tree_id": "R25",
+          "stratum_id": "large",
+          "diameter_inches": 16.3,
+          "volume_ft3": 42.6
+        },
+        {
+          "tree_id": "R27",
+          "stratum_id": "large",
+          "diameter_inches": 17.5,
+          "volume_ft3": 55.7
+        }
+      ],
+      "finite_population_size": 31,
+      "sampling_design": "Controlled reporting exercise over the31 archived trees, not a documented original field-sampling design. Partition the fixed finite population before sampling by its recorded diameter: small has diameter<=12 inches,large has diameter>12. Independently within each stratum,assume simple random sampling without replacement at the stated fixed sample size. The stored sample is one reproducible draw: NumPy default_rng(440),small then large,choice without replacement from ascending original row IDs. All sampled volumes are original readings. The population for inference is exactly these31 archived units,not all trees in a forest.",
+      "reporting_target": "Estimate the finite-population mean timber volume per tree using the stated sampling design and known stratum sizes. Report its plug-in design standard error using within-stratum unbiased sample variances and the without-replacement finite-population corrections. Compare the ordinary mean of all sampled readings with the design estimate by pooled-minus-design difference. Report standard error,not standard deviation of tree volumes or a confidence-interval width. There is no nonresponse,weight trimming,calibration model,normal-coverage guarantee or superpopulation inference.",
+      "unit_definitions": "Volume is cubic feet of timber per tree. The original field called Girth is actually diameter in inches,as documented by R. This sample export names it diameter_inches; stratum membership is fixed before sampling.",
+      "source_provenance": {
+        "source_url": "https://svn.r-project.org/R/trunk/src/library/datasets/data/trees.R",
+        "original_source_sha256": "843b3a732a8e41af3edcc47a8bf9c9d435941a258d26199299af3382181e691a",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/trees.html",
+        "license": "R datasets GPL-2-or-later; original attribution retained",
+        "original_scope": "Original31-tree diameter,height and timber-volume observations. The stratification,sample selection and proposed pooled reporting error are controlled benchmark conditions,not claims about the historical study. Unobserved tree volumes are not exported in this public sample.",
+        "method_source": "https://online.stat.psu.edu/stat506/Lesson06",
+        "method_read_scope": "Indexed primary course section6.1 read for stratified random sampling and independent stratum-total aggregation. Direct full-page fetch failed502/SSL verification; no full-page reading claimed. The finite-population variance relation is independently derived and checked by exhaustive within-stratum sampling in the root review."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

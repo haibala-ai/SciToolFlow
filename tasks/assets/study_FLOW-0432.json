@@ -1,0 +1,51 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "observations": [
+        [
+          1.0,
+          109.0
+        ],
+        [
+          2.0,
+          149.0
+        ],
+        [
+          3.0,
+          149.0
+        ],
+        [
+          5.0,
+          191.0
+        ],
+        [
+          7.0,
+          213.0
+        ],
+        [
+          10.0,
+          224.0
+        ]
+      ],
+      "column_order": [
+        "x",
+        "y"
+      ],
+      "request_time": 4.0,
+      "analysis_policy": "Exponentialapproach mean a*(1-exp(-b*x)),unweighted native-response leastsquares,initial[200,0.5]. For this explicitly local approximate normal calculation use coefficient covariance scaled by RSS/(n-2),gradient[1-exp(-b*t),a*t*exp(-b*t)],andcriticalvalue1.959963984540054. Mean-response variance=gCovgT;new independent individual-response variance adds RSS/(n-2). Both are local approximate reporting intervals,not guaranteed finite-sample coverage. Do not interpret an individual interval as a mean interval.",
+      "source_provenance": {
+        "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/BoxBOD.dat",
+        "raw_sha256": "fc44fbed04e3be16df6498e722d4c8aedfd0af210110bc396d9f99acecd77e21",
+        "read_scope": "Dataset description,variable definitions,observed rows and declared family; certified result block is never exported to public task assets.",
+        "source_kind": "US NIST Statistical Reference Datasets public observations; original study reference retained in source",
+        "reuse": "Attributed public numeric reference data; no claim of authorship or endorsement"
+      },
+      "units": "Archive time days;oxygen-demand responsemg/L."
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

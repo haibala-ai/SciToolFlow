@@ -1,0 +1,48 @@
+{
+  "data_origin": "Four explicit glycine protonation microstate molecular graphs, supplied as structural definitions. Do not neutralize, canonicalize tautomers into one state, or infer that equal net charge means the same microstate. No stereochemical or conformational state is varied.",
+  "records": [
+    {
+      "id": "g1",
+      "smiles": "NCC(=O)O"
+    },
+    {
+      "id": "g2",
+      "smiles": "NCC(=O)[O-]"
+    },
+    {
+      "id": "g3",
+      "smiles": "[NH3+]CC(=O)O"
+    },
+    {
+      "id": "g4",
+      "smiles": "[NH3+]CC(=O)[O-]"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "reactant": "g3",
+      "product": "g4",
+      "released_species": "one H+"
+    },
+    {
+      "id": "e2",
+      "reactant": "g3",
+      "product": "g1",
+      "released_species": "one H+"
+    },
+    {
+      "id": "e3",
+      "reactant": "g4",
+      "product": "g2",
+      "released_species": "one H+"
+    },
+    {
+      "id": "e4",
+      "reactant": "g1",
+      "product": "g2",
+      "released_species": "one H+"
+    }
+  ],
+  "source_scope": "Molecular graphs are original benchmark encodings of the four standard glycine protomers. The study uses controlled competing constants and simulated observations, not a measured glycine/host experiment."
+}

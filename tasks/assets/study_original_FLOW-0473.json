@@ -1,0 +1,44 @@
+{
+  "phenotype_records": [
+    {
+      "shape": "wrinkled",
+      "colour": "yellow",
+      "count": 101
+    },
+    {
+      "shape": "round",
+      "colour": "green",
+      "count": 108
+    },
+    {
+      "shape": "wrinkled",
+      "colour": "green",
+      "count": 32
+    },
+    {
+      "shape": "round",
+      "colour": "yellow",
+      "count": 315
+    }
+  ],
+  "allele_meanings": {
+    "A": "dominant round",
+    "a": "recessive wrinkled",
+    "B": "dominant yellow",
+    "b": "recessive green"
+  },
+  "working_model": "A fixed two-locus double-heterozygote F2 multinomial sampling model, conditional on the total recorded count. Complete dominance at both loci, no viability/selection distortion, independent gamete union and one common recombination fraction r in[0,0.5] for both gamete pools. Coupling phase means AB/ab and assigns each nonrecombinant gamete AB,ab probability(1-r)/2 and each recombinant Ab,aB probability r/2. Repulsion phase means Ab/aB and reverses these two pair probabilities. Marginal allele segregation remains one-half. The four dominant/recessive phenotypes pool genotypes; they are not directly observed recombinant-gamete counts.",
+  "comparison": "The historical parent information specifies coupling. First fit r with that phase retained. Then conduct an explicitly hypothetical information-loss sensitivity analysis in which phase is no longer known and either coupling or repulsion is allowed. The second analysis does not reinterpret the historical known pedigree or establish that its actual phase was repulsion.",
+  "support_policy": {
+    "twice_log_likelihood_drop_cutoff": 3.841458820694124,
+    "definition": "For the phenotype-only model, retain each(phase,r)whose twice log-likelihood drop from the GLOBAL maximum over BOTH phases and r is at most the cutoff. Include equality and r=0.5 endpoints. Report each phase interval, or an empty array if that phase has no support. This is a stipulated likelihood-support rule, not a promised exact95percent confidence procedure.",
+    "unlinked_comparator": "r=0.5, where the two phase descriptions coincide. Compute twice(global phenotype-only maximum log likelihood minus log likelihood at this unlinked model), with no fitted arbitrary phenotype margins."
+  },
+  "inference_scope": "A conditional model-based reanalysis and missing-pedigree sensitivity exercise on historical aggregate counts. The original seeds came from15 plants; independent multinomial observations and equal common r are working assumptions here, not established plant-level independence or a new experiment. No map distance conversion, locus sequencing, breeding instructions or claim of proven exact independent assortment is requested.",
+  "provenance": {
+    "kind": "Exact historical four-phenotype counts, plus an explicit project-defined inference model and pedigree-information-loss sensitivity policy.",
+    "source_url": "https://cs.brown.edu/people/rblumber/MendelWeb/Mendel.html",
+    "read": "Section8, first experiment: A/a seed form, B/b colour, AB versus ab parents,556seeds from15plants, four phenotype counts. Other subsequent-generation observations are outside the task.",
+    "source_author": "Gregor Mendel, Experiments in Plant Hybridization; English translation archived by MendelWeb."
+  }
+}

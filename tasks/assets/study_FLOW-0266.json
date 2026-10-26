@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "coordinate_file": "coordinates_FLOW-0266.pdb",
+      "requested_chain": "A",
+      "reference_sequence": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG",
+      "reference_scope": "1UBQ observed native protein chainA from source snapshot, not a universal isoform sequence",
+      "readiness_policy": "exactly one model; complete observed protein sequence of the supplied reference; every residue has N,CA,C,O",
+      "source_entry": "1UBQ",
+      "source_url": "https://files.rcsb.org/download/1UBQ.pdb",
+      "original_source_sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+      "input_sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+      "data_origin": "Coordinate audit input copied or derived from the public deposited snapshot; inspect actual records. It is not a new experimental structure.",
+      "scientific_scope": "coordinate readiness only; no claim of folding stability, measured function or biological design"
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

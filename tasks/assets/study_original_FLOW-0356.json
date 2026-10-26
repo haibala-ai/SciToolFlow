@@ -1,0 +1,28 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "ion_order": [
+    "divalent_cation",
+    "monovalent_anion"
+  ],
+  "charge_numbers": [
+    2.0,
+    -1.0
+  ],
+  "diffusion_coefficients_m2_per_second": [
+    7e-10,
+    2e-09
+  ],
+  "concentrations_mol_per_liter": [
+    0.02,
+    0.04
+  ],
+  "temperature_kelvin": 298.15,
+  "faraday_coulomb_per_mol": 96485.33212,
+  "gas_constant_j_per_mol_kelvin": 8.314462618,
+  "model": "Controlled dilute independent-ion Nernst-Einstein transport: conductivity=(F^2/(R*T))*sum_i z_i^2*D_i*c_i_SI, with c_SI in mol/m^3. Cation transference fraction is its nonnegative conductivity contribution divided by the total. Electroneutrality sum(z_i*c_i)=0 constrains charge density, not the squared-charge transport sum.",
+  "salt_diffusion": "For this ideal binary2:1 electrolyte, zero-current electroneutral ambipolar salt diffusion is D_salt=3*D_cation*D_anion/(2*D_cation+D_anion). This is a separate concentration-diffusion response, not a conductivity unit conversion.",
+  "scope": "No ion correlations, concentration-dependent activities, convection or actual electrolyte performance is inferred."
+}

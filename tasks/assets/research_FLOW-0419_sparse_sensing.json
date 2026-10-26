@@ -1,0 +1,51 @@
+{
+  "origin": "Own controlled noiseless scientific inverse-sensing audit with six SIGNED source-basis amplitudes and a common additive sensor offset. Amplitudes are coefficients of a linear readout basis, not nonnegative concentrations. Calibration/readings are exact mathematical model inputs, not measured performance of a real sensor array. The same positive measurement normalization is fixed for every sensor.",
+  "source_axes": {
+    "components": [
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6"
+    ],
+    "baseline_sensors": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "candidate_additional_sensors": [
+      "J1",
+      "J2",
+      "J3",
+      "J4"
+    ],
+    "one_additional_sensor_budget": 1
+  },
+  "calibration_handoff": "For EACH of the eight named sensors, export an actual reusable ordinary least-squares model with intercept, using all its seven source calibration rows and features[x1,x2,x3,x4,x5,x6]. No scaling, penalty, feature selection or target clipping. Keep the source sensor identity when regrouping shuffled rows. Retain actual predictions at calibration inputs[0,0,0,0,0,0] then the six ordered coordinate unit vectors. Audit equilibrium intercept0 and all source predictions to1e-9. Construct each row of the scientific sensing matrix from its actual predicted unit-source responses rounded to six decimals; regard the audited zero intercept as0. This defines an exact controlled handoff, not empirical calibration accuracy or extrapolation.",
+  "operating_model": "Use source-identified baseline readings y=A*x+b*ones. The operating offset b is a NEW unknown, unrestricted real number shared by every sensor, including any additional sensor; it is not the fitted calibration intercept. x has six unrestricted signed real components. Neither b=0, independent per-sensor offsets, nonnegative x, column normalization nor an amplitude penalty on b is allowed. Baseline readings have no sampling noise. Report source order explicitly. Eliminate b by differences against S1 or an equivalent complete projection, retaining all resulting constraints.",
+  "sparse_and_convex_audit": "Determine the minimum possible number of nonzero SOURCE components consistent with the four readings and free b. Enumerate every support of that minimum size and recover its coefficient vector and offset, proving that a zero-source explanation is impossible. Separately solve unweighted basis pursuit min sum_i|x_i| subject to the same baseline equations with b UNPENALIZED. Retain actual catalog LP observations with valid primal/dual certificates or equivalent globally complete exact certificates. Identify the entire source/offset optimizer set, not merely one chosen solver vector. Return coordinatewise min/max intervals for all six x and b over that optimizer set. Do not infer that a successful LP necessarily recovers the minimum-support source. Fitting residual alone does not establish scientific recovery.",
+  "uniform_recovery_quantity": "For each component i define eta_i=max{|h_i|: A*h+c*ones=0 for some real c, sum_j|h_j|<=1}. The null perturbation h and its associated offset c can have either sign. Compute all six sharp quantities for the baseline design. Derive the STRICT threshold on eta_i for unique exact unweighted-l1 recovery of EVERY one-sparse signal supported on component i, at any signed amplitude and common offset. Equality at the threshold does not certify uniqueness. A kernel is centrally symmetric, so a proved sign-symmetry argument can replace duplicate positive/negative optimizations. A sampled null vector supplies a lower bound only, not a sharp maximum. Retain complete primal/dual optimization or an exact complete kernel-polytope/circuit certificate.",
+  "additional_sensor_design": "For each candidate J1..J4 independently append exactly its calibrated row to the BASELINE design, with the same unknown common offset. Recompute all six eta_i and their worst component max_i eta_i. Choose every candidate minimizing that WORST-component quantity; also choose every candidate minimizing eta_i ONLY for the source component identified by the minimum-support baseline explanation. Report whether these two design objectives select the same sensors. Certify all candidates rather than testing only a promising row. Report which candidate designs guarantee unique recovery of all one-sparse signals. Both eta tables and every guarantee refer to the fixed source-coordinate l1 norm, not an unannounced rescaled dictionary. Obtain actual typed matrix-SVD rank observations for the offset-eliminated baseline and every candidate design. Economy singular vectors need not contain the full kernel of a wide matrix.",
+  "counterfactual_challenge": "This is a conditional mathematical audit, not a new observation: take the unique minimum-support explanation found from baseline data as a stipulated source/offset. Predict its response at each minimax-optimal candidate using the actual calibrated row. Append just that COUNTERFACTUAL response and solve the same unweighted-l1 recovery again, with the common offset still free. Report the counterfactual reading and recovered source/offset for the selected candidate. A successful conditional challenge is not empirical validation or permission to use measurements from all four future sensors simultaneously. The uniform nullspace certificate, rather than this one example, supports the one-sparse guarantee.",
+  "interpretation_proposals": {
+    "A": "A common unknown sensor offset changes the relevant kernel and must be eliminated or explicitly fitted without a source penalty.",
+    "B": "An l1 optimizer with zero sensing residual necessarily has minimum support.",
+    "C": "The strict nullspace mass condition distinguishes a uniform unique-recovery guarantee from one successful reconstruction.",
+    "D": "Column normalization is scientifically neutral for an unweighted l1 prior on fixed physical source amplitudes.",
+    "E": "Choosing a sensor for one presumed source can differ from minimizing the worst possible one-source recovery risk.",
+    "F": "A counterfactual challenge computed from an assumed source is an independent new measurement validating the sensor in reality.",
+    "G": "An economy SVD of a wide matrix can certify rank while omitting some null directions.",
+    "H": "A kernel witness sampled from a few directions proves the sharp componentwise worst-case bound."
+  },
+  "reporting": "source_component_order; baseline_sensor_order; baseline_offset_eliminated_rank; candidate_offset_eliminated_ranks mapJ1..J4; minimum_source_support_size; all_minimum_source_supports (array of sorted component-name arrays); minimum_support_source_vector; minimum_support_offset; initial_l1_minimum; initial_l1_source_coordinate_intervals (six[min,max]pairs); initial_l1_offset_interval; initial_l1_matches_minimum_support boolean; baseline_eta_by_component; baseline_uniformly_recoverable_components; candidate_eta_by_component mapJ1..J4 to six sharp values; candidate_worst_eta mapJ1..J4; minimax_additional_sensor_ids; inferred_source_specific_sensor_ids; minimax_and_source_specific_designs_agree boolean; all_one_sparse_guarantee_candidate_ids; counterfactual_selected_sensor_id; counterfactual_selected_reading; counterfactual_recovered_source; counterfactual_recovered_offset; counterfactual_l1_minimum; valid_interpretation_proposal_ids. Counts, IDs and booleans exact; numeric absolute tolerance1e-8. Sharp tables, all actual calibration/model predictions, support completeness, optimum-face and primal/dual/nullspace certificates and all typed ranks belong in the trajectory. If an optimizer property is nonidentified, its interval must retain that ambiguity.",
+  "methodological_source": {
+    "authors": "D.L. Donoho and M. Elad",
+    "title": "Optimally sparse representation in general(nonorthogonal) dictionaries via l1 minimization",
+    "year": 2003,
+    "doi": "10.1073/pnas.0437847100",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC153464/",
+    "role": "Primary context for sparsity, dictionaries and conditions for l1 recovery. All sensor rows, calibration panels, common-offset scenario and bounded design choices here are own constructions, not data or claims extracted from that paper."
+  }
+}

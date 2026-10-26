@@ -1,0 +1,15 @@
+{
+  "probe_first_order_rate_constants_per_s": [
+    1.0,
+    2.0
+  ],
+  "measured_unreacted_probe_fractions": [
+    0.2656679988991191,
+    0.20539035759926838
+  ],
+  "model": "Both noninteracting infinitesimal probes sample the SAMEflow-weighted residence-time distribution E=f*delta(t=0)+(1-f)*delta(t=tau),0<=f<1,tau>0. A fraction fbypasses the reactive holding region instantaneously;the remaining fraction stays exactly tau. Each probe has known first-order disappearance rate kand its outlet unreacted fraction is S(k)=integral exp(-kt)dE. There is no probe-dependent transport,unobserved reaction product recovery or renormalization excluding bypass.",
+  "target": "Infer the bypass fraction and nonbypass residence time,return the overall MEANresidence time,and conversion for the k=1probe. Return the conversion predicted by replacing this distribution with one plug-flow residence time equal to that mean,and report whether that replacement preserves the actual conversion.",
+  "provenance": {
+    "kind": "Explicit synthetic conditional chemical/physical measurement model;no empirical identification or practical process recommendation."
+  }
+}

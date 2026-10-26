@@ -1,0 +1,81 @@
+{
+  "scientific_goal": "Determine whether macroscopic acid-base data identify the neutral microstate composition and which thermodynamically consistent explanation survives a selective-host assay when depletion and ligand charge are treated together.",
+  "conditional_scale": "Use the stipulated conditional concentration model at fixed temperature and background medium. h=10^(-pH) M is the declared hydrogen scale. Each directed one-proton edge i -> j + H+ has K=[j]*h/[i] in M for FREE ligand. No activity-coefficient correction or alternative proton standard state is to be estimated. The background buffer fixes h independently of ligand/host proton uptake.",
+  "microconstant_cards": [
+    {
+      "id": "Q",
+      "conditional_dissociation_constants_M": {
+        "e1": 0.004252137648065438,
+        "e2": 0.00042521376480654375,
+        "e3": 2.960688284319605e-10,
+        "e4": 2.9606882843196052e-09
+      }
+    },
+    {
+      "id": "R",
+      "conditional_dissociation_constants_M": {
+        "e1": 0.004672678734137843,
+        "e2": 4.672678734137843e-06,
+        "e3": 1.077690535492336e-09,
+        "e4": 2.6942263387308404e-07
+      }
+    },
+    {
+      "id": "P",
+      "conditional_dissociation_constants_M": {
+        "e1": 0.004672678734137843,
+        "e2": 4.672678734137843e-06,
+        "e3": 2.69422633873084e-10,
+        "e4": 2.6942263387308404e-07
+      }
+    },
+    {
+      "id": "S",
+      "conditional_dissociation_constants_M": {
+        "e1": 0.009345357468275686,
+        "e2": 9.345357468275686e-06,
+        "e3": 2.69422633873084e-10,
+        "e4": 2.6942263387308404e-07
+      }
+    }
+  ],
+  "calibration": {
+    "macroscopic_first_dissociation_constant_M": 0.004677351412871981,
+    "macroscopic_second_dissociation_constant_M": 2.6915348039269137e-10,
+    "cycle_tolerance_in_absolute_log10_ratio": 1e-09,
+    "macro_tolerance_in_absolute_log10_ratio": 1e-08,
+    "definition": "The macroscopic singly protonated population is the SUM of the two neutral microspecies. Macroscopic constants describe ligand in the absence of host. Accept a card only if both independent routes around the one-proton square agree AND its derived macroscopic constants agree with both calibration values. Do not repair or average an inconsistent card."
+  },
+  "host_model": {
+    "total_ligand_M": 0.001,
+    "total_host_M": 0.0005,
+    "host_charge": 0,
+    "association_constants_per_M": {
+      "g1": 100000,
+      "g4": 1000,
+      "g2": 0,
+      "g3": 0
+    },
+    "stoichiometry": "A neutral host binds at most one ligand. Only g1 and g4 can form distinct 1:1 complexes. For each i, [Host:i]=B_i*[Host_free]*[i_free]. The free ligand protomers obey the accepted card, and exchange remains at equilibrium in the presence of binding. Bound complexes retain the proton inventory and net charge of their bound protomer. Total ligand includes every free and bound ligand; total host includes free and both complexes. There are no other complexes, aggregation, fluorescence yield differences or concentration corrections."
+  },
+  "observations": {
+    "data_origin": "Simulated deterministic interval observations for this bounded model, not extracted experimental glycine/host measurements.",
+    "unknown_shared_pH_interval": [
+      1,
+      12
+    ],
+    "occupied_host_fraction_interval": [
+      0.38,
+      0.4
+    ],
+    "mean_ligand_formal_charge_interval": [
+      -0.225,
+      -0.18
+    ],
+    "occupied_host_fraction_definition": "([Host:g1]+[Host:g4])/Host_total, not bound ligand divided by total ligand.",
+    "mean_ligand_formal_charge_definition": "Sum over ALL free and bound ligand species of formal_charge*concentration, divided by total ligand. Host-only species and background counterions are excluded. Both observations refer to the same physical sample at one common unknown pH."
+  },
+  "complete_set_policy": "For each accepted card, retain ALL pH values in the closed public range that meet BOTH closed observation intervals after solving the coupled equilibrium balances with all concentrations nonnegative. A local best fit, a finite pH grid or independent choices of pH for the two assays do not suffice. Establish complete feasible intervals using monotonicity or full physically filtered boundary roots. Do not use total concentrations as if they were free concentrations or erase the two neutral microstates before applying different binding affinities.",
+  "answer_representation": "state_net_formal_charges maps g1..g4 to their exact integer net charges. cycle_consistent_card_ids reports cards that pass thermodynamic cycle closure, before the macroscopic test. macro_calibration_compatible_card_ids reports the subset that also matches both macroconstants. macroscopic_titration_alone_identifies_neutral_microstate_ratio asks if those compatible cards specify the same free g4/g1 ratio. compatible_pH_intervals maps EVERY macro-compatible card ID to a minimal union of disjoint closed feasible intervals in ascending order, using [] for an empty set. occupied_host_fraction_interval is the sharp closed envelope over all surviving cards and their compatible pH values. bound_g4_to_g1_ratio is the ratio of the two bound complex concentrations over that surviving family; if it is constant report the number. Keep free and bound ratios distinct. Continuous values use absolute plus relative tolerance 1e-7; charges are exact integers.",
+  "scope": "Glycine supplies chemically interpretable structures. Constants/cards, host affinities and observations are controlled benchmark quantities. The numerical macro targets coincide with rounded literature values only as a scale choice; this is not an estimate of true glycine microconstants or a discovery of a real selective host. A wrong card is not evidence that equilibrium thermodynamics fails."
+}

@@ -1,0 +1,22 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "sample_absorbances": {
+    "sample_A": {
+      "excitation": 0.1,
+      "emission": 0.1
+    },
+    "sample_B": {
+      "excitation": 0.8,
+      "emission": 0.6
+    }
+  },
+  "raw_fluorescence_proxy_by_sample": {
+    "sample_A": 79.43282347242815,
+    "sample_B": 29.928934724533196
+  },
+  "model": "Controlled centered right-angle detection geometry with exact prescribed inner-filter relation F_observed=F_intrinsic*10^[-(A_excitation+A_emission)/2]. Each absorbance is independently measured for the same sample/cell. No dynamic/static quenching, changes of detector gain or scattering. The corrected quantity is an intensity proxy, not a quantum yield or concentration-normalized brightness.",
+  "target": "Apply the declared geometry to both samples and compare intrinsic versus observed rank. Do not use excitation absorbance alone or divide by absorptance to create an unrequested quantum-yield estimate."
+}

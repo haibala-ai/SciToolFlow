@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "record_id": "target",
+      "analytical_total_mol_per_litre": 1e-05,
+      "one_to_one_formation_constant_litre_per_mol": 1000000000.0
+    },
+    {
+      "record_id": "background",
+      "analytical_total_mol_per_litre": 0.001,
+      "one_to_one_formation_constant_litre_per_mol": 100000.0
+    },
+    {
+      "record_id": "ligand",
+      "analytical_total_mol_per_litre": 1.1e-05,
+      "unbound_monoprotic_pKa": 6.0
+    },
+    {
+      "record_id": "condition01",
+      "reservoir_fixed_pH": 3.0
+    },
+    {
+      "record_id": "condition02",
+      "reservoir_fixed_pH": 4.0
+    },
+    {
+      "record_id": "condition03",
+      "reservoir_fixed_pH": 5.0
+    },
+    {
+      "record_id": "study",
+      "minimum_target_complexed_fraction": 0.9,
+      "maximum_background_fraction_of_bound_metals": 0.12,
+      "temperature_kelvin": 298.15,
+      "species_model": "Two distinct generic metal ions form only 1:1 ML complexes with the deprotonated free ligand L. Unbound ligand comprises HL and L;only HL<=>H+ +L protonation is included. Fixed-pH supporting reservoirs hold the given pH independently of binding. No hydrolysis,precipitation,mixed complexes or ligand degradation.",
+      "constant_boundary": "These are explicitly illustrative concentration-scale constants for a controlled separation model,not measured constants for an identified real metal/ligand pair. Both beta values refer to free deprotonated L,not to total unbound ligand.",
+      "decision": "Admit conditions meeting BOTH target recovery and background carryover limits. Among admitted conditions choose the highest target complexed fraction;source condition ID breaks an exact tie."
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Concentrationsmol/L;1:1concentration-scaleformationconstantsL/mol;pH/pKadimensionless;recovery/carryoverfractionsdimensionless",
+    "original_observation_claim": false
+  }
+}

@@ -3,7 +3,7 @@
 These adapters are not the INGA prediction algorithm. They accept accessions,
 never sequence inputs, submit no prediction jobs, and return no mutation advice.
 """
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -19,6 +19,10 @@ ROOT = local_root()
 
 
 def annotations(accession, method):
+    if method not in {"all", "architecture", "homology", "interaction"}:
+        raise ValueError("Unsupported GO evidence filter")
+    if not isinstance(accession, str):
+        raise ValueError("uniprot_accession must be a string")
     accession = accession.strip().upper()
     if not re.fullmatch(r"[A-Z0-9]{6}(?:[A-Z0-9]{4})?", accession):
         raise ValueError("Provide a UniProt accession, not a protein sequence")
@@ -41,7 +45,7 @@ def annotations(accession, method):
         properties = {p["key"]:p["value"] for p in reference.get("properties", [])}
         evidence = properties.get("GoEvidenceType", "")
         code, _, origin = evidence.partition(":")
-        matches = ((method == "architecture" and code == "IEA" and origin == "InterPro") or
+        matches = (method == "all" or (method == "architecture" and code == "IEA" and origin == "InterPro") or
                    (method == "homology" and code in {"ISS", "ISO", "ISA", "ISM"}) or
                    (method == "interaction" and code in {"IPI", "HPI"}))
         if matches:
@@ -59,6 +63,21 @@ def annotations(accession, method):
                        "method_filter":method,"annotation_count":len(selected),"artifact":str(artifact),
                        "is_INGA_prediction":False,"sequence_submitted":False,
                        "scope":"Existing evidence-filtered annotations only; empty list is a valid scientific absence"},ensure_ascii=False)
+
+
+def get_human_go_annotations(uniprot_accession: str, evidence_filter: str = "all"):
+    """Retrieve published human UniProt GO annotations, optionally filtering evidence.
+
+    evidence_filter: all, interpro (IEA:InterPro), homology (ISS/ISO/ISA/ISM),
+    interaction (IPI/HPI). This is a record lookup, not INGA prediction,
+    sequence search, new PPI inference or ontology propagation. Only human
+    entries are accepted; absent accessions, nonhuman entries and network or
+    response failures raise. Empty annotation lists are valid negatives.
+    """
+    choices = {"all": "all", "interpro": "architecture", "homology": "homology", "interaction": "interaction"}
+    if evidence_filter not in choices:
+        raise ValueError("evidence_filter must be all, interpro, homology or interaction")
+    return annotations(uniprot_accession, choices[evidence_filter])
 
 
 def architecture_annotations(uniprot_accession: str):

@@ -1,0 +1,14 @@
+{
+  "Bernoulli_parameter_for_numeric_comparison": 0.2,
+  "stopped_record_order": [
+    "01",
+    "1",
+    "00"
+  ],
+  "sampling_rule": "X1,X2are independent Bernoulli(p). Observe X1first. If X1=1,stop immediately with record1and N=1. If X1=0,observe X2then stop with record00or01and N=2. The reported stopped sample mean is(sum observed successes)/N. The only possible stopped records are the three supplied strings;unobserved X2is not imputed when stopping after1.",
+  "estimator_class": "Consider any deterministic estimator g(record)that assigns one finite real value to each of the three possible stopped records. Require E_p[g]=pfor EVERYp in[0,1],not only at the numeric comparison p. No extra randomization or observations are allowed.",
+  "target": "Report expected N,mean and bias of the stopped sample mean,and its mean squared error as an estimator of p,at the supplied p. Determine whether this three-value class contains a unique estimator unbiased for every p;if so report its three record values in source order,otherwise null. Report that estimator variance at the numeric p. These calculations integrate over all possible stopped records,not a fixed-Nbinomial law.",
+  "provenance": {
+    "kind": "Explicit controlled statistical/model fixture with exact specified assumptions."
+  }
+}

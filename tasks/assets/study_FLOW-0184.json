@@ -1,0 +1,102 @@
+{
+  "data": [
+    {
+      "record_id": "calibration",
+      "response_matrix_per_phase_volume": [
+        [
+          1.3333337293128043,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          1.4179786211457293,
+          0.0
+        ]
+      ],
+      "two_theta_windows_deg": [
+        [
+          25.0,
+          35.0
+        ],
+        [
+          40.0,
+          46.0
+        ],
+        [
+          46.0,
+          60.0
+        ]
+      ],
+      "phase_order": [
+        "phase01",
+        "phase02"
+      ]
+    },
+    {
+      "record_id": "sample",
+      "observed_response": [
+        0.5333334917251217,
+        0.6,
+        0.5671914484582917
+      ]
+    },
+    {
+      "record_id": "phase01",
+      "structure_file": "phase_reference_0.cif"
+    },
+    {
+      "record_id": "phase02",
+      "structure_file": "phase_reference_1.cif"
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Dimensionlesscommonresponses;basisperunitphasevolume;CIFangstromanddensityg/cm³",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "Materials Project",
+      "url": "https://api.materialsproject.org/materials/summary/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_fields=material_id%2Cformula_pretty%2Ccomposition%2Cdensity%2Cvolume%2Cnsites%2Cstructure%2Cband_gap%2Cis_metal%2Cis_magnetic%2Cenergy_above_hull%2Cformation_energy_per_atom%2Csymmetry%2Corigins%2Clast_updated&_limit=20",
+      "accessed_at": "2026-10-20T07:58:30.182854+00:00",
+      "raw_sha256": "1aac1aa3378751ebcfd8efca70992ab314b53c38693c4dea87b5102ce585e862",
+      "record_count": 10,
+      "claims": "Authentic fresh API response. Not copied from old benchmark gold. Source units/method semantics need review before task construction.",
+      "credentials_included": false
+    },
+    "record_source_mapping": [
+      {
+        "local_phase_id": "phase01",
+        "upstream_record_identity": "mp-aaaaaaft",
+        "capture": "mp_summary_candidates",
+        "CIF_derivation": "pymatgen serialization of this exact source structure, no geometry modification",
+        "source": {
+          "provider": "Materials Project",
+          "url": "https://api.materialsproject.org/materials/summary/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_fields=material_id%2Cformula_pretty%2Ccomposition%2Cdensity%2Cvolume%2Cnsites%2Cstructure%2Cband_gap%2Cis_metal%2Cis_magnetic%2Cenergy_above_hull%2Cformation_energy_per_atom%2Csymmetry%2Corigins%2Clast_updated&_limit=20",
+          "accessed_at": "2026-10-20T07:58:30.182854+00:00",
+          "raw_sha256": "1aac1aa3378751ebcfd8efca70992ab314b53c38693c4dea87b5102ce585e862",
+          "record_count": 10,
+          "claims": "Authentic fresh API response. Not copied from old benchmark gold. Source units/method semantics need review before task construction.",
+          "credentials_included": false
+        }
+      },
+      {
+        "local_phase_id": "phase02",
+        "upstream_record_identity": "mp-aaaaaaco",
+        "capture": "mp_summary_candidates",
+        "CIF_derivation": "pymatgen serialization of this exact source structure, no geometry modification",
+        "source": {
+          "provider": "Materials Project",
+          "url": "https://api.materialsproject.org/materials/summary/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_fields=material_id%2Cformula_pretty%2Ccomposition%2Cdensity%2Cvolume%2Cnsites%2Cstructure%2Cband_gap%2Cis_metal%2Cis_magnetic%2Cenergy_above_hull%2Cformation_energy_per_atom%2Csymmetry%2Corigins%2Clast_updated&_limit=20",
+          "accessed_at": "2026-10-20T07:58:30.182854+00:00",
+          "raw_sha256": "1aac1aa3378751ebcfd8efca70992ab314b53c38693c4dea87b5102ce585e862",
+          "record_count": 10,
+          "claims": "Authentic fresh API response. Not copied from old benchmark gold. Source units/method semantics need review before task construction.",
+          "credentials_included": false
+        }
+      }
+    ]
+  }
+}

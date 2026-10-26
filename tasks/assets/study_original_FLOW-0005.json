@@ -1,0 +1,121 @@
+{
+  "formula": "Ce2O3",
+  "active_center_element": "Ce",
+  "gas_constant_j_mol_k": 8.31446261815324,
+  "candidate_level_models": [
+    {
+      "id": "model_A",
+      "gap_at_zero_field_k": 4.0,
+      "gap_shift_k_per_t": 1.0,
+      "ground_degeneracy": 1,
+      "excited_degeneracy": 2
+    },
+    {
+      "id": "model_B",
+      "gap_at_zero_field_k": 4.0,
+      "gap_shift_k_per_t": 1.0,
+      "ground_degeneracy": 2,
+      "excited_degeneracy": 4
+    },
+    {
+      "id": "model_C",
+      "gap_at_zero_field_k": 4.0,
+      "gap_shift_k_per_t": 1.0,
+      "ground_degeneracy": 1,
+      "excited_degeneracy": 1
+    },
+    {
+      "id": "model_D",
+      "gap_at_zero_field_k": 8.0,
+      "gap_shift_k_per_t": 0.0,
+      "ground_degeneracy": 1,
+      "excited_degeneracy": 2
+    },
+    {
+      "id": "model_E",
+      "gap_at_zero_field_k": 2.0,
+      "gap_shift_k_per_t": 2.0,
+      "ground_degeneracy": 1,
+      "excited_degeneracy": 3
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs_8",
+      "temperature_k": 6.0,
+      "field_t": 2.0,
+      "specific_heat_j_kg_k": 36.97206988322717
+    },
+    {
+      "observation_id": "obs_1",
+      "temperature_k": 1.5,
+      "field_t": 0.0,
+      "specific_heat_j_kg_k": 41.93083214939571
+    },
+    {
+      "observation_id": "obs_12",
+      "temperature_k": 12.0,
+      "field_t": 2.0,
+      "specific_heat_j_kg_k": 178.93705051239968
+    },
+    {
+      "observation_id": "obs_5",
+      "temperature_k": 4.0,
+      "field_t": 0.0,
+      "specific_heat_j_kg_k": 21.772069883227168
+    },
+    {
+      "observation_id": "obs_10",
+      "temperature_k": 9.0,
+      "field_t": 2.0,
+      "specific_heat_j_kg_k": 81.5281673496
+    },
+    {
+      "observation_id": "obs_3",
+      "temperature_k": 2.5,
+      "field_t": 0.0,
+      "specific_heat_j_kg_k": 31.13780552087069
+    },
+    {
+      "observation_id": "obs_7",
+      "temperature_k": 6.0,
+      "field_t": 0.0,
+      "specific_heat_j_kg_k": 30.228167349599993
+    },
+    {
+      "observation_id": "obs_2",
+      "temperature_k": 1.5,
+      "field_t": 2.0,
+      "specific_heat_j_kg_k": 30.969293659054852
+    },
+    {
+      "observation_id": "obs_11",
+      "temperature_k": 12.0,
+      "field_t": 0.0,
+      "specific_heat_j_kg_k": 177.16270462133008
+    },
+    {
+      "observation_id": "obs_6",
+      "temperature_k": 4.0,
+      "field_t": 2.0,
+      "specific_heat_j_kg_k": 33.719995609887896
+    },
+    {
+      "observation_id": "obs_9",
+      "temperature_k": 9.0,
+      "field_t": 0.0,
+      "specific_heat_j_kg_k": 78.36355488698746
+    },
+    {
+      "observation_id": "obs_4",
+      "temperature_k": 2.5,
+      "field_t": 2.0,
+      "specific_heat_j_kg_k": 42.49496222355167
+    }
+  ],
+  "max_absolute_paired_difference_error_j_kg_k": 1e-06,
+  "measurement_model": "Independent identical centers have a ground manifold at energy0 and an excited manifold at energy k_B*gap(B), with the supplied degeneracies. Gap(B)=gap_at_zero_field_k+gap_shift_k_per_t*B. Canonical equilibrium; exactly one independent center per atom of active_center_element. An arbitrary unknown additive heat-capacity background depends on T but is identical at both fields.",
+  "provenance": {
+    "kind": "Project-authored exact controlled calorimetry study and stipulated independent-center level models. Formula supplies average molar mass and center count only; this is not measured Ce2O3calorimetry, a real magnetic splitting law or a claim about that compound residual entropy."
+  }
+}

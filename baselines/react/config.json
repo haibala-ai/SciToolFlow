@@ -1,8 +1,8 @@
 {
-  "max_steps": 80,
-  "max_discovery_calls": 20,
-  "max_think_steps": 8,
-  "max_consecutive_thinks": 2,
+  "max_steps": null,
+  "max_discovery_calls": null,
+  "max_think_steps": null,
+  "max_consecutive_thinks": null,
   "max_actions": 8,
   "max_protocol_errors": 5,
   "max_failures_per_action": 0,
@@ -10,9 +10,10 @@
   "answer_schema_guard": true,
   "max_output_tokens": 4096,
   "max_input_tokens": 40960,
-  "task_timeout_seconds": 1800,
+  "task_timeout_seconds": 7200,
   "tool_timeout_seconds": 180,
   "tool_names_only_initially": true,
   "max_context_chars": 200000,
-  "protocol_schema_guard": true
+  "protocol_schema_guard": true,
+  "max_model_requests": 400
 }

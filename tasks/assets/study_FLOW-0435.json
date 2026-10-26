@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "raw_tsv": "Ozone\tSolar.R\tWind\tTemp\tMonth\tDay\n41\t190\t7.4\t67\t5\t1\n36\t118\t8\t72\t5\t2\n12\t149\t12.6\t74\t5\t3\n18\t313\t11.5\t62\t5\t4\nNA\tNA\t14.3\t56\t5\t5\n28\tNA\t14.9\t66\t5\t6\n23\t299\t8.6\t65\t5\t7\n19\t99\t13.8\t59\t5\t8\n8\t19\t20.1\t61\t5\t9\nNA\t194\t8.6\t69\t5\t10\n7\tNA\t6.9\t74\t5\t11\n16\t256\t9.7\t69\t5\t12\n11\t290\t9.2\t66\t5\t13\n14\t274\t10.9\t68\t5\t14\n18\t65\t13.2\t58\t5\t15\n14\t334\t11.5\t64\t5\t16\n34\t307\t12\t66\t5\t17\n6\t78\t18.4\t57\t5\t18\n30\t322\t11.5\t68\t5\t19\n11\t44\t9.7\t62\t5\t20\n1\t8\t9.7\t59\t5\t21\n11\t320\t16.6\t73\t5\t22\n4\t25\t9.7\t61\t5\t23\n32\t92\t12\t61\t5\t24\nNA\t66\t16.6\t57\t5\t25\nNA\t266\t14.9\t58\t5\t26\nNA\tNA\t8\t57\t5\t27\n23\t13\t12\t67\t5\t28\n45\t252\t14.9\t81\t5\t29\n115\t223\t5.7\t79\t5\t30\n37\t279\t7.4\t76\t5\t31\nNA\t286\t8.6\t78\t6\t1\nNA\t287\t9.7\t74\t6\t2\nNA\t242\t16.1\t67\t6\t3\nNA\t186\t9.2\t84\t6\t4\nNA\t220\t8.6\t85\t6\t5\nNA\t264\t14.3\t79\t6\t6\n29\t127\t9.7\t82\t6\t7\nNA\t273\t6.9\t87\t6\t8\n71\t291\t13.8\t90\t6\t9\n39\t323\t11.5\t87\t6\t10\nNA\t259\t10.9\t93\t6\t11\nNA\t250\t9.2\t92\t6\t12\n23\t148\t8\t82\t6\t13\nNA\t332\t13.8\t80\t6\t14\nNA\t322\t11.5\t79\t6\t15\n21\t191\t14.9\t77\t6\t16\n37\t284\t20.7\t72\t6\t17\n20\t37\t9.2\t65\t6\t18\n12\t120\t11.5\t73\t6\t19\n13\t137\t10.3\t76\t6\t20\nNA\t150\t6.3\t77\t6\t21\nNA\t59\t1.7\t76\t6\t22\nNA\t91\t4.6\t76\t6\t23\nNA\t250\t6.3\t76\t6\t24\nNA\t135\t8\t75\t6\t25\nNA\t127\t8\t78\t6\t26\nNA\t47\t10.3\t73\t6\t27\nNA\t98\t11.5\t80\t6\t28\nNA\t31\t14.9\t77\t6\t29\nNA\t138\t8\t83\t6\t30\n135\t269\t4.1\t84\t7\t1\n49\t248\t9.2\t85\t7\t2\n32\t236\t9.2\t81\t7\t3\nNA\t101\t10.9\t84\t7\t4\n64\t175\t4.6\t83\t7\t5\n40\t314\t10.9\t83\t7\t6\n77\t276\t5.1\t88\t7\t7\n97\t267\t6.3\t92\t7\t8\n97\t272\t5.7\t92\t7\t9\n85\t175\t7.4\t89\t7\t10\nNA\t139\t8.6\t82\t7\t11\n10\t264\t14.3\t73\t7\t12\n27\t175\t14.9\t81\t7\t13\nNA\t291\t14.9\t91\t7\t14\n7\t48\t14.3\t80\t7\t15\n48\t260\t6.9\t81\t7\t16\n35\t274\t10.3\t82\t7\t17\n61\t285\t6.3\t84\t7\t18\n79\t187\t5.1\t87\t7\t19\n63\t220\t11.5\t85\t7\t20\n16\t7\t6.9\t74\t7\t21\nNA\t258\t9.7\t81\t7\t22\nNA\t295\t11.5\t82\t7\t23\n80\t294\t8.6\t86\t7\t24\n108\t223\t8\t85\t7\t25\n20\t81\t8.6\t82\t7\t26\n52\t82\t12\t86\t7\t27\n82\t213\t7.4\t88\t7\t28\n50\t275\t7.4\t86\t7\t29\n64\t253\t7.4\t83\t7\t30\n59\t254\t9.2\t81\t7\t31\n39\t83\t6.9\t81\t8\t1\n9\t24\t13.8\t81\t8\t2\n16\t77\t7.4\t82\t8\t3\n78\tNA\t6.9\t86\t8\t4\n35\tNA\t7.4\t85\t8\t5\n66\tNA\t4.6\t87\t8\t6\n122\t255\t4\t89\t8\t7\n89\t229\t10.3\t90\t8\t8\n110\t207\t8\t90\t8\t9\nNA\t222\t8.6\t92\t8\t10\nNA\t137\t11.5\t86\t8\t11\n44\t192\t11.5\t86\t8\t12\n28\t273\t11.5\t82\t8\t13\n65\t157\t9.7\t80\t8\t14\nNA\t64\t11.5\t79\t8\t15\n22\t71\t10.3\t77\t8\t16\n59\t51\t6.3\t79\t8\t17\n23\t115\t7.4\t76\t8\t18\n31\t244\t10.9\t78\t8\t19\n44\t190\t10.3\t78\t8\t20\n21\t259\t15.5\t77\t8\t21\n9\t36\t14.3\t72\t8\t22\nNA\t255\t12.6\t75\t8\t23\n45\t212\t9.7\t79\t8\t24\n168\t238\t3.4\t81\t8\t25\n73\t215\t8\t86\t8\t26\nNA\t153\t5.7\t88\t8\t27\n76\t203\t9.7\t97\t8\t28\n118\t225\t2.3\t94\t8\t29\n84\t237\t6.3\t96\t8\t30\n85\t188\t6.3\t94\t8\t31\n96\t167\t6.9\t91\t9\t1\n78\t197\t5.1\t92\t9\t2\n73\t183\t2.8\t93\t9\t3\n91\t189\t4.6\t93\t9\t4\n47\t95\t7.4\t87\t9\t5\n32\t92\t15.5\t84\t9\t6\n20\t252\t10.9\t80\t9\t7\n23\t220\t10.3\t78\t9\t8\n21\t230\t10.9\t75\t9\t9\n24\t259\t9.7\t73\t9\t10\n44\t236\t14.9\t81\t9\t11\n21\t259\t15.5\t76\t9\t12\n28\t238\t6.3\t77\t9\t13\n9\t24\t10.9\t71\t9\t14\n13\t112\t11.5\t71\t9\t15\n46\t237\t6.9\t78\t9\t16\n18\t224\t13.8\t67\t9\t17\n13\t27\t10.3\t76\t9\t18\n24\t238\t10.3\t68\t9\t19\n16\t201\t8\t82\t9\t20\n13\t238\t12.6\t64\t9\t21\n23\t14\t9.2\t71\t9\t22\n36\t139\t10.3\t81\t9\t23\n7\t49\t10.3\t69\t9\t24\n14\t20\t16.6\t63\t9\t25\n30\t193\t6.9\t70\t9\t26\nNA\t145\t13.2\t77\t9\t27\n14\t191\t14.3\t75\t9\t28\n18\t131\t8\t76\t9\t29\n20\t223\t11.5\t68\t9\t30\n",
+      "missing_sentinel": "NA",
+      "association_estimand": "Observed-day monotonic rank association ofOzoneandWind. Include a day exactly when both relevant values exist;Solar.Risnotinthis estimand. Do not impute missing ozone or silentlydelete days for irrelevant missing radiation. Report the descriptive rank coefficient only;no causal or IIDday inference is requested.",
+      "units_and_sites": "Ozone ppb,RooseveltIsland1300\u20131500;Wind mph,LaGuardia0700/1000. Source matched calendar dates,not colocated instruments.",
+      "source_provenance": {
+        "source_url": "https://svn.r-project.org/R/trunk/src/library/datasets/data/airquality.tab",
+        "sha256": "0d9453a2e5196f06fa3b2ede9fcea8ab309ad147f64940dc0f4eb685857ed048",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html",
+        "retrieved_utc_date": "2026-10-20",
+        "source": "Official R datasets SVN source,revision90725 listing",
+        "license": "R distribution GPL>=2; underlying observations cited by individual dataset documentation",
+        "claim_scope": "Historical public observations only; no new scientific observations or causal/representativeness assumption",
+        "converted_json_sha256": "07de6b58fe19cbdd6b26aee13c14c20faffa070533cddb95063e4240f6c54ac2",
+        "rows": 153,
+        "conversion": "Pandas2.2.2 delimiter parsing;literalNA becomes JSONnull;no numeric observation altered.",
+        "converted_observation_sha256": "07de6b58fe19cbdd6b26aee13c14c20faffa070533cddb95063e4240f6c54ac2",
+        "observation_status": "Original historical values; no changed or synthetic observation."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

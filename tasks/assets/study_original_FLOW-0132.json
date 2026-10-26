@@ -1,0 +1,22 @@
+{
+  "state_order": [
+    "A",
+    "B"
+  ],
+  "rates_per_s": {
+    "A_to_B": 1.0,
+    "B_to_A": 9.0,
+    "B_to_absorbed_product": 2.0
+  },
+  "initial_transient_state_probabilities": [
+    1.0,
+    0.0
+  ],
+  "report_time_s": 5.0,
+  "model": "A continuous-time first-order gated model. AandBinterconvert and only Bleaves irreversibly to an absorbing observed product. No reverse product reaction or other loss occurs. The supplied initial transient probability is exactly A. Use column probability vectors;the2x2transient generator includes product loss in the Bdiagonal. State probabilities need not sum to1after product absorption.",
+  "target": "Return the mean first-passage time from Aand from B,the exact completion probability by5sfrom A,and the asymptotic survival decay time1/(smallest positive decay rate). Compare with the pre-equilibrium shortcut that replaces Boccupancy by its A/Binterconversion equilibrium fraction at all times,and report that shortcut mean time and whether it equals the exact Amean. Mean passage time and late-tail decay time are distinct.",
+  "scope": "Conditional finite kinetic-model inference,not an empirical reaction mechanism or synthesis recipe. Astate-relaxation mixing time is not the absorption time requested here.",
+  "provenance": {
+    "kind": "Explicit controlled analytical/kinetic model;no experimental procedure or empirical parameter claim."
+  }
+}

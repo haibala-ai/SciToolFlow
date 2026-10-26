@@ -1,0 +1,17 @@
+{
+  "data": [
+    {
+      "candidate_id": "A",
+      "structure_file": "crystal_A.cif"
+    },
+    {
+      "candidate_id": "B",
+      "structure_file": "crystal_B.cif"
+    },
+    {
+      "candidate_id": "C",
+      "structure_file": "crystal_C.cif"
+    }
+  ],
+  "source_scope": "Two authentic Materials Project structures and controlled alternate periodic representation; not experimental samples. Provider-response provenance retained in design source_data."
+}

@@ -1,0 +1,8 @@
+{
+  "query_entry": "HBA_HUMAN",
+  "minimum_confidence": 0.85,
+  "max_results": 1000,
+  "identity_policy": "Use the dated HIPPIE2.4snapshot. Count actual eligible interaction rows separately from unique partner entry names. A partner is the opposite endpoint from HBA_HUMAN. The two HBAEntrezIDs remain distinct row identities but do not duplicate an opposite partner entry.",
+  "comparison": "Return the unique direct partner entry names,the eligible row count,and row_count/unique_partner_count. Does a shared neighbor prove that the two partners directly interact? Does the confidence score equal a newly measured binding probability?",
+  "scope": "Published direct interaction records only;the local snapshot is dated and confidence is a dataset score. Do not infer transitive edges or new experiments."
+}

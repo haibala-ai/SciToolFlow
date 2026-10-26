@@ -1,0 +1,29 @@
+{
+  "early_records": [
+    {
+      "time_s": 0.0001,
+      "current_A": 5.607994390438371e-07
+    },
+    {
+      "time_s": 0.000225,
+      "current_A": 3.8053295936255813e-07
+    },
+    {
+      "time_s": 0.0004,
+      "current_A": 2.9039971952191856e-07
+    }
+  ],
+  "late_measurement": {
+    "time_s": 10.0,
+    "current_A": 5.859413284800001e-08
+  },
+  "electron_number": 1,
+  "F_C_per_mol": 96485.33212,
+  "bulk_concentration_mol_per_m3": 10.0,
+  "model": "An ideal disk electrode of unknown positive radius a with a dissolved analyte of unknown positive diffusivity D. The same unknown constant background current applies to all observations. In the declared early planar regime I(t)=I_bg+n*F*C*sqrt(pi)*a^2*sqrt(D)/sqrt(t). In the late steady disk regime I=I_bg+4*n*F*C*a*D. No kinetic limitation,ohmic drop,migration or other current is included. Use these equations exactly as the controlled reporting model.",
+  "validity_policy": "After inferring a,D,check the supplied regime policy:max early t*D/a^2<=0.01and late t*D/a^2>=10. These thresholds define this controlled model-consistency screen;passing does not independently validate an actual electrode.",
+  "target": "Fit the early free-intercept line against1/sqrt(t),then use its fitted background and the independent late observation to infer a,D. Return radius in micrometres,diffusivity in m²/s,background in A,early slope in A*sqrt(s),both dimensionless regime quantities and whether both criteria pass. Do not treat mol/m³as mol/Lor omit the disk geometric factors.",
+  "provenance": {
+    "kind": "Explicit controlled analytical/kinetic model;no experimental procedure or empirical parameter claim."
+  }
+}

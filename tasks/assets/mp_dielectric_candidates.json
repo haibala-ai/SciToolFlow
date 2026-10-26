@@ -1,0 +1,772 @@
+{
+  "data": [
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "dadfb421-bf05-4242-8999-33228247fe29",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T19:05:16.243000",
+        "license": null
+      },
+      "nsites": 8,
+      "elements": [
+        "C"
+      ],
+      "nelements": 1,
+      "composition": {
+        "C": 8.0
+      },
+      "composition_reduced": {
+        "C": 1.0
+      },
+      "formula_pretty": "C",
+      "formula_anonymous": "A",
+      "chemsys": "C",
+      "volume": 45.67513100839311,
+      "density": 3.493233390645347,
+      "density_atomic": 5.709391376049139,
+      "symmetry": {
+        "crystal_system": "Cubic",
+        "symbol": "Fd-3m",
+        "hall": "F 4d 2 3 -1d",
+        "number": 227,
+        "point_group": "m-3m",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaaaco",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2023-10-07T22:55:05.369000",
+      "origins": [
+        {
+          "name": "dielectric",
+          "task_id": "aaacmxvr",
+          "last_updated": "2018-12-19T21:43:29.732000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "dielectric",
+      "total": [
+        [
+          5.829713979999976,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          5.829713979999976,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          5.829713979999976
+        ]
+      ],
+      "ionic": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "electronic": [
+        [
+          5.829713979999976,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          5.829713979999976,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          5.829713979999976
+        ]
+      ],
+      "e_total": 5.829713979999976,
+      "e_ionic": 0.0,
+      "e_electronic": 5.829713979999976,
+      "n": 2.414480064113178
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "dadfb421-bf05-4242-8999-33228247fe29",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T19:05:16.353000",
+        "license": null
+      },
+      "nsites": 8,
+      "elements": [
+        "Si"
+      ],
+      "nelements": 1,
+      "composition": {
+        "Si": 8.0
+      },
+      "composition_reduced": {
+        "Si": 1.0
+      },
+      "formula_pretty": "Si",
+      "formula_anonymous": "A",
+      "chemsys": "Si",
+      "volume": 163.55317139465933,
+      "density": 2.2811942867248143,
+      "density_atomic": 20.444146424332416,
+      "symmetry": {
+        "crystal_system": "Cubic",
+        "symbol": "Fd-3m",
+        "hall": "F 4d 2 3 -1d",
+        "number": 227,
+        "point_group": "m-3m",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaaaft",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2023-10-07T21:10:10.420000",
+      "origins": [
+        {
+          "name": "dielectric",
+          "task_id": "aaacmxxl",
+          "last_updated": "2018-12-19T21:45:41.099000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "dielectric",
+      "total": [
+        [
+          13.003383160000025,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          13.003383160000025,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          13.003383160000025
+        ]
+      ],
+      "ionic": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "electronic": [
+        [
+          13.003383160000025,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          13.003383160000025,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          13.003383160000025
+        ]
+      ],
+      "e_total": 13.003383160000025,
+      "e_ionic": 0.0,
+      "e_electronic": 13.003383160000025,
+      "n": 3.6060204048230267
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "dadfb421-bf05-4242-8999-33228247fe29",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T19:05:28.540000",
+        "license": null
+      },
+      "nsites": 10,
+      "elements": [
+        "Al",
+        "O"
+      ],
+      "nelements": 2,
+      "composition": {
+        "Al": 4.0,
+        "O": 6.0
+      },
+      "composition_reduced": {
+        "Al": 2.0,
+        "O": 3.0
+      },
+      "formula_pretty": "Al2O3",
+      "formula_anonymous": "A2B3",
+      "chemsys": "Al-O",
+      "volume": 83.3596922070481,
+      "density": 4.062171532184872,
+      "density_atomic": 8.33596922070481,
+      "symmetry": {
+        "crystal_system": "Trigonal",
+        "symbol": "R-3c",
+        "hall": "-R 3 2\"c",
+        "number": 167,
+        "point_group": "-3m",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaabrz",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2023-10-07T08:13:14.774000",
+      "origins": [
+        {
+          "name": "dielectric",
+          "task_id": "aaacmyem",
+          "last_updated": "2018-12-19T21:54:00.305000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "dielectric",
+      "total": [
+        [
+          9.09247590858134,
+          -1.5527023775607262e-07,
+          3.7086553433325892e-06
+        ],
+        [
+          -1.5527023752722258e-07,
+          9.092487240927056,
+          -9.499140232183123e-07
+        ],
+        [
+          3.7086553431386115e-06,
+          -9.499140232183123e-07,
+          10.933749959016726
+        ]
+      ],
+      "ionic": [
+        [
+          5.860205023714133,
+          -1.0007344934608976e-07,
+          2.6262967945514165e-06
+        ],
+        [
+          -1.0007344924817826e-07,
+          5.860212327540862,
+          -6.122304845312954e-07
+        ],
+        [
+          2.62629679443035e-06,
+          -6.122304845312954e-07,
+          7.7427719272701205
+        ]
+      ],
+      "electronic": [
+        [
+          3.232270884867207,
+          -5.519678840998286e-08,
+          1.082358548781173e-06
+        ],
+        [
+          -5.5196788279044324e-08,
+          3.2322749133861937,
+          -3.3768353868701695e-07
+        ],
+        [
+          1.0823585487082614e-06,
+          -3.3768353868701695e-07,
+          3.1909780317466065
+        ]
+      ],
+      "e_total": 9.706237702841708,
+      "e_ionic": 6.487729759508372,
+      "e_electronic": 3.2185079433333357,
+      "n": 1.7940200509841955
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "dadfb421-bf05-4242-8999-33228247fe29",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T19:05:41.932000",
+        "license": null
+      },
+      "nsites": 4,
+      "elements": [
+        "O",
+        "Zn"
+      ],
+      "nelements": 2,
+      "composition": {
+        "Zn": 2.0,
+        "O": 2.0
+      },
+      "composition_reduced": {
+        "Zn": 1.0,
+        "O": 1.0
+      },
+      "formula_pretty": "ZnO",
+      "formula_anonymous": "AB",
+      "chemsys": "O-Zn",
+      "volume": 49.71871824836267,
+      "density": 5.437864591077574,
+      "density_atomic": 12.429679562090667,
+      "symmetry": {
+        "crystal_system": "Hexagonal",
+        "symbol": "P6_3mc",
+        "hall": "P 6c -2c",
+        "number": 186,
+        "point_group": "6mm",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaadeb",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2023-10-07T08:56:24.109000",
+      "origins": [
+        {
+          "name": "dielectric",
+          "task_id": "aaaclkzt",
+          "last_updated": "2019-03-27T18:58:19.945000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "dielectric",
+      "total": [
+        [
+          10.533545681509114,
+          -4.5762508932792194e-17,
+          -1.1293772630057337e-21
+        ],
+        [
+          -4.5762508932792194e-17,
+          10.533553908532927,
+          -5.646886315028669e-22
+        ],
+        [
+          -1.1293772630057337e-21,
+          -5.646886315028669e-22,
+          11.43879415
+        ]
+      ],
+      "ionic": [
+        [
+          5.138049498533517,
+          1.5589924620910226e-17,
+          -1.1293772630057337e-21
+        ],
+        [
+          1.5589924620910226e-17,
+          5.138053511508526,
+          -5.646886315028669e-22
+        ],
+        [
+          -1.1293772630057337e-21,
+          -5.646886315028669e-22,
+          6.05870727
+        ]
+      ],
+      "electronic": [
+        [
+          5.395496182975598,
+          -6.135243355370242e-17,
+          0.0
+        ],
+        [
+          -6.135243355370242e-17,
+          5.3955003970244,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          5.38008688
+        ]
+      ],
+      "e_total": 10.835297913347347,
+      "e_ionic": 5.444936760014014,
+      "e_electronic": 5.390361153333333,
+      "n": 2.321715131822449
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "dadfb421-bf05-4242-8999-33228247fe29",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T19:05:42.147000",
+        "license": null
+      },
+      "nsites": 8,
+      "elements": [
+        "As",
+        "Ga"
+      ],
+      "nelements": 2,
+      "composition": {
+        "Ga": 4.0,
+        "As": 4.0
+      },
+      "composition_reduced": {
+        "Ga": 1.0,
+        "As": 1.0
+      },
+      "formula_pretty": "GaAs",
+      "formula_anonymous": "AB",
+      "chemsys": "As-Ga",
+      "volume": 190.12752689019135,
+      "density": 5.053197994775937,
+      "density_atomic": 23.76594086127392,
+      "symmetry": {
+        "crystal_system": "Cubic",
+        "symbol": "F-43m",
+        "hall": "F -4 2 3",
+        "number": 216,
+        "point_group": "-43m",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaadtm",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2023-10-08T06:12:30.776000",
+      "origins": [
+        {
+          "name": "dielectric",
+          "task_id": "aaacllkj",
+          "last_updated": "2019-03-27T18:58:37.594000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "dielectric",
+      "total": [
+        [
+          17.03704953666666,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          17.03704953666666,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          17.03704953666666
+        ]
+      ],
+      "ionic": [
+        [
+          2.196668866666663,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.196668866666664,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.1966688666666636
+        ]
+      ],
+      "electronic": [
+        [
+          14.840380669999996,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          14.840380669999996,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          14.840380669999996
+        ]
+      ],
+      "e_total": 17.03704953666666,
+      "e_ionic": 2.1966688666666636,
+      "e_electronic": 14.840380669999996,
+      "n": 3.85232146503897
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "dadfb421-bf05-4242-8999-33228247fe29",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T19:05:42.333000",
+        "license": null
+      },
+      "nsites": 6,
+      "elements": [
+        "O",
+        "Ti"
+      ],
+      "nelements": 2,
+      "composition": {
+        "Ti": 2.0,
+        "O": 4.0
+      },
+      "composition_reduced": {
+        "Ti": 1.0,
+        "O": 2.0
+      },
+      "formula_pretty": "TiO2",
+      "formula_anonymous": "AB2",
+      "chemsys": "O-Ti",
+      "volume": 64.26624935437142,
+      "density": 4.127213973209096,
+      "density_atomic": 10.711041559061904,
+      "symmetry": {
+        "crystal_system": "Tetragonal",
+        "symbol": "P4_2/mnm",
+        "hall": "-P 4n 2n",
+        "number": 136,
+        "point_group": "4/mmm",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaadyf",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2023-10-07T20:29:48.636000",
+      "origins": [
+        {
+          "name": "dielectric",
+          "task_id": "aaacmysb",
+          "last_updated": "2018-12-19T22:10:39.875000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "dielectric",
+      "total": [
+        [
+          9.197478619999996,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          9.597858715000003,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          9.597858715000003
+        ]
+      ],
+      "ionic": [
+        [
+          6.419999999999997e-06,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.047888355,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.047888355
+        ]
+      ],
+      "electronic": [
+        [
+          9.197472199999996,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          7.549970360000002,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          7.549970360000002
+        ]
+      ],
+      "e_total": 9.464398683333334,
+      "e_ionic": 1.3652610433333334,
+      "e_electronic": 8.09913764,
+      "n": 2.845898388909906
+    },
+    {
+      "builder_meta": {
+        "emmet_version": "0.87.0rc6",
+        "pymatgen_version": "2026.5.18",
+        "run_id": "dadfb421-bf05-4242-8999-33228247fe29",
+        "batch_id": null,
+        "database_version": "2026.09.28",
+        "build_date": "2026-05-31T19:05:42.234000",
+        "license": null
+      },
+      "nsites": 4,
+      "elements": [
+        "C",
+        "Si"
+      ],
+      "nelements": 2,
+      "composition": {
+        "Si": 2.0,
+        "C": 2.0
+      },
+      "composition_reduced": {
+        "Si": 1.0,
+        "C": 1.0
+      },
+      "formula_pretty": "SiC",
+      "formula_anonymous": "AB",
+      "chemsys": "C-Si",
+      "volume": 42.00551753028701,
+      "density": 3.170121952061337,
+      "density_atomic": 10.501379382571752,
+      "symmetry": {
+        "crystal_system": "Hexagonal",
+        "symbol": "P6_3mc",
+        "hall": "P 6c -2c",
+        "number": 186,
+        "point_group": "6mm",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.7.0"
+      },
+      "material_id": "mp-aaaaakoq",
+      "deprecated": false,
+      "deprecation_reasons": null,
+      "last_updated": "2023-10-07T22:55:06.707000",
+      "origins": [
+        {
+          "name": "dielectric",
+          "task_id": "aaaclsig",
+          "last_updated": "2019-03-27T18:16:15.236000"
+        }
+      ],
+      "warnings": [],
+      "property_name": "dielectric",
+      "total": [
+        [
+          10.173183401064477,
+          1.4387207247557487e-16,
+          5.646886315028669e-22
+        ],
+        [
+          1.4387207247557487e-16,
+          10.173179778926105,
+          -2.748417295100611e-38
+        ],
+        [
+          5.646886315028669e-22,
+          -2.748417295100611e-38,
+          11.320142820000003
+        ]
+      ],
+      "ionic": [
+        [
+          3.218750713009658,
+          4.5520693808241326e-17,
+          5.646886315028669e-22
+        ],
+        [
+          4.5520693808241326e-17,
+          3.2187495669809256,
+          -2.748417295100611e-38
+        ],
+        [
+          5.646886315028669e-22,
+          -2.748417295100611e-38,
+          4.0007706700000005
+        ]
+      ],
+      "electronic": [
+        [
+          6.95443268805482,
+          9.835137866733355e-17,
+          0.0
+        ],
+        [
+          9.835137866733355e-17,
+          6.95443021194518,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          7.319372150000002
+        ]
+      ],
+      "e_total": 10.555501999996862,
+      "e_ionic": 3.479423649996862,
+      "e_electronic": 7.07607835,
+      "n": 2.6600899138938896
+    }
+  ],
+  "meta": {
+    "api_version": "0.88.0rc4",
+    "time_stamp": "2026-10-20T08:07:37.131611+00:00",
+    "total_doc": 7,
+    "facet": null,
+    "max_limit": 1000,
+    "default_fields": [
+      "material_id",
+      "last_updated"
+    ]
+  }
+}

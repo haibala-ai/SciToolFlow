@@ -1,0 +1,27 @@
+{
+  "sequence": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG",
+  "candidate_windows": [
+    {
+      "id": "N_edge",
+      "start": 1,
+      "end": 9
+    },
+    {
+      "id": "early_interior",
+      "start": 5,
+      "end": 13
+    },
+    {
+      "id": "middle_interior",
+      "start": 35,
+      "end": 43
+    },
+    {
+      "id": "C_edge",
+      "start": 68,
+      "end": 76
+    }
+  ],
+  "policy": "Coordinates are one-based inclusive. A window is eligible only when every residue has an actual returned provider score. Do not interpolate,zero-fill or shorten unsupported windows. Among eligible windows minimize the arithmetic mean score,retaining ties within1e-10.",
+  "scope": "The provider does not disclose its score scale/model. This is support-aware aggregation of that profile,not a calibrated hydrophobicity,solubility or functional prediction."
+}

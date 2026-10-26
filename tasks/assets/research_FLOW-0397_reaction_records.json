@@ -1,0 +1,75 @@
+{
+  "origin": "Own ideal open-quantum reaction-record model with two orthogonal reactant states|S>,|T> and one absorbing product state|P>. These are abstract labels, not molecular structures or an experimentally established radical-pair mechanism. The model tests conditional versus unconditional reaction kinetics, environment records and singular metastability; it is not a synthesis or intervention task. Set hbar=1 and use consistent dimensionless time units.",
+  "Hamiltonian_and_initial_state": {
+    "H_in_S_T_basis": [
+      [
+        "delta/2",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "-delta/2"
+      ]
+    ],
+    "initial_reactant_density": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "initial_product_probability": 0,
+    "reaction_scale_k": 0.6
+  },
+  "environment_model": "The environment-traced full density has no product-reactant coherences. On the reactant subspace define positive Gram matrix K=k[[1,mu],[mu,1]],0<=mu<=1. Reaction jumps may be chosen from an orthogonal spectral factorization ofK into states ending atP; distinct jump indices represent orthogonal unobserved environment records even if the visible final product is the same. The trace-decreasing reactant density obeys rho_dot=-i[H,rho]-(K rho+rho K)/2, and p_dot=Tr(K rho). Product is absorbing with no reverse channel. Derive an explicit Lindblad jump realization and determine precisely why identical visible product labels alone do not fixmu. Preserve unnormalizedrho in unconditional yields. The scalarp is an accumulated probability, whereasrho/Tr(rho) is a separately conditioned state.",
+  "real_generator_and_registered_checks": "Derive the complete real5state generator for[Re rho_SS,Re rho_TT,Re rho_ST,Im rho_ST,p], where rho_ST=rho[0,1]. Use actual registered SymmetricEigenDecomposition ofK for each panel case, retaining its full eigensystem and interpreting any degenerate basis without assigning physical meaning to arbitrary eigenvector signs. Verify positivity and total trace conservation from the jump model. Use actual registered MatrixExponential of the full5state generator for every panel/time below and actual registered MatrixMultiply of each returned propagator with the actual initial state. Stacked block calculations are allowed within tool limits. Retain all real coherence signs and product accumulation, not just survival or real intensities. Reconstruct conditional reactant states and verify physical positivity without clamping a negative eigenvalue tohide an error.",
+  "finite_panel": {
+    "cases_mu_delta": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.2
+      ]
+    ],
+    "times": [
+      0.5,
+      2.0,
+      10.0
+    ],
+    "order": "Cases in supplied order, then times in supplied order. State order isSS,TT,ReST,ImST,p."
+  },
+  "complete_spectrum": "Derive the reactant4state characteristic polynomial for arbitrarymu,delta and retain its full descending coefficients. For every finite panel case, use actual registered PolynomialRoots of the COMPLETE reactant characteristic polynomial and keep every real or complex root with multiplicity. Distinguish its stationary dark root, when present, from the absorbing product zero mode of the full5state generator. Do not discard coherences and replace the model with a classical two-population chain. Prove the eventual product yield for mu0, for mu1 atdelta0 and for mu1 at EVERY fixeddelta!=0.",
+  "singular_limits": "Atmu1 analyze the unreactive subspace and the exactdelta0 evolution, then derive the leading small-nonzero-delta slow POPULATION decay rate with its coefficient, including why it is twice the appropriate amplitude decay rate. Prove the ordered limits of product yield(t->infinity,delta->0) and their reversal. Resolve the joint long-time scaling t=u/delta\u00b2 for fixedu>0. Extend to mu=1-c*delta\u00b2 with fixedc>=0, deriving the complete leading scaled survival law and its initial bright-state boundary layer. Report the c0andc2 survival limits atu1. Also compute actual finite survival and product probability fordelta0.1,0.05,0.025 withc0,2 in that order andt=1/delta\u00b2. For long times where a direct MatrixExponential argument violates its norm limit, use an actual registered exponential at a valid subdivided time followed by a justified repeated-semigroup calculation with numerical refinement/identity checks; no unexecuted asymptotic value may replace the finite-time calculation.",
+  "waiting_time": "For mu1 anddelta0.2,-0.2,0.4, compute the unconditional mean absorption time, retaining actual registered SolveLinearSystem of the complete stable reactant generator integrated over time. Derive the exact expression as a function of nonzero delta and explain any sign dependence from the stated coherent initial state. Determine the leading delta\u00b2*mean limit and distinguish the infinite unconditional mean at the exact dark point from a finite mean conditioned on eventual absorption. A survival plateau is not a normalized waiting-time density.",
+  "interpretation_proposals": {
+    "A": "Orthogonal environment records can remove interference between reactions with the same visible final product.",
+    "B": "One visible product necessarily means a single coherent reaction jump.",
+    "C": "An arbitrarily weak dark-bright mixing can change the eventual yield while leaving a long metastable plateau.",
+    "D": "A population leakage exponent equals the corresponding amplitude exponent without a factor change.",
+    "E": "Ordered infinite-time and zero-mixing limits need not commute.",
+    "F": "Renormalizing the reactant density after every step preserves the original accumulated reaction probability.",
+    "G": "A joint imperfection/mixing scale can compete at leading order even though both vanish.",
+    "H": "A conditional reactant state determines the unconditional survival mass without its trace."
+  },
+  "reporting": "Numerical absolute tolerance1e-7; exact predicates and limit statements exact. Gram eigenvalues sorted ascending; polynomial coefficients descending with leading1. All finite5state rows retain coherences in declared order; only diagonal populations/product are probabilities, and complete[SS,TT,p]sum1. The full5state vector is not a probability simplex. For the scaling panel, rows run delta0.1 withc0,2, then0.05 withc0,2, then0.025 withc0,2, each[survival,p]. Retain jump/trace/positivity proof, full roots and actual propagator/state handoffs, slow-mode perturbation and all ordered/joint-limit reasoning in the trajectory.",
+  "primary_context": [
+    {
+      "authors": "G.Lindblad",
+      "year": 1976,
+      "title": "On the generators of quantum dynamical semigroups",
+      "doi": "10.1007/BF01608499",
+      "url": "https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-48/issue-2/On-the-generators-of-quantum-dynamical-semigroups/cmp/1103899849.full",
+      "role": "Primary general completely positive semigroup formalism; the reactant-record Gram matrix, finite panel and asymptotic questions here are own constructed inputs, not data or a model claimed to be established by this paper."
+    }
+  ]
+}

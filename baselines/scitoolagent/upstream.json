@@ -25,7 +25,7 @@
     "Use current standalone catalogue, graph and text-embedding-3-large index.",
     "Batch/cache query and contextual embeddings; bound graph exploration.",
     "Replace text Plan Chain/Input/FinalAnswer parsing with shared typed JSON protocol.",
-    "Use same model/client, public task inputs, formatting guide, scientific budgets and scorer as ReAct.",
+    "Use same model/client, public task inputs, formatting guide, task-wide resource policy and scorer as ReAct.",
     "Replace infinite execution retry with bounded role sessions and at most three plan rounds.",
     "Count all role generations; count automatic per-tool contract reads as discovery.",
     "Remove the additional baseline-only safety_gate callback; use the same tool dispatcher and its validations as ReAct. Legacy graph check annotations remain historical metadata and are excluded from retrieved candidate triples.",

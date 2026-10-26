@@ -1,0 +1,96 @@
+{
+  "data": [
+    {
+      "record_id": "state01",
+      "angular_frequency_rad_per_second": [
+        25.0,
+        50.0,
+        100.0,
+        200.0,
+        400.0,
+        800.0,
+        1600.0,
+        3200.0,
+        6400.0
+      ],
+      "real_impedance_ohm": [
+        249.9157434857232,
+        249.66438781852082,
+        248.679706601467,
+        245.045871559633,
+        234.11764705882354,
+        214.59016393442624,
+        198.87573964497042,
+        192.49584026622296,
+        190.64405324173464
+      ],
+      "imaginary_impedance_ohm": [
+        -2.24684038071462,
+        -4.474829086389062,
+        -8.80195599022005,
+        -16.513761467889907,
+        -26.47058823529412,
+        -29.508196721311474,
+        -21.301775147928996,
+        -11.980033277870216,
+        -6.182911120652641
+      ],
+      "source_circuit_role": "series bulk resistor plus one parallel interfacial resistor-capacitor element;no diffusion tail or overlapping second arc"
+    },
+    {
+      "record_id": "state02",
+      "angular_frequency_rad_per_second": [
+        25.0,
+        50.0,
+        100.0,
+        200.0,
+        400.0,
+        800.0,
+        1600.0,
+        3200.0,
+        6400.0
+      ],
+      "real_impedance_ohm": [
+        348.41584158415844,
+        343.8461538461538,
+        327.9310344827586,
+        287.5609756097561,
+        234.9438202247191,
+        204.23487544483984,
+        193.81315538608197,
+        190.97063819461295,
+        190.2437686635383
+      ],
+      "imaginary_impedance_ohm": [
+        -15.841584158415841,
+        -30.769230769230766,
+        -55.172413793103445,
+        -78.04878048780488,
+        -71.91011235955055,
+        -45.55160142348754,
+        -24.404194470924686,
+        -12.424168891045861,
+        -6.240477786580533
+      ],
+      "source_circuit_role": "series bulk resistor plus one parallel interfacial resistor-capacitor element;no diffusion tail or overlapping second arc"
+    },
+    {
+      "record_id": "study",
+      "initial_impedance_state_id": "state01",
+      "steady_impedance_state_id": "state02",
+      "applied_bias_millivolt": 10.0,
+      "initial_current_microampere": 40.0,
+      "steady_current_microampere": 12.0,
+      "reported_current_fraction_definition": "Isteady*(DeltaV-Iinitial*Rinterface_initial)/(Iinitial*(DeltaV-Isteady*Rinterface_steady))",
+      "resistance_convention": "Rinterface is the full semicircle diameter,excluding the high-frequency series/bulk intercept. Both interface values refer to the same full symmetric-cell convention,not a per-electrode half.",
+      "representation": "Exact controlled single-ideal-RC arcs with passive negative imaginary impedance. Finite frequency endpoints are not zero/infinite-frequency intercepts.",
+      "claim_boundary": "The requested operational Bruce-Vincent-style current fraction is not identified with a universal thermodynamic transference number for concentrated or associated electrolytes."
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Impedanceohm;angularfrequencyrad/s;biasmV;currentmicroampere;correctedandnaivecurrentfractionsdimensionless",
+    "original_observation_claim": false
+  }
+}

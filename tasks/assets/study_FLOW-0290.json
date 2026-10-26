@@ -1,0 +1,161 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "annotation_records": [
+        {
+          "annotation_id": "SGD-GAF-line-33",
+          "database": "SGD",
+          "gene_id": "S000000001",
+          "symbol": "TFC3",
+          "relation": "contributes_to",
+          "go_id": "GO:0001002",
+          "reference": "PMID:2404611",
+          "evidence_code": "IDA",
+          "with_from": "",
+          "aspect": "F",
+          "annotation_date": "20130807",
+          "assigned_by": "SGD",
+          "extension": "",
+          "gene_product_form": "SGD:S000000001"
+        },
+        {
+          "annotation_id": "SGD-GAF-line-34",
+          "database": "SGD",
+          "gene_id": "S000000001",
+          "symbol": "TFC3",
+          "relation": "contributes_to",
+          "go_id": "GO:0001002",
+          "reference": "PMID:2649882",
+          "evidence_code": "IDA",
+          "with_from": "",
+          "aspect": "F",
+          "annotation_date": "20130807",
+          "assigned_by": "SGD",
+          "extension": "",
+          "gene_product_form": "SGD:S000000001"
+        },
+        {
+          "annotation_id": "SGD-GAF-line-37",
+          "database": "SGD",
+          "gene_id": "S000000001",
+          "symbol": "TFC3",
+          "relation": "enables",
+          "go_id": "GO:0003677",
+          "reference": "GO_REF:0000002",
+          "evidence_code": "IEA",
+          "with_from": "InterPro:IPR044210",
+          "aspect": "F",
+          "annotation_date": "20260428",
+          "assigned_by": "InterPro",
+          "extension": "",
+          "gene_product_form": "SGD:S000000001"
+        },
+        {
+          "annotation_id": "SGD-GAF-line-63",
+          "database": "SGD",
+          "gene_id": "S000000002",
+          "symbol": "VPS8",
+          "relation": "enables",
+          "go_id": "GO:0051020",
+          "reference": "PMID:19828734",
+          "evidence_code": "IDA",
+          "with_from": "",
+          "aspect": "F",
+          "annotation_date": "20130807",
+          "assigned_by": "SGD",
+          "extension": "",
+          "gene_product_form": "SGD:S000000002"
+        },
+        {
+          "annotation_id": "SGD-GAF-line-64",
+          "database": "SGD",
+          "gene_id": "S000000002",
+          "symbol": "VPS8",
+          "relation": "enables",
+          "go_id": "GO:0051020",
+          "reference": "PMID:19828734",
+          "evidence_code": "IPI",
+          "with_from": "SGD:S000005615",
+          "aspect": "F",
+          "annotation_date": "20130807",
+          "assigned_by": "SGD",
+          "extension": "has_input(SGD:S000005615)",
+          "gene_product_form": "SGD:S000000002"
+        },
+        {
+          "annotation_id": "SGD-GAF-line-11013",
+          "database": "SGD",
+          "gene_id": "S000000605",
+          "symbol": "PGK1",
+          "relation": "NOT|enables",
+          "go_id": "GO:0047134",
+          "reference": "PMID:11130727",
+          "evidence_code": "IDA",
+          "with_from": "",
+          "aspect": "F",
+          "annotation_date": "20160603",
+          "assigned_by": "CAFA",
+          "extension": "",
+          "gene_product_form": "SGD:S000000605"
+        },
+        {
+          "annotation_id": "SGD-GAF-line-60226",
+          "database": "SGD",
+          "gene_id": "S000003424",
+          "symbol": "TDH3",
+          "relation": "enables",
+          "go_id": "GO:0003729",
+          "reference": "PMID:18959479",
+          "evidence_code": "IDA",
+          "with_from": "",
+          "aspect": "F",
+          "annotation_date": "20200922",
+          "assigned_by": "SGD",
+          "extension": "",
+          "gene_product_form": "SGD:S000003424"
+        },
+        {
+          "annotation_id": "SGD-GAF-line-60227",
+          "database": "SGD",
+          "gene_id": "S000003424",
+          "symbol": "TDH3",
+          "relation": "enables",
+          "go_id": "GO:0003729",
+          "reference": "PMID:37792491",
+          "evidence_code": "IDA",
+          "with_from": "",
+          "aspect": "F",
+          "annotation_date": "20231010",
+          "assigned_by": "SGD",
+          "extension": "has_input(SGD:S000001665)",
+          "gene_product_form": "SGD:S000003424"
+        }
+      ],
+      "claim_gene_id": "S000003424",
+      "claim_go_id": "GO:0003729",
+      "claim_relation": "enables",
+      "claim_extension": "has_input(SGD:S000001665)",
+      "minimum_independent_direct_assay_references": 2,
+      "interpretation_policy": "An eligible direct support row must match exact gene,GO ID,positive relation,enables scope and required extension, with evidence IDA. A broad claim requires empty extension; a specific claim requires the exact extension. Count distinct reference fields, not duplicated rows. contributes_to does not establish individual enables activity; NOT|enables is explicit negative; IEA/IPI are not direct-assay IDA. Annotation absence is not biological absence.",
+      "data_provenance": {
+        "source_url": "https://current.geneontology.org/annotations/sgd.gaf.gz",
+        "raw_source_sha256": "f9c603d5fc358d7a2fa3dc6cd8d354d0723a13e1dfa92e608091d11943d4559e",
+        "gaf_header_generated": "2026-05-21T09:00",
+        "source_scope": "Eight unchanged annotation rows for five harmless annotation-curation claims from Saccharomyces cerevisiae; annotation_id is a local raw-file line identity, not a new official accession.",
+        "license": "GO Consortium and contributors,CC BY4.0;provided AS-IS without warranty",
+        "license_url": "https://geneontology.org/docs/go-citation-policy/",
+        "format_url": "https://geneontology.org/docs/go-annotation-file-gaf-format-2.2/",
+        "citations": [
+          "Ashburner etal.2000,doi:10.1038/75556",
+          "Gene Ontology Consortium,knowledgebase2026,doi:10.1093/nar/gkaf1292"
+        ],
+        "modifications": "No annotation values changed; only eight-row subset extraction and local line-ID fields."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

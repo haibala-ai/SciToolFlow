@@ -1,6 +1,6 @@
 """Chroma's authorized weight download, with bounded requests and private credentials."""
 
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import hashlib
 import json
 from pathlib import Path

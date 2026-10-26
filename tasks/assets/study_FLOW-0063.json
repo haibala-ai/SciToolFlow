@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "record_id": "generator",
+      "rate_matrix_per_second": [
+        [
+          -0.4,
+          0.1,
+          0.0
+        ],
+        [
+          0.4,
+          -0.3,
+          0.3
+        ],
+        [
+          0.0,
+          0.2,
+          -0.3
+        ]
+      ],
+      "species_order": [
+        "A",
+        "B",
+        "C"
+      ],
+      "initial_species_indices": [
+        0,
+        2
+      ],
+      "candidate_wait_times_second": [
+        1.0,
+        4.0,
+        12.0,
+        24.0
+      ],
+      "maximum_total_variation_distance": 0.02
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "K persecond,time second,probabilityfractions,totalvariationdimensionless",
+    "original_observation_claim": false
+  }
+}

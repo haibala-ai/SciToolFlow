@@ -1,0 +1,98 @@
+{
+  "data_origin": "Controlled three-conformer kinetic model, with synthetic exact transition-probability constraints. The matrices are high-precision theoretical values serialized to float64, not finite-frequency counts or a claim of experimentally attainable precision. No real conformer identity, measured rate or chemical driving mechanism is asserted.",
+  "physical_model": "An observed molecule switches among three labeled conformational states C0,C1,C2 at fixed external conditions. Its coarse observed dynamics are exactly a homogeneous continuous-time Markov chain in the stipulated circulant family. Clockwise steps C0->C1->C2->C0 share rate k_plus>=0; reverse steps share rate k_minus>=0, in s^-1. Row probability vectors evolve p(t)=p(0) exp(t Q), where Q=[[-k_plus-k_minus,k_plus,k_minus],[k_minus,-k_plus-k_minus,k_plus],[k_plus,k_minus,-k_plus-k_minus]]. No other generator family is being inferred. State labels and their clockwise orientation are fixed by the detector, not freely relabeled. The external drive may break detailed balance.",
+  "constraints": [
+    {
+      "observation_id": "one_second",
+      "lag_seconds": 1.0,
+      "transition_matrix": [
+        [
+          0.33333688882638046,
+          0.33333331701626,
+          0.3333297941573595
+        ],
+        [
+          0.3333297941573595,
+          0.33333688882638046,
+          0.33333331701626
+        ],
+        [
+          0.33333331701626,
+          0.3333297941573595,
+          0.33333688882638046
+        ]
+      ]
+    },
+    {
+      "observation_id": "half_second",
+      "lag_seconds": 0.5,
+      "transition_matrix": [
+        [
+          0.3317362907941383,
+          0.333764210576128,
+          0.3344994986297337
+        ],
+        [
+          0.3344994986297337,
+          0.3317362907941383,
+          0.333764210576128
+        ],
+        [
+          0.333764210576128,
+          0.3344994986297337,
+          0.3317362907941383
+        ]
+      ]
+    }
+  ],
+  "constraint_semantics": "Treat the supplied decimal matrices as numerical serializations of exact compatible model constraints, with maximum-entry forward residual tolerance1e-12 for verifying matrix exponentials. This tolerance accommodates arithmetic, not a probabilistic error model or a request for continuous confidence regions. Report the isolated logarithm-branch rate solutions of the underlying model to1e-5. Enumerate EVERY real circulant generator with nonnegative rates compatible with the one-second matrix, then determine which of those also match the half-second matrix. A principal matrix logarithm alone does not establish uniqueness. Establish a finite complete branch bound from nonnegative rates rather than searching an arbitrary integer window.",
+  "irreversibility": "For each compatible generator use its stationary distribution and report the directed stationary current on C0->C1 in s^-1, dimensionless oriented cycle affinity, and OBSERVED three-state Markov entropy-production rate in k_B/s. Use natural logarithms. All solutions in this dataset have strictly positive forward and reverse rates; do not insert infinities. Entropy-production rate uses the full three unordered-edge sum, not one edge alone. Distinguish this observable Markov quantity from total microscopic chemical heat or entropy production: hidden channels/cycles and energetic stoichiometry are not specified. A uniform stationary distribution alone does not establish detailed balance.",
+  "prospective_query": {
+    "observable": "Signed conditional transition contrast C(t)=P(C1 at t|C0 at0)-P(C2 at t|C0 at0). State labels and preparation are unchanged.",
+    "candidate_queries": [
+      {
+        "query_id": "early",
+        "lag_seconds": 0.2,
+        "resource_cost": 8
+      },
+      {
+        "query_id": "quarter",
+        "lag_seconds": 0.25,
+        "resource_cost": 3
+      },
+      {
+        "query_id": "half",
+        "lag_seconds": 0.5,
+        "resource_cost": 1
+      },
+      {
+        "query_id": "three_quarter",
+        "lag_seconds": 0.75,
+        "resource_cost": 2
+      },
+      {
+        "query_id": "one",
+        "lag_seconds": 1.0,
+        "resource_cost": 1
+      }
+    ],
+    "noise_model": "The single scalar observed contrast at the selected lag has an unknown additive error in the closed interval[-rho,rho], rho=0.0002. No Gaussian or independence assumption is granted. Predictions from the remaining half-second-compatible rate models are fixed model means. Guaranteed single-query discrimination means their closed noise intervals are pairwise disjoint, so strict separation>2*rho is necessary and sufficient.",
+    "selection_rule": "For each query report the minimum absolute contrast separation among all remaining distinct rate models. Select the LEAST resource-cost query guaranteeing discrimination of every remaining model. Break cost ties by query_id lexicographic order. Return null if none. Also report the SUPREMUM error radius allowing guaranteed discrimination for the selected query; equality at that supremum is not guaranteed because closed intervals touch."
+  },
+  "interpretation_proposals": {
+    "A": "Within the stipulated circulant model, the supplied two lags exclude detailed balance.",
+    "B": "The two supplied lags identify the sign of the stationary clockwise current.",
+    "C": "A valid principal logarithm of the one-second transition matrix must be the unique physical generator.",
+    "D": "The observed Markov entropy production of these coarse states equals total microscopic chemical dissipation, even when hidden channels and chemical affinities are unspecified.",
+    "E": "At error radius exactly half the selected predicted contrast separation, the closed noise intervals guarantee unique discrimination.",
+    "F": "Even if conformer occupancies are uniform at stationarity, nonzero stationary cycle current can occur in this model."
+  },
+  "reporting": "Return one_second_generators sorted by increasing d=k_plus-k_minus, each with branch_index, k_plus, k_minus, stationary_edge_current, cycle_affinity and observed_entropy_production_rate; use the convention branch_index=0 for the principal phase of the one-second complex Fourier mode lambda=P00+omega*P01+omega^2*P02 with omega=exp(2*pi*i/3). Return half_second_compatible_branch_indices; observed_entropy_production_interval_after_two_lags as[min,max]; query_min_contrast_separation keyed by query_id; guaranteed_query_ids; selected_query_id; selected_query_error_radius_supremum; and valid_interpretation_proposal_ids. IDs, branch indices and sets exact, rates/currents/affinities/entropy values absolute1e-5 plus relative1e-6, contrast and radius absolute1e-7 plus relative1e-7. The interval is the sharp numerical envelope over the finite compatible model set, not a continuum of physically compatible entropy values.",
+  "methodological_source": {
+    "title": "Embedding of Markov matrices for d<=4",
+    "year": 2024,
+    "doi": "10.1007/s00285-024-02112-w",
+    "url": "https://link.springer.com/article/10.1007/s00285-024-02112-w",
+    "role": "Research motivation for nonunique continuous-time generators. No paper numerical data, figures or prose reproduced; all task matrices are constructed separately."
+  }
+}

@@ -14,8 +14,8 @@ import os
 from pathlib import Path
 import time
 
-from scitoolflow.paths import project_root, load_environment
-from scitoolflow.io import atomic_json
+from src.utils.paths import project_root, load_environment
+from src.utils.io import atomic_json
 
 
 class RetrievalError(RuntimeError):
@@ -191,13 +191,10 @@ class GraphRetriever:
             allowed = tool_allowed
         self.vectors = {}
         self.texts = {}
+        indexed_names = set(catalog.indexed_tools("embedding"))
         for text, vec in index["embedding_dict"].items():
             name, relation, _ = ast.literal_eval(text)
-            if (
-                name in catalog.tools
-                and catalog.tools[name]["kind"] == "scientific"
-                and allowed(name)
-            ):
+            if name in catalog.tools and name in indexed_names and allowed(name):
                 self.vectors[name] = unit(vec, identity["dimension"])
                 self.texts[name] = text
         if not self.vectors:

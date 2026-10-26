@@ -1,0 +1,88 @@
+{
+  "origin": "Own reversible finite-state polymorph-conversion model. A and B are source/target polymorph basins and I1,I2,I3 are intervening structural basins. All states are resolved Markov states, all numbers are exact model specifications, and no measured material or unproved timescale separation is claimed. The research question is how committor-based pathway diagnostics and equilibrium uncertainty affect kinetic control selection.",
+  "state_order": [
+    "A",
+    "I1",
+    "I2",
+    "I3",
+    "B"
+  ],
+  "thermodynamic_uncertainty": {
+    "pi_lambda0": [
+      0.25,
+      0.0625,
+      0.125,
+      0.0625,
+      0.5
+    ],
+    "pi_lambda1": [
+      0.25,
+      0.03125,
+      0.15625,
+      0.0625,
+      0.5
+    ],
+    "family": "For every lambda in the CLOSED interval[0,1], pi(lambda)=(1-lambda)*pi_lambda0+lambda*pi_lambda1. These are normalized equilibrium probabilities, not residence times or state enthalpies. At baseline lambda0 define dimensionless basin free energies F_i=-log(pi_i), with an arbitrary common additive constant."
+  },
+  "control_and_dynamics": {
+    "control": "x is a continuous kinetic control in the CLOSED interval[1,5]. It redistributes a fixed total conductance6 between A-I1 and I1-B; it does not change pi at fixed lambda.",
+    "undirected_conductance_edges": [
+      [
+        "A",
+        "I1",
+        "x"
+      ],
+      [
+        "I1",
+        "B",
+        "6-x"
+      ],
+      [
+        "A",
+        "I2",
+        1
+      ],
+      [
+        "I2",
+        "I3",
+        3
+      ],
+      [
+        "I3",
+        "B",
+        2
+      ],
+      [
+        "I1",
+        "I2",
+        1
+      ]
+    ],
+    "all_other_edges": "zero; no self-edges",
+    "units": "Conductances c_ij have units inverse time because pi is dimensionless. Rates Q_ij=c_ij/pi_i for i!=j and Q_ii=-sum_{j!=i}Q_ij. The row-vector probability convention is p(t)=p(0)exp(tQ). Q is a continuous-time generator, not a discrete transition matrix. Detailed balance is part of the specified reversible model."
+  },
+  "scientific_definitions": "The forward committor is q_i=P_i(hitBbeforeA), q_A=0,q_B=1. The backward committor is1-q for this equilibrium reversible model. Off-diagonal gross reactive flux is f_ij=pi_i*(1-q_i)*Q_ij*q_j; set f_ii=0. Do not use a negative diagonal generator entry as a reactive self-flux. Net current is f_ij-f_ji and positive net edges follow its positive part. Define the stationary reactive-transition frequency nu as sum_j f_Aj. Define k=nu/pi_A specifically for this task; its inverse is NOT defined to be a first-arrival mean. A successful A-to-B transition path starts at the last departure from A before B and ends at first entry to B; failed excursions, waiting in A and other trajectory segments are excluded. Its mean duration is the total stationary reactive occupancy sum_i pi_i*q_i*(1-q_i) divided by nu. Separately define tau_i as the mean time to first hit B starting in state i, with B absorbing for that calculation; tau_A includes waiting and failed excursions. These definitions distinguish transition frequency, reactive duration and first-arrival latency without invoking a metastable approximation.",
+  "baseline_investigation": "At x1 compare both equilibrium endpoints. Construct the complete weighted adjacency/Laplacian and both complete generators, solve all three unknown committor entries and all four nonabsorbing first-arrival means, and check conservation/detailed balance and residuals. Report the committor vector and complete off-diagonal gross flux matrix in declared state order. For the separating cut S={A,I1}, report outward and inward gross reactive fluxes separately and their signed difference; check that this NET difference equals nu even when the outward gross flux alone does not. Determine the intermediate(s) closest to q1/2 and compare with the highest free-energy intermediate(s) at lambda0. Establish which pathway quantities are invariant across the ENTIRE lambda family, and which are not. Endpoint agreement alone is not a proof of family invariance.",
+  "kinetic_design": "Find the global x maximizing nu and the separate global x minimizing tau_A for lambda0 and lambda1. Then solve the robust design min_{x in[1,5]} max_{lambda in[0,1]} tau_A(x,lambda). Reduce the continuous uncertainty family correctly rather than checking an arbitrary lambda grid. Determine every maximizing lambda at the robust optimum and whether the robust objective is differentiable there. Certify globality using the complete feasible stationary/boundary/branch-switch candidates and derivative or equivalent analytic inequalities, not local search or a dense grid alone. Report the two endpoint tau_A values for five controls in order: baseline1, frequency maximizer, individual lambda0 latency minimizer, individual lambda1 latency minimizer, robust latency minimizer. At each reported control retain the complete weighted graph construction and full committor and first-arrival solutions for both endpoint generators, with actual registered linear-system solutions. Equivalent exact analytic reductions may support global proofs; retain actual complete polynomial-root outputs if used. Use registered matrix products for generator scaling and for constructing the complete baseline reactive flux from its state factors and off-diagonal rates, preserving full intermediate data and node order. A calculator containing only final target constants does not establish these coupled pathways or uncertainty-sensitive optima.",
+  "interpretation_proposals": {
+    "A": "In a reversible conductance model, the same committor can coexist with different equilibrium dwell times and first-arrival latency.",
+    "B": "The outward gross flux across any separating cut is automatically the frequency of distinct successful transitions.",
+    "C": "The highest equilibrium free-energy intermediate need not be the intermediate closest to the half-committor surface.",
+    "D": "Maximizing stationary reactive-transition frequency necessarily minimizes source-state mean first-arrival time.",
+    "E": "An upper envelope of smooth uncertain-model latencies can have its minimum at a nondifferentiable branch switch.",
+    "F": "When both endpoint models tie at the robust optimum, only those two endpoints are worst cases even if all intermediate latencies are affine.",
+    "G": "Reactive-path duration excludes waiting in the source and failed excursions that contribute to a first-arrival mean.",
+    "H": "Equilibrium probabilities alone determine committors even if the conductance network changes."
+  },
+  "reporting": "All requested scalar and array numbers use absolute tolerance1e-7. Preserve probability normalization and positive physical times. IDs are sets in the answer schema. The string for the worst-case uncertainty set must be either all_lambda_in_closed_unit_interval, endpoints_only, lambda0_only, lambda1_only or another explicitly justified set description. State vectors/matrices retain declared state order; endpoint entries retain lambda0,lambda1 order. No material-specific measured rate, activation barrier or metastable lumpability follows from this constructed network.",
+  "primary_context": [
+    {
+      "authors": "W. E and E. Vanden-Eijnden",
+      "year": 2006,
+      "title": "Towards a Theory of Transition Paths",
+      "url": "https://web.math.princeton.edu/~weinan/pdf%20files/theory%20transition.pdf",
+      "doi": "10.1007/s10955-005-9003-9"
+    }
+  ],
+  "context_role": "Primary context for equilibrium reactive trajectories, committors, reactive flux and occupancy. The five-state control/uncertainty study and every numerical specification are own constructed inputs; no paper data or prose are reproduced."
+}

@@ -1,0 +1,24 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "habitats": [
+    {
+      "habitat_id": "low_detection",
+      "expected_first_captures": 16.0,
+      "expected_second_captures": 16.0,
+      "expected_overlap": 3.2
+    },
+    {
+      "habitat_id": "high_detection",
+      "expected_first_captures": 16.0,
+      "expected_second_captures": 16.0,
+      "expected_overlap": 12.8
+    }
+  ],
+  "model": "Two capture occasions in a closed population. Individuals remain in their habitat and have constant habitat-specific detection probability on each occasion. Captures on the two occasions are independent conditional on habitat. Within each habitat n1=N*p1,n2=N*p2,m=N*p1*p2 for EXPECTED tallies. No births,deaths,migration,mark loss or response to marking.",
+  "data_status": "These are exact model expectation tallies, explicitly including fractional expected overlaps. They are not integer realized field counts and do not imply an unbiased realized ratio estimator or an uncertainty interval.",
+  "audit": "Recover each N from its conditional expected tallies and sum habitats. Separately apply the pooled n1*n2/m ratio to the pooled expectation tallies. Relative error is pooled/stratified_total-1, retaining its sign.",
+  "scope": "Heterogeneous observation and aggregation audit, not a capture protocol or evidence about a named population."
+}

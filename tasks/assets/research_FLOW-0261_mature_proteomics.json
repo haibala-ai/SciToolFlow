@@ -1,0 +1,128 @@
+{
+  "data_origin": "Original precursor sequences and mature-chain coordinates are frozen UniProtKB 2026_03 Arabidopsis thaliana records. Peak areas and paired-condition measurements below are simulated controlled benchmark inputs; they are not experimental observations from UniProt or a published treatment study.",
+  "precursor_fasta": "asset://research_FLOW-0261_precursors.fasta",
+  "source_records": [
+    {
+      "accession": "P10795",
+      "organism": "Arabidopsis thaliana",
+      "mature_chain_one_based_inclusive": [
+        55,
+        180
+      ],
+      "entry_version": 202,
+      "sequence_version": 2,
+      "source_url": "https://rest.uniprot.org/uniprotkb/P10795.json",
+      "original_record_sha256": "4bd6687cb035b6739ff219e5025dcfd5bfe84c7e6994d2f0b8cdba5787a80e24"
+    },
+    {
+      "accession": "P10796",
+      "organism": "Arabidopsis thaliana",
+      "mature_chain_one_based_inclusive": [
+        55,
+        181
+      ],
+      "entry_version": 186,
+      "sequence_version": 1,
+      "source_url": "https://rest.uniprot.org/uniprotkb/P10796.json",
+      "original_record_sha256": "4bbb52a7d5429f4352da9cddd80be99370ea1ae96d3a76af27d37e4990c13356"
+    },
+    {
+      "accession": "P10797",
+      "organism": "Arabidopsis thaliana",
+      "mature_chain_one_based_inclusive": [
+        55,
+        181
+      ],
+      "entry_version": 182,
+      "sequence_version": 2,
+      "source_url": "https://rest.uniprot.org/uniprotkb/P10797.json",
+      "original_record_sha256": "ffaaf0daf04ab810e2d528824722cffd2538c0ab8e27e632bd446348eb5998bd"
+    },
+    {
+      "accession": "P10798",
+      "organism": "Arabidopsis thaliana",
+      "mature_chain_one_based_inclusive": [
+        55,
+        181
+      ],
+      "entry_version": 190,
+      "sequence_version": 2,
+      "source_url": "https://rest.uniprot.org/uniprotkb/P10798.json",
+      "original_record_sha256": "4420ff80a42919d37a7f2cfc8b718ad3b1da7ed5113ac40681f4e2b8fc2eb835"
+    }
+  ],
+  "processing_model": "Only the annotated mature chains enter the assayed mature-protein preparation. Chain coordinates are 1-based inclusive positions on the ORIGINAL precursor. Do not digest transit peptides or treat precursor differences as evidence that mature proteins are distinguishable. Assume exactly these four accession-labelled sources and unmodified mature sequences; do not infer transcription or assembly mechanisms.",
+  "digestion_model": "Candidate detectable sequences are all complete tryptic peptides with zero or one missed cleavage, using ordinary trypsin rules (no cleavage before proline). Unmodified linear free-terminus neutral monoisotopic masses include water. A channel is attributable only if BOTH its reported sequence (under the declared I/L ambiguity) and mass match a theoretical mature-chain peptide within its own ppm tolerance. An accession can generate multiple allowed sequences, but a candidate channel with no mature-chain match must not quantify any source.",
+  "identity_resolution": "The measurement reports I and L only as the indistinguishable symbol J; normalize every I or L in theoretical and reported peptide sequences to J BEFORE matching. J is an observational ambiguity, not an allowed residue in a source protein. There are no other residue ambiguities or PTMs. An I/L-isobaric channel is not uniquely assignable by its exact mass. All theoretically distinguishable mature proteins may be considered, not merely the channels that happened to be quantified.",
+  "candidate_channels": [
+    {
+      "channel_id": "S0",
+      "reported_sequence": "IIGFDNTR",
+      "neutral_monoisotopic_mass_da": 934.4872302285,
+      "mass_tolerance_ppm": 5.0,
+      "protein_equivalent_response_factor": 1.0
+    },
+    {
+      "channel_id": "S1",
+      "reported_sequence": "EHGNSPGYYDGR",
+      "neutral_monoisotopic_mass_da": 1350.55889159862,
+      "mass_tolerance_ppm": 5.0,
+      "protein_equivalent_response_factor": 0.8
+    },
+    {
+      "channel_id": "S2",
+      "reported_sequence": "EHGNTPGYYDGR",
+      "neutral_monoisotopic_mass_da": 1364.57454166276,
+      "mass_tolerance_ppm": 5.0,
+      "protein_equivalent_response_factor": 1.1
+    },
+    {
+      "channel_id": "S3",
+      "reported_sequence": "FETLSYLPDLTDVELAK",
+      "neutral_monoisotopic_mass_da": 1952.998275163,
+      "mass_tolerance_ppm": 5.0,
+      "protein_equivalent_response_factor": 0.9
+    },
+    {
+      "channel_id": "S4",
+      "reported_sequence": "FETLSYLPDLSDVELAK",
+      "neutral_monoisotopic_mass_da": 1938.98262509886,
+      "mass_tolerance_ppm": 5.0,
+      "protein_equivalent_response_factor": 1.2
+    },
+    {
+      "channel_id": "S5",
+      "reported_sequence": "EVDYJJR",
+      "neutral_monoisotopic_mass_da": 906.4810822189,
+      "mass_tolerance_ppm": 5.0,
+      "protein_equivalent_response_factor": 0.7
+    },
+    {
+      "channel_id": "S6",
+      "reported_sequence": "SSAAFPATR",
+      "neutral_monoisotopic_mass_da": 906.45593010022,
+      "mass_tolerance_ppm": 5.0,
+      "protein_equivalent_response_factor": 1.0
+    },
+    {
+      "channel_id": "S7",
+      "reported_sequence": "CMQVWPPIGKK",
+      "neutral_monoisotopic_mass_da": 1285.66752017293,
+      "mass_tolerance_ppm": 5.0,
+      "protein_equivalent_response_factor": 0.45
+    }
+  ],
+  "quantitative_response": "For each attributable channel and injection, calibrated pool amount in fmol is (light_peak_area/heavy_peak_area)*heavy_standard_fmol/protein_equivalent_response_factor. The factor is a stipulated independently calibrated channel response, including digestion recovery; do not assume an uncalibrated missed-cleavage peptide has stoichiometric yield. The amount is the SUM over its matching mature-protein sources. All matching occurrences here are single-copy. A nonattributable channel can contain off-target signal and is excluded, not a reason to assign a transit peptide to the mature preparation.",
+  "aggregation_policy": "Within each biological pair and condition: first average calibrated pool estimates across all attributable channels unique to P10795 inside an injection, and separately average all attributable channels matching ALL four sources to estimate the total small-subunit pool. Then average the three technical injections. These two amounts define absolute P10795 amount and its relative fraction=absolute/total. Other channels inform attribution/resolution and need not enter these two estimands. Technical injections and multiple peptides are repeated measurements, not new independent biological pairs.",
+  "comparison_policy": "There are exactly six independent randomized biological pairs, each with a control and treated aliquot. Compute one log2(treated/control) contrast per pair for absolute P10795 and another for its relative fraction. Report the equal-pair mean contrast for each estimand. Test each with the exact two-sided paired sign-randomization distribution: enumerate all 2^6 equally weighted within-pair sign assignments, use the absolute equal-pair mean statistic, and count ties inclusively. Include the observed assignment; do not use Monte Carlo plus-one adjustments or asymptotic tests. The two predeclared tests form ONE family: apply Holm FWER correction at alpha=0.05 and report supported_change_ids among [absolute_P10795,relative_P10795] only when corrected p<=alpha. Effect signs are separate from multiplicity-adjusted evidence.",
+  "interpretation": "An accession-specific transcript abundance change cannot be inferred from mature-protein quantification. Do not claim separate P10797 and P10798 changes if the complete mature-chain evidence is indistinguishable; changing the precursor sequence or collecting more copies of the same indistinguishable peptides cannot resolve that ambiguity.",
+  "reporting": "Return attributable_channel_source_ids keyed by every S0..S7 (empty list for unqualified channels), indistinguishable_mature_source_groups (only groups of size >=2), independent_biological_pairs, mean_log2_fold_changes and raw_randomization_pvalues and holm_adjusted_pvalues keyed by absolute_P10795 and relative_P10795, supported_change_ids, and individual_P10797_P10798_changes_identified. Arrays of IDs and equivalence groups are unordered; preserve multiplicity. Numeric absolute plus relative tolerance 1e-7 each. Return the compact schema without gene-expression, causal adaptation or independent-technical-replicate claims.",
+  "provenance": {
+    "uniprot_release": "2026_03",
+    "license": "CC BY 4.0",
+    "license_verification_url": "https://www.expasy.org/resources/uniprotkb-swiss-prot",
+    "attribution": "The UniProt Consortium, UniProtKB records P10795/P10796/P10797/P10798. Original record snapshots accompany project resources; the FASTA combines the unchanged original precursor sequences. Simulated measurement data and task policies were added by SciToolFlow."
+  },
+  "measurement_records_file": "asset://research_FLOW-0261_measurements.json",
+  "measurement_record_schema": "The separate public measurement file has a data list with unique record_id, pair_id, condition, injection_id, channel_id, light_peak_area, heavy_peak_area and heavy_standard_fmol. All 288 rows belong to this one analysis; identities must be preserved across filtering and aggregation."
+}

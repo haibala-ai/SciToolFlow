@@ -1,0 +1,38 @@
+{
+  "variable_order": [
+    "X1",
+    "X2",
+    "X3"
+  ],
+  "known_unit_variances": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "reported_exact_correlations": [
+    {
+      "variables": [
+        "X1",
+        "X2"
+      ],
+      "value": 0.8
+    },
+    {
+      "variables": [
+        "X2",
+        "X3"
+      ],
+      "value": 0.6
+    }
+  ],
+  "unreported_correlation": [
+    "X1",
+    "X3"
+  ],
+  "model": "All entries refer to the SAME joint population of three real standardized variables. Reported correlations are stipulated exact population values. The missing entry is unknown,not zero. Allow every positive-SEMIDEFINITE correlation completion,including singular boundaries. No Gaussian conditional-independence or latent-factor restriction is supplied.",
+  "target": "Find the sharp admissible interval of r13,and the sharp interval of the coefficient of X1in the population least-squares projection of X3on[X1,X2]. The predictor2x2covariance is nonsingular even when the full completion is singular. Assess whether that coefficient sign is identified. Evaluate the zero-filled completion for strict positive definiteness and determine whether zero filling would make the residuals of X1and X3after linear adjustment for X2uncorrelated.",
+  "scope": "A covariance-consistency and linear-projection problem;no causal effect or conditional independence of arbitrary non-Gaussian variables is inferred.",
+  "provenance": {
+    "kind": "Explicit controlled statistical study with stated working assumptions;not empirical population evidence."
+  }
+}

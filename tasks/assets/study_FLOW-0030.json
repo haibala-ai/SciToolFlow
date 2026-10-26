@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "record_id": "trace",
+      "retention_time_min": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0
+      ],
+      "signal": [
+        1.0,
+        3.0,
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0
+      ],
+      "constant_baseline": 1.0
+    },
+    {
+      "record_id": "peak-A",
+      "integration_window_min": [
+        0.0,
+        2.0
+      ],
+      "area_per_nmol": 2.0
+    },
+    {
+      "record_id": "peak-B",
+      "integration_window_min": [
+        3.0,
+        5.0
+      ],
+      "area_per_nmol": 0.5
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "signalunits;retentionmin;responsefactor signal·min/nmol",
+    "original_observation_claim": false
+  }
+}

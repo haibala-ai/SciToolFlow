@@ -9,7 +9,7 @@ import re
 
 @lru_cache(maxsize=1)
 def scope_metadata(construction=False):
-    from scitoolflow.paths import project_root
+    from src.utils.paths import project_root
     from tools.catalog import ToolCatalog
 
     root = project_root()

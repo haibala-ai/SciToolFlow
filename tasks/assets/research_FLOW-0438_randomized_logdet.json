@@ -1,0 +1,65 @@
+{
+  "origin": "Own finite-dimensional audit of randomized matrix-function trace estimation, motivated by log-determinants in Gaussian likelihoods and kernel methods. The explicit small positive matrix is supplied so bias, randomization and global budget claims can be independently checked exactly; this is not a claim that a4x4 matrix needs randomized estimation in practice. The method is being evaluated, not merely asked to return a trace obtainable from the diagonal.",
+  "matrix": [
+    [
+      0.7,
+      0.2,
+      0.05,
+      0.0
+    ],
+    [
+      0.2,
+      1.0,
+      0.15,
+      0.03
+    ],
+    [
+      0.05,
+      0.15,
+      4.0,
+      0.3
+    ],
+    [
+      0.0,
+      0.03,
+      0.3,
+      12.0
+    ]
+  ],
+  "spectral_function": "A is real symmetric positive definite. f(A)=log(A) is the real spectral matrix logarithm, not entrywise log. Targettheta=trlog(A)=logdet(A), using natural logarithms. Establish a strict positive spectral lower bounda=0.4 independently from the matrix; a is a certified bound, not asserted to be its smallest eigenvalue.",
+  "probe_law": "A full Rademacher probe has4 independent entries\u00b11 with equal probabilities. Since all quadratic forms and Lanczos spectral measures are identical for g and-g, complete exact enumeration may use8 representatives withfirstcoordinate+1 and remaining signs in lexicographic[-1,+1]^3order, each weight1/8. Prove this reduction. Never MonteCarlo-sample only a few probes or normalize g without restoring its squarednorm4.",
+  "Krylov_and_registered_handoffs": "For EVERY representative startq1=g/||g|| and perform the symmetric Lanczos process in exact arithmetic through the physical Krylov dimension, using full reorthogonalization for numerical checking. Retain each actual alpha,beta and basis. Actual registered MatrixMultiply must supplyAq at every new step for all8probes; columns may be batched so long as ordering and complete actual outputs feed the next recursion. At breakdown the spectral measure is already exact and no division byzero or fabricated extra Krylov direction is permitted. Construct everyT_m, m1..4, and use actual registered full SymmetricEigenDecomposition for EVERY nonscalarT_m to retain complete nodes/first-row weights. ScalarT1may be evaluated analytically. The4step result must agree with an actual registered full eigensystem ofA, and retain the original spectral matrix log/check without entrywise logarithms.",
+  "quadrature_bounds": "DefineU_m(g)=||g||\u00b2 e1^T log(T_m)e1. Determine analytically whether it is a lower or upper bound for g^T log(A)g and how it changes withm; a numerical inequality panel alone is not proof. For eachm1,2,3 construct the lower-endpoint Gauss-Radau extension R_(m+1)=[[T_m,beta_m e_m],[beta_m e_m^T,alpha_R]], wherealpha_R is chosen so thata=0.4 is an eigenvalue. Derivealpha_R from the correct Schur complement. For m2,3 retain actual registered SolveLinearSystem ofT_m-aI againstthelastbasisvector and use the actual complete solution inalpha_R; m1hasanallowedscalarformula. Use actual full registered eigensystems ofEVERY R_(m+1) and retain full quadrature nodes/weights. DefineL_m analogously and prove which side it bounds, including the sign oflogderivatives or an equivalent resolvent-integral argument. Validate all per-probe intervals against fullKrylov values, positivity ofnodes and weight normalization.",
+  "exact_risk_and_basis": "Enumerate the exact distribution ofU_m over all8representatives and report the NATURAL LOG of its strictly positive MEAN bias for m1,2,3. Report fullKrylov Rademacher estimator mean and variance. Derive its exact variance from offdiagonal entries oflogA and compare with Gaussian probes, whose variance uses a different formula. LetH=onehalf[[1,1,1,1],[1,-1,1,-1],[1,1,-1,-1],[1,-1,-1,1]]. ForA_new=H^T A H, compare the variance when drawing FRESH independentRademacher signs in the NEW basis. Retain actual registered full matrix products for this basis transformation and the full spectral check. Explain why trace invariance does not make fresh-sign Rademacher variance basis invariant; rotating the SAME physical probe instead defines a different coupled experiment.",
+  "adaptive_rule": "For eachprobe choose the smallestm in{1,2,3} withU_m-L_m<=0.02; if none, choosem4. UseU_selected as the estimate. Exact equality is accepted. Compute every selected level, its exact mean, bias and expected operator queries under the full probe law. Prove whether these per-probe quadrature intervals are MonteCarlo confidence intervals for the true trace, and whether averaging infinitely many probes at a fixed incomplete depth or using a positive-gap stopping rule removes quadrature bias. Distinguish deterministic quadrature error, random-probe error and adaptive stopping.",
+  "unbiased_randomized_levels": "Independently ofg, choose ONElevelJ in{2,3,4} with fixedpositiveprobabilitiesp2,p3,p4 summing1. DefineD_j=U_j-U_(j-1) andZ=U_1+D_J/p_J. Derive conditional and unconditional means and variance exactly from the COMPLETE joint(g,J)law; use actual numerical quadratures/increments rather than target-valued substitutions. The operator-query cost ofone realization isJ (U1andallstepsup toJ are computed alongthatprobe); the cost metric here is logicalA-vector products perreplicate, not numberofbatchedtoolrequests, eigensolvercalls orDescribeTools. Optimize unconditionalVarZ over the ENTIRE positive probability simplex with EXACT expectedquerybudgetp2*2+p3*3+p4*4=3. Prove global uniqueness/attainability and behavior at excludedzero-probabilityfaces, not a localgrid optimum. Report each logE[D_j\u00b2] to preserve small nonzero increments, optimalprobabilities, resulting[mean,variance,expectedqueries] and the variance of uniformlevels. Explain why signs or occasional large values ofZ need not be probabilities and why this independent level law is not the same as the adaptivegaprule.",
+  "interpretation_proposals": {
+    "A": "An exact full spectral trace can coexist with biased finite-depth stochastic quadrature estimates.",
+    "B": "Pointwise quadrature bounds alone are MonteCarlo confidence bounds for the populationtrace.",
+    "C": "Independent level randomization can remove truncation bias while changing variance and computationalcost.",
+    "D": "Entrywise matrix logarithms are interchangeable with a spectralmatrixlog.",
+    "E": "The distribution of probes and their coordinate basis affect stochastic trace variance.",
+    "F": "A fixed positive stoppinggap makes an estimator unbiased automatically.",
+    "G": "A complete finite joint law and convex allocation proof can certify a global cost/variance optimum.",
+    "H": "The numberofbatchedtoolcalls equals the operatorquerycostofeach individualrealization."
+  },
+  "reporting": "Absolute numerical tolerance1e-7 on final values. Logs ofpositivebiases andincrementsecondmoments must be finite and must not be replaced byzero or byrawsmallvalues. Probabilityoutputs p2,p3,p4 are genuine positiveprobabilities summing1, while quadraturevalues, matrixlogs andrandomizedZ are signed realstatistics. Probe rows use exact declared representativeorder; Gaussian/Rademachervariancesrefer to SINGLEreplicates withnormconventionsabove. Retain full source/basis/Lanczos/solve/eigensystem actualhandoffs, quadrature sign/weight and completejointlaw checks, conditionalunbiasedness and global costallocation proof.",
+  "primary_context": [
+    {
+      "authors": "S.Ubaru,J.Chen,Y.Saad",
+      "year": 2017,
+      "title": "Fast Estimation of tr(f(A)) via Stochastic Lanczos Quadrature",
+      "doi": "10.1137/16M1104974",
+      "url": "https://shashankaubaru.github.io/Papers/Lanc_Quad.pdf",
+      "role": "Primary stochastic matrix-function quadrature context; matrix, finite stoppingandallocationaudit above are own inputs."
+    },
+    {
+      "authors": "D.McLeish",
+      "year": 2011,
+      "title": "A general method for debiasing a Monte Carlo estimator",
+      "doi": "10.1515/mcma.2011.013",
+      "url": "https://arxiv.org/abs/1005.2228",
+      "role": "Primary independent-randomization debiasing context; the finite single-level estimator and query constraint above are explicitly defined own study."
+    }
+  ]
+}

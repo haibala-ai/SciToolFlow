@@ -1,0 +1,30 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "taxon_order": [
+    "grass_A",
+    "grass_B",
+    "shrub_C"
+  ],
+  "one_dimensional_trait_values": [
+    0.0,
+    1.0,
+    10.0
+  ],
+  "relative_abundance_by_community": {
+    "community_A": [
+      0.45,
+      0.45,
+      0.1
+    ],
+    "community_B": [
+      0.05,
+      0.05,
+      0.9
+    ]
+  },
+  "definition": "Functional distance is the absolute difference of supplied one-dimensional trait values. Rao Q=sum_i sum_j p_i*p_j*d_ij, including zero diagonal and both off-diagonal orientations. It is the expected absolute trait difference between two independent abundance-weighted draws with replacement. Count positive abundance taxa for richness.",
+  "scope": "Controlled communities on an explicitly stipulated trait scale; neither entropy nor squared Euclidean distances answers this functional-distance target. No uncertainty or causal environmental interpretation is supplied."
+}

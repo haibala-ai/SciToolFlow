@@ -1,0 +1,22 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "enantiomer_order": [
+    "R_label",
+    "S_label"
+  ],
+  "independent_first_order_consumption_rates_per_hour": [
+    0.2,
+    0.05
+  ],
+  "elapsed_hours": 5.0,
+  "initial_amount_fractions": [
+    0.5,
+    0.5
+  ],
+  "model": "Controlled parallel first-order consumption of an initially racemic benign substrate. Each label forms only its corresponding product, with no racemization, reversibility or cross-conversion. Remaining n_i=n_i0*exp(-k_i*t), product amount=n_i0-remaining. Rates are stipulated and not inferred from an operational reaction protocol.",
+  "sign_conventions": "Remaining-substrate ee=(S_remaining-R_remaining)/(S_remaining+R_remaining). Product ee=(R_product-S_product)/(R_product+S_product). The signs use different explicitly named numerators; compare actual major labels when answering whether the two pools share one major label. Rate selectivity is k_R/k_S.",
+  "scope": "Kinetic mass-balance interpretation, no synthesis conditions, catalyst design or real enantiomeric separation recommendation."
+}

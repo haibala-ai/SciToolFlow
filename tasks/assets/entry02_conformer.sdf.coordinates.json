@@ -1,0 +1,241 @@
+{
+  "schema_version": "finite_molecular_geometry_source.v1",
+  "source_file": "entry02_conformer.sdf",
+  "source_sha256": "6e488fcaab2de5f148e28b799483a1e1f46bb9df33e42b54db333e08693ff8be",
+  "original_format": "SDF V2000, first and only record",
+  "atom_count": 14,
+  "atom_indices_zero_based": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "elements": [
+    "C",
+    "C",
+    "C",
+    "C",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H"
+  ],
+  "atomic_numbers": [
+    6,
+    6,
+    6,
+    6,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "positions_angstrom": [
+    [
+      7.0781,
+      -1.6394,
+      1.0339
+    ],
+    [
+      7.3721,
+      -2.8853,
+      0.2126
+    ],
+    [
+      8.009,
+      -4.0133,
+      1.0248
+    ],
+    [
+      8.303,
+      -5.2592,
+      0.2036
+    ],
+    [
+      7.9984,
+      -1.1674,
+      1.3901
+    ],
+    [
+      6.453,
+      -1.8781,
+      1.9001
+    ],
+    [
+      6.5439,
+      -0.9045,
+      0.4231
+    ],
+    [
+      8.0202,
+      -2.6209,
+      -0.631
+    ],
+    [
+      6.4307,
+      -3.2522,
+      -0.2136
+    ],
+    [
+      8.9346,
+      -3.6591,
+      1.4934
+    ],
+    [
+      7.3258,
+      -4.285,
+      1.8383
+    ],
+    [
+      8.6726,
+      -6.0588,
+      0.8536
+    ],
+    [
+      9.0684,
+      -5.0685,
+      -0.5544
+    ],
+    [
+      7.4003,
+      -5.621,
+      -0.2985
+    ]
+  ],
+  "coordinate_tokens": [
+    [
+      "7.0781",
+      "-1.6394",
+      "1.0339"
+    ],
+    [
+      "7.3721",
+      "-2.8853",
+      "0.2126"
+    ],
+    [
+      "8.0090",
+      "-4.0133",
+      "1.0248"
+    ],
+    [
+      "8.3030",
+      "-5.2592",
+      "0.2036"
+    ],
+    [
+      "7.9984",
+      "-1.1674",
+      "1.3901"
+    ],
+    [
+      "6.4530",
+      "-1.8781",
+      "1.9001"
+    ],
+    [
+      "6.5439",
+      "-0.9045",
+      "0.4231"
+    ],
+    [
+      "8.0202",
+      "-2.6209",
+      "-0.6310"
+    ],
+    [
+      "6.4307",
+      "-3.2522",
+      "-0.2136"
+    ],
+    [
+      "8.9346",
+      "-3.6591",
+      "1.4934"
+    ],
+    [
+      "7.3258",
+      "-4.2850",
+      "1.8383"
+    ],
+    [
+      "8.6726",
+      "-6.0588",
+      "0.8536"
+    ],
+    [
+      "9.0684",
+      "-5.0685",
+      "-0.5544"
+    ],
+    [
+      "7.4003",
+      "-5.6210",
+      "-0.2985"
+    ]
+  ],
+  "coordinate_units": "angstrom",
+  "coordinate_unit_provenance": "The original public scientific protocol declares angstrom; this format transport performs no unit conversion.",
+  "atom_formal_charges_e": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "molecular_formal_charge_e": 0,
+  "source_charge_codes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "charge_scope": "Formal-charge atom codes and M CHG records preserved. Code4 denotes a radical with zero formal charge.",
+  "provenance": {
+    "operation": "Source-text field transport only; no geometry embedding, optimization, reordering, centering, alignment, isotope/default-mass assignment or scientific answer computation.",
+    "atom_order": "Exact original SDF atom-block / XYZ atom-line order. Every atom retained, including hydrogen.",
+    "original_utf8_text": "\n     RDKit          3D\n\n 14 13  0  0  0  0  0  0  0  0999 V2000\n    7.0781   -1.6394    1.0339 C   0  0  0  0  0  0  0  0  0  0  0  0\n    7.3721   -2.8853    0.2126 C   0  0  0  0  0  0  0  0  0  0  0  0\n    8.0090   -4.0133    1.0248 C   0  0  0  0  0  0  0  0  0  0  0  0\n    8.3030   -5.2592    0.2036 C   0  0  0  0  0  0  0  0  0  0  0  0\n    7.9984   -1.1674    1.3901 H   0  0  0  0  0  0  0  0  0  0  0  0\n    6.4530   -1.8781    1.9001 H   0  0  0  0  0  0  0  0  0  0  0  0\n    6.5439   -0.9045    0.4231 H   0  0  0  0  0  0  0  0  0  0  0  0\n    8.0202   -2.6209   -0.6310 H   0  0  0  0  0  0  0  0  0  0  0  0\n    6.4307   -3.2522   -0.2136 H   0  0  0  0  0  0  0  0  0  0  0  0\n    8.9346   -3.6591    1.4934 H   0  0  0  0  0  0  0  0  0  0  0  0\n    7.3258   -4.2850    1.8383 H   0  0  0  0  0  0  0  0  0  0  0  0\n    8.6726   -6.0588    0.8536 H   0  0  0  0  0  0  0  0  0  0  0  0\n    9.0684   -5.0685   -0.5544 H   0  0  0  0  0  0  0  0  0  0  0  0\n    7.4003   -5.6210   -0.2985 H   0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0\n  2  3  1  0\n  3  4  1  0\n  1  5  1  0\n  1  6  1  0\n  1  7  1  0\n  2  8  1  0\n  2  9  1  0\n  3 10  1  0\n  3 11  1  0\n  4 12  1  0\n  4 13  1  0\n  4 14  1  0\nM  END\n$$$$\n",
+    "source_geometry_role": "Same immutable original supplied computational geometry; not an experimental measurement or newly generated conformer."
+  }
+}

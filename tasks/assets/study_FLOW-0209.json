@@ -1,0 +1,82 @@
+{
+  "data": [
+    {
+      "record_id": "site0",
+      "zero_based_atom_index": 0,
+      "element": "Cl",
+      "cartesian_covariance_angstrom_squared": [
+        [
+          0.04635,
+          -0.00368,
+          -0.01366
+        ],
+        [
+          -0.00368,
+          0.05707,
+          -0.0048
+        ],
+        [
+          -0.01366,
+          -0.0048,
+          0.03702
+        ]
+      ],
+      "temperature_kelvin": 300.0
+    },
+    {
+      "record_id": "site10",
+      "zero_based_atom_index": 10,
+      "element": "C",
+      "cartesian_covariance_angstrom_squared": [
+        [
+          0.03069,
+          -0.00134,
+          -0.00239
+        ],
+        [
+          -0.00134,
+          0.03346,
+          -0.00214
+        ],
+        [
+          -0.00239,
+          -0.00214,
+          0.02851
+        ]
+      ],
+      "temperature_kelvin": 300.0
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published marginal atomic displacement covariance projection",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "POSCAR coordinates/cell angstrom,Cartesian covariance angstrom²,temperatureK;linearized parallel relative displacement variance angstrom²",
+    "original_observation_claim": false,
+    "source_captures": [
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/phonon/thermal_displacement_matrices/thermal_displacement_matrices.yaml",
+        "accessed_at": "2026-10-20T12:33:27.253326+00:00",
+        "raw_sha256": "a5cfa29c8e8df6a647a7e8bc566b0a1af35c55a4f805a8172a298afa97da3708",
+        "git_blob_sha1": "cdb62b0527d5a9c5d3458a90c8c4284a692afb61",
+        "git_blob_verified": true,
+        "byte_count": 107270,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/phonon/thermal_displacement_matrices/thermal_displacement_matrices.yaml",
+        "role": "Genuine published scientific source artifact / library fixture; byte provenance verified, physical completeness and normalization require individual inspection; no expected answers used"
+      },
+      {
+        "provider": "materialsproject/pymatgen-test-files",
+        "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+        "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/phonon/thermal_displacement_matrices/POSCAR",
+        "accessed_at": "2026-10-20T12:33:26.672353+00:00",
+        "raw_sha256": "454789b2b8a15a15c84cde3beb3fe95ba4181e8e8b4968d4f0ad2487a1fb3a7f",
+        "git_blob_sha1": "ac876d4c6c5ff24ae1bd288ed0b9de88b852bc82",
+        "git_blob_verified": true,
+        "byte_count": 2734,
+        "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/phonon/thermal_displacement_matrices/POSCAR",
+        "role": "Genuine published scientific source artifact / library fixture; byte provenance verified, physical completeness and normalization require individual inspection; no expected answers used"
+      }
+    ]
+  }
+}

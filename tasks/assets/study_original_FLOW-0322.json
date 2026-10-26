@@ -1,0 +1,20 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "offspring_probabilities_by_lineage": {
+    "lineage_A": {
+      "0": 0.4,
+      "2": 0.6
+    },
+    "lineage_B": {
+      "0": 0.7,
+      "4": 0.3
+    }
+  },
+  "initial_independent_individuals": 3,
+  "model": "A discrete-generation Galton-Watson process: every individual independently draws its offspring count from its lineage fixed distribution, with the same law in every generation. No migration, finite carrying capacity or correlated environmental shocks. Extinction is eventual loss of all descendants.",
+  "fixed_point": "For one founder the eventual extinction probability is the SMALLEST solution q in[0,1]of q=sum_n p_n*q^n. q=1is always a mathematical fixed point; a supercritical mean does not by itself choose that fixed point or guarantee survival. Independent founders have extinction probability q^initial_count.",
+  "scope": "Controlled branching-demography comparison, not a forecast for a named species or an intervention in a biological population. All count distributions are fully public."
+}

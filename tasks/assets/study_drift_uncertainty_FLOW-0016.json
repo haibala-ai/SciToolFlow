@@ -1,0 +1,98 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "controls": [
+        {
+          "control_id": "control-0",
+          "time_min": 0,
+          "sensitivity_response_per_mmol_l": 100
+        },
+        {
+          "control_id": "control-10",
+          "time_min": 10,
+          "sensitivity_response_per_mmol_l": 80
+        },
+        {
+          "control_id": "control-20",
+          "time_min": 20,
+          "sensitivity_response_per_mmol_l": 60
+        }
+      ],
+      "samples": [
+        {
+          "sample_id": "sample-A",
+          "time_min": 5,
+          "blank_corrected_response": 180
+        },
+        {
+          "sample_id": "sample-B",
+          "time_min": 15,
+          "blank_corrected_response": 134.4
+        },
+        {
+          "sample_id": "sample-X",
+          "time_min": 25,
+          "blank_corrected_response": 90
+        }
+      ],
+      "quantity_order": [
+        "s_control_0",
+        "s_control_10",
+        "s_control_20",
+        "response_sample_A",
+        "response_sample_B"
+      ],
+      "input_covariance": [
+        [
+          5.0,
+          3.2,
+          2.4,
+          0.0,
+          0.0
+        ],
+        [
+          3.2,
+          3.56,
+          1.92,
+          0.0,
+          0.0
+        ],
+        [
+          2.4,
+          1.92,
+          2.44,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "covariance_units": "Each entry uses the product of its two listed quantity units: sensitivities in response/(mmol/L), sample responses in response units.",
+      "uncertainty_model": "The control-sensitivity block is diag(1,1,1) + 0.0004*s*s^T at the listed nominal sensitivities. Independent control contributions have standard uncertainty 1 response/(mmol/L); a common relative calibration component has standard uncertainty 0.02. Each bracketed sample response has standard uncertainty 1 response unit, uncorrelated with the other response and every control. The supplied full covariance already includes all these components; do not add the common component again. These are stipulated uncertainty inputs, not covariance estimated from three observed controls.",
+      "measurement_model": "At an exactly known acquisition time, interpolate sensitivity linearly between its adjacent controls; corrected concentration is blank-corrected response divided by that sensitivity. Controls and sample responses are input estimates; use first-order Taylor propagation evaluated at all nominal inputs. Acquisition-time and blank uncertainties and additional drift-model discrepancy are absent in this controlled scenario. No extrapolation is licensed. A and B are two aliquots intended to have the same concentration; chemical stability and the stated model are stipulated, not verified by these numbers.",
+      "reporting_policy": "Contrast is concentration_B minus concentration_A. Flag its magnitude only if strictly greater than twice its first-order standard uncertainty under the full shared-input model. Also evaluate the deliberately naive approximation that sets covariance of the two corrected concentration estimates to zero while retaining each correctly propagated marginal variance. This naive scenario does not diagonalize the input covariance or remove within-sample calibration correlations. List every sample without bracketing controls for remeasurement; do not invent its corrected value or uncertainty. A fixed factor 2 is an operational comparison guard, not an identified 95 percent coverage probability.",
+      "source_provenance": {
+        "kind": "project-authored controlled computational metrology fixture, not experimental assay readings",
+        "method_references": [
+          "https://www.iso.org/sites/JCGM/GUM/JCGM100/C045315e-html/C045315e_FILES/MAIN_C045315e/05_e.html",
+          "https://www.iso.org/sites/JCGM/GUM/JCGM100/C045315e-html/C045315e_FILES/MAIN_C045315e/06_e.html"
+        ],
+        "read_scope": "Official ISO GUM HTML sections5.1.2-5.1.3 and5.2.1-5.2.4: first-order sensitivity coefficients, correlated input covariance and shared calibration. Section6.2-6.3: multiplying a standard uncertainty alone does not identify a coverage probability. Numeric values, drift model and decision policy are project-authored.",
+        "original_observation_claim": false
+      }
+    }
+  ]
+}

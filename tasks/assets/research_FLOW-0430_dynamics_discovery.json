@@ -1,0 +1,66 @@
+{
+  "origin": "Own scientific-machine-learning system-discovery study for two dimensionless modal amplitudes. The CSV and derivative probes are constructed exact-model summaries, not paper data or noisy measurements from a named physical system. The task tests whether a learned sparse dynamical model is identified by its training trajectories and whether probe selection resolves the scientifically important missing directions.",
+  "model_class": "The exact candidate family on the whole real(u,v)plane is du/dt=-alpha*u+a*v\u00b2 and dv/dt=b*v+c*u*v-v\u00b3. Time uses a fixed nondimensional unit. The coefficient of-v\u00b3is known independently and is fixed; alpha,a,b,c are unknown. The symmetryv\u2192-vis part of the model class, not inferred from a plot. Prior parameter bounds arealpha in[0.5,1.5],a in[0,2],b in[-0.2,0.6],c in[-0.2,0.4]. Do not assume global origin stability from the word relaxation or from decaying training traces. The polynomial equations themselves, rather than an unspecified surrogate outside a fit window, define the global predictions requested here.",
+  "training_data": "The CSV contains two runs at times0,0.5,1,2with columnsrun_id,t,u,v,du_dt,dv_dt. Their prepared initialv is EXACTLYzero and the sampled dv_dt values are exactzero, not small measurements that may be arbitrarily rounded. Other entries are binary64-rounded constructed observations and require residual checks at1e-12. Row identities and time ordering must be retained. Regress the two component equations jointly in coefficient order[alpha,a,b,c]: theu row is[-u,v\u00b2,0,0]with targetdu_dt; thev row is[0,0,v,u*v]with targetdv_dt+v\u00b3. Do not add an intercept or refit the independently fixed cubic coefficient.",
+  "identification_questions": "Construct the complete joint training design and target, retain actual registered least-squares and full singular-value outputs, and derive the entire coefficient set compatible with the training data and prior box. Report its rank, nullity, unconstrained minimum-Euclidean-norm solution and the unique orthogonal projector onto its parameter nullspace. The projector is a subspace object; arbitrary singular-vector signs/rotations within a degenerate nullspace are not physical answers. Verify its annihilation/idempotence or equivalent complete nullspace conditions with actual matrix calculations. Explain why holding out more trajectories prepared in the same invariantv0manifold cannot identify missing transverse dynamics, and compare the minimum-norm model with the model identified by the additional probes. Sparsity or regularization preference is not an independent empirical observation.",
+  "supplied_derivative_probes": [
+    {
+      "u": 0.5,
+      "v": 0.4,
+      "du_dt": -0.34,
+      "dv_dt": 0.136
+    },
+    {
+      "u": 1.5,
+      "v": -0.3,
+      "du_dt": -1.41,
+      "dv_dt": -0.183
+    }
+  ],
+  "probe_inference": "The two supplied off-manifold probes are calibrated derivative summaries at the exact listed(u,v), with the same1e-12residual policy. Combine them with the training data using actual full registered least squares and singular-value outputs, and report all four identified coefficients and augmented rank. Determine the minimum number of scalar-state derivative probes needed to identify(a,b,c)whenalphais already fixed by the training data; each probe returns BOTH derivative components. One probe is not two freely chosen state locations. Retain the full joint design and actual observed derivative handoffs, rather than substitute the final coefficients into a copied answer.",
+  "future_probe_design": "Separately design TWO future derivative probes before using their unknown outcomes. At each chosen point(u,v), the independently calibratedalpha is treated as known, and two derivative noise components are independent centered Gaussian with standard deviation0.01, independent across probes. The unknown local parameters for this design are[a,b,c]. Each probe location lies in the CLOSED rectangleu in[0,2],v in[-0.5,0.5]; probe count is the budget, not elapsed integration time or a variable preparation cost. Maximize the determinant of the conditional3-by-3Fisher information matrix over ALL pairs of locations, and characterize the ENTIRE optimal set including signs and probe ordering. Derive the determinant as a function of the two locations and prove the global bound, not a grid search. Report optimaluvalues as a set, corresponding|v|values, whether every independentvsign/order choice is optimal, the number of distinct ordered signed optimal designs, and the maximum determinant. For the canonical representative with increasinguand positivev, retain actual registered matrix products for the complete information matrix and its actual full registered inverse. This inverse is a local linear-Gaussian information bound; do not automatically identify it with the covariance of an estimator constrained by a prior box.",
+  "global_dynamics_after_identification": "Find every real equilibrium of the model identified by the supplied probes, retain complete registered polynomial-root outputs including zero and both signs, construct every full Jacobian and verify its complete characteristic roots. Report equilibria in increasingvorder and eigenvalues in increasing numerical order. Determine the limit for EVERY finite initial condition according to whether initialv is negative,zeroorpositive; local eigenvalues or a few simulated curves alone are not a global basin proof. Give a valid global boundedness/no-finite-escape and no-periodic-orbit argument, together with sign invariance and exclusion of spurious limiting states. Compare with global asymptotic stability of the minimum-norm training surrogate; a zero Jacobian eigenvalue alone does not settle nonlinear stability. You may use an appropriate Lyapunov, gradient, planar or equivalent rigorous global argument, but justify its conditions for the full specified model.",
+  "finite_time_verification": {
+    "initial_conditions": {
+      "zero": [
+        1.0,
+        0.0
+      ],
+      "positive": [
+        1.0,
+        0.1
+      ],
+      "negative": [
+        1.0,
+        -0.1
+      ]
+    },
+    "times": [
+      2,
+      10,
+      30
+    ],
+    "task": "Independently integrate the IDENTIFIED coupled model from all three initial conditions, retaining the(u,v)state at every requested time. Use registered numerical tools, convergence/refinement and comparison with any exact invariant/symmetry checks. Preserve the sign ofv; the exactv0initial condition stays on the invariant manifold. These numerical trajectories corroborate the global argument and do not replace it."
+  },
+  "interpretation_proposals": {
+    "A": "A parameter-nullspace calculation can reveal scientifically important unexcited dynamics despite tiny training residuals.",
+    "B": "The sparsest coefficient vector fitting one invariant manifold is therefore the unique governing law.",
+    "C": "Probe-state geometry determines whether separate derivative measurements identify interacting transverse terms.",
+    "D": "A single derivative probe necessarily identifies every unknown coefficient because both equations are observed.",
+    "E": "A minimum-norm interpolating surrogate can predict different global stability and attractors from a model equally consistent with its training traces.",
+    "F": "Simulated convergence of three curves alone proves the global basin structure of every initial condition.",
+    "G": "An inverse Fisher matrix is always the exact covariance of a prior-constrained finite-sample estimator.",
+    "H": "Complete inverse sets, continuous probe design, nonlinear stability and out-of-manifold verification answer different scientific questions."
+  },
+  "reporting": "Numeric absolute tolerance1e-7unless the input residual policy states1e-12. Coefficient order isalpha,a,b,c; conditional-information order isa,b,c. Parameter-box rows are lower and upper endpoints in that order. Equilibrium/state coordinates are[u,v]. The Fisher determinant must be accurate to relative1e-7because it has a large scale; all other requested scalar/array outputs use the absolute policy. Time-state dictionaries use the exact initial-condition keyszero,positive,negativeand rows followt2,10,30. Subspace/projector and optimal-design sets must not be graded by an arbitrary basis or representative sign. Keep complete source/design/solution data, parameter-set and global-design proofs, nonlinear basin certificate and actual refined integrations in the trajectory.",
+  "primary_context": [
+    {
+      "authors": "S. L. Brunton, J. L. Proctor and J. N. Kutz",
+      "year": 2016,
+      "title": "Discovering governing equations from data by sparse identification of nonlinear dynamical systems",
+      "doi": "10.1073/pnas.1517384113",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4839439/"
+    }
+  ],
+  "context_role": "Primary context for data-driven sparse equation discovery. The restricted symmetry-aware library, invariant-manifold observations, supplied derivative probes and global information/stability study are own constructed inputs. No claim is made to reproduce a paper experiment or evaluate the originalSINDyimplementation."
+}

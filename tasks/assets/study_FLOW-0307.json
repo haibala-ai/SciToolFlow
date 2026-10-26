@@ -1,0 +1,194 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "measurements": [
+        [
+          8.3,
+          70.0,
+          10.3
+        ],
+        [
+          8.6,
+          65.0,
+          10.3
+        ],
+        [
+          8.8,
+          63.0,
+          10.2
+        ],
+        [
+          10.5,
+          72.0,
+          16.4
+        ],
+        [
+          10.7,
+          81.0,
+          18.8
+        ],
+        [
+          10.8,
+          83.0,
+          19.7
+        ],
+        [
+          11.0,
+          66.0,
+          15.6
+        ],
+        [
+          11.0,
+          75.0,
+          18.2
+        ],
+        [
+          11.1,
+          80.0,
+          22.6
+        ],
+        [
+          11.2,
+          75.0,
+          19.9
+        ],
+        [
+          11.3,
+          79.0,
+          24.2
+        ],
+        [
+          11.4,
+          76.0,
+          21.0
+        ],
+        [
+          11.4,
+          76.0,
+          21.4
+        ],
+        [
+          11.7,
+          69.0,
+          21.3
+        ],
+        [
+          12.0,
+          75.0,
+          19.1
+        ],
+        [
+          12.9,
+          74.0,
+          22.2
+        ],
+        [
+          12.9,
+          85.0,
+          33.8
+        ],
+        [
+          13.3,
+          86.0,
+          27.4
+        ],
+        [
+          13.7,
+          71.0,
+          25.7
+        ],
+        [
+          13.8,
+          64.0,
+          24.9
+        ],
+        [
+          14.0,
+          78.0,
+          34.5
+        ],
+        [
+          14.2,
+          80.0,
+          31.7
+        ],
+        [
+          14.5,
+          74.0,
+          36.3
+        ],
+        [
+          16.0,
+          72.0,
+          38.3
+        ],
+        [
+          16.3,
+          77.0,
+          42.6
+        ],
+        [
+          17.3,
+          81.0,
+          55.4
+        ],
+        [
+          17.5,
+          82.0,
+          55.7
+        ],
+        [
+          17.9,
+          80.0,
+          58.3
+        ],
+        [
+          18.0,
+          80.0,
+          51.5
+        ],
+        [
+          18.0,
+          80.0,
+          51.0
+        ],
+        [
+          20.6,
+          87.0,
+          77.0
+        ]
+      ],
+      "column_order": [
+        "Girth",
+        "Height",
+        "Volume"
+      ],
+      "variable_dictionary": {
+        "Girth": "Original misleading column name: this is diameter in inches,measured at4ft6in,not circumference.",
+        "Height": "Tree height in feet.",
+        "Volume": "Measured timber volume in cubic feet."
+      },
+      "analysis_policy": "For each observed tree,define a geometric cylinder with the recorded diameter and full height. Report measured timber-volume/cylinder-volume as a dimensionless descriptive form factor;equal weight per tree. One foot=12inches. A factor is a shape proxy,not a validated allometric prediction or actual trunk-cylinder claim.",
+      "source_provenance": {
+        "source_url": "https://svn.r-project.org/R/trunk/src/library/datasets/data/trees.R",
+        "sha256": "843b3a732a8e41af3edcc47a8bf9c9d435941a258d26199299af3382181e691a",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/trees.html",
+        "retrieved_utc_date": "2026-10-20",
+        "source": "Official R datasets SVN source,revision90725 listing",
+        "license": "R distribution GPL>=2; underlying observations cited by individual dataset documentation",
+        "claim_scope": "Historical public observations only; no new scientific observations or causal/representativeness assumption",
+        "decoded_json_sha256": "52afc2db399593aaef45ef8fe7bed18cb9de2aaa1fe4827d6d6e3a94feb0973e",
+        "decoder": "rdata0.11.2 RDA or bounded literal numeric c(...) parser,no R evaluation",
+        "raw_file": "trees.R",
+        "records": 31,
+        "converted_observation_sha256": "52afc2db399593aaef45ef8fe7bed18cb9de2aaa1fe4827d6d6e3a94feb0973e",
+        "observation_status": "Original historical values; no changed or synthetic observation."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

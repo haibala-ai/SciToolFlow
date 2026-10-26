@@ -1,0 +1,159 @@
+{
+  "data": [
+    {
+      "record_id": "direction01",
+      "source_zero_based_band_index": 8,
+      "source_zero_based_kpoint_indices": [
+        15,
+        14,
+        13,
+        12,
+        11
+      ],
+      "fractional_kpoints": [
+        [
+          0.5,
+          0.0,
+          0.5
+        ],
+        [
+          0.46666667,
+          0.0,
+          0.46666667
+        ],
+        [
+          0.43333333,
+          0.0,
+          0.43333333
+        ],
+        [
+          0.4,
+          0.0,
+          0.4
+        ],
+        [
+          0.36666667,
+          0.0,
+          0.36666667
+        ]
+      ],
+      "anchor_fractional_kpoint": [
+        0.5,
+        0.0,
+        0.5
+      ],
+      "reciprocal_lattice_inverse_angstrom_including_2pi": [
+        [
+          -1.298375130458156,
+          1.298375130458156,
+          1.298375130458156
+        ],
+        [
+          1.298375130458156,
+          -1.298375130458156,
+          1.298375130458156
+        ],
+        [
+          1.298375130458156,
+          1.298375130458156,
+          -1.298375130458156
+        ]
+      ],
+      "band_energies_ev": [
+        5.8709,
+        5.8909,
+        5.9509,
+        6.0498,
+        6.1861
+      ],
+      "anchor_band_energy_ev": 5.8709
+    },
+    {
+      "record_id": "direction02",
+      "source_zero_based_band_index": 8,
+      "source_zero_based_kpoint_indices": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "fractional_kpoints": [
+        [
+          0.5,
+          0.0,
+          0.5
+        ],
+        [
+          0.5,
+          0.01666667,
+          0.51666667
+        ],
+        [
+          0.5,
+          0.03333333,
+          0.53333333
+        ],
+        [
+          0.5,
+          0.05,
+          0.55
+        ],
+        [
+          0.5,
+          0.06666667,
+          0.56666667
+        ]
+      ],
+      "anchor_fractional_kpoint": [
+        0.5,
+        0.0,
+        0.5
+      ],
+      "reciprocal_lattice_inverse_angstrom_including_2pi": [
+        [
+          -1.298375130458156,
+          1.298375130458156,
+          1.298375130458156
+        ],
+        [
+          1.298375130458156,
+          -1.298375130458156,
+          1.298375130458156
+        ],
+        [
+          1.298375130458156,
+          1.298375130458156,
+          -1.298375130458156
+        ]
+      ],
+      "band_energies_ev": [
+        5.8709,
+        5.887,
+        5.9349,
+        6.0134,
+        6.1205
+      ],
+      "anchor_band_energy_ev": 5.8709
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published local electronic-band source projection",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "E eV,k angular inverse angstrom because reciprocal basis includes2pi;quartic coefficient eV*angstrom^4,quadratic coefficient eV*angstrom²;fractional coordinates dimensionless",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "materialsproject/pymatgen-test-files",
+      "source_commit": "85005108e99e40cbd59e78f067459b0ca664efc6",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen-test-files/85005108e99e40cbd59e78f067459b0ca664efc6/electronic_structure/bandstructure/CaO_2605_bandstructure.json",
+      "accessed_at": "2026-10-20T12:33:22.954453+00:00",
+      "raw_sha256": "2c9714e6935dc1a05bf4a84dcf8e4ab08fd3b1c81c055a9b218b1d3b787183c9",
+      "git_blob_sha1": "866061e3a71868354dd55fd0a69b522bb6cec946",
+      "git_blob_verified": true,
+      "byte_count": 28710,
+      "raw_local_path": "design/research_workflows/source_data/pymatgen_raw/electronic_structure/bandstructure/CaO_2605_bandstructure.json",
+      "role": "Genuine published scientific source artifact / library fixture; byte provenance verified, physical completeness and normalization require individual inspection; no expected answers used"
+    },
+    "selection": "Source band8,anchor source kpoint15 at X,all consecutive five-point local samples directed away from X along Gamma and W;chosen fixed local-curvature study windows,not claimed convergence to an infinitely small-q physical mass."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "coordinate_file": "asset://coverage_FLOW-0295_1UBQ.pdb",
+  "model": "First parsed coordinate model;retain every DSSPassigned residue in the denominator. Broad helix=H+G+I;beta=E+B;all remaining DSSPclasses remain in the denominator. The report gives percentages,not residue counts.",
+  "target": "Return broad-helix andbeta fractions on0..1,the ratio broad_helix/H-only,and whetherH-onlyunderstates the declared broad-helix fraction bymore than0.05absolute fraction.",
+  "scope": "Coordinate-based DSSPannotation,not a predicted fold or solution ensemble. No missing residue or SEQRESfill is allowed."
+}

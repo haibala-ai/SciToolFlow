@@ -1,0 +1,50 @@
+{
+  "origin": "Joint evidence audit of cooperative ligand binding and quaternary structural change. Two real archived human hemoglobin biological assemblies provide static structural prototypes. The seven exact binding observations are OWN controlled mathematical inputs, not measured hemoglobin oxygen-binding data or fitted parameters of either crystal. The stipulated symmetric4site thermodynamic model is an illustrative coarse model; alpha/beta identity and a real crystal do not make its identical-site assumptions empirically true.",
+  "structural_sources": {
+    "oxygenated_prototype": "asset://research_FLOW-0362_1HHO_protein_tetramer.pdb",
+    "deoxygenated_prototype": "asset://research_FLOW-0362_2HHB_protein_tetramer.pdb",
+    "source_entries": [
+      "https://www.rcsb.org/structure/1HHO",
+      "https://www.rcsb.org/structure/2HHB"
+    ],
+    "transformation": "Start from RCSB biological assembly1, not just an asymmetric-unit dimer. For1HHO the two MODEL blocks are symmetry-related ASSEMBLY COPIES, not alternative time/conformational samples. Flatten their protein ATOM coordinates into one tetramer: source model1 A/B stayA/B; model2 A/B becomeC/D. For2HHB retain its one-model A/B/C/D assembly. Preserve ATOM Cartesian coordinates/residue/atom identities; renumber atom serials, remove nonprotein HETATM/water/connectivity records. This is an explicit protein-only coordinate subset, not a ligand-chemistry reconstruction. Both files now have one parsed model0. A,C are alpha and B,D beta; chain labels are fixed by this source mapping."
+  },
+  "structural_audit": "Inspect each immutable structure and extract observed C-alpha coordinates from each chain, checking residue correspondence and source identities. Use fixed anchor residue numbers10,20,...130 on alphaA,C and10,20,...140 on betaB,D in chain orderA,B,C,D. Perform proper rigid fits with the two structures in their given label correspondence: one global54anchor tetramer fit and two independent27anchor dimer fits forAB andCD. Report RMSDs in angstrom. A lower separately fitted RMSD shows the scale of relative rearrangement under THIS anchor/correspondence definition; it is not a free energy, population or kinetic rate. For each full protein-only assembly retain heavy-atom contacts at cutoff4.5angstrom, minimum_contacts1, buried surface disabled. Report counts for every unordered chain pairAB,AC,AD,BC,BD,CD; an absent pair is0 only after confirming both chains and the complete minimum1 result. Do not compare an asymmetric dimer with a tetramer, reflect a structure or use all-atom counts as C-alpha correspondence.",
+  "binding_data": "asset://research_FLOW-0362_binding.csv",
+  "binding_model": "Activitya is nonnegative, dimensionless oxygen activity in this controlled dataset. Each tetramer has four equivalent sites conditional on one of two conformations. At equilibrium Z(a)=(1+a/KR)^4+L*(1+a/KT)^4, Y(a)=a*dlnZ/da/4. Define normalized B(a)=Z(a)/Z(0)=sum_{j=0}^4 b_j a^j withb0=1. The declared parameter domain isL>1 and0<KR<KT, with finite constants. Infer all parameters from the supplied seven exact saturation fractions; do not assume physiological blood values. Show all physical solutions in this domain. The two crystal structures are illustrative R/T prototypes; the file counts are not the equilibrium weightingL.",
+  "inverse_and_model_audit": "First recover all normalized coefficientsb0..b4 and check every source observation. Retain an actual LinearLeastSquares observation for the4unknown coefficient linear system derived from the complete seven(a,Y) pairs; use exact source fraction arithmetic as needed for the global/domain argument. Use momentsm_j=b_j/binomial(4,j) to establish whether the two positive distinct affinity poles and positive weights are identified, including physical domains and the label constraintKR<KT. Retain actual PolynomialRoots observations for the recovered affinity-support quadratic and normalized binding quartic; do not infer independent sites merely from a degree4polynomial. Test whether ANY four noninteracting sites with finite positive but potentially different dissociation constants can give the ENTIRE recovered binding curve. Separately decide whether a sequential occupancy thermodynamic model with positive stepwise equilibrium weights can give the same whole curve; construct its full weights rather than compare at one point. Distinguish parameter identification within the declared model from identification of an actual microscopic kinetic/conformational path.",
+  "cooperativity_and_fluctuation": "Find the unique half-saturation activityY=.5 and the local Hill slopenH=dln[Y/(1-Y)]/dln(a). On the full closed probe domaina in[0,100], with the a=0slope defined by its continuous limit, find EVERY global Hill-slope maximizer and the maximum, certifying all physical stationary points and domain endpoints. Do not substitute4, a fitted constant Hill exponent, or the half-saturation slope for this maximum. At half saturation determine the complete occupancy distributionn=0..4 from the recovered polynomial, its variance and the variance of four independent identical sites with the same mean occupancy. Derive how the observed fluctuation relates to the Hill response; do not replace the cooperative population byBinomial(4,Y).",
+  "conformational_probe_design": "Within the DECLARED two-conformation thermodynamic model, P_R(a)=(1+a/KR)^4/Z(a). At half saturation return this R population. To locate a model-based conformation-sensitive probe, maximize the binary conformational entropy-P_R*lnP_R-(1-P_R)*ln(1-P_R) over the full activity interval[0,100], returning all maximizing activities and maximum entropy in nats. Prove globality. This is a design criterion under the fitted coarse model, not direct evidence for real conformational populations or a specification of a clinical oxygen condition.",
+  "typed_evidence": "Use actual InspectPDBQuality and all8 chain-specific ExtractPDBCoordinates observations; actual proper RigidSuperposition receipts for the stated global and both dimer fits; both full PDBInterfaceContacts receipts; actual complete-data LinearLeastSquares; and the two PolynomialRoots reports described above. Source records, observed coordinates, normalized-polynomial reconstruction, moment identifiability, candidate completeness, whole-curve alternative models and scientific fluctuation/global-probe certificates belong in the trajectory. Reconstructing these typed results only inside numerical code does not replace their required actual receipts.",
+  "interpretation_proposals": {
+    "A": "Global versus separately fitted rigid structural residuals can distinguish quaternary relative motion from local similarity under a stated correspondence.",
+    "B": "Counting two crystallographic assembly copies determines the equilibrium R/T population ratio.",
+    "C": "A cooperative occupancy distribution can have a different variance from four independent sites at the same mean saturation.",
+    "D": "A degree4binding polynomial alone proves four independent possibly heterogeneous sites.",
+    "E": "Unique parameters within a stipulated coarse thermodynamic family do not by themselves identify a microscopic kinetic path.",
+    "F": "The activity maximizing the Hill slope must equal both half saturation and the binary conformational entropy optimum.",
+    "G": "Positive sequential occupancy weights can reproduce an equilibrium binding polynomial without establishing the same conformational kinetics.",
+    "H": "These frozen structural prototypes and constructed binding values establish actual physiological or clinical hemoglobin oxygen parameters."
+  },
+  "reporting": "Return only the public answer object. Coefficients ascendingb0..b4; occupancy probabilities orderedn0..4; dimer RMSDs orderedAB,CD. Contact/anchor/solution counts and booleans exact. Absolute tolerance1e-5 foractivity/parameters/RMSD/Hill/variance/entropy,1e-8 forpolynomial coefficients and probabilities; keep probabilities nonnegative and normalized. Chain mapping is fixed by supplied assembly transformation. All source and global certificates remain in the trajectory.",
+  "primary_context": [
+    {
+      "title": "Structure of human oxyhaemoglobin at2.1A resolution",
+      "doi": "10.1016/S0022-2836(83)80313-1",
+      "role": "Source1HHO static structural prototype, not the own binding data."
+    },
+    {
+      "title": "The crystal structure of human deoxyhaemoglobin at1.74A resolution",
+      "doi": "10.1016/0022-2836(84)90472-8",
+      "role": "Source2HHB static structural prototype."
+    },
+    {
+      "authors": "Monod,Wyman,Changeux",
+      "year": 1965,
+      "title": "On the nature of allosteric transitions: A plausible model",
+      "doi": "10.1016/S0022-2836(65)80285-6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14343300/",
+      "role": "Primary methodological context; benchmark coefficients/data and global audits are own controlled construction."
+    }
+  ]
+}

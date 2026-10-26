@@ -160,7 +160,11 @@ def get_floating_solvent_molecules(cif_file_name: str) -> str:
     """
     Generate a Markdown string listing the composition and quantity of floating solvent molecules in a MOF structure from a CIF file.
 
-    Floating solvent molecules are identified as NonSbuMolecules that are not part of the structural building units (SBUs) of the MOF.
+    Floating components are finite nonperiodic graph components under the
+    standard moffragmentor bonding model, reported per default MOF cell
+    (potentially primitive). Composition does not assign charge, missing
+    hydrogens, solvent-removal feasibility or thermal stability. A source_sha256
+    line identifies exact input-file bytes; pre/post-parse changes fail.
 
     Args:
         cif_file_name (str): The name of the MOF cif file, without the '.cif' extension.
@@ -179,6 +183,11 @@ def get_floating_solvent_molecules(cif_file_name: str) -> str:
             return "File does not exist: Please check the cif file name and directory."
 
         # Create MOF object from CIF
+        import hashlib
+        from pathlib import Path
+
+        source_bytes = Path(cif_file_path).read_bytes()
+        source_sha256 = hashlib.sha256(source_bytes).hexdigest()
         mof = MOF.from_cif(cif_file_path)
 
         # Get the collection of floating solvent molecules
@@ -202,6 +211,9 @@ def get_floating_solvent_molecules(cif_file_name: str) -> str:
             for molecule_type, quantity in composition_dict.items():
                 markdown_output += f"- {molecule_type}: {quantity}\n"
 
+        if hashlib.sha256(Path(cif_file_path).read_bytes()).hexdigest() != source_sha256:
+            raise ValueError("CIF file bytes changed during MOF graph processing")
+        markdown_output += f"\n**source_sha256:** {source_sha256}\n"
         return markdown_output
     except Exception as e:
         return f"Error occurred while processing the file {cif_file_name}: {e}"
@@ -209,22 +221,35 @@ def get_floating_solvent_molecules(cif_file_name: str) -> str:
 
 def get_structure_info(file_name: str) -> str:
     """
-    Reads a structure file and returns basic information about the structure.
+    Read structure site count and the parsed cell matrix in angstrom.
+
+    Preserve the parser's input-cell representation; no default MOF primitive
+    reduction is applied. Append source_sha256 for exact file-byte identity.
+    Fail if the input bytes differ before and after parsing.
 
     Args:
         file_name (str): The name of the structure file (e.g., POSCAR, CIF).
 
     Returns:
-        str: A Markdown formatted string with structure information or an error message if the operation fails.
+        str: Markdown with input file name, site count, three cell-matrix rows
+            in angstrom and a trailing source_sha256 line. An error string is
+            returned on read/parse or detected input-change failure.
     """
     try:
+        import hashlib
+        from pathlib import Path
+
         structure_file = os.path.join(Config().UPLOAD_FILES_BASE_PATH, file_name)
+        source_sha256 = hashlib.sha256(Path(structure_file).read_bytes()).hexdigest()
         structure = Structure.from_file(structure_file)
+        if hashlib.sha256(Path(structure_file).read_bytes()).hexdigest() != source_sha256:
+            raise ValueError("Structure file bytes changed during parsing")
         return (
             f"## Structure Information\n\n"
             f"- **File Name**: `{file_name}`\n"
             f"- **Number of Sites**: `{len(structure)}`\n"
             f"- **Lattice Parameters**: `{structure.lattice}`\n"
+            f"\n**source_sha256:** {source_sha256}\n"
         )
     except Exception as e:
         return f"Error occurred while reading structure: {str(e)}\n"

@@ -5,14 +5,20 @@ from datetime import datetime, timezone
 from pathlib import Path
 import hashlib
 import json
+import math
 import re
 import time
 import uuid
+from itertools import count
 
-from .context import Context, encode, finite, preview, _inspect
-from scitoolflow.protocol import parse_reply, expand_citations
-from .trajectory import atomic_json
-from .feedback import action_feedback, schema_issues, required_answer_fields
+from baselines.react.context import Context, encode, finite, preview, _inspect
+from baselines.common.protocol import parse_reply, expand_citations
+from baselines.react.trajectory import atomic_json
+from baselines.react.feedback import (
+    action_feedback,
+    schema_issues,
+    required_answer_fields,
+)
 from tools.catalog import DISCOVERY_TOOL
 from baselines.common.answers import (
     AnswerFormatError,
@@ -23,11 +29,18 @@ from baselines.common.answers import (
     protocol_decision_schema,
 )
 from baselines.common.session import SessionOptions
+from baselines.common.resources import (
+    TaskResources,
+    BudgetedClient,
+    ResourceLimit,
+    remaining as quota_remaining,
+    available,
+)
 from baselines.common.repetition import ConsecutiveToolSteps
 
 
 def build_prompt(catalog, limits):
-    from scitoolflow.paths import project_root
+    from src.utils.paths import project_root
 
     prompt = (project_root() / "baselines/react/system_prompt.md").read_text().strip()
     groups = catalog.names_by_domain()
@@ -87,18 +100,19 @@ def run_react(
     inputs=None,
     files=None,
     answer_schema=None,
-    max_iterations=80,
-    max_calls=32,
+    max_iterations=None,
+    max_calls=None,
     max_actions=8,
-    max_discovery_calls=20,
-    max_reasoning_turns=8,
-    max_consecutive_thinks=2,
+    max_discovery_calls=None,
+    max_reasoning_turns=None,
+    max_consecutive_thinks=None,
     max_protocol_errors=5,
     max_failures_per_action=0,
     max_identical_tool_steps=10,
     answer_schema_guard=True,
     protocol_schema_guard=True,
-    task_timeout=1800,
+    task_timeout=7200,
+    max_model_requests=400,
     tool_timeout=180,
     max_context_chars=200000,
     max_output_tokens=4096,
@@ -111,7 +125,13 @@ def run_react(
         raise ValueError("A nonempty question is required")
     if not re.fullmatch(r"[A-Za-z0-9_-]+", case_id):
         raise ValueError("Unsafe task identifier")
+    resources = session.resources or TaskResources(
+        max_model_requests, task_timeout, clock
+    )
+    client = BudgetedClient(client, resources, session.phase)
     limits = dict(
+        resource_policy="task-resources.v1",
+        model_requests=resources.max_model_requests,
         decisions=max_iterations,
         scientific_calls=max_calls,
         actions_per_decision=max_actions,
@@ -127,10 +147,16 @@ def run_react(
         protocol_schema_guard=bool(protocol_schema_guard),
     )
     if any(
-        isinstance(v, bool) or not isinstance(v, (int, float)) or v <= 0
+        isinstance(v, bool)
+        or not isinstance(v, (int, float))
+        or not math.isfinite(v)
+        or v <= 0
         for k, v in limits.items()
         if k
         not in {
+            "resource_policy",
+            "decisions",
+            "consecutive_thinks",
             "think_steps",
             "scientific_calls",
             "discovery_calls",
@@ -148,17 +174,18 @@ def run_react(
         raise ValueError(
             "failures_per_identical_action must be nonnegative; 0 disables it"
         )
-    if (
-        isinstance(max_reasoning_turns, bool)
-        or not isinstance(max_reasoning_turns, int)
-        or max_reasoning_turns < 0
-    ):
-        raise ValueError("think_steps must be a nonnegative integer")
-    if any(
-        isinstance(v, bool) or not isinstance(v, int) or v < 0
-        for v in [max_calls, max_discovery_calls]
-    ):
-        raise ValueError("Call budgets must be nonnegative integers")
+    for name, value in [
+        ("decisions", max_iterations),
+        ("scientific_calls", max_calls),
+        ("discovery_calls", max_discovery_calls),
+        ("think_steps", max_reasoning_turns),
+        ("consecutive_thinks", max_consecutive_thinks),
+    ]:
+        if value is not None and (
+            type(value) is not int
+            or value < (1 if name in {"decisions", "consecutive_thinks"} else 0)
+        ):
+            raise ValueError(name + " must be null or a valid nonnegative integer")
     guide = answer_format(answer_schema) if answer_schema else None
     system = session.system_prompt or build_prompt(catalog, limits)
     if session.system_prompt:
@@ -184,16 +211,11 @@ def run_react(
     counter = (
         client.count_tokens if getattr(client, "backend", None) == "vllm" else None
     )
-    context = Context(
-        initial,
-        max_context_chars,
-        counter,
-        client.input_budget(max_output_tokens) if counter else None,
-    )
+    context = None
     run_id = case_id + "-" + uuid.uuid4().hex[:12]
     path = Path(trace_dir) / run_id / "trajectory.json"
     started = clock()
-    deadline = started + task_timeout
+    deadline = min(started + task_timeout, resources.deadline)
     trajectory = {
         "schema_version": "scitoolflow.trajectory.v1",
         "run_id": run_id,
@@ -241,6 +263,7 @@ def run_react(
     }
 
     def save():
+        trajectory["resource_usage"] = resources.snapshot()
         if session.persist:
             atomic_json(path, trajectory)
         if session.on_update:
@@ -248,19 +271,45 @@ def run_react(
 
     save()
     try:
-        for index in range(max_iterations):
+        context = Context(
+            initial,
+            max_context_chars,
+            counter,
+            client.input_budget(max_output_tokens) if counter else None,
+        )
+        for index in count():
+            if max_iterations is not None and index >= max_iterations:
+                failure = "DecisionBudget"
+                break
+            try:
+                resources.check()
+            except ResourceLimit as error:
+                failure = str(error)
+                break
             if clock() >= deadline:
                 failure = "TaskDeadline"
                 break
             remaining = {
-                "decisions_including_current": max_iterations - index,
-                "scientific_calls": max_calls - stats["scientific_calls"],
-                "discovery_calls": max_discovery_calls - stats["discovery_calls"],
-                "think_steps": max_reasoning_turns - stats["think_steps"],
-                "consecutive_thinks": max_consecutive_thinks - consecutive_thinks,
+                "decisions_including_current": quota_remaining(max_iterations, index),
+                "model_requests": resources.remaining_requests(),
+                "scientific_calls": quota_remaining(
+                    max_calls, stats["scientific_calls"]
+                ),
+                "discovery_calls": quota_remaining(
+                    max_discovery_calls, stats["discovery_calls"]
+                ),
+                "think_steps": quota_remaining(
+                    max_reasoning_turns, stats["think_steps"]
+                ),
+                "consecutive_thinks": quota_remaining(
+                    max_consecutive_thinks, consecutive_thinks
+                ),
                 "consecutive_protocol_errors": max_protocol_errors - errors,
                 "seconds": round(max(0, deadline - clock()), 1),
-                "final_decision": index == max_iterations - 1,
+                "final_decision": (
+                    max_iterations is not None and index == max_iterations - 1
+                )
+                or resources.remaining_requests() == 1,
             }
             messages = context.build(summaries, state={"remaining_budget": remaining})
             stats["model_turns"] += 1
@@ -276,8 +325,8 @@ def run_react(
             }
             trajectory["steps"].append(step)
             scope = (
-                client.react_request_scope()
-                if hasattr(client, "react_request_scope")
+                client.generation_scope()
+                if hasattr(client, "generation_scope")
                 else nullcontext()
             )
             try:
@@ -309,11 +358,11 @@ def run_react(
                             if (
                                 name == DISCOVERY_TOOL
                                 and session.allow_discovery
-                                and remaining["discovery_calls"] > 0
+                                and available(remaining["discovery_calls"])
                             )
                             or (
                                 name != DISCOVERY_TOOL
-                                and remaining["scientific_calls"] > 0
+                                and available(remaining["scientific_calls"])
                                 and (
                                     session.allowed_tools is None
                                     or name in session.allowed_tools
@@ -327,10 +376,21 @@ def run_react(
                         ]
                         request_schema = protocol_decision_schema(
                             names,
-                            max_actions=min(
-                                max_actions,
-                                remaining["scientific_calls"]
-                                + remaining["discovery_calls"],
+                            max_actions=(
+                                min(
+                                    max_actions,
+                                    sum(
+                                        v
+                                        for v in [
+                                            remaining["scientific_calls"],
+                                            remaining["discovery_calls"],
+                                        ]
+                                        if v is not None
+                                    ),
+                                )
+                                if remaining["scientific_calls"] is not None
+                                and remaining["discovery_calls"] is not None
+                                else max_actions
                             ),
                             answer_schema=(
                                 answer_schema if guarded_schema is not None else None
@@ -340,8 +400,8 @@ def run_react(
                                 for name in names
                                 if catalog.canonical(name) in visible_input_schemas
                             },
-                            allow_think=remaining["think_steps"] > 0
-                            and remaining["consecutive_thinks"] > 0,
+                            allow_think=available(remaining["think_steps"])
+                            and available(remaining["consecutive_thinks"]),
                         )
                         stats["protocol_schema_guard_requests"] += 1
                         step["model"]["visible_input_contracts"] = sorted(
@@ -374,7 +434,11 @@ def run_react(
                 failure = (
                     "TaskDeadline"
                     if clock() >= deadline
-                    else "ModelError: " + str(error)[:500]
+                    else (
+                        str(error)
+                        if isinstance(error, ResourceLimit)
+                        else "ModelError: " + str(error)[:500]
+                    )
                 )
                 break
             usage = reply.get("usage") or {}
@@ -448,8 +512,11 @@ def run_react(
                             "think must be a nonempty working-state string"
                         )
                     if (
-                        stats["think_steps"] >= max_reasoning_turns
-                        or consecutive_thinks >= max_consecutive_thinks
+                        max_reasoning_turns is not None
+                        and stats["think_steps"] >= max_reasoning_turns
+                    ) or (
+                        max_consecutive_thinks is not None
+                        and consecutive_thinks >= max_consecutive_thinks
                     ):
                         raise ValueError(
                             "Thinking limit reached; call a tool, inspect evidence or finish"
@@ -462,10 +529,12 @@ def run_react(
                         encode(
                             {
                                 "think_step_recorded": True,
-                                "remaining_think_steps": max_reasoning_turns
-                                - stats["think_steps"],
-                                "remaining_consecutive_thinks": max_consecutive_thinks
-                                - consecutive_thinks,
+                                "remaining_think_steps": quota_remaining(
+                                    max_reasoning_turns, stats["think_steps"]
+                                ),
+                                "remaining_consecutive_thinks": quota_remaining(
+                                    max_consecutive_thinks, consecutive_thinks
+                                ),
                                 "next": "Call tools, inspect or finish when the consecutive-think limit is reached.",
                             }
                         ),
@@ -505,6 +574,18 @@ def run_react(
                                 + ". Correct these paths inside finish using the public answer_schema. "
                                 "If required evidence is unavailable, use stop with a reason; do not invent values."
                             )
+                    if clock() >= deadline:
+                        failure = "TaskDeadline"
+                        step.update(
+                            type="error",
+                            error={
+                                "type": "TaskDeadline",
+                                "message": "Task deadline reached before final submission",
+                            },
+                        )
+                        break
+                    if session.phase is None or session.phase == "summarizer":
+                        resources.complete()
                     answer = candidate
                     step.update(type="finish", answer=candidate)
                     trajectory["status"] = "completed"
@@ -577,11 +658,17 @@ def run_react(
                     step["action_errors"] = rejected
                     science = sum(a["tool"] != DISCOVERY_TOOL for _, a in bound)
                     discovery = len(bound) - science
-                    if stats["scientific_calls"] + science > max_calls:
+                    if (
+                        max_calls is not None
+                        and stats["scientific_calls"] + science > max_calls
+                    ):
                         raise ValueError(
                             "Scientific call budget insufficient for this batch; nothing executed. Reduce the batch, finish or stop."
                         )
-                    if stats["discovery_calls"] + discovery > max_discovery_calls:
+                    if (
+                        max_discovery_calls is not None
+                        and stats["discovery_calls"] + discovery > max_discovery_calls
+                    ):
                         raise ValueError(
                             "Discovery call budget insufficient for this batch; nothing executed. Reuse known contracts, finish or stop."
                         )
@@ -711,8 +798,9 @@ def run_react(
                             {
                                 "observations": feedback,
                                 "action_errors": rejected,
-                                "remaining_scientific_calls": max_calls
-                                - stats["scientific_calls"],
+                                "remaining_scientific_calls": quota_remaining(
+                                    max_calls, stats["scientific_calls"]
+                                ),
                             }
                         ),
                     )
@@ -805,8 +893,12 @@ def run_react(
                 },
             )
     except Exception as error:
-        failure = type(error).__name__ + ": " + str(error)[:1000]
-    stats["context_compactions"] = context.compactions
+        failure = (
+            str(error)
+            if isinstance(error, ResourceLimit)
+            else type(error).__name__ + ": " + str(error)[:1000]
+        )
+    stats["context_compactions"] = context.compactions if context else 0
     trajectory.update(
         status=(
             "interrupted"

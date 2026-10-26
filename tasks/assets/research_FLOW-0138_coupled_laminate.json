@@ -1,0 +1,41 @@
+{
+  "origin": "Own controlled two-phase reciprocal linear-response thermoelectric laminate. Exact phase calibration and macroscopic resistance observations define a mathematical materials problem, not empirical transport measurements for a named compound. Forces and fluxes are normalized conjugate variables; no watts, Kelvin-scale temperature span or finite-temperature device efficiency is inferred.",
+  "constitutive_convention": "For each spatial direction alpha, J_alpha=(j_alpha,q_alpha)^T=L_phase X_alpha, with X_alpha=(electric_force,thermal_force)^T. Both phases are isotropic in physical space but charge and heat are coupled. The positive scalar normalization is fixed and common to both phases; entropy production is sum_alpha X_alpha^T J_alpha. Onsager symmetry and positive definiteness must be checked from the actual calibrated matrices. Work throughout linear response: heat flux is divergence-free to first order; nonlinear Joule heating, contacts, interface resistance, magnetic fields and finite-contrast temperature variation are excluded.",
+  "calibration_handoff": "For each phase P,Q export two reusable ordinary least-squares models with intercept using all its source rows: charge_flux and heat_flux as targets, feature order[electric_force,thermal_force]. No scaling or penalty. Audit the equilibrium intercepts against0 and predictions against every source row, tolerance1e-9. Retain the four actual exported models and actual predictions at forces[0,0],[1,0],[0,1],[1,1]. Construct the phase matrices from the actual predicted unit-force responses rounded to six decimals, with the intercept treated as0 only after the stated audit. This removes fitting roundoff in exact model inputs; it does not establish real-world calibration accuracy or extrapolation.",
+  "geometry": "A perfect rank-one laminate has phase-P volume fraction f in[0.15,0.85]. Its layer normal n=(cos(theta),sin(theta)) and tangent t=(-sin(theta),cos(theta)), theta in[0,180) degrees; n and -n describe the same layering, but reflection theta->180-theta is not identified a priori. Along a layer, both conjugate forces are continuous and fluxes add by volume. Across a layer, both conserved normal fluxes are continuous and force drops add by volume. Derive the two coupled2x2 tangent/normal effective matrices rather than averaging charge and heat independently. Rotate the resulting spatial tensor into x/y laboratory blocks ordered as[J_x,J_y]=[[K_xx,K_xy],[K_yx,K_yy]][X_x,X_y], each block2x2 in charge/heat order.",
+  "boundary_condition": "The long strip is electrically AND thermally insulated along its y sides: j_y=q_y=0. The resulting transverse forces generally do not vanish. Eliminate BOTH components of X_y to obtain the longitudinal matrix L_strip satisfying J_x=L_strip X_x. Retain actual typed matrix inversion/linear-solve observations for the coupled phase/laminate reductions, not scalar uncoupled formulas. Use a full4x4 block calculation at the inferred geometry as an independent check of the2x2 reduced law.",
+  "inverse_observations": {
+    "resistance_definition": "Under the same insulated-side boundary, X_x=N_strip J_x with N_strip=L_strip^-1. The charge experiment sets q_x=0 and measures electric_force/j_x=N11. The heat experiment sets j_x=0 and measures thermal_force/q_x=N22. Cross-force or cross-flux entries are not separately observed. Both quoted rational numbers are exact controlled-model observations.",
+    "N11_numerator_denominator": [
+      1249012,
+      2154835
+    ],
+    "N22_numerator_denominator": [
+      9526036,
+      15083845
+    ],
+    "identification": "Recover ALL(f,theta) pairs in the declared continuous domain, not just one local fit or a mesh match. Account for poles, excluded phase-fraction endpoints and orientation reflections. Give a global algebraic/root or equivalent complete certificate, with actual polynomial-root observations if using elimination."
+  },
+  "device_objectives": "For a small prescribed positive longitudinal thermal force, use its linear-response coefficient normalization X_x,thermal=1 and vary longitudinal electric_force e to generate power. With J_x=L_strip[e,1]^T define reduced power P=-e*j_x and Carnot-normalized linear-response efficiency r=P/q_x, restricted to j_x*e<=0 and q_x>0. This coefficient calculation does not assert a physically finite unit temperature difference. At the inferred microstructure report q_squared=L12^2/(L11*L22), ZT=q_squared/(1-q_squared), the maximum-power e and P, the efficiency at maximum power, the maximum r and its e, and power at that efficiency optimum. Distinguish efficiency from power objectives and exclude zero-power or negative-heat branch mistakes.",
+  "orientation_redesign": "Keep the inferred phase fraction fixed and allow any theta in[0,180). Find the complete set of globally maximum-efficiency orientations, and separately the complete set of globally maximum-power orientations when the load is optimized at each orientation. Give their optimal objective values. Certify all interior stationary points, endpoints and symmetry-equivalent orientations in the continuum; a sampled angular mesh is not a global certificate. Decide whether the same orientation solves both objectives.",
+  "boundary_shortcut_audit": "At the representative inferred orientation theta<=90, consider the different boundary condition j_y=0 but thermal_force_y=0, allowing transverse heat leakage. Eliminate only electric_force_y from the full laboratory blocks, obtain its longitudinal2x2 response and maximum efficiency. Report whether it equals the stipulated insulated-side response. Do not silently use the clamped transverse-temperature tensor or scalar phase averages as the actual strip law.",
+  "interpretation_proposals": {
+    "A": "Charge and heat have to be homogenized as coupled conjugate fields before applying the strip side constraints.",
+    "B": "Zero transverse flux implies both transverse forces are zero in a tilted coupled laminate.",
+    "C": "The measured diagonal resistances can determine phase fraction without determining the reflection of the layer orientation.",
+    "D": "Maximum power and maximum Carnot-normalized efficiency are necessarily attained at the same material orientation.",
+    "E": "Positive-definite phase Onsager matrices imply nonnegative entropy production in the eliminated passive strip.",
+    "F": "The listed normalized coefficients are experimentally measured properties of a named real thermoelectric compound.",
+    "G": "Different transverse thermal boundary conditions can change the inferred device response even at fixed microstructure.",
+    "H": "A finite angular grid proves that no better interior orientation exists."
+  },
+  "reporting": "phase_matrices mapsP,Q to2x2 arrays; phase_entropy_eigenvalues_ascending mapsP,Q to2numbers; identified_phase_fraction; all_identified_normal_angles_deg sorted; strip_matrix; strip_operating_points with q2,ZT,maximum_power,maximum_power_electric_force,efficiency_at_maximum_power,maximum_efficiency,maximum_efficiency_electric_force,power_at_maximum_efficiency; globally_maximum_efficiency_angles_deg sorted and globally_maximum_efficiency; globally_maximum_power_angles_deg sorted and globally_maximum_power; maximum_power_and_efficiency_share_orientation asboolean; leaky_boundary_strip_matrix and leaky_boundary_maximum_efficiency; leaky_boundary_equals_insulated asboolean; valid_interpretation_proposal_ids. Numeric absolute tolerance1e-8, angles1e-6degree, IDs/booleans exact. Model artifacts, actual predictions, source-cell checks, complete inversion, coupled matrix reductions and global stationary/endpoint certificates belong in the trajectory.",
+  "methodological_source": {
+    "authors": "D.J. Bergman and O. Levy",
+    "title": "Thermoelectric properties of a composite medium",
+    "year": 1991,
+    "doi": "10.1063/1.349830",
+    "url": "https://doi.org/10.1063/1.349830",
+    "role": "Primary context for coupled thermoelectric homogenization. This task supplies its own exact phase calibration, geometry, inverse observations and explicitly first-order transport model; these are not data extracted from that paper."
+  }
+}

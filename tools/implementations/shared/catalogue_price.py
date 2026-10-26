@@ -1,6 +1,6 @@
 """Read public mass-package catalogue prices from the supplier's CAS page."""
 
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 from datetime import datetime, timezone
 from decimal import Decimal, InvalidOperation
 import hashlib

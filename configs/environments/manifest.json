@@ -2,7 +2,7 @@
   "profiles": [
     {
       "name": "SciTool-Unified",
-      "packages": 320,
+      "packages": 324,
       "file": "configs/environments/SciTool-Unified.yml"
     },
     {
@@ -20,6 +20,5 @@
       "packages": 157,
       "file": "configs/environments/SciTool-Chroma.yml"
     }
-  ],
-  "new_environment_created": false
+  ]
 }

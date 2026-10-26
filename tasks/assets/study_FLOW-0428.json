@@ -1,0 +1,166 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "observations": [
+        [
+          400.0,
+          0.0001575
+        ],
+        [
+          405.0,
+          0.0001699
+        ],
+        [
+          410.0,
+          0.000235
+        ],
+        [
+          415.0,
+          0.0003102
+        ],
+        [
+          420.0,
+          0.0004917
+        ],
+        [
+          425.0,
+          0.000871
+        ],
+        [
+          430.0,
+          0.0017418
+        ],
+        [
+          435.0,
+          0.00464
+        ],
+        [
+          436.5,
+          0.0065895
+        ],
+        [
+          438.0,
+          0.0097302
+        ],
+        [
+          439.5,
+          0.0149002
+        ],
+        [
+          441.0,
+          0.023731
+        ],
+        [
+          442.5,
+          0.0401683
+        ],
+        [
+          444.0,
+          0.0712559
+        ],
+        [
+          445.5,
+          0.1264458
+        ],
+        [
+          447.0,
+          0.2073413
+        ],
+        [
+          448.5,
+          0.2902366
+        ],
+        [
+          450.0,
+          0.3445623
+        ],
+        [
+          451.5,
+          0.3698049
+        ],
+        [
+          453.0,
+          0.3668534
+        ],
+        [
+          454.5,
+          0.3106727
+        ],
+        [
+          456.0,
+          0.2078154
+        ],
+        [
+          457.5,
+          0.1164354
+        ],
+        [
+          459.0,
+          0.0616764
+        ],
+        [
+          460.5,
+          0.03372
+        ],
+        [
+          462.0,
+          0.0194023
+        ],
+        [
+          463.5,
+          0.0117831
+        ],
+        [
+          465.0,
+          0.0074357
+        ],
+        [
+          470.0,
+          0.0022732
+        ],
+        [
+          475.0,
+          0.00088
+        ],
+        [
+          480.0,
+          0.0004579
+        ],
+        [
+          485.0,
+          0.0002345
+        ],
+        [
+          490.0,
+          0.0001586
+        ],
+        [
+          495.0,
+          0.0001143
+        ],
+        [
+          500.0,
+          7.1e-05
+        ]
+      ],
+      "column_order": [
+        "x",
+        "y"
+      ],
+      "analysis_policy": "Fit a nonnegative-height Gaussian line shape a*exp(-0.5*((x-center)/width)**2) by unweighted original-response least squares. Report fitted half-height crossings and full width at half maximum,in original wavelength units. Suggested start height0.35,center450,width5. A fitted width is a descriptive line-shape estimate,not an instrument certification.",
+      "units": "x=wavelength,y=transmittance in original archive numbers; no inferred nanometer or percent conversion.",
+      "source_provenance": {
+        "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Eckerle4.dat",
+        "raw_sha256": "8ec2133b29a0a7cecbfccd51f7c61ee432f73c460bf5ce7106d672642e57a61e",
+        "read_scope": "Dataset description,variable definitions,observed rows and declared family; certified result block is never exported to public task assets.",
+        "source_kind": "US NIST Statistical Reference Datasets public observations; original study reference retained in source",
+        "reuse": "Attributed public numeric reference data; no claim of authorship or endorsement"
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

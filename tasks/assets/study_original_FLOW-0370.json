@@ -1,0 +1,21 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "intrinsic_growth_per_year": 0.6,
+  "carrying_biomass_tonnes": 1000.0,
+  "catchability_per_effort_year": 0.02,
+  "candidate_efforts": [
+    0.0,
+    5.0,
+    10.0,
+    15.0,
+    20.0,
+    30.0,
+    35.0
+  ],
+  "common_initial_biomass_tonnes": 800.0,
+  "model": "Controlled logistic biomass model dB/dt=r*B*(1-B/K)-q*E*B at fixed nonnegative effort E. At 0<=qE<r use the attracting positive equilibrium; at qE>=r the limiting biomass from any positive starting biomass is zero, including the threshold. Long-run equilibrium yield is qE*B_equilibrium. Compare all candidate efforts; the continuous sustainable-yield optimum may also be obtained analytically. No uncertainty, transient recovery policy or real fishery recommendation is implied.",
+  "target": "All effort-aligned arrays include the supplied zero and collapse cases. Define collapse threshold as the smallest continuous E for which no strictly positive equilibrium persists. Instantaneous catch is evaluated at the common initial biomass, rather than each design equilibrium."
+}

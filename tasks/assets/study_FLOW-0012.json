@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "record_id": "cal-0",
+      "role": "standard",
+      "concentration_mmol_l": 0,
+      "response": 0.51
+    },
+    {
+      "record_id": "cal-1",
+      "role": "standard",
+      "concentration_mmol_l": 0.5,
+      "response": 4.02
+    },
+    {
+      "record_id": "cal-2",
+      "role": "standard",
+      "concentration_mmol_l": 1,
+      "response": 7.49
+    },
+    {
+      "record_id": "cal-3",
+      "role": "standard",
+      "concentration_mmol_l": 2,
+      "response": 14.53
+    },
+    {
+      "record_id": "cal-4",
+      "role": "standard",
+      "concentration_mmol_l": 3,
+      "response": 21.48
+    },
+    {
+      "record_id": "unknown",
+      "role": "sample",
+      "concentration_mmol_l": null,
+      "response": 14.5
+    }
+  ],
+  "provenance": {
+    "kind": "controlled simulated analytical response data, not measured assay results"
+  }
+}

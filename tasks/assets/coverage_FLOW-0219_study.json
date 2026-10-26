@@ -1,0 +1,7 @@
+{
+  "cif_file": "asset://coverage_FLOW-0219_HKUST1.cif",
+  "source_site_index": 2,
+  "analysis": "Retrieve actual chemical-bond neighbor indices for source site2in the default MOFcell,then use same-cell element symbols to select every hydrogen neighbor. Return their indices and the componentwise wrapped fractional displacement from site2to each selected neighbor,in ascending neighbor-index order.",
+  "wrapping": "For each fractional component delta use delta-floor(delta+0.5),giving[-0.5,0.5). This is an explicitly defined fractional export,not a guaranteed shortest Cartesian image in an oblique lattice.",
+  "scope": "Keep the tool default-cell site identity consistent across graph,symbol and coordinate calls. A dimensionless fractional vector norm is not a distance in angstrom,and default-cell indices are not guaranteed to equal unmodified supplied CIFrow indices."
+}

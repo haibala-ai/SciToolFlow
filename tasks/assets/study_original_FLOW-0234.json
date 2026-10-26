@@ -1,0 +1,46 @@
+{
+  "site_order": [
+    "A",
+    "B"
+  ],
+  "occupancy_model": "Each labelled site is fully occupied by isotope XorY. Let x_A,x_Bin[0,1]be its Xoccupancy,with Yoccupancy1-x. The known coherent scattering amplitudes are b_X=+1,b_Y=-1,so site-average amplitudes are2*x-1. Disorder scattering,thermal attenuation and scale factors have already been removed.",
+  "normalized_coherent_intensities": {
+    "even": 1.0,
+    "odd": 0.16
+  },
+  "diffraction_model": "I_even=(b_A+b_B)^2,I_odd=(b_A-b_B)^2. These are INTENSITIES;the signs of the two real amplitudes were not measured. An independent bulk composition assay reports(x_A+x_B)/2=0.75exactly.",
+  "followup_options": [
+    {
+      "id": "bulk_repeat",
+      "coefficients": [
+        0.5,
+        0.5
+      ],
+      "cost": 1,
+      "response": 0.75
+    },
+    {
+      "id": "A_weighted",
+      "coefficients": [
+        2.0,
+        1.0
+      ],
+      "cost": 2,
+      "response": 2.35
+    },
+    {
+      "id": "B_weighted",
+      "coefficients": [
+        1.0,
+        2.0
+      ],
+      "cost": 3,
+      "response": 2.15
+    }
+  ],
+  "target": "Before using any followup responses,return EVERY occupancy pair compatible with BOTH intensities and bulk composition,and state whether the sign of x_A-x_Bis identified. Select the least-cost single followup coefficient row that distinguishes all baseline-compatible pairs,and then use only that selected response to report the unique occupancy vector. The calibrated followups are stipulated linear site-sensitive readouts,not extra neutron intensities.",
+  "reporting": "Compatible-pair outer order is irrelevant,while each pair follows[A,B]. Do not take square roots of intensity as signed positive amplitudes without retaining all phase signs consistent with composition.",
+  "provenance": {
+    "kind": "Controlled conditional solid-state model;inputs are stipulated,not experimental structural assignments."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study, not new experimental measurements.",
+    "scope": "Results are conditional on the complete stated model, measurement convention and units."
+  },
+  "temperature_kelvin": 298.15,
+  "gas_constant_j_per_mol_kelvin": 8.314462618,
+  "avogadro_per_mol": 6.02214076e+23,
+  "independently_known_clean_surface_tension_millinewton_per_meter": 72.0,
+  "independently_known_adsorption_constant_liter_per_mol": 1000.0,
+  "bulk_concentrations_mol_per_liter": [
+    0.0005,
+    0.001,
+    0.002,
+    0.004
+  ],
+  "surface_tensions_millinewton_per_meter": [
+    70.37813956756733,
+    69.22741127776023,
+    67.60555084532756,
+    65.5622483502636
+  ],
+  "target_concentration_mol_per_liter": 0.001,
+  "model": "One ideal dilute NONIONIC solute at fixed T obeys gamma(c)=gamma0-R*T*Gamma_inf*ln(1+K*c) with unknown common positive Gamma_inf. Fit all concentration/tension observations with equal unweighted tension residuals, keeping gamma0 and K fixed at their independent values. Gibbs surface excess is Gamma(c)=-(1/(R*T))*d gamma/d ln(c), using gamma in N/m.",
+  "interpretation": "Under the declared single-layer molecule-count convention area per adsorbed molecule is1/(N_A*Gamma). Report that area in nm^2. The specified base-10 error uses -(1/(R*T))*d gamma/d log10(c) without the necessary base conversion; report erroneous/correct excess. Surface excess is an amount per area, not film thickness, and no density, molecular volume or layer geometry is supplied."
+}

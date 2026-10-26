@@ -1,0 +1,12 @@
+{
+  "observed_positive_relaxation_decay_rates_per_s": [
+    1.0,
+    5.0
+  ],
+  "additional_cross_pool_initial_derivative_per_s": 1.0,
+  "model": "Two equal-population exchanging NMRpools have symmetric exchange rate k>=0and unknown strictly positive intrinsic relaxation rates R_A,R_B. Their deviations obey dm/dt=-L*m,L=[[R_A+k,-k],[-k,R_B+k]]. The two observed decay rates are ONLYthe eigenvalues of L;no amplitudes or pool-specific diagonal derivative is measured. First analyze all parameter triples compatible with those poles. Then add the stated exact derivative m_Bdot(0)for initialization m_A(0)=1,m_B(0)=0. This derivative is a new independent datum. Pool labels A,Bare retained;unordered intrinsic-rate pairs may still leave a label ambiguity.",
+  "target": "Return the sharp feasible exchange-rate interval from poles alone and the sharp interval for either labelled intrinsic rate. After the cross-pool derivative is included,return k,the intrinsic-rate pair sorted ascending,and whether the labelled R_A,R_Bassignment is unique. Report whether the two decay poles alone identify exchange.",
+  "provenance": {
+    "kind": "Explicit controlled chemical model/exact observations;no empirical mechanism or practical reaction recommendation is inferred."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "tree_newick": "((A:1,B:3)AB:2,C:4)ROOT;",
+  "tip_trait_records": [
+    {
+      "tip_id": "B",
+      "trait_value": 7.0
+    },
+    {
+      "tip_id": "C",
+      "trait_value": 2.0
+    },
+    {
+      "tip_id": "A",
+      "trait_value": 1.0
+    }
+  ],
+  "model": "Independent zero-mean Gaussian Brownian increments on each supplied edge, with variance1trait-unit² per branch unit. The ROOTtrait theta is an unknown fixed common location, not known0and not an extra random increment. Tip observations are exact with no measurement noise. The tree, branch units, variance rate and root convention are fixed inputs; no sequence-based tree inference or rate fitting is requested.",
+  "target": "Predict the unobserved trait at the most recent common ancestor of AandB(labelAB). Use the best linear unbiased predictor with the unknown ROOTlocation estimated from ALLtip observations. Report its prediction-error variance while accounting for estimation of ROOT, not the smaller conditional variance obtained by treating the fitted ROOTvalue as known.",
+  "comparison": "Also report that smaller fitted-root-as-known variance at ABto quantify the missing uncertainty. These are conditional Gaussian working-model variances, not empirically certified evolutionary histories. Tip record row order is unrelated to tree tip order.",
+  "provenance": {
+    "data_origin": "Explicit small controlled benchmark models, sequences and traits; no empirical evolutionary, functional or conservation-outcome claim."
+  }
+}

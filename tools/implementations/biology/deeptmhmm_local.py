@@ -1,5 +1,5 @@
 """Local author DeepTMHMM2 replacement for an upstream KG-only DeepTMHMM tool."""
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import json
 import os
 from pathlib import Path
@@ -25,8 +25,12 @@ def predict_deeptmhmm(sequence: str):
     sys.path.insert(0, str(source))
     from deeptmhmm2_predictor import DeepTMHMM2
     from deeptmhmm2_predictor.constants import MEMBRANE_TYPE_NAMES
-    model = DeepTMHMM2(model_dir=Config().DEEPTMHMM_MODEL_PATH, device="cpu", num_threads=4)
-    predictions = model.predict({"input": sequence}, progress_bar=False, compute_marginals=False)
+    from tools.implementations.biology.model_cache import cached_resource, checkpoint_version, inference_lock
+    model = cached_resource("deeptmhmm2", Config().DEEPTMHMM_MODEL_PATH,
+                            lambda: DeepTMHMM2(model_dir=Config().DEEPTMHMM_MODEL_PATH, device="cpu", num_threads=4),
+                            ("cpu", 4, checkpoint_version(backbone)))
+    with inference_lock(model):
+        predictions = model.predict({"input": sequence}, progress_bar=False, compute_marginals=False)
     prediction = predictions[0]
     if prediction.sequence != sequence or len(prediction.topology_string) != len(sequence):
         raise RuntimeError("Prediction sequence/topology length mismatch")

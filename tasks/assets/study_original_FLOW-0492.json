@@ -1,0 +1,37 @@
+{
+  "observations": [
+    1.0,
+    -1.0,
+    1.0,
+    -1.0
+  ],
+  "known_independent_noise_variance": 1.0,
+  "models": [
+    {
+      "id": "constant",
+      "design_column": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "zero_mean_coefficient_prior_variance": 0.1
+    },
+    {
+      "id": "alternating",
+      "design_column": [
+        1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "zero_mean_coefficient_prior_variance": 100.0
+    }
+  ],
+  "model": "For each candidate,y=x*beta+epsilon with independent epsilon~N(0,I). Each coefficient has its stated proper zero-mean Gaussian prior. Candidate model prior probabilities are equal. Compare fully integrated p(y|model),not maximized likelihood or posterior density at one coefficient. Do not fit the prior variance to these observations.",
+  "reparameterization": "For the alternating model only,define xprime=10*xand beta_prime=beta/10,so predictions are unchanged. Report the coefficient prior variance in beta_prime coordinates that preserves the original probabilistic model,and the log Bayes factor if this rescaled design instead incorrectly retains prior variance100. Normalizing constants common to both models may cancel in log ratios,but model-dependent covariance determinants cannot.",
+  "target": "Return each model unregularized minimum residual sum of squares in source model order,logBF=log p(y|alternating)-log p(y|constant),the posterior-preferred model ID,the correctly transformed prior variance,and the incorrectly-untransformed logBF. Assess whether correct prior transformation leaves evidence invariant.",
+  "provenance": {
+    "kind": "Explicit controlled statistical/model fixture with exact specified assumptions."
+  }
+}

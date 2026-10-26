@@ -1,0 +1,56 @@
+{
+  "data_origin": "Original controlled periodic single-tracer hopping model. The POSCAR files encode allowed tracer-centre geometry, not a complete host crystal or a simultaneously occupied Li3 material. Energies and saddle rules are stipulated model parameters, not DFT predictions or measured ion-conduction data. No host density, phase stability or conductivity can be inferred from the placeholder species inventory.",
+  "geometry": "The three site indices 0,1,2 refer to the preserved POSCAR site order. Cell vectors are rows in angstrom. For a directed transition i -> (j,n), n is an INTEGER lattice-image shift and the physical Cartesian increment is d=(f_j+n-f_i)@cell. Include each distinct directed periodic image within the specified geometric radius once, including same-index nonzero-image transitions. Exclude only i=j,n=0. Reverse edges remain present. Do not collapse different images to one quotient edge or componentwise-wrap an oblique displacement.",
+  "models": [
+    {
+      "id": "M1",
+      "maximum_jump_distance_angstrom": 5.5,
+      "image_policy": "Keep only edges with original-base-representation n=(0,0,0). This is a controlled periodic caging model with hard barriers between the explicitly declared base cells."
+    },
+    {
+      "id": "M2",
+      "maximum_jump_distance_angstrom": 3.1,
+      "image_policy": "Keep every periodic image inside the cutoff."
+    },
+    {
+      "id": "M3",
+      "maximum_jump_distance_angstrom": 5.5,
+      "image_policy": "Keep every periodic image inside the cutoff."
+    }
+  ],
+  "rates": {
+    "site_well_energies_in_kBT": [
+      0,
+      0,
+      -5
+    ],
+    "attempt_frequency_per_ns": 10000,
+    "saddle_rule": "For each allowed edge, B_ij(n)=8+0.2*(distance_angstrom)^2 in units of kBT. The directed rate in ns^-1 is nu*exp(-(B_ij(n)-E_i)), where E_i is the starting-site well energy. The reverse edge has the same saddle B, not necessarily the same directed rate. Every allowed edge is a real spatial jump, including same-index jumps to another cell."
+  },
+  "process": "There is one noninteracting tracer on the infinite periodic graph. The internal site state starts in its normalized stationary distribution within a cell; no uniform-site occupancy assumption is supplied. Determine that distribution from the rates and establish detailed balance and zero mean macroscopic drift. The infinite-space position is NOT reduced modulo the unit cell after a jump. The quotient internal-state generator includes all rates between different site indices; same-index image jumps cancel in that internal generator but still contribute spatial displacement statistics.",
+  "quantity": "The effective long-time diffusion tensor is D=lim_{t->infinity} Cov[X(t)-X(0)]/(2t), in the fixed Cartesian frame of the supplied cell. Establish the infinite-time tensor analytically from the periodic stochastic process, rather than a finite-time mean-square displacement or the average of uncorrelated one-jump squared displacements. Intracell relaxation can correlate successive increments. A periodic cell corrector/Poisson equation, an equivalent reversible variational derivation, or another justified exact homogenization route is allowed. No electric field or concentration-dependent interaction is present.",
+  "representation_check": {
+    "second_file_role": "Same physical sites and every physical edge, described with different cell representatives. This is a consistency check, not a second experiment.",
+    "site_representative_integer_shifts": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        -1,
+        0
+      ]
+    ],
+    "edge_relation": "If f_i_new=f_i_base+s_i, then the corresponding image is n_new=n_base+s_i-s_j and physical d is unchanged. Apply ALL model selection rules to n_base=n_new-s_i+s_j. In particular the M1 cell barriers remain those of the original base representation. Do not reapply its zero-image rule to the new images. Calculate or independently verify that the physical tensor and transport dimension do not change under this relabelling."
+  },
+  "dimensionality": "The periodic transport dimension is the rank of lattice translations reachable by closed walks of the connected quotient graph, equivalently the dimension of unbounded long-time diffusive displacement for this positive reversible model. Prove it from periodic-image cycles or another exact geometric argument, rather than classifying tiny numerical eigenvalues. An internally connected finite graph by itself need not imply three-dimensional spatial transport.",
+  "answer_representation": "internal_stationary_probabilities lists site 0,1,2 probabilities. quotient_graph_is_connected maps all model IDs to booleans. periodic_transport_dimensions maps all model IDs to exact integers in 0..3. diffusion_components_cm2_per_s maps every model ID to [D_xx,D_yy,D_zz,D_xy,D_xz,D_yz], in that order. The tensor is symmetric. unit_cell_representative_change_preserves_physical_predictions states the independently verified equivalence. uncorrelated_jump_estimate_is_valid_for_every_model tests the naive stationary average sum(pi_i*k_ij*d*d^T)/2 against the defined infinite-time quantity for all three models. Report diffusion entries with absolute tolerance 1e-14 cm^2/s plus relative tolerance 1e-6; probabilities use 1e-9 absolute/relative. Counts and booleans are exact. You must convert both the squared angstrom distance and the nanosecond time unit.",
+  "scope": "This study concerns a declared ideal tracer model. Positive spatial diffusivity here does not establish real Li-ion conductivity, defect concentration, a host structure or a material screening recommendation. Do not infer microscopic barriers from the chosen geometric radius."
+}

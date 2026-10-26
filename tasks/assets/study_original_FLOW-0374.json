@@ -1,0 +1,17 @@
+{
+  "initial_population": 100.0,
+  "annual_multiplier_values": [
+    2.0,
+    0.4
+  ],
+  "annual_multiplier_probabilities": [
+    0.5,
+    0.5
+  ],
+  "prediction_years": 20,
+  "model": "Annual environmental states are independent and identically distributed,and the deterministic conditional population update is N(t+1)=M(t)*N(t). Population is a positive continuous abundance measure;there is no integer demographic extinction,immigration,density regulation or absorbing cutoff. Compare the expected population,median population and almost-sure long-run mean log growth. More-than-initial means strict N(20)>N(0). A value exactly at the initial population would not count.",
+  "target": "Return expected and median population at20years,probability of being strictly above the initial population at20years,and the almost-sure mean log growth per year. Report whether arithmetic mean multiplier greater than1guarantees positive long-run log growth.",
+  "provenance": {
+    "kind": "Explicit small synthetic benign scientific model;data are conditional exact counts/means and do not establish empirical ecological,causal or functional claims."
+  }
+}

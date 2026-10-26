@@ -1,0 +1,88 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled statistical example. Values are stipulated observations or population working moments as explicitly stated, not new experimental data.",
+    "source_scope": "No outside information is required; every inferential assumption is declared."
+  },
+  "channel_order": [
+    "force",
+    "extension"
+  ],
+  "frozen_scale_by_channel": [
+    2.0,
+    5.0
+  ],
+  "calibration_prediction": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0
+    ]
+  ],
+  "calibration_observation": [
+    [
+      2.0,
+      5.0
+    ],
+    [
+      4.0,
+      1.0
+    ],
+    [
+      0.2,
+      15.0
+    ],
+    [
+      8.0,
+      1.0
+    ],
+    [
+      0.4,
+      25.0
+    ],
+    [
+      12.0,
+      1.0
+    ],
+    [
+      0.4,
+      35.0
+    ],
+    [
+      16.0,
+      1.0
+    ]
+  ],
+  "query_prediction": [
+    10.0,
+    100.0
+  ],
+  "miscoverage": 0.2,
+  "protocol": "The prediction function and the strictly positive channel scales were fixed using an independent training set, before these calibration objects. The eight calibration objects and one future query object are exchangeable as entire two-channel vectors. Dependence between channels within each object is unrestricted. Use the maximum absolute standardized residual within each object as one score. At rank ceil((n+1)*(1-alpha)), use that score; a rank beyond n requires an unbounded set. Each channel interval uses the same score times its own frozen scale. A componentwise alternative would instead calibrate each separate channel at the same alpha; no simultaneous-channel guarantee is supplied by those marginal statements. Coverage is marginal over calibration and query, not conditional on this realized calibration sample."
+}

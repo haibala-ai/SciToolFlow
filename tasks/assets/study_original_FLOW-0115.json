@@ -1,0 +1,12 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "quadratic_coefficient": -1.0,
+  "quartic_coefficient": 1.0,
+  "applied_field": 0.2,
+  "potential": "F(P)=a*P^2/2+b*P^4/4-E*P for all real P. The numerical coefficients and P,E,F are in a controlled nondimensional Landau scaling. No sixth-order term, gradient energy or domain structure.",
+  "policy": "Find every distinct real stationary P and classify local minima by positive F_second. Global equilibrium is the lowest F among all real P, which exists because b>0. Determine the positive field at which the negative-P metastable minimum merges with its adjacent maximum: simultaneous F_first=0 and F_second=0. Report all P arrays in increasing order.",
+  "scope": "Mean-field homogeneous branch structure; its metastability limit is not an experimental coercive field under finite-time nucleation or domain-wall motion."
+}

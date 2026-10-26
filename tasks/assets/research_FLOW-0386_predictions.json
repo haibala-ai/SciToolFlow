@@ -1,0 +1,5767 @@
+{
+  "data": [
+    {
+      "id": "candidate_A__north_0_070",
+      "specimen_id": "north_0_070",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_006",
+      "specimen_id": "south_0_006",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_094",
+      "specimen_id": "north_0_094",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_016",
+      "specimen_id": "north_0_016",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_099",
+      "specimen_id": "north_0_099",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_071",
+      "specimen_id": "north_0_071",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_152",
+      "specimen_id": "north_0_152",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__south_0_003",
+      "specimen_id": "south_0_003",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_005",
+      "specimen_id": "north_1_005",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__central_0_022",
+      "specimen_id": "central_0_022",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_005",
+      "specimen_id": "north_0_005",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_150",
+      "specimen_id": "north_0_150",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_135",
+      "specimen_id": "north_0_135",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_1_053",
+      "specimen_id": "north_1_053",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_1_045",
+      "specimen_id": "north_1_045",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_1_021",
+      "specimen_id": "north_1_021",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_017",
+      "specimen_id": "north_0_017",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_022",
+      "specimen_id": "north_0_022",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_078",
+      "specimen_id": "north_0_078",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_034",
+      "specimen_id": "north_0_034",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_069",
+      "specimen_id": "north_0_069",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_073",
+      "specimen_id": "north_0_073",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_056",
+      "specimen_id": "north_0_056",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_012",
+      "specimen_id": "north_0_012",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_033",
+      "specimen_id": "north_1_033",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_0_010",
+      "specimen_id": "south_0_010",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_100",
+      "specimen_id": "north_0_100",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_1_000",
+      "specimen_id": "north_1_000",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_008",
+      "specimen_id": "north_1_008",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_064",
+      "specimen_id": "north_1_064",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__south_0_007",
+      "specimen_id": "south_0_007",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_1_013",
+      "specimen_id": "central_1_013",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.2
+    },
+    {
+      "id": "candidate_B__north_1_034",
+      "specimen_id": "north_1_034",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_1_073",
+      "specimen_id": "north_1_073",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__central_0_023",
+      "specimen_id": "central_0_023",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_073",
+      "specimen_id": "north_0_073",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_038",
+      "specimen_id": "north_1_038",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__south_0_023",
+      "specimen_id": "south_0_023",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_036",
+      "specimen_id": "north_0_036",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_1_037",
+      "specimen_id": "north_1_037",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_010",
+      "specimen_id": "north_0_010",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_0_011",
+      "specimen_id": "south_0_011",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_137",
+      "specimen_id": "north_0_137",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_005",
+      "specimen_id": "south_0_005",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_083",
+      "specimen_id": "north_0_083",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_1_040",
+      "specimen_id": "north_1_040",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_153",
+      "specimen_id": "north_0_153",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_079",
+      "specimen_id": "north_1_079",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_C__north_1_074",
+      "specimen_id": "north_1_074",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_010",
+      "specimen_id": "north_0_010",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_033",
+      "specimen_id": "north_0_033",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_026",
+      "specimen_id": "north_1_026",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_052",
+      "specimen_id": "north_1_052",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_145",
+      "specimen_id": "north_0_145",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_013",
+      "specimen_id": "north_0_013",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_074",
+      "specimen_id": "north_0_074",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_040",
+      "specimen_id": "north_0_040",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_079",
+      "specimen_id": "north_0_079",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_077",
+      "specimen_id": "north_1_077",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_C__north_0_118",
+      "specimen_id": "north_0_118",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_003",
+      "specimen_id": "north_1_003",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_152",
+      "specimen_id": "north_0_152",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_1_015",
+      "specimen_id": "central_1_015",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_B__north_0_145",
+      "specimen_id": "north_0_145",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__south_0_028",
+      "specimen_id": "south_0_028",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_068",
+      "specimen_id": "north_1_068",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__central_0_021",
+      "specimen_id": "central_0_021",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.75
+    },
+    {
+      "id": "candidate_A__north_1_025",
+      "specimen_id": "north_1_025",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__central_1_000",
+      "specimen_id": "central_1_000",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_121",
+      "specimen_id": "north_0_121",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_136",
+      "specimen_id": "north_0_136",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_1_009",
+      "specimen_id": "central_1_009",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__central_0_008",
+      "specimen_id": "central_0_008",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_1_061",
+      "specimen_id": "north_1_061",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_1_003",
+      "specimen_id": "south_1_003",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_1_024",
+      "specimen_id": "north_1_024",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_011",
+      "specimen_id": "north_0_011",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_000",
+      "specimen_id": "north_0_000",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_039",
+      "specimen_id": "north_1_039",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_055",
+      "specimen_id": "north_0_055",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_0_012",
+      "specimen_id": "central_0_012",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__central_0_004",
+      "specimen_id": "central_0_004",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_021",
+      "specimen_id": "central_0_021",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_048",
+      "specimen_id": "north_1_048",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_074",
+      "specimen_id": "north_1_074",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_C__north_0_036",
+      "specimen_id": "north_0_036",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_022",
+      "specimen_id": "north_1_022",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_028",
+      "specimen_id": "north_0_028",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_077",
+      "specimen_id": "north_0_077",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_1_000",
+      "specimen_id": "central_1_000",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_108",
+      "specimen_id": "north_0_108",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_022",
+      "specimen_id": "north_0_022",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_060",
+      "specimen_id": "north_0_060",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_0_028",
+      "specimen_id": "south_0_028",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_059",
+      "specimen_id": "north_0_059",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_125",
+      "specimen_id": "north_0_125",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_107",
+      "specimen_id": "north_0_107",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_1_048",
+      "specimen_id": "north_1_048",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_080",
+      "specimen_id": "north_0_080",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_036",
+      "specimen_id": "north_0_036",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_050",
+      "specimen_id": "north_0_050",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_044",
+      "specimen_id": "north_0_044",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_040",
+      "specimen_id": "north_0_040",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_072",
+      "specimen_id": "north_1_072",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_010",
+      "specimen_id": "north_1_010",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_151",
+      "specimen_id": "north_0_151",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_035",
+      "specimen_id": "north_0_035",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_136",
+      "specimen_id": "north_0_136",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_024",
+      "specimen_id": "north_0_024",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_107",
+      "specimen_id": "north_0_107",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_007",
+      "specimen_id": "north_0_007",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_121",
+      "specimen_id": "north_0_121",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_1_008",
+      "specimen_id": "central_1_008",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_063",
+      "specimen_id": "north_0_063",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_1_006",
+      "specimen_id": "north_1_006",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__south_0_015",
+      "specimen_id": "south_0_015",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_035",
+      "specimen_id": "north_0_035",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_147",
+      "specimen_id": "north_0_147",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_068",
+      "specimen_id": "north_0_068",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_0_019",
+      "specimen_id": "south_0_019",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_015",
+      "specimen_id": "central_0_015",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_159",
+      "specimen_id": "north_0_159",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_156",
+      "specimen_id": "north_0_156",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_085",
+      "specimen_id": "north_0_085",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_026",
+      "specimen_id": "north_0_026",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_005",
+      "specimen_id": "north_0_005",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__central_0_005",
+      "specimen_id": "central_0_005",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_029",
+      "specimen_id": "north_0_029",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_110",
+      "specimen_id": "north_0_110",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_084",
+      "specimen_id": "north_0_084",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_037",
+      "specimen_id": "north_1_037",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_149",
+      "specimen_id": "north_0_149",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_075",
+      "specimen_id": "north_0_075",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_007",
+      "specimen_id": "north_0_007",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_066",
+      "specimen_id": "north_0_066",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_041",
+      "specimen_id": "north_0_041",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_023",
+      "specimen_id": "north_0_023",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_129",
+      "specimen_id": "north_0_129",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__south_0_031",
+      "specimen_id": "south_0_031",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_0_018",
+      "specimen_id": "central_0_018",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_067",
+      "specimen_id": "north_0_067",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_1_014",
+      "specimen_id": "north_1_014",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_014",
+      "specimen_id": "north_0_014",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_111",
+      "specimen_id": "north_0_111",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_1_004",
+      "specimen_id": "central_1_004",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_069",
+      "specimen_id": "north_1_069",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_C__north_0_089",
+      "specimen_id": "north_0_089",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_024",
+      "specimen_id": "south_0_024",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_117",
+      "specimen_id": "north_0_117",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_082",
+      "specimen_id": "north_0_082",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_030",
+      "specimen_id": "north_0_030",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_014",
+      "specimen_id": "central_0_014",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_1_015",
+      "specimen_id": "central_1_015",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.2
+    },
+    {
+      "id": "candidate_A__north_0_106",
+      "specimen_id": "north_0_106",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_007",
+      "specimen_id": "north_1_007",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_093",
+      "specimen_id": "north_0_093",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_1_003",
+      "specimen_id": "central_1_003",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_0_003",
+      "specimen_id": "south_0_003",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_1_027",
+      "specimen_id": "north_1_027",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_1_040",
+      "specimen_id": "north_1_040",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__central_0_006",
+      "specimen_id": "central_0_006",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_0_016",
+      "specimen_id": "central_0_016",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__south_0_021",
+      "specimen_id": "south_0_021",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_0_002",
+      "specimen_id": "central_0_002",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_112",
+      "specimen_id": "north_0_112",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_065",
+      "specimen_id": "north_1_065",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_148",
+      "specimen_id": "north_0_148",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_127",
+      "specimen_id": "north_0_127",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_012",
+      "specimen_id": "north_1_012",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_057",
+      "specimen_id": "north_0_057",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_149",
+      "specimen_id": "north_0_149",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_141",
+      "specimen_id": "north_0_141",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_073",
+      "specimen_id": "north_1_073",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_B__north_0_122",
+      "specimen_id": "north_0_122",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__south_0_025",
+      "specimen_id": "south_0_025",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_103",
+      "specimen_id": "north_0_103",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_1_001",
+      "specimen_id": "south_1_001",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_1_053",
+      "specimen_id": "north_1_053",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__central_1_015",
+      "specimen_id": "central_1_015",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__south_0_027",
+      "specimen_id": "south_0_027",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_028",
+      "specimen_id": "north_0_028",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_1_007",
+      "specimen_id": "south_1_007",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_018",
+      "specimen_id": "north_0_018",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_070",
+      "specimen_id": "north_1_070",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_A__north_0_053",
+      "specimen_id": "north_0_053",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_143",
+      "specimen_id": "north_0_143",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_105",
+      "specimen_id": "north_0_105",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_0_027",
+      "specimen_id": "south_0_027",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_036",
+      "specimen_id": "north_1_036",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__central_1_003",
+      "specimen_id": "central_1_003",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_142",
+      "specimen_id": "north_0_142",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_003",
+      "specimen_id": "south_0_003",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_021",
+      "specimen_id": "north_1_021",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_154",
+      "specimen_id": "north_0_154",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_124",
+      "specimen_id": "north_0_124",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_093",
+      "specimen_id": "north_0_093",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_1_012",
+      "specimen_id": "central_1_012",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_105",
+      "specimen_id": "north_0_105",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_146",
+      "specimen_id": "north_0_146",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_0_017",
+      "specimen_id": "south_0_017",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_029",
+      "specimen_id": "south_0_029",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_1_031",
+      "specimen_id": "north_1_031",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_128",
+      "specimen_id": "north_0_128",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_024",
+      "specimen_id": "north_0_024",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__central_0_010",
+      "specimen_id": "central_0_010",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_116",
+      "specimen_id": "north_0_116",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_1_004",
+      "specimen_id": "north_1_004",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_039",
+      "specimen_id": "north_1_039",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_038",
+      "specimen_id": "north_1_038",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_1_035",
+      "specimen_id": "north_1_035",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_144",
+      "specimen_id": "north_0_144",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_120",
+      "specimen_id": "north_0_120",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_144",
+      "specimen_id": "north_0_144",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_137",
+      "specimen_id": "north_0_137",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_1_077",
+      "specimen_id": "north_1_077",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__south_0_001",
+      "specimen_id": "south_0_001",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_043",
+      "specimen_id": "north_0_043",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_057",
+      "specimen_id": "north_1_057",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__central_1_003",
+      "specimen_id": "central_1_003",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__central_0_009",
+      "specimen_id": "central_0_009",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_068",
+      "specimen_id": "north_0_068",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_1_029",
+      "specimen_id": "north_1_029",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_004",
+      "specimen_id": "north_1_004",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__south_0_006",
+      "specimen_id": "south_0_006",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_003",
+      "specimen_id": "north_0_003",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_036",
+      "specimen_id": "north_1_036",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_030",
+      "specimen_id": "north_0_030",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_043",
+      "specimen_id": "north_1_043",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__south_1_002",
+      "specimen_id": "south_1_002",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_1_018",
+      "specimen_id": "north_1_018",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_054",
+      "specimen_id": "north_1_054",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_062",
+      "specimen_id": "north_0_062",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_039",
+      "specimen_id": "north_0_039",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_016",
+      "specimen_id": "central_0_016",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_067",
+      "specimen_id": "north_1_067",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__south_0_001",
+      "specimen_id": "south_0_001",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_091",
+      "specimen_id": "north_0_091",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_045",
+      "specimen_id": "north_1_045",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_065",
+      "specimen_id": "north_1_065",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__central_0_003",
+      "specimen_id": "central_0_003",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_068",
+      "specimen_id": "north_1_068",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_A__central_0_014",
+      "specimen_id": "central_0_014",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_032",
+      "specimen_id": "north_0_032",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_106",
+      "specimen_id": "north_0_106",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_027",
+      "specimen_id": "south_0_027",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_012",
+      "specimen_id": "north_0_012",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_091",
+      "specimen_id": "north_0_091",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_031",
+      "specimen_id": "north_0_031",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__central_1_001",
+      "specimen_id": "central_1_001",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_024",
+      "specimen_id": "north_0_024",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_078",
+      "specimen_id": "north_1_078",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_007",
+      "specimen_id": "north_1_007",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_0_085",
+      "specimen_id": "north_0_085",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_062",
+      "specimen_id": "north_0_062",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_003",
+      "specimen_id": "north_0_003",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_1_032",
+      "specimen_id": "north_1_032",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_072",
+      "specimen_id": "north_0_072",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_0_007",
+      "specimen_id": "central_0_007",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_132",
+      "specimen_id": "north_0_132",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_108",
+      "specimen_id": "north_0_108",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_031",
+      "specimen_id": "north_0_031",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_148",
+      "specimen_id": "north_0_148",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_1_066",
+      "specimen_id": "north_1_066",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_029",
+      "specimen_id": "north_0_029",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_013",
+      "specimen_id": "north_1_013",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_1_002",
+      "specimen_id": "north_1_002",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__central_0_005",
+      "specimen_id": "central_0_005",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_046",
+      "specimen_id": "north_0_046",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__south_0_020",
+      "specimen_id": "south_0_020",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_069",
+      "specimen_id": "north_0_069",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_0_010",
+      "specimen_id": "south_0_010",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_003",
+      "specimen_id": "central_0_003",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_001",
+      "specimen_id": "north_0_001",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_0_013",
+      "specimen_id": "central_0_013",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_158",
+      "specimen_id": "north_0_158",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.75
+    },
+    {
+      "id": "candidate_C__north_1_011",
+      "specimen_id": "north_1_011",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_021",
+      "specimen_id": "north_0_021",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__central_0_015",
+      "specimen_id": "central_0_015",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_087",
+      "specimen_id": "north_0_087",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_1_019",
+      "specimen_id": "north_1_019",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_049",
+      "specimen_id": "north_0_049",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_1_006",
+      "specimen_id": "central_1_006",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__central_1_005",
+      "specimen_id": "central_1_005",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_053",
+      "specimen_id": "north_1_053",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_0_030",
+      "specimen_id": "south_0_030",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_009",
+      "specimen_id": "north_0_009",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_020",
+      "specimen_id": "south_0_020",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__central_0_022",
+      "specimen_id": "central_0_022",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.75
+    },
+    {
+      "id": "candidate_C__north_0_138",
+      "specimen_id": "north_0_138",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_141",
+      "specimen_id": "north_0_141",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_004",
+      "specimen_id": "north_0_004",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_016",
+      "specimen_id": "north_1_016",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_134",
+      "specimen_id": "north_0_134",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_125",
+      "specimen_id": "north_0_125",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_1_006",
+      "specimen_id": "central_1_006",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_051",
+      "specimen_id": "north_0_051",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_084",
+      "specimen_id": "north_0_084",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_139",
+      "specimen_id": "north_0_139",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_016",
+      "specimen_id": "north_1_016",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_156",
+      "specimen_id": "north_0_156",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_051",
+      "specimen_id": "north_1_051",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_045",
+      "specimen_id": "north_1_045",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_158",
+      "specimen_id": "north_0_158",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.75
+    },
+    {
+      "id": "candidate_A__central_1_007",
+      "specimen_id": "central_1_007",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_114",
+      "specimen_id": "north_0_114",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_128",
+      "specimen_id": "north_0_128",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_1_078",
+      "specimen_id": "north_1_078",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_025",
+      "specimen_id": "north_0_025",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_038",
+      "specimen_id": "north_0_038",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_1_002",
+      "specimen_id": "north_1_002",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_130",
+      "specimen_id": "north_0_130",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_0_006",
+      "specimen_id": "central_0_006",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_1_046",
+      "specimen_id": "north_1_046",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_076",
+      "specimen_id": "north_1_076",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__south_0_000",
+      "specimen_id": "south_0_000",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_113",
+      "specimen_id": "north_0_113",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__south_0_026",
+      "specimen_id": "south_0_026",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_012",
+      "specimen_id": "south_0_012",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_009",
+      "specimen_id": "central_0_009",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_103",
+      "specimen_id": "north_0_103",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_019",
+      "specimen_id": "north_0_019",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_086",
+      "specimen_id": "north_0_086",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_079",
+      "specimen_id": "north_0_079",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_1_046",
+      "specimen_id": "north_1_046",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_1_058",
+      "specimen_id": "north_1_058",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_088",
+      "specimen_id": "north_0_088",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_095",
+      "specimen_id": "north_0_095",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_1_075",
+      "specimen_id": "north_1_075",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_158",
+      "specimen_id": "north_0_158",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_104",
+      "specimen_id": "north_0_104",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_054",
+      "specimen_id": "north_0_054",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_000",
+      "specimen_id": "north_0_000",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_1_005",
+      "specimen_id": "south_1_005",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.2
+    },
+    {
+      "id": "candidate_C__north_1_028",
+      "specimen_id": "north_1_028",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__south_0_022",
+      "specimen_id": "south_0_022",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_071",
+      "specimen_id": "north_1_071",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_113",
+      "specimen_id": "north_0_113",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_140",
+      "specimen_id": "north_0_140",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_032",
+      "specimen_id": "north_0_032",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_012",
+      "specimen_id": "south_0_012",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_055",
+      "specimen_id": "north_0_055",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__south_0_017",
+      "specimen_id": "south_0_017",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__central_0_020",
+      "specimen_id": "central_0_020",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.75
+    },
+    {
+      "id": "candidate_A__north_0_119",
+      "specimen_id": "north_0_119",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_1_002",
+      "specimen_id": "central_1_002",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_073",
+      "specimen_id": "north_1_073",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_157",
+      "specimen_id": "north_0_157",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_077",
+      "specimen_id": "north_0_077",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_071",
+      "specimen_id": "north_1_071",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_A__north_1_068",
+      "specimen_id": "north_1_068",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_045",
+      "specimen_id": "north_0_045",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_136",
+      "specimen_id": "north_0_136",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_007",
+      "specimen_id": "south_0_007",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_023",
+      "specimen_id": "north_0_023",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_041",
+      "specimen_id": "north_1_041",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_096",
+      "specimen_id": "north_0_096",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_0_026",
+      "specimen_id": "south_0_026",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_030",
+      "specimen_id": "south_0_030",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_094",
+      "specimen_id": "north_0_094",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_118",
+      "specimen_id": "north_0_118",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_065",
+      "specimen_id": "north_0_065",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_092",
+      "specimen_id": "north_0_092",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_109",
+      "specimen_id": "north_0_109",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_103",
+      "specimen_id": "north_0_103",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_1_070",
+      "specimen_id": "north_1_070",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_031",
+      "specimen_id": "north_1_031",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_026",
+      "specimen_id": "north_0_026",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_040",
+      "specimen_id": "north_0_040",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_1_009",
+      "specimen_id": "north_1_009",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_017",
+      "specimen_id": "north_0_017",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_015",
+      "specimen_id": "north_0_015",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_023",
+      "specimen_id": "central_0_023",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_001",
+      "specimen_id": "north_0_001",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_150",
+      "specimen_id": "north_0_150",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_020",
+      "specimen_id": "central_0_020",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_050",
+      "specimen_id": "north_1_050",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__central_0_000",
+      "specimen_id": "central_0_000",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_066",
+      "specimen_id": "north_0_066",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_1_002",
+      "specimen_id": "central_1_002",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__central_0_001",
+      "specimen_id": "central_0_001",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__south_0_025",
+      "specimen_id": "south_0_025",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_022",
+      "specimen_id": "north_1_022",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_006",
+      "specimen_id": "north_0_006",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_0_014",
+      "specimen_id": "central_0_014",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__south_1_002",
+      "specimen_id": "south_1_002",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_0_018",
+      "specimen_id": "south_0_018",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__south_0_014",
+      "specimen_id": "south_0_014",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_064",
+      "specimen_id": "north_0_064",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_092",
+      "specimen_id": "north_0_092",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__south_0_010",
+      "specimen_id": "south_0_010",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_1_006",
+      "specimen_id": "south_1_006",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_114",
+      "specimen_id": "north_0_114",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_144",
+      "specimen_id": "north_0_144",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_008",
+      "specimen_id": "north_0_008",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_008",
+      "specimen_id": "central_0_008",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_013",
+      "specimen_id": "south_0_013",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_019",
+      "specimen_id": "south_0_019",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_128",
+      "specimen_id": "north_0_128",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_023",
+      "specimen_id": "north_0_023",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_148",
+      "specimen_id": "north_0_148",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_022",
+      "specimen_id": "north_1_022",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_077",
+      "specimen_id": "north_1_077",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_053",
+      "specimen_id": "north_0_053",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_037",
+      "specimen_id": "north_0_037",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_008",
+      "specimen_id": "north_0_008",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_117",
+      "specimen_id": "north_0_117",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_1_071",
+      "specimen_id": "north_1_071",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_147",
+      "specimen_id": "north_0_147",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_153",
+      "specimen_id": "north_0_153",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_1_044",
+      "specimen_id": "north_1_044",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_1_069",
+      "specimen_id": "north_1_069",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_1_000",
+      "specimen_id": "south_1_000",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_1_029",
+      "specimen_id": "north_1_029",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_0_000",
+      "specimen_id": "north_0_000",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_1_067",
+      "specimen_id": "north_1_067",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_1_043",
+      "specimen_id": "north_1_043",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_108",
+      "specimen_id": "north_0_108",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_008",
+      "specimen_id": "north_1_008",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_088",
+      "specimen_id": "north_0_088",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__central_0_019",
+      "specimen_id": "central_0_019",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.75
+    },
+    {
+      "id": "candidate_B__north_0_151",
+      "specimen_id": "north_0_151",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_159",
+      "specimen_id": "north_0_159",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.75
+    },
+    {
+      "id": "candidate_B__south_1_006",
+      "specimen_id": "south_1_006",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_044",
+      "specimen_id": "north_0_044",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_143",
+      "specimen_id": "north_0_143",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_048",
+      "specimen_id": "north_0_048",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_049",
+      "specimen_id": "north_1_049",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_0_157",
+      "specimen_id": "north_0_157",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__central_1_001",
+      "specimen_id": "central_1_001",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_157",
+      "specimen_id": "north_0_157",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_096",
+      "specimen_id": "north_0_096",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_076",
+      "specimen_id": "north_1_076",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_037",
+      "specimen_id": "north_1_037",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_057",
+      "specimen_id": "north_1_057",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__south_0_008",
+      "specimen_id": "south_0_008",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_114",
+      "specimen_id": "north_0_114",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_027",
+      "specimen_id": "north_0_027",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_009",
+      "specimen_id": "north_1_009",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_059",
+      "specimen_id": "north_1_059",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_041",
+      "specimen_id": "north_0_041",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_058",
+      "specimen_id": "north_0_058",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_021",
+      "specimen_id": "north_1_021",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__south_0_002",
+      "specimen_id": "south_0_002",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_060",
+      "specimen_id": "north_0_060",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__central_1_004",
+      "specimen_id": "central_1_004",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__central_1_009",
+      "specimen_id": "central_1_009",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_0_006",
+      "specimen_id": "south_0_006",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_086",
+      "specimen_id": "north_0_086",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_1_023",
+      "specimen_id": "north_1_023",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__south_0_004",
+      "specimen_id": "south_0_004",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_007",
+      "specimen_id": "north_0_007",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_000",
+      "specimen_id": "north_1_000",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_042",
+      "specimen_id": "north_0_042",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_001",
+      "specimen_id": "north_1_001",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_025",
+      "specimen_id": "north_0_025",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_031",
+      "specimen_id": "south_0_031",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_1_074",
+      "specimen_id": "north_1_074",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_018",
+      "specimen_id": "north_1_018",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__south_0_024",
+      "specimen_id": "south_0_024",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_030",
+      "specimen_id": "north_1_030",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_115",
+      "specimen_id": "north_0_115",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_013",
+      "specimen_id": "south_0_013",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_1_061",
+      "specimen_id": "north_1_061",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_1_028",
+      "specimen_id": "north_1_028",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_1_020",
+      "specimen_id": "north_1_020",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_1_032",
+      "specimen_id": "north_1_032",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_0_073",
+      "specimen_id": "north_0_073",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_1_079",
+      "specimen_id": "north_1_079",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.2
+    },
+    {
+      "id": "candidate_A__north_0_151",
+      "specimen_id": "north_0_151",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_015",
+      "specimen_id": "north_1_015",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__central_0_013",
+      "specimen_id": "central_0_013",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_004",
+      "specimen_id": "north_0_004",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_020",
+      "specimen_id": "north_1_020",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__south_0_018",
+      "specimen_id": "south_0_018",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_024",
+      "specimen_id": "north_1_024",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_050",
+      "specimen_id": "north_0_050",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_025",
+      "specimen_id": "north_1_025",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_110",
+      "specimen_id": "north_0_110",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_076",
+      "specimen_id": "north_0_076",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_079",
+      "specimen_id": "north_0_079",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_072",
+      "specimen_id": "north_1_072",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__south_0_008",
+      "specimen_id": "south_0_008",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_104",
+      "specimen_id": "north_0_104",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_069",
+      "specimen_id": "north_0_069",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_1_015",
+      "specimen_id": "north_1_015",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_141",
+      "specimen_id": "north_0_141",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_115",
+      "specimen_id": "north_0_115",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_077",
+      "specimen_id": "north_0_077",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__south_0_018",
+      "specimen_id": "south_0_018",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_003",
+      "specimen_id": "north_1_003",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_047",
+      "specimen_id": "north_0_047",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_062",
+      "specimen_id": "north_1_062",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__south_0_016",
+      "specimen_id": "south_0_016",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_052",
+      "specimen_id": "north_0_052",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_084",
+      "specimen_id": "north_0_084",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_015",
+      "specimen_id": "north_0_015",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_109",
+      "specimen_id": "north_0_109",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_1_002",
+      "specimen_id": "north_1_002",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_089",
+      "specimen_id": "north_0_089",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_142",
+      "specimen_id": "north_0_142",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_1_047",
+      "specimen_id": "north_1_047",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__central_0_023",
+      "specimen_id": "central_0_023",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.75
+    },
+    {
+      "id": "candidate_A__north_0_045",
+      "specimen_id": "north_0_045",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_122",
+      "specimen_id": "north_0_122",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_091",
+      "specimen_id": "north_0_091",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_0_002",
+      "specimen_id": "south_0_002",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_133",
+      "specimen_id": "north_0_133",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_132",
+      "specimen_id": "north_0_132",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_156",
+      "specimen_id": "north_0_156",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_1_041",
+      "specimen_id": "north_1_041",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__south_0_022",
+      "specimen_id": "south_0_022",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__central_0_007",
+      "specimen_id": "central_0_007",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_013",
+      "specimen_id": "north_0_013",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_129",
+      "specimen_id": "north_0_129",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_131",
+      "specimen_id": "north_0_131",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_083",
+      "specimen_id": "north_0_083",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_131",
+      "specimen_id": "north_0_131",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__central_0_015",
+      "specimen_id": "central_0_015",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_0_010",
+      "specimen_id": "central_0_010",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_082",
+      "specimen_id": "north_0_082",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_004",
+      "specimen_id": "south_0_004",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_061",
+      "specimen_id": "north_0_061",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_056",
+      "specimen_id": "north_0_056",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_097",
+      "specimen_id": "north_0_097",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_1_009",
+      "specimen_id": "north_1_009",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_027",
+      "specimen_id": "north_0_027",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_014",
+      "specimen_id": "north_1_014",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__south_0_014",
+      "specimen_id": "south_0_014",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_1_007",
+      "specimen_id": "central_1_007",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_047",
+      "specimen_id": "north_1_047",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_0_000",
+      "specimen_id": "south_0_000",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__central_0_017",
+      "specimen_id": "central_0_017",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_1_014",
+      "specimen_id": "central_1_014",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.2
+    },
+    {
+      "id": "candidate_B__north_0_112",
+      "specimen_id": "north_0_112",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_1_042",
+      "specimen_id": "north_1_042",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_038",
+      "specimen_id": "north_0_038",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_1_009",
+      "specimen_id": "central_1_009",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_0_146",
+      "specimen_id": "north_0_146",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_125",
+      "specimen_id": "north_0_125",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_018",
+      "specimen_id": "north_0_018",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_1_014",
+      "specimen_id": "central_1_014",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_A__north_1_017",
+      "specimen_id": "north_1_017",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_055",
+      "specimen_id": "north_1_055",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_090",
+      "specimen_id": "north_0_090",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_106",
+      "specimen_id": "north_0_106",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_152",
+      "specimen_id": "north_0_152",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_057",
+      "specimen_id": "north_1_057",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_064",
+      "specimen_id": "north_0_064",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_033",
+      "specimen_id": "north_0_033",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_121",
+      "specimen_id": "north_0_121",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_027",
+      "specimen_id": "north_1_027",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_001",
+      "specimen_id": "north_1_001",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_004",
+      "specimen_id": "north_1_004",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_034",
+      "specimen_id": "north_1_034",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__south_1_006",
+      "specimen_id": "south_1_006",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.2
+    },
+    {
+      "id": "candidate_C__central_0_007",
+      "specimen_id": "central_0_007",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_028",
+      "specimen_id": "north_0_028",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_060",
+      "specimen_id": "north_0_060",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_140",
+      "specimen_id": "north_0_140",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_0_009",
+      "specimen_id": "south_0_009",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_041",
+      "specimen_id": "north_1_041",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_026",
+      "specimen_id": "north_0_026",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_1_014",
+      "specimen_id": "central_1_014",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_067",
+      "specimen_id": "north_0_067",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_081",
+      "specimen_id": "north_0_081",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_0_030",
+      "specimen_id": "south_0_030",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.75
+    },
+    {
+      "id": "candidate_A__north_0_054",
+      "specimen_id": "north_0_054",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_034",
+      "specimen_id": "north_1_034",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_080",
+      "specimen_id": "north_0_080",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_038",
+      "specimen_id": "north_0_038",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_046",
+      "specimen_id": "north_1_046",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__central_0_011",
+      "specimen_id": "central_0_011",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_142",
+      "specimen_id": "north_0_142",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_075",
+      "specimen_id": "north_1_075",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_C__north_0_039",
+      "specimen_id": "north_0_039",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_1_008",
+      "specimen_id": "central_1_008",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__central_0_013",
+      "specimen_id": "central_0_013",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_059",
+      "specimen_id": "north_1_059",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_061",
+      "specimen_id": "north_1_061",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__south_0_015",
+      "specimen_id": "south_0_015",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_012",
+      "specimen_id": "north_1_012",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__south_0_013",
+      "specimen_id": "south_0_013",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_069",
+      "specimen_id": "north_1_069",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_062",
+      "specimen_id": "north_0_062",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_1_011",
+      "specimen_id": "north_1_011",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_101",
+      "specimen_id": "north_0_101",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_0_000",
+      "specimen_id": "central_0_000",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_013",
+      "specimen_id": "north_0_013",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_0_031",
+      "specimen_id": "south_0_031",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.75
+    },
+    {
+      "id": "candidate_A__north_0_143",
+      "specimen_id": "north_0_143",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_0_020",
+      "specimen_id": "central_0_020",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_070",
+      "specimen_id": "north_0_070",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_133",
+      "specimen_id": "north_0_133",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_015",
+      "specimen_id": "north_1_015",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_055",
+      "specimen_id": "north_0_055",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_010",
+      "specimen_id": "north_1_010",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_013",
+      "specimen_id": "north_1_013",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__central_1_001",
+      "specimen_id": "central_1_001",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_042",
+      "specimen_id": "north_1_042",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_063",
+      "specimen_id": "north_0_063",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_155",
+      "specimen_id": "north_0_155",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_029",
+      "specimen_id": "south_0_029",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_1_005",
+      "specimen_id": "central_1_005",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_0_139",
+      "specimen_id": "north_0_139",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_034",
+      "specimen_id": "north_0_034",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_021",
+      "specimen_id": "north_0_021",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_081",
+      "specimen_id": "north_0_081",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__south_1_005",
+      "specimen_id": "south_1_005",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_012",
+      "specimen_id": "north_0_012",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__central_0_000",
+      "specimen_id": "central_0_000",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_1_064",
+      "specimen_id": "north_1_064",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__central_0_002",
+      "specimen_id": "central_0_002",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_132",
+      "specimen_id": "north_0_132",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_078",
+      "specimen_id": "north_0_078",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_1_059",
+      "specimen_id": "north_1_059",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_0_093",
+      "specimen_id": "north_0_093",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_116",
+      "specimen_id": "north_0_116",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_096",
+      "specimen_id": "north_0_096",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_089",
+      "specimen_id": "north_0_089",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_1_003",
+      "specimen_id": "north_1_003",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_0_011",
+      "specimen_id": "south_0_011",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_155",
+      "specimen_id": "north_0_155",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_126",
+      "specimen_id": "north_0_126",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_019",
+      "specimen_id": "south_0_019",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_037",
+      "specimen_id": "north_0_037",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_002",
+      "specimen_id": "north_0_002",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_044",
+      "specimen_id": "north_1_044",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_051",
+      "specimen_id": "north_0_051",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_090",
+      "specimen_id": "north_0_090",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__central_0_017",
+      "specimen_id": "central_0_017",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_021",
+      "specimen_id": "south_0_021",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_090",
+      "specimen_id": "north_0_090",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_056",
+      "specimen_id": "north_1_056",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_1_017",
+      "specimen_id": "north_1_017",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_049",
+      "specimen_id": "north_0_049",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_054",
+      "specimen_id": "north_1_054",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_052",
+      "specimen_id": "north_1_052",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_063",
+      "specimen_id": "north_0_063",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_058",
+      "specimen_id": "north_1_058",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_1_016",
+      "specimen_id": "north_1_016",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__central_0_002",
+      "specimen_id": "central_0_002",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_065",
+      "specimen_id": "north_1_065",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_045",
+      "specimen_id": "north_0_045",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_104",
+      "specimen_id": "north_0_104",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_111",
+      "specimen_id": "north_0_111",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_087",
+      "specimen_id": "north_0_087",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_099",
+      "specimen_id": "north_0_099",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_129",
+      "specimen_id": "north_0_129",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_130",
+      "specimen_id": "north_0_130",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__south_0_026",
+      "specimen_id": "south_0_026",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_065",
+      "specimen_id": "north_0_065",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_1_010",
+      "specimen_id": "central_1_010",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_009",
+      "specimen_id": "north_0_009",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_057",
+      "specimen_id": "north_0_057",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__south_1_007",
+      "specimen_id": "south_1_007",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_A__south_0_021",
+      "specimen_id": "south_0_021",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_1_008",
+      "specimen_id": "central_1_008",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_002",
+      "specimen_id": "north_0_002",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_081",
+      "specimen_id": "north_0_081",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_048",
+      "specimen_id": "north_0_048",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__south_1_000",
+      "specimen_id": "south_1_000",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__central_1_010",
+      "specimen_id": "central_1_010",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__central_0_016",
+      "specimen_id": "central_0_016",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_1_012",
+      "specimen_id": "central_1_012",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.2
+    },
+    {
+      "id": "candidate_B__north_0_140",
+      "specimen_id": "north_0_140",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__central_1_011",
+      "specimen_id": "central_1_011",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__central_1_011",
+      "specimen_id": "central_1_011",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_043",
+      "specimen_id": "north_0_043",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_011",
+      "specimen_id": "south_0_011",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_119",
+      "specimen_id": "north_0_119",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_014",
+      "specimen_id": "north_0_014",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_055",
+      "specimen_id": "north_1_055",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_044",
+      "specimen_id": "north_0_044",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_075",
+      "specimen_id": "north_1_075",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_005",
+      "specimen_id": "north_0_005",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_058",
+      "specimen_id": "north_0_058",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_1_050",
+      "specimen_id": "north_1_050",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_011",
+      "specimen_id": "north_0_011",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_107",
+      "specimen_id": "north_0_107",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_102",
+      "specimen_id": "north_0_102",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_019",
+      "specimen_id": "north_0_019",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_025",
+      "specimen_id": "north_0_025",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_046",
+      "specimen_id": "north_0_046",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_064",
+      "specimen_id": "north_1_064",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__central_1_012",
+      "specimen_id": "central_1_012",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_137",
+      "specimen_id": "north_0_137",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_0_004",
+      "specimen_id": "central_0_004",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__central_1_011",
+      "specimen_id": "central_1_011",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_085",
+      "specimen_id": "north_0_085",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_101",
+      "specimen_id": "north_0_101",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_022",
+      "specimen_id": "north_0_022",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_049",
+      "specimen_id": "north_0_049",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_070",
+      "specimen_id": "north_0_070",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_014",
+      "specimen_id": "north_1_014",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_029",
+      "specimen_id": "north_0_029",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_074",
+      "specimen_id": "north_0_074",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_006",
+      "specimen_id": "north_0_006",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_098",
+      "specimen_id": "north_0_098",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_133",
+      "specimen_id": "north_0_133",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_047",
+      "specimen_id": "north_1_047",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_020",
+      "specimen_id": "north_0_020",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_052",
+      "specimen_id": "north_0_052",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_1_032",
+      "specimen_id": "north_1_032",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__central_0_009",
+      "specimen_id": "central_0_009",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_042",
+      "specimen_id": "north_0_042",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_072",
+      "specimen_id": "north_0_072",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_020",
+      "specimen_id": "north_0_020",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__south_0_024",
+      "specimen_id": "south_0_024",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_038",
+      "specimen_id": "north_1_038",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_058",
+      "specimen_id": "north_1_058",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_056",
+      "specimen_id": "north_0_056",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_1_013",
+      "specimen_id": "central_1_013",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__central_0_012",
+      "specimen_id": "central_0_012",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_076",
+      "specimen_id": "north_0_076",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_014",
+      "specimen_id": "south_0_014",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_1_001",
+      "specimen_id": "north_1_001",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_1_004",
+      "specimen_id": "south_1_004",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__south_0_017",
+      "specimen_id": "south_0_017",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_067",
+      "specimen_id": "north_1_067",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_092",
+      "specimen_id": "north_0_092",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_009",
+      "specimen_id": "north_0_009",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_1_044",
+      "specimen_id": "north_1_044",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_153",
+      "specimen_id": "north_0_153",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_134",
+      "specimen_id": "north_0_134",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__central_0_006",
+      "specimen_id": "central_0_006",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_013",
+      "specimen_id": "north_1_013",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_099",
+      "specimen_id": "north_0_099",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_115",
+      "specimen_id": "north_0_115",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_098",
+      "specimen_id": "north_0_098",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_035",
+      "specimen_id": "north_1_035",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_1_005",
+      "specimen_id": "north_1_005",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_018",
+      "specimen_id": "north_0_018",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_135",
+      "specimen_id": "north_0_135",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_011",
+      "specimen_id": "central_0_011",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_006",
+      "specimen_id": "north_0_006",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_020",
+      "specimen_id": "north_0_020",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_061",
+      "specimen_id": "north_0_061",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_041",
+      "specimen_id": "north_0_041",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_037",
+      "specimen_id": "north_0_037",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_067",
+      "specimen_id": "north_0_067",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_004",
+      "specimen_id": "north_0_004",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_127",
+      "specimen_id": "north_0_127",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_063",
+      "specimen_id": "north_1_063",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_1_033",
+      "specimen_id": "north_1_033",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_0_127",
+      "specimen_id": "north_0_127",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_122",
+      "specimen_id": "north_0_122",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_001",
+      "specimen_id": "north_0_001",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_016",
+      "specimen_id": "north_0_016",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_068",
+      "specimen_id": "north_0_068",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_033",
+      "specimen_id": "north_1_033",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_043",
+      "specimen_id": "north_1_043",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_015",
+      "specimen_id": "north_0_015",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_021",
+      "specimen_id": "north_0_021",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_027",
+      "specimen_id": "north_0_027",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__south_1_004",
+      "specimen_id": "south_1_004",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_058",
+      "specimen_id": "north_0_058",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_005",
+      "specimen_id": "north_1_005",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_138",
+      "specimen_id": "north_0_138",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_083",
+      "specimen_id": "north_0_083",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_017",
+      "specimen_id": "north_0_017",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_111",
+      "specimen_id": "north_0_111",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_131",
+      "specimen_id": "north_0_131",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_0_017",
+      "specimen_id": "central_0_017",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_100",
+      "specimen_id": "north_0_100",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_120",
+      "specimen_id": "north_0_120",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_018",
+      "specimen_id": "north_1_018",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_019",
+      "specimen_id": "north_0_019",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_1_060",
+      "specimen_id": "north_1_060",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_1_031",
+      "specimen_id": "north_1_031",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_1_050",
+      "specimen_id": "north_1_050",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_066",
+      "specimen_id": "north_0_066",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_0_124",
+      "specimen_id": "north_0_124",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__south_0_020",
+      "specimen_id": "south_0_020",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_028",
+      "specimen_id": "north_1_028",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_033",
+      "specimen_id": "north_0_033",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_159",
+      "specimen_id": "north_0_159",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.75
+    },
+    {
+      "id": "candidate_C__north_1_056",
+      "specimen_id": "north_1_056",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__central_0_011",
+      "specimen_id": "central_0_011",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__central_0_003",
+      "specimen_id": "central_0_003",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_1_039",
+      "specimen_id": "north_1_039",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__south_0_012",
+      "specimen_id": "south_0_012",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_120",
+      "specimen_id": "north_0_120",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_004",
+      "specimen_id": "central_0_004",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__central_0_005",
+      "specimen_id": "central_0_005",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_010",
+      "specimen_id": "central_0_010",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_014",
+      "specimen_id": "north_0_014",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_116",
+      "specimen_id": "north_0_116",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_139",
+      "specimen_id": "north_0_139",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_010",
+      "specimen_id": "north_0_010",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__central_1_000",
+      "specimen_id": "central_1_000",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_1_023",
+      "specimen_id": "north_1_023",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__south_0_005",
+      "specimen_id": "south_0_005",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_080",
+      "specimen_id": "north_0_080",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__central_0_019",
+      "specimen_id": "central_0_019",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_1_012",
+      "specimen_id": "north_1_012",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_1_048",
+      "specimen_id": "north_1_048",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_003",
+      "specimen_id": "north_0_003",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_049",
+      "specimen_id": "north_1_049",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_0_009",
+      "specimen_id": "south_0_009",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__south_0_007",
+      "specimen_id": "south_0_007",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__central_1_010",
+      "specimen_id": "central_1_010",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_0_118",
+      "specimen_id": "north_0_118",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_1_062",
+      "specimen_id": "north_1_062",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_1_049",
+      "specimen_id": "north_1_049",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_1_030",
+      "specimen_id": "north_1_030",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_146",
+      "specimen_id": "north_0_146",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_023",
+      "specimen_id": "south_0_023",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_1_003",
+      "specimen_id": "south_1_003",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.2
+    },
+    {
+      "id": "candidate_A__south_0_022",
+      "specimen_id": "south_0_022",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_0_001",
+      "specimen_id": "central_0_001",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_149",
+      "specimen_id": "north_0_149",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_135",
+      "specimen_id": "north_0_135",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_1_001",
+      "specimen_id": "south_1_001",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_035",
+      "specimen_id": "north_1_035",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_1_056",
+      "specimen_id": "north_1_056",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_046",
+      "specimen_id": "north_0_046",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_036",
+      "specimen_id": "north_1_036",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_097",
+      "specimen_id": "north_0_097",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_030",
+      "specimen_id": "north_0_030",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__south_0_005",
+      "specimen_id": "south_0_005",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_059",
+      "specimen_id": "north_0_059",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_1_007",
+      "specimen_id": "south_1_007",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.2
+    },
+    {
+      "id": "candidate_B__north_1_019",
+      "specimen_id": "north_1_019",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__south_0_028",
+      "specimen_id": "south_0_028",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_0_123",
+      "specimen_id": "north_0_123",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_052",
+      "specimen_id": "north_0_052",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_123",
+      "specimen_id": "north_0_123",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_1_066",
+      "specimen_id": "north_1_066",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__central_0_018",
+      "specimen_id": "central_0_018",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.75
+    },
+    {
+      "id": "candidate_C__north_0_123",
+      "specimen_id": "north_0_123",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_000",
+      "specimen_id": "north_1_000",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_072",
+      "specimen_id": "north_0_072",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_1_000",
+      "specimen_id": "south_1_000",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_072",
+      "specimen_id": "north_1_072",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_B__north_0_043",
+      "specimen_id": "north_0_043",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_1_062",
+      "specimen_id": "north_1_062",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_1_007",
+      "specimen_id": "north_1_007",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_154",
+      "specimen_id": "north_0_154",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_039",
+      "specimen_id": "north_0_039",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__central_1_013",
+      "specimen_id": "central_1_013",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_1_027",
+      "specimen_id": "north_1_027",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_109",
+      "specimen_id": "north_0_109",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__south_1_004",
+      "specimen_id": "south_1_004",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.2
+    },
+    {
+      "id": "candidate_C__central_0_022",
+      "specimen_id": "central_0_022",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_134",
+      "specimen_id": "north_0_134",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_010",
+      "specimen_id": "north_1_010",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_034",
+      "specimen_id": "north_0_034",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_1_008",
+      "specimen_id": "north_1_008",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_0_065",
+      "specimen_id": "north_0_065",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__south_0_016",
+      "specimen_id": "south_0_016",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_023",
+      "specimen_id": "south_0_023",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_042",
+      "specimen_id": "north_0_042",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_086",
+      "specimen_id": "north_0_086",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_025",
+      "specimen_id": "south_0_025",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_0_002",
+      "specimen_id": "south_0_002",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_1_066",
+      "specimen_id": "north_1_066",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_040",
+      "specimen_id": "north_1_040",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_147",
+      "specimen_id": "north_0_147",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_047",
+      "specimen_id": "north_0_047",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_075",
+      "specimen_id": "north_0_075",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_1_001",
+      "specimen_id": "south_1_001",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_102",
+      "specimen_id": "north_0_102",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_082",
+      "specimen_id": "north_0_082",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_1_011",
+      "specimen_id": "north_1_011",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__central_0_021",
+      "specimen_id": "central_0_021",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_1_052",
+      "specimen_id": "north_1_052",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_035",
+      "specimen_id": "north_0_035",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_126",
+      "specimen_id": "north_0_126",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__central_0_018",
+      "specimen_id": "central_0_018",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_1_005",
+      "specimen_id": "central_1_005",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_053",
+      "specimen_id": "north_0_053",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_006",
+      "specimen_id": "north_1_006",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_1_078",
+      "specimen_id": "north_1_078",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_B__north_0_105",
+      "specimen_id": "north_0_105",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_102",
+      "specimen_id": "north_0_102",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__south_0_001",
+      "specimen_id": "south_0_001",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__south_0_015",
+      "specimen_id": "south_0_015",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__central_0_008",
+      "specimen_id": "central_0_008",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_088",
+      "specimen_id": "north_0_088",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_030",
+      "specimen_id": "north_1_030",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_1_017",
+      "specimen_id": "north_1_017",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_071",
+      "specimen_id": "north_0_071",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_026",
+      "specimen_id": "north_1_026",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_1_029",
+      "specimen_id": "north_1_029",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_100",
+      "specimen_id": "north_0_100",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_050",
+      "specimen_id": "north_0_050",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_0_095",
+      "specimen_id": "north_0_095",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_1_003",
+      "specimen_id": "south_1_003",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_016",
+      "specimen_id": "north_0_016",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_087",
+      "specimen_id": "north_0_087",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_1_006",
+      "specimen_id": "central_1_006",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__south_0_009",
+      "specimen_id": "south_0_009",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_113",
+      "specimen_id": "north_0_113",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_051",
+      "specimen_id": "north_1_051",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_0_124",
+      "specimen_id": "north_0_124",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_051",
+      "specimen_id": "north_0_051",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_B__north_1_051",
+      "specimen_id": "north_1_051",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_0_047",
+      "specimen_id": "north_0_047",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_138",
+      "specimen_id": "north_0_138",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_094",
+      "specimen_id": "north_0_094",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_B__north_0_150",
+      "specimen_id": "north_0_150",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__south_0_029",
+      "specimen_id": "south_0_029",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_057",
+      "specimen_id": "north_0_057",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_119",
+      "specimen_id": "north_0_119",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_095",
+      "specimen_id": "north_0_095",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_064",
+      "specimen_id": "north_0_064",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_059",
+      "specimen_id": "north_0_059",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__central_0_012",
+      "specimen_id": "central_0_012",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_024",
+      "specimen_id": "north_1_024",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__central_1_007",
+      "specimen_id": "central_1_007",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_0_075",
+      "specimen_id": "north_0_075",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_0_154",
+      "specimen_id": "north_0_154",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_098",
+      "specimen_id": "north_0_098",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_1_020",
+      "specimen_id": "north_1_020",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__central_0_019",
+      "specimen_id": "central_0_019",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_071",
+      "specimen_id": "north_0_071",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_117",
+      "specimen_id": "north_0_117",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_155",
+      "specimen_id": "north_0_155",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_0_031",
+      "specimen_id": "north_0_031",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__south_0_000",
+      "specimen_id": "south_0_000",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_011",
+      "specimen_id": "north_0_011",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_126",
+      "specimen_id": "north_0_126",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_112",
+      "specimen_id": "north_0_112",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_025",
+      "specimen_id": "north_1_025",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__north_1_006",
+      "specimen_id": "north_1_006",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_C__north_1_060",
+      "specimen_id": "north_1_060",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_0_016",
+      "specimen_id": "south_0_016",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_A__north_1_060",
+      "specimen_id": "north_1_060",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_078",
+      "specimen_id": "north_0_078",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_032",
+      "specimen_id": "north_0_032",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_0_061",
+      "specimen_id": "north_0_061",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_1_076",
+      "specimen_id": "north_1_076",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.4
+    },
+    {
+      "id": "candidate_A__south_0_004",
+      "specimen_id": "south_0_004",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_079",
+      "specimen_id": "north_1_079",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.2
+    },
+    {
+      "id": "candidate_A__north_0_097",
+      "specimen_id": "north_0_097",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_A__north_1_019",
+      "specimen_id": "north_1_019",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__south_0_008",
+      "specimen_id": "south_0_008",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_A__north_1_063",
+      "specimen_id": "north_1_063",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_048",
+      "specimen_id": "north_0_048",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_130",
+      "specimen_id": "north_0_130",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_110",
+      "specimen_id": "north_0_110",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.6
+    },
+    {
+      "id": "candidate_C__north_1_070",
+      "specimen_id": "north_1_070",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__north_1_055",
+      "specimen_id": "north_1_055",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__south_1_002",
+      "specimen_id": "south_1_002",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.2
+    },
+    {
+      "id": "candidate_A__north_1_042",
+      "specimen_id": "north_1_042",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_A__central_0_001",
+      "specimen_id": "central_0_001",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_101",
+      "specimen_id": "north_0_101",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__north_0_074",
+      "specimen_id": "north_0_074",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_1_063",
+      "specimen_id": "north_1_063",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_145",
+      "specimen_id": "north_0_145",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__central_1_002",
+      "specimen_id": "central_1_002",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_1_026",
+      "specimen_id": "north_1_026",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_B__north_0_054",
+      "specimen_id": "north_0_054",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.3
+    },
+    {
+      "id": "candidate_C__north_1_054",
+      "specimen_id": "north_1_054",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    },
+    {
+      "id": "candidate_C__north_0_008",
+      "specimen_id": "north_0_008",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_B__south_1_005",
+      "specimen_id": "south_1_005",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_B__central_1_004",
+      "specimen_id": "central_1_004",
+      "candidate_id": "candidate_B",
+      "positive_probability": 0.7
+    },
+    {
+      "id": "candidate_A__north_0_076",
+      "specimen_id": "north_0_076",
+      "candidate_id": "candidate_A",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_0_002",
+      "specimen_id": "north_0_002",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.15
+    },
+    {
+      "id": "candidate_C__north_1_023",
+      "specimen_id": "north_1_023",
+      "candidate_id": "candidate_C",
+      "positive_probability": 0.85
+    }
+  ],
+  "provenance": {
+    "kind": "Explicit fixed candidate scores; generated once for this controlled stress test, not fitted during evaluation."
+  }
+}

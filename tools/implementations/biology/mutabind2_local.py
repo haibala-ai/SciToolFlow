@@ -1,17 +1,9 @@
-"""Interaction partners of a PDB complex, with the MutaBind2 server attempted first.
+"""Coordinate contacts and optional SASA; no MutaBind2 mutation prediction.
 
-The KG node ``Mutabind2`` is defined as "Evaluates the effects of mutations on
-protein-protein interactions for soluble complexes" with a PDB ID as input and
-interaction partners as output.  This adapter keeps that contract callable:
-
-1. it attempts the real MutaBind2 web server for the submitted PDB entry;
-2. it always computes the interaction partners / interfaces directly from the
-   experimental RCSB structure, so the declared output is available even while
-   the MutaBind2 host is down (its ``upload_pdb`` route answers HTTP 500);
-3. it never fabricates a binding-affinity change: a requested mutation effect is
-   reported as unavailable unless the upstream method returned it.
+The old adapter uploaded a structure without submitting its mutation argument.
+That route cannot support an affinity-change capability and is retired.
 """
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 from datetime import datetime, timezone
 import json
 import os
@@ -87,11 +79,11 @@ def _interfaces(model, cutoff, minimum_contacts):
             if residue.id[0] != " ":
                 continue
             for atom in residue:
-                if atom.element == "H":
+                if atom.element in {"H", "D"}:
                     continue
                 coordinates.append(atom.coord)
                 chain_of.append(chain.id)
-                residue_of.append(f"{chain.id}:{residue.resname}{residue.id[1]}")
+                residue_of.append(f"{chain.id}:{residue.resname}:{residue.id[1]}{residue.id[2].strip()}")
     if not coordinates:
         raise RuntimeError("No heavy atoms found in the structure")
     points = np.asarray(coordinates, dtype=float)
@@ -145,91 +137,71 @@ def _buried_surface(model, chain_ids):
             "isolated_chain_area": isolated, "complex_chain_area": complex_area}
 
 
-def _mutabind_server(session, pdb_id, directory, timeout):
-    """Attempt the documented MutaBind2 upload route; raises on any non-usable answer."""
-    page = request_with_retries(session, "GET", SERVER, attempts=2, timeout=timeout)
-    page.raise_for_status()
-    token = re.search(r"name='csrfmiddlewaretoken' value='([^']+)'", page.text)
-    if not token:
-        raise RuntimeError("MutaBind2 landing page carries no CSRF token")
-    response = request_with_retries(session, "POST", SERVER + "upload_pdb", attempts=2, timeout=timeout,
-                                    headers={"Referer": SERVER},
-                                    data={"csrfmiddlewaretoken": token.group(1), "example": "0",
-                                          "pdb_container_asu": "", "pdb_container_bio": "", "isNMR": "0",
-                                          "pdb_id": pdb_id, "pdb_mol": "bio", "bioassembly": "1"})
-    (directory / "mutabind2_response.html").write_text(response.text)
-    if response.status_code >= 400:
-        raise RuntimeError(f"MutaBind2 upload_pdb answered HTTP {response.status_code}")
-    text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", response.text))
-    if "MutaBind2" not in text and "Mutation" not in text:
-        raise RuntimeError("MutaBind2 returned an unrecognised page")
-    partners = re.findall(r"Chain\s*([A-Za-z0-9])\s*[-–]\s*Chain\s*([A-Za-z0-9])", text)
-    return {"provider": "MutaBind2 web server", "page_excerpt": text[:4000],
-            "reported_chain_pairs": sorted({tuple(sorted(pair)) for pair in partners}),
-            "raw_response": str(directory / "mutabind2_response.html")}
+def pdb_interface_contacts(structure_file: str, model_id: int = 0,
+                           distance_cutoff: float = 5.0, minimum_contacts: int = 10,
+                           compute_buried_surface: bool = False):
+    """Protein chain contacts in one explicit PDB model; optional buried SASA.
+
+    Uses standard amino-acid ATOM residues only, selected Biopython alternate
+    locations, and heavy atoms (H/D excluded). No assembly is inferred or
+    downloaded. Coordinates and molecule/chain identity come from caller's
+    file; contacts do not prove a physiological interaction. No mutation,
+    affinity, MutaBind2 model or experimental-status inference is performed.
+    Buried area is sum(isolated chain SASA)-complex SASA (no division by two).
+    """
+    import hashlib
+    import io
+    import math
+    from Bio.PDB import PDBParser, is_aa
+    from tools.implementations.general.research_data import _public_source_path
+    if type(model_id) is not int or model_id < 0:
+        raise ValueError("model_id must be a nonnegative integer")
+    if type(distance_cutoff) not in (int, float) or not math.isfinite(distance_cutoff) or not 2 <= distance_cutoff <= 10:
+        raise ValueError("distance_cutoff must be finite, 2..10 angstrom")
+    if type(minimum_contacts) is not int or not 1 <= minimum_contacts <= 100000:
+        raise ValueError("minimum_contacts must be integer1..100000")
+    if type(compute_buried_surface) is not bool:
+        raise ValueError("compute_buried_surface must be a strict Boolean")
+    path = _public_source_path(structure_file)
+    raw = path.read_bytes()
+    if not raw or len(raw) > 10000000:
+        raise ValueError("Require nonempty plain PDB of at most10000000bytes")
+    structure = PDBParser(QUIET=True, PERMISSIVE=False).get_structure("input", io.StringIO(raw.decode("ascii")))
+    if model_id not in structure:
+        raise ValueError("Requested parsed model_id absent")
+    model = structure[model_id]
+    for chain in list(model):
+        for residue in list(chain):
+            if residue.id[0] != " " or not is_aa(residue, standard=True):
+                chain.detach_child(residue.id)
+                continue
+            for atom in list(residue):
+                if atom.element in {"H", "D"}:
+                    residue.detach_child(atom.id)
+                elif not all(math.isfinite(float(v)) for v in atom.coord):
+                    raise ValueError("Nonfinite selected protein coordinates")
+            if not len(residue):
+                chain.detach_child(residue.id)
+        if not len(chain):
+            model.detach_child(chain.id)
+    atoms = sum(1 for _ in model.get_atoms())
+    chains = [chain.id for chain in model]
+    if not atoms or atoms > 12000:
+        raise ValueError("Require1..12000 selected standard protein heavy atoms")
+    interfaces = _interfaces(model, distance_cutoff, minimum_contacts)
+    area = _buried_surface(model, chains) if compute_buried_surface else {"computed": False, "reason": "not requested"}
+    return json.dumps({"method": "heavy-atom distance contacts; optional Shrake-Rupley SASA",
+                       "source_sha256": hashlib.sha256(raw).hexdigest(), "model_id": model_id,
+                       "chains": chains, "selected_atom_count": atoms,
+                       "distance_cutoff_angstrom": distance_cutoff, "minimum_atom_contacts": minimum_contacts,
+                       "interfaces": interfaces, "interface_count": len(interfaces), "buried_surface": area,
+                       "atom_scope": "standard amino-acid ATOM heavy atoms only; no H/D, hetero/water or missing-atom completion",
+                       "altloc_policy": "Biopython selected highest occupancy; ties follow source order",
+                       "assembly_policy": "caller-supplied model only; no biological assembly inference",
+                       "binding_affinity_or_mutation_prediction": False}, allow_nan=False)
 
 
 def mutabind2(pdb_id: str, chain: str = "", distance_cutoff: float = 5.0, minimum_contacts: int = 10,
               assembly: str = "bio", mutation: str = "", wait_seconds: int = 60):
-    """Interaction partners of a PDB complex, plus the MutaBind2 server result when it is reachable.
-
-    ``assembly`` selects the RCSB biological assembly 1 (``bio``) or the asymmetric
-    unit (``asu``).  ``chain`` restricts the partner list to that chain.  ``mutation``
-    is only evaluated by the upstream MutaBind2 method; if that host is unavailable
-    the field is returned as unavailable instead of inventing a value.
-    """
-    identifier = _pdb_id(pdb_id)
-    query_chain = chain.strip().upper()
-    if not 2.0 <= distance_cutoff <= 10.0:
-        raise ValueError("Require a heavy-atom distance cutoff of 2..10 angstrom")
-    if not 1 <= minimum_contacts <= 100000:
-        raise ValueError("Require 1..100000 minimum atom contacts")
-    if assembly not in ["bio", "asu"]:
-        raise ValueError("assembly must be 'bio' (assembly 1) or 'asu' (asymmetric unit)")
-    if not 0 <= wait_seconds <= 300:
-        raise ValueError("Require 0..300 wait seconds")
-    directory = artifacts_root() / ("mutabind2_" + identifier + "_" + uuid.uuid4().hex[:8])
-    directory.mkdir(parents=True, exist_ok=True)
-    result = {"source": "SciToolAgent MutaBind2 adapter", "pdb_id": identifier,
-              "assembly_requested": assembly, "distance_cutoff_angstrom": distance_cutoff,
-              "minimum_atom_contacts": minimum_contacts,
-              "retrieved_at": datetime.now(timezone.utc).isoformat()}
-    with _session() as session:
-        path, url, attempts = _fetch_structure(session, identifier, assembly, directory)
-        result.update({"structure_path": str(path), "structure_url": url, "structure_download_attempts": attempts})
-        model, chains = _parse(path)
-        result["chains"] = chains
-        interfaces = _interfaces(model, distance_cutoff, minimum_contacts)
-        result["interfaces"] = interfaces
-        result["interface_count"] = len(interfaces)
-        if query_chain:
-            if query_chain not in chains:
-                raise ValueError(f"Chain {query_chain} is not present in the downloaded structure; available chains: {chains}")
-            partners = sorted({other for row in interfaces for other in row["chains"] if query_chain in row["chains"] and other != query_chain})
-            result["query_chain"] = query_chain
-            result["interaction_partners"] = partners
-        else:
-            result["interaction_partners"] = sorted({chain for row in interfaces for chain in row["chains"]})
-        result["buried_surface"] = _buried_surface(model, chains)
-        server = {"status": "not_attempted"}
-        if mutation or wait_seconds > 0:
-            try:
-                server = {"status": "ok", **_mutabind_server(session, identifier, directory, max(wait_seconds, 30))}
-            except Exception as error:  # upstream host is documented as unreliable
-                server = {"status": "unavailable", "error_type": type(error).__name__, "error": str(error)[:400]}
-        result["mutabind2_server"] = server
-    result["mutation"] = mutation or None
-    if mutation:
-        if result["mutabind2_server"].get("status") == "ok":
-            result["mutation_effect"] = result["mutabind2_server"].get("page_excerpt")
-            result["mutation_effect_status"] = "returned by the MutaBind2 web server"
-        else:
-            result["mutation_effect"] = None
-            result["mutation_effect_status"] = ("MutaBind2 server unavailable; no binding-affinity change is reported. "
-                                                "The interaction partners above come from the experimental RCSB structure.")
-    else:
-        result["mutation_effect"] = None
-        result["mutation_effect_status"] = "no mutation requested"
-    result["scope"] = ("Interaction partners and interfaces are computed from the experimental PDB coordinates "
-                       "(heavy-atom contacts and buried SASA). They are not a trained binding-affinity prediction.")
-    return json.dumps(result, ensure_ascii=False)
+    """Retired unsupported mutation-model entrypoint; use explicit contact analysis."""
+    raise NotImplementedError("Mutabind2 is retired: no mutation-specific model was implemented; use PDBInterfaceContacts for coordinate geometry only")

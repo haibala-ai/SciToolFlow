@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "basis_order": [
+    "alpha_alpha",
+    "alpha_beta",
+    "beta_alpha",
+    "beta_beta"
+  ],
+  "Hamiltonian_in_frequency_units_hz": [
+    [
+      107.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -7.0,
+      4.0,
+      0.0
+    ],
+    [
+      0.0,
+      4.0,
+      3.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      -103.0
+    ]
+  ],
+  "transverse_transition_operator": [
+    [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    [
+      0.5,
+      0.0,
+      0.0,
+      0.5
+    ],
+    [
+      0.5,
+      0.0,
+      0.0,
+      0.5
+    ],
+    [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ]
+  ],
+  "weak_coupling_site_frequencies_hz": [
+    100.0,
+    110.0
+  ],
+  "scalar_coupling_hz": 8.0,
+  "model": "Controlled two-spin1/2 isotropic scalar-coupling Hamiltonian with full nonsecular mixing as explicitly supplied. Diagonalize the real symmetric H. For each pair of energy eigenstates i<j, positive frequency=E_j-E_i and transition strength=abs((U_transpose*M*U)_ij)^2. Retain every transition with strength>1e-10 and normalize retained strengths to sum1.",
+  "target": "Sort lines by increasing frequency; keep aligned strengths. Weak-coupling comparator consists of nu_A +/-J/2 and nu_B +/-J/2. It matches only if every paired sorted line position differs by<=0.1Hz. Eigenvector signs are arbitrary and cannot affect strengths.",
+  "scope": "These are transition matrix-element strengths, not thermal-population-weighted experimental integrated intensities. No line broadening, real spin assignment or relaxation kinetics is inferred."
+}

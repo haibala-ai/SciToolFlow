@@ -44,10 +44,12 @@ dependencies:
       - aiofiles==25.1.0
       - aiohttp==3.9.5
       - aiosignal==1.4.0
+      - anndata==0.10.8
       - annotated-types==0.8.0
       - anyio==4.15.1
       - argon2-cffi==25.1.0
       - argon2-cffi-bindings==26.1.0
+      - array-api-compat==1.15.0
       - arrow==1.4.0
       - ase==3.29.0
       - asttokens==3.0.2
@@ -199,6 +201,7 @@ dependencies:
       - mygene==3.2.2
       - mypy-extensions==1.1.0
       - narwhals==2.27.1
+      - natsort==8.4.0
       - nbclient==0.11.0
       - nbconvert==7.17.2
       - nbformat==5.11.1
@@ -248,6 +251,7 @@ dependencies:
       - pydantic-core==2.50.1
       - pydantic-settings==2.15.0
       - pydentate==1.1.4
+      - pydeseq2==0.4.12
       - pygments==2.21.0
       - pylatexenc==2.11
       - pymatgen==2025.10.7

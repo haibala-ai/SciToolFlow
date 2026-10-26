@@ -1,0 +1,165 @@
+{
+  "data": [
+    {
+      "record_id": "dispersion",
+      "material_id": "mp-149",
+      "reciprocal_lattice_inverse_angstrom_including2pi": [
+        [
+          -1.1568402902170383,
+          1.1568402902170383,
+          1.1568402902170383
+        ],
+        [
+          1.1568402902170383,
+          -1.1568402902170383,
+          1.1568402902170383
+        ],
+        [
+          1.1568402902170383,
+          1.1568402902170383,
+          -1.1568402902170383
+        ]
+      ],
+      "fractional_qpoints": [
+        [
+          0.02380952381,
+          -7.7037197775e-34,
+          0.02380952381
+        ],
+        [
+          0.047619047619,
+          -1.5407439555e-33,
+          0.047619047619
+        ],
+        [
+          0.071428571429,
+          0.0,
+          0.071428571429
+        ]
+      ],
+      "first_three_mode_frequency_thz": [
+        [
+          0.49505600202370975,
+          0.9779867801036537,
+          1.4375330633436796
+        ],
+        [
+          0.4950560020237493,
+          0.9779867801036711,
+          1.4375330633436931
+        ],
+        [
+          0.7181572184559458,
+          1.433699767340377,
+          2.1441865942971274
+        ]
+      ],
+      "gamma_frequencies_thz": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "record_id": "elasticity",
+      "material_id": "mp-aaaaaaft",
+      "ieee_stiffness_gpa": [
+        [
+          153.0,
+          57.0,
+          57.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          57.0,
+          153.0,
+          57.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          57.0,
+          57.0,
+          153.0,
+          -0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          -0.0,
+          74.0,
+          0.0,
+          -0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          0.0,
+          0.0,
+          74.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -0.0,
+          -0.0,
+          74.0
+        ]
+      ],
+      "density_g_cm3": 2.281194286724814,
+      "crystal_system": "Cubic",
+      "warnings": []
+    }
+  ],
+  "provenance": {
+    "kind": "authentic published computational source projections with explicitly controlled cross-source comparison",
+    "generation": "Lossless selected original published computational-data projection; no synthetic numerical observations. Source captures identify the original bytes. Any derived coordinate or format metadata is explicitly marked. These are computational inputs,not new experimental measurements.",
+    "units": "Bandqfractional,reciprocalmatrixincludes2piandunitsinverseangstrom;ordinaryfrequencyTHz;stiffnessGPa,densityg/cm3",
+    "original_observation_claim": false,
+    "source_captures": [
+      {
+        "provider": "Materials Project official published DFPT object archive",
+        "url": "https://materialsproject-parsed.s3.amazonaws.com/ph-bandstructures/dfpt/mp-149.json.gz",
+        "accessed_at": "2026-10-20T11:12:53.485449+00:00",
+        "download_sha256": "92c1c67270c6004993194906b3a2ed86fbd5d1b8eff8d4120b17a02186ba8d2d",
+        "decoded_snapshot_sha256": "12fd39cb236a48ab9cc331bfdca12552772520831c9e36d8149408aa46ae71bc",
+        "method": "Official MP DFPT archive, no interpolation/renormalization or scientific alteration",
+        "record_count": 1,
+        "credentials_included": false
+      },
+      {
+        "provider": "Materials Project",
+        "url": "https://api.materialsproject.org/materials/elasticity/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_limit=20&_all_fields=true",
+        "accessed_at": "2026-10-20T08:07:40.768678+00:00",
+        "raw_sha256": "a7d7aff7db31c12a428e740d3c844cd9e7550c79a0064a489bf3bfe5595e46d8",
+        "record_count": 10,
+        "credentials_included": false,
+        "claims": "Authentic fresh API response; independent of prior benchmark answers."
+      },
+      {
+        "provider": "MaterialsProjectofficialAPI",
+        "url": "https://api.materialsproject.org/materials/summary/?material_ids=mp-149&_fields=material_id%2Cformula_pretty%2Ccomposition%2Cdensity%2Cvolume%2Cnsites%2Csymmetry%2Cstructure%2Clast_updated&_limit=5",
+        "accessed_at": "2026-10-20T12:37:37.260725+00:00",
+        "raw_sha256": "bd73eec6caeb7990e315b04ccd063853bfe47403cc9e24b049ce06086a0e7917",
+        "request_material_ids": [
+          "mp-149"
+        ],
+        "response_record_count": 1,
+        "role": "Exact single-ID request / actual returned material ID and structure identity; no assumption of ID string equality"
+      }
+    ],
+    "identity_confirmation": {
+      "single_official_request": "mp-149",
+      "actual_returned_material_id": "mp-aaaaaaft",
+      "official_response_formula": "Si",
+      "scope": "Request-to-responseIDmappingverified;notproofthatDFPTandelasticitysharefunctionalorcalculation"
+    }
+  }
+}

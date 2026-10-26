@@ -1,0 +1,50 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "observations": [
+        [
+          1.0,
+          109.0
+        ],
+        [
+          2.0,
+          149.0
+        ],
+        [
+          3.0,
+          149.0
+        ],
+        [
+          5.0,
+          191.0
+        ],
+        [
+          7.0,
+          213.0
+        ],
+        [
+          10.0,
+          224.0
+        ]
+      ],
+      "column_order": [
+        "x",
+        "y"
+      ],
+      "analysis_policy": "Use exponential approach a*(1-exp(-b*x)) and unweighted native-response least squares on all archived observations. A report requests the point prediction at time20 and claims it was directly validated by this archive. Validation support means time20 lies inside the observed predictor range; it is distinct from fit convergence or a narrow parameter covariance. Suggested start a200,b0.5.",
+      "units": "x=time in source days;y=biochemical oxygen demand inmg/L; purely archival water-quality numeric analysis,no experimental activity.",
+      "source_provenance": {
+        "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/BoxBOD.dat",
+        "raw_sha256": "fc44fbed04e3be16df6498e722d4c8aedfd0af210110bc396d9f99acecd77e21",
+        "read_scope": "Dataset description,variable definitions,observed rows and declared family; certified result block is never exported to public task assets.",
+        "source_kind": "US NIST Statistical Reference Datasets public observations; original study reference retained in source",
+        "reuse": "Attributed public numeric reference data; no claim of authorship or endorsement"
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

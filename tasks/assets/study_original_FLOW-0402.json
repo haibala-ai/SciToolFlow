@@ -1,0 +1,50 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "site_A_alternate_ids": [
+    "A1",
+    "A2"
+  ],
+  "site_A_marginal_occupancies": [
+    0.6,
+    0.4
+  ],
+  "site_A_coordinates_angstrom": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      10.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "site_B_alternate_ids": [
+    "B1",
+    "B2"
+  ],
+  "site_B_marginal_occupancies": [
+    0.7,
+    0.3
+  ],
+  "site_B_coordinates_angstrom": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      20.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "contact_cutoff_angstrom": 2.0,
+  "model": "Two sites each occupy exactly one of their two alternative positions. A contact occurs iff the distance of the occupied A and B positions is <=cutoff. Treat each listed occupancy as an exact marginal probability for this controlled ensemble. No joint-state occupancies, coupling model or independence assumption is supplied.",
+  "target": "Use every geometry pair to identify the contact event, then optimize its probability over ALL nonnegative 2x2 joint-state probability tables consistent with both marginals. Also report the counterfactual independence value, explicitly distinguishing it from an identified probability.",
+  "scope": "A controlled alternate-position occupancy model, not measured bond occupancy, an experimental PDB refinement result, interaction affinity or protein engineering."
+}

@@ -1,0 +1,46 @@
+{
+  "data_origin": "Own exhaustive configuration inventory for cyclohexane-1,2,3,4,5,6-hexol (inositol connectivity). Sixty-four cyclic above/below configurations and their C1-carbon-13 analogues are supplied as explicit isomeric SMILES. Local stereotags are assigned from oriented ideal diagrams. The isotope-distinguished record is serialized first, and its unlabelled partner preserves that exact local traversal and stereo by removing only the isotope mass annotation. The complete resulting molecular partitions are independently checked with standard InChI and the proper spatial symmetry action below. These diagrams specify configurations, not measured or optimized conformers, energies, equilibrium populations or interconversion rates. No natural abundance, named inositol-isomer assignment or experimental optical rotation is inferred.",
+  "input": {
+    "inventory": "asset://research_FLOW-0340_cyclohexanehexol_orientations.csv",
+    "identity": "record_id is the six-bit orientation word, including leading zeros. Treat it as a string. C1..C6 are temporary positions around the cyclic diagram, not permanent distinguishable atom-map labels. Every unlabelled carbon is treated as carbon-12 for exact monoisotopic-mass bookkeeping. In the second SMILES column only diagram C1 is carbon-13; the other five carbons remain carbon-12. Hydrogen and oxygen use their usual most-abundant isotopes. All O-H groups and molecular components remain intact.",
+    "orientation": "Bit1 means the OH group lies above the oriented ring diagram; bit0 means below. The six bits are cyclic relative configurations, not six independently named CIP R/S values and not a literal reading of SMILES @ versus @@. SMILES local traversal and ring-closure ordering affect those tag symbols. Chair changes and cyclic relabeling do not automatically create a new configuration."
+  },
+  "proper_symmetry": {
+    "unlabelled_action": "For i,r in0..5, R_r(b)_i=b_((i-r) mod6) is a proper rotation about the ring normal. F_r(b)_i=1-b_((r-i) mod6) is a180-degree proper rotation about an in-plane axis: it reverses cyclic order AND swaps above/below. The twelve operations R_0..R_5,F_0..F_5 form the allowed proper spatial relabeling group for this configuration-counting problem. Reflections are not identity operations.",
+    "mirror": "Use M(b)_i=1-b_i as a fixed spatial reflection. Two distinct proper-rotation classes interchanged by M form an enantiomeric pair. A class mapped to itself is achiral. No sign or magnitude of optical rotation is provided.",
+    "labelled_action": "With carbon-13 at C1 (diagram index0), allowable equivalence operations must also preserve the unique isotope position. Derive and use the stabilizer subgroup of this vertex in the same proper group. Do not continue dividing by the full unlabelled group, and do not treat the isotope as a freely movable decoration.",
+    "proof": "Certify complete classes over all64 records, not a sample. Independently check class counts by orbit enumeration or canonical identity and by fixed-point counting (Burnside). Give all twelve unlabelled fixed-record counts using keys R0..R5,F0..F5 and the number of isotope-preserving proper operations. Define each class representative as its lexicographically smallest record_id. Keep complete class memberships and mirror matching in the trajectory."
+  },
+  "molecular_identity_audit": "Verify the actual supplied graph identities of all reported unlabelled and labelled representatives, with assigned stereochemistry and isotopes preserved and no fragment removal or tautomer conversion. Verify mirror classification against actual representative/mirror molecular records, rather than counting tag characters. A mathematically correct group quotient applied to a mismatched SMILES inventory is not sufficient. A scalar count of atom stereocenters is not by itself a count of global stereoisomers or a chirality test; pseudoasymmetric and symmetry-dependent configurations require care.",
+  "isotope_questions": "Report the unlabelled and labelled class counts, the unlabelled achiral representative IDs and enantiomer pairs, and the labelled numbers of achiral classes and enantiomer pairs. For each unlabelled class, count how many distinct labelled classes its raw records split into when diagram C1 alone is isotopically distinguished. This is an orbit refinement problem; an isotope label may reveal otherwise equivalent or enantiotopic positions. Do not describe the label as causing physical configurational interconversion.",
+  "fingerprint_control": {
+    "kernel": "Compare every unlabelled class representative using Morgan bit fingerprints with radius=2,bits=2048,chirality=false,features=false, ordinary Tanimoto similarity (not distance). Preserve all representative records.",
+    "questions": "Report the number of distinct fingerprint vectors among the unlabelled representatives, the minimum off-diagonal Tanimoto similarity, and the number of UNORDERED pairs of distinct exact stereochemical identities having Tanimoto similarity exactly1 under this deliberately stereo-blind kernel. Decide whether these vectors identify global stereoisomer classes. Similarity1 is allowed and is not a molecule-parsing failure. Do not silently change the kernel to make it agree with desired identity."
+  },
+  "mass_control": "Compute exact neutral monoisotopic masses in Da for one supplied unlabelled record and its C1-carbon-13 analogue, retaining the explicit isotope. Report the mass shift. All records within one isotope family have the same exact mass; that fact cannot identify the configuration, achirality or an enantiomer. Do not substitute isotope-averaged molar mass or infer an observed spectrum.",
+  "interpretation_proposals": {
+    "A": "Equivalent configuration records are quotiented by proper spatial operations, while mirror reflection is used separately to test chirality.",
+    "B": "Every one of the64 local orientation words is a distinct stereoisomer because it uses a different bit string.",
+    "C": "A unique isotope distinguishes its site and changes which atom relabelings remain legitimate identity operations.",
+    "D": "The local SMILES symbols @ and @@ directly encode global OH-up/OH-down or permanent CIP R/S labels independently of traversal.",
+    "E": "A Tanimoto score of1 under a stereo-blind fingerprint does not prove stereochemical identity.",
+    "F": "Equal exact molecular mass establishes equality of the global stereochemical configuration.",
+    "G": "The same mathematical configuration class can admit multiple serialization strings, and identity must preserve declared isotope and stereo policies.",
+    "H": "Counting these configuration classes determines equilibrium populations, conformer energies or the sign of optical rotation."
+  },
+  "reporting": "Return raw_orientation_record_count; unlabelled_class_count; unlabelled_class_representative_ids sorted; unlabelled_orbit_size_histogram with string size keys; unlabelled_Burnside_fixed_counts keyed R0..R5,F0..F5; unlabelled_achiral_representative_ids sorted; unlabelled_enantiomer_pairs (sort each pair and then sort pairs lexicographically); isotope_preserving_proper_operation_count; labelled_class_count; labelled_achiral_class_count; labelled_enantiomer_pair_count; labelled_class_splits_by_unlabelled_representative keyed by all unlabelled class representative IDs; stereo_blind_distinct_fingerprint_count; stereo_blind_minimum_offdiagonal_Tanimoto; stereo_blind_false_identity_unordered_pair_count; fingerprint_kernel_identifies_stereoisomer_classes; unlabelled_exact_mass_Da; labelled_exact_mass_Da; carbon13_mass_shift_Da; valid_interpretation_proposal_ids sorted. IDs are strings including zeros. Counts, class partitions, booleans and proposal IDs are exact; masses use absolute tolerance1e-7 and similarity1e-12. Keep actual molecular identity outputs, full class/mirror evidence and fixed-point proof in the trajectory rather than forcing canonical SMILES strings into final_answer.",
+  "methodological_sources": [
+    {
+      "title": "Basic terminology of stereochemistry (IUPAC Recommendations1996)",
+      "author": "G.P.Moss",
+      "doi": "10.1351/pac199668122193",
+      "url": "https://publications.iupac.org/pac/68/12/2193/index.html",
+      "role": "Primary stereoisomer/enantiomer/isotopomer terminology; the full64-row configuration problem is constructed here."
+    },
+    {
+      "title": "The RDKit Book: Stereochemistry",
+      "url": "https://www.rdkit.org/docs/RDKit_Book.html#stereochemistry",
+      "role": "Primary software documentation for local SMILES stereo representation and identity policy. The finite proper-symmetry proof is independent of numeric canonical serialization or a fingerprint heuristic."
+    }
+  ]
+}

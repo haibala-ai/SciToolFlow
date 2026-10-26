@@ -1,0 +1,13 @@
+{
+  "records_file": "competing_failure_records_FLOW-0238.csv",
+  "horizon_hours": 5.0,
+  "entry_protocol": "All12units enter functioning at time0. Each record is the first terminal event or the end of observation. EventA is electronic failure, eventB is permanent mechanical failure. Either terminal event retires the unit so its later event of the other type is not observed or part of this estimand.",
+  "censoring_assumption": "Assume independent right censoring for the nonparametric cohort-distribution estimate. Censored is observation ending with neither terminal event, not another event type.",
+  "tie_convention": "At a tied time all observed terminal events occur before observation-ending censorings. Every unit with exit_time equal to that time is included in its pre-event risk set.",
+  "analyst_report": "The proposed report estimates causeA probability as one minus a product-limit survivor that counts only A as events and recodes B as right censorings. Audit its signed overstatement relative to the requested actual competing-first-event probability.",
+  "decision_rule": "Decide whether the requested A cumulative-incidence estimate is strictly below0.45 at the source horizon. This is a stipulated diagnostic cutoff, not statistical evidence of product certification.",
+  "provenance": {
+    "kind": "Controlled project-authored instrument failure cohort with two mutually exclusive first-terminal-event causes. No product reliability or medical inference claim.",
+    "records_sha256": "4bea081dcca797e283e1ef378fb346b3e6ba256436898d51544e0abf3658b498"
+  }
+}

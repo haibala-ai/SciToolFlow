@@ -1,0 +1,22 @@
+{
+  "light_heavy_molar_masses_g_per_mol": [
+    28.0,
+    30.0
+  ],
+  "heavy_over_light_detector_response_factor": 2.0,
+  "time_s": [
+    0.0,
+    5.0,
+    10.0
+  ],
+  "measured_heavy_over_light_outgoing_flux_signal_ratios": [
+    0.8,
+    0.8099382692526635,
+    0.82
+  ],
+  "model": "A well-mixed isothermal reservoir contains only two inert isotopologues and empties by molecular-flow effusion into vacuum. N_i(t)=N_i(0)*exp(-k_i*t),k_i=a/sqrt(M_i),where the positive shared a is constant and Muses the declared g/mol numerical convention. Detector signals are S_i=beta_i*k_i*N_i(t);only beta_heavy/beta_light is needed and is supplied. No replenishment,interconversion,continuum-flow mixing or isotope-dependent detector drift occurs.",
+  "target": "Infer afrom the time-dependent signal ratio,then return initial and10sheavy particle-number fractions and total particles remaining at10sas a fraction of the initial total. Report whether the initial detector signal ratio can be used directly as the reservoir heavy/light NUMBER ratio. The unknown initial total number cancels.",
+  "provenance": {
+    "kind": "Explicit synthetic conditional scientific model and exact source observations;not a live experiment or empirical mechanism validation."
+  }
+}

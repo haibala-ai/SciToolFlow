@@ -1,6 +1,6 @@
 """Local PDF evidence retrieval and Qwen answers, sharing the Agent's inference worker."""
 
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import hashlib
 import json
 import os
@@ -13,8 +13,8 @@ ROOT = local_root()
 
 
 def answer_question(question: str):
-    from scitoolflow.models.local import RUNTIME
-    from scitoolflow.models.trace import record
+    from src.models.local import RUNTIME
+    from src.models.trace import record
 
     config = Config()
     directory = (
@@ -45,11 +45,12 @@ def answer_question(question: str):
         raise ValueError("PDFs contain no extractable text; scanned PDFs need OCR")
     # Keep the operation bounded, with the actual coverage disclosed in output.
     sampled = chunks[:300]
-    vectors = np.asarray(
-        RUNTIME.request(
-            "embed", texts=[question] + [chunk["text"] for chunk in sampled]
-        )["vectors"]
+    embedded = RUNTIME.request(
+        "embed", texts=[question] + [chunk["text"] for chunk in sampled]
     )
+    vectors = np.asarray(embedded['vectors'], dtype=float)
+    if vectors.ndim != 2 or len(vectors) != len(sampled) + 1 or not np.all(np.isfinite(vectors)):
+        raise RuntimeError('PDF retrieval received malformed/nonfinite embedding rows')
     scores = vectors[1:] @ vectors[0]
     selected = [sampled[index] for index in np.argsort(scores)[-4:][::-1]]
     context = "\n\n".join(
@@ -92,8 +93,8 @@ def answer_question(question: str):
             "question": question,
             "answer": reply["text"],
             "sources": sources,
-            "model": "Qwen/Qwen3.5-9B",
-            "embedding": "Qwen/Qwen3-Embedding-0.6B",
+            "model": reply['model'],
+            "embedding": embedded['model'],
             "indexed_chunks": len(sampled),
             "total_chunks": len(chunks),
             "coverage_limited": len(sampled) < len(chunks),

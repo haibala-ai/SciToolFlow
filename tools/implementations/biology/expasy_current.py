@@ -1,5 +1,5 @@
 """Actual current SIB HAMAP-Scan and Sulfinator submissions with retained scientific reports."""
-from scitoolflow.paths import local_root, artifacts_root
+from src.utils.paths import local_root, artifacts_root
 import json
 from pathlib import Path
 import re

@@ -2,7 +2,19 @@
 
 本目录保存固定版本的模型、源码、参数、tokenizer、数据索引及来源记录，共约 **502 MiB**，最大存储文件 **48 MiB**。包含 23 个组件、1,556 个还原后的文件；其中两个 RXN checkpoint 使用分块存储，仓库实际保存 1,562 个资源文件。**无需 Git LFS**。
 
-运行 `python scripts/prepare_resources.py` 后，资源按原目录结构复制到项目 `.local/`。现有工具的目录、参数、计算逻辑、图谱和 embedding 均保持原样。
+## 目录职责
+
+| 目录／文件 | 用途 |
+| --- | --- |
+| external_sources/ | 固定的第三方源码、编译依赖与许可；保留上游结构 |
+| models/ | 已分发的小型权重、模型配置、词表与tokenizer |
+| chunks/ | 大型checkpoint的无损分块；由准备器重组 |
+| reference_data/ | 科学工具使用的固定数据快照与索引 |
+| provenance/ | 模型版本、下载来源和资源来源证据 |
+| manifest.json | 逐文件身份、组件、分块顺序与安装目标 |
+| THIRD_PARTY_NOTICES.md | 第三方版权、许可和分发说明 |
+
+运行 `python -m scripts.maintenance.prepare_resources` 后，资源按原目录结构复制到项目 `.local/`。准备器仅安装资源，不改写工具契约、科学实现或检索索引。
 
 | 已包含的组件 | 内容 | 约体积（MiB） |
 | --- | --- | ---: |
@@ -30,16 +42,16 @@ RXN 两个原始文件各 155,080,231 字节，分块保存在 `chunks/rxn_sandb
 在项目根目录、`SciTool-Unified` 环境中运行：
 
 ```bash
-python scripts/prepare_resources.py
-python scripts/prepare_resources.py --check
+python -m scripts.maintenance.prepare_resources
+python -m scripts.maintenance.prepare_resources --check
 ```
 
 准备器先验证整批源文件（含分块及还原后的完整文件）和目标文件，再复制缺失文件；不联网，不修改 Conda 环境，不反序列化模型，不覆盖已修改的文件。冲突时返回非零退出码，并列出相对路径。默认还原全部组件，至少为这些资源预留约 502 MiB 的额外空间；尚未下载的大型权重另计。可用以下参数选择范围或另建目录：
 
 ```bash
-python scripts/prepare_resources.py --component mofsimplify_models
-python scripts/prepare_resources.py --component rxn_sandbox_weights
-python scripts/prepare_resources.py --destination .local/work/resource_staging
+python -m scripts.maintenance.prepare_resources --component mofsimplify_models
+python -m scripts.maintenance.prepare_resources --component rxn_sandbox_weights
+python -m scripts.maintenance.prepare_resources --destination .local/work/resource_staging
 ```
 
 `--component` 可重复使用，组件 ID 见清单。`--destination` 用于隔离检查；工具仍按既有 `.local/` 路径或配置的覆盖项读取资源。

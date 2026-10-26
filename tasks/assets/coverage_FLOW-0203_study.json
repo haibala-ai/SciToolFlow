@@ -1,0 +1,6 @@
+{
+  "cif_file": "asset://coverage_FLOW-0203_HKUST1.cif",
+  "cell_policy": "All indices refer to the same default MOFcell,not raw supplied CIFrow order. Compare the actual branch-point set with degree-one terminal sites supported by the graph bridge map.",
+  "analysis": "Report branch and terminal counts,their intersection count,Jaccardset similarity,and the fraction of all default-cell sites that are terminals. Under the explicit operation of deleting only these verified degree-one leaves,can two retained vertices previously connected become disconnected?",
+  "scope": "The final connectivity statement is a graph theorem about deleting leaves,not a prediction of chemical framework stability,solvent-removal feasibility or a relaxed crystal structure. Equal set cardinality does not establish equal membership."
+}

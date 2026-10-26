@@ -1,0 +1,38 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "stage_order": [
+    "juvenile",
+    "adult"
+  ],
+  "projection_matrix_per_step": [
+    [
+      0.2,
+      4.0
+    ],
+    [
+      0.1,
+      0.3
+    ]
+  ],
+  "initial_expected_stage_counts": [
+    0.0,
+    10.0
+  ],
+  "census_steps_including_initial": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "model": "Column-vector expectation n(t+1)=A*n(t) with fixed nonnegative projection matrix. Entries combine stipulated survival, stage transitions and recruitment per census step; no density dependence, migration or environmental variation. This is a controlled mean-projection model, not a stochastic extinction calculation.",
+  "target": "Evaluate every listed whole-population expected census, including step0, with one common initial vector. Choose the earliest step if totals tie within1e-10. The dominant eigenvalue is the asymptotic expected per-step factor and does not impose immediate stable stage composition.",
+  "scope": "Finite-window transients and asymptotic expectation are different questions; finite counts and dominant eigenvalues are not persistence probabilities."
+}

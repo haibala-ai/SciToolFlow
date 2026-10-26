@@ -1,0 +1,18 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled statistical example. Values are stipulated observations or population working moments as explicitly stated, not new experimental data.",
+    "source_scope": "No outside information is required; every inferential assumption is declared."
+  },
+  "uncensored_responses": [
+    0.2,
+    0.8,
+    1.3,
+    2.0
+  ],
+  "left_censored_count": 3,
+  "censor_limit": 0.0,
+  "known_standard_deviation": 1.0,
+  "model": "Seven independent latent readings are Normal(mu,1). Four exact values exceed the fixed detection limit0; the other three are known only to be at or below0. The apparatus records every unit, including censored units; this is censoring, not truncation by unrecorded units. Maximize the full observed-data likelihood over -5<=mu<=5. For an uncensored reading its density contributes; each censored unit contributes Phi((0-mu)/1). Do not substitute0 for a censored value. Report the estimated latent mean of a censored unit under the fitted model, mu-phi(mu)/Phi(-mu), separately from the population mu.",
+  "precision": "Absolute1e-5 is sufficient for fitted means; the likelihood is strictly concave for this fixed positive variance. The normal CDF/density, or an independently accurate numerical equivalent, must be used.",
+  "scope": "Controlled reporting-limit example in generic measurement units; no scientific extrapolation beyond the stated latent normal model is established."
+}

@@ -1,0 +1,17 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "analyte_signal_integral": 3.0,
+  "analyte_equivalent_proton_count": 3,
+  "reference_signal_integral": 4.0,
+  "reference_equivalent_proton_count": 2,
+  "reference_weighed_mass_milligrams": 10.0,
+  "reference_mass_purity_fraction": 0.9,
+  "reference_molar_mass_grams_per_mol": 100.0,
+  "analyte_molar_mass_grams_per_mol": 400.0,
+  "sample_weighed_mass_milligrams": 30.0,
+  "model": "Controlled quantitative proton NMR with complete relaxation, common response per observed nucleus, exact integrations, resolved signals and all weighed material in the measured aliquot. The reference contributes only its stated pure fraction. Molar amount ratio n_analyte/n_reference=(I_analyte/NH_analyte)/(I_reference/NH_reference). Convert pure reference mass to moles, then analyte moles to mass.",
+  "scope": "An analytical mass-balance audit, not a relaxation-optimization task, molecular formula inference, treatment dose or claim of real sample purity."
+}

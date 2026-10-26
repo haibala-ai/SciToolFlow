@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "record_id": "study",
+      "framework_cif": "IRMOF-1.cif",
+      "framework_sha256": "e5d0b3d72445c15cd2ed02a36fa2fdf3d5d13f6c21441984475449d48d3f0ad2",
+      "temperature_kelvin": 298.0,
+      "feed_co2_mole_fraction": 0.5,
+      "desorption_pressure_pascal": 100000.0,
+      "adsorption_candidate_pressures_pascal": [
+        500000.0,
+        1000000.0
+      ],
+      "initialization_cycles": 100,
+      "production_cycles": 400,
+      "co2_working_capacity_lower_guard_threshold_mg_per_g": 80.0,
+      "co2_molar_mass_g_per_mol": 44.01,
+      "avogadro_constant_per_mol": 6.02214076e+23
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "PressurePa,TK,absolute adsorbate inventory mg/g under RASPA pseudo-atom model masses; reported width on the same basis; raw inventory molecules/crystallographic cell; source volume angstrom^3; ordinary CO2 molar mass g/mol; intracrystal inventory g/L; inventory composition mole fraction",
+    "original_observation_claim": false,
+    "framework_source_capture": {
+      "provider": "iRASPA/RASPA2 distributed crystal fixture",
+      "upstream": "https://github.com/iRASPA/RASPA2/blob/master/structures/mofs/cif/IRMOF-1.cif",
+      "source_local_installed_file": ".local/external_sources/RASPA2/structures/mofs/cif/IRMOF-1.cif",
+      "resource_manifest_sha256": "50fa530692255b46605ce4c220ad1d4c56545cb87f2bc6ee10ddde3cff5ade96",
+      "source_sha256": "e5d0b3d72445c15cd2ed02a36fa2fdf3d5d13f6c21441984475449d48d3f0ad2",
+      "role": "Existing public source CIF with original atom charges;no coordinate/charge construction or assignment. Dataset provenance not a forcefield-accuracy or equilibrium validation.",
+      "url": "https://raw.githubusercontent.com/iRASPA/RASPA2/6498ab1eec9c8e0f063dcd0d71dd7add372c529b/structures/mofs/cif/IRMOF-1.cif",
+      "source_commit": "6498ab1eec9c8e0f063dcd0d71dd7add372c529b",
+      "commit_resolution_status": "git ls-remote HEAD then direct immutable raw-file bytes verified",
+      "accessed_at": "2026-10-20T15:42:10.518766+00:00"
+    },
+    "scope": "Finite numerical screen,not validated equilibrium capacity,process outlet purity or packed-bed performance. Original example force fields require independent scientific validation before physical extrapolation. CIF site charges are retained as provided (all seven unique source-site charges are zero); this does not validate physical framework partial charges."
+  }
+}

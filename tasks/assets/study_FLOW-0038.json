@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "record_id": "ethanol",
+      "smiles": "CCO"
+    },
+    {
+      "record_id": "acetic-acid",
+      "smiles": "CC(=O)O"
+    },
+    {
+      "record_id": "sodium-acetate",
+      "smiles": "[Na+].CC(=O)[O-]"
+    },
+    {
+      "record_id": "tetramethylammonium",
+      "smiles": "C[N+](C)(C)C"
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "SMILES identities; natural-abundance molar masses unless isotopes explicitly requested",
+    "original_observation_claim": false
+  }
+}

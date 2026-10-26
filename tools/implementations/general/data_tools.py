@@ -5,7 +5,6 @@ import io
 import json
 import math
 from decimal import Decimal, InvalidOperation
-import pandas as pd
 import regex
 from tools.implementations.shared.common import InputValidationError
 from tools.implementations.shared.data_validation import (
@@ -20,6 +19,8 @@ from tools.implementations.shared.data_validation import (
     result,
     MAX_ROWS,
     MAX_CELLS,
+    MAX_COLUMNS,
+    MAX_TEXT,
 )
 
 
@@ -41,12 +42,39 @@ def _key(values):
         all(v is None or isinstance(v, (str, int, float, bool)) for v in values),
         "Keys/categories must be scalar JSON values",
     )
-    # Python numeric equality intentionally joins integer and float equivalents.
-    return tuple(values)
+    # JSON Booleans are not numeric IDs; integer/float numeric equivalents match.
+    return tuple(("number" if type(v) in (int, float) else type(v).__name__, v) for v in values)
 
 
-def parse_csv_records(csv_text: str, delimiter: str = ",") -> dict:
+def _same_json(a, b):
+    if type(a) in (int, float) and type(b) in (int, float):
+        return a == b
+    if type(a) is not type(b):
+        return False
+    if isinstance(a, list):
+        return len(a) == len(b) and all(_same_json(x, y) for x, y in zip(a, b))
+    if isinstance(a, dict):
+        return set(a) == set(b) and all(_same_json(a[k], b[k]) for k in a)
+    return a == b
+
+
+def parse_csv_records(csv_text: str | None = None, delimiter: str = ",", csv_file: str | None = None) -> dict:
     """Parse CSV text into records with string cells and explicit column names; reject duplicate headers or inconsistent row widths."""
+    if (csv_text is None) == (csv_file is None):
+        raise InputValidationError("Supply exactly one of csv_text or csv_file")
+    source_metadata = {}
+    if csv_file is not None:
+        from .research_data import _public_source_path
+        import hashlib
+        path = _public_source_path(csv_file)
+        if path.stat().st_size > 1000000:
+            raise InputValidationError("CSV source exceeds1000000 bytes")
+        raw = path.read_bytes()
+        try:
+            csv_text = raw.decode("utf-8-sig")
+        except UnicodeDecodeError as error:
+            raise InputValidationError("CSV source requires UTF-8 text") from error
+        source_metadata = dict(source_file=path.name, source_sha256=hashlib.sha256(raw).hexdigest())
     text(csv_text, "csv_text")
     require(
         isinstance(delimiter, str) and len(delimiter) == 1 and delimiter not in "\r\n",
@@ -73,11 +101,27 @@ def parse_csv_records(csv_text: str, delimiter: str = ",") -> dict:
         columns=names,
         row_count=len(data),
         cell_type="string",
+        **source_metadata,
     )
 
 
-def parse_json_document(json_text: str) -> dict:
+def parse_json_document(json_text: str | None = None, json_file: str | None = None) -> dict:
     """Parse a strict JSON document, rejecting duplicate object keys and nonfinite numbers instead of silently losing information."""
+    if (json_text is None) == (json_file is None):
+        raise InputValidationError("Supply exactly one of json_text or json_file")
+    source_metadata = {}
+    if json_file is not None:
+        from .research_data import _public_source_path
+        import hashlib
+        path = _public_source_path(json_file)
+        if path.stat().st_size > 1000000:
+            raise InputValidationError("JSON source exceeds1000000 bytes; use file query for large record sets")
+        raw = path.read_bytes()
+        try:
+            json_text = raw.decode("utf-8-sig")
+        except UnicodeDecodeError as error:
+            raise InputValidationError("JSON source requires UTF-8 text") from error
+        source_metadata = dict(source_file=path.name, source_sha256=hashlib.sha256(raw).hexdigest())
     text(json_text, "json_text")
 
     def pairs(items):
@@ -94,7 +138,7 @@ def parse_json_document(json_text: str) -> dict:
     except (ValueError, RecursionError) as error:
         raise InputValidationError("Invalid JSON: " + str(error))
     json_value(value)
-    return result(document=value)
+    return result(document=value, **source_metadata)
 
 
 def get_json_pointer(document: object, pointer: str = "") -> dict:
@@ -160,19 +204,23 @@ def filter_records(
             if operator == "not_null":
                 return item is not None
             if operator == "eq":
-                return item == value
+                return _same_json(item, value)
             if operator == "ne":
-                return item != value
+                return not _same_json(item, value)
             if operator == "contains":
                 require(
                     isinstance(item, (str, list)),
                     "contains requires text or list cells",
                 )
-                return value in item
+                if isinstance(item, str):
+                    require(isinstance(value, str), "Text containment requires a string value")
+                    return value in item
+                return any(_same_json(value, part) for part in item)
             if operator == "in":
-                return item in value
+                return any(_same_json(item, part) for part in value)
             if item is None:
                 return False
+            require(type(item) is not bool and type(value) is not bool, "Boolean values have no numeric ordering")
             if operator == "lt":
                 return item < value
             if operator == "le":
@@ -244,37 +292,72 @@ def join_record_tables(
     require(
         len(generated) == expected, "Join suffixes would collide with existing columns"
     )
-    try:
-        joined = pd.DataFrame(left, dtype=object).merge(
-            pd.DataFrame(right, dtype=object),
-            on=on_columns,
-            how=how,
-            suffixes=("_left", "_right"),
-            validate=cardinality,
-        )
-    except (ValueError, TypeError, pd.errors.MergeError) as error:
-        raise InputValidationError("Join contract failed: " + str(error))
-    require(
-        len(joined) * len(joined.columns) <= MAX_CELLS,
-        "Join would exceed output cell limit",
-    )
-    clean = [
-        {
-            key: None if isinstance(value, float) and math.isnan(value) else value
-            for key, value in row.items()
-        }
-        for row in joined.to_dict(orient="records")
-    ]
-    return result(
-        records=clean,
-        columns=list(joined.columns),
-        row_count=len(clean),
-        cardinality=cardinality,
-    )
+    if cardinality in {"one_to_one", "one_to_many"}:
+        require(all(count == 1 for count in lc.values()), "Declared cardinality requires unique left keys")
+    if cardinality in {"one_to_one", "many_to_one"}:
+        require(all(count == 1 for count in rc.values()), "Declared cardinality requires unique right keys")
+    left_names, right_names = _all_columns(left), _all_columns(right)
+    left_values = [k for k in left_names if k not in on_columns]
+    right_values = [k for k in right_names if k not in on_columns]
+    def name_for(key, side):
+        return key + "_" + side if key in overlap else key
+    out_columns = list(on_columns) + [name_for(k, "left") for k in left_values] + [name_for(k, "right") for k in right_values]
+    require(estimate * len(out_columns) <= MAX_CELLS, "Join exceeds output cell limit")
+    def identity(row):
+        return _key([row[k] for k in on_columns])
+    def emit(lrow, rrow):
+        source = rrow if how == "right" else lrow if lrow is not None else rrow
+        item = {k: source[k] for k in on_columns}
+        for row, keys, side in [(lrow, left_values, "left"), (rrow, right_values, "right")]:
+            for key in keys:
+                if row is None:
+                    item[name_for(key, side)] = None
+                elif key in row:
+                    item[name_for(key, side)] = row[key]
+        return item
+    clean = []
+    if how == "right":
+        indexed = {}
+        for row in left:
+            indexed.setdefault(identity(row), []).append(row)
+        for row in right:
+            matches = indexed.get(identity(row))
+            clean.extend(emit(lrow, row) for lrow in matches or [None])
+    else:
+        indexed = {}
+        for index, row in enumerate(right):
+            indexed.setdefault(identity(row), []).append((index, row))
+        seen_right = set()
+        for row in left:
+            matches = indexed.get(identity(row), [])
+            if matches:
+                clean.extend(emit(row, rrow) for _, rrow in matches)
+                seen_right.update(index for index, _ in matches)
+            elif how in {"left", "outer"}:
+                clean.append(emit(row, None))
+        if how == "outer":
+            clean.extend(emit(None, row) for index, row in enumerate(right) if index not in seen_right)
+    return result(records=clean, columns=out_columns, row_count=len(clean), cardinality=cardinality,
+                  key_semantics="JSON types preserved; numeric integer/float equivalents match; bool is distinct; null keys rejected",
+                  missing_policy="Unmatched side becomes null; absent fields inside a present source record remain absent")
 
 
 def convert_record_column_types(record_table: list, column_types: dict) -> dict:
-    """Explicitly convert record columns to int/float/str/bool (also integer/number/string/boolean), preserving nulls and rejecting fractional integers or ambiguous booleans."""
+    """Parse explicitly selected scalar columns, preserving rows and null cells.
+
+    Destination aliases int/integer, float/number, str/string and bool/boolean
+    are case-insensitive after trimming. Every selected column must exist in
+    every input record. Unselected columns and row order remain unchanged.
+    Integer parsing requires a finite exact integral value within the numeric
+    range; no fractional truncation. Numeric destinations reject boolean cells.
+    Boolean parsing accepts bool, numeric0/1, or case-insensitive strings
+    true/false/0/1; it does not trim cell strings or infer arbitrary truthiness.
+    String conversion uses Python scalar spelling (True/False for booleans),
+    not JSON serialization. Lists and objects cannot be converted to strings
+    or other scalar types. Null remains null for every requested destination.
+    Return records and normalized column_types; no in-place mutation, dropped
+    records, repair of missing columns or inference of scientific units.
+    """
     rows = records(record_table)
     require(
         isinstance(column_types, dict) and column_types,
@@ -346,6 +429,8 @@ def convert_record_column_types(record_table: list, column_types: dict) -> dict:
                 "Integer conversion exceeds supported numeric range",
             )
             return int(parsed)
+        except InputValidationError:
+            raise
         except (ValueError, OverflowError, TypeError, InvalidOperation):
             raise InputValidationError("Cell cannot be converted to " + kind)
 
@@ -384,6 +469,8 @@ def format_markdown_table(record_table: list, selected_columns: list = None) -> 
         if selected_columns is not None
         else _all_columns(rows)
     )
+    require(len(names) <= MAX_COLUMNS and len(rows) * len(names) <= MAX_CELLS,
+            "Rendered table exceeds200 columns or50000 cells; select fewer columns/rows")
     require(
         all(not isinstance(r.get(k), (dict, list)) for r in rows for k in names),
         "Markdown table cells must be scalar",
@@ -403,7 +490,10 @@ def format_markdown_table(record_table: list, selected_columns: list = None) -> 
         "| " + " | ".join(escape(k) for k in names) + " |",
         "| " + " | ".join("---" for k in names) + " |",
     ]
-    lines += [
-        "| " + " | ".join(escape(row.get(k)) for k in names) + " |" for row in rows
-    ]
+    characters = sum(len(line) + 1 for line in lines)
+    for row in rows:
+        line = "| " + " | ".join(escape(row.get(k)) for k in names) + " |"
+        characters += len(line) + 1
+        require(characters <= MAX_TEXT, "Rendered table exceeds1000000 characters")
+        lines.append(line)
     return result(markdown="\n".join(lines), columns=names, row_count=len(rows))

@@ -1,0 +1,67 @@
+{
+  "sequence_records": [
+    {
+      "id": "seq_A",
+      "sequence": "ACGTACGTGGCCATAT"
+    },
+    {
+      "id": "seq_B",
+      "sequence": "AAAATTTTGGGGCCCC"
+    },
+    {
+      "id": "seq_C",
+      "sequence": "AAAAAAAATTTTTTTT"
+    },
+    {
+      "id": "seq_D",
+      "sequence": "ACGTACGTGGCCATATACGT"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "single_linear_A",
+      "sequence_id": "seq_A",
+      "double_stranded": false,
+      "circular": false
+    },
+    {
+      "id": "duplex_linear_A",
+      "sequence_id": "seq_A",
+      "double_stranded": true,
+      "circular": false
+    },
+    {
+      "id": "duplex_linear_B",
+      "sequence_id": "seq_B",
+      "double_stranded": true,
+      "circular": false
+    },
+    {
+      "id": "duplex_circular_A",
+      "sequence_id": "seq_A",
+      "double_stranded": true,
+      "circular": true
+    },
+    {
+      "id": "duplex_linear_C",
+      "sequence_id": "seq_C",
+      "double_stranded": true,
+      "circular": false
+    },
+    {
+      "id": "duplex_linear_D",
+      "sequence_id": "seq_D",
+      "double_stranded": true,
+      "circular": false
+    }
+  ],
+  "controlled_observations": {
+    "GC_percent": 50.0,
+    "GC_absolute_tolerance_percentage_points": 0.1,
+    "average_molar_mass_g_per_mol": 9922.329799999998,
+    "mass_absolute_tolerance_g_per_mol": 0.05,
+    "mass_concentration_microgram_per_mL": 2.0
+  },
+  "mass_model": "Use the registered Biopython average DNAmass convention,including complementary strand when double_stranded=trueand its circular-versus-linear terminal-water accounting. No isotope-resolved mass,chemical modification,ligation experiment or sample purity is inferred. GC is a percentage of all canonical bases of the encoded sequence;complementation preserves it. Both observational tolerances are inclusive.",
+  "scope": "The observations are a controlled analytical identification case,not new experimental measurements. Only the listed hypotheses are admitted."
+}

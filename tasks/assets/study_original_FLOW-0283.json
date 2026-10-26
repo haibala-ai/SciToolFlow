@@ -1,0 +1,75 @@
+{
+  "parameter_order": [
+    "baseline",
+    "period2",
+    "current_A_effect",
+    "carryover_A",
+    "carryover_B"
+  ],
+  "mean_records": [
+    {
+      "sequence": "AB",
+      "period": 1,
+      "response": 10.0
+    },
+    {
+      "sequence": "AB",
+      "period": 2,
+      "response": 12.0
+    },
+    {
+      "sequence": "BA",
+      "period": 1,
+      "response": 8.0
+    },
+    {
+      "sequence": "BA",
+      "period": 2,
+      "response": 11.0
+    }
+  ],
+  "model": "An exact-population two-period AB/BAcrossover comparison. Both randomized sequence groups share one baseline. Bhas current-treatment effect0;Ahas an unknown additive current effect tau common to both periods. Period2has unknown additive shift delta. In period2the previous treatment adds an unknown carryover kappa_Aor kappa_B;there is no carryover in period1. No interaction,sequence-specific baseline or sampling noise is allowed in this controlled model.",
+  "followup_options": [
+    {
+      "id": "repeat_period2_difference",
+      "coefficient_row": [
+        0,
+        0,
+        1,
+        -1,
+        1
+      ],
+      "cost": 1,
+      "response": -1.0
+    },
+    {
+      "id": "fresh_untreated_period2",
+      "coefficient_row": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "cost": 2,
+      "response": 9.0
+    },
+    {
+      "id": "direct_A_carryover",
+      "coefficient_row": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "cost": 3,
+      "response": 3.0
+    }
+  ],
+  "target": "From baseline records ALONE decide whether the current Aeffect is identified,and report it if identified,otherwise null. Decide whether ALL five parameters are identified. Select the least-cost single followup whose coefficient row makes all five parameters identified (all minimizers if tied),then use only that followup response to report the full parameter vector. A repeated contrast of existing means adds no independent constraint.",
+  "scope": "Conditional linear-effect identifiability and measurement planning,not a real treatment recommendation or an uncertainty interval from four population means.",
+  "provenance": {
+    "kind": "Explicit controlled statistical/model fixture with exact specified assumptions."
+  }
+}

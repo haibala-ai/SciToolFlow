@@ -1,0 +1,9 @@
+record_id,phase_id,electric_force,thermal_force,charge_flux,heat_flux
+Q_2,Q,0,1,-0.7,3.0
+P_3,P,1,1,5.5,2.5
+P_0,P,0,0,0.0,0.0
+Q_0,Q,0,0,0.0,0.0
+P_2,P,0,1,1.5,1.0
+Q_1,Q,1,0,1.0,-0.7
+P_1,P,1,0,4.0,1.5
+Q_3,Q,1,1,0.30000000000000004,2.3

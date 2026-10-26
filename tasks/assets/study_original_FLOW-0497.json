@@ -1,0 +1,29 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "arrival_rate_jobs_per_minute": 0.4,
+  "service_duration_minutes_by_protocol": {
+    "protocol_A": [
+      2.0
+    ],
+    "protocol_B": [
+      0.5,
+      3.5
+    ]
+  },
+  "service_duration_probabilities_by_protocol": {
+    "protocol_A": [
+      1.0
+    ],
+    "protocol_B": [
+      0.5,
+      0.5
+    ]
+  },
+  "maximum_acceptable_mean_queue_wait_minutes": 5.0,
+  "model": "For each candidate protocol independently,a stationary single-instrument M/G/1 queue has homogeneous Poisson arrivals,independent identically distributed service times from its complete supplied law,one continuously available server,FCFS service,unlimited waiting room,no abandonment and no batching. Service times are independent of arrival times. rho=lambda*E[S]must be below1. Mean WAIT BEFORE SERVICE is Wq=lambda*E[S^2]/(2*(1-rho)); mean number WAITING EXCLUDING THE JOB IN SERVICE is Lq=lambda*Wq. These declared stationary identities define the evaluation model.",
+  "comparison": "The mean-only approximation replaces the full service law by deterministic service at its mean while retaining the same arrival rate. For protocol_B report signed relative wait error=(approximate_Wq-correct_Wq)/correct_Wq. Qualifying protocols have stationary mean queue wait at most the supplied threshold; equal utilization is not a queue-delay ranking.",
+  "scope": "Controlled scientific-instrument scheduling comparison,not observed beamline performance,a safety-critical staffing recommendation or a finite-horizon simulation."
+}

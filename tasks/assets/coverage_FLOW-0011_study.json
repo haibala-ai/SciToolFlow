@@ -1,0 +1,20 @@
+{
+  "reference_smiles": "CCO",
+  "candidates": [
+    {
+      "id": "amine",
+      "smiles": "CCN"
+    },
+    {
+      "id": "longer_alcohol",
+      "smiles": "CCCO"
+    },
+    {
+      "id": "chloroalkane",
+      "smiles": "CCCl"
+    }
+  ],
+  "geometry": "Each named tool uses its default explicit-H ETKDGv3seed42unoptimized conformer. Do not use an ensemble,experimental coordinates or another conformer.",
+  "score": "For either complete vector define similarity=1/(1+mean(abs(reference_vector-candidate_vector))). USRuses12components andUSRCAT60. Rank candidates independently under each score,retaining every tied maximum within1e-10.",
+  "scope": "Controlled descriptor retrieval only. USRCATincludes atom-category information and is not justified to equal the12-component geometry-only score. No bioactivity or observed structural similarity claim."
+}

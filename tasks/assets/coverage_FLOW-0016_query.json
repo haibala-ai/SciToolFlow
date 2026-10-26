@@ -1,0 +1,23 @@
+{
+  "query_smiles": "CC(C)=O",
+  "records": [
+    {
+      "id": "acetone",
+      "smiles": "CC(=O)C"
+    },
+    {
+      "id": "enol",
+      "smiles": "C=C(C)O"
+    },
+    {
+      "id": "propanal",
+      "smiles": "CCC=O"
+    },
+    {
+      "id": "vinyl_ether",
+      "smiles": "C=COC"
+    }
+  ],
+  "query_policy": "RDKit ordinary versus TautomerQuery-aware matching using query_format=smiles and default chirality matching. Query atom indices are zero-based in its parsed hydrogen-suppressed graph. The mutable-atom mask means the exact backend-reported query indices;it is not a claim that all other arbitrary atomic descriptors are invariant.",
+  "scope": "A controlled representation-retrieval test on neutral chemical graphs,not equilibrium chemistry."
+}

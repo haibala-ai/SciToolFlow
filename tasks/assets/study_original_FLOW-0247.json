@@ -1,0 +1,39 @@
+{
+  "charge_state_records": [
+    {
+      "charge": -1,
+      "formation_energy_at_vbm_ev": 4.7
+    },
+    {
+      "charge": 1,
+      "formation_energy_at_vbm_ev": 2.8
+    },
+    {
+      "charge": -2,
+      "formation_energy_at_vbm_ev": 7.0
+    },
+    {
+      "charge": 2,
+      "formation_energy_at_vbm_ev": 2.2
+    },
+    {
+      "charge": 0,
+      "formation_energy_at_vbm_ev": 3.0
+    }
+  ],
+  "fermi_window_ev": [
+    0.0,
+    3.0
+  ],
+  "query_fermi_energies_ev": [
+    2.6,
+    0.2,
+    1.0,
+    2.0
+  ],
+  "model": "For each charge q, formation energy is E0(q)+q*EF in eV per defect. All chemical-potential references, charge corrections and host/cell conventions are already common and included in E0. EF is measured from the SAME valence-band maximum; the upper window endpoint is the stipulated band gap. Compare only the supplied charge states under the dilute noninteracting single-defect model.",
+  "reporting": "Stable means attaining the GLOBAL minimum formation energy among every supplied charge. Return all INTERIOR lower-envelope transition Fermi energies in ascending order, not every pairwise intersection. A state never stable means it attains no minimum even at a transition or endpoint. Query charges follow original query order. Define U_for_q_plus1=E0(+2)+E0(0)-2*E0(+1); its sign tests whether the intermediate+1state can be skipped. Use1e-9eVcomparison tolerance. No charged defect concentration or kinetics is requested.",
+  "provenance": {
+    "data_origin": "Explicit benchmark-constructed model data. Energies and response tensors are conditional illustrative inputs, not claimed first-principles calculations or experimental properties of a named material."
+  }
+}

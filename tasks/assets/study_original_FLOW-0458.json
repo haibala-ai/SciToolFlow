@@ -1,0 +1,14 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "aligned_sequences": {
+    "reference": "ACGTACGTACGTACGT",
+    "export_A": "ACGTTCGTNCGTACGA",
+    "export_B": "TGCATGCATGCATGCA"
+  },
+  "site_policy": "Sequences are already aligned equal-length controlled fragments. A site is callable for a given reference/export pair iff BOTH characters are in A,C,G,T; omit an ambiguous N from that pair denominator rather than imputing a match. No alignment, orientation search or complete-sequence identity inference is requested.",
+  "model": "Jukes-Cantor corrected distance d=-(3/4)*ln(1-4p/3) for pairwise mismatch fraction 0<=p<3/4. At p>=3/4 the stated inversion gives no finite real nonnegative distance, report null. Do not clamp p just below the boundary, discard mismatches or return a finite absolute-log value.",
+  "scope": "Controlled substitution-distance model and its mathematical domain; finite fragments here are descriptive inputs, not a confidence interval, phylogeny or calibrated divergence time."
+}

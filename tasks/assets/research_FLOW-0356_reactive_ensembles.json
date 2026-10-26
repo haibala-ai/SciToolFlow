@@ -1,0 +1,63 @@
+{
+  "origin": "Own ideal-gas thermodynamic audit with five real molecular species and an inert monatomic Ar ballast, using frozen NIST-JANAF Shomate coefficient data. The feed, boundaries and local counterfactuals are constructed benchmark inputs. Only the declared gas-phase species may interconvert; excluded solids, liquids, radicals and other gases are not assumed absent in unrestricted real chemistry. No catalyst, kinetics, residence time or experimental procedure is specified.",
+  "sources": {
+    "coefficient_file": "asset://research_FLOW-0356_nist_shomate.csv",
+    "primary": "NIST Chemistry WebBook, SRD69; Chase1998 NIST-JANAF tables; H2 fit updated2001. Use each row as frozen decimal coefficients within its declared interval.",
+    "extraction": "The first listed SI gas-phase Shomate coefficient column was transcribed for each source species. Raw dated HTML, source URLs/hashes and extraction audit are retained in authoring resources. Coefficients are factual numeric data with NIST attribution; NIST displays its standard-reference-data copyright notice. No open-license claim is made for the source page layout or text."
+  },
+  "state_axes": {
+    "species_order": [
+      "CO",
+      "CO2",
+      "H2O",
+      "H2",
+      "CH4",
+      "Ar"
+    ],
+    "smiles_by_species": {
+      "CO": "[C-]#[O+]",
+      "CO2": "O=C=O",
+      "H2O": "O",
+      "H2": "[H][H]",
+      "CH4": "C",
+      "Ar": "[Ar]"
+    },
+    "initial_moles": [
+      0.6,
+      0.2,
+      1.5,
+      1.2,
+      0.05,
+      2.0
+    ],
+    "initial_temperature_K": 700,
+    "initial_pressure_bar": 10,
+    "allowed_temperature_domain_K": [
+      500,
+      999.9
+    ],
+    "gas_constant_kJ_per_mol_K": 0.00831446261815324,
+    "standard_pressure_bar": 1,
+    "reactions_in_report_order": [
+      "CO+H2O -> CO2+H2",
+      "CO+3H2 -> CH4+H2O"
+    ],
+    "extent_definition": "n=n_initial+nu*x, with reaction columns in report order and all six species in source order. Reaction extents may have either sign while every mole amount remains nonnegative. Ar does not react. Reconstruct stoichiometric columns and atom balances from identified molecular species; do not infer thermochemistry from SMILES or formal charge alone."
+  },
+  "thermochemistry": "Let t=T/1000. Cp=A+B*t+C*t^2+D*t^3+E/t^2 in J/(mol K); S\u00b0=A*ln(t)+B*t+C*t^2/2+D*t^3/3-E/(2*t^2)+G in J/(mol K). The NIST expression A*t+B*t^2/2+C*t^3/3+D*t^4/4-E/t+F-H is H\u00b0(T)-H\u00b0(298.15) in kJ/mol; H(column) is the298.15K formation enthalpy. Chemical h\u00b0(T) on this common formation reference is therefore the sensible increment PLUS H(column). Keep kJ/J units consistent. For inert Ar adopt the exact theoretical monatomic ideal-gas Cp=5R/2, h\u00b0=(5R/2)(T-298.15), s\u00b0=(5R/2)ln(T/298.15). Its entropy reference is arbitrary because its mole number is fixed; use the same convention in every state.",
+  "equilibrium_law": "For each molecular species, mu_i=h_i\u00b0-T*s_i\u00b0+R*T*ln(y_i*P/P\u00b0); ideal-gas activities are dimensionless. Find the global equilibrium on the full atom-conserving feasible composition set, not two independent conversions with other concentrations frozen. Obtain reaction affinities from both simultaneous reaction directions. At fixedT,P use Gibbs minimization; at fixedT,V use Helmholtz minimization or equivalent chemical-potential equations with the physical P=n_total*R*T/V. A pressure-independent equilibrium constant does not imply a pressure-independent coupled extent.",
+  "two_adiabatic_boundaries": "Start from exactly the same stipulated feed,Tin,Pin. First case: an ideal adiabatic, constant-pressure piston allows PV work only, so total ENTHALPY is conserved and P=10bar. Second case: a rigid adiabatic vessel has physical volume fixed at its INITIAL ideal-gas volume, so total INTERNAL ENERGY U=sum_i n_i*(h_i\u00b0-R*T) is conserved. Its final pressure is an output, not fixed10bar. Solve both complete chemical/energy systems in closed temperature domain[500,999.9]. Prove that each admitted root is a unique global equilibrium in this domain; positivity and atom balance, two vanishing affinities, energy residuals and endpoint/root-domain checks belong in the trajectory. A converged local nonlinear solver or temperature mesh alone is insufficient.",
+  "equilibrium_response_audit": "Independently consider the same atom inventory equilibrated atT=900K,P=1bar, not the700K inlet nor either adiabatic endpoint. Report its composition; frozen-composition total Cp; and total EQUILIBRATED Cp=dH_eq/dT at fixedP/atoms. Derive the reaction-coordinate Hessian and coupled equilibrium temperature response, including reaction enthalpy feedback. At that same reference state return both ordered reaction-extent derivatives with respect to ln(P/P\u00b0) at fixedT. Then consider infinitesimal pressure changes at FIXED TOTAL ENTHALPY of this reference equilibrium and report dT/dlnP and both total extent derivatives. This last is an enthalpy-constrained equilibrium susceptibility, not an asserted adiabatic reversible compression path; heat/work realizations are outside this local mathematical audit. Hold no reaction arbitrarily frozen. Certify the sign/definiteness conditions underlying global composition and energy-root uniqueness.",
+  "typed_evidence": "Retain actual GetMolFormula calls for all five molecular SMILES and Ar and use their identities to construct the full atom/extent balance. Retain an actual MatrixSVD of the3x5 C,H,O element-count matrix in molecular source order, and interpret rank versus reaction nullity correctly. At the900K,1bar reference, retain actual MatrixInverse and SymmetricEigenDecomposition observations of the2x2 reaction-coordinate Gibbs Hessian in kJ per mol-squared extent, then use that observed inverse in the local reaction/thermal susceptibilities. Source coefficient acquisition, full thermochemical calculations, all equilibrium residuals, global uniqueness proof and coupled response derivation must be observable in the trajectory. Molecular graphs provide identity/balance, not thermodynamic coefficients.",
+  "interpretation_proposals": {
+    "A": "Removing each species formation enthalpy independently changes reaction chemical potentials and can change chemical equilibrium.",
+    "B": "Because water-gas shift has zero total stoichiometric mole change, its extent is pressure independent even when coupled to methanation.",
+    "C": "Chemical equilibration can increase total heat capacity beyond its frozen-composition value through enthalpy-feedback terms.",
+    "D": "The rigid and constant-pressure adiabatic systems conserve the same enthalpy and have the same prescribed final pressure.",
+    "E": "A positive reaction-space thermodynamic Hessian, physical interiors and monotone equilibrium energy can support a global uniqueness certificate.",
+    "F": "Formal charge or molecular formula alone determines the real standard Gibbs energy of each gas.",
+    "G": "Equilibrium susceptibilities must state which energy, pressure, temperature and composition constraints are held fixed.",
+    "H": "An ideal-gas restricted-species equilibrium certifies a real catalytic reaction rate or excludes all other phases."
+  },
+  "reporting": "Return the supplied JSON schema. Numeric absolute tolerance:1e-6 for temperatures, pressures, mole amounts, response derivatives, enthalpies and log constants;1e-7 for heat capacities. Counts, labels and booleans exact. Species/extent order is fixed; compositions are mole amounts, not fractions. Report all scientific residuals, global arguments and source/reference conventions in the trajectory, not extra nested answer objects."
+}

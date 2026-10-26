@@ -2,7 +2,7 @@
 
 from pathlib import Path
 import json
-from scitoolflow.io import atomic_json
+from src.utils.io import atomic_json
 
 
 def scientific_calls(calls):

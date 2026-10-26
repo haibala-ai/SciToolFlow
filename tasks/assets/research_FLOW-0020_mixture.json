@@ -1,0 +1,81 @@
+{
+  "data_origin": "Controlled graph-based mixture identifiability problem using ordinary ester/acid examples. No actual spectrum, reaction or instrument selectivity is claimed.",
+  "candidate_records": [
+    {
+      "id": "L1",
+      "smiles": "CCCC(=O)OCC"
+    },
+    {
+      "id": "L1_copy",
+      "smiles": "CCOC(=O)CCC"
+    },
+    {
+      "id": "L2",
+      "smiles": "CCC(=O)OCCC"
+    },
+    {
+      "id": "L3",
+      "smiles": "CC(=O)OCCCC"
+    },
+    {
+      "id": "L4",
+      "smiles": "CCC(=O)OC(C)C"
+    },
+    {
+      "id": "L5",
+      "smiles": "CCCCCC(=O)O"
+    },
+    {
+      "id": "L6",
+      "smiles": "CCCCC(=O)OCC"
+    }
+  ],
+  "identity_policy": "Deduplicate exact neutral graph identities while preserving stereochemistry, charge and all components; each molecular species has ONE mole fraction regardless of record multiplicity. Name each species by its lexically smallest source ID. Do not canonicalize tautomers, remove fragments or neutralize.",
+  "observations": {
+    "neutral_monoisotopic_mass_da": 116.08373,
+    "mass_tolerance_ppm": 5.0,
+    "no_free_carboxylic_acid": true,
+    "free_acid_smarts": "[CX3](=[OX1])[OX2H1]",
+    "mean_motif_responses": [
+      {
+        "id": "methyl",
+        "smarts": "[CH3]",
+        "observed_mean_matches_per_molecule": 2.25
+      },
+      {
+        "id": "acetyl_ester",
+        "smarts": "[CH3]-[CX3](=[OX1])-[OX2]-[#6]",
+        "observed_mean_matches_per_molecule": 0.2
+      }
+    ]
+  },
+  "response_model": "All components belong to the compatible neutral-mass panel and obey the absence-of-free-acid constraint. An unknown nonnegative mole-fraction vector sums to one. For each specified SMARTS, a pure-species response equals its complete ordinary graph match count with unique atom-tuple matches, use_chirality=true, tautomer_aware=false; every graph occurrence is equally calibrated. An observed response is its exact mole-fraction-weighted mean. These are ideal selective motif channels, NOT assignments of real NMR peaks. Retain ALL compatible compositions; do not choose a minimum-norm mixture as identified.",
+  "prospective_assays": [
+    {
+      "id": "A1",
+      "smarts": "[OX2]-[CH2]-[CH3]",
+      "cost": 3
+    },
+    {
+      "id": "A2",
+      "smarts": "[CH3]-[CX3](=[OX1])-[OX2]-[#6]",
+      "cost": 1
+    },
+    {
+      "id": "A3",
+      "smarts": "[CH2]-[CH2]-[CX3](=[OX1])-[OX2]-[#6]",
+      "cost": 2
+    },
+    {
+      "id": "A4",
+      "smarts": "[OX2]-[CH]([CH3])-[CH3]",
+      "cost": 1
+    }
+  ],
+  "design_policy": "For each candidate assay, append its pure-species match-count row to the present normalized response equations. It is identifying only if any two currently feasible compositions with the same new exact response must be identical. Select the least-cost identifying assay; ties use lexical ID. No future response is provided. Compute the sharp premeasurement interval for the selected assay over the entire present feasible set.",
+  "reporting": "Return eligible_species_ids after identity/mass/free-acid qualification, deduplicated_source_groups (only groups of at least two equivalent source records), sharp_mole_fraction_intervals keyed by every eligible species ID, mixture_is_point_identified, selected_assay_id and selected_assay_response_interval. Use 1e-7 absolute plus 1e-7 relative tolerance; arrays of IDs/groups are unordered. Distinguish eligibility from a positive lower bound on abundance.",
+  "research_motivation": {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37132658/",
+    "scope": "Mixture quantification and signal overlap motivate the question; motif counts here are an explicitly controlled response model, not empirical peak selectivity."
+  }
+}

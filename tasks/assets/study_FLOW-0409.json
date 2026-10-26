@@ -1,0 +1,157 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "features": [
+        [
+          83.0,
+          234289.0,
+          2356.0,
+          1590.0,
+          107608.0,
+          1947.0
+        ],
+        [
+          88.5,
+          259426.0,
+          2325.0,
+          1456.0,
+          108632.0,
+          1948.0
+        ],
+        [
+          88.2,
+          258054.0,
+          3682.0,
+          1616.0,
+          109773.0,
+          1949.0
+        ],
+        [
+          89.5,
+          284599.0,
+          3351.0,
+          1650.0,
+          110929.0,
+          1950.0
+        ],
+        [
+          96.2,
+          328975.0,
+          2099.0,
+          3099.0,
+          112075.0,
+          1951.0
+        ],
+        [
+          98.1,
+          346999.0,
+          1932.0,
+          3594.0,
+          113270.0,
+          1952.0
+        ],
+        [
+          99.0,
+          365385.0,
+          1870.0,
+          3547.0,
+          115094.0,
+          1953.0
+        ],
+        [
+          100.0,
+          363112.0,
+          3578.0,
+          3350.0,
+          116219.0,
+          1954.0
+        ],
+        [
+          101.2,
+          397469.0,
+          2904.0,
+          3048.0,
+          117388.0,
+          1955.0
+        ],
+        [
+          104.6,
+          419180.0,
+          2822.0,
+          2857.0,
+          118734.0,
+          1956.0
+        ],
+        [
+          108.4,
+          442769.0,
+          2936.0,
+          2798.0,
+          120445.0,
+          1957.0
+        ],
+        [
+          110.8,
+          444546.0,
+          4681.0,
+          2637.0,
+          121950.0,
+          1958.0
+        ],
+        [
+          112.6,
+          482704.0,
+          3813.0,
+          2552.0,
+          123366.0,
+          1959.0
+        ],
+        [
+          114.2,
+          502601.0,
+          3931.0,
+          2514.0,
+          125368.0,
+          1960.0
+        ],
+        [
+          115.7,
+          518173.0,
+          4806.0,
+          2572.0,
+          127852.0,
+          1961.0
+        ],
+        [
+          116.9,
+          554894.0,
+          4007.0,
+          2827.0,
+          130081.0,
+          1962.0
+        ]
+      ],
+      "feature_order": [
+        "x1",
+        "x2",
+        "x3",
+        "x4",
+        "x5",
+        "calendar_year"
+      ],
+      "conditioning_policy": "Compare2-norm condition numbers of the six-column feature matrix before versus population-mean/SD standardization. Do not add an intercept to this specific matrix comparison. Standardization can reduce unit-scale effects but does not eliminate feature dependence.",
+      "maximum_condition_number": 100.0,
+      "source_provenance": {
+        "dataset": "NIST Longley observed16-row regression predictors",
+        "source_url": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Longley.dat",
+        "raw_source_sha256": "fc4b0c824f8f0b834eb8e7d1c4c7e0b3cebdd7987bcb085e8f5e1007582480ea",
+        "scope": "Historic observed economic reference data; not a causal model or future forecasting guarantee."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

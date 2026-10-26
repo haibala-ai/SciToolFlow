@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "record_id": "assay",
+      "response_matrix": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          2.0,
+          2.0
+        ],
+        [
+          3.0,
+          3.0
+        ]
+      ],
+      "observed_response": [
+        3.0,
+        6.0,
+        9.0
+      ],
+      "species_ids": [
+        "component-A",
+        "component-B"
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Response per mmol/L; concentrations mmol/L",
+    "original_observation_claim": false
+  }
+}

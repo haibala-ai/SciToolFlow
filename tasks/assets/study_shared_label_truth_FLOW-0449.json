@@ -1,0 +1,69 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "stratum_order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "strata": [
+        {
+          "prediction_A": 0,
+          "prediction_B": 0,
+          "weak_label": 0,
+          "population_mass": 0.31
+        },
+        {
+          "prediction_A": 0,
+          "prediction_B": 0,
+          "weak_label": 1,
+          "population_mass": 0.04
+        },
+        {
+          "prediction_A": 1,
+          "prediction_B": 1,
+          "weak_label": 1,
+          "population_mass": 0.39
+        },
+        {
+          "prediction_A": 1,
+          "prediction_B": 1,
+          "weak_label": 0,
+          "population_mass": 0.06
+        },
+        {
+          "prediction_A": 0,
+          "prediction_B": 1,
+          "weak_label": 0,
+          "population_mass": 0.16
+        },
+        {
+          "prediction_A": 0,
+          "prediction_B": 1,
+          "weak_label": 1,
+          "population_mass": 0.04
+        }
+      ],
+      "weak_error_mass_upper_bounds": {
+        "predictors_agree": 0.2,
+        "predictors_disagree": 0.03
+      },
+      "unknown_truth_model": "Each row is a fixed joint population stratum defined by the two predictions and one weak label. An unknown binary true label can be distributed arbitrarily inside every stratum, with no homogeneity or deterministic label assumption. The unknown amount of mass in a row whose truth differs from its weak label lies between0 and that row mass. Error budgets are absolute probability mass over the entire population, not error fractions conditional on the agreement group. Sum weak-label error mass across all agreement rows at most the agreement bound, and separately across all disagreement rows at most the disagreement bound. The SAME unknown truth allocation must underlie both predictors and every paired risk contrast.",
+      "research_scope": "Project-authored exact population probability law and sensitivity assumptions, not finite observation counts, annotation measurements or error rates certified by data. Risk is expected binary disagreement with the unknown truth. No sampling uncertainty, integer latent counts, independence of label errors or causal interpretation is stipulated.",
+      "question_policy": "Find sharp attainable intervals for both predictor risks and for risk_A minus risk_B under the shared ambiguity set. Decide whether either predictor has strictly smaller risk for EVERY admissible common truth allocation. Report overlapping marginal intervals separately from uniform relative ordering; overlap of individually optimized intervals does not answer the paired ordering question. A label budget is an assumption for sensitivity analysis, not a conclusion about the weak annotator.",
+      "units": "Probability fractions. Numeric answers within1e-8 absolute plus1e-7 relative. Interval entries are [minimum,maximum]. The strict uniform-order decision is exact.",
+      "provenance": {
+        "kind": "Project-authored controlled probability sensitivity panel, not measured labels or a real annotation audit.",
+        "original_observation_claim": false,
+        "method_context": "Sharp bounded linear functionals over a shared latent-truth polytope. Common latent variables retain coupling; separate marginal risk bounds are not difference bounds.",
+        "method_sources": [
+          "https://docs.scipy.org/doc/scipy-1.15.3/reference/optimize.linprog-highs-ds.html"
+        ]
+      }
+    }
+  ]
+}

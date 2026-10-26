@@ -1,0 +1,111 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "lots": [
+        {
+          "lot_id": "lot-A",
+          "formula": "MgSO4",
+          "certificate_basis": "dry_residue_formula_mass_fraction",
+          "certificate_coordinates": [
+            "dry_formula_mass_fraction",
+            "extra_water_mass_fraction"
+          ],
+          "nominal_certificate_values": [
+            0.99,
+            0.05
+          ],
+          "certificate_covariance": [
+            [
+              1e-06,
+              9.5e-07
+            ],
+            [
+              9.5e-07,
+              1e-06
+            ]
+          ],
+          "available_mass_mg": 28
+        },
+        {
+          "lot_id": "lot-B",
+          "formula": "MgSO4(H2O)7",
+          "certificate_basis": "as_received_formula_mass_fraction",
+          "certificate_coordinates": [
+            "as_received_formula_mass_fraction"
+          ],
+          "nominal_certificate_values": [
+            0.995
+          ],
+          "certificate_covariance": [
+            [
+              3.24e-06
+            ]
+          ],
+          "available_mass_mg": 55
+        },
+        {
+          "lot_id": "lot-C",
+          "formula": null,
+          "certificate_basis": "as_received_elemental_magnesium_mass_fraction",
+          "certificate_coordinates": [
+            "as_received_elemental_magnesium_mass_fraction"
+          ],
+          "nominal_certificate_values": [
+            0.15
+          ],
+          "certificate_covariance": [
+            [
+              8.1e-09
+            ]
+          ],
+          "available_mass_mg": 40
+        },
+        {
+          "lot_id": "lot-D",
+          "formula": null,
+          "certificate_basis": "as_received_elemental_magnesium_mass_fraction",
+          "certificate_coordinates": [
+            "as_received_elemental_magnesium_mass_fraction"
+          ],
+          "nominal_certificate_values": [
+            0.15
+          ],
+          "certificate_covariance": [
+            [
+              9e-10
+            ]
+          ],
+          "available_mass_mg": 30
+        }
+      ],
+      "atomic_mass_reference_u": {
+        "Mg": 24.305,
+        "S": 32.065,
+        "O": 15.9994,
+        "H": 1.00794
+      },
+      "target_magnesium_amount_mmol": 0.2,
+      "balance_mass_standard_uncertainty_mg": 0.02,
+      "maximum_combined_relative_standard_uncertainty": 0.001,
+      "certificate_semantics": "For the dry-residue basis, p is the mass fraction of the stated anhydrous formula in the water-free residue and w is extra water mass divided by the as-received lot mass. Other dry residue contains no Mg. Thus only the (1-w) fraction of weighed material is dry residue; p is not an as-received purity. For the as-received formula basis, p is mass of the entire stated formula divided by as-received lot mass. Stoichiometric water in MgSO4(H2O)7 is already part of that formula; there is no second moisture correction. All remaining impurities contain no Mg. A direct elemental certificate already gives Mg mass divided by total as-received mass; no formula or purity correction is needed.",
+      "mass_convention": "Use the supplied fixed ordinary-average atomic masses to calculate formula masses and Mg mass fractions from formula element counts. They define this controlled numerical model. The target Mg amount is exact. One mmol of an element with numeric molar mass M g/mol has mass M mg. A composition parser's own library mass table need not match this supplied table; do not silently substitute it.",
+      "uncertainty_model": "For each lot propagate the stated certificate covariance by first-order Taylor linearization at the nominal certificate values. The quoted matrix is covariance, not correlation; coordinate order and mass-fraction basis are explicit. The balance standard uncertainty is an independent additive weighed-mass error with the supplied SD in mg, identical for all lots. The atomic masses, nominal target amount and available masses are exact design inputs. No additional volume, transfer, dissolution or calibration uncertainty is included in this controlled comparison. The combined relative standard uncertainty concerns the delivered Mg amount at the nominal required weighed mass. No distribution or coverage probability is stipulated, and this is not certified preparation accuracy.",
+      "decision_policy": "For every lot compute the nominal required as-received mass to deliver the target Mg amount and its combined relative standard uncertainty. A lot is feasible iff that nominal mass does not exceed available_mass_mg and the combined relative standard uncertainty is at most the supplied maximum. Among feasible lots choose minimum combined relative standard uncertainty; ties within1e-12 absolute prefer lexical lot_id. Separately repeat this selection after setting within-certificate off-diagonal covariances to zero while retaining every marginal variance, basis correction, balance uncertainty and feasibility condition. That second selection is a named sensitivity analysis, not permission to ignore the supplied covariance in the primary result.",
+      "units": {
+        "atomic_masses": "u numerically equal to g/mol",
+        "target_amount": "mmol Mg",
+        "mass": "mg as-received material",
+        "certificate_coordinates": "dimensionless mass fractions",
+        "covariance": "squared mass-fraction units",
+        "relative_standard_uncertainty": "dimensionless fraction, not percent"
+      },
+      "provenance": {
+        "kind": "project-authored controlled computational certificate and inventory panel, not measured lots or real preparation instructions",
+        "original_observation_claim": false,
+        "method_context": "Mass-fraction basis reconciliation and first-order covariance propagation with an independent mass reading.",
+        "method_source": "https://www.iso.org/sites/JCGM/GUM/JCGM100/C045315e-html/C045315e_FILES/MAIN_C045315e/05_e.html"
+      }
+    }
+  ]
+}

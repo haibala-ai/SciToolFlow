@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "record_id": "line01",
+      "hkl": [
+        1,
+        0,
+        0
+      ],
+      "integrated_relative_intensity": 0.012566032205851146
+    },
+    {
+      "record_id": "line02",
+      "hkl": [
+        1,
+        1,
+        0
+      ],
+      "integrated_relative_intensity": 100.0
+    },
+    {
+      "record_id": "line03",
+      "hkl": [
+        1,
+        1,
+        1
+      ],
+      "integrated_relative_intensity": 0.011888897514231013
+    },
+    {
+      "record_id": "study",
+      "wavelength_angstrom": 1.5406,
+      "ordered_reference_structure_file": "study_b2_ordered_reference.cif",
+      "ordered_reference_source_sha256": "bb41c3a723776456398d278d8932f7dd2781ebb5d98916f605e02223b789f72e",
+      "magnitude_order_parameter_agreement_tolerance": 0.02
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "CIFangstrom,wavelengthangstrom,relative integrated intensity in a shared arbitrary scale;long-range sublattice order magnitude dimensionless",
+    "original_observation_claim": false
+  }
+}

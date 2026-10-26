@@ -1,0 +1,66 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific measurement/decision example; stipulated model inputs and observations, not new experimental findings.",
+    "scope": "All required information, units and inferential limits are in this document."
+  },
+  "bin_ids": [
+    "b0",
+    "b1",
+    "b2",
+    "b3"
+  ],
+  "measurement_matrix": [
+    [
+      0.5,
+      0.0,
+      0.0,
+      0.5
+    ],
+    [
+      0.5,
+      0.5,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.5,
+      0.5
+    ]
+  ],
+  "readout": [
+    1.0,
+    2.0,
+    3.0,
+    2.0
+  ],
+  "unknown_scope": "Four nonnegative latent bin inventories in one declared arbitrary unit. Four exact noiseless cyclic two-bin-average readouts use the supplied row order; this is a controlled temporal-resolution inverse problem, not four independent point samples.",
+  "extra_readouts": [
+    {
+      "readout_id": "sum_even",
+      "weights": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "readout_id": "sum_first_pair",
+      "weights": [
+        1,
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "target": "Bound the inventory in b0 over every nonnegative vector satisfying the complete exact original system; identify which single additional exact readout would identify b0 for every feasible observation it could return. A repeat or a row in the original row space cannot resolve its blind direction. Report total_inventory only if the total is already identified by the original system."
+}

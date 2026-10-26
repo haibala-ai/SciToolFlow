@@ -1,0 +1,38 @@
+{
+  "atomic_numbers": [
+    8,
+    1,
+    1
+  ],
+  "element_symbols": [
+    "O",
+    "H",
+    "H"
+  ],
+  "positions_angstrom": [
+    [
+      0.1825093492,
+      1.9982356762,
+      0.3462438878
+    ],
+    [
+      1.0251599245,
+      1.719964667,
+      -0.0243739112
+    ],
+    [
+      -0.4433491748,
+      1.9155221064,
+      -0.3791616702
+    ]
+  ],
+  "original_source_filename": "geometry.xyz",
+  "original_source_sha256": "6997e93ef77236dd9214eb98d643d1ee423925e208f4c3af70d73218d51814d2",
+  "original_source_text": "3\nCartesian coordinates exported unchanged from published completed Q-Chem output; atomic order O H H\nO 0.1825093492 1.9982356762 0.3462438878\nH 1.0251599245 1.719964667 -0.0243739112\nH -0.4433491748 1.9155221064 -0.3791616702\n",
+  "provenance": {
+    "kind": "Lossless source-coordinate JSON transport, not generated or optimized geometry",
+    "atom_order_preserved": true,
+    "coordinate_units": "angstrom",
+    "source_reference": "Published completed Q-Chem geometry identified in study_FLOW-0080.json"
+  }
+}

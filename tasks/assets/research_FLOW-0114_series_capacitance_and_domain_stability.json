@@ -1,0 +1,63 @@
+{
+  "data_origin": "Own controlled electrostatic/Landau stability study. The two idealized BaTiO3-labelled CIF geometries, the single-ion linear polarization coefficient, the polynomial coefficients, circuit coupling and discrete gradient penalty are benchmark assumptions. These are not a fit to measured BaTiO3, a first-principles polarization calculation, or a demonstrated transistor. No electronic-structure calculation or measured domain-wall energy is implied.",
+  "geometry": {
+    "centrosymmetric_reference": "asset://research_FLOW-0114_centrosymmetric.cif",
+    "polar_displaced_structure": "asset://research_FLOW-0114_polar.cif",
+    "mapping": "The files have identical lattice, ordered species inventory and site correspondence. Use actual minimum-image displacements without atom permutation, relaxation or cell standardization. Only the Ti ion moves. Inspect the complete inventory and obtain its signed z displacement in angstrom.",
+    "symmetry": "Infer the two NONMAGNETIC crystallographic space-group international numbers at symprec=0.001 angstrom and angle_tolerance=0.1 degree. A CIF P1 declaration is the file encoding, not the inferred highest geometric symmetry.",
+    "linear_polarization_model": "Define P0 = Z_Ti*e*delta_z/V using Z_Ti*=7.1, e=1.602176634e-19 C and the actual cell volume V. Convert angstrom to metre and angstrom^3 to metre^3. The other ions have zero displacement in this model. Retain the signed small-displacement branch from the reference; also report the positive polarization quantum e*c/V along z and confirm abs(P0)<quantum/2. This prescribed linear Born-charge approximation is not a Berry-phase determination of absolute polarization.",
+    "order_parameter": "p=P/P0 is dimensionless. The actual polar CIF defines p=+1 by this normalization, not an observed equilibrium polarization for every circuit setting. The centrosymmetric reference defines p=0. The structural and circuit models have distinct stated roles."
+  },
+  "uniform_model": {
+    "free_energy": "f(p)=-p^2/2-p^4/4+p^6/6. Under voltage control with a series element, g_K,v(p)=f(p)+K*p^2/2-v*p. p ranges over the whole real line; leading p^6 coefficient is positive. v and energies are in the stated common dimensionless units, K>=0. All homogeneous equilibria must solve g_prime=0, be classified with higher derivatives when curvature vanishes, and be compared globally by energy.",
+    "zero_voltage_cases": {
+      "K0": 0.0,
+      "K1": 1.0,
+      "K11": 1.1,
+      "Kcoex": 1.1875,
+      "K12": 1.2,
+      "Kspin": 1.25,
+      "Kmatch": 1.45,
+      "K16": 1.6
+    },
+    "questions": "For every listed K at v=0, report all DISTINCT real stationary p in ascending order, their aligned classifications minimum/maximum/degenerate_maximum/stationary_inflection, and every homogeneous global minimizer p. Do not treat a repeated polynomial root as multiple states. At zero curvature, inspect the first nonzero higher derivative rather than labeling every flat point stable. Then derive the zero-voltage central-branch local-stability boundary, the central/polar global-coexistence K and positive coexisting p, and the nonzero stationary-branch merger K. These are different boundaries.",
+    "curvature_matching": "Determine the smallest K for which g_second(p)>=0 for EVERY real p at any v, and whether strict positivity at every p requires a strict inequality. At the threshold itself, decide whether g remains strictly convex as a function despite isolated zero-curvature points. Derive the global minimum of the curvature polynomial, not a finite scan.",
+    "series_voltage_gain": "The series-element voltage is v_s=K*p and input voltage is v=f_prime(p)+K*p. On the central p=0 stationary branch at v=0, report dv_s/dv for K=1.2 and1.6. Total homogeneous curvature, not the bare f_second, controls local stability. A bare negative differential curvature alone neither proves an isolated stable ferroelectric nor rules out a locally stable combined circuit."
+  },
+  "spatial_model": {
+    "definition": "Eight cells form a periodic chain along the actual CIF a lattice vector. G=(1/N)*sum_j[f(p_j)+(kappa/2)*(p_{j+1}-p_j)^2]+(K/2)*mean(p)^2-v*mean(p), with N=8, periodic indices, K=1.6,v=0. Analyze the homogeneous p_j=0 stationary state. The specified series element couples only to the mean; do not apply its K penalty to every finite-wavevector mode.",
+    "Hessian_convention": "Report eigenvalues of N times the ordinary coordinate Hessian of G. Fourier modes are exp(2*pi*i*m*j/N), m=0,...,7. Include both conjugate mode indices when unstable; do not count a complex pair as a single index or duplicate the uniform mode.",
+    "gradient_cases": {
+      "soft": 0.6,
+      "stiff": 2.0
+    },
+    "questions": "For each gradient case report the minimum scaled-Hessian eigenvalue, all negative-eigenvalue Fourier indices and whether every allowed mode has STRICTLY positive curvature. Derive the infimum kappa required to eliminate negative finite-wavevector modes at p=0. At equality report the zero-mode indices and classify the QUADRATIC form as marginal. Then test the first nonzero higher-order energy change along a real zero Fourier mode to decide whether the threshold state is a nonlinear local minimum. Quadratic marginality alone is insufficient. Give the wavelength in angstrom of the first nonuniform unstable pair using the actual cell a.",
+    "scope": "This is an exhaustive linear-stability calculation for the stated eight-cell periodic model, not a global minimization over all nonuniform configurations. Positive Hessian gives local stability, and homogeneous global minimality does not establish global multidomain minimality. Do not infer a unique finite-amplitude domain structure, switching rate, operating transistor performance or hysteresis area."
+  },
+  "interpretation_proposals": {
+    "A": "A minimum of the homogeneous free-energy curve need not be stable to a spatially varying perturbation.",
+    "B": "A positive series stiffness contributes the same K shift to every Fourier mode even when the circuit couples only to the mean.",
+    "C": "The positive sixth-order term makes the homogeneous energy coercive, so comparing all real stationary states can establish its global minima.",
+    "D": "Every stationary point with zero second derivative is a stable minimum.",
+    "E": "Strict all-mode stability at the finite-wavevector threshold requires kappa to lie above, not merely equal to, the threshold.",
+    "F": "A small-displacement Born-charge estimate supplies a measured Berry-phase absolute polarization and validates a real-device voltage-gain claim.",
+    "G": "The full spatial Hessian can refute a uniform-only stability claim without determining a unique final domain pattern.",
+    "H": "An isolated zero of a nonnegative second derivative necessarily prevents strict convexity of the full function."
+  },
+  "reporting": "Return cell_volume_angstrom3, Ti_displacement_z_angstrom, P0_C_per_m2, polarization_quantum_C_per_m2, small_branch_condition_satisfied, space_group_numbers_by_structure, zero_voltage_cases (each with stationary_p,stationary_class,homogeneous_global_minimizer_p), central_local_stability_boundary_K, global_coexistence_K, positive_coexisting_p, nonzero_branch_merger_K, nonnegative_global_curvature_K_threshold, strictly_positive_curvature_requires_K_above_threshold, threshold_energy_remains_strictly_convex, central_series_voltage_gains keyed K12,K16, spatial_cases keyed soft,stiff (minimum_scaled_Hessian_eigenvalue,unstable_Fourier_mode_indices,strictly_stable_to_all_allowed_modes), spatial_nonnegative_kappa_infimum, spatial_threshold_zero_mode_indices, first_unstable_pair_wavelength_angstrom, spatial_threshold_is_strictly_stable, spatial_threshold_is_nonlinear_local_minimum, uniform_global_minimum_alone_certifies_multidomain_global_minimum, valid_interpretation_proposal_ids. All roots are DISTINCT and sorted; preserve all degenerate minimizers. Numbers absolute tolerance1e-6 except polarization1e-8. Classification strings, integer mode sets, space groups and booleans are exact. Keep complete root/energy and Hessian evidence in the trajectory.",
+  "methodological_sources": [
+    {
+      "title": "Use of negative capacitance to provide voltage amplification for low power nanoscale devices",
+      "authors": "Sayeef Salahuddin and Supriyo Datta",
+      "year": 2008,
+      "doi": "10.1021/nl071804g",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18052402/",
+      "role": "Primary motivation for total-circuit curvature and series voltage amplification. This task uses its own explicitly declared dimensionless model and does not reproduce experimental device data."
+    },
+    {
+      "title": "Multi-domain ferroelectricity as a limiting factor for voltage amplification in ferroelectric field-effect transistors",
+      "url": "https://arxiv.org/abs/1103.3768",
+      "role": "Primary motivation for checking spatial modes separately from homogeneous circuit stability; the finite-chain model and all numeric inputs here are constructed."
+    }
+  ]
+}

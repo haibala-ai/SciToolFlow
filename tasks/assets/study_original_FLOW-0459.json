@@ -1,0 +1,20 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "annulus_boundaries_meters": [
+    0.0,
+    1.0,
+    2.0,
+    3.0
+  ],
+  "calibration_expected_seed_counts": [
+    199.26259708319193,
+    389.6251124096206
+  ],
+  "heldout_outer_annulus_expected_count": 275.77700727057476,
+  "model": "A controlled isotropic planar Gaussian dispersal density around a known origin: f(x,y)=exp(-r^2/(2*sigma^2))/(2*pi*sigma^2), with unknown positive sigma and total expected count N. Thus annular expected count=N*[exp(-r_low^2/(2*sigma^2))-exp(-r_high^2/(2*sigma^2))]. Inputs are exact expected counts, not noisy integer observations.",
+  "analysis_policy": "Estimate sigma and N using ONLY the first two annular counts. The third annulus is a held-out check, not an additional calibration equation. Restrict the transformed parameter u=exp(-1/(2*sigma^2)) to (0,1). Report the held-out prediction and the probability beyond radius3 meters under the inferred complete-plane model.",
+  "scope": "Controlled kernel-identifiability and radial-area geometry; counts in an annulus integrate a planar density over changing area and do not locate a density maximum. No release, field intervention or real species movement forecast is involved."
+}

@@ -1,0 +1,6 @@
+{
+  "material_id": "mp-149",
+  "task_selection": "Use only an EOSrecord whose task_id belongs to the resolved core material task_ids. For this source select task_id aaaaaaft. Preserve each energy-volume pair when sorting.",
+  "fit": "Sort by volume,find the smallest sampled energy,and fit an unweighted quadratic E(V)=aV^2+bV+c to that point and its two immediate volume neighbors on each side. Use the reported energy and volume basis consistently. Report vertex V0=-b/(2a)and B=V0*d2E/dV2. Convert eV/angstrom^3toGPa with160.21766208.",
+  "scope": "This specified local quadratic estimator is not any published global EOSmodel. Do not substitute an unrelated task or a current summary energy into its curve;no finite-temperature equation of state is inferred."
+}

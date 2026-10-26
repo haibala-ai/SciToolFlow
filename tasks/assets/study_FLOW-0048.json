@@ -1,0 +1,45 @@
+{
+  "data": [
+    {
+      "record_id": "reference",
+      "wavelength_nm": [
+        500.0,
+        510.0,
+        520.0,
+        530.0
+      ],
+      "corrected_emission": [
+        0.0,
+        2.0,
+        2.0,
+        0.0
+      ],
+      "excitation_absorbance": 0.05,
+      "refractive_index": 1.33,
+      "quantum_yield": 0.6
+    },
+    {
+      "record_id": "sample",
+      "wavelength_nm": [
+        500.0,
+        510.0,
+        520.0,
+        530.0
+      ],
+      "corrected_emission": [
+        0.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "excitation_absorbance": 0.02,
+      "refractive_index": 1.4
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Wavelengthnm;commoncorrectedphotonsignal;absorbancedecadic;nunitless",
+    "original_observation_claim": false
+  }
+}

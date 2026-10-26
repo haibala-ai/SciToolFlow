@@ -1,0 +1,25 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "load_newton": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "measured_total_approach_micrometer": [
+    0.8654361859480025,
+    1.4563141015915657,
+    2.4767941160752946,
+    4.26174474379201
+  ],
+  "spherical_tip_radius_meter": 0.001,
+  "specimen_poisson_ratio": 0.3,
+  "indenter_young_modulus_pascal": 200000000000.0,
+  "indenter_poisson_ratio": 0.25,
+  "model": "Nonadhesive small-strain Hertz spherical contact in series with a linear testing-machine compliance C>=0. Delta_total=(3*F/(4*E_reduced*sqrt(R)))^(2/3)+C*F. Reduced modulus obeys1/E_reduced=(1-nu_specimen^2)/E_specimen+(1-nu_indenter^2)/E_indenter. All loads refer to the same elastic sample state with no contact offset or plasticity.",
+  "fit": "Fit both independent F^(2/3) and F coefficients without an intercept to all paired observations, then invert the positive Hertz coefficient and subtract the known indenter compliance. No separate machine calibration may be assumed.",
+  "scope": "Inverse model under the declared ideal contact law, not a general nanoindentation hardness or plastic-contact interpretation."
+}

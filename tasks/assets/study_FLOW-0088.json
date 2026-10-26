@@ -1,0 +1,128 @@
+{
+  "data": [
+    {
+      "record_id": "panel01",
+      "component01_mole_fraction": [
+        0.0,
+        0.1,
+        0.25,
+        0.4,
+        0.5,
+        0.65,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "ln_component01_activity_coefficient": [
+        1.4,
+        1.134,
+        0.7875,
+        0.504,
+        0.3500000000000001,
+        0.17149999999999999,
+        0.05599999999999983,
+        0.014000000000000012,
+        0.0
+      ],
+      "ln_component02_activity_coefficient": [
+        0.0,
+        0.013999999999999999,
+        0.0875,
+        0.22399999999999998,
+        0.35,
+        0.5914999999999999,
+        0.8959999999999999,
+        1.1340000000000001,
+        1.4
+      ]
+    },
+    {
+      "record_id": "panel02",
+      "component01_mole_fraction": [
+        0.0,
+        0.1,
+        0.25,
+        0.4,
+        0.5,
+        0.65,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "ln_component01_activity_coefficient": [
+        1.5799999999999998,
+        1.3139999999999998,
+        0.9674999999999999,
+        0.6839999999999999,
+        0.53,
+        0.3514999999999999,
+        0.23599999999999977,
+        0.19399999999999995,
+        0.17999999999999994
+      ],
+      "ln_component02_activity_coefficient": [
+        0.0,
+        0.013999999999999999,
+        0.0875,
+        0.22399999999999998,
+        0.35,
+        0.5914999999999999,
+        0.8959999999999999,
+        1.1340000000000001,
+        1.4
+      ]
+    },
+    {
+      "record_id": "panel03",
+      "component01_mole_fraction": [
+        0.0,
+        0.1,
+        0.25,
+        0.4,
+        0.5,
+        0.65,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "ln_component01_activity_coefficient": [
+        1.4,
+        1.134,
+        0.7875,
+        0.504,
+        0.3500000000000001,
+        0.17149999999999999,
+        0.05599999999999983,
+        0.014000000000000012,
+        0.0
+      ],
+      "ln_component02_activity_coefficient": [
+        0.0,
+        0.08600000000000001,
+        0.2375,
+        0.41600000000000004,
+        0.55,
+        0.7735,
+        1.024,
+        1.206,
+        1.4
+      ]
+    },
+    {
+      "record_id": "study",
+      "temperature_kelvin": 310.0,
+      "pressure_bar": 1.0,
+      "gas_constant_j_mol_k": 8.31446261815324,
+      "reference_convention": "Both activity coefficients use the respective pure liquid at the same T and P;pure-component activity coefficients approach one.",
+      "representation": "Each listed logarithmic coefficient curve is an exact polynomial of degree at most two over 0<=x1<=1. Numerical fitting error is not observation noise.",
+      "comparison_tolerance_dimensionless": 1e-08,
+      "repair_boundary": "A component-specific composition-INDEPENDENT additive shift in ln(gamma) may repair a pure-reference normalization error;composition-dependent changes are not allowed as a normalization-only repair."
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Mole fractions and logarithmic activity coefficients dimensionless;T kelvin,P bar;excess molar Gibbs energy J/mol",
+    "original_observation_claim": false
+  }
+}

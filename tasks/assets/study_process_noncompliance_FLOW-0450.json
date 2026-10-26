@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "observed_conditional_cells": [
+        {
+          "assigned_setting": 0,
+          "actual_setting": 0,
+          "passed": 0,
+          "conditional_probability": 0.28
+        },
+        {
+          "assigned_setting": 0,
+          "actual_setting": 0,
+          "passed": 1,
+          "conditional_probability": 0.32
+        },
+        {
+          "assigned_setting": 0,
+          "actual_setting": 1,
+          "passed": 0,
+          "conditional_probability": 0.17
+        },
+        {
+          "assigned_setting": 0,
+          "actual_setting": 1,
+          "passed": 1,
+          "conditional_probability": 0.23
+        },
+        {
+          "assigned_setting": 1,
+          "actual_setting": 0,
+          "passed": 0,
+          "conditional_probability": 0.18
+        },
+        {
+          "assigned_setting": 1,
+          "actual_setting": 0,
+          "passed": 1,
+          "conditional_probability": 0.22
+        },
+        {
+          "assigned_setting": 1,
+          "actual_setting": 1,
+          "passed": 0,
+          "conditional_probability": 0.24
+        },
+        {
+          "assigned_setting": 1,
+          "actual_setting": 1,
+          "passed": 1,
+          "conditional_probability": 0.36
+        }
+      ],
+      "variable_meanings": {
+        "Z": "Binary randomized encouragement to use a process setting.",
+        "D": "Binary setting actually used, possibly different from encouragement.",
+        "Y": "Binary quality-pass outcome."
+      },
+      "structural_assumptions": "The encouragement Z is jointly independent of all potential settings D(0),D(1) and potential outcomes Y(0),Y(1). Observed setting is D(Z), and observed outcome is Y(D(Z)); encouragement has no direct outcome effect. Every unit has binary potential settings and outcomes, with no interference. Uptake is monotone: D(1)>=D(0). Outcome monotonicity Y(1)>=Y(0) is NOT assumed. Use an unrestricted common population distribution over potential types satisfying those assumptions. The two conditional observation panels constrain the same population law; they are not separate latent populations.",
+      "data_scope": "Project-authored exact conditional population probabilities for a controlled process model, not finite batch counts, experimental observations or estimated probabilities. Sampling uncertainty is outside scope. The table supplies P(D=d,Y=y|Z=z), not joint probabilities requiring an encouragement allocation fraction.",
+      "research_targets": "Report the first-stage uptake difference E[D|Z=1]-E[D|Z=0], intention-to-encourage pass difference E[Y|Z=1]-E[Y|Z=0], and the setting effect among units whose setting follows encouragement, E[Y(1)-Y(0)|D(1)>D(0)]. Also obtain sharp attainable bounds on the whole-population setting effect E[Y(1)-Y(0)] and decide whether that overall effect is necessarily strictly positive. Distinguish a local effect for uptake-switching units from a whole-population effect; do not add an equal-effects or linear constant-effect restriction.",
+      "reporting": "All effects are differences of probability fractions. The sharp interval is [minimum,maximum]. Numeric tolerance1e-8 absolute plus1e-7 relative; Boolean exact. Bounds must be attainable under one common joint potential-type distribution.",
+      "provenance": {
+        "kind": "Project-authored controlled nonclinical process example. No observations or numeric results from the cited paper were imported.",
+        "original_observation_claim": false,
+        "method_sources": [
+          "https://ftp.cs.ucla.edu/pub/stat_ser/r199-jasa.pdf"
+        ],
+        "method_read_scope": "Author-hosted Balke and Pearl(1997),JASA92:1171-1176,pages1172-1173: latent binary response types, linear constraints/optimization and monotone-uptake restriction. The project model adds the explicitly stated assumptions and derives its own exact bounds; no unrestricted-IV formula is substituted for the monotone model."
+      }
+    }
+  ]
+}

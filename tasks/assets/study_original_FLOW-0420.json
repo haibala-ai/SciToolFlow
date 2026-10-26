@@ -1,0 +1,15 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "mole_fraction_A": 0.05,
+  "pure_molar_volumes_cm3_per_mol": {
+    "A": 100.0,
+    "B": 30.0
+  },
+  "excess_volume_coefficient_cm3_per_mol": -140.0,
+  "model": "In a controlled small composition neighborhood x in[0.04,0.06] at fixed T,P, V_m(x)=x*V_A+(1-x)*V_B+b*x*(1-x). The local function is stipulated, not fitted or extrapolated to all compositions. Partial molar volumes are d(n_total*V_m)/dn_i holding the other amount,T,P fixed: Vbar_A=V_m+(1-x)*dV_m/dx and Vbar_B=V_m-x*dV_m/dx.",
+  "target": "Evaluate the local bulk volume and both partial molar volumes, check Euler identity x*Vbar_A+(1-x)*Vbar_B=V_m and interpret the sign. A partial derivative can be negative even with positive total volume; it is not a standalone component geometric volume.",
+  "scope": "Local thermodynamic derivative model only, not a globally stable phase diagram or real measured mixture."
+}

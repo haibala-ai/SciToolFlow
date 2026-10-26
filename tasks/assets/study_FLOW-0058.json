@@ -1,0 +1,33 @@
+{
+  "data": [
+    {
+      "record_id": "label01",
+      "smiles": "[13CH3]N"
+    },
+    {
+      "record_id": "label02",
+      "smiles": "C[15NH2]"
+    },
+    {
+      "record_id": "setting01",
+      "resolving_power": 3000.0,
+      "acquisition_cost": 1.0
+    },
+    {
+      "record_id": "setting02",
+      "resolving_power": 6000.0,
+      "acquisition_cost": 2.0
+    },
+    {
+      "record_id": "setting03",
+      "resolving_power": 12000.0,
+      "acquisition_cost": 4.0
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "NeutralexactmassDa;Rdimensionless;costarbitrarycommonunits",
+    "original_observation_claim": false
+  }
+}
