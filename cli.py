@@ -5,6 +5,7 @@ import json
 import math
 from pathlib import Path
 from src.utils.paths import project_root
+from tasks.datasets import DATASETS, load_dataset
 
 
 def main():
@@ -16,6 +17,7 @@ def main():
         "task", help="View a public benchmark task, or list tasks by domain"
     )
     p.add_argument("id", nargs="?")
+    p.add_argument("--dataset", choices=DATASETS, default="full")
     p.add_argument(
         "--domain", choices=["Biology", "Chemical", "Material", "MachineLearning"]
     )
@@ -31,6 +33,7 @@ def main():
     p.add_argument("--timeout", type=float, default=180)
     p = sub.add_parser("run", help="Run a baseline using only public tasks")
     p.add_argument("--baseline", choices=["react", "scitoolagent"], default="react")
+    p.add_argument("--dataset", choices=DATASETS, default="full")
     p.add_argument("--tasks", default="all")
     p.add_argument("--output")
     p.add_argument("--backend", choices=["vllm", "local", "api"], default="vllm")
@@ -98,18 +101,15 @@ def main():
         help="Enable backend-native reasoning separately from explicit think steps",
     )
     p = sub.add_parser(
-        "score", help="Score all 500 tasks, or an explicitly declared selection"
+        "score", help="Score the selected dataset or an explicit selection within it"
     )
     p.add_argument("--predictions", required=True, type=Path)
     p.add_argument("--output", type=Path, default=Path("scores.json"))
     p.add_argument("--tasks", default="all")
+    p.add_argument("--dataset", choices=DATASETS, default="full")
     args = parser.parse_args()
     if args.command == "task":
-        rows = [
-            json.loads(s)
-            for s in (root / "tasks/questions.jsonl").read_text().splitlines()
-            if s.strip()
-        ]
+        rows = load_dataset(args.dataset, root).questions
         if args.domain:
             rows = [row for row in rows if row["domain"] == args.domain]
         if args.id:
@@ -201,7 +201,11 @@ def main():
         )
         args.output.parent.mkdir(parents=True, exist_ok=True)
         result = evaluate_package(
-            root, args.predictions, args.output, task_ids=selection
+            root,
+            args.predictions,
+            args.output,
+            task_ids=selection,
+            dataset=args.dataset,
         )
         print(json.dumps(result["summary"], ensure_ascii=False, indent=2))
 

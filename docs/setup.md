@@ -238,6 +238,8 @@ python -m scripts.benchmark.run_benchmark --baseline react --backend vllm --task
   --output-dir results/react_full
 ```
 
+流水线与 CLI 的运行和评分均支持 `--dataset full|mini`，默认 full。Mini 的 200 题使用独立编号，直接传 `--dataset mini` 即可运行并按 200 题评分；`--tasks` 只在所选题库中进一步抽题。
+
 ### 预检与构建脚本
 
 - `scripts/tools/check_foundation.py`：检查工具绑定、解释器、声明资源、图谱和向量，结果写入 `results/reports/tool_preflight.json`；不调用科学工具或生成 LLM。

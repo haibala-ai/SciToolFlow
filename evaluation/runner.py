@@ -1,6 +1,7 @@
 """Load predictions and run the same scoring protocol for every baseline."""
 
 from pathlib import Path
+import copy
 import json
 from tools.catalog import ToolCatalog
 from src.utils.io import read_jsonl
@@ -10,7 +11,9 @@ from evaluation.integrity.traces import verify_release_envelope
 from evaluation.integrity.resources import validate_policy, check_resources
 
 
-def evaluate_package(root, predictions, output, reviews=None, task_ids=None):
+def evaluate_package(
+    root, predictions, output, reviews=None, task_ids=None, dataset="full"
+):
     """Validate and score a fingerprinted checkpoint against workflow.v1 only."""
     root = Path(root).resolve()
     validate_package(root)
@@ -18,14 +21,32 @@ def evaluate_package(root, predictions, output, reviews=None, task_ids=None):
     refs = read_jsonl(root / metadata["references"])
     if {r.get("evaluation", {}).get("schema_version") for r in refs} != {"workflow.v1"}:
         raise ValueError("Only workflow.v1 task releases are supported")
-    if task_ids is not None:
+    source_ids = {r["id"]: r["id"] for r in refs}
+    if dataset == "mini":
+        from tasks.datasets import load_dataset
+
+        public = load_dataset("mini", root)
+        selected = public.select(task_ids)
+        by_source = {r["id"]: r for r in refs}
+        refs = []
+        source_ids = {}
+        for question in selected:
+            identifier = question["id"]
+            source = public.source_id(identifier)
+            if source not in by_source:
+                raise ValueError("Missing full reference for Mini task: " + identifier)
+            reference = copy.deepcopy(by_source[source])
+            reference["id"] = identifier
+            refs.append(reference)
+            source_ids[identifier] = source
+    elif task_ids is not None:
         ids = set(task_ids)
-        if not ids or ids - {r["id"] for r in refs}:
+        if not ids or len(ids) != len(task_ids) or ids - {r["id"] for r in refs}:
             raise ValueError("Unknown or empty scoring selection")
         refs = [r for r in refs if r["id"] in ids]
     path = Path(predictions)
     envelope = json.loads(path.read_text())
-    release_fingerprint = verify_release_envelope(envelope, root)
+    release_fingerprint = verify_release_envelope(envelope, root, dataset=dataset)
     execution_policy = validate_policy(envelope["settings"].get("resource_policy"))
     predicted = envelope.get("predictions")
     if not isinstance(predicted, list):
@@ -40,6 +61,8 @@ def evaluate_package(root, predictions, output, reviews=None, task_ids=None):
         release_fingerprint,
         reviews=reviews,
         execution_policy=execution_policy,
+        dataset=dataset,
+        source_ids=source_ids,
     )
 
 
@@ -54,6 +77,8 @@ def _evaluate_workflow_package(
     *,
     execution_policy,
     reviews=None,
+    dataset="full",
+    source_ids=None,
 ):
     """Evidence integrity precedes scoring; pending novel routes need policy review."""
     from evaluation.integrity.traces import authenticate_prediction, canonical_sha256
@@ -75,7 +100,9 @@ def _evaluate_workflow_package(
     reference_by_id = {r["id"]: r for r in refs}
     contract_errors = {}
     for prediction in predictions:
-        row, check = authenticate_prediction(prediction, root, run_directory, registry)
+        row, check = authenticate_prediction(
+            prediction, root, run_directory, registry, dataset=dataset
+        )
         identifier = row["id"]
         integrity[identifier] = check
         contract_errors[identifier] = validation_errors(
@@ -109,6 +136,8 @@ def _evaluate_workflow_package(
     for row in result["results"]:
         identifier = row["id"]
         row.update(
+            dataset=dataset,
+            source_id=(source_ids or {}).get(identifier, identifier),
             evidence_integrity=integrity.get(identifier),
             resource_usage=resource_checks.get(identifier),
             resource_policy_version=execution_policy["version"],
@@ -155,9 +184,14 @@ def _evaluate_workflow_package(
             requests.append(
                 {
                     "id": identifier,
+                    "dataset": dataset,
+                    "source_id": (source_ids or {}).get(identifier, identifier),
                     "schema_version": "workflow.v1",
                     "requires_independent_review": True,
-                    "reference_sha256": canonical_sha256(ref),
+                    "reference_sha256": canonical_sha256(
+                        {**ref, "id": (source_ids or {}).get(identifier, identifier)}
+                    ),
+                    "evaluation_view_sha256": canonical_sha256(ref),
                     "prediction_sha256": canonical_sha256(original[identifier]),
                     "planning_pass": None if not row["planning_pass"] else True,
                     "answer_pass": None if not row["answer_pass"] else True,
@@ -185,6 +219,7 @@ def _evaluate_workflow_package(
     pending_count = sum(bool(r["pending_review"]) for r in rows)
     lower = sum(bool(r["joint_pass"]) for r in rows) / len(rows)
     result["summary"].update(
+        dataset=dataset,
         selection="all" if task_ids is None else sorted(task_ids),
         release_fingerprint=release_fingerprint,
         evidence_integrity_failures=sum(not c["verified"] for c in integrity.values()),

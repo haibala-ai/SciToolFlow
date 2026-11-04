@@ -9,7 +9,7 @@ SciToolFlow 提供 **500 道科学任务、472 个科学工具、781 条参考�
 - **可核验的参考与评分**：每题提供金标准、必要科学能力、数据依赖与科学判据，参考执行经独立审核。
 - **统一的实验边界**：ReAct 与 SciToolAgent 共用工具执行器、模型接口和评分器，支持 API 或本地模型。
 
-[任务分类](tasks/CATEGORIES.md) · [工具接口](tools/README.md) · [评分细则](evaluation/README.md) · [安装与部署](docs/setup.md)
+[任务分类](tasks/CATEGORIES.md) · [Mini-200](tasks/mini/README.md) · [工具接口](tools/README.md) · [评分细则](evaluation/README.md) · [安装与部署](docs/setup.md)
 
 ## 与 SciToolEval Level2 的对比
 
@@ -167,6 +167,8 @@ python cli.py run --baseline react --backend vllm --model "<served-model-name>" 
 ```
 
 默认每题 **400 次生成请求、7,200 秒**，SciToolAgent 所有角色合计计数。科学调用、DescribeTools 与显式 think 无独立次数上限；连续同工具同参数十个决策步后终止。token 用量另行报告，完整边界见[运行资源策略](docs/execution_policy.md)。
+
+运行和评分均支持 `--dataset full|mini`：full 为默认全集 500 题，mini 为四学科各 50 题的精简集。`--tasks` 在所选题库内抽题；Mini 的独立编号与映射见 [Mini-200](tasks/mini/README.md)。
 
 在相同代码、题库、模型和设置下，可向原命令追加 `--resume`；改变指纹后应新建实验目录。
 

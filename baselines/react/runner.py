@@ -13,19 +13,10 @@ from src.utils.paths import project_root, load_environment
 from tools.catalog import ToolCatalog
 from tools import execute
 from tasks.assets import load_agent_input
+from tasks.datasets import dataset_files, load_dataset, select_tasks
 from src.models.client import GenerationClient
 from baselines.react.runtime import run_react
 from baselines.react.trajectory import atomic_json
-
-
-def select_tasks(rows, selection):
-    if selection == "all":
-        return rows
-    ids = [x.strip() for x in selection.split(",") if x.strip()]
-    indexed = {r["id"]: r for r in rows}
-    if not ids or len(set(ids)) != len(ids) or set(ids) - set(indexed):
-        raise ValueError("Unknown, empty or duplicate task selection")
-    return [indexed[i] for i in ids]
 
 
 def resume_rows(checkpoint, fingerprint, retry=False):
@@ -40,7 +31,7 @@ def resume_rows(checkpoint, fingerprint, retry=False):
     return [r for r in rows if not (retry and not r.get("completed"))]
 
 
-def actor_file_hashes(root):
+def actor_file_hashes(root, dataset="full"):
     """Bind resume to public inputs and all executable actor/tool dependencies."""
     files = [
         root / "tasks/questions.jsonl",
@@ -53,6 +44,7 @@ def actor_file_hashes(root):
         root / "baselines/react/config.json",
         root / "baselines/react/system_prompt.md",
     ]
+    files.extend(root / name for name in dataset_files(dataset))
     for directory in ["baselines", "tools", "tasks", "src"]:
         files.extend((root / directory).rglob("*.py"))
     for directory in ["react", "scitoolagent"]:
@@ -116,6 +108,7 @@ def run_task(payload):
                 invoke=lambda n, a, **kwargs: execute(n, a, catalog=catalog, **kwargs),
                 trace_dir=output.parent / "trajectories",
                 case_id=task["id"],
+                dataset=getattr(args, "dataset", "full"),
                 inputs=task["inputs"],
                 files=task["files"],
                 answer_schema=task["answer_schema"],
@@ -139,6 +132,7 @@ def run_task(payload):
             calls = result["calls"]
             prediction = {
                 "id": task["id"],
+                "dataset": getattr(args, "dataset", "full"),
                 "baseline": baseline,
                 "completed": result["status"] == "completed",
                 "status": result["status"],
@@ -158,6 +152,7 @@ def run_task(payload):
         except Exception as error:
             prediction = {
                 "id": task["id"],
+                "dataset": getattr(args, "dataset", "full"),
                 "baseline": baseline,
                 "completed": False,
                 "status": "failed",
@@ -182,12 +177,8 @@ def run_batch(args):
     os.environ["SCITOOLFLOW_ENABLE_MODEL_THINKING"] = (
         "1" if args.enable_model_thinking else "0"
     )
-    public = [
-        json.loads(s)
-        for s in (root / "tasks/questions.jsonl").read_text().splitlines()
-        if s.strip()
-    ]
-    selected = select_tasks(public, args.tasks)
+    dataset = load_dataset(getattr(args, "dataset", "full"), root)
+    selected = dataset.select(args.tasks)
     baseline = getattr(args, "baseline", "react")
     concurrency = getattr(args, "concurrency", 1)
     if concurrency < 1 or (args.backend == "local" and concurrency > 1):
@@ -204,7 +195,10 @@ def run_batch(args):
     output = (
         Path(args.output)
         if args.output
-        else root / "results" / (baseline + "_" + timestamp) / "predictions.json"
+        else root
+        / "results"
+        / (baseline + "_" + dataset.name + "_" + timestamp)
+        / "predictions.json"
     )
     output = output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -216,7 +210,8 @@ def run_batch(args):
     settings.update(
         model=client.model,
         backend=client.backend,
-        actor_file_hashes=actor_file_hashes(root),
+        dataset=dataset.name,
+        actor_file_hashes=actor_file_hashes(root, dataset.name),
         sampling=provider.get(
             "sampling",
             (
@@ -275,6 +270,7 @@ def run_batch(args):
     # The parent is the sole checkpoint writer; actor processes never see private references.
     namespace = output.parent.name + "-" + uuid4().hex[:12]
     options = {k: v for k, v in vars(args).items() if k not in {"func", "command"}}
+    options["dataset"] = dataset.name
     jobs = [
         (row["id"], (row, options, str(output), namespace))
         for row in selected
@@ -292,6 +288,7 @@ def run_batch(args):
             output.parent / "progress.json",
             {
                 "status": status,
+                "dataset": dataset.name,
                 "updated_at": datetime.now().astimezone().isoformat(),
                 "concurrency": concurrency,
                 "selected_tasks": len(selected),
@@ -313,6 +310,7 @@ def run_batch(args):
                 if response["ok"]
                 else {
                     "id": task_id,
+                    "dataset": dataset.name,
                     "baseline": baseline,
                     "completed": False,
                     "status": "failed",

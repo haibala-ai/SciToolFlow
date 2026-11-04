@@ -57,6 +57,7 @@ Agent读取公开任务、附件和工具契约。评分器在独立流程读取
 
 | 目标 | 入口 |
 | --- | --- |
+| 选择 full／mini、校验编号映射 | tasks/datasets.py |
 | 浏览题目或修改公开字段 | [tasks/README.md](../tasks/README.md)、tasks/questions.jsonl |
 | 查询工具、执行工具 | `from tools import ToolCatalog, execute` |
 | 修改描述、参数和输出契约 | [tools/catalog/catalog.json](../tools/catalog/catalog.json) |

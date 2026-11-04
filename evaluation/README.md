@@ -44,9 +44,18 @@ python cli.py score --predictions results/full/predictions.json \
   --output results/full/scores.json
 ```
 
-全量评分中，缺交、执行失败、格式错误、资源耗尽均保留在分母。抽测须显式传 `--tasks`；否则单题预测也会按 500 题计算。预测中的未知或重复题号会被拒绝。
+所选题库的全量评分中，缺交、执行失败、格式错误、资源耗尽均保留在分母。抽测须显式传 `--tasks`；否则单题预测也会按所选题库的全部题目计算（full 为 500，mini 为 200）。预测中的未知或重复题号会被拒绝。
 
 代码、题库、工具和运行指纹须匹配，不能修改旧指纹强行评分。使用其他 baseline 时，应生成同样可认证的预测与轨迹，并保持可比较的模型、采样和资源设置。
+
+Mini 使用相同评分入口，以所选题库的全部 200 题为分母：
+
+```bash
+python cli.py score --dataset mini --predictions results/mini/predictions.json \
+  --output results/mini/scores.json
+```
+
+查询、运行和评分均支持 `--dataset full|mini`，默认 full。`--tasks` 进一步限制所选题库；Mini 题号通过映射关联原金标准，结果同时报告 `id` 和全集 `source_id`。题库进入运行指纹，选择与预测不一致时会拒绝评分。
 
 ### 3. 读取两个输出文件
 

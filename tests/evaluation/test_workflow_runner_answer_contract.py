@@ -6,9 +6,10 @@ import evaluation.runner as runner
 import evaluation.integrity.traces as integrity
 
 
+@pytest.mark.parametrize("dataset", ["full", "mini"])
 @pytest.mark.parametrize("extra,expected", [(False, True), (True, False)])
 def test_scoring_rejects_unknown_fields_even_if_harness_guard_was_disabled(
-    monkeypatch, tmp_path, extra, expected
+    monkeypatch, tmp_path, extra, expected, dataset
 ):
     registry = {"tools": {"Measure": {"parameters": []}}, "aliases": {}}
 
@@ -23,7 +24,7 @@ def test_scoring_rejects_unknown_fields_even_if_harness_guard_was_disabled(
     monkeypatch.setattr(
         integrity,
         "authenticate_prediction",
-        lambda row, *args: (copy.deepcopy(row), {"verified": True}),
+        lambda row, *args, dataset="full": (copy.deepcopy(row), {"verified": True}),
     )
     monkeypatch.setattr(
         runner, "check_resources", lambda *args: {"verified": True, "exceeded": False}
@@ -66,6 +67,7 @@ def test_scoring_rejects_unknown_fields_even_if_harness_guard_was_disabled(
     }
     prediction = {
         "id": "t1",
+        "dataset": dataset,
         "completed": True,
         "status": "completed",
         "final_answer": {"result": 2},
@@ -89,6 +91,7 @@ def test_scoring_rejects_unknown_fields_even_if_harness_guard_was_disabled(
         tmp_path,
         None,
         "test-fingerprint",
+        dataset=dataset,
         execution_policy={
             "version": "task-resources.v1",
             "max_model_requests": 400,

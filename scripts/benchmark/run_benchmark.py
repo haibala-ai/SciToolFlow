@@ -15,12 +15,14 @@ sys.path.insert(0, str(ROOT))
 from src.utils.io import atomic_json
 from src.models.client import GenerationClient
 from src.utils.paths import load_environment
+from tasks.datasets import DATASETS, load_dataset
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--tasks", default="all")
+    parser.add_argument("--dataset", choices=DATASETS, default="full")
     parser.add_argument(
         "--baseline", choices=["react", "scitoolagent"], default="react"
     )
@@ -31,6 +33,8 @@ def main():
     args = parser.parse_args()
     if args.concurrency < 1:
         parser.error("concurrency must be positive")
+    dataset = load_dataset(args.dataset, ROOT)
+    selected = dataset.select(args.tasks)
     load_environment()
     client = GenerationClient(args.backend)
     if args.model:
@@ -45,11 +49,16 @@ def main():
     status_file = output / "experiment.json"
     if status_file.exists() and not args.resume:
         parser.error("Experiment exists; choose another output or --resume")
+    if status_file.exists():
+        previous = json.loads(status_file.read_text())
+        if previous.get("dataset", "full") != args.dataset:
+            parser.error("Cannot resume an experiment from a different dataset")
     started = datetime.now(timezone.utc).isoformat()
     state = {
         "started_at": started,
         "tasks": args.tasks,
-        "denominator": 500 if args.tasks == "all" else len(args.tasks.split(",")),
+        "dataset": args.dataset,
+        "denominator": len(selected),
         "model": model,
         "baseline": args.baseline,
         "concurrency": args.concurrency,
@@ -152,6 +161,8 @@ def main():
     scores = output / "scores.json"
     run = [
         "run",
+        "--dataset",
+        args.dataset,
         "--baseline",
         args.baseline,
         "--tasks",
@@ -182,6 +193,8 @@ def main():
         "score",
         [
             "score",
+            "--dataset",
+            args.dataset,
             "--tasks",
             args.tasks,
             "--predictions",

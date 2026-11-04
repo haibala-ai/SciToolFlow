@@ -114,12 +114,15 @@ class WorkflowIntegrationTest(unittest.TestCase):
             trace_path=str(path), trace_sha256=write(path, self.trace)
         )
 
-    def save_predictions(self):
+    def save_predictions(self, dataset="full"):
+        from tasks.datasets import dataset_files
+
         settings = {
+            "dataset": dataset,
             "resource_policy": self.resource_policy,
             "actor_file_hashes": {
                 name: hashlib.sha256((self.root / name).read_bytes()).hexdigest()
-                for name in ["tasks/questions.jsonl", "tools/catalog/catalog.json"]
+                for name in dataset_files(dataset) + ["tools/catalog/catalog.json"]
             },
         }
         self.envelope = {
@@ -139,6 +142,102 @@ class WorkflowIntegrationTest(unittest.TestCase):
                 self.root / "scores.json",
                 **kwargs,
             )
+
+    def make_mini(self):
+        self.task.update(domain="Chemical", files=[])
+        other = copy.deepcopy(self.task)
+        other.update(
+            id="FLOW-0001",
+            question="A different full-dataset task",
+            inputs={"dataset": "different-v1", "needs_confirmation": False},
+        )
+        other_ref = copy.deepcopy(self.reference)
+        other_ref.update(
+            id=other["id"], question=other["question"], inputs=other["inputs"]
+        )
+        self.save_reference()
+        (self.root / "tasks/questions.jsonl").write_text(
+            "\n".join(json.dumps(row) for row in [self.task, other]) + "\n"
+        )
+        (self.root / "evaluation/data/references.jsonl").write_text(
+            "\n".join(json.dumps(row) for row in [self.reference, other_ref]) + "\n"
+        )
+        folder = self.root / "tasks/mini"
+        folder.mkdir()
+        (folder / "questions.jsonl").write_text(
+            json.dumps({**self.task, "id": "FLOW-0001"}) + "\n"
+        )
+        (folder / "ids.tsv").write_text(
+            "mini_id\tfull_id\nFLOW-0001\t" + self.task["id"] + "\n"
+        )
+        write(
+            folder / "metadata.json",
+            {
+                "tasks": 1,
+                "sha256": {
+                    name: hashlib.sha256((folder / name).read_bytes()).hexdigest()
+                    for name in ["questions.jsonl", "ids.tsv"]
+                },
+            },
+        )
+        self.prediction.update(id="FLOW-0001", dataset="mini")
+        self.trace.update(task_id="FLOW-0001", dataset="mini")
+        self.save_trace()
+        self.save_predictions(dataset="mini")
+        return other
+
+    def test_mini_ids_map_to_original_gold_without_rewriting_reference_evidence(self):
+        self.make_mini()
+        reference_path = self.root / "evaluation/data/references.jsonl"
+        before = reference_path.read_bytes()
+        result = self.evaluate(dataset="mini")
+        self.assertEqual(result["summary"]["dataset"], "mini")
+        self.assertEqual(result["summary"]["total_reference_tasks"], 1)
+        self.assertTrue(result["results"][0]["joint_pass"])
+        self.assertEqual(result["results"][0]["id"], "FLOW-0001")
+        self.assertEqual(result["results"][0]["source_id"], self.task["id"])
+        self.assertEqual(reference_path.read_bytes(), before)
+
+    def test_mini_envelope_cannot_be_scored_as_full_even_when_ids_overlap(self):
+        self.make_mini()
+        with self.assertRaisesRegex(ValueError, "dataset differs"):
+            self.evaluate(dataset="full")
+
+    def test_full_trace_cannot_be_reused_under_a_mini_envelope(self):
+        self.make_mini()
+        self.trace["dataset"] = "full"
+        self.save_trace()
+        self.save_predictions(dataset="mini")
+        result = self.evaluate(dataset="mini")
+        self.assertFalse(result["results"][0]["joint_pass"])
+        self.assertEqual(result["summary"]["evidence_integrity_failures"], 1)
+
+    def test_mini_envelope_requires_mapping_and_public_subset_hashes(self):
+        self.make_mini()
+        del self.envelope["settings"]["actor_file_hashes"]["tasks/mini/ids.tsv"]
+        self.envelope["fingerprint"] = hashlib.sha256(
+            json.dumps(self.envelope["settings"], sort_keys=True).encode()
+        ).hexdigest()
+        with self.assertRaisesRegex(ValueError, "hashes are required"):
+            verify_release_envelope(self.envelope, self.root, dataset="mini")
+
+    def test_reassigned_mapping_cannot_change_gold_for_an_existing_prediction(self):
+        other = self.make_mini()
+        folder = self.root / "tasks/mini"
+        (folder / "questions.jsonl").write_text(json.dumps(other) + "\n")
+        (folder / "ids.tsv").write_text("mini_id\tfull_id\nFLOW-0001\tFLOW-0001\n")
+        write(
+            folder / "metadata.json",
+            {
+                "tasks": 1,
+                "sha256": {
+                    name: hashlib.sha256((folder / name).read_bytes()).hexdigest()
+                    for name in ["questions.jsonl", "ids.tsv"]
+                },
+            },
+        )
+        with self.assertRaisesRegex(ValueError, "source/release changed"):
+            self.evaluate(dataset="mini")
 
     def test_real_trace_without_exact_reference_path(self):
         self.prediction["calls"][0]["duration_seconds"] = 1234

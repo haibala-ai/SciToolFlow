@@ -110,6 +110,8 @@ def validate_calls(calls, registry):
 
 
 def verify_trajectory(trajectory, prediction, registry):
+    if trajectory.get("dataset", "full") != prediction.get("dataset", "full"):
+        raise ValueError("Trace/prediction dataset differs")
     if trajectory.get("task_id") != prediction["id"]:
         raise ValueError("Trace task ID differs")
     for field in ("status", "final_answer", "failure_reason"):
@@ -144,10 +146,12 @@ def verify_trajectory(trajectory, prediction, registry):
     return actual
 
 
-def authenticate_prediction(prediction, root, run_directory, registry):
+def authenticate_prediction(prediction, root, run_directory, registry, dataset="full"):
     """Return a fail-closed row and diagnostic; invalid rows cannot earn credit."""
     result = copy.deepcopy(prediction)
     try:
+        if prediction.get("dataset", "full") != dataset:
+            raise ValueError("Prediction belongs to a different dataset")
         name = prediction.get("trace_path")
         expected = prediction.get("trace_sha256")
         if not name or not isinstance(expected, str) or len(expected) != 64:
@@ -164,6 +168,8 @@ def authenticate_prediction(prediction, root, run_directory, registry):
         if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
             raise ValueError("Production trace hash mismatch")
         trajectory = read_trajectory(path)
+        if trajectory.get("dataset", "full") != dataset:
+            raise ValueError("Production trace belongs to a different dataset")
         verify_trajectory(trajectory, prediction, registry)
         result["_resource_usage"] = trajectory.get("resource_usage")
         result["_execution_limits"] = trajectory.get("limits", {})
@@ -196,20 +202,24 @@ def authenticate_prediction(prediction, root, run_directory, registry):
         }
 
 
-def verify_release_envelope(envelope, root):
+def verify_release_envelope(envelope, root, dataset="full"):
     if not isinstance(envelope, dict):
         raise ValueError("workflow.v1 requires a fingerprinted production checkpoint")
     settings = envelope.get("settings")
     if not isinstance(settings, dict):
         raise ValueError("Missing production settings")
+    from tasks.datasets import dataset_files
+
+    required_files = dataset_files(dataset) + ["tools/catalog/catalog.json"]
+    if settings.get("dataset", "full") != dataset:
+        raise ValueError(
+            "Prediction dataset differs from the requested scoring dataset"
+        )
     expected = hashlib.sha256(json.dumps(settings, sort_keys=True).encode()).hexdigest()
     if envelope.get("fingerprint") != expected:
         raise ValueError("Production settings fingerprint mismatch")
     hashes = settings.get("actor_file_hashes", {})
-    if not all(
-        name in hashes
-        for name in ("tasks/questions.jsonl", "tools/catalog/catalog.json")
-    ):
+    if not all(name in hashes for name in required_files):
         raise ValueError("Task release and tool catalog hashes are required")
     from evaluation.integrity.files import safe_file
 

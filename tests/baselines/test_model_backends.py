@@ -101,7 +101,7 @@ class ModelBackendTests(unittest.TestCase):
         self.assertEqual(json.loads(output.getvalue())["text"], reply["text"])
         self.assertNotIn('"ok":', errors.getvalue())
 
-    def run_baseline(self, baseline):
+    def run_baseline(self, baseline, dataset="full"):
         replies = [CALL, FINISH] if baseline == "react" else [PLAN, CALL, FINISH]
         with api_server(replies) as sent, tempfile.TemporaryDirectory() as directory:
             catalog = ToolCatalog()
@@ -112,6 +112,7 @@ class ModelBackendTests(unittest.TestCase):
             try:
                 result = (run_react if baseline == "react" else run_scitoolagent)(
                     "Parse the public JSON and report the observed number.",
+                    dataset=dataset,
                     catalog=catalog,
                     client=client,
                     invoke=lambda name, args, **kw: execute(
@@ -125,6 +126,9 @@ class ModelBackendTests(unittest.TestCase):
                 )
             finally:
                 client.close()
+            self.assertEqual(
+                json.loads(Path(result["trace_path"]).read_text())["dataset"], dataset
+            )
             self.assertEqual(result["status"], "completed")
             self.assertEqual(result["final_answer"], {"results": {"value": 7}})
             self.assertEqual(len(sent), len(replies))
@@ -133,6 +137,11 @@ class ModelBackendTests(unittest.TestCase):
 
     def test_react_api_executes_real_tool_and_cites_its_output(self):
         self.run_baseline("react")
+
+    def test_both_baselines_keep_the_mini_namespace_in_actual_trajectories(self):
+        for baseline in ("react", "scitoolagent"):
+            with self.subTest(baseline=baseline):
+                self.run_baseline(baseline, dataset="mini")
 
     def test_scitoolagent_roles_use_the_api_without_reading_references(self):
         original = Path.read_text

@@ -13,6 +13,8 @@ python cli.py score --tasks FLOW-0285,FLOW-0481 \
   --output results/scitoolagent_demo/scores.json
 ```
 
+同一运行和评分命令均支持 `--dataset full|mini`，默认 full；`--tasks` 使用所选题库的编号。Mini 的独立编号与映射见 [Mini-200](../../tasks/mini/README.md)。
+
 ## 检索与执行
 
 | 文件 | 职责 |

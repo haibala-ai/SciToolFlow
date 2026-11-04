@@ -14,8 +14,9 @@ from scripts.benchmark import run_benchmark
 
 
 class ExperimentBackendTests(unittest.TestCase):
-    def pipeline(self, backend, actor_code=0):
+    def pipeline(self, backend, actor_code=0, dataset="full", tasks=None):
         commands = []
+        tasks = tasks or ("all" if dataset == "mini" else "FLOW-0481")
 
         class Process:
             def __init__(self, command, **kwargs):
@@ -48,7 +49,9 @@ class ExperimentBackendTests(unittest.TestCase):
                 "--baseline",
                 "scitoolagent",
                 "--tasks",
-                "FLOW-0481",
+                tasks,
+                "--dataset",
+                dataset,
                 "--output-dir",
                 directory,
             ]
@@ -82,6 +85,19 @@ class ExperimentBackendTests(unittest.TestCase):
         self.assertEqual(state["denominator"], 1)
         self.assertEqual(state["status"], "finished")
         self.assertNotIn("SECRET_TEST", json.dumps(state))
+
+    def test_mini_pipeline_passes_dataset_to_run_and_score_and_uses_200_denominator(
+        self,
+    ):
+        code, commands, readiness, state = self.pipeline("api", dataset="mini")
+        self.assertEqual(code, 0)
+        self.assertEqual(readiness, 0)
+        self.assertEqual(state["dataset"], "mini")
+        self.assertEqual(state["denominator"], 200)
+        self.assertEqual(
+            [c[c.index("--dataset") + 1] for c in commands], ["mini", "mini"]
+        )
+        self.assertTrue(all(c[c.index("--tasks") + 1] == "all" for c in commands))
 
     def test_local_service_actor_waits_for_readiness_before_scoring(self):
         code, commands, readiness, state = self.pipeline("vllm")

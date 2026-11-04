@@ -11,12 +11,14 @@
 从项目根目录启动：
 
 ```bash
-python cli.py run --baseline react --backend api --model YOUR_MODEL \
+python cli.py run --dataset full --baseline react --backend api --model YOUR_MODEL \
   --tasks FLOW-0285 --output results/react_demo/predictions.json
-python cli.py run --baseline scitoolagent --backend vllm --model YOUR_MODEL \
+python cli.py run --dataset mini --baseline scitoolagent --backend vllm --model YOUR_MODEL \
   --tasks FLOW-0285 --output results/scitoolagent_demo/predictions.json
 ```
 
 `--output` 指向预测 JSON 文件，其所在目录容纳实验配置、进度、轨迹和工具产物。API 和本地服务均可自由选择模型，账号与部署步骤见[安装与部署](../docs/setup.md)。SciToolAgent 的检索 embedding 独立于生成模型，必须与工具索引身份一致。
 
 各策略的 `run.py` 提供独立命令入口，`runtime.py` 实现策略循环。公共模型客户端位于 `src/models/`；工具通过 `tools.execute` 统一执行；任务加载和评分分别位于 `tasks/` 与 `evaluation/`。相同实验的续跑要求代码、公开输入、模型和采样配置指纹一致。
+
+两个 baseline 均用 `--dataset full|mini` 选择题库，默认 full；`--tasks all` 运行所选题库的全部任务。Mini 使用独立编号，实际源题号由 `tasks/mini/ids.tsv` 映射。预测、轨迹与续跑指纹记录题库，评分使用相同的 `--dataset`。

@@ -1,0 +1,40 @@
+{
+  "schema_version": "scitoolflow.subset.v2",
+  "name": "SciToolFlow Mini-200",
+  "version": "20261104.1",
+  "dataset": "mini",
+  "id_range": [
+    "FLOW-0001",
+    "FLOW-0200"
+  ],
+  "id_mapping": "tasks/mini/ids.tsv",
+  "source_release": "20261026",
+  "tasks": 200,
+  "domains": {
+    "Biology": 50,
+    "Chemical": 50,
+    "MachineLearning": 50,
+    "Material": 50
+  },
+  "categories": {
+    "standard": 174,
+    "tool_composition": 26
+  },
+  "excluded_high_difficulty_tasks": 100,
+  "selection_focus": "scientific subtask decomposition and parallel scheduling",
+  "selection_support": {
+    "required_capability_dag": 181,
+    "task_semantics_and_reviewed_route": 19
+  },
+  "evaluation_schema": "workflow.v1",
+  "asset_release_root": "tasks",
+  "references": "evaluation/data/references.jsonl.gz",
+  "references_visible_to_agent": false,
+  "annotations_are_agent_input": false,
+  "independent_test_split": false,
+  "sha256": {
+    "questions.jsonl": "a744ef13c9d0d48f7bc1a2c45ebe9de7970018dbda8dc8587629f76a64cd4e68",
+    "ids.tsv": "b5415de1ded2715b2bed230244c24dce0ce69f5dee2c31882af7f15f12435017",
+    "selection.json": "8ceb43c905c2e701e76b5bcd6637d14acca52ab72e0bf5e173953130ae0c0536"
+  }
+}

@@ -1,0 +1,3036 @@
+{
+  "schema_version": "scitoolflow.mini-selection.v2",
+  "created_on": "2026-11-04",
+  "source_release": "20261026",
+  "method_basis": {
+    "document": "SciMAS/科学工具编排-v2.docx",
+    "sha256": "da3df30fdcbb956a5e65a3db12c4263e21738eca3703d1b09c12bac82c6a09f6",
+    "sections": [
+      "2.2.1 图规划智能体",
+      "2.2.2 工具执行智能体",
+      "2.2.3 过程评审智能体",
+      "2.2.4 多智能体协同进化"
+    ]
+  },
+  "policy": {
+    "tasks": 200,
+    "domain_quota": 50,
+    "excluded_category": "high_difficulty",
+    "selection_target": "Scientifically valid independent workstreams with explicit common prerequisites and a required result join.",
+    "performance_based_selection": false,
+    "annotations_are_agent_input": false,
+    "control_rule": "Scientific and declared control dependencies take precedence over parallel scheduling; retain all explicitly required reports and comparisons.",
+    "id_scheme": "Contiguous Mini IDs FLOW-0001..FLOW-0200; source_id binds the unchanged full task.",
+    "scientific_content_or_scoring_changes": false
+  },
+  "source_files_sha256": {
+    "tasks/questions.jsonl": "74e2adb00868bba70c4dead1efcbc16e6f8445a3d9939049e532d3d486a50d53",
+    "tasks/index.json": "ca36ac3bf6af578dc51f480a53796af6a5bae37307c5752dda151e8a3626a2e0",
+    "tasks/asset_manifest.json": "6496a3335aa36f50749107da80ed45c40900094f866dbc5a2513e523931bf54a",
+    "evaluation/data/references.jsonl.gz": "a7eb708eb84ddddeac87b781b3a6c6827e789a72f9f38f4a33bd8dea8ebc70fd",
+    "evaluation/data/reference_runs.jsonl.gz": "b22faccd474c7320c8d1479a776bee1166a98fbca3a9fdee25a7d6803482382d",
+    "tools/catalog/catalog.json": "f625636a684fe9dd142852b6b8848d2ac983f8ff908cbab13cb53bad6e7626ca"
+  },
+  "tasks": [
+    {
+      "id": "FLOW-0001",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "候选结构的多证据筛选",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "候选的中性精确质量核验",
+        "候选的结构选择性检验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0001"
+    },
+    {
+      "id": "FLOW-0002",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "粉末观测与取向符号可辨识性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各晶体的标记几何分析",
+        "各晶体的普通粉末线型计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0002"
+    },
+    {
+      "id": "FLOW-0003",
+      "domain": "Material",
+      "category": "tool_composition",
+      "scientific_goal": "材料密度与原子数密度口径",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "候选的质量密度与体积读取",
+        "候选的位点数与数密度读取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0003"
+    },
+    {
+      "id": "FLOW-0004",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "介电弛豫与导电竞争模型",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组时间常数模型的拟合",
+        "其他时间常数及导电模型的拟合"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0006"
+    },
+    {
+      "id": "FLOW-0005",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "scientific_goal": "构象专属转子参数核验",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先固定原题的构象、原子范围、质量和氢处理约定。",
+      "parallel_subtasks": [
+        "三个主惯性矩的计算",
+        "回转半径与分子质量核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0009"
+    },
+    {
+      "id": "FLOW-0006",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "scientific_goal": "分子检索表示比较",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "USR表示下的候选比较",
+        "USRCAT表示下的候选比较"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0011"
+    },
+    {
+      "id": "FLOW-0007",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "扩散NMR条件间尺寸比较",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先对齐各条件、待测物及内标的源曲线和单位。",
+      "parallel_subtasks": [
+        "第一条件的衰减曲线拟合",
+        "第二条件的衰减曲线拟合"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0015"
+    },
+    {
+      "id": "FLOW-0008",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "scientific_goal": "互变异构感知的结构检索",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "固定表示下的候选匹配",
+        "互变异构感知的候选匹配"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0016"
+    },
+    {
+      "id": "FLOW-0009",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "检测协议与读数设计",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先固定噪声约定并取得所需的空白与功效分位数。",
+      "parallel_subtasks": [
+        "各协议的有限读数可达性评估",
+        "各协议的无限读数可达性评估"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0017"
+    },
+    {
+      "id": "FLOW-0010",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "分层与总体等效性检验",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先按样本身份配对并固定总体权重和已知误差模型。",
+      "parallel_subtasks": [
+        "各基质的等效性评估",
+        "固定目标权重下的总体等效性评估"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0018"
+    },
+    {
+      "id": "FLOW-0011",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "混合价态的体相与子晶格证据",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "化学式约束的价态清点",
+        "子晶格磁矩候选的求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0019"
+    },
+    {
+      "id": "FLOW-0012",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "频率计算热化学校正",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各自由度的焓分量读取",
+        "各自由度的熵分量读取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0021"
+    },
+    {
+      "id": "FLOW-0013",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "低频熵敏感性复核排序",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一批频率记录的低频检查",
+        "其余频率记录的低频检查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0022"
+    },
+    {
+      "id": "FLOW-0014",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "框架的仿射与松弛稳定性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "仿射刚度的谱分析",
+        "松弛刚度的谱分析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0028"
+    },
+    {
+      "id": "FLOW-0015",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "附加光谱通道的信息比较",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一附加通道的设计矩阵分析",
+        "第二附加通道的设计矩阵分析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0029"
+    },
+    {
+      "id": "FLOW-0016",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "scientific_goal": "查询氢合并的匹配语义",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先取得原始与合并后的查询表示；不得提前假定二者语义相同。",
+      "parallel_subtasks": [
+        "原始精确氢查询的候选检查",
+        "合并查询的候选检查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0030"
+    },
+    {
+      "id": "FLOW-0017",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "scientific_goal": "分析校准参考物筛选",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "候选的氢键供受体约束检查",
+        "候选的极性表面积与质量检查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0032"
+    },
+    {
+      "id": "FLOW-0018",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "立体标记模型的输入资格",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各结构的总立体中心清点",
+        "各结构的未指定立体中心清点"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0034"
+    },
+    {
+      "id": "FLOW-0019",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "线性逐步增长模型的单体选择",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组候选的醇羟基计数",
+        "其余候选的醇羟基计数"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0035"
+    },
+    {
+      "id": "FLOW-0020",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "硬结构约束下的类似物检索",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "候选的精确芳环约束核验",
+        "候选的指纹相似度评估"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0036"
+    },
+    {
+      "id": "FLOW-0021",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "中性单分子实体资格审查",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各候选的原始电荷检查",
+        "各候选的共价片段检查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0038"
+    },
+    {
+      "id": "FLOW-0022",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "scientific_goal": "指纹聚类参考面板选择",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "固定距离策略下的指纹聚类",
+        "候选分子量的独立核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0043"
+    },
+    {
+      "id": "FLOW-0023",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "训练验证集的骨架重叠审查",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "训练记录的骨架提取",
+        "验证记录的骨架提取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0047"
+    },
+    {
+      "id": "FLOW-0024",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "scientific_goal": "芳香图序列化与原子不变量",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先得到同一Kekule图及原题要求的芳香表示。",
+      "parallel_subtasks": [
+        "连接不变量的核验",
+        "特征不变量的核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0061"
+    },
+    {
+      "id": "FLOW-0025",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "有限候选等待时间的动力学筛选",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各候选时间的传播算子计算",
+        "平稳分布的求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0063"
+    },
+    {
+      "id": "FLOW-0026",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "竞争动力学模型的观测设计",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一模型的平稳与时间响应",
+        "第二模型的平稳与时间响应"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0064"
+    },
+    {
+      "id": "FLOW-0027",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "弛豫校正的内标定量",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "待测物信号窗口的积分",
+        "参考物信号窗口的积分"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0068"
+    },
+    {
+      "id": "FLOW-0028",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "沉积电荷与干质量守恒核验",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "样品电流的全区间积分",
+        "匹配空白电流的全区间积分"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0070"
+    },
+    {
+      "id": "FLOW-0029",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "示踪回收率与停留时间资格",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各运行的零阶回收积分",
+        "其他运行的零阶回收积分"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0071"
+    },
+    {
+      "id": "FLOW-0030",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "静态与动态猝灭机制比较",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "寿命响应关系拟合",
+        "校正通量后的非寿命响应拟合"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0072"
+    },
+    {
+      "id": "FLOW-0031",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "候选位点的四极跃迁归属",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一候选位点的能级计算",
+        "第二候选位点的能级计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0074"
+    },
+    {
+      "id": "FLOW-0032",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "多模式振动温度一致性审查",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各Stokes频带的基线积分",
+        "各anti-Stokes频带的基线积分"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0075"
+    },
+    {
+      "id": "FLOW-0033",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "色谱柱与速度的约束选择",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一色谱柱的模型拟合",
+        "第二色谱柱的模型拟合"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0076"
+    },
+    {
+      "id": "FLOW-0034",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "酸碱物种分布下的分配比较",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一中性结构的分配估计",
+        "第二中性结构的分配估计"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0077"
+    },
+    {
+      "id": "FLOW-0035",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "振动几何与IR强度联合归属",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "源计算的振动位移读取",
+        "同源频率与IR强度读取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0078"
+    },
+    {
+      "id": "FLOW-0036",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "随机支化模型的进料比较",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一候选进料的官能团核验",
+        "其他候选进料的官能团核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0079"
+    },
+    {
+      "id": "FLOW-0037",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "固定报告吸附量下的表观热比较",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一负载水平的温度斜率拟合",
+        "第二负载水平的温度斜率拟合"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0083"
+    },
+    {
+      "id": "FLOW-0038",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "资格约束下的形状多样性选择",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先固定候选资格与统一的构象生成协议；不合格对象不进入后续形状比较。",
+      "parallel_subtasks": [
+        "各候选的分子式资格检查",
+        "合格候选的统一构象形状分析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0087"
+    },
+    {
+      "id": "FLOW-0039",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "双电极的传质校正活性比较",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一电极的传质与膜联合拟合",
+        "第二电极的传质与膜联合拟合"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0092"
+    },
+    {
+      "id": "FLOW-0040",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "固定反应预测器与虚拟库存核验",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先读取固定库存、目标及已产生的提案；最终正向核验等待库存一致的选择完成。",
+      "parallel_subtasks": [
+        "库存条目的规范身份核验",
+        "目标及候选提案的规范身份核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0094"
+    },
+    {
+      "id": "FLOW-0041",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "经典振动近似的适用性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "源文件的已打印振动熵读取",
+        "同一计算的谐振动频谱读取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0099"
+    },
+    {
+      "id": "FLOW-0042",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "磁热响应的可逆性审查",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "一条扫场分支的积分",
+        "另一条扫场分支的积分"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0101"
+    },
+    {
+      "id": "FLOW-0043",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "DSC峰高与潜热报告口径",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "样品与空白的窗口积分",
+        "质量及基线归一化所需的独立汇总"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0107"
+    },
+    {
+      "id": "FLOW-0044",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "竞争相的成核选择",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一候选相的临界成核计算",
+        "第二候选相的临界成核计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0108"
+    },
+    {
+      "id": "FLOW-0045",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "有限光谱窗口的振动贡献",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "源计算的IR强度读取",
+        "窗口两端的高斯尾积分计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0111"
+    },
+    {
+      "id": "FLOW-0046",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "双峰能级与强度约束审查",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先用原题能级约束完成共同的耦合反演。",
+      "parallel_subtasks": [
+        "反演后哈密顿量的本征分析",
+        "独立振子强度的相容性检验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0122"
+    },
+    {
+      "id": "FLOW-0047",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "离子归属的多证据筛选",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各候选的中性精确质量核验",
+        "各候选的电荷与组成核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0125"
+    },
+    {
+      "id": "FLOW-0048",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "旋光逆问题的可辨识范围",
+      "parallel_pattern": "bound_fanout",
+      "shared_prerequisite": "先完成共同的观测方程、符号及可行约束构造。",
+      "parallel_subtasks": [
+        "同一约束集上的组分下界求解",
+        "同一约束集上的组分上界求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0127"
+    },
+    {
+      "id": "FLOW-0049",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "同位素独立标记假设审查",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "分子中碳位点的清点",
+        "异原子及独立计数分布核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0131"
+    },
+    {
+      "id": "FLOW-0050",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "门控动力学的多种时间尺度",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "平均首达时间的后向求解",
+        "有限时间存活与渐近衰减分析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0132"
+    },
+    {
+      "id": "FLOW-0051",
+      "domain": "Material",
+      "category": "tool_composition",
+      "scientific_goal": "电子结构标量的物理口径",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "带边与带隙的读取",
+        "费米能与金属性的读取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0137"
+    },
+    {
+      "id": "FLOW-0052",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "粉末匹配后的几何相去重",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "不同候选相的粉末比较",
+        "不同周期表示的几何比较"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0139"
+    },
+    {
+      "id": "FLOW-0053",
+      "domain": "Material",
+      "category": "tool_composition",
+      "scientific_goal": "电子与静态介电响应分离",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "电子介电贡献读取",
+        "离子与总介电响应读取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0141"
+    },
+    {
+      "id": "FLOW-0054",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "非金属候选的光学各向异性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一候选的主光轴分析",
+        "其他候选的主光轴分析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0147"
+    },
+    {
+      "id": "FLOW-0055",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "指定方向的弹性刚度比较",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "一个传播方向的刚度分析",
+        "其他指定方向的刚度分析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0153"
+    },
+    {
+      "id": "FLOW-0056",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "平面扩散张量反演",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "纵向协方差斜率拟合",
+        "横向及交叉协方差斜率拟合"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0155"
+    },
+    {
+      "id": "FLOW-0057",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "兼容相集合中的候选稳定性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各相组成的独立核验",
+        "其他相组成的独立核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0167"
+    },
+    {
+      "id": "FLOW-0058",
+      "domain": "Material",
+      "category": "tool_composition",
+      "scientific_goal": "磁性数据库的归一化审查",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "总磁矩及体积归一化读取",
+        "磁性位点数及位点归一化读取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0170"
+    },
+    {
+      "id": "FLOW-0059",
+      "domain": "Material",
+      "category": "tool_composition",
+      "scientific_goal": "候选相的表面能代理比较",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "加权表面能读取",
+        "表面各向异性读取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0171"
+    },
+    {
+      "id": "FLOW-0060",
+      "domain": "Material",
+      "category": "tool_composition",
+      "scientific_goal": "多晶型的不同热力学参照",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "形成能参照的候选核验",
+        "相对凸包参照的候选核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0172"
+    },
+    {
+      "id": "FLOW-0061",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "不同传播方向的声学模态",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先取得同一材料的密度及弹性张量与坐标约定。",
+      "parallel_subtasks": [
+        "第一传播方向的模态求解",
+        "第二传播方向的模态求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0175"
+    },
+    {
+      "id": "FLOW-0062",
+      "domain": "Material",
+      "category": "tool_composition",
+      "scientific_goal": "局域环境与规则四面体主张",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "配位环境标签读取",
+        "键长统计与价态信息读取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0176"
+    },
+    {
+      "id": "FLOW-0063",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "损耗约束下的各向异性响应",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各候选的损耗二次型检查",
+        "其他候选的损耗二次型检查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0178"
+    },
+    {
+      "id": "FLOW-0064",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "XANES有限能轴偏移的选择",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组候选偏移的配准",
+        "其他候选偏移的配准"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0181"
+    },
+    {
+      "id": "FLOW-0065",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "两个XANES谱的形状比较",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一谱的归一化积分",
+        "第二谱的归一化积分"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0182"
+    },
+    {
+      "id": "FLOW-0066",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "声子态密度的质量热容比较",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先固定两个快照的原胞、态密度归一化和质量口径。",
+      "parallel_subtasks": [
+        "第一态密度的积分与质量核验",
+        "第二态密度的积分与质量核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0185"
+    },
+    {
+      "id": "FLOW-0067",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "质量近似对最高声子频率的影响",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "原质量模型的本征频率求解",
+        "平均质量模型的本征频率求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0187"
+    },
+    {
+      "id": "FLOW-0068",
+      "domain": "Material",
+      "category": "tool_composition",
+      "scientific_goal": "分子热化学手交数据审查",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "电子能与热焓读取",
+        "熵、自由能及零点能读取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0189"
+    },
+    {
+      "id": "FLOW-0069",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "固定邻居对应下的局域畸变",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "参考与第一状态的几何核验",
+        "参考与其他状态的几何核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0190"
+    },
+    {
+      "id": "FLOW-0070",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "周期连通分量的维数筛选",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一候选的周期邻接图",
+        "第二候选的周期邻接图"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0191"
+    },
+    {
+      "id": "FLOW-0071",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "自旋态密度的局部与积分指标",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一自旋通道的窗口积分",
+        "第二自旋通道的窗口积分"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0193"
+    },
+    {
+      "id": "FLOW-0072",
+      "domain": "Material",
+      "category": "tool_composition",
+      "scientific_goal": "电荷与自旋多重度一致性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一记录的电荷和自旋核验",
+        "第二记录的电荷和自旋核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0194"
+    },
+    {
+      "id": "FLOW-0073",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "迁移路径的移动原子归属",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组路径图像的几何提取",
+        "其余路径图像的几何提取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0195"
+    },
+    {
+      "id": "FLOW-0074",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "电极电位的区间配对积分",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组成区间的电位积分",
+        "其他组成区间的电位积分"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0198"
+    },
+    {
+      "id": "FLOW-0075",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "有限能量截断的谱矩覆盖",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "较低候选截止的覆盖积分",
+        "较高候选截止的覆盖积分"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0199"
+    },
+    {
+      "id": "FLOW-0076",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "有限本征值路径的费米穿越",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一候选的能带范围核验",
+        "第二候选的能带范围核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0200"
+    },
+    {
+      "id": "FLOW-0077",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "晶界快照的体积超额比较",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一边界快照的几何核验",
+        "第二边界快照的几何核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0202"
+    },
+    {
+      "id": "FLOW-0078",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "热运动各向异性的反射误差",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "晶胞度量的提取",
+        "热位移张量主方差的求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0206"
+    },
+    {
+      "id": "FLOW-0079",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "有限候选的局域离子环境复核",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一候选的周期配位环境",
+        "第二候选的周期配位环境"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0208"
+    },
+    {
+      "id": "FLOW-0080",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "有效质量的方向与高阶模型",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一方向的高阶色散拟合",
+        "第二方向的高阶色散拟合"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0211"
+    },
+    {
+      "id": "FLOW-0081",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "同一样品的吸附路径依赖",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一历史分支的数据投影",
+        "第二历史分支的数据投影"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0214"
+    },
+    {
+      "id": "FLOW-0082",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "表面重构对受限平衡形状的影响",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "允许重构的半空间几何求解",
+        "不允许重构的半空间几何求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0215"
+    },
+    {
+      "id": "FLOW-0083",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "有限模拟协议下的吸附压力筛选",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "低压参考状态的模拟",
+        "候选高压状态的独立模拟"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0216"
+    },
+    {
+      "id": "FLOW-0084",
+      "domain": "Material",
+      "category": "tool_composition",
+      "scientific_goal": "MOF选定局域坐标导出",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "位点坐标的提取",
+        "候选位点元素身份的核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0219"
+    },
+    {
+      "id": "FLOW-0085",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "压力下竞争相的稳定性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一相的能量体积拟合",
+        "第二相的能量体积拟合"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0220"
+    },
+    {
+      "id": "FLOW-0086",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "自动删客体前的结构资格",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "原晶体的完整晶胞核验",
+        "非周期分量的客体清点"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0224"
+    },
+    {
+      "id": "FLOW-0087",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "逆温度校准的完整不确定集合",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "均值响应系数的拟合",
+        "已知噪声下的系数协方差计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0232"
+    },
+    {
+      "id": "FLOW-0088",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "强度相位歧义与后续观测",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先固定独立体相测量和两个符号假设；后续观测必须等待基线歧义及成本选择完成。",
+      "parallel_subtasks": [
+        "第一符号假设下的占据反演",
+        "第二符号假设下的占据反演"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0234"
+    },
+    {
+      "id": "FLOW-0089",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "组成的质量与摩尔比较几何",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各氧化物的独立质量核验",
+        "其他氧化物的独立质量核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0235"
+    },
+    {
+      "id": "FLOW-0090",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "有限肽质量通道的混合物可辨识性",
+      "parallel_pattern": "bound_fanout",
+      "shared_prerequisite": "先清点全部参考条目的质量通道并构造同一个非负可行集。",
+      "parallel_subtasks": [
+        "同一非负可行集的各项下界",
+        "同一非负可行集的各项上界"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0239"
+    },
+    {
+      "id": "FLOW-0091",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "物种树与基因树的关系核验",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "物种树的有根拓扑解析",
+        "基因树的有根拓扑解析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0240"
+    },
+    {
+      "id": "FLOW-0092",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "scientific_goal": "坐标质心与质量中心的区别",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "同一原子集合的几何质心",
+        "同一原子集合的质量中心"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0241"
+    },
+    {
+      "id": "FLOW-0093",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "构象系综的距离反演局限",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "近构象的源几何距离",
+        "远构象的源几何距离"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0242"
+    },
+    {
+      "id": "FLOW-0094",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "组成变化与绝对表达的区别",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "外标约束的每细胞校准",
+        "内源总量归一化的组成变化"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0245"
+    },
+    {
+      "id": "FLOW-0095",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "肽混合物的整体电中性条件",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一肽的可电离位点清点",
+        "第二肽的可电离位点清点"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0249"
+    },
+    {
+      "id": "FLOW-0096",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "蛋白教学记录的身份资格",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "一组记录的来源及完整性检查",
+        "其他记录的来源及完整性检查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0251"
+    },
+    {
+      "id": "FLOW-0097",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "计数差异与注释富集的分阶段核验",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先固定原题的样本身份、完整基因背景及直接注释政策；富集检验等待差异集合完成。",
+      "parallel_subtasks": [
+        "规定模型的全背景计数拟合",
+        "同一基因背景的直接注释清点"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0252"
+    },
+    {
+      "id": "FLOW-0098",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "群落与环境的距离几何",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "群落观测的距离矩阵",
+        "环境观测的距离矩阵"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0253"
+    },
+    {
+      "id": "FLOW-0099",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "坐标质量与完整蛋白质量的区别",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "坐标文件原子库存质量",
+        "参考序列各片段的完整质量"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0254"
+    },
+    {
+      "id": "FLOW-0100",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "对数异速模型的回变换比较",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先用训练树完成同一个对数模型及训练专属涂抹因子估计。",
+      "parallel_subtasks": [
+        "直接指数回变换的测试误差",
+        "训练涂抹校正回变换的测试误差"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0255"
+    },
+    {
+      "id": "FLOW-0101",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "叶绿体CDS坐标与翻译一致性",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先按原注释拼接、处理链方向并得到完整翻译。",
+      "parallel_subtasks": [
+        "拼接后翻译的终止位点检查",
+        "完整翻译与源蛋白的比对"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0256"
+    },
+    {
+      "id": "FLOW-0102",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "历史标记面板的组成协变量",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组标记的组成计算",
+        "其余标记的组成计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0257"
+    },
+    {
+      "id": "FLOW-0103",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "注释特征数与编码产物数的区别",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先保留完整CDS特征表、基因标签与完整翻译字段。",
+      "parallel_subtasks": [
+        "特征及基因标签的分组计数",
+        "完整翻译序列的精确去重"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0258"
+    },
+    {
+      "id": "FLOW-0104",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "结构弹性网络的软模资格",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "一个接触半径下的网络谱",
+        "其他接触半径下的网络谱"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0259"
+    },
+    {
+      "id": "FLOW-0105",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "NMR系综的代表构象选择",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组提交构象的坐标核验",
+        "其余提交构象的坐标核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0260"
+    },
+    {
+      "id": "FLOW-0106",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "A280报告的半胱氨酸假设",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一参考蛋白的质量与组分核验",
+        "第二参考蛋白的质量与组分核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0263"
+    },
+    {
+      "id": "FLOW-0107",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "祖先相关对均值信息量的影响",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先由固定有根树取得同一协方差及其分支单位。",
+      "parallel_subtasks": [
+        "树相关模型的GLS方差",
+        "独立末端模型的参照方差"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0265"
+    },
+    {
+      "id": "FLOW-0108",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "固定酵母基因面板的功能概览",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组功能节点的后代查询",
+        "其余功能节点的后代查询"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0267"
+    },
+    {
+      "id": "FLOW-0109",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "开放库约束中的化学势范围",
+      "parallel_pattern": "bound_fanout",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "同一可行域的各项下界求解",
+        "同一可行域的各项上界求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0268"
+    },
+    {
+      "id": "FLOW-0110",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "两份蛋白坐标的完整几何对应",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "移动结构的坐标与身份提取",
+        "参考结构的坐标与身份提取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0272"
+    },
+    {
+      "id": "FLOW-0111",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "部分识别校准的响应包络",
+      "parallel_pattern": "bound_fanout",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "同一可行参数集的响应下界",
+        "同一可行参数集的响应上界"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0278"
+    },
+    {
+      "id": "FLOW-0112",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "scientific_goal": "组成相同但序列有序性的描述符",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一序列的组成与次序描述符",
+        "第二序列的同族描述符"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0279"
+    },
+    {
+      "id": "FLOW-0113",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "未知根性状的祖先预测误差",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先按固定根约定重建同一树协方差或等价精度结构。",
+      "parallel_subtasks": [
+        "未知根条件下的预测误差计算",
+        "把估计根当已知时的对照计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0281"
+    },
+    {
+      "id": "FLOW-0114",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "测量误差下的潜在回归关系",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "校正后潜在回归系数求解",
+        "潜在预测协方差的合法性检查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0284"
+    },
+    {
+      "id": "FLOW-0115",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "RNA计数输入与设计就绪性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "原始计数输入的合法性审查",
+        "样本设计的秩与可辨识性审查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0285"
+    },
+    {
+      "id": "FLOW-0116",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "种群阶段矩阵的局部敏感性",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先求得并选定同一个生物学可容许主特征值。",
+      "parallel_subtasks": [
+        "主模态的右向量求解",
+        "主模态的左向量求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0288"
+    },
+    {
+      "id": "FLOW-0117",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "scientific_goal": "DNA候选的GC与质量联合核验",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各候选的GC组成核验",
+        "各候选的平均分子质量核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0293"
+    },
+    {
+      "id": "FLOW-0118",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "scientific_goal": "不连续结构域的观测残基手交",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "实际观测坐标的残基库存",
+        "分段结构域注释的边界解析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0296"
+    },
+    {
+      "id": "FLOW-0119",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "scientific_goal": "功能注释证据源过滤的影响",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一证据政策下的完整注释",
+        "第二证据政策下的完整注释"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0298"
+    },
+    {
+      "id": "FLOW-0120",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "植被聚类与管理分类的一致性",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先固定共同样地全集及精确样地标识；聚类拟合不读取管理标签。",
+      "parallel_subtasks": [
+        "无管理标签参与的群落预处理",
+        "管理记录的样地身份对齐"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0300"
+    },
+    {
+      "id": "FLOW-0121",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "两个处理对共同对照的比较",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一处理相对对照的检验",
+        "第二处理相对对照的检验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0305"
+    },
+    {
+      "id": "FLOW-0122",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "scientific_goal": "N端规则表的上下界与未知值",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一模型体系的原始条目读取",
+        "其他模型体系的原始条目读取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0308"
+    },
+    {
+      "id": "FLOW-0123",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "scientific_goal": "源匹配预测结构的坐标验证",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先确认两份文件对应同一源序列并固定比较范围。",
+      "parallel_subtasks": [
+        "预测结构的坐标提取",
+        "固定参考结构的坐标提取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0310"
+    },
+    {
+      "id": "FLOW-0124",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "森林群落的计数与组成距离",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "原始计数空间的距离计算",
+        "组成归一化空间的距离计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0312"
+    },
+    {
+      "id": "FLOW-0125",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "生长曲线的公共窗口累积量",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组个体的基线相对积分",
+        "其余个体的基线相对积分"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0315"
+    },
+    {
+      "id": "FLOW-0126",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "scientific_goal": "局部界面检查与全局互作主张",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "局部几何接触的检查",
+        "既有条目的独立界面证据查询"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0316"
+    },
+    {
+      "id": "FLOW-0127",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "森林丰富度的抽样量校正",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各样地的完整物种库存清点",
+        "其他样地的完整物种库存清点"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0318"
+    },
+    {
+      "id": "FLOW-0128",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "覆盖等级调查的样地努力校正",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一生境的样地累积计算",
+        "其他生境的样地累积计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0319"
+    },
+    {
+      "id": "FLOW-0129",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "缓冲条件下的电荷态系综",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组电荷态的形式电荷核验",
+        "其余电荷态的形式电荷核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0320"
+    },
+    {
+      "id": "FLOW-0130",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "分枝过程的存续与灭绝",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一后代分布的灭绝根求解",
+        "第二后代分布的灭绝根求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0322"
+    },
+    {
+      "id": "FLOW-0131",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "有限蛋白鉴定的质量通道选择",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组参考条目的产物清点",
+        "其他参考条目的产物清点"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0323"
+    },
+    {
+      "id": "FLOW-0132",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "局域变异对配准约定的稳健性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "一种配准约定下的变换求解",
+        "其他配准约定下的变换求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0326"
+    },
+    {
+      "id": "FLOW-0133",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "保留接触的双模块结构手交",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一模块的接触计算",
+        "第二模块的接触计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0327"
+    },
+    {
+      "id": "FLOW-0134",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "整体与分链刚体解释的区别",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "参考结构各链的几何提取",
+        "移动结构各链的几何提取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0329"
+    },
+    {
+      "id": "FLOW-0135",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "竞争模型的共存与局部稳定性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "共存点的Jacobian谱分析",
+        "边界状态的入侵能力分析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0331"
+    },
+    {
+      "id": "FLOW-0136",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "最优通量面的非唯一性",
+      "parallel_pattern": "bound_fanout",
+      "shared_prerequisite": "先求得相同的生长最优值并固定完整最优面。",
+      "parallel_subtasks": [
+        "同一最优面的各通量下界",
+        "同一最优面的各通量上界"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0334"
+    },
+    {
+      "id": "FLOW-0137",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "化学计量可行与能量可行的区别",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "网络的稳态通量可行性求解",
+        "共同化学势条件的相容性检查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0335"
+    },
+    {
+      "id": "FLOW-0138",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "scientific_goal": "同尺寸分子图的支化证据",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一结构的支化相关描述符",
+        "第二结构的同族描述符"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0336"
+    },
+    {
+      "id": "FLOW-0139",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "群落多样性排序的阶数依赖",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一群落的多样性剖面",
+        "第二群落的多样性剖面"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0338"
+    },
+    {
+      "id": "FLOW-0140",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "溶剂化光谱的偶极解释审查",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "Stokes响应斜率拟合",
+        "中心光谱响应斜率拟合"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0351"
+    },
+    {
+      "id": "FLOW-0141",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "区域消失与真实存活的区别",
+      "parallel_pattern": "bound_fanout",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "同一历史约束下的存活下界",
+        "同一历史约束下的存活上界"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0353"
+    },
+    {
+      "id": "FLOW-0142",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "平移不变谐模型的相对涨落",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先固定同一个自由体系刚度、平衡载荷及零均值规范。",
+      "parallel_subtasks": [
+        "第一平衡载荷的静态响应",
+        "第二平衡载荷的静态响应"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0358"
+    },
+    {
+      "id": "FLOW-0143",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "采集成本约束下的测量协议",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先固定共同观测队列并依据公开成本排除不可负担协议。",
+      "parallel_subtasks": [
+        "第一可负担特征协议的验证",
+        "其他可负担特征协议的验证"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0377"
+    },
+    {
+      "id": "FLOW-0144",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "形态校准的子群迁移审查",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先在指定训练样本拟合并冻结同一个校准模型。",
+      "parallel_subtasks": [
+        "有性别编码子群的预测误差",
+        "幼体编码子群的预测误差"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0378"
+    },
+    {
+      "id": "FLOW-0145",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "配对研究的两种推断口径",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "精确随机分配检验",
+        "名义配对t检验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0379"
+    },
+    {
+      "id": "FLOW-0146",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "标签位移下的未标注批次组成",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "未标注批次的固定预测",
+        "独立校准样本的混淆矩阵"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0381"
+    },
+    {
+      "id": "FLOW-0147",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "未来时间块的趋势模型选择",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "线性季节模型的拟合与预测",
+        "二次季节模型的拟合与预测"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0382"
+    },
+    {
+      "id": "FLOW-0148",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "固定分类器的条件性能",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先用同一个冻结分类器获得完整持出预测并固定子群身份。",
+      "parallel_subtasks": [
+        "第一预先指定子群的混淆矩阵",
+        "第二预先指定子群的混淆矩阵"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0383"
+    },
+    {
+      "id": "FLOW-0149",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "配对分类表的对应分析",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先完成共同的对应分析标准化与SVD，并固定第一轴符号约定。",
+      "parallel_subtasks": [
+        "第一轴的来源类别贡献",
+        "第一轴的去向类别贡献"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0384"
+    },
+    {
+      "id": "FLOW-0150",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "冻结预测器的配对损失差",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一冻结模型的持出预测",
+        "第二冻结模型的持出预测"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0385"
+    },
+    {
+      "id": "FLOW-0151",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "拟合预测与区间校准的分离",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先冻结训练专属点预测器并保留校准和最终评估的独立角色。",
+      "parallel_subtasks": [
+        "固定模型的最终评估预测",
+        "独立校准残差的有限样本排序"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0387"
+    },
+    {
+      "id": "FLOW-0152",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "含参数选择的完整外层验证",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组外层划分内的选择与评估",
+        "其余外层划分内的选择与评估"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0389"
+    },
+    {
+      "id": "FLOW-0153",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "生态位宽度的协方差结构",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一生境的协方差几何",
+        "第二生境的协方差几何"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0395"
+    },
+    {
+      "id": "FLOW-0154",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "可逆交换速率的守恒核验",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "对映体R的份额清点",
+        "对映体S的份额清点"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0396"
+    },
+    {
+      "id": "FLOW-0155",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "训练期可用性约束下的预测",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先冻结训练观测、候选特征身份和可用性规则；持出数据不参与任何选择。",
+      "parallel_subtasks": [
+        "不同候选特征的训练期可用性检查",
+        "其余候选特征的训练期可用性检查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0400"
+    },
+    {
+      "id": "FLOW-0156",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "无向丝状取向的序参量",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一面板的向列谱分析",
+        "第二面板的向列谱分析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0401"
+    },
+    {
+      "id": "FLOW-0157",
+      "domain": "Biology",
+      "category": "standard",
+      "scientific_goal": "构象占据与接触概率的联合性",
+      "parallel_pattern": "bound_fanout",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "同一占据约束的接触概率下界",
+        "同一占据约束的接触概率上界"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0402"
+    },
+    {
+      "id": "FLOW-0158",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "固定分类器的决策阈值选择",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "一个候选阈值的效用与召回计算",
+        "其他候选阈值的效用与召回计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0403"
+    },
+    {
+      "id": "FLOW-0159",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "时间禁区与训练专属预处理",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先固定时间禁区与训练期估计的标准化参数。",
+      "parallel_subtasks": [
+        "冻结训练尺度后的模型拟合",
+        "使用同一尺度转换持出特征"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0410"
+    },
+    {
+      "id": "FLOW-0160",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "训练方差与持出重构的维数选择",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一候选维数的压缩重构评估",
+        "第二候选维数的压缩重构评估"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0415"
+    },
+    {
+      "id": "FLOW-0161",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "不同误差尺度的校准拟合",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "原始响应尺度下的拟合",
+        "对数响应尺度下的拟合"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0427"
+    },
+    {
+      "id": "FLOW-0162",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "光学线形总面积与观测窗口",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "规定线形模型的拟合",
+        "实际测量网格的面积积分"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0431"
+    },
+    {
+      "id": "FLOW-0163",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "残差影响协议的预测稳健性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "平方损失协议的预测",
+        "软损失协议的预测"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0433"
+    },
+    {
+      "id": "FLOW-0164",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "按参考分组的外推评估",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先确定分组划分并只用训练组估计尺度。",
+      "parallel_subtasks": [
+        "训练尺度固定后的模型拟合",
+        "同一尺度下的持出特征变换"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0434"
+    },
+    {
+      "id": "FLOW-0165",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "开发选择重拟合的完整边界",
+      "parallel_pattern": "candidate_assessment",
+      "shared_prerequisite": "先固定开发、验证与最终评估角色；重拟合等待验证选择完成。",
+      "parallel_subtasks": [
+        "第一正则化候选的验证评估",
+        "其他正则化候选的验证评估"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0439"
+    },
+    {
+      "id": "FLOW-0166",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "工具变量与排除假设的效应识别",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一阶段关系拟合",
+        "约化形式关系拟合"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0442"
+    },
+    {
+      "id": "FLOW-0167",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "分组校准与总体校准的区别",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先冻结训练专属仿射模型并固定每条校准记录的分组身份。",
+      "parallel_subtasks": [
+        "固定模型的查询点预测",
+        "分组及总体校准分数的有限样本排序"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0443"
+    },
+    {
+      "id": "FLOW-0168",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "环境混合不确定下的分类选择",
+      "parallel_pattern": "bound_fanout",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各候选分类器的最坏损失求解",
+        "候选差值的最坏边界求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0448"
+    },
+    {
+      "id": "FLOW-0169",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "弱标签下的相对性能范围",
+      "parallel_pattern": "bound_fanout",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各分类器风险的下界计算",
+        "各分类器风险的上界计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0449"
+    },
+    {
+      "id": "FLOW-0170",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "不完全依从下的因果可辨识范围",
+      "parallel_pattern": "bound_fanout",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "同一观测约束下的效应下界",
+        "同一观测约束下的效应上界"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0450"
+    },
+    {
+      "id": "FLOW-0171",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "两阶段二元资格方案的选择",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各方案的零假设概率分布",
+        "各方案的目标功效概率分布"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0451"
+    },
+    {
+      "id": "FLOW-0172",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "立体结构记录去重与旋光解释",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组记录的立体图身份核验",
+        "其余记录的立体图身份核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0455"
+    },
+    {
+      "id": "FLOW-0173",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "有限候选分子式的同位素解释",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组候选的完整分子式核验",
+        "其余候选的完整分子式核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0456"
+    },
+    {
+      "id": "FLOW-0174",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "多环图架构的非唯一环基审查",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组图的邻接结构提取",
+        "其余图的邻接结构提取"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0460"
+    },
+    {
+      "id": "FLOW-0175",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "共晶水合物的分析物质量分数",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "完整化学式单元的质量核验",
+        "全部组分及其重复次数核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0461"
+    },
+    {
+      "id": "FLOW-0176",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "Raman张量的取向等价性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一候选张量的本征分析",
+        "第二候选张量的本征分析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0463"
+    },
+    {
+      "id": "FLOW-0177",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "位点同位素标记的可辨识性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "同一观测约束下的位点下界",
+        "同一观测约束下的位点上界"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0464"
+    },
+    {
+      "id": "FLOW-0178",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "检测灵敏度与部署成本的区别",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "条件灵敏度目标的最优策略",
+        "部署成本目标的最优策略"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0466"
+    },
+    {
+      "id": "FLOW-0179",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "分层与边际优势比的区别",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先固定共同层身份、各层权重和完整二元单元。",
+      "parallel_subtasks": [
+        "各层内的分子与分母计算",
+        "边际混合分布的组成计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0467"
+    },
+    {
+      "id": "FLOW-0180",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "校准设计的目标特异性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各候选设计的信息矩阵求逆",
+        "其他设计的信息矩阵求逆"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0468"
+    },
+    {
+      "id": "FLOW-0181",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "双通道的完整对象覆盖",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先按完整对象校准得到同一个联合分数半径与各通道半宽。",
+      "parallel_subtasks": [
+        "共同半宽下的下端点计算",
+        "共同半宽下的上端点计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0471"
+    },
+    {
+      "id": "FLOW-0182",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "选择性记录下的双稳健估计",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "工作结果模型的残差计算",
+        "记录概率模型的比率计算"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0472"
+    },
+    {
+      "id": "FLOW-0183",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "重复查看中的错误率控制",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一观察时点的精确尾支持",
+        "其他观察时点的精确尾支持"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0474"
+    },
+    {
+      "id": "FLOW-0184",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "有限物料库存的可辨识范围",
+      "parallel_pattern": "bound_fanout",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "基线约束下的上下界求解",
+        "加入额外界限后的上下界求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0475"
+    },
+    {
+      "id": "FLOW-0185",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "通道单位与规范相关分析",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "协方差块的可容许性核验",
+        "原始交叉谱的奇异值分析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0476"
+    },
+    {
+      "id": "FLOW-0186",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "谱分组与离散平衡切割",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先由同一无向加权图取得共同的拉普拉斯算子与边计数约定。",
+      "parallel_subtasks": [
+        "连续谱与重特征空间分析",
+        "完整平衡割的组合枚举"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0477"
+    },
+    {
+      "id": "FLOW-0187",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "循环时间分箱的可观测信息",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "观测算子的秩与可辨识检查",
+        "给定谱假设下的解混检查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0479"
+    },
+    {
+      "id": "FLOW-0188",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "筛选后条件推断与全局检验",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先按原题选择规则固定选中坐标及所条件化的事件。",
+      "parallel_subtasks": [
+        "选中坐标的条件尾概率",
+        "全局最大统计量的尾概率"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0480"
+    },
+    {
+      "id": "FLOW-0189",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "重复插补的不确定性合并",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "插补点估计的组间离散程度",
+        "各完成数据集方差的均值"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0481"
+    },
+    {
+      "id": "FLOW-0190",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "名义参数数与有效模型复杂度",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各候选模型的有效自由度计算",
+        "各候选模型的风险分解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0483"
+    },
+    {
+      "id": "FLOW-0191",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "原始方差与物理信号方向",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "物理信号协方差的谱分析",
+        "噪声度量下的最优方向求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0484"
+    },
+    {
+      "id": "FLOW-0192",
+      "domain": "Material",
+      "category": "standard",
+      "scientific_goal": "有限剪切的顺序与客观应变",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "第一组合顺序的主伸长分析",
+        "第二组合顺序的主伸长分析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0486"
+    },
+    {
+      "id": "FLOW-0193",
+      "domain": "Chemical",
+      "category": "standard",
+      "scientific_goal": "不同机械边界下的气体平衡",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "恒压边界下的平衡求解",
+        "定容边界下的平衡求解"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0488"
+    },
+    {
+      "id": "FLOW-0194",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "插值拟合与真正的留一预测",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "各候选次数的拟合与复杂度检查",
+        "各候选次数的留一预测检查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0490"
+    },
+    {
+      "id": "FLOW-0195",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "拟合残差与积分模型证据",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "常数模型的拟合及积分证据",
+        "交替模型的拟合及积分证据"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0492"
+    },
+    {
+      "id": "FLOW-0196",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "最短路距离的欧氏可嵌入性",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "原距离矩阵的三角不等式检查",
+        "中心化Gram矩阵的谱分析"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0493"
+    },
+    {
+      "id": "FLOW-0197",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "自适应停止下的估计偏差",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "停止记录的完整概率清点",
+        "全参数无偏恒等式的核验"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0494"
+    },
+    {
+      "id": "FLOW-0198",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "不同发布面板的人群关联识别",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "正单元面板的人群单元恢复",
+        "零单元面板的人群关联边界"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0495"
+    },
+    {
+      "id": "FLOW-0199",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "未知人群混合下的风险比较",
+      "parallel_pattern": "independent_evidence",
+      "shared_prerequisite": "先核对原题给定的输入、对象身份、单位和处理约定。",
+      "parallel_subtasks": [
+        "不同候选模型的风险函数",
+        "允许混合比例端点的排序检查"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "required_capability_dag",
+      "source_id": "FLOW-0498"
+    },
+    {
+      "id": "FLOW-0200",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "scientific_goal": "共同校准误差下的证据合并",
+      "parallel_pattern": "shared_prefix_fanout",
+      "shared_prerequisite": "先固定同一共同电压目标、完整协方差与源顺序。",
+      "parallel_subtasks": [
+        "完整协方差下的最优权重",
+        "独立性假设下的参照估计量"
+      ],
+      "join_requirement": "等待所需分支及原题指定的其他检查完成后，按完整证据作比较、筛选或汇总。",
+      "support": "task_semantics_and_reviewed_route",
+      "source_id": "FLOW-0499"
+    }
+  ]
+}

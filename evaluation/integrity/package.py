@@ -163,10 +163,17 @@ def validate_package(root):
 
         count += validate_workflow_reference(root, task, reference, catalog, registry)
     verify_file_identities(root)
+    datasets = {"full": len(tasks)}
+    if (root / "tasks/mini").is_dir():
+        from tasks.datasets import load_dataset
+
+        mini = load_dataset("mini", root)
+        datasets["mini"] = len(mini.questions)
     return {
         "package_valid": True,
         "public_tasks": len(tasks),
         "references": len(refs),
+        "datasets": datasets,
         **counts,
         "inline_outputs": count,
         "new_model_api_calls": 0,

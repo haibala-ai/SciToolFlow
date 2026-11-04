@@ -8,9 +8,10 @@
 | tools | build_graph | 从当前契约重建图谱；`--embed` 编码变化的功能描述 |
 | tools | check_foundation | 核查工具契约、环境、数据端口、图谱与向量的静态一致性 |
 | tools | audit_tool_overlap | 静态筛查核心能力重叠候选，候选仍需人工判断 |
-| benchmark | run_benchmark | 编排 baseline 批量运行、进度保存与离线评分 |
+| benchmark | run_benchmark | 编排 baseline 批量运行、进度保存与离线评分；`--dataset full|mini` 贯穿运行和评分 |
 | benchmark | analyze_benchmark | 从正式题库和主参考重算分布、覆盖及分析图表 |
 | benchmark | compare_release | 对照固定 SciToolEval Level2 来源，生成当前对比统计和图件 |
+| benchmark | mini | 按审查记录导出或核验学科均衡的Mini-200，独立编号和源题号映射，可离线复核200条主参考 |
 | benchmark | index_tasks | 更新公开任务浏览索引 |
 | benchmark | index_results | 为本机实验结果建立浏览索引 |
 | references | validate_release | 核验全部主／额外参考的身份、实际证据、科学计分和独立审核 |

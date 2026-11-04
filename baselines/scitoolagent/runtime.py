@@ -33,6 +33,7 @@ def run_scitoolagent(
     invoke,
     trace_dir,
     case_id="case",
+    dataset="full",
     inputs=None,
     files=None,
     answer_schema=None,
@@ -54,6 +55,9 @@ def run_scitoolagent(
     max_output_tokens=4096,
     retriever=None,
 ):
+    from tasks.datasets import dataset_files
+
+    dataset_files(dataset)
     if not isinstance(question, str) or not question.strip():
         raise ValueError("A nonempty question is required")
     if not re.fullmatch(r"[A-Za-z0-9_-]+", case_id):
@@ -90,6 +94,7 @@ def run_scitoolagent(
         "baseline": "scitoolagent",
         "run_id": run_id,
         "task_id": case_id,
+        "dataset": dataset,
         "model": getattr(client, "model", "injected"),
         "backend": getattr(client, "backend", "injected"),
         "started_at": datetime.now(timezone.utc).isoformat(),
@@ -230,6 +235,7 @@ def run_scitoolagent(
             invoke=invoke,
             trace_dir=trace_dir,
             case_id=case_id,
+            dataset=dataset,
             inputs=inputs,
             files=files,
             answer_schema=schema,
