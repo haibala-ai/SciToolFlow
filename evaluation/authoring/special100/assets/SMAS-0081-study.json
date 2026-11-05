@@ -1,0 +1,4 @@
+{
+  "fasta": ">a\nACGTAACCGTAA\n>b\nTTACGGTTACGT\n>c\nACGTNACCGNAA\n>d\nACGTAACCATAT\n",
+  "reference": "ACGTAACCGTAA"
+}

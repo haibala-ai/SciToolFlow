@@ -1,12 +1,37 @@
 # 评分细则
 
-SciToolFlow 同时检查 **任务是否完成、科学工作是否做对、结论是否有证据支持**。当前 500 题统一采用 `workflow.v1`；ReAct、SciToolAgent 和接入同一预测格式的其他 baseline 使用相同规则。
+默认公开的 **Mini-200** 报告运行完成率、工具规划准确率和答案准确率，三项分别判断，不用答案正确补造工具证据。三个baseline共用同一科学判据与执行身份检查，评分不调用LLM。
+
+| Mini-200主指标 | 判定依据 |
+| --- | --- |
+| `runtime_completion_rate` | 可信生产轨迹正常结束、资源合规、答案格式合法 |
+| `tool_planning_accuracy` | 实际观测满足必要能力、科学输入、分支和依赖，且无待审项 |
+| `answer_accuracy` | 用已复核参考的真实观测独立判断，全部适用科学答案条件通过 |
+
+Mini与Full共用`workflow.v1`科学判据；Mini报告上述三项独立指标，Full另行报告Completion／Planning／Answer／Joint与部分分。题库选择在运行与评分时保持一致：默认`--dataset mini`，完整500题显式选择`--dataset full`。[Mini任务与运行说明](../tasks/mini/README.md)提供完整命令。
 
 评分由预先编写并审核的 Python 规则离线执行，**不调用 LLM，不重跑科学工具，不执行预测中提交的程序**。无法直接判定的新方法会产生待审记录。
 
 [如何测评](#如何测评) · [评分依据](#评分依据ground-truth) · [术语与完整案例](#用-flow-0001-理解术语和判分) · [指标计算](#指标如何计算) · [如何读分数](#如何读取结果)
 
-## 先理解四个整题判定
+## Mini与Full的映射评分
+
+Mini的`SMAS-0101..0200`直接来自Full，`ids.tsv`保存Mini题号与Full源题号的映射。例如，`SMAS-0103 → FLOW-0029`。这100题复用源题的科学内容、答案格式、金标准和`workflow.v1`规则，统一使用Mini三指标；另100道独立编排题使用各自已审核的规则，通过同一评分入口计算。
+
+评分按以下顺序进行：
+
+1. **定位参考。** 从`tasks/mini/evaluation/references.jsonl.gz`读取以源题号保存的固定参考副本，包括必要能力、输入约束、依赖、分支条件、科学答案判据和容差。
+2. **核验身份。** 将公开题目的顶层ID还原为源题号后核对题目哈希，并校验参考身份；原始轨迹与生成清单仍保留源题号。仅在内存中的评分视图使用Mini题号。
+3. **核验预测。** 预测必须使用Mini题号与`dataset=mini`，实验指纹、公开题目哈希、真实轨迹和资源账目必须有效。不能把Full预测改个题号后作为Mini运行提交。
+4. **独立计算三指标。** 运行指标判断实际运行与提交；规划指标使用模型本次真实调用和观测；答案指标把模型答案放入可信参考观测上下文，用原科学判据独立检查。缺失或身份无效的预测保留在分母并记失败。
+
+因此，“答案正确、工具规划失败”是允许出现的诊断结果：答案正确不会补造工具证据。规划检查必要能力与数据依赖，不逐项匹配参考串行顺序；DescribeTools不计科学调用。
+
+Mini保存的是固定版本的评分依据，不会自动追随Full的后续修改。源题或科学规则变更时，应同步重建Mini并重新验收。实现见[evaluation/suites/mini.py](suites/mini.py)，来源和参考验收见[integrity/mini.py](integrity/mini.py)。
+
+2026-11-05已完成100条映射一致性核查、全部200份Mini参考自检，以及3道映射题的真实工具执行与CLI评分；41项回归全部通过。[机器可读测试摘要](../docs/benchmark_analysis/mini_validation.json)记录范围与证据哈希。测试用参考决策回放驱动harness，不属于LLM自主解题成绩。
+
+## Full-500的四个整题判定
 
 | 判定 | 检查的问题 | 通过条件 |
 | --- | --- | --- |
@@ -25,7 +50,7 @@ SciToolFlow 同时检查 **任务是否完成、科学工作是否做对、结�
 
 ```bash
 conda activate SciTool-Unified
-python cli.py run --baseline react --backend api --tasks FLOW-0001 \
+python cli.py run --dataset full --baseline react --backend api --tasks FLOW-0001 \
   --output results/demo/predictions.json
 ```
 
@@ -35,32 +60,32 @@ python cli.py run --baseline react --backend api --tasks FLOW-0001 \
 
 ```bash
 # 单题示例；与上面的预测范围对应
-python cli.py score --tasks FLOW-0001 \
+python cli.py score --dataset full --tasks FLOW-0001 \
   --predictions results/demo/predictions.json \
   --output results/demo/scores.json
 
-# 正式全量测评，默认以全部 500 题为分母
-python cli.py score --predictions results/full/predictions.json \
+# Full全量测评，显式选择500题
+python cli.py score --dataset full --predictions results/full/predictions.json \
   --output results/full/scores.json
 ```
 
-所选题库的全量评分中，缺交、执行失败、格式错误、资源耗尽均保留在分母。抽测须显式传 `--tasks`；否则单题预测也会按所选题库的全部题目计算（full 为 500，mini 为 200）。预测中的未知或重复题号会被拒绝。
+所选题库的全量评分中，缺交、执行失败、格式错误、资源耗尽均保留在分母。抽测须显式传 `--tasks`；否则单题预测也会按所选题库的全部题目计算（mini为200，显式full为500）。预测中的未知或重复题号会被拒绝。
 
 代码、题库、工具和运行指纹须匹配，不能修改旧指纹强行评分。使用其他 baseline 时，应生成同样可认证的预测与轨迹，并保持可比较的模型、采样和资源设置。
 
-Mini 使用相同评分入口，以所选题库的全部 200 题为分母：
+Mini-200 使用统一评分入口，以所选题库的全部200题为分母，并报告其三项主指标：
 
 ```bash
 python cli.py score --dataset mini --predictions results/mini/predictions.json \
   --output results/mini/scores.json
 ```
 
-查询、运行和评分均支持 `--dataset full|mini`，默认 full。`--tasks` 进一步限制所选题库；Mini 题号通过映射关联原金标准，结果同时报告 `id` 和全集 `source_id`。题库进入运行指纹，选择与预测不一致时会拒绝评分。
+查询、规划、运行与评分默认使用`--dataset mini`，题号为SMAS-0001..0200。Full-500用`--dataset full`显式选择。评分使用与运行相同的题库和任务选择。
 
-### 3. 读取两个输出文件
+### 3. 读取评分输出
 
-- `scores.json`：`summary` 保存总体指标，`results` 保存逐题判定和诊断。
-- `scores_review_requests.json`：保存未决方法／证据的复核请求；文件名跟随评分输出名变化。
+- Mini的`scores.json`：`summary`保存三指标与任务分母，`tasks`保存逐题判定、源题号与证据诊断。
+- Full的`scores.json`：`summary`保存完整指标，`results`保存逐题判定和诊断；另有`scores_review_requests.json`保存未决复核请求。
 
 运行生成可使用 API 或本地模型；**上述评分步骤不需要生成模型、embedding 服务或额外 judge API**。
 
@@ -70,7 +95,7 @@ python cli.py score --dataset mini --predictions results/mini/predictions.json \
 
 | 内容 | 保存位置 | 作用 |
 | --- | --- | --- |
-| 公开题文、输入、附件、提交格式 | `tasks/questions.jsonl`、`tasks/assets/`、`answer_schema` | 明确问题、可用信息及模型应提交的结构 |
+| 公开题文、输入、附件、提交格式 | `tasks/full/questions.jsonl`、`tasks/full/assets/`、`answer_schema` | 明确问题、可用信息及模型应提交的结构 |
 | 已审核参考答案 | 主参考的 `expected_answer` | 记录一份由实际执行支持的完整答案 |
 | 能力与工作流规则 | `evaluation.nodes`、`capability_groups`、依赖与参数绑定 | 定义哪些科学工作必须完成，允许哪些完整路线 |
 | 科学结果与比较规则 | `evaluation.outcomes`、科学边界、容差与集合语义 | 判断结论正确性及其证据是否齐全 |

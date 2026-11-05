@@ -1,0 +1,19 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "observation_times_hours": [
+    0.0,
+    2.0,
+    5.0
+  ],
+  "observed_signed_R_minus_S_ee": [
+    0.8,
+    0.5362560368285115,
+    0.2943035529371539
+  ],
+  "model": "Controlled closed reversible label exchange R<->S, with equal first-order one-direction rate k on both arrows. Total amount R+S is constant. dR/dt=-k*R+k*S, dS/dt=k*R-k*S; ee=(R-S)/(R+S). No degradation, equilibrium energy bias or continued input.",
+  "target": "Infer the common one-direction k using the complete ee observations and test one exponential across all times. Report the half-life of ee, not the half-life of a molecule before its first transition. Reconstruct normalized R/S fractions at the last time.",
+  "scope": "Conditional symmetry-exchange kinetics of benign labels, no reaction conditions, stereochemical manipulation or actual molecular racemization forecast."
+}

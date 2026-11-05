@@ -16,7 +16,7 @@ def task_categories(root=ROOT):
     }
     result = {}
     category = None
-    for line in (root / "tasks/CATEGORIES.md").read_text().splitlines():
+    for line in (root / "tasks/full/CATEGORIES.md").read_text().splitlines():
         if line.startswith("## "):
             category = labels.get(line[3:].strip())
         match = re.match(r"\| (FLOW-\d{4}) \|", line)
@@ -30,7 +30,7 @@ def task_categories(root=ROOT):
 def main():
     tasks = [
         json.loads(line)
-        for line in (ROOT / "tasks/questions.jsonl").read_text().splitlines()
+        for line in (ROOT / "tasks/full/questions.jsonl").read_text().splitlines()
         if line.strip()
     ]
     categories = task_categories()
@@ -48,14 +48,14 @@ def main():
         for line, row in enumerate(tasks, 1)
     ]
     result = {
-        "canonical_source": "tasks/questions.jsonl",
+        "canonical_source": "tasks/full/questions.jsonl",
         "count": len(tasks),
         "categories": dict(sorted(Counter(categories.values()).items())),
         "domains": dict(sorted(Counter(row["domain"] for row in tasks).items())),
         "references_visible_to_agent": False,
         "tasks": entries,
     }
-    (ROOT / "tasks/index.json").write_text(
+    (ROOT / "tasks/full/index.json").write_text(
         json.dumps(result, ensure_ascii=False, indent=2) + "\n"
     )
     print(json.dumps({"public_tasks": len(tasks), "domains": result["domains"]}))

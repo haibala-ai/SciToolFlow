@@ -86,7 +86,7 @@ class ExperimentBackendTests(unittest.TestCase):
         self.assertEqual(state["status"], "finished")
         self.assertNotIn("SECRET_TEST", json.dumps(state))
 
-    def test_mini_pipeline_passes_dataset_to_run_and_score_and_uses_200_denominator(
+    def test_special_pipeline_passes_dataset_to_run_and_score_and_uses_200_denominator(
         self,
     ):
         code, commands, readiness, state = self.pipeline("api", dataset="mini")

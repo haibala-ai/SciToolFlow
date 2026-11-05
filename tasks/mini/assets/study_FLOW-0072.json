@@ -1,0 +1,45 @@
+{
+  "data": [
+    {
+      "record_id": "condition01",
+      "quencher_mol_per_litre": 0.0,
+      "fluorescence_lifetime_ns": 6.0,
+      "observed_emission_signal": 100.0,
+      "independently_calibrated_optical_throughput_fraction": 1.0
+    },
+    {
+      "record_id": "condition02",
+      "quencher_mol_per_litre": 0.02,
+      "fluorescence_lifetime_ns": 5.172413793103448,
+      "observed_emission_signal": 65.3503893214683,
+      "independently_calibrated_optical_throughput_fraction": 0.94
+    },
+    {
+      "record_id": "condition03",
+      "quencher_mol_per_litre": 0.05,
+      "fluorescence_lifetime_ns": 4.285714285714286,
+      "observed_emission_signal": 38.392857142857146,
+      "independently_calibrated_optical_throughput_fraction": 0.86
+    },
+    {
+      "record_id": "condition04",
+      "quencher_mol_per_litre": 0.08,
+      "fluorescence_lifetime_ns": 3.6585365853658534,
+      "observed_emission_signal": 23.95470383275261,
+      "independently_calibrated_optical_throughput_fraction": 0.77
+    },
+    {
+      "record_id": "condition05",
+      "quencher_mol_per_litre": 0.12,
+      "fluorescence_lifetime_ns": 3.061224489795918,
+      "observed_emission_signal": 14.218802275008365,
+      "independently_calibrated_optical_throughput_fraction": 0.68
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Quencher mol/L,lifetime ns,emission common arbitrary units,relative throughput unitless",
+    "original_observation_claim": false
+  }
+}

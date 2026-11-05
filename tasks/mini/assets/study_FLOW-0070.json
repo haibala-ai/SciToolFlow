@@ -1,0 +1,59 @@
+{
+  "data": [
+    {
+      "record_id": "sample",
+      "time_second": [
+        0.0,
+        30.0,
+        60.0,
+        90.0,
+        120.0,
+        150.0,
+        180.0
+      ],
+      "current_milliampere": [
+        0.0,
+        8.0,
+        11.0,
+        12.0,
+        10.0,
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "record_id": "blank",
+      "time_second": [
+        0.0,
+        30.0,
+        60.0,
+        90.0,
+        120.0,
+        150.0,
+        180.0
+      ],
+      "current_milliampere": [
+        0.0,
+        1.0,
+        2.0,
+        2.0,
+        1.0,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "record_id": "mass_balance",
+      "deposited_element_formula": "Cu",
+      "charge_number_per_deposited_atom": 2,
+      "observed_dry_mass_gain_mg": 0.3640949010270645,
+      "faraday_c_mol": 96485.33212331001
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "CurrentsmA,timesecond,chargenumberdimensionless,massmg,Fcoulomb/mol",
+    "original_observation_claim": false
+  }
+}

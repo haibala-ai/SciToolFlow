@@ -1,0 +1,84 @@
+{
+  "data": [
+    {
+      "record_id": "model01",
+      "generator_per_second": [
+        [
+          -2.0,
+          0.6666666666666667,
+          0.4
+        ],
+        [
+          1.0,
+          -1.3333333333333335,
+          0.4
+        ],
+        [
+          1.0,
+          0.6666666666666667,
+          -0.8
+        ]
+      ],
+      "species_order": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "record_id": "model02",
+      "generator_per_second": [
+        [
+          -2.0,
+          0.4,
+          0.56
+        ],
+        [
+          1.4000000000000001,
+          -1.3333333333333335,
+          0.24000000000000002
+        ],
+        [
+          0.6,
+          0.9333333333333335,
+          -0.8
+        ]
+      ],
+      "species_order": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "record_id": "plan01",
+      "initial_species_index": 0,
+      "time_second": 0.5,
+      "cost_units": 1.0
+    },
+    {
+      "record_id": "plan02",
+      "initial_species_index": 1,
+      "time_second": 2.0,
+      "cost_units": 1.0
+    },
+    {
+      "record_id": "plan03",
+      "initial_species_index": 2,
+      "time_second": 10.0,
+      "cost_units": 1.0
+    },
+    {
+      "record_id": "plan04",
+      "initial_species_index": 0,
+      "time_second": 2.0,
+      "cost_units": 5.0
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Kpersecond,time second;fractional C population;cost units;budget2",
+    "original_observation_claim": false
+  }
+}

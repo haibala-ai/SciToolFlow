@@ -1,0 +1,146 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "training_records": [
+        {
+          "unit_id": "train01",
+          "predictor": -4,
+          "response": -7
+        },
+        {
+          "unit_id": "train02",
+          "predictor": -3,
+          "response": -5
+        },
+        {
+          "unit_id": "train03",
+          "predictor": -2,
+          "response": -3
+        },
+        {
+          "unit_id": "train04",
+          "predictor": -1,
+          "response": -1
+        },
+        {
+          "unit_id": "train05",
+          "predictor": 0,
+          "response": 1
+        },
+        {
+          "unit_id": "train06",
+          "predictor": 1,
+          "response": 3
+        },
+        {
+          "unit_id": "train07",
+          "predictor": 2,
+          "response": 5
+        },
+        {
+          "unit_id": "train08",
+          "predictor": 3,
+          "response": 7
+        }
+      ],
+      "calibration_records": [
+        {
+          "unit_id": "cal01",
+          "instrument_group": "groupA",
+          "predictor": -1,
+          "response": -0.9
+        },
+        {
+          "unit_id": "cal02",
+          "instrument_group": "groupA",
+          "predictor": 0,
+          "response": 1.2
+        },
+        {
+          "unit_id": "cal03",
+          "instrument_group": "groupA",
+          "predictor": 1,
+          "response": 3.3
+        },
+        {
+          "unit_id": "cal04",
+          "instrument_group": "groupB",
+          "predictor": -3,
+          "response": -4.5
+        },
+        {
+          "unit_id": "cal05",
+          "instrument_group": "groupB",
+          "predictor": -2,
+          "response": -2
+        },
+        {
+          "unit_id": "cal06",
+          "instrument_group": "groupB",
+          "predictor": -1,
+          "response": 0.5
+        },
+        {
+          "unit_id": "cal07",
+          "instrument_group": "groupB",
+          "predictor": 0,
+          "response": 3
+        },
+        {
+          "unit_id": "cal08",
+          "instrument_group": "groupB",
+          "predictor": 1,
+          "response": 5.5
+        },
+        {
+          "unit_id": "cal09",
+          "instrument_group": "groupB",
+          "predictor": 2,
+          "response": 8
+        },
+        {
+          "unit_id": "cal10",
+          "instrument_group": "groupB",
+          "predictor": 3,
+          "response": 10.5
+        },
+        {
+          "unit_id": "cal11",
+          "instrument_group": "groupB",
+          "predictor": 4,
+          "response": 13
+        }
+      ],
+      "query_records": [
+        {
+          "unit_id": "query01",
+          "instrument_group": "groupA",
+          "predictor": 0.25
+        },
+        {
+          "unit_id": "query02",
+          "instrument_group": "groupB",
+          "predictor": 1.5
+        }
+      ],
+      "miscoverage_alpha": 0.2,
+      "group_field": "instrument_group",
+      "prediction_policy": "Fit an ordinary affine response-on-predictor least-squares model with an intercept using all and only training_records. Freeze that model. Calibration and query records are not training observations. Use absolute response residuals as the conformity score; the instrument group determines calibration membership but is not an additional regression feature.",
+      "rank_policy": "For a cohort of n calibration scores use 1-based rank k=ceil((n+1)*(1-alpha)), retaining all multiplicities and without interpolating. If k<=n, use the kth ordered calibration score as half-width. If k=n+1, the stipulated score set includes an extra +infinity score: the prediction set is all real response values. Do not clamp an unattainable rank to n. The proposed pooled rule applies the same rank construction to all calibration records, ignoring instrument_group. Audit whether that pooled rule alone justifies the requested within-group claim.",
+      "coverage_assumptions": "Condition on the independently designated training data and the fitted predictor. Within each prespecified group, its calibration units and one future query unit are exchangeable. Different groups need not have the same score distribution; pooled exchangeability is not stipulated. The guarantee averages over the group's calibration sample and a future unit, not conditional on the particular realized calibration scores. Group membership is observed before response. There is no simultaneous two-query coverage claim or empirical demonstration of population coverage.",
+      "units": {
+        "predictor": "instrument input unit",
+        "response": "response unit",
+        "half_width": "response unit"
+      },
+      "source_provenance": {
+        "kind": "controlled methodological prediction-reporting export, not physical measurements",
+        "construction": "Project-authored disjoint training/calibration/query records for two prespecified scientific instrument groups, including a sparse calibration group. No experimental instrument or observed population-coverage claim.",
+        "method_source": "https://arxiv.org/html/2107.07511v6",
+        "read_scope": "Primary authors' arXiv v6 sections1.1 and4.1, and AppendixD. General calibration ranks, group-stratified coverage and the +infinity convention when alpha<1/(n+1). The task gives an operational inverse-empirical-CDF rank rather than relying on a library quantile interpolation convention.",
+        "access_limits": "Author-hosted PDF returned403; arXiv HTML/PDF were accessible. No reading of all sections or replication of the paper's empirical examples is claimed."
+      }
+    }
+  ]
+}

@@ -179,7 +179,7 @@ def staged_reference_diagnostics(reference_paths, catalog, project_root=ROOT):
     """
     accepted, issues, tool_tasks = {}, [], defaultdict(set)
     for path in reference_paths:
-        public_path = path.parent.parent / "tasks/questions.jsonl"
+        public_path = path.parent.parent / "tasks/full/questions.jsonl"
         if not public_path.exists():
             issues.append(
                 {"reference_file": str(path), "issue": "no_staged_public_tasks"}

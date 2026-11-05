@@ -17,6 +17,7 @@ from tasks.datasets import dataset_files, load_dataset, select_tasks
 from src.models.client import GenerationClient
 from baselines.react.runtime import run_react
 from baselines.react.trajectory import atomic_json
+from evaluation.integrity.traces import canonical_sha256
 
 
 def resume_rows(checkpoint, fingerprint, retry=False):
@@ -34,7 +35,6 @@ def resume_rows(checkpoint, fingerprint, retry=False):
 def actor_file_hashes(root, dataset="full"):
     """Bind resume to public inputs and all executable actor/tool dependencies."""
     files = [
-        root / "tasks/questions.jsonl",
         root / "cli.py",
         root / "tools/catalog/catalog.json",
         root / "tools/graph/graph_store.json",
@@ -45,8 +45,11 @@ def actor_file_hashes(root, dataset="full"):
         root / "baselines/react/system_prompt.md",
     ]
     files.extend(root / name for name in dataset_files(dataset))
-    for directory in ["baselines", "tools", "tasks", "src"]:
+    for directory in ["baselines", "tools", "src"]:
         files.extend((root / directory).rglob("*.py"))
+    # Only public dataset loaders execute in this harness. Authoring scripts,
+    # private graders and source-suite tests are not actor dependencies.
+    files.extend((root / "tasks").glob("*.py"))
     for directory in ["react", "scitoolagent"]:
         files.extend(
             [
@@ -54,6 +57,17 @@ def actor_file_hashes(root, dataset="full"):
                 root / "baselines" / directory / "config.json",
             ]
         )
+    files.extend((root / "baselines/scimas/prompts").glob("*.md"))
+    files.append(root / "baselines/scimas/config.json")
+    files.extend(
+        root / "tools/graph/scimas" / name
+        for name in [
+            "graph.json",
+            "manifest.json",
+            "annotations.json",
+            "embeddings.json.gz",
+        ]
+    )
     return {
         str(file.relative_to(root)): hashlib.sha256(file.read_bytes()).hexdigest()
         for file in sorted(set(files))
@@ -85,11 +99,16 @@ def run_task(payload):
         from baselines.scitoolagent.runtime import run_scitoolagent
 
         runtime = run_scitoolagent
+    elif baseline == "scimas":
+        from baselines.scimas.runtime import run_scimas
+
+        runtime = run_scimas
     client = GenerationClient(args.backend)
     if args.model:
         client.model = args.model
     try:
-        task = load_agent_input(row, root / "tasks")
+        asset_root = root / ("tasks/mini" if getattr(args, "dataset", "full") == "mini" else "tasks/full")
+        task = load_agent_input(row, asset_root)
         budget = args.max_calls
         print(
             "[run] "
@@ -101,37 +120,40 @@ def run_task(payload):
             flush=True,
         )
         try:
-            result = runtime(
-                task["question"],
-                catalog=catalog,
-                client=client,
-                invoke=lambda n, a, **kwargs: execute(n, a, catalog=catalog, **kwargs),
-                trace_dir=output.parent / "trajectories",
-                case_id=task["id"],
-                dataset=getattr(args, "dataset", "full"),
-                inputs=task["inputs"],
-                files=task["files"],
-                answer_schema=task["answer_schema"],
-                max_iterations=args.max_steps,
-                max_model_requests=getattr(args, "max_model_requests", 400),
-                max_calls=budget,
-                max_actions=args.max_actions,
-                max_protocol_errors=args.max_protocol_errors,
-                max_failures_per_action=args.max_failures_per_action,
-                max_identical_tool_steps=args.max_identical_tool_steps,
-                answer_schema_guard=args.answer_schema_guard,
-                protocol_schema_guard=getattr(args, "protocol_schema_guard", True),
-                max_discovery_calls=args.max_discovery_calls,
-                max_reasoning_turns=args.max_think_steps,
-                max_consecutive_thinks=args.max_consecutive_thinks,
-                max_context_chars=args.max_context_chars,
-                max_output_tokens=args.max_output_tokens,
-                task_timeout=args.task_timeout,
-                tool_timeout=args.tool_timeout,
-            )
+            from baselines.scimas.assets import public_asset_scope
+            with public_asset_scope(asset_root):
+                result = runtime(
+                    task["question"],
+                    catalog=catalog,
+                    client=client,
+                    invoke=lambda n, a, **kwargs: execute(n, a, catalog=catalog, **kwargs),
+                    trace_dir=output.parent / "trajectories",
+                    case_id=task["id"],
+                    dataset=getattr(args, "dataset", "full"),
+                    inputs=task["inputs"],
+                    files=task["files"],
+                    answer_schema=task["answer_schema"],
+                    max_iterations=args.max_steps,
+                    max_model_requests=getattr(args, "max_model_requests", 400),
+                    max_calls=budget,
+                    max_actions=args.max_actions,
+                    max_protocol_errors=args.max_protocol_errors,
+                    max_failures_per_action=args.max_failures_per_action,
+                    max_identical_tool_steps=args.max_identical_tool_steps,
+                    answer_schema_guard=args.answer_schema_guard,
+                    protocol_schema_guard=getattr(args, "protocol_schema_guard", True),
+                    max_discovery_calls=args.max_discovery_calls,
+                    max_reasoning_turns=args.max_think_steps,
+                    max_consecutive_thinks=args.max_consecutive_thinks,
+                    max_context_chars=args.max_context_chars,
+                    max_output_tokens=args.max_output_tokens,
+                    task_timeout=args.task_timeout,
+                    tool_timeout=args.tool_timeout,
+                )
             calls = result["calls"]
             prediction = {
                 "id": task["id"],
+                "public_task_sha256": canonical_sha256(row),
                 "dataset": getattr(args, "dataset", "full"),
                 "baseline": baseline,
                 "completed": result["status"] == "completed",

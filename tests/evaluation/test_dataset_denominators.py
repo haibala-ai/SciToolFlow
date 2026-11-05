@@ -53,17 +53,15 @@ class DatasetDenominatorTests(unittest.TestCase):
                         dataset=dataset,
                     )
                 self.assertEqual(result["summary"]["dataset"], dataset)
-                self.assertEqual(result["summary"]["total_reference_tasks"], count)
-                self.assertEqual(result["summary"]["missing_predictions"], count)
-                self.assertEqual(result["summary"]["joint_pass_rate"], 0)
-                if dataset == "mini":
-                    self.assertEqual(
-                        [r["id"] for r in result["results"]],
-                        [f"FLOW-{i:04d}" for i in range(1, 201)],
-                    )
-                    self.assertTrue(
-                        any(r["id"] != r["source_id"] for r in result["results"])
-                    )
+                if dataset=="full":
+                    self.assertEqual(result["summary"]["total_reference_tasks"],count)
+                    self.assertEqual(result["summary"]["missing_predictions"],count)
+                    self.assertEqual(result["summary"]["joint_pass_rate"],0)
+                else:
+                    self.assertEqual(result["summary"]["tasks"],count)
+                    self.assertEqual(result["summary"]["answer_accuracy"],0)
+                    self.assertEqual([r["id"] for r in result["tasks"]],[f"SMAS-{i:04d}" for i in range(1,201)])
+
 
 
 if __name__ == "__main__":

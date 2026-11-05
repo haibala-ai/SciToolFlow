@@ -172,7 +172,25 @@ def run_worker(command, **kwargs):
         **kwargs,
     )
     try:
-        stdout, stderr = process.communicate(payload, timeout=timeout)
+        from tools.runtime.context import CALL_CANCEL
+
+        cancel = CALL_CANCEL.get()
+        if cancel is None:
+            stdout, stderr = process.communicate(payload, timeout=timeout)
+        else:
+            end = time.monotonic() + timeout
+            first = True
+            while True:
+                if cancel.is_set() or time.monotonic() >= end:
+                    raise subprocess.TimeoutExpired(command, timeout)
+                try:
+                    stdout, stderr = process.communicate(
+                        payload if first else None,
+                        timeout=min(0.25, end - time.monotonic()),
+                    )
+                    break
+                except subprocess.TimeoutExpired:
+                    first = False
     except (subprocess.TimeoutExpired, KeyboardInterrupt):
         try:
             os.killpg(process.pid, signal.SIGTERM)
@@ -241,7 +259,9 @@ def execute(name, input_str, file_path_list=None, timeout=None):
                 error="Missing required resources: " + ", ".join(missing),
             )
             return result
-        if spec.get("in_process"):
+        from tools.runtime.context import CALL_CANCEL
+
+        if spec.get("in_process") and CALL_CANCEL.get() is None:
             if Path(sys.prefix).name != environment:
                 raise RuntimeError(
                     "This tool must run in its configured Agent environment"
@@ -273,6 +293,13 @@ def execute(name, input_str, file_path_list=None, timeout=None):
         env = os.environ.copy()
         env["PYTHONPATH"] = str(REPO)
         env["PYTHONNOUSERSITE"] = "1"
+        from src.utils.paths import work_root, artifacts_root
+
+        call_root = work_root()
+        call_root.mkdir(parents=True, exist_ok=True)
+        artifacts_root().mkdir(parents=True, exist_ok=True)
+        env["SCITOOLFLOW_WORK_DIR"] = str(call_root)
+        env["SCITOOLFLOW_ARTIFACTS_DIR"] = str(artifacts_root())
         if spec.get("cpu_only"):
             env["CUDA_VISIBLE_DEVICES"] = ""
         if (
@@ -292,7 +319,7 @@ def execute(name, input_str, file_path_list=None, timeout=None):
         completed = run_worker(
             [str(python), "-m", "tools.runtime.worker"],
             input=json.dumps(payload),
-            cwd=ROOT,
+            cwd=call_root,
             env=env,
             capture_output=True,
             text=True,

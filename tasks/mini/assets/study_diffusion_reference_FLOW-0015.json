@@ -1,0 +1,124 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "attenuation_series": [
+        {
+          "series_id": "series-1",
+          "condition_id": "condition-A",
+          "assignment": "reference",
+          "nominal_attenuation_coordinate": [
+            0,
+            0.25,
+            0.5,
+            1,
+            1.5,
+            2
+          ],
+          "intensity": [
+            731.2,
+            598.6559266506204,
+            490.1380176612595,
+            328.54933856251245,
+            220.23320775020218,
+            147.62673395769204
+          ]
+        },
+        {
+          "series_id": "series-2",
+          "condition_id": "condition-A",
+          "assignment": "analyte",
+          "nominal_attenuation_coordinate": [
+            0,
+            0.25,
+            0.5,
+            1,
+            1.5,
+            2
+          ],
+          "intensity": [
+            342.7,
+            310.0877831609233,
+            280.5790290798244,
+            229.71867977641358,
+            188.07774768942286,
+            153.98503600297184
+          ]
+        },
+        {
+          "series_id": "series-3",
+          "condition_id": "condition-B",
+          "assignment": "reference",
+          "nominal_attenuation_coordinate": [
+            0,
+            0.25,
+            0.5,
+            1,
+            1.5,
+            2
+          ],
+          "intensity": [
+            481.5,
+            424.9222585944827,
+            374.99257704888146,
+            292.044512651633,
+            227.4444951447986,
+            177.1339509240495
+          ]
+        },
+        {
+          "series_id": "series-4",
+          "condition_id": "condition-B",
+          "assignment": "analyte",
+          "nominal_attenuation_coordinate": [
+            0,
+            0.25,
+            0.5,
+            1,
+            1.5,
+            2
+          ],
+          "intensity": [
+            216.3,
+            209.64514861723322,
+            203.19504548655482,
+            190.884080029048,
+            179.3189982624206,
+            168.45460937834488
+          ]
+        },
+        {
+          "series_id": "series-5",
+          "condition_id": "condition-B",
+          "assignment": "alternative_analyte_window",
+          "nominal_attenuation_coordinate": [
+            0,
+            0.25,
+            0.5,
+            1,
+            1.5,
+            2
+          ],
+          "intensity": [
+            250.0,
+            207.8248988524131,
+            177.94949715521608,
+            140.99594727304867,
+            120.76340012336527,
+            108.56472768073073
+          ]
+        }
+      ],
+      "observation_status": "Project-authored forward-simulated positive echo amplitudes for a computational diffusion audit. No experimental molecule identity, actual NMR measurement or original paper dataset is asserted.",
+      "attenuation_model": "For a qualifying single-component window, S(z)=A*exp(-beta_c*D*z), where z is the nominal b-value divided by 1e9 s/m^2, beta_c is one unknown strictly positive gradient-calibration factor times 1e9 s/m^2 for condition c, and D is in m^2/s. A is an unrelated positive amplitude for every window. Each condition shares its own beta_c across reference and analyte; beta_A and beta_B need not be equal. No convection, restricted diffusion, exchange during encoding or varying relaxation contribution is modeled.",
+      "qualification_policy": "For every supplied window, fit ln(S) against z by ordinary unweighted affine least squares with a free intercept, using every supplied pair. A single-component window is eligible only if its attenuation slope is strictly negative and its maximum absolute fitted log residual is at most0.01. In each condition use its assigned reference and exactly one eligible assigned analyte or alternative_analyte_window; do not combine windows. List all ineligible series. The residual guard is a deterministic analysis policy, not a significance test or empirical validation of a single-species model.",
+      "hydrodynamic_model": "For eligible windows assume the same isotropic no-slip Stokes-Einstein relation D=k_B*T/(6*pi*eta*R_eff). Within one condition analyte and reference share T and eta. T, eta and beta may differ between conditions. The reference is stipulated noninteracting and has the same effective hydrodynamic radius in both conditions. No absolute reference radius, viscosity, gradient calibration, size-to-molar-mass calibration or aggregation/solvation model is supplied.",
+      "requested_comparison": "Report effective analyte hydrodynamic radius in condition-B divided by that in condition-A after internal-reference normalization. Also report the deliberately naive inverse-analyte-attenuation-slope ratio, abs(slope_A_analyte)/abs(slope_B_analyte), which ignores reference changes. Decide whether absolute analyte diffusion coefficients or an aggregation number are identified by the stated evidence. A changed effective radius alone is not a molecular-count or association-mechanism determination.",
+      "method_context": {
+        "primary_article": "https://doi.org/10.1039/C5SC00670H",
+        "archived_primary_xml_sha256": "bec651d110104182bbb1567b39b35269df540beefd08af4e5df7b2571affedc8",
+        "read_scope": "Primary2015article introduction, eq2relative diffusivity, eq3normalization and limitations of molecular-size/mass interpretation. Original full XML obtained via EuropePMC after direct publisher/PMC HTML requests failed. Only method context is used; all task numbers and model assumptions are project-authored. No experimental procedure or source compound calibration is reproduced."
+      }
+    }
+  ]
+}

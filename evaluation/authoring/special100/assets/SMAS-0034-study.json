@@ -1,0 +1,70 @@
+{
+  "stand_counts": [
+    [
+      9,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      5,
+      5,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      8
+    ]
+  ],
+  "pooled_counts": [
+    10,
+    6,
+    6,
+    8
+  ],
+  "presence": [
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      1
+    ]
+  ],
+  "north_traps": [
+    1,
+    2,
+    4,
+    3,
+    5,
+    2
+  ],
+  "south_traps": [
+    0,
+    1,
+    2,
+    1,
+    7,
+    1
+  ],
+  "bootstrap_settings": {
+    "confidence": 0.95,
+    "resamples": 1000,
+    "seed": 17,
+    "interval": "central percentile"
+  }
+}

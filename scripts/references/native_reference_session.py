@@ -51,13 +51,13 @@ def main():
     p.add_argument(
         "--task-source",
         type=Path,
-        default=ROOT / "tasks/questions.jsonl",
+        default=ROOT / "tasks/full/questions.jsonl",
         help="Public candidate task JSONL; never a reference/answer file",
     )
     p.add_argument(
         "--task-root",
         type=Path,
-        default=ROOT / "tasks",
+        default=ROOT / "tasks/full",
         help="Public asset directory for this candidate release",
     )
     p.add_argument("--task-timeout", type=float, default=7200)

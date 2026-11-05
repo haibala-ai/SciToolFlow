@@ -100,12 +100,15 @@ class BudgetedClient:
     def __getattr__(self, name):
         return getattr(self.client, name)
 
-    def _preflight(self, name, *args):
+    def _preflight(self, name, *args, timeout=None):
         self.resources.check_deadline()
         method = getattr(self.client, name)
         kwargs = {}
         if getattr(self.client, "supports_preflight_timeout", False):
-            kwargs["timeout"] = self.resources.deadline - self.resources.clock()
+            remaining = self.resources.deadline - self.resources.clock()
+            kwargs["timeout"] = (
+                min(timeout, remaining) if timeout is not None else remaining
+            )
         try:
             result = method(*args, **kwargs)
         except Exception:
@@ -114,11 +117,11 @@ class BudgetedClient:
         self.resources.check_deadline()
         return result
 
-    def input_budget(self, output_tokens):
-        return self._preflight("input_budget", output_tokens)
+    def input_budget(self, output_tokens, *, timeout=None):
+        return self._preflight("input_budget", output_tokens, timeout=timeout)
 
-    def count_tokens(self, messages):
-        return self._preflight("count_tokens", messages)
+    def count_tokens(self, messages, *, timeout=None):
+        return self._preflight("count_tokens", messages, timeout=timeout)
 
     def request(self, messages, **kwargs):
         self.resources.check()

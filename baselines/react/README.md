@@ -8,16 +8,16 @@ ReAct 既是 SciToolFlow 的测试 harness，也是 baseline。它只读取公�
 
 ```bash
 python baselines/react/run.py --backend vllm --model YOUR_MODEL \
-  --tasks FLOW-0285,FLOW-0481 --concurrency 2 --output results/demo/predictions.json
+  --tasks SMAS-0103,SMAS-0180 --concurrency 2 --output results/demo/predictions.json
 python baselines/react/run.py --backend vllm --model YOUR_MODEL \
-  --tasks FLOW-0285,FLOW-0481 --concurrency 2 --output results/demo/predictions.json --resume
+  --tasks SMAS-0103,SMAS-0180 --concurrency 2 --output results/demo/predictions.json --resume
 ```
 
 生成后端支持 `api`、常驻 `vllm` 和直接加载权重的 `local`。API 使用 `SCITOOLFLOW_API_BASE/KEY/MODEL`；vLLM 使用独立的服务地址、模型名和采样配置；direct-local 仅支持并发 1，其 GPU 依次采用 `SCITOOL_LLM_GPU`、继承的 `CUDA_VISIBLE_DEVICES`、单卡 `0`。模型选择与部署见[安装说明](../../docs/setup.md)。
 
 `predictions.json` 保存预测、运行设置和续跑指纹，`progress.json` 保存进度；实验流水线另用 `experiment.json` 记录执行阶段。完整轨迹位于 `trajectories/<task-run>/trajectory.json`，工具产物位于 `tool_artifacts/`。轨迹与预测逐步原子保存；同指纹 `--resume` 复用已记录任务，只有显式 `--retry-failed` 才重试失败任务。代码、任务、工具实现、prompt、模型、采样和并发设置改变后，应新建实验目录。
 
-同一入口支持 `--dataset full|mini`，默认 full。`--tasks` 中的题号属于所选题库；Mini 独立编号及用法见 [Mini-200](../../tasks/mini/README.md)。运行目录、续跑指纹与评分均区分题库。
+查询、规划、运行与评分默认使用`--dataset mini`，题号为SMAS-0001..0200。Full-500用`--dataset full`显式选择；旧Mini接口已移除。评分使用与运行相同的题库和任务选择，说明见[Mini-200](../../tasks/mini/README.md)。
 
 ## 模型交互
 

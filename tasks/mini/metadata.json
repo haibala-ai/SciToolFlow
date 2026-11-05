@@ -1,40 +1,44 @@
 {
-  "schema_version": "scitoolflow.subset.v2",
+  "schema_version": "scitoolflow.mini.v1",
   "name": "SciToolFlow Mini-200",
-  "version": "20261104.1",
   "dataset": "mini",
-  "id_range": [
-    "FLOW-0001",
-    "FLOW-0200"
-  ],
-  "id_mapping": "tasks/mini/ids.tsv",
-  "source_release": "20261026",
   "tasks": 200,
+  "id_range": "SMAS-0001..SMAS-0200",
+  "origins": {
+    "special100": 100,
+    "full": 100
+  },
   "domains": {
-    "Biology": 50,
     "Chemical": 50,
-    "MachineLearning": 50,
-    "Material": 50
+    "Material": 50,
+    "Biology": 50,
+    "MachineLearning": 50
   },
-  "categories": {
-    "standard": 174,
-    "tool_composition": 26
+  "full_source_domains": {
+    "Chemical": 25,
+    "Material": 25,
+    "Biology": 25,
+    "MachineLearning": 25
   },
-  "excluded_high_difficulty_tasks": 100,
-  "selection_focus": "scientific subtask decomposition and parallel scheduling",
-  "selection_support": {
-    "required_capability_dag": 181,
-    "task_semantics_and_reviewed_route": 19
+  "graph_fit_counts": {
+    "multistage_dependency_graph": 166,
+    "parallel_evidence_panel": 34
   },
-  "evaluation_schema": "workflow.v1",
-  "asset_release_root": "tasks",
-  "references": "evaluation/data/references.jsonl.gz",
-  "references_visible_to_agent": false,
-  "annotations_are_agent_input": false,
-  "independent_test_split": false,
+  "reference_scientific_calls": 2242,
+  "references": "evaluation/references.jsonl.gz",
+  "reference_identity": "original source task IDs; public views are mapped, never raw trajectory relabels",
+  "primary_metrics": [
+    "runtime_completion_rate",
+    "tool_planning_accuracy",
+    "answer_accuracy"
+  ],
+  "performance_claim": "not measured",
   "sha256": {
-    "questions.jsonl": "a744ef13c9d0d48f7bc1a2c45ebe9de7970018dbda8dc8587629f76a64cd4e68",
-    "ids.tsv": "b5415de1ded2715b2bed230244c24dce0ce69f5dee2c31882af7f15f12435017",
-    "selection.json": "8ceb43c905c2e701e76b5bcd6637d14acca52ab72e0bf5e173953130ae0c0536"
+    "questions.jsonl": "df9b36f1a72586906607dd93beb1a82a0ed96dc7a6211d82f761e50873ca144a",
+    "ids.tsv": "6ca4629e976d4cc5fc29b8458b38798cabd1f299c3dd195c1deb366bcb0cf1f4",
+    "asset_manifest.json": "8e8fbcd6f172558132013dff6084fdea0c7a318ec45bfc94e5271a5d7c241a9e",
+    "schema.json": "96fd430131f33f51e203f350de97c23ae6a3c3dcfae9b81074608c8796283c2c",
+    "selection.json": "61ab100124fe1ff2ee23f984388a7b2f757293278e7cfc8bef1271d1581241e9",
+    "evaluation/references.jsonl.gz": "7d2f576f891acebffc090fe0fbb808b4277dc20fb91dea8da8306e431e104304"
   }
 }

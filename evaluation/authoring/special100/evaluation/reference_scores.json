@@ -1,0 +1,312 @@
+{
+  "schema_version": "scimas.special.three_metrics.v1",
+  "suite": "scimas-special-50-v2",
+  "summary": {
+    "tasks": 50,
+    "runtime_completion_rate": 1.0,
+    "tool_planning_accuracy": 1.0,
+    "answer_accuracy": 1.0
+  },
+  "tasks": [
+    {
+      "id": "SMAS-0001",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0002",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0003",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0004",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0005",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0006",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0007",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0008",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0009",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0010",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0011",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0012",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0013",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0014",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0015",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0016",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0017",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0018",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0019",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0020",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0021",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0022",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0023",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0024",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0025",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0026",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0027",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0028",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0029",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0030",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0031",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0032",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0033",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0034",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0035",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0036",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0037",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0038",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0039",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0040",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0041",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0042",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0043",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0044",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0045",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0046",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0047",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0048",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0049",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    },
+    {
+      "id": "SMAS-0050",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true
+    }
+  ]
+}

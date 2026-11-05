@@ -1,0 +1,51 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "source_window_sequence": "AATAAATGCTTTGCTACAAAAGGGTTTTTTTTTAGTGAACGTGTCACAGTTAATTAACTCCTATTTTTTTAAGACGAAGAAAGAAATTCGATTTTCTCTCCTATTTACTACGGCGACGAAGAATCAAAGTCTCACTATATTTTTTCCTTTTTCTAGTTCTTCTTCCAAGTGCAGGATAACCCCAGGGGGTTACGGGTTTTTTTCTACCAATTGGAGCCCTCCCTTCACCACCTCCATGGGGATGGTCGACAGGGTTCATAACTACTCCTCTTACTACAGGACGTTTACCTAGCCAACATTTCGATCCGGCTCTACCCAAACTTTTCTGGTTTACCCCAACATTTCCCACTTGTCCGACTGTTGCTGAGCAGTTTTTGGATATCAAACGGACCTCTCCAGAAGGTAATTTTAATGTGGCCGATTTCCCCTCTTTTGCAATCAGTTTCGCTACAGCACCCGCTGCTCTAGCTAATTGTCCACCCCTTCCAAGTGTGATTTCTATATTATGTATGGCCGTGCCTAAGGGCATATCGGTTGAAGTAGATTCTTCTTTTTGATCAATCAAAACCCCTTCCCAAACTGTACAAGCTTCTTCCAAAGCATACGGCTTTCTGGATGTAGATGATGATATCTATACGGATGGATCTTATATATATCGTAGAATTCTTCTATATATGGTAGAAGTACCACACGAGTGGATATATAGGAATCAAAATCTGCCGAATAACTTATGTTATGATCTTCTACATCCTAGGTCTTCCCGTTCCGTCATCTGGCTTATGTTCTTCATGTAGCATTCAGACCGAATGACTCTATGAAATTACGTCGATACTTCCACATATTATGGGTAACGTAGGAGACATCTCTATTTTTCCCCGGGGGAATCTTTAGAATTACCACTGCTTAGCTTTCAATTCGCCTCTGACCATCAAATGAAATGTGAATAACCCGTCCTCCTCTCTTTGAAACAAGGGGCGCTTATGGTTCTGTCGGTGCTTGAAACAATTTTGTCTTCTCCATATTACTATATCTCTAGAGTCAATAATTTTATATGAGGAACTACTGAACTCAATCACTTGCTGCCGTTACTCTTCAGTTTTCTGTTGAGGTCTATCCTGTAGAGGTACTCAAATTGGATCAGTGATCGATTTCTAGGTTTCGTCGTAAACCTAATTGGTTACTTCCAATTACGTAAATCAAATAGTTCAAACCGCACTCAAAGGTAGGGCATTTCCCATTTTTATAGGAACTTCTGTACCAGAAACAATGGTATCTCCAATTATAGCCCCTCTGGGATGTAAAATATATCTCTTCTCACCATCCCCATAGTGTATGAGACAAATGTATGCATTTCGATTAGGGTCGTATTCTATGGTTACGATTCTACCATATATGTCTTTTGCATTTCGTCGAAAATCTATTTTACGGTATAGACGCTTATGACCTCCCCCTCTATGCCTTGCGGTAATTATTCCTCTGGCATTACGACCTTTACCACAATGATGCTGCCCACAGATCAAATTATTTCGTGGATTGGATTTCACTTGACTGTCTACGGCTCCATTGCGTGTGCTCGGGGTAGAAGTTTTGTATAAATGTATCGCCATGCTATTAAGTATTTTGATTTAAGTTCTTTTCTTTCTAAGAGGTGGAATAGAATAACCCGGTTGAAGCGTAATGATCATACGTCTGTAATGCATTGTATGT",
+      "source_window_start_1based": 84237,
+      "source_window_end_1based": 85943,
+      "cds_feature": {
+        "feature_type": "CDS",
+        "gene": "rpl2",
+        "locus_tag": "ArthCp064",
+        "protein_id": "NP_051099.1",
+        "strand": "-",
+        "segments_1based_closed": [
+          [
+            85454,
+            85843
+          ],
+          [
+            84337,
+            84771
+          ]
+        ],
+        "codon_start": 1,
+        "translation_table": 11,
+        "original_location_expression": "complement(join(84337..84771,85454..85843))"
+      },
+      "reference_translation": "MAIHLYKTSTPSTRNGAVDSQVKSNPRNNLICGQHHCGKGRNARGIITARHRGGGHKRLYRKIDFRRNAKDIYGRIVTIEYDPNRNAYICLIHYGDGEKRYILHPRGAIIGDTIVSGTEVPIKMGNALPLTDMPLGTAIHNIEITLGRGGQLARAAGAVAKLIAKEGKSATLKLPSGEVRLISKNCSATVGQVGNVGVNQKSLGRAGSKCWLGKRPVVRGVVMNPVDHPHGGGEGRAPIGRKKPVTPWGYPALGRRTRKRKKYSETLILRRRSK",
+      "analysis_policy": "Audit only the declared locus and its supplied genomic window. The GenBank feature uses original-genome 1-based closed coordinates and its explicitly annotated strand; the window sequence is stored in increasing original-genome coordinate order. Distinguish the complete genomic span between the outer CDS endpoints from only the joined coding segments. Respect codon_start and the annotated genetic code. Translate the spliced CDS, include its final stop when checking the coding boundary, and exclude that one final stop from amino-acid count and aligned protein comparison. Count any earlier stops as internal. Compare the full translated residue sequence with the supplied GenBank translation reference without truncating mismatches. For these source codons the standard internal codon mapping and code11 coincide and the annotated start is ATG; a tool with that equivalent mapping can be used. Report reference identity as a percentage in0..100, not a fraction. Do not invent bases, complete a missing region, select a different gene copy or interpret an incidental longest ORF as the annotated CDS.",
+      "scientific_scope": "Retrospective internal consistency audit of a published Arabidopsis chloroplast record. The reference protein is the translation field of this same GenBank annotation, not an independent proteomics observation or evidence that the annotation is experimentally correct. No new sequence, altered construct, optimized gene or experimental action is proposed.",
+      "source_provenance": {
+        "record_accession": "NC_000932.1",
+        "record_annotation_date": "03-APR-2023",
+        "organism": "Arabidopsis thaliana",
+        "raw_genbank_sha256": "a5ad237da710526a1cbd01129ad35ab362ca439adc5656b37319fcfd040e6c73",
+        "download_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NC_000932.1&rettype=gbwithparts&retmode=text",
+        "record_url": "https://www.ncbi.nlm.nih.gov/nuccore/NC_000932.1",
+        "retrieved_utc": "2026-10-20",
+        "export_transformation": "Exact contiguous source window with100original flanking bases at either end; exact CDS qualifiers and annotated translation retained separately. No CDS sequence, splice lengths, translated output or expected comparison result was precomputed in public data.",
+        "feature_format": "https://www.insdc.org/submitting-standards/feature-table/",
+        "reuse_policy": "NCBI molecular-data policy places no NCBI-imposed use or distribution restrictions; original record attribution and provider-policy caveats are retained, not relabelled as an invented CC license.",
+        "reuse_policy_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+        "read_scope": "Complete actual raw GenBank record parsed locally; INSDC location/complement/join and CDS convention sections; NCBI Molecular Data Usage policy. The browser record page presented a CAPTCHA, so no browser-only content claim is made."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

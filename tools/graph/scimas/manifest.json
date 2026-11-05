@@ -1,0 +1,26 @@
+{
+  "schema_version": "scimas.tool_kg_manifest.v1",
+  "tools": 472,
+  "ports": 1755,
+  "nodes": 2801,
+  "edges": 3636,
+  "graph_sha256": "095f50dfb7ade969a2668c06ffcb31989d2a79b1c54c96b6cda71b198420fee1",
+  "catalog_sha256": "efa7b3e51dea99851b2f250a235f70b2eed1313e6d39c8e2d697ca1e9414c272",
+  "annotations_sha256": "0ddc57bc003392a300df6a18cde8cca7ba8c3980373aaa416da63f4a5aabfc03",
+  "embedding_file_sha256": "8efa19ae88f06e68e1be27c4875c523aeb8ef50c01b421bbdbe4a1ea646b6e34",
+  "embedding_identity": {
+    "backend": "openai",
+    "model": "text-embedding-3-large",
+    "dimension": 3072,
+    "api_base": "https://aihubmix.com/v1",
+    "provider": "openai_compatible",
+    "normalization": "client_l2"
+  },
+  "vectors": 472,
+  "reviewed_annotations": 99,
+  "new_embedding_api_calls": 0,
+  "embedding_text_basis": "unchanged_tool_functionality; enriched metadata is used in port queries and planning",
+  "excluded": [
+    "DescribeTools"
+  ]
+}

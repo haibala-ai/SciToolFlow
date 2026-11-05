@@ -55,7 +55,7 @@ def main():
         "name": "SciToolFlow",
         "version": __version__,
         "layout": "benchmark-first-modular",
-        "public_tasks": "tasks/questions.jsonl",
+        "public_tasks": "tasks/full/questions.jsonl",
         "references": "evaluation/data/references.jsonl.gz",
         "file_identities": "evaluation/data/file_identities.json",
         "scientific_tool_implementations_included": True,

@@ -1,0 +1,9 @@
+{
+  "provider": "Materials Project",
+  "url": "https://api.materialsproject.org/materials/dielectric/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_limit=20&_all_fields=true",
+  "accessed_at": "2026-10-20T08:07:37.759776+00:00",
+  "raw_sha256": "f70b684e62855e04746f0bb9a168c13bbeebc63c93e612ddd6c4f43ee1a2e4c8",
+  "record_count": 7,
+  "credentials_included": false,
+  "claims": "Authentic fresh API response; independent of prior benchmark answers."
+}

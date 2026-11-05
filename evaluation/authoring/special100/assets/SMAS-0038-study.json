@@ -1,0 +1,50 @@
+{
+  "moisture": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "growth_cm": [
+    1,
+    2,
+    2,
+    3,
+    4,
+    5,
+    7,
+    15
+  ],
+  "ordinal_score": [
+    1,
+    2,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nursery_counts": [
+    [
+      5,
+      3,
+      2
+    ],
+    [
+      8,
+      1,
+      1
+    ]
+  ],
+  "bootstrap_settings": {
+    "confidence": 0.95,
+    "resamples": 1000,
+    "seed": 17,
+    "interval": "central percentile"
+  }
+}

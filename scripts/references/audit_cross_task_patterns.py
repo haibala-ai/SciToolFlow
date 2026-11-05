@@ -403,10 +403,10 @@ def main():
     from src.utils.io import read_jsonl, atomic_json
     from tasks.assets import load_agent_input
 
-    public_path = ROOT / "tasks/questions.jsonl"
+    public_path = ROOT / "tasks/full/questions.jsonl"
     private_path = ROOT / "evaluation/data/references.jsonl.gz"
     catalog_path = ROOT / "tools/catalog/catalog.json"
-    asset_manifest = ROOT / "tasks/asset_manifest.json"
+    asset_manifest = ROOT / "tasks/full/asset_manifest.json"
     raw_files = {
         path: path.read_bytes()
         for path in (
@@ -437,7 +437,7 @@ def main():
             or task["inputs"] != reference["inputs"]
         ):
             raise ValueError("Public task/reference drift: " + tid)
-        resolved = load_agent_input(task, ROOT / "tasks")
+        resolved = load_agent_input(task, ROOT / "tasks/full")
         for name in resolved.get("files", []):
             path = Path(name)
             raw_files[path] = path.read_bytes()

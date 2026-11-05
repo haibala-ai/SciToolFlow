@@ -10,12 +10,12 @@ from evaluation.workflow.values import MissingEvidence
 
 @pytest.fixture
 def published(tmp_path, monkeypatch):
-    folder = tmp_path / 'tasks/assets'
+    folder = tmp_path / 'tasks/full/assets'
     folder.mkdir(parents=True)
     file = folder / 'coordinates.pdb'
     file.write_bytes(b'controlled coordinates\n')
     digest = hashlib.sha256(file.read_bytes()).hexdigest()
-    (tmp_path / 'tasks/asset_manifest.json').write_text(
+    (tmp_path / 'tasks/full/asset_manifest.json').write_text(
         json.dumps({'files': {file.name: {'sha256': digest}}}))
     monkeypatch.setattr(assets, 'ROOT', tmp_path)
     return file, digest
@@ -47,3 +47,11 @@ def test_manifest_cannot_substitute_a_different_digest(published):
 def test_invalid_names_are_rejected(published, name):
     with pytest.raises(MissingEvidence):
         assets.public_asset_paths(name, published[1], [])
+
+
+def test_relocated_full_keeps_only_exact_previous_path(published):
+    file, digest = published
+    result = assets.public_asset_paths(file.name, digest, [])
+    assert 'tasks/assets/coordinates.pdb' in result
+    assert str(file.parents[3]/'tasks/assets/coordinates.pdb') in result
+    assert '/unrelated/coordinates.pdb' not in result

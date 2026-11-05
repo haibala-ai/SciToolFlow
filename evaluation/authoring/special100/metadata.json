@@ -1,0 +1,3818 @@
+{
+  "schema_version": "scimas.special.v1",
+  "suite": "scimas-special-100-v2",
+  "task_count": 100,
+  "difficulty_counts": {
+    "intermediate": 52,
+    "foundation": 20,
+    "advanced": 28
+  },
+  "advanced_domain_counts": {
+    "Chemical": 7,
+    "Material": 7,
+    "Biology": 7,
+    "MachineLearning": 7
+  },
+  "reference_refresh": {
+    "regenerated": 43,
+    "unchanged_reused": 57,
+    "model": "gpt-6.1-sol",
+    "generation_api_used": false,
+    "scope": "Relative to Special-100 v1. Every revised public question, including the redesigned multi-record0073, has a new public-context reference; unchanged57 retain current-identity verified references."
+  },
+  "id_namespace": "SMAS-0001..SMAS-0100",
+  "domains": {
+    "Chemical": 25,
+    "Material": 25,
+    "Biology": 25,
+    "MachineLearning": 25
+  },
+  "featured_case_studies": [
+    "SMAS-0011",
+    "SMAS-0012",
+    "SMAS-0014",
+    "SMAS-0022",
+    "SMAS-0027",
+    "SMAS-0028",
+    "SMAS-0039",
+    "SMAS-0050",
+    "SMAS-0054",
+    "SMAS-0063",
+    "SMAS-0067",
+    "SMAS-0072",
+    "SMAS-0075",
+    "SMAS-0076",
+    "SMAS-0083",
+    "SMAS-0086",
+    "SMAS-0088",
+    "SMAS-0090",
+    "SMAS-0094",
+    "SMAS-0099"
+  ],
+  "reference_actor": {
+    "model": "gpt-6.1-sol",
+    "accepted_reference_trajectories": 100,
+    "fork_turns": "none",
+    "generation_api_used": false,
+    "isolation": "Public task/request plus tool broker; not independent OS accounts"
+  },
+  "primary_metrics": [
+    "runtime_completion_rate",
+    "tool_planning_accuracy",
+    "answer_accuracy"
+  ],
+  "strata_sha256": "2784393207e74fb0b36c931a24cebd40dd9dc158b4d027e39757bd2ac4e5d57d",
+  "public_questions_sha256": "45dc776982de9dae8e7f4284497b24c5ee71eb8d87c76151b5d41e8bcbc8dfe2",
+  "criteria_sha256": "29bcddfc3c5fc9f6e8226fe429185d15489283424e13afb48d85408d8a40a8a9",
+  "asset_manifest_sha256": "0f724c06b944291d99be91441e313a5825866aa09f4c4899e6e15523a4c832eb",
+  "active_full_and_mini_unchanged": true,
+  "catalogue_contract_sha256": "f625636a684fe9dd142852b6b8848d2ac983f8ff908cbab13cb53bad6e7626ca",
+  "reference_scientific_calls": 1071,
+  "covered_scientific_tools": 126,
+  "reference_call_range": [
+    3,
+    33
+  ],
+  "scientific_tool_names": [
+    "AddHydrogens",
+    "AdjustPValues",
+    "AdjustedRandAgreement",
+    "BinomialProbabilityTable",
+    "BootstrapMeanInterval",
+    "CalculateDensity",
+    "CalculatePMI1",
+    "CalculatePMI2",
+    "CalculatePMI3",
+    "CalculateSymmetry",
+    "CalculateTPSA",
+    "CanonicalMolecularIdentity",
+    "ClusteringQualityMetrics",
+    "CompareMolecularFingerprints",
+    "CompareMolecularShapes",
+    "CompositionFractions",
+    "ConvexHalfspaceGeometry",
+    "CountMolecularAtoms",
+    "CrystalStructureMatch",
+    "CubicHermiteInterpolate",
+    "DBSCANClustering",
+    "DecisionCostSummary",
+    "DescribeNumericData",
+    "DiversityIndices",
+    "ElementwiseNumericOperations",
+    "EnumerateSignAssignments",
+    "EvaluateParametricCurve",
+    "ExtractNumericColumns",
+    "ExtractPDBCoordinates",
+    "FiniteDifferenceGradient",
+    "FinitePopulationCoverage",
+    "FitLinearRegression",
+    "FitLogisticRegression",
+    "FitParametricCurve",
+    "FitRidgeRegression",
+    "GetAdjacencyMatrix",
+    "GetAromaticRingsNum",
+    "GetAtomStereoCentersNum",
+    "GetBridgeheadAtomsNum",
+    "GetEEMCharges",
+    "GetElementComposition",
+    "GetExactMolceularWeight",
+    "GetHBANum",
+    "GetHBDNum",
+    "GetLipinskiHBANum",
+    "GetLipinskiHBDNum",
+    "GetMolFormula",
+    "GetMolecularFrequencies",
+    "GetReverseComplement",
+    "GetRotatableBondsNum",
+    "GetSpiroAtomsNum",
+    "GetUnspecifiedAtomStereoCentersNum",
+    "GraphLaplacian",
+    "GroupTrainTestSplit",
+    "GroupedBootstrapMeanInterval",
+    "HypergeometricEnrichment",
+    "InChIToInChIKey",
+    "InChIToSMILES",
+    "InspectPDBQuality",
+    "InspectSELFIES",
+    "InspectTautomerQuery",
+    "KMeansClustering",
+    "LinearLeastSquares",
+    "MantelCorrelation",
+    "MatchedPeriodicDisplacements",
+    "MatrixExponential",
+    "MatrixInverse",
+    "MatrixMultiply",
+    "MatrixSVD",
+    "MolecularCentroid",
+    "MolecularFormalCharges",
+    "MurckoDecompose",
+    "NormalizeNumericRows",
+    "NormalizedPrincipalMoments",
+    "NumericalTrapezoidIntegration",
+    "PCAReconstructionError",
+    "PairedRandomizationTest",
+    "PairwiseNumericDistances",
+    "PairwiseSequenceAlignment",
+    "ParseFASTARecords",
+    "ParseJSONDocument",
+    "ParseNewickTreeDistances",
+    "PearsonCorrelation",
+    "PeriodicNeighborList",
+    "PolynomialLeastSquaresFit",
+    "PolynomialRoots",
+    "PowderDiffractionPattern",
+    "PredictLinearModel",
+    "PredictLogisticModel",
+    "PrincipalComponentProjection",
+    "ProbabilityCalibrationSummary",
+    "ProteinAliphaticIndex",
+    "ProteinGRAVY",
+    "ProteinIsoelectricPointCalculator",
+    "ReadCrystalStructure",
+    "ReadQChemFrequencyModes",
+    "ReadQChemIRIntensities",
+    "ReadQChemNBOPopulations",
+    "ReadQChemRotationalEnthalpy",
+    "ReadQChemRotationalEntropy",
+    "ReadQChemTranslationalEnthalpy",
+    "ReadQChemTranslationalEntropy",
+    "ReadQChemVibrationalEnthalpy",
+    "ReadQChemVibrationalEntropy",
+    "RegressionMetrics",
+    "RemoveHydrogens",
+    "RigidSuperposition",
+    "SMILESToInChI",
+    "SMILESToWeight",
+    "SMILEStoSELFIES",
+    "ScaleNumericMatrix",
+    "SelectOrderStatistic",
+    "SequenceComposition",
+    "SequenceQualityMetrics",
+    "SolveLinearProgram",
+    "SolveLinearSystem",
+    "SpearmanCorrelation",
+    "StandardNormalDistribution",
+    "StandardizeNumericFeatures",
+    "StratifiedClusterMeanInterval",
+    "SubstructureQuery",
+    "SummarizeNumericTable",
+    "SymmetricEigenDecomposition",
+    "ThresholdClassProbabilities",
+    "TimeSeriesSplitRecords",
+    "TraverseOntologyRelations"
+  ],
+  "all_tasks_have_reviewed_parallel_pair": true,
+  "paired_verified_tool_count": 97,
+  "paired_verified_calls": 194,
+  "source_reviewed_tool_annotations": 99,
+  "parallel_review_sha256": "97b0cf8fe1ad3d4bb6c480538e400d1cba6d74d27029bd84ac6e622be457097d",
+  "baseline_comparison_status": "not_run; reference self-checks are not SciMas performance",
+  "graph_fit_counts": {
+    "multistage_dependency_graph": 66,
+    "parallel_evidence_panel": 34
+  },
+  "graph_fit_scope": "Parallel evidence panels have a narrower scheduling interpretation than multistage dependency studies; capability graph depth does not include model-only scientific aggregation.",
+  "tasks": [
+    {
+      "id": "SMAS-0001",
+      "domain": "Chemical",
+      "title": "Salt-form inventory for a gravimetric assay",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 12,
+      "successful_reference_tools": [
+        "CalculateTPSA",
+        "CanonicalMolecularIdentity",
+        "ElementwiseNumericOperations",
+        "SMILESToWeight"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "as_received_mass_0",
+          "as_received_mass_1",
+          "as_received_mass_2",
+          "identity_0",
+          "identity_1",
+          "identity_2"
+        ],
+        [
+          "metric_0_0",
+          "metric_0_1",
+          "metric_1_0",
+          "metric_1_1",
+          "metric_2_0",
+          "metric_2_1"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0002",
+      "domain": "Chemical",
+      "title": "Isotope standard mass-defect audit",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "CanonicalMolecularIdentity",
+        "GetExactMolceularWeight",
+        "SMILESToWeight"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "identity_0",
+          "identity_1",
+          "identity_2"
+        ],
+        [
+          "metric_0_0",
+          "metric_0_1",
+          "metric_1_0",
+          "metric_1_1",
+          "metric_2_0",
+          "metric_2_1"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0003",
+      "domain": "Chemical",
+      "title": "Hydroxyl masking and donor efficiency",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "CanonicalMolecularIdentity",
+        "GetHBDNum",
+        "SMILESToWeight"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "identity_0",
+          "identity_1",
+          "identity_2"
+        ],
+        [
+          "metric_0_0",
+          "metric_0_1",
+          "metric_1_0",
+          "metric_1_1",
+          "metric_2_0",
+          "metric_2_1"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0004",
+      "domain": "Chemical",
+      "title": "Two-stage linker eligibility audit",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 11,
+      "successful_reference_tools": [
+        "CalculateTPSA",
+        "CanonicalMolecularIdentity",
+        "GetAromaticRingsNum",
+        "GetRotatableBondsNum",
+        "SMILESToWeight"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "rings_a",
+          "rings_b",
+          "rings_c",
+          "rot_a",
+          "rot_b",
+          "rot_c"
+        ],
+        [
+          "mass_a",
+          "mass_b",
+          "mass_c",
+          "tpsa_a",
+          "tpsa_b",
+          "tpsa_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0005",
+      "domain": "Chemical",
+      "title": "Tautomer-policy identity reconciliation",
+      "featured_showcase": false,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "CanonicalMolecularIdentity",
+        "SMILESToWeight"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "canonical_a",
+          "canonical_b",
+          "canonical_c",
+          "preserve_a",
+          "preserve_b",
+          "preserve_c"
+        ],
+        [
+          "mass_canonical_a",
+          "mass_canonical_b",
+          "mass_canonical_c",
+          "mass_preserve_a",
+          "mass_preserve_b",
+          "mass_preserve_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0006",
+      "domain": "Chemical",
+      "title": "Matched functional-group contrast accounting",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 8,
+      "successful_reference_tools": [
+        "CalculateTPSA",
+        "SMILESToWeight"
+      ],
+      "source_reviewed_applicable_ready_width": 8,
+      "declared_capability_dag_width": 8,
+      "capability_levels": [
+        [
+          "mass_a",
+          "mass_b",
+          "mass_base",
+          "mass_c",
+          "tpsa_a",
+          "tpsa_b",
+          "tpsa_base",
+          "tpsa_c"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0007",
+      "domain": "Chemical",
+      "title": "Charge-domain screening of submitted fragments",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 7,
+      "successful_reference_tools": [
+        "CanonicalMolecularIdentity",
+        "GetHBANum",
+        "GetHBDNum"
+      ],
+      "source_reviewed_applicable_ready_width": 4,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "identity_a",
+          "identity_b",
+          "identity_c"
+        ],
+        [
+          "acceptors_a",
+          "acceptors_b",
+          "acceptors_c",
+          "donors_a",
+          "donors_b",
+          "donors_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0008",
+      "domain": "Chemical",
+      "title": "Compound-space neighborhoods under two fingerprint representations",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 12,
+      "successful_reference_tools": [
+        "CompareMolecularFingerprints",
+        "GraphLaplacian",
+        "MatrixExponential",
+        "MatrixMultiply",
+        "ScaleNumericMatrix",
+        "SymmetricEigenDecomposition"
+      ],
+      "source_reviewed_applicable_ready_width": 4,
+      "declared_capability_dag_width": 4,
+      "capability_levels": [
+        [
+          "fingerprint_maccs",
+          "fingerprint_morgan"
+        ],
+        [
+          "lap_maccs",
+          "lap_morgan"
+        ],
+        [
+          "operator_maccs",
+          "operator_morgan",
+          "spectrum_maccs",
+          "spectrum_morgan"
+        ],
+        [
+          "heat_maccs",
+          "heat_morgan"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 7
+    },
+    {
+      "id": "SMAS-0009",
+      "domain": "Chemical",
+      "title": "Ring-junction topology classification",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 6,
+      "successful_reference_tools": [
+        "GetBridgeheadAtomsNum",
+        "GetSpiroAtomsNum"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "bridgehead_a",
+          "bridgehead_b",
+          "bridgehead_c",
+          "spiro_a",
+          "spiro_b",
+          "spiro_c"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 3
+    },
+    {
+      "id": "SMAS-0010",
+      "domain": "Chemical",
+      "title": "Duplicate-record identity and inventory audit",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 8,
+      "successful_reference_tools": [
+        "CalculateTPSA",
+        "CanonicalMolecularIdentity",
+        "SMILESToWeight"
+      ],
+      "source_reviewed_applicable_ready_width": 4,
+      "declared_capability_dag_width": 8,
+      "capability_levels": [
+        [
+          "identity_a",
+          "identity_b",
+          "identity_c",
+          "identity_d"
+        ],
+        [
+          "mass_a",
+          "mass_b",
+          "mass_c",
+          "mass_d",
+          "tpsa_a",
+          "tpsa_b",
+          "tpsa_c",
+          "tpsa_d"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0011",
+      "domain": "Chemical",
+      "title": "Representation round-trip with a mass witness",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 15,
+      "successful_reference_tools": [
+        "CanonicalMolecularIdentity",
+        "InChIToSMILES",
+        "SMILESToInChI",
+        "SMILESToWeight"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "inchi_a",
+          "inchi_b",
+          "inchi_c",
+          "mass_before_a",
+          "mass_before_b",
+          "mass_before_c"
+        ],
+        [
+          "back_a",
+          "back_b",
+          "back_c"
+        ],
+        [
+          "mass_after_a",
+          "mass_after_b",
+          "mass_after_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0012",
+      "domain": "Chemical",
+      "title": "Stereochemical specification audit",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 11,
+      "successful_reference_tools": [
+        "CanonicalMolecularIdentity",
+        "CompareMolecularFingerprints",
+        "GetAtomStereoCentersNum",
+        "GetUnspecifiedAtomStereoCentersNum"
+      ],
+      "source_reviewed_applicable_ready_width": 8,
+      "declared_capability_dag_width": 8,
+      "capability_levels": [
+        [
+          "identity_0",
+          "identity_1",
+          "identity_2"
+        ],
+        [
+          "achiral_matrix",
+          "chiral_matrix",
+          "metric_0_0",
+          "metric_0_1",
+          "metric_1_0",
+          "metric_1_1",
+          "metric_2_0",
+          "metric_2_1"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0013",
+      "domain": "Chemical",
+      "title": "Triage a phenolic fragment library for a follow-up polar-surface study",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 8,
+      "successful_reference_tools": [
+        "CalculateTPSA",
+        "CanonicalMolecularIdentity",
+        "SubstructureQuery"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 3,
+      "capability_levels": [
+        [
+          "identity_0",
+          "identity_1",
+          "identity_2"
+        ],
+        [
+          "phenolic_oxygen_0",
+          "phenolic_oxygen_1",
+          "phenolic_oxygen_2"
+        ],
+        [
+          "polar_area_0",
+          "polar_area_1",
+          "polar_area_2"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0014",
+      "domain": "Material",
+      "title": "Repository audit of three labelled crystal records",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 11,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CalculateSymmetry",
+        "CrystalStructureMatch",
+        "PowderDiffractionPattern"
+      ],
+      "source_reviewed_applicable_ready_width": 11,
+      "declared_capability_dag_width": 11,
+      "capability_levels": [
+        [
+          "density_doubled_B2",
+          "density_primitive_B2",
+          "density_tetragonal_B2",
+          "match_strain",
+          "match_supercell",
+          "powder_doubled_B2",
+          "powder_primitive_B2",
+          "powder_tetragonal_B2",
+          "symmetry_doubled_B2",
+          "symmetry_primitive_B2",
+          "symmetry_tetragonal_B2"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0015",
+      "domain": "Material",
+      "title": "A cubic perovskite motif has either exact coordinates or a small single-oxygen displacement",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 10,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CalculateSymmetry",
+        "PeriodicNeighborList",
+        "PowderDiffractionPattern"
+      ],
+      "source_reviewed_applicable_ready_width": 10,
+      "declared_capability_dag_width": 10,
+      "capability_levels": [
+        [
+          "density_ideal",
+          "density_oxygen_displaced",
+          "neighbors_ideal",
+          "neighbors_oxygen_displaced",
+          "powder_ideal",
+          "powder_oxygen_displaced",
+          "symmetry_ideal_coarse",
+          "symmetry_ideal_fine",
+          "symmetry_oxygen_displaced_coarse",
+          "symmetry_oxygen_displaced_fine"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0016",
+      "domain": "Material",
+      "title": "Occupancy and geometric-method eligibility in supplied structure records",
+      "featured_showcase": false,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 10,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CompositionFractions",
+        "CrystalStructureMatch",
+        "PeriodicNeighborList",
+        "ReadCrystalStructure"
+      ],
+      "source_reviewed_applicable_ready_width": 8,
+      "declared_capability_dag_width": 10,
+      "capability_levels": [
+        [
+          "composition_average_disorder",
+          "composition_ordered_A",
+          "composition_ordered_B",
+          "density_average_disorder",
+          "density_ordered_A",
+          "density_ordered_B",
+          "match_domains",
+          "neighbors_ordered_A",
+          "neighbors_ordered_B",
+          "read_average"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0017",
+      "domain": "Material",
+      "title": "Density and structural evidence for two labelled iron records",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CalculateSymmetry",
+        "CrystalStructureMatch",
+        "PeriodicNeighborList",
+        "PowderDiffractionPattern"
+      ],
+      "source_reviewed_applicable_ready_width": 9,
+      "declared_capability_dag_width": 9,
+      "capability_levels": [
+        [
+          "density_bcc_Fe",
+          "density_fcc_Fe",
+          "match_polymorph",
+          "neighbors_bcc_Fe",
+          "neighbors_fcc_Fe",
+          "powder_bcc_Fe",
+          "powder_fcc_Fe",
+          "symmetry_bcc_Fe",
+          "symmetry_fcc_Fe"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0018",
+      "domain": "Material",
+      "title": "A carbon panel contains an ideal tetrahedral network and an AB-stacked layered motif",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 8,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CalculateSymmetry",
+        "PeriodicNeighborList",
+        "PowderDiffractionPattern"
+      ],
+      "source_reviewed_applicable_ready_width": 8,
+      "declared_capability_dag_width": 8,
+      "capability_levels": [
+        [
+          "density_diamond",
+          "density_layered_carbon",
+          "neighbors_diamond",
+          "neighbors_layered_carbon",
+          "powder_diamond",
+          "powder_layered_carbon",
+          "symmetry_diamond",
+          "symmetry_layered_carbon"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0019",
+      "domain": "Material",
+      "title": "Three layered oxide motifs share the same cell and fractional-site geometry while alkali or transition metal is substituted",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CompositionFractions",
+        "PeriodicNeighborList"
+      ],
+      "source_reviewed_applicable_ready_width": 9,
+      "declared_capability_dag_width": 9,
+      "capability_levels": [
+        [
+          "density_LiCoO2",
+          "density_LiNiO2",
+          "density_NaCoO2",
+          "fractions_LiCoO2",
+          "fractions_LiNiO2",
+          "fractions_NaCoO2",
+          "neighbors_LiCoO2",
+          "neighbors_LiNiO2",
+          "neighbors_NaCoO2"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0020",
+      "domain": "Material",
+      "title": "Periodic endpoint comparison under two coordinate records",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 5,
+      "successful_reference_tools": [
+        "MatchedPeriodicDisplacements",
+        "PeriodicNeighborList"
+      ],
+      "source_reviewed_applicable_ready_width": 5,
+      "declared_capability_dag_width": 5,
+      "capability_levels": [
+        [
+          "motion_unwrapped_mobile",
+          "motion_wrapped_mobile",
+          "neighbors_reference",
+          "neighbors_unwrapped_mobile",
+          "neighbors_wrapped_mobile"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 3
+    },
+    {
+      "id": "SMAS-0021",
+      "domain": "Material",
+      "title": "Minimum-image distances and directional uniqueness of endpoint records",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 8,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "MatchedPeriodicDisplacements",
+        "ReadCrystalStructure"
+      ],
+      "source_reviewed_applicable_ready_width": 5,
+      "declared_capability_dag_width": 5,
+      "capability_levels": [
+        [
+          "density_half_cell",
+          "density_near_half_cell",
+          "density_reference",
+          "motion_half_cell",
+          "motion_near_half_cell"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 3
+    },
+    {
+      "id": "SMAS-0022",
+      "domain": "Material",
+      "title": "Geometric audit of two proposed periodic-basis representations",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 7,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CalculateSymmetry",
+        "CrystalStructureMatch",
+        "PeriodicNeighborList"
+      ],
+      "source_reviewed_applicable_ready_width": 7,
+      "declared_capability_dag_width": 7,
+      "capability_levels": [
+        [
+          "density_oblique_basis",
+          "density_reduced_basis",
+          "match_basis",
+          "neighbors_oblique_basis",
+          "neighbors_reduced_basis",
+          "symmetry_oblique_basis",
+          "symmetry_reduced_basis"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 3
+    },
+    {
+      "id": "SMAS-0023",
+      "domain": "Material",
+      "title": "Scale-dependent geometric comparisons of three supplied records",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 10,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CrystalStructureMatch",
+        "PeriodicNeighborList"
+      ],
+      "source_reviewed_applicable_ready_width": 10,
+      "declared_capability_dag_width": 10,
+      "capability_levels": [
+        [
+          "density_isotropic_compression",
+          "density_orthorhombic_strain",
+          "density_reference",
+          "match_isotropic_compression_physical",
+          "match_isotropic_compression_scaled",
+          "match_orthorhombic_strain_physical",
+          "match_orthorhombic_strain_scaled",
+          "neighbors_isotropic_compression",
+          "neighbors_orthorhombic_strain",
+          "neighbors_reference"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0024",
+      "domain": "Material",
+      "title": "A rocksalt-type panel replaces cation, anion and lattice length",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 12,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CalculateSymmetry",
+        "CompositionFractions",
+        "PowderDiffractionPattern"
+      ],
+      "source_reviewed_applicable_ready_width": 12,
+      "declared_capability_dag_width": 12,
+      "capability_levels": [
+        [
+          "density_CaO",
+          "density_MgO",
+          "density_MgS",
+          "fractions_CaO",
+          "fractions_MgO",
+          "fractions_MgS",
+          "powder_CaO",
+          "powder_MgO",
+          "powder_MgS",
+          "symmetry_CaO",
+          "symmetry_MgO",
+          "symmetry_MgS"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0025",
+      "domain": "Material",
+      "title": "One MgO cell is complete, another removes a specified Mg/O pair, and the third replaces one Mg with Ca",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "GetElementComposition",
+        "PeriodicNeighborList"
+      ],
+      "source_reviewed_applicable_ready_width": 9,
+      "declared_capability_dag_width": 9,
+      "capability_levels": [
+        [
+          "composition_Ca_substitution",
+          "composition_paired_vacancy",
+          "composition_perfect",
+          "density_Ca_substitution",
+          "density_paired_vacancy",
+          "density_perfect",
+          "neighbors_Ca_substitution",
+          "neighbors_paired_vacancy",
+          "neighbors_perfect"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0026",
+      "domain": "Material",
+      "title": "For two chemically distinct cubic salt motifs, compare ideal powder diffraction at wavelengths 1.5406 A (Cu label) and 0.71073 A (Mo label), using 2theta from 5 to 100 degrees",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 8,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CalculateSymmetry",
+        "PowderDiffractionPattern"
+      ],
+      "source_reviewed_applicable_ready_width": 8,
+      "declared_capability_dag_width": 8,
+      "capability_levels": [
+        [
+          "density_CsCl",
+          "density_NaCl",
+          "powder_CsCl_Cu",
+          "powder_CsCl_Mo",
+          "powder_NaCl_Cu",
+          "powder_NaCl_Mo",
+          "symmetry_CsCl",
+          "symmetry_NaCl"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0027",
+      "domain": "Biology",
+      "title": "Taxonomic evenness versus phylogenetic trait structure",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "DiversityIndices",
+        "MantelCorrelation",
+        "PairwiseNumericDistances",
+        "ParseJSONDocument",
+        "ParseNewickTreeDistances"
+      ],
+      "source_reviewed_applicable_ready_width": 8,
+      "declared_capability_dag_width": 8,
+      "capability_levels": [
+        [
+          "composition",
+          "plot1",
+          "plot2",
+          "plot3",
+          "plot4",
+          "records",
+          "traits",
+          "tree"
+        ],
+        [
+          "phylo_trait"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0028",
+      "domain": "Biology",
+      "title": "Paired cover observations with unequal within-plot sampling effort",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 10,
+      "successful_reference_tools": [
+        "BootstrapMeanInterval",
+        "DiversityIndices",
+        "GroupedBootstrapMeanInterval",
+        "ParseJSONDocument"
+      ],
+      "source_reviewed_applicable_ready_width": 9,
+      "declared_capability_dag_width": 9,
+      "capability_levels": [
+        [
+          "after_plot",
+          "after_quadrat",
+          "before_plot",
+          "before_quadrat",
+          "change_plot",
+          "change_quadrat",
+          "lowland",
+          "records",
+          "upland"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0029",
+      "domain": "Biology",
+      "title": "Detection turnover versus dominance",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "DiversityIndices",
+        "MantelCorrelation",
+        "PairwiseNumericDistances",
+        "ParseJSONDocument"
+      ],
+      "source_reviewed_applicable_ready_width": 8,
+      "declared_capability_dag_width": 8,
+      "capability_levels": [
+        [
+          "abundance",
+          "conditions",
+          "list1",
+          "list2",
+          "list3",
+          "list4",
+          "presence",
+          "records"
+        ],
+        [
+          "agreement"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0030",
+      "domain": "Biology",
+      "title": "Seasonal normalization sensitivity",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 8,
+      "successful_reference_tools": [
+        "DiversityIndices",
+        "MantelCorrelation",
+        "NormalizeNumericRows",
+        "PairwiseNumericDistances"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 7,
+      "capability_levels": [
+        [
+          "raw",
+          "records",
+          "relative",
+          "season1",
+          "season2",
+          "season3",
+          "season4"
+        ],
+        [
+          "agreement"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0031",
+      "domain": "Biology",
+      "title": "Guild-environment metric sensitivity",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "DiversityIndices",
+        "MantelCorrelation",
+        "PairwiseNumericDistances"
+      ],
+      "source_reviewed_applicable_ready_width": 7,
+      "declared_capability_dag_width": 8,
+      "capability_levels": [
+        [
+          "cityblock",
+          "environment",
+          "guild",
+          "pond1",
+          "pond2",
+          "pond3",
+          "pond4",
+          "records"
+        ],
+        [
+          "association",
+          "association_cityblock"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0032",
+      "domain": "Biology",
+      "title": "Weighted-tree comparison with trait observations",
+      "featured_showcase": false,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 4,
+      "successful_reference_tools": [
+        "MantelCorrelation",
+        "PairwiseNumericDistances",
+        "ParseNewickTreeDistances"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 4,
+      "capability_levels": [
+        [
+          "records",
+          "root1",
+          "root2",
+          "traits"
+        ],
+        [
+          "association1",
+          "association2"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0033",
+      "domain": "Biology",
+      "title": "Spatial pattern comparison in observational quadrats",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 5,
+      "successful_reference_tools": [
+        "MantelCorrelation",
+        "PairwiseNumericDistances"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 4,
+      "capability_levels": [
+        [
+          "composition",
+          "geography",
+          "records",
+          "soil"
+        ],
+        [
+          "association_geography",
+          "association_soil"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0034",
+      "domain": "Biology",
+      "title": "Local and pooled community diversity",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 6,
+      "successful_reference_tools": [
+        "DiversityIndices",
+        "PairwiseNumericDistances"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 7,
+      "capability_levels": [
+        [
+          "counts",
+          "pooled",
+          "presence",
+          "records",
+          "stand1",
+          "stand2",
+          "stand3"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 3
+    },
+    {
+      "id": "SMAS-0035",
+      "domain": "Biology",
+      "title": "Environmental barcode QC with an incomplete record",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "ParseJSONDocument",
+        "SequenceComposition",
+        "SequenceQualityMetrics"
+      ],
+      "source_reviewed_applicable_ready_width": 9,
+      "declared_capability_dag_width": 9,
+      "capability_levels": [
+        [
+          "R1",
+          "R2",
+          "R2_composition",
+          "R3",
+          "R3_composition",
+          "R3_corrected",
+          "R4",
+          "R4_composition",
+          "records"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0036",
+      "domain": "Biology",
+      "title": "Benign protein composition inventory",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 13,
+      "successful_reference_tools": [
+        "ParseJSONDocument",
+        "ProteinAliphaticIndex",
+        "ProteinGRAVY",
+        "ProteinIsoelectricPointCalculator"
+      ],
+      "source_reviewed_applicable_ready_width": 9,
+      "declared_capability_dag_width": 13,
+      "capability_levels": [
+        [
+          "C1_aliphatic",
+          "C1_hydropathy",
+          "C1_pI",
+          "C2_aliphatic",
+          "C2_hydropathy",
+          "C2_pI",
+          "C3_aliphatic",
+          "C3_hydropathy",
+          "C3_pI",
+          "C4_aliphatic",
+          "C4_hydropathy",
+          "C4_pI",
+          "records"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0037",
+      "domain": "Biology",
+      "title": "RNA record uncertainty and denominator conventions",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 6,
+      "successful_reference_tools": [
+        "SequenceComposition",
+        "SequenceQualityMetrics"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 7,
+      "capability_levels": [
+        [
+          "U1",
+          "U1_composition",
+          "U2",
+          "U3",
+          "U3_composition",
+          "U4",
+          "records"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 3
+    },
+    {
+      "id": "SMAS-0038",
+      "domain": "Biology",
+      "title": "Scale transformation and rank association",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 6,
+      "successful_reference_tools": [
+        "BootstrapMeanInterval",
+        "PearsonCorrelation",
+        "SpearmanCorrelation"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 7,
+      "capability_levels": [
+        [
+          "growth",
+          "growth_pearson",
+          "growth_spearman",
+          "records",
+          "score",
+          "score_pearson",
+          "score_spearman"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 3
+    },
+    {
+      "id": "SMAS-0039",
+      "domain": "MachineLearning",
+      "title": "Generalization to unseen calibration devices",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 10,
+      "successful_reference_tools": [
+        "FitRidgeRegression",
+        "GroupTrainTestSplit",
+        "PredictLinearModel",
+        "RegressionMetrics"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 3,
+      "capability_levels": [
+        [
+          "split"
+        ],
+        [
+          "fit_a",
+          "fit_b",
+          "fit_c"
+        ],
+        [
+          "predict_a",
+          "predict_b",
+          "predict_c"
+        ],
+        [
+          "metric_a",
+          "metric_b",
+          "metric_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0040",
+      "domain": "MachineLearning",
+      "title": "Transient responses on a weighted sensor network",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "GraphLaplacian",
+        "MatrixExponential",
+        "MatrixMultiply",
+        "PairwiseNumericDistances",
+        "SymmetricEigenDecomposition"
+      ],
+      "source_reviewed_applicable_ready_width": 4,
+      "declared_capability_dag_width": 4,
+      "capability_levels": [
+        [
+          "lap"
+        ],
+        [
+          "exp_a",
+          "exp_b",
+          "exp_c",
+          "spectrum"
+        ],
+        [
+          "state_a",
+          "state_b",
+          "state_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0041",
+      "domain": "MachineLearning",
+      "title": "Admissibility of covariance proposals",
+      "featured_showcase": false,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 7,
+      "successful_reference_tools": [
+        "MatrixInverse",
+        "SolveLinearSystem",
+        "SymmetricEigenDecomposition"
+      ],
+      "source_reviewed_applicable_ready_width": 4,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "eig_a",
+          "eig_b",
+          "eig_c"
+        ],
+        [
+          "inverse_a",
+          "inverse_b",
+          "inverse_c",
+          "solve_a",
+          "solve_b",
+          "solve_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0042",
+      "domain": "MachineLearning",
+      "title": "Paired optimizer comparison across benchmark instances",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 8,
+      "successful_reference_tools": [
+        "AdjustPValues",
+        "BootstrapMeanInterval",
+        "ElementwiseNumericOperations",
+        "PairedRandomizationTest"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "boot_a",
+          "boot_b",
+          "boot_c",
+          "test_a",
+          "test_b",
+          "test_c"
+        ],
+        [
+          "adjust"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0043",
+      "domain": "MachineLearning",
+      "title": "Cost-sensitive deployment thresholds",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 11,
+      "successful_reference_tools": [
+        "DecisionCostSummary",
+        "FitLogisticRegression",
+        "PredictLogisticModel",
+        "ProbabilityCalibrationSummary",
+        "StandardizeNumericFeatures",
+        "ThresholdClassProbabilities"
+      ],
+      "source_reviewed_applicable_ready_width": 4,
+      "declared_capability_dag_width": 4,
+      "capability_levels": [
+        [
+          "fit"
+        ],
+        [
+          "probability"
+        ],
+        [
+          "calibration",
+          "threshold_a",
+          "threshold_b",
+          "threshold_c"
+        ],
+        [
+          "cost_a",
+          "cost_b",
+          "cost_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 7
+    },
+    {
+      "id": "SMAS-0044",
+      "domain": "MachineLearning",
+      "title": "Discrete derivative consistency in three numerical sensors",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "CubicHermiteInterpolate",
+        "FiniteDifferenceGradient",
+        "NumericalTrapezoidIntegration"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "gradient_a",
+          "gradient_b",
+          "gradient_c"
+        ],
+        [
+          "hermite_a",
+          "hermite_b",
+          "hermite_c",
+          "integral_a",
+          "integral_b",
+          "integral_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0045",
+      "domain": "MachineLearning",
+      "title": "Resource allocation under three capacity scenarios",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "MatrixMultiply",
+        "SolveLinearProgram"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "optimum_a",
+          "optimum_b",
+          "optimum_c"
+        ],
+        [
+          "objective_a",
+          "objective_b",
+          "objective_c",
+          "resource_a",
+          "resource_b",
+          "resource_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0046",
+      "domain": "MachineLearning",
+      "title": "Scale sensitivity of unsupervised clustering",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 8,
+      "successful_reference_tools": [
+        "AdjustedRandAgreement",
+        "ClusteringQualityMetrics",
+        "KMeansClustering",
+        "PairwiseNumericDistances",
+        "StandardizeNumericFeatures"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 3,
+      "capability_levels": [
+        [
+          "cluster_raw",
+          "distance_raw",
+          "standardize"
+        ],
+        [
+          "cluster_standardized",
+          "distance_standardized",
+          "quality_raw"
+        ],
+        [
+          "agreement",
+          "quality_standardized"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0047",
+      "domain": "MachineLearning",
+      "title": "Compression fidelity on future feature vectors",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 7,
+      "successful_reference_tools": [
+        "PCAReconstructionError",
+        "PairwiseNumericDistances",
+        "PrincipalComponentProjection",
+        "StandardizeNumericFeatures"
+      ],
+      "source_reviewed_applicable_ready_width": 4,
+      "declared_capability_dag_width": 4,
+      "capability_levels": [
+        [
+          "scale_heldout",
+          "scale_training"
+        ],
+        [
+          "pca_a",
+          "pca_b",
+          "pca_c",
+          "projection"
+        ],
+        [
+          "distances"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0048",
+      "domain": "MachineLearning",
+      "title": "Coverage planning for a finite model-audit inventory",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 4,
+      "successful_reference_tools": [
+        "BinomialProbabilityTable",
+        "FinitePopulationCoverage"
+      ],
+      "source_reviewed_applicable_ready_width": 4,
+      "declared_capability_dag_width": 4,
+      "capability_levels": [
+        [
+          "coverage",
+          "replacement_a",
+          "replacement_b",
+          "replacement_c"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 3
+    },
+    {
+      "id": "SMAS-0049",
+      "domain": "MachineLearning",
+      "title": "Response-curve family comparison for a learning saturation study",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "EvaluateParametricCurve",
+        "FitParametricCurve",
+        "RegressionMetrics"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 3,
+      "capability_levels": [
+        [
+          "fit_a",
+          "fit_b",
+          "fit_c"
+        ],
+        [
+          "evaluate_a",
+          "evaluate_b",
+          "evaluate_c"
+        ],
+        [
+          "metric_a",
+          "metric_b",
+          "metric_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0050",
+      "domain": "MachineLearning",
+      "title": "Inverse calibration and branch ambiguity",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "PolynomialLeastSquaresFit",
+        "PolynomialRoots"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "calibration_a",
+          "calibration_b",
+          "calibration_c"
+        ],
+        [
+          "inverse_a",
+          "inverse_b",
+          "inverse_c",
+          "turning_a",
+          "turning_b",
+          "turning_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0051",
+      "domain": "Chemical",
+      "title": "Registry reconciliation with charged-parent witnesses",
+      "featured_showcase": false,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 13,
+      "successful_reference_tools": [
+        "CalculateTPSA",
+        "CanonicalMolecularIdentity",
+        "ElementwiseNumericOperations",
+        "InChIToInChIKey",
+        "SMILESToInChI",
+        "SMILESToWeight"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 12,
+      "capability_levels": [
+        [
+          "parent_a",
+          "parent_b",
+          "parent_c",
+          "parent_d"
+        ],
+        [
+          "inchi_a",
+          "inchi_b",
+          "inchi_c",
+          "inchi_d",
+          "mass_a",
+          "mass_b",
+          "mass_c",
+          "mass_d",
+          "tpsa_a",
+          "tpsa_b",
+          "tpsa_c",
+          "tpsa_d"
+        ],
+        [
+          "key_a",
+          "key_b",
+          "key_c",
+          "key_d"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0052",
+      "domain": "Chemical",
+      "title": "Atom-index graph heat versus molecular branching",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 33,
+      "successful_reference_tools": [
+        "GetAdjacencyMatrix",
+        "GraphLaplacian",
+        "MatrixExponential",
+        "MatrixMultiply",
+        "ScaleNumericMatrix",
+        "SymmetricEigenDecomposition"
+      ],
+      "source_reviewed_applicable_ready_width": 9,
+      "declared_capability_dag_width": 9,
+      "capability_levels": [
+        [
+          "adj_a",
+          "adj_b",
+          "adj_c"
+        ],
+        [
+          "lap_a",
+          "lap_b",
+          "lap_c"
+        ],
+        [
+          "eig_a",
+          "eig_b",
+          "eig_c",
+          "exp_long_a",
+          "exp_long_b",
+          "exp_long_c",
+          "exp_short_a",
+          "exp_short_b",
+          "exp_short_c"
+        ],
+        [
+          "heat_long_a",
+          "heat_long_b",
+          "heat_long_c",
+          "heat_short_a",
+          "heat_short_b",
+          "heat_short_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 8
+    },
+    {
+      "id": "SMAS-0053",
+      "domain": "Chemical",
+      "title": "Literal versus tautomer-aware carbonyl evidence",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 15,
+      "successful_reference_tools": [
+        "CalculateTPSA",
+        "GetHBDNum",
+        "InspectTautomerQuery",
+        "SubstructureQuery"
+      ],
+      "source_reviewed_applicable_ready_width": 12,
+      "declared_capability_dag_width": 15,
+      "capability_levels": [
+        [
+          "aware_a",
+          "aware_b",
+          "aware_c",
+          "donors_a",
+          "donors_b",
+          "donors_c",
+          "literal_a",
+          "literal_b",
+          "literal_c",
+          "query_a",
+          "query_b",
+          "query_c",
+          "tpsa_a",
+          "tpsa_b",
+          "tpsa_c"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0054",
+      "domain": "Chemical",
+      "title": "Geometry and shape readouts of labelled molecular records",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 10,
+      "successful_reference_tools": [
+        "CompareMolecularShapes",
+        "MolecularCentroid",
+        "PairwiseNumericDistances",
+        "RigidSuperposition"
+      ],
+      "source_reviewed_applicable_ready_width": 5,
+      "declared_capability_dag_width": 10,
+      "capability_levels": [
+        [
+          "center_a",
+          "center_b",
+          "center_c",
+          "center_d",
+          "distance_a",
+          "distance_b",
+          "distance_c",
+          "distance_d",
+          "fit",
+          "shape"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0055",
+      "domain": "Chemical",
+      "title": "Hydrogen representations, isotope inventory and charge conservation",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 19,
+      "successful_reference_tools": [
+        "AddHydrogens",
+        "CountMolecularAtoms",
+        "MolecularFormalCharges",
+        "RemoveHydrogens",
+        "SMILESToWeight"
+      ],
+      "source_reviewed_applicable_ready_width": 9,
+      "declared_capability_dag_width": 12,
+      "capability_levels": [
+        [
+          "add_a",
+          "add_b",
+          "add_c",
+          "charge_original_a",
+          "charge_original_b",
+          "charge_original_c",
+          "count_original_a",
+          "count_original_b",
+          "count_original_c",
+          "mass_original_a",
+          "mass_original_b",
+          "mass_original_c"
+        ],
+        [
+          "charge_added_a",
+          "charge_added_b",
+          "charge_added_c",
+          "mass_added_a",
+          "mass_added_b",
+          "mass_added_c",
+          "remove_a",
+          "remove_b",
+          "remove_c"
+        ],
+        [
+          "charge_removed_a",
+          "charge_removed_b",
+          "charge_removed_c",
+          "mass_removed_a",
+          "mass_removed_b",
+          "mass_removed_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0056",
+      "domain": "Chemical",
+      "title": "Scaffold-equivalent records can occupy distinct property neighborhoods",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 21,
+      "successful_reference_tools": [
+        "CalculateTPSA",
+        "CompareMolecularFingerprints",
+        "MurckoDecompose",
+        "PairwiseNumericDistances",
+        "SMILESToWeight",
+        "StandardizeNumericFeatures"
+      ],
+      "source_reviewed_applicable_ready_width": 13,
+      "declared_capability_dag_width": 19,
+      "capability_levels": [
+        [
+          "fp",
+          "mass_a",
+          "mass_b",
+          "mass_c",
+          "mass_d",
+          "mass_e",
+          "mass_f",
+          "scaffold_a",
+          "scaffold_b",
+          "scaffold_c",
+          "scaffold_d",
+          "scaffold_e",
+          "scaffold_f",
+          "tpsa_a",
+          "tpsa_b",
+          "tpsa_c",
+          "tpsa_d",
+          "tpsa_e",
+          "tpsa_f"
+        ],
+        [
+          "scale"
+        ],
+        [
+          "property_distance"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 10
+    },
+    {
+      "id": "SMAS-0057",
+      "domain": "Chemical",
+      "title": "Hydrogen-bond counting conventions in a control panel",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 20,
+      "successful_reference_tools": [
+        "GetHBANum",
+        "GetHBDNum",
+        "GetLipinskiHBANum",
+        "GetLipinskiHBDNum",
+        "MolecularFormalCharges"
+      ],
+      "source_reviewed_applicable_ready_width": 12,
+      "declared_capability_dag_width": 20,
+      "capability_levels": [
+        [
+          "charge_a",
+          "charge_b",
+          "charge_c",
+          "charge_d",
+          "lipinski_acceptors_a",
+          "lipinski_acceptors_b",
+          "lipinski_acceptors_c",
+          "lipinski_acceptors_d",
+          "lipinski_donors_a",
+          "lipinski_donors_b",
+          "lipinski_donors_c",
+          "lipinski_donors_d",
+          "rdkit_acceptors_a",
+          "rdkit_acceptors_b",
+          "rdkit_acceptors_c",
+          "rdkit_acceptors_d",
+          "rdkit_donors_a",
+          "rdkit_donors_b",
+          "rdkit_donors_c",
+          "rdkit_donors_d"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0058",
+      "domain": "Chemical",
+      "title": "Partial-charge sums versus formal graph charge",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "CountMolecularAtoms",
+        "GetEEMCharges",
+        "MolecularFormalCharges"
+      ],
+      "source_reviewed_applicable_ready_width": 9,
+      "declared_capability_dag_width": 9,
+      "capability_levels": [
+        [
+          "count_a",
+          "count_b",
+          "count_c",
+          "eem_a",
+          "eem_b",
+          "eem_c",
+          "formal_a",
+          "formal_b",
+          "formal_c"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0059",
+      "domain": "Chemical",
+      "title": "Molecular serialization fidelity under two representation standards",
+      "featured_showcase": false,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 24,
+      "successful_reference_tools": [
+        "CanonicalMolecularIdentity",
+        "InChIToSMILES",
+        "InspectSELFIES",
+        "SMILESToInChI",
+        "SMILESToWeight",
+        "SMILEStoSELFIES"
+      ],
+      "source_reviewed_applicable_ready_width": 12,
+      "declared_capability_dag_width": 12,
+      "capability_levels": [
+        [
+          "canonical_original_a",
+          "canonical_original_b",
+          "canonical_original_c",
+          "encode_a",
+          "encode_b",
+          "encode_c",
+          "inchi_a",
+          "inchi_b",
+          "inchi_c",
+          "mass_original_a",
+          "mass_original_b",
+          "mass_original_c"
+        ],
+        [
+          "back_a",
+          "back_b",
+          "back_c",
+          "inspect_a",
+          "inspect_b",
+          "inspect_c"
+        ],
+        [
+          "canonical_inchi_a",
+          "canonical_inchi_b",
+          "canonical_inchi_c",
+          "canonical_selfies_a",
+          "canonical_selfies_b",
+          "canonical_selfies_c",
+          "mass_inchi_a",
+          "mass_inchi_b",
+          "mass_inchi_c",
+          "mass_selfies_a",
+          "mass_selfies_b",
+          "mass_selfies_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0060",
+      "domain": "Chemical",
+      "title": "Element-constrained blend optimization and inventory audit",
+      "featured_showcase": false,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 11,
+      "successful_reference_tools": [
+        "CompositionFractions",
+        "GetMolFormula",
+        "MatrixMultiply",
+        "SMILESToWeight",
+        "SolveLinearProgram"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "formula_a",
+          "formula_b",
+          "formula_c",
+          "mass_a",
+          "mass_b",
+          "mass_c"
+        ],
+        [
+          "fractions_a",
+          "fractions_b",
+          "fractions_c"
+        ],
+        [
+          "optimum"
+        ],
+        [
+          "elements"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0061",
+      "domain": "Chemical",
+      "title": "Property geometry versus structural neighborhood association",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 19,
+      "successful_reference_tools": [
+        "CalculateTPSA",
+        "CompareMolecularFingerprints",
+        "GetHBDNum",
+        "MantelCorrelation",
+        "PairwiseNumericDistances",
+        "SMILESToWeight",
+        "StandardizeNumericFeatures"
+      ],
+      "source_reviewed_applicable_ready_width": 16,
+      "declared_capability_dag_width": 16,
+      "capability_levels": [
+        [
+          "donors_a",
+          "donors_b",
+          "donors_c",
+          "donors_d",
+          "donors_e",
+          "mass_a",
+          "mass_b",
+          "mass_c",
+          "mass_d",
+          "mass_e",
+          "sd",
+          "tpsa_a",
+          "tpsa_b",
+          "tpsa_c",
+          "tpsa_d",
+          "tpsa_e"
+        ],
+        [
+          "scale"
+        ],
+        [
+          "pd"
+        ],
+        [
+          "association"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 8
+    },
+    {
+      "id": "SMAS-0062",
+      "domain": "Chemical",
+      "title": "Principal moment ratios with a controlled conformer protocol",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 13,
+      "successful_reference_tools": [
+        "CalculatePMI1",
+        "CalculatePMI2",
+        "CalculatePMI3",
+        "CompareMolecularShapes",
+        "NormalizedPrincipalMoments"
+      ],
+      "source_reviewed_applicable_ready_width": 13,
+      "declared_capability_dag_width": 13,
+      "capability_levels": [
+        [
+          "normalized_a",
+          "normalized_b",
+          "normalized_c",
+          "pmi1_a",
+          "pmi1_b",
+          "pmi1_c",
+          "pmi2_a",
+          "pmi2_b",
+          "pmi2_c",
+          "pmi3_a",
+          "pmi3_b",
+          "pmi3_c",
+          "shape"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0063",
+      "domain": "Material",
+      "title": "Phase proportions and bulk density of an additive-volume mixture",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 12,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CompositionFractions",
+        "ElementwiseNumericOperations",
+        "MatrixMultiply",
+        "NormalizeNumericRows",
+        "SolveLinearSystem"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "density_a",
+          "density_b",
+          "density_c",
+          "fraction_a",
+          "fraction_b",
+          "fraction_c"
+        ],
+        [
+          "inverse"
+        ],
+        [
+          "forward"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 8
+    },
+    {
+      "id": "SMAS-0064",
+      "domain": "Material",
+      "title": "Held-out assessment of volume-density calibrations",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 16,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "FitLinearRegression",
+        "PredictLinearModel",
+        "ReadCrystalStructure",
+        "RegressionMetrics"
+      ],
+      "source_reviewed_applicable_ready_width": 5,
+      "declared_capability_dag_width": 5,
+      "capability_levels": [
+        [
+          "density_0",
+          "density_1",
+          "density_2",
+          "density_3",
+          "density_4"
+        ],
+        [
+          "fit_reciprocal",
+          "fit_volume"
+        ],
+        [
+          "prediction_reciprocal",
+          "prediction_volume"
+        ],
+        [
+          "metric_reciprocal",
+          "metric_volume"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 7
+    },
+    {
+      "id": "SMAS-0065",
+      "domain": "Material",
+      "title": "Coordination conclusion across a finite radial resolution envelope",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 18,
+      "successful_reference_tools": [
+        "ElementwiseNumericOperations",
+        "FiniteDifferenceGradient",
+        "NumericalTrapezoidIntegration",
+        "ParseJSONDocument",
+        "PeriodicNeighborList",
+        "ReadCrystalStructure"
+      ],
+      "source_reviewed_applicable_ready_width": 8,
+      "declared_capability_dag_width": 8,
+      "capability_levels": [
+        [
+          "neighbor_a0",
+          "neighbor_a1",
+          "neighbor_a2",
+          "neighbor_a3",
+          "neighbor_b0",
+          "neighbor_b1",
+          "neighbor_b2",
+          "neighbor_b3"
+        ],
+        [
+          "gradient_a",
+          "gradient_b",
+          "integral_a",
+          "integral_b"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 7
+    },
+    {
+      "id": "SMAS-0066",
+      "domain": "Material",
+      "title": "Candidate diffraction patterns under an unknown common angle offset",
+      "featured_showcase": false,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 6,
+      "successful_reference_tools": [
+        "PowderDiffractionPattern",
+        "RegressionMetrics"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 3,
+      "capability_levels": [
+        [
+          "powder_a",
+          "powder_b",
+          "powder_c"
+        ],
+        [
+          "metric_a",
+          "metric_b",
+          "metric_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 7
+    },
+    {
+      "id": "SMAS-0067",
+      "domain": "Material",
+      "title": "Periodic replicate displacement covariance with directional uncertainty",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "BootstrapMeanInterval",
+        "MatchedPeriodicDisplacements",
+        "MatrixMultiply",
+        "SymmetricEigenDecomposition"
+      ],
+      "source_reviewed_applicable_ready_width": 4,
+      "declared_capability_dag_width": 4,
+      "capability_levels": [
+        [
+          "displacement_0",
+          "displacement_1",
+          "displacement_2",
+          "displacement_3"
+        ],
+        [
+          "bootstrap_0",
+          "bootstrap_1",
+          "bootstrap_2"
+        ],
+        [
+          "covariance"
+        ],
+        [
+          "spectrum"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0068",
+      "domain": "Material",
+      "title": "Composition and occupancy in density-model transfer",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 18,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "FitLinearRegression",
+        "PredictLinearModel",
+        "ReadCrystalStructure",
+        "RegressionMetrics"
+      ],
+      "source_reviewed_applicable_ready_width": 12,
+      "declared_capability_dag_width": 12,
+      "capability_levels": [
+        [
+          "composition_0",
+          "composition_1",
+          "composition_2",
+          "composition_3",
+          "composition_4",
+          "composition_5",
+          "density_0",
+          "density_1",
+          "density_2",
+          "density_3",
+          "density_4",
+          "density_5"
+        ],
+        [
+          "fit_f_only",
+          "fit_inventory"
+        ],
+        [
+          "pred_f_only",
+          "pred_inventory"
+        ],
+        [
+          "error_f_only",
+          "error_inventory"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 7
+    },
+    {
+      "id": "SMAS-0069",
+      "domain": "Material",
+      "title": "Formula labels versus actual supplied-cell inventories",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CompositionFractions",
+        "GetElementComposition"
+      ],
+      "source_reviewed_applicable_ready_width": 9,
+      "declared_capability_dag_width": 9,
+      "capability_levels": [
+        [
+          "actual_a",
+          "actual_b",
+          "actual_c",
+          "declared_a",
+          "declared_b",
+          "declared_c",
+          "density_a",
+          "density_b",
+          "density_c"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0070",
+      "domain": "Material",
+      "title": "Normal-mode vector metric and IR-column alignment audit",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 8,
+      "successful_reference_tools": [
+        "GetMolecularFrequencies",
+        "MatrixMultiply",
+        "ReadQChemFrequencyModes",
+        "ReadQChemIRIntensities",
+        "SymmetricEigenDecomposition"
+      ],
+      "source_reviewed_applicable_ready_width": 2,
+      "declared_capability_dag_width": 3,
+      "capability_levels": [
+        [
+          "freq",
+          "ir",
+          "modes"
+        ],
+        [
+          "plain",
+          "weighted_gram"
+        ],
+        [
+          "plain_spectrum",
+          "weighted_spectrum"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0071",
+      "domain": "Material",
+      "title": "Pressure and surface-state dependence of a molecular reservoir model",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 6,
+      "successful_reference_tools": [
+        "ReadQChemRotationalEnthalpy",
+        "ReadQChemRotationalEntropy",
+        "ReadQChemTranslationalEnthalpy",
+        "ReadQChemTranslationalEntropy",
+        "ReadQChemVibrationalEnthalpy",
+        "ReadQChemVibrationalEntropy"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "h_rot",
+          "h_trans",
+          "h_vib",
+          "s_rot",
+          "s_trans",
+          "s_vib"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 3
+    },
+    {
+      "id": "SMAS-0072",
+      "domain": "Material",
+      "title": "Calibrated-band mixture inference and identifiability audit",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 13,
+      "successful_reference_tools": [
+        "EvaluateParametricCurve",
+        "FitParametricCurve",
+        "GetMolecularFrequencies",
+        "LinearLeastSquares",
+        "MatrixMultiply",
+        "MatrixSVD",
+        "ReadQChemFrequencyModes",
+        "ReadQChemIRIntensities",
+        "RegressionMetrics"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 3,
+      "capability_levels": [
+        [
+          "frequencies",
+          "intensities"
+        ],
+        [
+          "fit_a",
+          "fit_b",
+          "fit_c"
+        ],
+        [
+          "evaluate_a",
+          "evaluate_b",
+          "evaluate_c"
+        ],
+        [
+          "mixture",
+          "spectrum"
+        ],
+        [
+          "forward"
+        ],
+        [
+          "error"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 10
+    },
+    {
+      "id": "SMAS-0073",
+      "domain": "Material",
+      "title": "Population-accounting audit across three supplied records",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 3,
+      "successful_reference_tools": [
+        "ReadQChemNBOPopulations"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 3,
+      "capability_levels": [
+        [
+          "record_a",
+          "record_b",
+          "record_c"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0074",
+      "domain": "Material",
+      "title": "Anion packing versus total mass-density ranking",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 12,
+      "successful_reference_tools": [
+        "CalculateDensity",
+        "CompositionFractions",
+        "GetElementComposition"
+      ],
+      "source_reviewed_applicable_ready_width": 12,
+      "declared_capability_dag_width": 12,
+      "capability_levels": [
+        [
+          "count_a",
+          "count_b",
+          "count_c",
+          "count_d",
+          "density_a",
+          "density_b",
+          "density_c",
+          "density_d",
+          "fraction_a",
+          "fraction_b",
+          "fraction_c",
+          "fraction_d"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0075",
+      "domain": "Biology",
+      "title": "Restoration endpoints under a fixed target-habitat mixture",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 12,
+      "successful_reference_tools": [
+        "BootstrapMeanInterval",
+        "ElementwiseNumericOperations",
+        "GroupedBootstrapMeanInterval",
+        "StratifiedClusterMeanInterval"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 9,
+      "capability_levels": [
+        [
+          "naive_biomass",
+          "naive_cover",
+          "naive_height",
+          "unweighted_biomass",
+          "unweighted_cover",
+          "unweighted_height",
+          "weighted_biomass",
+          "weighted_cover",
+          "weighted_height"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0076",
+      "domain": "Biology",
+      "title": "Distance geometry of community observations",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 17,
+      "successful_reference_tools": [
+        "ElementwiseNumericOperations",
+        "MatrixMultiply",
+        "NormalizeNumericRows",
+        "PairwiseNumericDistances",
+        "SymmetricEigenDecomposition"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 3,
+      "capability_levels": [
+        [
+          "bray",
+          "jaccard",
+          "relative"
+        ],
+        [
+          "sqrt",
+          "square_bray",
+          "square_jaccard"
+        ],
+        [
+          "hellinger",
+          "left_bray",
+          "left_jaccard"
+        ],
+        [
+          "center_bray",
+          "center_jaccard",
+          "square_hellinger"
+        ],
+        [
+          "eigen_bray",
+          "eigen_jaccard",
+          "left_hellinger"
+        ],
+        [
+          "center_hellinger"
+        ],
+        [
+          "eigen_hellinger"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 9
+    },
+    {
+      "id": "SMAS-0077",
+      "domain": "Biology",
+      "title": "Observed richness versus equal-effort finite rarefaction",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 8,
+      "successful_reference_tools": [
+        "BinomialProbabilityTable",
+        "DiversityIndices",
+        "FinitePopulationCoverage"
+      ],
+      "source_reviewed_applicable_ready_width": 8,
+      "declared_capability_dag_width": 9,
+      "capability_levels": [
+        [
+          "div_a",
+          "div_b",
+          "div_c",
+          "finite_a",
+          "finite_b",
+          "finite_c",
+          "replacement_a",
+          "replacement_b",
+          "replacement_c"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0078",
+      "domain": "Biology",
+      "title": "Weighted-tree distances and trait geometries",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 12,
+      "successful_reference_tools": [
+        "MantelCorrelation",
+        "PairwiseNumericDistances",
+        "ParseNewickTreeDistances",
+        "StandardizeNumericFeatures"
+      ],
+      "source_reviewed_applicable_ready_width": 5,
+      "declared_capability_dag_width": 5,
+      "capability_levels": [
+        [
+          "scale",
+          "traits_raw",
+          "tree_a",
+          "tree_b",
+          "tree_c"
+        ],
+        [
+          "raw_a",
+          "raw_b",
+          "raw_c",
+          "traits_scaled"
+        ],
+        [
+          "scaled_a",
+          "scaled_b",
+          "scaled_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0079",
+      "domain": "Biology",
+      "title": "One complete-case ecological cohort must anchor every comparison",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 6,
+      "successful_reference_tools": [
+        "BootstrapMeanInterval",
+        "PearsonCorrelation",
+        "SpearmanCorrelation"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "bootstrap_growth",
+          "bootstrap_nutrient",
+          "mg_pearson",
+          "mg_spearman",
+          "mn_pearson",
+          "mn_spearman"
+        ]
+      ],
+      "graph_fit_class": "parallel_evidence_panel",
+      "reference_decisions": 3
+    },
+    {
+      "id": "SMAS-0080",
+      "domain": "Biology",
+      "title": "Sample means and future growth under a plug-in model",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 10,
+      "successful_reference_tools": [
+        "BinomialProbabilityTable",
+        "BootstrapMeanInterval",
+        "DescribeNumericData",
+        "StandardNormalDistribution"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "bootstrap_a",
+          "bootstrap_b",
+          "bootstrap_c",
+          "description_a",
+          "description_b",
+          "description_c"
+        ],
+        [
+          "normal_probabilities"
+        ],
+        [
+          "future_a",
+          "future_b",
+          "future_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0081",
+      "domain": "Biology",
+      "title": "Orientation comparison after preserving original barcode QC",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 14,
+      "successful_reference_tools": [
+        "GetReverseComplement",
+        "PairwiseSequenceAlignment",
+        "ParseFASTARecords",
+        "SequenceQualityMetrics"
+      ],
+      "source_reviewed_applicable_ready_width": 4,
+      "declared_capability_dag_width": 8,
+      "capability_levels": [
+        [
+          "parse"
+        ],
+        [
+          "qc_a",
+          "qc_b",
+          "qc_c",
+          "qc_d"
+        ],
+        [
+          "forward_a",
+          "forward_b",
+          "forward_c",
+          "forward_d",
+          "reverse_a",
+          "reverse_b",
+          "reverse_c",
+          "reverse_d"
+        ],
+        [
+          "reverse_align_a",
+          "reverse_align_b",
+          "reverse_align_c",
+          "reverse_align_d"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0082",
+      "domain": "Biology",
+      "title": "Diversity partitioning under two target-population definitions",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 14,
+      "successful_reference_tools": [
+        "DiversityIndices",
+        "ElementwiseNumericOperations",
+        "MatrixMultiply",
+        "NormalizeNumericRows"
+      ],
+      "source_reviewed_applicable_ready_width": 4,
+      "declared_capability_dag_width": 4,
+      "capability_levels": [
+        [
+          "local_0",
+          "local_1",
+          "local_2",
+          "relative"
+        ],
+        [
+          "pooled_both"
+        ],
+        [
+          "gamma_equal_stand",
+          "gamma_individual"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 7
+    },
+    {
+      "id": "SMAS-0083",
+      "domain": "Biology",
+      "title": "Observed common-core correspondence versus whole-record centroid shifts",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 13,
+      "successful_reference_tools": [
+        "ExtractPDBCoordinates",
+        "InspectPDBQuality",
+        "MolecularCentroid",
+        "PairwiseNumericDistances",
+        "RigidSuperposition"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "centroid_a",
+          "centroid_b",
+          "centroid_c",
+          "quality_a",
+          "quality_b",
+          "quality_c"
+        ],
+        [
+          "core_a",
+          "core_b",
+          "core_c"
+        ],
+        [
+          "fit",
+          "within_a",
+          "within_b",
+          "within_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0084",
+      "domain": "Biology",
+      "title": "Ecological trait relations and enrichment families",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 6,
+      "successful_reference_tools": [
+        "AdjustPValues",
+        "HypergeometricEnrichment",
+        "TraverseOntologyRelations"
+      ],
+      "source_reviewed_applicable_ready_width": 2,
+      "declared_capability_dag_width": 4,
+      "capability_levels": [
+        [
+          "ancestors_scraper",
+          "ancestors_shredder",
+          "descendants_feeding",
+          "enrichment"
+        ],
+        [
+          "adjust_bh",
+          "adjust_bonferroni"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0085",
+      "domain": "Biology",
+      "title": "Pulse responses and norm amplification in ecological linear models",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 21,
+      "successful_reference_tools": [
+        "MatrixExponential",
+        "MatrixMultiply",
+        "MatrixSVD",
+        "SymmetricEigenDecomposition"
+      ],
+      "source_reviewed_applicable_ready_width": 12,
+      "declared_capability_dag_width": 12,
+      "capability_levels": [
+        [
+          "propagator_long_a",
+          "propagator_long_b",
+          "propagator_long_c",
+          "propagator_short_a",
+          "propagator_short_b",
+          "propagator_short_c",
+          "symmetric_a",
+          "symmetric_b",
+          "symmetric_c"
+        ],
+        [
+          "gain_long_a",
+          "gain_long_b",
+          "gain_long_c",
+          "gain_short_a",
+          "gain_short_b",
+          "gain_short_c",
+          "pulse_long_a",
+          "pulse_long_b",
+          "pulse_long_c",
+          "pulse_short_a",
+          "pulse_short_b",
+          "pulse_short_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0086",
+      "domain": "Biology",
+      "title": "Community trait distributions and taxonomic composition",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "ElementwiseNumericOperations",
+        "MatrixMultiply",
+        "NormalizeNumericRows",
+        "PairwiseNumericDistances",
+        "StandardizeNumericFeatures"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 3,
+      "capability_levels": [
+        [
+          "scale",
+          "taxonomic",
+          "weights"
+        ],
+        [
+          "mean",
+          "trait_square"
+        ],
+        [
+          "centroid_distance",
+          "second"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0087",
+      "domain": "Biology",
+      "title": "Four uncertainty specifications for an allometric calibration",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 8,
+      "successful_reference_tools": [
+        "EvaluateParametricCurve",
+        "FitParametricCurve"
+      ],
+      "source_reviewed_applicable_ready_width": 4,
+      "declared_capability_dag_width": 4,
+      "capability_levels": [
+        [
+          "fit_absolute",
+          "fit_doubled_absolute",
+          "fit_doubled_relative",
+          "fit_unweighted"
+        ],
+        [
+          "predict_absolute",
+          "predict_doubled_absolute",
+          "predict_doubled_relative",
+          "predict_unweighted"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0088",
+      "domain": "MachineLearning",
+      "title": "Future prediction with cutoff-specific temporal embargoes",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 15,
+      "successful_reference_tools": [
+        "FitRidgeRegression",
+        "PredictLinearModel",
+        "RegressionMetrics",
+        "StandardizeNumericFeatures",
+        "TimeSeriesSplitRecords"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "split_a",
+          "split_b",
+          "split_c"
+        ],
+        [
+          "scale_test_a",
+          "scale_test_b",
+          "scale_test_c",
+          "scale_train_a",
+          "scale_train_b",
+          "scale_train_c"
+        ],
+        [
+          "fit_a",
+          "fit_b",
+          "fit_c"
+        ],
+        [
+          "prediction_a",
+          "prediction_b",
+          "prediction_c"
+        ],
+        [
+          "metric_a",
+          "metric_b",
+          "metric_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0089",
+      "domain": "MachineLearning",
+      "title": "Residual and solution-size admissibility of truncated inverse models",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 15,
+      "successful_reference_tools": [
+        "ElementwiseNumericOperations",
+        "MatrixMultiply",
+        "MatrixSVD",
+        "RegressionMetrics"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 3,
+      "capability_levels": [
+        [
+          "svd"
+        ],
+        [
+          "solution_r1",
+          "solution_r2",
+          "solution_r3"
+        ],
+        [
+          "forward_r1",
+          "forward_r2",
+          "forward_r3"
+        ],
+        [
+          "metric_r1",
+          "metric_r2",
+          "metric_r3"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 8
+    },
+    {
+      "id": "SMAS-0090",
+      "domain": "MachineLearning",
+      "title": "Identifiability of contrasts in a rank-deficient model",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 7,
+      "successful_reference_tools": [
+        "LinearLeastSquares",
+        "MatrixMultiply",
+        "MatrixSVD",
+        "PairwiseNumericDistances"
+      ],
+      "source_reviewed_applicable_ready_width": 2,
+      "declared_capability_dag_width": 2,
+      "capability_levels": [
+        [
+          "fit",
+          "svd"
+        ],
+        [
+          "forward",
+          "projector"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0091",
+      "domain": "MachineLearning",
+      "title": "Named-positive policies across two held-out cohorts",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 13,
+      "successful_reference_tools": [
+        "DecisionCostSummary",
+        "FitLogisticRegression",
+        "PredictLogisticModel",
+        "ProbabilityCalibrationSummary",
+        "ThresholdClassProbabilities"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "fit"
+        ],
+        [
+          "predict_a",
+          "predict_b"
+        ],
+        [
+          "calibration_a",
+          "calibration_b",
+          "threshold_a_high",
+          "threshold_a_low",
+          "threshold_b_high",
+          "threshold_b_low"
+        ],
+        [
+          "cost_a_high",
+          "cost_a_low",
+          "cost_b_high",
+          "cost_b_low"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0092",
+      "domain": "MachineLearning",
+      "title": "Common-matrix and direct-solve consistency across several forcings",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 7,
+      "successful_reference_tools": [
+        "MatrixInverse",
+        "MatrixMultiply",
+        "SolveLinearSystem",
+        "SymmetricEigenDecomposition"
+      ],
+      "source_reviewed_applicable_ready_width": 5,
+      "declared_capability_dag_width": 5,
+      "capability_levels": [
+        [
+          "direct_a",
+          "direct_b",
+          "direct_c",
+          "inverse",
+          "spectrum"
+        ],
+        [
+          "batch"
+        ],
+        [
+          "forward"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 5
+    },
+    {
+      "id": "SMAS-0093",
+      "domain": "MachineLearning",
+      "title": "One joint sign-randomization family versus separate endpoint tests",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 10,
+      "successful_reference_tools": [
+        "ElementwiseNumericOperations",
+        "EnumerateSignAssignments",
+        "ExtractNumericColumns",
+        "MatrixMultiply",
+        "PairedRandomizationTest",
+        "ScaleNumericMatrix",
+        "SelectOrderStatistic",
+        "SummarizeNumericTable"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 4,
+      "capability_levels": [
+        [
+          "marginal_a",
+          "marginal_b",
+          "marginal_c",
+          "signs"
+        ],
+        [
+          "sums"
+        ],
+        [
+          "critical"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 10
+    },
+    {
+      "id": "SMAS-0094",
+      "domain": "MachineLearning",
+      "title": "Nominal model ranking versus worst-case population-mixture risk",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "reference_scientific_calls": 16,
+      "successful_reference_tools": [
+        "MatrixMultiply",
+        "RegressionMetrics",
+        "SolveLinearProgram"
+      ],
+      "source_reviewed_applicable_ready_width": 9,
+      "declared_capability_dag_width": 9,
+      "capability_levels": [
+        [
+          "loss_a0",
+          "loss_a1",
+          "loss_a2",
+          "loss_b0",
+          "loss_b1",
+          "loss_b2",
+          "loss_c0",
+          "loss_c1",
+          "loss_c2"
+        ],
+        [
+          "worst_a",
+          "worst_b",
+          "worst_c"
+        ],
+        [
+          "witness_a",
+          "witness_b",
+          "witness_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0095",
+      "domain": "MachineLearning",
+      "title": "Analytic response models and numerical tabulation diagnostics",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 18,
+      "successful_reference_tools": [
+        "CubicHermiteInterpolate",
+        "EvaluateParametricCurve",
+        "FiniteDifferenceGradient",
+        "FitParametricCurve",
+        "NumericalTrapezoidIntegration",
+        "RegressionMetrics"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "fit_a",
+          "fit_b",
+          "fit_c"
+        ],
+        [
+          "direct_a",
+          "direct_b",
+          "direct_c",
+          "gradient_a",
+          "gradient_b",
+          "gradient_c"
+        ],
+        [
+          "hermite_a",
+          "hermite_b",
+          "hermite_c",
+          "integral_a",
+          "integral_b",
+          "integral_c"
+        ],
+        [
+          "error_a",
+          "error_b",
+          "error_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0096",
+      "domain": "MachineLearning",
+      "title": "Correlation-matrix admissibility under different missing-data cohorts",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 6,
+      "successful_reference_tools": [
+        "PearsonCorrelation",
+        "SymmetricEigenDecomposition"
+      ],
+      "source_reviewed_applicable_ready_width": 3,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "joint_xy",
+          "joint_xz",
+          "joint_yz",
+          "pairwise_xy",
+          "pairwise_xz",
+          "pairwise_yz"
+        ],
+        [
+          "eigen_joint",
+          "eigen_pairwise"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0097",
+      "domain": "MachineLearning",
+      "title": "Density partition quality and retained-sample coverage",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 6,
+      "successful_reference_tools": [
+        "ClusteringQualityMetrics",
+        "DBSCANClustering"
+      ],
+      "source_reviewed_applicable_ready_width": 2,
+      "declared_capability_dag_width": 3,
+      "capability_levels": [
+        [
+          "cluster_a",
+          "cluster_b",
+          "cluster_c"
+        ],
+        [
+          "quality_a",
+          "quality_b",
+          "quality_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 4
+    },
+    {
+      "id": "SMAS-0098",
+      "domain": "MachineLearning",
+      "title": "Population forecasts at several horizons and stationary balance",
+      "featured_showcase": false,
+      "difficulty_tier": "intermediate",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 9,
+      "successful_reference_tools": [
+        "MatrixMultiply",
+        "PairwiseNumericDistances",
+        "SolveLinearSystem"
+      ],
+      "source_reviewed_applicable_ready_width": 2,
+      "declared_capability_dag_width": 2,
+      "capability_levels": [
+        [
+          "P2",
+          "stationary"
+        ],
+        [
+          "P4",
+          "stationary_check"
+        ],
+        [
+          "P8",
+          "distributions4"
+        ],
+        [
+          "P16"
+        ],
+        [
+          "distributions16"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 8
+    },
+    {
+      "id": "SMAS-0099",
+      "domain": "MachineLearning",
+      "title": "Joint calibration bounds and independent geometric certificates",
+      "featured_showcase": true,
+      "difficulty_tier": "advanced",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 13,
+      "successful_reference_tools": [
+        "ConvexHalfspaceGeometry",
+        "DescribeNumericData",
+        "MatrixMultiply",
+        "SolveLinearProgram"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 7,
+      "capability_levels": [
+        [
+          "geometry",
+          "maximize_a",
+          "maximize_b",
+          "maximize_c",
+          "minimize_a",
+          "minimize_b",
+          "minimize_c"
+        ],
+        [
+          "vertex_projection_a",
+          "vertex_projection_b",
+          "vertex_projection_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    },
+    {
+      "id": "SMAS-0100",
+      "domain": "MachineLearning",
+      "title": "Smoothing and conservation under two weighting conventions",
+      "featured_showcase": false,
+      "difficulty_tier": "foundation",
+      "reference_action": "regenerated_clean_react",
+      "reference_scientific_calls": 14,
+      "successful_reference_tools": [
+        "FiniteDifferenceGradient",
+        "GraphLaplacian",
+        "MatrixExponential",
+        "MatrixMultiply",
+        "NumericalTrapezoidIntegration"
+      ],
+      "source_reviewed_applicable_ready_width": 6,
+      "declared_capability_dag_width": 6,
+      "capability_levels": [
+        [
+          "lap",
+          "raw_integral_a",
+          "raw_integral_b",
+          "raw_integral_c"
+        ],
+        [
+          "kernel"
+        ],
+        [
+          "smooth"
+        ],
+        [
+          "gradient_a",
+          "gradient_b",
+          "gradient_c",
+          "smoothed_integral_a",
+          "smoothed_integral_b",
+          "smoothed_integral_c"
+        ]
+      ],
+      "graph_fit_class": "multistage_dependency_graph",
+      "reference_decisions": 6
+    }
+  ]
+}

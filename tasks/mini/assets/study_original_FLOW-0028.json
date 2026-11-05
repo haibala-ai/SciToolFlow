@@ -1,0 +1,25 @@
+{
+  "geometry_file": "bar_framework_FLOW-0028.cif",
+  "geometric_cutoff_angstrom": 3.9,
+  "spring_constant_ev_per_angstrom2": 1.0,
+  "model": "An ideal2D periodic unstressed central-force bar framework. CIF element labels are geometry carriers, not a chemical silicon bonding/elasticity model. The first two lattice vectors span the plane; the third direction is inert storage vacuum. Every undirected geometric edge within the cutoff is one unstressed harmonic bar, with the same given spring constant. Reverse directed image edges represent the same bar and must not be counted twice. No angular, bending, prestress, out-of-plane or thermal term is present.",
+  "deformation": "A small symmetric homogeneous in-plane strain epsilon deforms each reference bar vector r affinely. In addition, every copy of each basis site may undergo the same internal in-plane shift. Fix site0 internal shift to zero as a translation gauge and allow site1 shift u freely. A site0-to-site1-image bar has first-order extension n dot (epsilon*r+u), where n=r/|r|. Energy per reference cell is sum_bars(k/2)*(extension)^2. All image copies use the same u; image shifts must not be discarded.",
+  "constitutive_convention": "Use Kelvin strain e=[epsilon_xx,epsilon_yy,sqrt(2)*epsilon_xy], whose squared norm is the strain Frobenius norm. Define2D energy density per reference in-plane AREA by W=(1/2)*e^T*C*e. Affine C fixes u=0. Relaxed C minimizes the cell energy over u separately for each imposed strain. Units of C are eV/angstrom^2, not3D bulk GPa; storage vacuum does not set the normalization.",
+  "report_policy": "A Kelvin stiffness eigenvalue with absolute magnitude at most1e-9eV/angstrom^2 is zero. If the relaxed uniform-strain nullspace is one-dimensional and epsilon_xx is nonzero, report its epsilon_yy/epsilon_xx and epsilon_xy/epsilon_xx; otherwise report null for both ratios. This linear zero-energy conclusion concerns homogeneous periodic strain only, not finite-deformation stability or all wavevectors.",
+  "provenance": {
+    "kind": "Project-authored ideal bar-framework geometry and exact harmonic model; no experimental material or calculated chemical stiffness is claimed.",
+    "geometry_sha256": "710dfa98f36ae7dc0f797f41863c4f9187a572ba2bb3548196df9ff2ec855d52",
+    "conceptual_sources": [
+      {
+        "url": "https://arxiv.org/abs/cond-mat/0410592",
+        "read": "Landing-page abstract on nonaffine contributions to elasticity; complete paper not read.",
+        "use": "Motivates distinguishing affine response from internal relaxation. Our finite-bar energy and elimination are derived independently."
+      },
+      {
+        "url": "https://arxiv.org/abs/1503.01324",
+        "read": "Landing-page abstract on central-force frameworks, coordination, zero modes and self stress; complete paper not read.",
+        "use": "Framework and coordination context only; not a source of this geometry or its numerical answer."
+      }
+    ]
+  }
+}

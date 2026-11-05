@@ -45,12 +45,12 @@ class DiscoveryTests(unittest.TestCase):
         output = StringIO()
         with (
             patch.object(Path, "read_text", guarded),
-            patch.object(sys, "argv", ["scitoolflow", "task", "FLOW-0285"]),
+            patch.object(sys, "argv", ["scitoolflow", "task", "SMAS-0103"]),
             redirect_stdout(output),
         ):
             main()
         row = json.loads(output.getvalue())
-        self.assertEqual(row["id"], "FLOW-0285")
+        self.assertEqual(row["id"], "SMAS-0103")
         self.assertIn("question", row)
         self.assertNotIn("expected_answer", row)
         self.assertNotIn("tool_path", row)

@@ -188,7 +188,11 @@
                 "select_if_text_equal",
                 "record_values_by_path",
                 "object_member_or_null",
-                "literal_constant"
+                "literal_constant",
+                "json_array",
+                "select_if_boolean",
+                "crystal_element_amount",
+                "finite_ge"
               ]
             },
             "args": {

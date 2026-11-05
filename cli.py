@@ -5,7 +5,7 @@ import json
 import math
 from pathlib import Path
 from src.utils.paths import project_root
-from tasks.datasets import DATASETS, load_dataset
+from tasks.datasets import DATASETS, DEFAULT_DATASET, load_dataset
 
 
 def main():
@@ -17,7 +17,7 @@ def main():
         "task", help="View a public benchmark task, or list tasks by domain"
     )
     p.add_argument("id", nargs="?")
-    p.add_argument("--dataset", choices=DATASETS, default="full")
+    p.add_argument("--dataset", choices=DATASETS, default=DEFAULT_DATASET)
     p.add_argument(
         "--domain", choices=["Biology", "Chemical", "Material", "MachineLearning"]
     )
@@ -31,9 +31,25 @@ def main():
     p.add_argument("--arguments", default="{}")
     p.add_argument("--files", nargs="*", default=[])
     p.add_argument("--timeout", type=float, default=180)
+    p = sub.add_parser(
+        "plan",
+        help="Generate and validate a SciMas task graph (no scientific execution)",
+    )
+    p.add_argument("--dataset", choices=DATASETS, default=DEFAULT_DATASET)
+    p.add_argument(
+        "--tasks", required=True, help="Explicit IDs or all in the selected dataset"
+    )
+    p.add_argument("--output", required=True)
+    p.add_argument("--backend", choices=["vllm", "local", "api"], default="vllm")
+    p.add_argument("--model")
+    p.add_argument("--max-model-requests", type=int, default=8)
+    p.add_argument("--max-output-tokens", type=int, default=8192)
+    p.add_argument("--task-timeout", type=float, default=600)
     p = sub.add_parser("run", help="Run a baseline using only public tasks")
-    p.add_argument("--baseline", choices=["react", "scitoolagent"], default="react")
-    p.add_argument("--dataset", choices=DATASETS, default="full")
+    p.add_argument(
+        "--baseline", choices=["react", "scitoolagent", "scimas"], default="react"
+    )
+    p.add_argument("--dataset", choices=DATASETS, default=DEFAULT_DATASET)
     p.add_argument("--tasks", default="all")
     p.add_argument("--output")
     p.add_argument("--backend", choices=["vllm", "local", "api"], default="vllm")
@@ -106,7 +122,7 @@ def main():
     p.add_argument("--predictions", required=True, type=Path)
     p.add_argument("--output", type=Path, default=Path("scores.json"))
     p.add_argument("--tasks", default="all")
-    p.add_argument("--dataset", choices=DATASETS, default="full")
+    p.add_argument("--dataset", choices=DATASETS, default=DEFAULT_DATASET)
     args = parser.parse_args()
     if args.command == "task":
         rows = load_dataset(args.dataset, root).questions
@@ -156,6 +172,18 @@ def main():
                 indent=2,
             )
         )
+    elif args.command == "plan":
+        if any(
+            not math.isfinite(getattr(args, name)) or getattr(args, name) <= 0
+            for name in ("max_model_requests", "max_output_tokens", "task_timeout")
+        ):
+            parser.error("Planning limits must be positive and finite")
+        from baselines.scimas.runner import run_planning
+
+        result = run_planning(args)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        if result["failed"]:
+            raise SystemExit(1)
     elif args.command == "run":
         if any(
             not math.isfinite(getattr(args, k)) or getattr(args, k) <= 0

@@ -10,7 +10,7 @@ from src.utils.paths import project_root
 
 def load_agent_input(record, release=None):
     """Resolve an exported public row with strict path/hash checks; no tools/API."""
-    release = Path(release or project_root() / "tasks").resolve()
+    release = Path(release or project_root() / "tasks/full").resolve()
     manifest = json.loads((release / "asset_manifest.json").read_text())["files"]
 
     def resolve(value):

@@ -1,0 +1,16 @@
+{
+  "records": [
+    {
+      "id": "r1",
+      "smiles": "CCO"
+    },
+    {
+      "id": "r2",
+      "smiles": "[13CH3]CO"
+    },
+    {
+      "id": "r3",
+      "smiles": "CC[18OH]"
+    }
+  ]
+}

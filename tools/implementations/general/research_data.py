@@ -179,7 +179,7 @@ def _is_public_source(path):
     from tools.runtime.config import Config
 
     resolved = path.resolve()
-    assets = (project_root() / "tasks/assets").resolve()
+    assets = (project_root() / "tasks/full/assets").resolve()
     explicit_uploads = {
         Path(item).resolve() for item in Config().ALL_UPLOAD_FILES_PATHS
     }

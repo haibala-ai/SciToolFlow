@@ -79,7 +79,7 @@ def validate_package(root):
         or {r["id"] for r in tasks} != {r["id"] for r in refs}
     ):
         raise ValueError("Expected 500 aligned unique public tasks and references")
-    index = json.loads((root / "tasks/index.json").read_text())
+    index = json.loads((root / "tasks/full/index.json").read_text())
     entries = index["tasks"]
     if (
         index["count"] != len(tasks)
@@ -107,7 +107,7 @@ def validate_package(root):
         )
     by_id = {r["id"]: r for r in refs}
     categories = Counter(entry.get("category") for entry in entries)
-    declared = json.loads((root / "tasks/metadata.json").read_text())["task_categories"]
+    declared = json.loads((root / "tasks/full/metadata.json").read_text())["task_categories"]
     if dict(categories) != declared or index.get("categories") != declared:
         raise ValueError("Task category counts differ from task metadata/index")
     catalog = json.loads((root / "tools/catalog/catalog.json").read_text())["tools"]
@@ -157,22 +157,25 @@ def validate_package(root):
             reference["expected_answer"], task["answer_schema"]
         ):
             raise ValueError("Invalid answer contract")
-        load_agent_input(task, root / "tasks")
+        load_agent_input(task, root / "tasks/full")
         validate_unit_annotations(task, reference["expected_answer"])
         from evaluation.integrity.reference import validate_workflow_reference
 
         count += validate_workflow_reference(root, task, reference, catalog, registry)
     verify_file_identities(root)
     datasets = {"full": len(tasks)}
-    if (root / "tasks/mini").is_dir():
-        from tasks.datasets import load_dataset
-
-        mini = load_dataset("mini", root)
-        datasets["mini"] = len(mini.questions)
+    if (root / "tasks/mini/metadata.json").is_file():
+        from evaluation.integrity.mini import validate_mini
+        mini = validate_mini(root)
+        datasets["mini"] = mini["tasks"]
+    default_dataset = "mini" if "mini" in datasets else "full"
     return {
         "package_valid": True,
-        "public_tasks": len(tasks),
-        "references": len(refs),
+        "default_dataset": default_dataset,
+        "public_tasks": datasets[default_dataset],
+        "references": mini["references"] if default_dataset == "mini" else len(refs),
+        "source_tasks": len(tasks),
+        "source_references": len(refs),
         "datasets": datasets,
         **counts,
         "inline_outputs": count,

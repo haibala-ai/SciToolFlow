@@ -1,0 +1,45 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "candidates": [
+        {
+          "candidate_id": "1UBQ",
+          "coordinate_file": "coordinates_FLOW-0263_1UBQ.pdb",
+          "model_id": 0,
+          "chain_id": "A"
+        },
+        {
+          "candidate_id": "1CRN",
+          "coordinate_file": "coordinates_FLOW-0263_1CRN.pdb",
+          "model_id": 0,
+          "chain_id": "A"
+        }
+      ],
+      "optical_policy": "At280nm in water use composition-based molar epsilon=5500*nTrp+1490*nTyr+125*nCystine in M^-1 cm^-1. Compare two declared endpoints for each uploaded chain: every Cys reduced, or all possible intrachain Cys pairs oxidized. Ignore other chromophores and modifications; do not infer the actual redox state from a sequence. Use canonical free-terminus average reduced-chain mass; each disulfide removes2.01588g/mol relative to that composition. Beer-Lambert A=epsilon*c*l, l=1cm. Report the two mass concentration conversion coefficients in g/L per unit A280 and the fractional molarity underestimate if an actually fully reduced chain were interpreted using its fully oxidized epsilon: (true molarity-estimated molarity)/true molarity. The redox-sensitivity acceptance limit is0.05. Return every candidate meeting that criterion; this criterion concerns redox sensitivity alone, not overall measurement accuracy.",
+      "scientific_scope": "This is a retrospective theoretical reporting audit for deposited ubiquitin and crambin sequences, not measured absorbance, an instruction to manipulate redox state, or an empirical calibration. Composition-derived coefficients can have substantial error, especially without tryptophan. No absolute concentration accuracy guarantee follows from the redox-sensitivity comparison.",
+      "source_provenance": [
+        {
+          "entry": "1UBQ",
+          "source_url": "https://files.rcsb.org/download/1UBQ.pdb",
+          "snapshot_sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+          "export": "Unchanged deposited PDB snapshot; chain identity and sequence must be reconciled from the actual file."
+        },
+        {
+          "entry": "1CRN",
+          "source_url": "https://files.rcsb.org/download/1CRN.pdb",
+          "snapshot_sha256": "42199a30a0701864a2a5cc76cd7f35cc544cd0e65fbcf63e03c166543249b811",
+          "export": "Unchanged deposited PDB snapshot; chain identity and sequence must be reconciled from the actual file."
+        }
+      ],
+      "estimator_provenance": {
+        "documentation": "https://web.expasy.org/protparam/protparam-doc.html",
+        "read_scope": "Official ProtParam documentation, extinction-coefficient formula, two cysteine endpoints, Beer-Lambert conversion and no-tryptophan caveat."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

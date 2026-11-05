@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "record_id": "entry01",
+      "smiles": "C1CCCCC1"
+    },
+    {
+      "record_id": "entry02",
+      "smiles": "CCCCCC"
+    },
+    {
+      "record_id": "entry03",
+      "smiles": "C=CCCCC"
+    },
+    {
+      "record_id": "entry04",
+      "smiles": "c1ccccc1"
+    },
+    {
+      "record_id": "entry05",
+      "smiles": "CC1CCCC1"
+    },
+    {
+      "record_id": "entry06",
+      "smiles": "CCCC1CC1"
+    },
+    {
+      "record_id": "study",
+      "eligible_formula": "C6H12",
+      "eligible_total_formal_charge": 0,
+      "required_covalent_fragment_count": 1,
+      "conformer_protocol": "RDKit Chem.MolFromSmiles on exact listed atom order;Chem.AddHs;AllChem.EmbedMolecule(randomSeed=42);no force-field optimization;one conformer only",
+      "source_build_rdkit_version": "2024.03.3",
+      "shape_coordinate_definition": [
+        "mass-weighted I1/I3",
+        "mass-weighted I2/I3"
+      ],
+      "shape_objective": "maximum pair Euclidean distance in the two normalized principal-moment coordinates",
+      "inertia_order": "I1<=I2<=I3,about molecular center of mass,explicit hydrogens included"
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "Normalized inertia coordinates and Euclidean distance dimensionless;chemical formula/charge/fragment count define eligibility independently of shape",
+    "original_observation_claim": false
+  }
+}

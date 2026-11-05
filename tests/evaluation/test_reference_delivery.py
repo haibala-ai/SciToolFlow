@@ -84,9 +84,9 @@ def test_category_document_lists_exactly_500_tasks_with_expected_counts():
     from collections import Counter
 
     categories = task_categories(ROOT)
-    tasks = read_jsonl(ROOT / "tasks/questions.jsonl")
+    tasks = read_jsonl(ROOT / "tasks/full/questions.jsonl")
     assert set(categories) == {r["id"] for r in tasks}
-    index = json.loads((ROOT / "tasks/index.json").read_text())
+    index = json.loads((ROOT / "tasks/full/index.json").read_text())
     assert categories == {r["id"]: r["category"] for r in index["tasks"]}
     assert Counter(categories.values()) == {
         "high_difficulty": 100,

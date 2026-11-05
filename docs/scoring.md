@@ -1,5 +1,7 @@
 # 一条任务如何变成分数：以 FLOW-0001 为例
 
+本文解释显式选择`--dataset full`时的Full-500科学评分与整题判定。默认公开入口现为Mini-200，其独立三项主指标与运行命令见[Mini-200](../tasks/mini/README.md)。
+
 本文用同一道题串起任务、ground truth、工具回执、评分规则和最终指标。先看科学问题与实际执行，再解释规则如何检查它们，最后计算各项分数。文件位置和运行命令放在文末。
 
 适用版本：`20261026`／项目 `0.4.0`／科学评分协议 `workflow.v1`／实验资源协议 `task-resources.v1`。**当前评分不调用 LLM。** Python 程序执行预先编写、审核过的规则；规则无法判断的新方法进入待审。ReAct 与 SciToolAgent 使用同一评分入口。本文使用 FLOW-0001 的真实执行，逐步说明证据、判据与指标计算。
@@ -356,7 +358,7 @@ flowchart LR
 
 | 要核对的内容 | 文件或字段 |
 | --- | --- |
-| 题目、公开输入和答案格式 | `tasks/questions.jsonl` 中的FLOW-0001；候选文件 `tasks/assets/study_FLOW-0001.json` |
+| 题目、公开输入和答案格式 | `tasks/full/questions.jsonl` 中的FLOW-0001；候选文件 `tasks/full/assets/study_FLOW-0001.json` |
 | 已审核参考答案 | `evaluation/data/references.jsonl.gz` 中的 `expected_answer` |
 | 必要节点、允许路线、科学检查式与权重 | 同一条参考的 `evaluation` |
 | 真实参考执行 | `evaluation/data/trajectories/FLOW-0001/primary.json.gz` |
@@ -381,7 +383,7 @@ python cli.py score \
   --output results/demo/scores.json
 
 # 单题评分；输入预测文件也应只包含这个任务。
-python cli.py score --tasks FLOW-0001 \
+python cli.py score --dataset full --tasks FLOW-0001 \
   --predictions results/one_task/predictions.json \
   --output results/one_task/scores.json
 ```

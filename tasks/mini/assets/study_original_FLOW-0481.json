@@ -1,0 +1,30 @@
+{
+  "independent_proper_imputation_records": [
+    {
+      "id": "imp_C",
+      "estimate": 9.0,
+      "complete_data_variance": 1.0
+    },
+    {
+      "id": "imp_A",
+      "estimate": 10.0,
+      "complete_data_variance": 1.0
+    },
+    {
+      "id": "imp_D",
+      "estimate": 13.0,
+      "complete_data_variance": 2.0
+    },
+    {
+      "id": "imp_B",
+      "estimate": 12.0,
+      "complete_data_variance": 4.0
+    }
+  ],
+  "model": "Four independent proper imputations of the SAME incomplete study. Each record is an estimate of the same scalar population contrast and its estimated complete-data sampling VARIANCE,not standard error. These are not four independent newly sampled studies. Complete-data degrees of freedom are taken infinite;use the conventional Rubin repeated-imputation pooling and its original large-complete-sample finite-imputation tdegrees of freedom,not a small-complete-sample correction.",
+  "target": "Return pooled estimate,mean within-imputation variance,sample between-imputation variance,total pooled variance,pooled standard error,and Rubin finite-imputation degrees of freedom. Also calculate the variance reported by the incorrect shortcut that treats the four completed-data estimates as independent measurements with variances U_i and averages them with equal weights,then state whether it understates the required pooled variance.",
+  "scope": "No actual missing-data mechanism or imputation validity is inferred from these summaries;proper-imputation assumptions are stipulated. Duplicate copies of records are not additional independent imputations. Units of all estimates match;variance units are their square.",
+  "provenance": {
+    "kind": "Explicit controlled statistical study with stated working assumptions;not empirical population evidence."
+  }
+}

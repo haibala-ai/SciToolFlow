@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "pdb_file": "coordinates_FLOW-0259.pdb",
+      "pdb_sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+      "chain_id": "A",
+      "model_id": 0,
+      "atom_name": "CA",
+      "candidate_graphs": [
+        {
+          "candidate_id": "candidate_A",
+          "cutoff_angstrom": 3.8
+        },
+        {
+          "candidate_id": "candidate_B",
+          "cutoff_angstrom": 4.0
+        },
+        {
+          "candidate_id": "candidate_C",
+          "cutoff_angstrom": 7.3
+        }
+      ],
+      "graph_definition": "One node for each of the76 observed protein C-alpha coordinates in the specified chain/model,with all nodes retained. Uniform edge weight1 iff0<Euclidean distance<=the candidate radius. Self-edges are absent. The unnormalized Kirchhoff matrix is degree diagonal minus adjacency. The radii are prespecified sensitivity settings for this computational comparison,not experimentally calibrated interactions.",
+      "mode_policy": "Use the complete spectrum. A numerical zero satisfies abs(eigenvalue)<=1e-8;positive means>1e-8. A candidate is eligible for the stated single-connected-network interpretation only if exactly one zero mode remains. The smallest positive eigenvalue is still reported for any candidate,including disconnected networks,but must not be reinterpreted as a global whole-chain internal mode there.",
+      "variance_comparison": "Report modal_variance_ratio_C_over_B as the variance of the normalized softest internal mode under candidate_C divided by that under candidate_B,using the same unit spring/thermal factor so variance is proportional to1/lambda. Return null if either is ineligible. This compares their mathematical modal amplitudes,not the same eigenvector or measured residue fluctuations.",
+      "research_scope": "A coarse-grained model applicability and sensitivity calculation on the exact historical coordinate inventory. Neither graph connectivity nor a soft eigenmode proves real conformational motion or predicts an experimental pathway. No sequence,structure modification or laboratory action is requested.",
+      "source_provenance": {
+        "source_url": "https://files.rcsb.org/download/1UBQ.pdb",
+        "original_source_sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+        "structure_documentation": "https://www.rcsb.org/structure/1UBQ",
+        "method_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1752228/",
+        "method_read_scope": "Original paper Systems and Methods GNM subsection:alpha-carbon nodes,uniform-contact Kirchhoff definition;connected graph rankN-1;Figure1 and discussion of disconnected networks producing additional zero eigenvalues.",
+        "software_documentation": "https://bahargroup.org/prody/tutorials/enm_analysis/gnm.html",
+        "software_read_scope": "Kirchhoff construction and calculation of modes;by-default trivial modes are omitted,so this audit explicitly requires the complete spectrum.",
+        "data_status": "Authentic complete historical1UBQ PDB bytes unchanged. Radii,unit weights and numerical zero tolerance are declared analysis conventions;no observed dynamics or new experimental data are fabricated."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

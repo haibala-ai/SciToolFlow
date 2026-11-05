@@ -12,38 +12,27 @@ from evaluation.integrity.resources import validate_policy, check_resources
 
 
 def evaluate_package(
-    root, predictions, output, reviews=None, task_ids=None, dataset="full"
+    root, predictions, output, reviews=None, task_ids=None, dataset="mini"
 ):
     """Validate and score a fingerprinted checkpoint against workflow.v1 only."""
     root = Path(root).resolve()
+    if dataset == "mini":
+        from evaluation.integrity.mini import validate_mini
+        from evaluation.suites.mini import evaluate
+        validate_mini(root)
+        if reviews is not None:raise ValueError("Mini uses shared deterministic criteria, not per-prediction judge overrides")
+        return evaluate(root,predictions,output,task_ids=task_ids)
     validate_package(root)
     metadata = manifest(root)
     refs = read_jsonl(root / metadata["references"])
     if {r.get("evaluation", {}).get("schema_version") for r in refs} != {"workflow.v1"}:
         raise ValueError("Only workflow.v1 task releases are supported")
     source_ids = {r["id"]: r["id"] for r in refs}
-    if dataset == "mini":
-        from tasks.datasets import load_dataset
-
-        public = load_dataset("mini", root)
-        selected = public.select(task_ids)
-        by_source = {r["id"]: r for r in refs}
-        refs = []
-        source_ids = {}
-        for question in selected:
-            identifier = question["id"]
-            source = public.source_id(identifier)
-            if source not in by_source:
-                raise ValueError("Missing full reference for Mini task: " + identifier)
-            reference = copy.deepcopy(by_source[source])
-            reference["id"] = identifier
-            refs.append(reference)
-            source_ids[identifier] = source
-    elif task_ids is not None:
-        ids = set(task_ids)
-        if not ids or len(ids) != len(task_ids) or ids - {r["id"] for r in refs}:
-            raise ValueError("Unknown or empty scoring selection")
-        refs = [r for r in refs if r["id"] in ids]
+    if dataset != "full":raise ValueError("Unknown scoring dataset: "+str(dataset))
+    if task_ids is not None:
+        ids=set(task_ids)
+        if not ids or len(ids)!=len(task_ids) or ids-{r["id"] for r in refs}:raise ValueError("Unknown or empty scoring selection")
+        refs=[r for r in refs if r["id"] in ids]
     path = Path(predictions)
     envelope = json.loads(path.read_text())
     release_fingerprint = verify_release_envelope(envelope, root, dataset=dataset)

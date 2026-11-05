@@ -1,0 +1,17 @@
+{
+  "records": [
+    {
+      "id": "r1",
+      "smiles": "C[C@H](O)C(=O)O"
+    },
+    {
+      "id": "r2",
+      "smiles": "CC(O)C(=O)O)",
+      "alternate_smiles": "CC(O)C(=O)O"
+    },
+    {
+      "id": "r3",
+      "smiles": "C[C@@H](O)C(=O)O"
+    }
+  ]
+}

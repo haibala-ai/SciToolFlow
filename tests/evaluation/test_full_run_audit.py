@@ -153,11 +153,11 @@ class ScoringBoundaryTests(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)
-            (root / "tasks").mkdir()
-            (root / "tasks/questions.jsonl").write_text("new-public-task\n")
+            (root / "tasks/full").mkdir(parents=True)
+            (root / "tasks/full/questions.jsonl").write_text("new-public-task\n")
             settings = {
                 "actor_file_hashes": {
-                    "tasks/questions.jsonl": "old-hash",
+                    "tasks/full/questions.jsonl": "old-hash",
                     "tools/catalog/catalog.json": "catalog-hash",
                 }
             }

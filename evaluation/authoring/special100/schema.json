@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SciMas Special-50 public task",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^SMAS-[0-9]{4}$"
+    },
+    "domain": {
+      "enum": [
+        "Chemical",
+        "Material",
+        "Biology",
+        "MachineLearning"
+      ]
+    },
+    "question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "question_language": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "object"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "answer_schema": {
+      "type": "object"
+    },
+    "unit_annotations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "Parameter": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "domain",
+    "question",
+    "inputs",
+    "files",
+    "answer_schema"
+  ],
+  "additionalProperties": false
+}

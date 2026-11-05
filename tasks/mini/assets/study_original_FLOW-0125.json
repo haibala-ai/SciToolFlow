@@ -1,0 +1,77 @@
+{
+  "candidate_library": [
+    {
+      "id": "ketone",
+      "smiles": "CC(=O)C"
+    },
+    {
+      "id": "aldehyde",
+      "smiles": "CCC=O"
+    },
+    {
+      "id": "ether",
+      "smiles": "COC=C"
+    },
+    {
+      "id": "alcohol",
+      "smiles": "CCO"
+    },
+    {
+      "id": "anion",
+      "smiles": "CC(=O)[O-]"
+    }
+  ],
+  "standard_ions": [
+    {
+      "id": "cal_low",
+      "smiles": "CO",
+      "role": "calibration",
+      "observed_coordinate": 33.07009791286393
+    },
+    {
+      "id": "cal_high",
+      "smiles": "CCO",
+      "role": "calibration",
+      "observed_coordinate": 47.08855110687672
+    },
+    {
+      "id": "check",
+      "smiles": "CCOCC",
+      "role": "validation",
+      "observed_coordinate": 75.12545749490232
+    }
+  ],
+  "unknown_envelope": [
+    {
+      "carbon13_substitution_count": 0,
+      "observed_coordinate": 59.09095110687672
+    },
+    {
+      "carbon13_substitution_count": 1,
+      "observed_coordinate": 59.59272885989523
+    },
+    {
+      "carbon13_substitution_count": 2,
+      "observed_coordinate": 60.09450661291374
+    }
+  ],
+  "proton_mass_da": 1.007276466621,
+  "carbon13_minus_carbon12_mass_da": 1.00335483507,
+  "allowed_neutral_copies": [
+    1,
+    2,
+    3
+  ],
+  "allowed_positive_charge_numbers": [
+    1,
+    2,
+    3
+  ],
+  "mass_coordinate_tolerance": 1e-05,
+  "calibration_model": "observed_coordinate=a*true_mass_over_charge+b, with a>0. All standard ions are stipulated singly protonated neutral monomers. Fit only the two calibration-role standards; use the validation-role standard to check but not refit the line.",
+  "ion_model": "For an eligible neutral candidate M, allow[n*M+z*H]^(z+) with the listed integer copy number n and positive charge number z; only added protons carry charge. Monomer internal connectivity is preserved and no neutralization, fragmentation, other adduct or isotope exchange is permitted. The isotope-tagged peaks correspond to exactly0,1or2carbon12-to-carbon13 substitutions anywhere in that same ion.",
+  "provenance": {
+    "kind": "Project-authored exact forward-generated mass-axis and isotope-tagged coordinates under an explicitly finite ion-assignment model. No experimentally measured spectrum, inferred cluster stability or claim that every listed ion can be produced.",
+    "isotope_constant_source": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=C"
+  }
+}

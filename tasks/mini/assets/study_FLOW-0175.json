@@ -1,0 +1,106 @@
+{
+  "data": [
+    {
+      "record_id": "phase",
+      "formula": "Fe1",
+      "cell_volume_angstrom3": 11.42890647337868,
+      "stiffness_ieee_gpa": [
+        [
+          274.0,
+          175.0,
+          175.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          175.0,
+          274.0,
+          175.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          175.0,
+          175.0,
+          274.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          89.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          89.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          89.0
+        ]
+      ]
+    },
+    {
+      "record_id": "direction01",
+      "unit_vector": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "record_id": "direction02",
+      "unit_vector": [
+        0.7071067811865475,
+        0.7071067811865475,
+        0.0
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "controlled computational analytical study, not experimental measurements",
+    "generation": "Controlled computational input table for the stated study; not experimental measurements. Authentic source inputs are documented separately when present.",
+    "units": "CGPa,cellvolumeangstrom³,rhokg/m³,velocitiesm/s",
+    "original_observation_claim": false,
+    "source_capture": {
+      "provider": "Materials Project",
+      "url": "https://api.materialsproject.org/materials/elasticity/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_limit=20&_all_fields=true",
+      "accessed_at": "2026-10-20T08:07:40.768678+00:00",
+      "raw_sha256": "a7d7aff7db31c12a428e740d3c844cd9e7550c79a0064a489bf3bfe5595e46d8",
+      "record_count": 10,
+      "credentials_included": false,
+      "claims": "Authentic fresh API response; independent of prior benchmark answers."
+    },
+    "record_source_mapping": [
+      {
+        "capture": "mp_elasticity_candidates",
+        "upstream_record_identity": null,
+        "role": "authentic source numerical field projection",
+        "source": {
+          "provider": "Materials Project",
+          "url": "https://api.materialsproject.org/materials/elasticity/?material_ids=mp-149%2Cmp-13%2Cmp-66%2Cmp-2534%2Cmp-2133%2Cmp-2657%2Cmp-1143%2Cmp-5229%2Cmp-5525%2Cmp-7140&_limit=20&_all_fields=true",
+          "accessed_at": "2026-10-20T08:07:40.768678+00:00",
+          "raw_sha256": "a7d7aff7db31c12a428e740d3c844cd9e7550c79a0064a489bf3bfe5595e46d8",
+          "record_count": 10,
+          "credentials_included": false,
+          "claims": "Authentic fresh API response; independent of prior benchmark answers."
+        }
+      }
+    ]
+  }
+}

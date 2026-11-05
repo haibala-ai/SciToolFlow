@@ -125,7 +125,7 @@ SCITOOL_EMBEDDING_API_KEY=YOUR_EMBEDDING_API_KEY
 - **DSSP 固定安装包**：DSSP 4.0.4、libcifpp 及三个 Boost 库的六个 Ubuntu 22.04 amd64 安装包和相对路径启动器。无需系统级安装，按资源说明离线解包；其他平台安装匹配的版本。
 - **力场与参数**：本项目实际使用的 RASPA 力场定义、逐文件 SHA256 清单，以及对应 aiida-lsmo 参数／渲染器和许可。
 - **小型归档与来源记录**：MP 公开历史快照及电荷密度索引、DeepTMHMM2 和 HIPPIE 的历史来源记录。HIPPIE 原始数据未打包。
-- **公开任务输入**：Q-Chem 输出等任务附件已在 [tasks/assets](../tasks/assets/) 中，无需重复下载。
+- **公开任务输入**：Q-Chem 输出等任务附件已在 [tasks/full/assets](../tasks/full/assets/) 中，无需重复下载。
 
 首次使用时执行一次离线准备，将资源放到工具要求的 `.local/` 路径：
 
@@ -233,12 +233,12 @@ python -m scripts.maintenance.prepare_resources --destination .local/work/resour
 全量运行及自动评分：
 
 ```bash
-# 选择 scitoolagent 可运行 KG baseline；--backend api 使用已配置的生成 API。
+# --baseline scitoolagent 或 scimas 使用各自 KG；--backend api 使用已配置的生成 API。
 python -m scripts.benchmark.run_benchmark --baseline react --backend vllm --tasks all --concurrency 2 \
   --output-dir results/react_full
 ```
 
-流水线与 CLI 的运行和评分均支持 `--dataset full|mini`，默认 full。Mini 的 200 题使用独立编号，直接传 `--dataset mini` 即可运行并按 200 题评分；`--tasks` 只在所选题库中进一步抽题。
+查询、规划、运行与评分默认使用`--dataset mini`，题号为SMAS-0001..0200。Full-500用`--dataset full`显式选择；旧Mini接口已移除。评分使用与运行相同的题库和任务选择，说明见[Mini-200](../tasks/mini/README.md)。
 
 ### 预检与构建脚本
 
@@ -259,3 +259,5 @@ python -m scripts.benchmark.index_tasks
 ### Qwen 专用启动配置
 
 项目另提供 [Qwen 部署配置](../configs/services/qwen_vllm.json)及 `scripts/services/model_service.py`，用于已验证的 Qwen 启动参数；该脚本包含 Qwen 专用 reasoning 设置。`--backend local` 也属于 Qwen3.5 专用 Transformers worker，并发为 1，使用 `SCITOOL_MODEL_PATH`、`SCITOOL_LLM_PYTHON` 和 `SCITOOL_LLM_GPU` 配置，可能复用同权重常驻服务。未显式指定 `SCITOOL_LLM_GPU` 时继承启动进程的 `CUDA_VISIBLE_DEVICES`；两者均未指定才使用单卡 0。**其他本地模型使用上面的通用 vLLM 接入方式**，不依赖这两个 Qwen 专用入口。
+
+Mini-200 使用同一运行接口：`python cli.py run --dataset mini --baseline react --backend vllm --model YOUR_MODEL --tasks all --output results/react_mini/predictions.json`。评分用相同题库选择：`python cli.py score --dataset mini --predictions results/react_mini/predictions.json --output results/react_mini/scores.json`；三项指标及来源说明见[Mini-200](../tasks/mini/README.md)。

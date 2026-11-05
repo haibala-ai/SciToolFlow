@@ -1,0 +1,720 @@
+{
+  "status": "passed",
+  "tasks": 100,
+  "accepted_references": 100,
+  "domains": {
+    "Chemical": 25,
+    "Material": 25,
+    "Biology": 25,
+    "MachineLearning": 25
+  },
+  "assets": 162,
+  "difficulty_counts": {
+    "intermediate": 52,
+    "foundation": 20,
+    "advanced": 28
+  },
+  "scientific_reference_calls": 1071,
+  "task_checks": [
+    {
+      "id": "SMAS-0001",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 19
+    },
+    {
+      "id": "SMAS-0002",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 13
+    },
+    {
+      "id": "SMAS-0003",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 13
+    },
+    {
+      "id": "SMAS-0004",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 18
+    },
+    {
+      "id": "SMAS-0005",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 17
+    },
+    {
+      "id": "SMAS-0006",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 19
+    },
+    {
+      "id": "SMAS-0007",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 15
+    },
+    {
+      "id": "SMAS-0008",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 17
+    },
+    {
+      "id": "SMAS-0009",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 16
+    },
+    {
+      "id": "SMAS-0010",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 14
+    },
+    {
+      "id": "SMAS-0011",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 21
+    },
+    {
+      "id": "SMAS-0012",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 15
+    },
+    {
+      "id": "SMAS-0013",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 9
+    },
+    {
+      "id": "SMAS-0014",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 5
+    },
+    {
+      "id": "SMAS-0015",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 6
+    },
+    {
+      "id": "SMAS-0016",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 8
+    },
+    {
+      "id": "SMAS-0017",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 5
+    },
+    {
+      "id": "SMAS-0018",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 5
+    },
+    {
+      "id": "SMAS-0019",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 5
+    },
+    {
+      "id": "SMAS-0020",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 6
+    },
+    {
+      "id": "SMAS-0021",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 8
+    },
+    {
+      "id": "SMAS-0022",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 7
+    },
+    {
+      "id": "SMAS-0023",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 5
+    },
+    {
+      "id": "SMAS-0024",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 6
+    },
+    {
+      "id": "SMAS-0025",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 8
+    },
+    {
+      "id": "SMAS-0026",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 7
+    },
+    {
+      "id": "SMAS-0027",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 24
+    },
+    {
+      "id": "SMAS-0028",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 28
+    },
+    {
+      "id": "SMAS-0029",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 22
+    },
+    {
+      "id": "SMAS-0030",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 21
+    },
+    {
+      "id": "SMAS-0031",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 27
+    },
+    {
+      "id": "SMAS-0032",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 11
+    },
+    {
+      "id": "SMAS-0033",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 7
+    },
+    {
+      "id": "SMAS-0034",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 20
+    },
+    {
+      "id": "SMAS-0035",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 29
+    },
+    {
+      "id": "SMAS-0036",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 16
+    },
+    {
+      "id": "SMAS-0037",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 23
+    },
+    {
+      "id": "SMAS-0038",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 20
+    },
+    {
+      "id": "SMAS-0039",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 9
+    },
+    {
+      "id": "SMAS-0040",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 8
+    },
+    {
+      "id": "SMAS-0041",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 12
+    },
+    {
+      "id": "SMAS-0042",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 10
+    },
+    {
+      "id": "SMAS-0043",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 9
+    },
+    {
+      "id": "SMAS-0044",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 13
+    },
+    {
+      "id": "SMAS-0045",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 13
+    },
+    {
+      "id": "SMAS-0046",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 5
+    },
+    {
+      "id": "SMAS-0047",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 7
+    },
+    {
+      "id": "SMAS-0048",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 15
+    },
+    {
+      "id": "SMAS-0049",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 10
+    },
+    {
+      "id": "SMAS-0050",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 15
+    },
+    {
+      "id": "SMAS-0051",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 27
+    },
+    {
+      "id": "SMAS-0052",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 18
+    },
+    {
+      "id": "SMAS-0053",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 21
+    },
+    {
+      "id": "SMAS-0054",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 10
+    },
+    {
+      "id": "SMAS-0055",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 18
+    },
+    {
+      "id": "SMAS-0056",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 17
+    },
+    {
+      "id": "SMAS-0057",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 36
+    },
+    {
+      "id": "SMAS-0058",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 21
+    },
+    {
+      "id": "SMAS-0059",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 33
+    },
+    {
+      "id": "SMAS-0060",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 16
+    },
+    {
+      "id": "SMAS-0061",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 19
+    },
+    {
+      "id": "SMAS-0062",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 13
+    },
+    {
+      "id": "SMAS-0063",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 13
+    },
+    {
+      "id": "SMAS-0064",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 7
+    },
+    {
+      "id": "SMAS-0065",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 7
+    },
+    {
+      "id": "SMAS-0066",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 13
+    },
+    {
+      "id": "SMAS-0067",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 6
+    },
+    {
+      "id": "SMAS-0068",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 7
+    },
+    {
+      "id": "SMAS-0069",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 21
+    },
+    {
+      "id": "SMAS-0070",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 7
+    },
+    {
+      "id": "SMAS-0071",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 15
+    },
+    {
+      "id": "SMAS-0072",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 7
+    },
+    {
+      "id": "SMAS-0073",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 19
+    },
+    {
+      "id": "SMAS-0074",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 26
+    },
+    {
+      "id": "SMAS-0075",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 21
+    },
+    {
+      "id": "SMAS-0076",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 12
+    },
+    {
+      "id": "SMAS-0077",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 20
+    },
+    {
+      "id": "SMAS-0078",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 16
+    },
+    {
+      "id": "SMAS-0079",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 9
+    },
+    {
+      "id": "SMAS-0080",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 15
+    },
+    {
+      "id": "SMAS-0081",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 24
+    },
+    {
+      "id": "SMAS-0082",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 16
+    },
+    {
+      "id": "SMAS-0083",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 15
+    },
+    {
+      "id": "SMAS-0084",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 8
+    },
+    {
+      "id": "SMAS-0085",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 18
+    },
+    {
+      "id": "SMAS-0086",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 9
+    },
+    {
+      "id": "SMAS-0087",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 13
+    },
+    {
+      "id": "SMAS-0088",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 21
+    },
+    {
+      "id": "SMAS-0089",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 16
+    },
+    {
+      "id": "SMAS-0090",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 13
+    },
+    {
+      "id": "SMAS-0091",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 13
+    },
+    {
+      "id": "SMAS-0092",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 12
+    },
+    {
+      "id": "SMAS-0093",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 7
+    },
+    {
+      "id": "SMAS-0094",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 6
+    },
+    {
+      "id": "SMAS-0095",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 21
+    },
+    {
+      "id": "SMAS-0096",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 8
+    },
+    {
+      "id": "SMAS-0097",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 11
+    },
+    {
+      "id": "SMAS-0098",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 15
+    },
+    {
+      "id": "SMAS-0099",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 10
+    },
+    {
+      "id": "SMAS-0100",
+      "reference_pass": true,
+      "separate_metric_boundaries": true,
+      "wrong_value_rejected": true,
+      "scored_field_mutations_rejected": 19
+    }
+  ]
+}

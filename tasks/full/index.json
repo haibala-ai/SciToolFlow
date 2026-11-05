@@ -1,0 +1,4018 @@
+{
+  "canonical_source": "tasks/full/questions.jsonl",
+  "count": 500,
+  "categories": {
+    "high_difficulty": 100,
+    "standard": 350,
+    "tool_composition": 50
+  },
+  "domains": {
+    "Biology": 111,
+    "Chemical": 143,
+    "MachineLearning": 102,
+    "Material": 144
+  },
+  "references_visible_to_agent": false,
+  "tasks": [
+    {
+      "id": "FLOW-0001",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 1,
+      "question_preview": "A controlled synthetic analytical case uses the attached benign candidate-structure panel. Observed neutral monoisotopic mass is 88.05243 Da. Allow 5 ppm mass e",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0002",
+      "domain": "Material",
+      "category": "standard",
+      "line": 2,
+      "question_preview": "Assess whether the declared ordinary non-anomalous powder observation can identify the orientation sign of the attached labelled crystal motif. Read the two unc",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0003",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 3,
+      "question_preview": "A crystal database handoff treats a per-atom packing-volume field as atomic number density and compares mass-density and atom-number-density rankings without di",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0004",
+      "domain": "Material",
+      "category": "standard",
+      "line": 4,
+      "question_preview": "Determine which mobility assignment and carrier-population interpretation the attached controlled low-field study supports. Fit transverse voltage against SIGNE",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0005",
+      "domain": "Material",
+      "category": "standard",
+      "line": 5,
+      "question_preview": "Assess which finite-level entropy statements the attached controlled two-field calorimetry can identify. Obtain the original formula molar mass and the number o",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0006",
+      "domain": "Material",
+      "category": "standard",
+      "line": 6,
+      "question_preview": "Determine which supplied relaxation/conduction models are supported by the attached controlled complex-permittivity study. The source reports angular frequency ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0007",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 7,
+      "question_preview": "A thin-film screening team must decide what its present capacitance measurements establish before paying for one new orientation measurement. First recover the ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0008",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 8,
+      "question_preview": "An alloy-screening team proposes that setting the middle principal transformation stretch to one is enough to obtain austenite compatibility at every twin volum",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0009",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 9,
+      "question_preview": "Qualify a conformer-specific rotor export before using it in a rotational model. Recover the mass moments and gyration radius for the attached molecular graph u",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0010",
+      "domain": "Material",
+      "category": "standard",
+      "line": 10,
+      "question_preview": "Determine which transition sets the polarization-resolved bright onset in this controlled electronic-panel study. The attached CIF supplies an oblique COORDINAT",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0011",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 11,
+      "question_preview": "Select which attached chemical records best match a reference under two explicitly different retrieval representations. Obtain complete geometric and atom-categ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0012",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 12,
+      "question_preview": "A controlled simulated chemical quantification study includes calibration standards and one diluted unknown in the same record table. Use only standard rows to ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0013",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 13,
+      "question_preview": "Audit energy bookkeeping in the supplied simulated calorimeter calibration. Treat consecutive recorded heat-flow samples as joined by straight segments, integra",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0014",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 14,
+      "question_preview": "Recover the molecular graph implied by the attached coordinates under the stated bond-perception policy,then pass the perceived graph to radical assignment as a",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0015",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 15,
+      "question_preview": "Assess whether the analyte effective hydrodynamic size changed between the two controlled diffusion-NMR conditions after accounting for condition-specific nuisa",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0016",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 16,
+      "question_preview": "An analytical structure catalogue uses a single keto representation as an exact substructure filter. Determine which attached candidate records it retrieves by ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0017",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 17,
+      "question_preview": "Plan a detector protocol and read count to detect the stated target concentration while controlling one-sided blank false positives under the supplied known-par",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0018",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 18,
+      "question_preview": "Audit whether a candidate assay's mean transfer bias is equivalent to the reference for the prespecified target population and for every listed matrix. Match ob",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0019",
+      "domain": "Material",
+      "category": "standard",
+      "line": 19,
+      "question_preview": "A mixed-valence structure report treats equal spectral line areas as equal valence populations and then assigns every site from a bulk magnetic moment. Audit th",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0020",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 20,
+      "question_preview": "A molecular-mixture study has several structure records, an unresolved neutral-mass window and two selectively calibrated aggregate channels. Determine which di",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0021",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 21,
+      "question_preview": "Audit the gas-phase thermal Gibbs correction supported by the attached completed water frequency output at298.15K and1atm. Use its printed translational, rotati",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0022",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 22,
+      "question_preview": "Prioritize the three supplied completed harmonic-frequency calculations for an explicitly defined low-frequency entropy sensitivity reassessment. Preserve calcu",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0023",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 23,
+      "question_preview": "Select the strongest computed IR diagnostic band in the1500–2000cm^-1 window of the attached completed vinylene-carbonate calculation. Frequency and IR-intensit",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0024",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 24,
+      "question_preview": "Quantify sample-A using an internal standard that corrects multiplicative injection variation. Every aliquot contains the same internal-standard concentration. ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0025",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 25,
+      "question_preview": "Choose an integrated kinetic model for a controlled concentration-time study. Zero-, first-, and second-order models are allowed. Use times0–30s for fitting and",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0026",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 26,
+      "question_preview": "Estimate Arrhenius parameters from the attached controlled rate study using absolute kelvin. Documented transformed columns are x=1/T and y=ln(k/(1s^-1)). Repor",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0027",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 27,
+      "question_preview": "Adjust the controlled liquid→gas phase-change enthalpy from298.15K to330K using Kirchhoff’s law and the piecewise-linear heat-capacity model. The table explicit",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0028",
+      "domain": "Material",
+      "category": "standard",
+      "line": 28,
+      "question_preview": "A framework-mechanics report uses positive affine stiffness to certify resistance to every small uniform strain. Audit that conclusion for the attached periodic",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0029",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 29,
+      "question_preview": "Select one additional spectroscopy channel to improve a two-analyte assay. Each candidate matrix contains the original two response rows and one proposed new ro",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0030",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 30,
+      "question_preview": "A chemical annotation handoff assumes that merging two explicit hydrogen nodes into a nitrogen query necessarily means exactly two attached hydrogens. Audit the",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0031",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 31,
+      "question_preview": "Compare three controlled binary liquid mixtures for volumetric nonideality. Composition is ethanol mole fraction, rather than mass or volume fraction. Reconstru",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0032",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 32,
+      "question_preview": "Choose a molecular reference for a declared analytical calibration while respecting its exact descriptor domain. Evaluate the attached candidate graphs under th",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0033",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 33,
+      "question_preview": "Audit a molecular surface-report handoff that mixes atomic EState indices,EState-binned surface contributions and the full Labute surface estimate. Use the atta",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0034",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 34,
+      "question_preview": "Review which digital structures can enter a stereochemistry-labeled model without inventing assignments. Return unassigned_stereocenter_ids and explicit_tetrahe",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0035",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 35,
+      "question_preview": "Screen a defined polyol panel for a computational linear step-growth material design. Require exactly two alcohol OH groups per molecule: one cannot connect bot",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0036",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 36,
+      "question_preview": "Choose an analogue of ethylbenzene CCc1ccccc1 from the library. Require an exact aromatic benzene ring; fingerprint similarity alone cannot establish that const",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0037",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 37,
+      "question_preview": "Audit exported molecular atom-pair features against the attached graph and declared packing convention. Recover the endpoint atom codes and actual graph distanc",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0038",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 38,
+      "question_preview": "Review input eligibility for a descriptor model trained on neutral single molecular entities. Require exactly one original connected component and zero formal c",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0039",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 39,
+      "question_preview": "Quantify an unknown with response6.000 using the controlled calibration and its independently known response standard deviations. Concentration x is exact for t",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0040",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 40,
+      "question_preview": "Assess what can be quantified from the attached exact linear mixture assay, assuming nonnegative concentrations and no noise. Report total_concentration_mmol_l,",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0041",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 41,
+      "question_preview": "Check whether the exact response can be explained by nonnegative amounts of the supplied library species within the stated absolute tolerance. Report library_fe",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0042",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 42,
+      "question_preview": "Audit the attached digital equation annotations for conservation of every element. Coefficients multiply full formulas; do not compare formula strings or total ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0043",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 43,
+      "question_preview": "Construct a compact chemical reference panel using the attached fixed fingerprint-distance policy. Recover actual clusters,then choose one low-mass representati",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0044",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 44,
+      "question_preview": "Summarize the controlled homolog distribution on both molecular-count and mass-weighted bases. The listed counts are relative numbers of molecules, not mass fra",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0045",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 45,
+      "question_preview": "Audit a maximum-score chemical fragment hit before treating it as an exact structural match. Select the declared fragment generation and comparison capabilities",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0046",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 46,
+      "question_preview": "Audit molecular-fragment cache de-duplication under two source spellings and a constitutional isomer. Obtain complete unhashed shingles and named molecular keys",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0047",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 47,
+      "question_preview": "Audit scaffold-level overlap across the digital training and validation split. Use the ring-and-linker Bemis–Murcko scaffold policy, retaining aromatic ring ide",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0048",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 48,
+      "question_preview": "Estimate relative fluorescence quantum yield from the controlled corrected spectra and reference. Excitation wavelength and collection geometry match, detector ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0049",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 49,
+      "question_preview": "Audit the controlled aqueous analysis on a charge-equivalent basis. The four reported species are free ions under this study model. If their net charge is posit",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0050",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 50,
+      "question_preview": "Infer lithium amount in the unspiked sample from the controlled stable-isotope blend. Atom fractions in sample and spike are independently known, the spike is w",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0051",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 51,
+      "question_preview": "A gas-property report substitutes the compressibility factor at one pressure for the integrated fugacity correction. Infer the finite-pressure equation from the",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0052",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 52,
+      "question_preview": "Audit the vibrational energy convention and reporting precision in the supplied completed Q-Chem frequency output. Compute harmonic zero-point energy as half th",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0053",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 53,
+      "question_preview": "Infer empirical partial orders of A and B from the controlled two-reactant initial-rate panel at fixed temperature. Use v=k[A]^m[B]^n with equal-variance log-ra",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0054",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 54,
+      "question_preview": "Audit whether a molecular descriptor export gives equal weight to two named feature families. Obtain both complete vectors for the source pair,verify their actu",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0055",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 55,
+      "question_preview": "Compute the ideal entropy of mixing for the attached distinguishable,nonreacting ideal gases initially separated at the same temperature and pressure. Use natur",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0056",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 56,
+      "question_preview": "Locate the interior equal-composition point in the controlled binary vapor/liquid table. Use piecewise-linear interpolation of y−x between adjacent observations",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0057",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 57,
+      "question_preview": "Estimate uncertainty in the equal-weight mean preparation bias relative to100mg/L. Each preparation is an independent unit; its repeated injections are technica",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0058",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 58,
+      "question_preview": "Choose the least-cost acquisition setting that meets the declared idealized neutral-mass resolving criterion R_required=mean(m1,m2)/abs(m1−m2) for the two expli",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0059",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 59,
+      "question_preview": "Audit the controlled relative-free-energy network before reporting globally reconciled state energies. Each edge is G_to−G_from; all edges are evaluated under t",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0060",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 60,
+      "question_preview": "Estimate the mean atom0-to-atom3 distance in the attached finite controlled conformer ensemble at298.15 K. The additional coordinate JSON files preserve the exa",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0061",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 61,
+      "question_preview": "Audit aromatic graph serialization before reusing molecular features. Carry the actual Kekule representation into aromaticity assignment,check bond-class restor",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0062",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 62,
+      "question_preview": "Select the lamp that gives the larger detected count rate perunitarea under the controlled ideal detector response. Spectra are calibrated energy irradiance per",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0063",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 63,
+      "question_preview": "For the controlled three-state closed kinetic model,choose the earliest listed wait time at which BOTH specified pure initial preparations lie within the stated",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0064",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 64,
+      "question_preview": "Compare the two controlled kinetic models using both stationary and time-dependent evidence. Use column-vector generator convention and obtain each normalized s",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0065",
+      "domain": "Material",
+      "category": "standard",
+      "line": 65,
+      "question_preview": "A full-cell energy estimate balances two reversible electrode capacities but ignores the finite lithium consumed during formation and then omits inactive mass. ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0066",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 66,
+      "question_preview": "Reconcile gas-phase Q-Chem thermochemical bookkeeping when replacing the 1 atm ideal translational standard state with a 1 mol/L number-density standard state a",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0067",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 67,
+      "question_preview": "Resolve the vapor/liquid equilibrium of the controlled mixture at345K and0.8bar under ideal Raoult-law behavior. The feed is specified by MASS fractions; the pu",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0068",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 68,
+      "question_preview": "Audit internal-standard quantitation when the assigned analyte and reference signals have unequal longitudinal relaxation. Use the controlled model of instantan",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0069",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 69,
+      "question_preview": "Identify which listed hydrationnumber is consistent with ALL three controlled initial/residuemass pairs. Under the explicit endpointmodel,each formulaunit leave",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0070",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 70,
+      "question_preview": "Reconcile the controlled drymass gain with the samplecurrent after the matchedblank correction. The declared depositionstoichiometry transfers twoelectrons per ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0071",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 71,
+      "question_preview": "Decide which finitewindow tracer runs support a normalized residence-time mean under the declared conservative,constantflow pulse-tracer model. Compute recovere",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0072",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 72,
+      "question_preview": "Determine whether the paired fluorescence observations support dynamic quenching alone,static quenching alone,both,or neither within the stated ideal comparison",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0073",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 73,
+      "question_preview": "Assess whether the two assigned hydrogen sites can be distinguished by choosing a fixed crystalorientation even if their isotropic chemicalshift separation is b",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0074",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 74,
+      "question_preview": "Assign the simulated zero-field nuclear-quadrupole linepair to one of the two candidate Al sites using BOTH transition frequencies. Use the symmetric,traceless ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0075",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 75,
+      "question_preview": "Assess whether a single vibrational temperature is supported across the three assigned Raman modes in the controlled study. For each Stokes and anti-Stokes band",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0076",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 76,
+      "question_preview": "Choose the fastest scientifically admissible column/linear-velocity pair for this controlled separation. Fit each column by ordinary least squares to the dimens",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0077",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 77,
+      "question_preview": "Compare the listed pH conditions for the controlled dilute octanol/water distribution surrogate. Estimate each NEUTRAL structure’s octanol/water base10logP usin",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0078",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 78,
+      "question_preview": "Assign the symmetric O-H stretching mode in the supplied genuine completed water frequency calculation using its displacement geometry, then compare its IR inte",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0079",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 79,
+      "question_preview": "Compare the controlled alcohol feeds using the ideal Flory-Stockmayer random-branching model. Only aliphatic alcohol OH groups are type-A reactive groups;all su",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0080",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 80,
+      "question_preview": "Determine which candidate isotope assignments are compatible with the simulated rotational constants at the stated measurement resolution. Use exactly the suppl",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0081",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 81,
+      "question_preview": "Infer the affine transfer relationship between the two controlled concentration-reporting instruments when BOTH readings have measurement error. Estimate each i",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0082",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 82,
+      "question_preview": "Determine which controlled binary-mixture study constrains its composition more tightly from the supplied refractive-index and density intervals. Adopt RDKit Wi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0083",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 83,
+      "question_preview": "Use the archived nitrogen/Zeolite5A temperature series to estimate an APPARENT fixed-reported-uptake heat proxy at the requested loadings. Select the target ads",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0084",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 84,
+      "question_preview": "Analyze the controlled binary-copolymer composition panel at the zero-conversion limit. The specified terminal propagation model uses r1=k11/k12 and r2=k22/k21:",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0085",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 85,
+      "question_preview": "Compare two atom-centered monopole descriptions of the attached charged single-point calculation: NPA net atomic charges and the printed RESP charges. The addit",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0086",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 86,
+      "question_preview": "Audit the controlled exact-mass oligomer ladder against the supplied finite mass models. Every reported parent peak belongs to one series with a common positive",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0087",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 87,
+      "question_preview": "Select a pair of shape-diverse molecular controls from the attached finite panel while holding molecular formula, total formal charge and covalent-fragment coun",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0088",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 88,
+      "question_preview": "Audit three proposed activity-coefficient pairs before using them as one binary-liquid thermodynamic model at the supplied fixed T and P. The data are exact sim",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0089",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 89,
+      "question_preview": "Determine the three bulk-solution characterization quantities in the answer schema from this controlled multi-angle static-scattering study. Use optical contras",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0090",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 90,
+      "question_preview": "Audit whether an inventory-ratio pH shortcut remains adequate as the same weak-acid/sodium-salt inventory is diluted under the supplied closed ideal-solution mo",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0091",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 91,
+      "question_preview": "Choose the most selective admissible fixed-pH condition for the supplied controlled two-metal/one-ligand model. Meet BOTH the target complexed-fraction floor an",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0092",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 92,
+      "question_preview": "Compare the intrinsic kinetic activity of the two generic electrodes in the supplied controlled rotating-disc study. Separate external rotation-dependent transp",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0093",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 93,
+      "question_preview": "Decompose the rotational entropy change from the source water isotopolog to the one-site HDO counterfactual under the declared frozen-geometry classical rotor m",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0094",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 94,
+      "question_preview": "Audit the supplied fixed-checkpoint retrosynthesis proposal system against the virtual inventory. Obtain its accepted proposals within the declared search depth",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0095",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 95,
+      "question_preview": "Audit a report that converts the sum of local radical electrons directly into a unique total-spin assignment. Recover the source graph inventory and actual loca",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0096",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 96,
+      "question_preview": "Use the controlled host–guest calorimetry to separate buffer-linked proton exchange from the observed binding enthalpy. Select only observations at the study ta",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0097",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 97,
+      "question_preview": "Infer the self-association equilibrium and the shared species spectrum from the controlled paired-path optical observations. First qualify concentration levels ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0098",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 98,
+      "question_preview": "Qualify a coordinate-preserving torsion handoff from an attached SDF. Recover the actual indexed candidates and their chemical central bonds,identify restricted",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0099",
+      "domain": "Material",
+      "category": "standard",
+      "line": 99,
+      "question_preview": "Audit whether classical vibrational equipartition is a defensible approximation for the attached completed molecular calculation. Recover its harmonic wavenumbe",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0100",
+      "domain": "Material",
+      "category": "standard",
+      "line": 100,
+      "question_preview": "Assess how strongly the attached open-shell calculation supports a one-site, nonnegative spin-localization picture. Identify the combined, alpha and beta NPA ta",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0101",
+      "domain": "Material",
+      "category": "standard",
+      "line": 101,
+      "question_preview": "A magnetic caloric report integrates one sweep and publishes the result as a reversible entropy change. Audit both attached sweep branches under the declared de",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0102",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 102,
+      "question_preview": "A periodic tracer-hopping calculation appears to predict transport whenever its unit-cell graph is connected. Determine the actual long-time spatial transport i",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0103",
+      "domain": "Material",
+      "category": "standard",
+      "line": 103,
+      "question_preview": "A phase-equilibrium report treats a single reference latent enthalpy as temperature independent over the whole supplied window. Reconstruct the coexistence-curv",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0104",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 104,
+      "question_preview": "A nanocrystal team has only translated, volume-normalized shape information at several reservoir settings. Determine which surface-energy cards remain observati",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0105",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 105,
+      "question_preview": "Determine whether a periodic heavy-atom basis can actually be identified from ideal diffraction. Reconcile candidate structure files, distinguish trivial coordi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0106",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 106,
+      "question_preview": "Determine which physical band-topology conclusions are identifiable from energy spectroscopy and coherent occupied-state information. Reconcile five two-orbital",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0107",
+      "domain": "Material",
+      "category": "standard",
+      "line": 107,
+      "question_preview": "A thermal-analysis summary reports the height of an endothermic DSC peak as latent enthalpy and divides it by mass to call it specific heat capacity. Reconstruc",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0108",
+      "domain": "Material",
+      "category": "standard",
+      "line": 108,
+      "question_preview": "A phase-selection argument predicts the first nucleus by choosing the phase with the larger bulk free-energy lowering. Audit that claim for the attached competi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0109",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 109,
+      "question_preview": "Infer the infinite-lattice harmonic model from aliased small-supercell Hessians and a separate elastic measurement, then decide what finite-cell stability tests",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0110",
+      "domain": "Material",
+      "category": "standard",
+      "line": 110,
+      "question_preview": "A structure report assumes that a complete set of exact ordinary diffraction intensities uniquely specifies its one-dimensional periodic basis. Audit the attach",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0111",
+      "domain": "Material",
+      "category": "standard",
+      "line": 111,
+      "question_preview": "A vibrational-spectrum report attributes a finite spectral window only to modes whose centers fall inside it. Audit that attribution using the attached calculat",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0112",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 112,
+      "question_preview": "Determine the continuous equilibrium phase geometry of a controlled substitutional alloy from free-energy values AND derivatives, then audit what global stabili",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0113",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 113,
+      "question_preview": "Resolve self-consistent charged-defect populations in a finite-site negative-U semiconductor model while keeping atomic and electronic equilibration distinct. D",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0114",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 114,
+      "question_preview": "Audit a proposed negative-capacitance stability and voltage-amplification claim using two supplied crystal geometries and a fully specified finite Landau/circui",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0115",
+      "domain": "Material",
+      "category": "standard",
+      "line": 115,
+      "question_preview": "A homogeneous polarization report treats every locally stable stationary branch as thermodynamic equilibrium and reports the observed field as its coercive limi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0116",
+      "domain": "Material",
+      "category": "standard",
+      "line": 116,
+      "question_preview": "A stress-relaxation report accepts a passive discrete Maxwell representation because its finite observed modulus values stay positive and decrease. Fit the comp",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0117",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 117,
+      "question_preview": "Determine whether phase-speed inversion can establish complete in-plane auxeticity of an orthotropic coating. Recover all stable stiffness candidates, certify g",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0118",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 118,
+      "question_preview": "Determine what fixed-composition energy observations and an average disordered crystal actually identify about a finite binary-alloy model. Reconstruct periodic",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0119",
+      "domain": "Material",
+      "category": "standard",
+      "line": 119,
+      "question_preview": "A spherical-contact fit assigns all measured approach to specimen indentation and ignores test-machine and indenter deformation. Reconstruct both contributions ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0120",
+      "domain": "Material",
+      "category": "standard",
+      "line": 120,
+      "question_preview": "A porosimetry report turns each first intrusion pressure directly into a pore-body radius and counts newly reached pores with equal weights. Audit the attached ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0121",
+      "domain": "Material",
+      "category": "standard",
+      "line": 121,
+      "question_preview": "A photonic-stack report replaces a layered period by its optical-path-matched uniform medium and equates a Bloch amplitude-decay factor with finite-device trans",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0122",
+      "domain": "Material",
+      "category": "standard",
+      "line": 122,
+      "question_preview": "An optical fit uses two exact excitation peaks to report a signed intersite coupling and assumes that matching peak positions also establishes agreement with pe",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0123",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 123,
+      "question_preview": "Determine whether the attached hypothetical regular solution should remain homogeneous at its weighed feed composition under the declared equilibrium model. Obt",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0124",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 124,
+      "question_preview": "Resolve a proposed inert-gas dilution argument for the attached controlled ideal associating gas. Begin with the weighed monomer-equivalent feed, no inert gas, ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0125",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 125,
+      "question_preview": "Determine which ion assignments the attached controlled mass-spectrometric evidence actually identifies. Obtain the neutral monoisotopic masses needed for the s",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0126",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 126,
+      "question_preview": "Audit directional plastic-work bounds of a controlled textured FCC aggregate. Reconstruct work-conjugate slip geometry from the source cell and grain rotations,",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0127",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 127,
+      "question_preview": "A chemical-analysis report interprets positive rotation at two wavelengths as proof that the lactic-acid constituent is R-enriched and its enantiomeric composit",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0128",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 128,
+      "question_preview": "A membrane-equilibrium report treats the outside solution as an unchanged salt reservoir and counts fixed charge equivalents as osmotic particles. Audit both ap",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0129",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 129,
+      "question_preview": "A closed-mixture report uses the300K equilibrium constant to predict an adiabatic conversion and only afterward adds its reaction heat. Under the attached hypot",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0130",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 130,
+      "question_preview": "A proton-binding analysis labels two intrinsic site pKa values as the two sequential macroscopic pKa values and sums two independent Henderson-Hasselbalch buffe",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0131",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 131,
+      "question_preview": "An isotope-envelope report estimates one mean13Cfraction and assumes every carbon site labels independently. Audit the complete count distribution for the attac",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0132",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 132,
+      "question_preview": "A gated-kinetics report multiplies product-formation rate by an equilibrium conformer fraction and interprets both that result and the slow survival tail as the",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0133",
+      "domain": "Material",
+      "category": "standard",
+      "line": 133,
+      "question_preview": "Choose one predicted crystal phase for a hypothetical lightweight elastic support using attached genuine Materials Project records. Reject any warning-bearing r",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0134",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 134,
+      "question_preview": "A current-transient analysis assumes an electrode area before estimating diffusivity,then subtracts no background from its late steady current. Use the attached",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0135",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 135,
+      "question_preview": "A tautomer enumeration is used as if every returned graph had equal population,and its partition coefficients are averaged before a finite-volume extraction cal",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0136",
+      "domain": "Material",
+      "category": "standard",
+      "line": 136,
+      "question_preview": "A hypothetical electrolyte permits every used electrode plateau only between2.5 and4.5V. Review the specified genuine frozen insertion-electrode record. Its ove",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0137",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 137,
+      "question_preview": "Qualify an electronic-structure scalar handoff before it is reused as a work-function or doping report. Reconcile the attached source identities,compare the fun",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0138",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 138,
+      "question_preview": "Infer a tilted two-phase thermoelectric laminate from source-calibrated coupled transport and two controlled resistance observations. Recover the complete admis",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0139",
+      "domain": "Material",
+      "category": "standard",
+      "line": 139,
+      "question_preview": "Identify every candidate record consistent with the controlled forward-simulated powder observation, then count distinct geometric phases among the compatible c",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0140",
+      "domain": "Material",
+      "category": "standard",
+      "line": 140,
+      "question_preview": "Compare the three specified calculated configurations for a lightweight magnetic-response study. Rank by net magnetic moment per mass, not moment per simulation",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0141",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 141,
+      "question_preview": "A scalar capacitor report substitutes an electronic-only dielectric value for a static dielectric response. Use the attached source identity and controlled devi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0142",
+      "domain": "Material",
+      "category": "standard",
+      "line": 142,
+      "question_preview": "Audit the specified MnO record before using it as an antiferromagnetic reference. Normalize its reported total moment to the stated formula unit independently u",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0143",
+      "domain": "Material",
+      "category": "standard",
+      "line": 143,
+      "question_preview": "Estimate the reversible small-strain elastic energy stored in the specified Fe calculation cell under volumetric strainΔV/V=0.003. Use the isotropic VRH bulk mo",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0144",
+      "domain": "Material",
+      "category": "standard",
+      "line": 144,
+      "question_preview": "Plan shear-response characterization of the specified TiO2 phase. Before using the listed VRH estimate as a single isotropic surrogate, verify that its IEEE sti",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0145",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 145,
+      "question_preview": "Determine the full linear stability and damping-design limits of a nonconservative two-link elastic prototype. Distinguish neutral motion, defective imaginary r",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0146",
+      "domain": "Material",
+      "category": "standard",
+      "line": 146,
+      "question_preview": "Triage three phases for a metallic-alloy ductility follow-up using the attached MP summary and elasticity sources. Join by exact material_id, not formula text. ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0147",
+      "domain": "Material",
+      "category": "standard",
+      "line": 147,
+      "question_preview": "Compare the three specified nonmetal phases as ideal transparent, nonmagnetic optical-anisotropy candidates. Use the electronic dielectric tensor only: neglect ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0148",
+      "domain": "Material",
+      "category": "standard",
+      "line": 148,
+      "question_preview": "Audit the isotropic acoustic velocities of the specified Fe elasticity calculation. Independently reconstruct density from its full cell composition and cell vo",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0149",
+      "domain": "Material",
+      "category": "standard",
+      "line": 149,
+      "question_preview": "Can the attached Fe elasticity response be treated as calibrated to the geometry in the independent summary source? First verify geometric phase equivalence usi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0150",
+      "domain": "Material",
+      "category": "standard",
+      "line": 150,
+      "question_preview": "Quantify a controlled structure perturbation relative to the reference cell. The attached role index identifies the pristine and modified CIFs; treat the cell a",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0151",
+      "domain": "Material",
+      "category": "standard",
+      "line": 151,
+      "question_preview": "Estimate uniform isotropic lattice strain from the attached indexed, forward-simulated powder observation and the undeformed reference CIF. The wavelength is ca",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0152",
+      "domain": "Material",
+      "category": "standard",
+      "line": 152,
+      "question_preview": "Calibrate an unknown X-ray wavelength using the attached indexed line from a known undeformed silicon reference. The observation settings provide a nominal wave",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0153",
+      "domain": "Material",
+      "category": "standard",
+      "line": 153,
+      "question_preview": "Select the stiffest of the100,110 and111 directions for the supplied Fe IEEE stiffness tensor. For each unit direction n, apply unit uniaxial stress n⊗n, solve ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0154",
+      "domain": "Material",
+      "category": "standard",
+      "line": 154,
+      "question_preview": "Infer the temperature gradient required to sustain the prescribed heat flux in the attached controlled anisotropic conductor, using Fourier’s lawq=−K gradT. Fir",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0155",
+      "domain": "Material",
+      "category": "standard",
+      "line": 155,
+      "question_preview": "Infer a planar diffusion tensor from the attached centered displacement-covariance study. Initial displacement is exactly zero and the model isΣ(t)=2Dt, so fit ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0156",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 156,
+      "question_preview": "Design a passive composite thermal rectifier without confusing a large heat-flow ratio with guaranteed throughput. Calibrate two temperature-dependent material ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0157",
+      "domain": "Material",
+      "category": "standard",
+      "line": 157,
+      "question_preview": "Estimate the ideal energy to create two clean equivalent Fe(100) faces with the in-plane cell area of the attached source slab. Use its two in-plane lattice vec",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0158",
+      "domain": "Material",
+      "category": "standard",
+      "line": 158,
+      "question_preview": "Prepare a machine-readable formal-redox curation record for the specified insertion-electrode snapshot. Retrieve its actual charged and discharged endpoint form",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0159",
+      "domain": "Material",
+      "category": "standard",
+      "line": 159,
+      "question_preview": "Convert the attached active-material crystal metric into a controlled porous-electrode design estimate. Binder is electrochemically inert; its stated mass fract",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0160",
+      "domain": "Material",
+      "category": "standard",
+      "line": 160,
+      "question_preview": "Assess the framework expansion evidence of the attached computed insertion cycle. Volumes and masses are on the same provider framework-unit basis. Report signe",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0161",
+      "domain": "Material",
+      "category": "standard",
+      "line": 161,
+      "question_preview": "Estimate a provisional quasistatic ZnO voltage-response surrogate from the supplied piezoelectric,elastic and dielectric records joined by exact phaseID. For th",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0162",
+      "domain": "Material",
+      "category": "standard",
+      "line": 162,
+      "question_preview": "Evaluate an idealized network-connectivity budget for the attached oxide design. Assume allSi andAl are tetrahedral network formers,eachAlO4 unit requires oneNa",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0163",
+      "domain": "Material",
+      "category": "standard",
+      "line": 163,
+      "question_preview": "Use the supplied structure and the declared computational screen to prioritize,not certify,a MOF for further independent study. Obtain the existing author-model",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0164",
+      "domain": "Material",
+      "category": "standard",
+      "line": 164,
+      "question_preview": "Run the declared finite computational CO2/H2mixture screen on the supplied charged framework. Use absolute mean loadings and convert their mg/g values to molar ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0165",
+      "domain": "Material",
+      "category": "standard",
+      "line": 165,
+      "question_preview": "Audit normalization before using a periodic surface-slab cell as a specimen density. The role index identifies one genuine bulk cell and one genuine surface sla",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0166",
+      "domain": "Material",
+      "category": "standard",
+      "line": 166,
+      "question_preview": "Evaluate the largest polarization response permitted by a unit Frobenius norm of symmetric strain for the specified SiC phase. Use the attached coordinate polic",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0167",
+      "domain": "Material",
+      "category": "standard",
+      "line": 167,
+      "question_preview": "Assess the specified computed Fe3O4 record against the attached two competing stable phases in one GGA_GGA+U compatibility set. Form the mixture with the same o",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0168",
+      "domain": "Material",
+      "category": "standard",
+      "line": 168,
+      "question_preview": "Estimate finite-interval expansion coefficients from two controlled model cell states. The CIF axes correspond between states; use the same crystallographic axe",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0169",
+      "domain": "Material",
+      "category": "standard",
+      "line": 169,
+      "question_preview": "Estimate two-phase Wiener bounds for the controlled dielectric composite. The first phase is silicon and its solid mass fraction is0.5; convert mass fractions t",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0170",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 170,
+      "question_preview": "Qualify a database magnetic summary before using its per-site normalization. Reconcile its two moment reporting bases,inspect the actual site-count denominator,",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0171",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 171,
+      "question_preview": "Compare two computed phases under the attached common-driving-force capillary proxy. Obtain their source-identified weighted surface energies,calculate the crit",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0172",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 172,
+      "question_preview": "Screen the attached polymorph candidates using two distinct thermodynamic reference comparisons. Retrieve the matched formation-energy,hull-distance and stabili",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0173",
+      "domain": "Material",
+      "category": "standard",
+      "line": 173,
+      "question_preview": "Assess which of two declared idealized cellular-solid regimes better describes the controlled normalized data: stretching-like E/Es=C*(rho/rhos) or bending-like",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0174",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 174,
+      "question_preview": "Audit a forward-scattering export for a database calculation cell. Select the source composition capability,retain its atom-count basis,and apply the attached c",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0175",
+      "domain": "Material",
+      "category": "standard",
+      "line": 175,
+      "question_preview": "Compare long-wavelength acoustic modes for the two supplied propagation directions in the computed Fe phase. Reconstruct density from the full-cell formula and ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0176",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 176,
+      "question_preview": "Assess whether a database local-environment report is sufficient to certify a regular tetrahedral geometry. Reconcile its assigned element label with its coordi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0177",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 177,
+      "question_preview": "Does the first local Griffith equality determine when a calibrated specimen cracks in a finite loading machine? Reconstruct specimen and machine compliance, dis",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0178",
+      "domain": "Material",
+      "category": "standard",
+      "line": 178,
+      "question_preview": "Screen the attached anisotropic dielectric response exports under the stated single-frequency loss criterion, then select an admissible response and field direc",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0179",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 179,
+      "question_preview": "Estimate a local mechanical response from a published EOS curve. Resolve source-task ownership,keep energy-volume pairing intact while ordering the data,and app",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0180",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 180,
+      "question_preview": "Construct a conditional harmonic response from a source-consistent phonon DOS. Retrieve and read its full data artifact,retain that record own structural atom c",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0181",
+      "domain": "Material",
+      "category": "standard",
+      "line": 181,
+      "question_preview": "Choose the best of the listed energy-axis shifts for the controlled observation relative to the authentic computed Fe K-XANES reference. The convention is obser",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0182",
+      "domain": "Material",
+      "category": "standard",
+      "line": 182,
+      "question_preview": "Compare a defined shape descriptor of the two genuine computed Fe K-XANES spectra. For each spectrum define E0 as the energy of the largest positive centered fi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0183",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 183,
+      "question_preview": "Compare two explicitly identified XAS records returned by a formula search while preserving their separate structures and energy grids. Extract in-window sample",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0184",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 184,
+      "question_preview": "Qualify an archived charge-density export against an official historical object relationship. Choose the metadata resolver,pass the actual returned file IDinto ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0185",
+      "domain": "Material",
+      "category": "standard",
+      "line": 185,
+      "question_preview": "Compare the two supplied full-zone DFPT phonon density-of-states snapshots for harmonic constant-volume heat capacity per kilogram at 300 K. The public projecti",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0186",
+      "domain": "Material",
+      "category": "standard",
+      "line": 186,
+      "question_preview": "Audit acoustic/optical separation using the authentic GaAs path branches and independently sampled full-zone DOS. For this six-branch model take branches0–2 as ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0187",
+      "domain": "Material",
+      "category": "standard",
+      "line": 187,
+      "question_preview": "Decide whether replacing the site-dependent mass model by one mean mass is accurate enough for the HIGHEST sampled Gamma-point frequency. The archive’s VASP5 he",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0188",
+      "domain": "Material",
+      "category": "standard",
+      "line": 188,
+      "question_preview": "Determine which element supplies more integrated site-projected vibrational weight between the first positive source gridfrequency and3.0THz in the authentic Ga",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0189",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 189,
+      "question_preview": "Audit a solvent-labelled molecular thermochemistry handoff. Reconcile each attached row identity and calculation context,infer its temperature from the reported",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0190",
+      "domain": "Material",
+      "category": "standard",
+      "line": 190,
+      "question_preview": "Audit the two controlled periodic snapshots against the reference using the supplied fixed central-site and neighbor-image correspondence. Let rows of R be the ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0191",
+      "domain": "Material",
+      "category": "standard",
+      "line": 191,
+      "question_preview": "Identify the candidate whose geometric periodic components are all two-dimensional under the declared 1.8 Å radius graph. A directed periodic edge connects atom",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0192",
+      "domain": "Material",
+      "category": "standard",
+      "line": 192,
+      "question_preview": "Reconcile the z-polarization branch of the published ordered BaTiO3 deformationpath. Allcells use the same orthorhombic axes. For each pathrecord form reduced s",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0193",
+      "domain": "Material",
+      "category": "standard",
+      "line": 193,
+      "question_preview": "For the two published numerical spin-DOS curves,quantify how a Fermi-level indicator differs from an integrated supplied-window indicator. Define P_F=(D_spin01(",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0194",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 194,
+      "question_preview": "Audit two charge-state records by reconciling composition,reported charge,spin multiplicity and the vacuum open-shell flag. Select actual state-property lookups",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0195",
+      "domain": "Material",
+      "category": "standard",
+      "line": 195,
+      "question_preview": "Audit whether the ordered migrationpath can be summarized by one moving atom. Preserve the source same-index species correspondence and commoncell; for every ad",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0196",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 196,
+      "question_preview": "Does a rebounding stress-relaxation curve imply an active material? Identify an exact memory law, distinguish positive Maxwell spectra from a broader power-pass",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0197",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 197,
+      "question_preview": "Can a calibrated layered dielectric support an omnidirectional bulk stopband without absorbing light? Resolve the index-identification gauge, certify the comple",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0198",
+      "domain": "Material",
+      "category": "standard",
+      "line": 198,
+      "question_preview": "A discharge report subtracts two whole-electrode average potentials and multiplies by the smaller nominal electrode capacity. Reconstruct the common charge coor",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0199",
+      "domain": "Material",
+      "category": "standard",
+      "line": 199,
+      "question_preview": "Determine the smallest listed energy cutoff for which the discrete spectral-moment coverage indicator reaches 95 percent. Use C(Emax)=[(2/pi)*integral from 0 to",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0200",
+      "domain": "Material",
+      "category": "standard",
+      "line": 200,
+      "question_preview": "Audit the supplied non-spin-polarized eigenvalue paths before treating either candidate as gapped in this finite-grid screen. A band crosses the Fermi level whe",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0201",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 201,
+      "question_preview": "Does an electron-like low-field Hall signal contradict a hole-majority material, and does a large magnetoresistance prove compensation? Remove contact artifacts",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0202",
+      "domain": "Material",
+      "category": "standard",
+      "line": 202,
+      "question_preview": "Compare the geometric volume excess of the two published boundary snapshots, using the supplied bulk structure as the declared volume-per-atom reference. Assume",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0203",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 203,
+      "question_preview": "Prepare the correct site mask for MOF branch analysis while auditing a proposed terminal-site substitution. Reconcile the named branch,bridge and degree-one ter",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0204",
+      "domain": "Material",
+      "category": "standard",
+      "line": 204,
+      "question_preview": "A phonon report would remove a small translational-sum-rule error and then certify the sampled model stable. Audit that conclusion using the attached MASS-WEIGH",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0205",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 205,
+      "question_preview": "Does a thermal cycle that repeats its stresses also stop plastic flow or accumulated deformation? Certify the full static elastic-adaptation load envelope, then",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0206",
+      "domain": "Material",
+      "category": "standard",
+      "line": 206,
+      "question_preview": "Identify which listed reflection is least accurately represented by an isotropic approximation to atom 0's thermal motion at 300 K. Use the actual cell geometry",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0207",
+      "domain": "Material",
+      "category": "standard",
+      "line": 207,
+      "question_preview": "Audit the insulating-crystal Born-charge translational sum rule before using the supplied tensors as a linear dipole-response map. The raw tensors satisfy the d",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0208",
+      "domain": "Material",
+      "category": "standard",
+      "line": 208,
+      "question_preview": "Prioritize the two relaxed oxide geometries for local ionic-model review under the supplied cation and oxygen formal-valence hypotheses. Use the supplied empiri",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0209",
+      "domain": "Material",
+      "category": "standard",
+      "line": 209,
+      "question_preview": "Determine what the supplied 300 K marginal atomic-motion tensors imply for the linearized parallel relative displacement of atom 0 and atom 10. Define the proje",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0210",
+      "domain": "Material",
+      "category": "standard",
+      "line": 210,
+      "question_preview": "Test whether ONE magnitude of the long-range two-sublattice order parameter can explain both odd-reflection intensities in the controlled equiatomic B2CuZn stud",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0211",
+      "domain": "Material",
+      "category": "standard",
+      "line": 211,
+      "question_preview": "Assess the directional effective-mass anisotropy of the supplied local X-valley electronic band and whether a purely quadratic fit is accurate enough on these f",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0212",
+      "domain": "Material",
+      "category": "standard",
+      "line": 212,
+      "question_preview": "Estimate the Curie-Weiss parameters only after qualifying finite-field linear response in the controlled magnetometry study. Subtract the matched empty-holder m",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0213",
+      "domain": "Material",
+      "category": "standard",
+      "line": 213,
+      "question_preview": "Evaluate whether the positive isotropic Poisson ratio reported for this computed phase rules out lateral expansion under a tensile probe. Use the actual IEEE-or",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0214",
+      "domain": "Material",
+      "category": "standard",
+      "line": 214,
+      "question_preview": "Quantify path dependence of the reported xenon inventory on the same Vycor specimen at the study target state. Select the actual target run and temperature, kee",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0215",
+      "domain": "Material",
+      "category": "standard",
+      "line": 215,
+      "question_preview": "Determine how allowing the supplied surface reconstructions changes the restricted equilibrium shape of the attached cubic Si phase. Compare two clean-surface m",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0216",
+      "domain": "Material",
+      "category": "standard",
+      "line": 216,
+      "question_preview": "Screen the two candidate adsorption pressures for the attached example framework using the declared finite local classical-simulation protocol. At the same temp",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0217",
+      "domain": "Material",
+      "category": "standard",
+      "line": 217,
+      "question_preview": "Assess the specified Fe3O4 candidate against the complete SUPPLIED compatible Fe-O cohort. Work strictly within these 44 records and the source corrected zero-t",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0218",
+      "domain": "Material",
+      "category": "standard",
+      "line": 218,
+      "question_preview": "Plan a GEOMETRY-ONLY follow-up to the supplied single collinear DFT state. Identify source sites whose absolute projected moment reaches the study dominance thr",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0219",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 219,
+      "question_preview": "Construct a chemically selected local coordinate export for a MOFsite. Follow the actual bond graph into element lookup,select hydrogen neighbors,and pass their",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0220",
+      "domain": "Material",
+      "category": "standard",
+      "line": 220,
+      "question_preview": "Assess whether the ambient higher-energy nominal phase becomes favored under hydrostatic pressure within the supplied study range. Reconstruct both supplied ene",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0221",
+      "domain": "Material",
+      "category": "standard",
+      "line": 221,
+      "question_preview": "Locate any acoustic axis strictly inside the supplied basal-plane propagation sector of this computed tetragonal elastic continuum. An acoustic axis requires co",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0222",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 222,
+      "question_preview": "Which kinetic control genuinely accelerates polymorph conversion under uncertain equilibrium basin populations? Distinguish committor, free-energy barriers, gro",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0223",
+      "domain": "Material",
+      "category": "standard",
+      "line": 223,
+      "question_preview": "Select a loading system for stable crack-growth characterization in the supplied controlled linear-elastic specimen study. Reconstruct specimen compliance and r",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0224",
+      "domain": "Material",
+      "category": "standard",
+      "line": 224,
+      "question_preview": "Audit the supplied original crystal as an input to a proposed automatic guest-deletion preprocessing step. Under the stated standard graph convention, identify ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0225",
+      "domain": "Material",
+      "category": "standard",
+      "line": 225,
+      "question_preview": "Determine whether fine layering can restore ideal macroscopic compatibility with the undeformed reference even though either constituent alone may be incompatib",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0226",
+      "domain": "Material",
+      "category": "standard",
+      "line": 226,
+      "question_preview": "Reanalyze the supplied official silicon quasi-harmonic example under the explicitly stated finite-volume polynomial reporting model. Reconcile the electronic an",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0227",
+      "domain": "Material",
+      "category": "standard",
+      "line": 227,
+      "question_preview": "Determine which listed slip system first activates as uniaxial tension increases in the attached crystal Cartesian frame. Audit whether each proposed direction ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0228",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 228,
+      "question_preview": "Can finite-scale helicity measurements distinguish a critical vortex separatrix from quasi-long-range and runaway flows? Calibrate the instrument, verify the fu",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0229",
+      "domain": "Material",
+      "category": "tool_composition",
+      "line": 229,
+      "question_preview": "Build a complete chemical inventory of the linker fragments produced from an attached MOF. Separate instance multiplicity from unique graph identity,pass the ac",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0230",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 230,
+      "question_preview": "A plant–pollinator network report treats its degree margins as sufficient to determine nested structure and interprets a descriptive overlap as a causal interac",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0231",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 231,
+      "question_preview": "A glycine speciation analysis gives several microscopic acid-base calibrations that look compatible with the same macroscopic titration. A neutral selective hos",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0232",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 232,
+      "question_preview": "Audit an inverse temperature-calibration report that replaces coefficient uncertainty by a symmetric error bar around the nominal inverse. Fit the affine mean r",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0233",
+      "domain": "Material",
+      "category": "standard",
+      "line": 233,
+      "question_preview": "A defect report evaluates formation energies at an arbitrarily chosen Fermi level and then assumes equal electron and hole densities because the sample is neutr",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0234",
+      "domain": "Material",
+      "category": "standard",
+      "line": 234,
+      "question_preview": "A site-occupancy report takes positive square roots of two coherent intensities and interprets the result as a unique site preference. Audit the attached two-si",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0235",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 235,
+      "question_preview": "Choose a scientifically defensible geometry for comparing the attached positive oxide compositions when the reporting basis changes from component MASS fraction",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0236",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 236,
+      "question_preview": "A spectroscopy team has one completed water harmonic-frequency calculation, but only rounded displacement vectors rather than its full-precision Hessian. Determ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0237",
+      "domain": "Material",
+      "category": "standard",
+      "line": 237,
+      "question_preview": "A material shortlist has modulus and density calibrated by the same uncertain coordinate. Select a robust specific-modulus winner using the joint uncertainty se",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0238",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 238,
+      "question_preview": "Audit a laboratory instrument reliability report when two different terminal failure modes compete. From the attached unit records, estimate the probability tha",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0239",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 239,
+      "question_preview": "A quantitative-proteomics methods study needs to decide which parent-polypeptide amounts are determined by its calibrated peptide-mass observations. Use the att",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0240",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 240,
+      "question_preview": "A comparative-gene handoff uses species labels as though every between-species pair were orthologous. Reconcile the attached rooted gene and species trees under",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0241",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 241,
+      "question_preview": "Audit a coordinate-frame handoff that treats a geometric atom centroid as a mass center when reporting torque. Use the attached deposited coordinate inventory a",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0242",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 242,
+      "question_preview": "An ensemble-distance report inverts one normalized transfer efficiency and calls the result the structure of every molecule. Under the attached two-state centro",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0243",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 243,
+      "question_preview": "A comparative plant-trait study must decide how robust its environment association is to shared ancestry, and which one archived taxon to digitize next. Reconci",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0244",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 244,
+      "question_preview": "A partial proteolysis report collapses identical peptide sequences and normalizes two measured signals as if they represented every final product. Use the suppl",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0245",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 245,
+      "question_preview": "A sequencing handoff interprets equal-library compositional changes as absolute per-cell regulation after one abundant transcript increases. Use the spike conve",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0246",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 246,
+      "question_preview": "Infer what time-sampled conformational switching actually reveals about a driven three-state molecular cycle. Recover the COMPLETE nonnegative-rate generator fa",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0247",
+      "domain": "Material",
+      "category": "standard",
+      "line": 247,
+      "question_preview": "Curate the thermodynamic charge-transition diagram of the attached defect model. Construct the global formation-energy lower envelope over the complete Fermi wi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0248",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 248,
+      "question_preview": "Audit whether the attached exact population covariance identifies the effect of setting X on Y under the supplied finite causal-model family. Reconcile variable",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0249",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 249,
+      "question_preview": "A peptide-mixture report defines its neutral-charge pH by averaging theoretical pIs. Use the declared common pKa convention and actual sequence compositions to ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0250",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 250,
+      "question_preview": "A cross-species interaction summary conserves each edge independently and concludes that one ortholog mapping preserves the full neighborhood. Audit the shared-",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0251",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 251,
+      "question_preview": "A curator must release an auditable teaching protein-record panel under the attached identity/metadata policy. Decide which identifiers can be released without ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0252",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 252,
+      "question_preview": "Assess a proposed retrospective interpretation that an upregulated set is overrepresented in the six supplied direct cellular-component annotations. Audit that ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0253",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 253,
+      "question_preview": "A proposed reanalysis would interpret a whole-community/whole-environment distance association as ecological evidence from these historical sites. Quantify the ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0254",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 254,
+      "question_preview": "Audit a controlled crystallographic-summary scenario in which coordinate atom-inventory mass would be substituted for intact protein mass. Quantify the two dist",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0255",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 255,
+      "question_preview": "Audit a proposed mean-volume report from archived tree measurements, comparing the two declared backtransformations. Audit the two declared backtransformations ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0256",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 256,
+      "question_preview": "Audit a controlled preprocessing scenario in which the full genomic span of an annotated chloroplast CDS would be treated as coding sequence. Reconcile the actu",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0257",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 257,
+      "question_preview": "A researcher needs usable nucleotide-composition covariates for the complete historical marker panel and must decide which top-rank claims are identifiable desp",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0258",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 258,
+      "question_preview": "A proposed chloroplast annotation index would use gene-name counts, CDS-feature counts and distinct encoded-polypeptide counts interchangeably. This is a contro",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0259",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 259,
+      "question_preview": "A structural-data researcher needs a coarse-grained fluctuation model whose soft internal mode is not confused with disconnected-network zero modes. Assess the ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0260",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 260,
+      "question_preview": "A structural-data archive needs one submitted conformer to represent its complete NMR ensemble in a downstream visualization. Choose the geometric medoid under ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0261",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 261,
+      "question_preview": "A mature-protein proteomics study appears to show conflicting changes in a plant RuBisCO small subunit. Resolve what the measurements can actually distinguish b",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0262",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 262,
+      "question_preview": "An ecological-methods analyst must separate site state from imperfect observation in the attached historical repeated surveys. Reconstruct the complete-three-vi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0263",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 263,
+      "question_preview": "Audit a proposed protein-analysis summary that would use one A280 coefficient without documenting its cysteine assumption. For the supplied deposited chains, qu",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0264",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 264,
+      "question_preview": "Check whether the supplied deposited disulfide endpoint annotations agree with the actual sulfur geometry under the declared audit rule, and look for unannotate",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0265",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 265,
+      "question_preview": "A comparative-trait study is planning which uncertainty calculation it can justify from a supplied reference tree before collecting trait values. Under the expl",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0266",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 266,
+      "question_preview": "Assess whether a three-mode approximation is adequate for the explicitly defined coordinate-network fluctuation statistic. Confirm the attached node inventory,o",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0267",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 267,
+      "question_preview": "A functional-annotation index needs a concise overview of a predeclared yeast gene panel without counting repeated references as additional genes or turning spe",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0268",
+      "domain": "Material",
+      "category": "standard",
+      "line": 268,
+      "question_preview": "An open-reservoir phase screen proposes using the most B-rich allowed target phase as a dilute-defect reference. Reconcile the target equilibrium,elemental limi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0269",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 269,
+      "question_preview": "A two-site sorbent is assigned a single preferred component from its dilute-limit affinity and a ratio of pure-component uptakes. Determine the actual pressure-",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0270",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 270,
+      "question_preview": "A structural-biology group wants to distinguish protein domain rearrangement from whole-protein repositioning, then choose three virtual distance reporters for ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0271",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 271,
+      "question_preview": "Determine whether a regularly sampled two-component instrument transient identifies its continuous-time linear generator. Under the attached model, infer the co",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0272",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 272,
+      "question_preview": "Evaluate whether the two supplied coordinate files support a comparison of the declared full-reference protein geometry up to a physically proper rigid pose. Se",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0273",
+      "domain": "Material",
+      "category": "standard",
+      "line": 273,
+      "question_preview": "A thermal-laminate summary averages the two free expansions to predict a flat,stress-free strip. Reconstruct the attached FREE bilayer equilibrium,allowing exte",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0274",
+      "domain": "Material",
+      "category": "standard",
+      "line": 274,
+      "question_preview": "Infer the attached collinear magnetic Hamiltonian and audit its predictive scope. Reconcile edge identities and the per-cell bond convention before fitting. The",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0275",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 275,
+      "question_preview": "Audit how the observation-error assumptions affect latent occupancy inference in the attached archived repeated surveys. Reconstruct the specified complete-thre",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0276",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 276,
+      "question_preview": "Audit an effective-spin interpretation of a three-center molecular magnet. Infer exchange parameters from a complete collinear product-state energy table, deter",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0277",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 277,
+      "question_preview": "An evolutionary-genomics team has mixed exports of independent single-copy gene trees and wants to evaluate a prespecified species-history model. Reconcile locu",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0278",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 278,
+      "question_preview": "A calibration team must release a response envelope and select a conservative detector setting without treating one fitted curve as identified. Use the attached",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0279",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 279,
+      "question_preview": "Can a composition-only quality-control handoff preserve an order-sensitive protein descriptor? For the two attached analytical records, compare their mean hydro",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0280",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 280,
+      "question_preview": "Qualify an acidic peptide used as a theoretical charge-model reference. Retrieve its explicitly named pI model and terminal conventions,then reconstruct the net",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0281",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 281,
+      "question_preview": "A comparative-trait report would average descendant observations and then treat its estimated root trait as an exact ancestral calibration. Under the attached r",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0282",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 282,
+      "question_preview": "An annotation handoff would copy two reference residue labels through the first best alignment returned by software. Determine which residue mappings are actual",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0283",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 283,
+      "question_preview": "A crossover report reads the period2A-minus-Bcontrast as the current treatment effect and says a rank-deficient full model identifies nothing. Audit both conclu",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0284",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 284,
+      "question_preview": "An instrument comparison reports the regression of a response on noisy predictors as if it were a relationship with the latent quantities. Under the attached po",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0285",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 285,
+      "question_preview": "An archived-count analysis is being handed to a collaborator. Audit whether the attached pasilla-derived input satisfies the specified count-input and design-re",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0286",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 286,
+      "question_preview": "How robust is an apparently stable nonreciprocal material chain when its boundary is weakly closed? Reconcile open and periodic spectra, signed point-gap windin",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0287",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 287,
+      "question_preview": "A seasonal population report averages two stage projections and assumes every initial population eventually grows at the global Perron factor. Audit both steps ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0288",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 288,
+      "question_preview": "A stage-demography report would identify the strongest local growth leverage by choosing the largest fecundity number or the most abundant stage. Under the atta",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0289",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 289,
+      "question_preview": "Two half-occupancy titrations at different nominal protein totals are treated as direct Kdreadings. Reconstruct their shared active fraction and equilibrium con",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0290",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 290,
+      "question_preview": "Prepare an auditable evidence handoff for the precisely scoped functional claim in the frozen yeast GO annotation panel. Apply the attached exact gene, GO ident",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0291",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 291,
+      "question_preview": "A historical bulk-count study needs a cautious reporting panel under the attached association-and-point-estimate policy. Decide which audit-panel genes qualify ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0292",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 292,
+      "question_preview": "A collaborator claims the nominated historical count contrast demonstrates a positive effect above the declared magnitude. Assess that specific claim using the ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0293",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 293,
+      "question_preview": "Determine which complete hypotheses survive a controlled DNA inventory audit that combines bulk GC and average molecular mass. Respect each hypothesis strand co",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0294",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 294,
+      "question_preview": "Reconcile an oligonucleotide UV concentration report before recording stock amounts. Retrieve the source-specific optical coefficient and its printed OD convers",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0295",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 295,
+      "question_preview": "Audit a structural summary whose declared broad-helix fraction was calculated using only DSSP class H. Select the coordinate annotation capability,retain the fu",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0296",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 296,
+      "question_preview": "Prepare an observed-residue handoff for a discontinuous protein-domain annotation. Reconcile the attached coordinate inventory with the registered CATHmappings,",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0297",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 297,
+      "question_preview": "Plan a defensible plant-occupancy census when both missed detections and false positives are possible. From exact controlled repeat-visit probabilities, disting",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0298",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 298,
+      "question_preview": "Audit how an evidence-source filter changes an existing human molecular-function annotation report. Retrieve both source-qualified views,compare exact term iden",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0299",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 299,
+      "question_preview": "An ecologist is preparing a two-axis descriptive plot of the archived site communities under the explicitly stated relative-score geometry. Determine the repres",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0300",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 300,
+      "question_preview": "Audit a proposed identification of four exploratory vegetation groups with four management categories in the archived dune study. Match the vegetation observati",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0301",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 301,
+      "question_preview": "A plant-physiology archive asks whether a treatment-associated change in CO2 responsiveness looks the same across its two source regions. Respect repeated measu",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0302",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 302,
+      "question_preview": "Quantify sampling uncertainty for a fixed-composition mean uptake target in the historical CO2 plant panel. A plant contributes its average response across its ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0303",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 303,
+      "question_preview": "Validate a circular-sequence comparison using a controlled record-origin test. Run the registered rotation-aware aligner,then independently check every possible",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0304",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 304,
+      "question_preview": "Assess which scientific comparisons are identifiable in the archived six-block pea factorial example when all disclosed block and treatment terms are retained. ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0305",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 305,
+      "question_preview": "Audit a proposed report that would highlight one favorable plant dry-weight comparison after examining both treatments against their shared control. Use the com",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0306",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 306,
+      "question_preview": "Select an analysis window from a sparse published residue-score profile. Determine actual positional support before averaging,exclude incompletely scored candid",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0307",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 307,
+      "question_preview": "Prepare a motif annotation for a residue-indexed handoff when the provider origin convention is unresolved. Retrieve the actual match,retain both explicitly all",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0308",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 308,
+      "question_preview": "A reporting pipeline converts every published N-end-rule entry into one exact decay curve,including lower bounds and an unknown cell. Audit this transformation ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0309",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 309,
+      "question_preview": "A structural archive needs an orientation-independent size-and-shape summary of its explicitly stated coordinate-node model. Use actual observed protein coordin",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0310",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 310,
+      "question_preview": "Validate a source-matched predicted structure against the attached fixed coordinate reference. Generate one prediction,trace its output file into residue-corres",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0311",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 311,
+      "question_preview": "A forest-understorey report related plant cover to soil chemistry after two tables had been exported in different orders. Reconstruct the stated site-matched de",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0312",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 312,
+      "question_preview": "Audit a proposed forest-community report that would use stem-count dissimilarity to answer a composition-only affinity question. Compare the two declared notion",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0313",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 313,
+      "question_preview": "Audit a proposed soil-community report that would treat distinct sample locations as sufficient evidence of independence. Quantify the declared descriptive spat",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0314",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 314,
+      "question_preview": "Audit a proposed growth summary that would pool repeated weighings and treat the day21 comparison as fully observed at enrollment. Reconstruct the exact observe",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0315",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 315,
+      "question_preview": "A longitudinal growth archive needs a cumulative, baseline-referenced summary over a common observation window, rather than the largest final weight or an unwei",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0316",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 316,
+      "question_preview": "Assess whether two completed entry-specific interface checks support a global noninteraction claim. Inspect the supplied coordinate inventory,perform the declar",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0317",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 317,
+      "question_preview": "Determine exactly how much disulfide connectivity is identifiable from three complete nonreducing peptide-mass datasets, and design a genuinely informative comb",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0318",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 318,
+      "question_preview": "Audit a proposed forest comparison that would rank plots by observed species totals without accounting for unequal recorded stem effort. Reassess the comparison",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0319",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 319,
+      "question_preview": "Audit a proposed ordinal-cover survey summary that would compare pooled species lists across strata with unequal sampled-site effort. Reconstruct the site-based",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0320",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 320,
+      "question_preview": "A charge-state report substitutes a single neutral structure for an entire buffered ampholyte ensemble. Reconstruct the three-state fractions and average net fo",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0321",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 321,
+      "question_preview": "An oxidation mass balance reports one organic Faradaic efficiency from consumed ethanol,CO2and total charge despite unmeasured branching and oxygen evolution. C",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0322",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 322,
+      "question_preview": "A population-growth report treats an offspring mean above one as guaranteed persistence and assumes equal means imply equal extinction risk. Audit both attached",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0323",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 323,
+      "question_preview": "A finite protein-identification assay is being reduced to a cheaper mass-channel panel. Derive the actual ideal channel responses from each supplied reference s",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0324",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 324,
+      "question_preview": "Assess whether the sign of the supplied morphology association is robust to its declared ancestry-correlated residual model. This is a controlled example with v",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0325",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 325,
+      "question_preview": "Select archived panels for digitization under the attached controlled ancestry-coverage policy. Choose at most maximum_panels without exceeding budget_units, co",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0326",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 326,
+      "question_preview": "Audit whether a local coordinate-variability conclusion is robust to the declared alignment convention in the attached deposited ubiquitin NMR ensemble. Use onl",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0327",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 327,
+      "question_preview": "Prepare a contact-preserving two-module handoff for the four explicitly supplied deposited protein chains. First group the chains by exact equality of their OBS",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0328",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 328,
+      "question_preview": "A regioselectivity summary ranks intrinsic reactivity directly from class peak fractions,ignoring that some ring positions are symmetry-equivalent. Reconstruct ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0329",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 329,
+      "question_preview": "Assess whether the selected four-chain geometry difference between two deposited hemoglobin structures is explained by one overall rigid pose, and quantify how ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0330",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 330,
+      "question_preview": "A stage-demography report uses a dominant projection factor below one to assert that every early census must decline. Audit that claim for the attached non-stab",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0331",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 331,
+      "question_preview": "A two-species competition report finds positive equilibrium densities and therefore promises stable coexistence and a uniquely determined long-run outcome. Audi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0332",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 332,
+      "question_preview": "Audit oxygen-provenance inference from a reaction graph and time-resolved isotope fine structure. Enumerate all minimum typed-bond-edit oxygen maps with fixed c",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0333",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 333,
+      "question_preview": "Determine what anomalous scattering actually identifies about absolute molecular hand in a controlled inversion-twinned crystal with shared calibration uncertai",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0334",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 334,
+      "question_preview": "A flux-balance report treats a single growth-optimal solver witness as the identified metabolic route split. Characterize the entire optimal face under the supp",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0335",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 335,
+      "question_preview": "A steady-state network exports ATPfrom a closed substrate cycle and calls the linear-program optimum a feasible energy yield. Audit both the flux balances and t",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0336",
+      "domain": "Chemical",
+      "category": "tool_composition",
+      "line": 336,
+      "question_preview": "Choose descriptor evidence that can actually distinguish branching between two same-size saturated carbon graphs. Recover the named graph indices under one hydr",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0337",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 337,
+      "question_preview": "Audit a real published paired bulk RNA-seq analysis while distinguishing statistical discovery, scientifically meaningful relative effects and sensitivity to in",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0338",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 338,
+      "question_preview": "A diversity report promotes a single observed-richness ranking as an order-independent conclusion about community diversity. Audit the complete attached profile",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0339",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 339,
+      "question_preview": "Infer what an ideal conformational-ensemble spectroscopy model can actually identify from frozen molecular geometries, two nonlinear distance observables and a ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0340",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 340,
+      "question_preview": "Audit a stereochemical candidate inventory for chemical screening. Classify all cyclic relative-configuration records under proper spatial equivalence, distingu",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0341",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 341,
+      "question_preview": "Determine what a partially observed neutral-marker haplotype alignment establishes about evolutionary history. Carry every allowed missing-state completion thro",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0342",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 342,
+      "question_preview": "Design a species-discovery subsampling allocation for six real frozen tropical-forest census plots. Audit the original count identities and descriptive diversit",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0343",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 343,
+      "question_preview": "Determine whether an exact functional-group conversion assay establishes polymer gel formation when reactions within a precursor can be correlated. Infer reacti",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0344",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 344,
+      "question_preview": "A two-exponential NMRdecay fit is interpreted as a unique exchange rate and two intrinsic relaxation times. Characterize the full inverse family under the state",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0345",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 345,
+      "question_preview": "Audit a stage-structured plant population in serially correlated environments. Determine whether positive ensemble growth can mask almost-sure decline, derive b",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0346",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 346,
+      "question_preview": "Investigate why positive stationary biomass correlation can conceal directional ecological interactions and transient sensitivity. Reconstruct all noise-compati",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0347",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 347,
+      "question_preview": "Audit a coherent quantum-statistical model of hydrogen-isotope exchange and spin conversion. Recover isotope masses and the actual reference geometry, derive sp",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0348",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 348,
+      "question_preview": "Audit a reversible surface-reaction model using actual molecular identities, complete physical branches and thermodynamic consistency. Find every stable and uns",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0349",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 349,
+      "question_preview": "A two-capture survey reports one population size while its scientific protocol permits dependent capture. Use the supplied dependence range to derive sharp fini",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0350",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 350,
+      "question_preview": "Audit a four-pi-electron molecular distortion problem without replacing a fixed-N molecule by independent mean occupations. Build the source molecular graph and",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0351",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 351,
+      "question_preview": "A solvatochromic analysis reports the square root of a calibrated Stokes slope as the absolute excited-state dipole and assumes it remains parallel to the groun",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0352",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 352,
+      "question_preview": "A composite kinetic isotope effect is assigned to a single pathway and averaged arithmetically over route isotope effects. Resolve the parallel path contributio",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0353",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 353,
+      "question_preview": "A mark-history summary calls disappearance from an observation region death and reports one true-survival probability. Audit what the attached expected encounte",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0354",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 354,
+      "question_preview": "Build a reusable, source-traceable resource-calibration hand-off and determine whether identical nutrient-growth tradeoffs imply the same coexistence outcome. F",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0355",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 355,
+      "question_preview": "Audit a linked-marker selection report whose marginal allele frequencies stay unchanged. Reconstruct phased identities and independent viability calibration fro",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0356",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 356,
+      "question_preview": "Audit the thermodynamics of a restricted ideal-gas water-gas-shift/methanation system with inert ballast. Use frozen real NIST source coefficients and molecular",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0357",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 357,
+      "question_preview": "Can a thermodynamically inconsistent quinone redox/proton square be repaired without changing trusted calibrations, and does finite buffering alter its differen",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0358",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 358,
+      "question_preview": "A coarse-grained structural report uses marginal node fluctuations as though they directly measured pair flexibility and silently pins one node to solve an unba",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0359",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 359,
+      "question_preview": "Can standard molecular graph tools distinguish a mechanically linked macrocycle assembly, and can a pairwise linking graph select the cheapest disassembly plan?",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0360",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 360,
+      "question_preview": "Do two calibrated optical signals distinguish one-triplet release from two-triplet fission? Reconstruct every physically admissible kinetic model, resolve stati",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0361",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 361,
+      "question_preview": "Audit two anonymous evolutionary panels with different observation schemes. Use the complete source alignment to distinguish a genuine long-branch parsimony inc",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0362",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 362,
+      "question_preview": "Do quaternary structural change and cooperative ligand binding identify a concerted allosteric mechanism? Audit two real hemoglobin biological assemblies alongs",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0363",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 363,
+      "question_preview": "Does matching stationary gene-expression noise preserve the time to a high RNA count? Identify every positive promoter-switching model compatible with exact tim",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0364",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 364,
+      "question_preview": "Can a driven chemical microreactor pattern remain stable when perturbations escape the symmetry used to compute it? Calibrate transport, distinguish finite-netw",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0365",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 365,
+      "question_preview": "Does a chromatographic concentration overshoot require solute production, and which displacement fronts are physically admissible? Jointly calibrate competitive",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0366",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 366,
+      "question_preview": "A two-resource competition analysis labels a positive coexistence solution stable because both resource-balance equations can be solved. Audit that inference us",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0367",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 367,
+      "question_preview": "Two kinetic probes are used to characterize a reactor with a possible bypass,but the report replaces its whole residence-time distribution by its mean. Infer th",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0368",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 368,
+      "question_preview": "When does an adiabatic geometric phase correctly describe molecular distortion motion, and where does it fail? Derive the boundary-consistent full vibronic spec",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0369",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 369,
+      "question_preview": "Can a lineage movie identify population growth and clonal variability? Recover a heritable cell-cycle model from calibrated single-daughter readouts, reconcile ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0370",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 370,
+      "question_preview": "Can silent single-neuron tuning and pairwise statistics hide a useful population code? Recover a four-neuron response law through asymmetric detector errors, di",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0371",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 371,
+      "question_preview": "Can leaf gas exchange identify its internal biochemical limitation, and does the best carbon-water strategy vary smoothly with cost? Combine a matched isotope s",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0372",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 372,
+      "question_preview": "Can two exact exchange-NMR spectral points identify the molecule’s dynamics? Recover every admissible parameter alias, design a globally discriminating new spec",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0373",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 373,
+      "question_preview": "A two-spin spectral assignment uses independent first-order doublets despite a coupling comparable to the site-frequency separation. Reconstruct the complete Ha",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0374",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 374,
+      "question_preview": "Which finite-time pulling protocol best estimates an equilibrium conformational free-energy difference, and is it the least dissipative one? Construct the compl",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0375",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 375,
+      "question_preview": "Can a molecular interference node retain an ordinary low-temperature Lorenz ratio once dephasing and open-circuit heat balance are treated consistently? Derive ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0376",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 376,
+      "question_preview": "A proposed longitudinal reanalysis needs to distinguish precision of the shared mean change from heterogeneous individual change and noisy observed endpoint dif",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0377",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 377,
+      "question_preview": "Using archived morphology measurements, select a measurement protocol under the supplied acquisition-accounting budget. Determine whether any candidate meets th",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0378",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 378,
+      "question_preview": "A morphology calibration fitted on sex-identified M/F archive records is proposed for I-coded records. Quantify the frozen model's error and signed bias in both",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0379",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 379,
+      "question_preview": "Audit an inference report for the attached controlled bench-unit study. Use the instrument records and independent assignment metadata to identify the randomize",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0380",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 380,
+      "question_preview": "Audit a proposed wind-tunnel prediction report that would treat a random-row holdout as validation at unseen operating configurations. Audit that interpretation",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0381",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 381,
+      "question_preview": "A digit-archive researcher needs the class mixture of an unlabelled batch while reusing an existing recognizer and a separately annotated calibration panel. Est",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0382",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 382,
+      "question_preview": "An atmospheric-data analyst must choose a compact historical trend representation for a genuinely future calendar block,while preserving the measured seasonal c",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0383",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 383,
+      "question_preview": "Prepare a conditional performance profile for a fixed historical census classifier on the attached heldout cohort. Quantify how the marginal prediction gap diff",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0384",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 384,
+      "question_preview": "A researcher needs a compact association display for an archived paired father–son occupational table. Quantify how concentrated the departure from independence",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0385",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 385,
+      "question_preview": "A model-comparison study needs uncertainty for the heldout loss improvement of one frozen fuel-consumption predictor over another,not a prediction interval for ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0386",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 386,
+      "question_preview": "A scientific detector must be released before its deployment site and class mix are known. Its candidate exports look favorable on the pooled archive, but one c",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0387",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 387,
+      "question_preview": "A proposed reanalysis of archived data would present a fitted model's point RMSE as a calibrated uncertainty interval. Treat this as a controlled reporting-audi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0388",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 388,
+      "question_preview": "A diagnostic-model study is deciding which additional binary measurement would reduce uncertainty about its target node after the recorded evidence. Evaluate ea",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0389",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 389,
+      "question_preview": "A methodological comparison needs performance evidence for its complete data-adaptive hull predictor,including parameter selection,not the best tuning score of ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0390",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 390,
+      "question_preview": "Can complete decision-time and acceptance-error observations identify the internal order and event cost of a molecular selection process? Reconstruct every rate",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0391",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 391,
+      "question_preview": "A powder-averaged diffusion measurement reports nonzero kurtosis as evidence of non-Gaussian motion within every domain. Propagate the supplied Gaussian anisotr",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0392",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 392,
+      "question_preview": "Which transport quantities can a finite-layer chemical admittance actually identify? Resolve the full spectral scaling ambiguity using independent geometry, ver",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0393",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 393,
+      "question_preview": "A compartment-transport team observes only two of six nodes after an unknown two-source tracer pulse. Determine which dynamical conventions respect the declared",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0394",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 394,
+      "question_preview": "Do identical stationary filament-length snapshots imply identical target-search kinetics? Resolve the inactive-state atom and full rate ambiguity, compute coupl",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0395",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 395,
+      "question_preview": "A niche-width summary ranks habitats by the product of their two marginal widths while ignoring covariance. Audit whether that ranking agrees with the actual jo",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0396",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 396,
+      "question_preview": "A reversible-exchange report reads the measured decay constant of enantiomeric excess as the rate on a single directional arrow. Infer the paired exchange model",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0397",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 397,
+      "question_preview": "Does one visible product imply coherent reaction channels? Derive the completely positive reaction-record dynamics, distinguish conditional and accumulated yiel",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0398",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 398,
+      "question_preview": "A community energy budget applies an individual body-mass allometry directly to total biomass. Use the exact count,mass-class support and total mass to bound th",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0399",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 399,
+      "question_preview": "A chemical-analysis archive must select an auditable predictor for the stated prediction time,not whichever export looks most accurate after the target is known",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0400",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 400,
+      "question_preview": "Reconstruct a heldout alcohol-column prediction analysis under the attached Wine data-availability protocol. Decide which candidate measurements can be used fro",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0401",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 401,
+      "question_preview": "A filament-orientation report calls a zero mean of its arbitrarily signed axis vectors isotropic and selects the eigenvector with the largest absolute tensor ei",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0402",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 402,
+      "question_preview": "A coordinate-ensemble report multiplies two alternate-position occupancies to report a contact probability without observing their dependence. Audit what the su",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0403",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 403,
+      "question_preview": "A researcher must set a reporting decision cutoff for an archived Iris morphology classifier. Use the supplied immutable predictor and heldout measurements to c",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0404",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 404,
+      "question_preview": "A binding report interprets a shallow Hill slope as proof of negative cooperativity and uses that slope as a site count. Audit the attached independent, unequal",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0405",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 405,
+      "question_preview": "A laboratory needs a surrogate for the responses of all specimens in a future, previously unseen material batch. Develop and audit a prediction-and-calibration ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0406",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 406,
+      "question_preview": "A materials-characterization laboratory wants to replace its logged two-stage assay policy. Audit which proposed policies can actually be evaluated from the ran",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0407",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 407,
+      "question_preview": "Develop a calibrated scientific surrogate and a robust next-batch measurement plan for a temperature-dependent calorimetric response. Marginalize common run off",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0408",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 408,
+      "question_preview": "Construct and audit a kinetic coarse-graining of periodic scientific configurations. Select a physically consistent density-clustering representation instead of",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0409",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 409,
+      "question_preview": "Audit whether a selected scientific classifier really exceeds its paired-randomization null after the complete model search, and distinguish that evidence from ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0410",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 410,
+      "question_preview": "Evaluate the archived Longley measurements under the supplied proposed forecast-origin, embargo and standardized-baseline assessment protocol. Determine eligibl",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0411",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 411,
+      "question_preview": "A particle-based scientific simulation resets every child weight to the same value and reports that its four independent parent lineages have been restored. Aud",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0412",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 412,
+      "question_preview": "Audit a path-dependent reliability claim when every two-time increment marginal is known but higher-order temporal dependence is not. Use the attached unlinked ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0413",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 413,
+      "question_preview": "Investigate what a randomized encouragement study can establish about an optional numerical preconditioner when actual use is self-selected. Distinguish associa",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0414",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 414,
+      "question_preview": "Design and validate a learned rare-event path sampler for two overlapping failure definitions. Train a fixed prefix classifier, preserve its model artifact and ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0415",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 415,
+      "question_preview": "A chemical archive needs a compact representation that preserves training variation and reconstructs genuinely held-out samples within its declared error budget",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0416",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 416,
+      "question_preview": "Audit a finite scientific screening protocol whose stopping decision depends on repeatedly inspected data. Reconstruct source-identified prefix enrichment repor",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0417",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 417,
+      "question_preview": "Does a small equilibrium master fraction imply an error threshold at finite genome length? Reconcile the full mutation-selection spectrum with population versus",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0418",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 418,
+      "question_preview": "Design a globally optimal adaptive scientific measurement policy for a fragile specimen under three candidate response mechanisms. Export and verify source-cali",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0419",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 419,
+      "question_preview": "Calibrate a signed-source sensing dictionary and diagnose sparse reconstruction when a common operating offset is unknown. Separate minimum support from the ent",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0420",
+      "domain": "Chemical",
+      "category": "high_difficulty",
+      "line": 420,
+      "question_preview": "Can pressure variation overcome an azeotropic separation obstruction? Infer a consistent liquid-vapor model, certify complete phase geometry and singular differ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0421",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 421,
+      "question_preview": "Can observational sparsity safely determine a scientific causal model, and which interventions are worth buying? Reconstruct an exact Gaussian law from explicit",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0422",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 422,
+      "question_preview": "How much does an exact set of scientific moment readouts identify about rare-event probabilities? Recover the continuous uncertainty class, certify sharp atom m",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0423",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 423,
+      "question_preview": "Audit a proposed extension of a reliability test using only the inspection counts and surviving units in the attached study. Under its exponential constant-haza",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0424",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 424,
+      "question_preview": "What does noisy independent-component analysis actually identify? Recover dense binary-source mixing through calibrated joint cumulants with unknown correlated ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0425",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 425,
+      "question_preview": "Does increasing graph-clustering resolution reveal one consistent hierarchy? Certify the complete global modularity diagram and all ties, relate its first trans",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0426",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 426,
+      "question_preview": "Can correlated noisy reruns of scientific summaries satisfy their marginal privacy promises jointly, and which noise covariance gives the best exact utility? Di",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0427",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 427,
+      "question_preview": "Two analysts report power-law calibrations of the same lamp measurements using different error scales. Reproduce their explicitly defined estimators and compare",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0428",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 428,
+      "question_preview": "What do partially overlapping sensor campaigns identify about joint variability, extreme contrast risk and deployable prediction? Characterize every compatible ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0429",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 429,
+      "question_preview": "Does a two-factor scientific signal model deserve an ordinary two-parameter BIC penalty, and what do its posterior predictions mean? Compare normalized evidence",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0430",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 430,
+      "question_preview": "Does a sparse dynamical model learned from clean relaxation trajectories identify the governing law? Recover the full parameter-nullspace ambiguity, resolve it ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0431",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 431,
+      "question_preview": "Audit a proposed optical summary that would conflate fitted total line-shape area and measurement-grid-supported area. Quantify both under the supplied observat",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0432",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 432,
+      "question_preview": "Audit a controlled reporting-table scenario that confuses fitted-mean uncertainty with uncertainty for one new independent oxygen-demand observation. Reproduce ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0433",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 433,
+      "question_preview": "An ultrasonic calibration reviewer asks how much its requested prediction depends on the two declared residual-influence protocols. Reproduce the controlled sen",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0434",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 434,
+      "question_preview": "An image-based permeability predictor must be assessed without sharing a reference-outcome group between development and assessment. Reproduce the declared cons",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0435",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 435,
+      "question_preview": "Does equally successful separable logistic training select the same classifier under a change of optimization geometry? Derive the full metric-dependent implici",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0436",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 436,
+      "question_preview": "When does a knockoff filter actually control false discoveries? Construct the maximal valid Gaussian coupling, retain its singular conditional sampler, and cert",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0437",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 437,
+      "question_preview": "What does an unpaired distribution alignment actually identify? Certify the complete transport cost/tail-probability region, distinguish sharp moment-constraine",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0438",
+      "domain": "MachineLearning",
+      "category": "high_difficulty",
+      "line": 438,
+      "question_preview": "Does stochastic log-determinant estimation remain unbiased after finite Krylov truncation or adaptive stopping? Certify complete Gauss/Radau bounds and exact pr",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0439",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 439,
+      "question_preview": "Audit a proposed reanalysis that would report the best validation result as untouched final assessment and reuse stale preprocessing at refit. Reproduce the dec",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0440",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 440,
+      "question_preview": "A proposed timber-volume summary would give every sampled tree equal weight despite a disproportionate sampling allocation. Reconstruct the finite-population me",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0441",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 441,
+      "question_preview": "A predictor-combination study must decide whether two frozen exports can be combined usefully without tuning to assessment outcomes. Fit the declared convex cal",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0442",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 442,
+      "question_preview": "An encouragement-study analysis proposes interpreting an exact-exclusion instrument estimate as a uniquely determined exposure effect. Audit that interpretation",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0443",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 443,
+      "question_preview": "A prediction-reporting proposal pools calibration errors from two prespecified scientific instrument groups and advertises at least 80% coverage within each gro",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0444",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 444,
+      "question_preview": "Plan one additional relative clock-calibration measurement for the supplied network. Each pair measures the difference of two unknown offsets, with the stated k",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0445",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 445,
+      "question_preview": "Compare the predictive uncertainty of two prospective equal-dry-mass pooled soil-composite assays under the fixed spatial log-Gaussian model in the study file. ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0446",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 446,
+      "question_preview": "Choose a two-readout follow-up program for the archived adsorption calibration under the attached prospective planning model. First enforce its additional-press",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0447",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 447,
+      "question_preview": "Audit an illustrative measurement-agreement report using the attached 17-subject published demonstration. The proposed protocol takes one reading per device. Es",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0448",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 448,
+      "question_preview": "Choose among the attached industrial sensor classifiers when the joint operating-environment mixture is uncertain. Reconstruct the admissible future mixtures fr",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0449",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 449,
+      "question_preview": "Audit relative classifier performance when the available labels are weak. The attachment supplies the exact joint population strata of two binary predictions an",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0450",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 450,
+      "question_preview": "Determine what a randomized process encouragement identifies when actual setting uptake is imperfect. The attachment gives exact P(D,Y|Z) cells and explicitly s",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0451",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 451,
+      "question_preview": "Audit and select a two-stage binary process-qualification design from the attached candidates. Each plan may stop for success after the first stage; otherwise i",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0452",
+      "domain": "Biology",
+      "category": "standard",
+      "line": 452,
+      "question_preview": "Assess a prespecified global arm-effect claim in the attached blocked plant-readout study. Pair records by block identity and apply the stated self-normalized s",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0453",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 453,
+      "question_preview": "Audit whether a two-level digital observation preserves an exact Markov description of the attached four-state kinetic model and retains its time-reversal infor",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0454",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 454,
+      "question_preview": "Calibrate the structural relationship between two fallible instrument coordinates using the attached independent repeatability standards and paired calibration ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0455",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 455,
+      "question_preview": "Four fully specified stereochemical records are counted as four compounds,and a zero-rotation mixture is declared a pure achiral form. Resolve symmetry-equivale",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0456",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 456,
+      "question_preview": "A nominal-mass formula screen uses carbon count alone and ignores heteroatom and hydrogen isotope contributions. Reconstruct each complete candidate envelope fr",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0457",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 457,
+      "question_preview": "Prepare a direct-interaction evidence summary while avoiding duplicate row inflation. Query the attached entry and confidence policy,verify that the returned re",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0458",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 458,
+      "question_preview": "Can a mass-balanced metabolic optimum create impossible cellular work? Certify all thermodynamic process supports and global growth regimes, distinguish mainten",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0459",
+      "domain": "Biology",
+      "category": "high_difficulty",
+      "line": 459,
+      "question_preview": "When do force and extension ensembles agree for a short semiflexible filament? Infer bending from an exact calibration, reconstruct finite endpoint and transfer",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0460",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 460,
+      "question_preview": "A molecular-curation report collapses every graph with cycle rank two into one ring architecture and treats a selected software ring basis as unique. Audit the ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0461",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 461,
+      "question_preview": "An analytical-standard handoff discards every component except the largest connected fragment before assigning the analyte content of a weighed cocrystal hydrat",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0462",
+      "domain": "Biology",
+      "category": "tool_composition",
+      "line": 462,
+      "question_preview": "Assess what a capped orthology retrieval actually supports before reusing it as a comparative sequence panel. Preserve the resolved query identity and actual re",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0463",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 463,
+      "question_preview": "A Raman assignment treats equal powder activity and depolarization as proof that two candidate tensors differ only by molecular orientation. Compute the powder ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0464",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 464,
+      "question_preview": "A mass-spectrum interpretation reads a binomial total-label histogram as proof of independent labeling at two distinct carbon positions. Audit what mass identif",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0465",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 465,
+      "question_preview": "A two-compartment measurement study proposes recovering an absolute inventory by adding more time samples from the same offset-contaminated sensor. Determine wh",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0466",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 466,
+      "question_preview": "Choose an operating policy for the attached defect detector under a conditional-sensitivity requirement, then determine whether that operating policy also optim",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0467",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 467,
+      "question_preview": "A stratified reporting example claims that any gap between the common within-stratum odds ratio and the pooled odds ratio proves confounding by stratum composit",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0468",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 468,
+      "question_preview": "A calibration plan proposes maximizing overall information as a universal way to measure curvature precisely. Use the attached quadratic response model and equa",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0469",
+      "domain": "Material",
+      "category": "standard",
+      "line": 469,
+      "question_preview": "A NaCl density interpretation assigns the entire density decrease to regular-site vacancies and concludes that every point-defect count is identified. Use both ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0470",
+      "domain": "Material",
+      "category": "high_difficulty",
+      "line": 470,
+      "question_preview": "When does a soft zero mode represent a real mechanism, and when can prestress or nonlinear elasticity stabilize it? Resolve the complete infinitesimal/finite ri",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0471",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 471,
+      "question_preview": "A two-channel instrument must report a region for the complete next object. Its draft independently calibrates both channels at the advertised miscoverage and t",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0472",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 472,
+      "question_preview": "An archive uses an augmented inverse-response estimator to recover a mean from selective recording. Audit its double-robustness argument using the attached exac",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0473",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 473,
+      "question_preview": "A historical-count report treats the absence of a strong phenotype association as proof of exact independent assortment and ignores the pedigree when estimating",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0474",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 474,
+      "question_preview": "Audit a proposed defect-monitoring error-control claim when the same accumulating observations are tested more than once. Derive the exact integer rejection thr",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0475",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 475,
+      "question_preview": "Assess which scientific quantities are identifiable from the supplied controlled iron-oxide inventory. Candidate phases are exactly the three given formulas. Fr",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0476",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 476,
+      "question_preview": "Two multi-channel instruments are proposed to share their strongest variation in the direction with largest raw cross-covariance. Under the attached known joint",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0477",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 477,
+      "question_preview": "A station-grouping report treats the second eigenvector of the attached coupling graph as one uniquely determined scientific grouping. Audit both the continuous",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0478",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 478,
+      "question_preview": "A measurement archive would estimate the latent mean using only values above its reporting limit, or insert the reporting limit for every remaining reading. Fit",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0479",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 479,
+      "question_preview": "A time-resolved inventory report treats cyclic two-bin averages as four independent point observations. Audit the recoverable resolution of the attached exact l",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0480",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 480,
+      "question_preview": "A screening report selects its most favorable signed Gaussian observation and reuses an ordinary one-test p-value as evidence for that selected setting. Audit i",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0481",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 481,
+      "question_preview": "An incomplete-data report averages four properly imputed estimates and divides their complete-data uncertainty by four as if four new independent studies had be",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0482",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 482,
+      "question_preview": "Two pairwise correlation exports are to be combined into a three-variable scientific calibration. A collaborator fills the unreported correlation with zero and ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0483",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 483,
+      "question_preview": "A calibration report measures model complexity by the two nominal coefficient slots and treats the smallest training error as latent-signal prediction risk. Und",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0484",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 484,
+      "question_preview": "An instrument report would use its largest observed-variance principal direction as the strongest physical-signal readout. Under the attached independent additi",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0485",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 485,
+      "question_preview": "A simulation plan proposes a zero-variance proposal proportional to each signed target contribution. Design the globally variance-minimizing admissible importan",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0486",
+      "domain": "Material",
+      "category": "standard",
+      "line": 486,
+      "question_preview": "Two finite shears are reported as interchangeable because each has determinant one. Audit the actual sequential kinematics using the declared column-vector conv",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0487",
+      "domain": "Material",
+      "category": "standard",
+      "line": 487,
+      "question_preview": "A coarse transport report averages two state diffusivities and calls that the long-time particle diffusivity,discarding persistent velocity correlations. Recons",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0488",
+      "domain": "Chemical",
+      "category": "standard",
+      "line": 488,
+      "question_preview": "A gas-association calculation carries the same equilibrium composition and heat between a constant-pressure piston and a fixed-volume vessel. Solve both closed ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0489",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 489,
+      "question_preview": "A nonlinear scientific surrogate substitutes the mean measured input coordinate into its Gaussian-process posterior and reports that pointwise uncertainty as th",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0490",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 490,
+      "question_preview": "A response-calibration report selects an interpolating polynomial because its fitted error is zero and records the resulting PRESS score as zero too. Audit all ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0491",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 491,
+      "question_preview": "A clustered study randomly assigns an equal number of clusters to each arm and assumes that the difference of realized arm means is automatically design-unbiase",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0492",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 492,
+      "question_preview": "A model-comparison report treats perfect training fit as sufficient evidence for one scientific pattern and assumes predictor-unit rescaling leaves its coeffici",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0493",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 493,
+      "question_preview": "An ecological site map proposes interpreting shortest-route distances as an exact Cartesian ordination because they satisfy the triangle inequalities. Audit tha",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0494",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 494,
+      "question_preview": "An adaptively stopped Bernoulli measurement report calls its ordinary sample mean unbiased because each individual draw is unbiased. Audit that claim under the ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0495",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 495,
+      "question_preview": "A released-table report would generalize an association from retained records to its complete census population and replace an unobserved cell by zero. Audit th",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0496",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 496,
+      "question_preview": "An instrument log proposes locating a sustained level shift at the largest adjacent jump. Under the attached single-break normal-mean comparison, evaluate every",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0497",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 497,
+      "question_preview": "A scientific-instrument scheduler regards two protocols as equivalent because their mean service time and utilization match. Audit the stationary queue delays u",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0498",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 498,
+      "question_preview": "A model comparison would transport its equal-stratum risk ranking to a target population whose composition is known only within the attached simultaneous bounds",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0499",
+      "domain": "MachineLearning",
+      "category": "standard",
+      "line": 499,
+      "question_preview": "Combine the attached three voltage reports under their known shared-calibration error model. Find the minimum-variance linear unbiased estimate of their common ",
+      "has_files": true
+    },
+    {
+      "id": "FLOW-0500",
+      "domain": "Material",
+      "category": "standard",
+      "line": 500,
+      "question_preview": "A finite-alloy report would collapse rotationally equivalent occupancy patterns to two equally weighted states when computing thermal disorder. Audit its canoni",
+      "has_files": true
+    }
+  ]
+}

@@ -6,14 +6,14 @@
 
 ```bash
 conda activate SciTool-Unified
-python cli.py run --baseline scitoolagent --backend vllm --tasks FLOW-0285,FLOW-0481 \
+python cli.py run --baseline scitoolagent --backend vllm --tasks SMAS-0103,SMAS-0180 \
   --output results/scitoolagent_demo/predictions.json
-python cli.py score --tasks FLOW-0285,FLOW-0481 \
+python cli.py score --tasks SMAS-0103,SMAS-0180 \
   --predictions results/scitoolagent_demo/predictions.json \
   --output results/scitoolagent_demo/scores.json
 ```
 
-同一运行和评分命令均支持 `--dataset full|mini`，默认 full；`--tasks` 使用所选题库的编号。Mini 的独立编号与映射见 [Mini-200](../../tasks/mini/README.md)。
+查询、规划、运行与评分默认使用`--dataset mini`，题号为SMAS-0001..0200。Full-500用`--dataset full`显式选择；旧Mini接口已移除。评分使用与运行相同的题库和任务选择，说明见[Mini-200](../../tasks/mini/README.md)。
 
 ## 检索与执行
 

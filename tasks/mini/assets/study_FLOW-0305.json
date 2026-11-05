@@ -1,0 +1,179 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "plant_records": [
+        {
+          "source_row_id": "1",
+          "weight": 4.17,
+          "group": "ctrl"
+        },
+        {
+          "source_row_id": "2",
+          "weight": 5.58,
+          "group": "ctrl"
+        },
+        {
+          "source_row_id": "3",
+          "weight": 5.18,
+          "group": "ctrl"
+        },
+        {
+          "source_row_id": "4",
+          "weight": 6.11,
+          "group": "ctrl"
+        },
+        {
+          "source_row_id": "5",
+          "weight": 4.5,
+          "group": "ctrl"
+        },
+        {
+          "source_row_id": "6",
+          "weight": 4.61,
+          "group": "ctrl"
+        },
+        {
+          "source_row_id": "7",
+          "weight": 5.17,
+          "group": "ctrl"
+        },
+        {
+          "source_row_id": "8",
+          "weight": 4.53,
+          "group": "ctrl"
+        },
+        {
+          "source_row_id": "9",
+          "weight": 5.33,
+          "group": "ctrl"
+        },
+        {
+          "source_row_id": "10",
+          "weight": 5.14,
+          "group": "ctrl"
+        },
+        {
+          "source_row_id": "11",
+          "weight": 4.81,
+          "group": "trt1"
+        },
+        {
+          "source_row_id": "12",
+          "weight": 4.17,
+          "group": "trt1"
+        },
+        {
+          "source_row_id": "13",
+          "weight": 4.41,
+          "group": "trt1"
+        },
+        {
+          "source_row_id": "14",
+          "weight": 3.59,
+          "group": "trt1"
+        },
+        {
+          "source_row_id": "15",
+          "weight": 5.87,
+          "group": "trt1"
+        },
+        {
+          "source_row_id": "16",
+          "weight": 3.83,
+          "group": "trt1"
+        },
+        {
+          "source_row_id": "17",
+          "weight": 6.03,
+          "group": "trt1"
+        },
+        {
+          "source_row_id": "18",
+          "weight": 4.89,
+          "group": "trt1"
+        },
+        {
+          "source_row_id": "19",
+          "weight": 4.32,
+          "group": "trt1"
+        },
+        {
+          "source_row_id": "20",
+          "weight": 4.69,
+          "group": "trt1"
+        },
+        {
+          "source_row_id": "21",
+          "weight": 6.31,
+          "group": "trt2"
+        },
+        {
+          "source_row_id": "22",
+          "weight": 5.12,
+          "group": "trt2"
+        },
+        {
+          "source_row_id": "23",
+          "weight": 5.54,
+          "group": "trt2"
+        },
+        {
+          "source_row_id": "24",
+          "weight": 5.5,
+          "group": "trt2"
+        },
+        {
+          "source_row_id": "25",
+          "weight": 5.37,
+          "group": "trt2"
+        },
+        {
+          "source_row_id": "26",
+          "weight": 5.29,
+          "group": "trt2"
+        },
+        {
+          "source_row_id": "27",
+          "weight": 4.92,
+          "group": "trt2"
+        },
+        {
+          "source_row_id": "28",
+          "weight": 6.15,
+          "group": "trt2"
+        },
+        {
+          "source_row_id": "29",
+          "weight": 5.8,
+          "group": "trt2"
+        },
+        {
+          "source_row_id": "30",
+          "weight": 5.26,
+          "group": "trt2"
+        }
+      ],
+      "analysis_policy": "The complete family is trt1 versus ctrl and trt2 versus ctrl, with 10 original plants in each group. For each comparison use a two-sided unequal-variance Welch mean test, with the conventional Welch-Satterthwaite reference under stipulated independent-plant and approximately normal within-group working assumptions. Use Bonferroni across both comparisons at family alpha 0.05, allowing dependence from the shared control. A treatment qualifies for greater mean dry weight only when its observed treatment-minus-control difference is positive and its family-adjusted p-value is at most 0.05. The source does not fully specify a dry-weight unit; do not relabel grams. Neither the working assumptions nor a causal or representative population interpretation is established by these data.",
+      "source_provenance": {
+        "source_url": "https://svn.r-project.org/R/trunk/src/library/datasets/data/PlantGrowth.R",
+        "sha256": "4b76f7321f8c2da58bede752aeb7e09251a691613d9a0ed7c3ead53c2e1e3cd6",
+        "documentation": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/PlantGrowth.html",
+        "retrieved_utc_date": "2026-10-20",
+        "source": "Official R datasets SVN source,revision90725 listing",
+        "license": "R distribution GPL>=2; underlying observations cited by individual dataset documentation",
+        "claim_scope": "Historical public observations only; no new scientific observations or causal/representativeness assumption",
+        "decoded_json_sha256": "c81a07ee7a33d605040fef79b646a54049189b7aa02d1be9291566697ef4194b",
+        "decoder": "rdata0.11.2 RDA or bounded literal numeric c(...) parser,no R evaluation",
+        "raw_file": "PlantGrowth.R",
+        "records": 30,
+        "converted_observation_sha256": "c81a07ee7a33d605040fef79b646a54049189b7aa02d1be9291566697ef4194b",
+        "observation_status": "Original historical values; no changed or synthetic observation."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

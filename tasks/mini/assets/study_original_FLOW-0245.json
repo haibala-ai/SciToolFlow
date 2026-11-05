@@ -1,0 +1,34 @@
+{
+  "gene_ids": [
+    "A",
+    "B",
+    "C"
+  ],
+  "condition_order": [
+    "control",
+    "treated"
+  ],
+  "endogenous_read_counts": [
+    [
+      1000,
+      1000,
+      1000
+    ],
+    [
+      500,
+      500,
+      2000
+    ]
+  ],
+  "spike_read_counts": [
+    200,
+    100
+  ],
+  "spike_molecules_added_per_cell": 20.0,
+  "model": "Each sample contains the same known cell count. A known number of spike molecules is added PER CELL before all losses;spike and endogenous molecules share the same condition-dependent library sampling factor. Read counts are exact expected values in this controlled model,not replicate observations for significance testing. Within a library,endogenous molecules per cell for gene g equal gene_reads/spike_reads*spike_molecules_per_cell. Endogenous-only compositional fractions divide each gene count by the sum over A,B,C;do not include spike reads in that denominator.",
+  "counterfactual_spike_convention": "Consider instead an equal spike amount per unit extracted RNA MASS,without an independent RNA-per-cell or cell-number measurement. Such a spike is not supplied at a known amount per cell.",
+  "target": "Return treated/control absolute per-cell fold changes in gene_ids order,total endogenous molecules-per-cell fold change,and endogenous-composition fold changes in the same order. Report whether compositional normalization would falsely label unchanged AandBas decreased in this exact model,and whether the counterfactual per-RNA-mass spike alone identifies absolute RNA per cell.",
+  "provenance": {
+    "kind": "Explicit synthetic benign biological measurement model with exact source observations;not an empirical validation or sequence-design recommendation."
+  }
+}

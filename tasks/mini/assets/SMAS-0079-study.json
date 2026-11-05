@@ -1,0 +1,64 @@
+{
+  "rows": [
+    {
+      "id": "p1",
+      "moisture": 1,
+      "growth": 2,
+      "nutrient": 7
+    },
+    {
+      "id": "p2",
+      "moisture": 2,
+      "growth": 3,
+      "nutrient": null
+    },
+    {
+      "id": "p3",
+      "moisture": 3,
+      "growth": null,
+      "nutrient": 8
+    },
+    {
+      "id": "p4",
+      "moisture": 4,
+      "growth": 6,
+      "nutrient": 5
+    },
+    {
+      "id": "p5",
+      "moisture": 5,
+      "growth": 4,
+      "nutrient": 4
+    },
+    {
+      "id": "p6",
+      "moisture": 6,
+      "growth": 8,
+      "nutrient": 3
+    },
+    {
+      "id": "p7",
+      "moisture": 7,
+      "growth": 9,
+      "nutrient": 2
+    },
+    {
+      "id": "p8",
+      "moisture": 8,
+      "growth": null,
+      "nutrient": null
+    },
+    {
+      "id": "p9",
+      "moisture": null,
+      "growth": 5,
+      "nutrient": 6
+    },
+    {
+      "id": "p10",
+      "moisture": 10,
+      "growth": 12,
+      "nutrient": 1
+    }
+  ]
+}

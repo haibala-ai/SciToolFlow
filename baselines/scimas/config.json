@@ -1,0 +1,11 @@
+{
+  "tool_concurrency": 4,
+  "transient_retries": 1,
+  "local_repairs": 2,
+  "planning_requests": 10,
+  "protocol_retries": 3,
+  "max_map_items": 128,
+  "experience_capacity": 20,
+  "experience_matches": 3,
+  "observation_preview_chars": 6000
+}

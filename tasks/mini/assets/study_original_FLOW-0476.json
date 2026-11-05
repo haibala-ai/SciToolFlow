@@ -1,0 +1,57 @@
+{
+  "X_channels": [
+    "X1",
+    "X2"
+  ],
+  "Y_channels": [
+    "Y1",
+    "Y2"
+  ],
+  "covariance_XX_mv2": [
+    [
+      50.5,
+      49.5
+    ],
+    [
+      49.5,
+      50.5
+    ]
+  ],
+  "covariance_YY_mv2": [
+    [
+      50.5,
+      49.5
+    ],
+    [
+      49.5,
+      50.5
+    ]
+  ],
+  "covariance_XY_mv2": [
+    [
+      10.45,
+      9.55
+    ],
+    [
+      9.55,
+      10.45
+    ]
+  ],
+  "model": "Known centered joint second moments of two bivariate instrument readouts. Cross block rows follow X_channels, columns follow Y_channels; transpose it for the YX block. No sample covariance estimation, regression intercept or data whitening by arbitrary feature units is requested.",
+  "target": "Find the ordered maximum correlations between nonconstant linear combinations of X and Y, with unit variance separately within each instrument, and the leading direction family. Direction labels: within_instrument_common_level means coefficients proportional to(1,1) in BOTH original instrument coordinates; within_instrument_contrast means proportional to(1,-1) in BOTH; neither means neither family. Signs of the two canonical variates may be flipped together.",
+  "unit_change": {
+    "X_multipliers": [
+      1000.0,
+      1.0
+    ],
+    "Y_multipliers": [
+      1.0,
+      0.001
+    ],
+    "interpretation": "Change numerical units only, on the named coordinate axes. Transform all covariance and cross-covariance blocks consistently. Do not change the underlying random measurements."
+  },
+  "provenance": {
+    "data_origin": "Explicitly constructed numerical instrument/reporting studies for this benchmark; not measurements from a named laboratory or archive.",
+    "method_scope": "Conditional finite-dimensional linear measurement models. Scientific conclusions follow from the stated covariance/distance definitions; no distributional or causal interpretation beyond those assumptions."
+  }
+}

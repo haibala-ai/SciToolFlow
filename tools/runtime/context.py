@@ -3,3 +3,5 @@
 from contextvars import ContextVar
 
 TOOL_DEADLINE = ContextVar("toolkg_deadline", default=None)
+
+CALL_CANCEL = ContextVar("toolkg_call_cancel", default=None)

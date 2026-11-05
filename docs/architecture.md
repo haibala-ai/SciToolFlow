@@ -4,18 +4,22 @@ SciToolFlow以公开任务为中心，任务、工具、baseline和评分器各�
 
 ```text
 SciToolFlow/
-├── tasks/                         公开题目、答案格式、输入附件及其加载／校验接口
+├── tasks/                         公开加载器与答案格式校验接口
+│   ├── mini/                      默认200题、独立附件、直接来源映射与三指标参考
+│   └── full/                      完整500题、附件、分类与索引
 ├── tools/
 │   ├── catalog/                   工具契约、名称解析、DescribeTools与端口校验
 │   ├── runtime/                   公开执行入口、环境路由、worker与失败反馈
 │   ├── implementations/           按学科组织的科学实现及共享依赖
-│   └── graph/                     派生工具图谱和功能检索向量
+│   └── graph/                     SciToolAgent 原图谱；scimas/ 保存独立端口图谱与索引
 ├── baselines/
 │   ├── common/                    批处理、执行会话、答案格式和 JSON 决策协议
 │   ├── react/                     ReAct循环、提示词、上下文和轨迹
-│   └── scitoolagent/              图谱检索与SciToolAgent策略
+│   ├── scitoolagent/              图谱检索与SciToolAgent策略
+│   └── scimas/                    SciMas 独立图谱、三角色 DAG 执行、过程审查与局部修复
 ├── evaluation/
 │   ├── runner.py                  统一评分服务入口
+│   ├── suites/                    Mini三指标报告与共享科学判据的衔接
 │   ├── workflow/                  当前workflow.v1规则与确定性计分
 │   ├── integrity/                 文件、轨迹、发布与参考身份校验
 │   ├── review/                    未识别方法分流与独立复核政策
@@ -57,13 +61,14 @@ Agent读取公开任务、附件和工具契约。评分器在独立流程读取
 
 | 目标 | 入口 |
 | --- | --- |
-| 选择 full／mini、校验编号映射 | tasks/datasets.py |
-| 浏览题目或修改公开字段 | [tasks/README.md](../tasks/README.md)、tasks/questions.jsonl |
+| 选择 mini／full、校验编号映射 | tasks/datasets.py |
+| 浏览题目或修改公开字段 | [tasks/README.md](../tasks/README.md)、tasks/full/questions.jsonl |
 | 查询工具、执行工具 | `from tools import ToolCatalog, execute` |
 | 修改描述、参数和输出契约 | [tools/catalog/catalog.json](../tools/catalog/catalog.json) |
 | 定位某个工具的实现 | catalog中的`source.file`和`source.function`；[实现索引](../tools/implementations/INDEX.md) |
 | 修改运行时验证、路由或超时 | tools/runtime/ |
 | 修改ReAct或检索策略 | [baselines/README.md](../baselines/README.md) |
+| 构建 SciMas 图谱、运行三角色工作流或检查任务图 | [baselines/scimas/README.md](../baselines/scimas/README.md)、`python cli.py plan --help` |
 | 修改科学计分 | evaluation/workflow/；[评分模块说明](../evaluation/workflow/README.md) |
 | 检查可信轨迹和参考身份 | evaluation/integrity/ |
 | 查看单题金标准、参考或审核 | `python -m evaluation.authoring.inspect --task FLOW-0022 --section review` |
@@ -81,6 +86,8 @@ python cli.py validate
 ```
 
 工具契约或实现有变动时，先执行`python -m scripts.tools.build_catalog`和`python -m scripts.tools.build_graph`。功能描述变化后使用`--embed`重新编码变化的文本；目录迁移本身不需要调用embedding API。真实参考轨迹无损保存；生成和审核信息与各自哈希内联于参考记录，保持任务、判据和执行一致。
+
+SciMas 的专属补充知识位于 `tools/graph/scimas/annotations.json`；共同契约或该文件变化后，执行 `python -m baselines.scimas.build_knowledge`。补充知识的审查身份过期时先重新核对来源。SciMas 的 `plan` 记录是规划阶段产物，不交给正式预测评分入口。
 
 新增模块应放入负责该行为的包。共享路径放在src/utils，模型连接放在src/models，评分规则统一放入工作流引擎，维护脚本不放进科学实现目录。第三方资源保留其上游结构与许可证，生成结果放在results，本机凭证和缓存放在.local。
 

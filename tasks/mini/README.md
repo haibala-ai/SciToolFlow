@@ -1,202 +1,179 @@
 # SciToolFlow Mini-200
 
-从正式 500 题中选出的 **200 道学科均衡任务**，用于评估科学子任务拆分、依赖感知的工具编排和并行调度。排除全部 100 道 `high_difficulty` 题，Mini 独立编号为 **FLOW-0001～FLOW-0200**；题文、输入、附件引用、答案格式和 `workflow.v1` 评分规则与对应全集题目一致。编号的含义由 `--dataset full|mini` 确定。
+**默认公开入口：200 道面向科学子任务拆分、工具编排与并行执行的任务，四个学科各 50 道。** 题库由100道独立设计的编排题与100道Full精选题组成，所有 baseline 共用公开输入、资源策略和评分规则。
 
-| 学科 | 正常题 | 工具组合题 | 合计 |
+| 学科 | 独立编排题 | 从 Full 新选 | 合计 |
 | --- | ---: | ---: | ---: |
-| 化学 | 42 | 8 | **50** |
-| 材料 | 40 | 10 | **50** |
-| 生物／生态 | 42 | 8 | **50** |
-| 机器学习／数理 | 50 | 0 | **50** |
-| **合计** | **174** | **26** | **200** |
+| 化学 | 25 | 25 | 50 |
+| 材料 | 25 | 25 | 50 |
+| 生物／生态 | 25 | 25 | 50 |
+| 机器学习／数理 | 25 | 25 | 50 |
+| **合计** | **100** | **100** | **200** |
 
-## 选题依据
+## 题库画像
 
-依据 `SciMAS/科学工具编排-v2.docx` 第 2.2 节，重点保留可以组织为“共享前处理 → 独立科学子任务 → 结果汇合”的任务，包括多候选比较、多个性质的联合核验、竞争方法比较、同一约束集的上下界求解，以及固定模型后的独立评估。
+| 主参考统计 | 数值 |
+| --- | ---: |
+| 参考数／科学调用总数 | 200／2242 |
+| 每题科学调用：均值／中位数／范围 | 11.21／9／3–37 |
+| 每题成功科学调用：均值／总数 | 10.865／2173 |
+| 每题不同成功工具：均值／中位数／范围 | 4.32／4／1–11 |
+| 至少4次科学调用的题数 | 198（99%） |
+| 涉及两个及以上工具类别的题数 | 134（67%） |
+| 多层评分能力图／并行证据面板 | 166／34 |
+| 主参考成功覆盖的科学工具 | 154／472（32.63%） |
 
-选题同时检查题文、科学约束、原评分依赖及实际主参考。并行分支必须承担原题要求的科学工作，有明确的输入与输出；读取 JSON、格式展示、互斥的替代路线或不同纠错迭代不单独构成并行证据。调用次数、工具种类或历史模型成功率不作为替代标准。
+![Mini题库统计](../../docs/benchmark_analysis/mini_overview.svg)
 
-181 题的独立计算可由当前必要能力图直接识别；另外 19 题按题文要求和已审核参考细分到预处理、后处理或独立参照分析。例如，固定主特征值后的左右向量求解、共同 SVD 后的行列贡献分析，以及冻结训练尺度后的模型拟合与持出变换。评分能力图用于判分，不要求它与最细粒度的执行任务图一一对应。
+| 工具类别 | 注册科学工具 | 主参考成功覆盖 | 覆盖率 | 涉及题数 |
+| --- | ---: | ---: | ---: | ---: |
+| 化学 | 134 | 39 | 29.10% | 38 |
+| 材料 | 162 | 20 | 12.35% | 37 |
+| 生物／生态 | 86 | 20 | 23.26% | 29 |
+| 机器学习／数理 | 65 | 58 | 89.23% | 141 |
+| 通用辅助 | 25 | 17 | 68.00% | 120 |
 
-完整逐题说明见 [selection.json](selection.json)：每题记录科学目标、共享前提、两个可并行子任务和结果汇合要求。这些说明用于题库审查，**不作为 Agent 的输入或额外提示**。
+任务主学科每题只计一次；工具涉及数为多标签统计，一题可以使用多个类别。科学调用包含失败恢复，成功覆盖只计真实成功调用，均排除DescribeTools。评分能力图包含可选／条件节点，其层数与同层宽度不是实际并发度或最小执行步数。
 
-| Mini ID | 全集 ID | 科学工作流 | 并行位置 |
-| --- | --- | --- | --- |
-| FLOW-0001 | FLOW-0001 | 候选结构的多证据筛选 | 各候选的质量与结构检验，最后合并全部相容证据 |
-| FLOW-0026 | FLOW-0064 | 竞争动力学模型的观测设计 | 两个模型的平稳与时间响应分别计算，再比较计划 |
-| FLOW-0004 | FLOW-0006 | 介电弛豫与导电竞争模型 | 各候选模型独立拟合，最后统一比较 |
-| FLOW-0083 | FLOW-0216 | 有限模拟协议下的压力筛选 | 公共条件确定后，各压力状态独立模拟，再构造库存差与守卫量 |
-| FLOW-0090 | FLOW-0239 | 有限质量通道的混合物辨识 | 同一可行约束集上的多个极值问题独立求解 |
-| FLOW-0116 | FLOW-0288 | 阶段种群的局部敏感性 | 共同主特征值确定后，左右向量分别求解 |
-| FLOW-0152 | FLOW-0389 | 包含参数选择的外层验证 | 各外层划分分别完成内部选择及评估，不能共享持出信息 |
-| FLOW-0159 | FLOW-0410 | 时间禁区下的预测评估 | 训练尺度冻结后，模型拟合与持出特征变换独立执行 |
+主参考中199题成功使用至少两种不同工具；`SMAS-0073`以同一个NBO解析工具处理多个分支，不将其描述为多种工具间的数据流编排。题库聚焦编排而非穷尽工具覆盖，材料等类别仍有大量工具未进入主参考。数据与逐题明细见[Mini统计](../../docs/benchmark_analysis/mini_statistics.json)和[逐题记录](../../docs/benchmark_analysis/mini_tasks.json)。
 
-```mermaid
-flowchart LR
-    A[共同输入与时间划分] --> S[仅用训练期估计尺度]
-    S --> F[拟合训练期模型]
-    S --> T[用冻结尺度转换持出特征]
-    F --> P[持出预测]
-    T --> P
-    P --> E[误差与报告]
-```
+## 选题与质量边界
 
-上图以 Mini FLOW-0159（全集 FLOW-0410）说明依赖关系。任务仍保留全部科学检查；后续调用必须满足数据和控制前提。完整属性报告与指定的对照比较不能因某个候选已不合格而省略。失败、字段缺失或单位不明也不能直接作为科学淘汰依据。共享写入或独占资源需要隔离或互斥调度。
+新增题优先考察有科学意义的独立分支、共享前提、数据身份或方法资格，以及必须汇合的结果。选题核查题文、附件、评分能力图和真实参考，兼顾学科与问题类型；不以某个模型能否通过作为质量标准，不按调用次数机械排序。从 Full 选入的100题均不属于其100道高难度题。
 
-## 文件与编号映射
+典型新增工作流包括竞争动力学模型的观测设计、多温度吸附曲线的共同支持范围、带内部松弛的周期框架力学、完整 NMR 系综的代表构象选择、嵌套模型评估，以及共享校准误差下的协方差感知证据合并。与已有题使用相同方法族时，审查科学目标和判据是否有实质区别，而不只看名称不同。
 
-| 文件 | 用途 |
-| --- | --- |
-| [questions.jsonl](questions.jsonl) | Mini 编号的 200 条公开题目，仅顶层 `id` 与对应全集记录不同 |
-| [ids.tsv](ids.tsv) | 两列映射表：`mini_id`、`full_id`，共 200 条映射 |
-| [selection.json](selection.json) | Mini `id`、全集 `source_id`、选题依据及逐题拆分说明 |
-| [metadata.json](metadata.json) | 题库名称、编号范围、学科数、共享资源位置与文件哈希 |
+独立编排题中较弱的多阶段适配说明继续保留。设计适配不等于已测量的baseline优势；相对成功率、耗时和实际并发收益需要独立实验。
 
-映射示例：
+[selection.json](selection.json) 记录每题来源、科学目标、选题理由、可并行子任务、汇合要求、参考工作量和适配限制。这些作者说明、评分器与参考答案不进入模型输入。公开题文和附件已检查答案键、具体工具路径等泄露；科学定义、已观测标签、研究协议和输出格式仍作为必要输入。
 
-```text
-mini_id     full_id
-FLOW-0001   FLOW-0001
-FLOW-0002   FLOW-0002
-FLOW-0003   FLOW-0003
-FLOW-0004   FLOW-0006
-```
+## 编号与参考
 
-**同一个 ID 在不同题库中可能表示不同题目。** Mini 的 FLOW-0004 对应全集 FLOW-0006；查询、运行和评分必须使用同一个题库选择。题文中的科学对象标识、附件文件名和历史来源编号保留原义，不做全局字符串替换。
+- `SMAS-0001..SMAS-0100` 保留现有 Special-100 的编号和科学内容。
+- `SMAS-0101..SMAS-0200` 直接来自 Full，只改变顶层题号，题文、输入、附件内容、答案格式和科学判据保持不变。
+- [ids.tsv](ids.tsv) 保存 `mini_id / origin / source_id` 映射。新增题按化学、材料、生物、机器学习各 25 道排列。
 
-## 统一加载与查询
+全部 200 题都有已复核的真实参考。复用参考时，原始轨迹、生成清单和科学审查记录保留其源题号；评分时建立新题号的内存视图，**不改写轨迹、生成身份，也不把旧参考称为重新生成的参考**。例如，`SMAS-0103` 直接映射到 Full 的 `FLOW-0029`，不经过旧 Mini 编号。前100题保留自身来源，未人为补造 Full 对应题。
 
-所有命令从 **SciToolFlow 仓库根目录**执行，环境和服务按[安装与部署](../../docs/setup.md)配置。
+公开附件和参考副本均包含在本目录，运行和评分不需要读取原 Special-100 的作者目录。Full-500 科学内容保存在 `../full/`；原 Special-100 的作者材料仅用于来源追溯。Mini-200 的运行使用下面的统一 CLI；旧 Special-100 的独立脚本只服务于原版本。
+
+## 加载与运行
+
+统一 CLI 默认选择 `mini`；也可显式指定 `--dataset mini`。完整500题位于 `tasks/full/`，使用 `--dataset full`。旧 Mini 题集及 `special` 接口已删除；原 Special-100 作者材料保存在 `evaluation/authoring/special100/`，不作为另一套运行接口。
+
+从仓库根目录执行，先按[安装与部署](../../docs/setup.md)配置 Conda、工具资源及生成模型。API、本地 vLLM 服务和本地权重均可使用；模型由实验者选择。三个 baseline 使用相同的 `--dataset mini`，支持任务并发、断点续跑和相同资源配置。
 
 ```bash
 conda activate SciTool-Unified
 
-# 查看 Mini 题目及其对应的全集题目。
-python cli.py task --dataset mini FLOW-0004
-python cli.py task --dataset full FLOW-0006
+# 查看一题；不传题号可列出200题
+python cli.py task SMAS-0103 --dataset mini
 
-# 查看 Mini 中的生物／生态任务列表。
-python cli.py task --dataset mini --domain Biology
+# API：运行全部200题
+python cli.py run --dataset mini --baseline react --backend api \
+  --model YOUR_MODEL --tasks all --concurrency 2 \
+  --output results/react_mini/predictions.json
+
+# 本地vLLM服务；使用服务实际公布的模型名
+python cli.py run --dataset mini --baseline scimas --backend vllm \
+  --model YOUR_SERVED_MODEL --tasks all --concurrency 2 \
+  --output results/scimas_mini/predictions.json
+
+# 直接加载本地权重；local后端使用单任务并发
+python cli.py run --dataset mini --baseline scitoolagent --backend local \
+  --model /path/to/model --tasks all --concurrency 1 \
+  --output results/scitoolagent_mini/predictions.json
 ```
 
-Python 也通过同一个公开接口选择题库：
+`--baseline` 可选 `react / scitoolagent / scimas`；`--backend` 可选 `api / vllm / local`。配置生成接口、权重和检索 embedding 的方式见部署说明；SciMas 与 SciToolAgent 使用各自的工具图谱。
+
+单题抽测时，将运行和评分的 `--tasks` 都设为相同的 Mini 题号。例如 `--tasks SMAS-0103,SMAS-0180`。恢复同一实验时，在原运行命令末尾加 `--resume`；需重试失败题可再加 `--retry-failed`。题库、代码、模型或设置身份改变后应使用新输出目录。
+
+默认每题最多 400 次生成请求、7,200 秒；科学调用数和决策步数没有默认固定上限，仍有连续同参数重复循环保护。可用统一 CLI 的资源选项为各方法设置相同限制。
+
+自定义 Agent 只加载公开题目及经哈希校验的附件：
 
 ```python
 from tasks.datasets import load_dataset
 from tasks.assets import load_agent_input
 
-dataset = load_dataset("mini")  # 改为 "full" 即加载全集。
-questions = dataset.select("all")
-assert len(questions) == 200
-
-# 每次处理一题；可对 questions 循环。
-agent_task = load_agent_input(questions[0], dataset.asset_root)
-print(dataset.name, agent_task["id"], agent_task["domain"])
-# 将 question、inputs、files、answer_schema 交给 Agent。
+dataset = load_dataset("mini")
+public = load_agent_input(dataset.select("SMAS-0103")[0], dataset.asset_root)
+# 仅向Agent提供question、inputs、files和answer_schema。
 ```
 
-两套题库共用 `tasks/assets/` 与 `tasks/asset_manifest.json`，加载器会校验附件哈希并解析 `asset://` 路径。`selection.json` 的拆分说明与 `evaluation/data/` 的答案、参考不进入 Agent 输入。
-
-## 统一运行接口
-
-`task`、`run`、`score` 均支持 `--dataset full|mini`，默认是 **full**。`--tasks all` 表示所选题库的全部任务，省略 `--tasks` 具有相同含义：
-
-| 参数组合 | 任务范围 |
-| --- | --- |
-| `--dataset full` | 全集 500 题 |
-| `--dataset mini` | Mini 200 题 |
-| `--dataset mini --tasks FLOW-0001,FLOW-0004` | Mini 中这两道题 |
-
-### ReAct：生成 API
-
-在 `.local/credentials/services.env` 中配置生成 API 的地址、密钥和模型名后运行：
+也可单独检查 SciMas 规划阶段：
 
 ```bash
-python cli.py run --dataset mini --baseline react --backend api \
-  --output results/mini_react_api/predictions.json
+python cli.py plan --dataset mini --tasks SMAS-0103 \
+  --backend vllm --model YOUR_SERVED_MODEL --output results/mini_plan
 ```
 
-运行全集时改为 `--dataset full`，并使用独立的实验输出目录。
+## 评分
 
-### ReAct：本地 vLLM
+Full来源题的评分依据已随Mini保存，不在评分时转去运行Full题。例如，`SMAS-0103 → FLOW-0029`：加载对应的科学判据、必要能力与金标准，核验还原源题号后的题目身份，并只在内存中建立Mini题号视图。原始参考轨迹和生成清单保留Full身份，不改写为新的Mini轨迹。
 
-按[生成模型配置](../../docs/setup.md#配置生成模型)启动本地服务，将占位符替换为实际 `served-model-name`：
+规划指标检查模型本次实际调用和观测；答案指标将模型答案放入可信参考观测上下文，按原科学判据独立判断。因此答案正确可以与规划失败同时出现，参考调用不会替模型获得规划分。Full题文或规则以后发生变化时，需要同步更新并重新验收Mini的固定副本，不会自动跟随变化。完整解释见[映射评分机制](../../evaluation/README.md#mini与full的映射评分)。
 
-```bash
-python cli.py run --dataset mini --baseline react --backend vllm \
-  --model "<served-model-name>" --concurrency 2 \
-  --output results/mini_react_vllm/predictions.json
-```
-
-### SciToolAgent
-
-只需切换 baseline，题库选择方式相同。生成支持 API 或本地模型；此外需要[同源检索 embedding](../../docs/setup.md#scitoolagent-检索配置)：
-
-```bash
-python cli.py run --dataset mini --baseline scitoolagent --backend vllm \
-  --model "<served-model-name>" --concurrency 2 \
-  --output results/mini_scitoolagent_vllm/predictions.json
-```
-
-`--concurrency 2` 表示两道任务并行，不是单题内工具并行。其他资源设置沿用[统一执行策略](../../docs/execution_policy.md)。中断后向原命令追加 `--resume`；续跑要求题库、编号映射、代码和模型设置一致。不同题库使用不同实验目录。
-
-首次接入可加 `--tasks FLOW-0001` 抽测一题；对应评分也需要相同的 `--dataset mini --tasks FLOW-0001`。
-
-## 统一测评接口
-
-使用运行时选择的同一个题库，对实际实验目录评分。下面对应上面的 API ReAct 示例：
+所有 baseline 的预测均使用同一命令，评分不调用 LLM：
 
 ```bash
 python cli.py score --dataset mini \
-  --predictions results/mini_react_api/predictions.json \
-  --output results/mini_react_api/scores.json
+  --predictions results/react_mini/predictions.json \
+  --output results/react_mini/scores.json
 ```
 
-这个命令以 **200 题**为分母；`--dataset full` 则以 **500 题**为分母。`--tasks` 可进一步限定当前题库的抽测范围。缺交、失败和资源耗尽保留在所选范围的分母中，评分器会拒绝与预测文件不一致的题库选择。
+只报告三项主指标，分母为所选题数。默认分母为全部 200 题；未提交预测或证据身份无效的题记失败。使用 `--tasks` 可以显式评分一个子集，完整 checkpoint 也可以取子集评分。
 
-评分器自动按映射取得原金标准和科学判据，不需要手工改回全集 ID，也不复制或改写原始参考轨迹。评分仍是离线 `workflow.v1` 规则计算，不需要启动生成模型、embedding 服务或 LLM judge。
+| 指标 | 单题通过标准 | 含义 |
+| --- | --- | --- |
+| `runtime_completion_rate` | 生产轨迹身份有效、资源账目合规，正常结束并提交符合公开格式的答案 | 是否成功完成运行和提交，不代表科学正确 |
+| `tool_planning_accuracy` | 实际观测满足 `workflow.v1` 必要能力、适用分支、科学输入约束及依赖，且没有待审查项 | 是否完成必要科学规划，不逐项比较参考串行调用顺序 |
+| `answer_accuracy` | 用可信参考的真实观测独立判定，全部适用的科学答案判据通过 | 是否答对科学问题；答案正确不补造工具证据 |
 
-### 结果位置与指标
+`DescribeTools` 不计科学工具规划。数值容差、合法并列、集合／分区等价、方法资格和空值规则沿用每题公开契约及共享判据。未列入当前规则的等价科学路径需要统一更新判据，不能用模型自评或单条预测豁免代替审查。计分依据和证据身份分别核验；参考自检通过不等于 baseline 的模型成绩。
 
-| 路径／字段 | 内容 |
-| --- | --- |
-| `predictions.json` | 运行设置、题库指纹、提交答案与轨迹位置 |
-| `trajectories/<task-run>/trajectory.json` | 记录所选题库与该题编号的完整真实轨迹 |
-| `progress.json` | 题库名称、已记录数、已完成数和活动任务 |
-| `scores.json` 的 `summary` | 总体指标；`dataset` 应为 mini，`total_reference_tasks` 应为 200 |
-| `scores.json` 的 `results` | 逐题判定；`id` 为 Mini ID，`source_id` 为对应全集 ID |
-| `scores_review_requests.json` | 尚需独立复核的方法或证据 |
+评分首先校验题库／工具／执行代码指纹、预测题号、轨迹字节与实际观测，并检查实验资源账目。作者说明或参考不能由通用文件读取工具当作任务附件读取。
 
-评分结束时终端也会打印 `summary`。`pass_rate`、`tool_planning_accuracy`、`final_answer_accuracy` 分别表示正常完成、必要科学编排和有证据支持的科学答案通过率。`joint_pass_rate` 是已确认的联合通过比例；无待审题时 `joint_success_rate` 给出可定案的主指标，有待审题时该字段为 null。完整定义见[评分细则](../../evaluation/README.md)。
+## 工程测试与复验
 
-### 一次完成运行与评分
+2026-11-05的验证结果：41项自动化回归通过；100条Full映射的题文、评分判据／金标准和原始轨迹逐项一致；Mini全部200份主参考通过身份核验与三指标自检。
 
-现有实验流水线同样使用这个题库参数：
+| Mini题号 | Full源题号 | 重新执行的科学调用 | 运行／规划／答案判定 |
+| --- | --- | ---: | --- |
+| SMAS-0103 | FLOW-0029 | 6 | 全部通过 |
+| SMAS-0131 | FLOW-0147 | 8 | 全部通过 |
+| SMAS-0132 | FLOW-0153 | 10 | 全部通过 |
 
-```bash
-python -m scripts.benchmark.run_benchmark --dataset mini \
-  --baseline react --backend api --output-dir results/mini_pipeline
-```
+同源Full题`FLOW-0029`也通过实际执行及统一CLI评分。这里以参考决策回放驱动生产ReAct harness，重新执行真实工具并生成新轨迹；不调用生成模型，不将这些分数作为baseline模型成绩。机器可读摘要见[mini_validation.json](../../docs/benchmark_analysis/mini_validation.json)。
 
-改为 `--dataset full` 可运行全集；无需另一个 Mini 专用运行器或评分器。
-
-### 接入自己的方法
-
-自定义方法使用 `load_dataset("mini")` 或 `load_dataset("full")` 加载公开任务，并复用工具执行器与 harness 的轨迹、预测保存接口。在运行设置、预测行和轨迹中一致记录 `dataset`，保留题库公共文件及编号映射的指纹；不能只提交最终答案数组。接入后用同一个 `score --dataset ...` 入口评分。接口说明见[baseline 文档](../../baselines/README.md)与[评分依据](../../evaluation/README.md#评分依据ground-truth)。
-
-## 核验与适用范围
+复验命令：
 
 ```bash
-# 检查题数、学科配额、高难度排除、编号映射、科学内容与来源身份。
+python -m pytest tests/integration/test_mini_dataset.py \
+  tests/integration/test_dataset_interfaces.py tests/integration/test_mini_selection.py \
+  tests/evaluation/test_public_asset_paths.py -q
 python -m scripts.benchmark.mini check
-
-# 进一步离线核验全部 200 条主参考、输入资源和原科学评分。
-python -m scripts.benchmark.mini check --references
-
-# 按已审查的 selection.json 重新导出题目、编号映射与元数据。
-python -m scripts.benchmark.mini build
+python cli.py validate
+python -m scripts.benchmark.analyze_benchmark --dataset mini
 ```
 
-主参考共记录 **1,941 次科学工具调用**，中位数 **8 次**，成功覆盖 **196 个规范工具**；没有主要仅靠读取 JSON 与执行代码完成的参考。调用长度是原参考的实际调用数，包含恢复调用，不是任务的最少调用数、串行深度或预计加速倍数。
+## 文件与验收
 
-Mini-200 是针对可拆分工作流筛选的均衡子集，不是新采集的独立测试集，也不代表完整 500 题的自然分布。并行机会不等于实测加速，轻量分支可能受调度开销影响。局部修复与异常恢复应另做受控实验，不以某次真实网络故障证明方法能力。
+| 文件 | 用途 |
+| --- | --- |
+| `questions.jsonl`、`assets/`、`asset_manifest.json`、`schema.json` | 公开任务、固定科学输入与内容身份 |
+| `ids.tsv`、`metadata.json` | 连续编号、来源映射与题库统计 |
+| `selection.json` | 作者使用的逐题选题和适配审查，不进入Agent输入 |
+| `evaluation/references.jsonl.gz`、`evaluation/trajectories/` | 原始源题参考、审查记录及未改写的真实轨迹 |
+| `evaluation/acceptance.json` | 全部200题的来源、参考与三指标自检 |
+
+```bash
+# 项目完整验收，包括Mini-200；不调用生成模型
+python cli.py validate
+
+# 单独核查Mini-200，不运行baseline实验
+python -m scripts.benchmark.mini check
+```
+
+运行复用 `baselines/`；评分实现位于 `evaluation/suites/mini.py`，底层科学判据使用共享的 `evaluation/workflow/`。题库目录只存任务数据、参考和说明，不再增加另一套运行器。

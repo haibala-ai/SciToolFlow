@@ -1,0 +1,1483 @@
+{
+  "status": "passed",
+  "tools": 97,
+  "checks": [
+    {
+      "tool": "AdjustPValues",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "aef0db93e3a28155afde2a60e8627f7f8107abf8cbb5458950e28f63e007e4cc",
+      "source": {
+        "file": "tools/implementations/machine_learning/family_statistics.py",
+        "function": "adjust_p_values",
+        "sha256": "8eaea92439522360f422d294763ba47715fae8fdf0cabbee8bce0de882b3767d"
+      },
+      "function_sha256": "48661c6e3efff10f68290b523fd2825c4bf33e6946930ee614f82927f534a4d3",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "AdjustedRandAgreement",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "ab88b87f98efe3b6ffc4185520abf52058c3fef06624e498ebba6fba99990c56",
+      "source": {
+        "file": "tools/implementations/machine_learning/research_workflows.py",
+        "function": "adjusted_rand_agreement",
+        "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+      },
+      "function_sha256": "b9e8b4128c180560bf26487053613a07c07eb852b882df4f80fd0fa2a20a2e62",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "BinomialProbabilityTable",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "d388e069e5533366225707ff8c8901c39ef0ff96a58c0e91e0ebab1a7fb81050",
+      "source": {
+        "file": "tools/implementations/machine_learning/binomial_distribution.py",
+        "function": "binomial_probability_table",
+        "sha256": "df10a20a713fbdfa2be4f545eff83675a1a23d15e6350e0670ec2e4c42bdb06b"
+      },
+      "function_sha256": "afb45103df5c6451d58ab8c625271d98335d61679e2319dab73243b6f5ad1641",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "BootstrapMeanInterval",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "f2793281b22bd3c96dcd79c7a3324ed1251c31a596cf65586f6f509bb435b522",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "bootstrap_mean_interval",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "085bc0c6ac630bcd092ef3e8d05c0462ec0b753fb270ff68597599b49549d2a0",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "CalculateDensity",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "a08fd124306d2c58e966c5303da46660094ce2fe2e929f439570395c30c4fc5e",
+      "source": {
+        "file": "tools/implementations/materials/basic_local.py",
+        "function": "calculate_density",
+        "sha256": "9d68861929bea2f30c64b4116ad23fcbbec94a9d3df16b28c2db96eeef1c71f9"
+      },
+      "function_sha256": "1df747239ee6d551343db9b385038e98d6b44f21f30f4e5b4a6d097f123db76d",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "CalculatePMI1",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "a72917ba0b684426c35d1dc8eb19f5b4d59b63a08277c3e21a2dd95050686953",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_properties.py",
+        "function": "calculate_PMI1",
+        "sha256": "51d9e8c847aa0d2699b6c422360d3196ed67078fd19c5dc36db5cf52d8e86db8"
+      },
+      "function_sha256": "d412340a63d44e85901aba5435d8bfa166844542a855516e938eee8c21b3288d",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "CalculatePMI2",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "f6229127c06558c09851733fe0b5ec38f99de933025a6e3c20ac617b4649c8d3",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_properties.py",
+        "function": "calculate_PMI2",
+        "sha256": "51d9e8c847aa0d2699b6c422360d3196ed67078fd19c5dc36db5cf52d8e86db8"
+      },
+      "function_sha256": "456f3d76ffc9a75e501d484aff407fd535032969c7209584c860d9b5c55c8285",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "CalculatePMI3",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "8ba43b655929799a0ca33a10fc19fd7b6486cd1e4f1ea19392dd8ccb59c8e98d",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_properties.py",
+        "function": "calculate_PMI3",
+        "sha256": "51d9e8c847aa0d2699b6c422360d3196ed67078fd19c5dc36db5cf52d8e86db8"
+      },
+      "function_sha256": "f21db7aee2ec6d6c1388b5ec84a644b299487df20d3787c56dc8e238996d8480",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "CalculateSymmetry",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "05f7cb337b782ee3e398112a431211e2565188125598f528ca2417c28a67ad22",
+      "source": {
+        "file": "tools/implementations/materials/local_queries.py",
+        "function": "calculate_symmetry",
+        "sha256": "cc1b4865b66fdd89dd0e7fabc479884898fea55cc005509eccf726b5da233cc7"
+      },
+      "function_sha256": "4d9e6431acc94cee56247e92febdfe4bf5289d22310d0f67a06a88909b095a37",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "CalculateTPSA",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "f883f86bd0c0a1325b9c03d6c9a900e9309e17625d963c8a46bde2c9f89e90e5",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_properties.py",
+        "function": "calculate_TPSA",
+        "sha256": "51d9e8c847aa0d2699b6c422360d3196ed67078fd19c5dc36db5cf52d8e86db8"
+      },
+      "function_sha256": "8c232c406e6d5467bd916606c5f9895980c4b35e4a72166c7389078a86d3e7ea",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "CanonicalMolecularIdentity",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "be218bcee050da156c3461640317ca7fc4c4e0d0fa503e9da865d466af926c6a",
+      "source": {
+        "file": "tools/implementations/chemistry/research_workflows.py",
+        "function": "canonical_molecular_identity",
+        "sha256": "af00a5877c4badf269ac1db278be46180c2b1d0590b0ae78ff98317e5ee7cb31"
+      },
+      "function_sha256": "272e5a73a3ad33e3e65c0514d91f51e84d0ee9c82da3979decd53472c35d1bf0",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "ClusteringQualityMetrics",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "c0d99f86eb7f453fd525a96de1fb982817b9c0898158053f4e4f24319645d34b",
+      "source": {
+        "file": "tools/implementations/machine_learning/research_workflows.py",
+        "function": "clustering_quality_metrics",
+        "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+      },
+      "function_sha256": "2ce5f2b30389e5918e9076b2352e54139044d284b8457491c7019b232e2cffe8",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "CompareMolecularFingerprints",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "a41312b2c7a0eb76d71ea78edae8b151a24a2215b48e7f5c09e2f3f9b0cbe43d",
+      "source": {
+        "file": "tools/implementations/chemistry/fingerprints.py",
+        "function": "compare_molecular_fingerprints",
+        "sha256": "2c9453fca27980abffa79fcc10e37867cb0a3fee7f9d316771b97ac1c59766b8"
+      },
+      "function_sha256": "e8300cc7ce2da9e2846892c3cc8e62eeae4e7f92f4ad63225be5ef06b0990e73",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "CompareMolecularShapes",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "f3b73b3a36f0c12d8af58af9326d63cd6bde922944411ed045e52021107c3b40",
+      "source": {
+        "file": "tools/implementations/chemistry/molecular_analysis.py",
+        "function": "compare_molecular_shapes",
+        "sha256": "7872e68bf250eee999aa03ed16e087935a205abb70598913dd13081ae7e3bab8"
+      },
+      "function_sha256": "8cd392085b79ee06381f0cf28b69f4b1bee9d684e6967bd2de695b4c474fecc0",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "CompositionFractions",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "37ef9edd61bd057b6b2644fb1d8dd0d58c258e15d52b5f4e767d19482a3206d3",
+      "source": {
+        "file": "tools/implementations/materials/research_workflows.py",
+        "function": "composition_fractions",
+        "sha256": "45bba61a94872f2d4417baca4c7de9ac2bc9d2f2e5c82049ec63424e42071f5d"
+      },
+      "function_sha256": "eb88c5e8ecfe038070c15c0634fefb69079bc2d93aeddd25d419c678bfc49183",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "CountMolecularAtoms",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "1d312f419e35af523c478531825c0487473619c7e0f28608527fa8a67467b866",
+      "source": {
+        "file": "tools/implementations/chemistry/core.py",
+        "function": "count_molecular_atoms",
+        "sha256": "2f3a37d92f9cf5fd5945965e9c72aebd5aea9cefc014979cf776c0663a6fad16"
+      },
+      "function_sha256": "8316a0264328d8cf9fbefa8874f5b673d957de0f0841b99b2f7af6123a1f61d5",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "CrystalStructureMatch",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "cf468729af03c2c791853b9623639d9099a6d657db77a947a6d90e5e61719ff0",
+      "source": {
+        "file": "tools/implementations/materials/research_workflows.py",
+        "function": "crystal_structure_match",
+        "sha256": "45bba61a94872f2d4417baca4c7de9ac2bc9d2f2e5c82049ec63424e42071f5d"
+      },
+      "function_sha256": "de4ac2a97c885eb144bd09b4d003faa0adbc281dfeb0fa7b92f94ed9e237abc7",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "CubicHermiteInterpolate",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "c5b01e1dd8ba5df097066354544d1584e7b959ef282c59c5a516ed6173e0e4e9",
+      "source": {
+        "file": "tools/implementations/machine_learning/hermite_interpolation.py",
+        "function": "cubic_hermite_interpolate",
+        "sha256": "c50bcfa251c2fa914decaa49917a21433d31510b8d0d70f5f5b65694222ed5f0"
+      },
+      "function_sha256": "fa6a2e5dd3bff708100265163a34e1f50a37d7dd24dec44f922a8f3a43ab4be4",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "DecisionCostSummary",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "33d996e2d0cf035cb4de1097423463b5485c89305f2afa7e52f0b913cb72dbff",
+      "source": {
+        "file": "tools/implementations/machine_learning/research_workflows.py",
+        "function": "decision_cost_summary",
+        "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+      },
+      "function_sha256": "cf83d4aefbba5119fe6dfed53523f3785ee63c167f79244a1da87b5dc98404c1",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "DescribeNumericData",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "29b4589b9a47d1437678337479ef432de9de425fd16429552b41eb6edf07254e",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "describe_numeric_data",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "a6fc4369ab0e68ff0d9274a5f41d6f8c7038260468122bfe02c5f40ee7c74baf",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "DiversityIndices",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "8a168e40d9cfde17f5b11e2fd47ee47eb3c46b5ecb85d9d7b313861e53f67a68",
+      "source": {
+        "file": "tools/implementations/biology/research_workflows.py",
+        "function": "diversity_indices",
+        "sha256": "788b2dc45d6fd024f78a7bf5e8f502a1b41f3924a2165e37acae01653868e7d8"
+      },
+      "function_sha256": "00b20ca6b5d30e61cbbd77981c8f642430f09f6870243e5841fb3540c1a8f9db",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "ElementwiseNumericOperations",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "67b6cbb94b7b796a290fdd99736c3fec2c81a79a569c023d499aeec9efb2c4d4",
+      "source": {
+        "file": "tools/implementations/general/numeric_operations.py",
+        "function": "elementwise_numeric_operations",
+        "sha256": "3f2d8ad7b6841e5145843465389114d1a0061e3ff860cfa4e628d87c874b241d"
+      },
+      "function_sha256": "73d521d4e00d65695a85c84a17a09f2d0fa86f96aa217e708750b3fd984ef9d1",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "EvaluateParametricCurve",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "449dfc51d3809641868a01eba8d295d41d444052fd15e4e9bb1cb8e7e0eb4fd4",
+      "source": {
+        "file": "tools/implementations/machine_learning/parametric_curves.py",
+        "function": "evaluate_parametric_curve",
+        "sha256": "a734bd48ab264b410b3d737f7b518b4f4acea1b52774beeaa3624c4e942cb340"
+      },
+      "function_sha256": "e200613826799e6aee648d123afd1efd55db50e6bcaf026c352ee63d6dedb2f2",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "FiniteDifferenceGradient",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "f30ef95f6c89a166bf039aa66684040f2146902fedfd5ae4f0cf738982750ba5",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "finite_difference_gradient",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "0f29e2cbf88cfa63fde6f5859ac38c16d7fe70bca78ae97ea322ce781b32774e",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "FinitePopulationCoverage",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "d0c8e85cbe825061affc6f6850df08a2a937db7736c5f3e888b380aa91d7a156",
+      "source": {
+        "file": "tools/implementations/machine_learning/finite_population.py",
+        "function": "finite_population_coverage",
+        "sha256": "30234f7180f446b57624b043a4a25d8c25c8eb3de1b5c48f80788f9a79f74e2f"
+      },
+      "function_sha256": "1e1520892b40dde0e1a720b8fefa1ebd5cdcad6013ed27792e28f5a59398cdc9",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "FitLogisticRegression",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "33247e99836af092ce9a0a41766fa2671c7527e5e3b182460aa0737233d6a88c",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "fit_logistic_regression",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "6ccc072ebb9f7e30c893176045a9dfcb5b705ba57b1197ce2851118a7a14903b",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "FitParametricCurve",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "93e673b5827d368a9aff2746d6804dff5504555a05ce75d6abeec3f9148e36f4",
+      "source": {
+        "file": "tools/implementations/machine_learning/parametric_curves.py",
+        "function": "fit_parametric_curve",
+        "sha256": "a734bd48ab264b410b3d737f7b518b4f4acea1b52774beeaa3624c4e942cb340"
+      },
+      "function_sha256": "aaf06bcd7bb91e212391b8d423d497f43ff2339a2a51e8c9a73362419904318d",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "FitRidgeRegression",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "7fc783590aa2c6774264776be9a93969a8f28432ebaa370d44fc075d71788b0b",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "fit_ridge_regression",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "f0d3e56d17a77737fc6b91122d472d9cb6c999c75bb0fa5170458c38087a295a",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetAmideBondsNum",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "0442253e70d167d95522931260adf61efceaeba3d116aaee8b3a9e2586c0159d",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_NumAmideBonds",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "1579e68b41964aba66175f3e55a284ec489d17fc3f7592e10a1b81cae120ea5b",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetAromaticHeterocyclesNum",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "cd63cb327c197a2241807eb1da0ab3a46d74c6c87f6d6a27785175ed20575224",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_NumAromaticHeterocycles",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "c218d1c0509f1f792c2ce54c0c0df67a832345ee91c1365f3e00c8da44302443",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetAromaticRingsNum",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "62d35f466d44114ba2c22879c8d55c65839cebfa33513e5c1d85114bce14881f",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_NumAromaticRings",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "5cdfadc81e0b87cb56f6a78695ce3b9d80ca91c1cb49f5efdb58b58bdbf49af5",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetAtomStereoCentersNum",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "4cde26355388cf6fc34d1ca630f06d14f5d44e8433613a0939679197424cd05f",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_NumAtomStereoCenters",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "c2556f05fde3615052c6ccbda5c7e7ac80be62d7d3b21c2b480d6d16c2656a96",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetBridgeheadAtomsNum",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "2ba297d80275bc8b2c97f87aa353bc5739dd3a81b3a775521c88d64f8cf92469",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_NumBridgeheadAtoms",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "9224de827811ab175bc0f89f657b92a25e0eea5bb78842463466c21a5a771ced",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetEEMCharges",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "fd3c70bdedb3360b2ecc8682a8d739018aefac2b04cf6fcae3cf1370b1e2791f",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_EEMcharges",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "fdfe11334859bddfc4787c83cfdc413aa4abe3645ed8a075ce7769a5333c3915",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "GetElementComposition",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "17c6f28c27aaee10dc49849a3f209fdc3b1c97e7fdb8fff3e657c8170878def5",
+      "source": {
+        "file": "tools/implementations/materials/local_queries.py",
+        "function": "get_element_composition",
+        "sha256": "cc1b4865b66fdd89dd0e7fabc479884898fea55cc005509eccf726b5da233cc7"
+      },
+      "function_sha256": "fe9450a8b62e083225ddea6b1bcd82d220b8465c3362b44fb38995dc75a13d57",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetExactMolceularWeight",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "33eda685074d1847fac1e136a8a606efa67dad02f957e03f0ce54f9641f20055",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_exact_molweight",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "a5cd13c38410d90fcc47941d8607374e639c8ee110ac68a41ca15003c035306b",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetFractionCSP3",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "ff80e070c5360834150b7d71de43f3d7d05b74a8888a4dd7b9cc1b39650948ef",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_FractionCSP3",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "edce55c90c20de63bbba76263b9a60785133562c2a920884d4b2deda75362e7d",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetHBANum",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "1b1b03d4eaa8c731325d9b8be88fa707f0c7fe3b3119186a40684c6b3314fa73",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_NumHBA",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "90e420635ac67818991c38eb10130b79af4187579c465c104e0c49611a13e4fa",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetHBDNum",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "74431c743efa6a3bb00d0763a1f6495d6c6e69dc78541b53d0f69b93f2f94c39",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_NumHBD",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "fba848018388256cc697e5ed9254bae37582228b45ede062ab0dcbebc047e8cd",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetRingsNum",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "e259e07c08a079acc246fbdacd94c8849c1ee9b75f8de825c4c56180249632a4",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_NumRings",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "17f99b1b6b0b11d984e722730771aea8bfdfa9755f5c3f8cdabbbb299c0360c5",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetRotatableBondsNum",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "de626a23f0243d4045b8e388141b8c30fc2f74f26aa867d54aa58314a15be123",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_NumRotatableBonds",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "923b55b455324b2a371428b5b03ab03e939cb37a16f43df81a44a277b8480d8f",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetSpiroAtomsNum",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "c11adc4f47631963d8696da4ac1805fb99da50dabf84bd95a68eddd260f8c3ee",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_NumSpiroAtoms",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "9e1d9268369579974c4017175efa7cb6fae452e82d9697478cde6cbe29da8b21",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GetUnspecifiedAtomStereoCentersNum",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "c334add67645f74ace2fae70fe62a326474944f34df9daa94952f7787450bc12",
+      "source": {
+        "file": "tools/implementations/chemistry/rdkit_basic.py",
+        "function": "calculate_NumUnspecifiedAtomStereoCenters",
+        "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+      },
+      "function_sha256": "9acd933d286d1132281d2a53e2e8f2d81a79be3963933fa47b3cc22d4a1c3143",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GraphLaplacian",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "bf4e79f73e9470857944ff1c1d9bdac7d4d8393275bd8632e880c3242443eab8",
+      "source": {
+        "file": "tools/implementations/machine_learning/graph_laplacian.py",
+        "function": "graph_laplacian",
+        "sha256": "ba49ae3ccc54570c360420d34c99e01b2ba9186f252fc25b1ce76f5b54d040f4"
+      },
+      "function_sha256": "55c85497210f34ea934ed1f7ace31388ded1c66ec203f2654cdb3d8315d5973c",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GroupTrainTestSplit",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "76139e4173ae34d7d0fd32d5eb378313eadbbaf87d984a6b3ca581fb1040e7ca",
+      "source": {
+        "file": "tools/implementations/machine_learning/research_workflows.py",
+        "function": "group_train_test_split",
+        "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+      },
+      "function_sha256": "5cc8234b17cd7cbc0fffa48e318f6b1300c877cf5b64b2091e0b4ef54ee936f0",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "GroupedBootstrapMeanInterval",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "d84f9da17389b06df1bbdf06d41c58a9cabe96947c50cf28ba8ba410c1b31566",
+      "source": {
+        "file": "tools/implementations/machine_learning/research_workflows.py",
+        "function": "grouped_bootstrap_mean_interval",
+        "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+      },
+      "function_sha256": "7436f3473cddc041cda0dbed55f50a170b6f83137558685adc78af5b59094937",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "InChIToSMILES",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "1f51c77ba68bf3ec5dc6b3f5805e8540c139504c04c8dbc88c8057da9dbe5b71",
+      "source": {
+        "file": "tools/implementations/chemistry/molecular_utilities.py",
+        "function": "inchi_to_smiles",
+        "sha256": "adc1cd4726121eee2d1cab90068e77ee3cc86d50b6b206bf7dd780c54a358bfc"
+      },
+      "function_sha256": "1b57b2861442b65b6a8e1a8ad3c9df79639c6be345a4a9ab038141a8addb43cc",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "KMeansClustering",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "783630ba06763e8fa860228818e4b100d6272cfa0aa9f2e1b505af7fa48f7292",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "kmeans_clustering",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "c6db1d766f504730d3e726935ffb110797560c842394a317112787c13cf10ca7",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "MantelCorrelation",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "ab11dc8ccab496b6af1d157cb41058aa2eda99f46101a5c1201912ddf754cd5d",
+      "source": {
+        "file": "tools/implementations/machine_learning/mantel.py",
+        "function": "mantel_correlation",
+        "sha256": "c9dd006e9f0dcd2eff7717c7930f8a234a31274e0dedc8ee5c98d9a20e3c0b49"
+      },
+      "function_sha256": "cab7d94d416afe8ed83fd89a9e79b21e34732bf2a238bbe918f29beea4dc3488",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "MatchedPeriodicDisplacements",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "137f53fc316f834c43bd03948ffbef4f5a2ddb86f493ae96715b7be9bd20848b",
+      "source": {
+        "file": "tools/implementations/materials/research_workflows.py",
+        "function": "matched_periodic_displacements",
+        "sha256": "45bba61a94872f2d4417baca4c7de9ac2bc9d2f2e5c82049ec63424e42071f5d"
+      },
+      "function_sha256": "b60d48797703b0585cd83109f6009f7aa0ebf709ad1d602fcfde5f27fc16283b",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "MatrixExponential",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "50e585767250dbc96eaa357a500810c8af382c92fed7927b6cebd8d14332a1f9",
+      "source": {
+        "file": "tools/implementations/machine_learning/matrix_exponential.py",
+        "function": "matrix_exponential",
+        "sha256": "148a9da8ed333fe6d4fd614d5572c114c814e3496be2abe109c25b74e2f79cb4"
+      },
+      "function_sha256": "01129fc817445b44fa5df7787450d66ddcec3e7b43f216e07fe457ea94bf873d",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "MatrixInverse",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "c1591c6dd1d4ec951692df25d5d121ca285d649a04a90c0e065c6db711fc7c70",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "matrix_inverse",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "468a35a6a2a2ea685a1f9cc07e914079466a4095bc722119f747523dbb71ab3a",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "MatrixMultiply",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "cdd46046397ba8066462678d934191deb7dd19e04890dabd9f23e657aeaa1f4e",
+      "source": {
+        "file": "tools/implementations/machine_learning/matrix_operations.py",
+        "function": "matrix_multiply",
+        "sha256": "fd8a42e473f51350e1dcdeae8247595f9a66abcd17c8e79dd4c45cd09573061d"
+      },
+      "function_sha256": "34eef3ebca1e9229a6c618e00c11b7f2f5d557ba2264f1fd0b168ad461894ee5",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "MolecularFormalCharges",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "233c356ae43f2480a50ca54fd95b51fb480ffa524793067e173e6f86e0aa7463",
+      "source": {
+        "file": "tools/implementations/chemistry/molecular_analysis.py",
+        "function": "formal_charges",
+        "sha256": "7872e68bf250eee999aa03ed16e087935a205abb70598913dd13081ae7e3bab8"
+      },
+      "function_sha256": "5b2fedbd7d9197a8fff2004116777ed5fe62f0c39a80ed73bceccfc6d0556c30",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "NormalizeNumericRows",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "acea12b9f49163826a4f8fc0d38f0a9631e248c14e4e4aa5b5b8b78d8a30adc8",
+      "source": {
+        "file": "tools/implementations/general/research_workflows.py",
+        "function": "normalize_numeric_rows",
+        "sha256": "179c7b9a1ee486a26079e0d4b4dd2ffc7ded374553d6c5b9df93aca8957a391f"
+      },
+      "function_sha256": "b35322a94fa313fa63ca9afde0539a9af476b9b40a60089388615e52339e7392",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "NormalizedPrincipalMoments",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "0efb1e8287657dd2f6f65bed0819ad1c640f3a55e2e54d836567f36af0b05a82",
+      "source": {
+        "file": "tools/implementations/chemistry/molecular_analysis.py",
+        "function": "normalized_principal_moments",
+        "sha256": "7872e68bf250eee999aa03ed16e087935a205abb70598913dd13081ae7e3bab8"
+      },
+      "function_sha256": "bf3c2cf281d7a9049970551b4934093cd9272bf3fe6600bafd4aaf39e3b60526",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "NumericalTrapezoidIntegration",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "b0e82af94c87e0fa1bc0eb8e7995342947306193a32c583f5237ee150facdff9",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "numerical_trapezoid_integration",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "cb99053632b650e9bd00970f2cbb03107ccb75598399a230fc843c7c798b9813",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "PCAReconstructionError",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "cd6089c3a382b95b9c29083d162c92cfe36ee172ffb1093d7c3c79beb838aac8",
+      "source": {
+        "file": "tools/implementations/machine_learning/research_workflows.py",
+        "function": "pca_reconstruction_error",
+        "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+      },
+      "function_sha256": "ffb3a4e163fb3a9b14d7d5101eb5afd051b582cdd448e3c76080ffb0d06b9e20",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "PairedRandomizationTest",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "22565a54d3ba13447e9aff4f38dec923db9432482270d87a852d7c9f190d7956",
+      "source": {
+        "file": "tools/implementations/machine_learning/randomization.py",
+        "function": "paired_randomization_test",
+        "sha256": "e2e1c5c2b1494bc9fe6eca67adecae932d7a5c02bc4cab67f839bc2bec659ac7"
+      },
+      "function_sha256": "5dc7af3403f46e8f11a245b34def585fe19bdf4fad52cee373a5d34d4c633292",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "PairwiseNumericDistances",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "038d23c69a623a360090b09468da86811ec69319e296b3e1182087ea1da4058a",
+      "source": {
+        "file": "tools/implementations/machine_learning/pairwise_distances.py",
+        "function": "pairwise_numeric_distances",
+        "sha256": "af2470442744045692fdce0d84f42fa59b43ab60646bb338f74561e46ec267ae"
+      },
+      "function_sha256": "bacfe4087b9ca86313139142c18597b3589d26b70ba3df74dd7aecfdb8ba18ae",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "ParseJSONDocument",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "dcd50e4519c31309e2207b37839ad372cde3242d8f041287f974d7ae9b2723ac",
+      "source": {
+        "file": "tools/implementations/general/data_tools.py",
+        "function": "parse_json_document",
+        "sha256": "aa5849411f36adec7ffc1dcd59cefc494edc9f36943c48fb71d94269b9dd0ff5"
+      },
+      "function_sha256": "38751c985e55644280a80796c579a1156169b3410981ee91286544af95365f5a",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "ParseNewickTreeDistances",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "5e629e93ae97d609ed43245486ff6440bcb746a7aa09a1b4941d79d08169eebb",
+      "source": {
+        "file": "tools/implementations/biology/tree_distances.py",
+        "function": "parse_newick_tree_distances",
+        "sha256": "d9ea835e1699c4f21629a45d15539e96730f999ec84710f2f5a272fd433d4304"
+      },
+      "function_sha256": "887b84990d0fac9bd312a74499a43f1971794f867f4dfbae5c3a20d65d13ad0b",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "PearsonCorrelation",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "ce2297fccc8ccd88cf579b070fdfd4601288d93a3feb233a853cb792f017ad63",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "pearson_correlation",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "6159a97d3f34d36f95fd46ba00dbc2b48545d321d0ba2e4c65e401c7ea1b7334",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "PeriodicNeighborList",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "997c2c595c7acfb44e0e593ecef124ceccd6cde15848f9a1d6af9ecc1335f458",
+      "source": {
+        "file": "tools/implementations/materials/research_workflows.py",
+        "function": "periodic_neighbor_list",
+        "sha256": "45bba61a94872f2d4417baca4c7de9ac2bc9d2f2e5c82049ec63424e42071f5d"
+      },
+      "function_sha256": "9104584e8dfa69a124849b5ff5fc478f8c47b101123c2e026752a62d294b1edf",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "PolynomialLeastSquaresFit",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "5ead353d07256bef503ec6d8bbd5ff35d16202a37e2d07fda11be3e50e528324",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "polynomial_least_squares_fit",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "1e0895539f3c0a9c651772ccd27baa26b098c49bfe76ed7c04deacb7b3285fe2",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "PolynomialRoots",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "0d7c87ee3165a634e2cae06dd2005f9d7e4928db68e8abe2be8f55e8edb385f4",
+      "source": {
+        "file": "tools/implementations/machine_learning/polynomial_roots.py",
+        "function": "polynomial_roots",
+        "sha256": "90de5bc4542bcfb3acbf327ecdbfb1a27b54dcc8c02d47f96d867cfcf6852a82"
+      },
+      "function_sha256": "f40507b5ed527c8e1e01853e76b2fb3b7716ba81d83fb6778589e41977e74550",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "PowderDiffractionPattern",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "6ee2b6046fe52809c30904262754e3c10fe41a9ecc58fb323eaca01b32e8d3a7",
+      "source": {
+        "file": "tools/implementations/materials/research_workflows.py",
+        "function": "powder_diffraction_pattern",
+        "sha256": "45bba61a94872f2d4417baca4c7de9ac2bc9d2f2e5c82049ec63424e42071f5d"
+      },
+      "function_sha256": "26c05aa95903b12b4b02b4063917b955619ba9a3940fe6e21c0d06efd6b5feca",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "PredictLinearModel",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "73c7fb9fd2754be2acdff10325d2e0857947630516bed487eec579e012733e6c",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "predict_linear_model",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "852b44dd162ff0c99b657c3b3aae1c18a058aeb4cdea35492d9e83d7343236a5",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "PredictLogisticModel",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "fb6f42a5d3543df481375019e1aeed4380e828002e52d3823c520e85da999f6f",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "predict_logistic_model",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "57046bb46e8f1596866cd373d497d1e63757462f4b48b268af2ffb03948c8823",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "PrincipalComponentProjection",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "5b8fbd19418fd8a6da0fce255718244303beda8dc416ae62cc5b7fff5b9404ff",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "principal_component_projection",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "7e0cf474287344dc4ff58e74b805b037226d6a421554e0310bad5ba7a860dcef",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "ProbabilityCalibrationSummary",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "0a32fd80207b969e5efa7d944cea8106d71ca2754b798a621cae046f4a921251",
+      "source": {
+        "file": "tools/implementations/machine_learning/research_workflows.py",
+        "function": "probability_calibration_summary",
+        "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+      },
+      "function_sha256": "88071907a561b79ecd7560f38cfc90a50c4d1253aeeca23796210201b40f62bf",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "ProteinAliphaticIndex",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "8cf53eb5fb79ba1da5005d4f56faa55c37f5241081922d1f28b2707bc227eec0",
+      "source": {
+        "file": "tools/implementations/biology/sequence_indices.py",
+        "function": "protein_aliphatic_index",
+        "sha256": "16fd324668e1477375ccd1586b817d1d7022be3bba8179dcaaf036def0577d40"
+      },
+      "function_sha256": "c7d5a238c69dd4c178f4711f3a8c123f5fba92532883c079f6f32ec3bca82001",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "ProteinGRAVY",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "05ff151b8fe3661acbb7755ec6e12ab5ced72283397ff9ed1e3f4a12290ed2ad",
+      "source": {
+        "file": "tools/implementations/biology/protein_descriptors.py",
+        "function": "protein_gravy",
+        "sha256": "f604b7d3a9973d33e6d08d9d9e78fb01dceee34b5691e7f36e7b5d4fcba73170"
+      },
+      "function_sha256": "bf406a3036cb9fcc19979046a5afc5fb12bd13028bab164e16d681cae9d5bf62",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "ReadCrystalStructure",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "357c7a26ef66674d25015f562eebcf83bb6bed8407a8aa6b7ce6957ece423109",
+      "source": {
+        "file": "tools/implementations/materials/local_queries.py",
+        "function": "read_crystal_structure",
+        "sha256": "cc1b4865b66fdd89dd0e7fabc479884898fea55cc005509eccf726b5da233cc7"
+      },
+      "function_sha256": "099cffdf604b17003155505217e42f18dadeed8aa0e0cd43c567bdda263a3c21",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "ReadQChemFrequencyModes",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "7e24b2ec385a2f69157f08efab3246d81e19dc5fc4d352b5ff2bf639dd9043c0",
+      "source": {
+        "file": "tools/implementations/materials/material_queries.py",
+        "function": "read_qchem_frequency_modes",
+        "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+      },
+      "function_sha256": "098be2ad4e2db81862bdf22fcbb54ff5929f17459884f62dc5abf36ef043093a",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "ReadQChemIRIntensities",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "7acd351b2488b6b3830da5448f85647d5ae6584d9b34a723a2a2c31c809116de",
+      "source": {
+        "file": "tools/implementations/materials/material_queries.py",
+        "function": "read_qchem_ir_intensities",
+        "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+      },
+      "function_sha256": "d70dac65bcd2b658262d5f93de2f0a14027e11a8db0da7cf5d5ae8bfa2d4d594",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "ReadQChemNBOPopulations",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "e0c5881147e2779937adfb7858d476a1d277b04274e407c3663eabee9b6e9e51",
+      "source": {
+        "file": "tools/implementations/materials/material_queries.py",
+        "function": "read_qchem_nbo_population",
+        "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+      },
+      "function_sha256": "9f68cbc7bf12e9fd8990cee98303a1ab898af6411ffbabdb4af5b0a25e350bd5",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "ReadQChemRotationalEnthalpy",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "bce3b13d3cfac5cb40ff5958b8903f95a77b358e7dc049e47911f903afa3fabe",
+      "source": {
+        "file": "tools/implementations/materials/material_queries.py",
+        "function": "read_qchem_rotational_enthalpy",
+        "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+      },
+      "function_sha256": "ab69f3b80a87f93edd8b971f24ff6f3fe28b4e5f109553c6ddf666be1573453b",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "ReadQChemRotationalEntropy",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "5c80f7550e7048ec9551ad756ee7be60e8525d0c2e59c56a3ff99550db813a86",
+      "source": {
+        "file": "tools/implementations/materials/material_queries.py",
+        "function": "read_qchem_rotational_entropy",
+        "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+      },
+      "function_sha256": "bae1d228b5059501b3e95c7f0c3757c8724eca9db5df47011e58bb0a666101fa",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "ReadQChemTranslationalEnthalpy",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "9d1aeacabd34e9b2d2b80541b8ffb895c2995bafb1823f397cca91f0243629e7",
+      "source": {
+        "file": "tools/implementations/materials/material_queries.py",
+        "function": "read_qchem_translational_enthalpy",
+        "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+      },
+      "function_sha256": "848cce8d85618ff2a403bc3b7a6842f8d4e3baa9010eeea5c665012736f34c1d",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "ReadQChemTranslationalEntropy",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "c4f2b737ba7787d7a2f13e6059ad47d0d577fc50a7d97d84b67384985454607b",
+      "source": {
+        "file": "tools/implementations/materials/material_queries.py",
+        "function": "read_qchem_translational_entropy",
+        "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+      },
+      "function_sha256": "230576f4c49d7d98b2a2888ca3301cfa3ae08e7a18fdf0623616b06d26d1d2ef",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "ReadQChemVibrationalEnthalpy",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "99cdb7d36ca9da48dff4cfc140df8cd5c20e810eecaf37a51d17c4e2fa1d40e6",
+      "source": {
+        "file": "tools/implementations/materials/material_queries.py",
+        "function": "read_qchem_vibrational_enthalpy",
+        "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+      },
+      "function_sha256": "3c3512164e45344a97c16b0dfc3530519a3c10a5a49509f431f962ac40cd0514",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "ReadQChemVibrationalEntropy",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "d44df06bcbc2b923cfbbd714ef7b9a7e2a5d5b5ba156fe3529f03b09608493fb",
+      "source": {
+        "file": "tools/implementations/materials/material_queries.py",
+        "function": "read_qchem_vibrational_entropy",
+        "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+      },
+      "function_sha256": "3507fdd671ed25747c4a2f72b7705301568b299c964054cc84609dbf25469bdf",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "RegressionMetrics",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "91f394474e8494022498ce1b41e7a69bedf9c726ab02fe2ff762d566c8864984",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "regression_metrics",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "cde1213653204c0b024c79d3dc50ebb36b8d93a9faac94773e073c0938433c02",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "SMILESToInChI",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "8b09500a8e1671103c63319ca7f114a72e644079ea75fdc307f734e2799b81e6",
+      "source": {
+        "file": "tools/implementations/chemistry/molecular_utilities.py",
+        "function": "smiles_to_inchi",
+        "sha256": "adc1cd4726121eee2d1cab90068e77ee3cc86d50b6b206bf7dd780c54a358bfc"
+      },
+      "function_sha256": "eebca13dc9f648432cc1d352e7c5e2764e598c43e8f1df995b381e822c286026",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "SMILESToWeight",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "b9a6e48291676eabd056a1960932b3592cb73d770a0b7d7ec367ca1967e48efb",
+      "source": {
+        "file": "tools/implementations/chemistry/molecular_utilities.py",
+        "function": "average_molecular_weight",
+        "sha256": "adc1cd4726121eee2d1cab90068e77ee3cc86d50b6b206bf7dd780c54a358bfc"
+      },
+      "function_sha256": "2ae19a9c87c348c1164069072f9dfb6082ee0d4355b72d53ea397e92a9945e5e",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "ScaleNumericMatrix",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "b9c102cdc76083a1fba3ec0223e722df280582170eed93ccc6a6e990f588aec1",
+      "source": {
+        "file": "tools/implementations/general/matrix_scaling.py",
+        "function": "scale_numeric_matrix",
+        "sha256": "f80bd8eb958f4a8311faea93b560a1db13cfc4af6fa574db949a70e928692707"
+      },
+      "function_sha256": "41ff4e0fde426606495201bc869bc0ce67c9f09a085200800ef348d66e565777",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "SequenceComposition",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "7610ee7c81c39e3d26d4a2052a955a6ae9a27352aa2313005b794ce30f135890",
+      "source": {
+        "file": "tools/implementations/biology/sequence_primitives.py",
+        "function": "sequence_composition",
+        "sha256": "1f05c75f05c88b6642fffdee6cabfb4ad0a896b1439af8a12fcfd4bdb6a4c42f"
+      },
+      "function_sha256": "f775cce00bc510b70b0f69da262adf4de6f8f2b22883f5f75731aa21f1472f47",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "SequenceQualityMetrics",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "31742c74a397ff2f348e68d9718bf82b827649270276945711cde9061266c957",
+      "source": {
+        "file": "tools/implementations/biology/research_workflows.py",
+        "function": "sequence_quality_metrics",
+        "sha256": "788b2dc45d6fd024f78a7bf5e8f502a1b41f3924a2165e37acae01653868e7d8"
+      },
+      "function_sha256": "af7d06640c20590b0dbd309a3346f5f2e4b519b00960a41c4b44d3c1c92aa062",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "SolveLinearProgram",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "752ebe5a65375630318f6943516a793729e58e67c8e88e57b4459e90314ae9b1",
+      "source": {
+        "file": "tools/implementations/machine_learning/linear_program.py",
+        "function": "solve_linear_program",
+        "sha256": "a1408174fcd45282e21704a12b2119a7dc0ce1bfafb97536b3001c66f82b4c12"
+      },
+      "function_sha256": "276b22b8235c208198b8380da58ec64011fb573a6e97987900094eaedf81f812",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "SolveLinearSystem",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "91f7618c2e10ee47f5d37aab098f44ba4b8616a360243ebadeec8607b8f2143c",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "solve_linear_system",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "7bbe050dc5b564bd9f7eba8b4e512e56774ccdafc808193bd25fbb60ba28a2aa",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "SpearmanCorrelation",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "8507fac3bc0fbe5923bc2b9bdbe8740107a99f1708aa709859a097c519a25698",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "spearman_correlation",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "ed8302e74eb6d7c21470149930f7cdc4e158d6fa906fac917e95070b39e65162",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "StandardizeNumericFeatures",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "2c2966e0ca19a3cc04d16b5c0064ed2e57340277d53c1e6721308d902ad78115",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "standardize_numeric_features",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "715c8d6c1e7a3e0701c5a4e57cc29f29b258b061f1d7c9eb88da3c12aec8ba5d",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "SubstructureQuery",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "5a7b634eeef393f2e5859b5094b2c691027fd3f92477d7c92cd5da6de31e0cb0",
+      "source": {
+        "file": "tools/implementations/chemistry/molecular_analysis.py",
+        "function": "substructure_query",
+        "sha256": "7872e68bf250eee999aa03ed16e087935a205abb70598913dd13081ae7e3bab8"
+      },
+      "function_sha256": "3683735c8cddb133baf3463b95941361589af45fdb1defb9e60ab78ee2880ef1",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "SummarizeNumericTable",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "input_immutable": true,
+      "contract_sha256": "be4d304adc94b6e4f1d80dba7f9754a44befd6174a29043f86914242fed15de4",
+      "source": {
+        "file": "tools/implementations/general/research_workflows.py",
+        "function": "summarize_numeric_table",
+        "sha256": "179c7b9a1ee486a26079e0d4b4dd2ffc7ded374553d6c5b9df93aca8957a391f"
+      },
+      "function_sha256": "fb6bad857eb5c17847bbe12d7a3a199253501f9f13433caa7d46156ded9c1d7b",
+      "scope": "Local scientific calculation or read-only parser; independently isolated production workers/directories. Exact method/seed/source retained; no thread-safety or latency claim."
+    },
+    {
+      "tool": "SymmetricEigenDecomposition",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "335be25dcab4f1391a7742d9647cbd5873f1c3ef17e05f8b877d6edbb34729d9",
+      "source": {
+        "file": "tools/implementations/machine_learning/numeric_tools.py",
+        "function": "symmetric_eigen_decomposition",
+        "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+      },
+      "function_sha256": "305b6b7b50d4347f824e1a4279f52cf33b751d1e30fe97b6de8e16fb60fda840",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    },
+    {
+      "tool": "ThresholdClassProbabilities",
+      "status": "passed",
+      "two_real_process_calls": 2,
+      "overlapping_dispatch_windows": true,
+      "outputs_equivalent": true,
+      "contract_sha256": "b67645afed89b37e6c3fa7182175de75f90abf40855cc3f249f660cf14eb287d",
+      "source": {
+        "file": "tools/implementations/machine_learning/research_workflows.py",
+        "function": "threshold_class_probabilities",
+        "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+      },
+      "function_sha256": "9a8892fcf971801451b02427b33307f11b438dd1ae6fcdbbf110e19f1870778a",
+      "scope": "Local read-only or pure numeric/graph operation in independently isolated worker processes; no latency improvement claim."
+    }
+  ],
+  "scope": "Generic local scientific tools. Remote-provider theoretical pI modes were not granted new parallel permission. Numerical source/contract identities reviewed and independent production worker overlap checked; no speedup claim.",
+  "successful_validation_calls": 158,
+  "reviewed_on": "2026-11-05",
+  "generation_api_used": false
+}

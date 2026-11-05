@@ -1,0 +1,50 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "observations": [
+        [
+          1.309,
+          2.138
+        ],
+        [
+          1.471,
+          3.421
+        ],
+        [
+          1.49,
+          3.597
+        ],
+        [
+          1.565,
+          4.34
+        ],
+        [
+          1.611,
+          4.882
+        ],
+        [
+          1.68,
+          5.66
+        ]
+      ],
+      "column_order": [
+        "x",
+        "y"
+      ],
+      "analysis_policy": "Compare native-response unweighted power-law least squares y=a*x**b with ordinary least squares of log(y) on intercept+log(x),back-transforming by exp without a smearing factor. The scientific target is squared error in original energy response units. Suggested native start a0.7,b4; do not compare R-squared across response scales.",
+      "units": "x=absolute temperature in1000K; y=source radiated energy per cm\u00b2 per second,source energy unit unspecified.",
+      "source_provenance": {
+        "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/DanWood.dat",
+        "raw_sha256": "5eae83de8b34e34c631a5738d640183b0628913e728437ae77f066e832186e24",
+        "read_scope": "Dataset description,variable definitions,observed rows and declared family; certified result block is never exported to public task assets.",
+        "source_kind": "US NIST Statistical Reference Datasets public observations; original study reference retained in source",
+        "reuse": "Attributed public numeric reference data; no claim of authorship or endorsement"
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

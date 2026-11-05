@@ -1,0 +1,512 @@
+{
+  "SMAS-0011": {
+    "actor_id": "/root/stratified_0011_resume",
+    "contributors": [
+      {
+        "id": "/root/stratified_0011",
+        "decisions": "1-5"
+      },
+      {
+        "id": "/root/stratified_0011_resume",
+        "decisions": "6 to completion"
+      }
+    ],
+    "restart_reason": "Network interruption; fresh actor resumed only the public ReAct request history."
+  },
+  "SMAS-0031": {
+    "actor_id": "/root/stratified_0031_resume",
+    "contributors": [
+      {
+        "id": "/root/stratified_0031_resume",
+        "decisions": "all"
+      }
+    ],
+    "restart_reason": "Network interruption before the first actor decision."
+  },
+  "SMAS-0054": {
+    "actor_id": "/root/final_reference_0054_retry",
+    "attempt": 2,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0055": {
+    "actor_id": "/root/final_reference_0055_retry",
+    "attempt": 2,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0056": {
+    "task_id": "SMAS-0056",
+    "actor_id": "/root/special100_references/solve_0056",
+    "actor_dir": "results/special100_work/native/SMAS-0056/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793846491.1450307,
+    "report": "SMAS-0056 completed; finished.json confirms completion and candidate stored for parent review. All requested calculations used broker tools. No scientific issues.",
+    "attempt": 1
+  },
+  "SMAS-0057": {
+    "task_id": "SMAS-0057",
+    "actor_id": "/root/special100_references/solve_0057",
+    "actor_dir": "results/special100_work/native/SMAS-0057/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793846511.4468634,
+    "report": "SMAS-0057 completed; finished.json confirms completion with no failure. All 20 scientific calls succeeded. Convention differences reported without experimental or pH inference.",
+    "attempt": 1
+  },
+  "SMAS-0058": {
+    "task_id": "SMAS-0058",
+    "actor_id": "/root/special100_references/solve_0058",
+    "actor_dir": "results/special100_work/native/SMAS-0058/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793846581.580272,
+    "report": "SMAS-0058 completed; finished.json confirms completion. All three EEM inventories align with explicit-H counts (9, 9, 3); charge residuals are zero within numerical precision. No scientific issues.",
+    "attempt": 1
+  },
+  "SMAS-0059": {
+    "actor_id": "/root/final_reference_0059",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0060": {
+    "actor_id": "/root/final_reference_0060",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0061": {
+    "task_id": "SMAS-0061",
+    "actor_id": "/root/special100_references/solve_0061",
+    "actor_dir": "results/special100_work/native/SMAS-0061/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793846823.4779627,
+    "report": "SMAS-0061 completed; finished.json confirms candidate stored for parent review. No scientific issues. Correlation: 0.8911515110528975. Constant donor feature correctly standardized to zero; association remains descriptive for this five-graph panel.",
+    "attempt": 1
+  },
+  "SMAS-0062": {
+    "task_id": "SMAS-0062",
+    "actor_id": "/root/special100_references/solve_0062",
+    "actor_dir": "results/special100_work/native/SMAS-0062/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793846793.5889137,
+    "report": "SMAS-0062 completed; finished.json confirms candidate stored for parent review. All PMI-derived ratios agree with independent normalized moments. USRCAT used seed42, explicit hydrogens, and no optimization. No scientific issues.",
+    "attempt": 1
+  },
+  "SMAS-0063": {
+    "actor_id": "/root/final_reference_0063_retry",
+    "attempt": 2,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0064": {
+    "actor_id": "/root/final_reference_0064",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0065": {
+    "task_id": "SMAS-0065",
+    "actor_id": "/root/special100_references/solve_0065",
+    "actor_dir": "results/special100_work/native/SMAS-0065/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793847390.4073267,
+    "report": "SMAS-0065 completed; finished.json confirms candidate stored for parent review. No scientific issues. Coordination: a=[0,8,8,14], b=[0,0,12,12]; difference=[0,-8,4,-2]. Integrals: a=6.9,b=5.4. Gradients computed with registered numpy-gradient tool, first-order boundaries.",
+    "attempt": 1
+  },
+  "SMAS-0066": {
+    "task_id": "SMAS-0066",
+    "attempt": 2,
+    "actor_id": "/root/special100_references/solve_0066_attempt2",
+    "actor_dir": "results/special100_work/native/SMAS-0066/attempt_2/actor",
+    "status": "completed",
+    "updated_at": 1793850418.0840535,
+    "sampling_restriction": "dedicated tools; no ExecuteNumericalCode, CodeInterpreterTools, PaperQA",
+    "report": "SMAS-0066 attempt2 completed; finished confirms stored for parent review. Selected a. Corrected RMSEs a0.15572952133053938,b0.785965126639495,c1.5322536348208708(o004–o006). Lines o001–o003 at1.5406A,5–100deg;weak nonzero c lines retained. No scientific issues."
+  },
+  "SMAS-0067": {
+    "task_id": "SMAS-0067",
+    "actor_id": "/root/special100_references/solve_0067",
+    "actor_dir": "results/special100_work/native/SMAS-0067/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793847481.6590996,
+    "report": "SMAS-0067 completed; finished.json confirms completion and candidate stored for parent review. All requested fields supported by broker observations o001–o009. No scientific issues; interpreted only as a static endpoint ensemble, without diffusion inference.",
+    "attempt": 1
+  },
+  "SMAS-0068": {
+    "actor_id": "/root/final_reference_0068",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0069": {
+    "task_id": "SMAS-0069",
+    "actor_id": "/root/special100_references/solve_0069",
+    "actor_dir": "results/special100_work/native/SMAS-0069/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793847575.1236176,
+    "report": "SMAS-0069 completed; finished.json confirms candidate stored for parent review. No scientific tool failures. Labels: a consistent despite unreduced formula; b inconsistent element inventory; c inconsistent atomic ratio.",
+    "attempt": 1
+  },
+  "SMAS-0070": {
+    "task_id": "SMAS-0070",
+    "attempt": 2,
+    "actor_id": "/root/special100_references/solve_0070_attempt2",
+    "actor_dir": "results/special100_work/native/SMAS-0070/attempt_2/actor",
+    "status": "completed",
+    "updated_at": 1793850522.5321586,
+    "sampling_restriction": "dedicated tools; no ExecuteNumericalCode, CodeInterpreterTools, PaperQA",
+    "report": "SMAS-0070 attempt2 completed; finished confirms completed/no failure. Registered Q-Chem readers,MatrixMultiply,SymmetricEigenDecomposition. Source hashes match;printed ordering preserved. Rounded modes not orthonormal in either metric. No scientific issues."
+  },
+  "SMAS-0071": {
+    "actor_id": "/root/final_reference_0071",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0072": {
+    "actor_id": "/root/final_reference_0072",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0073": {
+    "actor_id": "/root/final_reference_0073_retry",
+    "attempt": 2,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0074": {
+    "task_id": "SMAS-0074",
+    "actor_id": "/root/special100_references/solve_0074",
+    "actor_dir": "results/special100_work/native/SMAS-0074/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793847886.6892693,
+    "report": "SMAS-0074 completed; broker confirmed status completed and candidate stored for parent review. Both winner arrays are [c]. All requested fields derive from registered observations o001–o012 and simple arithmetic. No scientific issues identified; results describe static supplied-cell packing only.",
+    "attempt": 1
+  },
+  "SMAS-0075": {
+    "task_id": "SMAS-0075",
+    "actor_id": "/root/special100_references/solve_0075",
+    "actor_dir": "results/special100_work/native/SMAS-0075/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793847927.3612258,
+    "report": "SMAS-0075 completed; finished.json confirms completed with no failure. All three methods and endpoints reported using registered tools (o001–o012), 1000 resamples, seed 19. All weighted lower bounds are positive. Intervals remain marginal; resampling does not establish independent quadrats.",
+    "attempt": 1
+  },
+  "SMAS-0076": {
+    "actor_id": "/root/final_reference_0076",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0077": {
+    "task_id": "SMAS-0077",
+    "actor_id": "/root/special100_references/solve_0077",
+    "actor_dir": "results/special100_work/native/SMAS-0077/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793848013.1138303,
+    "report": "SMAS-0077 completed; finished.json confirms completion and candidate stored for review. No scientific issues. Observed richness winner: b; finite n8 rarefaction winner: a. All requested fields supported by broker observations o001–o008.",
+    "attempt": 1
+  },
+  "SMAS-0078": {
+    "actor_id": "/root/final_reference_0078",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0079": {
+    "task_id": "SMAS-0079",
+    "actor_id": "/root/special100_references/solve_0079",
+    "actor_dir": "results/special100_work/native/SMAS-0079/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793848081.5223074,
+    "report": "SMAS-0079 completed; broker confirmed status completed with no failure. All statistics used same six joint complete cases in row order. Four correlations and both seed23,1000-resample percentile bootstraps succeeded. No scientific issues encountered.",
+    "attempt": 1
+  },
+  "SMAS-0080": {
+    "actor_id": "/root/final_reference_0080",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0081": {
+    "task_id": "SMAS-0081",
+    "attempt": 2,
+    "actor_id": "/root/special100_references/solve_0081_attempt2",
+    "actor_dir": "results/special100_work/native/SMAS-0081/attempt_2/actor",
+    "status": "completed",
+    "updated_at": 1793850906.004341,
+    "sampling_restriction": "dedicated tools; no ExecuteNumericalCode, CodeInterpreterTools, PaperQA",
+    "report": "SMAS-0081 attempt2 completed; finished confirms stored for parent review. No scientific issues. Original c rejected canonical fraction0.8333333333333334;alignment fields null. Eligible a/b/d forward/reverse24/6,6/24,18/4.5."
+  },
+  "SMAS-0082": {
+    "actor_id": "/root/final_reference_0082",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0083": {
+    "task_id": "SMAS-0083",
+    "actor_id": "/root/special100_references/solve_0083",
+    "actor_dir": "results/special100_work/native/SMAS-0083/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793848427.3099797,
+    "report": "SMAS-0083 completed; finished.json confirms candidate stored for parent review. All fields use broker observations. Proper core RMSD A–B 6.1405455e-08 equivalent, A–C 0.06301987 not equivalent. B lacks observed residue3; no coordinates invented. Full-record centroids used every parsed atom. No scientific issues.",
+    "attempt": 1
+  },
+  "SMAS-0084": {
+    "actor_id": "/root/final_reference_0084",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0085": {
+    "actor_id": "/root/final_reference_0085",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0086": {
+    "actor_id": "/root/final_reference_0086",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0087": {
+    "actor_id": "/root/final_reference_0087",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0088": {
+    "actor_id": "/root/final_reference_0088",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0089": {
+    "actor_id": "/root/final_reference_0089",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0090": {
+    "actor_id": "/root/final_reference_0090",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0091": {
+    "actor_id": "/root/final_reference_0091",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0092": {
+    "actor_id": "/root/final_reference_0092",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0093": {
+    "task_id": "SMAS-0093",
+    "attempt": 1,
+    "actor_id": "/root/special100_references/solve_0093",
+    "actor_dir": "results/special100_work/native/SMAS-0093/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793849286.8151138,
+    "sampling_restriction": "dedicated tools; no ExecuteNumericalCode, CodeInterpreterTools, PaperQA",
+    "report": "SMAS-0093 completed; finished.json confirms completion. Joint critical1.3333333333; only endpoint a rejects. Marginal p-values[0.03125,0.03125,1]. All64 shared-row sign assignments used in registered enumeration order. No scientific issues."
+  },
+  "SMAS-0094": {
+    "task_id": "SMAS-0094",
+    "attempt": 1,
+    "actor_id": "/root/special100_references/solve_0094",
+    "actor_dir": "results/special100_work/native/SMAS-0094/attempt_1/actor",
+    "status": "completed",
+    "updated_at": 1793849418.1434658,
+    "sampling_restriction": "dedicated tools; no ExecuteNumericalCode, CodeInterpreterTools, PaperQA",
+    "report": "SMAS-0094 completed; finished.json confirms completion. Dedicated tools yielded worst risks[2.41,0.25,0.908], independently verified by witnesses; nominal risks[0.211,0.25,0.908]. Robust selects b; nominal selects a. No scientific issues."
+  },
+  "SMAS-0095": {
+    "actor_id": "/root/final_reference_0095",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0096": {
+    "actor_id": "/root/final_reference_0096",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0097": {
+    "actor_id": "/root/final_reference_0097",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0098": {
+    "actor_id": "/root/final_reference_0098",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0099": {
+    "actor_id": "/root/final_reference_0099",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0100": {
+    "actor_id": "/root/final_reference_0100",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0008": {
+    "actor_id": "/root/final_reference_0008",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Only own public actor directory and registered broker; no APIs, answers, source, other tasks or local scientific scripts."
+  },
+  "SMAS-0051": {
+    "actor_id": "/root/special100_0051",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "status": "completed"
+  },
+  "SMAS-0052": {
+    "actor_id": "/root/special100_0052",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "status": "completed"
+  },
+  "SMAS-0053": {
+    "actor_id": "/root/special100_0053",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "status": "completed"
+  },
+  "SMAS-0028": {
+    "actor_id": "/root/final_reference_0028",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Only own public actor directory and registered broker; no APIs, answers, source, other tasks or local scientific scripts."
+  },
+  "SMAS-0032": {
+    "actor_id": "/root/final_reference_0032_retry",
+    "attempt": 2,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0033": {
+    "actor_id": "/root/final_reference_0033",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Only own public actor directory and registered broker; no APIs, answers, source, other tasks or local scientific scripts."
+  },
+  "SMAS-0034": {
+    "actor_id": "/root/final_reference_0034",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Only own public actor directory and registered broker; no APIs, answers, source, other tasks or local scientific scripts."
+  },
+  "SMAS-0037": {
+    "actor_id": "/root/final_reference_0037",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0014": {
+    "actor_id": "/root/final_reference_0014",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no APIs,gold,evaluation,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0016": {
+    "actor_id": "/root/final_reference_0016",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no APIs,gold,evaluation,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0017": {
+    "actor_id": "/root/final_reference_0017",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no APIs,gold,evaluation,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0040": {
+    "actor_id": "/root/final_reference_0040",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no APIs,gold,evaluation,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0020": {
+    "actor_id": "/root/final_reference_0020",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0021": {
+    "actor_id": "/root/final_reference_0021",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0022": {
+    "actor_id": "/root/final_reference_0022",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  },
+  "SMAS-0023": {
+    "actor_id": "/root/final_reference_0023",
+    "attempt": 1,
+    "model": "gpt-6.1-sol",
+    "fork_turns": "none",
+    "scope": "Own public actor directory and broker only; no model APIs,evaluators,gold,source,other tasks or local scientific algorithms."
+  }
+}

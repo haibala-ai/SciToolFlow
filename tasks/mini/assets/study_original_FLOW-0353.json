@@ -1,0 +1,19 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "initial_known_residents": 100,
+  "subsequent_observation_occasions": 2,
+  "resident_detection_probability_each_occasion": 0.5,
+  "expected_encounter_history_counts": {
+    "11": 16.0,
+    "10": 24.0,
+    "01": 16.0,
+    "00": 44.0
+  },
+  "history_definition": "Two characters indicate whether an individual was detected at each subsequent occasion. The initial resident cohort is known independently. Fractional/proportional counts here are exact controlled model expectations, not a finite realized sample likelihood fit.",
+  "state_model": "Between each occasion a live resident survives with unknown S,then permanently leaves the observation region with conditional probability e. Only live residents can be detected; those residents are independently detected with known p at each occasion. A permanent emigrant never returns or produces an encounter, just like a dead individual. S and e are constant over both intervals,independent across individuals,0<=S,e<=1. Apparent resident survival is phi=S*(1-e).",
+  "target": "Use all supplied expected histories to check the common phi and report sharp marginal feasible intervals for S and e over the full compatible parameter set. True survival.9is a proposed value to test,not an external calibration.",
+  "scope": "Apparent survival versus permanent emigration nonidentifiability; no mortality mechanism or live-individual tracking procedure is inferred."
+}

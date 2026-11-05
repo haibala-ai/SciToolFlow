@@ -1,0 +1,1751 @@
+{
+  "files": {
+    "SMAS-0001-records.json": {
+      "sha256": "42ecbb73ca57f231db3fc23f33477e6d8ffabd715e36db50658034c2e7f25a18",
+      "bytes": 203,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0002-records.json": {
+      "sha256": "578b833c99435cfbf1a19965606b15e8aff2b151ab8953ce249dfd1a06198049",
+      "bytes": 192,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0003-records.json": {
+      "sha256": "ccba61e47817011e646b1247d8c7b234292e813b5972cea89d50912d9b0eb431",
+      "bytes": 221,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0004-study.json": {
+      "sha256": "8fe243a70533a96aa129747ac046fbb4bc25a59ec077b9e6b72dd068478290dd",
+      "bytes": 93,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0005-study.json": {
+      "sha256": "3dc32df6655a3e9f72dea5d9b7bb956c2189decd5cfc40fb55812e58c6829d45",
+      "bytes": 75,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0006-study.json": {
+      "sha256": "763260babcd21bbf7432f47c270ac788d8624110c6138bee0f2ce2ae142d0ac7",
+      "bytes": 102,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0007-study.json": {
+      "sha256": "eb9a21595f3dd264f1f4ed68087f2677ec1129b92c5abe197cb948565ec99dcc",
+      "bytes": 73,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0008-study.json": {
+      "sha256": "49f3a1b6f77bfc350a5299d36814a7dae5ba977cf7aabc6e4ec3046676cb3e3e",
+      "bytes": 91,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0009-study.json": {
+      "sha256": "0e95e581fce0df84bcddac2143f0ec867285a94dfafefd1a1dc83aed60ab272b",
+      "bytes": 86,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0010-study.json": {
+      "sha256": "ebd6edae6b578df8531cd4e64ba77631c8aa81bb3ab43cea1f6148a48fac97ff",
+      "bytes": 85,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0011-study.json": {
+      "sha256": "b74dc3fb73c23ff1d532d2ff5a3b4b1ad62757a6c05631ec8e84fd97446e48f3",
+      "bytes": 73,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0012-records.json": {
+      "sha256": "fb76a6811e1e2670d2247ea3e5023a511b6ed08e617ec8c680a75a079a9e3a1f",
+      "bytes": 256,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0013-records.json": {
+      "sha256": "b5ae50361344a7f474eae685fa3703b9299bf4c77c893ac9ad4286bef6f610ee",
+      "bytes": 199,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0014_doubled_B2.cif": {
+      "sha256": "8f61c3d7f497e139446a703fa44b6433cea0d2a492521d081bb85ffdbfdf4e4f",
+      "bytes": 455,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0014_primitive_B2.cif": {
+      "sha256": "13578a929d33a13c0383fc5577e2d426761ceb75c9b8c27e6f0e1545947f989e",
+      "bytes": 413,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0014_tetragonal_B2.cif": {
+      "sha256": "3f904cb219455eae7e024f2f9d0e4fbb4ad8d70a19dd2f523edc7393d6084c60",
+      "bytes": 414,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0015_ideal.cif": {
+      "sha256": "01c36d3d81e361a1b7ca1b5f952854e055adc05ea89181f52f9b3896652b4c1b",
+      "bytes": 464,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0015_oxygen_displaced.cif": {
+      "sha256": "528818641a7071c5e8740b8a4c3e69dbc030a7b0e92abe9f0a2c0749113288dd",
+      "bytes": 472,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0016_average_disorder.cif": {
+      "sha256": "225259765a82775d95da437c4ab661952b974b193f3dbaf8c0b90314bd72e5c0",
+      "bytes": 487,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0016_ordered_A.cif": {
+      "sha256": "74b9e08b419e2a148bfa50fa7147e9646405f5ad230fe35877547a8e66ef5698",
+      "bytes": 447,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0016_ordered_B.cif": {
+      "sha256": "69252e0d9fc68043c5a5435f4623198dd7de84257d5b161cf8df72413c8d5155",
+      "bytes": 447,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0017_bcc_Fe.cif": {
+      "sha256": "aefc3a5f822f1ade9141be3f047683e0783ad4ef7f1d463bf54200f8fd318b4c",
+      "bytes": 416,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0017_fcc_Fe.cif": {
+      "sha256": "6eddcd9a437c5408deaceeaccdc6879d2c52a9499cb19289658c5d02d5e6d42d",
+      "bytes": 491,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0018_diamond.cif": {
+      "sha256": "2ce778f42a9a3b3b5efcbd1b850e35bfc53d15ce1ea62606b3be6a7147be3c16",
+      "bytes": 535,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0018_layered_carbon.cif": {
+      "sha256": "4ea283cd75602fa3092a30d09d43cade19e97b799f823957d53847819c9bc875",
+      "bytes": 504,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0019_LiCoO2.cif": {
+      "sha256": "5ede24760f8df4543877cd9143f6db218ad799d9cf128677445b769293f1b081",
+      "bytes": 511,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0019_LiNiO2.cif": {
+      "sha256": "dda9ad35c1c8f3f2937f9ce5e39d9dd03afa5568672bb459025f4b0c7151180e",
+      "bytes": 511,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0019_NaCoO2.cif": {
+      "sha256": "b5b8325db7c817aed3501f3173b18432c93003fd121a60c58efd65f528ba58e3",
+      "bytes": 511,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0020_reference.cif": {
+      "sha256": "0601f5a026b5d2450ac997bcfaee888dc9b96a61790f995d5423b6bf147fc439",
+      "bytes": 434,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0020_unwrapped_mobile.cif": {
+      "sha256": "9f588d467626de83226a38e626f87748145d60766edb630c14c13731bf04b693",
+      "bytes": 436,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0020_wrapped_mobile.cif": {
+      "sha256": "8a6b2fd9f4a67f2e9a2199c94b6bd53bc8a0b16f274c4169fb81b57882992d51",
+      "bytes": 436,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0021_half_cell.cif": {
+      "sha256": "e085b23a5d69556073eb5145edecf1d2fc6899f13c09c4b619080c510aabb559",
+      "bytes": 410,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0021_near_half_cell.cif": {
+      "sha256": "6f212054d04a9109a6ae7f0dd57f7042a24f2a501d49e4b852491c418e6ee5c6",
+      "bytes": 412,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0021_reference.cif": {
+      "sha256": "1f2562f6ca368567aabde688d3d536aac1596a8c8eefc27d806fb59415604eef",
+      "bytes": 407,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0022_oblique_basis.vasp": {
+      "sha256": "2e6bfbdfb64c8b622b29581c76ba7dc38338cee5607a5444dc88147ecc8c0bdb",
+      "bytes": 72,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0022_reduced_basis.vasp": {
+      "sha256": "6d8bc09f410c01cd5bdf5b6780940f700cdbd4acb4d7c39f7e748082ede355d6",
+      "bytes": 72,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0023_isotropic_compression.cif": {
+      "sha256": "80af8635ea3308fed68c5d6cb2b3c133975324c41406720622113fa8d293a468",
+      "bytes": 414,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0023_orthorhombic_strain.cif": {
+      "sha256": "b1e7d0dbe11dbea975f2fe26a091e2b7cc2fae0d6455e57d7c862ff65ffcbae3",
+      "bytes": 413,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0023_reference.cif": {
+      "sha256": "04f8f1a815a7f81f2bf42ca90b9ce50714dc9e650c88b5f9ca754c363e1bd56c",
+      "bytes": 411,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0024_CaO.cif": {
+      "sha256": "8885ed0cfce8c8ea579152571a63e802a222ad0fee3718b3657f2d90ffed250d",
+      "bytes": 516,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0024_MgO.cif": {
+      "sha256": "f2e8648bda358389b8e5d7dcf3fde988c79d138b8aafa60652a923edf7ed3adc",
+      "bytes": 516,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0024_MgS.cif": {
+      "sha256": "10c76a56c30d34299f0eae976bfd65a17fd5edf8b9715719d0d25a0fd183f708",
+      "bytes": 513,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0025_Ca_substitution.cif": {
+      "sha256": "56640c0545d463e0a73f491a16dc9759d17477f5ae16c490fff69f37f5cc24a9",
+      "bytes": 516,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0025_paired_vacancy.cif": {
+      "sha256": "d8efdfb15526594f2cd645a645d76ca60c5946ce7c62ad5f56a4aa2cb83bb9dc",
+      "bytes": 486,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0025_perfect.cif": {
+      "sha256": "f2e8648bda358389b8e5d7dcf3fde988c79d138b8aafa60652a923edf7ed3adc",
+      "bytes": 516,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0026_CsCl.cif": {
+      "sha256": "b907d249482f530ec8147602dfc41fc3184ef192b2505cca80e1a80872ec5217",
+      "bytes": 416,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0026_NaCl.cif": {
+      "sha256": "e65abac44a50a1ebe3893ead3aa11a5afe7ea39b59b06ac4a99249b4af365719",
+      "bytes": 524,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0027_study.json": {
+      "sha256": "51e2ad00ca181d37aead9e40337a6e726c74c087e418efaad6e6a9686c02862f",
+      "bytes": 511,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0028_study.json": {
+      "sha256": "58b9bf308579d83099851b2d44cea47f509e67d98410544669adab8c1581e11b",
+      "bytes": 719,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0029_study.json": {
+      "sha256": "b7f606062b5a015f2857b35b0bcfba35ad6cb58d247b8334b531dfa01651e432",
+      "bytes": 604,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0030-study.json": {
+      "sha256": "3e50ff50d2a811f9d59a5493acb5e1adc2cbbc02f3f34b5ee80a9af28ca500ec",
+      "bytes": 604,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0031-study.json": {
+      "sha256": "94e6d74213e946a7e85e085b13adb4ff34927fdd220b90d9ada7fe9fd0e786cf",
+      "bytes": 363,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0032-study.json": {
+      "sha256": "71e3bd4caf0cb1bc9aacfc05daaefb70a55b2a48a4ed065da062e0102e952811",
+      "bytes": 355,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0033-study.json": {
+      "sha256": "5605ff5556c699a9861bb865bb27c2267d02baf1c4012d2d4e328ef48cc31e6f",
+      "bytes": 463,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0034-study.json": {
+      "sha256": "39e1dd02db9d51e5124b7618df886132e4299cf3cd7e4f38e15a482a3ae519e4",
+      "bytes": 650,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0035_study.json": {
+      "sha256": "e2963e6a9fa99fabc139842f00fefe70529e7945254ae8f8a65e3b3e5b278f1a",
+      "bytes": 143,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0036_study.json": {
+      "sha256": "ef8443142d8617b508602dc5f3858c5df3f6faae27ef2e73613aabf7e72aec26",
+      "bytes": 141,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0037-study.json": {
+      "sha256": "14e68fe2bf6ef14d42d91ef91cb0807d5f0033ccd873fdf5b7d8a0d2d4f9d1ed",
+      "bytes": 262,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0038-study.json": {
+      "sha256": "9d38c460f741c8517d74b1a3fb2789c534682f332a448bfc0152bdf542cb62cf",
+      "bytes": 473,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0039-study.json": {
+      "sha256": "40c7b90539dad0f8fd55329c18aa45fc21990b50a94e9440269292dda1e2f414",
+      "bytes": 682,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0040-study.json": {
+      "sha256": "e4c865bc36d8a2505ca2a2059a8824eb657dc5f3e07a935b94e1deb3ae228dcc",
+      "bytes": 320,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0041-study.json": {
+      "sha256": "d9efc6bd849013ab5ce887d79db3eab3a8c7a5a45d1a87805e4c458bd6a94ca6",
+      "bytes": 330,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0042-study.json": {
+      "sha256": "1cdeb7468c9fd387002c22fc1c7415015bbe6149ba8d65241e6294e941a05954",
+      "bytes": 302,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0043-study.json": {
+      "sha256": "53d4f282087799a8f60c42455567405bb9c053f5377597c1b9287b9e1dc7fe6e",
+      "bytes": 501,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0044-study.json": {
+      "sha256": "68c9572d30e94476a761b1d485555fb0f6a66f7a72cf7aab3d020f3e102ba8ca",
+      "bytes": 332,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0045-study.json": {
+      "sha256": "7aeae69b343a4f6e182d732735e8df01c43caa1f57cef92124a5fb7f94bf83ba",
+      "bytes": 242,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0046-study.json": {
+      "sha256": "5bc4f971bf3286ff3034ca1078ae5b71699e3857f1eff2ebd21a5f5dcdee67d4",
+      "bytes": 217,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0047-study.json": {
+      "sha256": "ab2b69bf415bd5748e04cfc50bf40fc0cec20617047c6a444937b4c298e642b1",
+      "bytes": 449,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0048-study.json": {
+      "sha256": "e6d2679616de36cfc803af4f865292a61e281397dabfa0c0f638dea6f632d739",
+      "bytes": 126,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0049-study.json": {
+      "sha256": "a6257a830377179c95a1abf7bc4bdee7f740d2c5dd1779c929a951a298f07451",
+      "bytes": 644,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0050-study.json": {
+      "sha256": "358313a2ca3db9d66bcc0d3c83933068700c4daecca6af08f80f1f1a88a33a31",
+      "bytes": 336,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0051-study.json": {
+      "sha256": "745bd197c74c2ab4e12156c01bab4969635cb022ee6f3afcfdf769ecd10d673b",
+      "bytes": 94,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0052-study.json": {
+      "sha256": "98a0f05a3462a01393baadc0ac58edcc4f664cf9d9b4ae343e227e26102a7f0f",
+      "bytes": 108,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0053-study.json": {
+      "sha256": "03f6ff2d9455f7825f4efb83280c86c683c2cec6aaa7b157e91972eaceab0a2d",
+      "bytes": 63,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0054-study.json": {
+      "sha256": "4be26bff77219f05b4d8ad2b533db21c7da4d5e949d55be0d359111bef7083a2",
+      "bytes": 1297,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0054_controls.sdf": {
+      "sha256": "b3a1316c43aa8a19eeb10091c168234ea1f3a0a33d9c16fffb885ab74599517a",
+      "bytes": 1920,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0055-study.json": {
+      "sha256": "ed36c4587689e39ee2b8b08c05d2b02e742c826c9bc45bd5d285f66653ff88f7",
+      "bytes": 63,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0056-study.json": {
+      "sha256": "6b44141a59a2c6735495a4d9b690372a52f1e60df35fc9b10cae29a47a61cf77",
+      "bytes": 121,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0057-study.json": {
+      "sha256": "90a46a502f2be2dd066011db079996067a22076714ca194697042c4d635e964d",
+      "bytes": 91,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0058-study.json": {
+      "sha256": "94d95a63b3c4c9cb4f0b24853519612b539671aeae07f00708deeced86e4bbd0",
+      "bytes": 56,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0059-study.json": {
+      "sha256": "3416fa05fe329005e1b37aaa1f99204b3889a15eda755e3d865c445dbb370978",
+      "bytes": 80,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0060-study.json": {
+      "sha256": "22c214f54c1c95b37d83dcdb7d4a956af5b4c40f44f806ef8bbec8f545c71a12",
+      "bytes": 80,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0061-study.json": {
+      "sha256": "6c8b2366604a0f878bad424de16542729bb307f95b0a6dbace9b14397a0908e7",
+      "bytes": 91,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0062-study.json": {
+      "sha256": "b0220e9ba523d55e11394f044494b5fc012605078005fb8fc4d016d831dcf9cb",
+      "bytes": 64,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0063-study.json": {
+      "sha256": "2bad8d8e6c8c5e07a9542c0684b2c50a5db7fdd96a0933bffd5f0bf9119e9888",
+      "bytes": 158,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0063_a.cif": {
+      "sha256": "41563fdb818da8ab0ffbe94ef45679844885dbfa101fb75bdb41f752fee5cada",
+      "bytes": 416,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0063_b.cif": {
+      "sha256": "8c4403aa846560413a53c4542040ddadf36bd9764f15ce90b9567864f2f383ce",
+      "bytes": 414,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0063_c.cif": {
+      "sha256": "d79766cf41199be0d60909946938a09ec5b740a89ee5b0b49ac0b4bd8a67ef4c",
+      "bytes": 414,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0064-study.json": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "bytes": 3,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0064_0.cif": {
+      "sha256": "a6fd636b203bfe2a72f3dd4cc116c3c64c01f0a81e043f3b85f066870863f5b1",
+      "bytes": 413,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0064_1.cif": {
+      "sha256": "2cdb7ca98d03a89cdc3eb2cc096c68602c33e0de77e69eac511828399717b2e5",
+      "bytes": 413,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0064_2.cif": {
+      "sha256": "310df00d85b262086e06c7dac092242716f24bafe910aa460d27aa1edeab8732",
+      "bytes": 413,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0064_3.cif": {
+      "sha256": "554782e05e9fdd563148e6e71f0e4b95ff9631a576a3ae9b98b38226b3513cc4",
+      "bytes": 413,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0064_4.cif": {
+      "sha256": "eab4a41991259a29b3323f27f9657c134e50a922bbec834c340b212ca8c69afa",
+      "bytes": 413,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0065-study.json": {
+      "sha256": "b8cf9094d263ffe603cdde2a7b07151662e31474e2676c8115ff799f61a79cb3",
+      "bytes": 56,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0065_bcc.cif": {
+      "sha256": "aefc3a5f822f1ade9141be3f047683e0783ad4ef7f1d463bf54200f8fd318b4c",
+      "bytes": 416,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0065_fcc.cif": {
+      "sha256": "6eddcd9a437c5408deaceeaccdc6879d2c52a9499cb19289658c5d02d5e6d42d",
+      "bytes": 491,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0066-study.json": {
+      "sha256": "53d5c0d28d531390128fd56bdb3a554df46afab3ac4689880087870788c8c26e",
+      "bytes": 53,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0066_a.cif": {
+      "sha256": "13578a929d33a13c0383fc5577e2d426761ceb75c9b8c27e6f0e1545947f989e",
+      "bytes": 413,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0066_b.cif": {
+      "sha256": "1002e35be5a9ab0b18e17214bc415f2a7535a722241a0c215bf2d9bd50065d22",
+      "bytes": 413,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0066_c.cif": {
+      "sha256": "4ed3adcd6f4779e06f2d1fc026bcb72cbacf07436b2a5465f814c5484550e064",
+      "bytes": 411,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0067-study.json": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "bytes": 3,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0067_0.vasp": {
+      "sha256": "89152b891730163301761bfd780cec199cb13ed229e1c3e0835687abe63d4e03",
+      "bytes": 138,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0067_1.vasp": {
+      "sha256": "41d4cc2cbaf325f9ad0b234b94927b5843691413c0fa510f1a393ba0a5c3d7f4",
+      "bytes": 121,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0067_2.vasp": {
+      "sha256": "9e7c450a0453e9122d1d771fe36195c2e6d3ffca32b90c0081f4088c9c5c103b",
+      "bytes": 138,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0067_3.vasp": {
+      "sha256": "718911a0c329552780be8740958d3491accecb228491b06b85a91e965d3dbfa4",
+      "bytes": 137,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0067_reference.vasp": {
+      "sha256": "f6696b2873c63b6d6cbe2c565cc93bfd8839aaa0ea74b6e3bb2addcd3838f39a",
+      "bytes": 91,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0068-study.json": {
+      "sha256": "9e7d6a8708341f4d8816800295c066cf94632ba93aeb15dfa5e8d08ed081cc6a",
+      "bytes": 139,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0068_0.cif": {
+      "sha256": "e37a6f03a3d2ddafd9604fd2b6af89fc52c858997565194288986922bfc40b5e",
+      "bytes": 409,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0068_1.cif": {
+      "sha256": "23eca1e9050f6f8bc53d8ae7a9c5d08d1ecb0372d0670b5170c35ca0e530c2bd",
+      "bytes": 407,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0068_2.cif": {
+      "sha256": "22a8f765c1778d49e263ba8d9435c089254e873e22c9ac64ee065e3f62271903",
+      "bytes": 409,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0068_3.cif": {
+      "sha256": "2e30a3d86689d35ce4f73a646f25506383120d45843a2a85f335c4daa995d8eb",
+      "bytes": 407,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0068_4.cif": {
+      "sha256": "e862a2d61dcd2a5405f89ef7889f0ece07a2000a7f6741f611e42020c6138ddd",
+      "bytes": 441,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0068_5.cif": {
+      "sha256": "b5b82f90ab9e206477b4096a073e353a6754015bd29c5fa7ef306ef863c1b04d",
+      "bytes": 441,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0069-study.json": {
+      "sha256": "d3bde47ee87e70f1376eb92a971fef221cb18d38ff5f6d6f93b37f640907e867",
+      "bytes": 70,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0069_a.cif": {
+      "sha256": "41563fdb818da8ab0ffbe94ef45679844885dbfa101fb75bdb41f752fee5cada",
+      "bytes": 416,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0069_b.cif": {
+      "sha256": "8c4403aa846560413a53c4542040ddadf36bd9764f15ce90b9567864f2f383ce",
+      "bytes": 414,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0069_c.cif": {
+      "sha256": "dd1b0489388c3e4649b7b24ac52ccc87b5eb589138e5d341fde60372a2a476c8",
+      "bytes": 413,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0070-study.json": {
+      "sha256": "af7e2f310d942df340b2df35b4355eb913f302cd614074054ea339f19bfea371",
+      "bytes": 54,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0070_water_source.qout": {
+      "sha256": "b276272a3eb1251c23231088ecccb3778510a1ef3c8364e3b932ea3df218f81c",
+      "bytes": 17569,
+      "provenance": {
+        "basis": "Bundled public completed Q-Chem water fixture, decompressed without text edits; not a new calculation.",
+        "original_relative_path": "tasks/assets/6.1.1.freq.out.gz",
+        "original_compressed_sha256": "9ec2e3a66e36ae94f078e4e40e819eb495659464aebc514428dc2252d8900f5c"
+      }
+    },
+    "SMAS-0071-study.json": {
+      "sha256": "abb0af9628128dffc34b6cb7848f7c8b2bb13c00b9b4eabb8531578efd303fd3",
+      "bytes": 190,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0071_water_source.qout": {
+      "sha256": "b276272a3eb1251c23231088ecccb3778510a1ef3c8364e3b932ea3df218f81c",
+      "bytes": 17569,
+      "provenance": {
+        "basis": "Bundled public completed Q-Chem water fixture, decompressed without text edits; not a new calculation.",
+        "original_relative_path": "tasks/assets/6.1.1.freq.out.gz",
+        "original_compressed_sha256": "9ec2e3a66e36ae94f078e4e40e819eb495659464aebc514428dc2252d8900f5c"
+      }
+    },
+    "SMAS-0072-study.json": {
+      "sha256": "a3662ef91b102ce699e881efa26aeb2969856451d36a6839c887caa46ad95cc0",
+      "bytes": 1340,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0072_water_source.qout": {
+      "sha256": "b276272a3eb1251c23231088ecccb3778510a1ef3c8364e3b932ea3df218f81c",
+      "bytes": 17569,
+      "provenance": {
+        "basis": "Bundled public completed Q-Chem water fixture, decompressed without text edits; not a new calculation.",
+        "original_relative_path": "tasks/assets/6.1.1.freq.out.gz",
+        "original_compressed_sha256": "9ec2e3a66e36ae94f078e4e40e819eb495659464aebc514428dc2252d8900f5c"
+      }
+    },
+    "SMAS-0073-study.json": {
+      "sha256": "0fe106ca27b7f3b15e73a95e0b92745e968e1908e3a83ad5b82605662e3437fa",
+      "bytes": 139,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0073_record_a.qout": {
+      "sha256": "2a9dcceda3f65f8664ef8073d7040c666dea559833b3e91bc987e77b0832b9c9",
+      "bytes": 1198433,
+      "provenance": {
+        "basis": "Controlled transcription-audit fixture derived from a bundled completed output. Values require an independent accounting audit; not a distinct physical state or newly run calculation.",
+        "original_relative_path": "tasks/assets/nbo7_1.qout",
+        "original_sha256": "cc840fa9ffe4473a55dec2796c67a1a375700b4c7ef83a32833e609b087f915e"
+      }
+    },
+    "SMAS-0073_record_b.qout": {
+      "sha256": "48ff1e0d23387b31d318d8f185ff30e203dce3901951674a7a49783ef83f5865",
+      "bytes": 1198433,
+      "provenance": {
+        "basis": "Controlled transcription-audit fixture derived from a bundled completed output. Values require an independent accounting audit; not a distinct physical state or newly run calculation.",
+        "original_relative_path": "tasks/assets/nbo7_1.qout",
+        "original_sha256": "cc840fa9ffe4473a55dec2796c67a1a375700b4c7ef83a32833e609b087f915e"
+      }
+    },
+    "SMAS-0073_record_c.qout": {
+      "sha256": "bf6bdb7787db371e28a91dd318d95aae82eeac80173d37d29152323bfc3c90f5",
+      "bytes": 1198433,
+      "provenance": {
+        "basis": "Controlled transcription-audit fixture derived from a bundled completed output. Values require an independent accounting audit; not a distinct physical state or newly run calculation.",
+        "original_relative_path": "tasks/assets/nbo7_1.qout",
+        "original_sha256": "cc840fa9ffe4473a55dec2796c67a1a375700b4c7ef83a32833e609b087f915e"
+      }
+    },
+    "SMAS-0074-study.json": {
+      "sha256": "d7528f8d793aeb3b3aa1fb097fd3d23558d7adbb4e2d641afbdad31e70897ea2",
+      "bytes": 69,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0074_a.cif": {
+      "sha256": "6ff7dd35f42e05c646ef7e0f2dbd67b5970a352c277262126920038db7368120",
+      "bytes": 411,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0074_b.cif": {
+      "sha256": "927ce94f9f6ca6eddcbf2dda99e917d5b9b5ad718eb32bf8b2479a1bfeb5d64b",
+      "bytes": 411,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0074_c.cif": {
+      "sha256": "cd539693ef84c2b6056ca9c193c3c6d6ac62dd88e9086b6859f8d89e69b29dbf",
+      "bytes": 426,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0074_d.cif": {
+      "sha256": "1ca68312bafee65fb54a54a74f74b7bf2005dc9cead81ce92316324bdcf02a17",
+      "bytes": 464,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0075-study.json": {
+      "sha256": "13489baacbaf7f2c90d8dc8990a0a222e5b63faa49fd243c21f4ef1b338a3c4d",
+      "bytes": 1254,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0076-study.json": {
+      "sha256": "c5abaa5aa66a00127a6f455d9b1e7ec18beeab3dc741b2f23947b376c65fdb14",
+      "bytes": 249,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0077-study.json": {
+      "sha256": "67e5c622c19365b2f2e94375e4b3c0b99b76d8d2cac4e1c78cb99b450b16b507",
+      "bytes": 236,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0078-study.json": {
+      "sha256": "e57771c980b6d4cd5b9cafa6f01b7b22d707b71627dc5a2527037bafe1502c1d",
+      "bytes": 262,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0079-study.json": {
+      "sha256": "c9e715308582b0060c84a65d16173ea17005716b41367e9a469900956f7cc62f",
+      "bytes": 947,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0080-study.json": {
+      "sha256": "55120dd6ac85f53a205afbd556a737fd53b4d4eebab9cadfb8dd8606834905b3",
+      "bytes": 265,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0081-study.json": {
+      "sha256": "7554ca23425eecc8a41297f2f3b7689a327410abc919c394cc83d3eb507ecd53",
+      "bytes": 121,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0082-study.json": {
+      "sha256": "644315f8f2ee045184e833008d59f486290bc62f7513ffc19c48d541da469119",
+      "bytes": 167,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0083-study.json": {
+      "sha256": "bdc058dc9f433d28d4c5d1cf4fd6b07597f2657e74be3bc3aa60288a5361b996",
+      "bytes": 59,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0083_a.pdb": {
+      "sha256": "53959b6238accd2be36362cc00775ed4ee4c28511b8063814ee510df9f8014ae",
+      "bytes": 494,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0083_b.pdb": {
+      "sha256": "7ce67a00fda620aea426210b974eb9f2cb0d7fe6d834f18d782c518e5cc984af",
+      "bytes": 413,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0083_c.pdb": {
+      "sha256": "fa44ad646bbb7de92b8b87d74d3cd30d41460e84a26adf4f60210bba8faf56b8",
+      "bytes": 494,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0084-study.json": {
+      "sha256": "6f93f28c5edd9ce447454f1a2d5bb510a05d8267fdd30a68ee0e5bcd507f033d",
+      "bytes": 1026,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0085-study.json": {
+      "sha256": "aec60512271e82e8650978c282e545731fe816bdbb9ce874442ab571e25c09ce",
+      "bytes": 550,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0086-study.json": {
+      "sha256": "0935ebca2ca300d4d3414edc8531f228985f684837adada6129332f77b149d9e",
+      "bytes": 361,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0087-study.json": {
+      "sha256": "f6c59c10e4a8ddac698aabb527d3a83f6088093e1d5acc2da2a352105109b81a",
+      "bytes": 245,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0088-study.json": {
+      "sha256": "aa70165a8a0c979c7abb6aba792199f88fb95e91f286446a8e6b3b88cfb42b02",
+      "bytes": 769,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0089-study.json": {
+      "sha256": "3b2d01345c42b0a0e3e62d94e6459bba2568fd0dd99de81dda27ee1b1b5c0898",
+      "bytes": 181,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0090-study.json": {
+      "sha256": "cd8e1ee4108301d1ad73724f4bbf3780e72fbf8ebc63db1f272719e4e1da5756",
+      "bytes": 343,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0091-study.json": {
+      "sha256": "42107a5a27b52a4416a0ff9845e14a2d8f220372309489059e16c117e36ca904",
+      "bytes": 1116,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0092-study.json": {
+      "sha256": "8b45112a468ec67c7d81977d6e65a7d96d40824b10363faecf49bfdabfaf1703",
+      "bytes": 268,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0093-study.json": {
+      "sha256": "6ed5054b07f01737e61065f06d80218fc45fa61220b7a1cb3ef08d5650c9dd0a",
+      "bytes": 293,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0094-study.json": {
+      "sha256": "ecf1e6e8d6da05a137b50b9e5d6ef1d52530fa42109416c6f1a3c0c9ec5c3c3a",
+      "bytes": 1008,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0095-study.json": {
+      "sha256": "24a1d17d2cc6bf8e8f2b0faea3f3e2855cd692c9d1a06ec4d8fbb885ddb38bf8",
+      "bytes": 709,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0096-study.json": {
+      "sha256": "29d93c1547de43d7be11de7f46054f34174ab5bd6befb0486ecc3ec4260d94f7",
+      "bytes": 703,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0097-study.json": {
+      "sha256": "5b4ff694339912bc8a1ab4ab6554f74dd229dc7b92a4fb138de6ca1aec5b37d3",
+      "bytes": 319,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0098-study.json": {
+      "sha256": "3debaa52720999208cc89eaeed91a26f2a1edf28e58c6b28030a5cc3f261532d",
+      "bytes": 293,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0099-study.json": {
+      "sha256": "b3e7a4f15bfbec6d2157f685e03da88770a20d456ac5182aeb924726875a6ee8",
+      "bytes": 465,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "SMAS-0100-study.json": {
+      "sha256": "708cb48674c8debdbba38404d54cb7a8d80cf5c6d80cc75f4779b899c389c6fa",
+      "bytes": 575,
+      "provenance": "Individually specified synthetic scientific fixture; not empirical measurements."
+    },
+    "study_FLOW-0001.json": {
+      "sha256": "87bc6a1eb584416b4e41ca3726d4cb31ab0e99e2c1aa142ebe3eb2a5d238327d",
+      "bytes": 533,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0001.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0001.json"
+    },
+    "study_diffusion_reference_FLOW-0015.json": {
+      "sha256": "1dcaf0f2f3cbbc3e06a7c98fa5165965ebd5e54cde4d50303b9b35e41d7bff7f",
+      "bytes": 5640,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_diffusion_reference_FLOW-0015.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_diffusion_reference_FLOW-0015.json"
+    },
+    "study_FLOW-0029.json": {
+      "sha256": "bcae6383bcb3d8ec00a3114b267d3fbc117ffb99493e19b37b9a65197ba2dc35",
+      "bytes": 1151,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0029.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0029.json"
+    },
+    "study_FLOW-0035.json": {
+      "sha256": "d70ca9998a733640725278d8ceac2ba811c14f8688440d248a08fa120f3a4668",
+      "bytes": 943,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0035.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0035.json"
+    },
+    "study_FLOW-0047.json": {
+      "sha256": "c09cbb75ecdf0b0ff606519ee68e9119f4f181d0f554f6510fcd0a46bfa2addb",
+      "bytes": 910,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0047.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0047.json"
+    },
+    "study_FLOW-0064.json": {
+      "sha256": "eb4107de9dff5afe5e2a9339ce505854f5ab99397e27ec53c0c87db851e073d5",
+      "bytes": 1743,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0064.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0064.json"
+    },
+    "study_FLOW-0068.json": {
+      "sha256": "a9f31ef5b18e428b47bce0689bedbeef8073fe469fc3031c400e52842a4a8e36",
+      "bytes": 13952,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0068.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0068.json"
+    },
+    "study_FLOW-0070.json": {
+      "sha256": "0f4dab43c9007fca587f9d3335b8f28da8eaae754e61f015e789463cd30725ad",
+      "bytes": 1265,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0070.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0070.json"
+    },
+    "study_FLOW-0071.json": {
+      "sha256": "6b9070ac4394592332edc1c1280b049f77d52e1b0a27e69b01df113883ebabd6",
+      "bytes": 5598,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0071.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0071.json"
+    },
+    "study_FLOW-0072.json": {
+      "sha256": "435ddee01e4cb4243484877cf0ef7ee42f7677803c2c0bdff62f313ac67d7a25",
+      "bytes": 1713,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0072.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0072.json"
+    },
+    "study_FLOW-0074.json": {
+      "sha256": "8144d3ed993fe6d3370f15d1b0b61ab80ebca476022af0ea63a6fd465e08c1e2",
+      "bytes": 3771,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0074.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0074.json"
+    },
+    "study_FLOW-0075.json": {
+      "sha256": "2379e8c4be05e937ec3d6c11660a715ce7062f226b5542278501e63dc4b9c2be",
+      "bytes": 10309,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0075.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0075.json"
+    },
+    "study_FLOW-0076.json": {
+      "sha256": "3a428cb0c72e71f75348d7f3edae10a31f8bfad0eed25e4912fa37f697c75002",
+      "bytes": 3447,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0076.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0076.json"
+    },
+    "study_FLOW-0077.json": {
+      "sha256": "c80c314c22f24b8f4e6bbf8e8797737e2be0034a1263a1a8a279074a28df82a4",
+      "bytes": 1063,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0077.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0077.json"
+    },
+    "6.1.1.freq.out.gz": {
+      "sha256": "9ec2e3a66e36ae94f078e4e40e819eb495659464aebc514428dc2252d8900f5c",
+      "bytes": 6990,
+      "source_project_relative_path": "design/research_workflows/source_data/pymatgen_raw/io/qchem/6.1.1.freq.out.gz",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/6.1.1.freq.out.gz"
+    },
+    "same_source_water_geometry.xyz": {
+      "sha256": "43327d04e9fb3af7465f07247c1fb0077f89e9cd3f07b7cc3492d5344b33bdb0",
+      "bytes": 214,
+      "source_project_relative_path": "design/research_workflows/batch8_assets/same_source_water_geometry.xyz",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/same_source_water_geometry.xyz"
+    },
+    "same_source_water_geometry.xyz.coordinates.json": {
+      "sha256": "7c34c4fda39aae3a17f0735483602b307c9cdb935859d550e938ab561ec60876",
+      "bytes": 2141,
+      "source": "source-faithful original coordinate transport",
+      "source_sha256": "43327d04e9fb3af7465f07247c1fb0077f89e9cd3f07b7cc3492d5344b33bdb0",
+      "provenance_review": "root_geometry_transport_verification.json"
+    },
+    "study_FLOW-0079.json": {
+      "sha256": "f10f62ce9a9155b2211679cab58ba9d0a28e53e922d4cbb5daf30e327b655207",
+      "bytes": 1382,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0079.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0079.json"
+    },
+    "study_FLOW-0083.json": {
+      "sha256": "d774caafa059d25f0f870a0976f7fd03a4e6ceffefaba64dfba220cbc5e58a79",
+      "bytes": 11393,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0083.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0083.json"
+    },
+    "study_FLOW-0087.json": {
+      "sha256": "aa685c8b3394c870ec5afbc04055701cb1558bce43b74aaea657b171843184bb",
+      "bytes": 1631,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0087.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0087.json"
+    },
+    "study_FLOW-0092.json": {
+      "sha256": "7f53b5e1e434989cab9e2a1d01ace773681a8eea84e34e2510f345ad7c1db3ab",
+      "bytes": 8176,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0092.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0092.json"
+    },
+    "study_original_FLOW-0125.json": {
+      "sha256": "75a5f41b8e2857dcb8db34004ec83c197543d1665398a3c22a9ae291d67edcfe",
+      "bytes": 2397,
+      "provenance": {
+        "kind": "Project-authored exact forward-generated mass-axis and isotope-tagged coordinates under an explicitly finite ion-assignment model. No experimentally measured spectrum, inferred cluster stability or claim that every listed ion can be produced.",
+        "isotope_constant_source": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=C"
+      }
+    },
+    "study_original_FLOW-0127.json": {
+      "sha256": "16747842fd6f03ed6fdc0bab7f29093e5162d46b66fe06597fd0161f53eb6901",
+      "bytes": 3040,
+      "provenance": {
+        "kind": "Project-authored exact linear polarimetric/achiral measurement fixture with benign lactic/mandelic reference graphs; the stipulated calibration coefficients are not claimed to be measured optical constants of these chemicals.",
+        "terminology_basis": [
+          {
+            "url": "https://goldbook.iupac.org/terms/view/O04310",
+            "read": "Official indexed definition available through search: optical purity compares a specified enantiomer mixture with a pure enantiomer. Direct page fetch returned403; no full-page reading claimed."
+          },
+          {
+            "url": "https://goldbook.iupac.org/terms/view/E02070",
+            "read": "Official indexed definition and legacy definition excerpt: enantiomeric excess uses the absolute enantiomer fraction difference. Direct page fetch returned403 and legacy page fetch502. The signed R-minus-S fraction here is our explicitly defined target."
+          }
+        ]
+      }
+    },
+    "study_original_FLOW-0396.json": {
+      "sha256": "a37c74d87b19eadf2268ec4f6c0b386970ce9413e0161262b32ad2fd6b99e69f",
+      "bytes": 1163,
+      "provenance": {
+        "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+        "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+      }
+    },
+    "study_original_FLOW-0461.json": {
+      "sha256": "ed85071f25e3e5528cff9cfa0d0355fa3c6db1ad4e1d65c0b78dc3c11749ee51",
+      "bytes": 1438,
+      "provenance": {
+        "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+        "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+      }
+    },
+    "study_original_FLOW-0464.json": {
+      "sha256": "2960551a6adb07a76671e61637d2645727bcd08ed2be1bddf28175c6753bdd7c",
+      "bytes": 1674,
+      "provenance": {
+        "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+        "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+      }
+    },
+    "study_original_FLOW-0488.json": {
+      "sha256": "aa4dd613dfa9ce7d75c11c10e0c4bdf757394953f8f5a92524c464ef3c4fc257",
+      "bytes": 1380,
+      "provenance": {
+        "kind": "Explicit synthetic conditional chemical/physical measurement model;no empirical identification or practical process recommendation."
+      }
+    },
+    "controlled_inverse_FLOW-0006.json": {
+      "sha256": "bd32c61a9f241ca4cc414e1c8ac4b755b4410ead2e01278631456e0636832134",
+      "bytes": 1828,
+      "provenance": "Project-authored controlled study; all generating equations/assumptions are disclosed in the public task. No experimental or database attribution."
+    },
+    "study_original_FLOW-0019.json": {
+      "sha256": "ebcc5aaeb7cbaccb7999968b364759c9bf4d43277bc12b6a2dc8312d6091d605",
+      "bytes": 1705,
+      "provenance": {
+        "kind": "Controlled conditional solid-state model;inputs are stipulated,not experimental structural assignments."
+      }
+    },
+    "bar_framework_FLOW-0028.cif": {
+      "sha256": "710dfa98f36ae7dc0f797f41863c4f9187a572ba2bb3548196df9ff2ec855d52",
+      "bytes": 413,
+      "provenance": {
+        "kind": "Project-authored ideal bar-framework geometry and exact harmonic model; no experimental material or calculated chemical stiffness is claimed.",
+        "geometry_sha256": "710dfa98f36ae7dc0f797f41863c4f9187a572ba2bb3548196df9ff2ec855d52",
+        "conceptual_sources": [
+          {
+            "url": "https://arxiv.org/abs/cond-mat/0410592",
+            "read": "Landing-page abstract on nonaffine contributions to elasticity; complete paper not read.",
+            "use": "Motivates distinguishing affine response from internal relaxation. Our finite-bar energy and elimination are derived independently."
+          },
+          {
+            "url": "https://arxiv.org/abs/1503.01324",
+            "read": "Landing-page abstract on central-force frameworks, coordination, zero modes and self stress; complete paper not read.",
+            "use": "Framework and coordination context only; not a source of this geometry or its numerical answer."
+          }
+        ]
+      }
+    },
+    "study_original_FLOW-0028.json": {
+      "sha256": "7975dc7279f7e455c9cdbe7cfd771ebeeaf9402d9421afc22406f1adc875e67f",
+      "bytes": 2964,
+      "provenance": {
+        "kind": "Project-authored ideal bar-framework geometry and exact harmonic model; no experimental material or calculated chemical stiffness is claimed.",
+        "geometry_sha256": "710dfa98f36ae7dc0f797f41863c4f9187a572ba2bb3548196df9ff2ec855d52",
+        "conceptual_sources": [
+          {
+            "url": "https://arxiv.org/abs/cond-mat/0410592",
+            "read": "Landing-page abstract on nonaffine contributions to elasticity; complete paper not read.",
+            "use": "Motivates distinguishing affine response from internal relaxation. Our finite-bar energy and elimination are derived independently."
+          },
+          {
+            "url": "https://arxiv.org/abs/1503.01324",
+            "read": "Landing-page abstract on central-force frameworks, coordination, zero modes and self stress; complete paper not read.",
+            "use": "Framework and coordination context only; not a source of this geometry or its numerical answer."
+          }
+        ]
+      }
+    },
+    "study_original_FLOW-0101.json": {
+      "sha256": "ba6831e0aa607725e63c289282c7857e30954702718fedc851c0b59371b957a2",
+      "bytes": 1957,
+      "provenance": {
+        "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+        "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+      }
+    },
+    "study_original_FLOW-0107.json": {
+      "sha256": "c2d970a9896b89f6d3c891d6d15a93867214dc63f0ea51ea90bbbc9679b5be53",
+      "bytes": 1573,
+      "provenance": {
+        "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+        "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+      }
+    },
+    "mp_dielectric_candidates.json": {
+      "sha256": "f70b684e62855e04746f0bb9a168c13bbeebc63c93e612ddd6c4f43ee1a2e4c8",
+      "bytes": 17291,
+      "source_project_relative_path": "design/research_workflows/source_data/mp_dielectric_candidates.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/mp_dielectric_candidates.json"
+    },
+    "mp_dielectric_candidates.provenance.json": {
+      "sha256": "e5f840889faa83ac1b9290fac72080c051dd56f222e6da2b7f436ebd6c6e0c16",
+      "bytes": 514,
+      "source_project_relative_path": "design/research_workflows/source_data/mp_dielectric_candidates.provenance.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/mp_dielectric_candidates.provenance.json"
+    },
+    "mp_elasticity_candidates.json": {
+      "sha256": "a7d7aff7db31c12a428e740d3c844cd9e7550c79a0064a489bf3bfe5595e46d8",
+      "bytes": 336518,
+      "source_project_relative_path": "design/research_workflows/source_data/mp_elasticity_candidates.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/mp_elasticity_candidates.json"
+    },
+    "mp_elasticity_candidates.provenance.json": {
+      "sha256": "3a7a6474695d6f9dd4f3d8a1e5b3b9dee1ca789d44ada44086b4356f567dcb5c",
+      "bytes": 515,
+      "source_project_relative_path": "design/research_workflows/source_data/mp_elasticity_candidates.provenance.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/mp_elasticity_candidates.provenance.json"
+    },
+    "study_FLOW-0155.json": {
+      "sha256": "a95e508e749a73a7c723b96f0e761956b4c95933cdf892c143191fe13d34490d",
+      "bytes": 1029,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0155.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0155.json"
+    },
+    "study_FLOW-0175.json": {
+      "sha256": "9f7c54ae8449f60df0d35a184dfc6cb6427d4c8d6b180ac2eeac277ce52460ce",
+      "bytes": 2879,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0175.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0175.json"
+    },
+    "study_FLOW-0181.json": {
+      "sha256": "f0f46f178f81a81cf7601fd597a1e4d646fa4e7d2496aca53b6ec6d4be66e846",
+      "bytes": 5235,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0181.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0181.json"
+    },
+    "study_FLOW-0182.json": {
+      "sha256": "97be0d4af82101d719e6c31f846788de41e8624af2bdbe5f553c4a62bfbc5938",
+      "bytes": 11742,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0182.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0182.json"
+    },
+    "study_FLOW-0185.json": {
+      "sha256": "e9a8d686bd839a66e8816a09abce3f2f45bc9bce6a4294032a16c407f00fbafb",
+      "bytes": 123468,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0185.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0185.json"
+    },
+    "nonaffine_reference.cif": {
+      "sha256": "08b7819d4a9ef291246d504d3d68800ce6b46b184c35f0156b4d5c4cc08e62e7",
+      "bytes": 1075,
+      "source_project_relative_path": "design/research_workflows/batch6_assets/nonaffine_reference.cif",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/nonaffine_reference.cif"
+    },
+    "nonaffine_state_U.cif": {
+      "sha256": "1ab47daaba9d6616976e23bbf604b5d156fed22f87c943ab525b541e364d6324",
+      "bytes": 1059,
+      "source_project_relative_path": "design/research_workflows/batch6_assets/nonaffine_state_U.cif",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/nonaffine_state_U.cif"
+    },
+    "nonaffine_state_V.cif": {
+      "sha256": "f8e6241ddac72ea9c11b8bb7ae59efd2389e70be4c7a82be648508e567b8bc8f",
+      "bytes": 1060,
+      "source_project_relative_path": "design/research_workflows/batch6_assets/nonaffine_state_V.cif",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/nonaffine_state_V.cif"
+    },
+    "study_FLOW-0190.json": {
+      "sha256": "aa2177b381a8642c7d3fbcfcefbb380fea0e0b152597d253d376b7cb2b94c35d",
+      "bytes": 2192,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0190.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0190.json"
+    },
+    "study_FLOW-0193.json": {
+      "sha256": "c66f8a4a9c2606227c99fd4301a21938c26f6cd8485f59f2f5b4807057698007",
+      "bytes": 20399,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0193.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0193.json"
+    },
+    "migration_image_00.vasp": {
+      "sha256": "e0e50d1d6b11f1817a8121327566a5e545bb9431184a533cb462ef392199c397",
+      "bytes": 4015,
+      "source_project_relative_path": "design/research_workflows/batch6_assets/migration_image_00.vasp",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/migration_image_00.vasp"
+    },
+    "migration_image_01.vasp": {
+      "sha256": "fb9fb0f20ed1902f9a0adb97d60aa0f8d6b67d4da91003b695a2f08b9ab8a208",
+      "bytes": 7514,
+      "source_project_relative_path": "design/research_workflows/batch6_assets/migration_image_01.vasp",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/migration_image_01.vasp"
+    },
+    "migration_image_02.vasp": {
+      "sha256": "0ee5a9d75fc7d21cf9db69d4b2ad9f753f1543cbca5ceed8f635247b3ea71bd0",
+      "bytes": 7514,
+      "source_project_relative_path": "design/research_workflows/batch6_assets/migration_image_02.vasp",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/migration_image_02.vasp"
+    },
+    "migration_image_03.vasp": {
+      "sha256": "b33c611fb02c074d9d7eaa111ca057a496d3f80e3eebec10838adbf3923a04fa",
+      "bytes": 7514,
+      "source_project_relative_path": "design/research_workflows/batch6_assets/migration_image_03.vasp",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/migration_image_03.vasp"
+    },
+    "migration_image_04.vasp": {
+      "sha256": "139da919e2fd6be3aa5c65eea0c723460ed79ded9d74710ec9b6ea5529e0f493",
+      "bytes": 4015,
+      "source_project_relative_path": "design/research_workflows/batch6_assets/migration_image_04.vasp",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/migration_image_04.vasp"
+    },
+    "study_FLOW-0195.json": {
+      "sha256": "9b8b8d03a20e96b0b20f8c01429352d03e99571566ac5cf6188421cbacb0f942",
+      "bytes": 1964,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0195.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0195.json"
+    },
+    "study_original_FLOW-0198.json": {
+      "sha256": "3f7d45b74fd3322f933d4d179832b63182a895a8d247ea5bfa6d1098116d3ade",
+      "bytes": 1632,
+      "provenance": {
+        "kind": "Explicit controlled material/device reporting model;not an experimental assembly or performance claim."
+      }
+    },
+    "study_FLOW-0199.json": {
+      "sha256": "8553935910d44a6ffdd453920687d8da9e85b50496138ed33ade5837d6de2148",
+      "bytes": 29525,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0199.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0199.json"
+    },
+    "study_FLOW-0200.json": {
+      "sha256": "962a230a984eeb0f63063d7a852b3ab8587ab718a084deafd1b9d26ce8eeb188",
+      "bytes": 353706,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0200.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0200.json"
+    },
+    "Be_gb_fin.cif": {
+      "sha256": "a7ca230bb0aaadac89fe806210b387f45ecd4b86a7199734ed2c128066eed8dd",
+      "bytes": 5916,
+      "source_project_relative_path": "design/research_workflows/source_data/pymatgen_raw/core/grain_boundary/Be_gb_fin.cif",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/Be_gb_fin.cif"
+    },
+    "Be_gb_init.cif": {
+      "sha256": "06fd88277eacb5fdf46bfb6176aade9375cf6fe775b42f77781d706a14386192",
+      "bytes": 5916,
+      "source_project_relative_path": "design/research_workflows/source_data/pymatgen_raw/core/grain_boundary/Be_gb_init.cif",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/Be_gb_init.cif"
+    },
+    "Be_mp-87_conventional_standard.cif": {
+      "sha256": "c44dd9fde0b35d8659e93daa3b92c7f7a92aadaa00d131f959c560162dd8ed9c",
+      "bytes": 737,
+      "source_project_relative_path": "design/research_workflows/source_data/pymatgen_raw/core/grain_boundary/Be_mp-87_conventional_standard.cif",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/Be_mp-87_conventional_standard.cif"
+    },
+    "study_FLOW-0202.json": {
+      "sha256": "63b35140267553d1ffd8fee5928a690d17d2c574c96aace38505d24cb838f08c",
+      "bytes": 3685,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0202.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0202.json"
+    },
+    "POSCAR": {
+      "sha256": "454789b2b8a15a15c84cde3beb3fe95ba4181e8e8b4968d4f0ad2487a1fb3a7f",
+      "bytes": 2734,
+      "source_project_relative_path": "design/research_workflows/source_data/pymatgen_raw/phonon/thermal_displacement_matrices/POSCAR",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/POSCAR"
+    },
+    "study_FLOW-0206.json": {
+      "sha256": "47069eb06b1a1cf666f22ccfc503d70b1ec024545a8a68f024ea440c5f35c067",
+      "bytes": 3650,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0206.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0206.json"
+    },
+    "local_model_structure_1.cif": {
+      "sha256": "0988e26a382eb096c41557997b62b3dfd9073cacd5f802eb9544be444607ff70",
+      "bytes": 862,
+      "source_project_relative_path": "design/research_workflows/batch7_assets/local_model_structure_1.cif",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/local_model_structure_1.cif"
+    },
+    "local_model_structure_2.cif": {
+      "sha256": "1e610eed945d43ec046a0a4ded703eaefba7b8968730f67f15321b4a123bf633",
+      "bytes": 1292,
+      "source_project_relative_path": "design/research_workflows/batch7_assets/local_model_structure_2.cif",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/local_model_structure_2.cif"
+    },
+    "study_FLOW-0208.json": {
+      "sha256": "7e82eeaeeca4dbc7f27582f0cd9c6711ead3b366c6e362ea23919e1d94ef6758",
+      "bytes": 2959,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0208.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0208.json"
+    },
+    "study_FLOW-0211.json": {
+      "sha256": "4159f48515a43497d72b24dd55177524f548d1d9e89ce163da2a2e84f191f5bd",
+      "bytes": 4331,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0211.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0211.json"
+    },
+    "study_FLOW-0214.json": {
+      "sha256": "20e89cb81f55df661e3bd52d789698e0ae136e661bb71f34cbaf14291b934705",
+      "bytes": 11976,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0214.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0214.json"
+    },
+    "study_FLOW-0215.json": {
+      "sha256": "d0214778c0e4a1dffda1420cfb4600d62c9a3d75c7c0ae69a4d01fac58a11f94",
+      "bytes": 109119,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0215.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0215.json"
+    },
+    "study_FLOW-0220.json": {
+      "sha256": "acef1aab69fc1906c10dbf02457605de3c13b20444b82f3e9deed716fc70d048",
+      "bytes": 2248,
+      "source_project_relative_path": "design/research_workflows/public_candidate_assets/study_FLOW-0220.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0220.json"
+    },
+    "study_original_FLOW-0239.json": {
+      "sha256": "168ea981262762f490f2ab71291fac1ddd6691b267facbb62559d1e1027afb26",
+      "bytes": 2894,
+      "provenance": {
+        "kind": "Project-authored short benign reference-polypeptide and exact calibrated-mixture fixture for inference-method assessment; no natural protein, biological activity or real experimental yield is claimed.",
+        "method_basis": {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3317402/",
+          "read": "Introduction and methods discussion of shared-peptide abundance constraints and known detectability, not the biological application.",
+          "adaptation": "We stipulate exact already calibrated absolute molar channels, merge mass-indistinguishable sequences, and ask for sharp bounds rather than selecting one abundance fit. The sequences and numeric fixture are ours."
+        }
+      }
+    },
+    "FRET_centroids_FLOW-0242_far.pdb": {
+      "sha256": "7247b34568f4ad6133c2029937228923a539cefeddc336d830b0d8aa5a1bfed6",
+      "bytes": 231,
+      "provenance": {
+        "kind": "Controlled abstract biological inference fixture;not empirical mechanism or intervention evidence."
+      }
+    },
+    "FRET_centroids_FLOW-0242_near.pdb": {
+      "sha256": "63de62cb579b91c6b72c8280c2a73fde3a18d8cc0ec2b97c8cddf37468b65a09",
+      "bytes": 231,
+      "provenance": {
+        "kind": "Controlled abstract biological inference fixture;not empirical mechanism or intervention evidence."
+      }
+    },
+    "study_original_FLOW-0242.json": {
+      "sha256": "0fd6ab67cd304c9add3934fae9ff07f64c343fabfe17e429dc88db60c00a8d71",
+      "bytes": 1543,
+      "provenance": {
+        "kind": "Controlled abstract biological inference fixture;not empirical mechanism or intervention evidence."
+      }
+    },
+    "study_original_FLOW-0245.json": {
+      "sha256": "980ce5b53bbcb0efbe1a324e04bf1ec48bdabac8d3fdbd55ad537a6b796b1306",
+      "bytes": 1718,
+      "provenance": {
+        "kind": "Explicit synthetic benign biological measurement model with exact source observations;not an empirical validation or sequence-design recommendation."
+      }
+    },
+    "annotations_FLOW-0252.json": {
+      "sha256": "e6279755af922188b81af3fc434618b4d48ed98b3cda8897db6f95add5f35cbc",
+      "bytes": 3817485,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/annotations_FLOW-0252.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/annotations_FLOW-0252.json"
+    },
+    "pasilla_counts.tsv": {
+      "sha256": "ea0dafbfcc600559644cfe7dd5cc8de809d631eb64ba3089aaa25c2fa0954dad",
+      "bytes": 498373,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/pasilla_counts.tsv",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/pasilla_counts.tsv"
+    },
+    "pasilla_metadata.csv": {
+      "sha256": "1844f871ca5d750f41685c73b87bd7dda291ec0d52304c1afb46a17ae88db745",
+      "bytes": 527,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/pasilla_metadata.csv",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/pasilla_metadata.csv"
+    },
+    "study_FLOW-0252.json": {
+      "sha256": "4689a8885aeee08b4a19b339057b34876974331ee11391d71392f2c87ed8c1fc",
+      "bytes": 5019,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0252.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0252.json"
+    },
+    "coordinates_FLOW-0254.pdb": {
+      "sha256": "51d037294f063b7b520acac4d801caeae577ec4b60a96c9f61e5dd3207b50387",
+      "bytes": 78408,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/coordinates_FLOW-0254.pdb",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/coordinates_FLOW-0254.pdb"
+    },
+    "study_FLOW-0254.json": {
+      "sha256": "6b311365f3bf399ba66d3351292e78aac3dd1ab0ffc8564b7a1a78f85eec538d",
+      "bytes": 2783,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0254.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0254.json"
+    },
+    "study_FLOW-0255.json": {
+      "sha256": "600526aba8bc30dfd4ff71d257493840e65af6896f25ef1acc138eb10b148e43",
+      "bytes": 5429,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0255.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0255.json"
+    },
+    "study_FLOW-0256.json": {
+      "sha256": "950cc39ae9bff0828db463dbef7f4e26ef75ef80de0974300a597133f4df0876",
+      "bytes": 5957,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0256.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0256.json"
+    },
+    "coordinates_FLOW-0259.pdb": {
+      "sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+      "bytes": 78570,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/coordinates_FLOW-0259.pdb",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/coordinates_FLOW-0259.pdb"
+    },
+    "study_FLOW-0259.json": {
+      "sha256": "e78887577748d2e08d1fbd85293479a1fbe4a0aea4f8ee5ed919b21a4eba5169",
+      "bytes": 3548,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0259.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0259.json"
+    },
+    "coordinates_FLOW-0260.pdb": {
+      "sha256": "21099cb88231455fdfab4095dddfadcc85cc4213e105cf5f9cfff2ca21993378",
+      "bytes": 1015821,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/coordinates_FLOW-0260.pdb",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/coordinates_FLOW-0260.pdb"
+    },
+    "study_FLOW-0260.json": {
+      "sha256": "e930ba3a0b9fab73f9448a0045ba1481d156886c47bae5b5843412c315587bb0",
+      "bytes": 5318,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0260.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0260.json"
+    },
+    "coordinates_FLOW-0263_1CRN.pdb": {
+      "sha256": "42199a30a0701864a2a5cc76cd7f35cc544cd0e65fbcf63e03c166543249b811",
+      "bytes": 49491,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/coordinates_FLOW-0263_1CRN.pdb",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/coordinates_FLOW-0263_1CRN.pdb"
+    },
+    "coordinates_FLOW-0263_1UBQ.pdb": {
+      "sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+      "bytes": 78570,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/coordinates_FLOW-0263_1UBQ.pdb",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/coordinates_FLOW-0263_1UBQ.pdb"
+    },
+    "study_FLOW-0263.json": {
+      "sha256": "a86ce93e34cee4bea844861f3662df055b73967ff5b04f00df7f6fe9f6b9954c",
+      "bytes": 3049,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0263.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0263.json"
+    },
+    "study_FLOW-0265.json": {
+      "sha256": "107c89dfc4f071c83cd16a9bc8aea52827a664961eea3a4b79b06b5cac617373",
+      "bytes": 4671,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0265.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0265.json"
+    },
+    "study_FLOW-0267.json": {
+      "sha256": "5ddc59c3e33c084adf0797de7c27df0fedfc3115bcbc0f82c1c854f0156fcb8e",
+      "bytes": 198372,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0267.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0267.json"
+    },
+    "study_original_FLOW-0281.json": {
+      "sha256": "a80e8f687765af14be927d4b54add954114c35f84c19708390f12373d6d9d6d6",
+      "bytes": 1505,
+      "provenance": {
+        "data_origin": "Explicit small controlled benchmark models, sequences and traits; no empirical evolutionary, functional or conservation-outcome claim."
+      }
+    },
+    "study_FLOW-0285.json": {
+      "sha256": "f4f677ddf4d7e120f6e06e90a08805741b3e9f08d618104e7975f1bcd708fb7a",
+      "bytes": 12970,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0285.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0285.json"
+    },
+    "study_original_FLOW-0288.json": {
+      "sha256": "7124879752161961b508569d9a877d656c3b7157e1a3202fcc5100726f7668c5",
+      "bytes": 1934,
+      "provenance": {
+        "data_origin": "Explicit small controlled benchmark models, sequences and traits; no empirical evolutionary, functional or conservation-outcome claim."
+      }
+    },
+    "study_FLOW-0300.json": {
+      "sha256": "b90d428c376a042819a088994b02eae06437700d9ca1197fcd6ab1570f706ce3",
+      "bytes": 16435,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0300.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0300.json"
+    },
+    "study_FLOW-0305.json": {
+      "sha256": "777bf4d9af5858b8c139659471b2940d706b9e7134323ed403a4283cc412b2c3",
+      "bytes": 5502,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0305.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0305.json"
+    },
+    "study_FLOW-0315.json": {
+      "sha256": "2f35276548c94bf196fad9da83442b6785d95e8a383f347c2b57970d2508b077",
+      "bytes": 4782,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0315.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0315.json"
+    },
+    "study_original_FLOW-0322.json": {
+      "sha256": "8800958e18a47a6275e3239d6dfa9750ead7f5dfee31fd03bcfc4a92061743f9",
+      "bytes": 1323,
+      "provenance": {
+        "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+        "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+      }
+    },
+    "1D3Z_deposited_nmr.pdb": {
+      "sha256": "21099cb88231455fdfab4095dddfadcc85cc4213e105cf5f9cfff2ca21993378",
+      "bytes": 1015821,
+      "provenance": {
+        "kind": "Unchanged deposited RCSB PDB coordinate record. Header declares ubiquitin solution NMR with ten models; task uses only explicitly selected first four coordinate models.",
+        "source_url": "https://files.rcsb.org/download/1D3Z.pdb",
+        "pdb_id": "1D3Z"
+      }
+    },
+    "study_original_FLOW-0326.json": {
+      "sha256": "cd57c293bd4f096f5e859d327df80ee06e53b0adda49d50fe594a1a73a5b6d19",
+      "bytes": 1881,
+      "provenance": {
+        "kind": "Analysis protocol authored by this project, applied to unchanged deposited coordinates; model index is not time, and these four selected models are not a calibrated dynamical sample.",
+        "coordinate_source_url": "https://files.rcsb.org/download/1D3Z.pdb",
+        "coordinate_sha256": "21099cb88231455fdfab4095dddfadcc85cc4213e105cf5f9cfff2ca21993378",
+        "coordinate_record_models": 10
+      }
+    },
+    "2DN1_assembly1_protein_single_model.pdb": {
+      "sha256": "3da9bad5437f5fc900352ba0e562c2853216270abaf3cda0719f03f8f29e7925",
+      "bytes": 352169,
+      "provenance": {
+        "kind": "Coordinate-faithful representation of the official biological assembly; not a new experiment or regenerated conformation.",
+        "source_url": "https://files.rcsb.org/download/2DN1.pdb1",
+        "source_sha256": "e6477125cc29a5bf2490ebddfe290f0e68f703b6dbe308f1a1b870b9b888216b",
+        "source_file": "2DN1_official.pdb1",
+        "mapping": {
+          "official_model1_A": "A",
+          "official_model1_B": "B",
+          "official_model2_A": "C",
+          "official_model2_B": "D"
+        },
+        "changes": "Preserve all original protein ATOM coordinates, residue identities, atom names, occupancies and altlocs. Flatten official assembly model copies into one model; rename chains and serials. Exclude hetero atoms, ANISOU records and metadata outside the protein-ATOM scope."
+      }
+    },
+    "2DN2_official.pdb": {
+      "sha256": "cc2fca4182e61cb85c2b0082c80167eb7d189a84b148faaa6eb810977c64e214",
+      "bytes": 825471,
+      "provenance": {
+        "kind": "Unchanged official RCSB coordinate download",
+        "url": "https://files.rcsb.org/download/2DN2.pdb",
+        "download_date": "2026-10-23",
+        "entry_page": "https://www.rcsb.org/structure/2DN2"
+      }
+    },
+    "study_original_FLOW-0329.json": {
+      "sha256": "d2dc4da7b547a282895e61f3d06f080cc543f89f28ff94b700d42e8d1513f30b",
+      "bytes": 2671,
+      "provenance": {
+        "kind": "Two actual deposited human hemoglobin structures from the same primary structural study; source-faithful assembly representation only, no regenerated coordinates.",
+        "reference_url": "https://files.rcsb.org/download/2DN2.pdb",
+        "mobile_official_assembly_url": "https://files.rcsb.org/download/2DN1.pdb1",
+        "entry_pages": [
+          "https://www.rcsb.org/structure/2DN1",
+          "https://www.rcsb.org/structure/2DN2"
+        ],
+        "primary_study_doi": "10.1016/j.jmb.2006.05.036"
+      }
+    },
+    "study_original_FLOW-0331.json": {
+      "sha256": "1ac9fb10850ac5bb9e7fa8eb19aebe3c01601a1a879b2e2421239421a937bd43",
+      "bytes": 1343,
+      "provenance": {
+        "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+        "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+      }
+    },
+    "study_original_FLOW-0334.json": {
+      "sha256": "d2374240c83fb4d5ee0e956d511f1877f664f57fb01703aa46f099888f92814b",
+      "bytes": 2009,
+      "provenance": {
+        "kind": "Explicit small synthetic benign scientific model;data are conditional exact counts/means and do not establish empirical ecological,causal or functional claims."
+      }
+    },
+    "study_original_FLOW-0353.json": {
+      "sha256": "dabdd266178b6916eb0128c0dba739664d6a1adbb34e3ac4625a20bc00c6f808",
+      "bytes": 1720,
+      "provenance": {
+        "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+        "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+      }
+    },
+    "study_original_FLOW-0358.json": {
+      "sha256": "3f7c27b82daa8f524152e178e0ff37eb1ef8542fe90bf07a3f56d5fd544c3e57",
+      "bytes": 1778,
+      "provenance": {
+        "kind": "Explicit controlled abstract biological measurement/model fixture;not a real protein,diet or intervention claim."
+      }
+    },
+    "study_FLOW-0377.json": {
+      "sha256": "417430555f8b06c3675f0bbf5f969bdeb307ce922bbd6ef25b68cbffcee40159",
+      "bytes": 453859,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0377.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0377.json"
+    },
+    "study_FLOW-0378.json": {
+      "sha256": "d53b3ef998ba9e6601335830d320a09a7a0f16f381dc10f4fa1006d76e38e5f4",
+      "bytes": 157554,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0378.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0378.json"
+    },
+    "study_randomized_units_FLOW-0379.json": {
+      "sha256": "bf2961c91f515714590d6f9c7354b97d18657036ef27375093ee1916819404fc",
+      "bytes": 10430,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_randomized_units_FLOW-0379.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_randomized_units_FLOW-0379.json"
+    },
+    "study_FLOW-0381.json": {
+      "sha256": "8b525fa7d453b3307e6b0157dbe34a2b93b45cd23111fb1b53f2fca8b1397540",
+      "bytes": 38015,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0381.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0381.json"
+    },
+    "study_FLOW-0382.json": {
+      "sha256": "5fb0113a936f06a3fde1ac3f42c38d726b67fe0b7a7639da7357ff02cab0171e",
+      "bytes": 240052,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0382.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0382.json"
+    },
+    "study_FLOW-0383.json": {
+      "sha256": "c81e6e06f4123aa99aa5f41304f2b4f0f4aba2b3c7538c5c7f9f8baf928367be",
+      "bytes": 213445,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0383.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0383.json"
+    },
+    "study_FLOW-0385.json": {
+      "sha256": "2e8066bb688ece701a7c832df6a037620c3a4532709ae001f65c9dc3a1905a53",
+      "bytes": 60683,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0385.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0385.json"
+    },
+    "study_FLOW-0387.json": {
+      "sha256": "109ecd212d94c5b99fb0c067d7e88157b281de91b212b5a6b65a2ad23d53add8",
+      "bytes": 97035,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0387.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0387.json"
+    },
+    "study_FLOW-0389.json": {
+      "sha256": "d4c861d804942d902be1e46e81f12f7f6e27e58901f6dfbf9074e0e43cd9ffe1",
+      "bytes": 119110,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0389.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0389.json"
+    },
+    "study_FLOW-0400.json": {
+      "sha256": "05e9e29927a740bd3bbf4fda6cbb35aee7f44b74b79a0f0444a370109538cae3",
+      "bytes": 10117,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0400.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0400.json"
+    },
+    "study_FLOW-0427.json": {
+      "sha256": "e92dcbb3615bbb7b2c239bd4bf898e23d1f91c5086edc30b1715629241da8168",
+      "bytes": 1855,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0427.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0427.json"
+    },
+    "study_FLOW-0433.json": {
+      "sha256": "a140add7d2df3ebda9a909dcb965fb40bf6e82c01a5f4b96cfe71e9eb65eed42",
+      "bytes": 4349,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0433.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0433.json"
+    },
+    "study_FLOW-0439.json": {
+      "sha256": "07dca51a17b560807544d9bcf91a5956d77b722c9d5de0e9f4b6fd1376aeb7b5",
+      "bytes": 14331,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0439.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0439.json"
+    },
+    "study_FLOW-0443.json": {
+      "sha256": "bdaa533a000d9cff85bfeb372f292b4a5ef4e3e93f466e0233996a7591444c5a",
+      "bytes": 5533,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_FLOW-0443.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_FLOW-0443.json"
+    },
+    "study_shared_label_truth_FLOW-0449.json": {
+      "sha256": "e19987138e87eb92214b07c9e4dcc5b5a6ba8b80c159e744abb19eade477a638",
+      "bytes": 3499,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_shared_label_truth_FLOW-0449.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_shared_label_truth_FLOW-0449.json"
+    },
+    "study_process_noncompliance_FLOW-0450.json": {
+      "sha256": "5c50e2e0b4a78a988fe14631ccd76a2af8402032803285e2987107f1c7ef6993",
+      "bytes": 4004,
+      "source_project_relative_path": "design/research_workflows/candidate_assets/study_process_noncompliance_FLOW-0450.json",
+      "migration_source": "design/research_workflows/accelerated/tasks/assets/study_process_noncompliance_FLOW-0450.json"
+    },
+    "study_original_FLOW-0467.json": {
+      "sha256": "490468503712f55fb7ccc119ada556d8930fdd4002db9ae7bd59eb8889e21e4c",
+      "bytes": 1415,
+      "provenance": {
+        "kind": "Project-authored controlled measurement study; stated matrices/counts are stipulated model inputs, not new experimental observations.",
+        "scope": "No external factual retrieval is required. Source roles, axes and units are stated in the file."
+      }
+    },
+    "study_original_FLOW-0468.json": {
+      "sha256": "df76f33a570dacafc9358ad82ca782c22a9d648f4b0b04ccb92aeba5ea7463ae",
+      "bytes": 1377,
+      "provenance": {
+        "kind": "Project-authored controlled measurement study; stated matrices/counts are stipulated model inputs, not new experimental observations.",
+        "scope": "No external factual retrieval is required. Source roles, axes and units are stated in the file."
+      }
+    },
+    "study_original_FLOW-0471.json": {
+      "sha256": "3f4742902a5172626eeedd6a084d0c030a23f6b9630cf93e843ad987f4f9e513",
+      "bytes": 1944,
+      "provenance": {
+        "kind": "Project-authored controlled statistical example. Values are stipulated observations or population working moments as explicitly stated, not new experimental data.",
+        "source_scope": "No outside information is required; every inferential assumption is declared."
+      }
+    },
+    "study_original_FLOW-0472.json": {
+      "sha256": "7290a634fd7b4073b24c988e95fecaa39b58d7ed6cb487fdfec8af7e1308f54b",
+      "bytes": 1638,
+      "provenance": {
+        "kind": "Project-authored controlled statistical example. Values are stipulated observations or population working moments as explicitly stated, not new experimental data.",
+        "source_scope": "No outside information is required; every inferential assumption is declared."
+      }
+    },
+    "study_original_FLOW-0476.json": {
+      "sha256": "f15e1fc3ce747f07aa42a8648af78ffd41887ce2ec6589e35f1031cd90d36122",
+      "bytes": 1904,
+      "provenance": {
+        "data_origin": "Explicitly constructed numerical instrument/reporting studies for this benchmark; not measurements from a named laboratory or archive.",
+        "method_scope": "Conditional finite-dimensional linear measurement models. Scientific conclusions follow from the stated covariance/distance definitions; no distributional or causal interpretation beyond those assumptions."
+      }
+    },
+    "study_original_FLOW-0481.json": {
+      "sha256": "e43ffaecd6fe57814bcd6fa7f4305b138f024bcb09ea9405e58dccf5f57fe02a",
+      "bytes": 1800,
+      "provenance": {
+        "kind": "Explicit controlled statistical study with stated working assumptions;not empirical population evidence."
+      }
+    },
+    "study_original_FLOW-0483.json": {
+      "sha256": "36628639cecf9f5ceb53e129d9fdbdeaffceea9dfa1d6f6a2655e268f9fd542e",
+      "bytes": 1387,
+      "provenance": {
+        "kind": "Project-authored controlled scientific measurement/decision example; stipulated model inputs and observations, not new experimental findings.",
+        "scope": "All required information, units and inferential limits are in this document."
+      }
+    },
+    "study_original_FLOW-0490.json": {
+      "sha256": "40ddf10142298d4c6158af33e7bc11a5cc346ce669cddf11eb28edef11755a83",
+      "bytes": 1355,
+      "provenance": {
+        "kind": "Project-authored controlled scientific measurement/decision example; stipulated model inputs and observations, not new experimental findings.",
+        "scope": "All required information, units and inferential limits are in this document."
+      }
+    },
+    "study_original_FLOW-0499.json": {
+      "sha256": "44547579fb2c0502dc66655900ea1e799fd4f581776245e751e770d75953d93f",
+      "bytes": 1989,
+      "provenance": {
+        "data_origin": "Explicitly constructed numerical instrument/reporting studies for this benchmark; not measurements from a named laboratory or archive.",
+        "method_scope": "Conditional finite-dimensional linear measurement models. Scientific conclusions follow from the stated covariance/distance definitions; no distributional or causal interpretation beyond those assumptions."
+      }
+    }
+  }
+}

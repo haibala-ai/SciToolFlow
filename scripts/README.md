@@ -8,10 +8,10 @@
 | tools | build_graph | 从当前契约重建图谱；`--embed` 编码变化的功能描述 |
 | tools | check_foundation | 核查工具契约、环境、数据端口、图谱与向量的静态一致性 |
 | tools | audit_tool_overlap | 静态筛查核心能力重叠候选，候选仍需人工判断 |
-| benchmark | run_benchmark | 编排 baseline 批量运行、进度保存与离线评分；`--dataset full|mini` 贯穿运行和评分 |
-| benchmark | analyze_benchmark | 从正式题库和主参考重算分布、覆盖及分析图表 |
-| benchmark | compare_release | 对照固定 SciToolEval Level2 来源，生成当前对比统计和图件 |
-| benchmark | mini | 按审查记录导出或核验学科均衡的Mini-200，独立编号和源题号映射，可离线复核200条主参考 |
+| benchmark | run_benchmark | 编排 baseline 批量运行、进度保存与离线评分；`--dataset mini|full` 贯穿运行和评分 |
+| benchmark | analyze_benchmark | `--dataset mini`重算Mini分布、覆盖与图表；`--dataset full`重算Full，缺省保持Full分析 |
+| benchmark | compare_release | 对照固定Level2来源，生成Level2／Full／Mini三方统计与图件，以及Full上、Mini下的分析合图 |
+| benchmark | mini | 构建Mini-200或使用check验收来源、参考和独立三指标边界 |
 | benchmark | index_tasks | 更新公开任务浏览索引 |
 | benchmark | index_results | 为本机实验结果建立浏览索引 |
 | references | validate_release | 核验全部主／额外参考的身份、实际证据、科学计分和独立审核 |
@@ -25,6 +25,14 @@
 | maintenance | freeze | 重建正式发布文件的 SHA256 清单 |
 
 `benchmark/figures.py` 提供分析图与对比图共用的样式和绘图函数，由上述分析命令调用。绘图依赖可用 `python -m pip install -e ".[plots]"` 安装。
+
+Mini分析读取当前200题的真实主参考，不运行工具或生成模型：
+
+```bash
+python -m scripts.benchmark.analyze_benchmark --dataset mini
+```
+
+结果位于`docs/benchmark_analysis/mini_statistics.json`、`mini_tasks.json`及`mini_overview.svg/png/pdf`。`--no-plots`只重算JSON，`--output`可选择输出目录；Full的`statistics.json`与图件不会被Mini分析覆盖。
 
 常用检查：
 

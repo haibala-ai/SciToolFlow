@@ -141,15 +141,84 @@
       }
     }
   },
+  "mini": {
+    "tasks": 200,
+    "scientific_tools": 472,
+    "reference_calls_mean": 11.21,
+    "reference_calls_median": 9.0,
+    "reference_calls_max": 37,
+    "at_least_four_calls": 198,
+    "reference_call_histogram": {
+      "3": 2,
+      "4": 3,
+      "5": 12,
+      "6": 15,
+      "7": 20,
+      "8": 19,
+      "9": 31,
+      "10": 15,
+      "11": 11,
+      "12": 14,
+      "13": 11,
+      "14": 8,
+      "15": 5,
+      "16": 4,
+      "17": 4,
+      "18": 6,
+      "19": 4,
+      "20": 4,
+      "21": 2,
+      "22": 1,
+      "24": 1,
+      "25": 1,
+      "29": 1,
+      "30": 2,
+      "32": 1,
+      "33": 1,
+      "34": 1,
+      "37": 1
+    },
+    "covered_registered_tools": 154,
+    "reference_tool_coverage": 0.326271186440678,
+    "domain_table": {
+      "Chemical": {
+        "registered_tools": 134,
+        "covered_tools": 39,
+        "tasks_using_domain": 38
+      },
+      "Material": {
+        "registered_tools": 162,
+        "covered_tools": 20,
+        "tasks_using_domain": 37
+      },
+      "Biology": {
+        "registered_tools": 86,
+        "covered_tools": 20,
+        "tasks_using_domain": 29
+      },
+      "MachineLearning": {
+        "registered_tools": 65,
+        "covered_tools": 58,
+        "tasks_using_domain": 141
+      },
+      "General": {
+        "registered_tools": 25,
+        "covered_tools": 17,
+        "tasks_using_domain": 120
+      }
+    }
+  },
   "definitions": {
     "upstream_length": "Tool names in supplied public reference paths; not newly executed.",
     "current_length": "Actual primary-reference scientific calls, including failures; DescribeTools excluded.",
     "coverage": "Each side uses its own registered-name pool. Upstream is path occurrence; current is successful execution. Different taxonomies; no one-to-one capability or availability claim.",
-    "domains": "Multi-label task incidence, using each side's registered tool categories. An absent original MachineLearning group is not a claim that the original algorithms lack numerical capabilities."
+    "domains": "Multi-label task incidence, using each side's registered tool categories. An absent original MachineLearning group is not a claim that the original algorithms lack numerical capabilities.",
+    "datasets": "scitoolflow denotes Full-500; mini denotes the current Mini-200. Both are compared with upstream independently. Mini shares 100 task sources with Full; task/reference counts must not be added as independent samples."
   },
   "source_sha256": {
     "docs/comparison/sources/upstream_metadata.json": "372aacea4b4eb71c66db8f46c59058a952c4f09d373f8991cd65eaf2f542c221",
-    "docs/benchmark_analysis/statistics.json": "6833a368f623436d776278556a21f09fe7485ea06b4118eae1695c0cae9a95ca"
+    "docs/benchmark_analysis/statistics.json": "2e2bcb1511122e11fd52acdeeb90921292cf9170f0363f4f3821ce233168caa4",
+    "docs/benchmark_analysis/mini_statistics.json": "36b8500d30bb78bb780b523a68e49956bf9127338e238e802c949d424aaeac92"
   },
   "change": {
     "task_increase_percent": 31.92612137203166,
@@ -157,5 +226,10 @@
     "reference_median_ratio": 3.5,
     "four_call_share_increase_pp": 79.50131926121372,
     "own_registry_coverage_increase_pp": 31.395018299399492
+  },
+  "mini_change": {
+    "reference_mean_ratio": 4.534247598719317,
+    "four_call_share_increase_pp": 89.50131926121372,
+    "own_registry_coverage_increase_pp": 8.93739118075543
   }
 }

@@ -1,0 +1,35 @@
+{
+  "positive_electrode_mass_g": 2.0,
+  "negative_electrode_mass_g": 1.0,
+  "inactive_mass_g": 1.0,
+  "positive_discharge_curve": {
+    "q_mAh_per_g_active": [
+      0.0,
+      40.0,
+      100.0
+    ],
+    "potential_V": [
+      4.0,
+      3.8,
+      3.4
+    ]
+  },
+  "negative_discharge_curve": {
+    "q_mAh_per_g_active": [
+      0.0,
+      60.0,
+      120.0
+    ],
+    "potential_V": [
+      0.1,
+      0.2,
+      0.8
+    ]
+  },
+  "cell_lower_voltage_cutoff_V": 3.0,
+  "model": "Both electrode coordinates start at0for the same fully charged model cell. A shared cell discharge QmAh maps to q_positive=Q/m_positive and q_negative=Q/m_negative. Each supplied potential curve is piecewise linear in its own per-active-mass coordinate;no extrapolation is permitted. Cell voltage is positive minus negative potential. Stop at the earliest electrode coordinate endpoint OR first crossing of the lower voltage cutoff;include equality at the stop. No formation loss,polarization or other process is included.",
+  "target": "Return usable cell discharge charge,the charge-weighted mean voltage on exactly that accessible interval,the integrated cell discharge energy in mWh and assembled specific energy in Wh/kg. For comparison,compute each electrode potential averaged over its OWN ENTIRE listed coordinate range and subtract those two averages;report whether that difference equals the actual accessible cell mean. Integrate across the union of mapped breakpoints and the actual stop point.",
+  "provenance": {
+    "kind": "Explicit controlled material/device reporting model;not an experimental assembly or performance claim."
+  }
+}

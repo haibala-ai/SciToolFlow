@@ -1,0 +1,75 @@
+{
+  "schema_version": "scitoolflow.mini.validation.v1",
+  "date": "2026-11-05",
+  "timezone": "Asia/Shanghai",
+  "status": "passed",
+  "test_mode": "Reference decision replay driving the production ReAct harness and real registered tools.",
+  "new_llm_api_calls": 0,
+  "model_benchmark_performance_measured": false,
+  "regression_tests": {
+    "tests": 41,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "mapped_source_validation": {
+    "mapped_tasks": 100,
+    "status": "passed"
+  },
+  "reference_validation": {
+    "mini_primary_references": 200,
+    "full_primary_references": 500,
+    "method": "The unmocked CLI score commands run their normal complete reference integrity/self-check gates before scoring the selected tasks."
+  },
+  "cases": [
+    {
+      "id": "SMAS-0103",
+      "dataset": "mini",
+      "source_id": "FLOW-0029",
+      "scientific_calls": 6,
+      "status": "completed",
+      "trace_sha256": "bfd8897535f2e38d3f8d6b97bde65140a0ce2c2e8a7a19a67bcce27e95902bfd"
+    },
+    {
+      "id": "SMAS-0131",
+      "dataset": "mini",
+      "source_id": "FLOW-0147",
+      "scientific_calls": 8,
+      "status": "completed",
+      "trace_sha256": "77bf0e8d241b637776c10b23398e0e7498fb0320270d4c23a1fb273c911ce0e1"
+    },
+    {
+      "id": "SMAS-0132",
+      "dataset": "mini",
+      "source_id": "FLOW-0153",
+      "scientific_calls": 10,
+      "status": "completed",
+      "trace_sha256": "cbde3ca467b8967c79c9386e33d60fdbbcba325b0a0b6c0d14465ae45a04a2bd"
+    },
+    {
+      "id": "FLOW-0029",
+      "dataset": "full",
+      "source_id": "FLOW-0029",
+      "scientific_calls": 6,
+      "status": "completed",
+      "trace_sha256": "a6a73065fc3f1d16d2cebaa578afd504dffcefd7f792b3f497b3dc8fb04fdaa4"
+    }
+  ],
+  "mini_subset_scores": {
+    "dataset": "mini",
+    "tasks": 3,
+    "runtime_completion_rate": 1.0,
+    "tool_planning_accuracy": 1.0,
+    "answer_accuracy": 1.0
+  },
+  "full_subset_joint_success_rate": 1.0,
+  "local_artifact_directory": "results/mini_mapping_smoke_20261105_153541",
+  "source_report_sha256": "55357874057f5738f2f4134bc1d4e0beeb5fa689ea9a780d2a9c40f03a654d16",
+  "source_sha256": {
+    "tasks/mini/questions.jsonl": "df9b36f1a72586906607dd93beb1a82a0ed96dc7a6211d82f761e50873ca144a",
+    "tasks/mini/ids.tsv": "6ca4629e976d4cc5fc29b8458b38798cabd1f299c3dd195c1deb366bcb0cf1f4",
+    "tasks/mini/selection.json": "61ab100124fe1ff2ee23f984388a7b2f757293278e7cfc8bef1271d1581241e9",
+    "tasks/mini/evaluation/references.jsonl.gz": "7d2f576f891acebffc090fe0fbb808b4277dc20fb91dea8da8306e431e104304",
+    "tools/catalog/catalog.json": "f625636a684fe9dd142852b6b8848d2ac983f8ff908cbab13cb53bad6e7626ca"
+  }
+}

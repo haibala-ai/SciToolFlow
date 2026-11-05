@@ -1,0 +1,16 @@
+{
+  "records": [
+    {
+      "id": "r1",
+      "smiles": "CC(=O)[O-].[Na+]"
+    },
+    {
+      "id": "r2",
+      "smiles": "CC(=O)O"
+    },
+    {
+      "id": "r3",
+      "smiles": "CCC(=O)O"
+    }
+  ]
+}

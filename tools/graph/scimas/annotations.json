@@ -1,0 +1,2914 @@
+{
+  "schema_version": "scimas.annotations.v1",
+  "tools": {
+    "MatrixMultiply": {
+      "contract_sha256": "cdd46046397ba8066462678d934191deb7dd19e04890dabd9f23e657aeaa1f4e",
+      "operation": "dense_linear_algebra",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/matrix_operations.py",
+          "function": "matrix_multiply",
+          "sha256": "fd8a42e473f51350e1dcdeae8247595f9a66abcd17c8e79dd4c45cd09573061d"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "shape_alignment",
+          "description": "left columns must equal right rows or vector length; preserve row/column identity"
+        },
+        {
+          "kind": "work_bound",
+          "description": "At most 10000 input/output entries and 10000000 multiply-add terms"
+        },
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "cache_safe": "same_arguments_source_environment_and_method_only",
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "single_numerical_thread_bounded_work",
+        "cost_basis": "algorithmic description; not a measured latency estimate"
+      },
+      "repair_policy": {
+        "allowed": [
+          "correct_documented_parameter_binding",
+          "insert_explicit_compatible_conversion"
+        ],
+        "forbidden": [
+          "change_scientific_target",
+          "silently_regularize_or_change_method"
+        ]
+      },
+      "ports": {
+        "inputs": [
+          {
+            "parameter": "right",
+            "concept": "Finite numeric vector or matrix",
+            "concepts": [
+              "Finite numeric vector",
+              "Finite numeric matrix"
+            ],
+            "notes": "The schema oneOf accepts either; dimensions and axis identity still require checking."
+          }
+        ],
+        "outputs": [
+          {
+            "path": [
+              "product"
+            ],
+            "concept": "Finite numeric vector or matrix",
+            "concepts": [
+              "Finite numeric vector",
+              "Finite numeric matrix"
+            ],
+            "condition": "Actual rank follows the right operand; validate before binding."
+          },
+          {
+            "path": [
+              "left_shape"
+            ],
+            "concept": "Array shape",
+            "notes": "Dimensions only, not a vector of scientific measurements."
+          },
+          {
+            "path": [
+              "right_shape"
+            ],
+            "concept": "Array shape",
+            "notes": "Dimensions only, not a vector of scientific measurements."
+          },
+          {
+            "path": [
+              "product_shape"
+            ],
+            "concept": "Array shape",
+            "notes": "Dimensions only, not a vector of scientific measurements."
+          }
+        ]
+      }
+    },
+    "MatrixInverse": {
+      "contract_sha256": "c1591c6dd1d4ec951692df25d5d121ca285d649a04a90c0e065c6db711fc7c70",
+      "operation": "dense_linear_algebra",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "matrix_inverse",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "matrix_precondition",
+          "description": "Square nonsingular finite matrix; no regularization"
+        },
+        {
+          "kind": "interpretation",
+          "description": "Residual norm is not a forward error guarantee"
+        },
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "cache_safe": "same_arguments_source_environment_and_method_only",
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "size_dependent_dense_linear_algebra",
+        "cost_basis": "algorithmic description; not a measured latency estimate"
+      },
+      "repair_policy": {
+        "allowed": [
+          "correct_documented_parameter_binding",
+          "insert_explicit_compatible_conversion"
+        ],
+        "forbidden": [
+          "change_scientific_target",
+          "silently_regularize_or_change_method"
+        ]
+      },
+      "ports": {
+        "outputs": [
+          {
+            "path": [
+              "condition_number"
+            ],
+            "concept": "Matrix condition number",
+            "unit": "1",
+            "notes": "2-norm condition number; not a direct error bound."
+          },
+          {
+            "path": [
+              "residual_norm"
+            ],
+            "concept": "Inverse residual norm",
+            "unit": "1",
+            "notes": "Frobenius norm of A @ inverse - I; not forward error."
+          }
+        ]
+      }
+    },
+    "MatrixSVD": {
+      "contract_sha256": "b1649f4827af99af4fa0c8228d74e1ed104940f02a8d64bbe86a2d5164a774db",
+      "operation": "dense_linear_algebra",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "matrix_svd",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        }
+      },
+      "constraints": [
+        {
+          "kind": "matrix_precondition",
+          "description": "Finite rectangular matrix; economy SVD"
+        },
+        {
+          "kind": "interpretation",
+          "description": "Singular vectors have sign ambiguity; preserve matrix axis order"
+        }
+      ],
+      "execution_hints": {
+        "cache_safe": "same_arguments_source_environment_and_method_only",
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "size_dependent_dense_linear_algebra",
+        "cost_basis": "algorithmic description; not a measured latency estimate"
+      },
+      "repair_policy": {
+        "allowed": [
+          "correct_documented_parameter_binding",
+          "insert_explicit_compatible_conversion"
+        ],
+        "forbidden": [
+          "change_scientific_target",
+          "silently_regularize_or_change_method"
+        ]
+      },
+      "ports": {
+        "outputs": [
+          {
+            "path": [
+              "reconstruction_error"
+            ],
+            "concept": "Matrix reconstruction error",
+            "notes": "Frobenius norm in the units of the input matrix; input units are task-specific."
+          }
+        ]
+      }
+    },
+    "SMILESToInChI": {
+      "contract_sha256": "8b09500a8e1671103c63319ca7f114a72e644079ea75fdc307f734e2799b81e6",
+      "operation": "representation_conversion",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/molecular_utilities.py",
+          "function": "smiles_to_inchi",
+          "sha256": "adc1cd4726121eee2d1cab90068e77ee3cc86d50b6b206bf7dd780c54a358bfc"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "identity_policy",
+          "description": "Preserve complete record; do not infer salt, tautomer or protonation policy"
+        },
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "cache_safe": "same_arguments_source_environment_and_method_only",
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "local_molecular_conversion",
+        "cost_basis": "algorithmic description; not a measured latency estimate"
+      },
+      "repair_policy": {
+        "allowed": [
+          "correct_documented_parameter_binding",
+          "insert_explicit_compatible_conversion"
+        ],
+        "forbidden": [
+          "change_scientific_target",
+          "silently_regularize_or_change_method"
+        ]
+      }
+    },
+    "InChIToSMILES": {
+      "contract_sha256": "1f51c77ba68bf3ec5dc6b3f5805e8540c139504c04c8dbc88c8057da9dbe5b71",
+      "operation": "representation_conversion",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/molecular_utilities.py",
+          "function": "inchi_to_smiles",
+          "sha256": "adc1cd4726121eee2d1cab90068e77ee3cc86d50b6b206bf7dd780c54a358bfc"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "identity_policy",
+          "description": "Complete InChI required; no lookup or inferred pH/salt policy"
+        },
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "cache_safe": "same_arguments_source_environment_and_method_only",
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "local_molecular_conversion",
+        "cost_basis": "algorithmic description; not a measured latency estimate"
+      },
+      "repair_policy": {
+        "allowed": [
+          "correct_documented_parameter_binding",
+          "insert_explicit_compatible_conversion"
+        ],
+        "forbidden": [
+          "change_scientific_target",
+          "silently_regularize_or_change_method"
+        ]
+      }
+    },
+    "InChIToInChIKey": {
+      "contract_sha256": "6ee7dc1728af79874f315fd9b9f5e1f60756ec9b6982b1950f36654b8076ebe0",
+      "operation": "identifier_hash",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/molecular_utilities.py",
+          "function": "inchi_to_inchikey",
+          "sha256": "adc1cd4726121eee2d1cab90068e77ee3cc86d50b6b206bf7dd780c54a358bfc"
+        }
+      },
+      "constraints": [
+        {
+          "kind": "information_loss",
+          "description": "Hash cannot be used as a reversible structure representation"
+        }
+      ],
+      "execution_hints": {
+        "cache_safe": "same_arguments_source_environment_and_method_only",
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "local_identifier_conversion",
+        "cost_basis": "algorithmic description; not a measured latency estimate"
+      },
+      "repair_policy": {
+        "allowed": [
+          "correct_documented_parameter_binding",
+          "insert_explicit_compatible_conversion"
+        ],
+        "forbidden": [
+          "change_scientific_target",
+          "silently_regularize_or_change_method"
+        ]
+      }
+    },
+    "AdjustPValues": {
+      "contract_sha256": "aef0db93e3a28155afde2a60e8627f7f8107abf8cbb5458950e28f63e007e4cc",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/family_statistics.py",
+          "function": "adjust_p_values",
+          "sha256": "8eaea92439522360f422d294763ba47715fae8fdf0cabbee8bce0de882b3767d"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "AdjustedRandAgreement": {
+      "contract_sha256": "ab88b87f98efe3b6ffc4185520abf52058c3fef06624e498ebba6fba99990c56",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/research_workflows.py",
+          "function": "adjusted_rand_agreement",
+          "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "BinomialProbabilityTable": {
+      "contract_sha256": "d388e069e5533366225707ff8c8901c39ef0ff96a58c0e91e0ebab1a7fb81050",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/binomial_distribution.py",
+          "function": "binomial_probability_table",
+          "sha256": "df10a20a713fbdfa2be4f545eff83675a1a23d15e6350e0670ec2e4c42bdb06b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "BootstrapMeanInterval": {
+      "contract_sha256": "f2793281b22bd3c96dcd79c7a3324ed1251c31a596cf65586f6f509bb435b522",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "bootstrap_mean_interval",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CalculateDensity": {
+      "contract_sha256": "a08fd124306d2c58e966c5303da46660094ce2fe2e929f439570395c30c4fc5e",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/basic_local.py",
+          "function": "calculate_density",
+          "sha256": "9d68861929bea2f30c64b4116ad23fcbbec94a9d3df16b28c2db96eeef1c71f9"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CalculateSymmetry": {
+      "contract_sha256": "05f7cb337b782ee3e398112a431211e2565188125598f528ca2417c28a67ad22",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/local_queries.py",
+          "function": "calculate_symmetry",
+          "sha256": "cc1b4865b66fdd89dd0e7fabc479884898fea55cc005509eccf726b5da233cc7"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CalculateTPSA": {
+      "contract_sha256": "f883f86bd0c0a1325b9c03d6c9a900e9309e17625d963c8a46bde2c9f89e90e5",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_properties.py",
+          "function": "calculate_TPSA",
+          "sha256": "51d9e8c847aa0d2699b6c422360d3196ed67078fd19c5dc36db5cf52d8e86db8"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CanonicalMolecularIdentity": {
+      "contract_sha256": "be218bcee050da156c3461640317ca7fc4c4e0d0fa503e9da865d466af926c6a",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/research_workflows.py",
+          "function": "canonical_molecular_identity",
+          "sha256": "af00a5877c4badf269ac1db278be46180c2b1d0590b0ae78ff98317e5ee7cb31"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ClusteringQualityMetrics": {
+      "contract_sha256": "c0d99f86eb7f453fd525a96de1fb982817b9c0898158053f4e4f24319645d34b",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/research_workflows.py",
+          "function": "clustering_quality_metrics",
+          "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CompareMolecularFingerprints": {
+      "contract_sha256": "a41312b2c7a0eb76d71ea78edae8b151a24a2215b48e7f5c09e2f3f9b0cbe43d",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/fingerprints.py",
+          "function": "compare_molecular_fingerprints",
+          "sha256": "2c9453fca27980abffa79fcc10e37867cb0a3fee7f9d316771b97ac1c59766b8"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CompositionFractions": {
+      "contract_sha256": "37ef9edd61bd057b6b2644fb1d8dd0d58c258e15d52b5f4e767d19482a3206d3",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/research_workflows.py",
+          "function": "composition_fractions",
+          "sha256": "45bba61a94872f2d4417baca4c7de9ac2bc9d2f2e5c82049ec63424e42071f5d"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CrystalStructureMatch": {
+      "contract_sha256": "cf468729af03c2c791853b9623639d9099a6d657db77a947a6d90e5e61719ff0",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/research_workflows.py",
+          "function": "crystal_structure_match",
+          "sha256": "45bba61a94872f2d4417baca4c7de9ac2bc9d2f2e5c82049ec63424e42071f5d"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CubicHermiteInterpolate": {
+      "contract_sha256": "c5b01e1dd8ba5df097066354544d1584e7b959ef282c59c5a516ed6173e0e4e9",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/hermite_interpolation.py",
+          "function": "cubic_hermite_interpolate",
+          "sha256": "c50bcfa251c2fa914decaa49917a21433d31510b8d0d70f5f5b65694222ed5f0"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "DecisionCostSummary": {
+      "contract_sha256": "33d996e2d0cf035cb4de1097423463b5485c89305f2afa7e52f0b913cb72dbff",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/research_workflows.py",
+          "function": "decision_cost_summary",
+          "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "DiversityIndices": {
+      "contract_sha256": "8a168e40d9cfde17f5b11e2fd47ee47eb3c46b5ecb85d9d7b313861e53f67a68",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/biology/research_workflows.py",
+          "function": "diversity_indices",
+          "sha256": "788b2dc45d6fd024f78a7bf5e8f502a1b41f3924a2165e37acae01653868e7d8"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ElementwiseNumericOperations": {
+      "contract_sha256": "67b6cbb94b7b796a290fdd99736c3fec2c81a79a569c023d499aeec9efb2c4d4",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/general/numeric_operations.py",
+          "function": "elementwise_numeric_operations",
+          "sha256": "3f2d8ad7b6841e5145843465389114d1a0061e3ff860cfa4e628d87c874b241d"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "EvaluateParametricCurve": {
+      "contract_sha256": "449dfc51d3809641868a01eba8d295d41d444052fd15e4e9bb1cb8e7e0eb4fd4",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/parametric_curves.py",
+          "function": "evaluate_parametric_curve",
+          "sha256": "a734bd48ab264b410b3d737f7b518b4f4acea1b52774beeaa3624c4e942cb340"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "FiniteDifferenceGradient": {
+      "contract_sha256": "f30ef95f6c89a166bf039aa66684040f2146902fedfd5ae4f0cf738982750ba5",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "finite_difference_gradient",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "FinitePopulationCoverage": {
+      "contract_sha256": "d0c8e85cbe825061affc6f6850df08a2a937db7736c5f3e888b380aa91d7a156",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/finite_population.py",
+          "function": "finite_population_coverage",
+          "sha256": "30234f7180f446b57624b043a4a25d8c25c8eb3de1b5c48f80788f9a79f74e2f"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "FitLogisticRegression": {
+      "contract_sha256": "33247e99836af092ce9a0a41766fa2671c7527e5e3b182460aa0737233d6a88c",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "fit_logistic_regression",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "FitParametricCurve": {
+      "contract_sha256": "93e673b5827d368a9aff2746d6804dff5504555a05ce75d6abeec3f9148e36f4",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/parametric_curves.py",
+          "function": "fit_parametric_curve",
+          "sha256": "a734bd48ab264b410b3d737f7b518b4f4acea1b52774beeaa3624c4e942cb340"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "FitRidgeRegression": {
+      "contract_sha256": "7fc783590aa2c6774264776be9a93969a8f28432ebaa370d44fc075d71788b0b",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "fit_ridge_regression",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetAmideBondsNum": {
+      "contract_sha256": "0442253e70d167d95522931260adf61efceaeba3d116aaee8b3a9e2586c0159d",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_NumAmideBonds",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetAromaticHeterocyclesNum": {
+      "contract_sha256": "cd63cb327c197a2241807eb1da0ab3a46d74c6c87f6d6a27785175ed20575224",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_NumAromaticHeterocycles",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetAromaticRingsNum": {
+      "contract_sha256": "62d35f466d44114ba2c22879c8d55c65839cebfa33513e5c1d85114bce14881f",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_NumAromaticRings",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetAtomStereoCentersNum": {
+      "contract_sha256": "4cde26355388cf6fc34d1ca630f06d14f5d44e8433613a0939679197424cd05f",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_NumAtomStereoCenters",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetBridgeheadAtomsNum": {
+      "contract_sha256": "2ba297d80275bc8b2c97f87aa353bc5739dd3a81b3a775521c88d64f8cf92469",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_NumBridgeheadAtoms",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetExactMolceularWeight": {
+      "contract_sha256": "33eda685074d1847fac1e136a8a606efa67dad02f957e03f0ce54f9641f20055",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_exact_molweight",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetFractionCSP3": {
+      "contract_sha256": "ff80e070c5360834150b7d71de43f3d7d05b74a8888a4dd7b9cc1b39650948ef",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_FractionCSP3",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetHBANum": {
+      "contract_sha256": "1b1b03d4eaa8c731325d9b8be88fa707f0c7fe3b3119186a40684c6b3314fa73",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_NumHBA",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetHBDNum": {
+      "contract_sha256": "74431c743efa6a3bb00d0763a1f6495d6c6e69dc78541b53d0f69b93f2f94c39",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_NumHBD",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetRingsNum": {
+      "contract_sha256": "e259e07c08a079acc246fbdacd94c8849c1ee9b75f8de825c4c56180249632a4",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_NumRings",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetRotatableBondsNum": {
+      "contract_sha256": "de626a23f0243d4045b8e388141b8c30fc2f74f26aa867d54aa58314a15be123",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_NumRotatableBonds",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetSpiroAtomsNum": {
+      "contract_sha256": "c11adc4f47631963d8696da4ac1805fb99da50dabf84bd95a68eddd260f8c3ee",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_NumSpiroAtoms",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetUnspecifiedAtomStereoCentersNum": {
+      "contract_sha256": "c334add67645f74ace2fae70fe62a326474944f34df9daa94952f7787450bc12",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_NumUnspecifiedAtomStereoCenters",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GraphLaplacian": {
+      "contract_sha256": "bf4e79f73e9470857944ff1c1d9bdac7d4d8393275bd8632e880c3242443eab8",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/graph_laplacian.py",
+          "function": "graph_laplacian",
+          "sha256": "ba49ae3ccc54570c360420d34c99e01b2ba9186f252fc25b1ce76f5b54d040f4"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GroupTrainTestSplit": {
+      "contract_sha256": "76139e4173ae34d7d0fd32d5eb378313eadbbaf87d984a6b3ca581fb1040e7ca",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/research_workflows.py",
+          "function": "group_train_test_split",
+          "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GroupedBootstrapMeanInterval": {
+      "contract_sha256": "d84f9da17389b06df1bbdf06d41c58a9cabe96947c50cf28ba8ba410c1b31566",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/research_workflows.py",
+          "function": "grouped_bootstrap_mean_interval",
+          "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "KMeansClustering": {
+      "contract_sha256": "783630ba06763e8fa860228818e4b100d6272cfa0aa9f2e1b505af7fa48f7292",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "kmeans_clustering",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "MantelCorrelation": {
+      "contract_sha256": "ab11dc8ccab496b6af1d157cb41058aa2eda99f46101a5c1201912ddf754cd5d",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/mantel.py",
+          "function": "mantel_correlation",
+          "sha256": "c9dd006e9f0dcd2eff7717c7930f8a234a31274e0dedc8ee5c98d9a20e3c0b49"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "MatchedPeriodicDisplacements": {
+      "contract_sha256": "137f53fc316f834c43bd03948ffbef4f5a2ddb86f493ae96715b7be9bd20848b",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/research_workflows.py",
+          "function": "matched_periodic_displacements",
+          "sha256": "45bba61a94872f2d4417baca4c7de9ac2bc9d2f2e5c82049ec63424e42071f5d"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "MatrixExponential": {
+      "contract_sha256": "50e585767250dbc96eaa357a500810c8af382c92fed7927b6cebd8d14332a1f9",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/matrix_exponential.py",
+          "function": "matrix_exponential",
+          "sha256": "148a9da8ed333fe6d4fd614d5572c114c814e3496be2abe109c25b74e2f79cb4"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "NormalizeNumericRows": {
+      "contract_sha256": "acea12b9f49163826a4f8fc0d38f0a9631e248c14e4e4aa5b5b8b78d8a30adc8",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/general/research_workflows.py",
+          "function": "normalize_numeric_rows",
+          "sha256": "179c7b9a1ee486a26079e0d4b4dd2ffc7ded374553d6c5b9df93aca8957a391f"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "NumericalTrapezoidIntegration": {
+      "contract_sha256": "b0e82af94c87e0fa1bc0eb8e7995342947306193a32c583f5237ee150facdff9",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "numerical_trapezoid_integration",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "PCAReconstructionError": {
+      "contract_sha256": "cd6089c3a382b95b9c29083d162c92cfe36ee172ffb1093d7c3c79beb838aac8",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/research_workflows.py",
+          "function": "pca_reconstruction_error",
+          "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "PairedRandomizationTest": {
+      "contract_sha256": "22565a54d3ba13447e9aff4f38dec923db9432482270d87a852d7c9f190d7956",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/randomization.py",
+          "function": "paired_randomization_test",
+          "sha256": "e2e1c5c2b1494bc9fe6eca67adecae932d7a5c02bc4cab67f839bc2bec659ac7"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "PairwiseNumericDistances": {
+      "contract_sha256": "038d23c69a623a360090b09468da86811ec69319e296b3e1182087ea1da4058a",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/pairwise_distances.py",
+          "function": "pairwise_numeric_distances",
+          "sha256": "af2470442744045692fdce0d84f42fa59b43ab60646bb338f74561e46ec267ae"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ParseJSONDocument": {
+      "contract_sha256": "dcd50e4519c31309e2207b37839ad372cde3242d8f041287f974d7ae9b2723ac",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/general/data_tools.py",
+          "function": "parse_json_document",
+          "sha256": "aa5849411f36adec7ffc1dcd59cefc494edc9f36943c48fb71d94269b9dd0ff5"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "DescribeNumericData": {
+      "contract_sha256": "29b4589b9a47d1437678337479ef432de9de425fd16429552b41eb6edf07254e",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "describe_numeric_data",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetElementComposition": {
+      "contract_sha256": "17c6f28c27aaee10dc49849a3f209fdc3b1c97e7fdb8fff3e657c8170878def5",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/local_queries.py",
+          "function": "get_element_composition",
+          "sha256": "cc1b4865b66fdd89dd0e7fabc479884898fea55cc005509eccf726b5da233cc7"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ParseNewickTreeDistances": {
+      "contract_sha256": "5e629e93ae97d609ed43245486ff6440bcb746a7aa09a1b4941d79d08169eebb",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/biology/tree_distances.py",
+          "function": "parse_newick_tree_distances",
+          "sha256": "d9ea835e1699c4f21629a45d15539e96730f999ec84710f2f5a272fd433d4304"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "PearsonCorrelation": {
+      "contract_sha256": "ce2297fccc8ccd88cf579b070fdfd4601288d93a3feb233a853cb792f017ad63",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "pearson_correlation",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "PeriodicNeighborList": {
+      "contract_sha256": "997c2c595c7acfb44e0e593ecef124ceccd6cde15848f9a1d6af9ecc1335f458",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/research_workflows.py",
+          "function": "periodic_neighbor_list",
+          "sha256": "45bba61a94872f2d4417baca4c7de9ac2bc9d2f2e5c82049ec63424e42071f5d"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "PolynomialLeastSquaresFit": {
+      "contract_sha256": "5ead353d07256bef503ec6d8bbd5ff35d16202a37e2d07fda11be3e50e528324",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "polynomial_least_squares_fit",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "PolynomialRoots": {
+      "contract_sha256": "0d7c87ee3165a634e2cae06dd2005f9d7e4928db68e8abe2be8f55e8edb385f4",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/polynomial_roots.py",
+          "function": "polynomial_roots",
+          "sha256": "90de5bc4542bcfb3acbf327ecdbfb1a27b54dcc8c02d47f96d867cfcf6852a82"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "PowderDiffractionPattern": {
+      "contract_sha256": "6ee2b6046fe52809c30904262754e3c10fe41a9ecc58fb323eaca01b32e8d3a7",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/research_workflows.py",
+          "function": "powder_diffraction_pattern",
+          "sha256": "45bba61a94872f2d4417baca4c7de9ac2bc9d2f2e5c82049ec63424e42071f5d"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "PredictLinearModel": {
+      "contract_sha256": "73c7fb9fd2754be2acdff10325d2e0857947630516bed487eec579e012733e6c",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "predict_linear_model",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "PredictLogisticModel": {
+      "contract_sha256": "fb6f42a5d3543df481375019e1aeed4380e828002e52d3823c520e85da999f6f",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "predict_logistic_model",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "PrincipalComponentProjection": {
+      "contract_sha256": "5b8fbd19418fd8a6da0fce255718244303beda8dc416ae62cc5b7fff5b9404ff",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "principal_component_projection",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ProbabilityCalibrationSummary": {
+      "contract_sha256": "0a32fd80207b969e5efa7d944cea8106d71ca2754b798a621cae046f4a921251",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/research_workflows.py",
+          "function": "probability_calibration_summary",
+          "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ProteinAliphaticIndex": {
+      "contract_sha256": "8cf53eb5fb79ba1da5005d4f56faa55c37f5241081922d1f28b2707bc227eec0",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/biology/sequence_indices.py",
+          "function": "protein_aliphatic_index",
+          "sha256": "16fd324668e1477375ccd1586b817d1d7022be3bba8179dcaaf036def0577d40"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ProteinGRAVY": {
+      "contract_sha256": "05ff151b8fe3661acbb7755ec6e12ab5ced72283397ff9ed1e3f4a12290ed2ad",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/biology/protein_descriptors.py",
+          "function": "protein_gravy",
+          "sha256": "f604b7d3a9973d33e6d08d9d9e78fb01dceee34b5691e7f36e7b5d4fcba73170"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ReadCrystalStructure": {
+      "contract_sha256": "357c7a26ef66674d25015f562eebcf83bb6bed8407a8aa6b7ce6957ece423109",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/local_queries.py",
+          "function": "read_crystal_structure",
+          "sha256": "cc1b4865b66fdd89dd0e7fabc479884898fea55cc005509eccf726b5da233cc7"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "RegressionMetrics": {
+      "contract_sha256": "91f394474e8494022498ce1b41e7a69bedf9c726ab02fe2ff762d566c8864984",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "regression_metrics",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "SMILESToWeight": {
+      "contract_sha256": "b9a6e48291676eabd056a1960932b3592cb73d770a0b7d7ec367ca1967e48efb",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/molecular_utilities.py",
+          "function": "average_molecular_weight",
+          "sha256": "adc1cd4726121eee2d1cab90068e77ee3cc86d50b6b206bf7dd780c54a358bfc"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ScaleNumericMatrix": {
+      "contract_sha256": "b9c102cdc76083a1fba3ec0223e722df280582170eed93ccc6a6e990f588aec1",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/general/matrix_scaling.py",
+          "function": "scale_numeric_matrix",
+          "sha256": "f80bd8eb958f4a8311faea93b560a1db13cfc4af6fa574db949a70e928692707"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "SequenceComposition": {
+      "contract_sha256": "7610ee7c81c39e3d26d4a2052a955a6ae9a27352aa2313005b794ce30f135890",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/biology/sequence_primitives.py",
+          "function": "sequence_composition",
+          "sha256": "1f05c75f05c88b6642fffdee6cabfb4ad0a896b1439af8a12fcfd4bdb6a4c42f"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "SequenceQualityMetrics": {
+      "contract_sha256": "31742c74a397ff2f348e68d9718bf82b827649270276945711cde9061266c957",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/biology/research_workflows.py",
+          "function": "sequence_quality_metrics",
+          "sha256": "788b2dc45d6fd024f78a7bf5e8f502a1b41f3924a2165e37acae01653868e7d8"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "SolveLinearProgram": {
+      "contract_sha256": "752ebe5a65375630318f6943516a793729e58e67c8e88e57b4459e90314ae9b1",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/linear_program.py",
+          "function": "solve_linear_program",
+          "sha256": "a1408174fcd45282e21704a12b2119a7dc0ce1bfafb97536b3001c66f82b4c12"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "SolveLinearSystem": {
+      "contract_sha256": "91f7618c2e10ee47f5d37aab098f44ba4b8616a360243ebadeec8607b8f2143c",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "solve_linear_system",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "SpearmanCorrelation": {
+      "contract_sha256": "8507fac3bc0fbe5923bc2b9bdbe8740107a99f1708aa709859a097c519a25698",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "spearman_correlation",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "StandardizeNumericFeatures": {
+      "contract_sha256": "2c2966e0ca19a3cc04d16b5c0064ed2e57340277d53c1e6721308d902ad78115",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "standardize_numeric_features",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "SubstructureQuery": {
+      "contract_sha256": "5a7b634eeef393f2e5859b5094b2c691027fd3f92477d7c92cd5da6de31e0cb0",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/molecular_analysis.py",
+          "function": "substructure_query",
+          "sha256": "7872e68bf250eee999aa03ed16e087935a205abb70598913dd13081ae7e3bab8"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "SymmetricEigenDecomposition": {
+      "contract_sha256": "335be25dcab4f1391a7742d9647cbd5873f1c3ef17e05f8b877d6edbb34729d9",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/numeric_tools.py",
+          "function": "symmetric_eigen_decomposition",
+          "sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ThresholdClassProbabilities": {
+      "contract_sha256": "b67645afed89b37e6c3fa7182175de75f90abf40855cc3f249f660cf14eb287d",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/machine_learning/research_workflows.py",
+          "function": "threshold_class_probabilities",
+          "sha256": "f0a5fc2c877433f8f8ba78ea2a672e87afe0bbcb5293a0357bd0eb3edb7e58de"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ReadQChemFrequencyModes": {
+      "contract_sha256": "7e24b2ec385a2f69157f08efab3246d81e19dc5fc4d352b5ff2bf639dd9043c0",
+      "operation": "read_only_completed_qchem_parser",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/material_queries.py",
+          "function": "read_qchem_frequency_modes",
+          "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Only immutable supplied completed Q-Chem bytes; component fields share source hash and printed context; no new calculation or remote substitution."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ReadQChemIRIntensities": {
+      "contract_sha256": "7acd351b2488b6b3830da5448f85647d5ae6584d9b34a723a2a2c31c809116de",
+      "operation": "read_only_completed_qchem_parser",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/material_queries.py",
+          "function": "read_qchem_ir_intensities",
+          "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Only immutable supplied completed Q-Chem bytes; component fields share source hash and printed context; no new calculation or remote substitution."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ReadQChemNBOPopulations": {
+      "contract_sha256": "e0c5881147e2779937adfb7858d476a1d277b04274e407c3663eabee9b6e9e51",
+      "operation": "read_only_completed_qchem_parser",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/material_queries.py",
+          "function": "read_qchem_nbo_population",
+          "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Read-only parsing of immutable supplied NBO-formatted records: completed computational outputs or explicitly identified controlled transcription-audit fixtures. Retain source hash, channel metadata, atom order and printed values. Parsing does not certify numerical accounting consistency, a new calculation or experimental validity."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ReadQChemTranslationalEnthalpy": {
+      "contract_sha256": "9d1aeacabd34e9b2d2b80541b8ffb895c2995bafb1823f397cca91f0243629e7",
+      "operation": "read_only_completed_qchem_parser",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/material_queries.py",
+          "function": "read_qchem_translational_enthalpy",
+          "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Only immutable supplied completed Q-Chem bytes; component fields share source hash and printed context; no new calculation or remote substitution."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ReadQChemTranslationalEntropy": {
+      "contract_sha256": "c4f2b737ba7787d7a2f13e6059ad47d0d577fc50a7d97d84b67384985454607b",
+      "operation": "read_only_completed_qchem_parser",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/material_queries.py",
+          "function": "read_qchem_translational_entropy",
+          "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Only immutable supplied completed Q-Chem bytes; component fields share source hash and printed context; no new calculation or remote substitution."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ReadQChemRotationalEnthalpy": {
+      "contract_sha256": "bce3b13d3cfac5cb40ff5958b8903f95a77b358e7dc049e47911f903afa3fabe",
+      "operation": "read_only_completed_qchem_parser",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/material_queries.py",
+          "function": "read_qchem_rotational_enthalpy",
+          "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Only immutable supplied completed Q-Chem bytes; component fields share source hash and printed context; no new calculation or remote substitution."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ReadQChemRotationalEntropy": {
+      "contract_sha256": "5c80f7550e7048ec9551ad756ee7be60e8525d0c2e59c56a3ff99550db813a86",
+      "operation": "read_only_completed_qchem_parser",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/material_queries.py",
+          "function": "read_qchem_rotational_entropy",
+          "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Only immutable supplied completed Q-Chem bytes; component fields share source hash and printed context; no new calculation or remote substitution."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ReadQChemVibrationalEnthalpy": {
+      "contract_sha256": "99cdb7d36ca9da48dff4cfc140df8cd5c20e810eecaf37a51d17c4e2fa1d40e6",
+      "operation": "read_only_completed_qchem_parser",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/material_queries.py",
+          "function": "read_qchem_vibrational_enthalpy",
+          "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Only immutable supplied completed Q-Chem bytes; component fields share source hash and printed context; no new calculation or remote substitution."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "ReadQChemVibrationalEntropy": {
+      "contract_sha256": "d44df06bcbc2b923cfbbd714ef7b9a7e2a5d5b5ba156fe3529f03b09608493fb",
+      "operation": "read_only_completed_qchem_parser",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/materials/material_queries.py",
+          "function": "read_qchem_vibrational_entropy",
+          "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Only immutable supplied completed Q-Chem bytes; component fields share source hash and printed context; no new calculation or remote substitution."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "GetEEMCharges": {
+      "contract_sha256": "fd3c70bdedb3360b2ecc8682a8d739018aefac2b04cf6fcae3cf1370b1e2791f",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_basic.py",
+          "function": "calculate_EEMcharges",
+          "sha256": "595e5503b8b488519e5f372c78a4c3f69391051fdcb416a34babd8f4ae9d52d3"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Local deterministic molecular geometry/inventory or finite table arithmetic; retain coordinate, hydrogen, record, random-seed and normalization protocol. No external experimental claim. Process-local caches are not shared state."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "MolecularFormalCharges": {
+      "contract_sha256": "233c356ae43f2480a50ca54fd95b51fb480ffa524793067e173e6f86e0aa7463",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/molecular_analysis.py",
+          "function": "formal_charges",
+          "sha256": "7872e68bf250eee999aa03ed16e087935a205abb70598913dd13081ae7e3bab8"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Local deterministic molecular geometry/inventory or finite table arithmetic; retain coordinate, hydrogen, record, random-seed and normalization protocol. No external experimental claim. Process-local caches are not shared state."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CountMolecularAtoms": {
+      "contract_sha256": "1d312f419e35af523c478531825c0487473619c7e0f28608527fa8a67467b866",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/core.py",
+          "function": "count_molecular_atoms",
+          "sha256": "2f3a37d92f9cf5fd5945965e9c72aebd5aea9cefc014979cf776c0663a6fad16"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Local deterministic molecular geometry/inventory or finite table arithmetic; retain coordinate, hydrogen, record, random-seed and normalization protocol. No external experimental claim. Process-local caches are not shared state."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CalculatePMI1": {
+      "contract_sha256": "a72917ba0b684426c35d1dc8eb19f5b4d59b63a08277c3e21a2dd95050686953",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_properties.py",
+          "function": "calculate_PMI1",
+          "sha256": "51d9e8c847aa0d2699b6c422360d3196ed67078fd19c5dc36db5cf52d8e86db8"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Local deterministic molecular geometry/inventory or finite table arithmetic; retain coordinate, hydrogen, record, random-seed and normalization protocol. No external experimental claim. Process-local caches are not shared state."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CalculatePMI2": {
+      "contract_sha256": "f6229127c06558c09851733fe0b5ec38f99de933025a6e3c20ac617b4649c8d3",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_properties.py",
+          "function": "calculate_PMI2",
+          "sha256": "51d9e8c847aa0d2699b6c422360d3196ed67078fd19c5dc36db5cf52d8e86db8"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Local deterministic molecular geometry/inventory or finite table arithmetic; retain coordinate, hydrogen, record, random-seed and normalization protocol. No external experimental claim. Process-local caches are not shared state."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CalculatePMI3": {
+      "contract_sha256": "8ba43b655929799a0ca33a10fc19fd7b6486cd1e4f1ea19392dd8ccb59c8e98d",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/rdkit_properties.py",
+          "function": "calculate_PMI3",
+          "sha256": "51d9e8c847aa0d2699b6c422360d3196ed67078fd19c5dc36db5cf52d8e86db8"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Local deterministic molecular geometry/inventory or finite table arithmetic; retain coordinate, hydrogen, record, random-seed and normalization protocol. No external experimental claim. Process-local caches are not shared state."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "NormalizedPrincipalMoments": {
+      "contract_sha256": "0efb1e8287657dd2f6f65bed0819ad1c640f3a55e2e54d836567f36af0b05a82",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/molecular_analysis.py",
+          "function": "normalized_principal_moments",
+          "sha256": "7872e68bf250eee999aa03ed16e087935a205abb70598913dd13081ae7e3bab8"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Local deterministic molecular geometry/inventory or finite table arithmetic; retain coordinate, hydrogen, record, random-seed and normalization protocol. No external experimental claim. Process-local caches are not shared state."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "CompareMolecularShapes": {
+      "contract_sha256": "f3b73b3a36f0c12d8af58af9326d63cd6bde922944411ed045e52021107c3b40",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/chemistry/molecular_analysis.py",
+          "function": "compare_molecular_shapes",
+          "sha256": "7872e68bf250eee999aa03ed16e087935a205abb70598913dd13081ae7e3bab8"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Local deterministic molecular geometry/inventory or finite table arithmetic; retain coordinate, hydrogen, record, random-seed and normalization protocol. No external experimental claim. Process-local caches are not shared state."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    },
+    "SummarizeNumericTable": {
+      "contract_sha256": "be4d304adc94b6e4f1d80dba7f9754a44befd6174a29043f86914242fed15de4",
+      "operation": "local_scientific_computation_or_readonly_input",
+      "evidence": {
+        "basis": "source_and_contract_review",
+        "source": {
+          "file": "tools/implementations/general/research_workflows.py",
+          "function": "summarize_numeric_table",
+          "sha256": "179c7b9a1ee486a26079e0d4b4dd2ffc7ded374553d6c5b9df93aca8957a391f"
+        },
+        "parallel_review": {
+          "source": "tools/graph/scimas/parallel_review.json",
+          "scope": "Independent production worker processes, separate per-call work/artifact directories, immutable input files; not arbitrary in-process thread safety."
+        }
+      },
+      "constraints": [
+        {
+          "kind": "execution_isolation",
+          "description": "Parallel overlap requires separate worker processes and per-call work/artifact directories; shared input bytes must remain immutable; stated scientific method, input identity and limits still apply."
+        },
+        {
+          "kind": "scientific_scope",
+          "description": "Local deterministic molecular geometry/inventory or finite table arithmetic; retain coordinate, hydrogen, record, random-seed and normalization protocol. No external experimental claim. Process-local caches are not shared state."
+        }
+      ],
+      "execution_hints": {
+        "parallel_safe": "isolated_processes_with_resource_limits",
+        "cost_class": "unknown",
+        "cost_basis": "No measured latency or speedup model; use production process and numeric bounds."
+      }
+    }
+  }
+}

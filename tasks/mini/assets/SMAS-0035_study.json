@@ -1,0 +1,9 @@
+{
+  "records": {
+    "R1": "ACGTACGTNN--",
+    "R2": "GGCCATAT",
+    "R3": "ACGT?ACG",
+    "R4": "AAAAACCC"
+  },
+  "verified_R3": "ACGTTACG"
+}

@@ -1,0 +1,1545 @@
+{
+  "schema_version": "scimas.special.strata.v1",
+  "suite": "scimas-special-100-v2",
+  "reviewed_on": "2026-11-05",
+  "task_count": 100,
+  "difficulty_counts": {
+    "intermediate": 52,
+    "foundation": 20,
+    "advanced": 28
+  },
+  "domain_counts": {
+    "Chemical": 25,
+    "Material": 25,
+    "Biology": 25,
+    "MachineLearning": 25
+  },
+  "advanced_domain_counts": {
+    "Chemical": 7,
+    "Material": 7,
+    "Biology": 7,
+    "MachineLearning": 7
+  },
+  "reference_policy": {
+    "regenerated": 43,
+    "unchanged_reused": 57,
+    "model": "gpt-6.1-sol",
+    "generation_api_used": false,
+    "scope": "Relative to Special-100 v1. Every revised public question, including the redesigned multi-record0073, has a new public-context reference; unchanged57 retain current-identity verified references."
+  },
+  "difficulty_definition": {
+    "advanced": "Interacting scientific/method-domain boundaries with meaningful branches and a nontrivial scientific join; design-based, not measured baseline failure.",
+    "intermediate": "A coherent multi-method comparison or dependency graph with shared evidence and an actual scientific decision.",
+    "foundation": "A bounded control problem with reusable state, independent branches and a consistent scientific join. Lower effort for graph execution, not a claim that serial methods trivially solve it."
+  },
+  "selection_policy": [
+    "Every task has a scientific purpose and an explicit graph-execution mechanism.",
+    "Tool count or internal algorithm complexity alone does not establish task difficulty.",
+    "Public inputs and three metrics are shared across baselines; equivalent correct scientific routes are eligible.",
+    "No model-specific score bonus or hidden reference serial-order requirement.",
+    "Readiness and execution-safety evidence do not establish measured end-to-end speedup."
+  ],
+  "scope": "Independent Special-100; neither Full-500 nor Mini-200 modified.",
+  "tasks": [
+    {
+      "id": "SMAS-0001",
+      "domain": "Chemical",
+      "title": "Salt-form inventory for a gravimetric assay",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "对象和电荷不能混用；代理目标受限",
+      "shared_prerequisite": "完整提交图和选定有机母体的身份",
+      "parallel_scientific_subtasks": [
+        "原始完整图的质量",
+        "母体的质量和极性"
+      ],
+      "scientific_join": "反离子质量差与明确代理排序",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0002",
+      "domain": "Chemical",
+      "title": "Isotope standard mass-defect audit",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "基础的共享身份与两个互补质量量，不要求推断实验性质",
+      "shared_prerequisite": "保留同位素、组分和立体信息的分子身份",
+      "parallel_scientific_subtasks": [
+        "平均质量",
+        "单同位素精确质量"
+      ],
+      "scientific_join": "按明确数值尺度作质量差并保留并列",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0003",
+      "domain": "Chemical",
+      "title": "Hydroxyl masking and donor efficiency",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "基础局部输入恢复，不强制制造失败，也不猜结构",
+      "shared_prerequisite": "受损记录仅采用给定权威替代式，其余记录独立",
+      "parallel_scientific_subtasks": [
+        "各记录规范身份与供体计数",
+        "各记录质量"
+      ],
+      "scientific_join": "按相同有效图计算供体密度",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0004",
+      "domain": "Chemical",
+      "title": "Two-stage linker eligibility audit",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "两种失败控制、包含阈值和可选字段空值需一致",
+      "shared_prerequisite": "每个保持原图的候选",
+      "parallel_scientific_subtasks": [
+        "芳环计数",
+        "严格可旋转键计数"
+      ],
+      "scientific_join": "AND门控后才启动合格候选的质量/极性",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0005",
+      "domain": "Chemical",
+      "title": "Tautomer-policy identity reconciliation",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "控制政策、表示和质量不变量，不能推断溶液丰度",
+      "shared_prerequisite": "同一原始图、不同互变异构政策",
+      "parallel_scientific_subtasks": [
+        "保留表示及质量见证",
+        "规范互变表示及质量见证"
+      ],
+      "scientific_join": "政策内/政策间身份相等性核对",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0006",
+      "domain": "Chemical",
+      "title": "Matched functional-group contrast accounting",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "公共基线复用与对照方向，避免并排独立算分",
+      "shared_prerequisite": "一个共同基线的实测质量与极性",
+      "parallel_scientific_subtasks": [
+        "各替代图的质量",
+        "各替代图的极性"
+      ],
+      "scientific_join": "每个替代减同一基线，再比较对照差",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0007",
+      "domain": "Chemical",
+      "title": "Charge-domain screening of submitted fragments",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "工具适用域门控，不把整盐净电荷当片段中性",
+      "shared_prerequisite": "最大有机片段身份及真实形式电荷",
+      "parallel_scientific_subtasks": [
+        "各候选的片段与电荷判别",
+        "合格图的供体与受体计数"
+      ],
+      "scientific_join": "带电片段停止中性图专属后续，完整保留身份",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0008",
+      "domain": "Chemical",
+      "title": "Compound-space neighborhoods under two fingerprint representations",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Compare representation-dependent local neighborhoods and distributed signal without mixing molecular and compound object spaces.",
+      "shared_prerequisite": "Each full fingerprint matrix is reused by its local neighbor audit and compound-space propagation operator.",
+      "parallel_scientific_subtasks": [
+        "Morgan and MACCS representation branches",
+        "Within each representation: local decisions, Laplacian spectrum and propagation chain"
+      ],
+      "scientific_join": "Compare representation-dependent local neighborhoods and distributed signal without mixing molecular and compound object spaces.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0009",
+      "domain": "Chemical",
+      "title": "Ring-junction topology classification",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "基础双拓扑视角，类别不强制互斥，不称物理刚性",
+      "shared_prerequisite": "各记录保持原图的拓扑对象",
+      "parallel_scientific_subtasks": [
+        "螺原子计数",
+        "桥头原子计数"
+      ],
+      "scientific_join": "分别分类并保留最大螺计数的全部并列",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0010",
+      "domain": "Chemical",
+      "title": "Duplicate-record identity and inventory audit",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "去重复用必须以相同图和电荷为条件，不按相似度缓存",
+      "shared_prerequisite": "每条原始记录选定片段的精确身份",
+      "parallel_scientific_subtasks": [
+        "不同图组的质量",
+        "不同图组的极性"
+      ],
+      "scientific_join": "重复记录共享同图证据但仍逐条报告",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0011",
+      "domain": "Chemical",
+      "title": "Representation round-trip with a mass witness",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "真实往返可改变互变表示；质量守恒不能证明表示可逆",
+      "shared_prerequisite": "保持原始图及其独立质量见证",
+      "parallel_scientific_subtasks": [
+        "标准InChI到恢复SMILES的有向转换链",
+        "原始图质量"
+      ],
+      "scientific_join": "恢复图质量、表示相等性与质量差联合审计",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0012",
+      "domain": "Chemical",
+      "title": "Stereochemical specification audit",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "错误隔离、对象顺序、立体方法三层边界",
+      "shared_prerequisite": "显式权威修复后的立体图身份",
+      "parallel_scientific_subtasks": [
+        "立体中心完整性",
+        "含手性/不含手性两种指纹矩阵"
+      ],
+      "scientific_join": "区分未指定中心、对映表示与指纹不变性",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0013",
+      "domain": "Chemical",
+      "title": "Triage a phenolic fragment library for a follow-up polar-surface study",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "基础真实门控题，适用域窄且易于解释",
+      "shared_prerequisite": "每条规范图的结构命中证据",
+      "parallel_scientific_subtasks": [
+        "候选间独立子结构查询",
+        "已命中候选的极性后续"
+      ],
+      "scientific_join": "未命中分支明确空值，命中分支保留数值",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0014",
+      "domain": "Material",
+      "title": "Repository audit of three labelled crystal records",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "多证据控制同一科学辨识，不以图宽代替难度",
+      "shared_prerequisite": "相同来源身份的原胞/超胞/应变几何，不假设共享解析计算",
+      "parallel_scientific_subtasks": [
+        "密度和几何匹配面板",
+        "衍射和对称性面板"
+      ],
+      "scientific_join": "识别表示不变性和真实尺度/形变区别",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0015",
+      "domain": "Material",
+      "title": "A cubic perovskite motif has either exact coordinates or a small single-oxygen displacement",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等协议对照面板，不宣传自适应容差搜索",
+      "shared_prerequisite": "固定原始结构与两套明确对称容差",
+      "parallel_scientific_subtasks": [
+        "精/粗容差的对称性",
+        "密度、邻接与衍射"
+      ],
+      "scientific_join": "容差稳定性与不同可观测量的敏感性",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0016",
+      "domain": "Material",
+      "title": "Occupancy and geometric-method eligibility in supplied structure records",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "平均无序与有序对象不可互换，属于方法适用性挑战",
+      "shared_prerequisite": "有序模型与平均混合占位模型的原始对象身份",
+      "parallel_scientific_subtasks": [
+        "占位加权组分和质量密度",
+        "仅有序模型的局域几何与匹配"
+      ],
+      "scientific_join": "模型适用域排除不能变成虚构有序模型",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0017",
+      "domain": "Material",
+      "title": "Density and structural evidence for two labelled iron records",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等独立证据面板，需完整比较而非单属性认定",
+      "shared_prerequisite": "等原子体积的两种结构",
+      "parallel_scientific_subtasks": [
+        "密度与对称性",
+        "局部邻域与衍射"
+      ],
+      "scientific_join": "相同密度不意味着同一晶体结构",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0018",
+      "domain": "Material",
+      "title": "A carbon panel contains an ideal tetrahedral network and an AB-stacked layered motif",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "基础并行验证面板，不从静态属性推断导电/弹性",
+      "shared_prerequisite": "两个固定碳几何及各自实际胞内原子数",
+      "parallel_scientific_subtasks": [
+        "局部接触和每原子归一化",
+        "密度、衍射与对称性"
+      ],
+      "scientific_join": "在相同定义下比较局部拓扑和质量堆积",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0019",
+      "domain": "Material",
+      "title": "Three layered oxide motifs share the same cell and fractional-site geometry while alkali or transition metal is substituted",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "基础分母一致性，原子分数不可代替质量分数",
+      "shared_prerequisite": "固定几何的替换系列与明确化学式",
+      "parallel_scientific_subtasks": [
+        "化学式质量及元素质量分数",
+        "质量密度及几何邻接"
+      ],
+      "scientific_join": "固定几何不等于相同质量或质量分数",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0020",
+      "domain": "Material",
+      "title": "Periodic endpoint comparison under two coordinate records",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等周期对象审计，工具内部搜索复杂度不计为规划难度",
+      "shared_prerequisite": "固定原子对应和同一个参考端点",
+      "parallel_scientific_subtasks": [
+        "wrapped最小镜像位移",
+        "unwrapped位移与各结构邻接"
+      ],
+      "scientific_join": "验证等价周期表示而非原始坐标差",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0021",
+      "domain": "Material",
+      "title": "Minimum-image distances and directional uniqueness of endpoint records",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等边界核验，完整并列镜像不能被确定性约定消去",
+      "shared_prerequisite": "同一参考与固定Cs/Cl对应",
+      "parallel_scientific_subtasks": [
+        "精确半胞镜像简并",
+        "近半胞唯一性及密度控制"
+      ],
+      "scientific_join": "相同最短距离不保证位移方向唯一",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0022",
+      "domain": "Material",
+      "title": "Geometric audit of two proposed periodic-basis representations",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "不能只数邻居或固定27胞；搜索由工具完成，难点是跨表示核验",
+      "shared_prerequisite": "坏格基与整数约化格基的同一周期物理对象",
+      "parallel_scientific_subtasks": [
+        "完整邻接镜像、距离和位移",
+        "密度、对称性和结构匹配"
+      ],
+      "scientific_join": "跨格基的物理不变量及坐标标签一致性",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0023",
+      "domain": "Material",
+      "title": "Scale-dependent geometric comparisons of three supplied records",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等对照设计，不把归一化匹配当相同密度",
+      "shared_prerequisite": "保留真实长度与允许等向缩放的两种匹配协议",
+      "parallel_scientific_subtasks": [
+        "物理尺度匹配",
+        "归一化尺度匹配与密度/邻接"
+      ],
+      "scientific_join": "形变、尺度和物理状态分别判断",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0024",
+      "domain": "Material",
+      "title": "A rocksalt-type panel replaces cation, anion and lattice length",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "基础平行证据题，不声称隐含热力学稳定性",
+      "shared_prerequisite": "同构盐的固定组成、晶格与衍射协议",
+      "parallel_scientific_subtasks": [
+        "质量和密度",
+        "首峰和对称性"
+      ],
+      "scientific_join": "两种独立排名联合说明同构标签的局限",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0025",
+      "domain": "Material",
+      "title": "One MgO cell is complete, another removes a specified Mg/O pair, and the third replaces one Mg with Ca",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等库存审计，约化式不能代替胞内计量",
+      "shared_prerequisite": "实际供给胞内的空位/替换身份",
+      "parallel_scientific_subtasks": [
+        "占位加权元素库存与原子数",
+        "密度和几何接触"
+      ],
+      "scientific_join": "缺陷质量差与实际胞的密度比",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0026",
+      "domain": "Material",
+      "title": "For two chemically distinct cubic salt motifs, compare ideal powder diffraction at wavelengths 1.5406 A (Cu label) and 0.71073 A (Mo label), using 2theta from 5 to 100 degrees",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等测量协议对照，不预设受限角域总含相同反射",
+      "shared_prerequisite": "固定角域与波长身份",
+      "parallel_scientific_subtasks": [
+        "Cu波长粉末线",
+        "Mo波长粉末线与独立密度/对称性"
+      ],
+      "scientific_join": "校验反射/晶面间距比较的适用范围",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0027",
+      "domain": "Biology",
+      "title": "Taxonomic evenness versus phylogenetic trait structure",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "多源对象对齐、随机化单位与最终科学判断",
+      "shared_prerequisite": "plot与taxon两种对象空间及各自顺序",
+      "parallel_scientific_subtasks": [
+        "plot多样性和组分距离",
+        "taxon树与性状距离"
+      ],
+      "scientific_join": "只在同对象空间进行关联与预设置换判断",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0028",
+      "domain": "Biology",
+      "title": "Paired cover observations with unequal within-plot sampling effort",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "组内依赖、配对和不等努力共同限制推断",
+      "shared_prerequisite": "四个独立plot与不等quadrat努力",
+      "parallel_scientific_subtasks": [
+        "plot加权的前/后/配对变化及区间",
+        "naive quadrat敏感性区间"
+      ],
+      "scientific_join": "比较估计量、区间宽度和符号，不偷换独立单位",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0029",
+      "domain": "Biology",
+      "title": "Detection turnover versus dominance",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等双观测定义对照，检出零不等于确认不存在",
+      "shared_prerequisite": "同一观察清单及固定物种列顺序",
+      "parallel_scientific_subtasks": [
+        "丰度Bray-Curtis",
+        "检出Jaccard与独立条件几何"
+      ],
+      "scientific_join": "比较丰度优势和观察到的检出周转",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0030",
+      "domain": "Biology",
+      "title": "Seasonal normalization sensitivity",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等估计定义敏感性，不把季节当独立随机点",
+      "shared_prerequisite": "同一地点反复季节观测及行总数",
+      "parallel_scientific_subtasks": [
+        "原始计数距离和每季多样性",
+        "行归一化距离"
+      ],
+      "scientific_join": "零置换的协议一致性与季节均匀度比较",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0031",
+      "domain": "Biology",
+      "title": "Guild-environment metric sensitivity",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等度量敏感性，两个数值结果不建立因果关系",
+      "shared_prerequisite": "同样pond与guild对象及固定环境列尺度",
+      "parallel_scientific_subtasks": [
+        "Euclidean环境/组分关联",
+        "Manhattan环境/组分关联"
+      ],
+      "scientific_join": "比较两种方法的预设关联判定",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0032",
+      "domain": "Biology",
+      "title": "Weighted-tree comparison with trait observations",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "拓扑不变量不能与序列化根或进化速率混淆",
+      "shared_prerequisite": "同一无根树的两个序列化根与同样taxon顺序",
+      "parallel_scientific_subtasks": [
+        "两个根的树距离和root-to-tip",
+        "独立性状距离和两路关联"
+      ],
+      "scientific_join": "成对距离不变、根距离可变与性状见证联合核验",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0033",
+      "domain": "Biology",
+      "title": "Spatial pattern comparison in observational quadrats",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等混杂审计，禁止把空间结构当无限制置换证据",
+      "shared_prerequisite": "同一空间样方的共同组分矩阵",
+      "parallel_scientific_subtasks": [
+        "地理距离和描述性关联",
+        "土壤距离和描述性关联"
+      ],
+      "scientific_join": "较强关联不意味着因果可识别",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0034",
+      "domain": "Biology",
+      "title": "Local and pooled community diversity",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等非线性估计量汇合，删除无关地区bootstrap",
+      "shared_prerequisite": "相同taxon列与各stand观测单位",
+      "parallel_scientific_subtasks": [
+        "局部多样性与两种距离",
+        "合并样本多样性"
+      ],
+      "scientific_join": "pooled熵与mean-local熵比较",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0035",
+      "domain": "Biology",
+      "title": "Environmental barcode QC with an incomplete record",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "基础局部修复，不猜碱基、不丢原始问题证据",
+      "shared_prerequisite": "原始QC与唯一授权的R3纠正来源",
+      "parallel_scientific_subtasks": [
+        "各原始记录独立QC",
+        "可用记录的组成和纠正后QC"
+      ],
+      "scientific_join": "完整保留原始不确定性及纠正结果",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0036",
+      "domain": "Biology",
+      "title": "Benign protein composition inventory",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "基础属性库存，用于受控并行与报告一致性，不称科学发现",
+      "shared_prerequisite": "四条固定人工、无功能声明的规范控制序列",
+      "parallel_scientific_subtasks": [
+        "每条控制的亲疏水库存",
+        "脂肪族指数和本地pI"
+      ],
+      "scientific_join": "相同序列身份下汇总多种测量控制属性",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0037",
+      "domain": "Biology",
+      "title": "RNA record uncertainty and denominator conventions",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "基础不确定性分支，宽度不能被已知碱基比例替代",
+      "shared_prerequisite": "每条人工RNA的原始不确定性与nongap分母",
+      "parallel_scientific_subtasks": [
+        "各记录的质量/GC界",
+        "规范记录的组成"
+      ],
+      "scientific_join": "全部GC宽度及最大不确定记录的并列",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0038",
+      "domain": "Biology",
+      "title": "Scale transformation and rank association",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等变换敏感性，不把序数均值当原单位平均生长",
+      "shared_prerequisite": "相同plot配对次序及给定单调评分",
+      "parallel_scientific_subtasks": [
+        "线性与秩相关四路对照",
+        "两种尺度的独立bootstrap"
+      ],
+      "scientific_join": "秩不变性与尺度相关性分别判断",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0039",
+      "domain": "MachineLearning",
+      "title": "Generalization to unseen calibration devices",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "共享划分、数据边界和模型选择共同约束",
+      "shared_prerequisite": "按设备分组的唯一训练/持出划分",
+      "parallel_scientific_subtasks": [
+        "各惩罚模型的训练与预测",
+        "各分支的真正持出误差"
+      ],
+      "scientific_join": "收齐各模型误差后选择，禁止读数级泄漏",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0040",
+      "domain": "MachineLearning",
+      "title": "Transient responses on a weighted sensor network",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等共享算子、多级分支，不把矩阵指数实现难度当方法发现",
+      "shared_prerequisite": "共享图Laplacian与明确时间单位",
+      "parallel_scientific_subtasks": [
+        "特征谱",
+        "多个时刻的指数传播链"
+      ],
+      "scientific_join": "按同一目标比较实际传播结果",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0041",
+      "domain": "MachineLearning",
+      "title": "Admissibility of covariance proposals",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "观测门控、错误/科学否定区分和方法分叉",
+      "shared_prerequisite": "各矩阵的实际谱及严格SPD阈值",
+      "parallel_scientific_subtasks": [
+        "独立候选的谱检验",
+        "通过后逆矩阵和独立线性系统解"
+      ],
+      "scientific_join": "不合格分支空值与两个数值结果核验",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0042",
+      "domain": "MachineLearning",
+      "title": "Paired optimizer comparison across benchmark instances",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等共享对照和跨分支多重性汇合",
+      "shared_prerequisite": "每个独立实例内的配对差与共同检验族",
+      "parallel_scientific_subtasks": [
+        "各优化器精确配对随机化",
+        "各效应bootstrap"
+      ],
+      "scientific_join": "所有p值共同BH调整后统一报告",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0043",
+      "domain": "MachineLearning",
+      "title": "Cost-sensitive deployment thresholds",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等共享概率及决策域，需要一致的标准化坐标",
+      "shared_prerequisite": "仅训练期拟合的概率模型与同一持出概率向量",
+      "parallel_scientific_subtasks": [
+        "校准质量",
+        "多阈值分类/代价链"
+      ],
+      "scientific_join": "以实际代价统一选择而非默认0.5",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0044",
+      "domain": "MachineLearning",
+      "title": "Discrete derivative consistency in three numerical sensors",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "基础共享导数与fork/join，不伪装为不确定度估计",
+      "shared_prerequisite": "每个传感器的同一估计梯度",
+      "parallel_scientific_subtasks": [
+        "积分恢复变化",
+        "Hermite中点插值"
+      ],
+      "scientific_join": "与源变化闭合并比较离散诊断",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0045",
+      "domain": "MachineLearning",
+      "title": "Resource allocation under three capacity scenarios",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等求解和证书并行，不把只找到数值当约束验证",
+      "shared_prerequisite": "同一资源矩阵/目标与不同场景容量",
+      "parallel_scientific_subtasks": [
+        "各场景LP",
+        "各解的资源及目标独立回代"
+      ],
+      "scientific_join": "可行见证核验后比较收益",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0046",
+      "domain": "MachineLearning",
+      "title": "Scale sensitivity of unsupervised clustering",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等状态复用，簇编号任意但分区必须一致",
+      "shared_prerequisite": "同一探索对象与唯一标准化结果",
+      "parallel_scientific_subtasks": [
+        "原始空间聚类/几何",
+        "标准化空间聚类/几何"
+      ],
+      "scientific_join": "标签不变的ARI及两种质量",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0047",
+      "domain": "MachineLearning",
+      "title": "Compression fidelity on future feature vectors",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等有界无泄漏投影，不是无限维度搜索",
+      "shared_prerequisite": "冻结的训练尺度与训练PCA基",
+      "parallel_scientific_subtasks": [
+        "各维数持出重建",
+        "独立投影几何"
+      ],
+      "scientific_join": "跨维数误差及符号不变的距离核验",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0048",
+      "domain": "MachineLearning",
+      "title": "Coverage planning for a finite model-audit inventory",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "基础分布模型对照，标记间独立性不被假设",
+      "shared_prerequisite": "同一有限总体和稀有标记计数",
+      "parallel_scientific_subtasks": [
+        "无放回覆盖",
+        "不同样本量有放回计数分布"
+      ],
+      "scientific_join": "比较零命中概率与最大概率质量",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0049",
+      "domain": "MachineLearning",
+      "title": "Response-curve family comparison for a learning saturation study",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "中等竞争模型工作流，不能训练残差选胜者",
+      "shared_prerequisite": "共享训练/持出角色及各自拟合初值和界",
+      "parallel_scientific_subtasks": [
+        "各响应函数族的拟合",
+        "各族持出评估链"
+      ],
+      "scientific_join": "根据真正持出误差比较族",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0050",
+      "domain": "MachineLearning",
+      "title": "Inverse calibration and branch ambiguity",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "逆问题多解、支持边界与共用拟合的双重证据链",
+      "shared_prerequisite": "每条传感器的拟合多项式",
+      "parallel_scientific_subtasks": [
+        "完整逆目标根",
+        "导数转折根及物理支持检查"
+      ],
+      "scientific_join": "保留多根、复根和支持内候选，不能假设唯一逆",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0051",
+      "domain": "Chemical",
+      "title": "Registry reconciliation with charged-parent witnesses",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Reconcile duplicate registration without conflating a neutral acid and its anion.",
+      "shared_prerequisite": "Each selected parent identity anchors registration and both scalar witness branches.",
+      "parallel_scientific_subtasks": [
+        "Independent parent records",
+        "InChI/key chain versus mass and polar surface witnesses"
+      ],
+      "scientific_join": "Reconcile duplicate registration without conflating a neutral acid and its anion.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0052",
+      "domain": "Chemical",
+      "title": "Atom-index graph heat versus molecular branching",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Compare topology-sensitive responses while checking conservation and source atom order.",
+      "shared_prerequisite": "One atom-index graph per record feeds its shared Laplacian.",
+      "parallel_scientific_subtasks": [
+        "Three independent molecular graph chains",
+        "Spectrum and two heat propagators from each common Laplacian"
+      ],
+      "scientific_join": "Compare topology-sensitive responses while checking conservation and source atom order.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0053",
+      "domain": "Chemical",
+      "title": "Literal versus tautomer-aware carbonyl evidence",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Distinguish a match convention from the molecular state used to measure properties.",
+      "shared_prerequisite": "The original graph is the common identity; query equivalence and original-state descriptors have separate roles.",
+      "parallel_scientific_subtasks": [
+        "Per-record tautomer inspection and two matching protocols",
+        "Original-graph donor and polarity measurements"
+      ],
+      "scientific_join": "Distinguish a match convention from the molecular state used to measure properties.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0054",
+      "domain": "Chemical",
+      "title": "Geometry and shape readouts of labelled molecular records",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Distinguish reflection invariance, proper rotational equivalence and scale changes.",
+      "shared_prerequisite": "Fixed atom correspondence and a byte-pinned four-record geometry source.",
+      "parallel_scientific_subtasks": [
+        "Source centroids/count inventory",
+        "Pairwise distance invariants, proper rigid fits and shape moments"
+      ],
+      "scientific_join": "Distinguish reflection invariance, proper rotational equivalence and scale changes.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0055",
+      "domain": "Chemical",
+      "title": "Hydrogen representations, isotope inventory and charge conservation",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Separate explicit atom count changes from conservation of isotope-sensitive chemical mass and charge.",
+      "shared_prerequisite": "The expanded graph is shared by removal, count, mass and charge witnesses.",
+      "parallel_scientific_subtasks": [
+        "Independent input molecules",
+        "Each representation has independent atom-inventory and mass/charge witnesses"
+      ],
+      "scientific_join": "Separate explicit atom count changes from conservation of isotope-sensitive chemical mass and charge.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0056",
+      "domain": "Chemical",
+      "title": "Scaffold-equivalent records can occupy distinct property neighborhoods",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Compare common scaffold families with two genuinely different notions of library proximity.",
+      "shared_prerequisite": "The fixed record order anchors scaffold identity, structural similarities and shared descriptor scaling.",
+      "parallel_scientific_subtasks": [
+        "Scaffolds and original-graph mass/polarity measurements",
+        "Fingerprint similarity versus standardized property-space geometry"
+      ],
+      "scientific_join": "Compare common scaffold families with two genuinely different notions of library proximity.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0057",
+      "domain": "Chemical",
+      "title": "Hydrogen-bond counting conventions in a control panel",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "Collect protocol-consistent differences rather than mixing descriptor families.",
+      "shared_prerequisite": "One unchanged molecular record anchors both explicitly different descriptor definitions.",
+      "parallel_scientific_subtasks": [
+        "Four independent molecular controls",
+        "RDKit and Lipinski donor/acceptor conventions with a formal-charge witness"
+      ],
+      "scientific_join": "Collect protocol-consistent differences rather than mixing descriptor families.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0058",
+      "domain": "Chemical",
+      "title": "Partial-charge sums versus formal graph charge",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Audit total charge and index-domain consistency before interpreting any atom charges.",
+      "shared_prerequisite": "The original chemical identity is shared, but EEM and graph-charge inventories have explicit distinct meanings.",
+      "parallel_scientific_subtasks": [
+        "Three independent conformer/EEM evaluations",
+        "Formal-charge totals and independently counted explicit-H inventories"
+      ],
+      "scientific_join": "Audit total charge and index-domain consistency before interpreting any atom charges.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0059",
+      "domain": "Chemical",
+      "title": "Molecular serialization fidelity under two representation standards",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Compare fidelity of two serialization systems without treating tautomer normalization or conserved mass as exact graph preservation.",
+      "shared_prerequisite": "Both routes and the original mass witness share each original graph.",
+      "parallel_scientific_subtasks": [
+        "Independent molecules",
+        "SELFIES token/decoding chain versus standard-InChI chain and mass checks"
+      ],
+      "scientific_join": "Compare fidelity of two serialization systems without treating tautomer normalization or conserved mass as exact graph preservation.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0060",
+      "domain": "Chemical",
+      "title": "Element-constrained blend optimization and inventory audit",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Enforce physical inventory and capacity constraints while optimizing one element rather than an arbitrary graph score.",
+      "shared_prerequisite": "Graph formula and mass fractions are shared between optimization and independent balance witnesses.",
+      "parallel_scientific_subtasks": [
+        "Per-stock formula, composition and molecular mass",
+        "Post-solve elemental and total-mass witnesses"
+      ],
+      "scientific_join": "Enforce physical inventory and capacity constraints while optimizing one element rather than an arbitrary graph score.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0061",
+      "domain": "Chemical",
+      "title": "Property geometry versus structural neighborhood association",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Correlate distances only after both branches preserve identical compound order.",
+      "shared_prerequisite": "Each molecule supplies one common feature row; standardization is fitted once for the whole finite panel.",
+      "parallel_scientific_subtasks": [
+        "Independent molecule descriptor rows",
+        "Structural fingerprint geometry versus standardized property geometry"
+      ],
+      "scientific_join": "Correlate distances only after both branches preserve identical compound order.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0062",
+      "domain": "Chemical",
+      "title": "Principal moment ratios with a controlled conformer protocol",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Check dimensionless ratio consistency without mixing geometry/H policies or confusing shape with identity.",
+      "shared_prerequisite": "Every inertia and shape branch is tied to the same declared finite conformer protocol.",
+      "parallel_scientific_subtasks": [
+        "Raw moment components versus separately normalized moment outputs",
+        "Cross-molecule shape matrix"
+      ],
+      "scientific_join": "Check dimensionless ratio consistency without mixing geometry/H policies or confusing shape with identity.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0063",
+      "domain": "Material",
+      "title": "Phase proportions and bulk density of an additive-volume mixture",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Reconcile elemental observations, mass conservation and physical volume convention.",
+      "shared_prerequisite": "Phase composition coefficients and densities are shared by inverse and independent forward/volume branches.",
+      "parallel_scientific_subtasks": [
+        "Independent phase geometry/density and stoichiometry",
+        "After inversion, elemental balance and additive-volume calculations"
+      ],
+      "scientific_join": "Reconcile elemental observations, mass conservation and physical volume convention.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0064",
+      "domain": "Material",
+      "title": "Held-out assessment of volume-density calibrations",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Compare held-out predictions under two coordinate models without fitting the held-out rows.",
+      "shared_prerequisite": "The same measured geometry/density pairs feed two scientific coordinate hypotheses.",
+      "parallel_scientific_subtasks": [
+        "Five independent source-density measurements",
+        "Direct-volume and reciprocal-volume fitting/prediction chains"
+      ],
+      "scientific_join": "Compare held-out predictions under two coordinate models without fitting the held-out rows.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0065",
+      "domain": "Material",
+      "title": "Coordination conclusion across a finite radial resolution envelope",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Do not let a conclusion at one arbitrary cutoff stand in for the full requested resolution audit.",
+      "shared_prerequisite": "Each fixed geometry is shared across a radial observation curve, whose samples feed two independent summaries.",
+      "parallel_scientific_subtasks": [
+        "Independent radius/structure neighbor computations",
+        "Gradient and integrated-contact summaries after each complete curve"
+      ],
+      "scientific_join": "Do not let a conclusion at one arbitrary cutoff stand in for the full requested resolution audit.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0066",
+      "domain": "Material",
+      "title": "Candidate diffraction patterns under an unknown common angle offset",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Separate phase evidence from a common instrumental angle nuisance before comparing fits.",
+      "shared_prerequisite": "One fixed observed scan and candidate-specific theoretical line identities.",
+      "parallel_scientific_subtasks": [
+        "Independent candidate diffraction calculations",
+        "Per-candidate offset estimation and corrected prediction validation"
+      ],
+      "scientific_join": "Separate phase evidence from a common instrumental angle nuisance before comparing fits.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0067",
+      "domain": "Material",
+      "title": "Periodic replicate displacement covariance with directional uncertainty",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Reconcile periodic image choices with uncertainty units and a joint anisotropy summary.",
+      "shared_prerequisite": "One immutable reference, fixed atom correspondence, and one displacement sample matrix.",
+      "parallel_scientific_subtasks": [
+        "Four independent periodic matching calls",
+        "Component uncertainty estimates versus joint centered covariance/spectral analysis"
+      ],
+      "scientific_join": "Reconcile periodic image choices with uncertainty units and a joint anisotropy summary.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0068",
+      "domain": "Material",
+      "title": "Composition and occupancy in density-model transfer",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Test whether normalizing composition discards the vacancy information needed to predict mass density.",
+      "shared_prerequisite": "The same density observations are compared under normalized-composition and actual-inventory hypotheses.",
+      "parallel_scientific_subtasks": [
+        "Independent mixed-occupancy structure parsing and density",
+        "Two training-only coordinate models and held-out checks"
+      ],
+      "scientific_join": "Test whether normalizing composition discards the vacancy information needed to predict mass density.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0069",
+      "domain": "Material",
+      "title": "Formula labels versus actual supplied-cell inventories",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Separate harmless formula scaling from wrong chemical species or wrong stoichiometric ratios.",
+      "shared_prerequisite": "Each original cell identity anchors stoichiometry and independent density/site-count evidence.",
+      "parallel_scientific_subtasks": [
+        "Declared-formula and actual-cell composition branches",
+        "Independent density and atom inventory witnesses"
+      ],
+      "scientific_join": "Separate harmless formula scaling from wrong chemical species or wrong stoichiometric ratios.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0070",
+      "domain": "Material",
+      "title": "Normal-mode vector metric and IR-column alignment audit",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Check metric and column identity before using displacement normalization or IR magnitudes.",
+      "shared_prerequisite": "One immutable mode/IR source and printed column/atom order.",
+      "parallel_scientific_subtasks": [
+        "Source mode, frequency and intensity parsing",
+        "Unweighted versus declared mass-metric Gram matrices and spectra"
+      ],
+      "scientific_join": "Check metric and column identity before using displacement normalization or IR magnitudes.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0071",
+      "domain": "Material",
+      "title": "Pressure and surface-state dependence of a molecular reservoir model",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Combine units and standard-state conventions once, then evaluate the complete declared condition table.",
+      "shared_prerequisite": "One source-consistent thermal reservoir correction is shared by every pressure and surface state.",
+      "parallel_scientific_subtasks": [
+        "Six independently parsed thermal components",
+        "Pressure logarithms and the electronic-state panel"
+      ],
+      "scientific_join": "Combine units and standard-state conventions once, then evaluate the complete declared condition table.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0072",
+      "domain": "Material",
+      "title": "Calibrated-band mixture inference and identifiability audit",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Separate source mode strength, instrument response, mixture coefficients and nuisance baseline identifiability.",
+      "shared_prerequisite": "Printed mode identities anchor three calibration fits; their common measurement grid is the shared inverse-design row domain.",
+      "parallel_scientific_subtasks": [
+        "Independent calibrated band fits/evaluations",
+        "Design singular spectrum versus least-squares mixture inference and forward residual validation"
+      ],
+      "scientific_join": "Separate source mode strength, instrument response, mixture coefficients and nuisance baseline identifiability.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0073",
+      "domain": "Material",
+      "title": "Population-accounting audit across three supplied records",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "Compare violations only after preserving independent record identities and the same printed-precision tolerance.",
+      "shared_prerequisite": "The declared atom identity and accounting definitions are common; each record retains its own immutable evidence.",
+      "parallel_scientific_subtasks": [
+        "Three independent source/channel audits",
+        "Charge,spin and population-decomposition evidence within each source"
+      ],
+      "scientific_join": "Compare violations only after preserving independent record identities and the same printed-precision tolerance.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0074",
+      "domain": "Material",
+      "title": "Anion packing versus total mass-density ranking",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "Collect two rankings under declared physical units instead of treating heavy cations as greater oxygen packing.",
+      "shared_prerequisite": "Actual-cell source identities and formula fractions anchor two distinct physical density definitions.",
+      "parallel_scientific_subtasks": [
+        "Independent structure density/element inventories",
+        "Formula mass fractions and post-measurement oxygen normalization"
+      ],
+      "scientific_join": "Collect two rankings under declared physical units instead of treating heavy cations as greater oxygen packing.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0075",
+      "domain": "Biology",
+      "title": "Restoration endpoints under a fixed target-habitat mixture",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Keep target habitat weights, plot independence and endpoint units separate when comparing conclusions.",
+      "shared_prerequisite": "Paired changes and independent plot identity are shared across target-weight, equal-plot and naive analyses.",
+      "parallel_scientific_subtasks": [
+        "Three endpoint chains",
+        "Three distinct resampling estimands per endpoint"
+      ],
+      "scientific_join": "Keep target habitat weights, plot independence and endpoint units separate when comparing conclusions.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0076",
+      "domain": "Biology",
+      "title": "Distance geometry of community observations",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Test the Euclidean embedding assumption rather than silently equating all distance matrices.",
+      "shared_prerequisite": "A single row/taxon order feeds three incompatible dissimilarity constructions and one centering convention.",
+      "parallel_scientific_subtasks": [
+        "Bray-Curtis and Jaccard branches",
+        "Hellinger transform and metric-specific Gram/spectrum chains"
+      ],
+      "scientific_join": "Test the Euclidean embedding assumption rather than silently equating all distance matrices.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0077",
+      "domain": "Biology",
+      "title": "Observed richness versus equal-effort finite rarefaction",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Compare equal-effort estimates rather than letting the largest raw census define richness.",
+      "shared_prerequisite": "Each finite census establishes total size, nonzero taxa and the shared sampling-size convention.",
+      "parallel_scientific_subtasks": [
+        "Independent communities",
+        "Raw diversity, finite sampling and replacement counterfactuals"
+      ],
+      "scientific_join": "Compare equal-effort estimates rather than letting the largest raw census define richness.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0078",
+      "domain": "Biology",
+      "title": "Weighted-tree distances and trait geometries",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Separate a scale-insensitive association statistic from an absolute tree-distance claim.",
+      "shared_prerequisite": "Taxon identities and branch-unit conventions are shared by all comparisons.",
+      "parallel_scientific_subtasks": [
+        "Three independent tree parsers",
+        "Raw versus standardized trait geometry and six correlation joins"
+      ],
+      "scientific_join": "Separate a scale-insensitive association statistic from an absolute tree-distance claim.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0079",
+      "domain": "Biology",
+      "title": "One complete-case ecological cohort must anchor every comparison",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Prevent separately filtered analyses from silently describing different scientific populations.",
+      "shared_prerequisite": "One explicit joint cohort is shared by both response geometries and uncertainty branches.",
+      "parallel_scientific_subtasks": [
+        "Three variable-extraction branches after shared filtering",
+        "Four associations and two marginal bootstrap summaries"
+      ],
+      "scientific_join": "Prevent separately filtered analyses from silently describing different scientific populations.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0080",
+      "domain": "Biology",
+      "title": "Sample means and future growth under a plug-in model",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "Compare an average estimand with predictive reliability under a clearly stated model assumption.",
+      "shared_prerequisite": "Each site sample defines an estimated model and an independently reported sampling interval.",
+      "parallel_scientific_subtasks": [
+        "Site mean/SD descriptions and mean bootstrap intervals",
+        "Normal-tail then future-count probability chains"
+      ],
+      "scientific_join": "Compare an average estimand with predictive reliability under a clearly stated model assumption.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0081",
+      "domain": "Biology",
+      "title": "Orientation comparison after preserving original barcode QC",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Do not turn failed/ambiguous input into a negative orientation result.",
+      "shared_prerequisite": "Original parsed record and quality identity gate all oriented alignment interpretations.",
+      "parallel_scientific_subtasks": [
+        "Four independent original-QC branches",
+        "Forward and reverse-complement alignment chains for eligible records"
+      ],
+      "scientific_join": "Do not turn failed/ambiguous input into a negative orientation result.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0082",
+      "domain": "Biology",
+      "title": "Diversity partitioning under two target-population definitions",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Partition effective alpha/gamma/beta without mixing linear weights with nonlinear entropy transforms.",
+      "shared_prerequisite": "Local entropy and within-stand composition are shared between two different target-population mixtures.",
+      "parallel_scientific_subtasks": [
+        "Three local diversity calculations",
+        "Two independently weighted pooled-composition/gamma chains"
+      ],
+      "scientific_join": "Partition effective alpha/gamma/beta without mixing linear weights with nonlinear entropy transforms.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0083",
+      "domain": "Biology",
+      "title": "Observed common-core correspondence versus whole-record centroid shifts",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Keep common-core atom identity and full-record inventory distinct.",
+      "shared_prerequisite": "Source identity and explicit common residue correspondence anchor every core comparison.",
+      "parallel_scientific_subtasks": [
+        "Three source-quality/core-extraction chains",
+        "Full-record centroids and within-core distances versus proper-rigid core fits"
+      ],
+      "scientific_join": "Keep common-core atom identity and full-record inventory distinct.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0084",
+      "domain": "Biology",
+      "title": "Ecological trait relations and enrichment families",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "Separate graph implication, unique taxon counts and multiplicity-adjusted evidence.",
+      "shared_prerequisite": "One declared taxon universe and one statistical family are shared by all trait tests.",
+      "parallel_scientific_subtasks": [
+        "Independent ontology reachability queries",
+        "One enrichment family feeding two correction methods"
+      ],
+      "scientific_join": "Separate graph implication, unique taxon counts and multiplicity-adjusted evidence.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0085",
+      "domain": "Biology",
+      "title": "Pulse responses and norm amplification in ecological linear models",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Distinguish asymptotic stability, initial energy growth and observed finite-time response.",
+      "shared_prerequisite": "Each interaction matrix shares its symmetric part and its two propagators across response and worst-case-gain witnesses.",
+      "parallel_scientific_subtasks": [
+        "Three independent model chains",
+        "At each time, one propagator feeds pulse multiplication and SVD gain"
+      ],
+      "scientific_join": "Distinguish asymptotic stability, initial energy growth and observed finite-time response.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0086",
+      "domain": "Biology",
+      "title": "Community trait distributions and taxonomic composition",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Preserve object domains and distributional information when centroids coincide.",
+      "shared_prerequisite": "One taxon trait standardization and one community weighting matrix feed both moment branches.",
+      "parallel_scientific_subtasks": [
+        "Taxonomic geometry versus functional geometry",
+        "Community first and second moments from shared scaled traits"
+      ],
+      "scientific_join": "Preserve object domains and distributional information when centroids coincide.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0087",
+      "domain": "Biology",
+      "title": "Four uncertainty specifications for an allometric calibration",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Keep point predictions, relative weights and absolute uncertainty calibration separate.",
+      "shared_prerequisite": "One training/query split and physical noise convention anchor four estimation branches.",
+      "parallel_scientific_subtasks": [
+        "Four independent fits with explicitly different sigma semantics",
+        "Each fitted artifact feeds query prediction and covariance interpretation"
+      ],
+      "scientific_join": "Keep point predictions, relative weights and absolute uncertainty calibration separate.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0088",
+      "domain": "MachineLearning",
+      "title": "Future prediction with cutoff-specific temporal embargoes",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Compare actual future errors without leaking later rows through scales or row identities.",
+      "shared_prerequisite": "Each temporal split anchors two independent transforms sharing the same training-only scale.",
+      "parallel_scientific_subtasks": [
+        "Three independent cutoff workflows",
+        "Training transform/fit versus held-out transform after each frozen training population"
+      ],
+      "scientific_join": "Compare actual future errors without leaking later rows through scales or row identities.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0089",
+      "domain": "MachineLearning",
+      "title": "Residual and solution-size admissibility of truncated inverse models",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Apply two independent admissibility criteria without ranking solely by fit.",
+      "shared_prerequisite": "One decomposition is shared by three rank-controlled inverse/forward-witness chains.",
+      "parallel_scientific_subtasks": [
+        "Three retained-rank subgraphs after the common SVD",
+        "Forward residual versus solution-size evidence within each rank"
+      ],
+      "scientific_join": "Apply two independent admissibility criteria without ranking solely by fit.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0090",
+      "domain": "MachineLearning",
+      "title": "Identifiability of contrasts in a rank-deficient model",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Separate prediction, coefficient nonuniqueness and contrast-specific scientific identifiability.",
+      "shared_prerequisite": "The same design supports an independent data fit and a basis-invariant row-space witness.",
+      "parallel_scientific_subtasks": [
+        "Least-squares fitted-response chain",
+        "SVD projector and batched contrast-estimability chain"
+      ],
+      "scientific_join": "Separate prediction, coefficient nonuniqueness and contrast-specific scientific identifiability.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0091",
+      "domain": "MachineLearning",
+      "title": "Named-positive policies across two held-out cohorts",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Preserve label meaning across probability, classification and cost interfaces.",
+      "shared_prerequisite": "One class-labelled standardized model feeds two held-out probability vectors and four policy branches.",
+      "parallel_scientific_subtasks": [
+        "Two independent held-out predictions",
+        "Brier calibration and threshold/cost chains using the same positive-class probabilities"
+      ],
+      "scientific_join": "Preserve label meaning across probability, classification and cost interfaces.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0092",
+      "domain": "MachineLearning",
+      "title": "Common-matrix and direct-solve consistency across several forcings",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "Keep RHS column identities intact while reusing matrix work.",
+      "shared_prerequisite": "A common inverse and matrix identity support a batched route and three independent direct-solve witnesses.",
+      "parallel_scientific_subtasks": [
+        "Inverse and spectrum of A plus three direct solves",
+        "Batched solution and forward residual chain"
+      ],
+      "scientific_join": "Keep RHS column identities intact while reusing matrix work.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0093",
+      "domain": "MachineLearning",
+      "title": "One joint sign-randomization family versus separate endpoint tests",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Respect the joint experimental unit and the chosen familywise finite-reference convention.",
+      "shared_prerequisite": "One shared sign-assignment matrix preserves cross-endpoint dependence.",
+      "parallel_scientific_subtasks": [
+        "Joint max-statistic distribution and exact marginal-test witnesses",
+        "Shared finite null feeding an explicit order-statistic decision"
+      ],
+      "scientific_join": "Respect the joint experimental unit and the chosen familywise finite-reference convention.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0094",
+      "domain": "MachineLearning",
+      "title": "Nominal model ranking versus worst-case population-mixture risk",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Compare nominal and robust decisions without confusing an optimizer witness with a unique population estimate.",
+      "shared_prerequisite": "A common cohort-identity matrix and feasible deployment population apply to every model.",
+      "parallel_scientific_subtasks": [
+        "Nine actual cohort loss estimates",
+        "Three independent worst-mixture optimizations and nominal/forward-witness branches"
+      ],
+      "scientific_join": "Compare nominal and robust decisions without confusing an optimizer witness with a unique population estimate.",
+      "reference_action": "reused_after_identity_and_scientific_review",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0095",
+      "domain": "MachineLearning",
+      "title": "Analytic response models and numerical tabulation diagnostics",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Separate fitting, tabulation and quadrature errors while preserving one source model.",
+      "shared_prerequisite": "One fitted model per sensor anchors its direct query branch and its gradient/interpolation branch.",
+      "parallel_scientific_subtasks": [
+        "Three independent response models",
+        "Analytic query evaluation versus gradient/Hermite and closure checks"
+      ],
+      "scientific_join": "Separate fitting, tabulation and quadrature errors while preserving one source model.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0096",
+      "domain": "MachineLearning",
+      "title": "Correlation-matrix admissibility under different missing-data cohorts",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "Expose the difference between individually valid correlations and a valid joint correlation model.",
+      "shared_prerequisite": "The row table and variable identities anchor distinct pairwise and common-cohort constructions.",
+      "parallel_scientific_subtasks": [
+        "Six explicitly scoped pair correlations",
+        "Two independently assembled matrix spectra/admissibility checks"
+      ],
+      "scientific_join": "Expose the difference between individually valid correlations and a valid joint correlation model.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0097",
+      "domain": "MachineLearning",
+      "title": "Density partition quality and retained-sample coverage",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Keep undefined metrics, label invariance and the retained-object population distinct.",
+      "shared_prerequisite": "One immutable object order supports three density partitions and explicitly qualified quality summaries.",
+      "parallel_scientific_subtasks": [
+        "Three independent density fits",
+        "Per-fit noise/cluster-domain checks and eligible quality evaluation"
+      ],
+      "scientific_join": "Keep undefined metrics, label invariance and the retained-object population distinct.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0098",
+      "domain": "MachineLearning",
+      "title": "Population forecasts at several horizons and stationary balance",
+      "difficulty_tier": "intermediate",
+      "difficulty_basis": "Compare finite forecasts to a separately validated stationary distribution without recomputing common transition work.",
+      "shared_prerequisite": "Four powers are computed once and shared by two batched forecast horizons.",
+      "parallel_scientific_subtasks": [
+        "Stationary-balance solve and power construction",
+        "Two batched horizon propagations, each retaining three initial-condition rows"
+      ],
+      "scientific_join": "Compare finite forecasts to a separately validated stationary distribution without recomputing common transition work.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0099",
+      "domain": "MachineLearning",
+      "title": "Joint calibration bounds and independent geometric certificates",
+      "difficulty_tier": "advanced",
+      "difficulty_basis": "Validate marginal and joint uncertainty while preserving feasible-point dependence.",
+      "shared_prerequisite": "One common physical feasible set supports six extrema and a separate geometric certificate.",
+      "parallel_scientific_subtasks": [
+        "Six independent contrast LPs",
+        "Halfspace geometry followed by joint vertex projections"
+      ],
+      "scientific_join": "Validate marginal and joint uncertainty while preserving feasible-point dependence.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    },
+    {
+      "id": "SMAS-0100",
+      "domain": "MachineLearning",
+      "title": "Smoothing and conservation under two weighting conventions",
+      "difficulty_tier": "foundation",
+      "difficulty_basis": "Check the correct conserved quantity instead of carrying a discrete invariant into a different physical weighting.",
+      "shared_prerequisite": "One graph generator and exponential operator are shared by all signals and downstream diagnostics.",
+      "parallel_scientific_subtasks": [
+        "Raw-signal quadratures while the common kernel is built",
+        "Three smoothed gradients and quadratures after one batched propagation"
+      ],
+      "scientific_join": "Check the correct conserved quantity instead of carrying a discrete invariant into a different physical weighting.",
+      "reference_action": "regenerated_clean_react",
+      "fit_evidence": "Scientific task, current criteria, real observations and source-backed isolation annotations; no baseline outcome selection."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled measurement study; stated matrices/counts are stipulated model inputs, not new experimental observations.",
+    "scope": "No external factual retrieval is required. Source roles, axes and units are stated in the file."
+  },
+  "historical_predictor_settings": [
+    -1.0,
+    0.0,
+    1.0
+  ],
+  "additional_programs": [
+    {
+      "program_id": "center",
+      "settings": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "program_id": "edges",
+      "settings": [
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "program_id": "inner",
+      "settings": [
+        -0.5,
+        0.5
+      ]
+    }
+  ],
+  "model": "Independent scalar readings obey y=beta0+beta1*x+beta2*x^2+epsilon, with known variance1 in response-unit squared. All historical and additional x are exact dimensionless settings. There is no unknown noise scale to re-estimate. Compare the covariance of the ordinary least-squares coefficient estimator conditional on these settings. All candidates cost exactly two readings and all are feasible. Future response values are not needed for design precision.",
+  "target": "Minimize variance of beta2 in the fixed [1,x,x^2] basis, not total prediction variance or determinant. Separately report the program maximizing det(X^T X); ties within1e-10 use lexicographically smallest program_id."
+}

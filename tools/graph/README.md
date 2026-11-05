@@ -2,6 +2,8 @@
 
 本目录是[工具契约](../catalog/catalog.json)的派生索引。473个公开工具中，472个进入图谱与功能向量；DescribeTools通过通用契约查询入口直接使用。
 
+本目录顶层文件供 SciToolAgent 使用。SciMas 使用 [scimas/](scimas/README.md) 中独立构建的端口图谱、规划补充信息和向量索引；SciToolAgent 不读取 SciMas 的补充知识。
+
 | 文件 | 用途 |
 | --- | --- |
 | graph_store.json | 工具、学科、功能、输入输出与执行绑定的双向关系 |

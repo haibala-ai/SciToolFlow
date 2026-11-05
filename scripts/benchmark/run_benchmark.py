@@ -15,16 +15,16 @@ sys.path.insert(0, str(ROOT))
 from src.utils.io import atomic_json
 from src.models.client import GenerationClient
 from src.utils.paths import load_environment
-from tasks.datasets import DATASETS, load_dataset
+from tasks.datasets import DATASETS, DEFAULT_DATASET, load_dataset
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--tasks", default="all")
-    parser.add_argument("--dataset", choices=DATASETS, default="full")
+    parser.add_argument("--dataset", choices=DATASETS, default=DEFAULT_DATASET)
     parser.add_argument(
-        "--baseline", choices=["react", "scitoolagent"], default="react"
+        "--baseline", choices=["react", "scitoolagent", "scimas"], default="react"
     )
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--concurrency", type=int, default=1)

@@ -1,0 +1,49 @@
+{
+  "node_order": [
+    "A",
+    "B",
+    "C"
+  ],
+  "scalar_elastic_hessian": [
+    [
+      1.1,
+      -1.0,
+      -0.1
+    ],
+    [
+      -1.0,
+      2.0,
+      -1.0
+    ],
+    [
+      -0.1,
+      -1.0,
+      1.1
+    ]
+  ],
+  "thermal_energy_kBT_in_model_energy_units": 1.0,
+  "model": "A conditional three-node coarse-grained structural fluctuation model with ONE scalar displacement per node. Energy is0.5*u^T*H*u. Uniform translation is the sole gauge. Remove only this translation by sum(u)=0;do not pin a physical node or add a spring to ground. These scalar coordinates are stipulated structural modes,not3DCartesian atoms.",
+  "force_cases": [
+    {
+      "id": "AC",
+      "force_vector": [
+        -1.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": "BC",
+      "force_vector": [
+        0.0,
+        -1.0,
+        1.0
+      ]
+    }
+  ],
+  "target": "For each balanced unit force dipole solve the static zero-mean response and report f^T*u(the pair compliance)in source case order. At the stated kBT,also report the equilibrium variance of the B-to-C relative displacement under the same gauge-free harmonic model. Report the three marginal displacement variances in node order and whether adding just the B/Cmarginal variances gives the correct relative variance. The B/Ccovariance matters;RMSfluctuation and relative stiffness are different summaries.",
+  "unbalanced_comparison": "The proposed extra force[1,0,0]has nonzero net force. Decide whether it admits a static free-model equilibrium. Subtracting its mean force changes the load and is not a solution of the stated unbalanced-force problem.",
+  "provenance": {
+    "kind": "Explicit controlled abstract biological measurement/model fixture;not a real protein,diet or intervention claim."
+  }
+}

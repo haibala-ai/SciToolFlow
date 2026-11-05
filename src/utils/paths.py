@@ -2,6 +2,10 @@
 
 from pathlib import Path
 import os
+from contextvars import ContextVar
+
+# Per-invocation overrides; never mutate process environment from worker threads.
+CALL_DIRECTORIES = ContextVar("scitoolflow_call_directories", default=None)
 
 
 def project_root():
@@ -18,11 +22,15 @@ def local_root():
 
 
 def artifacts_root():
+    if CALL_DIRECTORIES.get():
+        return Path(CALL_DIRECTORIES.get()["artifacts"])
     value = os.getenv("SCITOOLFLOW_ARTIFACTS_DIR")
     return Path(value).resolve() if value else project_root() / "results/tool_artifacts"
 
 
 def work_root():
+    if CALL_DIRECTORIES.get():
+        return Path(CALL_DIRECTORIES.get()["work"])
     value = os.getenv("SCITOOLFLOW_WORK_DIR")
     return Path(value).resolve() if value else local_root() / "work/tools"
 

@@ -1,0 +1,35 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled material-physics study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "temperature_k": [
+    300.0,
+    305.0,
+    310.0,
+    315.0,
+    320.0
+  ],
+  "sample_heat_flow_milliwatt": [
+    2.0,
+    7.5,
+    13.0,
+    8.5,
+    4.0
+  ],
+  "heating_rate_kelvin_per_minute": 10.0,
+  "sample_mass_gram": 0.01,
+  "baseline_anchors": [
+    {
+      "temperature_k": 300.0,
+      "heat_flow_milliwatt": 2.0
+    },
+    {
+      "temperature_k": 320.0,
+      "heat_flow_milliwatt": 4.0
+    }
+  ],
+  "model": "The sample sensible-heat baseline is exactly the straight line through the two independent anchor points across this interval. Positive heat flow is endothermic input. The transition excess is fully supported within the supplied interval; no latent heat lies outside it in this controlled model. Instrument/pan background has already been removed and must not be subtracted again.",
+  "integration": "Integrate excess heat flow versus time with the trapezoid rule on the temperature samples using the constant heating rate. Divide by sample mass. At310K derive sensible specific heat capacity from the baseline heat flow divided by heating rate and mass.",
+  "scope": "Finite-window enthalpy and baseline heat-capacity reconstruction under the declared DSC model; no phase identity or calorimeter dynamic-lag correction is inferred."
+}

@@ -72,7 +72,77 @@ def operand(spec, context):
         # A missing comparison or selected observation always fails; an unused
         # branch is not evidence and must not be evaluated eagerly.
         return operand(expressions[2 if left == right else 3], context)
+    if operation == "select_if_boolean":
+        expressions=spec.get("args",[])
+        if len(expressions)!=3:
+            raise MissingEvidence("Boolean selection requires guard, true and false operands")
+        guard=operand(expressions[0],context)
+        if type(guard) is not bool:
+            raise MissingEvidence("Boolean selection requires actual true/false evidence")
+        # Missing, failed or null guards cannot manufacture a negative result.
+        # Only a proven nonapplicable branch may leave its operand unresolved.
+        return operand(expressions[1 if guard else 2],context)
     args = [operand(arg, context) for arg in spec.get("args", [])]
+    if operation == "finite_ge":
+        if len(args)!=2 or not all(_number(v) for v in args):
+            raise MissingEvidence("Comparison requires two actual finite numbers")
+        return args[0]>=args[1]
+    if operation == "crystal_element_amount":
+        # Inventory aggregation from authenticated parser observations only.
+        # Does not infer missing atoms, normalize a formula or repair occupancy.
+        if len(args)!=2 or not isinstance(args[0],dict) or not isinstance(args[1],str) or not re.fullmatch(r"[A-Z][a-z]?",args[1]):
+            raise MissingEvidence("Crystal amount needs one observed object and element symbol")
+        value,element=args
+        if 'element_amounts' in value:
+            amounts=value['element_amounts']
+            if not isinstance(amounts,dict) or not 1<=len(amounts)<=118 or any(not isinstance(k,str) or not re.fullmatch(r"[A-Z][a-z]?",k) or not _number(v) or v<=0 for k,v in amounts.items()):
+                raise MissingEvidence("Invalid observed element amounts")
+            return amounts.get(element,0.)
+        structure=value.get('structure')
+        sites=structure.get('sites') if isinstance(structure,dict) else None
+        if not isinstance(sites,list) or not 1<=len(sites)<=10000:
+            raise MissingEvidence("Require actual parsed structure sites")
+        amount=0.;entries=0
+        for site in sites:
+            species=site.get('species') if isinstance(site,dict) else None
+            if not isinstance(species,list) or not 1<=len(species)<=118:
+                raise MissingEvidence("Require actual species/occupancy entries")
+            total=0.;seen=set()
+            for row in species:
+                entries+=1
+                if not isinstance(row,dict) or not isinstance(row.get('element'),str) or not re.fullmatch(r"[A-Z][a-z]?",row['element']) or row['element'] in seen or not _number(row.get('occu')) or not 0<row['occu']<=1 or entries>20000:
+                    raise MissingEvidence("Invalid or excessive species inventory")
+                seen.add(row['element']);total+=row['occu']
+                if row['element']==element:amount+=row['occu']
+            if total>1+1e-8:raise MissingEvidence("Overoccupied source site")
+        if not math.isfinite(amount):raise MissingEvidence("Nonfinite source amount")
+        return amount
+    if operation == "json_array":
+        # Data assembly only: preserve nested JSON values without casts,
+        # computation, filtering or evaluation of code supplied in strings.
+        if not 1 <= len(args) <= 256:
+            raise MissingEvidence("json_array requires1..256 operands")
+        stack=[(args,0)];seen=0
+        while stack:
+            value,depth=stack.pop();seen+=1
+            if seen>20000 or depth>16:
+                raise MissingEvidence("json_array exceeds structural bounds")
+            if type(value) is list:
+                stack.extend((v,depth+1) for v in value)
+            elif type(value) is dict:
+                if any(type(k) is not str or len(k)>1024 for k in value):
+                    raise MissingEvidence("json_array requires bounded string object keys")
+                stack.extend((v,depth+1) for v in value.values())
+            elif value is not None and type(value) not in (str,bool,int,float):
+                raise MissingEvidence("json_array accepts native JSON values only")
+            elif type(value) is float and not math.isfinite(value):
+                raise MissingEvidence("json_array rejects nonfinite values")
+        try:
+            if len(json.dumps(args,allow_nan=False,ensure_ascii=False).encode())>2000000:
+                raise MissingEvidence("json_array exceeds text bound")
+        except (ValueError,TypeError,OverflowError,RecursionError) as error:
+            raise MissingEvidence("json_array requires bounded finite JSON") from error
+        return args
     if operation == "public_asset_paths":
         if len(args) != 3:
             raise MissingEvidence("Public asset paths require filename, SHA256 and reviewed aliases")
@@ -1126,7 +1196,7 @@ def operand(spec, context):
         return values
     if operation == "partition_profile":
         # Cluster numbers are names, whereas specimen row identity is not.
-        # Quality metrics also give numeric -1 the special meaning of noise.
+        # Quality metrics also give numeric -1 the mini meaning of noise.
         if (
             len(args) != 2
             or not isinstance(args[0], list)

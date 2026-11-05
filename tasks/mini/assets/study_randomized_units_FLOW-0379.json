@@ -1,0 +1,308 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "data_status": "Project-authored controlled numerical bench-unit reporting scenario, not observations from a new experiment, a published trial or a calibrated material.",
+      "unit_assignment_metadata": [
+        {
+          "unit_id": "unit-4B",
+          "pair_id": "pair-4",
+          "assignment": "treated"
+        },
+        {
+          "unit_id": "unit-5A",
+          "pair_id": "pair-5",
+          "assignment": "treated"
+        },
+        {
+          "unit_id": "unit-5B",
+          "pair_id": "pair-5",
+          "assignment": "control"
+        },
+        {
+          "unit_id": "unit-6A",
+          "pair_id": "pair-6",
+          "assignment": "control"
+        },
+        {
+          "unit_id": "unit-6B",
+          "pair_id": "pair-6",
+          "assignment": "treated"
+        },
+        {
+          "unit_id": "unit-1A",
+          "pair_id": "pair-1",
+          "assignment": "treated"
+        },
+        {
+          "unit_id": "unit-1B",
+          "pair_id": "pair-1",
+          "assignment": "control"
+        },
+        {
+          "unit_id": "unit-2A",
+          "pair_id": "pair-2",
+          "assignment": "control"
+        },
+        {
+          "unit_id": "unit-2B",
+          "pair_id": "pair-2",
+          "assignment": "treated"
+        },
+        {
+          "unit_id": "unit-3A",
+          "pair_id": "pair-3",
+          "assignment": "treated"
+        },
+        {
+          "unit_id": "unit-3B",
+          "pair_id": "pair-3",
+          "assignment": "control"
+        },
+        {
+          "unit_id": "unit-4A",
+          "pair_id": "pair-4",
+          "assignment": "control"
+        }
+      ],
+      "instrument_readings": [
+        {
+          "unit_id": "unit-6B",
+          "technical_reading_id": "unit-6B-r3",
+          "response_mv": 12.74
+        },
+        {
+          "unit_id": "unit-6B",
+          "technical_reading_id": "unit-6B-r2",
+          "response_mv": 12.7
+        },
+        {
+          "unit_id": "unit-6B",
+          "technical_reading_id": "unit-6B-r1",
+          "response_mv": 12.66
+        },
+        {
+          "unit_id": "unit-6A",
+          "technical_reading_id": "unit-6A-r2",
+          "response_mv": 11.32
+        },
+        {
+          "unit_id": "unit-6A",
+          "technical_reading_id": "unit-6A-r1",
+          "response_mv": 11.28
+        },
+        {
+          "unit_id": "unit-5B",
+          "technical_reading_id": "unit-5B-r6",
+          "response_mv": 13.8
+        },
+        {
+          "unit_id": "unit-5B",
+          "technical_reading_id": "unit-5B-r5",
+          "response_mv": 13.76
+        },
+        {
+          "unit_id": "unit-5B",
+          "technical_reading_id": "unit-5B-r4",
+          "response_mv": 13.72
+        },
+        {
+          "unit_id": "unit-5B",
+          "technical_reading_id": "unit-5B-r3",
+          "response_mv": 13.68
+        },
+        {
+          "unit_id": "unit-5B",
+          "technical_reading_id": "unit-5B-r2",
+          "response_mv": 13.64
+        },
+        {
+          "unit_id": "unit-5B",
+          "technical_reading_id": "unit-5B-r1",
+          "response_mv": 13.6
+        },
+        {
+          "unit_id": "unit-5A",
+          "technical_reading_id": "unit-5A-r5",
+          "response_mv": 14.88
+        },
+        {
+          "unit_id": "unit-5A",
+          "technical_reading_id": "unit-5A-r4",
+          "response_mv": 14.84
+        },
+        {
+          "unit_id": "unit-5A",
+          "technical_reading_id": "unit-5A-r3",
+          "response_mv": 14.8
+        },
+        {
+          "unit_id": "unit-5A",
+          "technical_reading_id": "unit-5A-r2",
+          "response_mv": 14.76
+        },
+        {
+          "unit_id": "unit-5A",
+          "technical_reading_id": "unit-5A-r1",
+          "response_mv": 14.72
+        },
+        {
+          "unit_id": "unit-4B",
+          "technical_reading_id": "unit-4B-r4",
+          "response_mv": 10.46
+        },
+        {
+          "unit_id": "unit-4B",
+          "technical_reading_id": "unit-4B-r3",
+          "response_mv": 10.42
+        },
+        {
+          "unit_id": "unit-4B",
+          "technical_reading_id": "unit-4B-r2",
+          "response_mv": 10.38
+        },
+        {
+          "unit_id": "unit-4B",
+          "technical_reading_id": "unit-4B-r1",
+          "response_mv": 10.34
+        },
+        {
+          "unit_id": "unit-4A",
+          "technical_reading_id": "unit-4A-r3",
+          "response_mv": 9.54
+        },
+        {
+          "unit_id": "unit-4A",
+          "technical_reading_id": "unit-4A-r2",
+          "response_mv": 9.5
+        },
+        {
+          "unit_id": "unit-4A",
+          "technical_reading_id": "unit-4A-r1",
+          "response_mv": 9.46
+        },
+        {
+          "unit_id": "unit-3B",
+          "technical_reading_id": "unit-3B-r2",
+          "response_mv": 12.42
+        },
+        {
+          "unit_id": "unit-3B",
+          "technical_reading_id": "unit-3B-r1",
+          "response_mv": 12.38
+        },
+        {
+          "unit_id": "unit-3A",
+          "technical_reading_id": "unit-3A-r6",
+          "response_mv": 13.2
+        },
+        {
+          "unit_id": "unit-3A",
+          "technical_reading_id": "unit-3A-r5",
+          "response_mv": 13.16
+        },
+        {
+          "unit_id": "unit-3A",
+          "technical_reading_id": "unit-3A-r4",
+          "response_mv": 13.12
+        },
+        {
+          "unit_id": "unit-3A",
+          "technical_reading_id": "unit-3A-r3",
+          "response_mv": 13.08
+        },
+        {
+          "unit_id": "unit-3A",
+          "technical_reading_id": "unit-3A-r2",
+          "response_mv": 13.04
+        },
+        {
+          "unit_id": "unit-3A",
+          "technical_reading_id": "unit-3A-r1",
+          "response_mv": 13.0
+        },
+        {
+          "unit_id": "unit-2B",
+          "technical_reading_id": "unit-2B-r5",
+          "response_mv": 8.88
+        },
+        {
+          "unit_id": "unit-2B",
+          "technical_reading_id": "unit-2B-r4",
+          "response_mv": 8.84
+        },
+        {
+          "unit_id": "unit-2B",
+          "technical_reading_id": "unit-2B-r3",
+          "response_mv": 8.8
+        },
+        {
+          "unit_id": "unit-2B",
+          "technical_reading_id": "unit-2B-r2",
+          "response_mv": 8.76
+        },
+        {
+          "unit_id": "unit-2B",
+          "technical_reading_id": "unit-2B-r1",
+          "response_mv": 8.72
+        },
+        {
+          "unit_id": "unit-2A",
+          "technical_reading_id": "unit-2A-r4",
+          "response_mv": 8.26
+        },
+        {
+          "unit_id": "unit-2A",
+          "technical_reading_id": "unit-2A-r3",
+          "response_mv": 8.22
+        },
+        {
+          "unit_id": "unit-2A",
+          "technical_reading_id": "unit-2A-r2",
+          "response_mv": 8.18
+        },
+        {
+          "unit_id": "unit-2A",
+          "technical_reading_id": "unit-2A-r1",
+          "response_mv": 8.14
+        },
+        {
+          "unit_id": "unit-1B",
+          "technical_reading_id": "unit-1B-r3",
+          "response_mv": 10.14
+        },
+        {
+          "unit_id": "unit-1B",
+          "technical_reading_id": "unit-1B-r2",
+          "response_mv": 10.1
+        },
+        {
+          "unit_id": "unit-1B",
+          "technical_reading_id": "unit-1B-r1",
+          "response_mv": 10.06
+        },
+        {
+          "unit_id": "unit-1A",
+          "technical_reading_id": "unit-1A-r2",
+          "response_mv": 9.92
+        },
+        {
+          "unit_id": "unit-1A",
+          "technical_reading_id": "unit-1A-r1",
+          "response_mv": 9.88
+        }
+      ],
+      "assignment_design": "There are six pre-matched pairs, each containing two distinct bench units. Within each pair a separate independent fair coin assigned one unit to treatment and the other to control. Assignment applies to the complete bench unit. Technical readings from the same unit share its assignment and are not independent randomized units. No interference between units is stipulated. The actual assignment labels are in the unit metadata; A/B suffixes carry no treatment meaning.",
+      "analysis_plan": "Define each unit's response as the arithmetic mean of all its listed technical readings in mV. Missing readings are not present and none are imputed. For each matched pair form treated-unit response minus control-unit response. The point estimand is the mean of the six pair contrasts with equal pair weights, irrespective of unequal technical-reading counts. The predeclared design-based test uses the absolute equal-pair mean contrast and the sharp null of no treatment effect on every unit's fixed response. Enumerate all assignments allowed by the independent within-pair coin flips, retain every assignment multiplicity, include equality in the extreme tail and use the exact tail fraction without a Monte Carlo correction. Do not exchange units between matched pairs or randomize individual technical readings.",
+      "comparison_plan": "Separately compute the conventional two-sided paired t-test on those same six pair contrasts, with five degrees of freedom. Report it as a nominal model-based comparison: its exact reference distribution would require independent normal pair differences under its mean-zero null. The controlled scenario does not establish that population model. It is not a substitute for the sharp-null assignment test. For each calculation use the predeclared p<=0.05 rejection rule; no selection of a favorable tail, null or experimental unit after seeing the results.",
+      "reporting_scope": "Results concern this controlled finite panel under the stated assignment/measurement protocol. A failure to reject the sharp null does not establish equality, absence of effects or equivalence. The nominal t calculation does not validate its distributional assumptions. Neither calculation establishes a population effect, measurement-system validity or an empirical scientific discovery.",
+      "method_references": {
+        "urls": [
+          "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html",
+          "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_rel.html"
+        ],
+        "use": "Documentation of paired within-sample assignment permutations and the paired t statistic; numeric inputs are authored here, not extracted from SciPy examples."
+      }
+    }
+  ]
+}

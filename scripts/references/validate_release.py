@@ -13,8 +13,8 @@ from src.utils.paths import project_root
 
 def validate_references(root):
     root = Path(root).resolve()
-    metadata = json.loads((root / "tasks/metadata.json").read_text())
-    tasks = {r["id"]: r for r in read_jsonl(root / "tasks/questions.jsonl")}
+    metadata = json.loads((root / "tasks/full/metadata.json").read_text())
+    tasks = {r["id"]: r for r in read_jsonl(root / "tasks/full/questions.jsonl")}
     refs = {
         r["id"]: r for r in read_jsonl(root / "evaluation/data/references.jsonl.gz")
     }
@@ -60,7 +60,7 @@ def validate_references(root):
         "file_sha256": {
             name: hashlib.sha256((root / name).read_bytes()).hexdigest()
             for name in [
-                "tasks/questions.jsonl",
+                "tasks/full/questions.jsonl",
                 "evaluation/data/references.jsonl.gz",
                 "evaluation/data/reference_runs.jsonl.gz",
                 "tools/catalog/catalog.json",

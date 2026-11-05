@@ -1,0 +1,86 @@
+{
+  "edges": [
+    {
+      "child": "scraper",
+      "parent": "grazer"
+    },
+    {
+      "child": "grazer",
+      "parent": "feeding"
+    },
+    {
+      "child": "shredder",
+      "parent": "detritivore"
+    },
+    {
+      "child": "detritivore",
+      "parent": "feeding"
+    }
+  ],
+  "universe": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8",
+    "s9",
+    "s10",
+    "s11",
+    "s12",
+    "s13",
+    "s14",
+    "s15",
+    "s16",
+    "s17",
+    "s18",
+    "s19",
+    "s20"
+  ],
+  "selected": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5"
+  ],
+  "members": {
+    "scraper": [
+      "s1",
+      "s2",
+      "s3",
+      "s6"
+    ],
+    "grazer": [
+      "s1",
+      "s2",
+      "s3",
+      "s6",
+      "s7"
+    ],
+    "shredder": [
+      "s4",
+      "s5",
+      "s8"
+    ],
+    "detritivore": [
+      "s4",
+      "s5",
+      "s8",
+      "s9"
+    ],
+    "feeding": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6",
+      "s7",
+      "s8",
+      "s9"
+    ]
+  }
+}

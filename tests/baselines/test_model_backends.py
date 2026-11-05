@@ -138,7 +138,7 @@ class ModelBackendTests(unittest.TestCase):
     def test_react_api_executes_real_tool_and_cites_its_output(self):
         self.run_baseline("react")
 
-    def test_both_baselines_keep_the_mini_namespace_in_actual_trajectories(self):
+    def test_both_baselines_keep_the_special_namespace_in_actual_trajectories(self):
         for baseline in ("react", "scitoolagent"):
             with self.subTest(baseline=baseline):
                 self.run_baseline(baseline, dataset="mini")

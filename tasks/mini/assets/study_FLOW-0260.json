@@ -1,0 +1,158 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "pdb_file": "coordinates_FLOW-0260.pdb",
+      "pdb_sha256": "21099cb88231455fdfab4095dddfadcc85cc4213e105cf5f9cfff2ca21993378",
+      "chain_id": "A",
+      "atom_name": "CA",
+      "model_inventory": [
+        {
+          "model_id": "model_1",
+          "parser_model_index": 0,
+          "source_MODEL_serial": 1
+        },
+        {
+          "model_id": "model_2",
+          "parser_model_index": 1,
+          "source_MODEL_serial": 2
+        },
+        {
+          "model_id": "model_3",
+          "parser_model_index": 2,
+          "source_MODEL_serial": 3
+        },
+        {
+          "model_id": "model_4",
+          "parser_model_index": 3,
+          "source_MODEL_serial": 4
+        },
+        {
+          "model_id": "model_5",
+          "parser_model_index": 4,
+          "source_MODEL_serial": 5
+        },
+        {
+          "model_id": "model_6",
+          "parser_model_index": 5,
+          "source_MODEL_serial": 6
+        },
+        {
+          "model_id": "model_7",
+          "parser_model_index": 6,
+          "source_MODEL_serial": 7
+        },
+        {
+          "model_id": "model_8",
+          "parser_model_index": 7,
+          "source_MODEL_serial": 8
+        },
+        {
+          "model_id": "model_9",
+          "parser_model_index": 8,
+          "source_MODEL_serial": 9
+        },
+        {
+          "model_id": "model_10",
+          "parser_model_index": 9,
+          "source_MODEL_serial": 10
+        }
+      ],
+      "residue_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "52",
+        "53",
+        "54",
+        "55",
+        "56",
+        "57",
+        "58",
+        "59",
+        "60",
+        "61",
+        "62",
+        "63",
+        "64",
+        "65",
+        "66",
+        "67",
+        "68",
+        "69",
+        "70",
+        "71",
+        "72",
+        "73",
+        "74",
+        "75",
+        "76"
+      ],
+      "representative_policy": "Use all ten submitted models and the same complete 76 matching C-alpha residues. Pairwise dissimilarity is minimum root-mean-square corresponding-point distance after an independent proper rigid rotation and translation for each pair, with equal residue weights. Reflection, scale fitting and residue re-matching are excluded. Select every model attaining the lowest mean RMSD to the other nine models, tied within 1e-8 angstrom. Report that minimum mean, the largest pairwise RMSD from any selected representative to any ensemble member, and the diameter over all model pairs. Keep model identity attached to each point set; consistent common residue and model ordering changes are allowed.",
+      "research_scope": "Choose an observed submitted conformer as a descriptive geometric representative. The ten deposited low-energy calculated models are not ten independent experimental replicates or a sampled equilibrium distribution. These RMSDs do not estimate model accuracy, experimental precision, thermal fluctuations, dynamic pathways or confidence intervals; no model/sequence is designed or modified.",
+      "source_provenance": {
+        "source_url": "https://files.rcsb.org/download/1D3Z.pdb",
+        "documentation": "https://www.rcsb.org/structure/1D3Z",
+        "source_sha256": "21099cb88231455fdfab4095dddfadcc85cc4213e105cf5f9cfff2ca21993378",
+        "pdb_doi": "10.2210/pdb1D3Z/pdb",
+        "original_attribution": "Cornilescu G, Marquardt JL, Ottiger M, Bax A; UBIQUITIN NMR STRUCTURE, deposited1999/released1999. Entry experimental snapshot reports54calculated and10submitted conformers selected as lowest energy.",
+        "license": "wwPDB data CC0, deposition attribution retained.",
+        "export": "Complete original deposited PDB bytes unchanged, all ten submitted coordinate models. Only metadata identifying source model serials versus zero-based parser indexes is added; no coordinates, residues or models are deleted, aligned in advance or simulated.",
+        "method_source": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.align_vectors.html",
+        "method_read_scope": "Kabsch proper rotation minimizes equal-point-weight squared residuals after caller centering; rssd is root sum squared and must be divided by sqrt(point count) for RMSD. No sensitivity-matrix or ensemble probability interpretation is used."
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

@@ -62,7 +62,7 @@ class ContractAndRuntimeTests(unittest.TestCase):
     def test_all_public_contracts_are_executable_and_reject_empty(self):
         rows = [
             json.loads(s)
-            for s in (P / "tasks/questions.jsonl").read_text().splitlines()
+            for s in (P / "tasks/full/questions.jsonl").read_text().splitlines()
         ]
         self.assertEqual(len(rows), 500)
         self.assertTrue(
@@ -81,7 +81,7 @@ class ContractAndRuntimeTests(unittest.TestCase):
         }
         schemas = [
             json.loads(s)
-            for s in (P / "tasks/questions.jsonl").read_text().splitlines()
+            for s in (P / "tasks/full/questions.jsonl").read_text().splitlines()
         ]
         for row in schemas:
             for item in row.get("unit_annotations", []):

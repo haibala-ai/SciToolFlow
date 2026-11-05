@@ -2,91 +2,89 @@
 
 **面向科学工具筛选、编排与证据推理的大语言模型 Benchmark。**
 
-SciToolFlow 提供 **500 道科学任务、472 个科学工具、781 条参考执行轨迹**，覆盖化学、材料、生物／生态、机器学习／数理计算。模型需要理解科学目标、选择工具、衔接参数与数据，并用实际执行证据支撑结论。
+SciToolFlow提供 **Full-500完整题库**与**Mini-200编排题库**，覆盖化学、材料、生物／生态、机器学习／数理计算，共用 **472个科学工具**。模型需要理解研究目标、筛选工具、衔接中间数据，并通过真实执行支撑科学结论。默认运行入口为Mini。
 
-- **有层次的任务设计**：100 道高难度科学探究题、50 道工具组合题、350 道正常题。
-- **可执行的工具基础**：科学实现、输入输出契约、环境路由、工具图谱与功能向量随项目提供；DescribeTools 支持按需批量查询用法。
-- **可核验的参考与评分**：每题提供金标准、必要科学能力、数据依赖与科学判据，参考执行经独立审核。
-- **统一的实验边界**：ReAct 与 SciToolAgent 共用工具执行器、模型接口和评分器，支持 API 或本地模型。
+- **科学工作流**：从常规计算、方法比较到有边界的科学探究，考察工具选择、分支组织与证据整合。
+- **可执行工具**：实现、输入输出契约、失败反馈、环境路由、知识图谱和功能向量随项目提供。
+- **可核验评分**：实际参数、工具输出、金标准与科学判据相互关联，支持追查运行、规划和答案中的错误。
+- **统一实验接口**：ReAct、SciToolAgent、SciMas共用工具执行器、模型接口和资源策略，支持API、vLLM及本地权重。
 
-[任务分类](tasks/CATEGORIES.md) · [Mini-200](tasks/mini/README.md) · [工具接口](tools/README.md) · [评分细则](evaluation/README.md) · [安装与部署](docs/setup.md)
+[Full题库](tasks/full/README.md) · [Mini题库](tasks/mini/README.md) · [工具接口](tools/README.md) · [评分细则](evaluation/README.md) · [安装与部署](docs/setup.md)
+
+## 题库与工作流
+
+**Full-500**包含100道高难度科学探究题、50道工具组合题和350道正常题。任务覆盖模型识别、竞争解释、结构与物性分析、统计推断和科学结果验证，提供500条主参考及281条不重复的额外执行轨迹。
+
+**Mini-200**由100道独立设计的编排题与100道Full精选题组成，**四学科各50题**。任务围绕独立科学分支、共享前提和结果汇合展开，例如多条件模型评估、候选结构分析和多来源证据整合。Full精选部分排除Full中标记的100道高难度题；独立编排题保留自身难度层级。
+
+![上排Full-500、下排Mini-200：学科分布、参考调用负担与成功工具覆盖](docs/benchmark_analysis/full_mini_overview.svg)
+
+*上排为Full，下排为Mini。左列为任务主学科，中列为参考科学调用数，右列为按工具类别统计的成功覆盖；DescribeTools均不计入。主学科每题只计一次，工具类别可以跨学科使用。*
+
+Mini的评分能力图中，**166题（83%）具有多层依赖**，34题主要表现为并行证据面板；134题的主参考涉及两个及以上工具类别。能力图包含可选与条件节点，其结构不等于实际并发度或加速比。SciMas的相对收益仍需通过独立模型实验检验。
+
+Mini使用**运行完成率、工具规划准确率、答案准确率**；Full报告完整的Completion／Planning／Answer／Joint及部分分。两套题库共享科学判据框架，Full来源的Mini题保留原始参考身份，通过Mini题号运行和评分。[逐题分析与统计口径](docs/benchmark_analysis/README.md) · [映射评分机制](evaluation/README.md#mini与full的映射评分)
 
 ## 与 SciToolEval Level2 的对比
 
-**更大的任务规模、更高的多工具编排负担，以及可以追溯到实际执行的科学评分。**
+**更高的多工具编排负担、更广的非化学工具使用，以及可追溯到真实执行的科学评分。**
 
-SciToolEval 是 benchmark，SciToolAgent 是其 agent 框架。以下对比使用固定上游公开版本与 SciToolFlow 当前正式 500 题。<sup><a id="comparison-cite-1" href="#comparison-note-1">[1]</a></sup>
+SciToolEval是benchmark，SciToolAgent是其agent框架。下表分别展示固定上游公开版本、Full和Mini的统计；任务规模与参考负担不作为模型性能提升。<sup><a id="comparison-cite-1" href="#comparison-note-1">[1]</a></sup>
 
-| 对比维度 | SciToolEval Level2 | **SciToolFlow** | **主要差异** |
-| :--- | ---: | ---: | :--- |
-| 任务数 | 379 | **500** | **+121 题，+31.9%** |
-| 每题参考科学调用均值 | 2.47 | **11.888** | **4.81× 的参考调用负担** |
-| 每题参考科学调用中位数 | 2 | **7** | **3.50×** |
-| 至少 4 次参考科学调用的任务占比 | 9.5%（36/379） | **89.0%（445/500）** | **+79.5 个百分点** |
-| 最长参考科学调用序列 | 11 | **156** | 支持更长的多阶段工作流 |
-| 参考覆盖的注册工具数<sup><a id="comparison-cite-2" href="#comparison-note-2">[2]</a></sup> | 113 | **260** | **多覆盖 147 个注册名称** |
-| 各自工具池内的参考覆盖率 | 23.69% | **55.08%** | **+31.40 个百分点** |
+| 对比维度 | SciToolEval Level2 | SciToolFlow Full | SciToolFlow Mini |
+| :--- | ---: | ---: | ---: |
+| 任务数 | 379 | **500** | **200** |
+| 每题参考科学调用均值 | 2.47 | **11.888** | **11.21** |
+| 每题参考科学调用中位数 | 2 | **7** | **9** |
+| 至少4次参考科学调用 | 9.5%（36/379） | **89.0%（445/500）** | **99.0%（198/200）** |
+| 最长参考科学调用序列 | 11 | **156** | **37** |
+| 参考覆盖的注册工具数<sup><a id="comparison-cite-2" href="#comparison-note-2">[2]</a></sup> | 113 | **260** | **154** |
+| 各自工具池内的参考覆盖率 | 23.69% | **55.08%** | **32.63%** |
 
-调用长度反映执行负担，上游按公开工具路径计数，当前按真实参考执行计数；覆盖率按各自注册目录统计。它们不是同条件重跑得到的模型性能提升。<sup><a id="comparison-cite-3" href="#comparison-note-3">[3]</a></sup><sup><a id="comparison-cite-4" href="#comparison-note-4">[4]</a></sup>
-
-![任务规模、参考长度分布与工具覆盖差异](docs/comparison/current.svg)
+![Level2、Full和Mini的任务规模、参考调用分布与工具覆盖](docs/comparison/current.svg)
 
 ### 1. 从短工具链，扩展到多阶段科学工作流
 
-原 Level2 的公开参考中，**90.5%** 只有 2–3 次工具调用；SciToolFlow 的主参考中，**89.0%** 达到至少 4 次调用，中位数为 **7 次**。每条主参考至少成功使用两种不同工具，平均成功使用 **4.322 种工具**；平均成功科学调用为 **11.18 次**。
+Level2公开参考中90.5%只有2–3次工具调用。相对于Level2，Full与Mini的每题参考调用均值分别为 **4.81×** 和 **4.53×**，要求模型持续完成“选择能力 → 取得证据 → 衔接参数 → 验证结论”。Mini参考每题平均成功使用4.32种不同工具，突出科学分支组织和中间结果管理。
 
-这类工作流要求模型反复完成“选择能力 → 取得证据 → 衔接参数 → 验证结论”，将多项中间结果组织成完整证据链。100 道高难度题进一步考察模型识别、竞争解释、方法选择与证据整合；50 道工具组合题重点考察工具筛选及输入输出衔接。已审核的等价路线可以通过，独立分支可以换序，科学结论仍须满足同样的证据要求。
+长度反映参考执行负担，包含失败恢复，不等于科学难度、依赖深度或任何有效路线的最少调用次数。上游按公开工具路径计数，当前按真实参考执行计数，两者均排除DescribeTools。<sup><a id="comparison-cite-3" href="#comparison-note-3">[3]</a></sup>
 
 ### 2. 扩展生物、材料与数理工具的实际使用
 
-上游公开路径有 **378/379** 题涉及化学工具，生物与材料分别涉及 **7** 题、**15** 题。SciToolFlow 通过四学科任务设计和独立数理工具类别，扩大科学工具的使用范围。下表的任务涉及数为多标签统计，不同列按各自工具目录分类。<sup><a href="#comparison-note-2">[2]</a></sup>
+| 工具类别 | Level2参考覆盖 | Full成功覆盖 | Mini成功覆盖 |
+| :--- | ---: | ---: | ---: |
+| 生物／生态 | 2/85 | **40/86** | **20/86** |
+| 材料 | 4/199 | **74/162** | **20/162** |
+| 化学 | 107/187 | 67/134 | 39/134 |
+| 机器学习／数理 | 无独立注册类别 | **58/65** | **58/65** |
 
-| 学科／工具类别 | Level2：参考覆盖工具 | **SciToolFlow：成功覆盖工具** | Level2：涉及任务 | **SciToolFlow：涉及任务** |
-| :--- | ---: | ---: | ---: | ---: |
-| 生物／生态 | 2/85 | **40/86** | 7/379 | **58/500** |
-| 材料 | 4/199 | **74/162** | 15/379 | **90/500** |
-| 化学 | 107/187 | 67/134 | 378/379 | 64/500 |
-| 机器学习／数理 | 无独立注册类别 | **58/65** | 无独立注册类别 | **287/500** |
+Level2公开路径中，生物与材料工具分别涉及7题、15题；Full为58题、90题，Mini为29题、37题。任务涉及数为多标签统计，一题可使用多个类别；原仓库没有独立数理注册组，不表示其算法没有数理能力。
 
-SciToolFlow 共提供 **472 个规范科学工具＋DescribeTools**，涵盖科学查询、结构处理、统计检验、线性代数、优化与数据组织。工具实现、输入输出 schema、调用形式、失败反馈、环境路由、图谱和功能向量随项目提供，便于 baseline 在同一执行接口下比较。<sup><a href="#comparison-note-2">[2]</a></sup>
-
-任务的**主学科**分布如下；这与上表“是否调用某类工具”的多标签口径不同：
-
-| 主学科 | 高难度题 | 工具组合题 | 正常题 | 总计 |
-| :--- | ---: | ---: | ---: | ---: |
-| 化学 | 25 | 16 | 102 | **143** |
-| 材料 | 25 | 17 | 102 | **144** |
-| 生物／生态 | 25 | 17 | 69 | **111** |
-| 机器学习／数理 | 25 | 0 | 77 | **102** |
-| **合计** | **100** | **50** | **350** | **500** |
-
-![任务类别、参考长度与各学科工具覆盖](docs/benchmark_analysis/overview.svg)
-
-全部题号及摘要见[任务分类](tasks/CATEGORIES.md)，完整分布见[题库分析](docs/benchmark_analysis/README.md)。工具覆盖是对参考使用范围的描述，不是科学能力逐一对齐后的比较；化学工具的覆盖并未在所有口径上提高。<sup><a href="#comparison-note-4">[4]</a></sup>
+覆盖率按各自注册目录计算，统计的不是一一对齐的科学能力。化学覆盖未在所有口径上增加，Mini材料工具覆盖率仍为12.35%；主学科均衡也不意味着工具使用均匀。<sup><a id="comparison-cite-4" href="#comparison-note-4">[4]</a></sup>
 
 ### 3. 从工具名路径，扩展到可核验的科学执行证据
 
-SciToolFlow 将答案、实际执行与科学判据一起提供：**500 条主参考＋281 条不重复的额外参考，共 781 条完整执行轨迹**。每条轨迹记录真实参数、状态和输出，并关联生成信息与独立审核；额外运行数量不等于不同科学算法的数量。
+| 可核验内容 | 所比较的公开Level2文件／脚本 | Full | Mini |
+| :--- | :--- | :--- | :--- |
+| 结构化参考答案 | 所比较的答案JSONL未提供答案值字段 | **500份金标准与公开schema** | **200份金标准与公开schema** |
+| 逐步执行证据 | benchmark JSONL提供路径，未含逐步观测 | **500条主参考＋281条额外执行** | **200条真实主参考** |
+| 工具规划判定 | 路径相同直接接受，其余使用LLM判断 | 必要能力、对象来源、依赖与完整方法路线 | 同一科学判据框架 |
+| 科学答案判定 | 使用LLM比较回答与标准答案 | 显式科学判据、容差、边界与实际证据 | 按原科学判据与可信参考观测独立检查答案 |
+| 评分所需模型 | 公开评分脚本调用生成模型 | **离线规则评分** | **离线规则评分** |
 
-| 可核验内容 | 所比较的公开 Level2 文件／脚本 | **SciToolFlow** |
-| :--- | :--- | :--- |
-| 结构化参考答案 | 所比较的答案 JSONL 未提供答案值字段 | **500 份金标准、公开答案 schema 与字段规则** |
-| 逐步执行证据 | 所比较的 benchmark JSONL 提供工具路径，未含逐步观测 | **781 条真实轨迹，含参数、输出与状态** |
-| 编排判定 | 路径相同直接接受，其余使用 LLM 判断 | **核对必要能力、对象来源、数据依赖与完整方法路线** |
-| 答案判定 | 使用 LLM 判断回答与标准答案的一致性 | **显式科学判据、容差、边界与证据支撑联合核验** |
-| 评分所需模型 | 公开评分脚本调用生成模型 | **离线规则评分，无需额外 judge API** |
+以上限定于所比较的公开文件，不推断作者内部数据。已审核的等价路线可以通过，独立分支可以换序，规定的数据依赖与科学要求仍须成立；未知方法进入独立复核。<sup><a id="comparison-cite-5" href="#comparison-note-5">[5]</a></sup>
 
-以上结论限定于所比较的公开文件，不推断作者内部数据。<sup><a id="comparison-cite-5" href="#comparison-note-5">[5]</a></sup>
-
-主指标 **Joint** 要求正常完成、必要科学编排和科学答案同时成立。失败与缺交保留在分母；规则尚未识别的新方法进入独立复核。这样既能追查“结论为什么成立”，也能定位失败发生在运行、编排还是科学判断。完整定义与同一道题的算分案例见[评分细则](evaluation/README.md)。
+Full与Mini部分共享任务和参考来源，不将两者数量相加作为独立样本数。完整判定、三项独立指标与同题算分案例见[评分细则](evaluation/README.md)，三方统计与来源身份见[对比数据](docs/comparison/current.json)。
 
 ## 项目结构
 
 ```text
 SciToolFlow/
-├── tasks/                 # 500 题、分类文档、输入附件与公开答案 schema
+├── tasks/                 # 公开加载器与两个题库
+│   ├── mini/              # 默认200题、独立附件与来源映射
+│   └── full/              # 完整500题、分类与附件
 ├── tools/                 # 科学实现、统一契约、执行器、图谱与向量
-├── baselines/             # ReAct、SciToolAgent 与公共 harness
+├── baselines/             # ReAct、SciToolAgent、SciMas 与公共 harness
 ├── evaluation/            # 统一评分代码、金标准与参考执行证据
 ├── configs/               # 四个环境、服务参数和无密钥模板
 ├── resources/             # 科学工具源码、配置、已分发模型与参数
@@ -149,26 +147,27 @@ python cli.py validate
 | :--- | :--- |
 | [ReAct](baselines/react/README.md) | 初始看到按学科分类的工具名，按需 DescribeTools，逐步调用、观察、思考并提交答案 |
 | [SciToolAgent](baselines/scitoolagent/README.md) | 图谱与向量检索、预先规划、逐工具执行、总结及重规划；需要同源 embedding 配置 |
+| [SciMas](baselines/scimas/README.md) | 独立端口图谱，Planner／Executor／Reviewer 协作；并行 DAG 执行、科学门控、局部修复与任务内角色经验 |
 
-配置生成模型后，先运行一题检查流程。两种 baseline 均支持 `--backend api` 和 `--backend vllm`，`--model` 指定 API 或本地服务中的模型名：
+配置生成模型后，先运行一题检查流程。三个 baseline 均支持 `--backend api` 和 `--backend vllm`，`--model` 指定 API 或本地服务中的模型名：
 
 ```bash
 # API 生成；模型与服务凭据来自配置，也可显式传 --model
-python cli.py run --baseline react --backend api --tasks FLOW-0001 \
+python cli.py run --baseline react --backend api --tasks SMAS-0103 \
   --output results/react_demo/predictions.json
 
 # 本地 vLLM 生成；按实际服务填写模型名
 python cli.py run --baseline scitoolagent --backend vllm --model "<served-model-name>" \
-  --tasks FLOW-0001 --output results/kg_demo/predictions.json
+  --tasks SMAS-0103 --output results/kg_demo/predictions.json
 
-# 全量测试：两个 baseline 使用相同资源策略
+# 全量测试：三个 baseline 使用相同资源策略
 python cli.py run --baseline react --backend vllm --model "<served-model-name>" \
-  --tasks all --concurrency 2 --output results/react_full/predictions.json
+  --tasks all --concurrency 2 --output results/react_mini/predictions.json
 ```
 
-默认每题 **400 次生成请求、7,200 秒**，SciToolAgent 所有角色合计计数。科学调用、DescribeTools 与显式 think 无独立次数上限；连续同工具同参数十个决策步后终止。token 用量另行报告，完整边界见[运行资源策略](docs/execution_policy.md)。
+默认每题 **400 次生成请求、7,200 秒**，SciToolAgent、SciMas 的所有角色合计计数。科学调用、DescribeTools 与显式 think 无独立次数上限；连续同工具同参数十个决策步后终止。token 用量另行报告，完整边界见[运行资源策略](docs/execution_policy.md)。
 
-运行和评分均支持 `--dataset full|mini`：full 为默认全集 500 题，mini 为四学科各 50 题的精简集。`--tasks` 在所选题库内抽题；Mini 的独立编号与映射见 [Mini-200](tasks/mini/README.md)。
+查询、规划、运行和评分默认使用 **`--dataset mini`**（200 题，SMAS-0001..0200）。完整源库用 **`--dataset full`**（500 题，FLOW-0001..0500）显式选择。Mini的Full来源题直接记录源题号，编号映射和三项主指标见 [Mini-200](tasks/mini/README.md)。
 
 在相同代码、题库、模型和设置下，可向原命令追加 `--resume`；改变指纹后应新建实验目录。
 
@@ -176,23 +175,22 @@ python cli.py run --baseline react --backend vllm --model "<served-model-name>" 
 
 ```bash
 # 抽测时明确题目范围，与预测文件对应
-python cli.py score --tasks FLOW-0001 \
+python cli.py score --tasks SMAS-0103 \
   --predictions results/react_demo/predictions.json \
   --output results/react_demo/scores.json
 
-# 正式全量评分，默认以 500 题为分母
-python cli.py score --predictions results/react_full/predictions.json \
-  --output results/react_full/scores.json
+# 正式全量评分，默认以 200 题为分母
+python cli.py score --predictions results/react_mini/predictions.json \
+  --output results/react_mini/scores.json
 ```
 
-| 核心指标 | 回答的问题 | 输出字段 |
+| Mini-200 主指标 | 回答的问题 | 输出字段 |
 | :--- | :--- | :--- |
-| Completion | 是否正常完成并符合提交格式与实验资源要求？ | `pass_rate` |
-| Planning | 必要科学能力、来源与数据依赖是否全部成立？ | `tool_planning_accuracy` |
-| Answer | 科学答案及其必需证据、公开格式是否全部正确？ | `final_answer_accuracy` |
-| **Joint** | **以上三项是否同时成立？** | **`joint_success_rate`** |
+| 运行完成率 | 是否正常提交符合格式且资源合规的答案？ | `runtime_completion_rate` |
+| 工具规划准确率 | 实际观测是否满足必要科学能力、来源、分支与依赖？ | `tool_planning_accuracy` |
+| 答案准确率 | 用可信参考证据独立判断，科学答案是否正确？ | `answer_accuracy` |
 
-存在未决审核时，`joint_success_rate=null`，`joint_pass_rate` 仅表示已证实通过的下界。报告最终主指标前须确认 `final_metric_available=true`。部分分、证据覆盖、选择效率与待审处理详见[评分细则](evaluation/README.md)，从实际回执逐项算分见[完整案例](docs/scoring.md)。
+三项独立报告，答案正确不补造工具证据；评分不调用 LLM。默认分母为200题，缺失预测计失败，抽测用与运行相同的`--tasks`。Full-500 显式选择后仍使用原`workflow.v1`整题与部分分报告，详见[评分细则](evaluation/README.md)与[Full案例](docs/scoring.md)。
 
 | 实验产物 | 内容 |
 | :--- | :--- |
@@ -200,11 +198,13 @@ python cli.py score --predictions results/react_full/predictions.json \
 | `trajectories/*/trajectory.json` | 模型决策、工具观测、资源账本与终止原因 |
 | `progress.json` | 运行进度；完成数表示提交完成，科学正确性由评分给出 |
 | `scores.json` | 总体指标和逐题诊断 |
-| `scores_review_requests.json` | 未决方法／证据复核请求；名称随评分输出文件名变化 |
+| `scores_review_requests.json` | Full-500的未决方法／证据复核请求；Mini在逐题结果中报告待审状态 |
+
+工程验收已通过41项回归、100条Full映射一致性核查及全部200份Mini参考自检；3道映射题重新执行24次科学工具调用并通过统一CLI评分。测试以参考决策回放驱动生产harness，不作为LLM自主解题成绩。[测试摘要](docs/benchmark_analysis/mini_validation.json)
 
 ## 数据与使用范围
 
-当前版本为 **20261026／0.4.0**。没有独立隐藏测试集，研究队列可能复用。任务类别是设计目标，不是按模型成功率划分的难度等级。参考由原生智能体执行并独立复查，不能据此声称已穷尽所有科学方法或替代领域专家验证。
+当前公开题库为 **Mini-200**，Full-500 源库版本为 **20261026／0.4.0**。没有独立隐藏测试集，研究队列可能复用。任务类别是设计目标，不是按模型成功率划分的难度等级。参考由原生智能体执行并独立复查，不能据此声称已穷尽所有科学方法或替代领域专家验证。
 
 报告实验时请同时给出题库版本、baseline、模型、后端、采样设置、资源策略、任务分母、待审数及 token 用量完整性。科学主指标与运行成本分别报告。
 
@@ -217,7 +217,8 @@ python cli.py score --predictions results/react_full/predictions.json \
 ```bash
 python cli.py validate
 python -m scripts.references.validate_release
-python -m scripts.benchmark.analyze_benchmark
+python -m scripts.benchmark.analyze_benchmark --dataset mini
+python -m scripts.benchmark.analyze_benchmark --dataset full
 python -m scripts.benchmark.compare_release
 ```
 
@@ -227,7 +228,7 @@ python -m scripts.benchmark.compare_release
 
 <a id="comparison-note-1"></a>
 
-**[1] 数据来源。** 上游固定为提交 [`ac1cf19f`](https://github.com/HICAI-ZJU/SciToolAgent/tree/ac1cf19fcef84e69f149db6da424afe4e9b2f11f)，当前题库为 `20261026`。来源文件哈希见[上游元数据](docs/comparison/sources/upstream_metadata.json)，全部对比值、变化量和分类口径见[当前统计](docs/comparison/current.json)。<a href="#comparison-cite-1">返回正文 ↑</a>
+**[1] 数据来源。** Full与Mini均按当前发布数据统计；Mini题号、来源与参考身份见[Mini统计](docs/benchmark_analysis/mini_statistics.json)。上游固定为提交 [`ac1cf19f`](https://github.com/HICAI-ZJU/SciToolAgent/tree/ac1cf19fcef84e69f149db6da424afe4e9b2f11f)，Full源版本为 `20261026`，Mini按当前发布文件哈希固定。来源文件哈希见[上游元数据](docs/comparison/sources/upstream_metadata.json)，全部对比值、变化量和分类口径见[当前统计](docs/comparison/current.json)。<a href="#comparison-cite-1">返回正文 ↑</a>
 
 <a id="comparison-note-2"></a>
 
@@ -235,7 +236,7 @@ python -m scripts.benchmark.compare_release
 
 <a id="comparison-note-3"></a>
 
-**[3] 参考长度。** 上游是公开 `tool_path` 序列，当前是主参考实际科学调用，包含失败恢复；两侧均排除 DescribeTools。长度不是模型轮数、依赖深度或任何有效路线的最少调用次数，4.81× 表示参考调用均值之比。<a href="#comparison-cite-3">返回正文 ↑</a>
+**[3] 参考长度。** 上游是公开 `tool_path` 序列，Full与Mini均为主参考实际科学调用，包含失败恢复；两侧均排除 DescribeTools。长度不是模型轮数、依赖深度或任何有效路线的最少调用次数，4.81×与4.53×分别表示Full、Mini相对Level2的参考调用均值之比。<a href="#comparison-cite-3">返回正文 ↑</a>
 
 <a id="comparison-note-4"></a>
 
