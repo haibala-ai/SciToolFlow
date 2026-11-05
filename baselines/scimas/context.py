@@ -31,7 +31,7 @@ def role_messages(prompt, payload, schema, feedback=None):
         {
             "role": "system",
             "content": prompt
-            + "\nThe user messages supply complementary context fields for this single decision. Combine them; response_schema defines the reply. No previous conversation is assumed.",
+            + "\nThe user messages supply complementary context fields for this single decision. Combine them and return exactly one JSON object matching response_schema. No previous conversation is assumed.",
         },
         {"role": "user", "content": encode_payload({"context": stable})},
         {

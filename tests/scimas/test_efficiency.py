@@ -30,6 +30,7 @@ def test_context_is_lossless_and_stable_before_changing_state():
     )
     assert len(first[-1]["content"]) < len(json.dumps(decoded, ensure_ascii=False))
     assert request_diagnostics(first)["same_role_prefix_chars"] == 0
+    assert "JSON object" in first[0]["content"]
 
 
 @pytest.mark.parametrize("mode", ["format", "scientific"])

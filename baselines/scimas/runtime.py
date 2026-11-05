@@ -26,6 +26,7 @@ from .runner import asset_previews
 from .roles import Roles, RecordedClient
 from .executor import Executor
 from .experience import Experience
+from .trajectory import append_step
 
 IDS = {"type": "array", "items": ID, "uniqueItems": True}
 REPAIR = obj({"nodes": IDS, "reason": TEXT})
@@ -150,6 +151,7 @@ def run_scimas(
         "run_id": run_id,
         "task_id": case_id,
         "dataset": dataset,
+        "task": deepcopy(task),
         "model": getattr(client, "model", "injected"),
         "backend": getattr(client, "backend", "injected"),
         "started_at": datetime.now(timezone.utc).isoformat(),
@@ -193,14 +195,40 @@ def run_scimas(
     failures = {}
     assets = []
     output_previews = {}
+    planning_report = None
 
     def save():
+        if planning_report is not None and "planning" not in trace:
+            # Full request messages already live in steps: avoid serializing a
+            # second copy at every planning checkpoint.
+            trace["planning_progress"] = {
+                key: value for key, value in planning_report.items() if key != "steps"
+            }
         trace.update(
             resource_usage=resources.snapshot(),
             stats=dict(stats),
             experiences=deepcopy(memory.entries),
             results=deepcopy(results),
             pruned=deepcopy(pruned),
+            approved_gates=dict(gates),
+            pending_calls=[
+                {
+                    key: record[key]
+                    for key in (
+                        "node",
+                        "tool",
+                        "node_sha256",
+                        "arguments",
+                        "files",
+                        "timeout_seconds",
+                        "started",
+                        "directory",
+                        "stale",
+                    )
+                    if key in record
+                }
+                for record in executor.running.values()
+            ],
         )
         trace["metrics"] = task_metrics(
             trace["resource_usage"],
@@ -212,6 +240,13 @@ def run_scimas(
         # Preserve every durable checkpoint and raw request, but avoid repeatedly
         # pretty-printing the growing trajectory at each execution boundary.
         atomic_json(path, trace, indent=None)
+
+    def add_step(step):
+        return append_step(trace, step, resources)
+
+    def planning_update(report):
+        nonlocal planning_report
+        planning_report = report
 
     def recorded(role):
         return RecordedClient(client, resources, role, trace, save, max_iterations)
@@ -317,9 +352,7 @@ def run_scimas(
                 "Inspection too large: select a smaller JSON field or array element"
             )
         stats["inspection_steps"] += 1
-        trace["steps"].append(
-            {"type": "inspect", "request": request, "value": selected}
-        )
+        add_step({"type": "inspect", "request": request, "value": selected})
         return selected
 
     def ask(role, payload, schema):
@@ -514,7 +547,16 @@ def run_scimas(
                 call[key] = response[key]
         calls.append(call)
         observations[call["observation_id"]] = call
-        trace["steps"].append({"type": "tools", "role": "executor", "calls": [call]})
+        call["dispatcher_status"] = response.get("status")
+        call["dispatcher_metadata"] = {
+            key: value
+            for key, value in response.items()
+            if key not in {"status", "output"}
+        }
+        for key in ("files", "timeout_seconds"):
+            if key in record:
+                call[key] = record[key]
+        add_step({"type": "tools", "role": "executor", "calls": [call]})
         stats[
             "discovery_calls" if call["kind"] == "discovery" else "scientific_calls"
         ] += 1
@@ -537,12 +579,14 @@ def run_scimas(
             "started": started,
             "directory": str(folder),
             "stale": False,
+            "files": [],
+            "timeout_seconds": min(tool_timeout, resources.deadline - time.monotonic()),
         }
         try:
             response = invoke(
                 "DescribeTools",
                 {"tools": names},
-                timeout=min(tool_timeout, resources.deadline - time.monotonic()),
+                timeout=record["timeout_seconds"],
             )
         except (Exception, KeyboardInterrupt) as error:
             record["finished"] = time.monotonic()
@@ -600,7 +644,7 @@ def run_scimas(
             key = record["node_sha256"]
             if transient and retries.get(key, 0) < settings["transient_retries"]:
                 retries[key] = retries.get(key, 0) + 1
-                trace["steps"].append(
+                add_step(
                     {
                         "type": "retry",
                         "node": nid,
@@ -813,13 +857,14 @@ def run_scimas(
                 raise ValueError("Final scientific review rejected: " + str(decision))
             resources.complete()
             trace.update(status="completed", final_answer=answer, failure_reason=None)
-            trace["steps"].append({"type": "finish", "answer": answer})
+            add_step({"type": "finish", "answer": answer})
             return True
 
     save()
     try:
         knowledge = knowledge or ToolKnowledge(catalog=catalog)
         assets = asset_previews(task, root / "tasks/full") if files else []
+        trace["public_assets"] = assets
         planning = Planner(
             knowledge,
             recorded("planner"),
@@ -829,6 +874,7 @@ def run_scimas(
             timeout=max(0.01, resources.deadline - time.monotonic()),
             describe=discovery,
             schema_guard=protocol_schema_guard,
+            on_update=planning_update,
         ).plan(task, dataset=dataset, assets=assets)
         trace["planning"] = planning
         graph = TaskGraph.load(planning["graph"], task, catalog)
@@ -963,12 +1009,8 @@ def run_scimas(
                         raise ResourceLimit(
                             "ScientificCallBudget" if scientific else "DiscoveryBudget"
                         )
-                    signature = digest(
-                        {
-                            "tool": node["tool"],
-                            "arguments": graph.arguments(nid, results, catalog),
-                        }
-                    )
+                    arguments = graph.arguments(nid, results, catalog)
+                    signature = digest({"tool": node["tool"], "arguments": arguments})
                     submitted = [
                         s["signature"]
                         for s in trace["steps"]
@@ -984,23 +1026,32 @@ def run_scimas(
                         and streak >= max_identical_tool_steps
                     ):
                         raise ResourceLimit("ConsecutiveIdenticalToolCalls")
-                    trace["steps"].append(
+                    dispatch_step = add_step(
                         {
                             "type": "dispatch",
                             "node": nid,
+                            "tool": node["tool"],
+                            "arguments": arguments,
                             "signature": signature,
                             "graph_sha256": graph.identity,
                         }
                     )
-                    executor.submit(
+                    record = executor.submit(
                         node,
                         graph.node_identity(nid),
-                        graph.arguments(nid, results, catalog),
+                        arguments,
                         parallel=parallel,
                         files=available_files(),
                         timeout=min(
                             tool_timeout, resources.deadline - time.monotonic()
                         ),
+                    )
+                    dispatch_step.update(
+                        directory=record["directory"],
+                        files=record["files"],
+                        timeout_seconds=record["timeout_seconds"],
+                        started_seconds=record["started"] - resources.started,
+                        parallel=record["parallel"],
                     )
                     save()
             if executor.running:

@@ -8,6 +8,7 @@ from baselines.common.resources import BudgetedClient, ResourceLimit
 from tools.runtime.contracts import contract_errors
 from .schema import decoding_schema
 from .context import role_messages, request_diagnostics
+from .trajectory import append_step, timestamp
 
 
 class RecordedClient(BudgetedClient):
@@ -30,23 +31,51 @@ class RecordedClient(BudgetedClient):
             ),
             None,
         )
-        step = {
-            "type": "decision",
-            "role": self.phase,
-            "model": {"messages": deepcopy(messages), "response": None},
-            "context_usage": request_diagnostics(messages, previous),
-        }
-        self.trace["steps"].append(step)
+        step = append_step(
+            self.trace,
+            {
+                "type": "decision",
+                "role": self.phase,
+                "model": {
+                    "messages": deepcopy(messages),
+                    "response": None,
+                    "request_index": len(self.resources.requests) + 1,
+                    "options": deepcopy(kwargs),
+                    "started_at": timestamp(),
+                },
+                "context_usage": request_diagnostics(messages, previous),
+            },
+            self.resources,
+        )
+        self.last_step = step
         self.save()
+        started = self.resources.clock()
         try:
             reply = super().request(messages, **kwargs)
             step["model"]["response"] = deepcopy(reply)
             return reply
-        except Exception as error:
+        except (Exception, KeyboardInterrupt) as error:
             step["model"]["error"] = type(error).__name__ + ": " + str(error)
+            if getattr(error, "generation_response", None) is not None:
+                step["model"]["response"] = deepcopy(error.generation_response)
             raise
         finally:
+            step["model"].update(
+                finished_at=timestamp(),
+                duration_seconds=max(0, self.resources.clock() - started),
+                usage=(
+                    deepcopy(self.resources.requests[-1].get("usage"))
+                    if len(self.resources.requests) >= step["model"]["request_index"]
+                    else None
+                ),
+            )
             self.save()
+
+    def record_validation(self, value, errors):
+        # The next existing checkpoint persists this metadata; no extra write.
+        self.last_step["validation_errors"] = list(errors)
+        if not errors:
+            self.last_step["decision"] = deepcopy(value)
 
 
 class Roles:
@@ -106,7 +135,10 @@ class Roles:
                 value = json.loads(text)
                 errors = contract_errors(value, schema)
             except (ValueError, TypeError) as error:
+                value = None
                 errors = [str(error)]
+            if hasattr(client, "record_validation"):
+                client.record_validation(value, errors)
             if not errors:
                 return value
             if self.on_protocol_error is not None:

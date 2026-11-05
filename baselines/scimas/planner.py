@@ -55,6 +55,7 @@ class Planner:
         timeout=600,
         describe=None,
         schema_guard=True,
+        on_update=None,
     ):
         for value in (
             max_requests,
@@ -67,6 +68,7 @@ class Planner:
                 raise ValueError("Planning limits must be positive")
         self.knowledge, self.client = knowledge, client
         self.describe = describe
+        self.on_update = on_update
         self.schema_guard = schema_guard
         self.max_requests, self.max_retrieval_rounds = (
             max_requests,
@@ -96,6 +98,8 @@ class Planner:
             "scientific_correctness": "not_evaluated",
         }
         deadline = time.monotonic() + self.timeout
+        if self.on_update:
+            self.on_update(report)
 
         def request(stage, payload, schema):
             format_feedback = None
@@ -165,10 +169,13 @@ class Planner:
                     value = json.loads(text)
                     errors = contract_errors(value, schema)
                 except (ValueError, TypeError) as error:
+                    value = None
                     errors = [
                         "Expected finite JSON matching response_schema: "
                         + type(error).__name__
                     ]
+                if hasattr(self.client, "record_validation"):
+                    self.client.record_validation(value, errors)
                 if not errors:
                     return value
                 step["protocol_errors"] = errors

@@ -7,6 +7,7 @@
 | [environments/](environments/README.md) | 四个 Conda 环境的安装快照、依赖约束与工具环境路由 |
 | [services/qwen_vllm.json](services/qwen_vllm.json) | 可选的 Qwen 本地服务部署示例；GPU、解释器和模型路径可由启动参数覆盖 |
 | [services/dpsk_api.json](services/dpsk_api.json) | AIHubMix DPSK 生成 API 配置，不含密钥 |
+| [services/deepseek_api.json](services/deepseek_api.json) | DeepSeek 官方 `deepseek-flash`，生成请求直连；独立于 embedding 的代理配置 |
 | [services.env.example](services.env.example) | 生成 API、vLLM、检索 embedding 与科研服务账号模板 |
 | [runtime.env.example](runtime.env.example) | 科研文件、模型与解释器的本机路径模板 |
 | [tool_resources.json](tool_resources.json) | 从工具契约派生的资源配置项及依赖它们的工具 |

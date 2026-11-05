@@ -40,6 +40,8 @@ class Executor:
             "tool": node["tool"],
             "node_sha256": identity,
             "arguments": arguments,
+            "files": list(files),
+            "timeout_seconds": timeout,
             "parallel": parallel,
             "cancel": cancel,
             "started": time.monotonic(),
@@ -70,6 +72,7 @@ class Executor:
 
         future = self.pool.submit(copy_context().run, call)
         self.running[future] = record
+        return record
 
     def completed(self, timeout=0.1):
         if not self.running:

@@ -15,6 +15,20 @@ GENERATION_ACTIVE = ContextVar("scitoolflow_generation_active", default=False)
 def response_error(message, response):
     error = RuntimeError(message)
     error.generation_usage = response.get("usage")
+    # Preserve returned model content on truncation/failure without storing
+    # request headers, credentials or an arbitrary provider error body.
+    choice = (response.get("choices") or [{}])[0]
+    returned_message = choice.get("message") or {}
+    error.generation_response = {
+        "text": returned_message.get("content"),
+        "message_metadata": {
+            k: v for k, v in returned_message.items() if k != "content"
+        },
+        "finish_reason": choice.get("finish_reason"),
+        "usage": response.get("usage"),
+        "model": response.get("model"),
+        "response_id": response.get("id"),
+    }
     return error
 
 
@@ -74,6 +88,7 @@ class GenerationClient:
             if session is not None
             else os.getenv("SCITOOLFLOW_API_TRANSPORT", "requests")
         )
+        self._trust_env = os.getenv("SCITOOLFLOW_API_TRUST_ENV", "1") != "0"
         if self.backend not in ["local", "api", "vllm"]:
             raise ValueError("Backend must be local, api or vllm")
 
@@ -110,6 +125,12 @@ class GenerationClient:
             return {
                 "endpoint": base,
                 "transport": self._transport,
+                "trust_env": self._trust_env,
+                "connect_timeout_seconds": (
+                    float(os.environ["SCITOOLFLOW_API_CONNECT_TIMEOUT"])
+                    if "SCITOOLFLOW_API_CONNECT_TIMEOUT" in os.environ
+                    else None
+                ),
                 "connect_retries": 2 if self._transport == "httpx" else 0,
                 "token_parameter": os.getenv(
                     "SCITOOLFLOW_API_TOKEN_PARAMETER", "max_completion_tokens"
@@ -270,6 +291,11 @@ class GenerationClient:
         request_timeout = float(os.getenv("SCITOOLFLOW_API_TIMEOUT", "120"))
         if cap <= 0 or not math.isfinite(request_timeout) or request_timeout <= 0:
             raise ValueError("API token and timeout caps must be positive")
+        connect_timeout = os.getenv("SCITOOLFLOW_API_CONNECT_TIMEOUT")
+        if connect_timeout is not None:
+            connect_timeout = float(connect_timeout)
+            if not math.isfinite(connect_timeout) or connect_timeout <= 0:
+                raise ValueError("API connect timeout must be positive and finite")
         if timeout is not None:
             request_timeout = min(request_timeout, timeout)
         token_parameter = os.getenv(
@@ -310,21 +336,33 @@ class GenerationClient:
             )
         payload.update(extra)
         if self._session is None:
-            self._session = (
-                httpx.Client() if self._transport == "httpx" else requests.Session()
-            )
+            if self._transport == "httpx":
+                self._session = httpx.Client(trust_env=self._trust_env)
+            else:
+                self._session = requests.Session()
+                self._session.trust_env = self._trust_env
         start = time.monotonic()
         connection_attempts = 0
         try:
             while True:
                 connection_attempts += 1
                 remaining = request_timeout - (time.monotonic() - start)
+                attempt_timeout = max(0.001, remaining)
+                if connect_timeout is not None:
+                    attempt_timeout = (
+                        httpx.Timeout(
+                            attempt_timeout,
+                            connect=min(connect_timeout, attempt_timeout),
+                        )
+                        if self._transport == "httpx"
+                        else (min(connect_timeout, attempt_timeout), attempt_timeout)
+                    )
                 try:
                     response = self._session.post(
                         base + "/chat/completions",
                         headers={"Authorization": "Bearer " + key},
                         json=payload,
-                        timeout=max(0.001, remaining),
+                        timeout=attempt_timeout,
                     )
                     break
                 except exceptions as error:
@@ -382,7 +420,15 @@ class GenerationClient:
                 "Generation API content_filter; case skipped without retry", value
             )
         text = choice["message"].get("content")
-        if not isinstance(text, str) or not text.strip():
+        empty_json_completion = (
+            isinstance(text, str)
+            and not text.strip()
+            and choice.get("finish_reason") == "stop"
+            and payload.get("response_format", {}).get("type") == "json_object"
+        )
+        if not isinstance(text, str) or (
+            not text.strip() and not empty_json_completion
+        ):
             raise response_error("Generation API returned no textual completion", value)
         return {
             "text": text,
@@ -393,6 +439,11 @@ class GenerationClient:
             "provider_backend": "api",
             "connection_attempts": connection_attempts,
             "response_id": value.get("id"),
+            "finish_reason": choice.get("finish_reason"),
+            "empty_json_completion": empty_json_completion,
+            "message_metadata": {
+                k: v for k, v in choice["message"].items() if k != "content"
+            },
         }
 
     def _vllm_request(self, messages, max_tokens, timeout=None, response_schema=None):
@@ -504,6 +555,10 @@ class GenerationClient:
             "provider_backend": "vllm",
             "response_id": value.get("id"),
             "truncated": truncated,
+            "finish_reason": choice.get("finish_reason"),
+            "message_metadata": {
+                k: v for k, v in choice["message"].items() if k != "content"
+            },
         }
 
     def _local_http_session(self):

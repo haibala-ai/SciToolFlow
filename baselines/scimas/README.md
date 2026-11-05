@@ -44,6 +44,25 @@ python cli.py score --dataset mini --tasks SMAS-0103 \
 
 该配置使用已验证的 `httpx` 传输、`max_tokens`、JSON object 模式、32,768 输出 token 上限和 300 秒请求超时；完整 JSON Schema 由本地协议校验。模型默认思考消耗同一输出额度，运行命令也需显式设置 `--max-output-tokens 32768`；实际用量按服务端返回的 usage 记录。`httpx` 对建立连接失败最多重试两次；收到 HTTP 响应后的错误和发送后的读取／写入失败均不自动重发。长思考请求遇到读取超时时会明确失败，不将联调失败包装成任务通过。生成密钥与检索 embedding 的密钥分别配置。需要更换供应商时，使用 `--profile /path/to/profile.json`，或按部署文档配置其他兼容接口。
 
+### DeepSeek 官方直连与长任务
+
+[deepseek_api.json](../../configs/services/deepseek_api.json) 使用 `https://api.deepseek.com`、`deepseek-flash`、10 秒连接超时、600 秒生成响应等待上限和 65,536 输出 token 上限。连接失败仍按发送前重试规则处理，避免 TLS 建连占用整个长生成超时。`SCITOOLFLOW_API_TRUST_ENV=0` 使生成客户端忽略代理环境变量；embedding 和科学工具仍各自使用原有网络配置，不全局清空代理。各角色请求均明确要求 JSON 对象，满足供应商 JSON 模式的提示词要求。
+
+```bash
+python -m scripts.services.configure_api --profile configs/services/deepseek_api.json
+python cli.py run --baseline scimas --dataset mini --tasks all \
+  --backend api --model deepseek-flash --concurrency 8 \
+  --max-context-chars 1500000 --max-output-tokens 65536 \
+  --max-model-requests 400 --task-timeout 7200 \
+  --output results/scimas_deepseek/predictions.json
+```
+
+按[官方模型说明](https://api-docs.deepseek.com/quick_start/pricing/)，模型服务提供 1M token 上下文；本地 150 万字符保护阈值是字符限制，不等同于 token 数。API 路径由字符保护和服务端真实上下文限制检查，`--max-input-tokens` 不作为 API 的精确计数器。思考和回复共享单次输出额度。增加上限不会预先消费这些 token，统计仍取服务端实际 usage。
+
+不设置决策步数或工具调用数硬上限，400 次生成请求由所有角色共享，允许超过 32 步的工作流；初始规划及局部修复边界仍按算法配置执行。`--concurrency 8` 表示最多 8 个独立任务进程，可以跨任务同时请求 API，不改变单题 Planner／Executor／Reviewer 的依赖关系。它与 `tool_concurrency=4`（单题同时执行的工具数）分别控制。本次若只选两题，实际同时在途的模型请求最多两个，不能把配置上限当作已测吞吐。
+
+供应商 JSON 模式可能返回 HTTP 200、`finish_reason=stop`、但正文仅含空白的响应。客户端保留这种原始响应及其 usage，交由已有的协议纠错次数和总请求预算处理；空白不视为有效决策，不跳过科学工具，也不填充答案。传输层不会因此隐式重发，后续纠错请求逐次记录和计费。HTTP 错误、断连、内容过滤与输出截断继续沿用明确失败规则。
+
 也可用 `python -m baselines.scimas.run`，参数与 `cli.py run --baseline scimas` 相同。`--backend local` 使用现有本地 worker；三种后端都通过 `src/models/`，不绑定某个模型。生成服务与 embedding 服务分别配置，参见[安装与部署](../../docs/setup.md)。
 
 只查看规划时，使用 `python cli.py plan --dataset mini --tasks SMAS-0103 --backend vllm --output results/scimas_plan`。`plan` 产物不包含完整执行轨迹，不能提交正式评分。
@@ -150,6 +169,32 @@ python -m baselines.scimas.build_knowledge
 
 每题自动记录 `metrics.runtime_seconds`（墙钟秒数）、`metrics.tool_calls`（含失败、重试及 `DescribeTools` 的派发总次数）、`metrics.input_tokens` 和 `metrics.output_tokens`（所有角色生成的输入／输出总用量）。同一对象保存在预测与轨迹中，批次另生成 `task_metrics.json`。未知 usage 以 `null` 标记并保留已知小计；缓存和思考 token 不重复累加。完整口径及续跑规则见[实验输出](../../results/README.md#逐题运行成本)。
 
+### 单题案例分析
+
+`trajectory.json` 保存完整公开问题与输入、附件预览、每次模型请求的全部消息和生成参数、原始响应、解析后的决策和协议错误。每步具有 `step_id`、记录时间和相对起点的秒数；模型请求另有起止时间、耗时和 usage。接口实际返回的附加消息字段和输出截断时的部分响应也保留，部分响应不会作为有效决策执行。
+
+工具派发步骤记录实际参数、文件范围、超时、工作目录和并行标记；完成记录保存完整输出、错误及 dispatcher 已脱敏的诊断信息。并行调用的真实起止时间与主循环收集顺序分别记录。`graphs`、`reviews`、`repairs`、`results`、`pruned`、`approved_gates` 和 `experiences` 保留图版本、审查、修复、证据采纳和筛选状态；`pending_calls` 标识尚未收齐的调用。规划过程在完成前保存不重复模型消息的 `planning_progress`。异常或正常中断会保存最后检查点；强制终止或掉电后的完整性以最后实际落盘内容为限。
+
+运行时继续使用原有紧凑 JSON 检查点，不增加逐步文件写入，不为生成案例报告调用模型。运行结束后按需离线导出：
+
+```bash
+python -m baselines.scimas.trajectory \
+  results/YOUR_RUN/trajectories/TASK_ID-RUN_ID/trajectory.json
+```
+
+默认在该次任务目录下生成 `analysis/`：
+
+| 文件 | 用途 |
+| --- | --- |
+| `trajectory.md` | 可读的逐步案例索引，含决策、错误和统计预览，以及完整 JSON 的链接 |
+| `requests/<step_id>.json` | 单次模型的完整输入、响应、解析决策、校验与耗时 |
+| `calls/<observation_id>/request.json`、`response.json` | 单次工具的完整参数、输出与诊断 |
+| `manifest.json` | 原始轨迹路径和 SHA256，便于确认导出来源 |
+
+可用 `--output /path/to/analysis` 指定独立导出目录。导出不改写原始轨迹，不运行模型、工具或评分器，不计入任务时间。Markdown 中的长内容仅作有标识的预览，JSON 保留完整内容。历史轨迹未记录的字段不会推测补齐。
+
+新增元数据复用既有检查点，主要增加少量字段的编码开销；不声称记录完全没有成本。`runtime_seconds` 始终保留真实墙钟时间，包含运行中的日志开销，不通过扣除日志时间修饰速度指标。
+
 | 模块 | 职责 |
 | --- | --- |
 | `knowledge.py`、`build_knowledge.py` | 独立图谱构建、校验、检索与端口查询 |
@@ -159,6 +204,7 @@ python -m baselines.scimas.build_knowledge
 | `runtime.py` | 三角色协作、审查、修订和最终提交 |
 | `executor.py` | 并发进程调度、目录隔离与取消 |
 | `roles.py`、`context.py`、`prompts/` | 角色协议、稳定前缀上下文、有限格式纠正与请求记录 |
+| `trajectory.py` | 轻量步骤身份与离线案例导出，运行时不生成报告副本 |
 | `experience.py` | 任务内证据支持的角色经验 |
 | `runner.py`、`run.py` | 独立规划命令与完整 baseline 入口 |
 
