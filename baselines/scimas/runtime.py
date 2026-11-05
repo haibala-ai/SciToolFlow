@@ -15,6 +15,7 @@ from baselines.common.answers import (
 )
 from baselines.common.protocol import expand_citations
 from baselines.common.resources import TaskResources, ResourceLimit
+from baselines.common.metrics import task_metrics
 from src.utils.io import atomic_json
 from tools.runtime.contracts import contract_errors
 from .schema import TEXT, ID, PATH, obj
@@ -191,6 +192,7 @@ def run_scimas(
     executor = Executor(invoke, folder / "calls", settings["tool_concurrency"])
     failures = {}
     assets = []
+    output_previews = {}
 
     def save():
         trace.update(
@@ -200,7 +202,16 @@ def run_scimas(
             results=deepcopy(results),
             pruned=deepcopy(pruned),
         )
-        atomic_json(path, trace)
+        trace["metrics"] = task_metrics(
+            trace["resource_usage"],
+            calls,
+            runtime_seconds=trace.get("duration_seconds"),
+            pending_calls=list(executor.running.values()),
+            finished=trace["status"] != "running",
+        )
+        # Preserve every durable checkpoint and raw request, but avoid repeatedly
+        # pretty-printing the growing trajectory at each execution boundary.
+        atomic_json(path, trace, indent=None)
 
     def recorded(role):
         return RecordedClient(client, resources, role, trace, save, max_iterations)
@@ -224,36 +235,42 @@ def run_scimas(
 
     def evidence():
         preview = {}
+        node_ids = {n["id"] for n in graph.plan["nodes"]}
+        observed_nodes = {call["node"] for call in observations.values()} & node_ids
+        identities = {nid: graph.node_identity(nid) for nid in observed_nodes}
         for oid, call in observations.items():
             if call["kind"] == "discovery":
                 continue
-            text = json.dumps(call["output"], ensure_ascii=False)
+            # Outputs are immutable after logging; cache only their serialization,
+            # never graph validity or acceptance, which can change during repair.
+            if oid not in output_previews:
+                text = json.dumps(call["output"], ensure_ascii=False)
+                truncated = len(text) > settings["observation_preview_chars"]
+                output_previews[oid] = {
+                    "output": None if truncated else call["output"],
+                    "preview": (
+                        text[: settings["observation_preview_chars"]]
+                        if truncated
+                        else None
+                    ),
+                    "truncated": truncated,
+                }
             preview[oid] = {
                 "tool": call["tool"],
                 "status": call["status"],
                 "node": call["node"],
                 "node_sha256": call["node_sha256"],
                 "stale": call.get("stale", False)
-                or call["node"] not in {n["id"] for n in graph.plan["nodes"]}
-                or call["node_sha256"] != graph.node_identity(call["node"]),
+                or call["node"] not in node_ids
+                or call["node_sha256"] != identities.get(call["node"]),
                 "accepted_for_current_graph": results.get(call["node"], {}).get(
                     "observation_id"
                 )
                 == oid
                 and call["node"] not in pruned
                 and results[call["node"]]["node_sha256"]
-                == graph.node_identity(call["node"]),
-                "output": (
-                    call["output"]
-                    if len(text) <= settings["observation_preview_chars"]
-                    else None
-                ),
-                "preview": (
-                    text[: settings["observation_preview_chars"]]
-                    if len(text) > settings["observation_preview_chars"]
-                    else None
-                ),
-                "truncated": len(text) > settings["observation_preview_chars"],
+                == identities.get(call["node"]),
+                **output_previews[oid],
             }
         return preview
 
@@ -307,7 +324,9 @@ def run_scimas(
 
     def ask(role, payload, schema):
         nonlocal think_streak
-        feedback = []
+        # Preserve caller feedback (including final format/scientific corrections)
+        # when adding inspection and thinking history for this decision.
+        feedback = list(payload.get("feedback", []))
         while True:
             decision = roles.ask(role, {**payload, "feedback": feedback}, schema)
             if "inspect" in decision:
@@ -510,21 +529,34 @@ def run_scimas(
             raise ResourceLimit("DiscoveryBudget")
         resources.check_deadline()
         started = time.monotonic()
-        response = invoke(
-            "DescribeTools",
-            {"tools": names},
-            timeout=min(tool_timeout, resources.deadline - time.monotonic()),
-        )
         record = {
             "node": "discovery",
             "tool": "DescribeTools",
             "arguments": {"tools": names},
             "node_sha256": digest(catalog.tools["DescribeTools"]),
             "started": started,
-            "finished": time.monotonic(),
             "directory": str(folder),
             "stale": False,
         }
+        try:
+            response = invoke(
+                "DescribeTools",
+                {"tools": names},
+                timeout=min(tool_timeout, resources.deadline - time.monotonic()),
+            )
+        except (Exception, KeyboardInterrupt) as error:
+            record["finished"] = time.monotonic()
+            log_call(
+                record,
+                {
+                    "status": "error",
+                    "output": None,
+                    "error_type": type(error).__name__,
+                    "error": str(error),
+                },
+            )
+            raise
+        record["finished"] = time.monotonic()
         log_call(record, response)
         if response.get("status") != "success":
             raise ValueError(
@@ -970,6 +1002,7 @@ def run_scimas(
                             tool_timeout, resources.deadline - time.monotonic()
                         ),
                     )
+                    save()
             if executor.running:
                 for record, response in executor.completed():
                     consume(record, response)

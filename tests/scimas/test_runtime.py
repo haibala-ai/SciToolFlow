@@ -7,6 +7,7 @@ import time
 import pytest
 from baselines.scimas.runtime import run_scimas
 from baselines.scimas.experience import Experience
+from baselines.scimas.context import request_payload
 from baselines.scimas.executor import Executor
 from baselines.scimas.task_graph import digest
 from tools import ToolCatalog, execute
@@ -45,7 +46,7 @@ class Client:
         self.hook, self.contexts, self.summary_attempts = hook, [], 0
 
     def request(self, messages, **kwargs):
-        payload = json.loads(messages[-1]["content"])
+        payload = request_payload(messages)
         self.contexts.append(payload)
         if payload.get("stage") == "decompose":
             action = decomposition()
@@ -231,6 +232,9 @@ def test_transient_retry_bounded(tmp_path):
     )
     assert result["status"] == "failed" and len(result["calls"]) == 2
     assert len([s for s in result["steps"] if s["type"] == "retry"]) == 1
+    assert result["metrics"]["tool_calls"] == 2
+    assert result["metrics"]["scientific_tool_calls"] == 2
+    assert result["metrics"]["tool_calls_complete"]
 
 
 def test_format_correction_and_independent_final_review(tmp_path):
@@ -583,6 +587,9 @@ def test_model_requested_discovery_is_a_real_non_scientific_call(tmp_path):
     assert result["status"] == "completed", result["failure_reason"]
     assert result["calls"][0]["tool"] == "DescribeTools"
     assert result["calls"][0]["kind"] == "discovery"
+    assert result["metrics"]["tool_calls"] == 3
+    assert result["metrics"]["scientific_tool_calls"] == 2
+    assert result["metrics"]["discovery_tool_calls"] == 1
     assert (
         result["stats"]["discovery_calls"] == 1
         and result["stats"]["scientific_calls"] == 2
@@ -748,7 +755,7 @@ def test_role_protocol_errors_are_recorded(tmp_path):
         once = False
 
         def request(self, messages, **kwargs):
-            ctx = json.loads(messages[-1]["content"]).get("context", {})
+            ctx = request_payload(messages).get("context", {})
             if ctx.get("stage") == "graph" and not self.once:
                 self.once = True
                 return {

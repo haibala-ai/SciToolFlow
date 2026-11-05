@@ -8,9 +8,19 @@ First decompose the public question into concrete deliverable requirements and
 subtask retrieval queries. For each requirement quote a literal span of the
 question or its inputs as evidence. Copy a contiguous verbatim substring; never
 join fragments, paraphrase a quote or add ellipses. Requirements may share the
-same complete source sentence. Use mode "complete" for full reports and
-required comparisons; "screen" only if the task permits excluding candidates.
+same complete source sentence. A requirement's mode describes whether its scientific
+computation is unconditional, not whether its JSON output field is required.
+Use "complete" for unconditional scientific results and required comparisons.
+Use "screen" for computations that the question explicitly restricts to eligible
+candidates. Preserve the eligibility condition in the requirement's description
+and evidence. Represent the evidence for accepting or excluding every candidate
+as an unconditional requirement; the subsequent conditional computations form
+separate screened requirements. Excluded candidates still need the question's
+specified null values, explanations or other reporting, grounded in that decision
+evidence. Never turn an unconditional computation into screening to save work.
 Keep scientific thresholds, specified tools/models and output requirements intact.
+Final JSON syntax is enforced by answer_schema; do not add a blanket complete
+scientific requirement depending on every node merely to represent JSON formatting.
 
 Then produce a task graph using the supplied JSON language. A node is one concrete
 tool invocation. Repeated tools with different inputs are separate nodes. Use

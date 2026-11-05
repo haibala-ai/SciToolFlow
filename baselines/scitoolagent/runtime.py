@@ -14,6 +14,7 @@ import time
 import uuid
 
 from baselines.common.session import SessionOptions
+from baselines.common.metrics import task_metrics
 from baselines.common.resources import (
     TaskResources,
     ResourceLimit,
@@ -134,6 +135,13 @@ def run_scitoolagent(
     def save():
         trajectory["resource_usage"] = resources.snapshot()
         trajectory["stats"] = dict(stats)
+        trajectory["metrics"] = task_metrics(
+            trajectory["resource_usage"],
+            trajectory["preparations"]
+            + [call for step in trajectory["steps"] for call in step.get("calls", [])],
+            runtime_seconds=trajectory.get("duration_seconds"),
+            finished=trajectory["status"] not in {"running", "interrupted"},
+        )
         atomic_json(path, trajectory)
 
     save()
@@ -331,14 +339,24 @@ def run_scitoolagent(
                     ):
                         raise RuntimeError("DiscoveryCallBudget")
                     before_read = time.monotonic()
-                    row = invoke(
-                        "DescribeTools",
-                        {"tools": [name]},
-                        files=files or [],
-                        timeout=min(
-                            tool_timeout, max(0.01, deadline - time.monotonic())
-                        ),
-                    )
+                    call_error = None
+                    try:
+                        row = invoke(
+                            "DescribeTools",
+                            {"tools": [name]},
+                            files=files or [],
+                            timeout=min(
+                                tool_timeout, max(0.01, deadline - time.monotonic())
+                            ),
+                        )
+                    except (Exception, KeyboardInterrupt) as error:
+                        call_error = error
+                        row = {
+                            "status": "error",
+                            "output": None,
+                            "error_type": type(error).__name__,
+                            "error": str(error),
+                        }
                     stats["discovery_calls"] += 1
                     identifier = "d" + str(stats["discovery_calls"]).zfill(3)
                     doc = {
@@ -359,6 +377,8 @@ def run_scitoolagent(
                     observations[identifier] = doc
                     trajectory["preparations"].append(doc)
                     save()
+                    if call_error is not None:
+                        raise call_error
                     if row["status"] != "success":
                         raise RuntimeError("ToolContractReadFailed")
                     contracts[name] = row["output"]["tools"][name]

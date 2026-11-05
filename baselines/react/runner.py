@@ -4,10 +4,12 @@ from datetime import datetime
 import hashlib
 import json
 import os
+import time
 from pathlib import Path
 from uuid import uuid4
 
 from baselines.common.batch import iter_tasks
+from baselines.common.metrics import task_metrics
 
 from src.utils.paths import project_root, load_environment
 from tools.catalog import ToolCatalog
@@ -107,7 +109,9 @@ def run_task(payload):
     if args.model:
         client.model = args.model
     try:
-        asset_root = root / ("tasks/mini" if getattr(args, "dataset", "full") == "mini" else "tasks/full")
+        asset_root = root / (
+            "tasks/mini" if getattr(args, "dataset", "full") == "mini" else "tasks/full"
+        )
         task = load_agent_input(row, asset_root)
         budget = args.max_calls
         print(
@@ -119,14 +123,18 @@ def run_task(payload):
             + str(getattr(args, "max_model_requests", 400)),
             flush=True,
         )
+        started = time.monotonic()
         try:
             from baselines.scimas.assets import public_asset_scope
+
             with public_asset_scope(asset_root):
                 result = runtime(
                     task["question"],
                     catalog=catalog,
                     client=client,
-                    invoke=lambda n, a, **kwargs: execute(n, a, catalog=catalog, **kwargs),
+                    invoke=lambda n, a, **kwargs: execute(
+                        n, a, catalog=catalog, **kwargs
+                    ),
                     trace_dir=output.parent / "trajectories",
                     case_id=task["id"],
                     dataset=getattr(args, "dataset", "full"),
@@ -170,6 +178,13 @@ def run_task(payload):
                 "duration_seconds": result["duration_seconds"],
                 "resource_usage": result["resource_usage"],
                 "embedding_usage": result.get("embedding_usage"),
+                "metrics": result.get("metrics")
+                or task_metrics(
+                    result["resource_usage"],
+                    calls,
+                    runtime_seconds=result["duration_seconds"],
+                    finished=True,
+                ),
             }
         except Exception as error:
             prediction = {
@@ -182,6 +197,9 @@ def run_task(payload):
                 "calls": [],
                 "final_answer": None,
                 "failure_reason": type(error).__name__ + ": " + str(error)[:1000],
+                "metrics": task_metrics(
+                    None, None, runtime_seconds=time.monotonic() - started
+                ),
             }
         return prediction
     finally:
@@ -288,6 +306,27 @@ def run_batch(args):
                 "predictions": predictions,
             },
         )
+        # A compact table for analysis, bound to the same attempt/checkpoint.
+        # Rebuild on resume so an explicit failed-task retry replaces its row.
+        atomic_json(
+            output.parent / "task_metrics.json",
+            {
+                "schema_version": "scitoolflow.task_metrics.v1",
+                "fingerprint": fingerprint,
+                "dataset": dataset.name,
+                "baseline": baseline,
+                "tasks": [
+                    {
+                        "id": row["id"],
+                        "status": row["status"],
+                        "completed": row.get("completed", False),
+                        "trace_path": row.get("trace_path"),
+                        **row["metrics"],
+                    }
+                    for row in predictions
+                ],
+            },
+        )
 
     # The parent is the sole checkpoint writer; actor processes never see private references.
     namespace = output.parent.name + "-" + uuid4().hex[:12]
@@ -340,6 +379,7 @@ def run_batch(args):
                     "calls": [],
                     "final_answer": None,
                     "failure_reason": response["error"],
+                    "metrics": task_metrics(None, None),
                 }
             )
             predictions.append(prediction)

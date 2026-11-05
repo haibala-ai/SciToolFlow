@@ -109,6 +109,8 @@ class GenerationClient:
                 raise ValueError("SCITOOLFLOW_API_EXTRA_BODY must be a JSON object")
             return {
                 "endpoint": base,
+                "transport": self._transport,
+                "connect_retries": 2 if self._transport == "httpx" else 0,
                 "token_parameter": os.getenv(
                     "SCITOOLFLOW_API_TOKEN_PARAMETER", "max_completion_tokens"
                 ),
@@ -312,13 +314,30 @@ class GenerationClient:
                 httpx.Client() if self._transport == "httpx" else requests.Session()
             )
         start = time.monotonic()
+        connection_attempts = 0
         try:
-            response = self._session.post(
-                base + "/chat/completions",
-                headers={"Authorization": "Bearer " + key},
-                json=payload,
-                timeout=request_timeout,
-            )
+            while True:
+                connection_attempts += 1
+                remaining = request_timeout - (time.monotonic() - start)
+                try:
+                    response = self._session.post(
+                        base + "/chat/completions",
+                        headers={"Authorization": "Bearer " + key},
+                        json=payload,
+                        timeout=max(0.001, remaining),
+                    )
+                    break
+                except exceptions as error:
+                    # ConnectError/ConnectTimeout occur before the HTTP request
+                    # is sent. Never retry read/write failures or HTTP responses:
+                    # those may already represent a billed model generation.
+                    retryable = self._transport == "httpx" and isinstance(
+                        error, (httpx.ConnectError, httpx.ConnectTimeout)
+                    )
+                    remaining = request_timeout - (time.monotonic() - start)
+                    if not retryable or connection_attempts >= 3 or remaining <= 0.25:
+                        raise
+                    time.sleep(0.25)
         except exceptions as error:
             diagnostic = []
             cause = error
@@ -372,6 +391,7 @@ class GenerationClient:
             "duration_seconds": round(time.monotonic() - start, 3),
             "usage": value.get("usage"),
             "provider_backend": "api",
+            "connection_attempts": connection_attempts,
             "response_id": value.get("id"),
         }
 

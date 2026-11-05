@@ -7,6 +7,7 @@ from pathlib import Path
 from baselines.common.resources import BudgetedClient, ResourceLimit
 from tools.runtime.contracts import contract_errors
 from .schema import decoding_schema
+from .context import role_messages, request_diagnostics
 
 
 class RecordedClient(BudgetedClient):
@@ -21,10 +22,19 @@ class RecordedClient(BudgetedClient):
         ):
             raise ResourceLimit("DecisionBudget")
         self.resources.check()
+        previous = next(
+            (
+                s["model"]["messages"]
+                for s in reversed(self.trace["steps"])
+                if s.get("role") == self.phase and "model" in s
+            ),
+            None,
+        )
         step = {
             "type": "decision",
             "role": self.phase,
             "model": {"messages": deepcopy(messages), "response": None},
+            "context_usage": request_diagnostics(messages, previous),
         }
         self.trace["steps"].append(step)
         self.save()
@@ -57,27 +67,18 @@ class Roles:
         )
         self.retries, self.schema_guard = retries, schema_guard
         self.on_protocol_error = on_protocol_error
+        self.prompts = {}
 
     def ask(self, role, payload, schema):
         client = self.client_factory(role)
-        prompt = (Path(__file__).parent / "prompts" / (role + ".md")).read_text()
+        if role not in self.prompts:
+            self.prompts[role] = (
+                Path(__file__).parent / "prompts" / (role + ".md")
+            ).read_text()
+        prompt = self.prompts[role]
         feedback = None
         for _ in range(self.retries):
-            messages = [
-                {"role": "system", "content": prompt},
-                {
-                    "role": "user",
-                    "content": json.dumps(
-                        {
-                            "context": payload,
-                            "response_schema": schema,
-                            "format_feedback": feedback,
-                        },
-                        ensure_ascii=False,
-                        allow_nan=False,
-                    ),
-                },
-            ]
+            messages = role_messages(prompt, payload, schema, feedback)
             if sum(len(m["content"]) for m in messages) > self.max_chars:
                 raise ValueError(
                     "Role context too large; narrow the plan or inspect smaller evidence fields"

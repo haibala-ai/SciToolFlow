@@ -12,6 +12,7 @@ from .schema import DECOMPOSITION_SCHEMA, PLAN_SCHEMA, TEXT, obj, decoding_schem
 from .task_graph import TaskGraph, public_task, digest
 from .validation import validate_graph, grounded
 from .assets import evidence_sources
+from .context import encode_payload
 
 ACTION_SCHEMA = {
     "oneOf": [
@@ -105,17 +106,15 @@ class Planner:
                     {"role": "system", "content": self.prompt},
                     {
                         "role": "user",
-                        "content": json.dumps(
+                        "content": encode_payload(
                             {
-                                "stage": stage,
                                 "task": public,
                                 "public_assets": assets or [],
-                                "instructions": payload,
+                                "stage": stage,
                                 "response_schema": schema,
+                                "instructions": payload,
                                 "format_feedback": format_feedback,
                             },
-                            ensure_ascii=False,
-                            allow_nan=False,
                         ),
                     },
                 ]

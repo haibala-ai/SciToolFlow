@@ -37,6 +37,7 @@ from baselines.common.resources import (
     available,
 )
 from baselines.common.repetition import ConsecutiveToolSteps
+from baselines.common.metrics import task_metrics
 
 
 def build_prompt(catalog, limits):
@@ -269,6 +270,12 @@ def run_react(
 
     def save():
         trajectory["resource_usage"] = resources.snapshot()
+        trajectory["metrics"] = task_metrics(
+            trajectory["resource_usage"],
+            calls,
+            runtime_seconds=trajectory.get("duration_seconds"),
+            finished=trajectory["status"] not in {"running", "interrupted"},
+        )
         if session.persist:
             atomic_json(path, trajectory)
         if session.on_update:
@@ -702,6 +709,7 @@ def run_react(
                             stats[stat] + session.counter_offsets.get(stat, 0)
                         ).zfill(3)
                         begin = clock()
+                        call_interrupted = False
                         try:
                             row = invoke(
                                 action["tool"],
@@ -719,6 +727,14 @@ def run_react(
                             }:
                                 raise ValueError("Invalid dispatcher envelope")
                             encode(row)
+                        except KeyboardInterrupt:
+                            call_interrupted = True
+                            row = {
+                                "status": "error",
+                                "output": None,
+                                "error_type": "Interrupted",
+                                "error": "Tool call interrupted",
+                            }
                         except Exception as error:
                             row = {
                                 "status": "error",
@@ -754,6 +770,8 @@ def run_react(
                         step["calls"].append(call)
                         calls.append(call)
                         observations[identifier] = call
+                        if call_interrupted:
+                            raise KeyboardInterrupt
                         if row["status"] != "success":
                             failures[encode(action)] = (
                                 failures.get(encode(action), 0) + 1

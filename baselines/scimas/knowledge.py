@@ -3,7 +3,7 @@
 import gzip
 import hashlib
 import json
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 from pathlib import Path
 import time
 from copy import deepcopy
@@ -45,6 +45,7 @@ class ToolKnowledge:
         if set(self.vectors) != set(self.tools):
             raise ValueError("Incomplete SciMas functionality index")
         self.embedding = embedding or Embeddings(index["identity"], self.catalog.root)
+        self._connection_cache = OrderedDict()
         self.inputs, self.outputs = defaultdict(list), defaultdict(list)
         for name, record in self.tools.items():
             for direction, target in (
@@ -149,6 +150,32 @@ class ToolKnowledge:
             raise ValueError("Unknown connection direction")
         if limit < 1:
             raise ValueError("Connection limit must be positive")
+        key = (name, direction)
+        if key not in self._connection_cache:
+            self._connection_cache[key] = self._connection_candidates(name, direction)
+            if len(self._connection_cache) > 64:
+                self._connection_cache.popitem(last=False)
+        self._connection_cache.move_to_end(key)
+        # Relevance is query-dependent; never cache the ranking or expose mutable
+        # cached records to callers. The cache belongs to this validated KG only.
+        candidates = list(self._connection_cache[key])
+        other_key = "source_tool" if direction == "predecessors" else "target_tool"
+        candidates.sort(
+            key=lambda x: (
+                -(relevance or {}).get(x[other_key], 0),
+                x["source_tool"],
+                x["target_tool"],
+                x["source_port"],
+                x["target_port"],
+            )
+        )
+        return {
+            "connections": deepcopy(candidates[:limit]),
+            "total": len(candidates),
+            "truncated": len(candidates) > limit,
+        }
+
+    def _connection_candidates(self, name, direction):
         record = self.tools[name]
         own_direction = "inputs" if direction == "predecessors" else "outputs"
         index = self.outputs if direction == "predecessors" else self.inputs
@@ -203,21 +230,7 @@ class ToolKnowledge:
                         "provenance": [out["contract_sha256"], inp["contract_sha256"]],
                     }
                 )
-        other_key = "source_tool" if direction == "predecessors" else "target_tool"
-        candidates.sort(
-            key=lambda x: (
-                -(relevance or {}).get(x[other_key], 0),
-                x["source_tool"],
-                x["target_tool"],
-                x["source_port"],
-                x["target_port"],
-            )
-        )
-        return {
-            "connections": candidates[:limit],
-            "total": len(candidates),
-            "truncated": len(candidates) > limit,
-        }
+        return candidates
 
     def search(self, queries, deadline, *, top_k=5, depth=1, max_tools_per_query=12):
         if (

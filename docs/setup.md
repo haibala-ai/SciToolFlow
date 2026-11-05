@@ -211,6 +211,9 @@ SCITOOLFLOW_API_TOKEN_PARAMETER=max_completion_tokens
 
 将 `YOUR_GENERATION_API_KEY` 和 `YOUR_MODEL` 替换为供应商提供的值。生成 API 与检索 embedding 分别配置，支持使用不同的服务和授权。
 
+使用 AIHubMix 的 `doubao-deepseek-v4.1-flash-1017` 时，可在项目终端执行 `python -m scripts.services.configure_api`，隐藏输入密钥并保存本地配置；随后用 `python -m scripts.services.configure_api --check` 发起一次真实 JSON 探测。详细运行命令见 [SciMas API 配置](../baselines/scimas/README.md#aihubmix--dpsk-api)。
+
+
 ## 脚本说明
 
 ### 离线资源准备：`scripts/maintenance/prepare_resources.py`

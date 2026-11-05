@@ -22,6 +22,28 @@ python cli.py run --baseline scimas --dataset full --tasks FLOW-0029 \
   --output results/scimas_api/predictions.json
 ```
 
+### AIHubMix / DPSK API
+
+提供 [dpsk_api.json](../../configs/services/dpsk_api.json) 配置：`https://aihubmix.com/v1`，模型 `doubao-deepseek-v4.1-flash-1017`。从项目根目录在交互终端执行：
+
+```bash
+conda activate SciTool-Unified
+python -m scripts.services.configure_api
+python -m scripts.services.configure_api --check
+
+python cli.py run --baseline scimas --dataset mini --tasks SMAS-0103 \
+  --backend api --model doubao-deepseek-v4.1-flash-1017 \
+  --max-output-tokens 32768 \
+  --output results/scimas_dpsk/predictions.json
+python cli.py score --dataset mini --tasks SMAS-0103 \
+  --predictions results/scimas_dpsk/predictions.json \
+  --output results/scimas_dpsk/scores.json
+```
+
+配置命令隐藏输入密钥，原子保存至 `.local/credentials/services.env`，文件权限为 `600`，保留现有 embedding 和科学服务配置。密钥不作为命令行参数或配置模板内容；该目录由 Git 忽略。`--check` 使用同一生成客户端发起一次小额真实请求，不运行 benchmark。环境变量优先于本地文件。
+
+该配置使用已验证的 `httpx` 传输、`max_tokens`、JSON object 模式、32,768 输出 token 上限和 300 秒请求超时；完整 JSON Schema 由本地协议校验。模型默认思考消耗同一输出额度，运行命令也需显式设置 `--max-output-tokens 32768`；实际用量按服务端返回的 usage 记录。`httpx` 对建立连接失败最多重试两次；收到 HTTP 响应后的错误和发送后的读取／写入失败均不自动重发。长思考请求遇到读取超时时会明确失败，不将联调失败包装成任务通过。生成密钥与检索 embedding 的密钥分别配置。需要更换供应商时，使用 `--profile /path/to/profile.json`，或按部署文档配置其他兼容接口。
+
 也可用 `python -m baselines.scimas.run`，参数与 `cli.py run --baseline scimas` 相同。`--backend local` 使用现有本地 worker；三种后端都通过 `src/models/`，不绑定某个模型。生成服务与 embedding 服务分别配置，参见[安装与部署](../../docs/setup.md)。
 
 只查看规划时，使用 `python cli.py plan --dataset mini --tasks SMAS-0103 --backend vllm --output results/scimas_plan`。`plan` 产物不包含完整执行轨迹，不能提交正式评分。
@@ -118,9 +140,15 @@ python -m baselines.scimas.build_knowledge
 
 经验不是跨题答案记忆。Executor 记录经过实际调用验证的参数绑定方式；Reviewer 记录经过程序检查的输出访问方式；Planner 只有在前置输出被后继成功消费后记录衔接方式。经验绑定工具契约，按角色与当前工具匹配；确定性失败会使相关经验失效。不会把一个候选的数值迁移给另一个候选，也不会从评分参考中学习。
 
+## 实现效率
+
+角色请求将任务与图等稳定上下文放在前面，将执行状态放在后面，并采用紧凑 JSON 编码。图谱连接候选、输出预览序列化和角色 prompt 在任务内复用；科学证据有效性仍随图修订重新检查。轨迹保留全部内容与原子检查点，使用紧凑格式减少重复写入。详见[效率设计与测量边界](EFFICIENCY.md)。
+
 ## 轨迹与代码
 
 完整轨迹保存在 `results/<运行名>/trajectories/<任务ID>-<run_id>/trajectory.json`。其中保存角色请求、实际工具输入输出、图版本、局部修订、科学审查、筛选依据、经验及资源 ledger；工具产物位于同级 `calls/`。模型看到的是有明确截断标识的预览，可以按观测 ID 和字段路径查看完整值；原始结果保留在轨迹中。
+
+每题自动记录 `metrics.runtime_seconds`（墙钟秒数）、`metrics.tool_calls`（含失败、重试及 `DescribeTools` 的派发总次数）、`metrics.input_tokens` 和 `metrics.output_tokens`（所有角色生成的输入／输出总用量）。同一对象保存在预测与轨迹中，批次另生成 `task_metrics.json`。未知 usage 以 `null` 标记并保留已知小计；缓存和思考 token 不重复累加。完整口径及续跑规则见[实验输出](../../results/README.md#逐题运行成本)。
 
 | 模块 | 职责 |
 | --- | --- |
@@ -130,7 +158,7 @@ python -m baselines.scimas.build_knowledge
 | `planner.py` | 初始任务分解、检索历史与迭代建图 |
 | `runtime.py` | 三角色协作、审查、修订和最终提交 |
 | `executor.py` | 并发进程调度、目录隔离与取消 |
-| `roles.py`、`prompts/` | 角色协议、有限格式纠正与请求记录 |
+| `roles.py`、`context.py`、`prompts/` | 角色协议、稳定前缀上下文、有限格式纠正与请求记录 |
 | `experience.py` | 任务内证据支持的角色经验 |
 | `runner.py`、`run.py` | 独立规划命令与完整 baseline 入口 |
 

@@ -13,7 +13,7 @@ def read_jsonl(path):
         return [json.loads(line) for line in stream if line.strip()]
 
 
-def atomic_json(path, value):
+def atomic_json(path, value, *, indent=2):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     # Independent tasks may encode the same retrieval context concurrently.
@@ -24,7 +24,14 @@ def atomic_json(path, value):
     temp = Path(name)
     try:
         with os.fdopen(descriptor, "w") as stream:
-            json.dump(value, stream, ensure_ascii=False, indent=2, allow_nan=False)
+            json.dump(
+                value,
+                stream,
+                ensure_ascii=False,
+                indent=indent,
+                allow_nan=False,
+                separators=(",", ":") if indent is None else None,
+            )
             stream.write("\n")
             stream.flush()
             os.fsync(stream.fileno())
