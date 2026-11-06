@@ -140,7 +140,7 @@ def test_batch_writes_one_metric_row_per_attempt_and_resume_does_not_double_coun
 
     batches = []
 
-    def offline_jobs(jobs, function, concurrency, on_active):
+    def offline_jobs(jobs, function, concurrency, on_active, should_schedule=None):
         batches.append(len(jobs))
         for task_id, _ in jobs:
             ledger = TaskResources(clock=lambda: 1)

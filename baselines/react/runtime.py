@@ -38,6 +38,7 @@ from baselines.common.resources import (
 )
 from baselines.common.repetition import ConsecutiveToolSteps
 from baselines.common.metrics import task_metrics
+from src.models.communication import infrastructure_failure
 
 
 def build_prompt(catalog, limits):
@@ -274,6 +275,8 @@ def run_react(
             trajectory["resource_usage"],
             calls,
             runtime_seconds=trajectory.get("duration_seconds"),
+            runtime_started_monotonic=started,
+            infrastructure_failure=trajectory.get("infrastructure_failure"),
             finished=trajectory["status"] not in {"running", "interrupted"},
         )
         if session.persist:
@@ -439,6 +442,8 @@ def run_react(
                         **options,
                     )
             except Exception as error:
+                if infrastructure_failure(error):
+                    trajectory["infrastructure_failure"] = infrastructure_failure(error)
                 step.update(
                     type="error",
                     error={"type": type(error).__name__, "message": str(error)[:1000]},
@@ -916,6 +921,8 @@ def run_react(
                 },
             )
     except Exception as error:
+        if infrastructure_failure(error):
+            trajectory["infrastructure_failure"] = infrastructure_failure(error)
         failure = (
             str(error)
             if isinstance(error, ResourceLimit)

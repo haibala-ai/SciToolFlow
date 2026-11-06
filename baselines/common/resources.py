@@ -2,6 +2,8 @@
 
 import math
 import time
+from src.models.communication import infrastructure_failure
+from src.utils.timing import interval_seconds, subtract_intervals
 
 POLICY_VERSION = "task-resources.v1"
 DEFAULT_MODEL_REQUESTS = 400
@@ -73,6 +75,7 @@ class TaskResources:
             "model_requests": len(self.requests),
             "max_model_requests": self.max_model_requests,
             "task_seconds": self.task_seconds,
+            "clock_started_monotonic": self.started,
             "elapsed_seconds": (
                 self.completed_elapsed
                 if self.completed_elapsed is not None
@@ -86,6 +89,19 @@ class TaskResources:
             "requests_missing_completion_usage": missing_completion,
             "token_usage_complete": not (missing_prompt or missing_completion),
             "requests": [dict(row) for row in self.requests],
+            "communication_intervals": [span for row in self.requests
+                                        for span in row.get("communication_intervals", [])],
+            "communication_fault_seconds": interval_seconds(
+                [span for row in self.requests for span in row.get("communication_intervals", [])]
+            ),
+            "model_work_intervals": [
+                span for row in self.requests if row.get("status") == "returned"
+                and "started_monotonic" in row and "finished_monotonic" in row
+                for span in subtract_intervals(
+                    [[row["started_monotonic"], row["finished_monotonic"]]],
+                    row.get("communication_intervals", []),
+                )
+            ],
         }
 
 
@@ -135,23 +151,36 @@ class BudgetedClient:
         }
         self.resources.requests.append(entry)
         started = self.resources.clock()
+        entry["started_monotonic"] = started
         try:
             reply = self.client.request(messages, **kwargs)
             entry.update(
                 status="returned",
                 usage=reply.get("usage"),
                 response_id=reply.get("response_id"),
+                communication_wait_seconds=reply.get("communication_wait_seconds", 0),
+                communication_intervals=reply.get("communication_intervals", []),
             )
             if self.resources.clock() >= self.resources.deadline:
                 raise ResourceLimit("TaskDeadline")
             return reply
         except Exception as error:
+            failure = infrastructure_failure(error)
+            if failure:
+                entry["infrastructure_failure"] = failure
             if getattr(error, "generation_usage", None) is not None:
                 entry["usage"] = error.generation_usage
             entry["status"] = "error"
             raise
         finally:
-            entry["duration_seconds"] = max(0, self.resources.clock() - started)
+            finished = self.resources.clock()
+            entry["duration_seconds"] = max(0, finished - started)
+            entry["finished_monotonic"] = finished
+            if entry.get("infrastructure_failure"):
+                # The whole failed request already includes every internal
+                # reconnect/backoff. Replace, never add, its retry intervals.
+                entry["communication_intervals"] = [[started, finished]]
+                entry["communication_wait_seconds"] = entry["duration_seconds"]
 
 
 def remaining(limit, used):

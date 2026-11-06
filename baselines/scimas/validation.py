@@ -57,12 +57,17 @@ def path_schema(schema, path, *, allow_wildcards=False):
         )
     if isinstance(head, str) and schema.get("additionalProperties") is True:
         return {}
-    if allow_wildcards and head == "*" and isinstance(schema.get("items"), dict):
-        return path_schema(schema["items"], tail, allow_wildcards=True)
+    permits_array = "array" in types(schema) or not types(schema)
+    if allow_wildcards and head == "*" and permits_array:
+        child = schema.get("items", True)
+        if isinstance(child, dict) or child is True:
+            return path_schema(child, tail, allow_wildcards=True)
     if type(head) is int:
+        if head < 0 or not permits_array:
+            raise ValueError("Output path is not declared: " + repr(path))
         prefix = schema.get("prefixItems", [])
-        child = prefix[head] if head < len(prefix) else schema.get("items")
-        if isinstance(child, dict):
+        child = prefix[head] if head < len(prefix) else schema.get("items", True)
+        if isinstance(child, dict) or child is True:
             return path_schema(child, tail, allow_wildcards=allow_wildcards)
     raise ValueError("Output path is not declared: " + repr(path))
 

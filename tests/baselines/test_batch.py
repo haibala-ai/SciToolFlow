@@ -97,3 +97,16 @@ def cancellable_job(payload):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def test_circuit_stops_admission_but_preserves_already_running_results(tmp_path):
+    admit = [True]
+    jobs = [(tid, (str(tmp_path), tid)) for tid in ['A', 'B', 'C', 'D']]
+    rows = []
+    for tid, response in iter_tasks(jobs, isolated_job, 2,
+                                    should_schedule=lambda: admit[0]):
+        rows.append((tid, response))
+        admit[0] = False
+    assert {tid for tid, _ in rows} == {'A', 'B'}
+    assert all(row['ok'] for _, row in rows)
+    assert not (tmp_path / 'C').exists() and not (tmp_path / 'D').exists()

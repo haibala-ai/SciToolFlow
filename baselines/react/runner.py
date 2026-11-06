@@ -10,6 +10,7 @@ from uuid import uuid4
 
 from baselines.common.batch import iter_tasks
 from baselines.common.metrics import task_metrics
+from src.models.communication import CommunicationCircuit, infrastructure_failure
 
 from src.utils.paths import project_root, load_environment
 from tools.catalog import ToolCatalog
@@ -22,7 +23,7 @@ from baselines.react.trajectory import atomic_json
 from evaluation.integrity.traces import canonical_sha256
 
 
-def resume_rows(checkpoint, fingerprint, retry=False):
+def resume_rows(checkpoint, fingerprint, retry=False, retry_infrastructure=False):
     if checkpoint.get("fingerprint") != fingerprint:
         raise ValueError(
             "Actor inputs, runtime, tools or settings changed; choose a new output"
@@ -31,7 +32,11 @@ def resume_rows(checkpoint, fingerprint, retry=False):
     ids = [r["id"] for r in rows]
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate checkpoint IDs")
-    return [r for r in rows if not (retry and not r.get("completed"))]
+    return [r for r in rows if not (
+        not r.get("completed") and (retry or (
+            retry_infrastructure and r.get("infrastructure_failure")
+        ))
+    )]
 
 
 def actor_file_hashes(root, dataset="full"):
@@ -186,6 +191,13 @@ def run_task(payload):
                     finished=True,
                 ),
             }
+            failure = result.get("infrastructure_failure")
+            if not failure and result["status"] != "completed":
+                requests = result.get("resource_usage", {}).get("requests", [])
+                failure = requests[-1].get("infrastructure_failure") if requests else None
+            if failure:
+                prediction["infrastructure_failure"] = failure
+                prediction["metrics"].update(runtime_seconds=None, runtime_reportable=False)
         except Exception as error:
             prediction = {
                 "id": task["id"],
@@ -198,9 +210,12 @@ def run_task(payload):
                 "final_answer": None,
                 "failure_reason": type(error).__name__ + ": " + str(error)[:1000],
                 "metrics": task_metrics(
-                    None, None, runtime_seconds=time.monotonic() - started
+                    None, None, runtime_seconds=time.monotonic() - started,
+                    finished=True, infrastructure_failure=infrastructure_failure(error),
                 ),
             }
+            if infrastructure_failure(error):
+                prediction["infrastructure_failure"] = infrastructure_failure(error)
         return prediction
     finally:
         client.close()
@@ -245,7 +260,7 @@ def run_batch(args):
     settings = {
         k: v
         for k, v in vars(args).items()
-        if k not in {"output", "resume", "retry_failed", "func", "command"}
+        if k not in {"output", "resume", "retry_failed", "retry_infrastructure", "func", "command"}
     }
     settings.update(
         model=client.model,
@@ -288,12 +303,17 @@ def run_batch(args):
         json.dumps(settings, sort_keys=True).encode()
     ).hexdigest()
     predictions = []
+    attempt_history = []
     if output.exists():
         if not args.resume:
             raise ValueError("Output exists; use --resume or another output")
-        predictions = resume_rows(
-            json.loads(output.read_text()), fingerprint, args.retry_failed
-        )
+        checkpoint = json.loads(output.read_text())
+        predictions = resume_rows(checkpoint, fingerprint, args.retry_failed,
+                                  getattr(args, "retry_infrastructure", False))
+        kept = {p["id"] for p in predictions}
+        attempt_history = checkpoint.get("attempt_history", []) + [
+            p for p in checkpoint.get("predictions", []) if p["id"] not in kept
+        ]
     completed_ids = {r["id"] for r in predictions}
 
     def save():
@@ -304,6 +324,7 @@ def run_batch(args):
                 "fingerprint": fingerprint,
                 "settings": settings,
                 "predictions": predictions,
+                "attempt_history": attempt_history,
             },
         )
         # A compact table for analysis, bound to the same attempt/checkpoint.
@@ -340,6 +361,8 @@ def run_batch(args):
     task_order = {row["id"]: i for i, row in enumerate(selected)}
     active_ids = []
     status = "running"
+    circuit = CommunicationCircuit(getattr(args, "network_failure_threshold", 3))
+    session_started = time.monotonic()
 
     def progress(active=None):
         nonlocal active_ids
@@ -356,6 +379,10 @@ def run_batch(args):
                 "recorded_predictions": len(predictions),
                 "completed_tasks": sum(bool(p.get("completed")) for p in predictions),
                 "active_tasks": active_ids,
+                "pending_tasks": max(0, len(selected) - len(predictions) - len(active_ids)),
+                "session_wall_runtime_seconds": max(0, time.monotonic() - session_started),
+                "communication_circuit": circuit.snapshot(),
+                "infrastructure_failures": sum(bool(p.get("infrastructure_failure")) for p in predictions),
             },
         )
 
@@ -363,7 +390,8 @@ def run_batch(args):
     progress()
     # The metadata-only client owns no requests, and is not passed to workers.
     client.close()
-    scheduled = iter_tasks(jobs, run_task, concurrency, progress)
+    scheduled = iter_tasks(jobs, run_task, concurrency, progress,
+                           should_schedule=lambda: not circuit.open)
     try:
         for task_id, response in scheduled:
             prediction = (
@@ -382,7 +410,12 @@ def run_batch(args):
                     "metrics": task_metrics(None, None),
                 }
             )
+            if response.get("infrastructure_failure"):
+                prediction["infrastructure_failure"] = response["infrastructure_failure"]
             predictions.append(prediction)
+            circuit.observe(prediction)
+            if circuit.open:
+                status = "paused_infrastructure"
             predictions.sort(key=lambda p: task_order[p["id"]])
             save()
             progress()
@@ -390,7 +423,7 @@ def run_batch(args):
                 f"[done] {task_id} status={prediction['status']} recorded={len(predictions)}/{len(selected)}",
                 flush=True,
             )
-        status = "finished"
+        status = "paused_infrastructure" if circuit.open else "finished"
     except KeyboardInterrupt:
         status = "interrupted"
         raise

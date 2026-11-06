@@ -30,6 +30,7 @@ def request(outcomes):
     with patch.dict("os.environ", env), patch("src.models.client.time.sleep"):
         client = GenerationClient("api")
         client._session = Mock()
+        client._owns_session = False
         client._session.post.side_effect = outcomes
         try:
             with client.generation_scope():

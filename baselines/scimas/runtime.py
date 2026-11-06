@@ -17,6 +17,7 @@ from baselines.common.protocol import expand_citations
 from baselines.common.resources import TaskResources, ResourceLimit
 from baselines.common.metrics import task_metrics
 from src.utils.io import atomic_json
+from src.models.communication import infrastructure_failure
 from tools.runtime.contracts import contract_errors
 from .schema import TEXT, ID, PATH, obj
 from .task_graph import TaskGraph, at, digest, descendants, node_dependencies
@@ -27,6 +28,7 @@ from .roles import Roles, RecordedClient
 from .executor import Executor
 from .experience import Experience
 from .trajectory import append_step
+from .verification import numerical_certificate
 
 IDS = {"type": "array", "items": ID, "uniqueItems": True}
 REPAIR = obj({"nodes": IDS, "reason": TEXT})
@@ -119,6 +121,10 @@ def run_scimas(
 ):
     """Same public task/trace interface as ReAct; never reads evaluator data."""
     case_id = case_id or "custom"
+    if max_failures_per_action is not None and (
+        type(max_failures_per_action) is not int or max_failures_per_action < 0
+    ):
+        raise ValueError("max_failures_per_action must be a nonnegative integer or None")
     if not re.fullmatch(r"[A-Za-z0-9_-]+", case_id):
         raise ValueError("Unsafe task ID")
     root = catalog.root
@@ -236,6 +242,15 @@ def run_scimas(
             runtime_seconds=trace.get("duration_seconds"),
             pending_calls=list(executor.running.values()),
             finished=trace["status"] != "running",
+            communication_wait_seconds=(
+                knowledge.embedding.stats.get("communication_wait_seconds", 0)
+                if knowledge is not None else 0
+            ),
+            infrastructure_failure=trace.get("infrastructure_failure"),
+            communication_intervals=(
+                knowledge.embedding.stats.get("communication_intervals", [])
+                if knowledge is not None else []
+            ),
         )
         # Preserve every durable checkpoint and raw request, but avoid repeatedly
         # pretty-printing the growing trajectory at each execution boundary.
@@ -307,6 +322,11 @@ def run_scimas(
                 == identities.get(call["node"]),
                 **output_previews[oid],
             }
+            preview[oid]["review_state"] = (
+                "stale" if preview[oid]["stale"] else
+                "accepted" if preview[oid]["accepted_for_current_graph"] else
+                call.get("review_state", "unreviewed")
+            )
         return preview
 
     def context(role, **extra):
@@ -315,7 +335,8 @@ def run_scimas(
             "public_assets": assets,
             "requirements": graph.requirements,
             "graph": graph.document(),
-            "valid_nodes": list(results),
+            "current_graph_nodes": [n["id"] for n in graph.plan["nodes"]],
+            "accepted_result_nodes": list(results),
             "accepted_observations": {
                 nid: value["observation_id"] for nid, value in results.items()
             },
@@ -475,8 +496,20 @@ def run_scimas(
                 if "stop" in action:
                     raise ValueError("RepairPlannerStopped: " + action["stop"])
                 if "describe_tools" in action:
-                    discovery(action["describe_tools"])
-                    contracts.update(knowledge.planning_view(action["describe_tools"]))
+                    # A bad name is public lookup feedback, not a fatal repair.
+                    errors = []
+                    try:
+                        discovery(action["describe_tools"])
+                    except ValueError as error:
+                        errors.append({"error": str(error)})
+                    for name in action["describe_tools"]:
+                        try:
+                            if catalog.canonical(name) not in catalog.tools:
+                                raise ValueError("Unknown, retired or excluded tool: " + name)
+                            contracts.update(knowledge.planning_view([name]))
+                        except ValueError as error:
+                            errors.append({"tool": name, "error": str(error)})
+                    feedback = [{"contract_query_errors": errors}] if errors else []
                     continue
                 if "queries" in action:
                     found = knowledge.search(action["queries"], resources.deadline)
@@ -630,6 +663,7 @@ def run_scimas(
             failures[signature] = failures.get(signature, 0) + 1
             if (
                 max_failures_per_action is not None
+                and max_failures_per_action > 0
                 and failures[signature] >= max_failures_per_action
             ):
                 raise ResourceLimit("RepeatedActionFailure")
@@ -655,8 +689,29 @@ def run_scimas(
                 return
             if not transient:
                 memory.invalidate(record["tool"], graph.contracts[record["tool"]])
+        certificate = numerical_certificate(record["tool"], record["arguments"], response.get("output"))
+        if certificate and not certificate["passed"]:
+            structural = "Deterministic numerical verification failed: " + json.dumps(certificate)
+            accepted = None
+        # Resolution is a mechanical proof of the submitted arguments, not a
+        # scientific approval. The Reviewer still checks task intent and units.
+        provenance = {
+            "declared_arguments": deepcopy(graph.node(nid)["arguments"]),
+            "resolved_arguments_field": "arguments",
+            "resolution_verified": digest(graph.arguments(nid, results, catalog))
+                == digest(record["arguments"]),
+            "source_observations": {
+                parent: results[parent]["observation_id"]
+                for parent in set.union(*node_dependencies(graph.node(nid)))
+                if parent in results
+            },
+        }
+        if not provenance["resolution_verified"]:
+            accepted = None
+            structural = "Submitted arguments do not resolve from the current graph evidence"
         feedback = []
         for attempt in range(settings["protocol_retries"]):
+            call["review_state"] = "pending_review"
             decision = review(
                 "result",
                 node=nid,
@@ -665,8 +720,11 @@ def run_scimas(
                 structural_validation=structural or "passed",
                 contract=knowledge.planning_view([record["tool"]]),
                 semantic_feedback=feedback,
+                argument_provenance=provenance,
+                numerical_certificate=certificate,
             )
             if "repair" in decision:
+                call["review_state"] = "repair_requested"
                 repair(decision["repair"])
                 if (
                     nid in {n["id"] for n in graph.plan["nodes"]}
@@ -681,6 +739,7 @@ def run_scimas(
                     continue
                 return
             if "accept" not in decision or accepted is None:
+                call["review_state"] = "rejected"
                 raise ValueError(
                     "ResultRejected: " + str(decision) + "; " + str(structural)
                 )
@@ -892,12 +951,16 @@ def run_scimas(
                         graph.resolve(node["for_each"], results)
                     except (ValueError, KeyError, IndexError, TypeError):
                         continue
-                    new, delta = graph.expand(
-                        node["id"],
-                        results,
-                        catalog,
-                        max_items=settings["max_map_items"],
-                    )
+                    try:
+                        new, delta = graph.expand(
+                            node["id"], results, catalog,
+                            max_items=settings["max_map_items"],
+                        )
+                    except (ValueError, KeyError, IndexError, TypeError) as error:
+                        repair({"nodes": [node["id"]],
+                                "reason": "Template expansion failed: " + str(error)})
+                        expanded = True
+                        break
                     executor.invalidate(delta["invalidate"])
                     for nid in delta["invalidate"]:
                         results.pop(nid, None)
@@ -952,26 +1015,43 @@ def run_scimas(
                 )
             ]
             if ready:
-                action = ask(
+                executor_context = context(
                     "executor",
-                    context(
-                        "executor",
-                        ready=[
-                            {
-                                "id": nid,
-                                "tool": graph.node(nid)["tool"],
-                                "arguments": graph.arguments(nid, results, catalog),
-                            }
-                            for nid in ready
-                        ],
-                        running=running_ids,
-                        available_slots=min(
-                            settings["tool_concurrency"] - len(executor.running),
-                            max_actions or settings["tool_concurrency"],
-                        ),
+                    ready=[
+                        {
+                            "id": nid,
+                            "tool": graph.node(nid)["tool"],
+                            "arguments": graph.arguments(nid, results, catalog),
+                        }
+                        for nid in ready
+                    ],
+                    running=running_ids,
+                    available_slots=min(
+                        settings["tool_concurrency"] - len(executor.running),
+                        max_actions or settings["tool_concurrency"],
                     ),
-                    EXECUTOR_SCHEMA,
                 )
+                feedback = []
+                for _ in range(settings["protocol_retries"]):
+                    action = ask(
+                        "executor", {**executor_context, "feedback": feedback},
+                        EXECUTOR_SCHEMA,
+                    )
+                    if "dispatch" not in action:
+                        break
+                    selected = action["dispatch"]
+                    unavailable = sorted(set(selected) - set(ready))
+                    if not unavailable and len(selected) <= executor_context["available_slots"]:
+                        break
+                    feedback = [{
+                        "error": "Invalid dispatch selection",
+                        "unavailable_nodes": unavailable,
+                        "available_slots": executor_context["available_slots"],
+                        "instruction": "Select only IDs in ready, within available_slots. No rejected node was dispatched.",
+                    }]
+                    add_step({"type": "selection_error", "role": "executor", "feedback": feedback})
+                else:
+                    raise ValueError("Executor selection retry limit reached: " + str(feedback))
                 if "repair" in action:
                     repair(action["repair"])
                     continue
@@ -1070,10 +1150,25 @@ def run_scimas(
                 for n in graph.plan["nodes"]
                 if n["id"] not in results and n["id"] not in pruned
             ]
+            blocked = []
+            for nid in unresolved:
+                node = graph.node(nid)
+                parents = set.union(*node_dependencies(node))
+                if not parents <= results.keys():
+                    continue
+                try:
+                    graph.arguments(nid, results, catalog)
+                except (ValueError, KeyError, IndexError, TypeError) as error:
+                    blocked.append({
+                        "node": nid, "error": str(error),
+                        "declared_arguments": node["arguments"],
+                        "source_semantics": {p: results[p].get("semantics", {}) for p in parents},
+                    })
             repair(
                 {
                     "nodes": unresolved,
-                    "reason": "No runnable nodes: inspect unresolved bindings, semantic requirements, or scientific gates",
+                    "reason": "No runnable nodes: inspect unresolved bindings, semantic requirements, or scientific gates. "
+                              + json.dumps({"blocked_bindings": blocked}, ensure_ascii=False),
                 }
             )
     except (Exception, KeyboardInterrupt) as error:
@@ -1082,6 +1177,8 @@ def run_scimas(
             final_answer=None,
             failure_reason=type(error).__name__ + ": " + str(error),
         )
+        if infrastructure_failure(error):
+            trace["infrastructure_failure"] = infrastructure_failure(error)
         if hasattr(error, "report"):
             trace["planning"] = error.report
     finally:

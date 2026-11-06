@@ -9,6 +9,7 @@ from tools.runtime.contracts import contract_errors
 from .schema import decoding_schema
 from .context import role_messages, request_diagnostics
 from .trajectory import append_step, timestamp
+from src.models.communication import infrastructure_failure
 
 
 class RecordedClient(BudgetedClient):
@@ -56,6 +57,8 @@ class RecordedClient(BudgetedClient):
             return reply
         except (Exception, KeyboardInterrupt) as error:
             step["model"]["error"] = type(error).__name__ + ": " + str(error)
+            if infrastructure_failure(error):
+                step["model"]["infrastructure_failure"] = infrastructure_failure(error)
             if getattr(error, "generation_response", None) is not None:
                 step["model"]["response"] = deepcopy(error.generation_response)
             raise

@@ -159,6 +159,22 @@ python -m baselines.scimas.build_knowledge
 
 经验不是跨题答案记忆。Executor 记录经过实际调用验证的参数绑定方式；Reviewer 记录经过程序检查的输出访问方式；Planner 只有在前置输出被后继成功消费后记录衔接方式。经验绑定工具契约，按角色与当前工具匹配；确定性失败会使相关经验失效。不会把一个候选的数值迁移给另一个候选，也不会从评分参考中学习。
 
+## 通信恢复与错误反馈
+
+连续 3 道任务因生成 API 或 embedding 通信故障终止时，批次暂停派发新任务，已在运行的任务继续收齐结果。`progress.json` 显示 `paused_infrastructure` 和具体通信诊断；`--network-failure-threshold` 可修改阈值，0 表示关闭。网络恢复后，在相同代码及配置下继续：
+
+```bash
+python cli.py run --baseline scimas --dataset mini --tasks all \
+  --backend api --model YOUR_API_MODEL --concurrency 2 \
+  --output results/YOUR_RUN/predictions.json --resume --retry-infrastructure
+```
+
+恢复时必须保留首次运行的其他参数。`--retry-infrastructure` 只重新运行已标记的基础设施失败题及尚未运行题，模型／科学失败保留；旧尝试保存到预测文件的 `attempt_history`，原轨迹仍保留。代码、prompt 或配置发生变化时必须新建实验目录，不能强行拼接旧结果。
+
+生成客户端只对确定发生在发送前的建连失败进行有界退避重连，并保持原接口和代理路线。读写中断和 HTTP 错误不自动重放可能已计费的生成。通信错误单独标记，不作为科学负面结果。
+
+Executor 选错 ready 节点、Repair 查询未知工具名会收到有限次数的纠错反馈。Reviewer 分别看到声明绑定、实际实参、来源观察和待审核／已接受／过期状态；确定性数值证书辅助审查，不替代科学任务判断。`max_failures_per_action=0` 统一表示关闭累计限制；瞬时工具重试和局部修复仍有各自的次数保护。
+
 ## 实现效率
 
 角色请求将任务与图等稳定上下文放在前面，将执行状态放在后面，并采用紧凑 JSON 编码。图谱连接候选、输出预览序列化和角色 prompt 在任务内复用；科学证据有效性仍随图修订重新检查。轨迹保留全部内容与原子检查点，使用紧凑格式减少重复写入。详见[效率设计与测量边界](EFFICIENCY.md)。
@@ -167,7 +183,7 @@ python -m baselines.scimas.build_knowledge
 
 完整轨迹保存在 `results/<运行名>/trajectories/<任务ID>-<run_id>/trajectory.json`。其中保存角色请求、实际工具输入输出、图版本、局部修订、科学审查、筛选依据、经验及资源 ledger；工具产物位于同级 `calls/`。模型看到的是有明确截断标识的预览，可以按观测 ID 和字段路径查看完整值；原始结果保留在轨迹中。
 
-每题自动记录 `metrics.runtime_seconds`（墙钟秒数）、`metrics.tool_calls`（含失败、重试及 `DescribeTools` 的派发总次数）、`metrics.input_tokens` 和 `metrics.output_tokens`（所有角色生成的输入／输出总用量）。同一对象保存在预测与轨迹中，批次另生成 `task_metrics.json`。未知 usage 以 `null` 标记并保留已知小计；缓存和思考 token 不重复累加。完整口径及续跑规则见[实验输出](../../results/README.md#逐题运行成本)。
+每题自动记录 `metrics.runtime_seconds`（扣除通信故障等待后的运行秒数）、`metrics.tool_calls`（含失败、重试及 `DescribeTools` 的派发总次数）、`metrics.input_tokens` 和 `metrics.output_tokens`（所有角色生成的输入／输出总用量）。同一对象保存在预测与轨迹中，批次另生成 `task_metrics.json`。未知 usage 以 `null` 标记并保留已知小计；缓存和思考 token 不重复累加。完整口径及续跑规则见[实验输出](../../results/README.md#逐题运行成本)。
 
 ### 单题案例分析
 
@@ -193,7 +209,7 @@ python -m baselines.scimas.trajectory \
 
 可用 `--output /path/to/analysis` 指定独立导出目录。导出不改写原始轨迹，不运行模型、工具或评分器，不计入任务时间。Markdown 中的长内容仅作有标识的预览，JSON 保留完整内容。历史轨迹未记录的字段不会推测补齐。
 
-新增元数据复用既有检查点，主要增加少量字段的编码开销；不声称记录完全没有成本。`runtime_seconds` 始终保留真实墙钟时间，包含运行中的日志开销，不通过扣除日志时间修饰速度指标。
+新增元数据复用既有检查点，主要增加少量字段的编码开销；不声称记录完全没有成本。`wall_runtime_seconds` 保留真实墙钟时间，`runtime_seconds` 只扣除有记录的通信故障等待；日志、正常模型响应、工具执行及科学纠错仍计时。API 故障中止的尝试设置 `runtime_reportable=false`、`runtime_seconds=null`，不作为速度统计样本。
 
 | 模块 | 职责 |
 | --- | --- |

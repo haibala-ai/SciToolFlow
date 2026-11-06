@@ -264,7 +264,7 @@ class TaskGraph:
         errors = contract_errors(value, spec["output_schema"])
         if errors:
             raise ValueError("; ".join(errors))
-        if spec.get("output_encoding", {}).get("decoded_type") in {
+        if spec["output_schema"].get("type") == "string" and spec.get("output_encoding", {}).get("decoded_type") in {
             "json_object",
             "json_array",
         }:

@@ -8,6 +8,7 @@ from contextlib import contextmanager
 from contextvars import ContextVar
 from pathlib import Path
 from urllib.parse import urlparse
+from .communication import CommunicationError
 
 GENERATION_ACTIVE = ContextVar("scitoolflow_generation_active", default=False)
 
@@ -131,7 +132,7 @@ class GenerationClient:
                     if "SCITOOLFLOW_API_CONNECT_TIMEOUT" in os.environ
                     else None
                 ),
-                "connect_retries": 2 if self._transport == "httpx" else 0,
+                "connect_retries": 2,
                 "token_parameter": os.getenv(
                     "SCITOOLFLOW_API_TOKEN_PARAMETER", "max_completion_tokens"
                 ),
@@ -343,6 +344,8 @@ class GenerationClient:
                 self._session.trust_env = self._trust_env
         start = time.monotonic()
         connection_attempts = 0
+        communication_wait = 0.0
+        communication_intervals = []
         try:
             while True:
                 connection_attempts += 1
@@ -358,6 +361,7 @@ class GenerationClient:
                         else (min(connect_timeout, attempt_timeout), attempt_timeout)
                     )
                 try:
+                    attempt_started = time.monotonic()
                     response = self._session.post(
                         base + "/chat/completions",
                         headers={"Authorization": "Bearer " + key},
@@ -369,13 +373,27 @@ class GenerationClient:
                     # ConnectError/ConnectTimeout occur before the HTTP request
                     # is sent. Never retry read/write failures or HTTP responses:
                     # those may already represent a billed model generation.
-                    retryable = self._transport == "httpx" and isinstance(
-                        error, (httpx.ConnectError, httpx.ConnectTimeout)
+                    retryable = isinstance(error, requests.ConnectTimeout) or (
+                        self._transport == "httpx" and isinstance(
+                            error, (httpx.ConnectError, httpx.ConnectTimeout)
+                        )
                     )
                     remaining = request_timeout - (time.monotonic() - start)
                     if not retryable or connection_attempts >= 3 or remaining <= 0.25:
                         raise
-                    time.sleep(0.25)
+                    # Recreate a broken connection pool before a safe pre-send
+                    # retry; never change the configured endpoint or proxy route.
+                    if self._owns_session:
+                        self._session.close()
+                        if self._transport == "httpx":
+                            self._session = httpx.Client(trust_env=self._trust_env)
+                        else:
+                            self._session = requests.Session()
+                            self._session.trust_env = self._trust_env
+                    time.sleep(min(2 ** (connection_attempts - 1), remaining / 2))
+                    wait_finished = time.monotonic()
+                    communication_wait += max(0, wait_finished - attempt_started)
+                    communication_intervals.append([attempt_started, wait_finished])
         except exceptions as error:
             diagnostic = []
             cause = error
@@ -397,14 +415,28 @@ class GenerationClient:
                 ]
                 if name in str(error)
             ]
-            raise RuntimeError(
+            presend = isinstance(error, requests.ConnectTimeout) or (
+                self._transport == "httpx" and isinstance(
+                    error, (httpx.ConnectError, httpx.ConnectTimeout)
+                )
+            )
+            raise CommunicationError(
                 "Generation API network request failed ("
                 + " -> ".join(diagnostic)
                 + "; "
                 + ",".join(markers)
-                + "); credentials and server response are not logged"
+                + "); credentials and server response are not logged",
+                service="generation", category=type(error).__name__,
+                request_may_have_been_sent=not presend,
+                attempts=connection_attempts,
             ) from None
         if response.status_code != 200:
+            if response.status_code in {408, 429, 500, 502, 503, 504}:
+                raise CommunicationError(
+                    f"Generation API returned HTTP {response.status_code}; no automatic billing retry performed",
+                    service="generation", category="HTTPError",
+                    http_status=response.status_code, attempts=connection_attempts,
+                )
             raise RuntimeError(
                 f"Generation API returned HTTP {response.status_code}; no automatic billing retry performed"
             )
@@ -438,6 +470,8 @@ class GenerationClient:
             "usage": value.get("usage"),
             "provider_backend": "api",
             "connection_attempts": connection_attempts,
+            "communication_wait_seconds": communication_wait,
+            "communication_intervals": communication_intervals,
             "response_id": value.get("id"),
             "finish_reason": choice.get("finish_reason"),
             "empty_json_completion": empty_json_completion,
@@ -526,12 +560,19 @@ class GenerationClient:
                 timeout=request_timeout,
             )
         except requests.RequestException as error:
-            raise RuntimeError(
+            raise CommunicationError(
                 "vLLM service request failed ("
                 + type(error).__name__
-                + "); is the local service running?"
+                + "); is the local service running?",
+                service="generation", category=type(error).__name__,
             ) from None
         if response.status_code != 200:
+            if response.status_code in {408, 429, 500, 502, 503, 504}:
+                raise CommunicationError(
+                    f"vLLM service returned HTTP {response.status_code}",
+                    service="generation", category="HTTPError",
+                    http_status=response.status_code,
+                )
             raise RuntimeError(f"vLLM service returned HTTP {response.status_code}")
         value = response.json()
         choice = value["choices"][0]

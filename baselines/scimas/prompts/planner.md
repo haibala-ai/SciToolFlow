@@ -61,8 +61,12 @@ the raw text for decisions and final reporting; never invent structured fields.
 Omit optional checks, semantics and when unless needed. Reuse the fields already
 returned by a call instead of repeating a computation to read another field.
 Unit conversion and scientific transformations must be explicit. "expect"
-describes semantics that must later be confirmed, not facts established by the
-model. A tool-graph port connection is a candidate relationship, not proof of
+is a hard metadata precondition, not a unit annotation. Use it only when the
+source tool can return the requested metadata through an actual raw-output path.
+Do not attach expect units to a generic numeric output that contains no unit
+metadata: that would block execution. Planned semantics cannot supply the missing
+proof. Scientific units and methods must still be checked against the public task
+and documented contracts. A tool-graph port connection is a candidate relationship, not proof of
 object, unit, method, array shape or scientific compatibility.
 
 Every requirement must have a deliverable mapping to the nodes that supply its

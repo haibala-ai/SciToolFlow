@@ -62,6 +62,10 @@ def main():
     )
     p.add_argument("--resume", action="store_true")
     p.add_argument("--retry-failed", action="store_true")
+    p.add_argument("--retry-infrastructure", action="store_true",
+                   help="With --resume, retry only recorded infrastructure failures; retain attempt history")
+    p.add_argument("--network-failure-threshold", type=int, default=3,
+                   help="Pause admission after consecutive communication failures (default 3; 0 disables)")
     p.add_argument(
         "--max-steps",
         type=int,
@@ -205,6 +209,10 @@ def main():
             parser.error(
                 "max-failures-per-action must be nonnegative; 0 disables the cumulative limit"
             )
+        if args.network_failure_threshold < 0:
+            parser.error("network-failure-threshold must be nonnegative")
+        if (args.retry_infrastructure or args.retry_failed) and not args.resume:
+            parser.error("Retry options require --resume")
         for name in [
             "max_steps",
             "max_calls",

@@ -9,6 +9,7 @@ import tempfile
 import time
 
 from src.utils.io import atomic_json
+from src.models.communication import infrastructure_failure
 
 
 def _worker(function, payload, destination):
@@ -23,10 +24,12 @@ def _worker(function, payload, destination):
         return
     except Exception as error:
         value = {"ok": False, "error": type(error).__name__ + ": " + str(error)[:1000]}
+        if infrastructure_failure(error):
+            value["infrastructure_failure"] = infrastructure_failure(error)
     atomic_json(destination, value)
 
 
-def iter_tasks(jobs, function, concurrency, on_active=None):
+def iter_tasks(jobs, function, concurrency, on_active=None, should_schedule=None):
     """Yield (job, result) in completion order without sharing model clients.
 
     Jobs are (unique task ID, pickleable payload). No unbounded future queue is
@@ -47,6 +50,9 @@ def iter_tasks(jobs, function, concurrency, on_active=None):
         try:
             while active or not exhausted:
                 while len(active) < concurrency and not exhausted:
+                    if should_schedule is not None and not should_schedule():
+                        exhausted = True
+                        break
                     try:
                         task_id, payload = next(remaining)
                     except StopIteration:

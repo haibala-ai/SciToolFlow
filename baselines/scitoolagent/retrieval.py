@@ -16,10 +16,15 @@ import time
 
 from src.utils.paths import project_root, load_environment
 from src.utils.io import atomic_json
+from src.models.communication import CommunicationError
 
 
 class RetrievalError(RuntimeError):
     pass
+
+
+class EmbeddingCommunicationError(CommunicationError, RetrievalError):
+    """A retrieval failure that the batch can distinguish from bad science."""
 
 
 def unit(vector, dimensions):
@@ -53,6 +58,8 @@ class Embeddings:
             "texts": 0,
             "cached_texts": 0,
             "prompt_tokens": 0,
+            "communication_wait_seconds": 0.0,
+            "communication_intervals": [],
         }
 
     def request_batch(self, client, base, key, batch, deadline):
@@ -64,6 +71,7 @@ class Embeddings:
             if remaining <= 0:
                 raise RetrievalError("Task deadline during embedding retrieval")
             self.stats["requests"] += 1
+            started = time.monotonic()
             try:
                 response = client.post(
                     base + "/embeddings",
@@ -73,11 +81,12 @@ class Embeddings:
                         "input": batch,
                         "dimensions": self.dimensions,
                     },
-                    timeout=min(60, remaining),
+                    timeout=(min(10, remaining), min(60, remaining)),
                 )
             except requests.RequestException as error:
                 failure = "Embedding transport failure: " + type(error).__name__
                 retryable = True
+                category, http_status = type(error).__name__, None
             else:
                 if response.status_code == 200:
                     try:
@@ -88,13 +97,27 @@ class Embeddings:
                         ) from None
                 failure = "Embedding API HTTP " + str(response.status_code)
                 retryable = response.status_code in {408, 429, 500, 502, 503, 504}
+                category, http_status = "HTTPError", response.status_code
+            if retryable:
+                failed_at = time.monotonic()
+                self.stats["communication_wait_seconds"] += max(0, failed_at - started)
+                self.stats["communication_intervals"].append([started, failed_at])
             if not retryable or attempt == 2:
+                if retryable:
+                    raise EmbeddingCommunicationError(
+                        failure, service="embedding", category=category,
+                        attempts=attempt + 1, http_status=http_status,
+                    ) from None
                 raise RetrievalError(failure)
             pause = min(2**attempt, deadline - time.monotonic())
             if pause <= 0:
                 raise RetrievalError("Task deadline during embedding retrieval")
             self.stats["retries"] += 1
+            pause_started = time.monotonic()
             time.sleep(pause)
+            pause_finished = time.monotonic()
+            self.stats["communication_wait_seconds"] += max(0, pause_finished - pause_started)
+            self.stats["communication_intervals"].append([pause_started, pause_finished])
 
     def encode(self, texts, deadline):
         load_environment()

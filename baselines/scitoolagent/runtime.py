@@ -15,6 +15,7 @@ import uuid
 
 from baselines.common.session import SessionOptions
 from baselines.common.metrics import task_metrics
+from src.models.communication import infrastructure_failure
 from baselines.common.resources import (
     TaskResources,
     ResourceLimit,
@@ -140,7 +141,10 @@ def run_scitoolagent(
             trajectory["preparations"]
             + [call for step in trajectory["steps"] for call in step.get("calls", [])],
             runtime_seconds=trajectory.get("duration_seconds"),
+            runtime_started_monotonic=started,
             finished=trajectory["status"] not in {"running", "interrupted"},
+            infrastructure_failure=trajectory.get("infrastructure_failure"),
+            communication_intervals=trajectory.get("embedding_usage", {}).get("communication_intervals", []),
         )
         atomic_json(path, trajectory)
 
@@ -278,6 +282,8 @@ def run_scitoolagent(
         calls.extend(result["calls"])
         observations.update(result["observations"])
         record["failure_reason"] = result["failure_reason"]
+        if result.get("infrastructure_failure"):
+            trajectory["infrastructure_failure"] = result["infrastructure_failure"]
         return result
 
     try:
@@ -427,6 +433,8 @@ def run_scitoolagent(
         failure = "Interrupted"
         interrupted = True
     except Exception as error:
+        if infrastructure_failure(error):
+            trajectory["infrastructure_failure"] = infrastructure_failure(error)
         failure = (
             str(error)
             if str(error)
