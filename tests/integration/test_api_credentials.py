@@ -5,7 +5,7 @@ import stat
 from unittest.mock import patch
 import pytest
 from dotenv import dotenv_values
-from scripts.services.configure_api import hidden_key, save_settings
+from scripts.services.configure_api import hidden_key, save_settings, use_profile
 
 
 def test_updates_preserve_other_services_and_roundtrip_key(tmp_path):
@@ -54,3 +54,30 @@ def test_redirected_input_never_uses_echo_fallback():
         with pytest.raises(ValueError, match="interactive terminal"):
             hidden_key()
     prompt.assert_not_called()
+
+
+def test_saved_profiles_switch_endpoint_and_matching_key_together(tmp_path, monkeypatch):
+    monkeypatch.setattr("scripts.services.configure_api.project_root", lambda: tmp_path)
+    folder = tmp_path / ".local/credentials"
+    save_settings(folder / "services.env", {"SCITOOL_EMBEDDING_API_KEY": "keep-embedding"})
+    for name in ("official", "school"):
+        save_settings(folder / "api" / (name + ".env"), {
+            "SCITOOLFLOW_API_BASE": "https://" + name + ".example/v1",
+            "SCITOOLFLOW_API_MODEL": name + "-model",
+            "SCITOOLFLOW_API_KEY": name + "-test-key",
+            "SCITOOLFLOW_API_EXTRA_BODY": "{}",
+        })
+    for name in ("school", "official"):
+        use_profile(name)
+        config = dotenv_values(folder / "services.env")
+        assert config["SCITOOLFLOW_API_PROFILE"] == name
+        assert config["SCITOOLFLOW_API_BASE"] == "https://" + name + ".example/v1"
+        assert config["SCITOOLFLOW_API_KEY"] == name + "-test-key"
+        assert config["SCITOOL_EMBEDDING_API_KEY"] == "keep-embedding"
+        assert stat.S_IMODE((folder / "services.env").stat().st_mode) == 0o600
+
+
+@pytest.mark.parametrize("name", ["../services", "bad/name", "", "/tmp/key"])
+def test_saved_profile_name_cannot_escape_credentials_directory(name):
+    with pytest.raises(ValueError, match="name is invalid"):
+        use_profile(name)

@@ -97,6 +97,8 @@ def validate_workflow_reference(root, task, reference, catalog, registry):
     exploration_tools = spec.get("efficiency", {}).get(
         "disambiguation_tools", []
     ) + spec.get("efficiency", {}).get("recovery_tools", [])
+    exploration_tools += [tool for category in ('useful_work_rules','recovery_rules','disambiguation_rules')
+        for rule in spec.get('efficiency',{}).get(category,[]) for tool in rule['tools']]
     for name in exploration_tools:
         if name not in catalog or name == "DescribeTools":
             raise ValueError("Unregistered workflow disambiguation tool")
@@ -125,6 +127,7 @@ def validate_workflow_reference(root, task, reference, catalog, registry):
         raise ValueError("Native reference delegated reasoning to an LLM helper")
     prediction = {
         "id": task["id"],
+        "dataset": trajectory.get('dataset','full'),
         "status": trajectory.get("status"),
         "completed": trajectory.get("status") == "completed",
         "failure_reason": trajectory.get("failure_reason"),

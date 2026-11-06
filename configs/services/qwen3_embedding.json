@@ -1,0 +1,13 @@
+{
+  "model": "Qwen/Qwen3-Embedding-4B",
+  "model_path": ".local/models/Qwen3-Embedding-4B",
+  "served_model_name": "Qwen3-Embedding-4B",
+  "host": "127.0.0.1",
+  "port": 18081,
+  "dimension": 2560,
+  "max_input_tokens": 32768,
+  "max_batch_items": 32,
+  "batch_token_budget": 32768,
+  "gpu_memory_utilization": 0.4,
+  "dtype": "bfloat16"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "scimas.archive_verification.v1",
+  "original_tasks": 200,
+  "unique_predictions": 200,
+  "unique_score_rows": 200,
+  "unique_task_metric_rows": 200,
+  "trace_decompressed_hash_matches": 200,
+  "trace_prediction_evidence_matches": 200,
+  "portable_prediction_authentication_passed": 200,
+  "actor_commit": "d6246dc18bf73f696e6d7551e8c0fb52705b9572",
+  "actor_file_hash_matches": 216,
+  "original_scientific_results_changed": false,
+  "new_model_calls": 0,
+  "new_embedding_calls": 0,
+  "source_files_preserved": 259,
+  "excluded_non_results": "See manifest.json",
+  "portable_transform_allowed_fields": [
+    "predictions[].trace_path",
+    "predictions[].trace_sha256"
+  ]
+}

@@ -1,6 +1,7 @@
 """Match actual tool observations and capability dependencies without editing evidence."""
 
 import json
+import math
 from .values import MissingEvidence, pointer, _equal
 from .expressions import predicate
 
@@ -97,8 +98,25 @@ def _execution_signature(call):
         key: call.get(key)
         for key in ("tool", "arguments", "status", "output", "error_type", "error")
     }
+    # The engine supplies this view only from trusted tool contracts and drops
+    # any caller-provided internal field first. Spelling out a default does not
+    # turn the same operation into new scientific work; explicit null is kept.
+    feedback["arguments"] = call.get("_effective_arguments", call.get("arguments"))
     output = feedback["output"]
     if call.get("tool") == "ExecuteNumericalCode" and isinstance(output, dict):
+        from .program_identity import reviewed_program_identity
+        def code_identity(value):
+            try:
+                return {"reviewed_python_ast_sha256":reviewed_program_identity(value)}
+            except MissingEvidence:
+                return value
+        arguments=feedback["arguments"]
+        if isinstance(arguments,dict)and isinstance(arguments.get("code"),str):
+            feedback["arguments"]={**arguments,"code":code_identity(arguments["code"])}
+        output=dict(output)
+        if isinstance(output.get("code"),str):
+            output["code"]=code_identity(output["code"])
+        feedback["output"]=output
         # A fresh restricted worker creates a UUID output directory even for
         # identical deterministic calculations. Its location is not new science.
         # Preserve every other feedback field, and only relativize plots actually
@@ -119,8 +137,19 @@ def _execution_signature(call):
                     for plot in plots
                 ]
             feedback["output"] = output
+    def numeric_identity(value):
+        # JSON numbers 1 and 1.0 denote the same numeric parameter/receipt.
+        # Booleans, strings and genuinely different numeric values stay distinct.
+        if type(value) is float and math.isfinite(value) and value.is_integer():
+            return int(value)
+        if isinstance(value, list):
+            return [numeric_identity(item) for item in value]
+        if isinstance(value, dict):
+            return {key:numeric_identity(item) for key,item in value.items()}
+        return value
+
     return json.dumps(
-        feedback,
+        numeric_identity(feedback),
         sort_keys=True,
         ensure_ascii=False,
     )

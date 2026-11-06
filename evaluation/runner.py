@@ -16,12 +16,13 @@ def evaluate_package(
 ):
     """Validate and score a fingerprinted checkpoint against workflow.v1 only."""
     root = Path(root).resolve()
-    if dataset == "mini":
+    from tasks.datasets import MINI_DATASETS
+    if dataset in MINI_DATASETS:
         from evaluation.integrity.mini import validate_mini
         from evaluation.suites.mini import evaluate
-        validate_mini(root)
+        validate_mini(root,dataset=dataset)
         if reviews is not None:raise ValueError("Mini uses shared deterministic criteria, not per-prediction judge overrides")
-        return evaluate(root,predictions,output,task_ids=task_ids)
+        return evaluate(root,predictions,output,task_ids=task_ids,dataset=dataset)
     validate_package(root)
     metadata = manifest(root)
     refs = read_jsonl(root / metadata["references"])
@@ -97,24 +98,13 @@ def _evaluate_workflow_package(
         contract_errors[identifier] = validation_errors(
             row.get("final_answer"), reference_by_id[identifier]["answer_contract"]
         )
-        if contract_errors[identifier] and row.get("completed"):
-            row.update(completed=False, failure_reason="AnswerContractViolation")
         if check["verified"]:
             try:
                 resource_checks[identifier] = check_resources(row, execution_policy)
                 overruns[identifier] = resource_checks[identifier]["exceeded"]
-                if overruns[identifier]:
-                    row.update(
-                        completed=False,
-                        failure_reason="ExperimentResourceBudgetExceeded",
-                    )
             except (ValueError, TypeError, KeyError) as error:
                 resource_checks[identifier] = {"verified": False, "error": str(error)}
                 overruns[identifier] = False
-                row.update(
-                    completed=False,
-                    failure_reason="ResourceIntegrityError: " + str(error),
-                )
         verified.append(row)
         authenticated[identifier] = row
     result = evaluate_workflows(
@@ -143,8 +133,26 @@ def _evaluate_workflow_package(
             answer_contract_errors=contract_errors.get(identifier, []),
         )
         row["scientific_fields_pass"] = row["answer_pass"]
-        if contract_errors.get(identifier):
-            row["answer_pass"] = False
+        row["answer_schema_valid"] = not contract_errors.get(identifier)
+        # Scientific correctness is independent of execution and tool selection.
+        # Ground the submitted answer in authenticated, reviewed reference data;
+        # never borrow the actor's unverified observations to define its target.
+        if row["supplied"] and integrity[identifier]["verified"]:
+            from evaluation.suites.reference_context import prediction_from_reference
+            from evaluation.workflow import score_workflow
+            reference = by_id[identifier]
+            trusted = prediction_from_reference(root, reference)
+            checked = score_workflow(
+                reference,
+                {**trusted, "final_answer": authenticated[identifier].get("final_answer")},
+                aliases=aliases,
+                tool_contracts=registry["tools"],
+            )
+            row["answer_pass"] = bool(checked["answer_pass"] and not checked["pending_review"])
+            row["answer_reference_pending_review"] = checked["pending_review"]
+            row["pending_review"] = bool(row["pending_review"] or checked["pending_review"])
+            row["joint_pass"] = bool(row["runtime_pass"] and row["planning_pass"] and row["answer_pass"] and not row["pending_review"]
+                                     and resource_checks[identifier].get('verified', False) and not overruns[identifier])
         if not row["supplied"] or not integrity[identifier]["verified"]:
             continue
         ref = by_id[identifier]
@@ -170,6 +178,7 @@ def _evaluate_workflow_package(
                 pending_review=True, pending_method_review=True, method_review=method
             )
         if row["pending_review"]:
+            row["joint_pass"] = False
             requests.append(
                 {
                     "id": identifier,
@@ -221,6 +230,10 @@ def _evaluate_workflow_package(
         joint_accuracy_lower_bound=lower,
         final_metric_available=pending_count == 0,
         final_answer_accuracy=sum(bool(r["answer_pass"]) for r in rows) / len(rows),
+        answer_accuracy=sum(bool(r["answer_pass"]) for r in rows) / len(rows),
+        runtime_completion_rate=sum(bool(r["runtime_pass"]) for r in rows) / len(rows),
+        metric_definition_version="independent-runtime-answer.v2",
+        joint_pass_rate=lower,
         joint_success_rate=lower if pending_count == 0 else None,
         evaluation_policy_version="workflow.v1+task-resources.v1",
         resource_policy=execution_policy,

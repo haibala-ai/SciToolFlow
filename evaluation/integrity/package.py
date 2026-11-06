@@ -168,6 +168,10 @@ def validate_package(root):
         from evaluation.integrity.mini import validate_mini
         mini = validate_mini(root)
         datasets["mini"] = mini["tasks"]
+    if (root / "tasks/mini-100/metadata.json").is_file():
+        from evaluation.integrity.mini import validate_mini
+        subset = validate_mini(root, dataset="mini-100")
+        datasets["mini-100"] = subset["tasks"]
     default_dataset = "mini" if "mini" in datasets else "full"
     return {
         "package_valid": True,

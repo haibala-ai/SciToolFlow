@@ -40,9 +40,11 @@ executor 只可执行当前计划工具；planner 和 summarizer 不可执行科
 
 ## 轨迹与依赖
 
+共享运行器自动在结果目录的 `monitor/` 下生成实时文档 `monitor.md` 与机器状态 `monitor.json`，每10秒刷新进度、角色阶段、输入／输出token和调用成本。[监控说明](../../docs/monitoring.md)
+
 每题只保存一个 `trajectory.json`：`steps` 为每个模型响应，带 `phase`／`cycle`；`phases` 保存角色上下文，`retrievals` 保存检索依据，`preparations` 保存自动契约读取。观察 ID 跨阶段连续，可引用真实先前结果。`resource_usage` 保存共享生成请求、耗时和实际返回的 token 用量。自动 DescribeTools 不进入科学路径；检索和发现策略差异属于 baseline 算法差异，其成本分别报告。
 
-复用当前四个 Conda 环境。查询 embedding 使用索引声明的提供商、`text-embedding-3-large`、3072 维及 L2 归一化，配置读取 `.local/credentials/services.env`，缓存位于 `.local/cache/scitoolagent_embeddings/`。缺少授权或模型／提供商不匹配会明确失败，不替换成其他向量或词法检索。缓存采用独立临时文件后原子替换，避免并发写入冲突。
+复用当前四个 Conda 环境。`--embedding-backend api` 使用原有提供商的 `text-embedding-3-large`、3,072 维索引；`--embedding-backend local` 使用本地 vLLM 服务的 `Qwen3-Embedding-4B`、2,560 维独立索引。两种后端均使用 L2 归一化，保持原有图谱展开与上下文排序方法。API 密钥读取 `.local/credentials/services.env`；本地服务不需要远程密钥。缓存位于 `.local/cache/scitoolagent_embeddings/`，按完整模型身份隔离，并通过原子替换避免并发写入冲突。缺少服务、授权或索引身份不匹配会明确失败。部署、建库与切换见[向量检索配置](../../docs/embedding.md)。
 
 embedding 网络异常及 HTTP 408/429/500/502/503/504 最多尝试三次，间隔 1、2 秒，受总超时约束；401 等授权错误不重试。实际请求与重试分别记录。
 

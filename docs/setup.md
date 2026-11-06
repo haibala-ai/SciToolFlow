@@ -98,6 +98,8 @@ SCITOOL_LLM_PYTHON=/opt/conda/envs/SciTool-LLM/bin/python
 
 ### SciToolAgent 检索配置
 
+SciMas 与 SciToolAgent 均支持两种独立的向量后端。`--embedding-backend api` 使用下面的原有 API 配置和 3,072 维索引；`--embedding-backend local` 使用本地 Qwen3-Embedding-4B 服务与 2,560 维索引，不需要远程 embedding 密钥。本地模型下载、GPU 服务、建库和运行命令见[向量检索配置](embedding.md)。
+
 在 [AIHubMix 控制台](https://console.aihubmix.com/)创建有 embedding 调用权限的 API key，按[官方密钥管理说明](https://docs.aihubmix.com/cn/console/api-keys)配置。在 `services.env` 中设置：
 
 ```dotenv
@@ -105,7 +107,7 @@ SCITOOL_EMBEDDING_API_BASE=https://aihubmix.com/v1
 SCITOOL_EMBEDDING_API_KEY=YOUR_EMBEDDING_API_KEY
 ```
 
-附带的工具索引使用该服务的 `text-embedding-3-large`、3,072 维、L2 归一化向量。将密钥替换为具有该服务 embedding 权限的密钥；模型与维度由索引元数据指定。ReAct 不需要此配置；SciToolAgent 在使用本地生成模型时仍需要检索 embedding。更换提供商或 embedding 模型需要重建索引。
+附带的 API 工具索引使用该服务的 `text-embedding-3-large`、3,072 维、L2 归一化向量。将密钥替换为具有该服务 embedding 权限的密钥；模型与维度由索引元数据指定。ReAct 不使用向量检索。生成模型和检索模型分别选择；更换检索模型需要使用对应的独立索引，不能把本地 Qwen 向量直接写入原 API 索引。
 
 ### 选择生成 LLM
 

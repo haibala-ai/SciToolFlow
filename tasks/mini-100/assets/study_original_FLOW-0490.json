@@ -1,0 +1,26 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific measurement/decision example; stipulated model inputs and observations, not new experimental findings.",
+    "scope": "All required information, units and inferential limits are in this document."
+  },
+  "predictor": [
+    -1.0,
+    0.0,
+    1.0,
+    2.0
+  ],
+  "response": [
+    1.0,
+    0.0,
+    1.0,
+    6.0
+  ],
+  "candidate_degrees": [
+    1,
+    2,
+    3
+  ],
+  "policy": "Unweighted polynomial least squares includes every power0throughdegree. For candidates whose every leave-one-out training design has full column rank, compute predictions by refitting after leaving out each whole row and average squared errors. PRESS residual/(1-h_ii) is an equivalent computation when its denominator is nonzero. A candidate that loses full column rank on any leave-one-out split has no unique ordinary least-squares leave-one-out prediction and is ineligible; report null, not zero or an arbitrary minimum-norm extrapolation. Ties within1e-10 use smaller degree.",
+  "scope": "Four fixed controlled readings. The score concerns this leave-one-out protocol only; endpoint omissions can test extrapolation relative to a fold. It is not independent deployment validation.",
+  "answer_contract_note": "The nullable MSE fields are required because full-rank eligibility must be checked."
+}

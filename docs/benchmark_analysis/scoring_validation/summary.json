@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "summary": {
+    "designed": 200,
+    "new_clean_completed": 124,
+    "current_boundary_controls_passed": 200,
+    "accepted": 200,
+    "total": 200
+  },
+  "release_validation": {
+    "published_tasks": 200,
+    "individual_acceptances": 200,
+    "new_reference_tasks": 124,
+    "reused_reference_tasks": 76,
+    "evaluation_tests": {
+      "passed": 722,
+      "subtests": 422
+    },
+    "mini_interface_tests": {
+      "passed": 41
+    },
+    "all_reference_and_answer_boundary_audit": "passed",
+    "final_package_validation": "passed",
+    "wrong_scientific_fields_rejected": 1836
+  },
+  "scoring_revision": "scitoolflow.mini.orchestration.v3",
+  "scorer_sha256": "8f732e1fa5945d3d7fc04ecbd9fd00f0065b88f399f6d6702ab2f194d747a977",
+  "full_source_and_tool_graph_unchanged": true,
+  "baseline_model_experiments_repeated": false,
+  "metric_definition_version": "independent-runtime-answer.v2"
+}

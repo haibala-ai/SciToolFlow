@@ -1,0 +1,640 @@
+[
+  {
+    "task_id": "SMAS-0073",
+    "node": "charge_add_b",
+    "finding": "Reviewer misclassified graph node bindings as independent literals",
+    "verified_dispatches": [
+      {
+        "dispatch_step": "s000430",
+        "graph_sha256": "c1d75e060b130d60c18fbcdf1a1805dbe7104e2bdcfbce4c2ea076db7822f70b",
+        "graph_identity_verified": true,
+        "graph_arguments": {
+          "operation": {
+            "kind": "literal",
+            "value": "add"
+          },
+          "values": {
+            "kind": "list",
+            "items": [
+              {
+                "kind": "node",
+                "node": "comb_summary_b",
+                "path": [
+                  "columns",
+                  0,
+                  "observed_sum"
+                ]
+              }
+            ]
+          },
+          "other": {
+            "kind": "node",
+            "node": "comb_summary_b",
+            "path": [
+              "columns",
+              1,
+              "observed_sum"
+            ]
+          }
+        },
+        "resolved_arguments": {
+          "operation": "add",
+          "values": [
+            32.99999
+          ],
+          "other": -0.9999900000000002
+        }
+      }
+    ],
+    "terminal_error": "ValueError: LocalRepairLimit: charge_add_b was executed with independent literal operands 32.99999 and -0.9999900000000002 rather than node bindings to comb_summary_b columns 0 and 1 (observed_sum). Although the arithmetic result is numerically plausible, this breaks the required source provenance from the parsed record-b summary into the charge residual and must be repaired by rerunning the node with the planned comb_summary_b bindings."
+  },
+  {
+    "task_id": "SMAS-0076",
+    "node": "relative_abundance",
+    "finding": "Reviewer misclassified graph node bindings as independent literals",
+    "verified_dispatches": [
+      {
+        "dispatch_step": "s000017",
+        "graph_sha256": "af751425503ed3ed335526b0e37fc0185a4cf44fe16fa6e66beede749c4cdfb0",
+        "graph_identity_verified": true,
+        "graph_arguments": {
+          "matrix": {
+            "kind": "node",
+            "node": "read_counts",
+            "path": [
+              "document",
+              "counts"
+            ]
+          }
+        },
+        "resolved_arguments": {
+          "matrix": [
+            [
+              8,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              8,
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              4,
+              4,
+              2,
+              1,
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "dispatch_step": "s000027",
+        "graph_sha256": "532c3f749f756f0095ef7f9357f9fa12c77db62e14ee5b49f4796f23e6fef1c8",
+        "graph_identity_verified": true,
+        "graph_arguments": {
+          "matrix": {
+            "kind": "node",
+            "node": "read_counts",
+            "path": [
+              "document",
+              "counts"
+            ]
+          }
+        },
+        "resolved_arguments": {
+          "matrix": [
+            [
+              8,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              8,
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              4,
+              4,
+              2,
+              1,
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "dispatch_step": "s000039",
+        "graph_sha256": "2ad56f78034b78f099a9e11cd8adff156e44bd4c975ac7cf1fe1a77207b49c71",
+        "graph_identity_verified": true,
+        "graph_arguments": {
+          "matrix": {
+            "kind": "node",
+            "node": "read_counts",
+            "path": [
+              "document",
+              "counts"
+            ]
+          }
+        },
+        "resolved_arguments": {
+          "matrix": [
+            [
+              8,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              8,
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              4,
+              4,
+              2,
+              1,
+              1
+            ]
+          ]
+        }
+      }
+    ],
+    "terminal_error": "ValueError: LocalRepairLimit: The executed relative_abundance call passed the counts matrix as an inline literal array instead of binding to the accepted read_counts output (node read_counts, path [\"document\",\"counts\"]). Requirement ingest-counts-file explicitly requires all downstream distance/Gram/spectrum computations, including the Hellinger branch, to consume the structured data returned by the real JSON parser rather than a manually reproduced copy of the planning preview. Although the computed row totals (8, 8, 16, 12) and proportions happen to match the file, provenance is not satisfied and this observation is marked accepted_for_current_graph=false/stale. Re-execute relative_abundance with matrix bound to the read_counts node output path document.counts so the Hellinger chain (sqrt_abundance, hellinger_dist, Gram and spectrum) is provably derived from the parsed file."
+  },
+  {
+    "task_id": "SMAS-0088",
+    "node": "train_target_b",
+    "finding": "Reviewer misclassified graph node bindings as independent literals",
+    "verified_dispatches": [
+      {
+        "dispatch_step": "s000067",
+        "graph_sha256": "ba032d3d9f211975185f2d4e1befa45ddffd691fd4cd09a9663a0724b33ae610",
+        "graph_identity_verified": true,
+        "graph_arguments": {
+          "values": {
+            "kind": "node",
+            "node": "parse_study",
+            "path": [
+              "document",
+              "targets"
+            ]
+          },
+          "start": {
+            "kind": "literal",
+            "value": 0
+          },
+          "stop": {
+            "kind": "node",
+            "node": "split_b",
+            "path": [
+              "gap_indices",
+              0
+            ]
+          },
+          "step": {
+            "kind": "literal",
+            "value": 1
+          }
+        },
+        "resolved_arguments": {
+          "values": [
+            0.3,
+            1.1,
+            2.2,
+            2.8,
+            4.2,
+            5.1,
+            5.8,
+            7.1,
+            8.2,
+            9.9,
+            11.4,
+            12.1,
+            13.8,
+            15.2,
+            16.1
+          ],
+          "start": 0,
+          "stop": 9,
+          "step": 1
+        }
+      },
+      {
+        "dispatch_step": "s000073",
+        "graph_sha256": "c5a7bd3270eb6b63f8823e91265e453a4bb12930d268976d68e53ac07bf44a66",
+        "graph_identity_verified": true,
+        "graph_arguments": {
+          "values": {
+            "kind": "node",
+            "node": "parse_study",
+            "path": [
+              "document",
+              "targets"
+            ]
+          },
+          "start": {
+            "kind": "literal",
+            "value": 0
+          },
+          "stop": {
+            "kind": "node",
+            "node": "split_b",
+            "path": [
+              "gap_indices",
+              0
+            ]
+          },
+          "step": {
+            "kind": "literal",
+            "value": 1
+          }
+        },
+        "resolved_arguments": {
+          "values": [
+            0.3,
+            1.1,
+            2.2,
+            2.8,
+            4.2,
+            5.1,
+            5.8,
+            7.1,
+            8.2,
+            9.9,
+            11.4,
+            12.1,
+            13.8,
+            15.2,
+            16.1
+          ],
+          "start": 0,
+          "stop": 9,
+          "step": 1
+        }
+      },
+      {
+        "dispatch_step": "s000079",
+        "graph_sha256": "474e8ddd7e9e521135774e73ca580ad3c28429e2a103a14bd0a1118a9822a526",
+        "graph_identity_verified": true,
+        "graph_arguments": {
+          "values": {
+            "kind": "node",
+            "node": "parse_study",
+            "path": [
+              "document",
+              "targets"
+            ]
+          },
+          "start": {
+            "kind": "literal",
+            "value": 0
+          },
+          "stop": {
+            "kind": "node",
+            "node": "split_b",
+            "path": [
+              "gap_indices",
+              0
+            ]
+          },
+          "step": {
+            "kind": "literal",
+            "value": 1
+          }
+        },
+        "resolved_arguments": {
+          "values": [
+            0.3,
+            1.1,
+            2.2,
+            2.8,
+            4.2,
+            5.1,
+            5.8,
+            7.1,
+            8.2,
+            9.9,
+            11.4,
+            12.1,
+            13.8,
+            15.2,
+            16.1
+          ],
+          "start": 0,
+          "stop": 9,
+          "step": 1
+        }
+      }
+    ],
+    "terminal_error": "ValueError: LocalRepairLimit: Observation o0019 is structurally valid and its values are numerically the expected first nine targets, but the actual arguments bypass the required source dependencies. The values argument is a literal copy of the fifteen-element target array instead of a binding to parse_study.document.targets, and stop is a literal 9 instead of split_b.gap_indices[0]. This violates the load-from-study-asset requirement and the graph's cutoff-specific split binding. Repair train_target_b to bind values to parse_study path [\"document\",\"targets\"] and stop to split_b path [\"gap_indices\",0], then rerun it; do not accept the literal-copied slice as evidence."
+  },
+  {
+    "task_id": "SMAS-0093",
+    "node": "observed_table",
+    "finding": "Reviewer misclassified graph node bindings as independent literals",
+    "verified_dispatches": [
+      {
+        "dispatch_step": "s000021",
+        "graph_sha256": "35aef7d5b337b6feec756a5d3b60efe16485930409cec2b217eb7f5224a488cb",
+        "graph_identity_verified": true,
+        "graph_arguments": {
+          "matrix": {
+            "kind": "node",
+            "node": "parse_study",
+            "path": [
+              "document",
+              "D"
+            ]
+          },
+          "row_ids": {
+            "kind": "literal",
+            "value": [
+              "i1",
+              "i2",
+              "i3",
+              "i4",
+              "i5",
+              "i6"
+            ]
+          },
+          "column_ids": {
+            "kind": "literal",
+            "value": [
+              "a",
+              "b",
+              "c"
+            ]
+          }
+        },
+        "resolved_arguments": {
+          "matrix": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              1,
+              3,
+              -1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              1,
+              1,
+              -1
+            ]
+          ],
+          "row_ids": [
+            "i1",
+            "i2",
+            "i3",
+            "i4",
+            "i5",
+            "i6"
+          ],
+          "column_ids": [
+            "a",
+            "b",
+            "c"
+          ]
+        }
+      },
+      {
+        "dispatch_step": "s000032",
+        "graph_sha256": "8bedfda3abb2b69b845b619440e8c3bf964b032faa02de6ae9e262217685573d",
+        "graph_identity_verified": true,
+        "graph_arguments": {
+          "matrix": {
+            "kind": "node",
+            "node": "parse_study",
+            "path": [
+              "document",
+              "D"
+            ]
+          },
+          "row_ids": {
+            "kind": "literal",
+            "value": [
+              "i1",
+              "i2",
+              "i3",
+              "i4",
+              "i5",
+              "i6"
+            ]
+          },
+          "column_ids": {
+            "kind": "literal",
+            "value": [
+              "a",
+              "b",
+              "c"
+            ]
+          }
+        },
+        "resolved_arguments": {
+          "matrix": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              1,
+              3,
+              -1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              1,
+              1,
+              -1
+            ]
+          ],
+          "row_ids": [
+            "i1",
+            "i2",
+            "i3",
+            "i4",
+            "i5",
+            "i6"
+          ],
+          "column_ids": [
+            "a",
+            "b",
+            "c"
+          ]
+        }
+      },
+      {
+        "dispatch_step": "s000042",
+        "graph_sha256": "5c91320db8e02e6709f2b3e45411ea76a2944d7bf45e3f302af4db82ff85ef98",
+        "graph_identity_verified": true,
+        "graph_arguments": {
+          "matrix": {
+            "kind": "node",
+            "node": "parse_study",
+            "path": [
+              "document",
+              "D"
+            ]
+          },
+          "row_ids": {
+            "kind": "literal",
+            "value": [
+              "i1",
+              "i2",
+              "i3",
+              "i4",
+              "i5",
+              "i6"
+            ]
+          },
+          "column_ids": {
+            "kind": "literal",
+            "value": [
+              "a",
+              "b",
+              "c"
+            ]
+          }
+        },
+        "resolved_arguments": {
+          "matrix": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              1,
+              3,
+              -1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              1,
+              1,
+              -1
+            ]
+          ],
+          "row_ids": [
+            "i1",
+            "i2",
+            "i3",
+            "i4",
+            "i5",
+            "i6"
+          ],
+          "column_ids": [
+            "a",
+            "b",
+            "c"
+          ]
+        }
+      }
+    ],
+    "terminal_error": "ValueError: LocalRepairLimit: The executed observed_table node supplies its 6x3 matrix as inline literal values instead of binding matrix to parse_study.document.D from the real JSON parser output. This violates the load-study-data requirement that D and scales be obtained through the file reader and used as the scientific inputs, not inlined from the preview. Repair the node argument for matrix to a node reference to parse_study path ['document','D'] (and re-run), keeping row_ids/column_ids as endpoint identities."
+  },
+  {
+    "task_id": "SMAS-0089",
+    "finding": "Reviewer treated pending acceptance as staleness",
+    "node": "norm_r3",
+    "observation_id": "o0025",
+    "node_exists_in_current_graph": true,
+    "reported_stale": false,
+    "accepted_for_current_graph": false,
+    "structural_validation": "passed",
+    "terminal_error": "ValueError: LocalRepairLimit: Observation o0025 for norm_r3 is marked stale and accepted_for_current_graph=false, so it cannot be used as downstream evidence for norm_squared_r3 even though its computed sum 13.999999999999993 is arithmetically correct. Re-execute norm_r3 with the current graph binding to sq_r3.values to produce a current, accepted observation; the resulting norm_squared_r3 exceeds 9 and would correctly make admissible_r3 false."
+  },
+  {
+    "task_id": "SMAS-0121",
+    "finding": "Reviewer treated pending acceptance as staleness",
+    "node": "extract_convention",
+    "observation_id": "o0035",
+    "node_exists_in_current_graph": true,
+    "reported_stale": false,
+    "accepted_for_current_graph": false,
+    "structural_validation": "passed",
+    "terminal_error": "ValueError: ResultRejected: {'reject': 'Observation o0035 from node extract_convention is stale: extract_convention is not in the current valid node set and accepted_for_current_graph is false. Although the extracted reporting-convention text itself is correct, this obsolete observation must not be used downstream; the same convention is already available from the parsed fixture document.'}; None"
+  }
+]

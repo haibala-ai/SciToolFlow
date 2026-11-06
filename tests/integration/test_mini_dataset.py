@@ -16,17 +16,29 @@ from evaluation.integrity.traces import canonical_sha256,read_trajectory
 ROOT=Path(__file__).resolve().parents[2]
 
 
-def test_balanced_selection_preserves_all_original_scientific_fields():
+def test_balanced_selection_preserves_scientific_inputs_and_reviewed_contracts():
     dataset=load_dataset('mini');full=load_dataset('full')
     seeds={t['id']:t for t in map(json.loads,(ROOT/'evaluation/authoring/special100/questions.jsonl').read_text().splitlines())}
     fullq={t['id']:t for t in full.questions}
     selection=json.loads((dataset.asset_root/'selection.json').read_text())['tasks_review']
     assert len(dataset.questions)==200
     assert Counter(t['domain'] for t in dataset.questions)==dict.fromkeys(['Chemical','Material','Biology','MachineLearning'],50)
+    _,references=load_references(ROOT,dataset)
+    from evaluation.workflow import public_answer_contract
     for t,r in zip(dataset.questions,selection):
-        if r['origin']=='special100':assert t==seeds[t['id']]
-        else:
-            assert {**t,'id':r['source_id']}==fullq[r['source_id']]
+        original=deepcopy(seeds[t['id']]if r['origin']=='special100'else fullq[r['source_id']])
+        assert t['inputs']==original['inputs'] and t['files']==original['files']
+        for change in r.get('public_contract_clarifications',[]):
+            assert set(change)=={'path','value','reason'} and change['reason'].strip()
+            parts=change['path'].strip('/').split('/')
+            assert parts[0]in{'question','answer_schema','unit_annotations'}
+            parent=original
+            for part in parts[:-1]:parent=parent[part]
+            parent[parts[-1]]=deepcopy(change['value'])
+        if 'orchestration_review'in r and 'x-scoring-semantics'in original['answer_schema']:
+            original['answer_schema']['x-scoring-semantics']=public_answer_contract(references[t['id']])
+        assert {**t,'id':r['source_id']}=={**original,'id':r['source_id']}
+        assert r['public_task_sha256']==canonical_sha256(t)
     assert Counter(r['domain'] for r in selection[100:])==dict.fromkeys(['Chemical','Material','Biology','MachineLearning'],25)
     assert all(r['category']!='high_difficulty' for r in selection[100:])
     assert all(r['capability_depth']>=2 and r['capability_width']>=2 for r in selection[100:])
@@ -75,7 +87,7 @@ def options(monkeypatch,tmp_path):
     return vars(captured[0])
 
 
-@pytest.mark.parametrize('dataset_name,task_id',[('mini','SMAS-0103'),('mini','SMAS-0131'),('mini','SMAS-0132'),('full','FLOW-0029')])
+@pytest.mark.parametrize('dataset_name,task_id',[('mini','SMAS-0103'),('mini','SMAS-0131'),('mini','SMAS-0132'),('mini-100','SMAS-0103'),('full','FLOW-0029')])
 def test_production_react_tools_checkpoint_and_three_metric_score(tmp_path,monkeypatch,dataset_name,task_id):
     """Deterministic client replay is an integration test, not a model experiment.
 
@@ -84,7 +96,7 @@ def test_production_react_tools_checkpoint_and_three_metric_score(tmp_path,monke
     """
     import baselines.react.runner as runner
     dataset=load_dataset(dataset_name);task=dataset.select(task_id)[0]
-    if dataset_name=='mini':_,refs=load_references(ROOT,dataset)
+    if dataset_name in {'mini','mini-100'}:_,refs=load_references(ROOT,dataset)
     else:
         from src.utils.io import read_jsonl
         refs={r['id']:r for r in read_jsonl(ROOT/'evaluation/data/references.jsonl.gz')}
@@ -129,24 +141,31 @@ def test_production_react_tools_checkpoint_and_three_metric_score(tmp_path,monke
             report=evaluate_package(ROOT,checkpoint,tmp_path/'scores.json',task_ids=[task_id],dataset='full')
         assert report['summary']['joint_success_rate']==1,report
         return
-    report=evaluate(ROOT,checkpoint,tmp_path/'scores.json',task_ids=[task_id])
-    assert all(report['summary'][k]==1 for k in ['runtime_completion_rate','tool_planning_accuracy','answer_accuracy']),report
+    report=evaluate(ROOT,checkpoint,tmp_path/'scores.json',task_ids=[task_id],dataset=dataset_name)
+    assert all(report['summary'][k]==1 for k in ['runtime_completion_rate','answer_accuracy']),report
+    registry=json.loads((ROOT/'tools/catalog/catalog.json').read_text())
+    reference_prediction=prediction_from_reference(ROOT,refs[task_id])
+    expected=three_metrics(task,refs[task_id],reference_prediction,reference_prediction,registry)
+    # Real reference errors/redundancy still cost E; correct replay need not S=1.
+    assert report['summary']['tool_planning_accuracy']==pytest.approx(expected['tool_orchestration_score'])
+    assert report['summary']['strict_tool_planning_accuracy']==float(expected['tool_plan_correct'])
     # A complete valid checkpoint can be scored on the whole200 denominator.
     empty={**envelope,'predictions':[]};checkpoint.write_text(json.dumps(empty))
-    missing=evaluate(ROOT,checkpoint,tmp_path/'missing.json')
-    assert missing['summary']['tasks']==200 and missing['summary']['answer_accuracy']==0
+    missing=evaluate(ROOT,checkpoint,tmp_path/'missing.json',dataset=dataset_name)
+    assert missing['summary']['tasks']==len(dataset.questions) and missing['summary']['answer_accuracy']==0
     checkpoint.write_text(json.dumps(envelope));envelope['predictions'][0]['public_task_sha256']='0'*64
-    checkpoint.write_text(json.dumps(envelope));bad=evaluate(ROOT,checkpoint,tmp_path/'bad.json',task_ids=[task_id])
+    checkpoint.write_text(json.dumps(envelope));bad=evaluate(ROOT,checkpoint,tmp_path/'bad.json',task_ids=[task_id],dataset=dataset_name)
     assert bad['summary']['answer_accuracy']==0
 
 
 @pytest.mark.parametrize('baseline',['react','scitoolagent','scimas'])
-def test_each_worker_receives_mini_assets_and_public_scope(tmp_path,monkeypatch,baseline):
+@pytest.mark.parametrize('dataset_name',['mini','mini-100'])
+def test_each_worker_receives_mini_assets_and_public_scope(tmp_path,monkeypatch,baseline,dataset_name):
     import importlib,inspect
     import baselines.react.runner as runner
     from baselines.scimas.assets import asset_previews
-    options_row=options(monkeypatch,tmp_path);options_row['baseline']=baseline
-    dataset=load_dataset('mini');task=dataset.select('SMAS-0103')[0]
+    options_row=options(monkeypatch,tmp_path);options_row.update(baseline=baseline,dataset=dataset_name)
+    dataset=load_dataset(dataset_name);task=dataset.select('SMAS-0103')[0]
     module=importlib.import_module('baselines.'+baseline+'.runtime');original=getattr(module,'run_'+baseline)
     class Client:
         model='adapter-test';backend='injected'
@@ -154,7 +173,7 @@ def test_each_worker_receives_mini_assets_and_public_scope(tmp_path,monkeypatch,
         def close(self):pass
     def runtime(question,**kwargs):
         inspect.signature(original).bind(question,**kwargs)
-        assert kwargs['dataset']=='mini' and kwargs['case_id']=='SMAS-0103'
+        assert kwargs['dataset']==dataset_name and kwargs['case_id']=='SMAS-0103'
         assert Path(kwargs['files'][0]).parent==dataset.asset_root/'assets'
         assert asset_previews({'files':kwargs['files']},ROOT/'tasks')
         p=tmp_path/'trace.json';p.write_text('{}')
@@ -172,7 +191,7 @@ def test_each_worker_receives_mini_assets_and_public_scope(tmp_path,monkeypatch,
 def test_planning_entrypoint_uses_mini_public_asset_scope(tmp_path,monkeypatch):
     import baselines.scimas.runner as runner
     from baselines.scimas.assets import asset_previews
-    seen=[]
+    seen=[];monitors=[]
     class Client:
         model='test'
         def __init__(self,**kw):pass
@@ -185,5 +204,9 @@ def test_planning_entrypoint_uses_mini_public_asset_scope(tmp_path,monkeypatch):
             seen.append(public['id']);return {'status':'planned','steps':[]}
     monkeypatch.setattr(runner,'Planner',Planner);monkeypatch.setattr(runner,'GenerationClient',Client)
     monkeypatch.setattr(runner,'ToolKnowledge',lambda:object())
+    monkeypatch.setattr(runner,'start_monitor',lambda path:monitors.append(path))
     report=runner.run_planning(SimpleNamespace(dataset='mini',tasks='SMAS-0103',output=str(tmp_path/'plan'),backend='api',model='test',max_model_requests=3,max_output_tokens=1024,task_timeout=30))
     assert report['planned']==1 and seen==['SMAS-0103']
+    assert monitors==[tmp_path/'plan']
+    progress=json.loads((tmp_path/'plan/progress.json').read_text())
+    assert progress['stage']=='graph_planning' and progress['status']=='finished'

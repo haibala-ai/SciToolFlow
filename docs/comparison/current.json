@@ -144,42 +144,42 @@
   "mini": {
     "tasks": 200,
     "scientific_tools": 472,
-    "reference_calls_mean": 11.21,
+    "reference_calls_mean": 10.285,
     "reference_calls_median": 9.0,
     "reference_calls_max": 37,
-    "at_least_four_calls": 198,
+    "at_least_four_calls": 187,
     "reference_call_histogram": {
-      "3": 2,
-      "4": 3,
-      "5": 12,
-      "6": 15,
-      "7": 20,
-      "8": 19,
-      "9": 31,
+      "1": 1,
+      "2": 2,
+      "3": 10,
+      "4": 6,
+      "5": 16,
+      "6": 13,
+      "7": 22,
+      "8": 18,
+      "9": 23,
       "10": 15,
-      "11": 11,
-      "12": 14,
-      "13": 11,
-      "14": 8,
+      "11": 13,
+      "12": 17,
+      "13": 6,
+      "14": 6,
       "15": 5,
-      "16": 4,
-      "17": 4,
-      "18": 6,
-      "19": 4,
+      "16": 3,
+      "17": 3,
+      "18": 3,
+      "19": 3,
       "20": 4,
       "21": 2,
-      "22": 1,
-      "24": 1,
+      "24": 2,
       "25": 1,
-      "29": 1,
       "30": 2,
       "32": 1,
       "33": 1,
       "34": 1,
       "37": 1
     },
-    "covered_registered_tools": 154,
-    "reference_tool_coverage": 0.326271186440678,
+    "covered_registered_tools": 152,
+    "reference_tool_coverage": 0.3220338983050847,
     "domain_table": {
       "Chemical": {
         "registered_tools": 134,
@@ -194,17 +194,17 @@
       "Biology": {
         "registered_tools": 86,
         "covered_tools": 20,
-        "tasks_using_domain": 29
+        "tasks_using_domain": 28
       },
       "MachineLearning": {
         "registered_tools": 65,
-        "covered_tools": 58,
-        "tasks_using_domain": 141
+        "covered_tools": 56,
+        "tasks_using_domain": 131
       },
       "General": {
         "registered_tools": 25,
         "covered_tools": 17,
-        "tasks_using_domain": 120
+        "tasks_using_domain": 137
       }
     }
   },
@@ -218,7 +218,7 @@
   "source_sha256": {
     "docs/comparison/sources/upstream_metadata.json": "372aacea4b4eb71c66db8f46c59058a952c4f09d373f8991cd65eaf2f542c221",
     "docs/benchmark_analysis/statistics.json": "2e2bcb1511122e11fd52acdeeb90921292cf9170f0363f4f3821ce233168caa4",
-    "docs/benchmark_analysis/mini_statistics.json": "36b8500d30bb78bb780b523a68e49956bf9127338e238e802c949d424aaeac92"
+    "docs/benchmark_analysis/mini_statistics.json": "ba88e22be7476e9b4d987c9c9ad6db775cb9a80e2ca87efecad755aca123508d"
   },
   "change": {
     "task_increase_percent": 31.92612137203166,
@@ -228,8 +228,8 @@
     "own_registry_coverage_increase_pp": 31.395018299399492
   },
   "mini_change": {
-    "reference_mean_ratio": 4.534247598719317,
-    "four_call_share_increase_pp": 89.50131926121372,
-    "own_registry_coverage_increase_pp": 8.93739118075543
+    "reference_mean_ratio": 4.160101387406617,
+    "four_call_share_increase_pp": 84.00131926121372,
+    "own_registry_coverage_increase_pp": 8.513662367196103
   }
 }

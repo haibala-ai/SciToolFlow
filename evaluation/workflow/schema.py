@@ -56,6 +56,12 @@ def validate_workflow(spec):
         raise ValueError("Duplicate capability node")
     parents = {}
     for node in nodes:
+        if type(node.get('independent_check',False))is not bool:
+            raise ValueError('Independent scientific-check flag must be boolean')
+        if node.get('independent_check')and not isinstance(node.get('check_reason'),str):
+            raise ValueError('Independent scientific checks require their task-specific purpose')
+        if node.get('independent_check')and not node['check_reason'].strip():
+            raise ValueError('Independent scientific checks require their task-specific purpose')
         parents[node["id"]] = set(node.get("depends_on", []))
         if not parents[node["id"]] <= set(ids) or node["id"] in parents[node["id"]]:
             raise ValueError("Unknown or self dependency")
@@ -145,6 +151,8 @@ def validate_workflow(spec):
     if set(groups) & set(ids):
         raise ValueError("Capability group and node identities must differ")
     for group in groups.values():
+        if group.get("branch") and group["branch"] not in branches:
+            raise ValueError("Unknown capability group branch")
         if not group.get("alternatives") or any(
             not route or not set(route) <= set(ids) or len(set(route)) != len(route)
             for route in group["alternatives"]
@@ -232,6 +240,8 @@ def validate_workflow(spec):
         for rule in alt.get("input_rules", []) + alt["output_rules"]
     ]
     rules += outcomes + [b["when"] for b in branches.values()]
+    from .efficiency import validate_efficiency
+    rules += validate_efficiency(spec.get("efficiency", {}), ids, branches)
     supported_ops = {
         "eq",
         "ne",
@@ -267,6 +277,13 @@ def validate_workflow(spec):
             if not _number(rule.get(tolerance, 0)) or rule.get(tolerance, 0) < 0:
                 raise ValueError("Tolerances must be nonnegative finite numbers")
     fixed_arity = {
+        "distance_matrix": 2,
+        "optimal_bipartition_profiles": 1,
+        "partition_silhouette": 2,
+        "partition_adjusted_rand": 2,
+        "crystal_density_inventory": 1,
+        "crystal_element_inventory": 1,
+        "crystal_element_amount": 2,
         "reviewed_program_identity": 1,
         "literal_constant": 1,
         "object_member_or_null": 2,
@@ -346,6 +363,14 @@ def validate_workflow(spec):
                 from .constants import resolve
 
                 resolve(value, spec.get("constants", {}))
+            if name == 'observed_route_value':
+                expressions=value.get('args')
+                if not isinstance(expressions,list) or not 1<=len(expressions)<=16:
+                    raise ValueError('Observed route values require 1..16 evidence expressions')
+                for expression in expressions:
+                    sources=list(_selectors(expression))
+                    if not sources or any(s['source'] not in {'node','node_arguments'} for s in sources):
+                        raise ValueError('Observed route values cannot fall back to literals, inputs or answers')
             if name in {"array", "scalar_array", "numeric_rows"} and (
                 not isinstance(value.get("args"), list)
                 or not 1 <= len(value["args"]) <= 10000
@@ -363,6 +388,8 @@ def validate_workflow(spec):
                 # for numeric matrices. Do not infer the type of an observed
                 # selector or dynamically decoded JSON from its field name.
                 container_results = {
+                    "distance_matrix",
+                    "optimal_bipartition_profiles",
                     "array",
                     "scalar_array",
                     "numeric_rows",

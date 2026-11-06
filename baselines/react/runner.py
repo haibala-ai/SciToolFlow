@@ -1,6 +1,6 @@
 """Public-task-only baseline runner with atomic, compatible checkpoints."""
 
-from datetime import datetime
+from datetime import datetime, timezone
 import hashlib
 import json
 import os
@@ -10,6 +10,7 @@ from uuid import uuid4
 
 from baselines.common.batch import iter_tasks
 from baselines.common.metrics import task_metrics
+from baselines.common.monitor import start_monitor
 from src.models.communication import CommunicationCircuit, infrastructure_failure
 
 from src.utils.paths import project_root, load_environment
@@ -21,6 +22,8 @@ from src.models.client import GenerationClient
 from baselines.react.runtime import run_react
 from baselines.react.trajectory import atomic_json
 from evaluation.integrity.traces import canonical_sha256
+from baselines.scimas.ablation.policy import resolve_ablation, runtime_options
+from src.models.embedding_profiles import embedding_backend, graph_root
 
 
 def resume_rows(checkpoint, fingerprint, retry=False, retry_infrastructure=False):
@@ -41,12 +44,13 @@ def resume_rows(checkpoint, fingerprint, retry=False, retry_infrastructure=False
 
 def actor_file_hashes(root, dataset="full"):
     """Bind resume to public inputs and all executable actor/tool dependencies."""
+    retrieval = graph_root(root)
     files = [
         root / "cli.py",
         root / "tools/catalog/catalog.json",
-        root / "tools/graph/graph_store.json",
-        root / "tools/graph/index_store.json",
-        root / "tools/graph/tool_foundation_manifest.json",
+        retrieval / "graph_store.json",
+        retrieval / "index_store.json",
+        retrieval / "tool_foundation_manifest.json",
         root / "configs/environments/routing.json",
         root / "baselines/react/config.json",
         root / "baselines/react/system_prompt.md",
@@ -67,7 +71,7 @@ def actor_file_hashes(root, dataset="full"):
     files.extend((root / "baselines/scimas/prompts").glob("*.md"))
     files.append(root / "baselines/scimas/config.json")
     files.extend(
-        root / "tools/graph/scimas" / name
+        retrieval / "scimas" / name
         for name in [
             "graph.json",
             "manifest.json",
@@ -75,6 +79,11 @@ def actor_file_hashes(root, dataset="full"):
             "embeddings.json.gz",
         ]
     )
+    if embedding_backend() == "local":
+        files.extend([
+            root / "configs/services/qwen3_embedding.json",
+            root / "scripts/services/embedding_service.py",
+        ])
     return {
         str(file.relative_to(root)): hashlib.sha256(file.read_bytes()).hexdigest()
         for file in sorted(set(files))
@@ -99,8 +108,10 @@ def run_task(payload):
     Path(os.environ["SCITOOLFLOW_WORK_DIR"]).mkdir(parents=True, exist_ok=True)
     Path(os.environ["SCITOOLFLOW_ARTIFACTS_DIR"]).mkdir(parents=True, exist_ok=True)
     load_environment()
+    os.environ["SCITOOL_EMBEDDING_BACKEND"] = embedding_backend(getattr(args, "embedding_backend", None))
     catalog = ToolCatalog(root)
     baseline = getattr(args, "baseline", "react")
+    intervention = runtime_options(baseline, getattr(args, "scimas_ablation", "full"))
     runtime = run_react
     if baseline == "scitoolagent":
         from baselines.scitoolagent.runtime import run_scitoolagent
@@ -114,9 +125,7 @@ def run_task(payload):
     if args.model:
         client.model = args.model
     try:
-        asset_root = root / (
-            "tasks/mini" if getattr(args, "dataset", "full") == "mini" else "tasks/full"
-        )
+        asset_root = root / "tasks" / getattr(args, "dataset", "full")
         task = load_agent_input(row, asset_root)
         budget = args.max_calls
         print(
@@ -162,6 +171,7 @@ def run_task(payload):
                     max_output_tokens=args.max_output_tokens,
                     task_timeout=args.task_timeout,
                     tool_timeout=args.tool_timeout,
+                    **intervention,
                 )
             calls = result["calls"]
             prediction = {
@@ -183,6 +193,7 @@ def run_task(payload):
                 "duration_seconds": result["duration_seconds"],
                 "resource_usage": result["resource_usage"],
                 "embedding_usage": result.get("embedding_usage"),
+                "embedding_identity": result.get("embedding_identity"),
                 "metrics": result.get("metrics")
                 or task_metrics(
                     result["resource_usage"],
@@ -216,14 +227,23 @@ def run_task(payload):
             }
             if infrastructure_failure(error):
                 prediction["infrastructure_failure"] = infrastructure_failure(error)
+        if baseline == "scimas":
+            prediction["ablation"] = resolve_ablation(
+                intervention["scimas_ablation"]
+            ).document()
         return prediction
     finally:
         client.close()
 
 
 def run_batch(args):
+    baseline = getattr(args, "baseline", "react")
+    variant = getattr(args, "scimas_ablation", "full")
+    runtime_options(baseline, variant)  # Validate before client or output creation.
     root = project_root()
     load_environment()
+    selected_embedding = embedding_backend(getattr(args, "embedding_backend", None))
+    os.environ["SCITOOL_EMBEDDING_BACKEND"] = selected_embedding
     from tools.runtime.scope import tool_allowed
 
     # Reject an invalid execution-scope setting before spending model requests.
@@ -252,7 +272,8 @@ def run_batch(args):
         if args.output
         else root
         / "results"
-        / (baseline + "_" + dataset.name + "_" + timestamp)
+        / (baseline + ("_" + variant if baseline == "scimas" and variant != "full" else "")
+           + "_" + dataset.name + "_" + timestamp)
         / "predictions.json"
     )
     output = output.resolve()
@@ -263,6 +284,7 @@ def run_batch(args):
         if k not in {"output", "resume", "retry_failed", "retry_infrastructure", "func", "command"}
     }
     settings.update(
+        embedding_backend=selected_embedding,
         model=client.model,
         backend=client.backend,
         dataset=dataset.name,
@@ -299,6 +321,15 @@ def run_batch(args):
         execution_scope=os.getenv("SCITOOL_TOOL_SCOPE", "all"),
         task_isolation="independent_process_and_writable_directories",
     )
+    if baseline == "scimas":
+        policy = resolve_ablation(variant)
+        settings["scimas_ablation"] = policy.variant
+        settings["scimas_execution"] = {
+            **policy.document(),
+            "config": policy.apply(json.loads(
+                (root / "baselines/scimas/config.json").read_text()
+            )),
+        }
     fingerprint = hashlib.sha256(
         json.dumps(settings, sort_keys=True).encode()
     ).hexdigest()
@@ -336,12 +367,15 @@ def run_batch(args):
                 "fingerprint": fingerprint,
                 "dataset": dataset.name,
                 "baseline": baseline,
+                **({"ablation": policy.document()} if baseline == "scimas" else {}),
                 "tasks": [
                     {
                         "id": row["id"],
                         "status": row["status"],
                         "completed": row.get("completed", False),
                         "trace_path": row.get("trace_path"),
+                        "failure_reason": row.get("failure_reason"),
+                        "infrastructure_failure": row.get("infrastructure_failure"),
                         **row["metrics"],
                     }
                     for row in predictions
@@ -353,6 +387,7 @@ def run_batch(args):
     namespace = output.parent.name + "-" + uuid4().hex[:12]
     options = {k: v for k, v in vars(args).items() if k not in {"func", "command"}}
     options["dataset"] = dataset.name
+    options["embedding_backend"] = selected_embedding
     jobs = [
         (row["id"], (row, options, str(output), namespace))
         for row in selected
@@ -363,6 +398,7 @@ def run_batch(args):
     status = "running"
     circuit = CommunicationCircuit(getattr(args, "network_failure_threshold", 3))
     session_started = time.monotonic()
+    session_started_at = datetime.now(timezone.utc).isoformat()
 
     def progress(active=None):
         nonlocal active_ids
@@ -373,6 +409,14 @@ def run_batch(args):
             {
                 "status": status,
                 "dataset": dataset.name,
+                "baseline": baseline,
+                "model": client.model,
+                "backend": client.backend,
+                "fingerprint": fingerprint,
+                "runner_pid": os.getpid(),
+                "session_started_at": session_started_at,
+                "tool_concurrency_per_task": settings['scimas_execution']['config']['tool_concurrency'] if baseline == 'scimas' else 1,
+                **({"ablation": policy.document()} if baseline == "scimas" else {}),
                 "updated_at": datetime.now().astimezone().isoformat(),
                 "concurrency": concurrency,
                 "selected_tasks": len(selected),
@@ -388,6 +432,7 @@ def run_batch(args):
 
     save()
     progress()
+    start_monitor(output.parent)
     # The metadata-only client owns no requests, and is not passed to workers.
     client.close()
     scheduled = iter_tasks(jobs, run_task, concurrency, progress,
@@ -412,6 +457,8 @@ def run_batch(args):
             )
             if response.get("infrastructure_failure"):
                 prediction["infrastructure_failure"] = response["infrastructure_failure"]
+            if baseline == "scimas":
+                prediction.setdefault("ablation", policy.document())
             predictions.append(prediction)
             circuit.observe(prediction)
             if circuit.open:

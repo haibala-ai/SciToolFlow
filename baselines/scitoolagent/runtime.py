@@ -288,6 +288,7 @@ def run_scitoolagent(
 
     try:
         retriever = retriever or GraphRetriever(catalog, config)
+        trajectory["embedding_identity"] = getattr(getattr(retriever, "embedding", None), "identity", None)
         for cycle in range(1, config["max_plan_rounds"] + 1):
             remaining()
             query = (

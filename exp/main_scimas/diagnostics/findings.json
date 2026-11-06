@@ -1,0 +1,358 @@
+{
+  "schema_version": "scimas.failure_analysis.v1",
+  "scope": {
+    "tasks": 200,
+    "new_paid_api_calls": 0,
+    "runtime_or_benchmark_modified": false,
+    "source_run": "results/deepseek_scimas_mini_20261105_212725_c2",
+    "note": "Terminal categories are mutually exclusive. Findings overlap and are not additive. Unresolved issues are not counted as recovered successes."
+  },
+  "official_summary": {
+    "dataset": "mini",
+    "tasks": 200,
+    "runtime_completion_rate": 0.41,
+    "tool_planning_accuracy": 0.35,
+    "answer_accuracy": 0.395
+  },
+  "terminal_categories": {
+    "completed": 82,
+    "repeated_action_failure": 6,
+    "initial_planning_limit": 1,
+    "array_path_validation": 1,
+    "embedding_network": 2,
+    "role_protocol_exhausted": 2,
+    "reviewer_result_rejection": 2,
+    "unknown_tool_fatal": 3,
+    "api_remote_protocol": 13,
+    "api_connect_timeout": 73,
+    "local_repair_limit": 8,
+    "planner_stopped": 1,
+    "executor_selection_rejected": 4,
+    "api_read_timeout": 1,
+    "output_token_limit": 1
+  },
+  "findings": [
+    {
+      "id": "NET-01",
+      "severity": "P0",
+      "confidence": "confirmed_terminal_classification",
+      "tasks": [
+        "SMAS-0014",
+        "SMAS-0029",
+        "SMAS-0031",
+        "SMAS-0032",
+        "SMAS-0033",
+        "SMAS-0034",
+        "SMAS-0035",
+        "SMAS-0037",
+        "SMAS-0044",
+        "SMAS-0047",
+        "SMAS-0049",
+        "SMAS-0050",
+        "SMAS-0052",
+        "SMAS-0053",
+        "SMAS-0054",
+        "SMAS-0055",
+        "SMAS-0056",
+        "SMAS-0113",
+        "SMAS-0124",
+        "SMAS-0125",
+        "SMAS-0126",
+        "SMAS-0127",
+        "SMAS-0128",
+        "SMAS-0129",
+        "SMAS-0130",
+        "SMAS-0131",
+        "SMAS-0132",
+        "SMAS-0133",
+        "SMAS-0134",
+        "SMAS-0135",
+        "SMAS-0136",
+        "SMAS-0137",
+        "SMAS-0138",
+        "SMAS-0139",
+        "SMAS-0140",
+        "SMAS-0141",
+        "SMAS-0142",
+        "SMAS-0143",
+        "SMAS-0144",
+        "SMAS-0145",
+        "SMAS-0146",
+        "SMAS-0147",
+        "SMAS-0154",
+        "SMAS-0155",
+        "SMAS-0156",
+        "SMAS-0157",
+        "SMAS-0158",
+        "SMAS-0159",
+        "SMAS-0160",
+        "SMAS-0161",
+        "SMAS-0162",
+        "SMAS-0163",
+        "SMAS-0164",
+        "SMAS-0165",
+        "SMAS-0166",
+        "SMAS-0167",
+        "SMAS-0168",
+        "SMAS-0169",
+        "SMAS-0170",
+        "SMAS-0171",
+        "SMAS-0172",
+        "SMAS-0173",
+        "SMAS-0174",
+        "SMAS-0175",
+        "SMAS-0176",
+        "SMAS-0177",
+        "SMAS-0178",
+        "SMAS-0179",
+        "SMAS-0180",
+        "SMAS-0181",
+        "SMAS-0182",
+        "SMAS-0183",
+        "SMAS-0184",
+        "SMAS-0185",
+        "SMAS-0186",
+        "SMAS-0187",
+        "SMAS-0188",
+        "SMAS-0189",
+        "SMAS-0190",
+        "SMAS-0191",
+        "SMAS-0192",
+        "SMAS-0193",
+        "SMAS-0194",
+        "SMAS-0195",
+        "SMAS-0196",
+        "SMAS-0197",
+        "SMAS-0198",
+        "SMAS-0199",
+        "SMAS-0200"
+      ],
+      "summary": "89 tasks terminated on communication errors; 85 never invoked a scientific tool. Exact failing network hop is not identified.",
+      "evidence": [
+        "task_analysis.json",
+        "timeline.json"
+      ],
+      "recommendation": "Separate infrastructure failures; add a circuit breaker and resumable attempts. Do not silently replay potentially billed requests."
+    },
+    {
+      "id": "HAR-01",
+      "severity": "P0",
+      "confidence": "reproduced_offline",
+      "tasks": [
+        "SMAS-0003",
+        "SMAS-0070",
+        "SMAS-0072",
+        "SMAS-0105",
+        "SMAS-0106",
+        "SMAS-0117"
+      ],
+      "summary": "max_failures_per_action=0 is passed as disabled by common config, but SciMas compares count>=0 and aborts on the first failure before retry/repair. All six terminal identical actions occurred exactly once.",
+      "evidence": [
+        "offline_controls.json",
+        "failure_limit_cases.json"
+      ],
+      "recommendation": "Unify disable semantics; preserve a finite recovery policy and report the triggering error."
+    },
+    {
+      "id": "REV-01",
+      "severity": "P0",
+      "confidence": "confirmed_from_dispatch_graph_hashes",
+      "tasks": [
+        "SMAS-0073",
+        "SMAS-0076",
+        "SMAS-0088",
+        "SMAS-0093"
+      ],
+      "summary": "Reviewer called runtime-resolved numeric arguments independent literals even though the dispatch graph contained the correct upstream node bindings.",
+      "evidence": [
+        "reviewer_evidence.json"
+      ],
+      "recommendation": "Send declared bindings and resolved arguments as separately labeled evidence with runtime provenance checks."
+    },
+    {
+      "id": "REV-02",
+      "severity": "P0",
+      "confidence": "confirmed_from_sent_context",
+      "tasks": [
+        "SMAS-0089",
+        "SMAS-0121"
+      ],
+      "summary": "Reviewer mistook accepted_for_current_graph=false during pending review for stale evidence, despite stale=false and the node being present in the graph. valid_nodes actually lists accepted result nodes.",
+      "evidence": [
+        "reviewer_evidence.json"
+      ],
+      "recommendation": "Represent pending/accepted/stale states explicitly; distinguish graph node existence from accepted results."
+    },
+    {
+      "id": "REV-03",
+      "severity": "P0",
+      "confidence": "reproduced_offline",
+      "tasks": [
+        "SMAS-0111"
+      ],
+      "summary": "Reviewer rejected a correct eigensystem; independent residual using documented eigenvector columns is 4.44e-16.",
+      "evidence": [
+        "eigen_control.json"
+      ],
+      "recommendation": "Use numeric residual certificates before allowing a reviewer claim to invalidate deterministic numerical evidence."
+    },
+    {
+      "id": "REV-04",
+      "severity": "P1",
+      "confidence": "reproduced_offline",
+      "tasks": [
+        "SMAS-0022"
+      ],
+      "summary": "Reviewer inferred P2/m from the oblique cell; re-running pymatgen/spglib with the actual structure and tolerances confirms Cmmm (65), with an orthogonal conventional cell.",
+      "evidence": [
+        "symmetry_control.json"
+      ],
+      "recommendation": "Validate crystallographic claims against complete coordinates and cell conventions, not the metric of one chosen basis."
+    },
+    {
+      "id": "HAR-02",
+      "severity": "P1",
+      "confidence": "reproduced_offline",
+      "tasks": [
+        "SMAS-0009"
+      ],
+      "summary": "Array path traversal rejects unconstrained JSON array items. GetJSONPointer.value has a valid union schema without items; expansion then fatally rejects indices 0,1,2.",
+      "evidence": [
+        "offline_controls.json"
+      ],
+      "recommendation": "Handle unconstrained valid JSON schemas and keep actual value/receiving-contract checks; route expansion validation errors to bounded repair."
+    },
+    {
+      "id": "TOOL-01",
+      "severity": "P1",
+      "confidence": "reproduced_offline",
+      "tasks": [
+        "SMAS-0072"
+      ],
+      "summary": "GetMolecularFrequencies returns a dict but metadata says decoded_type=json_object; accept_result calls json.loads(dict), raising TypeError. The failure-limit bug then masks it as RepeatedActionFailure.",
+      "evidence": [
+        "graph_controls.json",
+        "catalog_decoding_risk.json"
+      ],
+      "recommendation": "Normalize the contract wire type and only decode actual string-encoded JSON. Audit found one static candidate in the current catalog."
+    },
+    {
+      "id": "HAR-03",
+      "severity": "P1",
+      "confidence": "confirmed_from_sent_context",
+      "tasks": [
+        "SMAS-0102",
+        "SMAS-0112",
+        "SMAS-0114",
+        "SMAS-0120"
+      ],
+      "summary": "Executor selected nodes absent from the supplied ready list; the harness treats the first selection error as fatal instead of giving bounded correction feedback.",
+      "evidence": [
+        "task_analysis.json"
+      ],
+      "recommendation": "Reject invalid selections precisely and offer bounded repair without executing unavailable nodes."
+    },
+    {
+      "id": "HAR-04",
+      "severity": "P1",
+      "confidence": "confirmed_from_source_and_trace",
+      "tasks": [
+        "SMAS-0026",
+        "SMAS-0071",
+        "SMAS-0115"
+      ],
+      "summary": "Repair role queried hallucinated tool names; its lookup path lacks the error feedback already present in initial Planner.",
+      "evidence": [
+        "task_analysis.json"
+      ],
+      "recommendation": "Return per-name errors and current-name hints consistently for every DescribeTools entry point."
+    },
+    {
+      "id": "HAR-05",
+      "severity": "P1",
+      "confidence": "reproduced_offline",
+      "tasks": [
+        "SMAS-0110"
+      ],
+      "summary": "Plan bindings require unit semantics such as ns/unitless while accepted generic numeric outputs have empty semantics; three root nodes remain blocked and repairs exhaust.",
+      "evidence": [
+        "graph_controls.json"
+      ],
+      "recommendation": "Validate semantic obligations before execution and provide evidence-backed unit propagation; do not invent metadata or remove unit checks."
+    },
+    {
+      "id": "MODEL-01",
+      "severity": "P1",
+      "confidence": "observed",
+      "tasks": [
+        "SMAS-0007",
+        "SMAS-0017",
+        "SMAS-0025",
+        "SMAS-0081",
+        "SMAS-0100",
+        "SMAS-0149"
+      ],
+      "summary": "Residual planning, malformed role output, scientific-method repair, candidate tool gap claims and output reasoning truncation remain. These cannot all be excused as infrastructure.",
+      "evidence": [
+        "task_analysis.json"
+      ],
+      "recommendation": "Keep scientific constraints, distinguish malformed output from transport errors, inspect tool retrieval completeness, and validate the requested nonuniform-gradient convention."
+    },
+    {
+      "id": "EVAL-01",
+      "severity": "P1",
+      "confidence": "confirmed_examples_with_remaining_review_needed",
+      "tasks": [
+        "SMAS-0013",
+        "SMAS-0060",
+        "SMAS-0063",
+        "SMAS-0067",
+        "SMAS-0074",
+        "SMAS-0080",
+        "SMAS-0082",
+        "SMAS-0090",
+        "SMAS-0098",
+        "SMAS-0099",
+        "SMAS-0107",
+        "SMAS-0116",
+        "SMAS-0119",
+        "SMAS-0122",
+        "SMAS-0123",
+        "SMAS-0148",
+        "SMAS-0153"
+      ],
+      "summary": "17 completed tasks failed planning, including 16 whose answers passed. Confirmed examples of route-sensitive grading include batch versus per-row matrix multiplication (0098) and sf(-z) versus cdf(z) (0080). Not all 17 have been certified equivalent.",
+      "evidence": [
+        "scoring_diagnosis.json"
+      ],
+      "recommendation": "Validate evidence-backed equivalent routes against counterexamples; missing execution and genuinely wrong methods must still fail."
+    },
+    {
+      "id": "EVAL-02",
+      "severity": "P1",
+      "confidence": "confirmed_contract_mismatches_or_ambiguities",
+      "tasks": [
+        "SMAS-0059",
+        "SMAS-0060",
+        "SMAS-0078"
+      ],
+      "summary": "The only three submitted-answer failures concern recovered representation naming, different average atomic-weight bases, and condensed versus square distance arrays. Keep official scores until task/contract/scorer alignment is resolved.",
+      "evidence": [
+        "scoring_diagnosis.json"
+      ],
+      "recommendation": "Specify output representation, dimensions/taxon ordering and mass basis publicly; do not reveal scientific answers or accept arbitrary values."
+    },
+    {
+      "id": "EFF-01",
+      "severity": "P2",
+      "confidence": "observed_provider_usage",
+      "tasks": [],
+      "summary": "5308 generation requests, 108820916 known input tokens and 13085665 known output tokens; reviewer plus executor consume most input. Usage is missing for 87 failed requests.",
+      "evidence": [
+        "request_overhead.json",
+        "task_analysis.json"
+      ],
+      "recommendation": "Reduce per-role irrelevant context while retaining reachable dependencies and inspectable raw observations; fix false repairs before optimizing thresholds."
+    }
+  ]
+}

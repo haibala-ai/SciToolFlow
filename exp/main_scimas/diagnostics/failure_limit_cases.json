@@ -1,0 +1,56 @@
+[
+  {
+    "id": "SMAS-0003",
+    "tool": "TestMolecule",
+    "node": "test_primary_r2",
+    "identical_invocations": 1,
+    "status": "error",
+    "error_type": "InvalidInput",
+    "error": "SMILES must encode a valid nonempty molecule of at most 500 parsed atoms"
+  },
+  {
+    "id": "SMAS-0070",
+    "tool": "ReadQChemIRIntensities",
+    "node": "read_ir_intensities",
+    "identical_invocations": 1,
+    "status": "error",
+    "error_type": "Timeout",
+    "error": "Tool exceeded 180.0 seconds"
+  },
+  {
+    "id": "SMAS-0072",
+    "tool": "GetMolecularFrequencies",
+    "node": "qchem_freq",
+    "identical_invocations": 1,
+    "status": "success",
+    "error_type": null,
+    "error": null
+  },
+  {
+    "id": "SMAS-0105",
+    "tool": "JoinRecordTables",
+    "node": "enrich_validation__0",
+    "identical_invocations": 1,
+    "status": "error",
+    "error_type": "InvalidInput",
+    "error": "columns: require nonempty column names"
+  },
+  {
+    "id": "SMAS-0106",
+    "tool": "QueryScientificRecordsFile",
+    "node": "query_eligible_plans",
+    "identical_invocations": 1,
+    "status": "error",
+    "error_type": "InvalidInput",
+    "error": "Missing predicate field:cost_units"
+  },
+  {
+    "id": "SMAS-0117",
+    "tool": "QueryScientificRecordsFile",
+    "node": "query_isotherms",
+    "identical_invocations": 1,
+    "status": "error",
+    "error_type": "InvalidInput",
+    "error": "Missing predicate field:adsorbate_inchikey"
+  }
+]

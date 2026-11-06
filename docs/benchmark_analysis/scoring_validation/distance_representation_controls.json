@@ -1,0 +1,181 @@
+{
+  "status": "passed",
+  "tasks": 16,
+  "fields": 44,
+  "checks": [
+    {
+      "id": "SMAS-0027",
+      "fields": [
+        "/tree_patristic_distances",
+        "/traits_distances",
+        "/composition_distances"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0029",
+      "fields": [
+        "/abundance_distances",
+        "/presence_distances",
+        "/conditions_distances"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0030",
+      "fields": [
+        "/raw_distances",
+        "/relative_distances"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0031",
+      "fields": [
+        "/guild_distances",
+        "/environment_distances",
+        "/cityblock_distances"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0032",
+      "fields": [
+        "/root1_patristic_distances",
+        "/root2_patristic_distances",
+        "/traits_distances"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0033",
+      "fields": [
+        "/geography_distances",
+        "/soil_distances",
+        "/composition_distances"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0034",
+      "fields": [
+        "/counts_distances",
+        "/presence_distances"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0046",
+      "fields": [
+        "/raw_distances",
+        "/standardized_distances"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0047",
+      "fields": [
+        "/projected_distances"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0054",
+      "fields": [
+        "/within_a",
+        "/within_b",
+        "/within_c",
+        "/within_d",
+        "/rmsd_matrix"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0056",
+      "fields": [
+        "/property_distances"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0061",
+      "fields": [
+        "/property_distances",
+        "/structural_distances"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0076",
+      "fields": [
+        "/D_bray",
+        "/D_jaccard",
+        "/D_hellinger"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0078",
+      "fields": [
+        "/raw_trait_distances",
+        "/standardized_trait_distances",
+        "/patristic_a",
+        "/patristic_b",
+        "/patristic_c"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0083",
+      "fields": [
+        "/within_core_a",
+        "/within_core_b",
+        "/within_core_c",
+        "/core_rmsd"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    },
+    {
+      "id": "SMAS-0086",
+      "fields": [
+        "/centroid_distances",
+        "/taxonomic_distances"
+      ],
+      "full_and_condensed_agree": true,
+      "wrong_value_rejected": true,
+      "missing_value_rejected": true
+    }
+  ],
+  "new_model_calls": 0,
+  "synthetic_grading_controls_not_solver_runs": true
+}

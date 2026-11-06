@@ -27,6 +27,7 @@ from .runner import asset_previews
 from .roles import Roles, RecordedClient
 from .executor import Executor
 from .experience import Experience
+from .ablation.policy import resolve_ablation, DisabledExperience, LocalRepairDisabled
 from .trajectory import append_step
 from .verification import numerical_certificate
 
@@ -117,10 +118,12 @@ def run_scimas(
     config=None,
     max_identical_tool_steps=10,
     max_failures_per_action=3,
+    scimas_ablation="full",
     **unused,
 ):
     """Same public task/trace interface as ReAct; never reads evaluator data."""
     case_id = case_id or "custom"
+    policy = resolve_ablation(scimas_ablation)
     if max_failures_per_action is not None and (
         type(max_failures_per_action) is not int or max_failures_per_action < 0
     ):
@@ -139,6 +142,7 @@ def run_scimas(
         for k, v in settings.items()
     ):
         raise ValueError("SciMas configuration requires positive integer bounds")
+    settings = policy.apply(settings)
     run_id = uuid.uuid4().hex[:12]
     folder = Path(trace_dir).resolve() / (case_id + "-" + run_id)
     folder.mkdir(parents=True, exist_ok=False)
@@ -154,6 +158,7 @@ def run_scimas(
     trace = {
         "schema_version": "scitoolflow.trajectory.v1",
         "baseline": "scimas",
+        "ablation": policy.document(),
         "run_id": run_id,
         "task_id": case_id,
         "dataset": dataset,
@@ -167,6 +172,7 @@ def run_scimas(
         "reviews": [],
         "repairs": [],
         "retrievals": [],
+        "gate_evaluations": [],
         "limits": {
             "resource_policy": "task-resources.v1",
             "model_requests": max_model_requests,
@@ -182,7 +188,10 @@ def run_scimas(
             **settings,
         },
     }
-    memory = Experience(settings["experience_capacity"], settings["experience_matches"])
+    memory_class = Experience if policy.experience else DisabledExperience
+    memory = memory_class(settings["experience_capacity"], settings["experience_matches"])
+    evaluated_gates = set()
+    gate_states = {}
     calls, results, observations, pruned, retries = [], {}, {}, {}, {}
     stats = dict.fromkeys(
         [
@@ -281,6 +290,7 @@ def run_scimas(
         ),
         schema_guard=protocol_schema_guard,
         on_protocol_error=protocol_error,
+        prompt_suffix=policy.instructions(),
     )
 
     def evidence():
@@ -343,6 +353,10 @@ def run_scimas(
             "pruned": pruned,
             "observations": evidence(),
             "experience": memory.match(role, graph.contracts),
+            **(
+                {"execution_policy": policy.document(), "gate_states": dict(gate_states)}
+                if policy.variant != "full" else {}
+            ),
             **extra,
         }
 
@@ -453,6 +467,7 @@ def run_scimas(
 
     def approve_graph():
         nonlocal gates
+        gate_states.clear()
         decision = review(
             "graph", contracts=knowledge.planning_view(sorted(graph.contracts))
         )
@@ -470,6 +485,9 @@ def run_scimas(
 
     def repair(request):
         nonlocal graph, repairs, gates
+        if not policy.local_repair:
+            add_step({"type": "repair_disabled", "request": deepcopy(request)})
+            raise LocalRepairDisabled(request["reason"])
         while True:
             if repairs >= settings["local_repairs"]:
                 raise ValueError("LocalRepairLimit: " + request["reason"])
@@ -709,6 +727,8 @@ def run_scimas(
         if not provenance["resolution_verified"]:
             accepted = None
             structural = "Submitted arguments do not resolve from the current graph evidence"
+        if accepted is None and not policy.local_repair:
+            repair({"nodes": [nid], "reason": structural or "Tool execution failed"})
         feedback = []
         for attempt in range(settings["protocol_retries"]):
             call["review_state"] = "pending_review"
@@ -922,6 +942,7 @@ def run_scimas(
     save()
     try:
         knowledge = knowledge or ToolKnowledge(catalog=catalog)
+        trace["embedding_identity"] = deepcopy(knowledge.manifest.get("embedding_identity"))
         assets = asset_previews(task, root / "tasks/full") if files else []
         trace["public_assets"] = assets
         planning = Planner(
@@ -977,7 +998,30 @@ def run_scimas(
             # False is supported scientific screening; unresolved and failed are never false.
             for node in graph.plan["nodes"]:
                 nid = node["id"]
-                if graph.condition_state(nid, results, approved_gates=gates) is False:
+                state = graph.condition_state(nid, results, approved_gates=gates)
+                if "when" in node:
+                    gate_states[nid] = state
+                    key = (graph.identity, nid, state)
+                    if key not in evaluated_gates:
+                        evaluated_gates.add(key)
+                        action = "continue"
+                        if state is None:
+                            action = "wait"
+                        elif state is False:
+                            action = "prune" if policy.early_stop else "continue_without_screening"
+                        trace["gate_evaluations"].append({
+                            "node": nid, "graph_sha256": graph.identity,
+                            "node_sha256": graph.node_identity(nid),
+                            "condition": deepcopy(node["when"]), "state": state,
+                            "action": action,
+                            "recorded_seconds": max(0, resources.clock() - resources.started),
+                            "source_observations": {
+                                parent: results[parent]["observation_id"]
+                                for parent in set.union(*node_dependencies(node))
+                                if parent in results
+                            },
+                        })
+                if policy.early_stop and state is False:
                     pruned[nid] = {
                         "reason": "scientific_gate_false",
                         "node_sha256": graph.node_identity(nid),
@@ -1000,7 +1044,8 @@ def run_scimas(
             ready = [
                 nid
                 for nid in graph.ready(
-                    results, catalog, approved_gates=gates, running=running_ids
+                    results, catalog, approved_gates=gates, running=running_ids,
+                    early_stop=policy.early_stop,
                 )
                 if nid not in pruned
             ]
@@ -1014,6 +1059,13 @@ def run_scimas(
                     == "isolated_processes_with_resource_limits"
                 )
             ]
+            if not policy.parallel:
+                # Stable topological tie-breaking uses the approved plan order.
+                # Keep the Executor role and review overhead in the comparison.
+                ready = [
+                    nid for nid in ready
+                    if set.union(*node_dependencies(graph.node(nid))) <= results.keys()
+                ][:1]
             if ready:
                 executor_context = context(
                     "executor",

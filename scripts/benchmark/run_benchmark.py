@@ -3,6 +3,7 @@
 import argparse
 from datetime import datetime, timezone
 import json
+import os
 import signal
 from pathlib import Path
 import subprocess
@@ -16,6 +17,7 @@ from src.utils.io import atomic_json
 from src.models.client import GenerationClient
 from src.utils.paths import load_environment
 from tasks.datasets import DATASETS, DEFAULT_DATASET, load_dataset
+from baselines.common.monitor import start_monitor
 
 
 def main():
@@ -56,6 +58,7 @@ def main():
     started = datetime.now(timezone.utc).isoformat()
     state = {
         "started_at": started,
+        "supervisor_pid": os.getpid(),
         "tasks": args.tasks,
         "dataset": args.dataset,
         "denominator": len(selected),
@@ -69,6 +72,7 @@ def main():
         "output_dir": str(output),
     }
     atomic_json(status_file, state)
+    start_monitor(output)
 
     def wait_for_model(backend):
         if backend != "vllm":

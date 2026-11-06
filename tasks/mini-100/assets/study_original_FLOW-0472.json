@@ -1,0 +1,42 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled statistical example. Values are stipulated observations or population working moments as explicitly stated, not new experimental data.",
+    "source_scope": "No outside information is required; every inferential assumption is declared."
+  },
+  "strata": [
+    {
+      "stratum": "low",
+      "population_weight": 0.3,
+      "true_mean": 2.0,
+      "response_probability": 0.2
+    },
+    {
+      "stratum": "high",
+      "population_weight": 0.7,
+      "true_mean": 8.0,
+      "response_probability": 0.8
+    }
+  ],
+  "outcome_models": {
+    "correct": [
+      2.0,
+      8.0
+    ],
+    "working": [
+      1.0,
+      6.0
+    ]
+  },
+  "response_probability_models": {
+    "correct": [
+      0.2,
+      0.8
+    ],
+    "working": [
+      0.5,
+      0.5
+    ]
+  },
+  "model": "A scalar outcome is selectively recorded. Given stratum, the recording indicator R is independent of the outcome and has the stipulated response_probability, strictly between0and1. The table gives exact population stratum weights and conditional mean outcomes and recording probabilities, not one finite realized sample. Model arrays use the table stratum order. Evaluate the population limit of the augmented inverse-response estimator E[m(X)+R*(Y-m(X))/p(X)]. The complete-population mean is the target. All nuisance predictions are fixed independently of these evaluation moments.",
+  "goal": "Audit the robustness claim by comparing all four nuisance-model combinations. A finite-sample guarantee, absence of unmeasured selection or universal correctness when both models are wrong is not assumed."
+}

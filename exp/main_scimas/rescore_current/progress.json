@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "completed": 200,
+  "total": 200,
+  "elapsed_scoring_seconds": 61.398827686032746,
+  "summary": {
+    "dataset": "mini",
+    "tasks": 200,
+    "runtime_completion_rate": 0.41,
+    "tool_planning_accuracy": 0.34482774383252024,
+    "observed_mean_tool_orchestration_score": 0.34482774383252024,
+    "tool_planning_reportable": true,
+    "strict_tool_planning_accuracy": 0.36,
+    "mean_orchestration_credit": 0.43986507936507935,
+    "mean_selection_efficiency": 0.2940487710457492,
+    "answer_accuracy": 0.4
+  }
+}

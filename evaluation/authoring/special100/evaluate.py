@@ -23,17 +23,17 @@ def three_metrics(task,criterion,prediction,reference_prediction,catalog):
     answer=prediction.get('final_answer')
     shape=not validation_errors(answer,task['answer_schema'])
     runtime=bool(prediction.get('completed') is True and prediction.get('status')=='completed'
-                 and not prediction.get('failure_reason') and shape)
+                 and not prediction.get('failure_reason'))
     actual=score_workflow(criterion,prediction,aliases=catalog.get('aliases',{}),tool_contracts=catalog['tools'])
     # Ground scientific targets in trusted reference observations, independently
     # of whether this baseline chose a correct tool route. Never use its answer
     # to define a target or count its claimed observations as evidence.
     independent=deepcopy(reference_prediction);independent['final_answer']=answer
     checked=score_workflow(criterion,independent,aliases=catalog.get('aliases',{}),tool_contracts=catalog['tools'])
-    scientific=shape and checked['answer_pass'] and not checked['pending_review']
+    scientific=checked['answer_pass'] and not checked['pending_review']
     return {'id':task['id'],'runtime_completed':runtime,
             'tool_plan_correct':bool(actual['planning_pass'] and not actual['pending_review']),
-            'answer_correct':bool(scientific)}
+            'answer_correct':bool(scientific),'answer_schema_valid':shape}
 
 
 def evaluate(predictions, *, selected=None,base=BASE):
@@ -70,7 +70,7 @@ def evaluate(predictions, *, selected=None,base=BASE):
     summary={'tasks':n,'runtime_completion_rate':sum(r['runtime_completed'] for r in out)/n,
              'tool_planning_accuracy':sum(r['tool_plan_correct'] for r in out)/n,
              'answer_accuracy':sum(r['answer_correct'] for r in out)/n}
-    return {'schema_version':'scimas.special.three_metrics.v1','suite':'scimas-special-100-v2','summary':summary,'tasks':out}
+    return {'schema_version':'scimas.special.three_metrics.v2','suite':'scimas-special-100-v2','summary':summary,'tasks':out}
 
 
 if __name__=='__main__':

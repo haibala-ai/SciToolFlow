@@ -65,12 +65,14 @@ class ExperimentBackendTests(unittest.TestCase):
                 patch.object(sys, "argv", argv),
                 patch.dict(os.environ, env),
                 patch.object(run_benchmark.subprocess, "Popen", Process),
+                patch.object(run_benchmark, "start_monitor") as observer,
                 patch.object(
                     run_benchmark.urllib.request, "build_opener", return_value=health
                 ) as opener,
             ):
                 code = run_benchmark.main()
                 calls = opener.call_count
+                observer.assert_called_once_with(Path(directory).resolve())
             state = json.loads((Path(directory) / "experiment.json").read_text())
         return code, commands, calls, state
 

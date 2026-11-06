@@ -1,75 +1,114 @@
 {
-  "schema_version": "scitoolflow.mini.validation.v1",
-  "date": "2026-11-05",
-  "timezone": "Asia/Shanghai",
-  "status": "passed",
-  "test_mode": "Reference decision replay driving the production ReAct harness and real registered tools.",
-  "new_llm_api_calls": 0,
-  "model_benchmark_performance_measured": false,
-  "regression_tests": {
-    "tests": 41,
-    "failures": 0,
-    "errors": 0,
-    "skipped": 0
+  "schema_version": "scitoolflow.mini.validation.v3",
+  "updated_utc": "2026-11-06T08:22:38.428480+00:00",
+  "dataset": "mini",
+  "tasks": 200,
+  "scoring_revision": "scitoolflow.mini.orchestration.v3",
+  "scorer_sha256": "8f732e1fa5945d3d7fc04ecbd9fd00f0065b88f399f6d6702ab2f194d747a977",
+  "individual_review": {
+    "accepted": 200,
+    "new_restricted_terra_references": 124,
+    "reused_genuine_references": 76,
+    "generation_model_api_calls": 0,
+    "historical_original_traces_archived": 200,
+    "rejected_attempt_preserved": "SMAS-0153/attempt_1: missing computational evidence; final reference uses attempt_2"
   },
-  "mapped_source_validation": {
-    "mapped_tasks": 100,
-    "status": "passed"
+  "evaluation_regressions": {
+    "command": "python -m pytest tests/evaluation -q",
+    "passed": 722,
+    "subtests_passed": 422
   },
-  "reference_validation": {
-    "mini_primary_references": 200,
-    "full_primary_references": 500,
-    "method": "The unmocked CLI score commands run their normal complete reference integrity/self-check gates before scoring the selected tasks."
+  "mini_interface_regressions": {
+    "command": "python -m pytest tests/integration/test_mini_dataset.py tests/integration/test_dataset_interfaces.py tests/integration/test_mini_selection.py tests/evaluation/test_public_asset_paths.py -q",
+    "passed": 41,
+    "scope": "shared run/score interfaces, source mapping and real-tool reference-decision replay; not a baseline model experiment"
   },
-  "cases": [
-    {
-      "id": "SMAS-0103",
+  "test_counts_are_not_additive": true,
+  "reference_self_check": {
+    "command": "python -m scripts.benchmark.mini check",
+    "status": "passed",
+    "tasks": 200,
+    "wrong_scientific_fields_rejected": 1836,
+    "metrics": {
       "dataset": "mini",
-      "source_id": "FLOW-0029",
-      "scientific_calls": 6,
-      "status": "completed",
-      "trace_sha256": "bfd8897535f2e38d3f8d6b97bde65140a0ce2c2e8a7a19a67bcce27e95902bfd"
+      "tasks": 200,
+      "runtime_completion_rate": 1.0,
+      "tool_planning_accuracy": 0.9855347720663856,
+      "observed_mean_tool_orchestration_score": 0.9855347720663856,
+      "tool_planning_reportable": true,
+      "strict_tool_planning_accuracy": 1.0,
+      "mean_orchestration_credit": 1.0,
+      "mean_selection_efficiency": 0.9633130546154259,
+      "answer_accuracy": 1.0
     },
-    {
-      "id": "SMAS-0131",
-      "dataset": "mini",
-      "source_id": "FLOW-0147",
-      "scientific_calls": 8,
-      "status": "completed",
-      "trace_sha256": "77bf0e8d241b637776c10b23398e0e7498fb0320270d4c23a1fb273c911ce0e1"
-    },
-    {
-      "id": "SMAS-0132",
-      "dataset": "mini",
-      "source_id": "FLOW-0153",
-      "scientific_calls": 10,
-      "status": "completed",
-      "trace_sha256": "cbde3ca467b8967c79c9386e33d60fdbbcba325b0a0b6c0d14465ae45a04a2bd"
-    },
-    {
-      "id": "FLOW-0029",
-      "dataset": "full",
-      "source_id": "FLOW-0029",
-      "scientific_calls": 6,
-      "status": "completed",
-      "trace_sha256": "a6a73065fc3f1d16d2cebaa578afd504dffcefd7f792b3f497b3dc8fb04fdaa4"
-    }
+    "not_baseline_model_performance": true
+  },
+  "serial_parallel_consistency": {
+    "tasks": 200,
+    "legal_serial": true,
+    "legal_parallel": true,
+    "reverse_result_collection": true,
+    "counterexamples_are_not_new_model_runs": true
+  },
+  "baseline_authentication_forms": [
+    "ReAct serial",
+    "SciToolAgent serial",
+    "SciMas authenticated dispatcher intervals"
   ],
-  "mini_subset_scores": {
-    "dataset": "mini",
-    "tasks": 3,
-    "runtime_completion_rate": 1.0,
-    "tool_planning_accuracy": 1.0,
-    "answer_accuracy": 1.0
+  "format_exploration": {
+    "eligible_tasks": 120,
+    "reviewed_zero_to_one_allowance_tasks": 33,
+    "boundary_controls": 14
   },
-  "full_subset_joint_success_rate": 1.0,
-  "local_artifact_directory": "results/mini_mapping_smoke_20261105_153541",
-  "source_report_sha256": "55357874057f5738f2f4134bc1d4e0beeb5fa689ea9a780d2a9c40f03a654d16",
-  "source_sha256": {
-    "tasks/mini/questions.jsonl": "df9b36f1a72586906607dd93beb1a82a0ed96dc7a6211d82f761e50873ca144a",
-    "tasks/mini/ids.tsv": "6ca4629e976d4cc5fc29b8458b38798cabd1f299c3dd195c1deb366bcb0cf1f4",
-    "tasks/mini/selection.json": "61ab100124fe1ff2ee23f984388a7b2f757293278e7cfc8bef1271d1581241e9",
-    "tasks/mini/evaluation/references.jsonl.gz": "7d2f576f891acebffc090fe0fbb808b4277dc20fb91dea8da8306e431e104304",
-    "tools/catalog/catalog.json": "f625636a684fe9dd142852b6b8848d2ac983f8ff908cbab13cb53bad6e7626ca"
+  "negative_controls": {
+    "numeric_default_and_AST_duplicate_cases": 18,
+    "full_helper_specific_cases": 210
+  },
+  "source_inputs_unchanged": true,
+  "tool_implementations_graph_and_embeddings_unchanged": true,
+  "release_files_sha256": {
+    "tasks/mini/questions.jsonl": "5359ba28d95be2d072dfbb4a3fe0650db8ed637a4c18581753228558a5141935",
+    "tasks/mini/selection.json": "2d2143085182867f9482e44b893196a7dce17034ba31575127f1500397c919d3",
+    "tasks/mini/evaluation/references.jsonl.gz": "8e4e0276db6618e0505353e8b2598e5a783481146d6d7eddb1ba7ecbfde5308b",
+    "tasks/mini/evaluation/orchestration_review.json": "4d7a75e63bb6dea91d1312fc0fda381ab93dc94409e6b3b2eb4763e3a2e55d08"
+  },
+  "package_validation": {
+    "command": "python cli.py validate",
+    "package_valid": true,
+    "default_dataset": "mini",
+    "public_tasks": 200,
+    "references": 200,
+    "source_tasks": 500,
+    "source_references": 500,
+    "datasets": {
+      "full": 500,
+      "mini": 200
+    },
+    "tool_count": 473,
+    "scored_tool_count": 472,
+    "metadata_lookup_tool_count": 1,
+    "graph_tool_count": 472,
+    "embedding_tool_count": 472,
+    "inline_outputs": 5944,
+    "new_model_api_calls": 0
+  },
+  "special100_metric_regressions": {
+    "passed": 52,
+    "scope": "Frozen authoring suite entrypoint and scientific regression checks"
+  },
+  "metric_definition_version": "independent-runtime-answer.v2",
+  "cross_suite_scientific_review": {
+    "mini_definitions_scanned": 200,
+    "full_definitions_scanned": 500,
+    "distance_tasks": 16,
+    "distance_fields": 44,
+    "nonoptimal_partitions_and_inconsistent_statistics_rejected": true,
+    "source": "docs/benchmark_analysis/scoring_validation/metric_definition_review.json"
+  },
+  "authoring_archive": {
+    "path": ".local/archives/scoring_cleanup_20261106_174600/mini_orchestration.tar.gz",
+    "sha256": "94743350ee54d14c4bc13b06977f4bb6ae91d002083937de70c9dcac6c1761f8",
+    "index": "docs/benchmark_analysis/scoring_validation/archive_manifest.json",
+    "local_only": true
   }
 }

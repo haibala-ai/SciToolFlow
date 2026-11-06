@@ -26,6 +26,9 @@ def asset_names(task):
 
 
 def build():
+    metadata=BASE/'metadata.json'
+    if metadata.is_file() and json.loads(metadata.read_text()).get('orchestration_revision'):
+        raise ValueError('Mini has individually reviewed orchestration rules. Historical seed rebuild is disabled; use mini check to validate the released dataset.')
     BASE.mkdir(exist_ok=True);(BASE/'assets').mkdir(exist_ok=True)
     (BASE/'evaluation/trajectories').mkdir(parents=True,exist_ok=True)
     full={r['id']:r for r in read_jsonl(ROOT/'tasks/full/questions.jsonl')}

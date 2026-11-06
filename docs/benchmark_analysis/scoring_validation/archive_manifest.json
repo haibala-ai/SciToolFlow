@@ -1,0 +1,67 @@
+{
+  "schema_version": "scitoolflow.scoring_cleanup.v1",
+  "status": "archived_and_verified",
+  "created_at": "2026-11-06T17:46:09.832096+08:00",
+  "archives": [
+    {
+      "archive": ".local/archives/scoring_cleanup_20261106_174600/mini_orchestration.tar.gz",
+      "archive_sha256": "94743350ee54d14c4bc13b06977f4bb6ae91d002083937de70c9dcac6c1761f8",
+      "archive_bytes": 34107939,
+      "files": 1492,
+      "source_bytes": 561693496,
+      "per_file_content_verified": true
+    },
+    {
+      "archive": "exp/main_scimas/rescore_current/before_definition_fix.tar.gz",
+      "archive_sha256": "b5e8014ebd39d8cf9f2463630ab59186d5700bc4129ab25867b3c132f79a6857",
+      "archive_bytes": 8887286,
+      "files": 43,
+      "source_bytes": 18108131,
+      "per_file_content_verified": true
+    },
+    {
+      "archive": "exp/main_scimas/rescore_current/scoring_snapshot.tar.gz",
+      "archive_sha256": "168b9cddee95e10b6384ea9f041741ce80e0d234a143fa81a50f64ab457ddf78",
+      "archive_bytes": 8782354,
+      "files": 39,
+      "source_bytes": 17540568,
+      "per_file_content_verified": true,
+      "packing_before_reproduction_sha256": "ae4fe1a1424ed944b43e917dc75e0e70298d44686fff6bb1128e02beeb586b54",
+      "reproduction_archive_members_identical": true
+    }
+  ],
+  "full_inventory": ".local/archives/scoring_cleanup_20261106_174600/inventory.json",
+  "active_data": "tasks/mini/evaluation/",
+  "active_scoring": "evaluation/workflow/",
+  "original_experiment_archive_records_preserved": 286,
+  "protected_files": 823,
+  "cleanup_validation": {
+    "status": "passed",
+    "evaluation_tests": 722,
+    "evaluation_subtests": 422,
+    "package": {
+      "package_valid": true,
+      "default_dataset": "mini",
+      "public_tasks": 200,
+      "references": 200,
+      "source_tasks": 500,
+      "source_references": 500,
+      "datasets": {
+        "full": 500,
+        "mini": 200
+      },
+      "tool_count": 473,
+      "scored_tool_count": 472,
+      "metadata_lookup_tool_count": 1,
+      "graph_tool_count": 472,
+      "embedding_tool_count": 472,
+      "inline_outputs": 5944,
+      "new_model_api_calls": 0
+    },
+    "protected_files_verified": 823,
+    "per_task_planning_and_scientific_results_unchanged": 200,
+    "archive_restore_sample": "passed",
+    "snapshot_repack_byte_identity": "passed",
+    "snapshot_original_members_preserved": 39
+  }
+}

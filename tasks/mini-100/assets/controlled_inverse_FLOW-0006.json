@@ -1,0 +1,81 @@
+{
+  "kind": "controlled_debye_plus_dc_study",
+  "observations": [
+    {
+      "omega_rad_s": 100,
+      "epsilon_real": 19.384615384615383,
+      "epsilon_loss_positive": 3.2769230769230773,
+      "role": "train"
+    },
+    {
+      "omega_rad_s": 200,
+      "epsilon_real": 17.79310344827586,
+      "epsilon_loss_positive": 5.617241379310344,
+      "role": "train"
+    },
+    {
+      "omega_rad_s": 500,
+      "epsilon_real": 12.0,
+      "epsilon_loss_positive": 8.04,
+      "role": "train"
+    },
+    {
+      "omega_rad_s": 1000,
+      "epsilon_real": 7.2,
+      "epsilon_loss_positive": 6.42,
+      "role": "train"
+    },
+    {
+      "omega_rad_s": 1500,
+      "epsilon_real": 5.6,
+      "epsilon_loss_positive": 4.8133333333333335,
+      "role": "validation"
+    },
+    {
+      "omega_rad_s": 2500,
+      "epsilon_real": 4.615384615384615,
+      "epsilon_loss_positive": 3.084923076923077,
+      "role": "validation"
+    }
+  ],
+  "candidate_models": [
+    {
+      "id": "tau_1000us_nodc",
+      "tau_s": 0.001,
+      "include_dc": false
+    },
+    {
+      "id": "tau_1000us_dc",
+      "tau_s": 0.001,
+      "include_dc": true
+    },
+    {
+      "id": "tau_2000us_nodc",
+      "tau_s": 0.002,
+      "include_dc": false
+    },
+    {
+      "id": "tau_2000us_dc",
+      "tau_s": 0.002,
+      "include_dc": true
+    },
+    {
+      "id": "tau_4000us_nodc",
+      "tau_s": 0.004,
+      "include_dc": false
+    },
+    {
+      "id": "tau_4000us_dc",
+      "tau_s": 0.004,
+      "include_dc": true
+    }
+  ],
+  "epsilon0_f_m": 8.8541878128e-12,
+  "validation_max_absolute_component_error": 1e-06,
+  "physical_parameter_lower_bounds": {
+    "epsilon_infinity": 0,
+    "relaxation_strength": 0,
+    "dc_loss_rate_per_s": 0
+  },
+  "boundary_policy": "Nonnegative parameters are admissible; no clipping or refitting on validation rows."
+}

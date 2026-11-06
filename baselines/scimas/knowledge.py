@@ -11,6 +11,7 @@ from tools.catalog import ToolCatalog
 from tools.runtime.scope import tool_allowed
 from .task_graph import digest
 from .validation import compatible
+from src.models.embedding_profiles import graph_root, validate_identity
 
 # Share the transport/cache only; the SciToolAgent graph and search policy are not used.
 from baselines.scitoolagent.retrieval import Embeddings, RetrievalError, dot, unit
@@ -19,7 +20,7 @@ from baselines.scitoolagent.retrieval import Embeddings, RetrievalError, dot, un
 class ToolKnowledge:
     def __init__(self, catalog=None, folder=None, embedding=None, allowed=None):
         self.catalog = catalog or ToolCatalog()
-        self.folder = Path(folder or self.catalog.root / "tools/graph/scimas")
+        self.folder = Path(folder or graph_root(self.catalog.root) / "scimas")
         self.manifest = json.loads((self.folder / "manifest.json").read_text())
         self.graph = json.loads((self.folder / "graph.json").read_text())
         raw = (self.folder / "embeddings.json.gz").read_bytes()
@@ -34,6 +35,7 @@ class ToolKnowledge:
         index = json.loads(gzip.decompress(raw))
         if index["identity"] != self.manifest["embedding_identity"]:
             raise ValueError("SciMas vector identity mismatch")
+        validate_identity(index["identity"])
         self.allowed = allowed or tool_allowed
         self.tools = {n: r for n, r in self.graph["tools"].items() if self.allowed(n)}
         dimensions = index["identity"]["dimension"]

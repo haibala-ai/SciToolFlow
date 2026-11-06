@@ -1,0 +1,21 @@
+{
+  "task_id": "SMAS-0022",
+  "library": "pymatgen/spglib",
+  "symbol": "Cmmm",
+  "number": 65,
+  "lattice_lengths": [
+    4.0,
+    0.7280109889280517,
+    6.0
+  ],
+  "lattice_angles": [
+    90.0,
+    90.0,
+    105.94539590092285
+  ],
+  "conventional_cell_angles": [
+    90.0,
+    90.0,
+    90.0
+  ]
+}

@@ -43,6 +43,43 @@ def operand(spec, context):
             value = context[source]
         return pointer(value, spec.get("path", ""))
     operation = spec.get("operation")
+    if operation == 'observed_route_value':
+        # Only absent execution routes may be skipped. A present but malformed
+        # receipt or contradictory independently observed result fails closed.
+        from .schema import _selectors
+        expressions=spec.get('args',[])
+        if not isinstance(expressions,list) or not 1<=len(expressions)<=16:
+            raise MissingEvidence('Observed route values need 1..16 explicit evidence expressions')
+        values=[]
+        def present(expression):
+            if 'source'in expression:
+                return expression.get('node')in context.get('nodes',{})
+            if 'value'in expression:return True
+            children=expression.get('args',[])
+            if expression.get('operation')=='observed_route_value':
+                return any(present(child)for child in children)
+            if expression.get('operation')=='select_if_boolean'and len(children)==3:
+                if not present(children[0]):return False
+                guard=operand(children[0],context)
+                if type(guard)is not bool:return True  # Present but invalid: fail on evaluation.
+                return present(children[1 if guard else 2])
+            if expression.get('operation')=='select_if_text_equal'and len(children)==4:
+                if not all(present(child)for child in children[:2]):return False
+                return present(children[2 if operand(children[0],context)==operand(children[1],context)else 3])
+            return all(present(child)for child in children)
+        for expression in expressions:
+            selectors=list(_selectors(expression))
+            if not selectors or any(s['source'] not in {'node','node_arguments'} for s in selectors):
+                raise MissingEvidence('Route values require executed node evidence; no literal or answer fallback')
+            if not present(expression):
+                continue
+            value=operand(expression,context)
+            if _contains_nonfinite(value) or _json_size(value,context)>2000000:
+                raise MissingEvidence('Observed route value is nonfinite or excessive')
+            values.append(value)
+        if not values or any(not _equal(values[0],v,1e-8,1e-8) for v in values[1:]):
+            raise MissingEvidence('No executed route value, or contradictory scientific route evidence')
+        return values[0]
     if (
         operation in {"array", "scalar_array"}
         and not 1 <= len(spec.get("args", [])) <= 10000
@@ -83,40 +120,31 @@ def operand(spec, context):
         # Only a proven nonapplicable branch may leave its operand unresolved.
         return operand(expressions[1 if guard else 2],context)
     args = [operand(arg, context) for arg in spec.get("args", [])]
+    if operation in {'distance_matrix','optimal_bipartition_profiles','partition_silhouette','partition_adjusted_rand'}:
+        from . import scientific_equivalence
+        arity = {'distance_matrix': 2, 'optimal_bipartition_profiles': 1,
+                 'partition_silhouette': 2, 'partition_adjusted_rand': 2}[operation]
+        if len(args) != arity:
+            raise MissingEvidence('Invalid scientific equivalence expression arity')
+        return getattr(scientific_equivalence, operation)(*args)
     if operation == "finite_ge":
         if len(args)!=2 or not all(_number(v) for v in args):
             raise MissingEvidence("Comparison requires two actual finite numbers")
         return args[0]>=args[1]
-    if operation == "crystal_element_amount":
-        # Inventory aggregation from authenticated parser observations only.
-        # Does not infer missing atoms, normalize a formula or repair occupancy.
-        if len(args)!=2 or not isinstance(args[0],dict) or not isinstance(args[1],str) or not re.fullmatch(r"[A-Z][a-z]?",args[1]):
-            raise MissingEvidence("Crystal amount needs one observed object and element symbol")
-        value,element=args
-        if 'element_amounts' in value:
-            amounts=value['element_amounts']
-            if not isinstance(amounts,dict) or not 1<=len(amounts)<=118 or any(not isinstance(k,str) or not re.fullmatch(r"[A-Z][a-z]?",k) or not _number(v) or v<=0 for k,v in amounts.items()):
-                raise MissingEvidence("Invalid observed element amounts")
-            return amounts.get(element,0.)
-        structure=value.get('structure')
-        sites=structure.get('sites') if isinstance(structure,dict) else None
-        if not isinstance(sites,list) or not 1<=len(sites)<=10000:
-            raise MissingEvidence("Require actual parsed structure sites")
-        amount=0.;entries=0
-        for site in sites:
-            species=site.get('species') if isinstance(site,dict) else None
-            if not isinstance(species,list) or not 1<=len(species)<=118:
-                raise MissingEvidence("Require actual species/occupancy entries")
-            total=0.;seen=set()
-            for row in species:
-                entries+=1
-                if not isinstance(row,dict) or not isinstance(row.get('element'),str) or not re.fullmatch(r"[A-Z][a-z]?",row['element']) or row['element'] in seen or not _number(row.get('occu')) or not 0<row['occu']<=1 or entries>20000:
-                    raise MissingEvidence("Invalid or excessive species inventory")
-                seen.add(row['element']);total+=row['occu']
-                if row['element']==element:amount+=row['occu']
-            if total>1+1e-8:raise MissingEvidence("Overoccupied source site")
-        if not math.isfinite(amount):raise MissingEvidence("Nonfinite source amount")
-        return amount
+    if operation == "crystal_density_inventory":
+        from .crystals import crystal_density_inventory
+        if len(args) != 1:
+            raise MissingEvidence("Density inventory needs one complete observed receipt")
+        return crystal_density_inventory(args[0])
+    if operation in {"crystal_element_amount", "crystal_element_inventory"}:
+        from .crystals import crystal_element_inventory
+        if operation == "crystal_element_inventory":
+            if len(args) != 1:
+                raise MissingEvidence("Crystal inventory needs one observed parser object")
+            return crystal_element_inventory(args[0])
+        if len(args) != 2 or not isinstance(args[1], str) or not re.fullmatch(r"[A-Z][a-z]?", args[1]):
+            raise MissingEvidence("Crystal amount needs an observed object and element symbol")
+        return crystal_element_inventory(args[0]).get(args[1], 0.0)
     if operation == "json_array":
         # Data assembly only: preserve nested JSON values without casts,
         # computation, filtering or evaluation of code supplied in strings.

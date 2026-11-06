@@ -1,0 +1,97 @@
+{
+  "data": [
+    {
+      "case_id": "study",
+      "counts_file": "pasilla_counts.tsv",
+      "metadata_file": "pasilla_metadata.csv",
+      "annotation_file": "annotations_FLOW-0252.json",
+      "contrast": [
+        "condition",
+        "treated",
+        "untreated"
+      ],
+      "design_factors": [
+        "condition",
+        "type"
+      ],
+      "metadata_sample_id_column": "file",
+      "metadata_id_suffix": "fb",
+      "term_ids": [
+        "GO:0005634",
+        "GO:0005737",
+        "GO:0005829",
+        "GO:0005886",
+        "GO:0005773",
+        "GO:0005811"
+      ],
+      "experimental_evidence_codes": [
+        "EXP",
+        "IDA",
+        "IPI",
+        "IMP",
+        "IGI",
+        "IEP",
+        "HTP",
+        "HDA",
+        "HMP",
+        "HGI",
+        "HEP"
+      ],
+      "analysis_policy": "Use all 14599 original genes in the additive condition+type bulk-count model; exact metadata file identities remove suffix fb, not row position. Unshrunk treated/reference log2FC, Wald zero-null testing, Cook filtering on, no independent filtering or count replacement. For this audit, a gene is testable exactly when its log-fold-change coefficient fit converged and its Cook-filtered Wald p-value is finite/non-null; finite p alone does not qualify a nonconverged fit. BH over every gene satisfying this definition. Upregulated point-estimate screen: gene BH q<=0.05 and log2FC>=1 (not a formal minimum-effect test). The set universe is every testable gene, not only annotated or selected genes. Use only non-negated annotations in the declared experimental evidence set; match exact GO IDs, without ontology propagation. Deduplicate gene/term pairs; ignore and report genes outside the universe. For each of the six declared terms test the one-sided overrepresentation tail and apply BH over all six terms, including empty categories. Return all terms at q<=0.05 and all leading q ties within 1e-12.",
+      "claim_scope": "Archived Drosophila observational count and annotation association only; exact-term direct annotations are not all descendants of a GO category, and enrichment is not mechanistic, causal or localization proof. An annotation date newer than the count package is a declared retrospective reannotation, not historical preregistration.",
+      "source_provenance": {
+        "counts": "Bioconductor pasilla 1.40.0, LGPL; original counts and metadata unmodified",
+        "counts_sha256": "ea0dafbfcc600559644cfe7dd5cc8de809d631eb64ba3089aaa25c2fa0954dad",
+        "metadata_sha256": "1844f871ca5d750f41685c73b87bd7dda291ec0d52304c1afb46a17ae88db745",
+        "annotations": {
+          "source_url": "https://current.geneontology.org/annotations/fb.gaf.gz",
+          "sha256": "f3b3ad14a1fd8e86569564d884d53059b7f7c7d3ec973cf2955ffb54c631aad3",
+          "retrieved_utc_date": "2026-10-20",
+          "http_last_modified": "Thu,28May2026 21:18:26GMT",
+          "header": [
+            "!gaf-version: 2.2",
+            "!",
+            "!generated-by: GOC",
+            "!",
+            "!date-generated: 2026-05-21T07:43",
+            "!",
+            "!Header from source association file:",
+            "!=================================",
+            "!",
+            "!generated-by: GOC",
+            "!",
+            "!date-generated: 2026-05-20T10:41",
+            "!",
+            "!Header from fb source association file:",
+            "!=================================",
+            "!generated-by: UniProt",
+            "!date-generated: 2026-04-30 09:24",
+            "!go-version: http://purl.obolibrary.org/obo/go/releases/2026-04-27/extensions/go-plus.ofn",
+            "!=================================",
+            "!",
+            "!Header copied from paint_fb_valid.gaf",
+            "!=================================",
+            "!Created on Mon Jan  5 19:04:15 2026.",
+            "!generated-by: PANTHER",
+            "!date-generated: 2026-01-05",
+            "!PANTHER version: v.19.0.",
+            "!GO version: 2025-10-05.",
+            "!",
+            "!=================================",
+            "!",
+            "!Documentation about this header can be found here: https://github.com/geneontology/go-site/blob/master/docs/gaf_validation.md",
+            "!"
+          ],
+          "license": "GeneOntology annotationdata CC BY4.0;FlyBase datasource attribution required",
+          "documentation": "https://geneontology.org/docs/download-go-annotations/",
+          "scope": "HistoricalDrosophila annotation records for benign archived computational statistics only;no experimental action or sequence design."
+        },
+        "annotation_file_sha256": "e6279755af922188b81af3fc434618b4d48ed98b3cda8897db6f95add5f35cbc"
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Public historical records and/or explicitly disclosed derived audit inputs; source-specific provenance is in the study record. Controlled numerical teaching fixtures make no experimental observation claim.",
+    "new_experimental_claim": false
+  }
+}

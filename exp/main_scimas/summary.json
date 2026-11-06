@@ -1,0 +1,101 @@
+{
+  "schema_version": "scimas.main_experiment.v1",
+  "experiment_id": "deepseek_scimas_mini_20261105_212725_c2",
+  "baseline": "scimas",
+  "dataset": "mini",
+  "model": "deepseek-flash",
+  "generation_endpoint": "https://api.deepseek.com",
+  "started_at": "2026-11-05T13:33:02.350385+00:00",
+  "finished_at": "2026-11-06T01:06:47.028818+00:00",
+  "actor_commit": "d6246dc18bf73f696e6d7551e8c0fb52705b9572",
+  "release_fingerprint": "1046df2c84965b851fb60b24861882b00318789affcec247667ac0391934cfd3",
+  "actor_files_verified_against_commit": 216,
+  "original_score_summary": {
+    "dataset": "mini",
+    "tasks": 200,
+    "runtime_completion_rate": 0.41,
+    "tool_planning_accuracy": 0.35,
+    "answer_accuracy": 0.395
+  },
+  "counts": {
+    "tasks": 200,
+    "completed": 82,
+    "failed": 118,
+    "planning_passed": 70,
+    "answer_passed": 79
+  },
+  "domains": {
+    "Biology": {
+      "tasks": 50,
+      "runtime_completed": 19,
+      "tool_plan_correct": 16,
+      "answer_correct": 18
+    },
+    "Chemical": {
+      "tasks": 50,
+      "runtime_completed": 28,
+      "tool_plan_correct": 23,
+      "answer_correct": 26
+    },
+    "MachineLearning": {
+      "tasks": 50,
+      "runtime_completed": 17,
+      "tool_plan_correct": 14,
+      "answer_correct": 17
+    },
+    "Material": {
+      "tasks": 50,
+      "runtime_completed": 18,
+      "tool_plan_correct": 17,
+      "answer_correct": 18
+    }
+  },
+  "terminal_categories": {
+    "completed": 82,
+    "repeated_action_failure": 6,
+    "initial_planning_limit": 1,
+    "array_path_validation": 1,
+    "embedding_network": 2,
+    "role_protocol_exhausted": 2,
+    "reviewer_result_rejection": 2,
+    "unknown_tool_fatal": 3,
+    "api_remote_protocol": 13,
+    "api_connect_timeout": 73,
+    "local_repair_limit": 8,
+    "planner_stopped": 1,
+    "executor_selection_rejected": 4,
+    "api_read_timeout": 1,
+    "output_token_limit": 1
+  },
+  "recorded_resource_totals": {
+    "scientific_tool_calls": 2380,
+    "discovery_tool_calls": 218,
+    "model_requests": 5308
+  },
+  "recorded_generation_usage": {
+    "model_steps": 5308,
+    "responses_received": 5221,
+    "presend_connection_retries_observed": 13,
+    "known_input_tokens": 108820916,
+    "known_output_tokens": 13085665,
+    "request_errors": 88,
+    "requests_missing_input_usage": 87,
+    "requests_missing_output_usage": 87
+  },
+  "timing_policy": "Original task-metrics.v1 wall-clock timing, including communication delays; no retrospective task-metrics.v2 adjustment.",
+  "interpretation": "Historical pre-reliability-fix run. 89 tasks terminated on communication failures; observed framework and scoring limitations are preserved in diagnostics. Not a post-fix model result.",
+  "archive": {
+    "original_run_files": 259,
+    "original_run_bytes": 908521040,
+    "stored_original_run_bytes": 132858685,
+    "trajectory_count": 200,
+    "tool_output_artifact_files": 46,
+    "all_200_trajectory_hashes_and_prediction_evidence_verified": true,
+    "portable_predictions_authenticated": 200,
+    "portable_prediction_file": "predictions.portable.json"
+  },
+  "new_model_generation_requests": 0,
+  "new_embedding_encoding_requests": 0,
+  "configuration_file": "configuration.json",
+  "code_version_label": "SciMas d6246dc18bf73f696e6d7551e8c0fb52705b9572"
+}

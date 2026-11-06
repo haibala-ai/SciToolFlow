@@ -99,7 +99,9 @@ class TaskGraph:
 
     @classmethod
     def create(cls, task, requirements, plan, catalog, dataset="full"):
-        if dataset not in {"full", "mini", "custom"}:
+        from tasks.datasets import DATASETS
+
+        if dataset not in {*DATASETS, "custom"}:
             raise ValueError("Unknown task namespace")
         return cls(
             public_task(task),
@@ -356,7 +358,7 @@ class TaskGraph:
 
         return evaluate(node["when"])
 
-    def ready(self, results, catalog, *, approved_gates=(), running=()):
+    def ready(self, results, catalog, *, approved_gates=(), running=(), early_stop=True):
         ready = []
         for node in self.plan["nodes"]:
             nid = node["id"]
@@ -365,11 +367,12 @@ class TaskGraph:
                 and results[nid].get("node_sha256") == self.node_identity(nid)
             ):
                 continue
-            if (
-                "for_each" in node
-                or self.condition_state(nid, results, approved_gates=approved_gates)
-                is not True
-            ):
+            state = self.condition_state(nid, results, approved_gates=approved_gates)
+            # Disabling screening permits a *resolved false* predicate, never
+            # unreviewed guards, missing evidence or invalid input contracts.
+            if "for_each" in node or state is None or (early_stop and state is False):
+                continue
+            if not early_stop and not set.union(*node_dependencies(node)) <= results.keys():
                 continue
             try:
                 self.arguments(nid, results, catalog)

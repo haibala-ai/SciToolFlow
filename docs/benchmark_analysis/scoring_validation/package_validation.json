@@ -1,0 +1,19 @@
+{
+  "package_valid": true,
+  "default_dataset": "mini",
+  "public_tasks": 200,
+  "references": 200,
+  "source_tasks": 500,
+  "source_references": 500,
+  "datasets": {
+    "full": 500,
+    "mini": 200
+  },
+  "tool_count": 473,
+  "scored_tool_count": 472,
+  "metadata_lookup_tool_count": 1,
+  "graph_tool_count": 472,
+  "embedding_tool_count": 472,
+  "inline_outputs": 5944,
+  "new_model_api_calls": 0
+}

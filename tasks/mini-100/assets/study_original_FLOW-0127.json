@@ -1,0 +1,57 @@
+{
+  "calibrated_components": [
+    {
+      "id": "L1",
+      "parent": "lactic_acid",
+      "smiles": "C[C@H](O)C(=O)O",
+      "absorbance_per_mmol_l": 0.3,
+      "rotation_lambda01_mdeg_per_mmol_l": -1.0,
+      "rotation_lambda02_mdeg_per_mmol_l": -2.0
+    },
+    {
+      "id": "M1",
+      "parent": "mandelic_acid",
+      "smiles": "O=C(O)[C@H](O)c1ccccc1",
+      "absorbance_per_mmol_l": 0.8,
+      "rotation_lambda01_mdeg_per_mmol_l": -2.0,
+      "rotation_lambda02_mdeg_per_mmol_l": -4.0
+    },
+    {
+      "id": "L2",
+      "parent": "lactic_acid",
+      "smiles": "C[C@@H](O)C(=O)O",
+      "absorbance_per_mmol_l": 0.3,
+      "rotation_lambda01_mdeg_per_mmol_l": 1.0,
+      "rotation_lambda02_mdeg_per_mmol_l": 2.0
+    },
+    {
+      "id": "M2",
+      "parent": "mandelic_acid",
+      "smiles": "O=C(O)[C@@H](O)c1ccccc1",
+      "absorbance_per_mmol_l": 0.8,
+      "rotation_lambda01_mdeg_per_mmol_l": 2.0,
+      "rotation_lambda02_mdeg_per_mmol_l": 4.0
+    }
+  ],
+  "observation": {
+    "total_solute_mass_concentration_mg_l": 256.2305,
+    "achiral_absorbance": 1.0,
+    "rotation_lambda01_mdeg": 0.4,
+    "rotation_lambda02_mdeg": 0.8
+  },
+  "model": "Exactly these four neutral unmodified dissolved component graphs, at one fixed common solvent/temperature/path state. Unknown component molar concentrations are continuous and nonnegative. Total solute mass contains only these components. Use ordinary isotope-averaged molar masses of the complete supplied graphs. Absorbance and both rotations are additive linear sums of the individually calibrated per-mmol/L contributions. Calibrations are exact controlled inputs, not values predicted from R/S labels. No association, reaction, concentration-dependent optical response or additional component occurs.",
+  "reporting_convention": "For the lactic-acid pair define the SIGNED R-minus-S fraction as (c_R-c_S)/(c_R+c_S), separately from an absolute enantiomeric excess. Report globally attainable lower and upper bounds over the complete nonnegative feasible mixture. A net optical signal is not a compound-specific chiral composition.",
+  "provenance": {
+    "kind": "Project-authored exact linear polarimetric/achiral measurement fixture with benign lactic/mandelic reference graphs; the stipulated calibration coefficients are not claimed to be measured optical constants of these chemicals.",
+    "terminology_basis": [
+      {
+        "url": "https://goldbook.iupac.org/terms/view/O04310",
+        "read": "Official indexed definition available through search: optical purity compares a specified enantiomer mixture with a pure enantiomer. Direct page fetch returned403; no full-page reading claimed."
+      },
+      {
+        "url": "https://goldbook.iupac.org/terms/view/E02070",
+        "read": "Official indexed definition and legacy definition excerpt: enantiomeric excess uses the absolute enantiomer fraction difference. Direct page fetch returned403 and legacy page fetch502. The signed R-minus-S fraction here is our explicitly defined target."
+      }
+    ]
+  }
+}

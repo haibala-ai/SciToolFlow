@@ -995,32 +995,32 @@ L 578.965492 541.914937
    <g id="patch_40">
     <path d="M 387.012743 541.914937
 L 411.545974 541.914937
-L 411.545974 540.655491
-L 387.012743 540.655491
+L 411.545974 533.728538
+L 387.012743 533.728538
 z
 " clip-path="url(#pd7151db688)" style="fill: #227c77"/>
    </g>
    <g id="patch_41">
     <path d="M 426.58247 541.914937
 L 451.115702 541.914937
-L 451.115702 510.428787
-L 426.58247 510.428787
+L 451.115702 506.020726
+L 426.58247 506.020726
 z
 " clip-path="url(#pd7151db688)" style="fill: #227c77"/>
    </g>
    <g id="patch_42">
     <path d="M 466.152198 541.914937
 L 490.685429 541.914937
-L 490.685429 470.126515
-L 466.152198 470.126515
+L 490.685429 477.053468
+L 466.152198 477.053468
 z
 " clip-path="url(#pd7151db688)" style="fill: #227c77"/>
    </g>
    <g id="patch_43">
     <path d="M 505.721926 541.914937
 L 530.255157 541.914937
-L 530.255157 523.023247
-L 505.721926 523.023247
+L 530.255157 527.431308
+L 505.721926 527.431308
 z
 " clip-path="url(#pd7151db688)" style="fill: #227c77"/>
    </g>
@@ -1033,16 +1033,16 @@ z
 " clip-path="url(#pd7151db688)" style="fill: #227c77"/>
    </g>
    <g id="text_82">
-    <text style="fill: #243342; font: 10px 'STIXGeneral'; text-anchor: middle" x="399.279358" y="534.485179" transform="rotate(-0 399.279358 534.485179)">2</text>
+    <text style="fill: #243342; font: 10px 'STIXGeneral'; text-anchor: middle" x="399.279358" y="527.558226" transform="rotate(-0 399.279358 527.558226)">13</text>
    </g>
    <g id="text_83">
-    <text style="fill: #243342; font: 10px 'STIXGeneral'; text-anchor: middle" x="438.849086" y="504.258475" transform="rotate(-0 438.849086 504.258475)">50</text>
+    <text style="fill: #243342; font: 10px 'STIXGeneral'; text-anchor: middle" x="438.849086" y="499.850414" transform="rotate(-0 438.849086 499.850414)">57</text>
    </g>
    <g id="text_84">
-    <text style="fill: #243342; font: 10px 'STIXGeneral'; text-anchor: middle" x="478.418814" y="463.956203" transform="rotate(-0 478.418814 463.956203)">114</text>
+    <text style="fill: #243342; font: 10px 'STIXGeneral'; text-anchor: middle" x="478.418814" y="470.883156" transform="rotate(-0 478.418814 470.883156)">103</text>
    </g>
    <g id="text_85">
-    <text style="fill: #243342; font: 10px 'STIXGeneral'; text-anchor: middle" x="517.988542" y="516.852935" transform="rotate(-0 517.988542 516.852935)">30</text>
+    <text style="fill: #243342; font: 10px 'STIXGeneral'; text-anchor: middle" x="517.988542" y="521.260996" transform="rotate(-0 517.988542 521.260996)">23</text>
    </g>
    <g id="text_86">
     <text style="fill: #243342; font: 10px 'STIXGeneral'; text-anchor: middle" x="557.558269" y="533.225733" transform="rotate(-0 557.558269 533.225733)">4</text>
@@ -1260,14 +1260,14 @@ z
    </g>
    <g id="patch_56">
     <path d="M 701.153646 483.760972
-L 862.626896 483.760972
-L 862.626896 500.617194
+L 857.058853 483.760972
+L 857.058853 500.617194
 L 701.153646 500.617194
 z
 " clip-path="url(#p34d46df51c)" style="fill: #227c77"/>
    </g>
    <g id="text_103">
-    <text style="fill: #243342; font: 10px 'STIXGeneral'; text-anchor: start" x="887.543889" y="494.518771" transform="rotate(-0 887.543889 494.518771)">58/65</text>
+    <text style="fill: #243342; font: 10px 'STIXGeneral'; text-anchor: start" x="887.543889" y="494.518771" transform="rotate(-0 887.543889 494.518771)">56/65</text>
    </g>
    <g id="patch_57">
     <path d="M 701.153646 517.473416

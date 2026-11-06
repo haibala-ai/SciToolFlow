@@ -57,6 +57,34 @@
             "type": "string"
           },
           "uniqueItems": true
+        },
+        "useful_work_rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/efficiency_certificate"
+          }
+        },
+        "recovery_rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/efficiency_certificate"
+          }
+        },
+        "disambiguation_rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/efficiency_certificate"
+          }
+        },
+        "recovery_error_types": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "single_route_efficiency": {
+          "type": "boolean"
         }
       },
       "additionalProperties": false
@@ -192,7 +220,14 @@
                 "json_array",
                 "select_if_boolean",
                 "crystal_element_amount",
-                "finite_ge"
+                "finite_ge",
+                "crystal_element_inventory",
+                "crystal_density_inventory",
+                "observed_route_value",
+                "distance_matrix",
+                "optimal_bipartition_profiles",
+                "partition_silhouette",
+                "partition_adjusted_rand"
               ]
             },
             "args": {
@@ -240,7 +275,11 @@
                     "enum": [
                       "array",
                       "scalar_array",
-                      "numeric_rows"
+                      "numeric_rows",
+                      "distance_matrix",
+                      "optimal_bipartition_profiles",
+                      "partition_silhouette",
+                      "partition_adjusted_rand"
                     ]
                   }
                 }
@@ -478,6 +517,13 @@
           "type": "string",
           "minLength": 1
         },
+        "independent_check": {
+          "type": "boolean"
+        },
+        "check_reason": {
+          "type": "string",
+          "minLength": 1
+        },
         "observation_reuse_group": {
           "type": "string",
           "minLength": 1,
@@ -485,7 +531,32 @@
           "description": "Nodes in the same explicit group may independently validate different scientific predicates on one actual observation. Every predicate and strict dependency ordering still applies; calls are charged once. Absent this field, observations cannot be shared across nodes."
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "independent_check": {
+                "const": true
+              }
+            },
+            "required": [
+              "independent_check"
+            ]
+          },
+          "then": {
+            "required": [
+              "check_reason"
+            ],
+            "properties": {
+              "check_reason": {
+                "type": "string",
+                "pattern": "\\S"
+              }
+            }
+          }
+        }
+      ]
     },
     "outcome": {
       "type": "object",
@@ -681,6 +752,105 @@
         "weight": {
           "type": "number",
           "exclusiveMinimum": 0
+        },
+        "branch": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "efficiency_certificate": {
+      "type": "object",
+      "required": [
+        "id",
+        "tools",
+        "input_rules",
+        "output_rules",
+        "max_calls"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "tools": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "statuses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "success",
+              "error",
+              "failed",
+              "timeout",
+              "blocked"
+            ]
+          }
+        },
+        "depends_on": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "before_nodes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Exploration must precede every successful actual receipt matching these source nodes, not merely the selected witness. At least one such receipt is required."
+        },
+        "input_rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/rule"
+          }
+        },
+        "output_rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/rule"
+          }
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/binding"
+          }
+        },
+        "max_calls": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "branch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "error_types": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
         }
       },
       "additionalProperties": false

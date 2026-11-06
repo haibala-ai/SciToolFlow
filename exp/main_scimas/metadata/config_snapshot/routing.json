@@ -1,0 +1,11 @@
+{
+  "recommended_agent_environment": "SciTool-Unified",
+  "recommended_profile": "integrated",
+  "profiles": {
+    "integrated": {
+      "SciTool": "SciTool-Unified",
+      "SciTool-Materials": "SciTool-Unified",
+      "SciTool-MOF": "SciTool-Unified"
+    }
+  }
+}

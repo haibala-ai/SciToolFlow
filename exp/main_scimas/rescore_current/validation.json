@@ -1,0 +1,2225 @@
+{
+  "schema_version": "scitoolflow.historical_mini_rescore.v1",
+  "archive_files_verified": 286,
+  "actor_commit": "d6246dc18bf73f696e6d7551e8c0fb52705b9572",
+  "historical_actor_files_verified": 216,
+  "original_run_fingerprint": "1046df2c84965b851fb60b24861882b00318789affcec247667ac0391934cfd3",
+  "original_predictions_sha256": "732377f132ba08c23740caf89879cfb4133ebbcf342dd3449a7248b2e0ff3f1f",
+  "portable_predictions_sha256": "ac5a1b16c3e2a8bab55f3c647c2337203b2d2f3eef377690203489d7f758105e",
+  "original_archive_manifest_sha256": "ea1480cbe2812c8d4063fb154b93d2c200c41a0ceb52662993e02feee9a5a711",
+  "original_scores_sha256": "291b71f9b7b71079cd4cc62e5acc8d88c1c4ce51bf04c5f09f1e388262542dd5",
+  "current_scoring_revision": "scitoolflow.mini.orchestration.v3",
+  "current_scoring_files_sha256": {
+    "evaluation/integrity/__init__.py": "0b6617622db90b1a3d738dc88e3457acd75e65c2d04a804188330f3c32777223",
+    "evaluation/integrity/files.py": "181083ba76e9ef59acac318066d353d553013b3cde13fdc7e700d1106808d2f1",
+    "evaluation/integrity/mini.py": "22a0aa9f8f0a7afd5a750cfad38a5fa80b625a12070172b99f8020a65177ccea",
+    "evaluation/integrity/package.py": "06c6f1a6ad3297ddb36c73c9e607c3abf59853ebcb3566d6b5e92e9da9f9aa7d",
+    "evaluation/integrity/reference.py": "263b670ac9e462a2100e09e3d6461de95699ee81fbbb3b31194064ff96ba699d",
+    "evaluation/integrity/resources.py": "73dfb66384091868ba38061901dc949b3b4f1c17a67f6f0261d8697c30d85595",
+    "evaluation/integrity/traces.py": "44dbdff132342a4594e23239e29c0ef52ccae0b92dafb776c1fc9d916af799dc",
+    "evaluation/suites/mini.py": "af2675d0763a1b432e1af536dc2cbe4d8ab2402639cfd0ddc2ef8fa7b615d0b6",
+    "evaluation/suites/reference_context.py": "b39bcd1513baebe8b34267c66560faa849fa734f6b086fc686f6927cb1f6fd40",
+    "evaluation/workflow/__init__.py": "1f0df90b2a7714623656a5433272a7dad49c1ecd13b6fc34a313f90616691214",
+    "evaluation/workflow/allocation.py": "645d47f69055f9d65ae2035125dcaf8c8e1d9e8a221603f49b316eec8b893416",
+    "evaluation/workflow/assets.py": "5ce8e005710f035d984f24908a6c155922664c4e0fcd32ace49e8e557715c380",
+    "evaluation/workflow/causality.py": "a96eed259226b53fc8821fa866bed79a7cfe910db46c6d79555e68f4a9d301ae",
+    "evaluation/workflow/constants.py": "cc0faa8cde1588fc8b7be960d678caad43b8cd044b408220d7d2fb94c4c221d8",
+    "evaluation/workflow/contracts.py": "2080aad5157f7e2f0e3a756bd306aecb072945b4033769716433e5dd10c5eab8",
+    "evaluation/workflow/crystals.py": "183a17b42ddad47ea3f02d207a66e68e0277268177ff29af4abe69cb4de644af",
+    "evaluation/workflow/efficiency.py": "8480816c6e02fcfac5663433b2d25199fbd9c954cb8942368b2cdce7f92f3ee4",
+    "evaluation/workflow/engine.py": "93cb37a976796677ca7d9c0d5def7363f13d3d3f2a19427f58c81d229ba40a26",
+    "evaluation/workflow/expressions.py": "1be7038698ac812c7c3cbb7b46298467ca75b4b1c1826643d9191526cc938c62",
+    "evaluation/workflow/literal_evidence.py": "538894cea341ce5ea78f3ce1c8c771d0f89da6820302434297229be01f22f633",
+    "evaluation/workflow/matching.py": "acf302f94b4601cd3de13cf37b8b4265640d4907a2f9be38e5b119dda66dfddb",
+    "evaluation/workflow/method_cover.py": "f4a832dba797f34e07352e19af17d3ae4a6c653754ae1b778622c5c8316ed12e",
+    "evaluation/workflow/numeric_expression.py": "7abe056394c32bc7e5718ca6e6b738a7d1682166640b4f061d4aaeea21a8b6b4",
+    "evaluation/workflow/program_identity.py": "954eae60c82d6b9ed64f1c5c7a8917946d6df4b0e60caa9d30f06933a330ba81",
+    "evaluation/workflow/schema.json": "457cb41da3215561cb4bdc21b7058d6d0696eaef78b842ff61cdb11329331c47",
+    "evaluation/workflow/schema.py": "a92b1b81217957fd84d8dc505d8a7867a348d9483faa082234cd3b1f9948e73a",
+    "evaluation/workflow/scientific_equivalence.py": "91681f51960961456c37777db7050aabd2d1bd87eddcad0571129825092efa5f",
+    "evaluation/workflow/values.py": "4f57eb53199057548e465e5a02bd833e4bf4ff758229460da3981233ef49318e",
+    "evaluation/workflow/witnesses.py": "533d42aa340dabc85eab658af9ab21197117a3dff76e3c6f1e7ac21996419a58",
+    "src/utils/io.py": "12fe7d028dd75f3ecfca1e099f3f5ad0f73780d4034b8c896f0bf562c5d16add",
+    "tasks/datasets.py": "e409a5cd569aa258782c53d792c1b52cde1a1e74404121aea2945e61d202e272",
+    "tasks/schema.py": "dd992c020e8f7278270b4d3b12b61d270494577df12622b831fa700ac8fb64a5",
+    "tools/catalog/catalog.json": "f625636a684fe9dd142852b6b8848d2ac983f8ff908cbab13cb53bad6e7626ca"
+  },
+  "current_release_files_sha256": {
+    "questions.jsonl": "5359ba28d95be2d072dfbb4a3fe0650db8ed637a4c18581753228558a5141935",
+    "metadata.json": "55bb21a2a63d15276f064092930b29c5ba74a8461bab25d044d4407dc5448de9",
+    "selection.json": "2d2143085182867f9482e44b893196a7dce17034ba31575127f1500397c919d3",
+    "evaluation/references.jsonl.gz": "8e4e0276db6618e0505353e8b2598e5a783481146d6d7eddb1ba7ecbfde5308b",
+    "evaluation/orchestration_review.json": "4d7a75e63bb6dea91d1312fc0fda381ab93dc94409e6b3b2eb4763e3a2e55d08"
+  },
+  "historical_run_identity_preserved": true,
+  "production_release_gate_changed": false,
+  "new_model_calls": 0,
+  "new_scientific_tool_calls": 0,
+  "llm_judge_used": false,
+  "resource_timing_policy": "Use original authenticated task-resources.v1 ledger; no counterfactual retiming",
+  "historical_public_task_changes": [
+    {
+      "id": "SMAS-0001",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "b02175112124caf254a9a78060e217e92d6a9971997a892640924f779a67fc59",
+      "current_public_task_sha256": "b02175112124caf254a9a78060e217e92d6a9971997a892640924f779a67fc59",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0002",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "113227e24a4a0cf3960d8a53c5494bdd703b07826bf2e000c8b36ab2f7f82278",
+      "current_public_task_sha256": "113227e24a4a0cf3960d8a53c5494bdd703b07826bf2e000c8b36ab2f7f82278",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0003",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "5f303cc02c480ebbe19be0b37fc4276c62eff97e72a7e268acd50cb9b6140bd4",
+      "current_public_task_sha256": "5f303cc02c480ebbe19be0b37fc4276c62eff97e72a7e268acd50cb9b6140bd4",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0004",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "60e6da916923472bd9b1ff898d3bd8f696dde7dca652f8d949aaaa54aa629cbf",
+      "current_public_task_sha256": "60e6da916923472bd9b1ff898d3bd8f696dde7dca652f8d949aaaa54aa629cbf",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0005",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "a873728f7c20e3c9d73141bd60334a72a97add0d4799ebe657d733dfe53ed707",
+      "current_public_task_sha256": "a873728f7c20e3c9d73141bd60334a72a97add0d4799ebe657d733dfe53ed707",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0006",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "b033bd9fc66b66001ede5d8ab98db45ca4f15068056390662c50c39f797cc7cb",
+      "current_public_task_sha256": "b033bd9fc66b66001ede5d8ab98db45ca4f15068056390662c50c39f797cc7cb",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0007",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "bc605824a6f6ff15e9c8edd5d6b11d402d00a194fb89b39844042972b00e8d00",
+      "current_public_task_sha256": "bc605824a6f6ff15e9c8edd5d6b11d402d00a194fb89b39844042972b00e8d00",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0008",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "dc839ef32293c247000cf1543900471f0452de4a64378263ec86796065ba3636",
+      "current_public_task_sha256": "dc839ef32293c247000cf1543900471f0452de4a64378263ec86796065ba3636",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0009",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "c716957f6f738bcdc250d06deac00ea679013d2282c7a2fcc798788e6eefaf1b",
+      "current_public_task_sha256": "c716957f6f738bcdc250d06deac00ea679013d2282c7a2fcc798788e6eefaf1b",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0010",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "f182e7eeae99dea482bd94c096fe2ba342bc2475023feb741b40ab97ec7d393e",
+      "current_public_task_sha256": "f182e7eeae99dea482bd94c096fe2ba342bc2475023feb741b40ab97ec7d393e",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0011",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "b7c4a3ddf15eb355eba33dc8efa2dabcd301c0657382a80de4f9179b89161532",
+      "current_public_task_sha256": "b7c4a3ddf15eb355eba33dc8efa2dabcd301c0657382a80de4f9179b89161532",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0012",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "17eda53420dc9f71a6579232e38a9d671dd894882d6c3088597bb06943ba993a",
+      "current_public_task_sha256": "17eda53420dc9f71a6579232e38a9d671dd894882d6c3088597bb06943ba993a",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0013",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "72755ffdd6391d7141779eea2ef24b8f515065de4748a13f41bfc45e550d75a5",
+      "current_public_task_sha256": "72755ffdd6391d7141779eea2ef24b8f515065de4748a13f41bfc45e550d75a5",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0014",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "7e76e5e5dc27c59330a2d0f99128b740cd66dcf06a769bf723b8407cda9074e9",
+      "current_public_task_sha256": "7e76e5e5dc27c59330a2d0f99128b740cd66dcf06a769bf723b8407cda9074e9",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0015",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "0490fbedca7c5566241c280ed9567770041dda27984e469e269e11825c491744",
+      "current_public_task_sha256": "0490fbedca7c5566241c280ed9567770041dda27984e469e269e11825c491744",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0016",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "fb4f7a0a2f65601e600432ea04fe24e93caf047c2926839de513c0f04ee0a4d1",
+      "current_public_task_sha256": "fb4f7a0a2f65601e600432ea04fe24e93caf047c2926839de513c0f04ee0a4d1",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0017",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "4122f578fd7c7f9d6fa558d31db96a916e6b04bc7b8349d486574a15d5b0993e",
+      "current_public_task_sha256": "4122f578fd7c7f9d6fa558d31db96a916e6b04bc7b8349d486574a15d5b0993e",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0018",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "14433ec9d9f96d7c15ed8bdecd9745495a6cf76a39b35e730788440436f1ce2d",
+      "current_public_task_sha256": "14433ec9d9f96d7c15ed8bdecd9745495a6cf76a39b35e730788440436f1ce2d",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0019",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "f490699e5c02d43959c8dffc9f0375b25ce806c4f21fd94d689bb44bcd5a70ba",
+      "current_public_task_sha256": "f490699e5c02d43959c8dffc9f0375b25ce806c4f21fd94d689bb44bcd5a70ba",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0020",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "1da838df192747de38a6a38ea1c32e26050117817cb12f5f83ed59bdaf2cd33a",
+      "current_public_task_sha256": "1da838df192747de38a6a38ea1c32e26050117817cb12f5f83ed59bdaf2cd33a",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0021",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "b812e4087d1df2ac9c02d9eee662968490375e04add400f309541fcba96e67b3",
+      "current_public_task_sha256": "b812e4087d1df2ac9c02d9eee662968490375e04add400f309541fcba96e67b3",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0022",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "47f9391e0ca59a1a38391b64e5ebd02b6c65df5c66d744bf8a0e05a475a3040d",
+      "current_public_task_sha256": "47f9391e0ca59a1a38391b64e5ebd02b6c65df5c66d744bf8a0e05a475a3040d",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0023",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "79cc3eb95686127a20622481356a3b9af259c2832cb82151ba0b0bf36528589a",
+      "current_public_task_sha256": "79cc3eb95686127a20622481356a3b9af259c2832cb82151ba0b0bf36528589a",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0024",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "b8bc09a8324b3ef3ee54089ee361dde743edf276acc5dc347a7cbb75984e91bf",
+      "current_public_task_sha256": "b8bc09a8324b3ef3ee54089ee361dde743edf276acc5dc347a7cbb75984e91bf",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0025",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "88b8069d5070bd8577626515433406401e576f15f6d7c7c230f24f9f3a28ddb5",
+      "current_public_task_sha256": "88b8069d5070bd8577626515433406401e576f15f6d7c7c230f24f9f3a28ddb5",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0026",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "588ebb83447f63f333602b7280d751d44cd542a1ff260cb0cc1d254a9055cbda",
+      "current_public_task_sha256": "588ebb83447f63f333602b7280d751d44cd542a1ff260cb0cc1d254a9055cbda",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0027",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "fb3b1d638171b9f1b3e4969b6e32be1aa9c0dc7c436c79c9da06edc61860eac8",
+      "current_public_task_sha256": "b5f2741f08306be0c3f0168d6b59a27c136c396154c73eb86596aeb20315771c",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/tree_patristic_distances",
+        "/answer_schema/properties/traits_distances",
+        "/answer_schema/properties/composition_distances"
+      ]
+    },
+    {
+      "id": "SMAS-0028",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "539eff577fb32130463e69228981faaeed81b8bbebf106656d581703362fe9f3",
+      "current_public_task_sha256": "b64a99da7d0c5010f6142b9edd826f8336d46d52bd1f4f63e18016e4bdd27966",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/before_plot_interval",
+        "/answer_schema/properties/after_plot_interval",
+        "/answer_schema/properties/change_plot_interval"
+      ]
+    },
+    {
+      "id": "SMAS-0029",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "2a4562822f02ee8c436752c1ff1c65c7d9ca3a20ddac59e49603b14801173ef1",
+      "current_public_task_sha256": "7cd8464df55d67a30179e673ab978991a282d13d6dc871f28add24def4588284",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/abundance_distances",
+        "/answer_schema/properties/presence_distances",
+        "/answer_schema/properties/conditions_distances"
+      ]
+    },
+    {
+      "id": "SMAS-0030",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "7fb6ab898b2f05bfbe8442f3863cb597bc7b028bf36f031f991407ffec65eb5b",
+      "current_public_task_sha256": "7c156032d49bb17786134260c5560330e85409c245eaac3ca109e37744767091",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/raw_distances",
+        "/answer_schema/properties/relative_distances"
+      ]
+    },
+    {
+      "id": "SMAS-0031",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "db3ef43d8d1f729b656e1883682815ed64f2f8de4fcb7fe6f26425985d6f2f9e",
+      "current_public_task_sha256": "9812dd8934d5c885474a6ee047b2db9e0dac3d804516eab7b12e6a12222aa0e4",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/guild_distances",
+        "/answer_schema/properties/environment_distances",
+        "/answer_schema/properties/cityblock_distances"
+      ]
+    },
+    {
+      "id": "SMAS-0032",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "02e2d0ae64cec82f818c49c31dc089156ded0b50f2ec3283b80cd06c2ba0b59c",
+      "current_public_task_sha256": "3a2b9a1bfa9fa5ffef928e0ddae476a1e8a0e1eb4393f8453c0f15b58f2dedca",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/root1_patristic_distances",
+        "/answer_schema/properties/root2_patristic_distances",
+        "/answer_schema/properties/root1_root_to_tip_lengths",
+        "/answer_schema/properties/root2_root_to_tip_lengths",
+        "/answer_schema/properties/traits_distances"
+      ]
+    },
+    {
+      "id": "SMAS-0033",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "4b2655e07a5a4d71b34b5bb25392e7f73464050b03489cea78d781978687f111",
+      "current_public_task_sha256": "f1832c311baa1b894fe3c2cf43ecee4a3d96516f8ec0ac4ce4b698a703c70140",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/geography_distances",
+        "/answer_schema/properties/soil_distances",
+        "/answer_schema/properties/composition_distances"
+      ]
+    },
+    {
+      "id": "SMAS-0034",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "18739f906837d9eb2369d0cdf67e8c8457f9715d09905e24ddfb7a33c6d41cb7",
+      "current_public_task_sha256": "b335b211e6d60d5870b45839582422ee7122798822474abef6ee856476179f4d",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/counts_distances",
+        "/answer_schema/properties/presence_distances"
+      ]
+    },
+    {
+      "id": "SMAS-0035",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "0fc6656dbbd832cf0e8faa1298d804bd7e0b8fa8a437ce73ebeeb2d11b8f9a37",
+      "current_public_task_sha256": "0fc6656dbbd832cf0e8faa1298d804bd7e0b8fa8a437ce73ebeeb2d11b8f9a37",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0036",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "10bd3c5dfb4dca2732cae8b39bab69317053f23a4f87c7c5d024c9a5995e2676",
+      "current_public_task_sha256": "10bd3c5dfb4dca2732cae8b39bab69317053f23a4f87c7c5d024c9a5995e2676",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0037",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "fec83544954955a14880172bcd10adedba710f63e06515b1a06b55f3ccb2641b",
+      "current_public_task_sha256": "fec83544954955a14880172bcd10adedba710f63e06515b1a06b55f3ccb2641b",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0038",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "2b1a90ff3a40f34deb5741028c03c832ee725bfb08e82e04a5864587fda0df7e",
+      "current_public_task_sha256": "2b1a90ff3a40f34deb5741028c03c832ee725bfb08e82e04a5864587fda0df7e",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0039",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "3a51983c489cbb9faf8a9c49bc14695f45329efbdfa65d674e1f95f5eb4b95c1",
+      "current_public_task_sha256": "3a51983c489cbb9faf8a9c49bc14695f45329efbdfa65d674e1f95f5eb4b95c1",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0040",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "bf9b65d40842d01bb107e55d019ea50b73f91cb963d85e0f18f423f107e188a1",
+      "current_public_task_sha256": "bf9b65d40842d01bb107e55d019ea50b73f91cb963d85e0f18f423f107e188a1",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0041",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "68ff169459e3ecc791a5a841191687cfcf8e57ae50d6fedd889908d8ae6643df",
+      "current_public_task_sha256": "68ff169459e3ecc791a5a841191687cfcf8e57ae50d6fedd889908d8ae6643df",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0042",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "0f42fee993b405c2a72c7b39c14ce5280c1a7c77a031c94ac92ae8a6d7884911",
+      "current_public_task_sha256": "0f42fee993b405c2a72c7b39c14ce5280c1a7c77a031c94ac92ae8a6d7884911",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0043",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "7442f76f2ae65dc63e3f1af16eb65af734f923d5b44891b1fa8f9ef349173cec",
+      "current_public_task_sha256": "7442f76f2ae65dc63e3f1af16eb65af734f923d5b44891b1fa8f9ef349173cec",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0044",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "0015b5b6077e0b20073e7cbfe78fadbee42be486409e0cab03f402815a08c941",
+      "current_public_task_sha256": "0015b5b6077e0b20073e7cbfe78fadbee42be486409e0cab03f402815a08c941",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0045",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "18489e3e9107ed3fd50138f42c296ff5a074d33f155577b2005c54a78c335acf",
+      "current_public_task_sha256": "18489e3e9107ed3fd50138f42c296ff5a074d33f155577b2005c54a78c335acf",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0046",
+      "changed_public_fields": [
+        "answer_schema",
+        "question"
+      ],
+      "historical_public_task_sha256": "cf6ab16e25a752810a88d10101f46b79c1ec4fa6a1925684f0aa5022e912bd28",
+      "current_public_task_sha256": "71a9a2637359bf8a932e229f8a52e60c8fceee3f52ab62ff551cd5f979404e27",
+      "question_changed": true,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/question"
+      ]
+    },
+    {
+      "id": "SMAS-0047",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "8f302bfcd9a978ca9ac3339b0bf7deb094129a48180db59f0355fea337b66cd3",
+      "current_public_task_sha256": "8f302bfcd9a978ca9ac3339b0bf7deb094129a48180db59f0355fea337b66cd3",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0048",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "52612fe172d2b6100d906cad637be563970f1923fb33d28cf1b1da83ca70d632",
+      "current_public_task_sha256": "52612fe172d2b6100d906cad637be563970f1923fb33d28cf1b1da83ca70d632",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0049",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "beac1a873183e20fdbf9dbb25e89fc6e78c8d544f499bf15eb321a7d55c2a1e0",
+      "current_public_task_sha256": "beac1a873183e20fdbf9dbb25e89fc6e78c8d544f499bf15eb321a7d55c2a1e0",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0050",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "4a76231fa7ba0e1bfeedbfabfec2dd07f50bd5afaa7ea46877768265c8a339b4",
+      "current_public_task_sha256": "4a76231fa7ba0e1bfeedbfabfec2dd07f50bd5afaa7ea46877768265c8a339b4",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0051",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "7e03fd34b01ba4e00f015be3ee83cca301cea48491606b69e541be6a8c6e2654",
+      "current_public_task_sha256": "7e03fd34b01ba4e00f015be3ee83cca301cea48491606b69e541be6a8c6e2654",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0052",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "707a94b25011f92088460360f4cd39c5faaa3fbe4df60ebaae3ea90fd349048b",
+      "current_public_task_sha256": "707a94b25011f92088460360f4cd39c5faaa3fbe4df60ebaae3ea90fd349048b",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0053",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "7ee4cf3203436227e87b62cd63bb5daed6eef06badaa5c17c4c01cfa33fef334",
+      "current_public_task_sha256": "7ee4cf3203436227e87b62cd63bb5daed6eef06badaa5c17c4c01cfa33fef334",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0054",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "3e9118b06fd31f6db0c81199b250b5bc8cf9dda50bf08fe3262be530fd79ac31",
+      "current_public_task_sha256": "3e9118b06fd31f6db0c81199b250b5bc8cf9dda50bf08fe3262be530fd79ac31",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0055",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "1dfc7c01dcc9d8528d8880c997a6cedcab902901aaaabd880d5b2b537037b60d",
+      "current_public_task_sha256": "1dfc7c01dcc9d8528d8880c997a6cedcab902901aaaabd880d5b2b537037b60d",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0056",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "20147e47f212590d2f83825de1b095c9f3a7321f676b2850eda5c45cb28b8ae8",
+      "current_public_task_sha256": "20147e47f212590d2f83825de1b095c9f3a7321f676b2850eda5c45cb28b8ae8",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0057",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "02451c96f7ee4a1e6a94c743b029312b84c32759cb1d636196824ddb433b71e7",
+      "current_public_task_sha256": "02451c96f7ee4a1e6a94c743b029312b84c32759cb1d636196824ddb433b71e7",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0058",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "3b11fbcac76edc15204b977023d95b87a6566636a03dbbbe79167a9643a03896",
+      "current_public_task_sha256": "3b11fbcac76edc15204b977023d95b87a6566636a03dbbbe79167a9643a03896",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0059",
+      "changed_public_fields": [
+        "question"
+      ],
+      "historical_public_task_sha256": "7958cb85b1dd15c022c1c60467132176c31b4a290b42164dae45253e83682992",
+      "current_public_task_sha256": "76d9485c55deee3e3cec3b3a3ac0ffef7f3f854479fe710dc66df0dde635496c",
+      "question_changed": true,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/question"
+      ]
+    },
+    {
+      "id": "SMAS-0060",
+      "changed_public_fields": [
+        "question"
+      ],
+      "historical_public_task_sha256": "777c8abcbb72b52ef60e62d9896a9b6fc450ffa674bda99fae29916987af5807",
+      "current_public_task_sha256": "1f25325267270c6d7bc79451eff1af0adffb6efa033da63edb06190d87ac24fa",
+      "question_changed": true,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/question"
+      ]
+    },
+    {
+      "id": "SMAS-0061",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "d0ca7d371e79e09b9722664e2a49147f843d526a3f4cd7feba01d9addfb64e49",
+      "current_public_task_sha256": "d0ca7d371e79e09b9722664e2a49147f843d526a3f4cd7feba01d9addfb64e49",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0062",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "30721e248930dc599436ed4b8a34c43d66a9993a0c4f2299e98e99a17a23d3be",
+      "current_public_task_sha256": "30721e248930dc599436ed4b8a34c43d66a9993a0c4f2299e98e99a17a23d3be",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0063",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "46a7c2e2728dabdd02aff1fdea00a85d482ed3953c3dfd5bc16f3e703b5a1b6a",
+      "current_public_task_sha256": "46a7c2e2728dabdd02aff1fdea00a85d482ed3953c3dfd5bc16f3e703b5a1b6a",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0064",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "74c438c0108e2c3bcbc42db975794ccedc2f17d9fb0271dcf7125a746139dbf3",
+      "current_public_task_sha256": "74c438c0108e2c3bcbc42db975794ccedc2f17d9fb0271dcf7125a746139dbf3",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0065",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "c6f91f0012a552f07151ec54202aa5b7df743479610cff1a7d241ef34aefcd17",
+      "current_public_task_sha256": "c6f91f0012a552f07151ec54202aa5b7df743479610cff1a7d241ef34aefcd17",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0066",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "634fe24a5da947fe4e481b27328b0f2481b616b78d9931b7f5b9270a3e66d4eb",
+      "current_public_task_sha256": "634fe24a5da947fe4e481b27328b0f2481b616b78d9931b7f5b9270a3e66d4eb",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0067",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "ebec9c715a0c31136ec6cd5ea7e96234f161737efee3762c353a437ee22e1a7e",
+      "current_public_task_sha256": "ebec9c715a0c31136ec6cd5ea7e96234f161737efee3762c353a437ee22e1a7e",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0068",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "86eef4d517cfcc36b59e2af37230ce074096ab28178c0e49c7394a743c313b3e",
+      "current_public_task_sha256": "86eef4d517cfcc36b59e2af37230ce074096ab28178c0e49c7394a743c313b3e",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0069",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "b56223f899295729b55bc765d0f9e6d40c8678b60eef54b7eb1bd75f1e13a94d",
+      "current_public_task_sha256": "b56223f899295729b55bc765d0f9e6d40c8678b60eef54b7eb1bd75f1e13a94d",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0070",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "cad163bc1aab193682c81558e01327310a926ea04c588ab6d1b0d2aaee2562f0",
+      "current_public_task_sha256": "cad163bc1aab193682c81558e01327310a926ea04c588ab6d1b0d2aaee2562f0",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0071",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "3f7bb02f30e903f2175bc5f65590d6936309d4d1dab7c5172d1d0339317847f0",
+      "current_public_task_sha256": "3f7bb02f30e903f2175bc5f65590d6936309d4d1dab7c5172d1d0339317847f0",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0072",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "b8f27ef8b0326a85a22c9c7cfd26dca0fe9119e26bd390f73b32fdd2245689d7",
+      "current_public_task_sha256": "b8f27ef8b0326a85a22c9c7cfd26dca0fe9119e26bd390f73b32fdd2245689d7",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0073",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "46f71a500eebbd715d36fcf308d419af30aab8fc2036ce2768b217f147826f4b",
+      "current_public_task_sha256": "46f71a500eebbd715d36fcf308d419af30aab8fc2036ce2768b217f147826f4b",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0074",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "46078a800508f488a718658dbc1a951ae7bfa0c7be6277ba29cbb94eadaeaa1b",
+      "current_public_task_sha256": "46078a800508f488a718658dbc1a951ae7bfa0c7be6277ba29cbb94eadaeaa1b",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0075",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "4ad240a48e80e3a3c0d8f7a9b2d851de1d558219bc2f493807b7c24d1aad1621",
+      "current_public_task_sha256": "4ad240a48e80e3a3c0d8f7a9b2d851de1d558219bc2f493807b7c24d1aad1621",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0076",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "ef7b695d12786a6c5114d5c466d7c57e333f52f1490187bb13f615a8e6f5b874",
+      "current_public_task_sha256": "18c9a040c19f2049835c20bf9e860ddc1b6a58c42c9bbfa88d46d993a49f011e",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/D_bray",
+        "/answer_schema/properties/D_jaccard",
+        "/answer_schema/properties/D_hellinger",
+        "/answer_schema/properties/gram_bray",
+        "/answer_schema/properties/gram_jaccard",
+        "/answer_schema/properties/gram_hellinger",
+        "/answer_schema/properties/spectrum_bray",
+        "/answer_schema/properties/spectrum_jaccard",
+        "/answer_schema/properties/spectrum_hellinger"
+      ]
+    },
+    {
+      "id": "SMAS-0077",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "2178950d6be07e1e55d110942cc62410415edd4f439268cb6dd00f59a1126feb",
+      "current_public_task_sha256": "2178950d6be07e1e55d110942cc62410415edd4f439268cb6dd00f59a1126feb",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0078",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "a3a1f0a6b634bbce119b1c34eb3d249b3b06ed14169eb1e7e1af202166ae4490",
+      "current_public_task_sha256": "4cc0a69d318415f24c012218b6f04b3ad89d0a4a169fb12380a8a72cd19b410a",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/patristic_a",
+        "/answer_schema/properties/patristic_b",
+        "/answer_schema/properties/patristic_c",
+        "/answer_schema/properties/raw_trait_distances",
+        "/answer_schema/properties/standardized_trait_distances"
+      ]
+    },
+    {
+      "id": "SMAS-0079",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "72d6ea50ab0f4b35b9c9b72a53cc3dd4fc7117abad879d936256f5ad54eeaf36",
+      "current_public_task_sha256": "72d6ea50ab0f4b35b9c9b72a53cc3dd4fc7117abad879d936256f5ad54eeaf36",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0080",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "e6e59fd45967dcfe24df218a41181bacd957d1d24ae9d6375698a4c29c4a9228",
+      "current_public_task_sha256": "e6e59fd45967dcfe24df218a41181bacd957d1d24ae9d6375698a4c29c4a9228",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0081",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "1847ca11d43d4a9633a2d8c471cf5e6f0769dcf3033bf4a5edd33c5d7f4bd5bd",
+      "current_public_task_sha256": "1847ca11d43d4a9633a2d8c471cf5e6f0769dcf3033bf4a5edd33c5d7f4bd5bd",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0082",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "028fbaa047eaef203b02247a9dd5fcbf442309fd5b8dd30ed6f91fdb58ab630b",
+      "current_public_task_sha256": "028fbaa047eaef203b02247a9dd5fcbf442309fd5b8dd30ed6f91fdb58ab630b",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0083",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "a4a6154da795bb9963c58af633ba1048fe98af6d3afc06e7e4ab4b5147944311",
+      "current_public_task_sha256": "85722bdb74da2996e7feb7e1ba953519a538a35bec0467b353a7cc387ab88bbb",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/core_a",
+        "/answer_schema/properties/core_b",
+        "/answer_schema/properties/core_c",
+        "/answer_schema/properties/within_core_a",
+        "/answer_schema/properties/within_core_b",
+        "/answer_schema/properties/within_core_c",
+        "/answer_schema/properties/core_rmsd"
+      ]
+    },
+    {
+      "id": "SMAS-0084",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "b9721f0a2da51ba89d076e605ed2aa4a05bab3a85e7c0f5c47b73de82fc00635",
+      "current_public_task_sha256": "b9721f0a2da51ba89d076e605ed2aa4a05bab3a85e7c0f5c47b73de82fc00635",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0085",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "a460a1457ceb93d0d6288e631a793d0fcd481db3a654b38c96564a135afdee8a",
+      "current_public_task_sha256": "a460a1457ceb93d0d6288e631a793d0fcd481db3a654b38c96564a135afdee8a",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0086",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "91af2d6b7e992d656ce272ffeb6e51bef919882561596e4c7f4b17c0b3ea5c59",
+      "current_public_task_sha256": "91af2d6b7e992d656ce272ffeb6e51bef919882561596e4c7f4b17c0b3ea5c59",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0087",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "72ce6caee362b33eecddf0830426bd930801ea0981798e73962ae08c59ef9d03",
+      "current_public_task_sha256": "72ce6caee362b33eecddf0830426bd930801ea0981798e73962ae08c59ef9d03",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0088",
+      "changed_public_fields": [
+        "question"
+      ],
+      "historical_public_task_sha256": "ac870b1c967e8d13f29721678a1132c24f045f4326353d9c5d6591cb6f9c7218",
+      "current_public_task_sha256": "e7aa28674f20a7b6a3e835b0bf08c9faf7d69da50f0ab722ca124f0c7d81cc27",
+      "question_changed": true,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/question"
+      ]
+    },
+    {
+      "id": "SMAS-0089",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "c61a35d702f86828bfd891c082eedd0fe500fa5ed59dc4773f17bcba34109caf",
+      "current_public_task_sha256": "c61a35d702f86828bfd891c082eedd0fe500fa5ed59dc4773f17bcba34109caf",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0090",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "a4995b5e854ac07e452f3cf3d9f9b7ba0a3dbe860757b1a7380c3dac1148c78d",
+      "current_public_task_sha256": "76b7bc2a68626caf0cfad97df9b087f2d81f6c434e840b9420cf8a45347c04f1",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/projector"
+      ]
+    },
+    {
+      "id": "SMAS-0091",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "72df81ab67f4f8dc5f23885c0d66ae898c61d7e681f5b20669f76ad283c1ea3d",
+      "current_public_task_sha256": "72df81ab67f4f8dc5f23885c0d66ae898c61d7e681f5b20669f76ad283c1ea3d",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0092",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "4b6e29cfaf17a713b8d799038f96789e246ff97a09652bf85ebacfc243327f90",
+      "current_public_task_sha256": "4b6e29cfaf17a713b8d799038f96789e246ff97a09652bf85ebacfc243327f90",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0093",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "0c3fc5e434807ff20e5fa4b1d1325a99e4d89312a5d743781067df77354c38e0",
+      "current_public_task_sha256": "e4d00a63fa5df69a364afbf2f3c9a67514607ed1862eddcdeec15aa4d85761e8",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/max_distribution",
+        "/answer_schema/properties/observed_standardized",
+        "/answer_schema/properties/p_values"
+      ]
+    },
+    {
+      "id": "SMAS-0094",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "ad07b179ceeb86d0c500cefc1d5b088eefb1ad28977ad62d124bedeeb23bdf07",
+      "current_public_task_sha256": "6dc2e79963a1ece0244f93cdccf4773c47c6b5a09c85aad71d884cf022979a80",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/cohort_mse",
+        "/answer_schema/properties/worst_risks",
+        "/answer_schema/properties/nominal_risks",
+        "/answer_schema/properties/witness_risks"
+      ]
+    },
+    {
+      "id": "SMAS-0095",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "f577851ecdfb9605f2db9647df4972a134472f404a92c559b7b349a813c83159",
+      "current_public_task_sha256": "f577851ecdfb9605f2db9647df4972a134472f404a92c559b7b349a813c83159",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0096",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "6978a04f63ca3bf1702d69ca5bcf7cbade1cea6793a8adfb2df8374a5400ef4d",
+      "current_public_task_sha256": "6c96a6095173ac325cd4a6e9445ccca10232d86821597e47b8ba598ba9fbe934",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/pairwise_counts",
+        "/answer_schema/properties/joint_counts",
+        "/answer_schema/properties/correlation_pairwise",
+        "/answer_schema/properties/correlation_joint",
+        "/answer_schema/properties/eigen_pairwise",
+        "/answer_schema/properties/eigen_joint"
+      ]
+    },
+    {
+      "id": "SMAS-0097",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "d52e4a87460ea53d53be767abaa9a8c89aa759e8e5125f633aa6c523ffbc98c2",
+      "current_public_task_sha256": "d52e4a87460ea53d53be767abaa9a8c89aa759e8e5125f633aa6c523ffbc98c2",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0098",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "b8bcb69ad026a0cfd4b77cbdaa76c664de5937c540a848b8838e86b83b6eedb6",
+      "current_public_task_sha256": "4c7b092df8b7805d77b7518ab2dcf6cc74a66412c215f520e790b62d3160b6af",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/P2",
+        "/answer_schema/properties/P4",
+        "/answer_schema/properties/P8",
+        "/answer_schema/properties/P16",
+        "/answer_schema/properties/stationary",
+        "/answer_schema/properties/stationary_check",
+        "/answer_schema/properties/dist4_a",
+        "/answer_schema/properties/dist4_b",
+        "/answer_schema/properties/dist4_c",
+        "/answer_schema/properties/dist16_a",
+        "/answer_schema/properties/dist16_b",
+        "/answer_schema/properties/dist16_c"
+      ]
+    },
+    {
+      "id": "SMAS-0099",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "ed5f766ecdf5dad9546e2e6cec1db4d1dd30a626a76bcb096a5d1ab14e530b38",
+      "current_public_task_sha256": "6d4eb4ad987b73653743abb0d41abc0296df4d8706eee035f21c58e81abd872c",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/bounds_a",
+        "/answer_schema/properties/bounds_b",
+        "/answer_schema/properties/bounds_c",
+        "/answer_schema/properties/vertex_bounds_a",
+        "/answer_schema/properties/vertex_bounds_b",
+        "/answer_schema/properties/vertex_bounds_c"
+      ]
+    },
+    {
+      "id": "SMAS-0100",
+      "changed_public_fields": [
+        "answer_schema"
+      ],
+      "historical_public_task_sha256": "89cff6de23b2c5be7cb79de93f5257e0d2c5b9ddcc0a3b5c213ac1f84d03c35c",
+      "current_public_task_sha256": "011dc68f9f0257bada05a44289ddd6e75eaf09094eae1d39a0d3f4e39ddd09c8",
+      "question_changed": false,
+      "answer_contract_changed": true,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": [
+        "/answer_schema/properties/smoothed",
+        "/answer_schema/properties/gradient_a",
+        "/answer_schema/properties/gradient_b",
+        "/answer_schema/properties/gradient_c"
+      ]
+    },
+    {
+      "id": "SMAS-0101",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "273691497944ab0586d72fa4369eef2b2f3faf231fd88811001626b0eecfcf8e",
+      "current_public_task_sha256": "273691497944ab0586d72fa4369eef2b2f3faf231fd88811001626b0eecfcf8e",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0102",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "5bce47a57ab70fc77023b479c0df16b67a4614082da32d6513a6080e0eb92fc9",
+      "current_public_task_sha256": "5bce47a57ab70fc77023b479c0df16b67a4614082da32d6513a6080e0eb92fc9",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0103",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "cbca17e66aa7bc98e77807e4eed17edf8708692c8a8e4977a6339fd8cc1ffedc",
+      "current_public_task_sha256": "cbca17e66aa7bc98e77807e4eed17edf8708692c8a8e4977a6339fd8cc1ffedc",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0104",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "c4cfd13bb7221742178a5d4696457031c21af86b3623a4ac7b1e8fbcf46efec8",
+      "current_public_task_sha256": "c4cfd13bb7221742178a5d4696457031c21af86b3623a4ac7b1e8fbcf46efec8",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0105",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "77f2fa561c2adbcf90fe9bbaf07c2aec009433098102a5b4c618bdadb3bd65b5",
+      "current_public_task_sha256": "77f2fa561c2adbcf90fe9bbaf07c2aec009433098102a5b4c618bdadb3bd65b5",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0106",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "98a8d647f9dadd055718a3c63d690f00a4edceca4d90459d1ef77f9b4f592866",
+      "current_public_task_sha256": "98a8d647f9dadd055718a3c63d690f00a4edceca4d90459d1ef77f9b4f592866",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0107",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "28f971539b348922f5f306583f924283ccb87c3abacc972b8603424d20d8c802",
+      "current_public_task_sha256": "28f971539b348922f5f306583f924283ccb87c3abacc972b8603424d20d8c802",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0108",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "ee90196a1da919944834b40a8e06e576f7553d01a4d301bcaf037210d6958ebe",
+      "current_public_task_sha256": "ee90196a1da919944834b40a8e06e576f7553d01a4d301bcaf037210d6958ebe",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0109",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "9fd13bbcfe5b199ec11993170ae3c006f5e6fa690fe8d45bf15a8dc7777fd159",
+      "current_public_task_sha256": "9fd13bbcfe5b199ec11993170ae3c006f5e6fa690fe8d45bf15a8dc7777fd159",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0110",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "d39516e0af89ab69cc289fa10b283999b5eb6291fa8492a96401698dc137163b",
+      "current_public_task_sha256": "d39516e0af89ab69cc289fa10b283999b5eb6291fa8492a96401698dc137163b",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0111",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "8277e6497427ed3e0077ea4619226419436efe8270b5dfb3fdf6be0e3e61a2bb",
+      "current_public_task_sha256": "8277e6497427ed3e0077ea4619226419436efe8270b5dfb3fdf6be0e3e61a2bb",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0112",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "8b6ad905b2f93f50fe849f92a95695a80c3f518530aa9ff02f03f6c8b9961939",
+      "current_public_task_sha256": "8b6ad905b2f93f50fe849f92a95695a80c3f518530aa9ff02f03f6c8b9961939",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0113",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "e4920f2180fdb4917c646abe37fbacd47d465f6545e08749e7e537f7972bf648",
+      "current_public_task_sha256": "e4920f2180fdb4917c646abe37fbacd47d465f6545e08749e7e537f7972bf648",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0114",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "61331f85823e65ba171ddd7e6bbec354955dacdbd0ee31dd171459b64f738725",
+      "current_public_task_sha256": "61331f85823e65ba171ddd7e6bbec354955dacdbd0ee31dd171459b64f738725",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0115",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "f60fef8d1f54fa06c88b4687a0fa403b96782ff9994097cc298a103c8b625341",
+      "current_public_task_sha256": "f60fef8d1f54fa06c88b4687a0fa403b96782ff9994097cc298a103c8b625341",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0116",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "b647da656b227cbff4ac21c88b3a72f29483a506d9dc5bf5b5a82678ff912ef4",
+      "current_public_task_sha256": "b647da656b227cbff4ac21c88b3a72f29483a506d9dc5bf5b5a82678ff912ef4",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0117",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "49cb23123381bfbdd98adec9ded72e9ce45ada10ebcec120d133dbb00c5e8a27",
+      "current_public_task_sha256": "49cb23123381bfbdd98adec9ded72e9ce45ada10ebcec120d133dbb00c5e8a27",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0118",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "575886bf0b9975919952c94cc80ceec3ea7d89c6a1d8b505dcd9206a182e08de",
+      "current_public_task_sha256": "575886bf0b9975919952c94cc80ceec3ea7d89c6a1d8b505dcd9206a182e08de",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0119",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "b572668229e11dd9ff3d888109ce618aa739fc9cd2070f199263acf160abe72f",
+      "current_public_task_sha256": "b572668229e11dd9ff3d888109ce618aa739fc9cd2070f199263acf160abe72f",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0120",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "1979160807201452a2c5a858d2322baf69765adcc982687078496d180d66a358",
+      "current_public_task_sha256": "1979160807201452a2c5a858d2322baf69765adcc982687078496d180d66a358",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0121",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "a11c2b96103d07641aeb6c2ce2662e83089dc9dc089c52aaaff867866c34ad3b",
+      "current_public_task_sha256": "a11c2b96103d07641aeb6c2ce2662e83089dc9dc089c52aaaff867866c34ad3b",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0122",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "4693cfdc6d9a83082181992096baaaab5a6be921a0a22dfc84b60350a0b7c143",
+      "current_public_task_sha256": "4693cfdc6d9a83082181992096baaaab5a6be921a0a22dfc84b60350a0b7c143",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0123",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "9b90e5c34c6de8c74b15dbe8cae3313203e5dae037a0d8457c2befcefb86ec83",
+      "current_public_task_sha256": "9b90e5c34c6de8c74b15dbe8cae3313203e5dae037a0d8457c2befcefb86ec83",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0124",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "d644a4f6bf061225ae63d209c46a58cfb288cc71b9f30cc03c7310bf4b5726c9",
+      "current_public_task_sha256": "d644a4f6bf061225ae63d209c46a58cfb288cc71b9f30cc03c7310bf4b5726c9",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0125",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "6178c0e5c357cf7d457339be9160f6850ff23abcfcf4f0c11c806e61f593a835",
+      "current_public_task_sha256": "6178c0e5c357cf7d457339be9160f6850ff23abcfcf4f0c11c806e61f593a835",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0126",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "432a6078e84fc17dd09c7de5e0727b1e26e9d594f403fca686049ce78100c089",
+      "current_public_task_sha256": "432a6078e84fc17dd09c7de5e0727b1e26e9d594f403fca686049ce78100c089",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0127",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "c720579964ffb28b4a6bde5076d44819b89ec85ebfda9d62401fde8e59955e83",
+      "current_public_task_sha256": "c720579964ffb28b4a6bde5076d44819b89ec85ebfda9d62401fde8e59955e83",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0128",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "c000dca7eb9c6299bb5bf197b451bfb4f5891a6de5b6b128899bd95fbc9a2df8",
+      "current_public_task_sha256": "c000dca7eb9c6299bb5bf197b451bfb4f5891a6de5b6b128899bd95fbc9a2df8",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0129",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "ff777b2847e16d030ebe0ec6f70f9ad9b10d5e72b944a2503cce236899908450",
+      "current_public_task_sha256": "ff777b2847e16d030ebe0ec6f70f9ad9b10d5e72b944a2503cce236899908450",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0130",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "8d8caed8907a58743e67e86e20bf07db2a615ffe8e78aa63d2241ca8738fda6c",
+      "current_public_task_sha256": "8d8caed8907a58743e67e86e20bf07db2a615ffe8e78aa63d2241ca8738fda6c",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0131",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "ad81a20ff36f4ce1a0f55369e07877e18a5032bb8d622ecc5b581478924f1a77",
+      "current_public_task_sha256": "ad81a20ff36f4ce1a0f55369e07877e18a5032bb8d622ecc5b581478924f1a77",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0132",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "77bae8e99cd231fb80d527e35d925e6c2fe3cad546e8bda347543252cebb340e",
+      "current_public_task_sha256": "77bae8e99cd231fb80d527e35d925e6c2fe3cad546e8bda347543252cebb340e",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0133",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "b8251e2569993d221157e957ed110bcf2e4a1173166e22ca8aa474ff46d380e0",
+      "current_public_task_sha256": "b8251e2569993d221157e957ed110bcf2e4a1173166e22ca8aa474ff46d380e0",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0134",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "54fff0d004a76f65ee57d9682258c5d867f22f3b0c028aef978e856cf1a1f790",
+      "current_public_task_sha256": "54fff0d004a76f65ee57d9682258c5d867f22f3b0c028aef978e856cf1a1f790",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0135",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "3ac37007dad5906b64c9a08f4542a9c15c603b8f3e9439f93829707cead9d7af",
+      "current_public_task_sha256": "3ac37007dad5906b64c9a08f4542a9c15c603b8f3e9439f93829707cead9d7af",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0136",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "a5cf0adc51eedc03b09014ce8e608beb5d00efe26f6f616b1b136f88bb7ceac1",
+      "current_public_task_sha256": "a5cf0adc51eedc03b09014ce8e608beb5d00efe26f6f616b1b136f88bb7ceac1",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0137",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "e657aa432255c790ba996fb22647a4e160f57b14c7bc35cdd1b1029317934118",
+      "current_public_task_sha256": "e657aa432255c790ba996fb22647a4e160f57b14c7bc35cdd1b1029317934118",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0138",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "730b21ae4d2838eec82ac63e27e5d5f77740392ef9e7eee4c5af62e85aabb669",
+      "current_public_task_sha256": "730b21ae4d2838eec82ac63e27e5d5f77740392ef9e7eee4c5af62e85aabb669",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0139",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "b8c4ac2fe4ab1c2e5e597e5794fe5ccb46d955320cf4b53852f4fcecf8e87f55",
+      "current_public_task_sha256": "b8c4ac2fe4ab1c2e5e597e5794fe5ccb46d955320cf4b53852f4fcecf8e87f55",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0140",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "465cb515171635f4d89573298a02bb87fe78213cdc05ea00679f3b88f45d3ab6",
+      "current_public_task_sha256": "465cb515171635f4d89573298a02bb87fe78213cdc05ea00679f3b88f45d3ab6",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0141",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "c52cf41895a4975dafa04e97a8485e768edc57e731976392e1c1526416d3235c",
+      "current_public_task_sha256": "c52cf41895a4975dafa04e97a8485e768edc57e731976392e1c1526416d3235c",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0142",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "7192aa2ead323843d638d7fdb6efad678778f1870089d49db933793746e6c332",
+      "current_public_task_sha256": "7192aa2ead323843d638d7fdb6efad678778f1870089d49db933793746e6c332",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0143",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "027f4b772c78c3b302b0441ba2eef5dd1b8de0c9f7bcc80c949c66209d60108a",
+      "current_public_task_sha256": "027f4b772c78c3b302b0441ba2eef5dd1b8de0c9f7bcc80c949c66209d60108a",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0144",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "7136c69e86669a5b8bcb2968e8e9c573a62f60aba5b77e6a3fa20cb9daa71ac8",
+      "current_public_task_sha256": "7136c69e86669a5b8bcb2968e8e9c573a62f60aba5b77e6a3fa20cb9daa71ac8",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0145",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "db0f83ae4d4501ec0e6091a26db7704fc3917968ef13e06a92ed1019565755c1",
+      "current_public_task_sha256": "db0f83ae4d4501ec0e6091a26db7704fc3917968ef13e06a92ed1019565755c1",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0146",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "f1e81393b431a66d10bf9777ef81f403466b5e34a240b075f96fed829f2e9901",
+      "current_public_task_sha256": "f1e81393b431a66d10bf9777ef81f403466b5e34a240b075f96fed829f2e9901",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0147",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "9196973abbe250b48fae77ec6f5469300f464e3571a2274a54046840efc36ea1",
+      "current_public_task_sha256": "9196973abbe250b48fae77ec6f5469300f464e3571a2274a54046840efc36ea1",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0148",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "1d0e0473b85bd1252c71da8661dce5cbecc9b0138ec8fc3c84a2126285e993af",
+      "current_public_task_sha256": "1d0e0473b85bd1252c71da8661dce5cbecc9b0138ec8fc3c84a2126285e993af",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0149",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "749af2d24c3b1791a0292fd6e035bd2028191cc959777b5418b0ec345355139b",
+      "current_public_task_sha256": "749af2d24c3b1791a0292fd6e035bd2028191cc959777b5418b0ec345355139b",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0150",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "fdde026f0257913d0c10835cbdd1391f093a11855383c8198c1617381fc45ca8",
+      "current_public_task_sha256": "fdde026f0257913d0c10835cbdd1391f093a11855383c8198c1617381fc45ca8",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0151",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "8aa0b22311c3188c04b0d4ff876afc5b6ba5a423a79c5e09d576a917b8f14b18",
+      "current_public_task_sha256": "8aa0b22311c3188c04b0d4ff876afc5b6ba5a423a79c5e09d576a917b8f14b18",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0152",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "6d4be1ea03de24cfc7ce58d24513d27b7ea5c15827028621a33aeb7722713e59",
+      "current_public_task_sha256": "6d4be1ea03de24cfc7ce58d24513d27b7ea5c15827028621a33aeb7722713e59",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0153",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "775d32d0dc29ea1518ed91a37b377a45e9c1527bab80c525d93b56948a80fa35",
+      "current_public_task_sha256": "775d32d0dc29ea1518ed91a37b377a45e9c1527bab80c525d93b56948a80fa35",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0154",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "a331860e4a188b73e2ceb2f945f918bc4a676807f72d0ef36d4760aad271bc17",
+      "current_public_task_sha256": "a331860e4a188b73e2ceb2f945f918bc4a676807f72d0ef36d4760aad271bc17",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0155",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "5d122311b3b9a1ed0074de720c8e89719a1209bafe9fef2264d124acadda4ce4",
+      "current_public_task_sha256": "5d122311b3b9a1ed0074de720c8e89719a1209bafe9fef2264d124acadda4ce4",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0156",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "afeb049fe94780fcf24483ee1785f8886c7463240901acadd143de1f41238211",
+      "current_public_task_sha256": "afeb049fe94780fcf24483ee1785f8886c7463240901acadd143de1f41238211",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0157",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "f1f2595a617820df0030e08e38700c5e6b7264356592c25917881419b7b6634b",
+      "current_public_task_sha256": "f1f2595a617820df0030e08e38700c5e6b7264356592c25917881419b7b6634b",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0158",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "2bef9591f6b53d4bef09f0d8eaa383b1999819d41c80a50083abc45099ec31e0",
+      "current_public_task_sha256": "2bef9591f6b53d4bef09f0d8eaa383b1999819d41c80a50083abc45099ec31e0",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0159",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "65756ee0c8b387950dcddbd4457073a12b0714e94a9537947b38bbfc0ea96c8c",
+      "current_public_task_sha256": "65756ee0c8b387950dcddbd4457073a12b0714e94a9537947b38bbfc0ea96c8c",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0160",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "59866835197e9b5e9edd1dec8164de6e443e97c215e5b9d2f662bd7b65ec125d",
+      "current_public_task_sha256": "59866835197e9b5e9edd1dec8164de6e443e97c215e5b9d2f662bd7b65ec125d",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0161",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "00d2657a75b2711bf37a9c2fc434a6d523b15f8c458ee45d26d64be2b3c4d5ce",
+      "current_public_task_sha256": "00d2657a75b2711bf37a9c2fc434a6d523b15f8c458ee45d26d64be2b3c4d5ce",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0162",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "2bfca4b6f1dac19711576d17f505dabfc6662cc044268d0de044a1e5c105884f",
+      "current_public_task_sha256": "2bfca4b6f1dac19711576d17f505dabfc6662cc044268d0de044a1e5c105884f",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0163",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "7b3ccb1728a4b5bbff6628bb46b5139e834c96bafc5cfafc66557bb8918491de",
+      "current_public_task_sha256": "7b3ccb1728a4b5bbff6628bb46b5139e834c96bafc5cfafc66557bb8918491de",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0164",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "d23ddf7e3d83d49d5539ce5061cd97114c5e190c28d8ec07a3f9cea5b01ba843",
+      "current_public_task_sha256": "d23ddf7e3d83d49d5539ce5061cd97114c5e190c28d8ec07a3f9cea5b01ba843",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0165",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "f2816e3f2b92248559846317b4286b11faf6933fed241a40072453354959078b",
+      "current_public_task_sha256": "f2816e3f2b92248559846317b4286b11faf6933fed241a40072453354959078b",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0166",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "d5663df1d59125f984a3acf536e23fdc78d204e5a8bb281f02ffd946171c8b65",
+      "current_public_task_sha256": "d5663df1d59125f984a3acf536e23fdc78d204e5a8bb281f02ffd946171c8b65",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0167",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "d02cc6b36766e34034548bbd49a90c5152ca52caff752f82562a5c210507b112",
+      "current_public_task_sha256": "d02cc6b36766e34034548bbd49a90c5152ca52caff752f82562a5c210507b112",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0168",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "190af9e67acf49ebd729b155d0bdee39703b34928f0fc72b1ba724b87daa92f9",
+      "current_public_task_sha256": "190af9e67acf49ebd729b155d0bdee39703b34928f0fc72b1ba724b87daa92f9",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0169",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "935ced59e63ceabbf69b30a66a8c55aff4077bc13607709889b9a414597eb3a3",
+      "current_public_task_sha256": "935ced59e63ceabbf69b30a66a8c55aff4077bc13607709889b9a414597eb3a3",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0170",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "713d77923ff7b6a19a4ac786e7662d245222e24e5ecb4b80bd344db6036d8b15",
+      "current_public_task_sha256": "713d77923ff7b6a19a4ac786e7662d245222e24e5ecb4b80bd344db6036d8b15",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0171",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "993167db13a5e64b078f61bacca6589f7b15ba88448132e6044196ba21b0da77",
+      "current_public_task_sha256": "993167db13a5e64b078f61bacca6589f7b15ba88448132e6044196ba21b0da77",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0172",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "6c09000984bec788c9633e39f6e331952f706f4e49dbc0436791ad8c6c713352",
+      "current_public_task_sha256": "6c09000984bec788c9633e39f6e331952f706f4e49dbc0436791ad8c6c713352",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0173",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "d9422e90cbcdc72c0864f01353818060419bbfc125a9f5f191d9f545a2c5b227",
+      "current_public_task_sha256": "d9422e90cbcdc72c0864f01353818060419bbfc125a9f5f191d9f545a2c5b227",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0174",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "a97e6dec2e8b0e375402dd876a0918ae0fc328f43d4fccee557486f6041ac0d2",
+      "current_public_task_sha256": "a97e6dec2e8b0e375402dd876a0918ae0fc328f43d4fccee557486f6041ac0d2",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0175",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "1922533eecbcc8c08d6240a1a0ccf5914e61d91cf8b9892e07797b14f3d3c96a",
+      "current_public_task_sha256": "1922533eecbcc8c08d6240a1a0ccf5914e61d91cf8b9892e07797b14f3d3c96a",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0176",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "4036326730eca83b5d2a6a3cc5a1b1015073140d3912365e946f9fbe17da2a40",
+      "current_public_task_sha256": "4036326730eca83b5d2a6a3cc5a1b1015073140d3912365e946f9fbe17da2a40",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0177",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "2e4745ae5a6b496d270718dead50aaae57ddc583010dad3d6bc9b2aaaf93af5d",
+      "current_public_task_sha256": "2e4745ae5a6b496d270718dead50aaae57ddc583010dad3d6bc9b2aaaf93af5d",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0178",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "e55bda13af4acfca06026bfb0082548bf6c2d044e512e5761ef2cbd40ab9d1ee",
+      "current_public_task_sha256": "e55bda13af4acfca06026bfb0082548bf6c2d044e512e5761ef2cbd40ab9d1ee",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0179",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "2a1851005ebc7482e0c5e2b5488a69aafbc8d3e37f87d7d35bb0c1c9876f98ba",
+      "current_public_task_sha256": "2a1851005ebc7482e0c5e2b5488a69aafbc8d3e37f87d7d35bb0c1c9876f98ba",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0180",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "130aec5ac656ca54065c0b75bbaca2c3849b2fb84b7c212aada809cdb7feaae1",
+      "current_public_task_sha256": "130aec5ac656ca54065c0b75bbaca2c3849b2fb84b7c212aada809cdb7feaae1",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0181",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "5a4c1ee5cd3242955a5e33dc9ded6b5b426533557a7db18f8dfc1a269b9fc2ae",
+      "current_public_task_sha256": "5a4c1ee5cd3242955a5e33dc9ded6b5b426533557a7db18f8dfc1a269b9fc2ae",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0182",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "c8c8886e720ddefdfc3aec1c64f7d68fcd308832775b58e2db3bf891bb04926c",
+      "current_public_task_sha256": "c8c8886e720ddefdfc3aec1c64f7d68fcd308832775b58e2db3bf891bb04926c",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0183",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "48c73224c64a88a928f6bb2fa59deb60c1fbe59ae12567797c7a76012c98fe26",
+      "current_public_task_sha256": "48c73224c64a88a928f6bb2fa59deb60c1fbe59ae12567797c7a76012c98fe26",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0184",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "58584d156f4035e5a095e1e1bac1827bf0255b3e6406c601fe64faf09c28a83f",
+      "current_public_task_sha256": "58584d156f4035e5a095e1e1bac1827bf0255b3e6406c601fe64faf09c28a83f",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0185",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "d2f3db760aa3f2412ee8780607d48999b7058fe5ddb8603a587f7d88bd3199e6",
+      "current_public_task_sha256": "d2f3db760aa3f2412ee8780607d48999b7058fe5ddb8603a587f7d88bd3199e6",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0186",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "473374415d50c5743289cb09b4ab15f6aa975702c46882ce9d9c6c833632426a",
+      "current_public_task_sha256": "473374415d50c5743289cb09b4ab15f6aa975702c46882ce9d9c6c833632426a",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0187",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "5337bd78515f09e1f688b99b352407f9ef7d13390de1384cb17f37c36096642b",
+      "current_public_task_sha256": "5337bd78515f09e1f688b99b352407f9ef7d13390de1384cb17f37c36096642b",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0188",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "df3bf5eedd620563119c3efc973d9076e8b0c70b0bd8811106318abb548c11fb",
+      "current_public_task_sha256": "df3bf5eedd620563119c3efc973d9076e8b0c70b0bd8811106318abb548c11fb",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0189",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "94fed648e17464ff2be8e6193a05f15b39b0bb3a4640bb1eda5129c5c89591a6",
+      "current_public_task_sha256": "94fed648e17464ff2be8e6193a05f15b39b0bb3a4640bb1eda5129c5c89591a6",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0190",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "accb5e2c94e323bb7342b2d088c6f5811295dde4ccc136256c3108fe0604752e",
+      "current_public_task_sha256": "accb5e2c94e323bb7342b2d088c6f5811295dde4ccc136256c3108fe0604752e",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0191",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "bc8f04d49294c34333015df47491951ff37928929ad43e676e5e0ee6af763ca5",
+      "current_public_task_sha256": "bc8f04d49294c34333015df47491951ff37928929ad43e676e5e0ee6af763ca5",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0192",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "feb51d885e335215ed017fd5c7f9b0c614bbbd5c172858362fdb35344ab95c39",
+      "current_public_task_sha256": "feb51d885e335215ed017fd5c7f9b0c614bbbd5c172858362fdb35344ab95c39",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0193",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "98765bf3aab4f1f67735ee6c729f5d01386af42a8f7a1768c029fc99d5bdd834",
+      "current_public_task_sha256": "98765bf3aab4f1f67735ee6c729f5d01386af42a8f7a1768c029fc99d5bdd834",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0194",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "03fccfaf1f5f2a1aa3347dbbbbd1f4742a6619eea7cda62be3e8912b621bcd66",
+      "current_public_task_sha256": "03fccfaf1f5f2a1aa3347dbbbbd1f4742a6619eea7cda62be3e8912b621bcd66",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0195",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "57a3b94cfc5e2936aab6d16eb362856690006dedc6f0e165e7ff030995489999",
+      "current_public_task_sha256": "57a3b94cfc5e2936aab6d16eb362856690006dedc6f0e165e7ff030995489999",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0196",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "222a80d36cbecbacd94b4538f17bf1ed6bf27e9a0fea2e6b2cb68eb6aef4e08e",
+      "current_public_task_sha256": "222a80d36cbecbacd94b4538f17bf1ed6bf27e9a0fea2e6b2cb68eb6aef4e08e",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0197",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "160cc03b80228204da09ba7ea43dbe01ed064901ad3413251b573b81efd9facb",
+      "current_public_task_sha256": "160cc03b80228204da09ba7ea43dbe01ed064901ad3413251b573b81efd9facb",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0198",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "2f2125ab02a797d384beee1a4d2682017a19064a61ff30f6be471347b5dba732",
+      "current_public_task_sha256": "2f2125ab02a797d384beee1a4d2682017a19064a61ff30f6be471347b5dba732",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0199",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "faf5cde7527db0f9d542efff7e6be5de792e772774939c10b4081bc4b6145a22",
+      "current_public_task_sha256": "faf5cde7527db0f9d542efff7e6be5de792e772774939c10b4081bc4b6145a22",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    },
+    {
+      "id": "SMAS-0200",
+      "changed_public_fields": [],
+      "historical_public_task_sha256": "8e2265ebd0570baa8ea5a3a0bb1d68706434b2cef32c1d8ba75ba6cb01cf5cf6",
+      "current_public_task_sha256": "8e2265ebd0570baa8ea5a3a0bb1d68706434b2cef32c1d8ba75ba6cb01cf5cf6",
+      "question_changed": false,
+      "answer_contract_changed": false,
+      "scientific_inputs_unchanged": true,
+      "approved_clarification_paths": []
+    }
+  ],
+  "status": "passed",
+  "scoring_snapshot_archive": {
+    "path": "scoring_snapshot.tar.gz",
+    "sha256": "168b9cddee95e10b6384ea9f041741ce80e0d234a143fa81a50f64ab457ddf78",
+    "files": 39
+  },
+  "authenticated_original_trajectories": 200,
+  "original_experiment_files_unchanged": 287,
+  "public_contract_changed_tasks": 22,
+  "question_changed_tasks": 4,
+  "completed_utc": "2026-11-06T09:49:38.247412+00:00"
+}

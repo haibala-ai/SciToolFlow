@@ -17,6 +17,8 @@ python baselines/react/run.py --backend vllm --model YOUR_MODEL \
 
 `predictions.json` 保存预测、运行设置和续跑指纹，`progress.json` 保存进度；实验流水线另用 `experiment.json` 记录执行阶段。完整轨迹位于 `trajectories/<task-run>/trajectory.json`，工具产物位于 `tool_artifacts/`。轨迹与预测逐步原子保存；同指纹 `--resume` 复用已记录任务，只有显式 `--retry-failed` 才重试失败任务。代码、任务、工具实现、prompt、模型、采样和并发设置改变后，应新建实验目录。
 
+结果目录自动生成 `monitor/monitor.md` 与 `monitor/monitor.json`，每10秒刷新进度、活动阶段、token、工具调用和失败记录。监控在独立进程中只读检查点；[详细用法](../../docs/monitoring.md)。
+
 查询、规划、运行与评分默认使用`--dataset mini`，题号为SMAS-0001..0200。Full-500用`--dataset full`显式选择；旧Mini接口已移除。评分使用与运行相同的题库和任务选择，说明见[Mini-200](../../tasks/mini/README.md)。
 
 ## 模型交互

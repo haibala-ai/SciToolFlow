@@ -1,0 +1,7 @@
+{
+  "dataset": "mini",
+  "tasks": 200,
+  "runtime_completion_rate": 0.41,
+  "tool_planning_accuracy": 0.35,
+  "answer_accuracy": 0.395
+}

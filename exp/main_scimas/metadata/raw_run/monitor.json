@@ -1,0 +1,749 @@
+{
+  "schema_version": "scimas.live_monitor.v1",
+  "sequence": 4068,
+  "updated_at": "2026-11-06T09:06:51.890189+08:00",
+  "status": "finished",
+  "dataset": "mini",
+  "baseline": "scimas",
+  "model": "deepseek-flash",
+  "selected_tasks": 200,
+  "recorded_tasks": 200,
+  "successful_tasks": 82,
+  "failed_tasks": 118,
+  "active_tasks_count": 0,
+  "queued_tasks": 0,
+  "progress_percent": 100.0,
+  "experiment_age_seconds": 41629.539804,
+  "supervisor_alive": false,
+  "configured_task_concurrency": 2,
+  "tool_concurrency_per_task": 4,
+  "active_tasks": [],
+  "failures": [
+    {
+      "id": "SMAS-0003",
+      "status": "failed",
+      "failure_reason": "ResourceLimit: RepeatedActionFailure",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0003-f67b371ebef0/trajectory.json"
+    },
+    {
+      "id": "SMAS-0007",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: ValueError: No valid graph within the planning request limit",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0007-3dbd6ae8c6b8/trajectory.json"
+    },
+    {
+      "id": "SMAS-0009",
+      "status": "failed",
+      "failure_reason": "ValueError: [\"canonical-identities__0: Output path is not declared: [0]\", \"canonical-identities__1: Output path is not declared: [1]\", \"canonical-identities__2: Output path is not declared: [2]\"]",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0009-2fae96ec418b/trajectory.json"
+    },
+    {
+      "id": "SMAS-0014",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RetrievalError: Embedding transport failure: SSLError",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0014-7190882d2d32/trajectory.json"
+    },
+    {
+      "id": "SMAS-0017",
+      "status": "failed",
+      "failure_reason": "ValueError: Role protocol retry limit reached: ['Extra data: line 1 column 3 (char 2)']",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0017-579775c9fc98/trajectory.json"
+    },
+    {
+      "id": "SMAS-0022",
+      "status": "failed",
+      "failure_reason": "ValueError: ResultRejected: {'reject': 'CalculateSymmetry returned Cmmm (#65) for the reduced_basis structure, but the parsed lattice is a primitive monoclinic cell (a=4.0 Å, b=0.728 Å, c=6.0 Å, gamma=105.95°) with only 2/m symmetry. The correct space group is P2/m (#10). The observation is scientifically invalid and cannot be used downstream.'}; None",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0022-331cdaa3f936/trajectory.json"
+    },
+    {
+      "id": "SMAS-0025",
+      "status": "failed",
+      "failure_reason": "ValueError: Role protocol retry limit reached: ['Extra data: line 1 column 3 (char 2)']",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0025-a1efff4278f4/trajectory.json"
+    },
+    {
+      "id": "SMAS-0026",
+      "status": "failed",
+      "failure_reason": "ValueError: Unknown, retired or excluded tool: FilterTable",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0026-8bb5304f0eb8/trajectory.json"
+    },
+    {
+      "id": "SMAS-0029",
+      "status": "failed",
+      "failure_reason": "RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0029-6f27c0f68db0/trajectory.json"
+    },
+    {
+      "id": "SMAS-0031",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0031-a1c9cb4e15d2/trajectory.json"
+    },
+    {
+      "id": "SMAS-0032",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0032-cf3f8cfb6591/trajectory.json"
+    },
+    {
+      "id": "SMAS-0033",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0033-4c092f16b101/trajectory.json"
+    },
+    {
+      "id": "SMAS-0034",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0034-be7805013d8b/trajectory.json"
+    },
+    {
+      "id": "SMAS-0035",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0035-02effa803c13/trajectory.json"
+    },
+    {
+      "id": "SMAS-0037",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0037-2ca9fc42da65/trajectory.json"
+    },
+    {
+      "id": "SMAS-0044",
+      "status": "failed",
+      "failure_reason": "RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0044-0fc869e10f9c/trajectory.json"
+    },
+    {
+      "id": "SMAS-0047",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RetrievalError: Embedding transport failure: SSLError",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0047-6e63b5cf8831/trajectory.json"
+    },
+    {
+      "id": "SMAS-0049",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0049-4855720d60c2/trajectory.json"
+    },
+    {
+      "id": "SMAS-0050",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0050-e05fcee15514/trajectory.json"
+    },
+    {
+      "id": "SMAS-0052",
+      "status": "failed",
+      "failure_reason": "RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0052-5c522559174e/trajectory.json"
+    },
+    {
+      "id": "SMAS-0053",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0053-d8d04c76d75f/trajectory.json"
+    },
+    {
+      "id": "SMAS-0054",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0054-aae07e243eb3/trajectory.json"
+    },
+    {
+      "id": "SMAS-0055",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0055-ae43ee16812e/trajectory.json"
+    },
+    {
+      "id": "SMAS-0056",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0056-c61eabd4056a/trajectory.json"
+    },
+    {
+      "id": "SMAS-0070",
+      "status": "failed",
+      "failure_reason": "ResourceLimit: RepeatedActionFailure",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0070-4887dc25da12/trajectory.json"
+    },
+    {
+      "id": "SMAS-0071",
+      "status": "failed",
+      "failure_reason": "ValueError: Unknown, retired or excluded tool: ReadQChemThermochemistry",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0071-1df8a9e61f61/trajectory.json"
+    },
+    {
+      "id": "SMAS-0072",
+      "status": "failed",
+      "failure_reason": "ResourceLimit: RepeatedActionFailure",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0072-3381248c93cd/trajectory.json"
+    },
+    {
+      "id": "SMAS-0073",
+      "status": "failed",
+      "failure_reason": "ValueError: LocalRepairLimit: charge_add_b was executed with independent literal operands 32.99999 and -0.9999900000000002 rather than node bindings to comb_summary_b columns 0 and 1 (observed_sum). Although the arithmetic result is numerically plausible, this breaks the required source provenance from the parsed record-b summary into the charge residual and must be repaired by rerunning the node with the planned comb_summary_b bindings.",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0073-a4bc4b4a5693/trajectory.json"
+    },
+    {
+      "id": "SMAS-0076",
+      "status": "failed",
+      "failure_reason": "ValueError: LocalRepairLimit: The executed relative_abundance call passed the counts matrix as an inline literal array instead of binding to the accepted read_counts output (node read_counts, path [\"document\",\"counts\"]). Requirement ingest-counts-file explicitly requires all downstream distance/Gram/spectrum computations, including the Hellinger branch, to consume the structured data returned by the real JSON parser rather than a manually reproduced copy of the planning preview. Although the computed row totals (8, 8, 16, 12) and proportions happen to match the file, provenance is not satisfied and this observation is marked accepted_for_current_graph=false/stale. Re-execute relative_abundance with matrix bound to the read_counts node output path document.counts so the Hellinger chain (sqrt_abundance, hellinger_dist, Gram and spectrum) is provably derived from the parsed file.",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0076-c5e2f3fdb966/trajectory.json"
+    },
+    {
+      "id": "SMAS-0081",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: ValueError: PlannerStopped: Missing structured reverse-complement adapter: GetReverseComplement returns an unstructured Markdown report (output_access=reviewer_extraction), not a JSON/string sequence field that can be bound as PairwiseSequenceAlignment sequence input. No candidate provides a documented parser or native reverse-complement sequence output, so reverse_score_X for the required global DNA alignment in reverse-complement orientation cannot be computed without hard-coding the transformation or inventing a parser.",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0081-ed7d1e8469ab/trajectory.json"
+    },
+    {
+      "id": "SMAS-0088",
+      "status": "failed",
+      "failure_reason": "ValueError: LocalRepairLimit: Observation o0019 is structurally valid and its values are numerically the expected first nine targets, but the actual arguments bypass the required source dependencies. The values argument is a literal copy of the fifteen-element target array instead of a binding to parse_study.document.targets, and stop is a literal 9 instead of split_b.gap_indices[0]. This violates the load-from-study-asset requirement and the graph's cutoff-specific split binding. Repair train_target_b to bind values to parse_study path [\"document\",\"targets\"] and stop to split_b path [\"gap_indices\",0], then rerun it; do not accept the literal-copied slice as evidence.",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0088-096b7bce019a/trajectory.json"
+    },
+    {
+      "id": "SMAS-0089",
+      "status": "failed",
+      "failure_reason": "ValueError: LocalRepairLimit: Observation o0025 for norm_r3 is marked stale and accepted_for_current_graph=false, so it cannot be used as downstream evidence for norm_squared_r3 even though its computed sum 13.999999999999993 is arithmetically correct. Re-execute norm_r3 with the current graph binding to sq_r3.values to produce a current, accepted observation; the resulting norm_squared_r3 exceeds 9 and would correctly make admissible_r3 false.",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0089-c907b599dd1e/trajectory.json"
+    },
+    {
+      "id": "SMAS-0093",
+      "status": "failed",
+      "failure_reason": "ValueError: LocalRepairLimit: The executed observed_table node supplies its 6x3 matrix as inline literal values instead of binding matrix to parse_study.document.D from the real JSON parser output. This violates the load-study-data requirement that D and scales be obtained through the file reader and used as the scientific inputs, not inlined from the preview. Repair the node argument for matrix to a node reference to parse_study path ['document','D'] (and re-run), keeping row_ids/column_ids as endpoint identities.",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0093-af68fcdb52de/trajectory.json"
+    },
+    {
+      "id": "SMAS-0100",
+      "status": "failed",
+      "failure_reason": "ValueError: LocalRepairLimit: The interior gradient formula implemented by ga-num/ga-den, gb-num/gb-den, and gc-num/gc-den is the simple central difference (y[i+1]-y[i-1])/(x[i+1]-x[i-1]). On the nonuniform x grid this is only first-order and does not match numpy.gradient(..., edge_order=1), which uses a weighted second-order central difference for interior points. Replace the gradient construction for gradient-a/b/c with the correct weighted formula (or a verified finite-difference tool such as the one that produced the stale gradient-b observation) and regenerate the three gradient nodes. Also ensure the sum-preserved-mask node is present/executed so sum_preserved_a/b/c can be reported from abs(raw_sum-smoothed_sum)<=1e-8; the current accepted graph stops at sum-abs-diff.",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0100-03fde6ee6c99/trajectory.json"
+    },
+    {
+      "id": "SMAS-0102",
+      "status": "failed",
+      "failure_reason": "ValueError: Executor selected unavailable nodes or exceeded available slots",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0102-7521661e8e6f/trajectory.json"
+    },
+    {
+      "id": "SMAS-0105",
+      "status": "failed",
+      "failure_reason": "ResourceLimit: RepeatedActionFailure",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0105-47ad8ce37818/trajectory.json"
+    },
+    {
+      "id": "SMAS-0106",
+      "status": "failed",
+      "failure_reason": "ResourceLimit: RepeatedActionFailure",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0106-75e65519a4d0/trajectory.json"
+    },
+    {
+      "id": "SMAS-0110",
+      "status": "failed",
+      "failure_reason": "ValueError: LocalRepairLimit: No runnable nodes: inspect unresolved bindings, semantic requirements, or scientific gates",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0110-137d8652e299/trajectory.json"
+    },
+    {
+      "id": "SMAS-0111",
+      "status": "failed",
+      "failure_reason": "ValueError: LocalRepairLimit: The SymmetricEigenDecomposition result for s1_eigH is scientifically inconsistent with its input Hamiltonian. The returned eigenvalues are three exactly degenerate doublets, while the supplied 6x6 H_Q/h matrix is block diagonal with two non-identical 3x3 blocks and does not possess that degeneracy. Directly applying the input matrix to the first reported eigenvector does not satisfy H*v = lambda*v (the 5th row component is off by more than 0.02). Re-run the eigenvalue decomposition on the correct s1_H matrix or investigate why the tool produced an inconsistent eigensystem before using these levels for the linepair comparison.",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0111-c3d08a6f962a/trajectory.json"
+    },
+    {
+      "id": "SMAS-0112",
+      "status": "failed",
+      "failure_reason": "ValueError: Executor selected unavailable nodes or exceeded available slots",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0112-a5396e26f276/trajectory.json"
+    },
+    {
+      "id": "SMAS-0113",
+      "status": "failed",
+      "failure_reason": "RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0113-4b542f9dc000/trajectory.json"
+    },
+    {
+      "id": "SMAS-0114",
+      "status": "failed",
+      "failure_reason": "ValueError: Executor selected unavailable nodes or exceeded available slots",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0114-271ad98cdc26/trajectory.json"
+    },
+    {
+      "id": "SMAS-0115",
+      "status": "failed",
+      "failure_reason": "ValueError: Unknown, retired or excluded tool: ReadXYZFile",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0115-cb83b2a4d529/trajectory.json"
+    },
+    {
+      "id": "SMAS-0117",
+      "status": "failed",
+      "failure_reason": "ResourceLimit: RepeatedActionFailure",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0117-ab54c23a671c/trajectory.json"
+    },
+    {
+      "id": "SMAS-0120",
+      "status": "failed",
+      "failure_reason": "ValueError: Executor selected unavailable nodes or exceeded available slots",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0120-3cbeea273c3b/trajectory.json"
+    },
+    {
+      "id": "SMAS-0121",
+      "status": "failed",
+      "failure_reason": "ValueError: ResultRejected: {'reject': 'Observation o0035 from node extract_convention is stale: extract_convention is not in the current valid node set and accepted_for_current_graph is false. Although the extracted reporting-convention text itself is correct, this obsolete observation must not be used downstream; the same convention is already available from the parsed fixture document.'}; None",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0121-f182febc60d4/trajectory.json"
+    },
+    {
+      "id": "SMAS-0124",
+      "status": "failed",
+      "failure_reason": "RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0124-ce4c1c7aee0a/trajectory.json"
+    },
+    {
+      "id": "SMAS-0125",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0125-44f33717cfe2/trajectory.json"
+    },
+    {
+      "id": "SMAS-0126",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0126-d705e746542d/trajectory.json"
+    },
+    {
+      "id": "SMAS-0127",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0127-487577400a02/trajectory.json"
+    },
+    {
+      "id": "SMAS-0128",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0128-6c12f45030dd/trajectory.json"
+    },
+    {
+      "id": "SMAS-0129",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ReadTimeout -> ReadTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0129-e30f8d1929f9/trajectory.json"
+    },
+    {
+      "id": "SMAS-0130",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0130-6aa3c7fca909/trajectory.json"
+    },
+    {
+      "id": "SMAS-0131",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0131-16caca55d93a/trajectory.json"
+    },
+    {
+      "id": "SMAS-0132",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0132-c1ce1729ff1d/trajectory.json"
+    },
+    {
+      "id": "SMAS-0133",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0133-d31006375c93/trajectory.json"
+    },
+    {
+      "id": "SMAS-0134",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0134-c9c4a9c91fdf/trajectory.json"
+    },
+    {
+      "id": "SMAS-0135",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0135-6dc03441cba3/trajectory.json"
+    },
+    {
+      "id": "SMAS-0136",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0136-fa3e8e34da4d/trajectory.json"
+    },
+    {
+      "id": "SMAS-0137",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0137-b5ae14d458c5/trajectory.json"
+    },
+    {
+      "id": "SMAS-0138",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0138-74a782ab2906/trajectory.json"
+    },
+    {
+      "id": "SMAS-0139",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0139-ae552a2126a2/trajectory.json"
+    },
+    {
+      "id": "SMAS-0140",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0140-63186aa55c08/trajectory.json"
+    },
+    {
+      "id": "SMAS-0141",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0141-23859aff47c5/trajectory.json"
+    },
+    {
+      "id": "SMAS-0142",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0142-604709bf1e04/trajectory.json"
+    },
+    {
+      "id": "SMAS-0143",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0143-7bde87f6fafb/trajectory.json"
+    },
+    {
+      "id": "SMAS-0144",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0144-307832ebe28a/trajectory.json"
+    },
+    {
+      "id": "SMAS-0145",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0145-86ed50c642c6/trajectory.json"
+    },
+    {
+      "id": "SMAS-0146",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0146-7dbadc09b5ca/trajectory.json"
+    },
+    {
+      "id": "SMAS-0147",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0147-e6bf828784aa/trajectory.json"
+    },
+    {
+      "id": "SMAS-0149",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API output token budget exhausted (finish_reason=length); partial completion discarded, no automatic retry",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0149-9ba65de25924/trajectory.json"
+    },
+    {
+      "id": "SMAS-0154",
+      "status": "failed",
+      "failure_reason": "RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0154-468108d553c9/trajectory.json"
+    },
+    {
+      "id": "SMAS-0155",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0155-ac5ec05d9284/trajectory.json"
+    },
+    {
+      "id": "SMAS-0156",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (RemoteProtocolError -> RemoteProtocolError; ); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0156-ac1c53e16e83/trajectory.json"
+    },
+    {
+      "id": "SMAS-0157",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0157-3ef1369def3f/trajectory.json"
+    },
+    {
+      "id": "SMAS-0158",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0158-c1feaf31bbc6/trajectory.json"
+    },
+    {
+      "id": "SMAS-0159",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0159-a8db4841ed03/trajectory.json"
+    },
+    {
+      "id": "SMAS-0160",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0160-c67739abf375/trajectory.json"
+    },
+    {
+      "id": "SMAS-0161",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0161-8c92266abc04/trajectory.json"
+    },
+    {
+      "id": "SMAS-0162",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0162-1428a63853c0/trajectory.json"
+    },
+    {
+      "id": "SMAS-0163",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0163-2124ec52282a/trajectory.json"
+    },
+    {
+      "id": "SMAS-0164",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0164-c5bdbb8e4431/trajectory.json"
+    },
+    {
+      "id": "SMAS-0165",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0165-d245c0e7a9cf/trajectory.json"
+    },
+    {
+      "id": "SMAS-0166",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0166-79e957298dd7/trajectory.json"
+    },
+    {
+      "id": "SMAS-0167",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0167-ade3a540c024/trajectory.json"
+    },
+    {
+      "id": "SMAS-0168",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0168-ea9e6a8a011f/trajectory.json"
+    },
+    {
+      "id": "SMAS-0169",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0169-6f257ea29209/trajectory.json"
+    },
+    {
+      "id": "SMAS-0170",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0170-3e984958988d/trajectory.json"
+    },
+    {
+      "id": "SMAS-0171",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0171-76c908b7f393/trajectory.json"
+    },
+    {
+      "id": "SMAS-0172",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0172-5ae5e1015fd4/trajectory.json"
+    },
+    {
+      "id": "SMAS-0173",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0173-04f8a15e4680/trajectory.json"
+    },
+    {
+      "id": "SMAS-0174",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0174-50b390870e6a/trajectory.json"
+    },
+    {
+      "id": "SMAS-0175",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0175-fbebc720b3bd/trajectory.json"
+    },
+    {
+      "id": "SMAS-0176",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0176-41626feb6965/trajectory.json"
+    },
+    {
+      "id": "SMAS-0177",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0177-635646ea2808/trajectory.json"
+    },
+    {
+      "id": "SMAS-0178",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0178-81b46f468285/trajectory.json"
+    },
+    {
+      "id": "SMAS-0179",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0179-5e718dfbf0e3/trajectory.json"
+    },
+    {
+      "id": "SMAS-0180",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0180-057fa20f7b05/trajectory.json"
+    },
+    {
+      "id": "SMAS-0181",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0181-014a2ff65738/trajectory.json"
+    },
+    {
+      "id": "SMAS-0182",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0182-1235362411c0/trajectory.json"
+    },
+    {
+      "id": "SMAS-0183",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0183-8b85439aa250/trajectory.json"
+    },
+    {
+      "id": "SMAS-0184",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0184-7d2012d5dafd/trajectory.json"
+    },
+    {
+      "id": "SMAS-0185",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0185-27110094a51c/trajectory.json"
+    },
+    {
+      "id": "SMAS-0186",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0186-f988fcfff73b/trajectory.json"
+    },
+    {
+      "id": "SMAS-0187",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0187-1756acb503ac/trajectory.json"
+    },
+    {
+      "id": "SMAS-0188",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0188-d99b7f99461f/trajectory.json"
+    },
+    {
+      "id": "SMAS-0189",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0189-76f9fd967f6d/trajectory.json"
+    },
+    {
+      "id": "SMAS-0190",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0190-be1d65825474/trajectory.json"
+    },
+    {
+      "id": "SMAS-0191",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0191-c1ae6f6cc139/trajectory.json"
+    },
+    {
+      "id": "SMAS-0192",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0192-aa6150891c7d/trajectory.json"
+    },
+    {
+      "id": "SMAS-0193",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0193-532d708ddc98/trajectory.json"
+    },
+    {
+      "id": "SMAS-0194",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0194-46cb5060bfe2/trajectory.json"
+    },
+    {
+      "id": "SMAS-0195",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0195-2bcfa3225ce8/trajectory.json"
+    },
+    {
+      "id": "SMAS-0196",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0196-d2b8b5153070/trajectory.json"
+    },
+    {
+      "id": "SMAS-0197",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0197-f0d8f3723ccc/trajectory.json"
+    },
+    {
+      "id": "SMAS-0198",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0198-d0a1e9e6b0db/trajectory.json"
+    },
+    {
+      "id": "SMAS-0199",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0199-c4d7112c9b28/trajectory.json"
+    },
+    {
+      "id": "SMAS-0200",
+      "status": "failed",
+      "failure_reason": "PlanningFailure: RuntimeError: Generation API network request failed (ConnectTimeout -> ConnectTimeout -> TimeoutError; timed out); credentials and server response are not logged",
+      "trace_path": "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/trajectories/SMAS-0200-8c279825356a/trajectory.json"
+    }
+  ],
+  "known_cost_lower_bounds": {
+    "input_tokens": 108820916,
+    "output_tokens": 13085665,
+    "tool_calls": 2598,
+    "scientific_tool_calls": 2380,
+    "discovery_tool_calls": 218,
+    "model_requests_recorded": 5308
+  },
+  "finished_tasks_with_incomplete_usage": 87,
+  "pending_model_responses": 0,
+  "score_summary": {
+    "dataset": "mini",
+    "tasks": 200,
+    "runtime_completion_rate": 0.41,
+    "tool_planning_accuracy": 0.35,
+    "answer_accuracy": 0.395
+  },
+  "note": "Running-task costs are latest checkpoint lower bounds; never interpret them as final totals. No model calls or raw trace writes are performed by this monitor."
+}

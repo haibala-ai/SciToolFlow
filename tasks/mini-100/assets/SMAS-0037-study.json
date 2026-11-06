@@ -1,0 +1,26 @@
+{
+  "records": {
+    "U1": "ACGUACGU",
+    "U2": "GGCCNNRY",
+    "U3": "AAAAUUUU",
+    "U4": "CCGG--NN"
+  },
+  "known_base_summaries": [
+    [
+      4,
+      4
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      0,
+      4
+    ]
+  ]
+}

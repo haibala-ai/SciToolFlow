@@ -17,6 +17,7 @@ import time
 from src.utils.paths import project_root, load_environment
 from src.utils.io import atomic_json
 from src.models.communication import CommunicationError
+from src.models.embedding_profiles import graph_root, validate_identity, query_text, service_state
 
 
 class RetrievalError(RuntimeError):
@@ -121,7 +122,8 @@ class Embeddings:
 
     def encode(self, texts, deadline):
         load_environment()
-        base = (
+        local = self.identity.get("provider") == "local_qwen3"
+        base = self.identity["api_base"] if local else (
             os.getenv("SCITOOL_EMBEDDING_API_BASE")
             or os.getenv("OPENAI_BASE_URL")
             or os.getenv("OPENAI_API_BASE")
@@ -131,7 +133,7 @@ class Embeddings:
             raise RetrievalError(
                 "Query embedding provider differs from the frozen index identity"
             )
-        key = os.getenv("SCITOOL_EMBEDDING_API_KEY") or os.getenv("OPENAI_API_KEY")
+        key = "local" if local else os.getenv("SCITOOL_EMBEDDING_API_KEY") or os.getenv("OPENAI_API_KEY")
         unique = list(dict.fromkeys(texts))
         values = {}
         missing = []
@@ -155,9 +157,25 @@ class Embeddings:
             import requests
 
             with requests.Session() as client:
+                if local:
+                    client.trust_env = False
                 for offset in range(0, len(missing), 32):
                     batch = missing[offset : offset + 32]
-                    payload = self.request_batch(client, base, key, batch, deadline)
+                    payload = self.request_batch(
+                        client, base, key, [query_text(t, self.identity) for t in batch], deadline
+                    )
+                    if local and (
+                        payload.get("model") != self.identity["model"]
+                        or payload.get("model_fingerprint", None) not in {None, self.identity["model_fingerprint"]}
+                    ):
+                        raise RetrievalError("Local embedding service identity differs from the index")
+                    if local and payload.get("model_fingerprint") is None:
+                        try:
+                            live = service_state(self.root)
+                        except ValueError as error:
+                            raise RetrievalError(str(error)) from None
+                        if live["model_fingerprint"] != self.identity["model_fingerprint"]:
+                            raise RetrievalError("Local embedding service identity differs from the index")
                     rows = payload.get("data", [])
                     if len(rows) != len(batch) or {
                         row.get("index") for row in rows
@@ -193,20 +211,20 @@ class GraphRetriever:
         self.catalog = catalog
         self.config = config
         root = catalog.root
-        self.graph = json.loads((root / "tools/graph/graph_store.json").read_text())[
+        folder = graph_root(root)
+        self.graph = json.loads((folder / "graph_store.json").read_text())[
             "graph_dict"
         ]
         manifest = json.loads(
-            (root / "tools/graph/tool_foundation_manifest.json").read_text()
+            (folder / "tool_foundation_manifest.json").read_text()
         )
-        store = json.loads((root / "tools/graph/index_store.json").read_text())
+        store = json.loads((folder / "index_store.json").read_text())
         index = json.loads(next(iter(store["index_store/data"].values()))["__data__"])
         identity = manifest["embedding_identity"]
-        if (
-            identity["model"] != "text-embedding-3-large"
-            or identity["dimension"] != 3072
-        ):
-            raise RetrievalError("Unexpected functionality embedding identity")
+        try:
+            validate_identity(identity)
+        except ValueError as error:
+            raise RetrievalError(str(error)) from None
         self.embedding = embedding or Embeddings(identity, root)
         if allowed is None:
             from tools.runtime.scope import tool_allowed

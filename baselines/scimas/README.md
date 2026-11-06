@@ -2,6 +2,10 @@
 
 SciMas 将科学问题组织为带数据依赖和科学条件的任务图，由 **Planner、Executor、Reviewer** 协作完成工具选择、并行执行、过程审查和局部修复。它使用自己的工具知识图谱，与 SciToolAgent 的图谱和检索策略独立。
 
+消融实验通过 `--scimas-ablation` 选择 `wo-exp`、`wo-parallel`、`wo-early-stop`、`wo-local-repair` 或 `wo-all`；默认 `full` 保留全部机制。各变体共用运行、轨迹和评分入口，定义与命令见[消融实验](ablation/README.md)。
+
+检索可使用 `--embedding-backend local`（本地 Qwen3-Embedding-4B，2,560 维）或 `--embedding-backend api`（原有 text-embedding-3-large，3,072 维）。两套索引独立保存，生成模型可继续使用 `official` 或 `school`；启动服务、建库与切换方式见[向量检索配置](../../docs/embedding.md)。
+
 ## 运行与评分
 
 SciMas 与其他 baseline 共用公开题目、模型客户端、任务预算、预测文件和 `workflow.v1` 评分入口。公开入口默认为Mini-200，Full-500源库需显式选择；两者题号与实验身份分开。
@@ -45,6 +49,10 @@ python cli.py score --dataset mini --tasks SMAS-0103 \
 该配置使用已验证的 `httpx` 传输、`max_tokens`、JSON object 模式、32,768 输出 token 上限和 300 秒请求超时；完整 JSON Schema 由本地协议校验。模型默认思考消耗同一输出额度，运行命令也需显式设置 `--max-output-tokens 32768`；实际用量按服务端返回的 usage 记录。`httpx` 对建立连接失败最多重试两次；收到 HTTP 响应后的错误和发送后的读取／写入失败均不自动重发。长思考请求遇到读取超时时会明确失败，不将联调失败包装成任务通过。生成密钥与检索 embedding 的密钥分别配置。需要更换供应商时，使用 `--profile /path/to/profile.json`，或按部署文档配置其他兼容接口。
 
 ### DeepSeek 官方直连与长任务
+
+本机可将官网与校内接口分别保存为 `official` 和 `school`：完整配置与各自密钥位于 `.local/credentials/api/official.env` 和 `.local/credentials/api/school.env`（权限 `600`，由 Git 忽略）。使用 `python -m scripts.services.configure_api --use official` 或 `--use school` 切换后，启动新的运行进程。切换会一起更新地址、模型和对应密钥；embedding 等其他服务配置保留。显式导出的环境变量仍优先于本地配置文件。
+
+校内公开配置见 [school_api.json](../../configs/services/school_api.json)：`https://api.llm.ustc.edu.cn/v1`，模型 `deepseek-v4-flash-ascend1`，显式设置 `thinking={"type":"disabled"}`。该模型已通过小请求的 JSON 输出验证。校内密钥保存在本机凭据文件中，公开配置只包含接口与模型设置。
 
 [deepseek_api.json](../../configs/services/deepseek_api.json) 使用 `https://api.deepseek.com`、`deepseek-flash`、10 秒连接超时、600 秒生成响应等待上限和 65,536 输出 token 上限。连接失败仍按发送前重试规则处理，避免 TLS 建连占用整个长生成超时。`SCITOOLFLOW_API_TRUST_ENV=0` 使生成客户端忽略代理环境变量；embedding 和科学工具仍各自使用原有网络配置，不全局清空代理。各角色请求均明确要求 JSON 对象，满足供应商 JSON 模式的提示词要求。
 
@@ -160,6 +168,8 @@ python -m baselines.scimas.build_knowledge
 经验不是跨题答案记忆。Executor 记录经过实际调用验证的参数绑定方式；Reviewer 记录经过程序检查的输出访问方式；Planner 只有在前置输出被后继成功消费后记录衔接方式。经验绑定工具契约，按角色与当前工具匹配；确定性失败会使相关经验失效。不会把一个候选的数值迁移给另一个候选，也不会从评分参考中学习。
 
 ## 通信恢复与错误反馈
+
+每个运行及消融结果目录自动生成 `monitor/monitor.md` 和 `monitor/monitor.json`。监控每10秒显示完成进度、活动角色／工具阶段、输入与输出token、调用数及失败记录；独立监控进程不修改任务计时。建图入口同样支持监控。[使用说明](../../docs/monitoring.md)
 
 连续 3 道任务因生成 API 或 embedding 通信故障终止时，批次暂停派发新任务，已在运行的任务继续收齐结果。`progress.json` 显示 `paused_infrastructure` 和具体通信诊断；`--network-failure-threshold` 可修改阈值，0 表示关闭。网络恢复后，在相同代码及配置下继续：
 

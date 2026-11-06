@@ -1,0 +1,75 @@
+{
+  "flux_order": [
+    "direct_S_to_P",
+    "S_to_Q",
+    "Q_to_P",
+    "biomass_P_drain"
+  ],
+  "substrate_uptake_millimolar_per_h": 10.0,
+  "steady_state_matrix": [
+    [
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      -1.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      1.0,
+      -1.0
+    ]
+  ],
+  "steady_state_rhs": [
+    10.0,
+    0.0,
+    0.0
+  ],
+  "flux_bounds_millimolar_per_h": [
+    [
+      0.0,
+      8.0
+    ],
+    [
+      0.0,
+      6.0
+    ],
+    [
+      0.0,
+      null
+    ],
+    [
+      0.0,
+      null
+    ]
+  ],
+  "candidate_exact_assays": [
+    {
+      "id": "total_product_drain",
+      "reports_flux_index": 3,
+      "cost": 1
+    },
+    {
+      "id": "substrate_uptake",
+      "reports_fixed_uptake": true,
+      "cost": 2
+    },
+    {
+      "id": "Q_turnover",
+      "reports_flux_index": 2,
+      "cost": 3
+    }
+  ],
+  "additional_Q_turnover_observation_millimolar_per_h": 5.0,
+  "model": "At steady state,the supplied equations are balances of S,Q,P,respectively. All fluxes share the stated units and directions. Maximize biomass_P_drain;then perform variability analysis ONLY on the face attaining that same optimum. No gene-expression-to-flux equality,thermodynamic preference or hidden secondary objective is allowed. An assay is identifying only if,combined with optimality and the balances,it determines the whole flux vector. Candidate costs are exact;choose the cheapest identifying candidate,not merely the cheapest measurement.",
+  "target": "Return maximal biomass flux,the sharp optimal-face intervals for direct_S_to_Pand S_to_Qin that order,the cheapest identifying assay ID,and the entire flux vector after adding the given Qturnover observation. Report whether biomass maximization alone identifies a unique route split.",
+  "provenance": {
+    "kind": "Explicit small synthetic benign scientific model;data are conditional exact counts/means and do not establish empirical ecological,causal or functional claims."
+  }
+}

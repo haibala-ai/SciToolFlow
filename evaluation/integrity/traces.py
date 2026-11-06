@@ -171,6 +171,14 @@ def authenticate_prediction(prediction, root, run_directory, registry, dataset="
         if trajectory.get("dataset", "full") != dataset:
             raise ValueError("Production trace belongs to a different dataset")
         verify_trajectory(trajectory, prediction, registry)
+        # Dispatcher timing/provenance used for parallel causal grading must come
+        # from the hash-bound trace, not unverified extra fields in a prediction.
+        result["calls"] = execution_calls(trajectory)
+        from evaluation.workflow.causality import _times
+        for call in result['calls']:
+            interval=_times(call)
+            if trajectory.get('baseline')=='scimas' and call.get('tool')!='DescribeTools' and interval is None:
+                raise ValueError('Parallel SciMas evidence requires dispatcher call intervals')
         result["_resource_usage"] = trajectory.get("resource_usage")
         result["_execution_limits"] = trajectory.get("limits", {})
         result["_model_steps"] = sum(

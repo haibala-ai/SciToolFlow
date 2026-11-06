@@ -1,0 +1,47 @@
+{
+  "offline_only": true,
+  "paid_api_calls": 0,
+  "failure_limit_control": [
+    {
+      "max_failures_per_action": 0,
+      "status": "failed",
+      "failure_reason": "ResourceLimit: RepeatedActionFailure",
+      "inverse_calls": 1
+    },
+    {
+      "max_failures_per_action": null,
+      "status": "completed",
+      "failure_reason": null,
+      "inverse_calls": 2
+    }
+  ],
+  "array_schema_control": [
+    {
+      "schema": {
+        "type": "array",
+        "items": true
+      },
+      "json_schema_accepts_1_2": true,
+      "path_schema_result": "Output path is not declared: [0]"
+    },
+    {
+      "schema": {
+        "type": "array"
+      },
+      "json_schema_accepts_1_2": true,
+      "path_schema_result": "Output path is not declared: [0]"
+    },
+    {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        }
+      },
+      "json_schema_accepts_1_2": true,
+      "path_schema_result": {
+        "type": "integer"
+      }
+    }
+  ]
+}

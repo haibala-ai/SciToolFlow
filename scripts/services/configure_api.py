@@ -5,10 +5,11 @@ import getpass
 import json
 import os
 from pathlib import Path
+import re
 import sys
 import tempfile
 
-from dotenv import set_key
+from dotenv import dotenv_values, set_key
 from src.utils.paths import project_root
 
 
@@ -51,6 +52,24 @@ def hidden_key():
     if not key or key != key.strip() or any(c.isspace() for c in key):
         raise ValueError("API key must be nonempty and contain no whitespace")
     return key
+
+
+def use_profile(name):
+    """Activate a saved local generation profile without replacing other services."""
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]{0,63}", name):
+        raise ValueError("Generation API profile name is invalid")
+    folder = project_root() / ".local/credentials"
+    source = folder / "api" / (name + ".env")
+    if source.is_symlink() or not source.is_file():
+        raise ValueError("Generation API profile is missing or is a symlink")
+    values = dotenv_values(source)
+    required = {"SCITOOLFLOW_API_BASE", "SCITOOLFLOW_API_MODEL", "SCITOOLFLOW_API_KEY"}
+    if not required <= values.keys() or any(
+        not k.startswith("SCITOOLFLOW_API_") or not isinstance(v, str) or not v
+        for k, v in values.items()
+    ):
+        raise ValueError("Generation API profile is incomplete or contains unrelated settings")
+    save_settings(folder / "services.env", {**values, "SCITOOLFLOW_API_PROFILE": name})
 
 
 def check_api():
@@ -97,6 +116,10 @@ def main():
         default=project_root() / "configs/services/dpsk_api.json",
     )
     parser.add_argument(
+        "--use", metavar="NAME",
+        help="Activate a saved local profile such as official or school; no API request",
+    )
+    parser.add_argument(
         "--settings-only",
         action="store_true",
         help="Save the public profile without prompting for or changing a key",
@@ -108,6 +131,12 @@ def main():
     )
     args = parser.parse_args()
     try:
+        if args.use:
+            if args.check or args.settings_only:
+                raise ValueError("Use --use separately from --check and --settings-only")
+            use_profile(args.use)
+            print("Active generation API profile: " + args.use)
+            return
         if args.check:
             if args.settings_only:
                 raise ValueError("Use --check separately from --settings-only")
@@ -123,6 +152,7 @@ def main():
             )
         if not args.settings_only:
             values["SCITOOLFLOW_API_KEY"] = hidden_key()
+        values.setdefault("SCITOOLFLOW_API_PROFILE", args.profile.stem)
         target = project_root() / ".local/credentials/services.env"
         save_settings(target, values)
         print("Saved generation API settings to " + str(target) + " (mode 600).")

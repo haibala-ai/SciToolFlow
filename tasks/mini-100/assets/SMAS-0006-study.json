@@ -1,0 +1,8 @@
+{
+  "baseline": "CC(=O)NCC",
+  "smiles": [
+    "CCOC(=O)NCC",
+    "CCS(=O)(=O)NCC",
+    "CCNCC"
+  ]
+}

@@ -18,7 +18,7 @@
       "General"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 13,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -38,7 +38,7 @@
       "Chemical"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 10,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -46,19 +46,21 @@
     "source_id": "SMAS-0003",
     "origin": "special100",
     "domain": "Chemical",
-    "scientific_calls": 9,
-    "successful_scientific_calls": 9,
-    "distinct_successful_tools": 3,
+    "scientific_calls": 11,
+    "successful_scientific_calls": 10,
+    "distinct_successful_tools": 4,
     "successful_tools": [
       "CanonicalMolecularIdentity",
+      "ElementwiseNumericOperations",
       "GetHBDNum",
       "SMILESToWeight"
     ],
     "tool_domains": [
-      "Chemical"
+      "Chemical",
+      "General"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 10,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -80,7 +82,7 @@
       "Chemical"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 10,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -99,7 +101,7 @@
       "Chemical"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 7,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -117,9 +119,9 @@
     "tool_domains": [
       "Chemical"
     ],
-    "capability_depth": 1,
-    "max_capability_layer_width": 8,
-    "graph_fit": "parallel_evidence_panel"
+    "capability_depth": 2,
+    "max_capability_layer_width": 9,
+    "graph_fit": "multistage_dependency_graph"
   },
   {
     "id": "SMAS-0007",
@@ -151,10 +153,10 @@
     "distinct_successful_tools": 6,
     "successful_tools": [
       "CompareMolecularFingerprints",
+      "ElementwiseNumericOperations",
       "GraphLaplacian",
       "MatrixExponential",
       "MatrixMultiply",
-      "ScaleNumericMatrix",
       "SymmetricEigenDecomposition"
     ],
     "tool_domains": [
@@ -171,18 +173,20 @@
     "source_id": "SMAS-0009",
     "origin": "special100",
     "domain": "Chemical",
-    "scientific_calls": 6,
-    "successful_scientific_calls": 6,
-    "distinct_successful_tools": 2,
+    "scientific_calls": 8,
+    "successful_scientific_calls": 7,
+    "distinct_successful_tools": 3,
     "successful_tools": [
       "GetBridgeheadAtomsNum",
-      "GetSpiroAtomsNum"
+      "GetSpiroAtomsNum",
+      "ParseJSONDocument"
     ],
     "tool_domains": [
-      "Chemical"
+      "Chemical",
+      "General"
     ],
     "capability_depth": 1,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 7,
     "graph_fit": "parallel_evidence_panel"
   },
   {
@@ -210,11 +214,10 @@
     "source_id": "SMAS-0011",
     "origin": "special100",
     "domain": "Chemical",
-    "scientific_calls": 15,
-    "successful_scientific_calls": 15,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 12,
+    "successful_scientific_calls": 12,
+    "distinct_successful_tools": 3,
     "successful_tools": [
-      "CanonicalMolecularIdentity",
       "InChIToSMILES",
       "SMILESToInChI",
       "SMILESToWeight"
@@ -222,8 +225,8 @@
     "tool_domains": [
       "Chemical"
     ],
-    "capability_depth": 3,
-    "max_capability_layer_width": 6,
+    "capability_depth": 4,
+    "max_capability_layer_width": 10,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -231,7 +234,7 @@
     "source_id": "SMAS-0012",
     "origin": "special100",
     "domain": "Chemical",
-    "scientific_calls": 11,
+    "scientific_calls": 12,
     "successful_scientific_calls": 11,
     "distinct_successful_tools": 4,
     "successful_tools": [
@@ -244,7 +247,7 @@
       "Chemical"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 8,
+    "max_capability_layer_width": 10,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -252,19 +255,18 @@
     "source_id": "SMAS-0013",
     "origin": "special100",
     "domain": "Chemical",
-    "scientific_calls": 8,
-    "successful_scientific_calls": 8,
-    "distinct_successful_tools": 3,
+    "scientific_calls": 5,
+    "successful_scientific_calls": 5,
+    "distinct_successful_tools": 2,
     "successful_tools": [
       "CalculateTPSA",
-      "CanonicalMolecularIdentity",
       "SubstructureQuery"
     ],
     "tool_domains": [
       "Chemical"
     ],
-    "capability_depth": 3,
-    "max_capability_layer_width": 3,
+    "capability_depth": 2,
+    "max_capability_layer_width": 7,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -284,9 +286,9 @@
     "tool_domains": [
       "Material"
     ],
-    "capability_depth": 1,
+    "capability_depth": 2,
     "max_capability_layer_width": 11,
-    "graph_fit": "parallel_evidence_panel"
+    "graph_fit": "multistage_dependency_graph"
   },
   {
     "id": "SMAS-0015",
@@ -314,12 +316,11 @@
     "source_id": "SMAS-0016",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 10,
-    "successful_scientific_calls": 10,
-    "distinct_successful_tools": 5,
+    "scientific_calls": 9,
+    "successful_scientific_calls": 9,
+    "distinct_successful_tools": 4,
     "successful_tools": [
       "CalculateDensity",
-      "CompositionFractions",
       "CrystalStructureMatch",
       "PeriodicNeighborList",
       "ReadCrystalStructure"
@@ -328,7 +329,7 @@
       "Material"
     ],
     "capability_depth": 1,
-    "max_capability_layer_width": 10,
+    "max_capability_layer_width": 12,
     "graph_fit": "parallel_evidence_panel"
   },
   {
@@ -418,13 +419,12 @@
     "source_id": "SMAS-0021",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 8,
-    "successful_scientific_calls": 8,
-    "distinct_successful_tools": 3,
+    "scientific_calls": 5,
+    "successful_scientific_calls": 5,
+    "distinct_successful_tools": 2,
     "successful_tools": [
       "CalculateDensity",
-      "MatchedPeriodicDisplacements",
-      "ReadCrystalStructure"
+      "MatchedPeriodicDisplacements"
     ],
     "tool_domains": [
       "Material"
@@ -459,15 +459,17 @@
     "source_id": "SMAS-0023",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 10,
-    "successful_scientific_calls": 10,
-    "distinct_successful_tools": 3,
+    "scientific_calls": 11,
+    "successful_scientific_calls": 11,
+    "distinct_successful_tools": 4,
     "successful_tools": [
       "CalculateDensity",
       "CrystalStructureMatch",
+      "ElementwiseNumericOperations",
       "PeriodicNeighborList"
     ],
     "tool_domains": [
+      "General",
       "Material"
     ],
     "capability_depth": 1,
@@ -511,9 +513,9 @@
     "tool_domains": [
       "Material"
     ],
-    "capability_depth": 1,
+    "capability_depth": 2,
     "max_capability_layer_width": 9,
-    "graph_fit": "parallel_evidence_panel"
+    "graph_fit": "multistage_dependency_graph"
   },
   {
     "id": "SMAS-0026",
@@ -555,8 +557,8 @@
       "General",
       "MachineLearning"
     ],
-    "capability_depth": 2,
-    "max_capability_layer_width": 8,
+    "capability_depth": 3,
+    "max_capability_layer_width": 7,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -578,9 +580,9 @@
       "General",
       "MachineLearning"
     ],
-    "capability_depth": 1,
-    "max_capability_layer_width": 9,
-    "graph_fit": "parallel_evidence_panel"
+    "capability_depth": 2,
+    "max_capability_layer_width": 8,
+    "graph_fit": "multistage_dependency_graph"
   },
   {
     "id": "SMAS-0029",
@@ -601,8 +603,8 @@
       "General",
       "MachineLearning"
     ],
-    "capability_depth": 2,
-    "max_capability_layer_width": 8,
+    "capability_depth": 3,
+    "max_capability_layer_width": 7,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -610,18 +612,16 @@
     "source_id": "SMAS-0030",
     "origin": "special100",
     "domain": "Biology",
-    "scientific_calls": 8,
-    "successful_scientific_calls": 8,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 7,
+    "successful_scientific_calls": 7,
+    "distinct_successful_tools": 3,
     "successful_tools": [
       "DiversityIndices",
       "MantelCorrelation",
-      "NormalizeNumericRows",
       "PairwiseNumericDistances"
     ],
     "tool_domains": [
       "Biology",
-      "General",
       "MachineLearning"
     ],
     "capability_depth": 2,
@@ -654,8 +654,8 @@
     "source_id": "SMAS-0032",
     "origin": "special100",
     "domain": "Biology",
-    "scientific_calls": 4,
-    "successful_scientific_calls": 4,
+    "scientific_calls": 5,
+    "successful_scientific_calls": 5,
     "distinct_successful_tools": 3,
     "successful_tools": [
       "MantelCorrelation",
@@ -694,10 +694,11 @@
     "source_id": "SMAS-0034",
     "origin": "special100",
     "domain": "Biology",
-    "scientific_calls": 6,
-    "successful_scientific_calls": 6,
-    "distinct_successful_tools": 2,
+    "scientific_calls": 7,
+    "successful_scientific_calls": 7,
+    "distinct_successful_tools": 3,
     "successful_tools": [
+      "DescribeNumericData",
       "DiversityIndices",
       "PairwiseNumericDistances"
     ],
@@ -714,7 +715,7 @@
     "source_id": "SMAS-0035",
     "origin": "special100",
     "domain": "Biology",
-    "scientific_calls": 9,
+    "scientific_calls": 10,
     "successful_scientific_calls": 9,
     "distinct_successful_tools": 3,
     "successful_tools": [
@@ -726,16 +727,16 @@
       "Biology",
       "General"
     ],
-    "capability_depth": 1,
-    "max_capability_layer_width": 9,
-    "graph_fit": "parallel_evidence_panel"
+    "capability_depth": 2,
+    "max_capability_layer_width": 8,
+    "graph_fit": "multistage_dependency_graph"
   },
   {
     "id": "SMAS-0036",
     "source_id": "SMAS-0036",
     "origin": "special100",
     "domain": "Biology",
-    "scientific_calls": 13,
+    "scientific_calls": 14,
     "successful_scientific_calls": 13,
     "distinct_successful_tools": 4,
     "successful_tools": [
@@ -748,9 +749,9 @@
       "Biology",
       "General"
     ],
-    "capability_depth": 1,
-    "max_capability_layer_width": 13,
-    "graph_fit": "parallel_evidence_panel"
+    "capability_depth": 2,
+    "max_capability_layer_width": 12,
+    "graph_fit": "multistage_dependency_graph"
   },
   {
     "id": "SMAS-0037",
@@ -817,21 +818,22 @@
     "source_id": "SMAS-0040",
     "origin": "special100",
     "domain": "MachineLearning",
-    "scientific_calls": 9,
-    "successful_scientific_calls": 9,
+    "scientific_calls": 11,
+    "successful_scientific_calls": 11,
     "distinct_successful_tools": 5,
     "successful_tools": [
+      "ElementwiseNumericOperations",
       "GraphLaplacian",
       "MatrixExponential",
-      "MatrixMultiply",
-      "PairwiseNumericDistances",
+      "RegressionMetrics",
       "SymmetricEigenDecomposition"
     ],
     "tool_domains": [
+      "General",
       "MachineLearning"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 4,
+    "max_capability_layer_width": 10,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -873,7 +875,7 @@
       "MachineLearning"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 7,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -881,15 +883,14 @@
     "source_id": "SMAS-0043",
     "origin": "special100",
     "domain": "MachineLearning",
-    "scientific_calls": 11,
-    "successful_scientific_calls": 11,
-    "distinct_successful_tools": 6,
+    "scientific_calls": 9,
+    "successful_scientific_calls": 9,
+    "distinct_successful_tools": 5,
     "successful_tools": [
       "DecisionCostSummary",
       "FitLogisticRegression",
       "PredictLogisticModel",
       "ProbabilityCalibrationSummary",
-      "StandardizeNumericFeatures",
       "ThresholdClassProbabilities"
     ],
     "tool_domains": [
@@ -924,8 +925,8 @@
     "source_id": "SMAS-0045",
     "origin": "special100",
     "domain": "MachineLearning",
-    "scientific_calls": 9,
-    "successful_scientific_calls": 9,
+    "scientific_calls": 6,
+    "successful_scientific_calls": 6,
     "distinct_successful_tools": 2,
     "successful_tools": [
       "MatrixMultiply",
@@ -935,7 +936,7 @@
       "MachineLearning"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 9,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -957,7 +958,7 @@
       "MachineLearning"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 3,
+    "max_capability_layer_width": 4,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -965,16 +966,18 @@
     "source_id": "SMAS-0047",
     "origin": "special100",
     "domain": "MachineLearning",
-    "scientific_calls": 7,
-    "successful_scientific_calls": 7,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 8,
+    "successful_scientific_calls": 8,
+    "distinct_successful_tools": 5,
     "successful_tools": [
+      "ElementwiseNumericOperations",
       "PCAReconstructionError",
       "PairwiseNumericDistances",
       "PrincipalComponentProjection",
       "StandardizeNumericFeatures"
     ],
     "tool_domains": [
+      "General",
       "MachineLearning"
     ],
     "capability_depth": 3,
@@ -986,18 +989,20 @@
     "source_id": "SMAS-0048",
     "origin": "special100",
     "domain": "MachineLearning",
-    "scientific_calls": 4,
-    "successful_scientific_calls": 4,
-    "distinct_successful_tools": 2,
+    "scientific_calls": 5,
+    "successful_scientific_calls": 5,
+    "distinct_successful_tools": 3,
     "successful_tools": [
       "BinomialProbabilityTable",
+      "ElementwiseNumericOperations",
       "FinitePopulationCoverage"
     ],
     "tool_domains": [
+      "General",
       "MachineLearning"
     ],
     "capability_depth": 1,
-    "max_capability_layer_width": 4,
+    "max_capability_layer_width": 5,
     "graph_fit": "parallel_evidence_panel"
   },
   {
@@ -1017,7 +1022,7 @@
       "MachineLearning"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 3,
+    "max_capability_layer_width": 4,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1044,20 +1049,18 @@
     "source_id": "SMAS-0051",
     "origin": "special100",
     "domain": "Chemical",
-    "scientific_calls": 13,
-    "successful_scientific_calls": 13,
-    "distinct_successful_tools": 6,
+    "scientific_calls": 12,
+    "successful_scientific_calls": 12,
+    "distinct_successful_tools": 5,
     "successful_tools": [
       "CalculateTPSA",
       "CanonicalMolecularIdentity",
-      "ElementwiseNumericOperations",
       "InChIToInChIKey",
       "SMILESToInChI",
       "SMILESToWeight"
     ],
     "tool_domains": [
-      "Chemical",
-      "General"
+      "Chemical"
     ],
     "capability_depth": 3,
     "max_capability_layer_width": 12,
@@ -1106,7 +1109,7 @@
       "Chemical"
     ],
     "capability_depth": 1,
-    "max_capability_layer_width": 15,
+    "max_capability_layer_width": 16,
     "graph_fit": "parallel_evidence_panel"
   },
   {
@@ -1128,7 +1131,7 @@
       "MachineLearning"
     ],
     "capability_depth": 1,
-    "max_capability_layer_width": 10,
+    "max_capability_layer_width": 11,
     "graph_fit": "parallel_evidence_panel"
   },
   {
@@ -1136,8 +1139,8 @@
     "source_id": "SMAS-0055",
     "origin": "special100",
     "domain": "Chemical",
-    "scientific_calls": 19,
-    "successful_scientific_calls": 19,
+    "scientific_calls": 20,
+    "successful_scientific_calls": 20,
     "distinct_successful_tools": 5,
     "successful_tools": [
       "AddHydrogens",
@@ -1150,7 +1153,7 @@
       "Chemical"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 12,
+    "max_capability_layer_width": 13,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1174,7 +1177,7 @@
       "MachineLearning"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 19,
+    "max_capability_layer_width": 20,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1195,9 +1198,9 @@
     "tool_domains": [
       "Chemical"
     ],
-    "capability_depth": 1,
-    "max_capability_layer_width": 20,
-    "graph_fit": "parallel_evidence_panel"
+    "capability_depth": 2,
+    "max_capability_layer_width": 21,
+    "graph_fit": "multistage_dependency_graph"
   },
   {
     "id": "SMAS-0058",
@@ -1215,9 +1218,9 @@
     "tool_domains": [
       "Chemical"
     ],
-    "capability_depth": 1,
-    "max_capability_layer_width": 9,
-    "graph_fit": "parallel_evidence_panel"
+    "capability_depth": 2,
+    "max_capability_layer_width": 10,
+    "graph_fit": "multistage_dependency_graph"
   },
   {
     "id": "SMAS-0059",
@@ -1239,7 +1242,7 @@
       "Chemical"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 12,
+    "max_capability_layer_width": 13,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1263,7 +1266,7 @@
       "Material"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 7,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1288,7 +1291,7 @@
       "MachineLearning"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 16,
+    "max_capability_layer_width": 17,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1310,7 +1313,7 @@
       "Chemical"
     ],
     "capability_depth": 1,
-    "max_capability_layer_width": 13,
+    "max_capability_layer_width": 14,
     "graph_fit": "parallel_evidence_panel"
   },
   {
@@ -1320,13 +1323,12 @@
     "domain": "Material",
     "scientific_calls": 12,
     "successful_scientific_calls": 12,
-    "distinct_successful_tools": 6,
+    "distinct_successful_tools": 5,
     "successful_tools": [
       "CalculateDensity",
       "CompositionFractions",
       "ElementwiseNumericOperations",
       "MatrixMultiply",
-      "NormalizeNumericRows",
       "SolveLinearSystem"
     ],
     "tool_domains": [
@@ -1335,7 +1337,7 @@
       "Material"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 8,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1343,22 +1345,23 @@
     "source_id": "SMAS-0064",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 16,
-    "successful_scientific_calls": 16,
+    "scientific_calls": 12,
+    "successful_scientific_calls": 12,
     "distinct_successful_tools": 5,
     "successful_tools": [
       "CalculateDensity",
+      "ElementwiseNumericOperations",
       "FitLinearRegression",
       "PredictLinearModel",
-      "ReadCrystalStructure",
       "RegressionMetrics"
     ],
     "tool_domains": [
+      "General",
       "MachineLearning",
       "Material"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 5,
+    "max_capability_layer_width": 6,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1366,16 +1369,14 @@
     "source_id": "SMAS-0065",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 18,
-    "successful_scientific_calls": 18,
-    "distinct_successful_tools": 6,
+    "scientific_calls": 15,
+    "successful_scientific_calls": 15,
+    "distinct_successful_tools": 4,
     "successful_tools": [
       "ElementwiseNumericOperations",
       "FiniteDifferenceGradient",
       "NumericalTrapezoidIntegration",
-      "ParseJSONDocument",
-      "PeriodicNeighborList",
-      "ReadCrystalStructure"
+      "PeriodicNeighborList"
     ],
     "tool_domains": [
       "General",
@@ -1383,7 +1384,7 @@
       "Material"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 8,
+    "max_capability_layer_width": 9,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1391,19 +1392,19 @@
     "source_id": "SMAS-0066",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 6,
-    "successful_scientific_calls": 6,
+    "scientific_calls": 4,
+    "successful_scientific_calls": 4,
     "distinct_successful_tools": 2,
     "successful_tools": [
-      "PowderDiffractionPattern",
-      "RegressionMetrics"
+      "ExecuteNumericalCode",
+      "PowderDiffractionPattern"
     ],
     "tool_domains": [
-      "MachineLearning",
+      "General",
       "Material"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 3,
+    "max_capability_layer_width": 8,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1411,21 +1412,23 @@
     "source_id": "SMAS-0067",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 9,
-    "successful_scientific_calls": 9,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 10,
+    "successful_scientific_calls": 10,
+    "distinct_successful_tools": 5,
     "successful_tools": [
       "BootstrapMeanInterval",
+      "ElementwiseNumericOperations",
+      "ExecuteNumericalCode",
       "MatchedPeriodicDisplacements",
-      "MatrixMultiply",
       "SymmetricEigenDecomposition"
     ],
     "tool_domains": [
+      "General",
       "MachineLearning",
       "Material"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 4,
+    "max_capability_layer_width": 6,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1433,14 +1436,13 @@
     "source_id": "SMAS-0068",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 18,
-    "successful_scientific_calls": 18,
-    "distinct_successful_tools": 5,
+    "scientific_calls": 12,
+    "successful_scientific_calls": 12,
+    "distinct_successful_tools": 4,
     "successful_tools": [
       "CalculateDensity",
       "FitLinearRegression",
       "PredictLinearModel",
-      "ReadCrystalStructure",
       "RegressionMetrics"
     ],
     "tool_domains": [
@@ -1448,7 +1450,7 @@
       "Material"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 12,
+    "max_capability_layer_width": 13,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1456,19 +1458,18 @@
     "source_id": "SMAS-0069",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 9,
-    "successful_scientific_calls": 9,
-    "distinct_successful_tools": 3,
+    "scientific_calls": 6,
+    "successful_scientific_calls": 6,
+    "distinct_successful_tools": 2,
     "successful_tools": [
       "CalculateDensity",
-      "CompositionFractions",
-      "GetElementComposition"
+      "CompositionFractions"
     ],
     "tool_domains": [
       "Material"
     ],
     "capability_depth": 1,
-    "max_capability_layer_width": 9,
+    "max_capability_layer_width": 10,
     "graph_fit": "parallel_evidence_panel"
   },
   {
@@ -1477,21 +1478,22 @@
     "origin": "special100",
     "domain": "Material",
     "scientific_calls": 8,
-    "successful_scientific_calls": 8,
+    "successful_scientific_calls": 6,
     "distinct_successful_tools": 5,
     "successful_tools": [
+      "ExecuteNumericalCode",
       "GetMolecularFrequencies",
-      "MatrixMultiply",
       "ReadQChemFrequencyModes",
       "ReadQChemIRIntensities",
       "SymmetricEigenDecomposition"
     ],
     "tool_domains": [
+      "General",
       "MachineLearning",
       "Material"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 3,
+    "max_capability_layer_width": 4,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1499,10 +1501,11 @@
     "source_id": "SMAS-0071",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 6,
-    "successful_scientific_calls": 6,
-    "distinct_successful_tools": 6,
+    "scientific_calls": 7,
+    "successful_scientific_calls": 7,
+    "distinct_successful_tools": 7,
     "successful_tools": [
+      "ExecuteNumericalCode",
       "ReadQChemRotationalEnthalpy",
       "ReadQChemRotationalEntropy",
       "ReadQChemTranslationalEnthalpy",
@@ -1511,37 +1514,38 @@
       "ReadQChemVibrationalEntropy"
     ],
     "tool_domains": [
+      "General",
       "Material"
     ],
-    "capability_depth": 1,
-    "max_capability_layer_width": 6,
-    "graph_fit": "parallel_evidence_panel"
+    "capability_depth": 2,
+    "max_capability_layer_width": 7,
+    "graph_fit": "multistage_dependency_graph"
   },
   {
     "id": "SMAS-0072",
     "source_id": "SMAS-0072",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 13,
-    "successful_scientific_calls": 13,
-    "distinct_successful_tools": 9,
+    "scientific_calls": 11,
+    "successful_scientific_calls": 10,
+    "distinct_successful_tools": 8,
     "successful_tools": [
-      "EvaluateParametricCurve",
+      "ExecuteNumericalCode",
       "FitParametricCurve",
       "GetMolecularFrequencies",
       "LinearLeastSquares",
       "MatrixMultiply",
       "MatrixSVD",
-      "ReadQChemFrequencyModes",
       "ReadQChemIRIntensities",
       "RegressionMetrics"
     ],
     "tool_domains": [
+      "General",
       "MachineLearning",
       "Material"
     ],
     "capability_depth": 6,
-    "max_capability_layer_width": 3,
+    "max_capability_layer_width": 4,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1549,38 +1553,41 @@
     "source_id": "SMAS-0073",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 3,
-    "successful_scientific_calls": 3,
-    "distinct_successful_tools": 1,
+    "scientific_calls": 4,
+    "successful_scientific_calls": 4,
+    "distinct_successful_tools": 2,
     "successful_tools": [
+      "ExecuteNumericalCode",
       "ReadQChemNBOPopulations"
     ],
     "tool_domains": [
+      "General",
       "Material"
     ],
-    "capability_depth": 1,
-    "max_capability_layer_width": 3,
-    "graph_fit": "parallel_evidence_panel"
+    "capability_depth": 2,
+    "max_capability_layer_width": 5,
+    "graph_fit": "multistage_dependency_graph"
   },
   {
     "id": "SMAS-0074",
     "source_id": "SMAS-0074",
     "origin": "special100",
     "domain": "Material",
-    "scientific_calls": 12,
-    "successful_scientific_calls": 12,
+    "scientific_calls": 11,
+    "successful_scientific_calls": 10,
     "distinct_successful_tools": 3,
     "successful_tools": [
       "CalculateDensity",
       "CompositionFractions",
-      "GetElementComposition"
+      "ElementwiseNumericOperations"
     ],
     "tool_domains": [
+      "General",
       "Material"
     ],
-    "capability_depth": 1,
-    "max_capability_layer_width": 12,
-    "graph_fit": "parallel_evidence_panel"
+    "capability_depth": 2,
+    "max_capability_layer_width": 15,
+    "graph_fit": "multistage_dependency_graph"
   },
   {
     "id": "SMAS-0075",
@@ -1601,7 +1608,7 @@
       "MachineLearning"
     ],
     "capability_depth": 1,
-    "max_capability_layer_width": 9,
+    "max_capability_layer_width": 10,
     "graph_fit": "parallel_evidence_panel"
   },
   {
@@ -1609,14 +1616,11 @@
     "source_id": "SMAS-0076",
     "origin": "special100",
     "domain": "Biology",
-    "scientific_calls": 17,
-    "successful_scientific_calls": 17,
-    "distinct_successful_tools": 5,
+    "scientific_calls": 4,
+    "successful_scientific_calls": 4,
+    "distinct_successful_tools": 2,
     "successful_tools": [
-      "ElementwiseNumericOperations",
-      "MatrixMultiply",
-      "NormalizeNumericRows",
-      "PairwiseNumericDistances",
+      "ExecuteNumericalCode",
       "SymmetricEigenDecomposition"
     ],
     "tool_domains": [
@@ -1624,7 +1628,7 @@
       "MachineLearning"
     ],
     "capability_depth": 7,
-    "max_capability_layer_width": 3,
+    "max_capability_layer_width": 6,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1645,7 +1649,7 @@
       "MachineLearning"
     ],
     "capability_depth": 1,
-    "max_capability_layer_width": 9,
+    "max_capability_layer_width": 10,
     "graph_fit": "parallel_evidence_panel"
   },
   {
@@ -1667,7 +1671,7 @@
       "MachineLearning"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 5,
+    "max_capability_layer_width": 6,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1687,7 +1691,7 @@
       "MachineLearning"
     ],
     "capability_depth": 1,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 7,
     "graph_fit": "parallel_evidence_panel"
   },
   {
@@ -1695,20 +1699,22 @@
     "source_id": "SMAS-0080",
     "origin": "special100",
     "domain": "Biology",
-    "scientific_calls": 10,
-    "successful_scientific_calls": 10,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 11,
+    "successful_scientific_calls": 11,
+    "distinct_successful_tools": 5,
     "successful_tools": [
       "BinomialProbabilityTable",
       "BootstrapMeanInterval",
       "DescribeNumericData",
+      "ExecuteNumericalCode",
       "StandardNormalDistribution"
     ],
     "tool_domains": [
+      "General",
       "MachineLearning"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 7,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1716,8 +1722,8 @@
     "source_id": "SMAS-0081",
     "origin": "special100",
     "domain": "Biology",
-    "scientific_calls": 14,
-    "successful_scientific_calls": 14,
+    "scientific_calls": 12,
+    "successful_scientific_calls": 12,
     "distinct_successful_tools": 4,
     "successful_tools": [
       "GetReverseComplement",
@@ -1729,7 +1735,7 @@
       "Biology"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 8,
+    "max_capability_layer_width": 9,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1737,22 +1743,17 @@
     "source_id": "SMAS-0082",
     "origin": "special100",
     "domain": "Biology",
-    "scientific_calls": 14,
-    "successful_scientific_calls": 14,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 1,
+    "successful_scientific_calls": 1,
+    "distinct_successful_tools": 1,
     "successful_tools": [
-      "DiversityIndices",
-      "ElementwiseNumericOperations",
-      "MatrixMultiply",
-      "NormalizeNumericRows"
+      "ExecuteNumericalCode"
     ],
     "tool_domains": [
-      "Biology",
-      "General",
-      "MachineLearning"
+      "General"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 4,
+    "max_capability_layer_width": 6,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1762,10 +1763,9 @@
     "domain": "Biology",
     "scientific_calls": 13,
     "successful_scientific_calls": 13,
-    "distinct_successful_tools": 5,
+    "distinct_successful_tools": 4,
     "successful_tools": [
       "ExtractPDBCoordinates",
-      "InspectPDBQuality",
       "MolecularCentroid",
       "PairwiseNumericDistances",
       "RigidSuperposition"
@@ -1775,8 +1775,8 @@
       "Chemical",
       "MachineLearning"
     ],
-    "capability_depth": 3,
-    "max_capability_layer_width": 6,
+    "capability_depth": 2,
+    "max_capability_layer_width": 13,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1797,7 +1797,7 @@
       "MachineLearning"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 4,
+    "max_capability_layer_width": 5,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1805,12 +1805,11 @@
     "source_id": "SMAS-0085",
     "origin": "special100",
     "domain": "Biology",
-    "scientific_calls": 21,
-    "successful_scientific_calls": 21,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 15,
+    "successful_scientific_calls": 15,
+    "distinct_successful_tools": 3,
     "successful_tools": [
       "MatrixExponential",
-      "MatrixMultiply",
       "MatrixSVD",
       "SymmetricEigenDecomposition"
     ],
@@ -1841,7 +1840,7 @@
       "MachineLearning"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 3,
+    "max_capability_layer_width": 4,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1849,18 +1848,20 @@
     "source_id": "SMAS-0087",
     "origin": "special100",
     "domain": "Biology",
-    "scientific_calls": 8,
-    "successful_scientific_calls": 8,
-    "distinct_successful_tools": 2,
+    "scientific_calls": 9,
+    "successful_scientific_calls": 9,
+    "distinct_successful_tools": 3,
     "successful_tools": [
+      "ElementwiseNumericOperations",
       "EvaluateParametricCurve",
       "FitParametricCurve"
     ],
     "tool_domains": [
+      "General",
       "MachineLearning"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 4,
+    "max_capability_layer_width": 5,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1870,19 +1871,18 @@
     "domain": "MachineLearning",
     "scientific_calls": 15,
     "successful_scientific_calls": 15,
-    "distinct_successful_tools": 5,
+    "distinct_successful_tools": 4,
     "successful_tools": [
       "FitRidgeRegression",
       "PredictLinearModel",
       "RegressionMetrics",
-      "StandardizeNumericFeatures",
-      "TimeSeriesSplitRecords"
+      "StandardizeNumericFeatures"
     ],
     "tool_domains": [
       "MachineLearning"
     ],
-    "capability_depth": 5,
-    "max_capability_layer_width": 6,
+    "capability_depth": 4,
+    "max_capability_layer_width": 10,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1890,11 +1890,11 @@
     "source_id": "SMAS-0089",
     "origin": "special100",
     "domain": "MachineLearning",
-    "scientific_calls": 15,
-    "successful_scientific_calls": 15,
+    "scientific_calls": 8,
+    "successful_scientific_calls": 8,
     "distinct_successful_tools": 4,
     "successful_tools": [
-      "ElementwiseNumericOperations",
+      "ExecuteNumericalCode",
       "MatrixMultiply",
       "MatrixSVD",
       "RegressionMetrics"
@@ -1904,7 +1904,7 @@
       "MachineLearning"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 3,
+    "max_capability_layer_width": 6,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1912,20 +1912,20 @@
     "source_id": "SMAS-0090",
     "origin": "special100",
     "domain": "MachineLearning",
-    "scientific_calls": 7,
-    "successful_scientific_calls": 7,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 3,
+    "successful_scientific_calls": 3,
+    "distinct_successful_tools": 3,
     "successful_tools": [
+      "ExecuteNumericalCode",
       "LinearLeastSquares",
-      "MatrixMultiply",
-      "MatrixSVD",
-      "PairwiseNumericDistances"
+      "MatrixSVD"
     ],
     "tool_domains": [
+      "General",
       "MachineLearning"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 2,
+    "max_capability_layer_width": 3,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1968,7 +1968,7 @@
       "MachineLearning"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 5,
+    "max_capability_layer_width": 6,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -1976,25 +1976,19 @@
     "source_id": "SMAS-0093",
     "origin": "special100",
     "domain": "MachineLearning",
-    "scientific_calls": 10,
-    "successful_scientific_calls": 10,
-    "distinct_successful_tools": 8,
+    "scientific_calls": 4,
+    "successful_scientific_calls": 4,
+    "distinct_successful_tools": 2,
     "successful_tools": [
-      "ElementwiseNumericOperations",
-      "EnumerateSignAssignments",
-      "ExtractNumericColumns",
-      "MatrixMultiply",
-      "PairedRandomizationTest",
-      "ScaleNumericMatrix",
-      "SelectOrderStatistic",
-      "SummarizeNumericTable"
+      "ExecuteNumericalCode",
+      "PairedRandomizationTest"
     ],
     "tool_domains": [
       "General",
       "MachineLearning"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 4,
+    "max_capability_layer_width": 6,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2014,7 +2008,7 @@
       "MachineLearning"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 9,
+    "max_capability_layer_width": 10,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2022,11 +2016,12 @@
     "source_id": "SMAS-0095",
     "origin": "special100",
     "domain": "MachineLearning",
-    "scientific_calls": 18,
-    "successful_scientific_calls": 18,
-    "distinct_successful_tools": 6,
+    "scientific_calls": 24,
+    "successful_scientific_calls": 24,
+    "distinct_successful_tools": 7,
     "successful_tools": [
       "CubicHermiteInterpolate",
+      "ElementwiseNumericOperations",
       "EvaluateParametricCurve",
       "FiniteDifferenceGradient",
       "FitParametricCurve",
@@ -2034,10 +2029,11 @@
       "RegressionMetrics"
     ],
     "tool_domains": [
+      "General",
       "MachineLearning"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 10,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2045,8 +2041,8 @@
     "source_id": "SMAS-0096",
     "origin": "special100",
     "domain": "MachineLearning",
-    "scientific_calls": 6,
-    "successful_scientific_calls": 6,
+    "scientific_calls": 5,
+    "successful_scientific_calls": 5,
     "distinct_successful_tools": 2,
     "successful_tools": [
       "PearsonCorrelation",
@@ -2056,7 +2052,7 @@
       "MachineLearning"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 7,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2075,7 +2071,7 @@
       "MachineLearning"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 3,
+    "max_capability_layer_width": 4,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2095,7 +2091,7 @@
       "MachineLearning"
     ],
     "capability_depth": 5,
-    "max_capability_layer_width": 2,
+    "max_capability_layer_width": 5,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2103,13 +2099,11 @@
     "source_id": "SMAS-0099",
     "origin": "special100",
     "domain": "MachineLearning",
-    "scientific_calls": 13,
-    "successful_scientific_calls": 13,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 7,
+    "successful_scientific_calls": 7,
+    "distinct_successful_tools": 2,
     "successful_tools": [
       "ConvexHalfspaceGeometry",
-      "DescribeNumericData",
-      "MatrixMultiply",
       "SolveLinearProgram"
     ],
     "tool_domains": [
@@ -2117,7 +2111,7 @@
       "MachineLearning"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 7,
+    "max_capability_layer_width": 8,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2127,19 +2121,22 @@
     "domain": "MachineLearning",
     "scientific_calls": 14,
     "successful_scientific_calls": 14,
-    "distinct_successful_tools": 5,
+    "distinct_successful_tools": 7,
     "successful_tools": [
       "FiniteDifferenceGradient",
       "GraphLaplacian",
       "MatrixExponential",
       "MatrixMultiply",
-      "NumericalTrapezoidIntegration"
+      "NumericalTrapezoidIntegration",
+      "ScaleNumericMatrix",
+      "SummarizeNumericTable"
     ],
     "tool_domains": [
+      "General",
       "MachineLearning"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 7,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2161,7 +2158,7 @@
       "Chemical",
       "General"
     ],
-    "capability_depth": 4,
+    "capability_depth": 5,
     "max_capability_layer_width": 10,
     "graph_fit": "multistage_dependency_graph"
   },
@@ -2170,21 +2167,19 @@
     "source_id": "FLOW-0015",
     "origin": "full",
     "domain": "Chemical",
-    "scientific_calls": 22,
-    "successful_scientific_calls": 22,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 3,
+    "successful_scientific_calls": 3,
+    "distinct_successful_tools": 3,
     "successful_tools": [
-      "DescribeNumericData",
-      "ElementwiseNumericOperations",
-      "ParseJSONDocument",
-      "PolynomialLeastSquaresFit"
+      "ExecuteNumericalCode",
+      "InspectScientificFile",
+      "QueryScientificRecordsFile"
     ],
     "tool_domains": [
-      "General",
-      "MachineLearning"
+      "General"
     ],
     "capability_depth": 5,
-    "max_capability_layer_width": 14,
+    "max_capability_layer_width": 15,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2226,8 +2221,8 @@
       "Chemical",
       "General"
     ],
-    "capability_depth": 2,
-    "max_capability_layer_width": 9,
+    "capability_depth": 3,
+    "max_capability_layer_width": 8,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2281,11 +2276,11 @@
     "source_id": "FLOW-0068",
     "origin": "full",
     "domain": "Chemical",
-    "scientific_calls": 5,
-    "successful_scientific_calls": 5,
+    "scientific_calls": 10,
+    "successful_scientific_calls": 10,
     "distinct_successful_tools": 4,
     "successful_tools": [
-      "ExecuteNumericalCode",
+      "ElementwiseNumericOperations",
       "NumericalTrapezoidIntegration",
       "QueryScientificRecordsFile",
       "SMILESToWeight"
@@ -2296,7 +2291,7 @@
       "MachineLearning"
     ],
     "capability_depth": 8,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 7,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2348,20 +2343,18 @@
     "source_id": "FLOW-0072",
     "origin": "full",
     "domain": "Chemical",
-    "scientific_calls": 5,
-    "successful_scientific_calls": 4,
-    "distinct_successful_tools": 3,
+    "scientific_calls": 2,
+    "successful_scientific_calls": 2,
+    "distinct_successful_tools": 2,
     "successful_tools": [
       "ExecuteNumericalCode",
-      "FitLinearRegression",
       "QueryScientificRecordsFile"
     ],
     "tool_domains": [
-      "General",
-      "MachineLearning"
+      "General"
     ],
     "capability_depth": 6,
-    "max_capability_layer_width": 7,
+    "max_capability_layer_width": 8,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2369,8 +2362,8 @@
     "source_id": "FLOW-0074",
     "origin": "full",
     "domain": "Chemical",
-    "scientific_calls": 9,
-    "successful_scientific_calls": 7,
+    "scientific_calls": 6,
+    "successful_scientific_calls": 6,
     "distinct_successful_tools": 3,
     "successful_tools": [
       "ExecuteNumericalCode",
@@ -2382,7 +2375,7 @@
       "MachineLearning"
     ],
     "capability_depth": 6,
-    "max_capability_layer_width": 7,
+    "max_capability_layer_width": 8,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2434,10 +2427,11 @@
     "origin": "full",
     "domain": "Chemical",
     "scientific_calls": 5,
-    "successful_scientific_calls": 4,
-    "distinct_successful_tools": 3,
+    "successful_scientific_calls": 5,
+    "distinct_successful_tools": 4,
     "successful_tools": [
       "ExecuteNumericalCode",
+      "InspectScientificFile",
       "MolecularElectronicDescriptors",
       "QueryScientificRecordsFile"
     ],
@@ -2469,7 +2463,7 @@
       "Material"
     ],
     "capability_depth": 9,
-    "max_capability_layer_width": 4,
+    "max_capability_layer_width": 5,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2478,10 +2472,11 @@
     "origin": "full",
     "domain": "Chemical",
     "scientific_calls": 9,
-    "successful_scientific_calls": 8,
-    "distinct_successful_tools": 4,
+    "successful_scientific_calls": 9,
+    "distinct_successful_tools": 5,
     "successful_tools": [
       "ExecuteNumericalCode",
+      "InspectScientificFile",
       "QueryScientificRecordsFile",
       "SMILESToWeight",
       "SubstructureQuery"
@@ -2499,21 +2494,19 @@
     "source_id": "FLOW-0083",
     "origin": "full",
     "domain": "Chemical",
-    "scientific_calls": 13,
-    "successful_scientific_calls": 13,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 3,
+    "successful_scientific_calls": 3,
+    "distinct_successful_tools": 3,
     "successful_tools": [
-      "ElementwiseNumericOperations",
-      "FitLinearRegression",
-      "InterpolateLinear",
+      "ExecuteNumericalCode",
+      "InspectScientificFile",
       "QueryScientificRecordsFile"
     ],
     "tool_domains": [
-      "General",
-      "MachineLearning"
+      "General"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 11,
+    "max_capability_layer_width": 12,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2546,21 +2539,18 @@
     "source_id": "FLOW-0092",
     "origin": "full",
     "domain": "Chemical",
-    "scientific_calls": 8,
-    "successful_scientific_calls": 6,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 2,
+    "successful_scientific_calls": 2,
+    "distinct_successful_tools": 2,
     "successful_tools": [
       "ExecuteNumericalCode",
-      "InspectScientificFile",
-      "LinearLeastSquares",
       "QueryScientificRecordsFile"
     ],
     "tool_domains": [
-      "General",
-      "MachineLearning"
+      "General"
     ],
     "capability_depth": 9,
-    "max_capability_layer_width": 16,
+    "max_capability_layer_width": 17,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2591,8 +2581,8 @@
     "source_id": "FLOW-0127",
     "origin": "full",
     "domain": "Chemical",
-    "scientific_calls": 11,
-    "successful_scientific_calls": 10,
+    "scientific_calls": 10,
+    "successful_scientific_calls": 9,
     "distinct_successful_tools": 6,
     "successful_tools": [
       "AssignCIPLabels",
@@ -2616,20 +2606,18 @@
     "source_id": "FLOW-0396",
     "origin": "full",
     "domain": "Chemical",
-    "scientific_calls": 14,
-    "successful_scientific_calls": 13,
-    "distinct_successful_tools": 3,
+    "scientific_calls": 3,
+    "successful_scientific_calls": 2,
+    "distinct_successful_tools": 2,
     "successful_tools": [
-      "ElementwiseNumericOperations",
-      "FitLinearRegression",
+      "ExecuteNumericalCode",
       "ParseJSONDocument"
     ],
     "tool_domains": [
-      "General",
-      "MachineLearning"
+      "General"
     ],
-    "capability_depth": 4,
-    "max_capability_layer_width": 3,
+    "capability_depth": 5,
+    "max_capability_layer_width": 7,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2638,7 +2626,7 @@
     "origin": "full",
     "domain": "Chemical",
     "scientific_calls": 7,
-    "successful_scientific_calls": 7,
+    "successful_scientific_calls": 6,
     "distinct_successful_tools": 4,
     "successful_tools": [
       "ElementwiseNumericOperations",
@@ -2650,7 +2638,7 @@
       "Chemical",
       "General"
     ],
-    "capability_depth": 5,
+    "capability_depth": 4,
     "max_capability_layer_width": 3,
     "graph_fit": "multistage_dependency_graph"
   },
@@ -2771,11 +2759,11 @@
     "source_id": "FLOW-0101",
     "origin": "full",
     "domain": "Material",
-    "scientific_calls": 11,
-    "successful_scientific_calls": 11,
+    "scientific_calls": 5,
+    "successful_scientific_calls": 4,
     "distinct_successful_tools": 3,
     "successful_tools": [
-      "FiniteDifferenceGradient",
+      "ExecuteNumericalCode",
       "NumericalTrapezoidIntegration",
       "ParseJSONDocument"
     ],
@@ -2783,8 +2771,8 @@
       "General",
       "MachineLearning"
     ],
-    "capability_depth": 2,
-    "max_capability_layer_width": 8,
+    "capability_depth": 3,
+    "max_capability_layer_width": 9,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -2974,7 +2962,7 @@
     "source_id": "FLOW-0190",
     "origin": "full",
     "domain": "Material",
-    "scientific_calls": 13,
+    "scientific_calls": 10,
     "successful_scientific_calls": 10,
     "distinct_successful_tools": 4,
     "successful_tools": [
@@ -2989,7 +2977,7 @@
       "Material"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 10,
+    "max_capability_layer_width": 9,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -3103,7 +3091,7 @@
       "MachineLearning"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 7,
+    "max_capability_layer_width": 9,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -3178,21 +3166,19 @@
     "source_id": "FLOW-0211",
     "origin": "full",
     "domain": "Material",
-    "scientific_calls": 9,
-    "successful_scientific_calls": 8,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 3,
+    "successful_scientific_calls": 3,
+    "distinct_successful_tools": 3,
     "successful_tools": [
       "ExecuteNumericalCode",
       "InspectScientificFile",
-      "LinearLeastSquares",
       "QueryScientificRecordsFile"
     ],
     "tool_domains": [
-      "General",
-      "MachineLearning"
+      "General"
     ],
     "capability_depth": 5,
-    "max_capability_layer_width": 10,
+    "max_capability_layer_width": 11,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -3200,22 +3186,18 @@
     "source_id": "FLOW-0214",
     "origin": "full",
     "domain": "Material",
-    "scientific_calls": 12,
-    "successful_scientific_calls": 11,
-    "distinct_successful_tools": 5,
+    "scientific_calls": 3,
+    "successful_scientific_calls": 2,
+    "distinct_successful_tools": 2,
     "successful_tools": [
-      "ElementwiseNumericOperations",
       "ExecuteNumericalCode",
-      "InterpolateLinear",
-      "NumericalTrapezoidIntegration",
       "QueryScientificRecordsFile"
     ],
     "tool_domains": [
-      "General",
-      "MachineLearning"
+      "General"
     ],
     "capability_depth": 5,
-    "max_capability_layer_width": 17,
+    "max_capability_layer_width": 18,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -3223,16 +3205,15 @@
     "source_id": "FLOW-0215",
     "origin": "full",
     "domain": "Material",
-    "scientific_calls": 20,
-    "successful_scientific_calls": 20,
-    "distinct_successful_tools": 9,
+    "scientific_calls": 13,
+    "successful_scientific_calls": 13,
+    "distinct_successful_tools": 8,
     "successful_tools": [
       "AggregateRecordGroups",
       "ConvexHalfspaceGeometry",
       "ExecuteNumericalCode",
       "ExtractNumericColumns",
       "FilterRecords",
-      "GetJSONPointer",
       "InspectScientificFile",
       "ParseJSONDocument",
       "QueryScientificRecordsFile"
@@ -3313,19 +3294,18 @@
     "source_id": "FLOW-0245",
     "origin": "full",
     "domain": "Biology",
-    "scientific_calls": 9,
-    "successful_scientific_calls": 9,
-    "distinct_successful_tools": 3,
+    "scientific_calls": 3,
+    "successful_scientific_calls": 2,
+    "distinct_successful_tools": 2,
     "successful_tools": [
-      "ElementwiseNumericOperations",
-      "NormalizeNumericRows",
+      "ExecuteNumericalCode",
       "ParseJSONDocument"
     ],
     "tool_domains": [
       "General"
     ],
-    "capability_depth": 2,
-    "max_capability_layer_width": 8,
+    "capability_depth": 3,
+    "max_capability_layer_width": 10,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -3474,7 +3454,7 @@
       "General",
       "MachineLearning"
     ],
-    "capability_depth": 5,
+    "capability_depth": 6,
     "max_capability_layer_width": 46,
     "graph_fit": "multistage_dependency_graph"
   },
@@ -3483,15 +3463,15 @@
     "source_id": "FLOW-0263",
     "origin": "full",
     "domain": "Biology",
-    "scientific_calls": 9,
+    "scientific_calls": 7,
     "successful_scientific_calls": 7,
     "distinct_successful_tools": 5,
     "successful_tools": [
       "ComputeExtinctionCoefficient",
-      "ExecuteNumericalCode",
+      "ElementwiseNumericOperations",
       "InspectPDBQuality",
       "InspectScientificFile",
-      "QueryScientificRecordsFile"
+      "ParseJSONDocument"
     ],
     "tool_domains": [
       "Biology",
@@ -3522,7 +3502,7 @@
       "MachineLearning"
     ],
     "capability_depth": 5,
-    "max_capability_layer_width": 10,
+    "max_capability_layer_width": 11,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -3598,15 +3578,13 @@
     "source_id": "FLOW-0288",
     "origin": "full",
     "domain": "Biology",
-    "scientific_calls": 10,
-    "successful_scientific_calls": 10,
-    "distinct_successful_tools": 5,
+    "scientific_calls": 4,
+    "successful_scientific_calls": 3,
+    "distinct_successful_tools": 3,
     "successful_tools": [
-      "ElementwiseNumericOperations",
-      "MatrixMultiply",
+      "ExecuteNumericalCode",
       "ParseJSONDocument",
-      "PolynomialRoots",
-      "SolveLinearSystem"
+      "PolynomialRoots"
     ],
     "tool_domains": [
       "General",
@@ -3679,7 +3657,7 @@
       "General",
       "MachineLearning"
     ],
-    "capability_depth": 2,
+    "capability_depth": 3,
     "max_capability_layer_width": 5,
     "graph_fit": "multistage_dependency_graph"
   },
@@ -3701,7 +3679,7 @@
       "General",
       "MachineLearning"
     ],
-    "capability_depth": 3,
+    "capability_depth": 4,
     "max_capability_layer_width": 3,
     "graph_fit": "multistage_dependency_graph"
   },
@@ -3710,7 +3688,7 @@
     "source_id": "FLOW-0326",
     "origin": "full",
     "domain": "Biology",
-    "scientific_calls": 29,
+    "scientific_calls": 21,
     "successful_scientific_calls": 20,
     "distinct_successful_tools": 4,
     "successful_tools": [
@@ -3773,7 +3751,7 @@
       "MachineLearning"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 2,
+    "max_capability_layer_width": 3,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -3802,21 +3780,18 @@
     "source_id": "FLOW-0353",
     "origin": "full",
     "domain": "Biology",
-    "scientific_calls": 12,
-    "successful_scientific_calls": 12,
-    "distinct_successful_tools": 4,
+    "scientific_calls": 3,
+    "successful_scientific_calls": 2,
+    "distinct_successful_tools": 2,
     "successful_tools": [
-      "ElementwiseNumericOperations",
-      "MatrixMultiply",
-      "ParseJSONDocument",
-      "SolveLinearProgram"
+      "ExecuteNumericalCode",
+      "ParseJSONDocument"
     ],
     "tool_domains": [
-      "General",
-      "MachineLearning"
+      "General"
     ],
-    "capability_depth": 3,
-    "max_capability_layer_width": 3,
+    "capability_depth": 4,
+    "max_capability_layer_width": 9,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -3908,7 +3883,7 @@
       "General",
       "MachineLearning"
     ],
-    "capability_depth": 2,
+    "capability_depth": 3,
     "max_capability_layer_width": 3,
     "graph_fit": "multistage_dependency_graph"
   },
@@ -3983,7 +3958,7 @@
       "MachineLearning"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 8,
+    "max_capability_layer_width": 11,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -4008,7 +3983,7 @@
       "MachineLearning"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 6,
+    "max_capability_layer_width": 8,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -4096,8 +4071,8 @@
     "source_id": "FLOW-0427",
     "origin": "full",
     "domain": "MachineLearning",
-    "scientific_calls": 9,
-    "successful_scientific_calls": 9,
+    "scientific_calls": 8,
+    "successful_scientific_calls": 8,
     "distinct_successful_tools": 6,
     "successful_tools": [
       "ElementwiseNumericOperations",
@@ -4135,7 +4110,7 @@
       "MachineLearning"
     ],
     "capability_depth": 4,
-    "max_capability_layer_width": 2,
+    "max_capability_layer_width": 4,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -4183,7 +4158,7 @@
       "MachineLearning"
     ],
     "capability_depth": 3,
-    "max_capability_layer_width": 24,
+    "max_capability_layer_width": 30,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -4213,13 +4188,10 @@
     "source_id": "FLOW-0450",
     "origin": "full",
     "domain": "MachineLearning",
-    "scientific_calls": 7,
-    "successful_scientific_calls": 7,
-    "distinct_successful_tools": 5,
+    "scientific_calls": 3,
+    "successful_scientific_calls": 3,
+    "distinct_successful_tools": 2,
     "successful_tools": [
-      "ExecuteNumericalCode",
-      "GetJSONPointer",
-      "InspectScientificFile",
       "QueryScientificRecordsFile",
       "SolveLinearProgram"
     ],
@@ -4228,7 +4200,7 @@
       "MachineLearning"
     ],
     "capability_depth": 2,
-    "max_capability_layer_width": 8,
+    "max_capability_layer_width": 9,
     "graph_fit": "multistage_dependency_graph"
   },
   {
@@ -4295,7 +4267,7 @@
       "MachineLearning"
     ],
     "capability_depth": 7,
-    "max_capability_layer_width": 2,
+    "max_capability_layer_width": 3,
     "graph_fit": "multistage_dependency_graph"
   },
   {

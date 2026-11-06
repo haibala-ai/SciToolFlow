@@ -10,6 +10,7 @@
 | [assets](full/assets/)与[asset_manifest.json](full/asset_manifest.json) | 836 份已登记附件（当前 500 题使用其中 676 份）及SHA256、字节数和来源 |
 | [metadata.json](full/metadata.json) | 当前版本、学科数与统一评分政策 |
 | [mini/](mini/README.md) | 原Special-100与Full精选100题组成的200题，四学科各50题，使用统一运行与三指标评分 |
+| [mini-100/](mini-100/README.md) | 从Mini-200固定随机抽取的100题，用于消融实验，使用`--dataset mini-100` |
 
 每题包含`id`、`domain`、`question`、`inputs`、`files`和`answer_schema`。`Parameter`是inputs的兼容JSON字符串，`unit_annotations`补充必要单位与整题范围说明。仅含非空 `description` 的对象说明整题约定；字段级单位标注必须含可解析的 `path`。加载器将asset://URI解析为经过内容哈希校验的本地文件。
 
@@ -27,7 +28,7 @@ Agent只读取公开题目、附件、工具契约及运行配置。Full的私�
 
 ## 加载与格式校验接口
 
-`assets.py` 负责解析公开 `asset://` 附件并核对内容哈希，`schema.py` 提供公开答案格式的构建和校验函数，`datasets.py` 统一选择 mini／full 并校验编号映射。这些公开加载器只处理公开任务，不读取参考答案。`mini/schema.json` 与 `full/schema.json` 是任务记录格式，`schema.py` 是 Python 校验实现，职责不同。
+`assets.py` 负责解析公开 `asset://` 附件并核对内容哈希，`schema.py` 提供公开答案格式的构建和校验函数，`datasets.py` 统一选择 mini／mini-100／full 并校验编号映射。这些公开加载器只处理公开任务，不读取参考答案。`mini/schema.json` 与 `full/schema.json` 是任务记录格式，`schema.py` 是 Python 校验实现，职责不同。
 
 Full任务按设计目标分为高难度题、工具组合题和正常题，完整题号与摘要统一见 [CATEGORIES.md](full/CATEGORIES.md)。`full/index.json`的category字段便于程序分组；Mini的独立编排题保留自身难度层级，不将两种标签直接混用。
 

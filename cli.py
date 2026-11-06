@@ -42,6 +42,8 @@ def main():
     p.add_argument("--output", required=True)
     p.add_argument("--backend", choices=["vllm", "local", "api"], default="vllm")
     p.add_argument("--model")
+    p.add_argument("--embedding-backend", choices=["api", "local"],
+                   help="Retrieval vectors: original API 3072D or local Qwen 2560D")
     p.add_argument("--max-model-requests", type=int, default=8)
     p.add_argument("--max-output-tokens", type=int, default=8192)
     p.add_argument("--task-timeout", type=float, default=600)
@@ -49,11 +51,19 @@ def main():
     p.add_argument(
         "--baseline", choices=["react", "scitoolagent", "scimas"], default="react"
     )
+    from baselines.scimas.ablation import VARIANTS
+
+    p.add_argument(
+        "--scimas-ablation", choices=tuple(VARIANTS), default="full",
+        help="SciMas mechanism intervention (default: full); task concurrency is unchanged",
+    )
     p.add_argument("--dataset", choices=DATASETS, default=DEFAULT_DATASET)
     p.add_argument("--tasks", default="all")
     p.add_argument("--output")
     p.add_argument("--backend", choices=["vllm", "local", "api"], default="vllm")
     p.add_argument("--model")
+    p.add_argument("--embedding-backend", choices=["api", "local"],
+                   help="Retrieval vectors: original API 3072D or local Qwen 2560D")
     p.add_argument(
         "--concurrency",
         type=int,
@@ -189,6 +199,8 @@ def main():
         if result["failed"]:
             raise SystemExit(1)
     elif args.command == "run":
+        if args.baseline != "scimas" and args.scimas_ablation != "full":
+            parser.error("--scimas-ablation requires --baseline scimas")
         if any(
             not math.isfinite(getattr(args, k)) or getattr(args, k) <= 0
             for k in [

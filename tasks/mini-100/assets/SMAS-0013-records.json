@@ -1,0 +1,16 @@
+{
+  "records": [
+    {
+      "id": "r1",
+      "smiles": "c1ccccc1O"
+    },
+    {
+      "id": "r2",
+      "smiles": "Oc1ccncc1"
+    },
+    {
+      "id": "r3",
+      "smiles": "OC1CCCCC1"
+    }
+  ]
+}

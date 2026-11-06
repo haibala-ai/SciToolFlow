@@ -1,0 +1,55 @@
+{
+  "schema_version": "scimas.ablation_acceptance.v1",
+  "checked_at": "2026-11-06T15:02:17.652333+08:00",
+  "scope": "Mechanism implementation and integration; not Mini-200 model performance",
+  "checks": [
+    {
+      "name": "ablation_four_mechanism_recheck",
+      "tests": 39,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "generation_api_requests": 0,
+  "real_tool_smoke": {
+    "variants": 6,
+    "tools": [
+      "MatrixInverse",
+      "MatrixMultiply"
+    ],
+    "calls_per_variant": 2,
+    "all_completed": true,
+    "trajectory_integrity_verified": true
+  },
+  "controlled_checks": [
+    "No experience accumulation or retrieval in wo-exp and wo-all",
+    "Actual independent-call overlap in parallel variants; no overlap and stable topological dispatch in serial variants",
+    "False screening conditions and descendants execute in wo-early-stop and wo-all; positive gates remain executable",
+    "Unapproved gates, missing evidence and invalid outputs do not become valid by disabling screening",
+    "Local repair reuses unaffected evidence; disabled variants fail without calling the repair role",
+    "Transient retries preserved and bounded in no-repair variants",
+    "CLI to batch to worker variant propagation; recorded effective configuration; cross-variant resume rejection"
+  ],
+  "source_sha256": {
+    "cli.py": "10a9bf34fc9753667215876da9c22e2304afdf1893800cc64f6420bcca307bc2",
+    "baselines/react/runner.py": "56f259c0c90f8ebee5a5aa9bd285628c9250b36fff668d4abc84c60c4b8a1163",
+    "baselines/scimas/README.md": "a445491859c72095195b48027a8dcd566b734f635425fb99685bd6ea83d6597b",
+    "baselines/scimas/roles.py": "b73ce32f4158f7e3c02df1433e124399a5484d0fe7ab632cb254867c5f7f0d7d",
+    "baselines/scimas/runtime.py": "9ce032d759d35314c0dfdbc2ae328ee84ee1edba8762218f78d5ad78e0fb94c4",
+    "baselines/scimas/task_graph.py": "cafe408087a0fd885080803839fba547e5514ef767b931336d185d2b99023345",
+    "tests/scimas/test_ablation.py": "650f618ee7ef64d46f160f893219be8d4fe314af2ffe0a391ab68e5c733757d7",
+    "baselines/scimas/ablation/__init__.py": "c1a7cb0e43bc98f4d58dc9cb2b4e91694f2204e626df736ef3e1c514a3c92ba0",
+    "baselines/scimas/ablation/policy.py": "1738c70c59b0ed1371380f749b36d7ae182a99f72e412c7583309255ede27e67",
+    "baselines/scimas/ablation/run.py": "aab7ba50e51b6e46ec04ff581e561cdb9626e26f7b9aa67beb111e053629cdc0",
+    "baselines/scimas/ablation/README.md": "1fdc56fed84fe08ca7e8882706a5a19ae7e90545522e5ba7323db911a1fb05fb"
+  },
+  "variant_definition": {
+    "wo-all": {
+      "experience": false,
+      "parallel": false,
+      "early_stop": false,
+      "local_repair": false
+    }
+  }
+}

@@ -1,4 +1,5 @@
 {
+  "SCITOOLFLOW_API_PROFILE": "official",
   "SCITOOLFLOW_API_BASE": "https://api.deepseek.com",
   "SCITOOLFLOW_API_MODEL": "deepseek-flash",
   "SCITOOLFLOW_API_TOKEN_PARAMETER": "max_tokens",

@@ -59,6 +59,14 @@ class WorkflowIntegrationTest(unittest.TestCase):
             ]
         }
         write(self.root / "tools/catalog/catalog.json", {"tools": self.catalog})
+        # Keep reference observations separate from the subsequently mutated
+        # actor run. Answer accuracy must not inherit actor route failures.
+        self.reference['reference_trace'] = 'evaluation/data/reference_trace.json'
+        write(self.root / self.reference['reference_trace'], {
+            'task_id': self.task['id'], 'status': 'completed',
+            'final_answer': copy.deepcopy(self.prediction['final_answer']),
+            'steps': [{'type': 'tools', 'calls': copy.deepcopy(self.prediction['calls'])}],
+        })
         self.save_reference()
         self.trace = {
             "schema_version": "scitoolflow.trajectory.v1",
@@ -143,6 +151,40 @@ class WorkflowIntegrationTest(unittest.TestCase):
                 self.root / "scores.json",
                 **kwargs,
             )
+
+    def test_correct_answer_without_actor_route_remains_correct(self):
+        self.trace['steps'][0]['calls'] = []
+        self.prediction['calls'] = []
+        self.save_trace(); self.save_predictions()
+        row = self.evaluate()['results'][0]
+        self.assertTrue(row['runtime_pass'])
+        self.assertTrue(row['answer_pass'])
+        self.assertFalse(row['planning_pass'])
+        self.assertFalse(row['joint_pass'])
+
+    def test_failed_actor_can_still_have_a_correct_answer(self):
+        self.trace.update(status='failed', failure_reason='ModelRequestError')
+        self.prediction.update(status='failed', completed=False, failure_reason='ModelRequestError')
+        self.save_trace(); self.save_predictions()
+        row = self.evaluate()['results'][0]
+        self.assertFalse(row['runtime_pass'])
+        self.assertTrue(row['answer_pass'])
+
+    def test_normally_completed_wrong_answer_still_completed(self):
+        self.trace['final_answer'] = {'selected': [], 'status': 'wrong'}
+        self.prediction['final_answer'] = copy.deepcopy(self.trace['final_answer'])
+        self.save_trace(); self.save_predictions()
+        row = self.evaluate()['results'][0]
+        self.assertTrue(row['runtime_pass'])
+        self.assertFalse(row['answer_pass'])
+
+    def test_method_review_does_not_override_correct_answer_or_normal_end(self):
+        with patch('evaluation.review.methods.classify', return_value={'reason': 'new method'}):
+            row = self.evaluate()['results'][0]
+        self.assertTrue(row['runtime_pass'])
+        self.assertTrue(row['answer_pass'])
+        self.assertTrue(row['pending_review'])
+        self.assertFalse(row['joint_pass'])
 
     def test_real_trace_without_exact_reference_path(self):
         self.prediction["calls"][0]["duration_seconds"] = 1234

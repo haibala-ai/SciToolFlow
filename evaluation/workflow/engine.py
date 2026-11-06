@@ -1,5 +1,7 @@
 """Score grounded workflow capabilities and aggregate benchmark metrics."""
 
+from .efficiency import score_efficiency, orchestration_score
+from .causality import observed_before
 from .values import MissingEvidence
 from .schema import SCHEMA_VERSION, validate_workflow, _selectors
 from .expressions import predicate
@@ -71,8 +73,9 @@ def score_workflow(
     full_science = sum(o.get("weight", 1) for o in spec["outcomes"])
     # Match results depend only on this call and its explicitly declared parent
     # observations. Reuse them across assignments of unrelated optional nodes.
+    candidate_keys={c['_index']:(_execution_signature(c),str(c['observation_id'])) for c in calls}
     candidates = {
-        node["id"]: [
+        node["id"]: sorted([
             call
             for call in calls
             if any(
@@ -80,7 +83,7 @@ def score_workflow(
                 and call.get("status") in alt.get("statuses", ["success"])
                 for alt in node["alternatives"]
             )
-        ]
+        ],key=lambda c:candidate_keys[c['_index']])
         for node in ordered
     }
     # Ordering parents need not supply any values to a match predicate. Keep
@@ -144,11 +147,10 @@ def score_workflow(
             # node could receive,even before the search commits to that route.
             # Ambiguous parents stay optimistic; no guessed observation enters
             # the final witness or earns evidence credit here.
-            minimum = max(
-                (min(c["_index"] for c in possible_calls[p]) for p in parents),
-                default=-1,
-            )
-            available = [c for c in available if c["_index"] > minimum]
+            available = [c for c in available if all(
+                any(observed_before(parent, c) for parent in possible_calls[p])
+                for p in parents
+            )]
             data_parents = match_parents[node["id"]]
             if all(len(possible_calls[p]) == 1 for p in data_parents):
                 determined = {
@@ -171,6 +173,7 @@ def score_workflow(
             any(all(n in possible for n in route) for route in group["alternatives"])
             for group in groups.values()
             if group.get("required", True)
+            and _branch(group.get("branch"), spec, local) is True
         )
         # Without explicit reuse, one actual call witnesses at most one node.
         # A declared reuse group can make that capacity bound too small; use
@@ -249,7 +252,11 @@ def score_workflow(
             (outcome, _branch(outcome.get("branch"), spec, local))
             for outcome in spec["outcomes"]
         ]
-        unresolved = any(active is None for _, active in node_states + outcome_states)
+        group_states = [
+            (group, _branch(group.get("branch"), spec, local))
+            for group in groups.values()
+        ]
+        unresolved = any(active is None for _, active in node_states + outcome_states + group_states)
         required_nodes = [
             node
             for node, active in node_states
@@ -258,14 +265,14 @@ def score_workflow(
         graph_complete = (
             (
                 bool(required_nodes)
-                or any(g.get("required", True) for g in groups.values())
+                or any(g.get("required", True) and active is True for g, active in group_states)
             )
             and not unresolved
             and all(node["id"] in matched for node in required_nodes)
             and all(
                 _group_satisfied(group, matched)
-                for group in groups.values()
-                if group.get("required", True)
+                for group, active in group_states
+                if group.get("required", True) and active is True
             )
         )
         required_outcomes = [
@@ -316,11 +323,10 @@ def score_workflow(
         active = _branch(node.get("branch"), spec, local)
         parents = node.get("depends_on", [])
         if active is True and all(p in matched for p in parents):
-            minimum = max((matched[p]["_index"] for p in parents), default=-1)
             for call in candidates[node["id"]]:
                 if (
                     observation_available(node, call, matched, used)
-                    and call["_index"] > minimum
+                    and all(observed_before(matched[p], call) for p in parents)
                     and matches(node, call, matched)
                 ):
                     walk(
@@ -371,11 +377,25 @@ def score_workflow(
         )
     applicable_nodes = [r for r in node_rows if r["applicable"] is True]
     applicable_outcomes = [r for r in outcomes if r["applicable"] is True]
+    group_rows = [
+        {
+            "id": group["id"],
+            "required": group.get("required", True),
+            "weight": group.get("weight", 1),
+            "applicable": _branch(group.get("branch"), spec, context),
+            "matched": _branch(group.get("branch"), spec, context) is True
+                       and _group_satisfied(group, best),
+            "matched_routes": [route for route in group["alternatives"]
+                               if all(n in best for n in route)],
+        }
+        for group in groups.values()
+    ]
     unresolved_conditions = []
     branch_by_id = {b["id"]: b for b in spec.get("branches", [])}
     for kind, definitions, rows in (
         ("node", ordered, node_rows),
         ("outcome", spec["outcomes"], outcomes),
+        ("capability_group", list(groups.values()), group_rows),
     ):
         for definition, row in zip(definitions, rows):
             if row["applicable"] is not None:
@@ -409,24 +429,11 @@ def score_workflow(
     )
     required_nodes = [r for r in applicable_nodes if r["required"]]
     required_outcomes = [r for r in applicable_outcomes if r["required"]]
-    group_rows = [
-        {
-            "id": group["id"],
-            "required": group.get("required", True),
-            "weight": group.get("weight", 1),
-            "matched": _group_satisfied(group, best),
-            "matched_routes": [
-                route
-                for route in group["alternatives"]
-                if all(n in best for n in route)
-            ],
-        }
-        for group in groups.values()
-    ]
+    required_groups = [r for r in group_rows if r["required"] and r["applicable"] is True]
     orchestration_pass = (
-        (bool(required_nodes) or any(r["required"] for r in group_rows))
+        (bool(required_nodes) or bool(required_groups))
         and all(r["matched"] for r in required_nodes)
-        and all(r["matched"] for r in group_rows if r["required"])
+        and all(r["matched"] for r in required_groups)
         and not pending
         and not unresolved_conditions
     )
@@ -446,59 +453,18 @@ def score_workflow(
     # Optional diagnostic nodes remain visible and their actual observations can
     # count as useful work. Omitting an optional operation cannot lower the
     # required-capability score, whether or not it belongs to a method group.
-    credit_nodes = [r for r in applicable_nodes if r["required"]] + [
-        r for r in group_rows if r["required"]
+    # Only a proven false scientific branch removes a requirement. Missing its
+    # eligibility evidence must never improve C by shrinking the denominator.
+    credit_nodes = [r for r in node_rows if r["required"] and r["applicable"] is not False] + [
+        r for r in group_rows if r["required"] and r["applicable"] is not False
     ]
-    used = {c["_index"] for c in best.values()}
-    useful_executions = {_execution_signature(c) for c in best.values()}
-    policy = spec.get("efficiency", {})
-    eligible_recovery = {
-        tool
-        for node in ordered
-        for alt in node["alternatives"]
-        for tool in alt["tools"]
-    }
-    eligible_recovery.update(policy.get("recovery_tools", []))
-    eligible_disambiguation = set(policy.get("disambiguation_tools", []))
-    # Every repeated execution is charged, including a repeat assigned to an
-    # overlapping alternative node. One distinct result earns useful credit once.
-    duplicates, signatures, exempt, recovery_used, exploration_used = 0, set(), [], 0, 0
-    for call in calls:
-        signature = _execution_signature(call)
-        duplicate = signature in signatures
-        signatures.add(signature)
-        if duplicate:
-            duplicates += 1
-            continue
-        # If a later occurrence was selected as the witness, the earlier copy
-        # cannot also obtain a recovery/exploration allowance.
-        if call["_index"] in used or signature in useful_executions:
-            continue
-        if (
-            call.get("tool") in eligible_recovery
-            and call.get("status") != "success"
-            and recovery_used < policy.get("free_recovery_calls", 0)
-        ):
-            recovery_used += 1
-            exempt.append(call["observation_id"])
-        elif (
-            call.get("tool") in eligible_disambiguation
-            and call.get("status") == "success"
-            and exploration_used < policy.get("free_disambiguation_calls", 0)
-        ):
-            exploration_used += 1
-            exempt.append(call["observation_id"])
-    charged = max(0, len(calls) - len(exempt))
-    efficiency = len(useful_executions) / charged if charged else 0.0
-    has_answer = answer is not None and (
-        not isinstance(answer, (str, list, dict)) or bool(answer)
-    )
+    efficiency = score_efficiency(spec, calls, best, context,route_limit=search_limit)
+    if efficiency['efficiency_search_truncated']:
+        pending=True;orchestration_pass=False;science_pass=False
     runtime_pass = (
         prediction.get("completed") is True
-        and has_answer
         and not prediction.get("failure_reason")
-        and prediction.get("status")
-        not in {"failed", "error", "blocked", "timeout", "quarantined"}
+        and prediction.get("status") in {None, "completed"}
     )
     return {
         "schema_version": SCHEMA_VERSION,
@@ -511,27 +477,22 @@ def score_workflow(
         "scientific_credit": fraction(applicable_outcomes, "passed"),
         "answer_only_credit": fraction(applicable_outcomes, "correct"),
         "evidence_coverage": fraction(applicable_outcomes, "grounded"),
-        "selection_efficiency": efficiency,
-        "raw_selection_efficiency": (
-            len(useful_executions) / len(calls) if calls else 0.0
+        **efficiency,
+        "tool_orchestration_score": orchestration_score(
+            fraction(credit_nodes, "matched"), efficiency["selection_efficiency"]
         ),
-        "matched_scientific_calls": len(useful_executions),
-        "charged_scientific_calls": charged,
-        "recovery_exempt_calls": recovery_used,
-        "exploration_exempt_calls": exploration_used,
         "scientific_calls": len(calls),
         "discovery_calls": discovery,
         "successful_tool_names": sorted(
             {c["tool"] for c in calls if c.get("status") == "success"}
         ),
-        "redundant_calls": duplicates,
-        "exempt_observations": exempt,
         "nodes": node_rows,
         "capability_groups": group_rows,
         "outcomes": outcomes,
         "pending_review": pending,
         "unresolved_conditions": unresolved_conditions,
         "pending_review_reasons": (["assignment_search_limit"] if truncated else [])
+        + (["efficiency_route_search_limit"]if efficiency['efficiency_search_truncated']else[])
         + sorted(
             {
                 item["reason"]
@@ -584,6 +545,7 @@ def evaluate_workflows(references, predictions, *, aliases=None, catalog_tools=N
         "mean_scientific_credit": mean("scientific_credit"),
         "mean_evidence_coverage": mean("evidence_coverage"),
         "mean_selection_efficiency": mean("selection_efficiency"),
+        "mean_tool_orchestration_score": mean("tool_orchestration_score"),
         "mean_raw_selection_efficiency": mean("raw_selection_efficiency"),
         "pending_reviews": sum(r["pending_review"] for r in rows),
         "joint_accuracy_lower_bound": mean("joint_pass"),

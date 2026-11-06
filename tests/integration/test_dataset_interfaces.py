@@ -12,7 +12,7 @@ ROOT=Path(__file__).resolve().parents[2]
 
 
 def test_public_namespaces_and_default():
-    assert DATASETS==('mini','full')
+    assert DATASETS==('mini','mini-100','full')
     assert load_dataset().name=='mini' and len(load_dataset().questions)==200
     assert len(load_dataset('full').questions)==500
     with pytest.raises(ValueError):load_dataset('special')

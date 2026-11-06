@@ -1,0 +1,29 @@
+{
+  "formula": "Fe3O4",
+  "site_order": [
+    "A",
+    "B1",
+    "B2"
+  ],
+  "site_elements": [
+    "Fe",
+    "Fe",
+    "Fe"
+  ],
+  "oxygen_formal_valence": -2,
+  "allowed_Fe_formal_valences": [
+    2,
+    3
+  ],
+  "high_spin_site_moment_muB": {
+    "2": 4.0,
+    "3": 5.0
+  },
+  "magnetic_model": "Each formula unit has one tetrahedral Asite and two labelled octahedral Bsites. Both Bmoments are parallel and antiparallel to A;all site moments are collinear. Measured net moment magnitude per formula unit is4mu_B. Use the supplied ionic moment model exactly;no orbital,covalent or noncollinear corrections are included.",
+  "spectral_model": "A separate ideal spectral measurement resolves Fe(II)and Fe(III)but not individual sites. Integrated line area equals number of ions times a known per-ion response factor. Fe(II)factor is2and Fe(III)factor1. The observed normalized areas are[0.5,0.5]in[Fe(II),Fe(III)]order. Equal areas are not stipulated equal ion counts.",
+  "target": "Use actual formula stoichiometry,neutrality and the moment observation to retain every allowed site-valence assignment. Report Fe(II)/Fe(III)counts per formula unit,all retained vectors in source site order,and whether ALL labelled sites have identified valences. Check whether the spectral areas agree with those counts after response correction;do not infer counts directly from equal raw areas.",
+  "scope": "Formal-valence and ionic-moment consistency only. The model does not prove a real magnetite charge-order structure or experimentally validate integer local valence.",
+  "provenance": {
+    "kind": "Controlled conditional solid-state model;inputs are stipulated,not experimental structural assignments."
+  }
+}

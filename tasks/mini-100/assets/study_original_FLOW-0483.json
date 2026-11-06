@@ -1,0 +1,40 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific measurement/decision example; stipulated model inputs and observations, not new experimental findings.",
+    "scope": "All required information, units and inferential limits are in this document."
+  },
+  "design_matrix": [
+    [
+      -1.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0
+    ],
+    [
+      2.0,
+      1.0
+    ]
+  ],
+  "responses": [
+    1.0,
+    0.0,
+    1.0,
+    4.0
+  ],
+  "known_independent_noise_variance": 0.5,
+  "candidate_alphas": [
+    0.0,
+    1.0,
+    4.0,
+    16.0
+  ],
+  "model": "y=mu+epsilon at this fixed design; independent zero-mean Gaussian errors have known common variance. The two supplied columns form the entire fitted basis; both coefficients are penalized by alpha, including the constant column. A candidate uses H=X(X^T X+alpha I)^(-1)X^T. Squared-error risk concerns the latent mean vector mu at these same four locations, averaged per scalar response.",
+  "criterion": "For each fixed alpha use Stein unbiased risk estimate SURE=(||y-Hy||^2+2*sigma2*trace(H)-n*sigma2)/n. Choose its minimum, breaking numerical ties within1e-10 by smaller alpha. A selected minimum after searching the same y need not remain unbiased for the risk of the selected procedure.",
+  "scope": "No held-out performance or risk uncertainty bound is requested."
+}

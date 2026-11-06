@@ -1,0 +1,17 @@
+{
+  "raw_sha256": "af1ab2c76fe43868c1466647e0b4a3dd2b36be1cc772778bdb3fb854616b4438",
+  "source_type": "derived_statistical_result",
+  "counts_sha256": "ea0dafbfcc600559644cfe7dd5cc8de809d631eb64ba3089aaa25c2fa0954dad",
+  "metadata_sha256": "1844f871ca5d750f41685c73b87bd7dda291ec0d52304c1afb46a17ae88db745",
+  "method": "PyDESeq2",
+  "versions": {
+    "pydeseq2": "0.4.12",
+    "anndata": "0.10.8",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "pandas": "2.2.2",
+    "scikit-learn": "1.5.2"
+  },
+  "implementation_sha256": "64428a366ae80f38970c4921fb64905d851786ba59244a4bb1ecc883c48eb577",
+  "not_an_official_source_snapshot": true
+}

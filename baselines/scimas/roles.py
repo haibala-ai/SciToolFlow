@@ -91,6 +91,7 @@ class Roles:
         retries=3,
         schema_guard=True,
         on_protocol_error=None,
+        prompt_suffix="",
     ):
         self.client_factory, self.max_tokens, self.max_chars = (
             client_factory,
@@ -100,6 +101,7 @@ class Roles:
         self.retries, self.schema_guard = retries, schema_guard
         self.on_protocol_error = on_protocol_error
         self.prompts = {}
+        self.prompt_suffix = prompt_suffix
 
     def ask(self, role, payload, schema):
         client = self.client_factory(role)
@@ -107,7 +109,7 @@ class Roles:
             self.prompts[role] = (
                 Path(__file__).parent / "prompts" / (role + ".md")
             ).read_text()
-        prompt = self.prompts[role]
+        prompt = self.prompts[role] + self.prompt_suffix
         feedback = None
         for _ in range(self.retries):
             messages = role_messages(prompt, payload, schema, feedback)

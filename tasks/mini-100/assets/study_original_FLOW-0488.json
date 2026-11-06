@@ -1,0 +1,17 @@
+{
+  "initial_monomer_amount_mol": 1.0,
+  "initial_pressure_bar": 1.0,
+  "standard_pressure_bar": 1.0,
+  "dimensionless_equilibrium_Kp": 1.0,
+  "RT_kJ_per_mol": 2.5,
+  "reaction_internal_energy_kJ_per_mol_dimer_formed": -10.0,
+  "mechanical_case_order": [
+    "constant_pressure_piston",
+    "constant_volume_vessel"
+  ],
+  "model": "Ideal gas reaction2M<=>Dunder one fixed temperature. Initially one mole Mis present and no D,at1bar in volume V0=n0*RT/P_initial. Both cases reach the same-temperature chemical equilibrium with Kp=(p_D/p_standard)/(p_M/p_standard)^2=1. Case1uses a quasistatic frictionless piston held at1bar;case2holds V0fixed. Only PVwork exists. Dimerization extent xiin moles obeys n_M=1-2xi,n_D=xiand0<=xi<=1/2. Isothermal internal-energy change is xi*DeltaU_reaction. Work BYthe gas is integral P_external*dVand heat INTOgas satisfies DeltaU=Q-W_by. The equilibrium constant is dimensionless and its standard pressure must be retained.",
+  "target": "For each mechanical case in order,return dimerization extent,total final gas moles,final pressure,Vfinal/V0,work by the gas in kJ,and heat into the gas in kJ. Report whether the mechanical boundary leaves equilibrium extent unchanged.",
+  "provenance": {
+    "kind": "Explicit synthetic conditional chemical/physical measurement model;no empirical identification or practical process recommendation."
+  }
+}

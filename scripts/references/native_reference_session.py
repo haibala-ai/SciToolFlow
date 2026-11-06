@@ -47,6 +47,8 @@ def invoke_native_tool(name, arguments, *, catalog, execute_tool, **kwargs):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--task", required=True)
+    p.add_argument("--dataset", choices=["full", "mini"], default="full")
+    p.add_argument("--actor-model", default="gpt-6.1-terra")
     p.add_argument("--directory", type=Path, required=True)
     p.add_argument(
         "--task-source",
@@ -156,6 +158,8 @@ else:print('Decision accepted; next request not ready. Invoke broker.py without 
         directory / "generation_manifest.json",
         {
             "actor_backend": "native_subagent",
+            "model": a.actor_model,
+            "dataset": a.dataset,
             "model_api_used": False,
             "forbidden_generation_helpers": sorted(FORBIDDEN_GENERATION_HELPERS),
             "task_id": a.task,
@@ -176,7 +180,7 @@ else:print('Decision accepted; next request not ready. Invoke broker.py without 
 
     class Client:
         backend = "native_subagent"
-        model = "codex-native-clean-actor"
+        model = a.actor_model
         supports_response_schema = False
 
         def __init__(self):
@@ -211,6 +215,7 @@ else:print('Decision accepted; next request not ready. Invoke broker.py without 
         ),
         trace_dir=directory / "trajectories",
         case_id=a.task,
+        dataset=a.dataset,
         inputs=task["inputs"],
         files=task["files"],
         answer_schema=task["answer_schema"],

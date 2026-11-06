@@ -1,0 +1,5020 @@
+{
+  "schema_version": "scitoolflow.mini.three_metrics.v1",
+  "summary": {
+    "dataset": "mini",
+    "tasks": 200,
+    "runtime_completion_rate": 0.41,
+    "tool_planning_accuracy": 0.35,
+    "answer_accuracy": 0.395
+  },
+  "dataset": "mini",
+  "release_fingerprint": "1046df2c84965b851fb60b24861882b00318789affcec247667ac0391934cfd3",
+  "primary_metrics": [
+    "runtime_completion_rate",
+    "tool_planning_accuracy",
+    "answer_accuracy"
+  ],
+  "tasks": [
+    {
+      "id": "SMAS-0001",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "74ad129742f003a70f4db4cd6c4f5f46411d9d0755ae9ce479bc591f6ff3f719"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 43,
+        "elapsed_seconds": 423.46380039298674,
+        "prompt_tokens": 612516,
+        "completion_tokens": 64686,
+        "observed_prompt_tokens": 612516,
+        "observed_completion_tokens": 64686,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0001"
+    },
+    {
+      "id": "SMAS-0002",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "f4def11cfd238b4cf7edd8419d3c1a6fcc408ffc7f5d377781b7071f08ace7d6"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 37,
+        "elapsed_seconds": 505.5399108820129,
+        "prompt_tokens": 423897,
+        "completion_tokens": 69184,
+        "observed_prompt_tokens": 423897,
+        "observed_completion_tokens": 69184,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0002"
+    },
+    {
+      "id": "SMAS-0003",
+      "runtime_completed": false,
+      "tool_plan_correct": true,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "98d61a3a30bdf70eef2d285c563b0cbb977fb4cb819a2fac27247003cdf7a4c7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 28,
+        "elapsed_seconds": 445.72533594002016,
+        "prompt_tokens": 345620,
+        "completion_tokens": 62569,
+        "observed_prompt_tokens": 345620,
+        "observed_completion_tokens": 62569,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0003"
+    },
+    {
+      "id": "SMAS-0004",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e0383ad4925efd1b4c50b15cdd0e8442afb614c42ef4f89db08d51c78bc24852"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 27,
+        "elapsed_seconds": 386.66727767698467,
+        "prompt_tokens": 394164,
+        "completion_tokens": 59056,
+        "observed_prompt_tokens": 394164,
+        "observed_completion_tokens": 59056,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0004"
+    },
+    {
+      "id": "SMAS-0005",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e9fefe1e1d0fd78123b57a3258b0253a0c08eba00548adf34896cfe83982c014"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 29,
+        "elapsed_seconds": 307.7857983330032,
+        "prompt_tokens": 380195,
+        "completion_tokens": 50181,
+        "observed_prompt_tokens": 380195,
+        "observed_completion_tokens": 50181,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0005"
+    },
+    {
+      "id": "SMAS-0006",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "7a1bfc6c815d20774dd5c1dc5a79358f1e31f2773636f6afa86b86bbeea3e3b7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 53,
+        "elapsed_seconds": 493.67714090499794,
+        "prompt_tokens": 713913,
+        "completion_tokens": 71993,
+        "observed_prompt_tokens": 713913,
+        "observed_completion_tokens": 71993,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0006"
+    },
+    {
+      "id": "SMAS-0007",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d25ceb04415133d996e1b5df1028ad53ae2f473273c2b052a0fb558e85deb3a1"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 10,
+        "elapsed_seconds": 356.9730524509796,
+        "prompt_tokens": 160094,
+        "completion_tokens": 67824,
+        "observed_prompt_tokens": 160094,
+        "observed_completion_tokens": 67824,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0007"
+    },
+    {
+      "id": "SMAS-0008",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "64f03178a10fd2ad8103ea6769bd52faa1d1cb549fa3679725715be430d8cffd"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 55,
+        "elapsed_seconds": 558.14821768197,
+        "prompt_tokens": 1066262,
+        "completion_tokens": 86299,
+        "observed_prompt_tokens": 1066262,
+        "observed_completion_tokens": 86299,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0008"
+    },
+    {
+      "id": "SMAS-0009",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "fa25dbf5e311d1f57a27312c3718d5cffe985b6730c6fab7805386f0434dc5ce"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 10,
+        "elapsed_seconds": 216.683088358026,
+        "prompt_tokens": 138431,
+        "completion_tokens": 35999,
+        "observed_prompt_tokens": 138431,
+        "observed_completion_tokens": 35999,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0009"
+    },
+    {
+      "id": "SMAS-0010",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "2dde9befb4e35310f9698abf117cc1c1138f68af02d018271dccdd7981c4f300"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 25,
+        "elapsed_seconds": 199.08752136601834,
+        "prompt_tokens": 240241,
+        "completion_tokens": 26926,
+        "observed_prompt_tokens": 240241,
+        "observed_completion_tokens": 26926,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0010"
+    },
+    {
+      "id": "SMAS-0011",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "52d0ff2d6780af44a8a2dc0a0615e60e0b6b9d162f12338aa6eb2e469062bb43"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 36,
+        "elapsed_seconds": 399.2547545150155,
+        "prompt_tokens": 482985,
+        "completion_tokens": 62763,
+        "observed_prompt_tokens": 482985,
+        "observed_completion_tokens": 62763,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0011"
+    },
+    {
+      "id": "SMAS-0012",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "6893eb119e305f867cd7e908a35899c44bdff6e9e29e6f6d1e5a30be3da1a709"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 51,
+        "elapsed_seconds": 1095.7264451120282,
+        "prompt_tokens": 913111,
+        "completion_tokens": 144017,
+        "observed_prompt_tokens": 913111,
+        "observed_completion_tokens": 144017,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0012"
+    },
+    {
+      "id": "SMAS-0013",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "150c58a2018fe05afd94ea15664a1b0d6ea1f41fc6cd990bfb1b85314748f829"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 24,
+        "elapsed_seconds": 622.1318847740185,
+        "prompt_tokens": 271415,
+        "completion_tokens": 87289,
+        "observed_prompt_tokens": 271415,
+        "observed_completion_tokens": 87289,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0013"
+    },
+    {
+      "id": "SMAS-0014",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "8e3d305da95351d67eca2beee2cdadb2bee1e1776556672a98edbb65d7ed04b4"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 2,
+        "elapsed_seconds": 137.55241945502348,
+        "prompt_tokens": 7916,
+        "completion_tokens": 14838,
+        "observed_prompt_tokens": 7916,
+        "observed_completion_tokens": 14838,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0014"
+    },
+    {
+      "id": "SMAS-0015",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "1291f009475d22be0f32f3f003a70ad7f6842307141e784d25dbd10887a83e30"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 25,
+        "elapsed_seconds": 480.57802770199487,
+        "prompt_tokens": 332673,
+        "completion_tokens": 76001,
+        "observed_prompt_tokens": 332673,
+        "observed_completion_tokens": 76001,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0015"
+    },
+    {
+      "id": "SMAS-0016",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "20d81d899474c57ffa6bdcf539e5b86c09e4bbdd4baa7fe028c8c4d5208f8fc6"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 29,
+        "elapsed_seconds": 508.29265945003135,
+        "prompt_tokens": 449411,
+        "completion_tokens": 76850,
+        "observed_prompt_tokens": 449411,
+        "observed_completion_tokens": 76850,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0016"
+    },
+    {
+      "id": "SMAS-0017",
+      "runtime_completed": false,
+      "tool_plan_correct": true,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "5e4c0dad84ada05db24fc25350b56855ad7b010d14a8633825bdb12fb844ea37"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 26,
+        "elapsed_seconds": 300.85780109500047,
+        "prompt_tokens": 315264,
+        "completion_tokens": 44925,
+        "observed_prompt_tokens": 315264,
+        "observed_completion_tokens": 44925,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0017"
+    },
+    {
+      "id": "SMAS-0018",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "0e26fd5092239b580d278392343b406fc57dcb366290bb5f62afd65de8c0b885"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 44,
+        "elapsed_seconds": 665.4122327140067,
+        "prompt_tokens": 869511,
+        "completion_tokens": 101375,
+        "observed_prompt_tokens": 869511,
+        "observed_completion_tokens": 101375,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0018"
+    },
+    {
+      "id": "SMAS-0019",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "08de0f66cbf77ffc6872445140a2183bf87a936e048e768da40b7506ebbfd89b"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 29,
+        "elapsed_seconds": 458.36823536700103,
+        "prompt_tokens": 427514,
+        "completion_tokens": 78275,
+        "observed_prompt_tokens": 427514,
+        "observed_completion_tokens": 78275,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0019"
+    },
+    {
+      "id": "SMAS-0020",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "15342eb4a2e63d73285d338e1b5e63c885ca3fb82a214a77f6f6b9084e31e3a7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 15,
+        "elapsed_seconds": 250.40490212099394,
+        "prompt_tokens": 177279,
+        "completion_tokens": 39321,
+        "observed_prompt_tokens": 177279,
+        "observed_completion_tokens": 39321,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0020"
+    },
+    {
+      "id": "SMAS-0021",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "9a28921a23d4f6922892bdfb1f7d57b7f1dda6357fe2c85eba96b3be29e69162"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 15,
+        "elapsed_seconds": 230.09423811500892,
+        "prompt_tokens": 160166,
+        "completion_tokens": 37040,
+        "observed_prompt_tokens": 160166,
+        "observed_completion_tokens": 37040,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0021"
+    },
+    {
+      "id": "SMAS-0022",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "7264b513bf351ee478d88824437ca0be543a674a6270015ada1db46376a62ae8"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 12,
+        "elapsed_seconds": 376.2736199880019,
+        "prompt_tokens": 122962,
+        "completion_tokens": 64419,
+        "observed_prompt_tokens": 122962,
+        "observed_completion_tokens": 64419,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0022"
+    },
+    {
+      "id": "SMAS-0023",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "31e2245ae18941cff3c5cd2be094b0ec97a0dcef39bc0c3b15bc88f8fbf5671a"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 30,
+        "elapsed_seconds": 310.2924521440291,
+        "prompt_tokens": 430009,
+        "completion_tokens": 47203,
+        "observed_prompt_tokens": 430009,
+        "observed_completion_tokens": 47203,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0023"
+    },
+    {
+      "id": "SMAS-0024",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "4d24ce4119c9a0fd3548fa3ef90176fa1728194d7d3e528f2a25c1bc8cf189c3"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 42,
+        "elapsed_seconds": 692.9629414340016,
+        "prompt_tokens": 712302,
+        "completion_tokens": 94377,
+        "observed_prompt_tokens": 712302,
+        "observed_completion_tokens": 94377,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0024"
+    },
+    {
+      "id": "SMAS-0025",
+      "runtime_completed": false,
+      "tool_plan_correct": true,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "9b7dae2bfd8920fcdbdba034521d2bc711ead0757cd76c03a183e69015c3ab89"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 38,
+        "elapsed_seconds": 714.8697939179838,
+        "prompt_tokens": 688733,
+        "completion_tokens": 98023,
+        "observed_prompt_tokens": 688733,
+        "observed_completion_tokens": 98023,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0025"
+    },
+    {
+      "id": "SMAS-0026",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "87652292974a502b4f4ea715a83ddb69548ff21381a3db98bd2745adbefe44cb"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 10,
+        "elapsed_seconds": 716.8036560880137,
+        "prompt_tokens": 216286,
+        "completion_tokens": 145489,
+        "observed_prompt_tokens": 216286,
+        "observed_completion_tokens": 145489,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0026"
+    },
+    {
+      "id": "SMAS-0027",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "c02cd21e48a68bc14a4a6e027eae9461931f513c557dc895ccddf2f514ac0d22"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 22,
+        "elapsed_seconds": 282.08697512198705,
+        "prompt_tokens": 313004,
+        "completion_tokens": 44081,
+        "observed_prompt_tokens": 313004,
+        "observed_completion_tokens": 44081,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0027"
+    },
+    {
+      "id": "SMAS-0028",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "fc24a736bfbc85fc51dca9058ffcd54bb97a065d30e1782f03cc3461b0fac805"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 39,
+        "elapsed_seconds": 361.59381052601384,
+        "prompt_tokens": 467955,
+        "completion_tokens": 52786,
+        "observed_prompt_tokens": 467955,
+        "observed_completion_tokens": 52786,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0028"
+    },
+    {
+      "id": "SMAS-0029",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "9b8ac90353e24ea8d546d144bfb85773e2790d7dd9686ecbeaf0bf1b81d95682"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 27,
+        "elapsed_seconds": 392.7468340200139,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 346442,
+        "observed_completion_tokens": 50645,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0029"
+    },
+    {
+      "id": "SMAS-0030",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "af459fd5566f046a385ce267c969c3b7a1eff35f4bf85f62f0c514369ea8b36d"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 27,
+        "elapsed_seconds": 410.0070043539745,
+        "prompt_tokens": 360326,
+        "completion_tokens": 71021,
+        "observed_prompt_tokens": 360326,
+        "observed_completion_tokens": 71021,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0030"
+    },
+    {
+      "id": "SMAS-0031",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "c6d0368191cfb703a4cf25024d3c6204f0070bf2685a741ab092fbe79465b7e0"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.32241668301867,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0031"
+    },
+    {
+      "id": "SMAS-0032",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "2f0cc395798f005126831d837c79c5bb0c25b0bf377d2e1d0a60dd17d6b05f42"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.13224315101979,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0032"
+    },
+    {
+      "id": "SMAS-0033",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "10b4715857d2eafb681f2a4943ed1e0d7beb7fdba47a49e3fcfb5b6981e25aa7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.210576515994035,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0033"
+    },
+    {
+      "id": "SMAS-0034",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "9677c7f9a4b51fe16097f0af25e8bae7dc8fb6794acb8472cb111615931d1e33"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.45601360895671,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0034"
+    },
+    {
+      "id": "SMAS-0035",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "8e321e5b7cf099a36b992499703b2ee53c1d3667bd6215ac4172a2c18508781e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 35.418474806007,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0035"
+    },
+    {
+      "id": "SMAS-0036",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "9102bd9b09d42c172f723f45b3f621e414c9f8b3d5747df84c3d1d5e86aa1cb2"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 28,
+        "elapsed_seconds": 246.54488778999075,
+        "prompt_tokens": 295089,
+        "completion_tokens": 27898,
+        "observed_prompt_tokens": 295089,
+        "observed_completion_tokens": 27898,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0036"
+    },
+    {
+      "id": "SMAS-0037",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a854cd580b9a8007278139b13d6df3ed118670caabc1c242eec8bd3229962134"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 2,
+        "elapsed_seconds": 172.0543949729763,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 3511,
+        "observed_completion_tokens": 19267,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0037"
+    },
+    {
+      "id": "SMAS-0038",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e0f28cef480b8f36691b1556f899d33b2d34b43da2e349a9f1339b05bde0fb97"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 73,
+        "elapsed_seconds": 550.3644708209904,
+        "prompt_tokens": 1118990,
+        "completion_tokens": 82951,
+        "observed_prompt_tokens": 1118990,
+        "observed_completion_tokens": 82951,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0038"
+    },
+    {
+      "id": "SMAS-0039",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "8bc74743920df8ec83bc88e4d90adc0e5f94948645c1418eb734b6a3e2da67c9"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 38,
+        "elapsed_seconds": 385.43997626402415,
+        "prompt_tokens": 434337,
+        "completion_tokens": 58460,
+        "observed_prompt_tokens": 434337,
+        "observed_completion_tokens": 58460,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0039"
+    },
+    {
+      "id": "SMAS-0040",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "58ba74f443abe3b439ced9928f2c77b56bd26467bbe08fb6c802faee63cece99"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 47,
+        "elapsed_seconds": 437.17181144998176,
+        "prompt_tokens": 612245,
+        "completion_tokens": 66171,
+        "observed_prompt_tokens": 612245,
+        "observed_completion_tokens": 66171,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0040"
+    },
+    {
+      "id": "SMAS-0041",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "bd7720ce490c1bebe8677400f265ee34d9de117f7b90dd42128912d72c7f36d5"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 41,
+        "elapsed_seconds": 427.94206611596746,
+        "prompt_tokens": 530206,
+        "completion_tokens": 70010,
+        "observed_prompt_tokens": 530206,
+        "observed_completion_tokens": 70010,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0041"
+    },
+    {
+      "id": "SMAS-0042",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "dde8a741880f219ff922ad8ade5a7faf6612749457e89fe24cdaea21d0291833"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 35,
+        "elapsed_seconds": 281.96573001297656,
+        "prompt_tokens": 394834,
+        "completion_tokens": 42283,
+        "observed_prompt_tokens": 394834,
+        "observed_completion_tokens": 42283,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0042"
+    },
+    {
+      "id": "SMAS-0043",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "75819d67e8edea1b1fc36f372b91fb40cf4ac6e3007bed480791e7b3b60e8004"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 39,
+        "elapsed_seconds": 584.8247891619685,
+        "prompt_tokens": 524270,
+        "completion_tokens": 93875,
+        "observed_prompt_tokens": 524270,
+        "observed_completion_tokens": 93875,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0043"
+    },
+    {
+      "id": "SMAS-0044",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "59263ef9251fe22d5c42f33bf5d6585d3bfae8558e9830724932d0663fc17786"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 36,
+        "elapsed_seconds": 1587.2325079000439,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 690518,
+        "observed_completion_tokens": 356850,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0044"
+    },
+    {
+      "id": "SMAS-0045",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "fb62f7f6e57aa54017ab8d68a91cfb46cbe507c5253b16450b94f96c2b3e1a71"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 36,
+        "elapsed_seconds": 445.36461724800756,
+        "prompt_tokens": 426573,
+        "completion_tokens": 74523,
+        "observed_prompt_tokens": 426573,
+        "observed_completion_tokens": 74523,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0045"
+    },
+    {
+      "id": "SMAS-0046",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a9974abda49750b95cbbcb9a3fe16757251d639a4e1dd043560626fde34c902f"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 20,
+        "elapsed_seconds": 226.53404839202994,
+        "prompt_tokens": 162173,
+        "completion_tokens": 37316,
+        "observed_prompt_tokens": 162173,
+        "observed_completion_tokens": 37316,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0046"
+    },
+    {
+      "id": "SMAS-0047",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "f405b7e9c2d9b6e8658deb2d785e65ef69d111374ce1a5b5eba6bc8f6304d4ae"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 2,
+        "elapsed_seconds": 89.3022266739863,
+        "prompt_tokens": 6165,
+        "completion_tokens": 9292,
+        "observed_prompt_tokens": 6165,
+        "observed_completion_tokens": 9292,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0047"
+    },
+    {
+      "id": "SMAS-0048",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d084be2b2ffc0268e926b0dbbacaa0a7b7ca1a701ff0d5ff8e109f2c627c1b94"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 34,
+        "elapsed_seconds": 351.9551383429789,
+        "prompt_tokens": 468797,
+        "completion_tokens": 51663,
+        "observed_prompt_tokens": 468797,
+        "observed_completion_tokens": 51663,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0048"
+    },
+    {
+      "id": "SMAS-0049",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "1b6bea518994c900970b4072b947f5a4e74503b30d060aa66b822892ad09037f"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.86026058899006,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0049"
+    },
+    {
+      "id": "SMAS-0050",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "69bc7162df91e5b25eeebb10dd9f39c8f9c448034f88f95353923db45c546b04"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.58001979498658,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0050"
+    },
+    {
+      "id": "SMAS-0051",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "eebe4ef1ec052b87244c3389be3c5f04142f577ed2c60bc955528044ae3692c8"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 48,
+        "elapsed_seconds": 600.830878112989,
+        "prompt_tokens": 741951,
+        "completion_tokens": 100977,
+        "observed_prompt_tokens": 741951,
+        "observed_completion_tokens": 100977,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0051"
+    },
+    {
+      "id": "SMAS-0052",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "c3ec881df880be38291582bb963876983fdd364b12e57cd3b2d0eb9c7a7f54d7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 64,
+        "elapsed_seconds": 723.4197480820003,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 1161648,
+        "observed_completion_tokens": 115355,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0052"
+    },
+    {
+      "id": "SMAS-0053",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "61619108e58d4cc31fabf808f61fcbe24277bc23738f8404fde65b4ca19f9a5a"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.61446967202937,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0053"
+    },
+    {
+      "id": "SMAS-0054",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "77c38eb5bde3fb454e8f96ddcfd98b93f750967b236b27d2a910b783378fb4c6"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.400886012997944,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0054"
+    },
+    {
+      "id": "SMAS-0055",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "aa125eaa46f69988de2cbc68001d0d9dbf7850cb28609bf124264f86d8972e1a"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.42202986701159,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0055"
+    },
+    {
+      "id": "SMAS-0056",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "b15dd6f2ab23480e4a542fd57b18f5cc7d523c1d29d13ad07d9e81e618dc2836"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 36.22909700497985,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0056"
+    },
+    {
+      "id": "SMAS-0057",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "b8dee4e5a216920302a95aaded2be66b5203e72b06f85aaef69b3da0f61a4657"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 53,
+        "elapsed_seconds": 561.2936375940335,
+        "prompt_tokens": 970514,
+        "completion_tokens": 65466,
+        "observed_prompt_tokens": 970514,
+        "observed_completion_tokens": 65466,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0057"
+    },
+    {
+      "id": "SMAS-0058",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "2684321ca13be0f9e4ec14a3ed28370479fc6e2ea2ae6db29b1a2bfe2db3fd30"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 44,
+        "elapsed_seconds": 677.5069992209901,
+        "prompt_tokens": 680530,
+        "completion_tokens": 106542,
+        "observed_prompt_tokens": 680530,
+        "observed_completion_tokens": 106542,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0058"
+    },
+    {
+      "id": "SMAS-0059",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "4218591ba7c4200e7be8704af4bf37d945a8a6a4c6736cdbb0b8f51bddff059a"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 72,
+        "elapsed_seconds": 1113.0185150369653,
+        "prompt_tokens": 1435835,
+        "completion_tokens": 206172,
+        "observed_prompt_tokens": 1435835,
+        "observed_completion_tokens": 206172,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0059"
+    },
+    {
+      "id": "SMAS-0060",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a50499df4b9056bde921e69e131783889857d4e1b0c50fee2bd30aa6f84bfffc"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 35,
+        "elapsed_seconds": 559.2395595100243,
+        "prompt_tokens": 497112,
+        "completion_tokens": 96628,
+        "observed_prompt_tokens": 497112,
+        "observed_completion_tokens": 96628,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0060"
+    },
+    {
+      "id": "SMAS-0061",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "87d3cb605dd14b19e2bec0f7191f582d99a630adbbafe340b2474702bb48178f"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 42,
+        "elapsed_seconds": 448.6050913889776,
+        "prompt_tokens": 574279,
+        "completion_tokens": 61510,
+        "observed_prompt_tokens": 574279,
+        "observed_completion_tokens": 61510,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0061"
+    },
+    {
+      "id": "SMAS-0062",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "f7e73689d2fff64bd67ec3c54b4a0034299a6b170645dedf80cba9a192e9b1c5"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 66,
+        "elapsed_seconds": 845.2776180889923,
+        "prompt_tokens": 1256433,
+        "completion_tokens": 123538,
+        "observed_prompt_tokens": 1256433,
+        "observed_completion_tokens": 123538,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "SMAS-0062"
+    },
+    {
+      "id": "SMAS-0063",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "ee45140c48e31c1c6538ff3e0e9b47448f5a5b77c07cc7863d0f81c9d091ce6e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 41,
+        "elapsed_seconds": 556.8112240459886,
+        "prompt_tokens": 654594,
+        "completion_tokens": 87320,
+        "observed_prompt_tokens": 654594,
+        "observed_completion_tokens": 87320,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0063"
+    },
+    {
+      "id": "SMAS-0064",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "49433729116747378fb75899e54885e29629f3932b6a3560991b2cb4845d2321"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 57,
+        "elapsed_seconds": 718.2073588350322,
+        "prompt_tokens": 1123975,
+        "completion_tokens": 107224,
+        "observed_prompt_tokens": 1123975,
+        "observed_completion_tokens": 107224,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0064"
+    },
+    {
+      "id": "SMAS-0065",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "2e7a0eeacac9f3dc4c514241dbf6dc05c453196eee87a7ac2286e291de164f1c"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 49,
+        "elapsed_seconds": 813.4334361990332,
+        "prompt_tokens": 1017116,
+        "completion_tokens": 146545,
+        "observed_prompt_tokens": 1017116,
+        "observed_completion_tokens": 146545,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0065"
+    },
+    {
+      "id": "SMAS-0066",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "16084d72e7b5b67372f29b3873b7fad6f1cd70018eb447bf627ef1d9b9b578c4"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 64,
+        "elapsed_seconds": 692.7434250710066,
+        "prompt_tokens": 1529617,
+        "completion_tokens": 93335,
+        "observed_prompt_tokens": 1529617,
+        "observed_completion_tokens": 93335,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0066"
+    },
+    {
+      "id": "SMAS-0067",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "fcaeef69cc95cf1bea98e4ce6c27709797d83833c100d1b763bce10db4043ea7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 38,
+        "elapsed_seconds": 780.6014733449556,
+        "prompt_tokens": 673604,
+        "completion_tokens": 135309,
+        "observed_prompt_tokens": 673604,
+        "observed_completion_tokens": 135309,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0067"
+    },
+    {
+      "id": "SMAS-0068",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "6ae359aab744f891e775e79497c640671db2b69747cce075b7f15b1cd81ec0c9"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 57,
+        "elapsed_seconds": 679.9219943439821,
+        "prompt_tokens": 971659,
+        "completion_tokens": 104702,
+        "observed_prompt_tokens": 971659,
+        "observed_completion_tokens": 104702,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0068"
+    },
+    {
+      "id": "SMAS-0069",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e08f6b72ff46335e3f32cd600b38d0320250183f334b448044b60f1f4b0d2990"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 25,
+        "elapsed_seconds": 364.18181662098505,
+        "prompt_tokens": 348802,
+        "completion_tokens": 59547,
+        "observed_prompt_tokens": 348802,
+        "observed_completion_tokens": 59547,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0069"
+    },
+    {
+      "id": "SMAS-0070",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "ff6dc4d9fcfa9e8e6b7b96371fd7f94ee18f9a7288ad0a384394f1a5ae51a225"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 17,
+        "elapsed_seconds": 684.0576202849625,
+        "prompt_tokens": 491386,
+        "completion_tokens": 141508,
+        "observed_prompt_tokens": 491386,
+        "observed_completion_tokens": 141508,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0070"
+    },
+    {
+      "id": "SMAS-0071",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e6744876b70597ab7922723ed9ca0bb66459bb1be9bd366df30fd3f932025527"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 18,
+        "elapsed_seconds": 634.6381292320439,
+        "prompt_tokens": 506404,
+        "completion_tokens": 124472,
+        "observed_prompt_tokens": 506404,
+        "observed_completion_tokens": 124472,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0071"
+    },
+    {
+      "id": "SMAS-0072",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "cf3f5c4cab74717c1025079d821a38fe55048c1274d7b3eb085937dce34de66f"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 9,
+        "elapsed_seconds": 488.5001582489931,
+        "prompt_tokens": 278158,
+        "completion_tokens": 95474,
+        "observed_prompt_tokens": 278158,
+        "observed_completion_tokens": 95474,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0072"
+    },
+    {
+      "id": "SMAS-0073",
+      "runtime_completed": false,
+      "tool_plan_correct": true,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "69abf6e072c8fb0d988b2f3d37ea06d471a7e5eb3532aadf2c830a7e22a871b0"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 219,
+        "elapsed_seconds": 3153.2025585649535,
+        "prompt_tokens": 14951780,
+        "completion_tokens": 440033,
+        "observed_prompt_tokens": 14951780,
+        "observed_completion_tokens": 440033,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0073"
+    },
+    {
+      "id": "SMAS-0074",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "7bc2aabf4b085762b8b60c152acced611f444ccfe586f77db9fa38c30c0790a7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 46,
+        "elapsed_seconds": 652.1213798249955,
+        "prompt_tokens": 826383,
+        "completion_tokens": 89738,
+        "observed_prompt_tokens": 826383,
+        "observed_completion_tokens": 89738,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "SMAS-0074"
+    },
+    {
+      "id": "SMAS-0075",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "666656e3bc7430bec1ae276127cab41510b3e5118faf7773118ad798ccece961"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 42,
+        "elapsed_seconds": 455.7509267569985,
+        "prompt_tokens": 744894,
+        "completion_tokens": 72578,
+        "observed_prompt_tokens": 744894,
+        "observed_completion_tokens": 72578,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0075"
+    },
+    {
+      "id": "SMAS-0076",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "8eef2b306ff0546152e31adada59c77c9d92f35bdacf329b6a8b8455e73dcfdc"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 28,
+        "elapsed_seconds": 534.3891955169966,
+        "prompt_tokens": 453783,
+        "completion_tokens": 105539,
+        "observed_prompt_tokens": 453783,
+        "observed_completion_tokens": 105539,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0076"
+    },
+    {
+      "id": "SMAS-0077",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e4bf0ee62aa5d88bc69f0d5dcd3c71a5ac29505acd60590328464995c7533612"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 49,
+        "elapsed_seconds": 631.629788188031,
+        "prompt_tokens": 774612,
+        "completion_tokens": 91850,
+        "observed_prompt_tokens": 774612,
+        "observed_completion_tokens": 91850,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0077"
+    },
+    {
+      "id": "SMAS-0078",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "fa0f6bf13bf3a44e3c0503b88b85f19f69f0addb3cdc00a32f373306276c659f"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 88,
+        "elapsed_seconds": 1038.7274094809545,
+        "prompt_tokens": 1757289,
+        "completion_tokens": 164945,
+        "observed_prompt_tokens": 1757289,
+        "observed_completion_tokens": 164945,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0078"
+    },
+    {
+      "id": "SMAS-0079",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "10109735bbc8a50229b46d2a2e20d8d3ff66a958739f747b84e4ba0dbc95119d"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 30,
+        "elapsed_seconds": 199.26652858097805,
+        "prompt_tokens": 295617,
+        "completion_tokens": 28644,
+        "observed_prompt_tokens": 295617,
+        "observed_completion_tokens": 28644,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0079"
+    },
+    {
+      "id": "SMAS-0080",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "c4e0956e490c9798fe136b7b634b41051dc77f5cca7266395b4b22b19e95c294"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 44,
+        "elapsed_seconds": 319.9631819979986,
+        "prompt_tokens": 557672,
+        "completion_tokens": 46733,
+        "observed_prompt_tokens": 557672,
+        "observed_completion_tokens": 46733,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0080"
+    },
+    {
+      "id": "SMAS-0081",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "4219b4f88221aa36bfcdc6f04c7194b7af4ab772fe1208afb597d0600461caed"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 6,
+        "elapsed_seconds": 201.75869642099133,
+        "prompt_tokens": 87690,
+        "completion_tokens": 34297,
+        "observed_prompt_tokens": 87690,
+        "observed_completion_tokens": 34297,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0081"
+    },
+    {
+      "id": "SMAS-0082",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a07aab76547a729f92e8f19e4e1ac7639b0b461e6022cc1af6073c98cac85fef"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 76,
+        "elapsed_seconds": 732.9646278109867,
+        "prompt_tokens": 1378368,
+        "completion_tokens": 124013,
+        "observed_prompt_tokens": 1378368,
+        "observed_completion_tokens": 124013,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0082"
+    },
+    {
+      "id": "SMAS-0083",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "3e764beb7a3021747ded8d94469d58713597ed0d1cee765832c091b1590daca2"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 36,
+        "elapsed_seconds": 445.3455803070101,
+        "prompt_tokens": 525846,
+        "completion_tokens": 75584,
+        "observed_prompt_tokens": 525846,
+        "observed_completion_tokens": 75584,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0083"
+    },
+    {
+      "id": "SMAS-0084",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e76c9d5bff03e8c758bedbd1706ee52bab3647ab2f7eecf5a72bf70679a0e15f"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 20,
+        "elapsed_seconds": 183.35264433798147,
+        "prompt_tokens": 192703,
+        "completion_tokens": 29059,
+        "observed_prompt_tokens": 192703,
+        "observed_completion_tokens": 29059,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0084"
+    },
+    {
+      "id": "SMAS-0085",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d1c7f1720d24b262a71ffa07ab99defed05f1800db49522c60edb7d75892ffcf"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 145,
+        "elapsed_seconds": 1374.9190257829614,
+        "prompt_tokens": 3718528,
+        "completion_tokens": 196519,
+        "observed_prompt_tokens": 3718528,
+        "observed_completion_tokens": 196519,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0085"
+    },
+    {
+      "id": "SMAS-0086",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "bc916731bff714d0edfd91cb0bea9f798105cc5864c9cb09db10bcaf1e7be0be"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 38,
+        "elapsed_seconds": 470.0800851910026,
+        "prompt_tokens": 461333,
+        "completion_tokens": 82452,
+        "observed_prompt_tokens": 461333,
+        "observed_completion_tokens": 82452,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0086"
+    },
+    {
+      "id": "SMAS-0087",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d0bc3633b4dd7ca122653be1c902288d4334e895f12d992a2dbaebf78732b801"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 39,
+        "elapsed_seconds": 578.3996479249909,
+        "prompt_tokens": 612672,
+        "completion_tokens": 99304,
+        "observed_prompt_tokens": 612672,
+        "observed_completion_tokens": 99304,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "SMAS-0087"
+    },
+    {
+      "id": "SMAS-0088",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d89580f9e2fc00355a186f2fa22ed4d3a1051e12f4575c9573b0f7f47935aac4"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 44,
+        "elapsed_seconds": 602.8779642619775,
+        "prompt_tokens": 625820,
+        "completion_tokens": 101115,
+        "observed_prompt_tokens": 625820,
+        "observed_completion_tokens": 101115,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0088"
+    },
+    {
+      "id": "SMAS-0089",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "cc206b450e12c38ada0edd2e015f8fe128dbb2df3968a6a20c840a480e252609"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 51,
+        "elapsed_seconds": 1131.6553936160053,
+        "prompt_tokens": 1042477,
+        "completion_tokens": 221290,
+        "observed_prompt_tokens": 1042477,
+        "observed_completion_tokens": 221290,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0089"
+    },
+    {
+      "id": "SMAS-0090",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "ca594dfe826f39274a7c6e636daf550fb320b82bb728862eef40eb2c2a00d665"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 67,
+        "elapsed_seconds": 730.7382271810202,
+        "prompt_tokens": 959514,
+        "completion_tokens": 118866,
+        "observed_prompt_tokens": 959514,
+        "observed_completion_tokens": 118866,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0090"
+    },
+    {
+      "id": "SMAS-0091",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "ed30805489bf1053bbba6816531af7b6d13c7816c199df79b92605c18c4f3683"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 39,
+        "elapsed_seconds": 701.8451726259664,
+        "prompt_tokens": 599051,
+        "completion_tokens": 131225,
+        "observed_prompt_tokens": 599051,
+        "observed_completion_tokens": 131225,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0091"
+    },
+    {
+      "id": "SMAS-0092",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "916beab07be84ac9fb2b00f5e647aec46a3748f8694c6af9ce4eef3104b5b5b5"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 54,
+        "elapsed_seconds": 476.12581865198445,
+        "prompt_tokens": 846343,
+        "completion_tokens": 79211,
+        "observed_prompt_tokens": 846343,
+        "observed_completion_tokens": 79211,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0092"
+    },
+    {
+      "id": "SMAS-0093",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e51690c683096b72fcc04924f66178638275d638ae875ad60b0e27f971be27a1"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 26,
+        "elapsed_seconds": 721.0286503409734,
+        "prompt_tokens": 510948,
+        "completion_tokens": 133840,
+        "observed_prompt_tokens": 510948,
+        "observed_completion_tokens": 133840,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0093"
+    },
+    {
+      "id": "SMAS-0094",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "7be26b0aef40c3ae7ec53bacefa4fa6be443ebd49c554c186658157e45cec75a"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 45,
+        "elapsed_seconds": 388.14764223300153,
+        "prompt_tokens": 644898,
+        "completion_tokens": 63784,
+        "observed_prompt_tokens": 644898,
+        "observed_completion_tokens": 63784,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0094"
+    },
+    {
+      "id": "SMAS-0095",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "04fdc26eecf0c1d59303d9206f2cc2666665869637b26e24e6ea9ee35f253c9d"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 46,
+        "elapsed_seconds": 484.9611562709906,
+        "prompt_tokens": 799760,
+        "completion_tokens": 82212,
+        "observed_prompt_tokens": 799760,
+        "observed_completion_tokens": 82212,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0095"
+    },
+    {
+      "id": "SMAS-0096",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "fa86f58e94fe6c8d7a66bd3ab4d76a673abff73eaad398fab19531ff0aa24a57"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 60,
+        "elapsed_seconds": 583.8069214540301,
+        "prompt_tokens": 801814,
+        "completion_tokens": 93702,
+        "observed_prompt_tokens": 801814,
+        "observed_completion_tokens": 93702,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0096"
+    },
+    {
+      "id": "SMAS-0097",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "ebd8dc9dd7e2ecda889679f3a7a3c76c3892dc4f69be949c95b8246c6628935f"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 35,
+        "elapsed_seconds": 408.69255005399464,
+        "prompt_tokens": 440652,
+        "completion_tokens": 67165,
+        "observed_prompt_tokens": 440652,
+        "observed_completion_tokens": 67165,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0097"
+    },
+    {
+      "id": "SMAS-0098",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "4205d1c893af91f084c1913d463f53720ed7db20f48f8785638d0bb0245934aa"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 74,
+        "elapsed_seconds": 864.6301037849626,
+        "prompt_tokens": 1310619,
+        "completion_tokens": 151271,
+        "observed_prompt_tokens": 1310619,
+        "observed_completion_tokens": 151271,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0098"
+    },
+    {
+      "id": "SMAS-0099",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "0caf9551f2c493c68a3040c739df7511a43c1fedba2cf87d42ec8bc1541a7911"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 45,
+        "elapsed_seconds": 722.7633171989582,
+        "prompt_tokens": 735413,
+        "completion_tokens": 129260,
+        "observed_prompt_tokens": 735413,
+        "observed_completion_tokens": 129260,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0099"
+    },
+    {
+      "id": "SMAS-0100",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "65ed174dc5a76be6e3a178ea648833e5e4ffdee3df71692a2dcef1ceb637692a"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 49,
+        "elapsed_seconds": 716.0901058119489,
+        "prompt_tokens": 832292,
+        "completion_tokens": 129217,
+        "observed_prompt_tokens": 832292,
+        "observed_completion_tokens": 129217,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0100"
+    },
+    {
+      "id": "SMAS-0101",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "fb0d3ee98bca7421f3b96fdcafc470ca2b9072d00da021549e1fb893e212fb7a"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 30,
+        "elapsed_seconds": 577.2782476060092,
+        "prompt_tokens": 339326,
+        "completion_tokens": 105844,
+        "observed_prompt_tokens": 339326,
+        "observed_completion_tokens": 105844,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0001"
+    },
+    {
+      "id": "SMAS-0102",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a37d21f87c147a6570fad489282e659d248989075b0bb198a5d63058fd3fd9c6"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 44,
+        "elapsed_seconds": 643.8358595889877,
+        "prompt_tokens": 1330520,
+        "completion_tokens": 115542,
+        "observed_prompt_tokens": 1330520,
+        "observed_completion_tokens": 115542,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0015"
+    },
+    {
+      "id": "SMAS-0103",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "f0f28e250aa5a3042018c9d71b39b78d1bb5057fd228e3089defd5c9c37f552e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 50,
+        "elapsed_seconds": 806.0827842360013,
+        "prompt_tokens": 685114,
+        "completion_tokens": 138590,
+        "observed_prompt_tokens": 685114,
+        "observed_completion_tokens": 138590,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0029"
+    },
+    {
+      "id": "SMAS-0104",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "b7847e56c60b4ea4e58c3cb74e5b44458864587188a29f22a324a33527555a01"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 78,
+        "elapsed_seconds": 1046.3671526280232,
+        "prompt_tokens": 1286036,
+        "completion_tokens": 165813,
+        "observed_prompt_tokens": 1286036,
+        "observed_completion_tokens": 165813,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0035"
+    },
+    {
+      "id": "SMAS-0105",
+      "runtime_completed": false,
+      "tool_plan_correct": true,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d7ba77e9bfa9023946fedcf13b945ded666a35c446f48ac1dfdf443f69ef24e7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 67,
+        "elapsed_seconds": 1686.3791131500038,
+        "prompt_tokens": 1677397,
+        "completion_tokens": 295661,
+        "observed_prompt_tokens": 1677397,
+        "observed_completion_tokens": 295661,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0047"
+    },
+    {
+      "id": "SMAS-0106",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "ae65dbd8664a752bd82e8a1b1efb430074d8dcc23acfd3d654e2ec6f35def1fe"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 18,
+        "elapsed_seconds": 634.1016375839827,
+        "prompt_tokens": 439046,
+        "completion_tokens": 124278,
+        "observed_prompt_tokens": 439046,
+        "observed_completion_tokens": 124278,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0064"
+    },
+    {
+      "id": "SMAS-0107",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "dbbfd73694e6c0e774ae115b0ab9f5d3930bb54b4c4ca842861da513013b2903"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 93,
+        "elapsed_seconds": 883.483859771979,
+        "prompt_tokens": 2471835,
+        "completion_tokens": 141167,
+        "observed_prompt_tokens": 2471835,
+        "observed_completion_tokens": 141167,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0068"
+    },
+    {
+      "id": "SMAS-0108",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "19e9240dd1254b55f9673bd72b000d42387477c60db43eff25d2a561fe410354"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 56,
+        "elapsed_seconds": 325.22642351296963,
+        "prompt_tokens": 606480,
+        "completion_tokens": 42493,
+        "observed_prompt_tokens": 606480,
+        "observed_completion_tokens": 42493,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0070"
+    },
+    {
+      "id": "SMAS-0109",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a6a58ea6ef0a8809df948c40e07b0401d76076ba8e45427ec8bd7615f90ec656"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 38,
+        "elapsed_seconds": 487.74976692005293,
+        "prompt_tokens": 582403,
+        "completion_tokens": 82339,
+        "observed_prompt_tokens": 582403,
+        "observed_completion_tokens": 82339,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0071"
+    },
+    {
+      "id": "SMAS-0110",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e72f8799989371b1a5dc517996aad5f9a06f44a2198f852c4de2d8def2db2f18"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 37,
+        "elapsed_seconds": 928.3615101150353,
+        "prompt_tokens": 605873,
+        "completion_tokens": 181165,
+        "observed_prompt_tokens": 605873,
+        "observed_completion_tokens": 181165,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0072"
+    },
+    {
+      "id": "SMAS-0111",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "6b5aa224a6b2a17e42f444896c7642a469d18f735e8834e65ee430c4acb6dbcb"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 97,
+        "elapsed_seconds": 2358.8702933770255,
+        "prompt_tokens": 2601300,
+        "completion_tokens": 489450,
+        "observed_prompt_tokens": 2601300,
+        "observed_completion_tokens": 489450,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0074"
+    },
+    {
+      "id": "SMAS-0112",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "f24ef664ed0129fa350fea775de1d3cd76de7f947e49083aaa5437eea4d4d710"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 48,
+        "elapsed_seconds": 911.4320827950141,
+        "prompt_tokens": 2617234,
+        "completion_tokens": 173762,
+        "observed_prompt_tokens": 2617234,
+        "observed_completion_tokens": 173762,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0075"
+    },
+    {
+      "id": "SMAS-0113",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "ec8463cbfc7348613828edfe22ad1547e4e6605043117ed4187615013d1ce9ed"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 9,
+        "elapsed_seconds": 855.216306911956,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 174744,
+        "observed_completion_tokens": 157147,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0076"
+    },
+    {
+      "id": "SMAS-0114",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "06c9cb63424b171c2a3be6cf69d9a453716beec111d2f1e950f866b69c7f152a"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 17,
+        "elapsed_seconds": 610.8658201289945,
+        "prompt_tokens": 324509,
+        "completion_tokens": 116294,
+        "observed_prompt_tokens": 324509,
+        "observed_completion_tokens": 116294,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0077"
+    },
+    {
+      "id": "SMAS-0115",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d4a8be7a8ea9666f664b3545a60e7df9b1c1c1b2e21a3cf6e7d2c43e2560d1c7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 18,
+        "elapsed_seconds": 698.358492143976,
+        "prompt_tokens": 589691,
+        "completion_tokens": 130177,
+        "observed_prompt_tokens": 589691,
+        "observed_completion_tokens": 130177,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0078"
+    },
+    {
+      "id": "SMAS-0116",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d530eaf37fe0052b3ce889b0b90c41e702c40b4bbc0684a2e7e81e63ef60097e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 106,
+        "elapsed_seconds": 1720.5614298389992,
+        "prompt_tokens": 2507290,
+        "completion_tokens": 264353,
+        "observed_prompt_tokens": 2507290,
+        "observed_completion_tokens": 264353,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0079"
+    },
+    {
+      "id": "SMAS-0117",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "043d31466662601fc1347600b82b39d49b5af502cb959c1d20388afe1e1cd8f8"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 16,
+        "elapsed_seconds": 649.8995881410083,
+        "prompt_tokens": 399351,
+        "completion_tokens": 129138,
+        "observed_prompt_tokens": 399351,
+        "observed_completion_tokens": 129138,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0083"
+    },
+    {
+      "id": "SMAS-0118",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "7020f39fc989be376a8fe606dea78b10c36fdddd55e1a6992c9939d8369ca594"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 59,
+        "elapsed_seconds": 1044.1468465600046,
+        "prompt_tokens": 1072039,
+        "completion_tokens": 167354,
+        "observed_prompt_tokens": 1072039,
+        "observed_completion_tokens": 167354,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0087"
+    },
+    {
+      "id": "SMAS-0119",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "13cd1a047b59bc4133ddc47a4a1b4a2e2b9139009a75fb6bf04636e063640d2a"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 107,
+        "elapsed_seconds": 1248.335371616995,
+        "prompt_tokens": 3237154,
+        "completion_tokens": 180713,
+        "observed_prompt_tokens": 3237154,
+        "observed_completion_tokens": 180713,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0092"
+    },
+    {
+      "id": "SMAS-0120",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "77a1e5bab5d1e7afef918d5d8b407748543e97b701e28f0001d543160eac2b30"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 36,
+        "elapsed_seconds": 870.4891268209904,
+        "prompt_tokens": 902858,
+        "completion_tokens": 160831,
+        "observed_prompt_tokens": 902858,
+        "observed_completion_tokens": 160831,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0125"
+    },
+    {
+      "id": "SMAS-0121",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "50f9336b03192f441194ae1de7cbf5920dc156d414eb72180841f53e8c575cb5"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 72,
+        "elapsed_seconds": 1165.1373800170259,
+        "prompt_tokens": 1693032,
+        "completion_tokens": 197461,
+        "observed_prompt_tokens": 1693032,
+        "observed_completion_tokens": 197461,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0127"
+    },
+    {
+      "id": "SMAS-0122",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "1bce281479fc79e12a46110f39bab51205a4643fbaa17c76a6ecac8c9057f806"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 21,
+        "elapsed_seconds": 298.61798238998745,
+        "prompt_tokens": 231868,
+        "completion_tokens": 50514,
+        "observed_prompt_tokens": 231868,
+        "observed_completion_tokens": 50514,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0396"
+    },
+    {
+      "id": "SMAS-0123",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "337b922e424b7971f2fe867461d16338beec9e4abc25a19abedc2b7d530ea231"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 32,
+        "elapsed_seconds": 386.33680650102906,
+        "prompt_tokens": 344385,
+        "completion_tokens": 59852,
+        "observed_prompt_tokens": 344385,
+        "observed_completion_tokens": 59852,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0461"
+    },
+    {
+      "id": "SMAS-0124",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "56ecb61fa6bb30a852b83ec7a1bd69ee3a69e1b4dd83a93c52d26b5d1f2ed174"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 7,
+        "elapsed_seconds": 446.61786436400143,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 116212,
+        "observed_completion_tokens": 71381,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0464"
+    },
+    {
+      "id": "SMAS-0125",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "0fbe008e1cf307209da2d950becc6937683f09acf00d3248fc81fa7e639467bd"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 3,
+        "elapsed_seconds": 190.89913316100137,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 6633,
+        "observed_completion_tokens": 26057,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Chemical",
+      "source_id": "FLOW-0488"
+    },
+    {
+      "id": "SMAS-0126",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "b0d5b7901eedf6e1ccd28cedbebb78a3a7c0e267aeeeab48e247cd47ada5c63b"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.43659588403534,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0006"
+    },
+    {
+      "id": "SMAS-0127",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "7f4a51ae2611606133aeb2a32f013e232ca298ae9d169dceaad4817c1b51e2fc"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.39039031701395,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0019"
+    },
+    {
+      "id": "SMAS-0128",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "084c85af26b903d6ccda91648b071f5e28b57ba3fae35b30204ceb78522ee7d9"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.29084067395888,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0028"
+    },
+    {
+      "id": "SMAS-0129",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "912ff5352f8585947bb06bca066ab03605a5a8d9fa8b89fb33c7ed6c67c500e0"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 2,
+        "elapsed_seconds": 675.5447153279674,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 2556,
+        "observed_completion_tokens": 10284,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0101"
+    },
+    {
+      "id": "SMAS-0130",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "24b038cdf0412d51c9230659dfe0e658748552cef5f2d853566e1779fdb2ed98"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 2,
+        "elapsed_seconds": 123.43256050598575,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 2432,
+        "observed_completion_tokens": 7308,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0107"
+    },
+    {
+      "id": "SMAS-0131",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a84a229e2a08ad60620af37f22ad233c32b0ac771ccc80fc701c56e2596a8066"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 33.59902805095771,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0147"
+    },
+    {
+      "id": "SMAS-0132",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "7b4fa2edcf577ee1c5f101381716379b7ae7263551eab29122d89de63be2aa54"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 33.819736243982334,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0153"
+    },
+    {
+      "id": "SMAS-0133",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "fd32f7a368afaaa76f8a7b2ea80f18dd702d478377f5fb88cb96c92ce9707c23"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 2,
+        "elapsed_seconds": 102.86093375401106,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 2312,
+        "observed_completion_tokens": 6043,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0155"
+    },
+    {
+      "id": "SMAS-0134",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "2fceec8293d180548053406e6e7b600b13e37ac86b2a1881fda196d17aecaece"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.63904665200971,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0175"
+    },
+    {
+      "id": "SMAS-0135",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "c6adfd8a3af4d35c9e1cac7560cfd561e42458988a6aa094a64228b72e00cb20"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.348868208995555,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0181"
+    },
+    {
+      "id": "SMAS-0136",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "4d03c2d541bac021f3a4b8f349119087eb86d1ef426e54bd01b93e01de81e48a"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 2,
+        "elapsed_seconds": 145.17057676200056,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 6552,
+        "observed_completion_tokens": 12911,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0182"
+    },
+    {
+      "id": "SMAS-0137",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "f0e4c46741b6689d7e3fa77f6943743282c2557a80ad2b8eb202924e180f2ad2"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.56326209998224,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0185"
+    },
+    {
+      "id": "SMAS-0138",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "3b4426ede201bb8dbdca0881437f6e3de4d4386a9713ee03754443c33e4458e1"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 2,
+        "elapsed_seconds": 122.43674418801675,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 4573,
+        "observed_completion_tokens": 8152,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0190"
+    },
+    {
+      "id": "SMAS-0139",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "959981a0b90d5f0dd830c4a5dab2343a4b8ffcb06821477f9b3eb2219e9303ad"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.444748369045556,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0193"
+    },
+    {
+      "id": "SMAS-0140",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "c7f21aefbdec47c74f13f7c5461279be7c2ac6d8df4369e073696a6f5ff49344"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.36959209898487,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0195"
+    },
+    {
+      "id": "SMAS-0141",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "37b03c78cb8888bf778d261ee08dfd3ae3f7e84edf261eb708f3ed8f44e7ca3c"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.27031893003732,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0198"
+    },
+    {
+      "id": "SMAS-0142",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "b535876268f7634b9a41851c4018950122f0fcb11894ca2dc7b7a87a03f8c6cb"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.622719581006095,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0199"
+    },
+    {
+      "id": "SMAS-0143",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "9d62c62cd00c3501c01422efee9ed92e8ee31da7e0aa2f14b1c5ad8b10b8a237"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 2,
+        "elapsed_seconds": 111.28660920995753,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 6683,
+        "observed_completion_tokens": 6738,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0200"
+    },
+    {
+      "id": "SMAS-0144",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "839f02982ea9edd09f6c9242752b004dbef8e72f22c2f88b9f5bc3baea98bb13"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 2,
+        "elapsed_seconds": 118.20334091503173,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 9948,
+        "observed_completion_tokens": 9691,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0202"
+    },
+    {
+      "id": "SMAS-0145",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "0c734b8f1354f5d0d31a61506f3e438e8645bde2382d6436739213bceffe3812"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.517046092951205,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0206"
+    },
+    {
+      "id": "SMAS-0146",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "6aefbb4706b0c9350d65ecd3a2bb5938cd90e75b3785ffbcf7ee0d78eb3836a9"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.32314817799488,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0208"
+    },
+    {
+      "id": "SMAS-0147",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "cb502e95fba1b76b8b38aa6c090326913b8b39c1c6fabe9f45c00d85b5fecc94"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.306984447990544,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0211"
+    },
+    {
+      "id": "SMAS-0148",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "74475b78a10e831bf47a9dcecfd98e14f6c4fabbab092ad6215f2431576bc89f"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 87,
+        "elapsed_seconds": 1424.6675722739892,
+        "prompt_tokens": 2761620,
+        "completion_tokens": 233500,
+        "observed_prompt_tokens": 2761620,
+        "observed_completion_tokens": 233500,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0214"
+    },
+    {
+      "id": "SMAS-0149",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a56f44e1f444fd2c33f6a06d5640f97560bc51a6e51746980a094e15274e7308"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 9,
+        "elapsed_seconds": 858.419278654037,
+        "prompt_tokens": 269614,
+        "completion_tokens": 150250,
+        "observed_prompt_tokens": 269614,
+        "observed_completion_tokens": 150250,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0215"
+    },
+    {
+      "id": "SMAS-0150",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "efd96da6bfcf171250e349d3cf1cce63d1966ea6b43b6ffaea385a57ac59fbf7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 118,
+        "elapsed_seconds": 1477.617557310965,
+        "prompt_tokens": 2618430,
+        "completion_tokens": 237704,
+        "observed_prompt_tokens": 2618430,
+        "observed_completion_tokens": 237704,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Material",
+      "source_id": "FLOW-0220"
+    },
+    {
+      "id": "SMAS-0151",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "f09841edb2eec95a62d1bcf7229374f35a70e63e9e20235674c7240b69310ba0"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 109,
+        "elapsed_seconds": 1430.1976750729955,
+        "prompt_tokens": 4144401,
+        "completion_tokens": 240883,
+        "observed_prompt_tokens": 4144401,
+        "observed_completion_tokens": 240883,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0239"
+    },
+    {
+      "id": "SMAS-0152",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a7b84b339f361ca17b1cb540d846cd8dc247700f730618a27d22776434141eeb"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 52,
+        "elapsed_seconds": 592.9161158989882,
+        "prompt_tokens": 693310,
+        "completion_tokens": 99061,
+        "observed_prompt_tokens": 693310,
+        "observed_completion_tokens": 99061,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0242"
+    },
+    {
+      "id": "SMAS-0153",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "81d356c6318afed0dd5050775ebbebca3fc3acc6d1d3711907228e4b38e90ced"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 47,
+        "elapsed_seconds": 385.03505028400104,
+        "prompt_tokens": 603663,
+        "completion_tokens": 54463,
+        "observed_prompt_tokens": 603663,
+        "observed_completion_tokens": 54463,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0245"
+    },
+    {
+      "id": "SMAS-0154",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "fe208ed9ed2b5b96821fcc2b030246e3162eada732080a6c92a0002d4194fcf0"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 9,
+        "elapsed_seconds": 410.1770459660329,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 237962,
+        "observed_completion_tokens": 59150,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0252"
+    },
+    {
+      "id": "SMAS-0155",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "15b786850b28d612a63a5ef871a84b561e2f40b2dcd47ebb0a2872d0abcb3d41"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.457042882044334,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0254"
+    },
+    {
+      "id": "SMAS-0156",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "00761431d4a2a5b87b45b4435e5214fc945773aa0a22f06235d70d29fec66a6e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 2,
+        "elapsed_seconds": 150.52675984898815,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 3837,
+        "observed_completion_tokens": 11067,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0255"
+    },
+    {
+      "id": "SMAS-0157",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "c17e7dca0ef41a2ab53843d3bc190c1533a8eb54b01ddd5dbc65aef5ceb4f633"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.58765875198878,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0256"
+    },
+    {
+      "id": "SMAS-0158",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "00d41bced9f6df40790582545931695318d733a0bf7a63567daee997ad12b36e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.39471279102145,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0259"
+    },
+    {
+      "id": "SMAS-0159",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a68645c0ce7589188533eb6cd9c855bf9a2d1fda8131c5215de5b3e898aeb403"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.38910642295377,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0260"
+    },
+    {
+      "id": "SMAS-0160",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "1cf9c56bb6fcce204d72ab6b67bc056b970386a0b426c762785bacdf09d2b2ed"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.60019741096767,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0263"
+    },
+    {
+      "id": "SMAS-0161",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "77c30a870a3105d275a5827d6f44977c6308827023da35d140e12912f12156dd"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.62131855299231,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0265"
+    },
+    {
+      "id": "SMAS-0162",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "448e71cf37fe0901d1bcf5108f97e6da3c588c1a17ebdee1fe139a0f7957584e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 33.19430657598423,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0267"
+    },
+    {
+      "id": "SMAS-0163",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d180e9626a9a8af79efa3deb65111f51fc28ebc706c90c3d0a518193287deebc"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.32714525796473,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0281"
+    },
+    {
+      "id": "SMAS-0164",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e531fecb3da48d08b908c2d0a46fd6c0a988dbb2bd4b3538474c578f02f25173"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.414876716036815,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0285"
+    },
+    {
+      "id": "SMAS-0165",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e7fbcaaf89db7dcb6d61d3cf7117d0e98b334001dc7a7d962e7b533b47c243ab"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.377670866961125,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0288"
+    },
+    {
+      "id": "SMAS-0166",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "3ee9ddb9b2157e23a9a01415ad7ed5f8c9ccb987307222cdde5753f19456ae67"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.54532127000857,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0300"
+    },
+    {
+      "id": "SMAS-0167",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "c859ec97e3c78dacc76c6078b6ffbd156fe9710a93890ba6c1f6e705a9af2c70"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.53064791497309,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0305"
+    },
+    {
+      "id": "SMAS-0168",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "5a2544254d31cf77ba663be499d6e7385c6462578c7f5bc6ba88160a7627c093"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.40473368501989,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0315"
+    },
+    {
+      "id": "SMAS-0169",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "2378adced46f136af17e210e77d1203c1768f3ce32a9c8c258703ed7c24c0f44"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.42970187601168,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0322"
+    },
+    {
+      "id": "SMAS-0170",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d86225bacd67932773ef59057a420eda36e8df118bed7d08e9e26e2e5b399a9f"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.29899058700539,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0326"
+    },
+    {
+      "id": "SMAS-0171",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "fec704e940863a44d695eee2381bc48fdeda2a5283abbeef8db3c609ad26b6ab"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.4372016399866,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0329"
+    },
+    {
+      "id": "SMAS-0172",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "07ec1ecd12d2e46d47fa74246cb606c8bbe875232daa9d78350ede3b823daa6d"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.25355896097608,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0331"
+    },
+    {
+      "id": "SMAS-0173",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "05dac8e65d78498d8cd9753139c9d6305d4dc2f08017d097e07d761290949dc7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.41341734799789,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0334"
+    },
+    {
+      "id": "SMAS-0174",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "675a015b10c797c3928a5eb9cc2fc46d10c169809ffbafe0ab7235255692a0c7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.25609112303937,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0353"
+    },
+    {
+      "id": "SMAS-0175",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "041776b2009b6ddf176ac6569613da0d06b53499f4e7d60346f91a5e47c526f7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.33643279399257,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "Biology",
+      "source_id": "FLOW-0358"
+    },
+    {
+      "id": "SMAS-0176",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "1c2963ca8ea1ea92a75aee1cc28cd763ae920d7ac53d98878b176ba3be31d2f7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.29972126701614,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0377"
+    },
+    {
+      "id": "SMAS-0177",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e311db866fe445392652499fc0d4831eba2c01a07df56e710b49ed2e39e86ff4"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 34.404726813023444,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0378"
+    },
+    {
+      "id": "SMAS-0178",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a4c199277c096deba13a71499c0db463f8c82fd4302f3cf36bfe99d835c1b7ff"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 35.39922427001875,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0379"
+    },
+    {
+      "id": "SMAS-0179",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "11a98c943f80cabebc0459fcd045fdc42f20b2b2fde772e2ec0cd80c0e76c52c"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.283014168962836,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0381"
+    },
+    {
+      "id": "SMAS-0180",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "b3c1118650702e8617905a5b7bfb1881916282404d7593a35433a0d66566a337"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.40259989100741,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0382"
+    },
+    {
+      "id": "SMAS-0181",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a84e2837bc935a659b67b93c974468430ca1f8a9dfadece400018783f72251b6"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.40266139101004,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0383"
+    },
+    {
+      "id": "SMAS-0182",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "749288f54243960aa0a09596456416028ec4f5310cd6c10ba4f259fc7b1259f5"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.33132564701373,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0385"
+    },
+    {
+      "id": "SMAS-0183",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "29d9022e612983c46f52c82e1c336f89143b2fc1c025849b2acfb0e06aeb826b"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.368168785003945,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0387"
+    },
+    {
+      "id": "SMAS-0184",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "557903c8a353ebb8f9317f8f456af43b5a176434e97045bb744ecc925c2a076e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.56918259197846,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0389"
+    },
+    {
+      "id": "SMAS-0185",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d1832115e5ad8914f52a4161b631fcb7cc56a407a4e377de9c81188a1d109dc6"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.54125559999375,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0400"
+    },
+    {
+      "id": "SMAS-0186",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "26edf5858619fd22db654b9d8dd2d4e0576f0b9dbf4374a3729ee91d429b4509"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.95831504400121,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0427"
+    },
+    {
+      "id": "SMAS-0187",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "698d241f230518807902182ccf11656125bda1645d0e37e26a60bf0d248c415a"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.8298599870177,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0433"
+    },
+    {
+      "id": "SMAS-0188",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "9b28ad2f9e5597355b80ebe14cc8d9acb36703fb67da24031ba8be775f4d0d71"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.58125178597402,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0439"
+    },
+    {
+      "id": "SMAS-0189",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "850af143de295169450c313c7de8162919cd9afaf91d8b552c00779820c0a043"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.29421918897424,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0443"
+    },
+    {
+      "id": "SMAS-0190",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "da56b70152e76528e512ddc1bd340fc7afb97e6ca11c6b7acb32b4792ecdac2e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.34367332601687,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0449"
+    },
+    {
+      "id": "SMAS-0191",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e7ad46bef5633c6baa4525baf2e099761ddfe171d5a6afc5859935186c26427d"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.2854092020425,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0450"
+    },
+    {
+      "id": "SMAS-0192",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "4ab85bbc98671c0f2d956acf2f61b57200dfa672d33fd796a82074ec3dac6ad2"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.46286734403111,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0467"
+    },
+    {
+      "id": "SMAS-0193",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "76916c4b731dd416f9873aa0ec5a46cf931260e9d7da1986003da785753ea553"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.55452779203188,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0468"
+    },
+    {
+      "id": "SMAS-0194",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "abefd902970cc0214aaede479d862528279b6ead597719176f164cf81563e328"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.320617167977616,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0471"
+    },
+    {
+      "id": "SMAS-0195",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e27dfb5c96f435a0372d0297244d54eef2cf48f54a81f35b499ae16bd6f7239c"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.508915006008465,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0472"
+    },
+    {
+      "id": "SMAS-0196",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "5bc66cd24a9e8f4ba95149a63cd6d62f6bb898bb2f0c245e5f0afae7b83fb5b0"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.210154319007415,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0476"
+    },
+    {
+      "id": "SMAS-0197",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "0f9d94f7b343d165f900ed2f032dc25c7a48fd67b6019d82d40b199ed8482e77"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.203382050967775,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0481"
+    },
+    {
+      "id": "SMAS-0198",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "b784a2dc807026ce25ebefb4a579b1d708a401cf148b6bda9633dc6de6ac1ff9"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.38668452599086,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0483"
+    },
+    {
+      "id": "SMAS-0199",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "f40c33c146f55d420101c521a869bd38c1192221cc46900518b3ac9e0c7a93a5"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.3279044929659,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0490"
+    },
+    {
+      "id": "SMAS-0200",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a41b30216240a142b0433d0b36e69272ee17cc8cb48f4475abed0601c3671a92"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 1,
+        "elapsed_seconds": 32.58835519402055,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "observed_prompt_tokens": 0,
+        "observed_completion_tokens": 0,
+        "requests_with_incomplete_token_usage": 1
+      },
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0499"
+    }
+  ],
+  "llm_judge_used": false
+}

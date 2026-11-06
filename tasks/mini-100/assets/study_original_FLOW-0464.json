@@ -1,0 +1,27 @@
+{
+  "provenance": {
+    "kind": "Project-authored controlled scientific study. All tables are stipulated model observations, not a claim of new experimental or ab-initio results.",
+    "scope": "Inference is conditional on the explicit finite model, source identities, units and measurement policy."
+  },
+  "isotopolog_smiles_by_state": {
+    "unlabeled": "CCO",
+    "site1_only": "[13CH3]CO",
+    "site2_only": "C[13CH2]O",
+    "both_sites": "[13CH3][13CH2]O"
+  },
+  "state_order": [
+    "unlabeled",
+    "site1_only",
+    "site2_only",
+    "both_sites"
+  ],
+  "observed_label_count_probability": {
+    "0": 0.25,
+    "1": 0.5,
+    "2": 0.25
+  },
+  "independent_NMR_site1_enrichment": 0.6,
+  "observation_model": "Controlled exact label-count probabilities for the two carbon positions of neutral ethanol. Listed13C substitutions are exact isotope labels in the molecular graphs. No other isotope or natural-abundance convolution contributes. The mass instrument resolves the number of13C atoms but cannot distinguish positional isomers with the same exact mass; compare the exact molecular masses of all listed graphs to verify the observation groups.",
+  "analysis_policy": "First remove the NMR datum and derive the sharp possible site1 enrichment interval from only the complete mass-count histogram and nonnegative joint fractions. Then restore the independent site1 enrichment and reconstruct all four joint state fractions. Covariance of site indicators is P(both)-P(site1)*P(site2).",
+  "scope": "Analytical isotope-position identifiability, not an isotope-production procedure, metabolic pathway flux claim or instruction to create labeled biological material."
+}
