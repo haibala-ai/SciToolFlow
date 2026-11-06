@@ -54,6 +54,17 @@ def test_checkpoint_counts_costs_and_raw_evidence_are_preserved(tmp_path):
     assert path.read_text()  # The observer never consumes or removes a checkpoint.
 
 
+@pytest.mark.parametrize('stage', ['graph_refinement', 'local_repair'])
+def test_revision_phase_is_visible_during_pending_requests(tmp_path, stage):
+    _, path = setup_run(tmp_path)
+    trace = json.loads(path.read_text())
+    trace['steps'][-1].update(role='repair', stage=stage)
+    atomic_json(path, trace)
+    active = monitor.Monitor(tmp_path).snapshot()['active_tasks'][0]
+    assert active['phase'] == stage
+    assert active['pending_model_response']
+
+
 def test_missing_usage_is_unknown_and_mismatched_attempts_are_not_combined(tmp_path):
     setup_run(tmp_path)
     atomic_json(tmp_path/'task_metrics.json', {'fingerprint':'fixture','tasks':[

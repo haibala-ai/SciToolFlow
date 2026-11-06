@@ -19420,15 +19420,7 @@
       "type": "port",
       "tool": "GetMolecularFrequencies",
       "direction": "outputs",
-      "schema": {
-        "anyOf": [
-          {
-            "type": "string",
-            "description": "MP branch only, exact verified molecule identity."
-          },
-          {}
-        ]
-      },
+      "schema": {},
       "contract_sha256": "082a2316d8c17ddd3b00fc5a4d31bec452eaf3f9b2ed6838c02a63e91a8d4dd1"
     },
     "port:GetMolecularFrequencies:outputs:2": {
@@ -19508,15 +19500,7 @@
       "type": "port",
       "tool": "GetMolecularFrequencies",
       "direction": "outputs",
-      "schema": {
-        "anyOf": [
-          {},
-          {
-            "type": "string",
-            "description": "Local branch only: exact existing completed source."
-          }
-        ]
-      },
+      "schema": {},
       "contract_sha256": "082a2316d8c17ddd3b00fc5a4d31bec452eaf3f9b2ed6838c02a63e91a8d4dd1"
     },
     "tool:GetMolecularThermalEnthalpy": {
@@ -162239,15 +162223,7 @@
             "type": "port",
             "tool": "GetMolecularFrequencies",
             "direction": "outputs",
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "description": "MP branch only, exact verified molecule identity."
-                },
-                {}
-              ]
-            },
+            "schema": {},
             "contract_sha256": "082a2316d8c17ddd3b00fc5a4d31bec452eaf3f9b2ed6838c02a63e91a8d4dd1"
           },
           {
@@ -162329,15 +162305,7 @@
             "type": "port",
             "tool": "GetMolecularFrequencies",
             "direction": "outputs",
-            "schema": {
-              "anyOf": [
-                {},
-                {
-                  "type": "string",
-                  "description": "Local branch only: exact existing completed source."
-                }
-              ]
-            },
+            "schema": {},
             "contract_sha256": "082a2316d8c17ddd3b00fc5a4d31bec452eaf3f9b2ed6838c02a63e91a8d4dd1"
           }
         ]

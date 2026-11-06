@@ -201,7 +201,8 @@ def test_bad_binding_repaired_before_scientific_call(tmp_path):
 
     result = run(tmp_path, Client(hook))
     assert result["status"] == "completed", result["failure_reason"]
-    assert len(result["repairs"]) == 1
+    assert len(result["graph_refinements"]) == 1
+    assert not result["repairs"]
     assert result["calls"][1]["arguments"]["left"] == [[2, 0], [0, 4]]
     assert len(result["calls"]) == 2
 

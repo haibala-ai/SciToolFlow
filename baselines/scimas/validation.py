@@ -25,46 +25,80 @@ def output_schema(spec, decoded=False):
 
 
 def path_schema(schema, path, *, allow_wildcards=False):
-    # An explicitly unconstrained JSON value (e.g. a parsed document) may
-    # contain runtime-defined fields. This is uncertainty, not a proof that
-    # the field exists; resolution and the receiving contract remain mandatory.
+    """Project a contract path, preserving open JSON and combined constraints.
+
+    A projected schema is a possibility check. Actual field presence, array
+    bounds and the complete receiving contract are always checked at runtime.
+    """
     if schema is True or schema == {}:
         return {}
-    if not path:
-        return schema
     if not isinstance(schema, dict):
         raise ValueError("Path has no declared schema")
+    if not path:
+        return schema
+
+    def combine(parts, keyword):
+        # An unconstrained alternative is genuinely unknown; an unconstrained
+        # intersection adds no information. Do not lose a sibling's field type.
+        if keyword == "anyOf" and any(part == {} for part in parts):
+            return {}
+        known = []
+        for part in parts:
+            if part != {} and part not in known:
+                known.append(part)
+        return known[0] if len(known) == 1 else {keyword: known} if known else {}
+
     for family in ("oneOf", "anyOf", "allOf"):
-        if family in schema:
-            found = []
-            for branch in schema[family]:
-                try:
-                    found.append(
-                        path_schema(branch, path, allow_wildcards=allow_wildcards)
-                    )
-                except ValueError:
-                    pass
-            if found:
-                return {"anyOf": found} if len(found) > 1 else found[0]
+        if family not in schema:
+            continue
+        base = {key: value for key, value in schema.items() if key != family}
+        if family == "allOf":
+            return combine([
+                path_schema(branch, path, allow_wildcards=allow_wildcards)
+                for branch in ([base] if base else []) + schema[family]
+            ], "allOf")
+        alternatives = []
+        for branch in schema[family]:
+            try:
+                # Constraints alongside oneOf/anyOf also apply to each branch.
+                projected = [path_schema(branch, path, allow_wildcards=allow_wildcards)]
+                if base:
+                    projected.append(path_schema(base, path, allow_wildcards=allow_wildcards))
+                alternatives.append(combine(projected, "allOf"))
+            except ValueError:
+                pass
+        if alternatives:
+            return combine(alternatives, "anyOf")
+        raise ValueError("Output path is not declared: " + repr(path))
+
     head, *tail = path
-    if isinstance(head, str) and head in schema.get("properties", {}):
-        return path_schema(
-            schema["properties"][head], tail, allow_wildcards=allow_wildcards
-        )
-    if isinstance(head, str) and isinstance(schema.get("additionalProperties"), dict):
-        return path_schema(
-            schema["additionalProperties"], tail, allow_wildcards=allow_wildcards
-        )
-    if isinstance(head, str) and schema.get("additionalProperties") is True:
-        return {}
-    permits_array = "array" in types(schema) or not types(schema)
-    if allow_wildcards and head == "*" and permits_array:
-        child = schema.get("items", True)
-        if isinstance(child, dict) or child is True:
-            return path_schema(child, tail, allow_wildcards=True)
-    if type(head) is int:
-        if head < 0 or not permits_array:
-            raise ValueError("Output path is not declared: " + repr(path))
+    permitted = types(schema)
+    permits_object = "object" in permitted or not permitted
+    permits_array = "array" in permitted or not permitted
+    if isinstance(head, str) and permits_object and head in schema.get("properties", {}):
+        return path_schema(schema["properties"][head], tail, allow_wildcards=allow_wildcards)
+    if allow_wildcards and head == "*":
+        children = []
+        if permits_array:
+            children.append(schema.get("items", True))
+        if permits_object:
+            children.append(schema.get("additionalProperties", True)
+                            if schema.get("unevaluatedProperties", True) is not False else False)
+        alternatives = []
+        for child in children:
+            try:
+                alternatives.append(path_schema(child, tail, allow_wildcards=True))
+            except ValueError:
+                pass
+        if alternatives:
+            return combine(alternatives, "anyOf")
+    elif isinstance(head, str) and permits_object:
+        child = schema.get("additionalProperties", True)
+        if schema.get("unevaluatedProperties", True) is False:
+            child = False
+        if child is True or isinstance(child, dict):
+            return path_schema(child, tail, allow_wildcards=allow_wildcards)
+    if type(head) is int and head >= 0 and permits_array:
         prefix = schema.get("prefixItems", [])
         child = prefix[head] if head < len(prefix) else schema.get("items", True)
         if isinstance(child, dict) or child is True:
@@ -79,6 +113,11 @@ def types(schema):
     for key in ("oneOf", "anyOf"):
         if key in schema:
             return set().union(*(types(s) for s in schema[key]))
+    if "allOf" in schema:
+        restrictions = [types(branch) for branch in schema["allOf"]]
+        restrictions = [value | ({"integer"} if "number" in value else set())
+                        for value in restrictions if value]
+        return set.intersection(*restrictions) if restrictions else set()
     return set()
 
 
@@ -229,7 +268,7 @@ def validate_graph(graph, catalog, *, allowed=None):
             iterable = schema_for(current["for_each"])
             if types(iterable) and "array" not in types(iterable):
                 raise ValueError("for_each must select a declared array")
-            return path_schema(iterable.get("items", {}), binding["path"])
+            return path_schema(iterable, [0] + binding["path"])
         source = nodes[binding["node"]]
         if kind == "collect" and "for_each" not in source:
             raise ValueError("collect must reference an unexpanded template")
@@ -309,8 +348,8 @@ def validate_graph(graph, catalog, *, allowed=None):
             errors.append(nid + ": unknown tool arguments")
         try:
             if "for_each" in node:
-                if node["for_each"]["kind"] not in {"node", "task"}:
-                    raise ValueError("for_each must bind to a task/node array")
+                if node["for_each"]["kind"] not in {"node", "task", "collect", "list"}:
+                    raise ValueError("for_each must bind to a task/node array, collected template outputs or a list of bindings")
                 iterable = binding_check(node["for_each"], node)
                 if types(iterable) and "array" not in types(iterable):
                     raise ValueError("for_each source is not a declared array")

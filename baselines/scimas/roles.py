@@ -13,17 +13,26 @@ from src.models.communication import infrastructure_failure
 
 
 class RecordedClient(BudgetedClient):
-    def __init__(self, client, resources, phase, trace, save, max_decisions=None):
+    def __init__(self, client, resources, phase, trace, save, max_decisions=None,
+                 request_guard=None, request_context=None):
         super().__init__(client, resources, phase)
         self.trace, self.save, self.max_decisions = trace, save, max_decisions
+        self.request_guard = request_guard
+        self.request_context = request_context
+
+    def context_updates(self):
+        return self.request_context() if self.request_context is not None else {}
 
     def request(self, messages, **kwargs):
+        if self.request_guard is not None:
+            self.request_guard()
         if (
             self.max_decisions is not None
             and len(self.resources.requests) >= self.max_decisions
         ):
             raise ResourceLimit("DecisionBudget")
         self.resources.check()
+        phase_context = self.context_updates()
         previous = next(
             (
                 s["model"]["messages"]
@@ -37,6 +46,8 @@ class RecordedClient(BudgetedClient):
             {
                 "type": "decision",
                 "role": self.phase,
+                **({"stage": phase_context["revision_stage"]}
+                   if "revision_stage" in phase_context else {}),
                 "model": {
                     "messages": deepcopy(messages),
                     "response": None,
@@ -112,6 +123,8 @@ class Roles:
         prompt = self.prompts[role] + self.prompt_suffix
         feedback = None
         for _ in range(self.retries):
+            if hasattr(client, "context_updates"):
+                payload = {**payload, **client.context_updates()}
             messages = role_messages(prompt, payload, schema, feedback)
             if sum(len(m["content"]) for m in messages) > self.max_chars:
                 raise ValueError(

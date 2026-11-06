@@ -21,7 +21,7 @@ from src.models.communication import infrastructure_failure
 from tools.runtime.contracts import contract_errors
 from .schema import TEXT, ID, PATH, obj
 from .task_graph import TaskGraph, at, digest, descendants, node_dependencies
-from .knowledge import ToolKnowledge
+from .knowledge import ToolKnowledge, fresh_queries, embedding_usage_since
 from .planner import Planner, ACTION_SCHEMA
 from .runner import asset_previews
 from .roles import Roles, RecordedClient
@@ -30,6 +30,7 @@ from .experience import Experience
 from .ablation.policy import resolve_ablation, DisabledExperience, LocalRepairDisabled
 from .trajectory import append_step
 from .verification import numerical_certificate
+from .validation import validate_graph
 
 IDS = {"type": "array", "items": ID, "uniqueItems": True}
 REPAIR = obj({"nodes": IDS, "reason": TEXT})
@@ -171,6 +172,9 @@ def run_scimas(
         "graphs": [],
         "reviews": [],
         "repairs": [],
+        "repair_attempts": [],
+        "graph_refinements": [],
+        "graph_refinement_attempts": [],
         "retrievals": [],
         "gate_evaluations": [],
         "limits": {
@@ -206,11 +210,14 @@ def run_scimas(
         0,
     )
     graph, gates, repairs, think_streak = None, {}, 0, 0
+    refinements = 0
+    repair_window = None
     executor = Executor(invoke, folder / "calls", settings["tool_concurrency"])
     failures = {}
     assets = []
     output_previews = {}
     planning_report = None
+    embedding_baseline = deepcopy(knowledge.embedding.stats) if knowledge is not None else {}
 
     def save():
         if planning_report is not None and "planning" not in trace:
@@ -245,21 +252,16 @@ def run_scimas(
                 for record in executor.running.values()
             ],
         )
+        query_usage = embedding_usage_since(knowledge.embedding, embedding_baseline) if knowledge is not None else {}
         trace["metrics"] = task_metrics(
             trace["resource_usage"],
             calls,
             runtime_seconds=trace.get("duration_seconds"),
             pending_calls=list(executor.running.values()),
             finished=trace["status"] != "running",
-            communication_wait_seconds=(
-                knowledge.embedding.stats.get("communication_wait_seconds", 0)
-                if knowledge is not None else 0
-            ),
+            communication_wait_seconds=query_usage.get("communication_wait_seconds", 0),
             infrastructure_failure=trace.get("infrastructure_failure"),
-            communication_intervals=(
-                knowledge.embedding.stats.get("communication_intervals", [])
-                if knowledge is not None else []
-            ),
+            communication_intervals=query_usage.get("communication_intervals", []),
         )
         # Preserve every durable checkpoint and raw request, but avoid repeatedly
         # pretty-printing the growing trajectory at each execution boundary.
@@ -273,9 +275,30 @@ def run_scimas(
         planning_report = report
 
     def recorded(role):
-        return RecordedClient(client, resources, role, trace, save, max_iterations)
+        def request_context():
+            if role == "repair" and repair_window is not None:
+                return {"revision_stage": repair_window["stage"], "remaining_requests": max(0, settings["repair_requests"] - (
+                    len(resources.requests) - repair_window["start_request_count"]
+                ))}
+            return {}
+
+        def guard():
+            if role == "repair" and repair_window is not None:
+                used = len(resources.requests) - repair_window["start_request_count"]
+                if used >= settings["repair_requests"]:
+                    repair_window.update(status="request_limit", requests=used)
+                    raise ValueError(
+                        "RepairRequestLimit: no valid replacement within "
+                        + str(settings["repair_requests"])
+                        + " generation requests. Last feedback: "
+                        + str(repair_window.get("last_error", "No replacement plan submitted"))
+                    )
+        return RecordedClient(client, resources, role, trace, save, max_iterations,
+                              request_guard=guard, request_context=request_context)
 
     def protocol_error(errors):
+        nonlocal think_streak
+        think_streak = 0
         stats["protocol_errors"] += 1
         trace["steps"][-1]["protocol_errors"] = list(errors)
         save()
@@ -331,6 +354,8 @@ def run_scimas(
                 and results[call["node"]]["node_sha256"]
                 == identities.get(call["node"]),
                 **output_previews[oid],
+                **{key: deepcopy(call[key]) for key in
+                   ("error", "error_type", "missing_resources") if key in call},
             }
             preview[oid]["review_state"] = (
                 "stale" if preview[oid]["stale"] else
@@ -343,7 +368,6 @@ def run_scimas(
         return {
             "task": task,
             "public_assets": assets,
-            "requirements": graph.requirements,
             "graph": graph.document(),
             "current_graph_nodes": [n["id"] for n in graph.plan["nodes"]],
             "accepted_result_nodes": list(results),
@@ -353,10 +377,8 @@ def run_scimas(
             "pruned": pruned,
             "observations": evidence(),
             "experience": memory.match(role, graph.contracts),
-            **(
-                {"execution_policy": policy.document(), "gate_states": dict(gate_states)}
-                if policy.variant != "full" else {}
-            ),
+            "execution_policy": policy.document(),
+            "gate_states": dict(gate_states),
             **extra,
         }
 
@@ -390,14 +412,31 @@ def run_scimas(
         add_step({"type": "inspect", "request": request, "value": selected})
         return selected
 
-    def ask(role, payload, schema):
+    def ask(role, payload, schema, *, feedback_out=None):
         nonlocal think_streak
         # Preserve caller feedback (including final format/scientific corrections)
         # when adding inspection and thinking history for this decision.
         feedback = list(payload.get("feedback", []))
+        previous_auxiliary, repeated_auxiliary = None, 0
+        decision_schema = schema
         while True:
-            decision = roles.ask(role, {**payload, "feedback": feedback}, schema)
+            decision = roles.ask(role, {**payload, "feedback": feedback}, decision_schema)
+            if role == "repair" and repair_window is not None:
+                trace["steps"][-1]["stage"] = repair_window["stage"]
+            if "inspect" in decision or "think" in decision:
+                identity = digest(decision)
+                repeated_auxiliary = repeated_auxiliary + 1 if identity == previous_auxiliary else 1
+                previous_auxiliary = identity
+                if repeated_auxiliary >= settings["protocol_retries"]:
+                    productive = [branch for branch in schema["oneOf"]
+                                  if not ({"inspect", "think"} & branch["properties"].keys())]
+                    decision_schema = {**schema, "oneOf": productive}
+                    feedback.append({"progress_feedback":
+                        "This identical auxiliary decision has already been served. "
+                        "Use the supplied evidence and choose a productive action from response_schema."})
+                    trace["steps"][-1]["progress_intervention"] = "request_productive_decision"
             if "inspect" in decision:
+                think_streak = 0
                 try:
                     value = inspect(decision["inspect"])
                     feedback.append({"inspection": decision["inspect"], "value": value})
@@ -418,6 +457,8 @@ def run_scimas(
                 feedback.append({"previous_thought": decision["think"]})
             else:
                 think_streak = 0
+                if feedback_out is not None:
+                    feedback_out[:] = feedback
                 return decision
             save()
 
@@ -469,10 +510,16 @@ def run_scimas(
         nonlocal gates
         gate_states.clear()
         decision = review(
-            "graph", contracts=knowledge.planning_view(sorted(graph.contracts))
+            "graph", contracts=knowledge.planning_view(sorted(graph.contracts)),
+            graph_validation=validate_graph(graph, catalog),
         )
         if "repair" in decision:
             return decision["repair"]
+        if "reject" in decision and not stats["scientific_calls"] and not executor.running:
+            # A pre-execution concern is feedback to the planner, not evidence
+            # that the task itself is impossible. All variants get this chance.
+            return {"nodes": [n["id"] for n in graph.plan["nodes"]],
+                    "reason": "Initial graph review requested correction: " + decision["reject"]}
         if "approve" not in decision:
             raise ValueError("Graph scientifically rejected: " + str(decision))
         expected = {n["id"] for n in graph.plan["nodes"] if "when" in n}
@@ -484,32 +531,58 @@ def run_scimas(
         return None
 
     def repair(request):
-        nonlocal graph, repairs, gates
-        if not policy.local_repair:
+        nonlocal graph, repairs, refinements, gates, repair_window
+        initial = not stats["scientific_calls"] and not executor.running
+        if not initial and not policy.local_repair:
             add_step({"type": "repair_disabled", "request": deepcopy(request)})
             raise LocalRepairDisabled(request["reason"])
         while True:
-            if repairs >= settings["local_repairs"]:
-                raise ValueError("LocalRepairLimit: " + request["reason"])
-            repairs += 1
+            if initial:
+                if refinements >= settings["graph_refinements"]:
+                    raise ValueError("GraphRefinementLimit: " + request["reason"])
+                refinements += 1
+            else:
+                if repairs >= settings["local_repairs"]:
+                    raise ValueError("LocalRepairLimit: " + request["reason"])
+                repairs += 1
             old = graph
             ids = {n["id"] for n in old.plan["nodes"]}
             if not request["nodes"] or not set(request["nodes"]) <= ids:
                 raise ValueError("Repair must identify existing affected nodes")
-            allowed = descendants(old.plan, set(request["nodes"]))
+            # Before execution there is no validated scientific work to retain;
+            # a source adapter may need correction along with its consumers.
+            # During execution, local repair must preserve unaffected evidence.
+            allowed = ids if initial else descendants(old.plan, set(request["nodes"]))
             contracts = knowledge.planning_view(sorted(old.contracts))
             feedback = []
+            search_history, completed_queries = [], set()
+            repair_window = {
+                "round": refinements if initial else repairs,
+                "stage": "graph_refinement" if initial else "local_repair",
+                "request": deepcopy(request), "status": "planning",
+                "start_request_count": len(resources.requests),
+                "max_requests": settings["repair_requests"],
+            }
+            trace["graph_refinement_attempts" if initial else "repair_attempts"].append(repair_window)
             while True:
-                action = roles.ask(
+                action = ask(
                     "repair",
                     context(
                         "planner",
                         request=request,
+                        revision_stage=repair_window["stage"],
                         allowed_changes=sorted(allowed),
                         contracts=contracts,
                         feedback=feedback,
+                        search_history=search_history,
+                        remaining_requests=max(0, settings["repair_requests"] - (
+                            len(resources.requests) - repair_window["start_request_count"]
+                        )),
                     ),
-                    ACTION_SCHEMA,
+                    {**ACTION_SCHEMA, "oneOf": ACTION_SCHEMA["oneOf"] + [
+                        obj({"inspect": INSPECT}), obj({"think": TEXT})
+                    ]},
+                    feedback_out=feedback,
                 )
                 if "stop" in action:
                     raise ValueError("RepairPlannerStopped: " + action["stop"])
@@ -527,22 +600,38 @@ def run_scimas(
                             contracts.update(knowledge.planning_view([name]))
                         except ValueError as error:
                             errors.append({"tool": name, "error": str(error)})
-                    feedback = [{"contract_query_errors": errors}] if errors else []
+                    feedback = [item for item in feedback if "contract_query_errors" not in item]
+                    if errors:
+                        feedback.append({"contract_query_errors": errors})
                     continue
                 if "queries" in action:
-                    found = knowledge.search(action["queries"], resources.deadline)
-                    trace["retrievals"].append(found)
-                    contracts.update(found["tools"])
+                    queries, skipped = fresh_queries(action["queries"], completed_queries)
+                    if skipped:
+                        feedback.append({"retrieval_notice": "Repeated or blank queries were skipped; use existing contracts or query a genuinely missing capability.",
+                                         "skipped_queries": skipped})
+                    if queries:
+                        found = knowledge.search(queries, resources.deadline)
+                        search_history.append(list(queries))
+                        trace["retrievals"].append(found)
+                        contracts.update(found["tools"])
                     continue
                 try:
                     new, delta = old.revise(action["plan"], catalog)
                     if set(delta["changed"]) & (ids - allowed):
-                        raise ValueError("Repair modifies unaffected nodes")
+                        raise ValueError("Repair modifies unaffected nodes: " + ", ".join(
+                            sorted(set(delta["changed"]) & (ids - allowed))
+                        ) + ". Copy those nodes unchanged from the current graph.")
                     if not delta["changed"]:
                         raise ValueError("Repair must change the defective branch")
                     break
                 except (ValueError, KeyError) as error:
-                    feedback = [{"rejected_plan": action["plan"], "error": str(error)}]
+                    repair_window["last_error"] = str(error)
+                    feedback = [item for item in feedback if "rejected_plan" not in item]
+                    feedback.append({"rejected_plan": action["plan"], "error": str(error)})
+            repair_window.update(status="applied", requests=(
+                len(resources.requests) - repair_window["start_request_count"]
+            ))
+            repair_window = None
             executor.invalidate(delta["invalidate"])
             for call in observations.values():
                 if call["node"] in delta["invalidate"]:
@@ -552,7 +641,7 @@ def run_scimas(
                 pruned.pop(nid, None)
             graph, gates = new, {}
             trace["graphs"].append(graph.document())
-            trace["repairs"].append(
+            trace["graph_refinements" if initial else "repairs"].append(
                 {
                     "request": request,
                     "delta": delta,
@@ -676,6 +765,12 @@ def run_scimas(
         except (ValueError, TypeError, KeyError, IndexError) as error:
             structural = str(error)
             accepted = None
+            if response.get("status") != "success":
+                structural += "; tool returned " + str(response.get("status"))
+                if response.get("error_type"):
+                    structural += " (" + str(response["error_type"]) + ")"
+                if response.get("error"):
+                    structural += ": " + str(response["error"])
         signature = digest({"tool": record["tool"], "arguments": record["arguments"]})
         if accepted is None:
             failures[signature] = failures.get(signature, 0) + 1
@@ -877,6 +972,16 @@ def run_scimas(
     def finish():
         schema = {"oneOf": [obj({"finish": {"type": "object"}})] + EXTRA}
         feedback = []
+        previous_rejection, repeated_rejections = None, 0
+
+        def reject_answer(answer, category):
+            nonlocal previous_rejection, repeated_rejections
+            identity = digest({"answer": answer, "category": category})
+            repeated_rejections = repeated_rejections + 1 if identity == previous_rejection else 1
+            previous_rejection = identity
+            if repeated_rejections >= settings["protocol_retries"]:
+                raise ValueError("FinalAnswerNoProgress: unchanged answer repeatedly rejected for " + category)
+
         while True:
             action = ask(
                 "summary",
@@ -910,6 +1015,7 @@ def run_scimas(
                 )
             if errors:
                 stats["answer_format_errors"] += 1
+                reject_answer(answer, "format_or_citation")
                 if answer_schema_guard:
                     schema["oneOf"][0] = obj(
                         {
@@ -922,6 +1028,7 @@ def run_scimas(
                 continue
             decision = review("final", proposed_answer=answer)
             if "revise_answer" in decision:
+                reject_answer(answer, "scientific_review")
                 feedback = [
                     {
                         "previous_answer": answer,
@@ -942,6 +1049,7 @@ def run_scimas(
     save()
     try:
         knowledge = knowledge or ToolKnowledge(catalog=catalog)
+        embedding_baseline = deepcopy(knowledge.embedding.stats)
         trace["embedding_identity"] = deepcopy(knowledge.manifest.get("embedding_identity"))
         assets = asset_previews(task, root / "tasks/full") if files else []
         trace["public_assets"] = assets
@@ -1224,6 +1332,12 @@ def run_scimas(
                 }
             )
     except (Exception, KeyboardInterrupt) as error:
+        if repair_window is not None:
+            repair_window.update(
+                status=(repair_window["status"] if repair_window["status"] == "request_limit" else "failed"),
+                requests=len(resources.requests) - repair_window["start_request_count"],
+                failure_reason=type(error).__name__ + ": " + str(error),
+            )
         trace.update(
             status="interrupted" if isinstance(error, KeyboardInterrupt) else "failed",
             final_answer=None,
@@ -1243,7 +1357,7 @@ def run_scimas(
         executor.close()
         stats["model_turns"] = len(resources.requests)
         trace["embedding_usage"] = (
-            deepcopy(knowledge.embedding.stats) if knowledge is not None else None
+            embedding_usage_since(knowledge.embedding, embedding_baseline) if knowledge is not None else None
         )
         if trace.get("planning"):
             stats["protocol_errors"] += sum(

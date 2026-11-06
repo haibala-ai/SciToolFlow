@@ -1,6 +1,8 @@
 # SciToolFlow Mini-100
 
-**从当前 Mini-200 中随机无放回抽取的固定 100 题，用于 SciMas 消融实验。** 题文、科学输入、附件内容和评分规则与抽样时的对应源题相同，使用统一的任务加载、运行和评分接口。
+当前主实验使用本题库全部 100 题；五组消融改用其中固定的 [Mini-50 选题](../mini-50/README.md)。完整方法的 50 题配对结果从这 100 题中提取，不额外生成。下文的 `--tasks all` 表示 100 题；50 题消融的运行和评分都应传入 Mini-50 的相同题号清单。
+
+**从当前 Mini-200 中随机无放回抽取的固定 100 题，用于 SciMas 主实验与配对子集评估。** 题文、科学输入、附件内容和评分规则与抽样时的对应源题相同，使用统一的任务加载、运行和评分接口。
 
 ## 抽样与题号
 
@@ -14,7 +16,7 @@
 | 机器学习／数理计算 | 20 |
 | **合计** | **100** |
 
-保留原有 `SMAS-xxxx` 编号，编号不连续。所有消融变体使用同一份固定样本；不要为不同变体重新抽题。Mini-100 是抽样时的冻结快照，后续 Mini-200 更新不会自动覆盖它。
+保留原有 `SMAS-xxxx` 编号，编号不连续。主实验固定为这 100 题，消融变体共用从中选定的 50 题；不要为不同变体重新抽题。Mini-100 是抽样时的冻结快照，后续 Mini-200 更新不会自动覆盖它。
 
 ## 文件与数据边界
 
@@ -31,7 +33,7 @@
 
 ## 查询、运行与评分
 
-在项目根目录执行。接口名称为 **`mini-100`**；默认数据集仍是 `mini`（200 题），因此消融实验应显式指定 `--dataset mini-100`。
+在项目根目录执行。接口名称为 **`mini-100`**；默认数据集仍是 `mini`（200 题），因此本轮主实验与消融均应显式指定 `--dataset mini-100`。
 
 ```bash
 conda activate SciTool-Unified
@@ -40,15 +42,15 @@ conda activate SciTool-Unified
 python cli.py task --dataset mini-100
 python cli.py task SMAS-0103 --dataset mini-100
 
-# SciMas消融：完整执行所选100题
-python cli.py run --baseline scimas --scimas-ablation wo-exp \
+# SciMas主实验：完整执行100题
+python cli.py run --baseline scimas --scimas-ablation full \
   --dataset mini-100 --tasks all --backend api --model deepseek-flash \
   --concurrency 2 --max-context-chars 1500000 --max-output-tokens 65536 \
-  --output results/ablation_mini100/wo-exp/predictions.json
+  --output results/scimas_mini100/full/predictions.json
 
 python cli.py score --dataset mini-100 --tasks all \
-  --predictions results/ablation_mini100/wo-exp/predictions.json \
-  --output results/ablation_mini100/wo-exp/scores.json
+  --predictions results/scimas_mini100/full/predictions.json \
+  --output results/scimas_mini100/full/scores.json
 ```
 
 `--scimas-ablation` 可选 `full`、`wo-exp`、`wo-parallel`、`wo-early-stop`、`wo-local-repair`、`wo-all`，每个变体使用独立输出目录。`wo-all` 关闭经验、并行、早停和局部修复四项机制，完整定义见[消融说明](../../baselines/scimas/ablation/README.md)。

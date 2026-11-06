@@ -13,6 +13,7 @@ from .task_graph import TaskGraph, public_task, digest
 from .validation import validate_graph, grounded
 from .assets import evidence_sources
 from .context import encode_payload
+from .knowledge import fresh_queries, embedding_usage_since
 
 ACTION_SCHEMA = {
     "oneOf": [
@@ -83,6 +84,7 @@ class Planner:
 
     def plan(self, task, *, dataset="full", assets=None):
         public = public_task(task)
+        embedding_baseline = deepcopy(self.knowledge.embedding.stats)
         report = {
             "schema_version": "scimas.planning_run.v1",
             "status": "planning",
@@ -230,15 +232,21 @@ class Planner:
             report["requirements"] = decomposition["requirements"]
             candidates, feedback, contracts = {}, [], {}
             search_history = []
+            completed_queries = set()
             queries = decomposition["queries"]
             while len(report["steps"]) < self.max_requests:
                 if queries:
-                    if len(report["retrievals"]) >= self.max_retrieval_rounds:
-                        raise ValueError("Retrieval round limit reached")
-                    search_history.append(list(queries))
-                    retrieval = self.knowledge.search(queries, deadline)
-                    report["retrievals"].append(retrieval)
-                    candidates.update(retrieval["tools"])
+                    queries, skipped = fresh_queries(queries, completed_queries)
+                    if skipped:
+                        feedback.append({"retrieval_notice": "Repeated or blank queries were skipped; use existing candidates or query a genuinely missing capability.",
+                                         "skipped_queries": skipped})
+                    if queries:
+                        if len(report["retrievals"]) >= self.max_retrieval_rounds:
+                            raise ValueError("Retrieval round limit reached")
+                        search_history.append(list(queries))
+                        retrieval = self.knowledge.search(queries, deadline)
+                        report["retrievals"].append(retrieval)
+                        candidates.update(retrieval["tools"])
                 summaries = {}
                 for name, record in candidates.items():
                     contract = record.get("contract", record)
@@ -314,17 +322,31 @@ class Planner:
                 validation = validate_graph(
                     graph, self.knowledge.catalog, allowed=self.knowledge.allowed
                 )
-                unknown = (
+                undiscovered = (
                     {n["tool"] for n in plan["nodes"]}
                     - set(candidates)
                     - {"DescribeTools"}
                 )
-                if unknown:
-                    validation["errors"].append(
-                        "Retrieve contracts before planning with tools: "
-                        + ", ".join(sorted(unknown))
+                # Retrieval proposes useful tools; it is not an allowlist. The
+                # canonical catalogue and scope decide availability, and the
+                # reviewer receives full current contracts before execution.
+                available = sorted(name for name in undiscovered
+                                   if name in self.knowledge.catalog.tools
+                                   and self.knowledge.allowed(name))
+                if available:
+                    described = (
+                        self.knowledge.planning_view(available)
+                        if hasattr(self.knowledge, "planning_view") else {
+                            name: self.knowledge.catalog.describe(name)["tools"][name]
+                            for name in available
+                        }
                     )
-                    validation["valid"] = False
+                    contracts.update(described)
+                    candidates.update(described)
+                    report["contract_queries"].append({
+                        "mode": "plan_contract_resolution", "names": available,
+                        "contracts": described, "scientific_call": False,
+                    })
                 report["steps"][-1]["validation"] = validation
                 report["validation"] = validation
                 if validation["valid"]:
@@ -332,7 +354,7 @@ class Planner:
                         status="planned",
                         graph=graph.document(),
                         graph_sha256=graph.identity,
-                        embedding_usage=deepcopy(self.knowledge.embedding.stats),
+                        embedding_usage=embedding_usage_since(self.knowledge.embedding, embedding_baseline),
                     )
                     return report
                 # Give actionable contract evidence with errors, without requiring
@@ -342,6 +364,7 @@ class Planner:
                         n["tool"]
                         for n in plan["nodes"]
                         if n["tool"] in self.knowledge.catalog.tools
+                        and self.knowledge.allowed(n["tool"])
                     }
                 )
                 if hasattr(self.knowledge, "planning_view"):
@@ -365,6 +388,6 @@ class Planner:
             report.update(
                 status="failed",
                 error=type(error).__name__ + ": " + str(error),
-                embedding_usage=deepcopy(self.knowledge.embedding.stats),
+                embedding_usage=embedding_usage_since(self.knowledge.embedding, embedding_baseline),
             )
             raise PlanningFailure(report) from error

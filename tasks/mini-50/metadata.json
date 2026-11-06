@@ -1,0 +1,14 @@
+{
+  "name": "SciMas Mini-50 ablation selection",
+  "execution_dataset": "mini-100",
+  "tasks": 50,
+  "required_tasks": 8,
+  "randomly_sampled_tasks": 42,
+  "sha256": {
+    "ids.tsv": "3a50fe1393c17d117f47e42ae2a2421e151188e8acab7fb53226b40208dfd3f4",
+    "ids.txt": "d5b57017d590c336b48693fa9fa628bb98d88fea1643514680d42458f00c84ea",
+    "inclusion_evidence.json": "589a8d9aa5cedac699e69047f720d7e8f83864f44af7be8941c404f66d790640",
+    "sampling.json": "7ca49d0a36ede5e10e7fc3711fdc144bdf14c7456a4abf93967cedef34f0760c"
+  },
+  "assets_and_grading": "Shared from tasks/mini-100; no task, answer, asset or trace relabelling"
+}

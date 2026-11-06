@@ -215,15 +215,43 @@ def test_no_early_stop_still_requires_approved_resolvable_conditions_and_valid_i
     assert not graph.ready(results, catalog, approved_gates=gates, early_stop=False)
 
 
-@pytest.mark.parametrize("variant", ["wo-local-repair", "wo-all"])
-def test_reviewer_graph_repair_does_not_sneak_into_disabled_variant(tmp_path, variant):
+@pytest.mark.parametrize("variant", VARIANTS)
+def test_initial_graph_correction_is_shared_by_all_variants(tmp_path, variant):
+    requested = False
     def hook(payload, action):
-        if payload.get("context", {}).get("stage") == "graph":
-            return {"repair": {"nodes": ["inverse"], "reason": "Graph correction required"}}
+        nonlocal requested
+        if payload.get("context", {}).get("stage") == "graph" and not requested:
+            requested = True
+            return {"repair": {"nodes": ["check"], "reason": "Graph correction required"}}
+        if "request" in payload.get("context", {}):
+            plan = valid_plan()
+            plan["nodes"][0]["purpose"] = "Compute the requested inverse with clarified source binding"
+            return {"plan": plan}
         return action
     trace = run(tmp_path, Client(hook), scimas_ablation=variant)
-    assert "LocalRepairDisabled" in trace["failure_reason"]
-    assert not trace["calls"] and not trace["repairs"]
+    assert trace['status'] == 'completed', trace['failure_reason']
+    assert len(trace['calls']) == 2 and not trace['repairs']
+    assert len(trace['graph_refinements']) == 1
+
+
+@pytest.mark.parametrize("variant", VARIANTS)
+def test_initial_reviewer_rejection_becomes_actionable_planning_feedback(tmp_path, variant):
+    rejected = False
+    def hook(payload, action):
+        nonlocal rejected
+        ctx = payload.get('context', {})
+        if ctx.get('stage') == 'graph' and not rejected:
+            rejected = True
+            return {'reject': 'Clarify which supplied matrix is used for the inverse check'}
+        if 'request' in ctx:
+            plan = valid_plan()
+            plan['nodes'][0]['purpose'] = 'Invert the matrix supplied in public task inputs'
+            return {'plan': plan}
+        return action
+    trace = run(tmp_path, Client(hook), scimas_ablation=variant)
+    assert trace['status'] == 'completed', trace['failure_reason']
+    assert len(trace['calls']) == 2 and not trace['repairs']
+    assert len(trace['graph_refinements']) == 1
 
 
 def test_invalid_variant_and_wrong_baseline_rejected():

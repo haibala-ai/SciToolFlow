@@ -11,7 +11,7 @@ SciToolFlow提供 **Full-500完整题库**与**Mini-200编排题库**，覆盖�
 
 [Full题库](tasks/full/README.md) · [Mini题库](tasks/mini/README.md) · [工具接口](tools/README.md) · [评分细则](evaluation/README.md) · [安装与部署](docs/setup.md)
 
-消融实验可使用固定随机子集 [Mini-100](tasks/mini-100/README.md)：从当前 Mini-200 全随机无放回抽取100题，种子为 `20261106`，使用 `--dataset mini-100`，共用当前 Mini 评分机制与运行接口。
+当前实验采用 [Mini-100](tasks/mini-100/README.md) 的 100 题作为主实验，并从中固定 [Mini-50 消融选题](tasks/mini-50/README.md)。Mini-50 纳入六组实验已经启动的 8 题，再随机抽取 42 题；完整方法的 50 题对照直接取自主实验结果。两者均通过 `--dataset mini-100` 运行，消融另传固定题号清单，共用当前 Mini 评分机制。
 
 ## 题库与工作流
 

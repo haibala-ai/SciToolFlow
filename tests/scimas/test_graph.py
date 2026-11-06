@@ -6,6 +6,8 @@ from baselines.scimas.validation import validate_graph
 
 
 def spec(inputs, output):
+    if output.get("type") == "object" and "properties" in output:
+        output = {"additionalProperties": False, **output}
     return {
         "input_schema": {
             "type": "object",
@@ -449,7 +451,7 @@ def test_dynamic_paths_do_not_open_typed_closed_or_scalar_outputs():
         {"type": "number"},
         {"type": "string"},
         {"type": "object", "additionalProperties": False},
-        {"type": "object", "properties": {"known": {"type": "number"}}},
+        {"type": "object", "properties": {"known": {"type": "number"}}, "additionalProperties": False},
     ]:
         with pytest.raises(ValueError):
             path_schema(schema, ["undeclared"])

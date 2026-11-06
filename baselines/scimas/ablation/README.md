@@ -37,7 +37,7 @@
 
 采用实验定义中的**直接失败**策略，不进行整图重跑。工具异常在允许的瞬时重试次数耗尽后，或出现不可重试的无效输出时，任务失败并保留已发生的调用。任何运行期图修复请求也会产生 `LocalRepairDisabled`，不会调用修复角色或重写图。
 
-初始规划的结构校验、有限的传输重试、输出格式纠错和已有 observation 的查看保持一致。它们与异常驱动的图局部重规划是不同机制。科学错误不会因禁用修复而自动通过。
+初始规划及执行前的图完善、结构校验、有限的传输重试、输出格式纠错和已有 observation 的查看保持一致。执行前的 Reviewer 异议会反馈给 Planner，并记录在 `graph_refinement_attempts`／`graph_refinements`；此时还没有已执行的科学结果，各变体均可完善图。这与执行异常驱动的局部重规划是不同机制；只有后者受 `local_repair` 开关控制，记录在 `repair_attempts`／`repairs`。科学错误不会因禁用修复而自动通过。
 
 ### w/o All
 
@@ -45,18 +45,19 @@
 
 ## 运行与测评
 
-消融实验可使用固定随机子集 [Mini-100](../../../tasks/mini-100/README.md)，通过 `--dataset mini-100` 选择；其余运行与评分接口与 Mini-200 相同。以下命令在项目根目录执行，生成 API 与 embedding 服务沿用[部署配置](../../../docs/setup.md)。每个变体使用独立输出目录和同一组固定题目。
+当前主实验使用 [Mini-100](../../../tasks/mini-100/README.md) 全部 100 题，五组消融使用其中的 [Mini-50 固定选题](../../../tasks/mini-50/README.md)。50 题包含六组已启动的 8 题，其余 42 题随机无放回抽取；完整方法的 50 题对照直接从主实验结果评分，不重新生成。底层数据集统一为 `mini-100`，消融通过显式题号限制为 50 题。以下命令在项目根目录执行，生成 API 与 embedding 服务沿用[部署配置](../../../docs/setup.md)。每个变体使用独立输出目录和同一组固定题目。
 
 ```bash
 conda activate SciTool-Unified
+TASK_IDS=$(python -m scripts.benchmark.mini50 --print-tasks) || exit 1
 
 python cli.py run --baseline scimas --scimas-ablation wo-parallel \
-  --dataset mini-100 --tasks all --backend api --model deepseek-flash \
+  --dataset mini-100 --tasks "$TASK_IDS" --backend api --model deepseek-flash \
   --concurrency 2 --max-context-chars 1500000 --max-output-tokens 65536 \
   --max-model-requests 400 --task-timeout 7200 \
   --output results/scimas_ablation/wo-parallel/predictions.json
 
-python cli.py score --dataset mini-100 --tasks all \
+python cli.py score --dataset mini-100 --tasks "$TASK_IDS" \
   --predictions results/scimas_ablation/wo-parallel/predictions.json \
   --output results/scimas_ablation/wo-parallel/scores.json
 ```
@@ -70,7 +71,7 @@ python -m baselines.scimas.ablation.run --scimas-ablation wo-exp \
   --output results/scimas_ablation/wo-exp-smoke/predictions.json
 ```
 
-本地模型使用同一入口，将 `--backend` 改为 `vllm` 或 `local` 并指定服务模型名。`local` 后端遵循共享运行器的单任务进程限制。上述命令是运行示例，本次实现验收没有启动付费模型的 Mini-100 全量消融实验。
+本地模型使用同一入口，将 `--backend` 改为 `vllm` 或 `local` 并指定服务模型名。`local` 后端遵循共享运行器的单任务进程限制。正式比较应固定模型配置、任务集合和代码版本；下文的框架测试不作为实际模型实验成绩。
 
 续跑时保留同一组参数并加 `--resume`。只重试通信失败时再加 `--retry-infrastructure`。变体、实际配置及源码哈希均写入实验指纹；不同变体或不同源码版本不能混入同一份预测文件。
 
@@ -82,6 +83,8 @@ python -m baselines.scimas.ablation.run --scimas-ablation wo-exp \
 | 每题 prediction 和 `trajectory.json → ablation` | 本题变体身份、经验范围、不可恢复异常策略 |
 | `trajectory.json → gate_evaluations` | 条件及证据、true / false / unknown 状态、剪枝或继续执行决定 |
 | `trajectory.json → graphs / repairs / reviews / experiences` | 实际图版本、修复与复用、评审、经验累积 |
+| `trajectory.json → graph_refinement_attempts / graph_refinements` | 各变体共有的执行前建图纠错，单独计数 |
+| `trajectory.json → repair_attempts` | 运行期局部修复的请求用量、最后错误与终止原因 |
 | `trajectory.json → steps` | 完整角色请求、决策、工具参数与输出；每次实际调用的起止时间 |
 | `task_metrics.json` | 逐题运行时间、工具调用数、输入和输出 token；当前共享任务计时口径 |
 | `progress.json` | 实时完成数量、在途任务与通信熔断状态 |

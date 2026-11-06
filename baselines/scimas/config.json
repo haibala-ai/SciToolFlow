@@ -2,6 +2,8 @@
   "tool_concurrency": 4,
   "transient_retries": 1,
   "local_repairs": 2,
+  "graph_refinements": 2,
+  "repair_requests": 6,
   "planning_requests": 10,
   "protocol_retries": 3,
   "max_map_items": 128,

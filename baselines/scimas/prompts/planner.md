@@ -28,6 +28,9 @@ canonical current names, documented parameter names and actual output paths.
 Candidate summaries are shown first. Use {"describe_tools":["ToolName"]} to inspect
 the full contracts of the tools you need, including SciMas's planning metadata.
 Keep these queries focused; do not request every candidate's contract at once.
+Retrieval is assistance, not an availability gate: a registered canonical tool
+may appear in the plan before retrieval returns it. The framework resolves its
+current contract and validates it before scientific review and execution.
 Arguments bind to literal JSON, public task fields, previous node outputs, or
 lists of bindings. Data dependencies are derived from bindings. Reuse shared
 preprocessing nodes; retain independent branches without artificial serial edges.
@@ -46,11 +49,12 @@ control execution. An invalid tool response is not a failed scientific predicate
 Never gate a calculation required for a complete report. Do not use arbitrary
 Python or natural-language expressions as conditions.
 
-For unknown-length candidate arrays use "for_each" binding to a task/node array,
-and "item" bindings for that node's per-item inputs. Use "collect" to refer to
-ordered outputs of an unexpanded template. Each template expands one tool call
-per item. Do not use a single "node" reference to pretend template outputs are
-already one result. Do not make up indices for candidates not yet observed.
+For unknown-length candidate arrays use "for_each" bound to a task/node array,
+an ordered "collect" from another template, or a "list" of bindings. Use "item"
+for the per-item input of that node. Each template expands one tool call per item;
+chained templates wait for actual producer outputs and retain their source order.
+Do not use a single "node" reference to pretend template outputs are already one
+result. Do not make up indices for candidates not yet observed.
 
 A node output path addresses a real field in the tool result. For
 output_access=native_fields, omit decoded or set it to false, including in checks:
@@ -58,6 +62,12 @@ the output is already structured. Set decoded=true only when the contract declar
 JSON-string output (output_access=declared_json_decode). For unstructured text,
 use a documented parsing step for downstream bindings, or let the Reviewer read
 the raw text for decisions and final reporting; never invent structured fields.
+Open JSON objects and record arrays may have input-dependent fields. Bind their
+documented or public-input-supported paths directly; the framework defers field
+presence and receiving-parameter checks to execution. A pending runtime check is
+not a graph error and does not justify substituting preview text or invented data.
+Closed objects, scalar outputs and incompatible declared types still constrain
+valid paths. Optional output checks express real required structure, not results.
 Omit optional checks, semantics and when unless needed. Reuse the fields already
 returned by a call instead of repeating a computation to read another field.
 Unit conversion and scientific transformations must be explicit. "expect"

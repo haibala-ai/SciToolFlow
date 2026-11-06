@@ -43,6 +43,29 @@ def at(value, path):
     return value
 
 
+def _json_equal(left, right):
+    """Exact JSON value equality; numbers share a domain, Booleans do not.
+
+    Use the same rule for equality and membership, including nested records.
+    This does not introduce a floating-point tolerance or coerce strings/IDs.
+    """
+    if type(left) is bool or type(right) is bool:
+        return type(left) is type(right) and left == right
+    if type(left) in (int, float) and type(right) in (int, float):
+        return left == right
+    if type(left) is not type(right):
+        return False
+    if isinstance(left, list):
+        return len(left) == len(right) and all(
+            _json_equal(a, b) for a, b in zip(left, right)
+        )
+    if isinstance(left, dict):
+        return left.keys() == right.keys() and all(
+            _json_equal(left[key], right[key]) for key in left
+        )
+    return left == right
+
+
 def bindings(value):
     """Walk binding syntax, treating literal JSON and semantic metadata as opaque."""
     if not isinstance(value, dict):
@@ -240,7 +263,13 @@ class TaskGraph:
         expected = binding.get("expect", {})
         if any(result.get("semantics", {}).get(k) != v for k, v in expected.items()):
             raise ValueError("Unconfirmed or conflicting scientific semantics")
-        return deepcopy(at(output, binding["path"]))
+        try:
+            return deepcopy(at(output, binding["path"]))
+        except (KeyError, IndexError, ValueError, TypeError) as error:
+            raise ValueError(
+                "Cannot resolve output binding from node " + node_id
+                + " at path " + repr(binding["path"]) + ": " + str(error)
+            ) from error
 
     def accept_result(
         self, node_id, response, catalog, *, semantics=None, environment=None
@@ -337,16 +366,12 @@ class TaskGraph:
                     ):
                         return None
                 if op in {"eq", "ne"}:
-                    equal = (
-                        digest(left) == digest(right)
-                        if isinstance(left, bool) or isinstance(right, bool)
-                        else left == right
-                    )
+                    equal = _json_equal(left, right)
                     return equal if op == "eq" else not equal
                 if op == "in":
                     if not isinstance(right, list):
                         return None
-                    return any(digest(left) == digest(item) for item in right)
+                    return any(_json_equal(left, item) for item in right)
                 return {
                     "lt": lambda: left < right,
                     "le": lambda: left <= right,
@@ -385,8 +410,8 @@ class TaskGraph:
         """Materialize one bounded map, preserving source dependencies and order."""
         node = self.node(template_id)
         source = node["for_each"]
-        if source["kind"] not in {"node", "task"}:
-            raise ValueError("for_each requires a task or node array binding")
+        if source["kind"] not in {"node", "task", "list"}:
+            raise ValueError("Expand the producing template before mapping its collected outputs")
         values = self.resolve(source, results)
         if not isinstance(values, list) or len(values) > max_items:
             raise ValueError(
@@ -395,6 +420,23 @@ class TaskGraph:
         ids = [template_id + "__" + str(i) for i in range(len(values))]
         if set(ids) & {n["id"] for n in self.plan["nodes"]}:
             raise ValueError("Expansion ID collision")
+
+        def item_binding(index, path):
+            if source["kind"] != "list":
+                return {**source, "path": source["path"] + [index] + path}
+            selected = deepcopy(source["items"][index])
+            while path and selected["kind"] == "list":
+                head, *path = path
+                if type(head) is not int or head < 0:
+                    raise ValueError("Mapped list path requires a nonnegative index")
+                selected = selected["items"][head]
+            if not path:
+                return selected
+            if selected["kind"] in {"node", "task"}:
+                return {**selected, "path": selected["path"] + path}
+            if selected["kind"] == "literal":
+                return {"kind": "literal", "value": at(selected["value"], path)}
+            raise ValueError("Map item must resolve to a concrete task, node, list or literal binding")
 
         def transform(value, index=None, preserve_item=False):
             if not isinstance(value, dict):
@@ -406,7 +448,7 @@ class TaskGraph:
                     if preserve_item:
                         return deepcopy(value)
                     raise ValueError("Item binding outside template")
-                return {**source, "path": source["path"] + [index] + value["path"]}
+                return item_binding(index, value["path"])
             if value.get("kind") == "collect" and value["node"] == template_id:
                 return {
                     "kind": "list",
@@ -440,8 +482,9 @@ class TaskGraph:
             ]
             if not delivery["nodes"]:
                 # An empty candidate set is evidenced by its producer, not a fabricated invocation.
-                if source["kind"] == "node":
-                    delivery["nodes"] = [source["node"]]
+                producers = [b["node"] for b in bindings(source) if b["kind"] == "node"]
+                if producers:
+                    delivery["nodes"] = list(dict.fromkeys(producers))
                 else:
                     raise ValueError(
                         "Empty task-input expansion needs an explicit reporting node"

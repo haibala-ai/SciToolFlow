@@ -157,7 +157,7 @@ class Monitor:
             last = steps[-1] if steps else {}
             model = last.get('model', {})
             pending = bool(last and model.get('response') is None and not model.get('error'))
-            phase = last.get('role', last.get('type', progress.get('stage', 'initializing')))
+            phase = last.get('stage') or last.get('role', last.get('type', progress.get('stage', 'initializing')))
             if trace.get('pending_calls') and not pending:
                 phase = 'tools'
             active.append({'id':identifier, 'status':trace.get('status', 'initializing'),

@@ -17,6 +17,35 @@ from src.models.embedding_profiles import graph_root, validate_identity
 from baselines.scitoolagent.retrieval import Embeddings, RetrievalError, dot, unit
 
 
+def fresh_queries(queries, completed):
+    """Skip repeated/blank queries without conflating scientific letter case."""
+    fresh, skipped = [], []
+    for query in queries:
+        key = " ".join(query.split())
+        if not key or key in completed:
+            skipped.append(query)
+        else:
+            completed.add(key)
+            fresh.append(query)
+    return fresh, skipped
+
+
+def embedding_usage_since(embedding, baseline):
+    """Per-invocation counters when a retriever is reused sequentially."""
+    usage = {}
+    for key, value in embedding.stats.items():
+        previous = baseline.get(key)
+        if type(value) in (int, float):
+            previous = previous if type(previous) in (int, float) else 0
+            usage[key] = value - previous if value >= previous else value
+        elif isinstance(value, list):
+            offset = len(previous) if isinstance(previous, list) and len(value) >= len(previous) else 0
+            usage[key] = deepcopy(value[offset:])
+        else:
+            usage[key] = deepcopy(value)
+    return usage
+
+
 class ToolKnowledge:
     def __init__(self, catalog=None, folder=None, embedding=None, allowed=None):
         self.catalog = catalog or ToolCatalog()

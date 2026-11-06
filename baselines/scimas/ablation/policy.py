@@ -58,11 +58,12 @@ class AblationPolicy:
             )
         if not self.local_repair:
             lines.append(
-                "Graph replanning is disabled after initial planning. An unrecoverable "
+                "Adaptive graph replanning is disabled after scientific execution starts. "
+                "The common pre-execution graph refinement and review remain available. An unrecoverable "
                 "execution error or required graph correction terminates the task. "
                 "Do not hide errors or substitute unsupported answers to avoid failure. "
                 "Bounded automatic transient retries, inspection and answer-format "
-                "correction remain available; repair requests terminate the task."
+                "correction remain available; execution-stage repair requests terminate the task."
             )
         if not self.experience:
             lines.append(
