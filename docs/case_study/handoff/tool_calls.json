@@ -1,0 +1,2953 @@
+{
+  "notes": "Exact recorded arguments and outputs; original absolute source paths are historical. Use source/water.qout in the zip for the same bytes. review_state_at_recording can remain pending even when later accepted; consult final_result_status and reviewer records.",
+  "calls": [
+    {
+      "step_id": "s000003",
+      "array_index": 2,
+      "observation_id": "o0001",
+      "node": "discovery",
+      "tool": "DescribeTools",
+      "kind": "discovery",
+      "arguments": {
+        "tools": [
+          "ReadQChemFrequencyModes",
+          "ReadQChemIRIntensities",
+          "GetMolecularFrequencies",
+          "ScaleNumericMatrix",
+          "MatrixMultiply",
+          "SymmetricEigenDecomposition",
+          "NormalizeNumericRows"
+        ]
+      },
+      "status": "success",
+      "output": {
+        "tools": {
+          "ReadQChemFrequencyModes": {
+            "name": "ReadQChemFrequencyModes",
+            "domain": "Material",
+            "kind": "tool",
+            "description": "Parse frequency_modes from an explicitly supplied completed Q-Chem output, retaining original units/source hash and calculation provenance. This field is not published by the current MP summary composite; no MP lookup or new calculation is claimed.",
+            "call_signature": "ReadQChemFrequencyModes(qchem_file: str) -> dict",
+            "parameters": [
+              {
+                "name": "qchem_file",
+                "type": "str",
+                "required": true,
+                "default": null,
+                "kind": "POSITIONAL_OR_KEYWORD",
+                "description": "Existing .qout/.out[.gz] completed Q-Chem output path, without qchem: prefix. Max20MiB compressed/100MiB decoded; parser completion and errors are checked.",
+                "description_basis": "explicit_contract",
+                "json_schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "qchem_file": {
+                  "type": "string",
+                  "description": "Existing .qout/.out[.gz] completed Q-Chem output path, without qchem: prefix. Max20MiB compressed/100MiB decoded; parser completion and errors are checked."
+                }
+              },
+              "required": [
+                "qchem_file"
+              ],
+              "additionalProperties": false
+            },
+            "output_description": "Returns backend, property, source_file, source_sha256, formula, temperature_k, units, value, scope, mp_molecule_identity_verified. Scientific units, source identity and failure boundaries are described in the field schema and implementation documentation.",
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "backend": {
+                  "const": "supplied_qchem_output",
+                  "description": "Actual local source parser backend,not a new calculation.",
+                  "type": "string"
+                },
+                "property": {
+                  "type": "string",
+                  "description": "Exact named Q-Chem printed component extracted from the completed source."
+                },
+                "source_file": {
+                  "type": "string",
+                  "description": "Verified existing parsed source path, not a newly executed quantum calculation."
+                },
+                "source_sha256": {
+                  "type": "string",
+                  "description": "SHA256 of the exact source bytes used by this observation."
+                },
+                "formula": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Elemental composition formula from the actual input/source,when available."
+                },
+                "temperature_k": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "description": "Printed completed-Q-Chem calculation temperature in kelvin,or null when not printed."
+                },
+                "units": {
+                  "type": "string",
+                  "description": "Physical unit/basis for the named observation;null indicates a structured or dimensionless source field without a scalar unit."
+                },
+                "value": {
+                  "description": "Printed completed Q-Chem frequency_modes; units=Q-Chem displacement-vector normalization. Preserve source_sha256 and printed calculation context; MP identity is unverified."
+                },
+                "scope": {
+                  "type": "string",
+                  "description": "Explicit scientific interpretation boundary;read with values and source identity."
+                },
+                "mp_molecule_identity_verified": {
+                  "const": false,
+                  "description": "False for local completed-Q-Chem files;no MP identity is assigned to an unrelated source.",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "backend",
+                "property",
+                "source_file",
+                "source_sha256",
+                "units",
+                "value",
+                "mp_molecule_identity_verified"
+              ],
+              "additionalProperties": true
+            },
+            "returns": [
+              {
+                "name": "backend",
+                "type": "string",
+                "description": "Actual local source parser backend,not a new calculation.",
+                "path": [
+                  "backend"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "property",
+                "type": "string",
+                "description": "Exact named Q-Chem printed component extracted from the completed source.",
+                "path": [
+                  "property"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "source_file",
+                "type": "string",
+                "description": "Verified existing parsed source path, not a newly executed quantum calculation.",
+                "path": [
+                  "source_file"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "source_sha256",
+                "type": "string",
+                "description": "SHA256 of the exact source bytes used by this observation.",
+                "path": [
+                  "source_sha256"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "formula",
+                "type": "string | null",
+                "description": "Elemental composition formula from the actual input/source,when available.",
+                "path": [
+                  "formula"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "temperature_k",
+                "type": "number | null",
+                "description": "Printed completed-Q-Chem calculation temperature in kelvin,or null when not printed.",
+                "path": [
+                  "temperature_k"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "units",
+                "type": "string",
+                "description": "Physical unit/basis for the named observation;null indicates a structured or dimensionless source field without a scalar unit.",
+                "path": [
+                  "units"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "value",
+                "type": "JSON value",
+                "description": "Printed completed Q-Chem frequency_modes; units=Q-Chem displacement-vector normalization. Preserve source_sha256 and printed calculation context; MP identity is unverified.",
+                "path": [
+                  "value"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "scope",
+                "type": "string",
+                "description": "Explicit scientific interpretation boundary;read with values and source identity.",
+                "path": [
+                  "scope"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "mp_molecule_identity_verified",
+                "type": "boolean",
+                "description": "False for local completed-Q-Chem files;no MP identity is assigned to an unrelated source.",
+                "path": [
+                  "mp_molecule_identity_verified"
+                ],
+                "decoded": false,
+                "required": true
+              }
+            ],
+            "output_encoding": {
+              "wire_type": "object",
+              "decoded_type": "object",
+              "observed_fields_optional": false
+            },
+            "limitations": [
+              "Invalid inputs raise explicit validation errors; no logged exception/None/error text is returned as a scientific success.",
+              "External availability, published record coverage and configured resource versions are not guaranteed by static/schema checks."
+            ],
+            "indexing": {
+              "graph": true,
+              "embedding": true
+            },
+            "dataflow": {
+              "inputs": [
+                {
+                  "parameter": "qchem_file",
+                  "concept": "Q-Chem output file path",
+                  "notes": "Explicit completed Q-Chem .qout/.out source, optionally gzip, without qchem: prefix;20MiB compressed/100MiB decoded bounds and exact source SHA."
+                }
+              ],
+              "outputs": [
+                {
+                  "path": [
+                    "value"
+                  ],
+                  "concept": "molecular_normal_mode_displacement_vectors_QChem",
+                  "notes": "Printed completed Q-Chem frequency_modes; units=Q-Chem displacement-vector normalization. Preserve source_sha256 and printed calculation context; MP identity is unverified.",
+                  "decoded": false
+                },
+                {
+                  "path": [
+                    "source_file"
+                  ],
+                  "concept": "Q-Chem output file path",
+                  "notes": "Verified existing parsed source path, not a newly executed quantum calculation.",
+                  "decoded": false
+                }
+              ],
+              "non_data_parameters": [],
+              "notes": "",
+              "evidence": {
+                "file": "tools/implementations/materials/material_queries.py",
+                "function": "read_qchem_frequency_modes",
+                "line": 804,
+                "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607",
+                "source_sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+              }
+            },
+            "failure_feedback": {
+              "invalid_input": "status=error, error_type=InvalidInput; inspect the argument error and query DescribeTools for the contract.",
+              "invalid_output": "status=error, error_type=InvalidOutput; no contract-invalid or nonfinite result is accepted as scientific evidence.",
+              "missing_resource": "status=blocked, error_type=MissingResource or MissingEnvironment; configure the declared dependency.",
+              "external_source": "Remote failures, missing scientific data and pending jobs are reported explicitly; no fallback value is invented.",
+              "retired_name": "status=error, error_type=RetiredTool with active replacement names and explicit migration guidance; incompatible signatures are never silently aliased."
+            }
+          },
+          "ReadQChemIRIntensities": {
+            "name": "ReadQChemIRIntensities",
+            "domain": "Material",
+            "kind": "tool",
+            "description": "Parse ir_intensities from an explicitly supplied completed Q-Chem output, retaining original units/source hash and calculation provenance. This field is not published by the current MP summary composite; no MP lookup or new calculation is claimed.",
+            "call_signature": "ReadQChemIRIntensities(qchem_file: str) -> dict",
+            "parameters": [
+              {
+                "name": "qchem_file",
+                "type": "str",
+                "required": true,
+                "default": null,
+                "kind": "POSITIONAL_OR_KEYWORD",
+                "description": "Existing .qout/.out[.gz] completed Q-Chem output path, without qchem: prefix. Max20MiB compressed/100MiB decoded; parser completion and errors are checked.",
+                "description_basis": "explicit_contract",
+                "json_schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "qchem_file": {
+                  "type": "string",
+                  "description": "Existing .qout/.out[.gz] completed Q-Chem output path, without qchem: prefix. Max20MiB compressed/100MiB decoded; parser completion and errors are checked."
+                }
+              },
+              "required": [
+                "qchem_file"
+              ],
+              "additionalProperties": false
+            },
+            "output_description": "Returns backend, property, source_file, source_sha256, formula, temperature_k, units, value, scope, mp_molecule_identity_verified. Scientific units, source identity and failure boundaries are described in the field schema and implementation documentation.",
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "backend": {
+                  "const": "supplied_qchem_output",
+                  "description": "Actual local source parser backend,not a new calculation.",
+                  "type": "string"
+                },
+                "property": {
+                  "type": "string",
+                  "description": "Exact named Q-Chem printed component extracted from the completed source."
+                },
+                "source_file": {
+                  "type": "string",
+                  "description": "Verified existing parsed source path, not a newly executed quantum calculation."
+                },
+                "source_sha256": {
+                  "type": "string",
+                  "description": "SHA256 of the exact source bytes used by this observation."
+                },
+                "formula": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Elemental composition formula from the actual input/source,when available."
+                },
+                "temperature_k": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "description": "Printed completed-Q-Chem calculation temperature in kelvin,or null when not printed."
+                },
+                "units": {
+                  "type": "string",
+                  "description": "Physical unit/basis for the named observation;null indicates a structured or dimensionless source field without a scalar unit."
+                },
+                "value": {
+                  "description": "Printed completed Q-Chem ir_intensities; units=km/mol. Preserve source_sha256 and printed calculation context; MP identity is unverified."
+                },
+                "scope": {
+                  "type": "string",
+                  "description": "Explicit scientific interpretation boundary;read with values and source identity."
+                },
+                "mp_molecule_identity_verified": {
+                  "const": false,
+                  "description": "False for local completed-Q-Chem files;no MP identity is assigned to an unrelated source.",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "backend",
+                "property",
+                "source_file",
+                "source_sha256",
+                "units",
+                "value",
+                "mp_molecule_identity_verified"
+              ],
+              "additionalProperties": true
+            },
+            "returns": [
+              {
+                "name": "backend",
+                "type": "string",
+                "description": "Actual local source parser backend,not a new calculation.",
+                "path": [
+                  "backend"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "property",
+                "type": "string",
+                "description": "Exact named Q-Chem printed component extracted from the completed source.",
+                "path": [
+                  "property"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "source_file",
+                "type": "string",
+                "description": "Verified existing parsed source path, not a newly executed quantum calculation.",
+                "path": [
+                  "source_file"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "source_sha256",
+                "type": "string",
+                "description": "SHA256 of the exact source bytes used by this observation.",
+                "path": [
+                  "source_sha256"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "formula",
+                "type": "string | null",
+                "description": "Elemental composition formula from the actual input/source,when available.",
+                "path": [
+                  "formula"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "temperature_k",
+                "type": "number | null",
+                "description": "Printed completed-Q-Chem calculation temperature in kelvin,or null when not printed.",
+                "path": [
+                  "temperature_k"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "units",
+                "type": "string",
+                "description": "Physical unit/basis for the named observation;null indicates a structured or dimensionless source field without a scalar unit.",
+                "path": [
+                  "units"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "value",
+                "type": "JSON value",
+                "description": "Printed completed Q-Chem ir_intensities; units=km/mol. Preserve source_sha256 and printed calculation context; MP identity is unverified.",
+                "path": [
+                  "value"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "scope",
+                "type": "string",
+                "description": "Explicit scientific interpretation boundary;read with values and source identity.",
+                "path": [
+                  "scope"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "mp_molecule_identity_verified",
+                "type": "boolean",
+                "description": "False for local completed-Q-Chem files;no MP identity is assigned to an unrelated source.",
+                "path": [
+                  "mp_molecule_identity_verified"
+                ],
+                "decoded": false,
+                "required": true
+              }
+            ],
+            "output_encoding": {
+              "wire_type": "object",
+              "decoded_type": "object",
+              "observed_fields_optional": false
+            },
+            "limitations": [
+              "Invalid inputs raise explicit validation errors; no logged exception/None/error text is returned as a scientific success.",
+              "External availability, published record coverage and configured resource versions are not guaranteed by static/schema checks."
+            ],
+            "indexing": {
+              "graph": true,
+              "embedding": true
+            },
+            "dataflow": {
+              "inputs": [
+                {
+                  "parameter": "qchem_file",
+                  "concept": "Q-Chem output file path",
+                  "notes": "Explicit completed Q-Chem .qout/.out source, optionally gzip, without qchem: prefix;20MiB compressed/100MiB decoded bounds and exact source SHA."
+                }
+              ],
+              "outputs": [
+                {
+                  "path": [
+                    "value"
+                  ],
+                  "concept": "molecular_IR_intensities_km_per_mol",
+                  "notes": "Printed completed Q-Chem ir_intensities; units=km/mol. Preserve source_sha256 and printed calculation context; MP identity is unverified.",
+                  "decoded": false
+                },
+                {
+                  "path": [
+                    "source_file"
+                  ],
+                  "concept": "Q-Chem output file path",
+                  "notes": "Verified existing parsed source path, not a newly executed quantum calculation.",
+                  "decoded": false
+                }
+              ],
+              "non_data_parameters": [],
+              "notes": "",
+              "evidence": {
+                "file": "tools/implementations/materials/material_queries.py",
+                "function": "read_qchem_ir_intensities",
+                "line": 809,
+                "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607",
+                "source_sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+              }
+            },
+            "failure_feedback": {
+              "invalid_input": "status=error, error_type=InvalidInput; inspect the argument error and query DescribeTools for the contract.",
+              "invalid_output": "status=error, error_type=InvalidOutput; no contract-invalid or nonfinite result is accepted as scientific evidence.",
+              "missing_resource": "status=blocked, error_type=MissingResource or MissingEnvironment; configure the declared dependency.",
+              "external_source": "Remote failures, missing scientific data and pending jobs are reported explicitly; no fallback value is invented.",
+              "retired_name": "status=error, error_type=RetiredTool with active replacement names and explicit migration guidance; incompatible signatures are never silently aliased."
+            }
+          },
+          "GetMolecularFrequencies": {
+            "name": "GetMolecularFrequencies",
+            "domain": "Material",
+            "kind": "tool",
+            "description": "Read signed molecular frequencies in cm^-1 from one MPculeID or explicit completed Q-Chem output. Sources remain distinct; no MP identity is inferred for a file. Positive frequencies alone do not establish optimization convergence or a global minimum.",
+            "call_signature": "GetMolecularFrequencies(molecule_id: str=None, qchem_file: str=None) -> dict",
+            "parameters": [
+              {
+                "name": "molecule_id",
+                "type": "str",
+                "required": false,
+                "default": null,
+                "kind": "POSITIONAL_OR_KEYWORD",
+                "description": "One complete MPculeID identifying formula/charge/spin; not a qchem file pseudo-identifier.",
+                "description_basis": "explicit_contract",
+                "json_schema": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1,
+                  "maxLength": 256,
+                  "default": null
+                }
+              },
+              {
+                "name": "qchem_file",
+                "type": "str",
+                "required": false,
+                "default": null,
+                "kind": "POSITIONAL_OR_KEYWORD",
+                "description": "Existing completed Q-Chem output path (.qout/.out optionally gzip), without qchem: prefix;20MiB compressed/100MiB decoded bound.",
+                "description_basis": "explicit_contract",
+                "json_schema": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "default": null
+                }
+              }
+            ],
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "molecule_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "One complete MPculeID identifying formula/charge/spin; not a qchem file pseudo-identifier.",
+                  "minLength": 1,
+                  "maxLength": 256,
+                  "default": null
+                },
+                "qchem_file": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Existing completed Q-Chem output path (.qout/.out optionally gzip), without qchem: prefix;20MiB compressed/100MiB decoded bound.",
+                  "default": null
+                }
+              },
+              "required": [],
+              "additionalProperties": false,
+              "oneOf": [
+                {
+                  "required": [
+                    "molecule_id"
+                  ],
+                  "properties": {
+                    "molecule_id": {
+                      "type": "string"
+                    },
+                    "qchem_file": {
+                      "type": "null"
+                    }
+                  }
+                },
+                {
+                  "required": [
+                    "qchem_file"
+                  ],
+                  "properties": {
+                    "molecule_id": {
+                      "type": "null"
+                    },
+                    "qchem_file": {
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            },
+            "output_description": "Returns exactly one source-specific envelope: MP molecule vibration.frequencies with solvent/method/property identity, or local completed Q-Chem frequencies with source_file/source_sha256, printed calculation context and mp_molecule_identity_verified=false. Both retain signed frequencies in cm^-1.",
+            "output_schema": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "source": {
+                      "type": "string",
+                      "description": "Actual database,model,engine or service source of this observation."
+                    },
+                    "molecule_id": {
+                      "type": "string",
+                      "description": "MP branch only, exact verified molecule identity."
+                    },
+                    "field": {
+                      "const": "vibration.frequencies",
+                      "description": "Exact source property field projected by this primitive.",
+                      "type": "string"
+                    },
+                    "units": {
+                      "const": "cm^-1",
+                      "description": "Physical unit/basis for the named observation;null indicates a structured or dimensionless source field without a scalar unit.",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "object",
+                      "description": "Solvent-label→selected observation mapping;source level-of-theory/property ID remain attached to each value.",
+                      "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "anyOf": [
+                              {
+                                "items": {
+                                  "type": "number"
+                                },
+                                "type": "array"
+                              }
+                            ],
+                            "title": "Frequencies",
+                            "description": "Published vibration.frequencies for this solvent-labelled calculation;List of molecular vibrational frequencies"
+                          },
+                          "level_of_theory": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "description": "Source level-of-theory string for this same solvent/property observation."
+                          },
+                          "property_id": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "description": "Source molecular-property document identifier for this same observation."
+                          }
+                        },
+                        "required": [
+                          "value",
+                          "level_of_theory",
+                          "property_id"
+                        ],
+                        "additionalProperties": true
+                      }
+                    },
+                    "solvent_labelled": {
+                      "const": true,
+                      "description": "Whether value is indexed by actual source solvent labels with method/property IDs.",
+                      "type": "boolean"
+                    },
+                    "last_updated": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Actual source document update timestamp,when published."
+                    },
+                    "api_version": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Actual upstream API version metadata,when supplied."
+                    },
+                    "queried_at": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Actual source/API response timestamp,when supplied."
+                    },
+                    "scope": {
+                      "type": "string",
+                      "description": "Explicit scientific interpretation boundary;read with values and source identity."
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "molecule_id",
+                    "field",
+                    "units",
+                    "value",
+                    "solvent_labelled"
+                  ],
+                  "additionalProperties": true,
+                  "description": "MP molecule vibration composite; solvent-labelled values retain level_of_theory and property_id."
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "backend": {
+                      "const": "supplied_qchem_output",
+                      "description": "Actual local source parser backend,not a new calculation.",
+                      "type": "string"
+                    },
+                    "property": {
+                      "const": "frequencies",
+                      "description": "Exact named Q-Chem printed component extracted from the completed source.",
+                      "type": "string"
+                    },
+                    "source_file": {
+                      "type": "string",
+                      "description": "Local branch only: exact existing completed source."
+                    },
+                    "source_sha256": {
+                      "type": "string",
+                      "description": "SHA256 of the exact source bytes used by this observation."
+                    },
+                    "formula": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Elemental composition formula from the actual input/source,when available."
+                    },
+                    "temperature_k": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "description": "Printed completed-Q-Chem calculation temperature in kelvin,or null when not printed."
+                    },
+                    "units": {
+                      "const": "cm^-1",
+                      "description": "Physical unit/basis for the named observation;null indicates a structured or dimensionless source field without a scalar unit.",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 1,
+                      "description": "Local branch only: signed frequency array,cm^-1; source hash retained,MP identity unverified."
+                    },
+                    "scope": {
+                      "type": "string",
+                      "description": "Explicit scientific interpretation boundary;read with values and source identity."
+                    },
+                    "mp_molecule_identity_verified": {
+                      "const": false,
+                      "description": "False for local completed-Q-Chem files;no MP identity is assigned to an unrelated source.",
+                      "type": "boolean"
+                    },
+                    "molecular_charge": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "description": "Printed source calculation charge,when available."
+                    },
+                    "spin_multiplicity": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "description": "Printed source calculation spin multiplicity,when available."
+                    }
+                  },
+                  "required": [
+                    "backend",
+                    "property",
+                    "source_file",
+                    "source_sha256",
+                    "units",
+                    "value",
+                    "mp_molecule_identity_verified"
+                  ],
+                  "additionalProperties": true,
+                  "description": "Signed frequencies parsed from one completed Q-Chem source; source hash retained and MP identity explicitly unverified."
+                }
+              ]
+            },
+            "returns": [
+              {
+                "name": "source",
+                "type": "string",
+                "description": "Actual database,model,engine or service source of this observation. Present only in its documented source branch.",
+                "path": [
+                  "source"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "molecule_id",
+                "type": "string",
+                "description": "MP branch only, exact verified molecule identity. Present only in its documented source branch.",
+                "path": [
+                  "molecule_id"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "field",
+                "type": "string",
+                "description": "Exact source property field projected by this primitive. Present only in its documented source branch.",
+                "path": [
+                  "field"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "units",
+                "type": "string",
+                "description": "Physical unit/basis for the named observation;null indicates a structured or dimensionless source field without a scalar unit.",
+                "path": [
+                  "units"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "value",
+                "type": "object | array",
+                "description": "Solvent-label→selected observation mapping;source level-of-theory/property ID remain attached to each value.",
+                "path": [
+                  "value"
+                ],
+                "decoded": false,
+                "required": true
+              },
+              {
+                "name": "solvent_labelled",
+                "type": "boolean",
+                "description": "Whether value is indexed by actual source solvent labels with method/property IDs. Present only in its documented source branch.",
+                "path": [
+                  "solvent_labelled"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "last_updated",
+                "type": "string | null",
+                "description": "Actual source document update timestamp,when published. Present only in its documented source branch.",
+                "path": [
+                  "last_updated"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "api_version",
+                "type": "string | null",
+                "description": "Actual upstream API version metadata,when supplied. Present only in its documented source branch.",
+                "path": [
+                  "api_version"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "queried_at",
+                "type": "string | null",
+                "description": "Actual source/API response timestamp,when supplied. Present only in its documented source branch.",
+                "path": [
+                  "queried_at"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "scope",
+                "type": "string",
+                "description": "Explicit scientific interpretation boundary;read with values and source identity.",
+                "path": [
+                  "scope"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "backend",
+                "type": "string",
+                "description": "Actual local source parser backend,not a new calculation. Present only in its documented source branch.",
+                "path": [
+                  "backend"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "property",
+                "type": "string",
+                "description": "Exact named Q-Chem printed component extracted from the completed source. Present only in its documented source branch.",
+                "path": [
+                  "property"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "source_file",
+                "type": "string",
+                "description": "Local branch only: exact existing completed source. Present only in its documented source branch.",
+                "path": [
+                  "source_file"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "source_sha256",
+                "type": "string",
+                "description": "SHA256 of the exact source bytes used by this observation. Present only in its documented source branch.",
+                "path": [
+                  "source_sha256"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "formula",
+                "type": "string | null",
+                "description": "Elemental composition formula from the actual input/source,when available. Present only in its documented source branch.",
+                "path": [
+                  "formula"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "temperature_k",
+                "type": "number | null",
+                "description": "Printed completed-Q-Chem calculation temperature in kelvin,or null when not printed. Present only in its documented source branch.",
+                "path": [
+                  "temperature_k"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "mp_molecule_identity_verified",
+                "type": "boolean",
+                "description": "False for local completed-Q-Chem files;no MP identity is assigned to an unrelated source. Present only in its documented source branch.",
+                "path": [
+                  "mp_molecule_identity_verified"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "molecular_charge",
+                "type": "number | null",
+                "description": "Printed source calculation charge,when available. Present only in its documented source branch.",
+                "path": [
+                  "molecular_charge"
+                ],
+                "decoded": false,
+                "required": false
+              },
+              {
+                "name": "spin_multiplicity",
+                "type": "number | null",
+                "description": "Printed source calculation spin multiplicity,when available. Present only in its documented source branch.",
+                "path": [
+                  "spin_multiplicity"
+                ],
+                "decoded": false,
+                "required": false
+              }
+            ],
+            "output_encoding": {
+              "wire_type": "dict",
+              "decoded_type": "json_object",
+              "observed_fields_optional": false
+            },
+            "limitations": [
+              "Invalid inputs raise explicit validation errors; no logged exception/None/error text is returned as a scientific success.",
+              "External availability, published record coverage and configured resource versions are not guaranteed by static/schema checks.",
+              "Positive frequencies alone do not establish optimization convergence or a global minimum. Local file mode does not establish MP molecule identity."
+            ],
+            "indexing": {
+              "graph": true,
+              "embedding": true
+            },
+            "dataflow": {
+              "inputs": [
+                {
+                  "parameter": "molecule_id",
+                  "concept": "mp_molecule_id",
+                  "notes": "One complete MPculeID including formula/charge/spin; not a legacy task ID, SMILES or qchem:<file> pseudo-ID."
+                },
+                {
+                  "parameter": "qchem_file",
+                  "concept": "Q-Chem output file path",
+                  "notes": "Explicit completed Q-Chem .qout/.out source, optionally gzip, without qchem: prefix;20MiB compressed/100MiB decoded bounds and exact source SHA."
+                }
+              ],
+              "outputs": [
+                {
+                  "path": [
+                    "value",
+                    "*",
+                    "value"
+                  ],
+                  "concept": "molecular_vibrational_frequencies_cm_inverse",
+                  "notes": "MP branch only: signed frequency array under each solvent-labelled observation; preserve level_of_theory/property_id.",
+                  "decoded": false,
+                  "condition": "molecule_id supplied"
+                },
+                {
+                  "path": [
+                    "molecule_id"
+                  ],
+                  "concept": "mp_molecule_id",
+                  "notes": "MP branch only, exact verified molecule identity.",
+                  "decoded": false,
+                  "condition": "molecule_id supplied"
+                },
+                {
+                  "path": [
+                    "value"
+                  ],
+                  "concept": "molecular_vibrational_frequencies_cm_inverse",
+                  "notes": "Local branch only: signed frequency array,cm^-1; source hash retained,MP identity unverified.",
+                  "decoded": false,
+                  "condition": "qchem_file supplied"
+                },
+                {
+                  "path": [
+                    "source_file"
+                  ],
+                  "concept": "Q-Chem output file path",
+                  "notes": "Local branch only: exact existing completed source.",
+                  "decoded": false,
+                  "condition": "qchem_file supplied"
+                }
+              ],
+              "non_data_parameters": [],
+              "notes": "Exactly one molecule_id or qchem_file; the two source envelopes are distinct and no implicit MP identity is assigned to a file.",
+              "evidence": {
+                "file": "tools/implementations/materials/material_queries.py",
+                "function": "get_molecular_frequencies",
+                "line": 402,
+                "sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607",
+                "source_sha256": "2317b3df2336ef4f300868230b0f661d07b4a379e1619b46a9d68e3ef54d9607"
+              }
+            },
+            "failure_feedback": {
+              "invalid_input": "status=error, error_type=InvalidInput; inspect the argument error and query DescribeTools for the contract.",
+              "invalid_output": "status=error, error_type=InvalidOutput; no contract-invalid or nonfinite result is accepted as scientific evidence.",
+              "missing_resource": "status=blocked, error_type=MissingResource or MissingEnvironment; configure the declared dependency.",
+              "external_source": "Remote failures, missing scientific data and pending jobs are reported explicitly; no fallback value is invented.",
+              "retired_name": "status=error, error_type=RetiredTool with active replacement names and explicit migration guidance; incompatible signatures are never silently aliased."
+            }
+          },
+          "ScaleNumericMatrix": {
+            "name": "ScaleNumericMatrix",
+            "domain": "General",
+            "kind": "tool",
+            "description": "Scale explicit matrix rows and columns by supplied finite factors. Perform no mass weighting, normalization, unit inference or automatic row/column alignment.",
+            "call_signature": "ScaleNumericMatrix(values: list, row_factors: list | None=None, column_factors: list | None=None) -> dict",
+            "parameters": [
+              {
+                "name": "values",
+                "type": "list",
+                "required": true,
+                "default": null,
+                "default_value": null,
+                "kind": "POSITIONAL_OR_KEYWORD",
+                "description": "Nonempty finite rectangular real matrix;outer length and total cells<=10000,width<=1000. No boolean,string,null,ragged or deeper-nested cells.",
+                "description_basis": "explicit_new_contract",
+                "json_schema": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 10000,
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1000,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              {
+                "name": "row_factors",
+                "type": "list | None",
+                "required": false,
+                "default": null,
+                "default_value": null,
+                "kind": "POSITIONAL_OR_KEYWORD",
+                "description": "Exactly one finite factor per source row,or null for all ones. Negative/zero factors allowed;caller establishes row alignment and scientific meaning.",
+                "description_basis": "explicit_new_contract",
+                "json_schema": {
+                  "anyOf": [
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 10000,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null
+                }
+              },
+              {
+                "name": "column_factors",
+                "type": "list | None",
+                "required": false,
+                "default": null,
+                "default_value": null,
+                "kind": "POSITIONAL_OR_KEYWORD",
+                "description": "Exactly one finite factor per source column,or null for all ones. Negative/zero factors allowed;no implicit axis broadcasting or data normalization.",
+                "description_basis": "explicit_new_contract",
+                "json_schema": {
+                  "anyOf": [
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 1000,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null
+                }
+              }
+            ],
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "values": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 10000,
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1000,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "description": "Nonempty finite rectangular real matrix;outer length and total cells<=10000,width<=1000. No boolean,string,null,ragged or deeper-nested cells."
+                },
+                "row_factors": {
+                  "anyOf": [
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 10000,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "Exactly one finite factor per source row,or null for all ones. Negative/zero factors allowed;caller establishes row alignment and scientific meaning.",
+                  "default": null
+                },
+                "column_factors": {
+                  "anyOf": [
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 1000,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "Exactly one finite factor per source column,or null for all ones. Negative/zero factors allowed;no implicit axis broadcasting or data normalization.",
+                  "default": null
+                }
+              },
+              "required": [
+                "values"
+              ],
+              "additionalProperties": false
+            },
+            "output_description": "Complete scaled numeric matrix,unchanged shape/count,explicit-factor flags,resolved factor vectors and scope. Entire call fails on shape,type,nonfinite,overflow or nonzero multiplication underflow.",
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "values": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 10000,
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1000,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "shape": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 10000
+                  }
+                },
+                "element_count": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 10000
+                },
+                "row_factors_applied": {
+                  "type": "boolean"
+                },
+                "column_factors_applied": {
+                  "type": "boolean"
+                },
+                "row_factors_used": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 10000,
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "column_factors_used": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 1000,
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "scope": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "values",
+                "shape",
+                "element_count",
+                "row_factors_applied",
+                "column_factors_applied",
+                "row_factors_used",
+                "column_factors_used",
+                "scope"
+              ],
+              "additionalProperties": false
+            },
+            "returns": [
+              {
+                "name": "values",
+                "type": "array",
+                "description": "Complete float64 matrix in original row/column order,entry row_factor[i]*source[i][j]*column_factor[j]."
+              },
+              {
+                "name": "shape",
+                "type": "array",
+                "description": "[source_row_count,source_column_count],unchanged by scaling."
+              },
+              {
+                "name": "element_count",
+                "type": "integer",
+                "description": "Complete matrix cell count."
+              },
+              {
+                "name": "row_factors_applied",
+                "type": "boolean",
+                "description": "True iff an explicit row factor vector was supplied;false iff null/all-ones default used."
+              },
+              {
+                "name": "column_factors_applied",
+                "type": "boolean",
+                "description": "True iff an explicit column factor vector was supplied."
+              },
+              {
+                "name": "row_factors_used",
+                "type": "array",
+                "description": "Resolved full row factor vector,including ones for a null input."
+              },
+              {
+                "name": "column_factors_used",
+                "type": "array",
+                "description": "Resolved full column factor vector."
+              },
+              {
+                "name": "scope",
+                "type": "string",
+                "description": "Explicit operation and scientific inference boundaries."
+              }
+            ],
+            "output_encoding": {
+              "wire_type": "object",
+              "decoded_type": "object",
+              "observed_fields_optional": false
+            },
+            "limitations": [
+              "Only explicitly supplied finite real numeric matrices;no file/API/model execution.",
+              "Total cells and outer length<=10000,width<=1000;factor vectors must match axes exactly.",
+              "Left-to-right ordinary float64 multiplication;overflow/nonfinite/nonzero underflow rejects the complete call,even if a later zero factor could mask an intermediate overflow.",
+              "Source axis order preserved;negative/zero factors supported;no data-derived normalization,implicit broadcasting or unit/mass inference."
+            ],
+            "indexing": {
+              "graph": true,
+              "embedding": true
+            },
+            "dataflow": {
+              "inputs": [
+                {
+                  "parameter": "values",
+                  "concept": "Finite numeric matrix",
+                  "notes": "Nonempty finite rectangular real matrix;outer length and total cells<=10000,width<=1000. No boolean,string,null,ragged or deeper-nested cells. Compatibility is conditional on this tool contract, units, identities and scientific assumptions."
+                },
+                {
+                  "parameter": "row_factors",
+                  "concept": "Finite numeric vector",
+                  "notes": "Exactly one finite factor per source row,or null for all ones. Negative/zero factors allowed;caller establishes row alignment and scientific meaning. Compatibility is conditional on this tool contract, units, identities and scientific assumptions."
+                },
+                {
+                  "parameter": "column_factors",
+                  "concept": "Finite numeric vector",
+                  "notes": "Exactly one finite factor per source column,or null for all ones. Negative/zero factors allowed;no implicit axis broadcasting or data normalization. Compatibility is conditional on this tool contract, units, identities and scientific assumptions."
+                }
+              ],
+              "outputs": [
+                {
+                  "path": [
+                    "values"
+                  ],
+                  "concept": "Finite numeric matrix",
+                  "notes": "Current output field; transport/mode and identity/unit context must be inspected before reuse."
+                },
+                {
+                  "path": [
+                    "shape"
+                  ],
+                  "concept": "Finite numeric vector",
+                  "notes": "Current output field; transport/mode and identity/unit context must be inspected before reuse."
+                },
+                {
+                  "path": [
+                    "row_factors_used"
+                  ],
+                  "concept": "Finite numeric vector",
+                  "notes": "Current output field; transport/mode and identity/unit context must be inspected before reuse."
+                },
+                {
+                  "path": [
+                    "column_factors_used"
+                  ],
+                  "concept": "Finite numeric vector",
+                  "notes": "Current output field; transport/mode and identity/unit context must be inspected before reuse."
+                }
+              ],
+              "evidence": {
+                "source_file": "tools/implementations/general/matrix_scaling.py",
+                "source_function": "scale_numeric_matrix",
+                "source_sha256": "f80bd8eb958f4a8311faea93b560a1db13cfc4af6fa574db949a70e928692707",
+                "file": "tools/implementations/general/matrix_scaling.py",
+                "function": "scale_numeric_matrix",
+                "line": 6
+              },
+              "interpretation": "Candidate data representations only. Matching concepts never imply automatic unit conversion, row alignment, scientific validity or successful execution."
+            },
+            "failure_feedback": {
+              "invalid_input": "status=error, error_type=InvalidInput; inspect the argument error and query DescribeTools for the contract.",
+              "invalid_output": "status=error, error_type=InvalidOutput; no contract-invalid or nonfinite result is accepted as scientific evidence.",
+              "missing_resource": "status=blocked, error_type=MissingResource or MissingEnvironment; configure the declared dependency.",
+              "external_source": "Remote failures, missing scientific data and pending jobs are reported explicitly; no fallback value is invented.",
+              "retired_name": "status=error, error_type=RetiredTool with active replacement names and explicit migration guidance; incompatible signatures are never silently aliased."
+            }
+          },
+          "MatrixMultiply": {
+            "name": "MatrixMultiply",
+            "domain": "MachineLearning",
+            "kind": "tool",
+            "description": "Multiply a finite matrix by an aligned matrix or vector without broadcasting, generated code or inferred alignment. Retain the supplied row/column order.",
+            "call_signature": "MatrixMultiply(left: list, right: list) -> dict",
+            "parameters": [
+              {
+                "name": "left",
+                "type": "list",
+                "required": true,
+                "default": null,
+                "default_value": null,
+                "kind": "POSITIONAL_OR_KEYWORD",
+                "description": "Nonempty finite float64 rectangular matrix,at most10000 entries; row and column identity/order and units are caller-established.",
+                "description_basis": "explicit_new_contract",
+                "json_schema": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 10000,
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 10000,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              {
+                "name": "right",
+                "type": "list",
+                "required": true,
+                "default": null,
+                "default_value": null,
+                "kind": "POSITIONAL_OR_KEYWORD",
+                "description": "Aligned finite vector or rectangular matrix; right rows equal left columns; no broadcasting or implicit transposition. At most10000 entries.",
+                "description_basis": "explicit_new_contract",
+                "json_schema": {
+                  "oneOf": [
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 10000,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 10000,
+                      "items": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 10000,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "left": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 10000,
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 10000,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "description": "Nonempty finite float64 rectangular matrix,at most10000 entries; row and column identity/order and units are caller-established."
+                },
+                "right": {
+                  "oneOf": [
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 10000,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 10000,
+                      "items": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 10000,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  ],
+                  "description": "Aligned finite vector or rectangular matrix; right rows equal left columns; no broadcasting or implicit transposition. At most10000 entries."
+                }
+              },
+              "required": [
+                "left",
+                "right"
+              ],
+              "additionalProperties": false
+            },
+            "output_description": "Multiply a matrix by an aligned matrix or column vector, without broadcasting.\n\nArgs:\n    left: Nonempty rectangular numeric matrix with at most 10000 entries.\n    right: Numeric vector of length equal to left's column count, or a\n        rectangular matrix whose row count equals that column count.\n        Each operand has at most 10000 entries. Bool/null/strings,\n        mixed dimensions, empty rows, ragged rows and nonfinite values fail.\n\nReturns:\n    dict with product, left_shape, right_shape, product_shape and operation.\n    A vector right operand returns a vector product; a matrix returns a\n    matrix. Both use ordinary float64 and preserve supplied axis order.\n    Result size is at most 10000 entries and at most 10 million scalar\n    multiply-add terms are allowed. One numerical thread; no unit inference,\n    transposition, broadcasting, identity matching or fitting is performed.\n\nRaises:\n    ValueError: Invalid shape/type/alignment, excessive size/work, or\n        nonfinite input/output. Inputs must represent compatible units and\n        scientifically matched axes; this tool cannot establish those facts.",
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "product": {
+                  "oneOf": [
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 10000,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 10000,
+                      "items": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 10000,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  ],
+                  "description": "Ordered float64 matrix/vector product,shape follows right operand; finite with at most10000 entries."
+                },
+                "left_shape": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "description": "Actual left [rows,columns]."
+                },
+                "right_shape": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "description": "Actual right [length] or [rows,columns]."
+                },
+                "product_shape": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "description": "Returned vector or matrix dimensions."
+                },
+                "operation": {
+                  "type": "string",
+                  "enum": [
+                    "matrix_matrix",
+                    "matrix_vector"
+                  ],
+                  "description": "The exact dimensional operation performed."
+                }
+              },
+              "required": [
+                "product",
+                "left_shape",
+                "right_shape",
+                "product_shape",
+                "operation"
+              ],
+              "additionalProperties": false
+            },
+            "returns": [
+              {
+                "name": "product",
+                "type": "array",
+                "description": "Ordered float64 matrix/vector product,shape follows right operand; finite with at most10000 entries."
+              },
+              {
+                "name": "left_shape",
+                "type": "array",
+                "description": "Actual left [rows,columns]."
+              },
+              {
+                "name": "right_shape",
+                "type": "array",
+                "description": "Actual right [length] or [rows,columns]."
+              },
+              {
+                "name": "product_shape",
+                "type": "array",
+                "description": "Returned vector or matrix dimensions."
+              },
+              {
+                "name": "operation",
+                "type": "string",
+                "description": "The exact dimensional operation performed."
+              }
+            ],
+            "output_encoding": {
+              "wire_type": "object",
+              "decoded_type": "object",
+              "observed_fields_optional": false
+            },
+            "limitations": [
+              "Caller establishes scientifically compatible units and aligned axis identities; this primitive only multiplies the supplied arrays.",
+              "Each operand/output at most10000 entries,at most10million scalar terms; float64 precision and one numerical thread.",
+              "No transposition,broadcasting,identity matching,unit conversion,fitting,filesystem,network or model call.",
+              "Invalid shape/type and nonfinite/overflow fail the whole call; no row filtering or clipping."
+            ],
+            "indexing": {
+              "graph": true,
+              "embedding": true
+            },
+            "dataflow": {
+              "inputs": [
+                {
+                  "parameter": "left",
+                  "concept": "Finite numeric matrix",
+                  "notes": "Nonempty finite float64 rectangular matrix,at most10000 entries; row and column identity/order and units are caller-established. Compatibility is conditional on this tool contract, units, identities and scientific assumptions."
+                },
+                {
+                  "parameter": "right",
+                  "concept": "Finite numeric vector",
+                  "notes": "Aligned finite vector or rectangular matrix; right rows equal left columns; no broadcasting or implicit transposition. At most10000 entries. Compatibility is conditional on this tool contract, units, identities and scientific assumptions."
+                }
+              ],
+              "outputs": [
+                {
+                  "path": [
+                    "product"
+                  ],
+                  "concept": "Finite numeric vector",
+                  "notes": "Ordered float64 matrix/vector product,shape follows right operand; finite with at most10000 entries."
+                },
+                {
+                  "path": [
+                    "left_shape"
+                  ],
+                  "concept": "Finite numeric vector",
+                  "notes": "Actual left [rows,columns]."
+                },
+                {
+                  "path": [
+                    "right_shape"
+                  ],
+                  "concept": "Finite numeric vector",
+                  "notes": "Actual right [length] or [rows,columns]."
+                },
+                {
+                  "path": [
+                    "product_shape"
+                  ],
+                  "concept": "Finite numeric vector",
+                  "notes": "Returned vector or matrix dimensions."
+                }
+              ],
+              "evidence": {
+                "source_file": "tools/implementations/machine_learning/matrix_operations.py",
+                "source_function": "matrix_multiply",
+                "source_sha256": "fd8a42e473f51350e1dcdeae8247595f9a66abcd17c8e79dd4c45cd09573061d",
+                "file": "tools/implementations/machine_learning/matrix_operations.py",
+                "function": "matrix_multiply",
+                "line": 9
+              },
+              "interpretation": "Candidate data representations only. Matching concepts never imply automatic unit conversion, row alignment, scientific validity or successful execution."
+            },
+            "failure_feedback": {
+              "invalid_input": "status=error, error_type=InvalidInput; inspect the argument error and query DescribeTools for the contract.",
+              "invalid_output": "status=error, error_type=InvalidOutput; no contract-invalid or nonfinite result is accepted as scientific evidence.",
+              "missing_resource": "status=blocked, error_type=MissingResource or MissingEnvironment; configure the declared dependency.",
+              "external_source": "Remote failures, missing scientific data and pending jobs are reported explicitly; no fallback value is invented.",
+              "retired_name": "status=error, error_type=RetiredTool with active replacement names and explicit migration guidance; incompatible signatures are never silently aliased."
+            }
+          },
+          "SymmetricEigenDecomposition": {
+            "name": "SymmetricEigenDecomposition",
+            "domain": "MachineLearning",
+            "kind": "tool",
+            "description": "Compute ascending real eigenvalues and orthonormal eigenvectors after a near-symmetry check. The lower triangle defines the symmetric matrix; signs and repeated-subspace bases are arbitrary.",
+            "call_signature": "SymmetricEigenDecomposition(values: list) -> dict",
+            "parameters": [
+              {
+                "name": "values",
+                "type": "list",
+                "required": true,
+                "default": null,
+                "kind": "POSITIONAL_OR_KEYWORD",
+                "description": "Explicit finite numeric values in supplied order; no implicit missing-value parsing.",
+                "description_basis": "explicit_implementation_contract",
+                "json_schema": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 5000,
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 200,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            ],
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "values": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 5000,
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 200,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "description": "Explicit finite numeric values in supplied order; no implicit missing-value parsing."
+                }
+              },
+              "required": [
+                "values"
+              ],
+              "additionalProperties": false
+            },
+            "output_description": "Always returns eigenvalues and eigenvectors on success;all entries are finite. Numerical convergence,invalid input or nonrepresentable result fails through the standard error envelope.",
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "eigenvalues": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 200,
+                  "items": {
+                    "type": "number"
+                  },
+                  "description": "All n eigenvalues in ascending order,including repeated or negative values."
+                },
+                "eigenvectors": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 200,
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 200,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "description": "Complete n-by-n orthonormal eigenvector matrix;column j belongs to eigenvalues[j]. Signs are arbitrary. Repeated-eigenvalue bases may rotate within the eigenspace. The symmetric source matrix is defined by its lower triangle."
+                }
+              },
+              "required": [
+                "eigenvalues",
+                "eigenvectors"
+              ],
+              "additionalProperties": false
+            },
+            "returns": [
+              {
+                "name": "eigenvalues",
+                "type": "array",
+                "description": "All n eigenvalues in ascending order,including repeated or negative values."
+              },
+              {
+                "name": "eigenvectors",
+                "type": "array",
+                "description": "Complete n-by-n orthonormal eigenvector matrix;column j belongs to eigenvalues[j]. Signs are arbitrary. Repeated-eigenvalue bases may rotate within the eigenspace. The symmetric source matrix is defined by its lower triangle."
+              }
+            ],
+            "output_encoding": {
+              "wire_type": "object",
+              "decoded_type": "object",
+              "observed_fields_optional": false
+            },
+            "limitations": [
+              "Float64 real symmetric decomposition only;near-symmetry is checked before lower-triangle interpretation.",
+              "Signs and degenerate eigenspace bases are not stable scientific identifiers;compare eigen-equations or projectors.",
+              "No sorting by a physical label,normal-mode interpretation or model covariance assumption is inferred."
+            ],
+            "indexing": {
+              "graph": true,
+              "embedding": true
+            },
+            "dataflow": {
+              "inputs": [
+                {
+                  "parameter": "values",
+                  "concept": "Finite numeric matrix",
+                  "notes": "Explicit finite numeric values in supplied order; no implicit missing-value parsing. Compatibility is conditional on this tool contract, units, identities and scientific assumptions."
+                }
+              ],
+              "outputs": [
+                {
+                  "path": [
+                    "eigenvalues"
+                  ],
+                  "concept": "Finite numeric vector",
+                  "notes": "All n eigenvalues in ascending order,including repeated or negative values."
+                },
+                {
+                  "path": [
+                    "eigenvectors"
+                  ],
+                  "concept": "Finite numeric matrix",
+                  "notes": "Complete n-by-n orthonormal eigenvector matrix;column j belongs to eigenvalues[j]. Signs are arbitrary. Repeated-eigenvalue bases may rotate within the eigenspace. The symmetric source matrix is defined by its lower triangle."
+                }
+              ],
+              "evidence": {
+                "source_file": "tools/implementations/machine_learning/numeric_tools.py",
+                "source_function": "symmetric_eigen_decomposition",
+                "source_sha256": "decab944485fa03eb0ccb01152f1f54c3bc3f9746635cfb5e81abd3b81447e8b",
+                "file": "tools/implementations/machine_learning/numeric_tools.py",
+                "function": "symmetric_eigen_decomposition",
+                "line": 272
+              },
+              "interpretation": "Candidate data representations only. Matching concepts never imply automatic unit conversion, row alignment, scientific validity or successful execution."
+            },
+            "failure_feedback": {
+              "invalid_input": "status=error, error_type=InvalidInput; inspect the argument error and query DescribeTools for the contract.",
+              "invalid_output": "status=error, error_type=InvalidOutput; no contract-invalid or nonfinite result is accepted as scientific evidence.",
+              "missing_resource": "status=blocked, error_type=MissingResource or MissingEnvironment; configure the declared dependency.",
+              "external_source": "Remote failures, missing scientific data and pending jobs are reported explicitly; no fallback value is invented.",
+              "retired_name": "status=error, error_type=RetiredTool with active replacement names and explicit migration guidance; incompatible signatures are never silently aliased."
+            }
+          },
+          "NormalizeNumericRows": {
+            "name": "NormalizeNumericRows",
+            "domain": "General",
+            "kind": "tool",
+            "description": "Convert nonnegative numeric rows into sum-one proportions. Preserve row/column identity and report all-zero rows as null rather than inventing proportions.",
+            "call_signature": "NormalizeNumericRows(matrix: list) -> dict",
+            "parameters": [
+              {
+                "name": "matrix",
+                "type": "list",
+                "required": true,
+                "default": null,
+                "default_value": null,
+                "kind": "POSITIONAL_OR_KEYWORD",
+                "description": "Rectangular finite numeric/null assay matrix; rows/columns correspond exactly to the supplied identity lists.",
+                "description_basis": "explicit_new_contract",
+                "json_schema": {
+                  "type": "array",
+                  "items": {}
+                }
+              }
+            ],
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "matrix": {
+                  "type": "array",
+                  "items": {},
+                  "description": "Rectangular finite numeric/null assay matrix; rows/columns correspond exactly to the supplied identity lists."
+                }
+              },
+              "required": [
+                "matrix"
+              ],
+              "additionalProperties": false
+            },
+            "output_description": "Convert nonnegative rows into sum-one proportions; zero rows remain null.\n\nRectangular input contains at most10000 cells. Nonfinite or overflowing\nrow totals reject the whole call; no all-zero overflow normalization.",
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "proportions": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        }
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "description": "Row-sum normalized values in original row/column order; zero-total rows are null."
+                },
+                "row_totals": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "description": "Original nonnegative sum for each input row, including zero."
+                },
+                "zero_total_row_indices": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  },
+                  "description": "Zero-based row indices whose composition is undefined due to zero total."
+                },
+                "scope": {
+                  "type": "string",
+                  "description": "Exact applicability/undefined-value/inference boundary of this primitive; not a scientific claim beyond supplied data."
+                }
+              },
+              "required": [
+                "proportions",
+                "row_totals",
+                "zero_total_row_indices",
+                "scope"
+              ],
+              "additionalProperties": false
+            },
+            "returns": [
+              {
+                "name": "proportions",
+                "type": "array",
+                "description": "Row-sum normalized values in original row/column order; zero-total rows are null."
+              },
+              {
+                "name": "row_totals",
+                "type": "array",
+                "description": "Original nonnegative sum for each input row, including zero."
+              },
+              {
+                "name": "zero_total_row_indices",
+                "type": "array",
+                "description": "Zero-based row indices whose composition is undefined due to zero total."
+              },
+              {
+                "name": "scope",
+                "type": "string",
+                "description": "Exact applicability/undefined-value/inference boundary of this primitive; not a scientific claim beyond supplied data."
+              }
+            ],
+            "output_encoding": {
+              "wire_type": "object",
+              "decoded_type": "object",
+              "observed_fields_optional": false
+            },
+            "limitations": [
+              "Convert nonnegative rows into sum-one proportions; zero rows remain null.\n\nRectangular input contains at most10000 cells. Nonfinite or overflowing\nrow totals reject the whole call; no all-zero overflow normalization.",
+              "CPU-only deterministic primitive; no network/account/model call.",
+              "Any inference remains conditional on correct supplied scientific sampling/measurement assumptions."
+            ],
+            "indexing": {
+              "graph": true,
+              "embedding": true
+            },
+            "dataflow": {
+              "inputs": [],
+              "outputs": [
+                {
+                  "path": [
+                    "proportions"
+                  ],
+                  "concept": "Finite numeric matrix",
+                  "notes": "Row-sum normalized values in original row/column order; zero-total rows are null."
+                },
+                {
+                  "path": [
+                    "row_totals"
+                  ],
+                  "concept": "Finite numeric vector",
+                  "notes": "Original nonnegative sum for each input row, including zero."
+                },
+                {
+                  "path": [
+                    "zero_total_row_indices"
+                  ],
+                  "concept": "Finite numeric vector",
+                  "notes": "Zero-based row indices whose composition is undefined due to zero total."
+                }
+              ],
+              "evidence": {
+                "source_file": "tools/implementations/general/research_workflows.py",
+                "source_function": "normalize_numeric_rows",
+                "source_sha256": "179c7b9a1ee486a26079e0d4b4dd2ffc7ded374553d6c5b9df93aca8957a391f",
+                "file": "tools/implementations/general/research_workflows.py",
+                "function": "normalize_numeric_rows",
+                "line": 176
+              },
+              "interpretation": "Candidate data representations only. Matching concepts never imply automatic unit conversion, row alignment, scientific validity or successful execution."
+            },
+            "failure_feedback": {
+              "invalid_input": "status=error, error_type=InvalidInput; inspect the argument error and query DescribeTools for the contract.",
+              "invalid_output": "status=error, error_type=InvalidOutput; no contract-invalid or nonfinite result is accepted as scientific evidence.",
+              "missing_resource": "status=blocked, error_type=MissingResource or MissingEnvironment; configure the declared dependency.",
+              "external_source": "Remote failures, missing scientific data and pending jobs are reported explicitly; no fallback value is invented.",
+              "retired_name": "status=error, error_type=RetiredTool with active replacement names and explicit migration guidance; incompatible signatures are never silently aliased."
+            }
+          }
+        },
+        "unknown": [],
+        "count": 7
+      },
+      "started_seconds": 43.78263303899439,
+      "finished_seconds": 43.828739650023635,
+      "duration_seconds": 0.04610661102924496,
+      "review_state_at_recording": null,
+      "final_result_status": null,
+      "selected_observation_for_final_node": null
+    },
+    {
+      "step_id": "s000012",
+      "array_index": 11,
+      "observation_id": "o0002",
+      "node": "modes",
+      "tool": "ReadQChemFrequencyModes",
+      "kind": "scientific",
+      "arguments": {
+        "qchem_file": "/data/wuchenmin/Project/ToolKG/SciToolFlow/.local/experiment_sources/scimas_ablation_20261107_105210_mini100_50/tasks/mini-100/assets/SMAS-0070_water_source.qout"
+      },
+      "status": "success",
+      "output": {
+        "backend": "supplied_qchem_output",
+        "property": "frequency_modes",
+        "source_file": "/data/wuchenmin/Project/ToolKG/SciToolFlow/.local/experiment_sources/scimas_ablation_20261107_105210_mini100_50/tasks/mini-100/assets/SMAS-0070_water_source.qout",
+        "source_sha256": "b276272a3eb1251c23231088ecccb3778510a1ef3c8364e3b932ea3df218f81c",
+        "formula": "H2 O1",
+        "temperature_k": 298.15,
+        "molecular_charge": 0,
+        "spin_multiplicity": 1,
+        "units": "Q-Chem displacement-vector normalization",
+        "value": [
+          [
+            [
+              0.013,
+              -0.022,
+              -0.066
+            ],
+            [
+              0.313,
+              0.116,
+              0.621
+            ],
+            [
+              -0.519,
+              0.227,
+              0.42
+            ]
+          ],
+          [
+            [
+              -0.01,
+              0.016,
+              0.047
+            ],
+            [
+              0.641,
+              -0.2,
+              -0.24
+            ],
+            [
+              -0.483,
+              -0.048,
+              -0.504
+            ]
+          ],
+          [
+            [
+              -0.068,
+              0.009,
+              -0.017
+            ],
+            [
+              0.612,
+              -0.202,
+              -0.27
+            ],
+            [
+              0.464,
+              0.061,
+              0.537
+            ]
+          ]
+        ],
+        "scope": "Values parsed from this completed calculation only; not a Materials Project lookup or a new calculation",
+        "mp_molecule_identity_verified": false
+      },
+      "started_seconds": 202.0231445709942,
+      "finished_seconds": 206.0927178870188,
+      "duration_seconds": 4.069573316024616,
+      "review_state_at_recording": "repair_requested",
+      "final_result_status": "valid",
+      "selected_observation_for_final_node": "o0004"
+    },
+    {
+      "step_id": "s000018",
+      "array_index": 17,
+      "observation_id": "o0003",
+      "node": "ir",
+      "tool": "ReadQChemIRIntensities",
+      "kind": "scientific",
+      "arguments": {
+        "qchem_file": "/data/wuchenmin/Project/ToolKG/SciToolFlow/.local/experiment_sources/scimas_ablation_20261107_105210_mini100_50/tasks/mini-100/assets/SMAS-0070_water_source.qout"
+      },
+      "status": "success",
+      "output": {
+        "backend": "supplied_qchem_output",
+        "property": "ir_intensities",
+        "source_file": "/data/wuchenmin/Project/ToolKG/SciToolFlow/.local/experiment_sources/scimas_ablation_20261107_105210_mini100_50/tasks/mini-100/assets/SMAS-0070_water_source.qout",
+        "source_sha256": "b276272a3eb1251c23231088ecccb3778510a1ef3c8364e3b932ea3df218f81c",
+        "formula": "H2 O1",
+        "temperature_k": 298.15,
+        "molecular_charge": 0,
+        "spin_multiplicity": 1,
+        "units": "km/mol",
+        "value": [
+          106.754,
+          26.209,
+          128.758
+        ],
+        "scope": "Values parsed from this completed calculation only; not a Materials Project lookup or a new calculation",
+        "mp_molecule_identity_verified": false
+      },
+      "started_seconds": 204.30071434099227,
+      "finished_seconds": 206.9288201610325,
+      "duration_seconds": 2.6281058200402185,
+      "review_state_at_recording": "pending_review",
+      "final_result_status": "valid",
+      "selected_observation_for_final_node": "o0003"
+    },
+    {
+      "step_id": "s000022",
+      "array_index": 21,
+      "observation_id": "o0004",
+      "node": "modes",
+      "tool": "ReadQChemFrequencyModes",
+      "kind": "scientific",
+      "arguments": {
+        "qchem_file": "/data/wuchenmin/Project/ToolKG/SciToolFlow/.local/experiment_sources/scimas_ablation_20261107_105210_mini100_50/tasks/mini-100/assets/SMAS-0070_water_source.qout"
+      },
+      "status": "success",
+      "output": {
+        "backend": "supplied_qchem_output",
+        "property": "frequency_modes",
+        "source_file": "/data/wuchenmin/Project/ToolKG/SciToolFlow/.local/experiment_sources/scimas_ablation_20261107_105210_mini100_50/tasks/mini-100/assets/SMAS-0070_water_source.qout",
+        "source_sha256": "b276272a3eb1251c23231088ecccb3778510a1ef3c8364e3b932ea3df218f81c",
+        "formula": "H2 O1",
+        "temperature_k": 298.15,
+        "molecular_charge": 0,
+        "spin_multiplicity": 1,
+        "units": "Q-Chem displacement-vector normalization",
+        "value": [
+          [
+            [
+              0.013,
+              -0.022,
+              -0.066
+            ],
+            [
+              0.313,
+              0.116,
+              0.621
+            ],
+            [
+              -0.519,
+              0.227,
+              0.42
+            ]
+          ],
+          [
+            [
+              -0.01,
+              0.016,
+              0.047
+            ],
+            [
+              0.641,
+              -0.2,
+              -0.24
+            ],
+            [
+              -0.483,
+              -0.048,
+              -0.504
+            ]
+          ],
+          [
+            [
+              -0.068,
+              0.009,
+              -0.017
+            ],
+            [
+              0.612,
+              -0.202,
+              -0.27
+            ],
+            [
+              0.464,
+              0.061,
+              0.537
+            ]
+          ]
+        ],
+        "scope": "Values parsed from this completed calculation only; not a Materials Project lookup or a new calculation",
+        "mp_molecule_identity_verified": false
+      },
+      "started_seconds": 314.5030450170161,
+      "finished_seconds": 317.6872240480152,
+      "duration_seconds": 3.1841790309990756,
+      "review_state_at_recording": "pending_review",
+      "final_result_status": "valid",
+      "selected_observation_for_final_node": "o0004"
+    },
+    {
+      "step_id": "s000026",
+      "array_index": 25,
+      "observation_id": "o0005",
+      "node": "intensity_fractions",
+      "tool": "NormalizeNumericRows",
+      "kind": "scientific",
+      "arguments": {
+        "matrix": [
+          [
+            106.754,
+            26.209,
+            128.758
+          ]
+        ]
+      },
+      "status": "success",
+      "output": {
+        "proportions": [
+          [
+            0.40789237394018824,
+            0.10014098983268442,
+            0.4919666362271274
+          ]
+        ],
+        "row_totals": [
+          261.721
+        ],
+        "zero_total_row_indices": [],
+        "scope": "row-sum composition only; no library normalization, rarefaction or detection correction"
+      },
+      "started_seconds": 331.11282897699857,
+      "finished_seconds": 332.5835426489939,
+      "duration_seconds": 1.4707136719953269,
+      "review_state_at_recording": "pending_review",
+      "final_result_status": "valid",
+      "selected_observation_for_final_node": "o0005"
+    },
+    {
+      "step_id": "s000028",
+      "array_index": 27,
+      "observation_id": "o0006",
+      "node": "mode_matrix",
+      "tool": "ScaleNumericMatrix",
+      "kind": "scientific",
+      "arguments": {
+        "values": [
+          [
+            0.013,
+            -0.022,
+            -0.066,
+            0.313,
+            0.116,
+            0.621,
+            -0.519,
+            0.227,
+            0.42
+          ],
+          [
+            -0.01,
+            0.016,
+            0.047,
+            0.641,
+            -0.2,
+            -0.24,
+            -0.483,
+            -0.048,
+            -0.504
+          ],
+          [
+            -0.068,
+            0.009,
+            -0.017,
+            0.612,
+            -0.202,
+            -0.27,
+            0.464,
+            0.061,
+            0.537
+          ]
+        ]
+      },
+      "status": "success",
+      "output": {
+        "values": [
+          [
+            0.013,
+            -0.022,
+            -0.066,
+            0.313,
+            0.116,
+            0.621,
+            -0.519,
+            0.227,
+            0.42
+          ],
+          [
+            -0.01,
+            0.016,
+            0.047,
+            0.641,
+            -0.2,
+            -0.24,
+            -0.483,
+            -0.048,
+            -0.504
+          ],
+          [
+            -0.068,
+            0.009,
+            -0.017,
+            0.612,
+            -0.202,
+            -0.27,
+            0.464,
+            0.061,
+            0.537
+          ]
+        ],
+        "shape": [
+          3,
+          9
+        ],
+        "element_count": 27,
+        "row_factors_applied": false,
+        "column_factors_applied": false,
+        "row_factors_used": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "column_factors_used": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "scope": "Explicit row_i*value_ij*column_j scaling only;source axis order retained. No unit,mass,normalization or coordinate interpretation inferred."
+      },
+      "started_seconds": 355.5877891420387,
+      "finished_seconds": 356.97839621204184,
+      "duration_seconds": 1.3906070700031705,
+      "review_state_at_recording": "pending_review",
+      "final_result_status": "valid",
+      "selected_observation_for_final_node": "o0006"
+    },
+    {
+      "step_id": "s000032",
+      "array_index": 31,
+      "observation_id": "o0007",
+      "node": "frequencies",
+      "tool": "GetMolecularFrequencies",
+      "kind": "scientific",
+      "arguments": {
+        "qchem_file": "/data/wuchenmin/Project/ToolKG/SciToolFlow/.local/experiment_sources/scimas_ablation_20261107_105210_mini100_50/tasks/mini-100/assets/SMAS-0070_water_source.qout"
+      },
+      "status": "success",
+      "output": {
+        "backend": "supplied_qchem_output",
+        "property": "frequencies",
+        "source_file": "/data/wuchenmin/Project/ToolKG/SciToolFlow/.local/experiment_sources/scimas_ablation_20261107_105210_mini100_50/tasks/mini-100/assets/SMAS-0070_water_source.qout",
+        "source_sha256": "b276272a3eb1251c23231088ecccb3778510a1ef3c8364e3b932ea3df218f81c",
+        "formula": "H2 O1",
+        "temperature_k": 298.15,
+        "molecular_charge": 0,
+        "spin_multiplicity": 1,
+        "units": "cm^-1",
+        "value": [
+          1590.33,
+          3884.52,
+          3980.89
+        ],
+        "scope": "Values parsed from this completed calculation only; not a Materials Project lookup or a new calculation",
+        "mp_molecule_identity_verified": false
+      },
+      "started_seconds": 371.88181669299956,
+      "finished_seconds": 375.0958131729858,
+      "duration_seconds": 3.2139964799862355,
+      "review_state_at_recording": "pending_review",
+      "final_result_status": "valid",
+      "selected_observation_for_final_node": "o0007"
+    },
+    {
+      "step_id": "s000038",
+      "array_index": 37,
+      "observation_id": "o0008",
+      "node": "weighted_modes",
+      "tool": "ScaleNumericMatrix",
+      "kind": "scientific",
+      "arguments": {
+        "values": [
+          [
+            0.013,
+            -0.022,
+            -0.066,
+            0.313,
+            0.116,
+            0.621,
+            -0.519,
+            0.227,
+            0.42
+          ],
+          [
+            -0.01,
+            0.016,
+            0.047,
+            0.641,
+            -0.2,
+            -0.24,
+            -0.483,
+            -0.048,
+            -0.504
+          ],
+          [
+            -0.068,
+            0.009,
+            -0.017,
+            0.612,
+            -0.202,
+            -0.27,
+            0.464,
+            0.061,
+            0.537
+          ]
+        ],
+        "column_factors": [
+          4,
+          4,
+          4,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "status": "success",
+      "output": {
+        "values": [
+          [
+            0.052,
+            -0.088,
+            -0.264,
+            0.313,
+            0.116,
+            0.621,
+            -0.519,
+            0.227,
+            0.42
+          ],
+          [
+            -0.04,
+            0.064,
+            0.188,
+            0.641,
+            -0.2,
+            -0.24,
+            -0.483,
+            -0.048,
+            -0.504
+          ],
+          [
+            -0.272,
+            0.036,
+            -0.068,
+            0.612,
+            -0.202,
+            -0.27,
+            0.464,
+            0.061,
+            0.537
+          ]
+        ],
+        "shape": [
+          3,
+          9
+        ],
+        "element_count": 27,
+        "row_factors_applied": false,
+        "column_factors_applied": true,
+        "row_factors_used": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "column_factors_used": [
+          4.0,
+          4.0,
+          4.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "scope": "Explicit row_i*value_ij*column_j scaling only;source axis order retained. No unit,mass,normalization or coordinate interpretation inferred."
+      },
+      "started_seconds": 406.45661845302675,
+      "finished_seconds": 407.9923949590302,
+      "duration_seconds": 1.535776506003458,
+      "review_state_at_recording": "pending_review",
+      "final_result_status": "valid",
+      "selected_observation_for_final_node": "o0008"
+    },
+    {
+      "step_id": "s000042",
+      "array_index": 41,
+      "observation_id": "o0009",
+      "node": "plain_gram",
+      "tool": "MatrixMultiply",
+      "kind": "scientific",
+      "arguments": {
+        "left": [
+          [
+            0.013,
+            -0.022,
+            -0.066,
+            0.313,
+            0.116,
+            0.621,
+            -0.519,
+            0.227,
+            0.42
+          ],
+          [
+            -0.01,
+            0.016,
+            0.047,
+            0.641,
+            -0.2,
+            -0.24,
+            -0.483,
+            -0.048,
+            -0.504
+          ],
+          [
+            -0.068,
+            0.009,
+            -0.017,
+            0.612,
+            -0.202,
+            -0.27,
+            0.464,
+            0.061,
+            0.537
+          ]
+        ],
+        "right": [
+          [
+            0.013,
+            -0.01,
+            -0.068
+          ],
+          [
+            -0.022,
+            0.016,
+            0.009
+          ],
+          [
+            -0.066,
+            0.047,
+            -0.017
+          ],
+          [
+            0.313,
+            0.641,
+            0.612
+          ],
+          [
+            0.116,
+            -0.2,
+            -0.202
+          ],
+          [
+            0.621,
+            -0.24,
+            -0.27
+          ],
+          [
+            -0.519,
+            -0.483,
+            0.464
+          ],
+          [
+            0.227,
+            -0.048,
+            0.061
+          ],
+          [
+            0.42,
+            -0.504,
+            0.537
+          ]
+        ]
+      },
+      "status": "success",
+      "output": {
+        "product": [
+          [
+            0.9993650000000001,
+            0.05291,
+            -0.0009350000000000597
+          ],
+          [
+            0.05291,
+            1.0006549999999999,
+            -0.00017099999999994
+          ],
+          [
+            -0.0009350000000000597,
+            -0.00017099999999994,
+            1.000628
+          ]
+        ],
+        "left_shape": [
+          3,
+          9
+        ],
+        "right_shape": [
+          9,
+          3
+        ],
+        "product_shape": [
+          3,
+          3
+        ],
+        "operation": "matrix_matrix"
+      },
+      "started_seconds": 406.59531422599684,
+      "finished_seconds": 408.3668734279927,
+      "duration_seconds": 1.7715592019958422,
+      "review_state_at_recording": "pending_review",
+      "final_result_status": "valid",
+      "selected_observation_for_final_node": "o0009"
+    },
+    {
+      "step_id": "s000046",
+      "array_index": 45,
+      "observation_id": "o0010",
+      "node": "weighted_gram",
+      "tool": "MatrixMultiply",
+      "kind": "scientific",
+      "arguments": {
+        "left": [
+          [
+            0.052,
+            -0.088,
+            -0.264,
+            0.313,
+            0.116,
+            0.621,
+            -0.519,
+            0.227,
+            0.42
+          ],
+          [
+            -0.04,
+            0.064,
+            0.188,
+            0.641,
+            -0.2,
+            -0.24,
+            -0.483,
+            -0.048,
+            -0.504
+          ],
+          [
+            -0.272,
+            0.036,
+            -0.068,
+            0.612,
+            -0.202,
+            -0.27,
+            0.464,
+            0.061,
+            0.537
+          ]
+        ],
+        "right": [
+          [
+            0.052,
+            -0.04,
+            -0.272
+          ],
+          [
+            -0.088,
+            0.064,
+            0.036
+          ],
+          [
+            -0.264,
+            0.188,
+            -0.068
+          ],
+          [
+            0.313,
+            0.641,
+            0.612
+          ],
+          [
+            0.116,
+            -0.2,
+            -0.202
+          ],
+          [
+            0.621,
+            -0.24,
+            -0.27
+          ],
+          [
+            -0.519,
+            -0.483,
+            0.464
+          ],
+          [
+            0.227,
+            -0.048,
+            0.061
+          ],
+          [
+            0.42,
+            -0.504,
+            0.537
+          ]
+        ]
+      },
+      "status": "success",
+      "output": {
+        "product": [
+          [
+            1.0745,
+            -0.0008499999999999763,
+            -0.0003350000000000425
+          ],
+          [
+            -0.0008499999999999763,
+            1.0391299999999999,
+            0.0002040000000000187
+          ],
+          [
+            -0.0003350000000000425,
+            0.0002040000000000187,
+            1.075538
+          ]
+        ],
+        "left_shape": [
+          3,
+          9
+        ],
+        "right_shape": [
+          9,
+          3
+        ],
+        "product_shape": [
+          3,
+          3
+        ],
+        "operation": "matrix_matrix"
+      },
+      "started_seconds": 419.2573791160248,
+      "finished_seconds": 420.92584496800555,
+      "duration_seconds": 1.6684658519807272,
+      "review_state_at_recording": "pending_review",
+      "final_result_status": "valid",
+      "selected_observation_for_final_node": "o0010"
+    },
+    {
+      "step_id": "s000050",
+      "array_index": 49,
+      "observation_id": "o0011",
+      "node": "plain_spectrum",
+      "tool": "SymmetricEigenDecomposition",
+      "kind": "scientific",
+      "arguments": {
+        "values": [
+          [
+            0.9993650000000001,
+            0.05291,
+            -0.0009350000000000597
+          ],
+          [
+            0.05291,
+            1.0006549999999999,
+            -0.00017099999999994
+          ],
+          [
+            -0.0009350000000000597,
+            -0.00017099999999994,
+            1.000628
+          ]
+        ]
+      },
+      "status": "success",
+      "output": {
+        "eigenvalues": [
+          0.9470905204117459,
+          1.0006219536213476,
+          1.0529355259669064
+        ],
+        "eigenvectors": [
+          [
+            0.7114191823678779,
+            -0.0032202943704715925,
+            0.7027605400584096
+          ],
+          [
+            -0.7026941815442144,
+            -0.017745146267525786,
+            0.711270691795923
+          ],
+          [
+            0.010180087569710047,
+            -0.9998373565176045,
+            -0.014887119565631567
+          ]
+        ]
+      },
+      "started_seconds": 432.39108215499436,
+      "finished_seconds": 434.09054363699397,
+      "duration_seconds": 1.699461481999606,
+      "review_state_at_recording": "pending_review",
+      "final_result_status": "valid",
+      "selected_observation_for_final_node": "o0011"
+    },
+    {
+      "step_id": "s000052",
+      "array_index": 51,
+      "observation_id": "o0012",
+      "node": "weighted_spectrum",
+      "tool": "SymmetricEigenDecomposition",
+      "kind": "scientific",
+      "arguments": {
+        "values": [
+          [
+            1.0745,
+            -0.0008499999999999763,
+            -0.0003350000000000425
+          ],
+          [
+            -0.0008499999999999763,
+            1.0391299999999999,
+            0.0002040000000000187
+          ],
+          [
+            -0.0003350000000000425,
+            0.0002040000000000187,
+            1.075538
+          ]
+        ]
+      },
+      "status": "success",
+      "output": {
+        "eigenvalues": [
+          1.0391085313449258,
+          1.0744174698743065,
+          1.0756419987807677
+        ],
+        "eigenvectors": [
+          [
+            -0.023958941488636552,
+            0.956805363728219,
+            -0.2897403407598853
+          ],
+          [
+            -0.9996984784645746,
+            -0.021371219072400915,
+            0.012092276500880184
+          ],
+          [
+            0.005377850719235376,
+            0.28994269595261374,
+            0.9570288980931411
+          ]
+        ]
+      },
+      "started_seconds": 456.82583704200806,
+      "finished_seconds": 458.84172842203407,
+      "duration_seconds": 2.015891380026005,
+      "review_state_at_recording": "pending_review",
+      "final_result_status": "valid",
+      "selected_observation_for_final_node": "o0012"
+    }
+  ]
+}

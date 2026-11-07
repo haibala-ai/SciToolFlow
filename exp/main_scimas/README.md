@@ -33,7 +33,7 @@ main_scimas/
 
 `predictions.json` 是统一结果集合；每条 `trace_path` 相对本目录解析。轨迹正文、模型响应、工具输入输出和时间戳保持原样。原始配置与生产指纹按 `source_id` 关联到 `metadata/production/`；历史绝对路径可通过 `metadata/path_map.json` 定位到本目录的工具产物。
 
-运行代码以 `2ade7929edfd4db5a324d7f33d230b0b16b43530` 为基础。精确源码、配置与检索索引快照保存在 `metadata/source_dependencies/`，逐文件哈希与来源索引位于 `metadata/sources.json`。快照不包含凭据或模型权重。
+**SciMas 项目版本（代码与实验数据发布）**：[395e670cb205076efe555a60963a1759d96b9686](https://github.com/haibala-ai/SciToolFlow/commit/395e670cb205076efe555a60963a1759d96b9686)。每条结果的精确执行源码、配置与检索索引快照保存在 `metadata/source_dependencies/`，逐文件哈希与来源索引位于 `metadata/sources.json`。快照不包含凭据或模型权重。
 
 ## 查看单题
 

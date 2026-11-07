@@ -1,0 +1,480 @@
+{
+  "task_id": "SMAS-0070",
+  "model": "deepseek-flash",
+  "variant": "full",
+  "trace": "exp/main_scimas/trajectories/SMAS-0070/trajectory.json",
+  "trace_sha256": "cf176d8f6aba677d746c0ed4a5790e569eda8e0b739270fd3a31d588f5ea7037",
+  "source_asset": "tasks/mini-100/assets/SMAS-0070_water_source.qout",
+  "source_sha256": "b276272a3eb1251c23231088ecccb3778510a1ef3c8364e3b932ea3df218f81c",
+  "selection": {
+    "population": "Full Mini-100 selected result set",
+    "criteria": [
+      "答案与编排通过",
+      "科学结果可直观展示",
+      "机制有真实执行证据"
+    ],
+    "candidates": [
+      {
+        "id": "SMAS-0070",
+        "reason": "主案例：振动模式、度量矩阵与真实局部修复，可结合科学可视化。",
+        "answer_correct": true,
+        "orchestration_credit": 1.0,
+        "tool_orchestration_score": 0.8888888888888888
+      },
+      {
+        "id": "SMAS-0004",
+        "reason": "早停补充案例：三个连接体候选中两个被排除，四个后续描述符节点未执行。",
+        "answer_correct": true,
+        "orchestration_credit": 1.0,
+        "tool_orchestration_score": 1.0
+      },
+      {
+        "id": "SMAS-0101",
+        "reason": "科学歧义补充案例：质量与官能团证据仍允许两个结构异构体。",
+        "answer_correct": true,
+        "orchestration_credit": 1.0,
+        "tool_orchestration_score": 0.9090909090909093
+      }
+    ],
+    "representativeness": "目的性案例选择，不是随机抽样或总体性能证据"
+  },
+  "question": "Normal-mode vector metric and IR-column alignment audit. Use the bundled completed water Q-Chem source without inventing a new calculation. Read the three mode displacement tensors, three frequencies and three IR intensities in printed mode order. Flatten each mode in [atom0 x,y,z,atom1 x,y,z,atom2 x,y,z] order into M(3x9). Report frequencies,ir_intensities,plain_gram=M M^T, and weighted_gram=(M D)(M D)^T with D=diag(4,4,4,1,1,1,1,1,1). These explicitly declared metric weights use O:H=16:1 as a model convention. Report ascending spectra plain_spectrum,weighted_spectrum, and intensity_fractions = intensities/sum(intensities). Do not assume printed rounded displacement vectors are orthonormal in either metric. Return the named answer fields as JSON. Numeric values must agree within absolute 1e-6 plus relative 1e-6; winner ties use absolute 1e-9. Array order follows the supplied data order unless explicitly stated otherwise. Required output fields: plain_gram, plain_spectrum, weighted_gram, weighted_spectrum, frequencies, ir_intensities, intensity_fractions. The bundled source is reused as a fixed computational record; this exercise does not run quantum chemistry or assign a Materials Project identity.",
+  "score": {
+    "id": "SMAS-0070",
+    "runtime_completed": true,
+    "tool_plan_correct": true,
+    "answer_correct": true,
+    "answer_schema_valid": true,
+    "orchestration_credit": 1.0,
+    "selection_efficiency": 0.7272727272727273,
+    "tool_orchestration_score": 0.8888888888888888,
+    "planning_reportable": true,
+    "planning_diagnostics": {
+      "selected_routes": {
+        "cap_frequency_axis": [
+          "freq"
+        ],
+        "cap_ir_axis": [
+          "ir"
+        ],
+        "cap_mode_vectors": [
+          "modes"
+        ],
+        "cap_plain_metric": [
+          "plain"
+        ],
+        "cap_plain_spectrum": [
+          "plain_spectrum"
+        ],
+        "cap_weighted_metric": [
+          "weighted_gram"
+        ],
+        "cap_weighted_spectrum": [
+          "weighted_spectrum"
+        ],
+        "optional_mode_weight_methods": [
+          "mode_weight_preparation"
+        ]
+      },
+      "charged_scientific_calls": 11,
+      "matched_scientific_calls": 8,
+      "supporting_work_observations": [],
+      "redundant_semantic_observations": []
+    },
+    "pending_review": false,
+    "evidence_integrity": {
+      "verified": true,
+      "trace_sha256": "cf176d8f6aba677d746c0ed4a5790e569eda8e0b739270fd3a31d588f5ea7037"
+    },
+    "resource_usage": {
+      "verified": true,
+      "policy_version": "task-resources.v1",
+      "exceeded": false,
+      "model_requests": 32,
+      "elapsed_seconds": 523.7748062150204,
+      "prompt_tokens": 570176,
+      "completion_tokens": 84957,
+      "observed_prompt_tokens": 570176,
+      "observed_completion_tokens": 84957,
+      "requests_with_incomplete_token_usage": 0
+    },
+    "resource_policy_compliant": true,
+    "domain": "Material",
+    "source_id": "23c74906d8181482"
+  },
+  "metrics": {
+    "id": "SMAS-0070",
+    "status": "completed",
+    "completed": true,
+    "trace_path": "trajectories/SMAS-0070/trajectory.json",
+    "failure_reason": null,
+    "infrastructure_failure": null,
+    "schema_version": "task-metrics.v2",
+    "runtime_seconds": 523.7750806360273,
+    "active_runtime_seconds": 523.7750806360273,
+    "wall_runtime_seconds": 523.7750806360273,
+    "communication_wait_seconds": 0.0,
+    "communication_fault_seconds": 0.0,
+    "communication_overlap_seconds": 0,
+    "excluded_communication_intervals": [],
+    "runtime_reportable": true,
+    "tool_calls": 12,
+    "scientific_tool_calls": 11,
+    "discovery_tool_calls": 1,
+    "tool_calls_complete": true,
+    "model_requests": 32,
+    "input_tokens": 570176,
+    "output_tokens": 84957,
+    "total_tokens": 655133,
+    "observed_input_tokens": 570176,
+    "observed_output_tokens": 84957,
+    "requests_missing_input_usage": 0,
+    "requests_missing_output_usage": 0,
+    "token_usage_complete": true,
+    "source_id": "23c74906d8181482"
+  },
+  "scientific_calls": [
+    {
+      "node": "modes",
+      "tool": "ReadQChemFrequencyModes",
+      "observation_id": "o0002",
+      "status": "success",
+      "started_seconds": 202.0231445709942,
+      "finished_seconds": 206.0927178870188
+    },
+    {
+      "node": "ir",
+      "tool": "ReadQChemIRIntensities",
+      "observation_id": "o0003",
+      "status": "success",
+      "started_seconds": 204.30071434099227,
+      "finished_seconds": 206.9288201610325
+    },
+    {
+      "node": "modes",
+      "tool": "ReadQChemFrequencyModes",
+      "observation_id": "o0004",
+      "status": "success",
+      "started_seconds": 314.5030450170161,
+      "finished_seconds": 317.6872240480152
+    },
+    {
+      "node": "intensity_fractions",
+      "tool": "NormalizeNumericRows",
+      "observation_id": "o0005",
+      "status": "success",
+      "started_seconds": 331.11282897699857,
+      "finished_seconds": 332.5835426489939
+    },
+    {
+      "node": "mode_matrix",
+      "tool": "ScaleNumericMatrix",
+      "observation_id": "o0006",
+      "status": "success",
+      "started_seconds": 355.5877891420387,
+      "finished_seconds": 356.97839621204184
+    },
+    {
+      "node": "frequencies",
+      "tool": "GetMolecularFrequencies",
+      "observation_id": "o0007",
+      "status": "success",
+      "started_seconds": 371.88181669299956,
+      "finished_seconds": 375.0958131729858
+    },
+    {
+      "node": "weighted_modes",
+      "tool": "ScaleNumericMatrix",
+      "observation_id": "o0008",
+      "status": "success",
+      "started_seconds": 406.45661845302675,
+      "finished_seconds": 407.9923949590302
+    },
+    {
+      "node": "plain_gram",
+      "tool": "MatrixMultiply",
+      "observation_id": "o0009",
+      "status": "success",
+      "started_seconds": 406.59531422599684,
+      "finished_seconds": 408.3668734279927
+    },
+    {
+      "node": "weighted_gram",
+      "tool": "MatrixMultiply",
+      "observation_id": "o0010",
+      "status": "success",
+      "started_seconds": 419.2573791160248,
+      "finished_seconds": 420.92584496800555
+    },
+    {
+      "node": "plain_spectrum",
+      "tool": "SymmetricEigenDecomposition",
+      "observation_id": "o0011",
+      "status": "success",
+      "started_seconds": 432.39108215499436,
+      "finished_seconds": 434.09054363699397
+    },
+    {
+      "node": "weighted_spectrum",
+      "tool": "SymmetricEigenDecomposition",
+      "observation_id": "o0012",
+      "status": "success",
+      "started_seconds": 456.82583704200806,
+      "finished_seconds": 458.84172842203407
+    }
+  ],
+  "overlapping_execution_intervals": [
+    {
+      "nodes": [
+        "modes",
+        "ir"
+      ],
+      "observations": [
+        "o0002",
+        "o0003"
+      ],
+      "start_seconds": 204.30071434099227,
+      "end_seconds": 206.0927178870188,
+      "overlap_seconds": 1.7920035460265353
+    },
+    {
+      "nodes": [
+        "weighted_modes",
+        "plain_gram"
+      ],
+      "observations": [
+        "o0008",
+        "o0009"
+      ],
+      "start_seconds": 406.59531422599684,
+      "end_seconds": 407.9923949590302,
+      "overlap_seconds": 1.3970807330333628
+    }
+  ],
+  "repair": {
+    "request": {
+      "nodes": [
+        "modes",
+        "weighted_modes",
+        "plain_gram"
+      ],
+      "reason": "ReadQChemFrequencyModes returned value with shape 3x3x3 (three modes, each 3 atoms x 3 Cartesian components), but the declared modes check expects 3x9, and both weighted_modes and plain_gram bind that tensor directly as a 3x9 matrix. Structural validation therefore failed on a concrete shape/binding mismatch, so the observation cannot yet serve as M(3x9).",
+      "suggested_change": "Update the modes check to accept the parser's actual 3x3x3 shape, then explicitly flatten each mode in atom-major order into a 3x9 M for weighted_modes and plain_gram—for example by constructing the 3x9 nested list from value[mode][atom][component] bindings—before calling ScaleNumericMatrix and MatrixMultiply.",
+      "verification": "After repair, modes' structural_validation should be empty and its value should be 3x3x3; the explicitly flattened M should be 3x9; and ScaleNumericMatrix/MatrixMultiply should return the expected 3x9 and 3x3 shapes without shape errors."
+    },
+    "changes": {
+      "added_nodes": [
+        "mode_matrix"
+      ],
+      "removed_nodes": [],
+      "changed_fields": {
+        "modes": [
+          "checks",
+          "object",
+          "purpose",
+          "semantics"
+        ],
+        "plain_gram": [
+          "arguments",
+          "purpose"
+        ],
+        "weighted_modes": [
+          "arguments",
+          "checks",
+          "purpose"
+        ]
+      },
+      "operational_change": true,
+      "deliverables_changed": true
+    },
+    "delta": {
+      "changed": [
+        "mode_matrix",
+        "modes",
+        "plain_gram",
+        "weighted_modes"
+      ],
+      "invalidate": [
+        "mode_matrix",
+        "modes",
+        "plain_gram",
+        "plain_spectrum",
+        "weighted_gram",
+        "weighted_modes",
+        "weighted_spectrum"
+      ]
+    },
+    "retained": [],
+    "execution_evidence": {
+      "accepted_nodes": [
+        "mode_matrix",
+        "modes",
+        "plain_gram",
+        "plain_spectrum",
+        "weighted_gram",
+        "weighted_modes",
+        "weighted_spectrum"
+      ],
+      "excluded_nodes": [],
+      "pending_nodes": [],
+      "graph_sha256": "666cebe9144e480e7ac8c9cf8d0ec30d2fedf64e43b3daa0a2a57b739a94ed2e",
+      "status": "affected_evidence_available",
+      "task_success_proven": false
+    }
+  },
+  "protocol_errors": 1,
+  "early_stop_triggered": false,
+  "final_answer": {
+    "plain_gram": [
+      [
+        0.9993650000000001,
+        0.05291,
+        -0.0009350000000000597
+      ],
+      [
+        0.05291,
+        1.0006549999999999,
+        -0.00017099999999994
+      ],
+      [
+        -0.0009350000000000597,
+        -0.00017099999999994,
+        1.000628
+      ]
+    ],
+    "plain_spectrum": [
+      0.9470905204117459,
+      1.0006219536213476,
+      1.0529355259669064
+    ],
+    "weighted_gram": [
+      [
+        1.0745,
+        -0.0008499999999999763,
+        -0.0003350000000000425
+      ],
+      [
+        -0.0008499999999999763,
+        1.0391299999999999,
+        0.0002040000000000187
+      ],
+      [
+        -0.0003350000000000425,
+        0.0002040000000000187,
+        1.075538
+      ]
+    ],
+    "weighted_spectrum": [
+      1.0391085313449258,
+      1.0744174698743065,
+      1.0756419987807677
+    ],
+    "frequencies": [
+      1590.33,
+      3884.52,
+      3980.89
+    ],
+    "ir_intensities": [
+      106.754,
+      26.209,
+      128.758
+    ],
+    "intensity_fractions": [
+      0.40789237394018824,
+      0.10014098983268442,
+      0.4919666362271274
+    ]
+  },
+  "source_geometry_angstrom": [
+    [
+      0.1825093492,
+      1.9982356762,
+      0.3462438878
+    ],
+    [
+      1.0251599245,
+      1.719964667,
+      -0.0243739112
+    ],
+    [
+      -0.4433491748,
+      1.9155221064,
+      -0.3791616702
+    ]
+  ],
+  "source_mode_vectors": [
+    [
+      [
+        0.013,
+        -0.022,
+        -0.066
+      ],
+      [
+        0.313,
+        0.116,
+        0.621
+      ],
+      [
+        -0.519,
+        0.227,
+        0.42
+      ]
+    ],
+    [
+      [
+        -0.01,
+        0.016,
+        0.047
+      ],
+      [
+        0.641,
+        -0.2,
+        -0.24
+      ],
+      [
+        -0.483,
+        -0.048,
+        -0.504
+      ]
+    ],
+    [
+      [
+        -0.068,
+        0.009,
+        -0.017
+      ],
+      [
+        0.612,
+        -0.202,
+        -0.27
+      ],
+      [
+        0.464,
+        0.061,
+        0.537
+      ]
+    ]
+  ],
+  "independent_numeric_check": {
+    "plain_gram": 0.0,
+    "weighted_gram": 0.0,
+    "plain_spectrum": 0.0,
+    "weighted_spectrum": 0.0,
+    "frequencies": 0.0,
+    "ir_intensities": 0.0,
+    "intensity_fractions": 0.0
+  },
+  "figure_encoding": {
+    "graph": "Final repaired task graph, with explicit repair annotation; not an execution timeline.",
+    "molecules": "Source geometry and mode vectors projected into the molecular plane; arrows scaled uniformly by 1.05 and offset to the atom surface for readability, not physical amplitudes.",
+    "matrix_table": "Signed Gram entries and ascending eigenvalues rounded to five decimal places.",
+    "bar_chart": "IR intensity fractions in printed mode order, expressed as percentages.",
+    "limits": [
+      "No new quantum-chemistry calculation",
+      "No early-stop event in this case",
+      "No cross-task experience-transfer or speedup claim",
+      "Repair retained list is empty; IR completed in flight and was called once",
+      "One planner protocol error and one repeated mode read remain in the full trace"
+    ]
+  }
+}

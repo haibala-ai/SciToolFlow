@@ -1,0 +1,3291 @@
+{
+  "notes": "Dependency edges, not execution chronology. version 1 has the incorrect modes shape; version 2 is the accepted repaired graph.",
+  "graphs": [
+    {
+      "version": 1,
+      "parent_sha256": null,
+      "nodes": [
+        {
+          "id": "modes",
+          "tool": "ReadQChemFrequencyModes",
+          "purpose": "Parse the three printed normal-mode displacement tensors from the fixed bundled completed Q-Chem output, preserving printed mode order and yielding the 3x9 mode matrix M in atom-major [atom0 x,y,z, atom1 x,y,z, atom2 x,y,z] order.",
+          "object": "Printed Q-Chem frequency modes (3 modes x 9 displacement components) from the supplied completed output",
+          "arguments": {
+            "qchem_file": {
+              "kind": "task",
+              "path": [
+                "inputs",
+                "source"
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "value"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "array",
+                  "minItems": 9,
+                  "maxItems": 9,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "Q-Chem displacement-vector normalization",
+            "method": "read-only completed Q-Chem parser",
+            "concept": "normal-mode displacement matrix M (3x9)"
+          }
+        },
+        {
+          "id": "frequencies",
+          "tool": "GetMolecularFrequencies",
+          "purpose": "Read the three signed vibrational frequencies in printed mode order from the same fixed completed Q-Chem output; these are the frequencies answer array.",
+          "object": "Q-Chem vibrational frequencies",
+          "arguments": {
+            "qchem_file": {
+              "kind": "task",
+              "path": [
+                "inputs",
+                "source"
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "value"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "cm^-1",
+            "method": "read-only completed Q-Chem parser",
+            "concept": "vibrational frequencies in printed mode order"
+          }
+        },
+        {
+          "id": "ir",
+          "tool": "ReadQChemIRIntensities",
+          "purpose": "Read the three IR intensities in printed mode order from the same fixed completed Q-Chem output; these are the ir_intensities answer array.",
+          "object": "Q-Chem IR intensities",
+          "arguments": {
+            "qchem_file": {
+              "kind": "task",
+              "path": [
+                "inputs",
+                "source"
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "value"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "km/mol",
+            "method": "read-only completed Q-Chem parser",
+            "concept": "IR intensities aligned to printed mode order"
+          }
+        },
+        {
+          "id": "weighted_modes",
+          "tool": "ScaleNumericMatrix",
+          "purpose": "Compute M D by right-scaling the 3x9 mode matrix columns with the declared metric D=diag(4,4,4,1,1,1,1,1,1) (O:H=16:1 convention), without normalizing or orthonormalizing the printed modes.",
+          "object": "Weighted normal-mode matrix M D",
+          "arguments": {
+            "values": {
+              "kind": "node",
+              "node": "modes",
+              "path": [
+                "value"
+              ]
+            },
+            "column_factors": {
+              "kind": "literal",
+              "value": [
+                4,
+                4,
+                4,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            }
+          },
+          "semantics": {
+            "unit": "weighted displacement-vector normalization",
+            "method": "explicit column scaling",
+            "concept": "M D used for the weighted Gram matrix"
+          }
+        },
+        {
+          "id": "plain_gram",
+          "tool": "MatrixMultiply",
+          "purpose": "Compute plain_gram = M M^T by multiplying the 3x9 M by its explicitly constructed 9x3 transpose; the rounded printed vectors are used as data with no orthonormalization.",
+          "object": "Plain 3x3 Gram matrix M M^T",
+          "arguments": {
+            "left": {
+              "kind": "node",
+              "node": "modes",
+              "path": [
+                "value"
+              ]
+            },
+            "right": {
+              "kind": "list",
+              "items": [
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        1
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        2
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        3
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        3
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        3
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        4
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        4
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        4
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        5
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        5
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        5
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        6
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        6
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        6
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        7
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        7
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        7
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        8
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        8
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        8
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "product"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "Q-Chem displacement-vector normalization squared",
+            "method": "dense matrix multiplication",
+            "concept": "plain Gram matrix M M^T"
+          }
+        },
+        {
+          "id": "weighted_gram",
+          "tool": "MatrixMultiply",
+          "purpose": "Compute weighted_gram = (M D)(M D)^T by multiplying the scaled 3x9 matrix by its explicitly constructed 9x3 transpose, with no orthonormality assumption.",
+          "object": "Weighted 3x3 Gram matrix (M D)(M D)^T",
+          "arguments": {
+            "left": {
+              "kind": "node",
+              "node": "weighted_modes",
+              "path": [
+                "values"
+              ]
+            },
+            "right": {
+              "kind": "list",
+              "items": [
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        1
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        2
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        3
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        3
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        3
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        4
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        4
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        4
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        5
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        5
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        5
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        6
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        6
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        6
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        7
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        7
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        7
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        8
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        8
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        8
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "product"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "weighted displacement-vector normalization squared",
+            "method": "dense matrix multiplication",
+            "concept": "weighted Gram matrix (M D)(M D)^T"
+          }
+        },
+        {
+          "id": "plain_spectrum",
+          "tool": "SymmetricEigenDecomposition",
+          "purpose": "Compute the ascending spectrum of plain_gram as its three real eigenvalues (returned already sorted ascending), i.e. plain_spectrum.",
+          "object": "Ascending spectrum of the plain Gram matrix",
+          "arguments": {
+            "values": {
+              "kind": "node",
+              "node": "plain_gram",
+              "path": [
+                "product"
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "eigenvalues"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "Q-Chem displacement-vector normalization squared",
+            "method": "symmetric eigendecomposition",
+            "concept": "plain_spectrum = ascending eigenvalues of M M^T"
+          }
+        },
+        {
+          "id": "weighted_spectrum",
+          "tool": "SymmetricEigenDecomposition",
+          "purpose": "Compute the ascending spectrum of weighted_gram as its three real eigenvalues (returned already sorted ascending), i.e. weighted_spectrum.",
+          "object": "Ascending spectrum of the weighted Gram matrix",
+          "arguments": {
+            "values": {
+              "kind": "node",
+              "node": "weighted_gram",
+              "path": [
+                "product"
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "eigenvalues"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "weighted displacement-vector normalization squared",
+            "method": "symmetric eigendecomposition",
+            "concept": "weighted_spectrum = ascending eigenvalues of (M D)(M D)^T"
+          }
+        },
+        {
+          "id": "intensity_fractions",
+          "tool": "NormalizeNumericRows",
+          "purpose": "Divide the three IR intensities by their sum in printed mode order by supplying them as a single row; the flat intensity_fractions answer array is proportions[0] of the result.",
+          "object": "IR intensity fractions in printed mode order",
+          "arguments": {
+            "matrix": {
+              "kind": "list",
+              "items": [
+                {
+                  "kind": "node",
+                  "node": "ir",
+                  "path": [
+                    "value"
+                  ]
+                }
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "proportions"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "dimensionless",
+            "method": "row-sum proportion normalization",
+            "concept": "intensity_fractions = intensities / sum(intensities)"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "source": "modes",
+          "target": "weighted_modes",
+          "source_paths": [
+            [
+              "value"
+            ]
+          ]
+        },
+        {
+          "source": "modes",
+          "target": "plain_gram",
+          "source_paths": [
+            [
+              "value"
+            ],
+            [
+              "value",
+              0,
+              0
+            ],
+            [
+              "value",
+              1,
+              0
+            ],
+            [
+              "value",
+              2,
+              0
+            ],
+            [
+              "value",
+              0,
+              1
+            ],
+            [
+              "value",
+              1,
+              1
+            ],
+            [
+              "value",
+              2,
+              1
+            ],
+            [
+              "value",
+              0,
+              2
+            ],
+            [
+              "value",
+              1,
+              2
+            ],
+            [
+              "value",
+              2,
+              2
+            ],
+            [
+              "value",
+              0,
+              3
+            ],
+            [
+              "value",
+              1,
+              3
+            ],
+            [
+              "value",
+              2,
+              3
+            ],
+            [
+              "value",
+              0,
+              4
+            ],
+            [
+              "value",
+              1,
+              4
+            ],
+            [
+              "value",
+              2,
+              4
+            ],
+            [
+              "value",
+              0,
+              5
+            ],
+            [
+              "value",
+              1,
+              5
+            ],
+            [
+              "value",
+              2,
+              5
+            ],
+            [
+              "value",
+              0,
+              6
+            ],
+            [
+              "value",
+              1,
+              6
+            ],
+            [
+              "value",
+              2,
+              6
+            ],
+            [
+              "value",
+              0,
+              7
+            ],
+            [
+              "value",
+              1,
+              7
+            ],
+            [
+              "value",
+              2,
+              7
+            ],
+            [
+              "value",
+              0,
+              8
+            ],
+            [
+              "value",
+              1,
+              8
+            ],
+            [
+              "value",
+              2,
+              8
+            ]
+          ]
+        },
+        {
+          "source": "weighted_modes",
+          "target": "weighted_gram",
+          "source_paths": [
+            [
+              "values"
+            ],
+            [
+              "values",
+              0,
+              0
+            ],
+            [
+              "values",
+              1,
+              0
+            ],
+            [
+              "values",
+              2,
+              0
+            ],
+            [
+              "values",
+              0,
+              1
+            ],
+            [
+              "values",
+              1,
+              1
+            ],
+            [
+              "values",
+              2,
+              1
+            ],
+            [
+              "values",
+              0,
+              2
+            ],
+            [
+              "values",
+              1,
+              2
+            ],
+            [
+              "values",
+              2,
+              2
+            ],
+            [
+              "values",
+              0,
+              3
+            ],
+            [
+              "values",
+              1,
+              3
+            ],
+            [
+              "values",
+              2,
+              3
+            ],
+            [
+              "values",
+              0,
+              4
+            ],
+            [
+              "values",
+              1,
+              4
+            ],
+            [
+              "values",
+              2,
+              4
+            ],
+            [
+              "values",
+              0,
+              5
+            ],
+            [
+              "values",
+              1,
+              5
+            ],
+            [
+              "values",
+              2,
+              5
+            ],
+            [
+              "values",
+              0,
+              6
+            ],
+            [
+              "values",
+              1,
+              6
+            ],
+            [
+              "values",
+              2,
+              6
+            ],
+            [
+              "values",
+              0,
+              7
+            ],
+            [
+              "values",
+              1,
+              7
+            ],
+            [
+              "values",
+              2,
+              7
+            ],
+            [
+              "values",
+              0,
+              8
+            ],
+            [
+              "values",
+              1,
+              8
+            ],
+            [
+              "values",
+              2,
+              8
+            ]
+          ]
+        },
+        {
+          "source": "plain_gram",
+          "target": "plain_spectrum",
+          "source_paths": [
+            [
+              "product"
+            ]
+          ]
+        },
+        {
+          "source": "weighted_gram",
+          "target": "weighted_spectrum",
+          "source_paths": [
+            [
+              "product"
+            ]
+          ]
+        },
+        {
+          "source": "ir",
+          "target": "intensity_fractions",
+          "source_paths": [
+            [
+              "value"
+            ]
+          ]
+        }
+      ],
+      "deliverables": [
+        {
+          "requirement": "source_record",
+          "nodes": [
+            "modes",
+            "frequencies",
+            "ir"
+          ],
+          "description": "All scientific values are parsed by read-only parsers from the single bundled completed water Q-Chem output bound from task inputs; no new quantum-chemistry calculation is run and no Materials Project identity is assigned."
+        },
+        {
+          "requirement": "freq_ir_order",
+          "nodes": [
+            "frequencies",
+            "ir"
+          ],
+          "description": "frequencies and ir_intensities are the parsed three-element arrays in printed mode order (cm^-1 and km/mol respectively)."
+        },
+        {
+          "requirement": "mode_matrix_M",
+          "nodes": [
+            "modes"
+          ],
+          "description": "The three printed mode displacement tensors form the 3x9 matrix M with rows in printed mode order and columns in atom-major [atom0 x,y,z, atom1 x,y,z, atom2 x,y,z] order."
+        },
+        {
+          "requirement": "plain_gram",
+          "nodes": [
+            "plain_gram"
+          ],
+          "description": "plain_gram is the reported 3x3 matrix product M M^T computed directly from the parsed M."
+        },
+        {
+          "requirement": "weighted_gram",
+          "nodes": [
+            "weighted_modes",
+            "weighted_gram"
+          ],
+          "description": "weighted_gram is the reported 3x3 matrix product (M D)(M D)^T with D=diag(4,4,4,1,1,1,1,1,1) applied as explicit column factors."
+        },
+        {
+          "requirement": "plain_weighted_spectra",
+          "nodes": [
+            "plain_spectrum",
+            "weighted_spectrum"
+          ],
+          "description": "plain_spectrum and weighted_spectrum are the ascending eigenvalue sets of plain_gram and weighted_gram respectively, as returned by the symmetric eigendecomposition."
+        },
+        {
+          "requirement": "intensity_fractions",
+          "nodes": [
+            "intensity_fractions"
+          ],
+          "description": "intensity_fractions is proportions[0] of the row-normalized IR intensities, i.e. each intensity divided by the sum of the three, in printed mode order."
+        },
+        {
+          "requirement": "no_orthonormality_assumption",
+          "nodes": [
+            "modes",
+            "weighted_modes",
+            "plain_gram",
+            "weighted_gram",
+            "plain_spectrum",
+            "weighted_spectrum"
+          ],
+          "description": "No node rescales, orthogonalizes or renormalizes the rounded printed displacement vectors; both Gram matrices and their spectra are computed directly from the parsed coordinates."
+        }
+      ],
+      "requirements": [
+        {
+          "id": "source_record",
+          "description": "Use the bundled completed water Q-Chem output as the fixed computational record; do not invent, rerun, or substitute a new quantum-chemistry calculation, and do not assign a Materials Project identity.",
+          "evidence": "The bundled source is reused as a fixed computational record; this exercise does not run quantum chemistry or assign a Materials Project identity.",
+          "mode": "complete"
+        },
+        {
+          "id": "freq_ir_order",
+          "description": "Extract exactly three vibrational frequencies and three IR intensities from the source in printed mode order and report them as the frequencies and ir_intensities arrays, preserving the supplied data order.",
+          "evidence": "Read the three mode displacement tensors, three frequencies and three IR intensities in printed mode order.",
+          "mode": "complete"
+        },
+        {
+          "id": "mode_matrix_M",
+          "description": "Read the three normal-mode displacement tensors and flatten each mode in atom-major coordinate order [atom0 x,y,z, atom1 x,y,z, atom2 x,y,z] to form the 3x9 mode matrix M.",
+          "evidence": "Read the three mode displacement tensors, three frequencies and three IR intensities in printed mode order. Flatten each mode in [atom0 x,y,z,atom1 x,y,z,atom2 x,y,z] order into M(3x9).",
+          "mode": "complete"
+        },
+        {
+          "id": "plain_gram",
+          "description": "Compute and report plain_gram = M M^T as the 3x3 unweighted Gram matrix from the flattened printed mode vectors.",
+          "evidence": "Report frequencies,ir_intensities,plain_gram=M M^T, and weighted_gram=(M D)(M D)^T with D=diag(4,4,4,1,1,1,1,1,1).",
+          "mode": "complete"
+        },
+        {
+          "id": "weighted_gram",
+          "description": "Compute and report weighted_gram = (M D)(M D)^T as the 3x3 weighted Gram matrix with D = diag(4,4,4,1,1,1,1,1,1), using the declared O:H=16:1 model convention.",
+          "evidence": "Report frequencies,ir_intensities,plain_gram=M M^T, and weighted_gram=(M D)(M D)^T with D=diag(4,4,4,1,1,1,1,1,1). These explicitly declared metric weights use O:H=16:1 as a model convention.",
+          "mode": "complete"
+        },
+        {
+          "id": "plain_weighted_spectra",
+          "description": "Report plain_spectrum and weighted_spectrum as the ascending spectra of the plain and weighted Gram matrices, respectively, with each spectrum sorted in ascending order.",
+          "evidence": "Report ascending spectra plain_spectrum,weighted_spectrum, and intensity_fractions = intensities/sum(intensities).",
+          "mode": "complete"
+        },
+        {
+          "id": "intensity_fractions",
+          "description": "Compute intensity_fractions as each IR intensity divided by the sum of the three IR intensities, preserving the printed mode order.",
+          "evidence": "Report ascending spectra plain_spectrum,weighted_spectrum, and intensity_fractions = intensities/sum(intensities).",
+          "mode": "complete"
+        },
+        {
+          "id": "no_orthonormality_assumption",
+          "description": "Treat the printed rounded displacement vectors as data and do not assume or enforce orthonormality in either metric when forming M, the Gram matrices, or their spectra.",
+          "evidence": "Do not assume printed rounded displacement vectors are orthonormal in either metric.",
+          "mode": "complete"
+        }
+      ],
+      "contract_hashes": {
+        "ReadQChemFrequencyModes": "7e24b2ec385a2f69157f08efab3246d81e19dc5fc4d352b5ff2bf639dd9043c0",
+        "GetMolecularFrequencies": "082a2316d8c17ddd3b00fc5a4d31bec452eaf3f9b2ed6838c02a63e91a8d4dd1",
+        "ReadQChemIRIntensities": "7acd351b2488b6b3830da5448f85647d5ae6584d9b34a723a2a2c31c809116de",
+        "ScaleNumericMatrix": "b9c102cdc76083a1fba3ec0223e722df280582170eed93ccc6a6e990f588aec1",
+        "MatrixMultiply": "cdd46046397ba8066462678d934191deb7dd19e04890dabd9f23e657aeaa1f4e",
+        "SymmetricEigenDecomposition": "335be25dcab4f1391a7742d9647cbd5873f1c3ef17e05f8b877d6edbb34729d9",
+        "NormalizeNumericRows": "acea12b9f49163826a4f8fc0d38f0a9631e248c14e4e4aa5b5b8b78d8a30adc8"
+      }
+    },
+    {
+      "version": 2,
+      "parent_sha256": "38433bce5a8965206be70ce4cbbb2f8ad968f4420e33255a77877bc5f5b31272",
+      "nodes": [
+        {
+          "id": "modes",
+          "tool": "ReadQChemFrequencyModes",
+          "purpose": "Parse the three printed normal-mode displacement tensors from the fixed bundled completed Q-Chem output, preserving printed mode order and retaining the parser's native 3x3x3 (mode, atom, Cartesian component) layout for explicit flattening downstream.",
+          "object": "Printed Q-Chem frequency modes as a 3 modes x 3 atoms x 3 Cartesian components tensor from the supplied completed output",
+          "arguments": {
+            "qchem_file": {
+              "kind": "task",
+              "path": [
+                "inputs",
+                "source"
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "value"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "array",
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "Q-Chem displacement-vector normalization",
+            "method": "read-only completed Q-Chem parser",
+            "concept": "printed normal-mode displacement tensor (mode, atom, component)"
+          }
+        },
+        {
+          "id": "frequencies",
+          "tool": "GetMolecularFrequencies",
+          "purpose": "Read the three signed vibrational frequencies in printed mode order from the same fixed completed Q-Chem output; these are the frequencies answer array.",
+          "object": "Q-Chem vibrational frequencies",
+          "arguments": {
+            "qchem_file": {
+              "kind": "task",
+              "path": [
+                "inputs",
+                "source"
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "value"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "cm^-1",
+            "method": "read-only completed Q-Chem parser",
+            "concept": "vibrational frequencies in printed mode order"
+          }
+        },
+        {
+          "id": "ir",
+          "tool": "ReadQChemIRIntensities",
+          "purpose": "Read the three IR intensities in printed mode order from the same fixed completed Q-Chem output; these are the ir_intensities answer array.",
+          "object": "Q-Chem IR intensities",
+          "arguments": {
+            "qchem_file": {
+              "kind": "task",
+              "path": [
+                "inputs",
+                "source"
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "value"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "km/mol",
+            "method": "read-only completed Q-Chem parser",
+            "concept": "IR intensities aligned to printed mode order"
+          }
+        },
+        {
+          "id": "mode_matrix",
+          "tool": "ScaleNumericMatrix",
+          "purpose": "Materialize the flattened 3x9 mode matrix M explicitly from the parser's 3x3x3 tensor, placing each mode's components in atom-major [atom0 x,y,z, atom1 x,y,z, atom2 x,y,z] order; no scaling, normalization or orthonormalization is applied.",
+          "object": "Flattened normal-mode displacement matrix M (3x9)",
+          "arguments": {
+            "values": {
+              "kind": "list",
+              "items": [
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        0,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        1,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        1,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        2,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        2,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        0,
+                        2,
+                        2
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        0,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        1,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        1,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        2,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        2,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        1,
+                        2,
+                        2
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        0,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        1,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        1,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        2,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        2,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "modes",
+                      "path": [
+                        "value",
+                        2,
+                        2,
+                        2
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "values"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "array",
+                  "minItems": 9,
+                  "maxItems": 9,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "Q-Chem displacement-vector normalization",
+            "method": "explicit atom-major flattening from the parser tensor into a supplied matrix",
+            "concept": "flattened normal-mode displacement matrix M (3x9)"
+          }
+        },
+        {
+          "id": "weighted_modes",
+          "tool": "ScaleNumericMatrix",
+          "purpose": "Compute M D by right-scaling the flattened 3x9 mode matrix columns with the declared metric D=diag(4,4,4,1,1,1,1,1,1) (O:H=16:1 convention), without normalizing or orthonormalizing the printed modes.",
+          "object": "Weighted normal-mode matrix M D",
+          "arguments": {
+            "values": {
+              "kind": "node",
+              "node": "mode_matrix",
+              "path": [
+                "values"
+              ]
+            },
+            "column_factors": {
+              "kind": "literal",
+              "value": [
+                4,
+                4,
+                4,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "values"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "array",
+                  "minItems": 9,
+                  "maxItems": 9,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "weighted displacement-vector normalization",
+            "method": "explicit column scaling",
+            "concept": "M D used for the weighted Gram matrix"
+          }
+        },
+        {
+          "id": "plain_gram",
+          "tool": "MatrixMultiply",
+          "purpose": "Compute plain_gram = M M^T by multiplying the explicitly flattened 3x9 M by its explicitly constructed 9x3 transpose; the rounded printed vectors are used as data with no orthonormalization.",
+          "object": "Plain 3x3 Gram matrix M M^T",
+          "arguments": {
+            "left": {
+              "kind": "node",
+              "node": "mode_matrix",
+              "path": [
+                "values"
+              ]
+            },
+            "right": {
+              "kind": "list",
+              "items": [
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        2,
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        1,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        2,
+                        1
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        0,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        1,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        2,
+                        2
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        0,
+                        3
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        1,
+                        3
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        2,
+                        3
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        0,
+                        4
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        1,
+                        4
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        2,
+                        4
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        0,
+                        5
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        1,
+                        5
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        2,
+                        5
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        0,
+                        6
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        1,
+                        6
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        2,
+                        6
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        0,
+                        7
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        1,
+                        7
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        2,
+                        7
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        0,
+                        8
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        1,
+                        8
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "mode_matrix",
+                      "path": [
+                        "values",
+                        2,
+                        8
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "product"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "Q-Chem displacement-vector normalization squared",
+            "method": "dense matrix multiplication",
+            "concept": "plain Gram matrix M M^T"
+          }
+        },
+        {
+          "id": "weighted_gram",
+          "tool": "MatrixMultiply",
+          "purpose": "Compute weighted_gram = (M D)(M D)^T by multiplying the scaled 3x9 matrix by its explicitly constructed 9x3 transpose, with no orthonormality assumption.",
+          "object": "Weighted 3x3 Gram matrix (M D)(M D)^T",
+          "arguments": {
+            "left": {
+              "kind": "node",
+              "node": "weighted_modes",
+              "path": [
+                "values"
+              ]
+            },
+            "right": {
+              "kind": "list",
+              "items": [
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        1
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        1
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        2
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        2
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        3
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        3
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        3
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        4
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        4
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        4
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        5
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        5
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        5
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        6
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        6
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        6
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        7
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        7
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        7
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "list",
+                  "items": [
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        0,
+                        8
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        1,
+                        8
+                      ]
+                    },
+                    {
+                      "kind": "node",
+                      "node": "weighted_modes",
+                      "path": [
+                        "values",
+                        2,
+                        8
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "product"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "weighted displacement-vector normalization squared",
+            "method": "dense matrix multiplication",
+            "concept": "weighted Gram matrix (M D)(M D)^T"
+          }
+        },
+        {
+          "id": "plain_spectrum",
+          "tool": "SymmetricEigenDecomposition",
+          "purpose": "Compute the ascending spectrum of plain_gram as its three real eigenvalues (returned already sorted ascending), i.e. plain_spectrum.",
+          "object": "Ascending spectrum of the plain Gram matrix",
+          "arguments": {
+            "values": {
+              "kind": "node",
+              "node": "plain_gram",
+              "path": [
+                "product"
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "eigenvalues"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "Q-Chem displacement-vector normalization squared",
+            "method": "symmetric eigendecomposition",
+            "concept": "plain_spectrum = ascending eigenvalues of M M^T"
+          }
+        },
+        {
+          "id": "weighted_spectrum",
+          "tool": "SymmetricEigenDecomposition",
+          "purpose": "Compute the ascending spectrum of weighted_gram as its three real eigenvalues (returned already sorted ascending), i.e. weighted_spectrum.",
+          "object": "Ascending spectrum of the weighted Gram matrix",
+          "arguments": {
+            "values": {
+              "kind": "node",
+              "node": "weighted_gram",
+              "path": [
+                "product"
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "eigenvalues"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "weighted displacement-vector normalization squared",
+            "method": "symmetric eigendecomposition",
+            "concept": "weighted_spectrum = ascending eigenvalues of (M D)(M D)^T"
+          }
+        },
+        {
+          "id": "intensity_fractions",
+          "tool": "NormalizeNumericRows",
+          "purpose": "Divide the three IR intensities by their sum in printed mode order by supplying them as a single row; the flat intensity_fractions answer array is proportions[0] of the result.",
+          "object": "IR intensity fractions in printed mode order",
+          "arguments": {
+            "matrix": {
+              "kind": "list",
+              "items": [
+                {
+                  "kind": "node",
+                  "node": "ir",
+                  "path": [
+                    "value"
+                  ]
+                }
+              ]
+            }
+          },
+          "checks": [
+            {
+              "path": [
+                "proportions"
+              ],
+              "schema": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          ],
+          "semantics": {
+            "unit": "dimensionless",
+            "method": "row-sum proportion normalization",
+            "concept": "intensity_fractions = intensities / sum(intensities)"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "source": "modes",
+          "target": "mode_matrix",
+          "source_paths": [
+            [
+              "value",
+              0,
+              0,
+              0
+            ],
+            [
+              "value",
+              0,
+              0,
+              1
+            ],
+            [
+              "value",
+              0,
+              0,
+              2
+            ],
+            [
+              "value",
+              0,
+              1,
+              0
+            ],
+            [
+              "value",
+              0,
+              1,
+              1
+            ],
+            [
+              "value",
+              0,
+              1,
+              2
+            ],
+            [
+              "value",
+              0,
+              2,
+              0
+            ],
+            [
+              "value",
+              0,
+              2,
+              1
+            ],
+            [
+              "value",
+              0,
+              2,
+              2
+            ],
+            [
+              "value",
+              1,
+              0,
+              0
+            ],
+            [
+              "value",
+              1,
+              0,
+              1
+            ],
+            [
+              "value",
+              1,
+              0,
+              2
+            ],
+            [
+              "value",
+              1,
+              1,
+              0
+            ],
+            [
+              "value",
+              1,
+              1,
+              1
+            ],
+            [
+              "value",
+              1,
+              1,
+              2
+            ],
+            [
+              "value",
+              1,
+              2,
+              0
+            ],
+            [
+              "value",
+              1,
+              2,
+              1
+            ],
+            [
+              "value",
+              1,
+              2,
+              2
+            ],
+            [
+              "value",
+              2,
+              0,
+              0
+            ],
+            [
+              "value",
+              2,
+              0,
+              1
+            ],
+            [
+              "value",
+              2,
+              0,
+              2
+            ],
+            [
+              "value",
+              2,
+              1,
+              0
+            ],
+            [
+              "value",
+              2,
+              1,
+              1
+            ],
+            [
+              "value",
+              2,
+              1,
+              2
+            ],
+            [
+              "value",
+              2,
+              2,
+              0
+            ],
+            [
+              "value",
+              2,
+              2,
+              1
+            ],
+            [
+              "value",
+              2,
+              2,
+              2
+            ]
+          ]
+        },
+        {
+          "source": "mode_matrix",
+          "target": "weighted_modes",
+          "source_paths": [
+            [
+              "values"
+            ]
+          ]
+        },
+        {
+          "source": "mode_matrix",
+          "target": "plain_gram",
+          "source_paths": [
+            [
+              "values"
+            ],
+            [
+              "values",
+              0,
+              0
+            ],
+            [
+              "values",
+              1,
+              0
+            ],
+            [
+              "values",
+              2,
+              0
+            ],
+            [
+              "values",
+              0,
+              1
+            ],
+            [
+              "values",
+              1,
+              1
+            ],
+            [
+              "values",
+              2,
+              1
+            ],
+            [
+              "values",
+              0,
+              2
+            ],
+            [
+              "values",
+              1,
+              2
+            ],
+            [
+              "values",
+              2,
+              2
+            ],
+            [
+              "values",
+              0,
+              3
+            ],
+            [
+              "values",
+              1,
+              3
+            ],
+            [
+              "values",
+              2,
+              3
+            ],
+            [
+              "values",
+              0,
+              4
+            ],
+            [
+              "values",
+              1,
+              4
+            ],
+            [
+              "values",
+              2,
+              4
+            ],
+            [
+              "values",
+              0,
+              5
+            ],
+            [
+              "values",
+              1,
+              5
+            ],
+            [
+              "values",
+              2,
+              5
+            ],
+            [
+              "values",
+              0,
+              6
+            ],
+            [
+              "values",
+              1,
+              6
+            ],
+            [
+              "values",
+              2,
+              6
+            ],
+            [
+              "values",
+              0,
+              7
+            ],
+            [
+              "values",
+              1,
+              7
+            ],
+            [
+              "values",
+              2,
+              7
+            ],
+            [
+              "values",
+              0,
+              8
+            ],
+            [
+              "values",
+              1,
+              8
+            ],
+            [
+              "values",
+              2,
+              8
+            ]
+          ]
+        },
+        {
+          "source": "weighted_modes",
+          "target": "weighted_gram",
+          "source_paths": [
+            [
+              "values"
+            ],
+            [
+              "values",
+              0,
+              0
+            ],
+            [
+              "values",
+              1,
+              0
+            ],
+            [
+              "values",
+              2,
+              0
+            ],
+            [
+              "values",
+              0,
+              1
+            ],
+            [
+              "values",
+              1,
+              1
+            ],
+            [
+              "values",
+              2,
+              1
+            ],
+            [
+              "values",
+              0,
+              2
+            ],
+            [
+              "values",
+              1,
+              2
+            ],
+            [
+              "values",
+              2,
+              2
+            ],
+            [
+              "values",
+              0,
+              3
+            ],
+            [
+              "values",
+              1,
+              3
+            ],
+            [
+              "values",
+              2,
+              3
+            ],
+            [
+              "values",
+              0,
+              4
+            ],
+            [
+              "values",
+              1,
+              4
+            ],
+            [
+              "values",
+              2,
+              4
+            ],
+            [
+              "values",
+              0,
+              5
+            ],
+            [
+              "values",
+              1,
+              5
+            ],
+            [
+              "values",
+              2,
+              5
+            ],
+            [
+              "values",
+              0,
+              6
+            ],
+            [
+              "values",
+              1,
+              6
+            ],
+            [
+              "values",
+              2,
+              6
+            ],
+            [
+              "values",
+              0,
+              7
+            ],
+            [
+              "values",
+              1,
+              7
+            ],
+            [
+              "values",
+              2,
+              7
+            ],
+            [
+              "values",
+              0,
+              8
+            ],
+            [
+              "values",
+              1,
+              8
+            ],
+            [
+              "values",
+              2,
+              8
+            ]
+          ]
+        },
+        {
+          "source": "plain_gram",
+          "target": "plain_spectrum",
+          "source_paths": [
+            [
+              "product"
+            ]
+          ]
+        },
+        {
+          "source": "weighted_gram",
+          "target": "weighted_spectrum",
+          "source_paths": [
+            [
+              "product"
+            ]
+          ]
+        },
+        {
+          "source": "ir",
+          "target": "intensity_fractions",
+          "source_paths": [
+            [
+              "value"
+            ]
+          ]
+        }
+      ],
+      "deliverables": [
+        {
+          "requirement": "source_record",
+          "nodes": [
+            "modes",
+            "frequencies",
+            "ir"
+          ],
+          "description": "All scientific values are parsed by read-only parsers from the single bundled completed water Q-Chem output bound from task inputs; no new quantum-chemistry calculation is run and no Materials Project identity is assigned."
+        },
+        {
+          "requirement": "freq_ir_order",
+          "nodes": [
+            "frequencies",
+            "ir"
+          ],
+          "description": "frequencies and ir_intensities are the parsed three-element arrays in printed mode order (cm^-1 and km/mol respectively)."
+        },
+        {
+          "requirement": "mode_matrix_M",
+          "nodes": [
+            "modes",
+            "mode_matrix"
+          ],
+          "description": "The parser's 3x3x3 mode displacement tensor is explicitly flattened into the 3x9 matrix M by mode_matrix, with rows in printed mode order and columns in atom-major [atom0 x,y,z, atom1 x,y,z, atom2 x,y,z] order; no normalization or orthogonalization is applied."
+        },
+        {
+          "requirement": "plain_gram",
+          "nodes": [
+            "mode_matrix",
+            "plain_gram"
+          ],
+          "description": "plain_gram is the reported 3x3 matrix product M M^T computed from the explicitly flattened 3x9 M."
+        },
+        {
+          "requirement": "weighted_gram",
+          "nodes": [
+            "mode_matrix",
+            "weighted_modes",
+            "weighted_gram"
+          ],
+          "description": "weighted_gram is the reported 3x3 matrix product (M D)(M D)^T with D=diag(4,4,4,1,1,1,1,1,1) applied as explicit column factors to the flattened M."
+        },
+        {
+          "requirement": "plain_weighted_spectra",
+          "nodes": [
+            "plain_spectrum",
+            "weighted_spectrum"
+          ],
+          "description": "plain_spectrum and weighted_spectrum are the ascending eigenvalue sets of plain_gram and weighted_gram respectively, as returned by the symmetric eigendecomposition."
+        },
+        {
+          "requirement": "intensity_fractions",
+          "nodes": [
+            "intensity_fractions"
+          ],
+          "description": "intensity_fractions is proportions[0] of the row-normalized IR intensities, i.e. each intensity divided by the sum of the three, in printed mode order."
+        },
+        {
+          "requirement": "no_orthonormality_assumption",
+          "nodes": [
+            "modes",
+            "mode_matrix",
+            "weighted_modes",
+            "plain_gram",
+            "weighted_gram",
+            "plain_spectrum",
+            "weighted_spectrum"
+          ],
+          "description": "No node rescales, orthogonalizes or renormalizes the rounded printed displacement vectors beyond the explicitly declared metric weighting; both Gram matrices and their spectra are computed directly from the parsed coordinates."
+        }
+      ],
+      "requirements": [
+        {
+          "id": "source_record",
+          "description": "Use the bundled completed water Q-Chem output as the fixed computational record; do not invent, rerun, or substitute a new quantum-chemistry calculation, and do not assign a Materials Project identity.",
+          "evidence": "The bundled source is reused as a fixed computational record; this exercise does not run quantum chemistry or assign a Materials Project identity.",
+          "mode": "complete"
+        },
+        {
+          "id": "freq_ir_order",
+          "description": "Extract exactly three vibrational frequencies and three IR intensities from the source in printed mode order and report them as the frequencies and ir_intensities arrays, preserving the supplied data order.",
+          "evidence": "Read the three mode displacement tensors, three frequencies and three IR intensities in printed mode order.",
+          "mode": "complete"
+        },
+        {
+          "id": "mode_matrix_M",
+          "description": "Read the three normal-mode displacement tensors and flatten each mode in atom-major coordinate order [atom0 x,y,z, atom1 x,y,z, atom2 x,y,z] to form the 3x9 mode matrix M.",
+          "evidence": "Read the three mode displacement tensors, three frequencies and three IR intensities in printed mode order. Flatten each mode in [atom0 x,y,z,atom1 x,y,z,atom2 x,y,z] order into M(3x9).",
+          "mode": "complete"
+        },
+        {
+          "id": "plain_gram",
+          "description": "Compute and report plain_gram = M M^T as the 3x3 unweighted Gram matrix from the flattened printed mode vectors.",
+          "evidence": "Report frequencies,ir_intensities,plain_gram=M M^T, and weighted_gram=(M D)(M D)^T with D=diag(4,4,4,1,1,1,1,1,1).",
+          "mode": "complete"
+        },
+        {
+          "id": "weighted_gram",
+          "description": "Compute and report weighted_gram = (M D)(M D)^T as the 3x3 weighted Gram matrix with D = diag(4,4,4,1,1,1,1,1,1), using the declared O:H=16:1 model convention.",
+          "evidence": "Report frequencies,ir_intensities,plain_gram=M M^T, and weighted_gram=(M D)(M D)^T with D=diag(4,4,4,1,1,1,1,1,1). These explicitly declared metric weights use O:H=16:1 as a model convention.",
+          "mode": "complete"
+        },
+        {
+          "id": "plain_weighted_spectra",
+          "description": "Report plain_spectrum and weighted_spectrum as the ascending spectra of the plain and weighted Gram matrices, respectively, with each spectrum sorted in ascending order.",
+          "evidence": "Report ascending spectra plain_spectrum,weighted_spectrum, and intensity_fractions = intensities/sum(intensities).",
+          "mode": "complete"
+        },
+        {
+          "id": "intensity_fractions",
+          "description": "Compute intensity_fractions as each IR intensity divided by the sum of the three IR intensities, preserving the printed mode order.",
+          "evidence": "Report ascending spectra plain_spectrum,weighted_spectrum, and intensity_fractions = intensities/sum(intensities).",
+          "mode": "complete"
+        },
+        {
+          "id": "no_orthonormality_assumption",
+          "description": "Treat the printed rounded displacement vectors as data and do not assume or enforce orthonormality in either metric when forming M, the Gram matrices, or their spectra.",
+          "evidence": "Do not assume printed rounded displacement vectors are orthonormal in either metric.",
+          "mode": "complete"
+        }
+      ],
+      "contract_hashes": {
+        "ReadQChemFrequencyModes": "7e24b2ec385a2f69157f08efab3246d81e19dc5fc4d352b5ff2bf639dd9043c0",
+        "GetMolecularFrequencies": "082a2316d8c17ddd3b00fc5a4d31bec452eaf3f9b2ed6838c02a63e91a8d4dd1",
+        "ReadQChemIRIntensities": "7acd351b2488b6b3830da5448f85647d5ae6584d9b34a723a2a2c31c809116de",
+        "ScaleNumericMatrix": "b9c102cdc76083a1fba3ec0223e722df280582170eed93ccc6a6e990f588aec1",
+        "MatrixMultiply": "cdd46046397ba8066462678d934191deb7dd19e04890dabd9f23e657aeaa1f4e",
+        "SymmetricEigenDecomposition": "335be25dcab4f1391a7742d9647cbd5873f1c3ef17e05f8b877d6edbb34729d9",
+        "NormalizeNumericRows": "acea12b9f49163826a4f8fc0d38f0a9631e248c14e4e4aa5b5b8b78d8a30adc8"
+      }
+    }
+  ]
+}

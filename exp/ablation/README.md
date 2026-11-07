@@ -21,7 +21,7 @@
 
 ## 代码版本与配置
 
-**本轮运行源码**：[`2ade7929edfd4db5a324d7f33d230b0b16b43530`](https://github.com/haibala-ai/SciToolFlow/commit/2ade7929edfd4db5a324d7f33d230b0b16b43530)。每条结果对应的实际 GitHub commit、执行开关、源文件哈希和运行指纹记录在各组 `task_results.jsonl` 与 `segments/*/configuration.json`；逐批次版本索引见 [configuration.json](configuration.json)。
+**SciMas 项目版本（代码与实验数据发布）**：[395e670cb205076efe555a60963a1759d96b9686](https://github.com/haibala-ai/SciToolFlow/commit/395e670cb205076efe555a60963a1759d96b9686)。每条结果对应的实际 GitHub commit、执行开关、源文件哈希和运行指纹记录在各组 `task_results.jsonl` 与 `segments/*/configuration.json`；逐批次版本索引见 [configuration.json](configuration.json)。
 
 | 配置 | 取值 |
 | :--- | :--- |

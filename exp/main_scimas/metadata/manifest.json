@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 3620,
-      "sha256": "55212d9072d80f1260af417c116aa315bc02fcdcbbf9e3a2def2d5b167f68689"
+      "bytes": 3765,
+      "sha256": "7b2435cd6ee97dfa99b094b87a46586637c8b197b5c3eb8012f48c75063c95da"
     },
     {
       "path": "configuration.json",
@@ -1045,5 +1045,5 @@
   "tasks": 100,
   "mini50_tasks": 50,
   "verification": "metadata/verification.json",
-  "total_bytes": 787380618
+  "total_bytes": 787380763
 }
