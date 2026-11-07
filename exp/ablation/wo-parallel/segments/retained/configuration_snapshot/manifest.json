@@ -1,0 +1,29 @@
+{
+  "schema_version": "scimas.tool_kg_manifest.v1",
+  "tools": 472,
+  "ports": 1755,
+  "nodes": 2801,
+  "edges": 3636,
+  "graph_sha256": "095f50dfb7ade969a2668c06ffcb31989d2a79b1c54c96b6cda71b198420fee1",
+  "catalog_sha256": "efa7b3e51dea99851b2f250a235f70b2eed1313e6d39c8e2d697ca1e9414c272",
+  "annotations_sha256": "0ddc57bc003392a300df6a18cde8cca7ba8c3980373aaa416da63f4a5aabfc03",
+  "embedding_file_sha256": "2b5759fc260802e5e59192e239548ccddd7e1e5f0420a9240906a2d180202db0",
+  "embedding_identity": {
+    "backend": "openai",
+    "provider": "local_qwen3",
+    "model": "Qwen3-Embedding-4B",
+    "dimension": 2560,
+    "api_base": "http://127.0.0.1:18081/v1",
+    "normalization": "client_l2",
+    "pooling": "last_token_endoftext",
+    "query_instruction": "Given a scientific task requirement, retrieve scientific tools whose functions and input/output contracts can fulfill the requirement.",
+    "model_fingerprint": "c1552dd04f6458016004b4ac767251993da77544004449207c7eabaf708c549f"
+  },
+  "vectors": 472,
+  "reviewed_annotations": 99,
+  "new_embedding_api_calls": 0,
+  "embedding_text_basis": "unchanged_tool_functionality; enriched metadata is used in port queries and planning",
+  "excluded": [
+    "DescribeTools"
+  ]
+}

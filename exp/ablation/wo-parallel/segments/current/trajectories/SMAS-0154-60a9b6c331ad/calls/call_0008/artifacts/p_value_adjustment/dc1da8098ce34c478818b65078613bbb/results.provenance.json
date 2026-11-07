@@ -1,0 +1,1 @@
+{"raw_sha256": "c76784b330d738317e1d522784d772663ed5c94aa73576916a9f238d6656eb05", "source_sha256": "e84a45458cb909259435079b16be88058b4db37519184b2f54d5e45734fd150e", "operation": "AdjustPValuesFile", "method": "bh", "family_size": 6, "eligibility_field": null, "all_source_rows_retained": true}

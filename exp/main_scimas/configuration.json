@@ -1,69 +1,40 @@
 {
-  "schema_version": "scimas.experiment_configuration.v1",
-  "code": {
-    "repository": "https://github.com/haibala-ai/SciToolFlow",
-    "scimas_commit": "d6246dc18bf73f696e6d7551e8c0fb52705b9572",
-    "actor_files_verified": 216,
-    "actor_hashes_file": "metadata/actor_file_hashes.json"
+  "baseline": "scimas",
+  "variant": "full",
+  "model": "deepseek-flash",
+  "generation_profile": "official",
+  "api_base": "https://api.deepseek.com",
+  "embedding_backend": "local",
+  "embedding_identity": {
+    "backend": "openai",
+    "provider": "local_qwen3",
+    "model": "Qwen3-Embedding-4B",
+    "dimension": 2560,
+    "api_base": "http://127.0.0.1:18081/v1",
+    "normalization": "client_l2",
+    "pooling": "last_token_endoftext",
+    "query_instruction": "Given a scientific task requirement, retrieve scientific tools whose functions and input/output contracts can fulfill the requirement.",
+    "model_fingerprint": "c1552dd04f6458016004b4ac767251993da77544004449207c7eabaf708c549f"
   },
-  "runtime_recorded": {
-    "baseline": "scimas",
-    "dataset": "mini",
-    "tasks": "all",
-    "backend": "api",
-    "model": "deepseek-flash",
-    "concurrency": 2,
-    "max_steps": null,
+  "runtime_limits": {
     "max_model_requests": 400,
-    "max_calls": null,
     "max_actions": 8,
     "max_protocol_errors": 5,
     "max_failures_per_action": 0,
     "max_identical_tool_steps": 10,
-    "answer_schema_guard": true,
-    "protocol_schema_guard": true,
-    "max_discovery_calls": null,
-    "max_think_steps": null,
-    "max_consecutive_thinks": null,
     "max_input_tokens": 40960,
     "max_context_chars": 1500000,
     "max_output_tokens": 65536,
-    "task_timeout": 7200.0,
+    "task_timeout": 7200,
     "tool_timeout": 180,
-    "enable_model_thinking": false,
-    "sampling": {},
-    "provider": {
-      "endpoint": "https://api.deepseek.com",
-      "transport": "httpx",
-      "trust_env": false,
-      "connect_timeout_seconds": 10.0,
-      "connect_retries": 2,
-      "token_parameter": "max_tokens",
-      "json_mode": true,
-      "structured_output": false,
-      "sampling": {},
-      "extra_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-      "max_completion_tokens": 65536,
-      "timeout_seconds": 600.0
-    },
-    "endpoint": "https://api.deepseek.com",
-    "resource_policy": {
-      "version": "task-resources.v1",
-      "max_model_requests": 400,
-      "task_seconds": 7200.0,
-      "scientific_calls": null,
-      "decisions": null,
-      "discovery_calls": null,
-      "think_steps": null,
-      "consecutive_thinks": null
-    },
-    "execution_scope": "all",
-    "task_isolation": "independent_process_and_writable_directories"
+    "network_failure_threshold": 3
   },
-  "scimas_config_at_commit": {
+  "scimas_configuration": {
     "tool_concurrency": 4,
     "transient_retries": 1,
     "local_repairs": 2,
+    "graph_refinements": 2,
+    "repair_requests": 6,
     "planning_requests": 10,
     "protocol_retries": 3,
     "max_map_items": 128,
@@ -71,61 +42,19 @@
     "experience_matches": 3,
     "observation_preview_chars": 6000
   },
-  "interpretation_notes": [
-    "This is the original pre-reliability-fix run at the specified commit; do not apply current runtime/prompt behavior retrospectively.",
-    "sampling={} means temperature/top_p/seed were not explicitly supplied; provider defaults are not known from this record.",
-    "max_input_tokens=40960 is the recorded CLI field, not a verified hard token limit on API SciMas roles; max_context_chars=1500000 was the actual role context guard.",
-    "enable_model_thinking=false is the local/vLLM-oriented CLI flag; API replies can still contain DeepSeek reasoning_content and reasoning_tokens.",
-    "max_failures_per_action=0 had the historical SciMas first-failure termination defect at this commit.",
-    "The original task-metrics.v1 wall-clock times include communication delays; no retrospective v2 timing correction is applied.",
-    "Generation used the official DeepSeek endpoint with trust_env=false; query embeddings retain their separate fixed provider identity and transport settings."
-  ],
-  "launch_commands_recorded": [
-    [
-      "/data/wuchenmin/Application/anaconda3/envs/SciTool-Unified/bin/python",
-      "/data/wuchenmin/Project/ToolKG/SciToolFlow/cli.py",
-      "run",
-      "--baseline",
-      "scimas",
-      "--dataset",
-      "mini",
-      "--tasks",
-      "all",
-      "--backend",
-      "api",
-      "--model",
-      "deepseek-flash",
-      "--concurrency",
-      "2",
-      "--max-context-chars",
-      "1500000",
-      "--max-output-tokens",
-      "65536",
-      "--max-model-requests",
-      "400",
-      "--task-timeout",
-      "7200",
-      "--output",
-      "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/predictions.json"
-    ],
-    [
-      "/data/wuchenmin/Application/anaconda3/envs/SciTool-Unified/bin/python",
-      "/data/wuchenmin/Project/ToolKG/SciToolFlow/cli.py",
-      "score",
-      "--dataset",
-      "mini",
-      "--tasks",
-      "all",
-      "--predictions",
-      "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/predictions.json",
-      "--output",
-      "/data/wuchenmin/Project/ToolKG/SciToolFlow/results/deepseek_scimas_mini_20261105_212725_c2/scores.json"
-    ]
-  ],
-  "launcher_python": "/data/wuchenmin/Application/anaconda3/envs/SciTool-Unified/bin/python",
-  "launcher_conda_environment": "SciTool-Unified",
-  "public_config_snapshots": [
-    "metadata/config_snapshot/deepseek_api.json",
-    "metadata/config_snapshot/routing.json"
+  "dataset": "mini-100",
+  "task_count": 100,
+  "tool_concurrency": 4,
+  "production_sources": "metadata/sources.json",
+  "schema_version": "scimas.experiment_configuration.v2",
+  "code": {
+    "repository": "https://github.com/haibala-ai/SciToolFlow",
+    "base_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+    "source_index": "metadata/sources.json",
+    "dependencies": "metadata/source_dependencies/"
+  },
+  "datasets": [
+    "mini-100",
+    "mini-50"
   ]
 }

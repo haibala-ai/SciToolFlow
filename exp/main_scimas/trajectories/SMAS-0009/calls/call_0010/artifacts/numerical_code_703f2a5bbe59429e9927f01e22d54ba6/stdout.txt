@@ -1,0 +1,10 @@
+spiro_present_a True
+spiro_present_b False
+spiro_present_c False
+bridgehead_present_a False
+bridgehead_present_b True
+bridgehead_present_c False
+max_spiro 1
+selected ['a']
+spiro_counts [1, 0, 0]
+bridgehead_counts [0, 2, 0]

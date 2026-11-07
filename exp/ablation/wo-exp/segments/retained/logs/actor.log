@@ -1,0 +1,6 @@
+[run] SMAS-0001 scientific_limit=unlimited model_requests=400
+[run] SMAS-0002 scientific_limit=unlimited model_requests=400
+[done] SMAS-0002 status=completed recorded=1/100
+[run] SMAS-0003 scientific_limit=unlimited model_requests=400
+[done] SMAS-0001 status=completed recorded=2/100
+[run] SMAS-0004 scientific_limit=unlimited model_requests=400

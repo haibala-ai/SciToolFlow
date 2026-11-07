@@ -1,0 +1,1782 @@
+{
+  "verified_at": "2026-11-07T16:37:56.047616+08:00",
+  "groups": 5,
+  "tasks": 250,
+  "authenticated_trajectories": 250,
+  "original_trace_bytes_hash_verified": 250,
+  "portable_prediction_changes": [
+    "trace_path",
+    "trace_sha256"
+  ],
+  "score_summaries_recomputed_and_equal": true,
+  "retained_success_and_failure_outcomes": true,
+  "excluded_files": [],
+  "credential_scan": "passed; archived payloads checked against local credential values without recording secrets",
+  "records": [
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0003",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0004",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0006",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0007",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0009",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0012",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0020",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0025",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0028",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0036",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0037",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0046",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0050",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0054",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0060",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0062",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0065",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0072",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0080",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0082",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0087",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0094",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0096",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0103",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0105",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0116",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0117",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0121",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0124",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0126",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0133",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0135",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0142",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0144",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0149",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0154",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0166",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0171",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0173",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0175",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0183",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0184",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0190",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0195",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0196",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0198",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0199",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0200",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0001",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-exp",
+      "id": "SMAS-0002",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0001",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0004",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0006",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0007",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0009",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0012",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0020",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0025",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0028",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0036",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0037",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0046",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0050",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0054",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0060",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0062",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0065",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0072",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0080",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0082",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0087",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0094",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0096",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0103",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0105",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0116",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0117",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0121",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0124",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0126",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0133",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0135",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0142",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0144",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0149",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0154",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0166",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0171",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0173",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0175",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0183",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0184",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0190",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0195",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0196",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0198",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0199",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0200",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0002",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-parallel",
+      "id": "SMAS-0003",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0003",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0004",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0006",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0007",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0009",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0012",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0020",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0025",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0028",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0036",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0037",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0046",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0050",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0054",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0060",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0062",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0065",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0072",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0080",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0082",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0087",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0094",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0096",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0103",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0105",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0116",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0117",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0121",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0124",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0126",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0133",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0135",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0142",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0144",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0149",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0154",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0166",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0171",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0173",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0175",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0183",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0184",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0190",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0195",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0196",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0198",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0199",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0200",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0001",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-early-stop",
+      "id": "SMAS-0002",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0009",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0012",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0020",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0025",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0028",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0036",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0037",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0046",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0050",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0054",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0060",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0062",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0065",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0072",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0080",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0082",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0087",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0094",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0096",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0103",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0105",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0116",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0117",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0121",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0124",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0126",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0133",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0135",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0142",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0144",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0149",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0154",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0166",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0171",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0173",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0175",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0183",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0184",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0190",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0195",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0196",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0198",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0199",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0200",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0001",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0002",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0003",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0004",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0006",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-local-repair",
+      "id": "SMAS-0007",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0006",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0009",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0012",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0020",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0025",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0028",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0036",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0037",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0046",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0050",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0054",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0060",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0062",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0065",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0072",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0080",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0082",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0087",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0094",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0096",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0103",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0105",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0116",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0117",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0121",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0124",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0126",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0133",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0135",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0142",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0144",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0149",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0154",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0166",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0171",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0173",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0175",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0183",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0184",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0190",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0195",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0196",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0198",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0199",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0200",
+      "segment": "current",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0001",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0002",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0003",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0004",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    },
+    {
+      "variant": "wo-all",
+      "id": "SMAS-0007",
+      "segment": "retained",
+      "evidence_verified": true,
+      "raw_trace_hash_preserved": true
+    }
+  ],
+  "portable_score_checks": [
+    {
+      "variant": "wo-exp",
+      "segment": "current",
+      "tasks": 48,
+      "portable_rescore_equal": true
+    },
+    {
+      "variant": "wo-exp",
+      "segment": "retained",
+      "tasks": 2,
+      "portable_rescore_equal": true
+    }
+  ],
+  "retrieval_dependency_tar_hashes_verified": true
+}

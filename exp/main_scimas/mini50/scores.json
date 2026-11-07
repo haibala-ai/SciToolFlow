@@ -1,0 +1,2869 @@
+{
+  "schema_version": "scimas.result_scores.v1",
+  "updated_at": "2026-11-07T19:27:40.214119+08:00",
+  "summary": {
+    "dataset": "mini-50",
+    "tasks": 50,
+    "runtime_completion_rate": 0.92,
+    "tool_planning_accuracy": 0.5389289261194414,
+    "observed_mean_tool_orchestration_score": 0.5389289261194414,
+    "tool_planning_reportable": true,
+    "strict_tool_planning_accuracy": 0.5,
+    "mean_orchestration_credit": 0.6922686202686202,
+    "mean_selection_efficiency": 0.45591219473476513,
+    "answer_accuracy": 0.86
+  },
+  "tasks": [
+    {
+      "id": "SMAS-0001",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.8333333333333334,
+      "tool_orchestration_score": 0.9374999999999999,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_0_identity": [
+            "identity_0"
+          ],
+          "cap_0_m1": [
+            "metric_0_0"
+          ],
+          "cap_0_m2": [
+            "metric_0_1"
+          ],
+          "cap_1_identity": [
+            "identity_1"
+          ],
+          "cap_1_m1": [
+            "metric_1_0"
+          ],
+          "cap_1_m2": [
+            "metric_1_1"
+          ],
+          "cap_2_identity": [
+            "identity_2"
+          ],
+          "cap_2_m1": [
+            "metric_2_0"
+          ],
+          "cap_2_m2": [
+            "metric_2_1"
+          ],
+          "cap_whole_inventory_0": [
+            "as_received_mass_0"
+          ],
+          "cap_whole_inventory_1": [
+            "as_received_mass_1"
+          ],
+          "cap_whole_inventory_2": [
+            "as_received_mass_2"
+          ],
+          "optional_numeric_divide_score": [
+            "arithmetic_score_0",
+            "arithmetic_score_1",
+            "arithmetic_score_2"
+          ],
+          "optional_numeric_subtract_removed_mass": [
+            "arithmetic_removed_mass_0",
+            "arithmetic_removed_mass_1",
+            "arithmetic_removed_mass_2"
+          ]
+        },
+        "charged_scientific_calls": 12,
+        "matched_scientific_calls": 10,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "fa0fdf4cd439f4c7c76dc6e0ac5fb830f862b30791aac155ffed393737b20305"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 26,
+        "elapsed_seconds": 276.47067634103587,
+        "prompt_tokens": 224805,
+        "completion_tokens": 34771,
+        "observed_prompt_tokens": 224805,
+        "observed_completion_tokens": 34771,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0002",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.7142857142857143,
+      "tool_orchestration_score": 0.8823529411764705,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_0_identity": [
+            "identity_0"
+          ],
+          "cap_0_m1": [
+            "metric_0_0"
+          ],
+          "cap_0_m2": [
+            "metric_0_1"
+          ],
+          "cap_1_identity": [
+            "identity_1"
+          ],
+          "cap_1_m1": [
+            "metric_1_0"
+          ],
+          "cap_1_m2": [
+            "metric_1_1"
+          ],
+          "cap_2_identity": [
+            "identity_2"
+          ],
+          "cap_2_m1": [
+            "metric_2_0"
+          ],
+          "cap_2_m2": [
+            "metric_2_1"
+          ],
+          "optional_numeric_subtract_score": [
+            "batch_subtract_score"
+          ]
+        },
+        "charged_scientific_calls": 14,
+        "matched_scientific_calls": 10,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d4e0e5d1c55cae092f75755b3b82fa44f7ebe09633ba6a567811b24df40833d0"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 33,
+        "elapsed_seconds": 337.9432425959967,
+        "prompt_tokens": 312232,
+        "completion_tokens": 40510,
+        "observed_prompt_tokens": 312232,
+        "observed_completion_tokens": 40510,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0003",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.6,
+      "selection_efficiency": 0.6666666666666666,
+      "tool_orchestration_score": 0.6206896551724137,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_0_identity": [
+            "identity_0"
+          ],
+          "cap_0_m1": [
+            "metric_0_0"
+          ],
+          "cap_0_m2": [
+            "metric_0_1"
+          ],
+          "cap_1_identity": [
+            "identity_1"
+          ],
+          "cap_1_m1": [
+            "metric_1_0"
+          ],
+          "cap_1_m2": [
+            "metric_1_1"
+          ],
+          "cap_2_identity": [
+            "identity_2"
+          ],
+          "cap_2_m1": [
+            "metric_2_0"
+          ],
+          "cap_2_m2": [
+            "metric_2_1"
+          ],
+          "optional_numeric_divide_score": [
+            "arithmetic_score_0",
+            "arithmetic_score_1",
+            "arithmetic_score_2"
+          ]
+        },
+        "charged_scientific_calls": 9,
+        "matched_scientific_calls": 6,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a2184d10b87f49d6449dc78eb112c1ae2e1feeb55fc35187fe6dd71cccacec92"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 23,
+        "elapsed_seconds": 247.8501047390164,
+        "prompt_tokens": 204018,
+        "completion_tokens": 30721,
+        "observed_prompt_tokens": 204018,
+        "observed_completion_tokens": 30721,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0004",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 1.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_aromatic_evidence_a": [
+            "rings_a"
+          ],
+          "cap_aromatic_evidence_b": [
+            "rings_b"
+          ],
+          "cap_aromatic_evidence_c": [
+            "rings_c"
+          ],
+          "cap_eligible_profile_b": [
+            "mass_b",
+            "tpsa_b"
+          ],
+          "cap_strict_rotation_a": [
+            "rot_a"
+          ],
+          "cap_strict_rotation_b": [
+            "rot_b"
+          ],
+          "cap_strict_rotation_c": [
+            "rot_c"
+          ]
+        },
+        "charged_scientific_calls": 11,
+        "matched_scientific_calls": 11,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "545818cb729e8e5347ef08ff2c8d4bb2ef2dc4b023fd31ab91ac03eb46bb21be"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 25,
+        "elapsed_seconds": 281.4259221510147,
+        "prompt_tokens": 274543,
+        "completion_tokens": 34685,
+        "observed_prompt_tokens": 274543,
+        "observed_completion_tokens": 34685,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0006",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.6666666666666666,
+      "tool_orchestration_score": 0.8571428571428572,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_replacement_a": [
+            "mass_a",
+            "tpsa_a"
+          ],
+          "cap_replacement_b": [
+            "mass_b",
+            "tpsa_b"
+          ],
+          "cap_replacement_c": [
+            "mass_c",
+            "tpsa_c"
+          ],
+          "cap_shared_baseline": [
+            "mass_base",
+            "tpsa_base"
+          ],
+          "optional_numeric_subtract_delta_mass": [
+            "arithmetic_delta_mass_a",
+            "arithmetic_delta_mass_b",
+            "arithmetic_delta_mass_c"
+          ],
+          "optional_numeric_subtract_delta_tpsa": [
+            "arithmetic_delta_tpsa_a",
+            "arithmetic_delta_tpsa_b",
+            "arithmetic_delta_tpsa_c"
+          ]
+        },
+        "charged_scientific_calls": 12,
+        "matched_scientific_calls": 8,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "16f0c6e2bf9f817f76c235b0bb986dc941b0847c3e78a60ae87f86689bb6c603"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 24,
+        "elapsed_seconds": 207.77868133201264,
+        "prompt_tokens": 214587,
+        "completion_tokens": 25745,
+        "observed_prompt_tokens": 214587,
+        "observed_completion_tokens": 25745,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0007",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.7777777777777778,
+      "tool_orchestration_score": 0.9130434782608697,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_charged_parent_a": [
+            "identity_a"
+          ],
+          "cap_charged_parent_b": [
+            "identity_b"
+          ],
+          "cap_charged_parent_c": [
+            "identity_c"
+          ],
+          "cap_neutral_descriptors_a": [
+            "donors_a",
+            "acceptors_a"
+          ],
+          "cap_neutral_descriptors_c": [
+            "donors_c",
+            "acceptors_c"
+          ]
+        },
+        "charged_scientific_calls": 9,
+        "matched_scientific_calls": 7,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": [
+          "o0009",
+          "o0010"
+        ]
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "8945d16c2d21836dc40d24613ea358320ca95a49e7ab6630253daf77c99113a8"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 24,
+        "elapsed_seconds": 279.22129480098374,
+        "prompt_tokens": 200193,
+        "completion_tokens": 36077,
+        "observed_prompt_tokens": 200193,
+        "observed_completion_tokens": 36077,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0009",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.6,
+      "tool_orchestration_score": 0.818181818181818,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_a_bridgehead": [
+            "bridgehead_a"
+          ],
+          "cap_a_spiro": [
+            "spiro_a"
+          ],
+          "cap_b_bridgehead": [
+            "bridgehead_b"
+          ],
+          "cap_b_spiro": [
+            "spiro_b"
+          ],
+          "cap_c_bridgehead": [
+            "bridgehead_c"
+          ],
+          "cap_c_spiro": [
+            "spiro_c"
+          ]
+        },
+        "charged_scientific_calls": 10,
+        "matched_scientific_calls": 6,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "77e298e3ae3241dc23876134044c83a6602e30fd739cdff244f115b828b49aa6"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 23,
+        "elapsed_seconds": 224.32605216902448,
+        "prompt_tokens": 228522,
+        "completion_tokens": 28271,
+        "observed_prompt_tokens": 228522,
+        "observed_completion_tokens": 28271,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "6b608658ffbc1fe2"
+    },
+    {
+      "id": "SMAS-0012",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 1.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_0_identity": [
+            "identity_0"
+          ],
+          "cap_0_potential": [
+            "metric_0_0"
+          ],
+          "cap_0_unspecified": [
+            "metric_0_1"
+          ],
+          "cap_1_identity": [
+            "identity_1"
+          ],
+          "cap_1_potential": [
+            "metric_1_0"
+          ],
+          "cap_1_unspecified": [
+            "metric_1_1"
+          ],
+          "cap_2_identity": [
+            "identity_2"
+          ],
+          "cap_2_potential": [
+            "metric_2_0"
+          ],
+          "cap_2_unspecified": [
+            "metric_2_1"
+          ],
+          "cap_achiral_neighbors": [
+            "achiral_matrix"
+          ],
+          "cap_chiral_neighbors": [
+            "chiral_matrix"
+          ],
+          "optional_numeric_subtract_score": [
+            "arithmetic_score_0",
+            "arithmetic_score_1",
+            "arithmetic_score_2"
+          ]
+        },
+        "charged_scientific_calls": 11,
+        "matched_scientific_calls": 11,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a110320104e561b4abd8237bfbadc11125153fd697d2000d55fdad450082159b"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 25,
+        "elapsed_seconds": 383.6569194190088,
+        "prompt_tokens": 300311,
+        "completion_tokens": 51754,
+        "observed_prompt_tokens": 300311,
+        "observed_completion_tokens": 51754,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0020",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 1.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_neighbor_inventory_reference": [
+            "neighbors_reference"
+          ],
+          "cap_neighbor_inventory_unwrapped_mobile": [
+            "neighbors_unwrapped_mobile"
+          ],
+          "cap_neighbor_inventory_wrapped_mobile": [
+            "neighbors_wrapped_mobile"
+          ],
+          "cap_unwrapped_endpoint": [
+            "motion_unwrapped_mobile"
+          ],
+          "cap_wrapped_endpoint": [
+            "motion_wrapped_mobile"
+          ]
+        },
+        "charged_scientific_calls": 5,
+        "matched_scientific_calls": 5,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "3f04a3e80da0e14a718ade165e9c32d0e596cc0195dcd66c108f0c81fc4740cd"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 13,
+        "elapsed_seconds": 227.0467579169781,
+        "prompt_tokens": 133049,
+        "completion_tokens": 33042,
+        "observed_prompt_tokens": 133049,
+        "observed_completion_tokens": 33042,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0025",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": false,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.6923076923076923,
+      "tool_orchestration_score": 0.8709677419354838,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_actual_inventory_Ca_substitution": [
+            "composition_Ca_substitution"
+          ],
+          "cap_actual_inventory_paired_vacancy": [
+            "composition_paired_vacancy"
+          ],
+          "cap_actual_inventory_perfect": [
+            "composition_perfect"
+          ],
+          "cap_density_Ca_substitution": [
+            "density_Ca_substitution"
+          ],
+          "cap_density_paired_vacancy": [
+            "density_paired_vacancy"
+          ],
+          "cap_density_perfect": [
+            "density_perfect"
+          ],
+          "cap_periodic_contacts_Ca_substitution": [
+            "neighbors_Ca_substitution"
+          ],
+          "cap_periodic_contacts_paired_vacancy": [
+            "neighbors_paired_vacancy"
+          ],
+          "cap_periodic_contacts_perfect": [
+            "neighbors_perfect"
+          ],
+          "optional_numeric_divide_vacancy_mass_density_fraction": [
+            "arithmetic_vacancy_mass_density_fraction"
+          ]
+        },
+        "charged_scientific_calls": 13,
+        "matched_scientific_calls": 9,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "4f17a3b7f77f2e49d99a5f50d3abf4f62d6ca7465ead216d0160b355eb9a0b9e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 34,
+        "elapsed_seconds": 507.77599161304533,
+        "prompt_tokens": 548543,
+        "completion_tokens": 71521,
+        "observed_prompt_tokens": 548543,
+        "observed_completion_tokens": 71521,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0028",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 1.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "records"
+          ],
+          "cap_02": [
+            "before_plot"
+          ],
+          "cap_03": [
+            "after_plot"
+          ],
+          "cap_04": [
+            "change_plot"
+          ],
+          "cap_05": [
+            "before_quadrat"
+          ],
+          "cap_06": [
+            "after_quadrat"
+          ],
+          "cap_07": [
+            "change_quadrat"
+          ],
+          "cap_08": [
+            "upland"
+          ],
+          "cap_09": [
+            "lowland"
+          ]
+        },
+        "charged_scientific_calls": 9,
+        "matched_scientific_calls": 9,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "2c1a1027e3f26c2e6dd1d25a23af02b79f6b9c305942a0e70088188cd84b7c20"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 21,
+        "elapsed_seconds": 244.3192737600184,
+        "prompt_tokens": 209174,
+        "completion_tokens": 32504,
+        "observed_prompt_tokens": 209174,
+        "observed_completion_tokens": 32504,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0036",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.7647058823529411,
+      "tool_orchestration_score": 0.9069767441860465,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "records"
+          ],
+          "cap_02": [
+            "C1_hydropathy"
+          ],
+          "cap_03": [
+            "C1_aliphatic"
+          ],
+          "cap_04": [
+            "C1_pI"
+          ],
+          "cap_05": [
+            "C2_hydropathy"
+          ],
+          "cap_06": [
+            "C2_aliphatic"
+          ],
+          "cap_07": [
+            "C2_pI"
+          ],
+          "cap_08": [
+            "C3_hydropathy"
+          ],
+          "cap_09": [
+            "C3_aliphatic"
+          ],
+          "cap_10": [
+            "C3_pI"
+          ],
+          "cap_11": [
+            "C4_hydropathy"
+          ],
+          "cap_12": [
+            "C4_aliphatic"
+          ],
+          "cap_13": [
+            "C4_pI"
+          ]
+        },
+        "charged_scientific_calls": 17,
+        "matched_scientific_calls": 13,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "938dfc2d67c207b18ddb78312032f28af9ae4cda3fcfc8839f064a9c6a2ba265"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 38,
+        "elapsed_seconds": 298.6708759199828,
+        "prompt_tokens": 380147,
+        "completion_tokens": 35137,
+        "observed_prompt_tokens": 380147,
+        "observed_completion_tokens": 35137,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0037",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.6,
+      "tool_orchestration_score": 0.818181818181818,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "U1"
+          ],
+          "cap_02": [
+            "U2"
+          ],
+          "cap_03": [
+            "U3"
+          ],
+          "cap_04": [
+            "U4"
+          ],
+          "cap_05": [
+            "U1_composition"
+          ],
+          "cap_06": [
+            "U3_composition"
+          ]
+        },
+        "charged_scientific_calls": 10,
+        "matched_scientific_calls": 6,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "56e02c3322164b7ca26a53a27c194325375e36f40d66957d5abf869cd602bc38"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 24,
+        "elapsed_seconds": 407.9779224090162,
+        "prompt_tokens": 246575,
+        "completion_tokens": 54245,
+        "observed_prompt_tokens": 246575,
+        "observed_completion_tokens": 54245,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0046",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 1.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "standardize"
+          ],
+          "cap_02": [
+            "cluster_raw"
+          ],
+          "cap_03": [
+            "cluster_standardized"
+          ],
+          "cap_04": [
+            "quality_raw"
+          ],
+          "cap_05": [
+            "quality_standardized"
+          ],
+          "cap_06": [
+            "distance_raw"
+          ],
+          "cap_07": [
+            "distance_standardized"
+          ],
+          "cap_08": [
+            "agreement"
+          ]
+        },
+        "charged_scientific_calls": 8,
+        "matched_scientific_calls": 8,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "15282df57baecc44e3ae282b5d39d3d8bdcdbb1b374903b1bdac8958729bb9e2"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 18,
+        "elapsed_seconds": 232.98734698601766,
+        "prompt_tokens": 156075,
+        "completion_tokens": 38458,
+        "observed_prompt_tokens": 156075,
+        "observed_completion_tokens": 38458,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0050",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "calibration_a"
+          ],
+          "cap_02": [
+            "calibration_b"
+          ],
+          "cap_03": [
+            "calibration_c"
+          ],
+          "cap_04": [
+            "inverse_a"
+          ],
+          "cap_05": [
+            "inverse_b"
+          ],
+          "cap_06": [
+            "inverse_c"
+          ],
+          "cap_07": [
+            "turning_a"
+          ],
+          "cap_08": [
+            "turning_b"
+          ],
+          "cap_09": [
+            "turning_c"
+          ]
+        },
+        "charged_scientific_calls": 1,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "6229d25e4abb62367341cc0105326a8fb452cd01356227b183c614588a66d16f"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 8,
+        "elapsed_seconds": 249.83559217199218,
+        "prompt_tokens": 70002,
+        "completion_tokens": 42215,
+        "observed_prompt_tokens": 70002,
+        "observed_completion_tokens": 42215,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0054",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 1.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_a_centroid": [
+            "center_a"
+          ],
+          "cap_a_distance": [
+            "distance_a"
+          ],
+          "cap_b_centroid": [
+            "center_b"
+          ],
+          "cap_b_distance": [
+            "distance_b"
+          ],
+          "cap_c_centroid": [
+            "center_c"
+          ],
+          "cap_c_distance": [
+            "distance_c"
+          ],
+          "cap_d_centroid": [
+            "center_d"
+          ],
+          "cap_d_distance": [
+            "distance_d"
+          ],
+          "cap_preserved_shape": [
+            "shape"
+          ],
+          "cap_proper_fit": [
+            "fit"
+          ]
+        },
+        "charged_scientific_calls": 10,
+        "matched_scientific_calls": 10,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "51a956032b18146cf479b84c45f5aa2ac7433636f3efd1ebf83833c07c7150b5"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 24,
+        "elapsed_seconds": 381.8573482700158,
+        "prompt_tokens": 280529,
+        "completion_tokens": 61852,
+        "observed_prompt_tokens": 280529,
+        "observed_completion_tokens": 61852,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0060",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.6923076923076923,
+      "selection_efficiency": 0.8181818181818182,
+      "tool_orchestration_score": 0.7297297297297296,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_constrained_blend": [
+            "optimum"
+          ],
+          "cap_elemental_source_a": [
+            "formula_a",
+            "fractions_a"
+          ],
+          "cap_elemental_source_b": [
+            "formula_b",
+            "fractions_b"
+          ],
+          "cap_elemental_source_c": [
+            "formula_c",
+            "fractions_c"
+          ],
+          "cap_graph_mass_a": [
+            "mass_a"
+          ],
+          "cap_graph_mass_b": [
+            "mass_b"
+          ],
+          "cap_graph_mass_c": [
+            "mass_c"
+          ],
+          "cap_independent_balance": [
+            "elements"
+          ]
+        },
+        "charged_scientific_calls": 11,
+        "matched_scientific_calls": 9,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "df670762b27c747967395fd3c3f06ec24a4683ca4323d95017e36147935822e7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 29,
+        "elapsed_seconds": 523.3126676530228,
+        "prompt_tokens": 353037,
+        "completion_tokens": 80419,
+        "observed_prompt_tokens": 353037,
+        "observed_completion_tokens": 80419,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0062",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.38235294117647056,
+      "tool_orchestration_score": 0.65,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_normalized_moments_a": [
+            "normalized_a"
+          ],
+          "cap_normalized_moments_b": [
+            "normalized_b"
+          ],
+          "cap_normalized_moments_c": [
+            "normalized_c"
+          ],
+          "cap_raw_moments_a": [
+            "pmi1_a",
+            "pmi2_a",
+            "pmi3_a"
+          ],
+          "cap_raw_moments_b": [
+            "pmi1_b",
+            "pmi2_b",
+            "pmi3_b"
+          ],
+          "cap_raw_moments_c": [
+            "pmi1_c",
+            "pmi2_c",
+            "pmi3_c"
+          ],
+          "cap_shape_panel": [
+            "shape"
+          ]
+        },
+        "charged_scientific_calls": 34,
+        "matched_scientific_calls": 13,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "b4b91dcb46a9ffc7e28b1987d2aa1eb1d2b40ff1a8fc03d48bf50949e6f13d9e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 65,
+        "elapsed_seconds": 645.4816004449967,
+        "prompt_tokens": 1014866,
+        "completion_tokens": 96736,
+        "observed_prompt_tokens": 1014866,
+        "observed_completion_tokens": 96736,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0065",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 1.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_contact_a0": [
+            "neighbor_a0"
+          ],
+          "cap_contact_a1": [
+            "neighbor_a1"
+          ],
+          "cap_contact_a2": [
+            "neighbor_a2"
+          ],
+          "cap_contact_a3": [
+            "neighbor_a3"
+          ],
+          "cap_contact_b0": [
+            "neighbor_b0"
+          ],
+          "cap_contact_b1": [
+            "neighbor_b1"
+          ],
+          "cap_contact_b2": [
+            "neighbor_b2"
+          ],
+          "cap_contact_b3": [
+            "neighbor_b3"
+          ],
+          "cap_gradient_a": [
+            "gradient_a"
+          ],
+          "cap_gradient_b": [
+            "gradient_b"
+          ],
+          "cap_integral_a": [
+            "integral_a"
+          ],
+          "cap_integral_b": [
+            "integral_b"
+          ]
+        },
+        "charged_scientific_calls": 15,
+        "matched_scientific_calls": 15,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "b3cecfa90b8ec1059740984e8d3cc7cc46dc22deabd90607f48c45182ae167d3"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 34,
+        "elapsed_seconds": 462.6254329250078,
+        "prompt_tokens": 611481,
+        "completion_tokens": 74121,
+        "observed_prompt_tokens": 611481,
+        "observed_completion_tokens": 74121,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0072",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.7142857142857143,
+      "selection_efficiency": 0.75,
+      "tool_orchestration_score": 0.7258064516129032,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_identifiability": [
+            "spectrum"
+          ],
+          "cap_independent_prediction": [
+            "forward",
+            "error"
+          ],
+          "cap_line_calibration_a": [
+            "fit_a",
+            "evaluate_a"
+          ],
+          "cap_line_calibration_b": [
+            "fit_b",
+            "evaluate_b"
+          ],
+          "cap_line_calibration_c": [
+            "fit_c",
+            "evaluate_c"
+          ],
+          "cap_mixture_inversion": [
+            "mixture"
+          ],
+          "cap_spectral_axis": [
+            "frequencies",
+            "intensities"
+          ]
+        },
+        "charged_scientific_calls": 12,
+        "matched_scientific_calls": 9,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "8baa55763876cba789111ac75dec65197a984acfdfcaa174f37832de579ed133"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 27,
+        "elapsed_seconds": 449.1736091389903,
+        "prompt_tokens": 538367,
+        "completion_tokens": 67721,
+        "observed_prompt_tokens": 538367,
+        "observed_completion_tokens": 67721,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0080",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.6666666666666666,
+      "selection_efficiency": 0.6666666666666666,
+      "tool_orchestration_score": 0.6666666666666666,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "description_a"
+          ],
+          "cap_02": [
+            "description_b"
+          ],
+          "cap_03": [
+            "description_c"
+          ],
+          "cap_04": [
+            "bootstrap_a"
+          ],
+          "cap_05": [
+            "bootstrap_b"
+          ],
+          "cap_06": [
+            "bootstrap_c"
+          ],
+          "cap_07": [
+            "normal_probabilities"
+          ],
+          "cap_08": [
+            "normal_probabilities"
+          ],
+          "cap_09": [
+            "normal_site_c"
+          ],
+          "cap_10": [
+            "future_a"
+          ],
+          "cap_11": [
+            "future_b"
+          ],
+          "cap_12": [
+            "normal_site_c",
+            "future_site_c"
+          ],
+          "optional_normal_parameter_standardization": [
+            "plugin_normal_standardization_batch"
+          ]
+        },
+        "charged_scientific_calls": 12,
+        "matched_scientific_calls": 8,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "c0cf0074cd5922bd40cdb9ebf9dba680423e7beb488d551b3982c1b2960e266b"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 26,
+        "elapsed_seconds": 328.39488950703526,
+        "prompt_tokens": 229204,
+        "completion_tokens": 50515,
+        "observed_prompt_tokens": 229204,
+        "observed_completion_tokens": 50515,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0082",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.38461538461538464,
+      "selection_efficiency": 0.15625,
+      "tool_orchestration_score": 0.2586206896551725,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "relative"
+          ],
+          "cap_02": [
+            "local_0"
+          ],
+          "cap_03": [
+            "local_1"
+          ],
+          "cap_04": [
+            "local_2"
+          ],
+          "cap_05_equal_stand": [
+            "diversity_partition_program"
+          ],
+          "cap_05_individual": [
+            "diversity_partition_program"
+          ],
+          "cap_06": [
+            "diversity_partition_program"
+          ],
+          "cap_07": [
+            "diversity_partition_program"
+          ]
+        },
+        "charged_scientific_calls": 32,
+        "matched_scientific_calls": 5,
+        "supporting_work_observations": [
+          {
+            "observation_id": "o0008",
+            "rule": "reviewed_helper_6"
+          }
+        ],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "12ff7c6f1f6dab6f5c84237e03b970252bfd393fa68ec008008c98321bba1d9f"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 59,
+        "elapsed_seconds": 789.4827425589901,
+        "prompt_tokens": 907692,
+        "completion_tokens": 128887,
+        "observed_prompt_tokens": 907692,
+        "observed_completion_tokens": 128887,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0087",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.6666666666666666,
+      "tool_orchestration_score": 0.8571428571428572,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "fit_unweighted"
+          ],
+          "cap_02": [
+            "fit_absolute"
+          ],
+          "cap_03": [
+            "fit_doubled_absolute"
+          ],
+          "cap_04": [
+            "fit_doubled_relative"
+          ],
+          "cap_05": [
+            "predict_unweighted"
+          ],
+          "cap_06": [
+            "predict_absolute"
+          ],
+          "cap_07": [
+            "predict_doubled_absolute"
+          ],
+          "cap_08": [
+            "predict_doubled_relative"
+          ]
+        },
+        "charged_scientific_calls": 9,
+        "matched_scientific_calls": 6,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": [
+          "o0007"
+        ]
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "56395d94d802dab1bc150459c35c95981da64bc036114fa826d41b7cd3168535"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 23,
+        "elapsed_seconds": 361.2054146110313,
+        "prompt_tokens": 272444,
+        "completion_tokens": 53871,
+        "observed_prompt_tokens": 272444,
+        "observed_completion_tokens": 53871,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0094",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.6956521739130435,
+      "tool_orchestration_score": 0.8727272727272727,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "loss_a0",
+            "loss_a1",
+            "loss_a2"
+          ],
+          "cap_02": [
+            "loss_b0",
+            "loss_b1",
+            "loss_b2"
+          ],
+          "cap_03": [
+            "loss_c0",
+            "loss_c1",
+            "loss_c2"
+          ],
+          "cap_04": [
+            "worst_a"
+          ],
+          "cap_05": [
+            "worst_b"
+          ],
+          "cap_06": [
+            "worst_c"
+          ],
+          "cap_07": [
+            "witness_a"
+          ],
+          "cap_08": [
+            "witness_b"
+          ],
+          "cap_09": [
+            "witness_c"
+          ]
+        },
+        "charged_scientific_calls": 23,
+        "matched_scientific_calls": 16,
+        "supporting_work_observations": [
+          {
+            "observation_id": "o0013",
+            "rule": "reviewed_helper_14"
+          }
+        ],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "b9a98a50ceb077789a975db4fa3fc65b0dfe5d81af4cab50ef50da0e906f0fa7"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 46,
+        "elapsed_seconds": 528.5149249000242,
+        "prompt_tokens": 584899,
+        "completion_tokens": 74751,
+        "observed_prompt_tokens": 584899,
+        "observed_completion_tokens": 74751,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0096",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.5,
+      "tool_orchestration_score": 0.75,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "pairwise_xy"
+          ],
+          "cap_02": [
+            "pairwise_xz"
+          ],
+          "cap_03": [
+            "pairwise_yz"
+          ],
+          "cap_04": [
+            "eigen_pairwise"
+          ],
+          "cap_05": [
+            "joint_xy"
+          ],
+          "cap_06": [
+            "joint_xz"
+          ],
+          "cap_07": [
+            "joint_yz"
+          ],
+          "cap_08": [
+            "eigen_joint"
+          ]
+        },
+        "charged_scientific_calls": 10,
+        "matched_scientific_calls": 5,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "81eb158bbc11d2bbd2ec5322ee3765e0357447e425c8d51594703c9d2ffd88e8"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 24,
+        "elapsed_seconds": 293.7645248010522,
+        "prompt_tokens": 207700,
+        "completion_tokens": 41435,
+        "observed_prompt_tokens": 207700,
+        "observed_completion_tokens": 41435,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0103",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.5,
+      "tool_orchestration_score": 0.75,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 10,
+        "matched_scientific_calls": 5,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "91a808a7a299b84fb948309963025c92779d84c66efd2ad232148ec59c0fc0d5"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 33,
+        "elapsed_seconds": 690.1795172999846,
+        "prompt_tokens": 292604,
+        "completion_tokens": 91610,
+        "observed_prompt_tokens": 292604,
+        "observed_completion_tokens": 91610,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0105",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.23076923076923078,
+      "tool_orchestration_score": 0.4736842105263157,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 26,
+        "matched_scientific_calls": 6,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "31bc7121e246db7a3e2a6d715a830b70bf4f977fb3d2d34402ab53c1696b1af5"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 67,
+        "elapsed_seconds": 1827.684841090988,
+        "prompt_tokens": 1954686,
+        "completion_tokens": 231922,
+        "observed_prompt_tokens": 1954686,
+        "observed_completion_tokens": 231922,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0116",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "average_mass_evidence": [
+            "average_mass_0",
+            "average_mass_1",
+            "average_mass_2"
+          ],
+          "blend_branching_calculation_route": [
+            "feed_molecule_amounts_0",
+            "feed_molecule_amounts_1",
+            "feed_molecule_amounts_2",
+            "group_excess_functionality_moments",
+            "group_weighted_branching_factors",
+            "two_link_continuation_factors",
+            "inverse_branching_factors",
+            "critical_group_conversions",
+            "branch_monomer_mass_fractions"
+          ]
+        },
+        "charged_scientific_calls": 60,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e4d58c0d1c97d969396e1914b1018e934d358a02319d739e9e13b5db5535fb14"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 118,
+        "elapsed_seconds": 2408.1388287400478,
+        "prompt_tokens": 2710825,
+        "completion_tokens": 310278,
+        "observed_prompt_tokens": 2710825,
+        "observed_completion_tokens": 310278,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "23c74906d8181482"
+    },
+    {
+      "id": "SMAS-0117",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "complete_supported_fixed_uptake_affine_analysis": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "isosteric_interpolation_0_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "isosteric_interpolation_1_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "isosteric_interpolation_2_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "isosteric_interpolation_3_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "log_pressure_curve_0_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "log_pressure_curve_1_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "log_pressure_curve_2_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "log_pressure_curve_3_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "reciprocal_temperature_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "supported_apparent_heat_conversion_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ]
+        },
+        "charged_scientific_calls": 36,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "8800b9e154ae1e924ea4ca8c4ef4806e92ce5acb0f22ea42a0edb22725fe785e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 82,
+        "elapsed_seconds": 1197.5247007060098,
+        "prompt_tokens": 2158980,
+        "completion_tokens": 142215,
+        "observed_prompt_tokens": 2158980,
+        "observed_completion_tokens": 142215,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0121",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5555555555555556,
+      "selection_efficiency": 0.38461538461538464,
+      "tool_orchestration_score": 0.48387096774193544,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 13,
+        "matched_scientific_calls": 5,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "694f2c1601ef2cd177754b1d96545837f9a486010cfe6a6a121faac9e295721a"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 30,
+        "elapsed_seconds": 971.6233280589804,
+        "prompt_tokens": 524903,
+        "completion_tokens": 135201,
+        "observed_prompt_tokens": 524903,
+        "observed_completion_tokens": 135201,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0124",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.3125,
+      "tool_orchestration_score": 0.4166666666666667,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "source_bound_scientific_inference": [
+            "exact_mass_unlabeled",
+            "exact_mass_site1_only",
+            "exact_mass_site2_only",
+            "exact_mass_both_sites",
+            "mass_only_site1_min",
+            "mass_only_site1_max",
+            "orthogonal_NMR_joint_reconstruction",
+            "site_covariance"
+          ]
+        },
+        "charged_scientific_calls": 16,
+        "matched_scientific_calls": 5,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "146eb9b28e34c714e9c6aa4261536750ff040bfc6ca2e710dc6cba09c4c012be"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 35,
+        "elapsed_seconds": 490.6387622730108,
+        "prompt_tokens": 395038,
+        "completion_tokens": 60559,
+        "observed_prompt_tokens": 395038,
+        "observed_completion_tokens": 60559,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0126",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.5,
+      "tool_orchestration_score": 0.5,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "validated_complex_family": [
+            "audited_complex_analysis"
+          ]
+        },
+        "charged_scientific_calls": 2,
+        "matched_scientific_calls": 1,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "a734a2e022932f3da1148b4d2ca17145da98065ed4ef79b509a978b34926f3f0"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 17,
+        "elapsed_seconds": 366.98201123200124,
+        "prompt_tokens": 204935,
+        "completion_tokens": 55424,
+        "observed_prompt_tokens": 204935,
+        "observed_completion_tokens": 55424,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "6b608658ffbc1fe2"
+    },
+    {
+      "id": "SMAS-0133",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.625,
+      "tool_orchestration_score": 0.8333333333333334,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 8,
+        "matched_scientific_calls": 5,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "dd303e18b361b0dd0b2a2fda99ed1a12c7c75c41b548268163e77c817bf183c8"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 24,
+        "elapsed_seconds": 215.1772558169905,
+        "prompt_tokens": 178973,
+        "completion_tokens": 23863,
+        "observed_prompt_tokens": 178973,
+        "observed_completion_tokens": 23863,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0135",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.5555555555555556,
+      "tool_orchestration_score": 0.7894736842105263,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "alignment_optimality": [
+            "alignment_0",
+            "alignment_1",
+            "alignment_2"
+          ]
+        },
+        "charged_scientific_calls": 18,
+        "matched_scientific_calls": 10,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "87d237a691838ef1aa24b7e4b04e2f9c9a8c84f56e6d3717a0802b2913ec01c4"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 44,
+        "elapsed_seconds": 430.6549123529694,
+        "prompt_tokens": 622043,
+        "completion_tokens": 47747,
+        "observed_prompt_tokens": 622043,
+        "observed_completion_tokens": 47747,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0142",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.044444444444444446,
+      "tool_orchestration_score": 0.12244897959183675,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "minimal_adequate_window_certificate": [
+            "rejected_0",
+            "qualified_1"
+          ],
+          "spectral_source_support": [
+            "spectral_windows"
+          ],
+          "optional_scientific_metadata_o014_batch_or_records": [
+            "optional_scientific_metadata_o014"
+          ]
+        },
+        "charged_scientific_calls": 90,
+        "matched_scientific_calls": 4,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": [
+          "o0043",
+          "o0062"
+        ]
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "033b3201393b6ddff18395ebbed837c925c11ee742af5bf82e2fcc81b0549e08"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 182,
+        "elapsed_seconds": 3298.1252594009857,
+        "prompt_tokens": 9038123,
+        "completion_tokens": 421352,
+        "observed_prompt_tokens": 9038123,
+        "observed_completion_tokens": 421352,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0144",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.07142857142857142,
+      "tool_orchestration_score": 0.16666666666666669,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 28,
+        "matched_scientific_calls": 2,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "8aa7b5556ca9a5358e87562785e873f00032e9ba1699e52f5f8662b5fe9693b5"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 57,
+        "elapsed_seconds": 692.3027057219879,
+        "prompt_tokens": 1440834,
+        "completion_tokens": 85949,
+        "observed_prompt_tokens": 1440834,
+        "observed_completion_tokens": 85949,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0149",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 0,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "ab95098b354ae73501ec5626b616d474ff4cb8e74237096649fd0a60e0f8d681"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 6,
+        "elapsed_seconds": 252.39096364396391,
+        "prompt_tokens": 94973,
+        "completion_tokens": 31789,
+        "observed_prompt_tokens": 94973,
+        "observed_completion_tokens": 31789,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0154",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "full_eligible_universe_association": [
+            "background_from_model",
+            "gene_family",
+            "upregulated",
+            "overrepresentation_early_background",
+            "term_family_route_1",
+            "term_evidence_route_1"
+          ]
+        },
+        "charged_scientific_calls": 8,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "f244e63a73541b4e4f3166f6dac402ecc24170faa6a595377c85df8c7d54dbc6"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 28,
+        "elapsed_seconds": 913.9415947389789,
+        "prompt_tokens": 751377,
+        "completion_tokens": 117367,
+        "observed_prompt_tokens": 751377,
+        "observed_completion_tokens": 117367,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0166",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.10416666666666667,
+      "tool_orchestration_score": 0.25862068965517243,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 48,
+        "matched_scientific_calls": 5,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "75c067d6328fe5d68ef38db0326c18dae1ad951fe5d4ba5ef752703e65d9b2af"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 109,
+        "elapsed_seconds": 1463.0373062859871,
+        "prompt_tokens": 3864837,
+        "completion_tokens": 152684,
+        "observed_prompt_tokens": 3864837,
+        "observed_completion_tokens": 152684,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0171",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.8333333333333334,
+      "selection_efficiency": 0.2702702702702703,
+      "tool_orchestration_score": 0.4918032786885246,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "complete_nested_fit_comparison": [
+            "global_ABCD",
+            "global_ADCB",
+            "global_CBAD",
+            "global_CDAB",
+            "local_A_A",
+            "local_A_C",
+            "local_C_A",
+            "local_C_C",
+            "local_B_B",
+            "local_B_D",
+            "local_D_B",
+            "local_D_D"
+          ]
+        },
+        "charged_scientific_calls": 37,
+        "matched_scientific_calls": 10,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "331b4aa2c721935da81cbaa63e78a10c1f93052d818fbd7f2efad025a9fbcd0d"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 96,
+        "elapsed_seconds": 4605.797753743012,
+        "prompt_tokens": 9356716,
+        "completion_tokens": 754350,
+        "observed_prompt_tokens": 9356716,
+        "observed_completion_tokens": 754350,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0173",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.5454545454545454,
+      "tool_orchestration_score": 0.5142857142857142,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "full_flux_face_and_assay_evidence": [
+            "optimal_face_LP_2",
+            "optimal_face_LP_3",
+            "optimal_face_LP_4",
+            "optimal_face_LP_5",
+            "optimal_face_LP_6",
+            "assay_updated_flux_balance"
+          ]
+        },
+        "charged_scientific_calls": 11,
+        "matched_scientific_calls": 6,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "d50b22a9ddb1ae06c5f04c19959c329d7436928b7ab163782ecd06b3e11a5f45"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 28,
+        "elapsed_seconds": 601.7060444260132,
+        "prompt_tokens": 452402,
+        "completion_tokens": 84047,
+        "observed_prompt_tokens": 452402,
+        "observed_completion_tokens": 84047,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0175",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.047619047619047616,
+      "tool_orchestration_score": 0.12,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 21,
+        "matched_scientific_calls": 1,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "dc0940b80925a74d49abbc352a7f025f633828baedb63a742876069df831fadd"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 52,
+        "elapsed_seconds": 1062.3850664360216,
+        "prompt_tokens": 653817,
+        "completion_tokens": 147224,
+        "observed_prompt_tokens": 653817,
+        "observed_completion_tokens": 147224,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0183",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 0,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "9d3b0262b5ea2f078f8999dfd9c5c87caab27746301722ec5d9e898b12465673"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 7,
+        "elapsed_seconds": 265.1170890330104,
+        "prompt_tokens": 143980,
+        "completion_tokens": 32380,
+        "observed_prompt_tokens": 143980,
+        "observed_completion_tokens": 32380,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0184",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 0,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "4ad528aaf7924c5dc9e8e6f8b05d9673f32c262bd0a4e1e20541f3cf539b2500"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 6,
+        "elapsed_seconds": 170.5175706659793,
+        "prompt_tokens": 138145,
+        "completion_tokens": 20798,
+        "observed_prompt_tokens": 138145,
+        "observed_completion_tokens": 20798,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0190",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "certified_A_lower": [
+            "analytic_primal_A_lower",
+            "analytic_dual_A_lower"
+          ],
+          "certified_A_minus_B_lower": [
+            "analytic_primal_A_minus_B_lower",
+            "analytic_dual_A_minus_B_lower"
+          ],
+          "certified_A_minus_B_upper": [
+            "analytic_primal_A_minus_B_upper",
+            "analytic_dual_A_minus_B_upper"
+          ],
+          "certified_A_upper": [
+            "analytic_primal_A_upper",
+            "analytic_dual_A_upper"
+          ],
+          "certified_B_lower": [
+            "analytic_primal_B_lower",
+            "analytic_dual_B_lower"
+          ],
+          "certified_B_upper": [
+            "analytic_primal_B_upper",
+            "analytic_dual_B_upper"
+          ]
+        },
+        "charged_scientific_calls": 7,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "6442b922c9b3fafe012c74ab34eaf22c62fc983e42bc072b4c8f1120b5c1d190"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 18,
+        "elapsed_seconds": 579.9046321380301,
+        "prompt_tokens": 334838,
+        "completion_tokens": 92718,
+        "observed_prompt_tokens": 334838,
+        "observed_completion_tokens": 92718,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0195",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.5,
+      "tool_orchestration_score": 0.5,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "source_bound_scientific_inference": [
+            "complete_mean",
+            "outcome_residuals",
+            "recording_probability_ratios",
+            "augmentation_terms",
+            "complete_conditional_terms",
+            "all_population_limits",
+            "population_limit_biases"
+          ]
+        },
+        "charged_scientific_calls": 2,
+        "matched_scientific_calls": 1,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "1ad84eab9b3fd3cca60b67779d048ca0fa226470a9a28fbcd0d9fef1ea97b74d"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 11,
+        "elapsed_seconds": 124.22147477098042,
+        "prompt_tokens": 74866,
+        "completion_tokens": 15361,
+        "observed_prompt_tokens": 74866,
+        "observed_completion_tokens": 15361,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "6b608658ffbc1fe2"
+    },
+    {
+      "id": "SMAS-0196",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.6666666666666666,
+      "selection_efficiency": 0.07142857142857142,
+      "tool_orchestration_score": 0.1764705882352941,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "variance_normalized_association": [
+            "within_spectrum",
+            "raw_cross_spectrum"
+          ]
+        },
+        "charged_scientific_calls": 42,
+        "matched_scientific_calls": 3,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "89d8b7df1fa072e8dd1cbe53660723a1f14d4ccc1ecd7cbedf746b908a927980"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 76,
+        "elapsed_seconds": 1002.1356532460195,
+        "prompt_tokens": 1113772,
+        "completion_tokens": 146688,
+        "observed_prompt_tokens": 1113772,
+        "observed_completion_tokens": 146688,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0198",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.018518518518518517,
+      "tool_orchestration_score": 0.05172413793103448,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "source_bound_scientific_inference": [
+            "proof_o004",
+            "proof_o005",
+            "proof_o006",
+            "proof_o007",
+            "proof_o008",
+            "proof_o009",
+            "proof_o010",
+            "proof_o011",
+            "proof_o012",
+            "proof_o013",
+            "proof_o014",
+            "proof_o015",
+            "proof_o016",
+            "proof_o017",
+            "proof_o018",
+            "proof_o019",
+            "proof_o020",
+            "proof_o021",
+            "proof_o022",
+            "proof_o023",
+            "proof_o024",
+            "proof_o025",
+            "proof_o026",
+            "proof_o027",
+            "proof_o028",
+            "proof_o029",
+            "proof_o030",
+            "proof_o031",
+            "proof_o032"
+          ]
+        },
+        "charged_scientific_calls": 54,
+        "matched_scientific_calls": 1,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "01de552d56493ff1d3a751bc8c6c399b9881dd23ce0fd993e1bf160e728deb05"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 92,
+        "elapsed_seconds": 1352.622884299024,
+        "prompt_tokens": 1709156,
+        "completion_tokens": 194386,
+        "observed_prompt_tokens": 1709156,
+        "observed_completion_tokens": 194386,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0199",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.014705882352941176,
+      "tool_orchestration_score": 0.041666666666666664,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "source_bound_scientific_inference": [
+            "proof_o002",
+            "proof_o003",
+            "proof_o004",
+            "proof_o005",
+            "proof_o006",
+            "proof_o007",
+            "proof_o008",
+            "proof_o009",
+            "proof_o010",
+            "proof_o011",
+            "proof_o012",
+            "proof_o013",
+            "proof_o014",
+            "proof_o015",
+            "complete_omitted_row_prediction"
+          ]
+        },
+        "charged_scientific_calls": 68,
+        "matched_scientific_calls": 1,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "e223c53e4f4f95117fb13c7a50c609dc2baae5cc71ddd91558ba3268e0284c2b"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 148,
+        "elapsed_seconds": 1678.0813049470307,
+        "prompt_tokens": 3154515,
+        "completion_tokens": 217468,
+        "observed_prompt_tokens": 3154515,
+        "observed_completion_tokens": 217468,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "bfc93c1b39b93f02"
+    },
+    {
+      "id": "SMAS-0200",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.047619047619047616,
+      "tool_orchestration_score": 0.12,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 21,
+        "matched_scientific_calls": 1,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "0fc55264815ba8463e8eb7604d092c9f9df26d1af38b19bd7fe7fec00f726546"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 48,
+        "elapsed_seconds": 628.8707296810462,
+        "prompt_tokens": 594060,
+        "completion_tokens": 79349,
+        "observed_prompt_tokens": 594060,
+        "observed_completion_tokens": 79349,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "bfc93c1b39b93f02"
+    }
+  ],
+  "additional_model_runs": 0,
+  "source_index": "../metadata/sources.json"
+}

@@ -1,0 +1,1 @@
+{"minimum_affine_kelvin_stiffness_ev_angstrom2": 0.18049038507585172, "relaxed_uniform_strain_nullity": 1, "guest_transverse_over_axial_strain": -0.8750000000000001, "guest_tensor_shear_over_axial_strain": 6.429748997931437e-17, "positive_affine_response_proves_uniform_strain_rigidity": false, "scope": "periodic_2d_unstressed_bar_internal_relaxation"}

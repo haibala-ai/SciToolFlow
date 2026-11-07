@@ -161,7 +161,13 @@ class Roles:
                 return value
             if self.on_protocol_error is not None:
                 self.on_protocol_error(errors)
-            feedback = {"errors": errors, "previous_response": text}
+            feedback = {
+                "errors": [str(error)[:2000] for error in errors[:8]],
+                "previous_response": text[:8000],
+                "instruction": "Return exactly one JSON action matching response_schema. "
+                    "Do not emit native tool calls, XML, DSML tags or several JSON objects. "
+                    "For inspection use the JSON inspect action with its required fields.",
+            }
         raise ValueError(
             "Role protocol retry limit reached: " + str(feedback["errors"])
         )

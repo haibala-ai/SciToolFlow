@@ -1,0 +1,4 @@
+print('fixed_alpha_sure_unbiased_for_latent_mean_risk', True)
+print('selected_minimum_is_unbiased_selected_procedure_risk', False)
+print('basis', 'SURE is unbiased for the latent-mean risk at a fixed alpha; the reported minimum is chosen after searching the same y, so it is optimistically biased for the risk of the selected procedure and is not the expected future noisy-response error')
+print('scope', 'no held-out performance or risk uncertainty bound is claimed')

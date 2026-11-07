@@ -1,0 +1,7 @@
+bulk_volume_per_atom 7.93979996065
+area_init 31.27381891024542
+area_fin 31.09254563818527
+excess_length_init 0.3571210255982234
+excess_length_fin 0.06985296890366582
+final_minus_initial_excess_length_angstrom -0.28726805669455757
+final_to_initial_interface_area_ratio 0.9942036732840208

@@ -1,0 +1,29 @@
+import math
+counts = [[8,2,0,0],[1,9,10,0],[0,0,5,35]]
+n = len(counts)
+m = len(counts[0])
+totals = [sum(counts[i]) for i in range(n)]
+rel = [[counts[i][j] / totals[i] for j in range(m)] for i in range(n)]
+local_shannon = [-sum(rel[i][j] * math.log(rel[i][j]) for j in range(m) if rel[i][j] > 0) for i in range(n)]
+local_effective = [math.exp(h) for h in local_shannon]
+weights_equal = [1.0 / n for i in range(n)]
+total_all = sum(totals)
+weights_individual = [totals[i] / total_all for i in range(n)]
+print('local_shannon=' + str(local_shannon))
+print('local_effective=' + str(local_effective))
+targets = [('equal_stand', weights_equal), ('individual', weights_individual)]
+for name, weights in targets:
+    pooled = [sum(weights[i] * rel[i][j] for i in range(n)) for j in range(m)]
+    h_alpha = sum(weights[i] * local_shannon[i] for i in range(n))
+    h_gamma = -sum(p * math.log(p) for p in pooled if p > 0)
+    eff_alpha = math.exp(h_alpha)
+    eff_gamma = math.exp(h_gamma)
+    eff_beta = math.exp(h_gamma - h_alpha)
+    arith = sum(weights[i] * local_effective[i] for i in range(n))
+    print('pooled_proportions_' + name + '=' + str(pooled))
+    print('H_alpha_' + name + '=' + str(h_alpha))
+    print('H_gamma_' + name + '=' + str(h_gamma))
+    print('effective_alpha_' + name + '=' + str(eff_alpha))
+    print('effective_gamma_' + name + '=' + str(eff_gamma))
+    print('effective_beta_' + name + '=' + str(eff_beta))
+    print('arithmetic_local_effective_' + name + '=' + str(arith))

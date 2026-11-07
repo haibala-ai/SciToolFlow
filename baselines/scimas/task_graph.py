@@ -4,6 +4,7 @@ from copy import deepcopy
 from dataclasses import dataclass
 import hashlib
 import json
+import keyword
 from .schema import ID_MAX_LENGTH
 
 PUBLIC_FIELDS = (
@@ -75,6 +76,9 @@ def bindings(value):
         yield value
         if value["kind"] == "list":
             for item in value["items"] + value.get("provenance", []):
+                yield from bindings(item)
+        elif value["kind"] == "python_code":
+            for item in value["inputs"].values():
                 yield from bindings(item)
     elif "op" in value:
         for key in ("left", "right", "arg"):
@@ -246,6 +250,20 @@ class TaskGraph:
             return deepcopy(binding["value"])
         if kind == "task":
             return deepcopy(at(self.task, binding["path"]))
+        if kind == "python_code":
+            assignments = []
+            for name, source in binding["inputs"].items():
+                if not name.isidentifier() or keyword.iskeyword(name) or name.startswith("_"):
+                    raise ValueError("Invalid numerical-code input name")
+                value = self.resolve(source, results)
+                # Validate finite JSON, then quote as a Python literal. Data are
+                # never interpolated as executable text or read from the filesystem.
+                json.dumps(value, allow_nan=False)
+                assignments.append(name + " = " + repr(value))
+            rendered = "\n".join(assignments) + "\n" + binding["code"]
+            if len(rendered) > 12000:
+                raise ValueError("Bound numerical code exceeds 12000 characters; use array tools or smaller inputs")
+            return rendered
         if kind == "list":
             for evidence in binding.get("provenance", []):
                 self.resolve(evidence, results)

@@ -1,0 +1,165 @@
+{
+  "schema_version": "scimas.ablation_archive.summary.v1",
+  "selection": "mini-50",
+  "tasks_per_variant": 50,
+  "full": null,
+  "groups": {
+    "wo-exp": {
+      "metrics": {
+        "dataset": "mini-50",
+        "tasks": 50,
+        "runtime_completion_rate": 0.82,
+        "tool_planning_accuracy": 0.5631567202678691,
+        "observed_mean_tool_orchestration_score": 0.5631567202678691,
+        "tool_planning_reportable": true,
+        "strict_tool_planning_accuracy": 0.54,
+        "mean_orchestration_credit": 0.7057448107448107,
+        "mean_selection_efficiency": 0.4768737027307065,
+        "answer_accuracy": 0.8
+      },
+      "efficiency": {
+        "tasks": 50,
+        "time_reportable_tasks": 50,
+        "median_runtime_seconds": 487.34556859949953,
+        "mean_runtime_seconds": 589.7975017381017,
+        "avg_tool_calls": 16.86,
+        "avg_scientific_tool_calls": 15.24,
+        "avg_discovery_calls": 1.62,
+        "token_usage_complete": true,
+        "tasks_missing_token_usage": [],
+        "avg_input_tokens": 665201.24,
+        "avg_observed_input_tokens": 665201.24,
+        "avg_output_tokens": 84433.62,
+        "avg_observed_output_tokens": 84433.62,
+        "avg_total_tokens": 749634.86,
+        "avg_observed_total_tokens": 749634.86
+      }
+    },
+    "wo-parallel": {
+      "metrics": {
+        "dataset": "mini-50",
+        "tasks": 50,
+        "runtime_completion_rate": 0.84,
+        "tool_planning_accuracy": 0.5050559974201075,
+        "observed_mean_tool_orchestration_score": 0.5050559974201075,
+        "tool_planning_reportable": true,
+        "strict_tool_planning_accuracy": 0.48,
+        "mean_orchestration_credit": 0.6317667887667888,
+        "mean_selection_efficiency": 0.4098534220665856,
+        "answer_accuracy": 0.82
+      },
+      "efficiency": {
+        "tasks": 50,
+        "time_reportable_tasks": 50,
+        "median_runtime_seconds": 495.1258786135004,
+        "mean_runtime_seconds": 562.7178700288606,
+        "avg_tool_calls": 16.18,
+        "avg_scientific_tool_calls": 14.34,
+        "avg_discovery_calls": 1.84,
+        "token_usage_complete": true,
+        "tasks_missing_token_usage": [],
+        "avg_input_tokens": 578709.4,
+        "avg_observed_input_tokens": 578709.4,
+        "avg_output_tokens": 77990.32,
+        "avg_observed_output_tokens": 77990.32,
+        "avg_total_tokens": 656699.72,
+        "avg_observed_total_tokens": 656699.72
+      }
+    },
+    "wo-early-stop": {
+      "metrics": {
+        "dataset": "mini-50",
+        "tasks": 50,
+        "runtime_completion_rate": 0.78,
+        "tool_planning_accuracy": 0.560029494378891,
+        "observed_mean_tool_orchestration_score": 0.560029494378891,
+        "tool_planning_reportable": true,
+        "strict_tool_planning_accuracy": 0.52,
+        "mean_orchestration_credit": 0.6927667887667888,
+        "mean_selection_efficiency": 0.47931950376427457,
+        "answer_accuracy": 0.76
+      },
+      "efficiency": {
+        "tasks": 50,
+        "time_reportable_tasks": 50,
+        "median_runtime_seconds": 510.6812264699838,
+        "mean_runtime_seconds": 608.418319751888,
+        "avg_tool_calls": 16.56,
+        "avg_scientific_tool_calls": 14.86,
+        "avg_discovery_calls": 1.7,
+        "token_usage_complete": false,
+        "tasks_missing_token_usage": [
+          "SMAS-0200"
+        ],
+        "avg_input_tokens": null,
+        "avg_observed_input_tokens": 631604.8,
+        "avg_output_tokens": null,
+        "avg_observed_output_tokens": 86677.42,
+        "avg_total_tokens": null,
+        "avg_observed_total_tokens": 718282.2200000001
+      }
+    },
+    "wo-local-repair": {
+      "metrics": {
+        "dataset": "mini-50",
+        "tasks": 50,
+        "runtime_completion_rate": 0.7,
+        "tool_planning_accuracy": 0.49102266443587345,
+        "observed_mean_tool_orchestration_score": 0.49102266443587345,
+        "tool_planning_reportable": true,
+        "strict_tool_planning_accuracy": 0.42,
+        "mean_orchestration_credit": 0.6138895957843327,
+        "mean_selection_efficiency": 0.40637944124502595,
+        "answer_accuracy": 0.66
+      },
+      "efficiency": {
+        "tasks": 50,
+        "time_reportable_tasks": 50,
+        "median_runtime_seconds": 379.8041619489668,
+        "mean_runtime_seconds": 526.4319499006739,
+        "avg_tool_calls": 15.82,
+        "avg_scientific_tool_calls": 14.14,
+        "avg_discovery_calls": 1.68,
+        "token_usage_complete": true,
+        "tasks_missing_token_usage": [],
+        "avg_input_tokens": 622214.16,
+        "avg_observed_input_tokens": 622214.16,
+        "avg_output_tokens": 76429.96,
+        "avg_observed_output_tokens": 76429.96,
+        "avg_total_tokens": 698644.12,
+        "avg_observed_total_tokens": 698644.12
+      }
+    },
+    "wo-all": {
+      "metrics": {
+        "dataset": "mini-50",
+        "tasks": 50,
+        "runtime_completion_rate": 0.72,
+        "tool_planning_accuracy": 0.47849342037348275,
+        "observed_mean_tool_orchestration_score": 0.47849342037348275,
+        "tool_planning_reportable": true,
+        "strict_tool_planning_accuracy": 0.48,
+        "mean_orchestration_credit": 0.635989010989011,
+        "mean_selection_efficiency": 0.3934705744065077,
+        "answer_accuracy": 0.66
+      },
+      "efficiency": {
+        "tasks": 50,
+        "time_reportable_tasks": 50,
+        "median_runtime_seconds": 265.1022946285084,
+        "mean_runtime_seconds": 315.37150659726234,
+        "avg_tool_calls": 15.48,
+        "avg_scientific_tool_calls": 13.78,
+        "avg_discovery_calls": 1.7,
+        "token_usage_complete": true,
+        "tasks_missing_token_usage": [],
+        "avg_input_tokens": 301242.74,
+        "avg_observed_input_tokens": 301242.74,
+        "avg_output_tokens": 42485.58,
+        "avg_observed_output_tokens": 42485.58,
+        "avg_total_tokens": 343728.32,
+        "avg_observed_total_tokens": 343728.32
+      }
+    }
+  }
+}

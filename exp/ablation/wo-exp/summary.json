@@ -1,0 +1,31 @@
+{
+  "metrics": {
+    "dataset": "mini-50",
+    "tasks": 50,
+    "runtime_completion_rate": 0.82,
+    "tool_planning_accuracy": 0.5631567202678691,
+    "observed_mean_tool_orchestration_score": 0.5631567202678691,
+    "tool_planning_reportable": true,
+    "strict_tool_planning_accuracy": 0.54,
+    "mean_orchestration_credit": 0.7057448107448107,
+    "mean_selection_efficiency": 0.4768737027307065,
+    "answer_accuracy": 0.8
+  },
+  "efficiency": {
+    "tasks": 50,
+    "time_reportable_tasks": 50,
+    "median_runtime_seconds": 487.34556859949953,
+    "mean_runtime_seconds": 589.7975017381017,
+    "avg_tool_calls": 16.86,
+    "avg_scientific_tool_calls": 15.24,
+    "avg_discovery_calls": 1.62,
+    "token_usage_complete": true,
+    "tasks_missing_token_usage": [],
+    "avg_input_tokens": 665201.24,
+    "avg_observed_input_tokens": 665201.24,
+    "avg_output_tokens": 84433.62,
+    "avg_observed_output_tokens": 84433.62,
+    "avg_total_tokens": 749634.86,
+    "avg_observed_total_tokens": 749634.86
+  }
+}

@@ -1,0 +1,13 @@
+line_labels ['Fe(II)', 'Fe(III)']
+observed_normalized_areas [0.5, 0.5]
+per_ion_response_factors [2.0, 1.0]
+charge_target_from_neutrality 8
+neutral_counts_from_stoichiometry [1.0, 2.0]
+response_corrected_signal [0.25, 0.5]
+response_corrected_fractions [0.3333333333333333, 0.6666666666666666]
+implied_Fe_II_Fe_III_counts [1.0, 2.0]
+response_corrected_spectral_areas_consistent True
+raw_areas_equal True
+implied_Fe_II_over_Fe_III_count_ratio 0.5
+equal_raw_line_areas_imply_equal_Fe_II_and_Fe_III_counts False
+reason equal raw areas map to equal ion counts only when the per-ion response factors are equal

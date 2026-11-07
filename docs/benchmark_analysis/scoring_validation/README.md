@@ -16,7 +16,7 @@
 .local/archives/scoring_cleanup_20261106_174600/mini_orchestration.tar.gz
 ```
 
-该文件位于忽略提交的 `.local/` 下，不上传 GitHub。完整文件清单与逐文件校验值位于同目录 `inventory.json`；正式评分与回归测试不依赖本地归档。原始实验 `exp/main_scimas` 的归档清单与286条原文件记录保持不变。
+该文件位于忽略提交的 `.local/` 下，不上传 GitHub。完整文件清单与逐文件校验值位于同目录 `inventory.json`；正式评分与回归测试不依赖本地归档。旧 Mini-200 实验的完整归档已随正式结果更新移入本地备份；当前 `exp/main_scimas/` 为 Mini-100 主实验。
 
 若需要恢复作者工作进度，在项目根目录先核对压缩包SHA-256，再运行：
 
@@ -27,4 +27,4 @@ tar -xzf .local/archives/scoring_cleanup_20261106_174600/mini_orchestration.tar.
 
 压缩包保留 `evaluation/authoring/mini_orchestration/` 下的原始相对路径，恢复后可继续原作者流程。解压会恢复历史文件，应在需要续审时执行。
 
-重评分的当前代码／数据快照与修正前结果分别保存在 `exp/main_scimas/rescore_current/scoring_snapshot.tar.gz` 和 `before_definition_fix.tar.gz`，作为两个便于复核的完整压缩包交付。复现入口见[重评分说明](../../../exp/main_scimas/rescore_current/README.md)。
+旧 Mini-200 重评分快照和修正前结果保留在本地备份 `.local/archives/main_scimas_20261107_194927/rescore_current/`，不属于当前正式实验。当前主实验的复核入口见 [主实验说明](../../../exp/main_scimas/README.md)。

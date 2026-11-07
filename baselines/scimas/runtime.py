@@ -456,11 +456,26 @@ def run_scimas(
         # when adding inspection and thinking history for this decision.
         feedback = list(payload.get("feedback", []))
         previous_auxiliary, repeated_auxiliary = None, 0
+        misplaced_answers = 0
         decision_schema = schema
         while True:
             decision = roles.ask(role, {**payload, "feedback": feedback}, decision_schema)
             if role == "repair" and repair_window is not None:
                 trace["steps"][-1]["stage"] = repair_window["stage"]
+            if role == "executor" and "stop" in decision:
+                try:
+                    candidate = json.loads(decision["stop"])
+                except (ValueError, TypeError):
+                    candidate = None
+                if isinstance(candidate, dict) and not contract_errors(candidate, task["answer_schema"]):
+                    misplaced_answers += 1
+                    if misplaced_answers >= settings["protocol_retries"]:
+                        raise ValueError("Executor repeatedly placed an answer in stop instead of completing ready nodes")
+                    feedback.append({"protocol_error": "stop is a failure action, not an answer channel. "
+                        "The final report belongs to the summary role after required nodes finish. "
+                        "Dispatch from ready now, or identify a specific unresolved defect with repair."})
+                    save()
+                    continue
             if "inspect" in decision or "think" in decision:
                 identity = digest(decision)
                 repeated_auxiliary = repeated_auxiliary + 1 if identity == previous_auxiliary else 1
@@ -626,6 +641,7 @@ def run_scimas(
                 "max_requests": settings["repair_requests"],
             }
             trace["graph_refinement_attempts" if initial else "repair_attempts"].append(repair_window)
+            reconsidered = False
             while True:
                 action = ask(
                     "repair",
@@ -648,6 +664,45 @@ def run_scimas(
                     feedback_out=feedback,
                 )
                 if "stop" in action:
+                    # A disagreement with an LLM review is not proof that the
+                    # scientific task is impossible. Ask the same review role
+                    # once to examine counterevidence; deterministic failures
+                    # remain hard barriers and no observation is auto-approved.
+                    basis = (diagnosis or {}).get("basis", {})
+                    stage = (diagnosis or {}).get("stage")
+                    if (not reconsidered and policy.scientific_review
+                            and stage in {"graph", "result"}
+                            and (stage == "graph" or basis.get("structural_validation") == "passed")
+                            and (basis.get("numerical_certificate") or {}).get("passed") is not False):
+                        reconsidered = True
+                        if stage == "graph":
+                            extra = {"graph_validation": validate_graph(graph, catalog),
+                                     "contracts": knowledge.planning_view(sorted(graph.contracts))}
+                        else:
+                            nid = diagnosis["node"]
+                            call = observations[basis["observation_id"]]
+                            extra = {**basis, "node": nid, "arguments": call["arguments"],
+                                     "contract": knowledge.planning_view([call["tool"]])}
+                        reconsideration = review(stage, **extra,
+                            counterevidence={"original_request": request, "repairer_objection": action["stop"],
+                                "instruction": "Recheck the stated method and actual observations. "
+                                    "A role's claimed expected value is not a reference answer. "
+                                    "Withdraw the repair only if the existing evidence satisfies the public task; "
+                                    "otherwise state the concrete remaining defect."})
+                        if "accept" in reconsideration or "approve" in reconsideration:
+                            repair_window.update(status="not_needed_after_reconsideration",
+                                requests=len(resources.requests)-repair_window["start_request_count"])
+                            if stage == "graph":
+                                expected = {n["id"] for n in graph.plan["nodes"] if "when" in n}
+                                if set(reconsideration["approve"]["gates"]) != expected:
+                                    raise ValueError("Reconsidered graph review must approve exactly its gates")
+                                gates = {nid: graph.node_identity(nid) for nid in expected}
+                            repair_window = None
+                            save()
+                            return reconsideration
+                        feedback.append({"review_reconsideration": reconsideration,
+                                         "instruction": "Correct the remaining concrete defect or stop with the unresolved cause."})
+                        continue
                     raise ValueError("RepairPlannerStopped: " + action["stop"])
                 if "describe_tools" in action:
                     # A bad name is public lookup feedback, not a fatal repair.
@@ -908,8 +963,10 @@ def run_scimas(
             )
             if "repair" in decision:
                 call["review_state"] = "repair_requested"
-                repair(decision["repair"])
-                if (
+                resolution = repair(decision["repair"])
+                if resolution and "accept" in resolution:
+                    decision = resolution
+                elif (
                     nid in {n["id"] for n in graph.plan["nodes"]}
                     and graph.node_identity(nid) == record["node_sha256"]
                     and attempt + 1 < settings["protocol_retries"]
@@ -920,7 +977,8 @@ def run_scimas(
                         }
                     ]
                     continue
-                return
+                else:
+                    return
             if "accept" not in decision or accepted is None:
                 if "accept" in decision and accepted is None and attempt + 1 < settings["protocol_retries"]:
                     feedback = [{"error": structural,

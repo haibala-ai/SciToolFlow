@@ -1,0 +1,9 @@
+{
+  ".local/indexes/qwen3-embedding-4b/graph_store.json": "399b9c80ff4191a89be386aebc9e1d9e6da8321c09e59da6fe907721173e8b44",
+  ".local/indexes/qwen3-embedding-4b/index_store.json": "5b4cf0a81f7facb9b8d587bc453d3772badcb207d950e296e33ad89407b2b7aa",
+  ".local/indexes/qwen3-embedding-4b/scimas/annotations.json": "8a48636d3207eb3ed801ae552cc9049ede0d92936692bb82e5b17d3a98beb5a7",
+  ".local/indexes/qwen3-embedding-4b/scimas/embeddings.json.gz": "2b5759fc260802e5e59192e239548ccddd7e1e5f0420a9240906a2d180202db0",
+  ".local/indexes/qwen3-embedding-4b/scimas/graph.json": "6d21972e2814fd6b82a4073e8f0acf0dd4bee646bc470872b84e8cadc7ec6f7b",
+  ".local/indexes/qwen3-embedding-4b/scimas/manifest.json": "40d5e7fe5c9a8e2eae2806b399113f5394d1ffd0005345849213a7abd2b5fd88",
+  ".local/indexes/qwen3-embedding-4b/tool_foundation_manifest.json": "b7604b976f009775703a3e5aa09219c94cd7f2ee32a6b0caa99f42d122e8c0a9"
+}

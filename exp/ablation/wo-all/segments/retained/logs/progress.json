@@ -1,0 +1,43 @@
+{
+  "status": "paused_by_user",
+  "dataset": "mini-100",
+  "baseline": "scimas",
+  "model": "deepseek-flash",
+  "backend": "api",
+  "fingerprint": "135069ab306c28f0400f0cb035641574a3b0b74401df26f67addc70a9e61fc18",
+  "runner_pid": 4119789,
+  "session_started_at": "2026-11-06T11:15:05.578034+00:00",
+  "tool_concurrency_per_task": 1,
+  "ablation": {
+    "schema_version": "scimas.ablation.v1",
+    "variant": "wo-all",
+    "experience": false,
+    "parallel": false,
+    "early_stop": false,
+    "local_repair": false,
+    "experience_scope": "task_local",
+    "serial_order": "stable_topological_plan_order",
+    "unrecoverable_error_policy": "fail_task"
+  },
+  "updated_at": "2026-11-06T19:32:53.258846+08:00",
+  "concurrency": 2,
+  "selected_tasks": 100,
+  "recorded_predictions": 5,
+  "completed_tasks": 2,
+  "active_tasks": [],
+  "pending_tasks": 93,
+  "session_wall_runtime_seconds": 1067.6808418370201,
+  "communication_circuit": {
+    "open": false,
+    "threshold": 3,
+    "consecutive_failures": 0,
+    "last_failure": null
+  },
+  "infrastructure_failures": 0,
+  "paused_at": "2026-11-06T19:36:10.545744+08:00",
+  "suspended_tasks": [
+    "SMAS-0006",
+    "SMAS-0009"
+  ],
+  "automatic_resume": false
+}

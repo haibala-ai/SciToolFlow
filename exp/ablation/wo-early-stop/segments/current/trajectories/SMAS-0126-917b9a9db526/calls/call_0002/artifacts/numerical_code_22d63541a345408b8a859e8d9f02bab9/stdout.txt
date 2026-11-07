@@ -1,0 +1,23 @@
+n_train=4 n_val=2
+epsilon0_f_m=8.8541878128e-12 validation_threshold=1e-06
+candidate=tau_1000us_nodc tau_s=0.001 dc=False fitted=[-1.2753304743923568, 18.907101812689106] max_validation_component_error=3.9130213494462547 negative_parameter=True
+candidate=tau_1000us_dc tau_s=0.001 dc=True fitted=[-0.43131500837503767, 17.86883666359955, 194.24968307223915] max_validation_component_error=3.5633218385812837 negative_parameter=True
+candidate=tau_2000us_nodc tau_s=0.002 dc=False fitted=[3.9316277398490893, 16.108372260150908] max_validation_component_error=0.06420409629895207 negative_parameter=False
+candidate=tau_2000us_dc tau_s=0.002 dc=True fitted=[4.000000000000006, 15.999999999999991, 20.000000000000266] max_validation_component_error=6.217248937900877e-15 negative_parameter=False
+candidate=tau_4000us_nodc tau_s=0.004 dc=False fitted=[7.666146923640384, 14.857511368806987] max_validation_component_error=3.1978663812142543 negative_parameter=False
+candidate=tau_4000us_dc tau_s=0.004 dc=True fitted=[6.933623900259163, 16.550571477161622, -240.13427124335328] max_validation_component_error=2.482106329202881 negative_parameter=True
+supported_model_ids=['tau_2000us_dc']
+n_supported=1
+dc_loss_required_in_supplied_family=True
+survivor_id=tau_2000us_dc
+relaxation_time_s=0.002
+epsilon_infinity=4.000000000000006
+delta=15.999999999999991
+epsilon_static_relaxation_only=19.999999999999996
+dc_loss_rate_per_s=20.000000000000266
+dc_conductivity_s_m=1.7708375625600236e-10
+lowest_omega_rad_s=100
+relaxation_loss_at_lowest_omega=3.0769230769230753
+dc_loss_at_lowest_omega=0.20000000000000268
+dc_loss_fraction_at_lowest_omega=0.06103286384976605
+scope=finite_candidate_conditional_dispersion_screen

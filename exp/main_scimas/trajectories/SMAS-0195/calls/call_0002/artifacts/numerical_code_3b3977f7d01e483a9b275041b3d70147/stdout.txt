@@ -1,0 +1,10 @@
+stratum_weights [0.3, 0.7]
+true_conditional_means [2.0, 8.0]
+true_response_probabilities [0.2, 0.8]
+complete_population_mean 6.199999999999999
+correct|correct 6.199999999999999
+correct|working 6.199999999999999
+working|correct 6.199999999999999
+working|working 6.859999999999999
+both_working_bias 0.6600000000000001
+scope probability limits under declared conditional recording assumptions; not finite-sample unbiasedness

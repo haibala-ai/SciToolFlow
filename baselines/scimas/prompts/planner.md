@@ -16,9 +16,13 @@ registered tool can be planned before retrieval finds it. The framework resolves
 its contract before execution. Respect documented enums, methods and units;
 similar tool names or knowledge-graph edges do not prove scientific compatibility.
 If a capability is missing, issue a focused query. Use search_history and existing
-contracts instead of repeating searches. Primitive operations may implement a
-method, but a different scientific method is not a substitute. Return stop with
-the precise missing capability if a supported plan cannot be formed.
+contracts instead of repeating searches. Look for a composition before requiring
+a dedicated workflow tool: ParseJSONDocument reads complete nested JSON files;
+SliceNumericArray, SplitTrainTest, filtering, column extraction and numeric
+operations can connect data preparation to scientific estimators. Primitive
+operations may implement the stipulated method; a different method is not a
+substitute. Stop only for the precise operation that remains unsupported after
+checking the relevant contracts.
 
 Use complete values already supplied in task.inputs directly when permitted by
 the question. An accompanying attachment does not itself require a reader node.
@@ -31,6 +35,16 @@ needs a documented parser before structured downstream use. Open objects may
 have input-dependent fields: plausible paths undergo presence/type checks at
 runtime. Do not revise a graph merely because these checks are pending. Closed
 objects, scalars and incompatible declared types remain binding constraints.
+
+For a small custom calculation, bind ExecuteNumericalCode.code as
+{"kind":"python_code","code":"print(sum(values))","inputs":{"values":{"kind":"node","node":"read_data","path":["document","values"]}}}.
+The runtime resolves inputs from accepted observations, quotes them as Python
+data assignments, then submits the code to the existing restricted numerical
+tool. This creates real data dependencies; no filesystem access is added. Use
+ordinary task/node bindings inside inputs, not copied preview values or expected
+results. The rendered code retains the tool's 12000-character limit; use native
+array tools rather than embedding large datasets. Final nested JSON formatting
+belongs to the summary role and does not require an object-construction tool.
 
 Use optional graph features only when the task needs them:
 - for_each: for unknown-length arrays, bind to a task/node array, ordered collect,

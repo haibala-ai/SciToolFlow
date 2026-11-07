@@ -1,0 +1,40 @@
+{
+  "status": "finished",
+  "dataset": "mini-100",
+  "baseline": "scimas",
+  "model": "deepseek-flash",
+  "backend": "api",
+  "fingerprint": "194945cc80b49134a05040117a9bfd06511bc1579a295f0fced4fe0a9d738610",
+  "runner_pid": 2259628,
+  "session_started_at": "2026-11-07T02:56:01.680450+00:00",
+  "tool_concurrency_per_task": 4,
+  "ablation": {
+    "schema_version": "scimas.ablation.v2",
+    "variant": "wo-exp",
+    "experience": false,
+    "parallel": true,
+    "early_stop": true,
+    "local_repair": true,
+    "graph_refinement": true,
+    "scientific_review": true,
+    "experience_scope": "task_local",
+    "experience_representation": "verified_interface_recipes.v1",
+    "serial_order": "stable_topological_plan_order",
+    "unrecoverable_error_policy": "bounded_local_repair"
+  },
+  "updated_at": "2026-11-07T14:56:04.315724+08:00",
+  "concurrency": 2,
+  "selected_tasks": 48,
+  "recorded_predictions": 48,
+  "completed_tasks": 39,
+  "active_tasks": [],
+  "pending_tasks": 0,
+  "session_wall_runtime_seconds": 14402.63531143096,
+  "communication_circuit": {
+    "open": false,
+    "threshold": 3,
+    "consecutive_failures": 0,
+    "last_failure": null
+  },
+  "infrastructure_failures": 0
+}

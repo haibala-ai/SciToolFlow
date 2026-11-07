@@ -236,6 +236,7 @@ class Planner:
             search_history = []
             completed_queries = set()
             queries = decomposition["queries"]
+            capability_reconsidered = False
             while len(report["steps"]) < self.max_requests:
                 if queries:
                     queries, skipped = fresh_queries(queries, completed_queries)
@@ -287,6 +288,25 @@ class Planner:
                 )
                 queries = []
                 if "stop" in action:
+                    if not capability_reconsidered and len(report["steps"]) < self.max_requests:
+                        capability_reconsidered = True
+                        common = [name for name in (
+                            "ParseJSONDocument", "GetJSONPointer", "SliceNumericArray",
+                            "FilterRecords", "ExtractNumericColumns", "AggregateRecordGroups",
+                            "SplitTrainTest", "CrossValidateRegressor", "StandardizeNumericFeatures",
+                            "FitRidgeRegression", "PredictLinearModel", "RegressionMetrics",
+                            "ElementwiseNumericOperations", "MatrixMultiply", "SelectOrderStatistic",
+                            "ConvexHalfspaceGeometry", "ExecuteNumericalCode",
+                        ) if name in self.knowledge.catalog.tools
+                            and self.knowledge.allowed(name)]
+                        feedback.append({"proposed_stop": action["stop"],
+                            "available_primitives": common,
+                            "instruction": "Before declaring a capability missing, consider a composition of registered primitives. "
+                                "ParseJSONDocument reads complete nested JSON; array slicing and train/test tools preserve subsets. "
+                                "ExecuteNumericalCode.code accepts the python_code binding to safely bind observed values. "
+                                "Final JSON formatting needs no tool node. Describe uncertain contracts. "
+                                "If the actual scientific operation still cannot be expressed, stop with that precise gap."})
+                        continue
                     raise ValueError("PlannerStopped: " + action["stop"])
                 if "queries" in action:
                     queries = action["queries"]

@@ -1,0 +1,17 @@
+case1_candidate_roots [0.276393202250021, 0.7236067977499789]
+case1_physical_root_count 1
+case2_candidate_roots [0.25, 1.0]
+case2_physical_root_count 1
+Kp_recheck_case1 0.9999999999999999
+Kp_recheck_case2 1.0
+monomer_nonnegative_case1 True
+monomer_nonnegative_case2 True
+extent_leq_half_case1 True
+extent_leq_half_case2 True
+equilibrium_dimerization_extents_mol_by_case: [0.276393202250021, 0.25]
+final_total_gas_moles_by_case: [0.7236067977499789, 0.75]
+final_pressures_bar_by_case: [1.0, 0.75]
+final_volume_over_initial_volume_by_case: [0.7236067977499789, 1.0]
+work_by_gas_kJ_by_case: [-0.6909830056250528, 0.0]
+heat_into_gas_kJ_by_case: [-3.4549150281252627, -2.5]
+mechanical_boundary_leaves_equilibrium_extent_unchanged: False

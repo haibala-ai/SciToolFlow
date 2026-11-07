@@ -421,6 +421,7 @@ def test_planner_can_report_missing_capability_without_fabricated_plan():
         [
             decomposition(),
             {"stop": "Required method is not available in inspected contracts"},
+            {"stop": "The suggested primitives still cannot express the required method"},
         ]
     )
     with pytest.raises(PlanningFailure, match="PlannerStopped"):

@@ -1,0 +1,18 @@
+site_order_used ['A', 'B1', 'B2']
+site_elements_used ['Fe', 'Fe', 'Fe']
+allowed_valences_used [2, 3]
+n_Fe_n_O_oxygen_valence 3 4 -2
+moment_map_used {2: 4.0, 3: 5.0}
+net_moment_target_muB 4.0
+charge_target_from_neutrality 8
+enumerated_vector_count 8
+neutral_vector_count 3
+neutral_vectors [[2, 3, 3], [3, 2, 3], [3, 3, 2]]
+Fe_II_and_Fe_III_counts_per_formula_unit [1.0, 2.0]
+candidate [2, 3, 3] A_moment_muB 4.0 B_moment_sum_muB 10.0 net_moment_muB 6.0
+candidate [3, 2, 3] A_moment_muB 5.0 B_moment_sum_muB 9.0 net_moment_muB 4.0
+candidate [3, 3, 2] A_moment_muB 5.0 B_moment_sum_muB 9.0 net_moment_muB 4.0
+retained_count 2
+retained_site_valence_assignments [[3, 2, 3], [3, 3, 2]]
+retained_in_site_order ['A', 'B1', 'B2'] [[3, 2, 3], [3, 3, 2]]
+all_labelled_site_valences_identified False

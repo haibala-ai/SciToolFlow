@@ -1,0 +1,2913 @@
+{
+  "schema_version": "scimas.archived_segmented_scores.v1",
+  "summary": {
+    "dataset": "mini-50",
+    "tasks": 50,
+    "runtime_completion_rate": 0.72,
+    "tool_planning_accuracy": 0.47849342037348275,
+    "observed_mean_tool_orchestration_score": 0.47849342037348275,
+    "tool_planning_reportable": true,
+    "strict_tool_planning_accuracy": 0.48,
+    "mean_orchestration_credit": 0.635989010989011,
+    "mean_selection_efficiency": 0.3934705744065077,
+    "answer_accuracy": 0.66
+  },
+  "tasks": [
+    {
+      "id": "SMAS-0001",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_0_identity": [
+            "identity_0"
+          ],
+          "cap_0_m1": [
+            "metric_0_0"
+          ],
+          "cap_0_m2": [
+            "metric_0_1"
+          ],
+          "cap_1_identity": [
+            "identity_1"
+          ],
+          "cap_1_m1": [
+            "metric_1_0"
+          ],
+          "cap_1_m2": [
+            "metric_1_1"
+          ],
+          "cap_2_identity": [
+            "identity_2"
+          ],
+          "cap_2_m1": [
+            "metric_2_0"
+          ],
+          "cap_2_m2": [
+            "metric_2_1"
+          ],
+          "cap_whole_inventory_0": [
+            "as_received_mass_0"
+          ],
+          "cap_whole_inventory_1": [
+            "as_received_mass_1"
+          ],
+          "cap_whole_inventory_2": [
+            "as_received_mass_2"
+          ],
+          "optional_numeric_divide_score": [
+            "arithmetic_score_0",
+            "arithmetic_score_1",
+            "arithmetic_score_2"
+          ],
+          "optional_numeric_subtract_removed_mass": [
+            "arithmetic_removed_mass_0",
+            "arithmetic_removed_mass_1",
+            "arithmetic_removed_mass_2"
+          ]
+        },
+        "charged_scientific_calls": 0,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 6,
+        "elapsed_seconds": 269.75355815701187,
+        "prompt_tokens": 108402,
+        "completion_tokens": 46128,
+        "observed_prompt_tokens": 108402,
+        "observed_completion_tokens": 46128,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0001",
+      "provenance": {
+        "segment": "retained",
+        "actor_commit": "9e7782d0fea293878e8301e408e01bd85060992d",
+        "trajectory_file": "segments/retained/trajectories/SMAS-0001-751e9420d6db/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0002",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_0_identity": [
+            "identity_0"
+          ],
+          "cap_0_m1": [
+            "metric_0_0"
+          ],
+          "cap_0_m2": [
+            "metric_0_1"
+          ],
+          "cap_1_identity": [
+            "identity_1"
+          ],
+          "cap_1_m1": [
+            "metric_1_0"
+          ],
+          "cap_1_m2": [
+            "metric_1_1"
+          ],
+          "cap_2_identity": [
+            "identity_2"
+          ],
+          "cap_2_m1": [
+            "metric_2_0"
+          ],
+          "cap_2_m2": [
+            "metric_2_1"
+          ],
+          "optional_numeric_subtract_score": [
+            "arithmetic_score_0",
+            "arithmetic_score_1",
+            "arithmetic_score_2"
+          ]
+        },
+        "charged_scientific_calls": 1,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 10,
+        "elapsed_seconds": 360.3338878629729,
+        "prompt_tokens": 184264,
+        "completion_tokens": 64366,
+        "observed_prompt_tokens": 184264,
+        "observed_completion_tokens": 64366,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0002",
+      "provenance": {
+        "segment": "retained",
+        "actor_commit": "9e7782d0fea293878e8301e408e01bd85060992d",
+        "trajectory_file": "segments/retained/trajectories/SMAS-0002-b32fac30881f/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0003",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.8125,
+      "tool_orchestration_score": 0.9285714285714286,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_0_identity": [
+            "identity_0"
+          ],
+          "cap_0_m1": [
+            "metric_0_0"
+          ],
+          "cap_0_m2": [
+            "metric_0_1"
+          ],
+          "cap_1_identity": [
+            "identity_1"
+          ],
+          "cap_1_m1": [
+            "metric_1_0"
+          ],
+          "cap_1_m2": [
+            "metric_1_1"
+          ],
+          "cap_2_identity": [
+            "identity_2"
+          ],
+          "cap_2_m1": [
+            "metric_2_0"
+          ],
+          "cap_2_m2": [
+            "metric_2_1"
+          ],
+          "optional_numeric_divide_score": [
+            "arithmetic_score_0",
+            "arithmetic_score_1",
+            "arithmetic_score_2"
+          ]
+        },
+        "charged_scientific_calls": 16,
+        "matched_scientific_calls": 13,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 46,
+        "elapsed_seconds": 560.272011952009,
+        "prompt_tokens": 593919,
+        "completion_tokens": 83480,
+        "observed_prompt_tokens": 593919,
+        "observed_completion_tokens": 83480,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0003",
+      "provenance": {
+        "segment": "retained",
+        "actor_commit": "9e7782d0fea293878e8301e408e01bd85060992d",
+        "trajectory_file": "segments/retained/trajectories/SMAS-0003-b5b1f57daba9/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0004",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.75,
+      "tool_orchestration_score": 0.9,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_aromatic_evidence_a": [
+            "rings_a"
+          ],
+          "cap_aromatic_evidence_b": [
+            "rings_b"
+          ],
+          "cap_aromatic_evidence_c": [
+            "rings_c"
+          ],
+          "cap_eligible_profile_b": [
+            "mass_b",
+            "tpsa_b"
+          ],
+          "cap_strict_rotation_a": [
+            "rot_a"
+          ],
+          "cap_strict_rotation_b": [
+            "rot_b"
+          ],
+          "cap_strict_rotation_c": [
+            "rot_c"
+          ]
+        },
+        "charged_scientific_calls": 16,
+        "matched_scientific_calls": 12,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": [
+          "o0007",
+          "o0008",
+          "o0017",
+          "o0018"
+        ]
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 44,
+        "elapsed_seconds": 408.1308080450399,
+        "prompt_tokens": 565547,
+        "completion_tokens": 60041,
+        "observed_prompt_tokens": 565547,
+        "observed_completion_tokens": 60041,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0004",
+      "provenance": {
+        "segment": "retained",
+        "actor_commit": "9e7782d0fea293878e8301e408e01bd85060992d",
+        "trajectory_file": "segments/retained/trajectories/SMAS-0004-6fea3401a384/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0006",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.47058823529411764,
+      "tool_orchestration_score": 0.7272727272727272,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_replacement_a": [
+            "mass_a",
+            "tpsa_a"
+          ],
+          "cap_replacement_b": [
+            "mass_b",
+            "tpsa_b"
+          ],
+          "cap_replacement_c": [
+            "mass_c",
+            "tpsa_c"
+          ],
+          "cap_shared_baseline": [
+            "mass_base",
+            "tpsa_base"
+          ],
+          "optional_numeric_subtract_delta_mass": [
+            "arithmetic_delta_mass_a",
+            "arithmetic_delta_mass_b",
+            "arithmetic_delta_mass_c"
+          ],
+          "optional_numeric_subtract_delta_tpsa": [
+            "arithmetic_delta_tpsa_a",
+            "arithmetic_delta_tpsa_b",
+            "arithmetic_delta_tpsa_c"
+          ]
+        },
+        "charged_scientific_calls": 17,
+        "matched_scientific_calls": 8,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 22,
+        "elapsed_seconds": 173.64722999098012,
+        "prompt_tokens": 190098,
+        "completion_tokens": 16140,
+        "observed_prompt_tokens": 190098,
+        "observed_completion_tokens": 16140,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0006",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0006-6dd766aba81e/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0007",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_charged_parent_a": [
+            "identity_a"
+          ],
+          "cap_charged_parent_b": [
+            "identity_b"
+          ],
+          "cap_charged_parent_c": [
+            "identity_c"
+          ]
+        },
+        "charged_scientific_calls": 1,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 10,
+        "elapsed_seconds": 231.74855340697104,
+        "prompt_tokens": 153002,
+        "completion_tokens": 39020,
+        "observed_prompt_tokens": 153002,
+        "observed_completion_tokens": 39020,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0007",
+      "provenance": {
+        "segment": "retained",
+        "actor_commit": "9e7782d0fea293878e8301e408e01bd85060992d",
+        "trajectory_file": "segments/retained/trajectories/SMAS-0007-f2e15f76f5eb/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0009",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.6666666666666666,
+      "tool_orchestration_score": 0.8571428571428572,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_a_bridgehead": [
+            "bridgehead_a"
+          ],
+          "cap_a_spiro": [
+            "spiro_a"
+          ],
+          "cap_b_bridgehead": [
+            "bridgehead_b"
+          ],
+          "cap_b_spiro": [
+            "spiro_b"
+          ],
+          "cap_c_bridgehead": [
+            "bridgehead_c"
+          ],
+          "cap_c_spiro": [
+            "spiro_c"
+          ]
+        },
+        "charged_scientific_calls": 9,
+        "matched_scientific_calls": 6,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 14,
+        "elapsed_seconds": 130.87812908703927,
+        "prompt_tokens": 92630,
+        "completion_tokens": 12794,
+        "observed_prompt_tokens": 92630,
+        "observed_completion_tokens": 12794,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0009",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0009-977dc33c4680/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0012",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 1.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_0_identity": [
+            "identity_0"
+          ],
+          "cap_0_potential": [
+            "metric_0_0"
+          ],
+          "cap_0_unspecified": [
+            "metric_0_1"
+          ],
+          "cap_1_identity": [
+            "identity_1"
+          ],
+          "cap_1_potential": [
+            "metric_1_0"
+          ],
+          "cap_1_unspecified": [
+            "metric_1_1"
+          ],
+          "cap_2_identity": [
+            "identity_2"
+          ],
+          "cap_2_potential": [
+            "metric_2_0"
+          ],
+          "cap_2_unspecified": [
+            "metric_2_1"
+          ],
+          "cap_achiral_neighbors": [
+            "achiral_matrix"
+          ],
+          "cap_chiral_neighbors": [
+            "chiral_matrix"
+          ],
+          "optional_numeric_subtract_score": [
+            "arithmetic_score_0",
+            "arithmetic_score_1",
+            "arithmetic_score_2"
+          ]
+        },
+        "charged_scientific_calls": 11,
+        "matched_scientific_calls": 11,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 16,
+        "elapsed_seconds": 116.61766910302686,
+        "prompt_tokens": 151719,
+        "completion_tokens": 12711,
+        "observed_prompt_tokens": 151719,
+        "observed_completion_tokens": 12711,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0012",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0012-7a0863768415/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0020",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 1.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_neighbor_inventory_reference": [
+            "neighbors_reference"
+          ],
+          "cap_neighbor_inventory_unwrapped_mobile": [
+            "neighbors_unwrapped_mobile"
+          ],
+          "cap_neighbor_inventory_wrapped_mobile": [
+            "neighbors_wrapped_mobile"
+          ],
+          "cap_unwrapped_endpoint": [
+            "motion_unwrapped_mobile"
+          ],
+          "cap_wrapped_endpoint": [
+            "motion_wrapped_mobile"
+          ]
+        },
+        "charged_scientific_calls": 5,
+        "matched_scientific_calls": 5,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 9,
+        "elapsed_seconds": 184.26609545899555,
+        "prompt_tokens": 80783,
+        "completion_tokens": 25385,
+        "observed_prompt_tokens": 80783,
+        "observed_completion_tokens": 25385,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "SMAS-0020",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0020-44c61f2be3ae/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0025",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": false,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.8181818181818182,
+      "tool_orchestration_score": 0.9310344827586206,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_actual_inventory_Ca_substitution": [
+            "composition_Ca_substitution"
+          ],
+          "cap_actual_inventory_paired_vacancy": [
+            "composition_paired_vacancy"
+          ],
+          "cap_actual_inventory_perfect": [
+            "composition_perfect"
+          ],
+          "cap_density_Ca_substitution": [
+            "density_Ca_substitution"
+          ],
+          "cap_density_paired_vacancy": [
+            "density_paired_vacancy"
+          ],
+          "cap_density_perfect": [
+            "density_perfect"
+          ],
+          "cap_periodic_contacts_Ca_substitution": [
+            "neighbors_Ca_substitution"
+          ],
+          "cap_periodic_contacts_paired_vacancy": [
+            "neighbors_paired_vacancy"
+          ],
+          "cap_periodic_contacts_perfect": [
+            "neighbors_perfect"
+          ],
+          "optional_numeric_divide_vacancy_mass_density_fraction": [
+            "arithmetic_vacancy_mass_density_fraction"
+          ]
+        },
+        "charged_scientific_calls": 11,
+        "matched_scientific_calls": 9,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 21,
+        "elapsed_seconds": 260.45068796898704,
+        "prompt_tokens": 282770,
+        "completion_tokens": 26541,
+        "observed_prompt_tokens": 282770,
+        "observed_completion_tokens": 26541,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "SMAS-0025",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0025-b36c0c695c86/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0028",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 1.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "records"
+          ],
+          "cap_02": [
+            "before_plot"
+          ],
+          "cap_03": [
+            "after_plot"
+          ],
+          "cap_04": [
+            "change_plot"
+          ],
+          "cap_05": [
+            "before_quadrat"
+          ],
+          "cap_06": [
+            "after_quadrat"
+          ],
+          "cap_07": [
+            "change_quadrat"
+          ],
+          "cap_08": [
+            "upland"
+          ],
+          "cap_09": [
+            "lowland"
+          ]
+        },
+        "charged_scientific_calls": 9,
+        "matched_scientific_calls": 9,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 16,
+        "elapsed_seconds": 250.56363960599992,
+        "prompt_tokens": 160516,
+        "completion_tokens": 35090,
+        "observed_prompt_tokens": 160516,
+        "observed_completion_tokens": 35090,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "SMAS-0028",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0028-88372f838464/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0036",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 1.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "records"
+          ],
+          "cap_02": [
+            "C1_hydropathy"
+          ],
+          "cap_03": [
+            "C1_aliphatic"
+          ],
+          "cap_04": [
+            "C1_pI"
+          ],
+          "cap_05": [
+            "C2_hydropathy"
+          ],
+          "cap_06": [
+            "C2_aliphatic"
+          ],
+          "cap_07": [
+            "C2_pI"
+          ],
+          "cap_08": [
+            "C3_hydropathy"
+          ],
+          "cap_09": [
+            "C3_aliphatic"
+          ],
+          "cap_10": [
+            "C3_pI"
+          ],
+          "cap_11": [
+            "C4_hydropathy"
+          ],
+          "cap_12": [
+            "C4_aliphatic"
+          ],
+          "cap_13": [
+            "C4_pI"
+          ]
+        },
+        "charged_scientific_calls": 13,
+        "matched_scientific_calls": 13,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 19,
+        "elapsed_seconds": 124.15284330100985,
+        "prompt_tokens": 166368,
+        "completion_tokens": 11315,
+        "observed_prompt_tokens": 166368,
+        "observed_completion_tokens": 11315,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "SMAS-0036",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0036-54a51872fa09/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0037",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.6,
+      "tool_orchestration_score": 0.818181818181818,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "U1"
+          ],
+          "cap_02": [
+            "U2"
+          ],
+          "cap_03": [
+            "U3"
+          ],
+          "cap_04": [
+            "U4"
+          ],
+          "cap_05": [
+            "U1_composition"
+          ],
+          "cap_06": [
+            "U3_composition"
+          ]
+        },
+        "charged_scientific_calls": 10,
+        "matched_scientific_calls": 6,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 17,
+        "elapsed_seconds": 181.85554590303218,
+        "prompt_tokens": 176303,
+        "completion_tokens": 22549,
+        "observed_prompt_tokens": 176303,
+        "observed_completion_tokens": 22549,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "SMAS-0037",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0037-86159ed09a25/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0046",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 1.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "standardize"
+          ],
+          "cap_02": [
+            "cluster_raw"
+          ],
+          "cap_03": [
+            "cluster_standardized"
+          ],
+          "cap_04": [
+            "quality_raw"
+          ],
+          "cap_05": [
+            "quality_standardized"
+          ],
+          "cap_06": [
+            "distance_raw"
+          ],
+          "cap_07": [
+            "distance_standardized"
+          ],
+          "cap_08": [
+            "agreement"
+          ]
+        },
+        "charged_scientific_calls": 8,
+        "matched_scientific_calls": 8,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 12,
+        "elapsed_seconds": 110.61649940599455,
+        "prompt_tokens": 72048,
+        "completion_tokens": 12348,
+        "observed_prompt_tokens": 72048,
+        "observed_completion_tokens": 12348,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0046",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0046-bacb689e6633/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0050",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "calibration_a"
+          ],
+          "cap_02": [
+            "calibration_b"
+          ],
+          "cap_03": [
+            "calibration_c"
+          ],
+          "cap_04": [
+            "inverse_a"
+          ],
+          "cap_05": [
+            "inverse_b"
+          ],
+          "cap_06": [
+            "inverse_c"
+          ],
+          "cap_07": [
+            "turning_a"
+          ],
+          "cap_08": [
+            "turning_b"
+          ],
+          "cap_09": [
+            "turning_c"
+          ]
+        },
+        "charged_scientific_calls": 1,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 7,
+        "elapsed_seconds": 208.36821266799234,
+        "prompt_tokens": 81896,
+        "completion_tokens": 30812,
+        "observed_prompt_tokens": 81896,
+        "observed_completion_tokens": 30812,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0050",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0050-4ea28b27e6c4/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0054",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.5555555555555556,
+      "tool_orchestration_score": 0.7894736842105263,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_a_centroid": [
+            "center_a"
+          ],
+          "cap_a_distance": [
+            "distance_a"
+          ],
+          "cap_b_centroid": [
+            "center_b"
+          ],
+          "cap_b_distance": [
+            "distance_b"
+          ],
+          "cap_c_centroid": [
+            "center_c"
+          ],
+          "cap_c_distance": [
+            "distance_c"
+          ],
+          "cap_d_centroid": [
+            "center_d"
+          ],
+          "cap_d_distance": [
+            "distance_d"
+          ],
+          "cap_preserved_shape": [
+            "shape"
+          ],
+          "cap_proper_fit": [
+            "fit"
+          ]
+        },
+        "charged_scientific_calls": 18,
+        "matched_scientific_calls": 10,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 26,
+        "elapsed_seconds": 327.88470054703066,
+        "prompt_tokens": 360953,
+        "completion_tokens": 42289,
+        "observed_prompt_tokens": 360953,
+        "observed_completion_tokens": 42289,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0054",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0054-48d10cee139c/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0060",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.6923076923076923,
+      "selection_efficiency": 1.0,
+      "tool_orchestration_score": 0.7714285714285712,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_constrained_blend": [
+            "optimum"
+          ],
+          "cap_elemental_source_a": [
+            "formula_a",
+            "fractions_a"
+          ],
+          "cap_elemental_source_b": [
+            "formula_b",
+            "fractions_b"
+          ],
+          "cap_elemental_source_c": [
+            "formula_c",
+            "fractions_c"
+          ],
+          "cap_graph_mass_a": [
+            "mass_a"
+          ],
+          "cap_graph_mass_b": [
+            "mass_b"
+          ],
+          "cap_graph_mass_c": [
+            "mass_c"
+          ],
+          "cap_independent_balance": [
+            "elements"
+          ]
+        },
+        "charged_scientific_calls": 9,
+        "matched_scientific_calls": 9,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 14,
+        "elapsed_seconds": 181.4161368609639,
+        "prompt_tokens": 124076,
+        "completion_tokens": 22181,
+        "observed_prompt_tokens": 124076,
+        "observed_completion_tokens": 22181,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0060",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0060-f96bf7a60eb3/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0062",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.5652173913043478,
+      "tool_orchestration_score": 0.7959183673469389,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_normalized_moments_a": [
+            "normalized_a"
+          ],
+          "cap_normalized_moments_b": [
+            "normalized_b"
+          ],
+          "cap_normalized_moments_c": [
+            "normalized_c"
+          ],
+          "cap_raw_moments_a": [
+            "pmi1_a",
+            "pmi2_a",
+            "pmi3_a"
+          ],
+          "cap_raw_moments_b": [
+            "pmi1_b",
+            "pmi2_b",
+            "pmi3_b"
+          ],
+          "cap_raw_moments_c": [
+            "pmi1_c",
+            "pmi2_c",
+            "pmi3_c"
+          ],
+          "cap_shape_panel": [
+            "shape"
+          ]
+        },
+        "charged_scientific_calls": 23,
+        "matched_scientific_calls": 13,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 30,
+        "elapsed_seconds": 355.4102963419864,
+        "prompt_tokens": 358146,
+        "completion_tokens": 36716,
+        "observed_prompt_tokens": 358146,
+        "observed_completion_tokens": 36716,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0062",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0062-52d5aa7047ae/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0065",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.75,
+      "tool_orchestration_score": 0.9,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_contact_a0": [
+            "neighbor_a0"
+          ],
+          "cap_contact_a1": [
+            "neighbor_a1"
+          ],
+          "cap_contact_a2": [
+            "neighbor_a2"
+          ],
+          "cap_contact_a3": [
+            "neighbor_a3"
+          ],
+          "cap_contact_b0": [
+            "neighbor_b0"
+          ],
+          "cap_contact_b1": [
+            "neighbor_b1"
+          ],
+          "cap_contact_b2": [
+            "neighbor_b2"
+          ],
+          "cap_contact_b3": [
+            "neighbor_b3"
+          ],
+          "cap_gradient_a": [
+            "gradient_a"
+          ],
+          "cap_gradient_b": [
+            "gradient_b"
+          ],
+          "cap_integral_a": [
+            "integral_a"
+          ],
+          "cap_integral_b": [
+            "integral_b"
+          ]
+        },
+        "charged_scientific_calls": 20,
+        "matched_scientific_calls": 15,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 27,
+        "elapsed_seconds": 359.43801011901814,
+        "prompt_tokens": 439745,
+        "completion_tokens": 38332,
+        "observed_prompt_tokens": 439745,
+        "observed_completion_tokens": 38332,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "SMAS-0065",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0065-02823bfa1b44/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0072",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.8571428571428571,
+      "selection_efficiency": 0.9166666666666666,
+      "tool_orchestration_score": 0.8761061946902654,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_identifiability": [
+            "spectrum"
+          ],
+          "cap_independent_prediction": [
+            "forward",
+            "error"
+          ],
+          "cap_line_calibration_a": [
+            "fit_a",
+            "evaluate_a"
+          ],
+          "cap_line_calibration_b": [
+            "fit_b",
+            "evaluate_b"
+          ],
+          "cap_line_calibration_c": [
+            "fit_c",
+            "evaluate_c"
+          ],
+          "cap_mixture_inversion": [
+            "mixture"
+          ],
+          "cap_spectral_axis": [
+            "frequencies",
+            "intensities"
+          ]
+        },
+        "charged_scientific_calls": 12,
+        "matched_scientific_calls": 11,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 22,
+        "elapsed_seconds": 642.3770833709859,
+        "prompt_tokens": 495082,
+        "completion_tokens": 91851,
+        "observed_prompt_tokens": 495082,
+        "observed_completion_tokens": 91851,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "SMAS-0072",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0072-b442ef87eb08/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0080",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.8,
+      "tool_orchestration_score": 0.9230769230769231,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "description_a"
+          ],
+          "cap_02": [
+            "description_b"
+          ],
+          "cap_03": [
+            "description_c"
+          ],
+          "cap_04": [
+            "bootstrap_a"
+          ],
+          "cap_05": [
+            "bootstrap_b"
+          ],
+          "cap_06": [
+            "bootstrap_c"
+          ],
+          "cap_07": [
+            "normal_site_a"
+          ],
+          "cap_08": [
+            "normal_site_b"
+          ],
+          "cap_09": [
+            "normal_site_c"
+          ],
+          "cap_10": [
+            "normal_site_a",
+            "future_site_a"
+          ],
+          "cap_11": [
+            "normal_site_b",
+            "future_site_b"
+          ],
+          "cap_12": [
+            "normal_site_c",
+            "future_site_c"
+          ],
+          "optional_normal_parameter_standardization": [
+            "plugin_normal_standardization_batch"
+          ]
+        },
+        "charged_scientific_calls": 15,
+        "matched_scientific_calls": 12,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 21,
+        "elapsed_seconds": 145.6466784219956,
+        "prompt_tokens": 193395,
+        "completion_tokens": 15584,
+        "observed_prompt_tokens": 193395,
+        "observed_completion_tokens": 15584,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "SMAS-0080",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0080-00479f5a64b0/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0082",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "diversity_partition_program"
+          ],
+          "cap_02": [
+            "diversity_partition_program"
+          ],
+          "cap_03": [
+            "diversity_partition_program"
+          ],
+          "cap_04": [
+            "diversity_partition_program"
+          ],
+          "cap_05_equal_stand": [
+            "diversity_partition_program"
+          ],
+          "cap_05_individual": [
+            "diversity_partition_program"
+          ],
+          "cap_06": [
+            "diversity_partition_program"
+          ],
+          "cap_07": [
+            "diversity_partition_program"
+          ]
+        },
+        "charged_scientific_calls": 1,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 6,
+        "elapsed_seconds": 147.49532773694955,
+        "prompt_tokens": 53936,
+        "completion_tokens": 22501,
+        "observed_prompt_tokens": 53936,
+        "observed_completion_tokens": 22501,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "SMAS-0082",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0082-727591e401fd/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0087",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.75,
+      "selection_efficiency": 0.6363636363636364,
+      "tool_orchestration_score": 0.7078651685393259,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "fit_unweighted"
+          ],
+          "cap_02": [
+            "fit_absolute"
+          ],
+          "cap_03": [
+            "fit_doubled_absolute"
+          ],
+          "cap_04": [
+            "fit_doubled_relative"
+          ],
+          "cap_05": [
+            "predict_unweighted"
+          ],
+          "cap_06": [
+            "predict_absolute"
+          ],
+          "cap_07": [
+            "predict_doubled_absolute"
+          ],
+          "cap_08": [
+            "predict_doubled_relative"
+          ]
+        },
+        "charged_scientific_calls": 11,
+        "matched_scientific_calls": 7,
+        "supporting_work_observations": [
+          {
+            "observation_id": "o0013",
+            "rule": "absolute_sigma_covariance_diagonal_ratios"
+          },
+          {
+            "observation_id": "o0005",
+            "rule": "double_measurement_sd"
+          }
+        ],
+        "redundant_semantic_observations": [
+          "o0010"
+        ]
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 18,
+        "elapsed_seconds": 161.71693098300602,
+        "prompt_tokens": 177651,
+        "completion_tokens": 17869,
+        "observed_prompt_tokens": 177651,
+        "observed_completion_tokens": 17869,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "SMAS-0087",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0087-8c6491c4f867/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0094",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.75,
+      "selection_efficiency": 0.6666666666666666,
+      "tool_orchestration_score": 0.7200000000000001,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "loss_a0",
+            "loss_a1",
+            "loss_a2"
+          ],
+          "cap_02": [
+            "loss_b0",
+            "loss_b1",
+            "loss_b2"
+          ],
+          "cap_03": [
+            "loss_c0",
+            "loss_c1",
+            "loss_c2"
+          ],
+          "cap_04": [
+            "worst_a"
+          ],
+          "cap_05": [
+            "worst_b"
+          ],
+          "cap_06": [
+            "worst_c"
+          ],
+          "cap_07": [
+            "witness_a"
+          ],
+          "cap_08": [
+            "witness_b"
+          ],
+          "cap_09": [
+            "witness_c"
+          ]
+        },
+        "charged_scientific_calls": 18,
+        "matched_scientific_calls": 12,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 23,
+        "elapsed_seconds": 247.3536704069702,
+        "prompt_tokens": 247096,
+        "completion_tokens": 29384,
+        "observed_prompt_tokens": 247096,
+        "observed_completion_tokens": 29384,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0094",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0094-2e9ea5b2aa97/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0096",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.5555555555555556,
+      "tool_orchestration_score": 0.7894736842105263,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_01": [
+            "pairwise_xy"
+          ],
+          "cap_02": [
+            "pairwise_xz"
+          ],
+          "cap_03": [
+            "pairwise_yz"
+          ],
+          "cap_04": [
+            "eigen_pairwise"
+          ],
+          "cap_05": [
+            "joint_xy"
+          ],
+          "cap_06": [
+            "joint_xz"
+          ],
+          "cap_07": [
+            "joint_yz"
+          ],
+          "cap_08": [
+            "eigen_joint"
+          ]
+        },
+        "charged_scientific_calls": 9,
+        "matched_scientific_calls": 5,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 13,
+        "elapsed_seconds": 126.0559713349794,
+        "prompt_tokens": 102178,
+        "completion_tokens": 16265,
+        "observed_prompt_tokens": 102178,
+        "observed_completion_tokens": 16265,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "SMAS-0096",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0096-ad440a962712/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0103",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.75,
+      "selection_efficiency": 0.4,
+      "tool_orchestration_score": 0.5806451612903226,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 10,
+        "matched_scientific_calls": 4,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 16,
+        "elapsed_seconds": 228.48181082797237,
+        "prompt_tokens": 124494,
+        "completion_tokens": 29977,
+        "observed_prompt_tokens": 124494,
+        "observed_completion_tokens": 29977,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "FLOW-0029",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0103-ee697b634997/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0105",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.3,
+      "tool_orchestration_score": 0.5624999999999999,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 20,
+        "matched_scientific_calls": 6,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 25,
+        "elapsed_seconds": 273.80483577301493,
+        "prompt_tokens": 372113,
+        "completion_tokens": 30343,
+        "observed_prompt_tokens": 372113,
+        "observed_completion_tokens": 30343,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "FLOW-0047",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0105-b3d4ce1eaf7c/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0116",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.17543859649122806,
+      "tool_orchestration_score": 0.3896103896103896,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "average_mass_evidence": [
+            "average_mass_0",
+            "average_mass_1",
+            "average_mass_2"
+          ],
+          "blend_branching_calculation_route": [
+            "feed_molecule_amounts_0",
+            "feed_molecule_amounts_1",
+            "feed_molecule_amounts_2",
+            "group_excess_functionality_moments",
+            "group_weighted_branching_factors",
+            "two_link_continuation_factors",
+            "inverse_branching_factors",
+            "critical_group_conversions",
+            "branch_monomer_mass_fractions"
+          ]
+        },
+        "charged_scientific_calls": 57,
+        "matched_scientific_calls": 10,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 64,
+        "elapsed_seconds": 730.1604873840115,
+        "prompt_tokens": 1139499,
+        "completion_tokens": 81421,
+        "observed_prompt_tokens": 1139499,
+        "observed_completion_tokens": 81421,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "FLOW-0079",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0116-95659c2cba86/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0117",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.25806451612903225,
+      "tool_orchestration_score": 0.5106382978723404,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "complete_supported_fixed_uptake_affine_analysis": [
+            "apparent_isosteric_slope_0",
+            "apparent_isosteric_slope_1"
+          ],
+          "isosteric_interpolation_0_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "isosteric_interpolation_1_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "isosteric_interpolation_2_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "isosteric_interpolation_3_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ],
+          "log_pressure_curve_0_implementation": [
+            "log_pressure_curve_0"
+          ],
+          "log_pressure_curve_1_implementation": [
+            "log_pressure_curve_1"
+          ],
+          "log_pressure_curve_2_implementation": [
+            "log_pressure_curve_2"
+          ],
+          "log_pressure_curve_3_implementation": [
+            "log_pressure_curve_3"
+          ],
+          "reciprocal_temperature_implementation": [
+            "reciprocal_isostere_temperatures"
+          ],
+          "supported_apparent_heat_conversion_implementation": [
+            "all_selected_temperature_fixed_uptake_log_pressure_fits"
+          ]
+        },
+        "charged_scientific_calls": 31,
+        "matched_scientific_calls": 8,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 37,
+        "elapsed_seconds": 387.9021199410199,
+        "prompt_tokens": 806363,
+        "completion_tokens": 38874,
+        "observed_prompt_tokens": 806363,
+        "observed_completion_tokens": 38874,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "FLOW-0083",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0117-c2bbc518ca4b/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0121",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 1,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 5,
+        "elapsed_seconds": 422.2069366200012,
+        "prompt_tokens": 78825,
+        "completion_tokens": 64316,
+        "observed_prompt_tokens": 78825,
+        "observed_completion_tokens": 64316,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "FLOW-0127",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0121-7ca30bdecf77/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0124",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.2916666666666667,
+      "tool_orchestration_score": 0.4038461538461538,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "source_bound_scientific_inference": [
+            "exact_mass_unlabeled",
+            "exact_mass_site1_only",
+            "exact_mass_site2_only",
+            "exact_mass_both_sites",
+            "mass_only_site1_min",
+            "mass_only_site1_max",
+            "orthogonal_NMR_joint_reconstruction",
+            "site_covariance"
+          ]
+        },
+        "charged_scientific_calls": 24,
+        "matched_scientific_calls": 7,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 29,
+        "elapsed_seconds": 296.50517280900385,
+        "prompt_tokens": 312750,
+        "completion_tokens": 32869,
+        "observed_prompt_tokens": 312750,
+        "observed_completion_tokens": 32869,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "FLOW-0464",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0124-cdcbd75ea6a3/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0126",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.16666666666666666,
+      "tool_orchestration_score": 0.30000000000000004,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "validated_complex_family": [
+            "audited_complex_analysis"
+          ]
+        },
+        "charged_scientific_calls": 6,
+        "matched_scientific_calls": 1,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 12,
+        "elapsed_seconds": 403.6459465380176,
+        "prompt_tokens": 134811,
+        "completion_tokens": 57753,
+        "observed_prompt_tokens": 134811,
+        "observed_completion_tokens": 57753,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "FLOW-0006",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0126-af73427b917a/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0133",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.5555555555555556,
+      "tool_orchestration_score": 0.7894736842105263,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 9,
+        "matched_scientific_calls": 5,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 13,
+        "elapsed_seconds": 106.68474592099665,
+        "prompt_tokens": 86858,
+        "completion_tokens": 11706,
+        "observed_prompt_tokens": 86858,
+        "observed_completion_tokens": 11706,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "FLOW-0155",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0133-dea9bb4bdb9a/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0135",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.43478260869565216,
+      "tool_orchestration_score": 0.6976744186046512,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "alignment_optimality": [
+            "alignment_0",
+            "alignment_1",
+            "alignment_2"
+          ]
+        },
+        "charged_scientific_calls": 23,
+        "matched_scientific_calls": 10,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 35,
+        "elapsed_seconds": 554.4581713600201,
+        "prompt_tokens": 571363,
+        "completion_tokens": 58434,
+        "observed_prompt_tokens": 571363,
+        "observed_completion_tokens": 58434,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "FLOW-0181",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0135-9b01a5f574d6/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0142",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "minimal_adequate_window_certificate": [
+            "qualified_0"
+          ],
+          "spectral_source_support": [
+            "cutoff_index",
+            "selective_spectral_windows"
+          ],
+          "optional_scientific_metadata_o014_batch_or_records": [
+            "optional_scientific_metadata_o014"
+          ]
+        },
+        "charged_scientific_calls": 0,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 10,
+        "elapsed_seconds": 708.7466498310096,
+        "prompt_tokens": 292265,
+        "completion_tokens": 114134,
+        "observed_prompt_tokens": 292265,
+        "observed_completion_tokens": 114134,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "FLOW-0199",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0142-6eac8cbdc63d/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0144",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.3333333333333333,
+      "tool_orchestration_score": 0.4285714285714286,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 6,
+        "matched_scientific_calls": 2,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 13,
+        "elapsed_seconds": 222.8224166580476,
+        "prompt_tokens": 234090,
+        "completion_tokens": 31745,
+        "observed_prompt_tokens": 234090,
+        "observed_completion_tokens": 31745,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "FLOW-0202",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0144-9967ff99bbd9/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0149",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 0,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 5,
+        "elapsed_seconds": 85.77678517700406,
+        "prompt_tokens": 57012,
+        "completion_tokens": 13356,
+        "observed_prompt_tokens": 57012,
+        "observed_completion_tokens": 13356,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Material",
+      "source_id": "FLOW-0215",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0149-b876a58f606c/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0154",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "full_eligible_universe_association": [
+            "background_from_model",
+            "gene_family",
+            "upregulated",
+            "overrepresentation_early_background",
+            "term_family_route_1",
+            "term_evidence_route_1"
+          ]
+        },
+        "charged_scientific_calls": 7,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 10,
+        "elapsed_seconds": 272.3826448119944,
+        "prompt_tokens": 233641,
+        "completion_tokens": 35688,
+        "observed_prompt_tokens": 233641,
+        "observed_completion_tokens": 35688,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "FLOW-0252",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0154-8f8adc52d257/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0166",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.10204081632653061,
+      "tool_orchestration_score": 0.2542372881355932,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 49,
+        "matched_scientific_calls": 5,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 55,
+        "elapsed_seconds": 480.1244770369958,
+        "prompt_tokens": 1760261,
+        "completion_tokens": 46140,
+        "observed_prompt_tokens": 1760261,
+        "observed_completion_tokens": 46140,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "FLOW-0300",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0166-e454ae05d927/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0171",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "complete_nested_fit_comparison": [
+            "global_ABCD",
+            "global_ADCB",
+            "global_CBAD",
+            "global_CDAB",
+            "local_A_A",
+            "local_A_C",
+            "local_C_A",
+            "local_C_C",
+            "local_B_B",
+            "local_B_D",
+            "local_D_B",
+            "local_D_D"
+          ]
+        },
+        "charged_scientific_calls": 0,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 6,
+        "elapsed_seconds": 176.72868360904977,
+        "prompt_tokens": 130393,
+        "completion_tokens": 25651,
+        "observed_prompt_tokens": 130393,
+        "observed_completion_tokens": 25651,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "FLOW-0329",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0171-a7586b448889/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0173",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.6666666666666666,
+      "tool_orchestration_score": 0.5454545454545455,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "full_flux_face_and_assay_evidence": [
+            "optimal_face_LP_2",
+            "optimal_face_LP_3",
+            "optimal_face_LP_4",
+            "optimal_face_LP_5",
+            "optimal_face_LP_6",
+            "assay_updated_flux_balance"
+          ]
+        },
+        "charged_scientific_calls": 3,
+        "matched_scientific_calls": 2,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 9,
+        "elapsed_seconds": 240.8810241430183,
+        "prompt_tokens": 115249,
+        "completion_tokens": 37063,
+        "observed_prompt_tokens": 115249,
+        "observed_completion_tokens": 37063,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "FLOW-0334",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0173-f0d4796a2976/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0175",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.041666666666666664,
+      "tool_orchestration_score": 0.10714285714285714,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 24,
+        "matched_scientific_calls": 1,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 30,
+        "elapsed_seconds": 426.63780354498886,
+        "prompt_tokens": 313117,
+        "completion_tokens": 62250,
+        "observed_prompt_tokens": 313117,
+        "observed_completion_tokens": 62250,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Biology",
+      "source_id": "FLOW-0358",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0175-a08e603f0689/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0183",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 1,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 6,
+        "elapsed_seconds": 458.08213916799286,
+        "prompt_tokens": 110518,
+        "completion_tokens": 73860,
+        "observed_prompt_tokens": 110518,
+        "observed_completion_tokens": 73860,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0387",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0183-20e3b6011aa5/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0184",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 0,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 6,
+        "elapsed_seconds": 220.1251779299928,
+        "prompt_tokens": 121392,
+        "completion_tokens": 32475,
+        "observed_prompt_tokens": 121392,
+        "observed_completion_tokens": 32475,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0389",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0184-150f6b483629/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0190",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.0,
+      "selection_efficiency": 0.0,
+      "tool_orchestration_score": 0.0,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "certified_A_lower": [
+            "analytic_primal_A_lower",
+            "analytic_dual_A_lower"
+          ],
+          "certified_A_minus_B_lower": [
+            "analytic_primal_A_minus_B_lower",
+            "analytic_dual_A_minus_B_lower"
+          ],
+          "certified_A_minus_B_upper": [
+            "analytic_primal_A_minus_B_upper",
+            "analytic_dual_A_minus_B_upper"
+          ],
+          "certified_A_upper": [
+            "analytic_primal_A_upper",
+            "analytic_dual_A_upper"
+          ],
+          "certified_B_lower": [
+            "analytic_primal_B_lower",
+            "analytic_dual_B_lower"
+          ],
+          "certified_B_upper": [
+            "analytic_primal_B_upper",
+            "analytic_dual_B_upper"
+          ]
+        },
+        "charged_scientific_calls": 3,
+        "matched_scientific_calls": 0,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 8,
+        "elapsed_seconds": 671.1013399150106,
+        "prompt_tokens": 112745,
+        "completion_tokens": 124924,
+        "observed_prompt_tokens": 112745,
+        "observed_completion_tokens": 124924,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0449",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0190-475c63fa0b49/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0195",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.021739130434782608,
+      "tool_orchestration_score": 0.060000000000000005,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "source_bound_scientific_inference": [
+            "complete_mean",
+            "outcome_residuals",
+            "recording_probability_ratios",
+            "augmentation_terms",
+            "complete_conditional_terms",
+            "all_population_limits",
+            "population_limit_biases"
+          ]
+        },
+        "charged_scientific_calls": 46,
+        "matched_scientific_calls": 1,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 52,
+        "elapsed_seconds": 309.928546597017,
+        "prompt_tokens": 601330,
+        "completion_tokens": 31413,
+        "observed_prompt_tokens": 601330,
+        "observed_completion_tokens": 31413,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0472",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0195-ef007f270d75/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0196",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.11764705882352941,
+      "tool_orchestration_score": 0.2857142857142857,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "variance_normalized_association": [
+            "within_spectrum",
+            "raw_cross_spectrum"
+          ]
+        },
+        "charged_scientific_calls": 34,
+        "matched_scientific_calls": 4,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 39,
+        "elapsed_seconds": 245.95960264001042,
+        "prompt_tokens": 468707,
+        "completion_tokens": 26599,
+        "observed_prompt_tokens": 468707,
+        "observed_completion_tokens": 26599,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0476",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0196-9bf5e77d1d6a/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0198",
+      "runtime_completed": false,
+      "tool_plan_correct": false,
+      "answer_correct": false,
+      "answer_schema_valid": false,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.05263157894736842,
+      "tool_orchestration_score": 0.13043478260869565,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "source_bound_scientific_inference": [
+            "proof_o004",
+            "proof_o005",
+            "proof_o006",
+            "proof_o007",
+            "proof_o008",
+            "proof_o009",
+            "proof_o010",
+            "proof_o011",
+            "proof_o012",
+            "proof_o013",
+            "proof_o014",
+            "proof_o015",
+            "proof_o016",
+            "proof_o017",
+            "proof_o018",
+            "proof_o019",
+            "proof_o020",
+            "proof_o021",
+            "proof_o022",
+            "proof_o023",
+            "proof_o024",
+            "proof_o025",
+            "proof_o026",
+            "proof_o027",
+            "proof_o028",
+            "proof_o029",
+            "proof_o030",
+            "proof_o031",
+            "proof_o032"
+          ]
+        },
+        "charged_scientific_calls": 19,
+        "matched_scientific_calls": 1,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 26,
+        "elapsed_seconds": 488.3498794089537,
+        "prompt_tokens": 310221,
+        "completion_tokens": 73111,
+        "observed_prompt_tokens": 310221,
+        "observed_completion_tokens": 73111,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0483",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0198-160026ad1799/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0199",
+      "runtime_completed": true,
+      "tool_plan_correct": false,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 0.5,
+      "selection_efficiency": 0.025,
+      "tool_orchestration_score": 0.06818181818181819,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "source_bound_scientific_inference": [
+            "proof_o002",
+            "proof_o003",
+            "proof_o004",
+            "proof_o005",
+            "proof_o006",
+            "proof_o007",
+            "proof_o008",
+            "proof_o009",
+            "proof_o010",
+            "proof_o011",
+            "proof_o012",
+            "proof_o013",
+            "proof_o014",
+            "proof_o015",
+            "complete_omitted_row_prediction"
+          ]
+        },
+        "charged_scientific_calls": 40,
+        "matched_scientific_calls": 1,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 49,
+        "elapsed_seconds": 713.0985119950492,
+        "prompt_tokens": 804681,
+        "completion_tokens": 104795,
+        "observed_prompt_tokens": 804681,
+        "observed_completion_tokens": 104795,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0490",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0199-4658331e627d/trajectory.json.gz"
+      }
+    },
+    {
+      "id": "SMAS-0200",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.16666666666666666,
+      "tool_orchestration_score": 0.375,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {},
+        "charged_scientific_calls": 12,
+        "matched_scientific_calls": 2,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 17,
+        "elapsed_seconds": 377.5210833029705,
+        "prompt_tokens": 156916,
+        "completion_tokens": 53690,
+        "observed_prompt_tokens": 156916,
+        "observed_completion_tokens": 53690,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "MachineLearning",
+      "source_id": "FLOW-0499",
+      "provenance": {
+        "segment": "current",
+        "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+        "trajectory_file": "segments/current/trajectories/SMAS-0200-b0e8d6669573/trajectory.json.gz"
+      }
+    }
+  ],
+  "metric_definition_version": "independent-runtime-answer.v2",
+  "llm_judge_used": false
+}

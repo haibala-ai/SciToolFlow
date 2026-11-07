@@ -44,6 +44,13 @@ BINDING = {
             },
             ["kind", "items"],
         ),
+        obj({
+            "kind": {"const": "python_code"},
+            "code": {"type": "string", "minLength": 1, "maxLength": 12000},
+            "inputs": {"type": "object", "minProperties": 1, "maxProperties": 16,
+                       "propertyNames": {"pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"},
+                       "additionalProperties": REF},
+        }),
     ]
 }
 CONDITION = {

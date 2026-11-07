@@ -25,6 +25,11 @@ def binding_recipe(binding, node_tools):
         # payloads or list lengths into procedural memory.
         patterns = [binding_recipe(item, node_tools) for item in binding["items"]]
         recipe["item_patterns"] = list({digest(p): p for p in patterns}.values())
+    elif kind == "python_code":
+        recipe["input_patterns"] = {
+            name: binding_recipe(source, node_tools)
+            for name, source in binding["inputs"].items()
+        }
     else:
         recipe["path_pattern"] = ["<index>" if type(p) is int else p
                                   for p in binding.get("path", [])]

@@ -1,6 +1,0 @@
-{
-  "static_risk_candidates": [
-    "GetMolecularFrequencies"
-  ],
-  "note": "Static candidates, not all reproduced failures; GetMolecularFrequencies native-dict response reproduced in SMAS-0072."
-}

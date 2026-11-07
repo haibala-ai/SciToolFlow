@@ -1,0 +1,293 @@
+{
+  "source_suite": "scimas_ablation_20261106_190958",
+  "actor_commit": "9e7782d0fea293878e8301e408e01bd85060992d",
+  "suite_sha256": "2683703d202f14c1c35f55c32836d9bc885e08fb0a3b2edbf992b3ef9d800b61",
+  "groups": [
+    {
+      "variant": "full",
+      "execution_dataset": "mini",
+      "started_ids": [
+        "SMAS-0001",
+        "SMAS-0002"
+      ],
+      "recorded_ids": [],
+      "prediction_sha256": "fbb1b5b1075b1ece869cdac9d274f3c32ae98be35011e9a386e17afa2640ea84",
+      "traces": [
+        {
+          "id": "SMAS-0001",
+          "file": "trajectories/SMAS-0001-973aabc3cfd3/trajectory.json",
+          "sha256": "08beae7208280a80c1f28a2976468fc976dc333982ee62e5ff89e681808526e7",
+          "status": "running"
+        },
+        {
+          "id": "SMAS-0002",
+          "file": "trajectories/SMAS-0002-cd24ed6f5ab0/trajectory.json",
+          "sha256": "67d32e2e2f303f7772636d5b1c6fb1ed1d66bf6aca77d1163d8fe517e97056e6",
+          "status": "running"
+        }
+      ]
+    },
+    {
+      "variant": "wo-exp",
+      "execution_dataset": "mini-100",
+      "started_ids": [
+        "SMAS-0001",
+        "SMAS-0002",
+        "SMAS-0003",
+        "SMAS-0004"
+      ],
+      "recorded_ids": [
+        "SMAS-0001",
+        "SMAS-0002"
+      ],
+      "prediction_sha256": "152db24f2c5384b0868b102f059fa43bfa2ea9426bf25920385176c11970e605",
+      "traces": [
+        {
+          "id": "SMAS-0001",
+          "file": "trajectories/SMAS-0001-69623e4cbaae/trajectory.json",
+          "sha256": "af28ec38f3de996ef013bd142be0397dd6020ed23c12107cd4fcffff618d3fe6",
+          "status": "completed"
+        },
+        {
+          "id": "SMAS-0002",
+          "file": "trajectories/SMAS-0002-4558f9538e2e/trajectory.json",
+          "sha256": "7f482c8b179ae035e7a992e23324ffc376708f1d32dce604a329b6b3fd69af4e",
+          "status": "completed"
+        },
+        {
+          "id": "SMAS-0003",
+          "file": "trajectories/SMAS-0003-0802a4a2525f/trajectory.json",
+          "sha256": "4c509b12c63017182fe78fdb496b82362e0f791d7e8b228d2c5bf205eb9dd4d7",
+          "status": "running"
+        },
+        {
+          "id": "SMAS-0004",
+          "file": "trajectories/SMAS-0004-cc356f7e35fe/trajectory.json",
+          "sha256": "cd884891bb8881219e31517123d8dd57f16604b84f0aa2b08d99603a8cc5027e",
+          "status": "running"
+        }
+      ]
+    },
+    {
+      "variant": "wo-parallel",
+      "execution_dataset": "mini-100",
+      "started_ids": [
+        "SMAS-0001",
+        "SMAS-0002",
+        "SMAS-0003",
+        "SMAS-0004"
+      ],
+      "recorded_ids": [
+        "SMAS-0002",
+        "SMAS-0003"
+      ],
+      "prediction_sha256": "7c7dee20b7e8f21d24443a32df26fb82c138f1216ffa99c8bb7462166b92cf25",
+      "traces": [
+        {
+          "id": "SMAS-0001",
+          "file": "trajectories/SMAS-0001-9d6f9da0594d/trajectory.json",
+          "sha256": "d85ebf95776ec28f62a5cd0f1c2b887469115a513d5aad9ee381f81bb8da9e64",
+          "status": "running"
+        },
+        {
+          "id": "SMAS-0002",
+          "file": "trajectories/SMAS-0002-b9d2381147b0/trajectory.json",
+          "sha256": "d2801dbea56ecbf310267e7e1b7feaa931fda946701473662ce6230c18ff3e37",
+          "status": "completed"
+        },
+        {
+          "id": "SMAS-0003",
+          "file": "trajectories/SMAS-0003-4499b59b9906/trajectory.json",
+          "sha256": "84b241b6bfeeec93d2f6ff1fd7550212f8fe471cd58ef63b2d8de2d912257fca",
+          "status": "failed"
+        },
+        {
+          "id": "SMAS-0004",
+          "file": "trajectories/SMAS-0004-c26976b688d2/trajectory.json",
+          "sha256": "e15bf400210763b4246309b5d4167bfd1ac43cebf1e59d838ec1b37ef80891fe",
+          "status": "running"
+        }
+      ]
+    },
+    {
+      "variant": "wo-early-stop",
+      "execution_dataset": "mini-100",
+      "started_ids": [
+        "SMAS-0001",
+        "SMAS-0002",
+        "SMAS-0003",
+        "SMAS-0004"
+      ],
+      "recorded_ids": [
+        "SMAS-0001",
+        "SMAS-0002"
+      ],
+      "prediction_sha256": "f7c0cd181caadafe3de0408df6838505865221f44932bbbc3941a602f71607f3",
+      "traces": [
+        {
+          "id": "SMAS-0001",
+          "file": "trajectories/SMAS-0001-aaa8dcd27e4b/trajectory.json",
+          "sha256": "15c1552a37e5f15f0f231114e0c57b1216e4c2b3ed66e8d3a920244a8873b8fc",
+          "status": "failed"
+        },
+        {
+          "id": "SMAS-0002",
+          "file": "trajectories/SMAS-0002-fd4e1dc218ff/trajectory.json",
+          "sha256": "6baf85d6be622aa37b764fbb3598b290d980e7503a504bce02f16da511188abb",
+          "status": "completed"
+        },
+        {
+          "id": "SMAS-0003",
+          "file": "trajectories/SMAS-0003-90d28a06ecd5/trajectory.json",
+          "sha256": "7bd9ed74b01e5f46ef63326cbaf1525895a182e5f18db7273d4661f4c4c96338",
+          "status": "running"
+        },
+        {
+          "id": "SMAS-0004",
+          "file": "trajectories/SMAS-0004-14923e26254a/trajectory.json",
+          "sha256": "e9d0c40cc56f469082447f62cd10eb4690c04e1b599a822aa95199d09b40ca18",
+          "status": "running"
+        }
+      ]
+    },
+    {
+      "variant": "wo-local-repair",
+      "execution_dataset": "mini-100",
+      "started_ids": [
+        "SMAS-0001",
+        "SMAS-0002",
+        "SMAS-0003",
+        "SMAS-0004",
+        "SMAS-0006",
+        "SMAS-0007",
+        "SMAS-0009",
+        "SMAS-0012"
+      ],
+      "recorded_ids": [
+        "SMAS-0001",
+        "SMAS-0002",
+        "SMAS-0003",
+        "SMAS-0004",
+        "SMAS-0006",
+        "SMAS-0007"
+      ],
+      "prediction_sha256": "05cd5039a8db641e6defb3a648d2d1b8cf4ae32e95e261ca0e0f51ab9d1499e2",
+      "traces": [
+        {
+          "id": "SMAS-0001",
+          "file": "trajectories/SMAS-0001-4e84ecc4b736/trajectory.json",
+          "sha256": "ee2dcdeea525823b96b00ce0b11a7cb9db1613783f9df364b5b51773391d3f4d",
+          "status": "failed"
+        },
+        {
+          "id": "SMAS-0002",
+          "file": "trajectories/SMAS-0002-f7932fee4bbb/trajectory.json",
+          "sha256": "6e690a8bc29a96d1ff4c8a1b763739107963b1331bb336d86a0d4e98419e72eb",
+          "status": "failed"
+        },
+        {
+          "id": "SMAS-0003",
+          "file": "trajectories/SMAS-0003-ae6a6acb7a23/trajectory.json",
+          "sha256": "ecd9626dadb380a6566a36373b96b1cf8ad75894f2267a5429b9c5fbce307711",
+          "status": "completed"
+        },
+        {
+          "id": "SMAS-0004",
+          "file": "trajectories/SMAS-0004-0f72fe64be5c/trajectory.json",
+          "sha256": "04a2375e643aa6bb8a8aa6a4027a1444739556c0a2ee7ea4a268801fd361f8eb",
+          "status": "completed"
+        },
+        {
+          "id": "SMAS-0006",
+          "file": "trajectories/SMAS-0006-a9a2d781720c/trajectory.json",
+          "sha256": "45ce4fd7fbcafa7fc8ccf91ac581aa6b829cbc27dcbdb70fe7e3cdbdd6efd579",
+          "status": "completed"
+        },
+        {
+          "id": "SMAS-0007",
+          "file": "trajectories/SMAS-0007-0799088d2eb5/trajectory.json",
+          "sha256": "1d2efba49e3b639cd5ffe9740556ed02ecd5f3458af22fce4ab976cca47386dc",
+          "status": "completed"
+        },
+        {
+          "id": "SMAS-0009",
+          "file": "trajectories/SMAS-0009-13c7d653c3b1/trajectory.json",
+          "sha256": "fb8aeeedb6bc001cac184dbf3c00c54666e382fc5cf3383d0555f7f5e7e332c7",
+          "status": "running"
+        },
+        {
+          "id": "SMAS-0012",
+          "file": "trajectories/SMAS-0012-0b65aac6f047/trajectory.json",
+          "sha256": "3c203d4bc3cb6aa879fee6bec6b711451d27b5533ecdb68cf8386a6a335e78da",
+          "status": "running"
+        }
+      ]
+    },
+    {
+      "variant": "wo-all",
+      "execution_dataset": "mini-100",
+      "started_ids": [
+        "SMAS-0001",
+        "SMAS-0002",
+        "SMAS-0003",
+        "SMAS-0004",
+        "SMAS-0006",
+        "SMAS-0007",
+        "SMAS-0009"
+      ],
+      "recorded_ids": [
+        "SMAS-0001",
+        "SMAS-0002",
+        "SMAS-0003",
+        "SMAS-0004",
+        "SMAS-0007"
+      ],
+      "prediction_sha256": "61b8c782c9e14a5ab45ab1ba4ae4c1963da48eb5d6ebccb23895ba2e81962259",
+      "traces": [
+        {
+          "id": "SMAS-0001",
+          "file": "trajectories/SMAS-0001-751e9420d6db/trajectory.json",
+          "sha256": "d76e9bbe77844a49842ce931d121c5bd8ca3e4e6a12bd0ac6832d7456ea1c124",
+          "status": "failed"
+        },
+        {
+          "id": "SMAS-0002",
+          "file": "trajectories/SMAS-0002-b32fac30881f/trajectory.json",
+          "sha256": "aae8af5395b37bcf23fb58e0fd1eb48a7327b0606adf3fef9adb8b0ec84be180",
+          "status": "failed"
+        },
+        {
+          "id": "SMAS-0003",
+          "file": "trajectories/SMAS-0003-b5b1f57daba9/trajectory.json",
+          "sha256": "c9e98e37555383726e2a82bce44c590769d680eb0d628b9a7ad65c657dddb193",
+          "status": "completed"
+        },
+        {
+          "id": "SMAS-0004",
+          "file": "trajectories/SMAS-0004-6fea3401a384/trajectory.json",
+          "sha256": "9546fd05149232f92e4e477e79d357e3daa81cea2f2f8b916487e207be3ffacc",
+          "status": "completed"
+        },
+        {
+          "id": "SMAS-0006",
+          "file": "trajectories/SMAS-0006-aa671e309fea/trajectory.json",
+          "sha256": "31061bcb0c67c240dcf79df570a3bc67b6a29171eb8144e817b640b194797e24",
+          "status": "running"
+        },
+        {
+          "id": "SMAS-0007",
+          "file": "trajectories/SMAS-0007-f2e15f76f5eb/trajectory.json",
+          "sha256": "95f16b6deb4360634103cf95352f652bfc7cf428833ed00ca0032558e70f4aed",
+          "status": "failed"
+        },
+        {
+          "id": "SMAS-0009",
+          "file": "trajectories/SMAS-0009-e2025f5716db/trajectory.json",
+          "sha256": "0537229668c1f00d71bffa8692da7c3625068dcd7f284ee29fa54fcbd5c2b200",
+          "status": "running"
+        }
+      ]
+    }
+  ],
+  "note": "Receipts fix inclusion only. They do not certify compatibility with a repaired actor or turn interrupted traces into completed runs."
+}

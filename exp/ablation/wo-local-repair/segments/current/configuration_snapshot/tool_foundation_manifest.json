@@ -1,0 +1,30 @@
+{
+  "embedding_model": "Qwen3-Embedding-4B",
+  "embedding_dimension": 2560,
+  "embedding_backend": "local_qwen3",
+  "embedding_identity": {
+    "backend": "openai",
+    "provider": "local_qwen3",
+    "model": "Qwen3-Embedding-4B",
+    "dimension": 2560,
+    "api_base": "http://127.0.0.1:18081/v1",
+    "normalization": "client_l2",
+    "pooling": "last_token_endoftext",
+    "query_instruction": "Given a scientific task requirement, retrieve scientific tools whose functions and input/output contracts can fulfill the requirement.",
+    "model_fingerprint": "c1552dd04f6458016004b4ac767251993da77544004449207c7eabaf708c549f"
+  },
+  "functionality_vectors": 472,
+  "text_sha256": "d9c2a92ddcddd3c31aa8b34cb20cad7b99882f2a59140e3fb76a7ad2d6b23b0c",
+  "contract_file": "tools/catalog/catalog.json",
+  "sync_report": "tools/graph/build_report.json",
+  "embedding_build_report": "tools/graph/build_report.json",
+  "project_version": "0.4.0",
+  "public_tools": 473,
+  "graph_nodes": 5090,
+  "graph_edges": 22042,
+  "catalog_sha256": "f625636a684fe9dd142852b6b8848d2ac983f8ff908cbab13cb53bad6e7626ca",
+  "indexed_tools": 472,
+  "excluded_graph_tools": [
+    "DescribeTools"
+  ]
+}

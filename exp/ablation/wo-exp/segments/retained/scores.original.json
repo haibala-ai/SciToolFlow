@@ -1,0 +1,179 @@
+{
+  "schema_version": "scitoolflow.mini.three_metrics.v3",
+  "summary": {
+    "dataset": "mini-100",
+    "tasks": 2,
+    "runtime_completion_rate": 1.0,
+    "tool_planning_accuracy": 0.8774014155712841,
+    "observed_mean_tool_orchestration_score": 0.8774014155712841,
+    "tool_planning_reportable": true,
+    "strict_tool_planning_accuracy": 1.0,
+    "mean_orchestration_credit": 1.0,
+    "mean_selection_efficiency": 0.7073529411764705,
+    "answer_accuracy": 1.0
+  },
+  "dataset": "mini-100",
+  "metric_definition_version": "independent-runtime-answer.v2",
+  "tool_planning_definition": "Macro mean of per-task 3*C*E/(2*E+C), zero when C or E is zero; unavailable while planning review is pending.",
+  "release_fingerprint": "975ae9ec0af7826ae4bbec94c2bf93ab521b92678e7a31d6e61b37e4f477ba6e",
+  "primary_metrics": [
+    "runtime_completion_rate",
+    "tool_planning_accuracy",
+    "answer_accuracy"
+  ],
+  "tasks": [
+    {
+      "id": "SMAS-0001",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.65,
+      "tool_orchestration_score": 0.8478260869565218,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_0_identity": [
+            "identity_0"
+          ],
+          "cap_0_m1": [
+            "metric_0_0"
+          ],
+          "cap_0_m2": [
+            "metric_0_1"
+          ],
+          "cap_1_identity": [
+            "identity_1"
+          ],
+          "cap_1_m1": [
+            "metric_1_0"
+          ],
+          "cap_1_m2": [
+            "metric_1_1"
+          ],
+          "cap_2_identity": [
+            "identity_2"
+          ],
+          "cap_2_m1": [
+            "metric_2_0"
+          ],
+          "cap_2_m2": [
+            "metric_2_1"
+          ],
+          "cap_whole_inventory_0": [
+            "as_received_mass_0"
+          ],
+          "cap_whole_inventory_1": [
+            "as_received_mass_1"
+          ],
+          "cap_whole_inventory_2": [
+            "as_received_mass_2"
+          ],
+          "optional_numeric_divide_score": [
+            "batch_divide_score"
+          ],
+          "optional_numeric_subtract_removed_mass": [
+            "batch_subtract_removed_mass"
+          ]
+        },
+        "charged_scientific_calls": 20,
+        "matched_scientific_calls": 13,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "af28ec38f3de996ef013bd142be0397dd6020ed23c12107cd4fcffff618d3fe6"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 50,
+        "elapsed_seconds": 712.9605246859719,
+        "prompt_tokens": 785502,
+        "completion_tokens": 116344,
+        "observed_prompt_tokens": 785502,
+        "observed_completion_tokens": 116344,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0001"
+    },
+    {
+      "id": "SMAS-0002",
+      "runtime_completed": true,
+      "tool_plan_correct": true,
+      "answer_correct": true,
+      "answer_schema_valid": true,
+      "orchestration_credit": 1.0,
+      "selection_efficiency": 0.7647058823529411,
+      "tool_orchestration_score": 0.9069767441860465,
+      "planning_reportable": true,
+      "planning_diagnostics": {
+        "selected_routes": {
+          "cap_0_identity": [
+            "identity_0"
+          ],
+          "cap_0_m1": [
+            "metric_0_0"
+          ],
+          "cap_0_m2": [
+            "metric_0_1"
+          ],
+          "cap_1_identity": [
+            "identity_1"
+          ],
+          "cap_1_m1": [
+            "metric_1_0"
+          ],
+          "cap_1_m2": [
+            "metric_1_1"
+          ],
+          "cap_2_identity": [
+            "identity_2"
+          ],
+          "cap_2_m1": [
+            "metric_2_0"
+          ],
+          "cap_2_m2": [
+            "metric_2_1"
+          ],
+          "optional_numeric_subtract_score": [
+            "arithmetic_score_0",
+            "arithmetic_score_1",
+            "arithmetic_score_2"
+          ]
+        },
+        "charged_scientific_calls": 17,
+        "matched_scientific_calls": 13,
+        "supporting_work_observations": [],
+        "redundant_semantic_observations": []
+      },
+      "pending_review": false,
+      "evidence_integrity": {
+        "verified": true,
+        "trace_sha256": "7f482c8b179ae035e7a992e23324ffc376708f1d32dce604a329b6b3fd69af4e"
+      },
+      "resource_usage": {
+        "verified": true,
+        "policy_version": "task-resources.v1",
+        "exceeded": false,
+        "model_requests": 39,
+        "elapsed_seconds": 398.08885372499935,
+        "prompt_tokens": 453627,
+        "completion_tokens": 57676,
+        "observed_prompt_tokens": 453627,
+        "observed_completion_tokens": 57676,
+        "requests_with_incomplete_token_usage": 0
+      },
+      "resource_policy_compliant": true,
+      "domain": "Chemical",
+      "source_id": "SMAS-0002"
+    }
+  ],
+  "llm_judge_used": false
+}

@@ -1,6 +1,7 @@
 """Structural proofs and explicit runtime obligations for SciMas task graphs."""
 
 import json
+import keyword
 from graphlib import TopologicalSorter, CycleError
 from jsonschema import Draft202012Validator
 from tools.runtime.contracts import contract_errors
@@ -251,6 +252,12 @@ def validate_graph(graph, catalog, *, allowed=None):
             return infer(binding["value"])
         if kind == "task":
             return infer(at(graph.task, binding["path"]))
+        if kind == "python_code":
+            for name, source in binding["inputs"].items():
+                if not name.isidentifier() or keyword.iskeyword(name) or name.startswith("_"):
+                    raise ValueError("Invalid numerical-code input name")
+                schema_for(source, current)
+            return {"type": "string"}
         if kind == "list":
             for evidence in binding.get("provenance", []):
                 schema_for(evidence, current)
@@ -357,6 +364,11 @@ def validate_graph(graph, catalog, *, allowed=None):
                     {"node": nid, "check": "actual_array_and_bounded_map_expansion"}
                 )
             for key, binding in node["arguments"].items():
+                if any(b["kind"] == "python_code" for b in bindings(binding)) and (
+                    node["tool"] != "ExecuteNumericalCode" or key != "code"
+                    or binding["kind"] != "python_code"
+                ):
+                    raise ValueError("python_code is only an ExecuteNumericalCode.code binding")
                 binding_check(binding, node, properties.get(key, {}))
             for check in node.get("checks", []):
                 local_schema(check["schema"])

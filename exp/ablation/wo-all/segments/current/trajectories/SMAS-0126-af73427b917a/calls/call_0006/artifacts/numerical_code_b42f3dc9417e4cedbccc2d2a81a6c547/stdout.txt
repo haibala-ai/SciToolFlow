@@ -1,0 +1,15 @@
+[{'id': 'tau_1000us_nodc', 'tau_s': 0.001, 'include_dc': False, 'eps_infinity': -1.2753304743923568, 'delta': 18.907101812689106, 'kappa': 0.0, 'admissible': False, 'max_abs_validation_error': 3.9130213494462547, 'supported': False, 'epsilon_static_relaxation_only': 17.63177133829675, 'dc_conductivity_s_m': 0.0}, {'id': 'tau_1000us_dc', 'tau_s': 0.001, 'include_dc': True, 'eps_infinity': -0.43131500837503545, 'delta': 17.868836663599545, 'kappa': 194.2496830722392, 'admissible': False, 'max_abs_validation_error': 3.563321838581282, 'supported': False, 'epsilon_static_relaxation_only': 17.437521655224508, 'dc_conductivity_s_m': 1.719923176498483e-09}, {'id': 'tau_2000us_nodc', 'tau_s': 0.002, 'include_dc': False, 'eps_infinity': 3.9316277398490875, 'delta': 16.10837226015091, 'kappa': 0.0, 'admissible': True, 'max_abs_validation_error': 0.06420409629895385, 'supported': False, 'epsilon_static_relaxation_only': 20.04, 'dc_conductivity_s_m': 0.0}, {'id': 'tau_2000us_dc', 'tau_s': 0.002, 'include_dc': True, 'eps_infinity': 4.000000000000005, 'delta': 15.999999999999993, 'kappa': 20.00000000000027, 'admissible': True, 'max_abs_validation_error': 5.329070518200751e-15, 'supported': True, 'epsilon_static_relaxation_only': 20.0, 'dc_conductivity_s_m': 1.770837562560024e-10}, {'id': 'tau_4000us_nodc', 'tau_s': 0.004, 'include_dc': False, 'eps_infinity': 7.666146923640388, 'delta': 14.85751136880698, 'kappa': 0.0, 'admissible': True, 'max_abs_validation_error': 3.197866381214258, 'supported': False, 'epsilon_static_relaxation_only': 22.52365829244737, 'dc_conductivity_s_m': 0.0}, {'id': 'tau_4000us_dc', 'tau_s': 0.004, 'include_dc': True, 'eps_infinity': 6.9336239002591675, 'delta': 16.55057147716161, 'kappa': -240.1342712433527, 'admissible': False, 'max_abs_validation_error': 2.4821063292028853, 'supported': False, 'epsilon_static_relaxation_only': 23.48419537742078, 'dc_conductivity_s_m': -2.1261939378785033e-09}]
+N_SUPPORTED 1
+SUPPORTED_IDS ['tau_2000us_dc']
+SURVIVOR_ID tau_2000us_dc
+TAU_S 0.002
+EPS_INF 4.000000000000005
+EPS_STATIC_RELAX_ONLY 20.0
+KAPPA_LOSS_RATE 20.00000000000027
+SIGMA_DC_S_M 1.770837562560024e-10
+LOWEST_OMEGA 100.0
+DC_LOSS_AT_LOWEST 0.2000000000000027
+RELAX_LOSS_AT_LOWEST 3.0769230769230758
+DC_FRACTION_AT_LOWEST 0.06103286384976605
+DC_REQUIRED_IN_FAMILY True
+SCOPE finite_candidate_conditional_dispersion_screen

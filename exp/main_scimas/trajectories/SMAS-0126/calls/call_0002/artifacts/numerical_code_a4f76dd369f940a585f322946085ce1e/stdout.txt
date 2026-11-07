@@ -1,0 +1,28 @@
+candidate tau_1000us_nodc tau 0.001 include_dc False epsilon_infinity -1.2753304743923568 Delta 18.907101812689106 kappa 0.0 max_validation_abs_error 3.9130213494462547 nonnegative False supported False
+candidate tau_1000us_dc tau 0.001 include_dc True epsilon_infinity -0.43131500837503545 Delta 17.868836663599545 kappa 194.2496830722392 max_validation_abs_error 3.563321838581282 nonnegative False supported False
+candidate tau_2000us_nodc tau 0.002 include_dc False epsilon_infinity 3.931627739849093 Delta 16.1083722601509 kappa 0.0 max_validation_abs_error 0.06420409629894941 nonnegative True supported False
+candidate tau_2000us_dc tau 0.002 include_dc True epsilon_infinity 4.000000000000011 Delta 15.999999999999982 kappa 20.00000000000067 max_validation_abs_error 1.0658141036401503e-14 nonnegative True supported True
+candidate tau_4000us_nodc tau 0.004 include_dc False epsilon_infinity 7.6661469236403885 Delta 14.857511368806977 kappa 0.0 max_validation_abs_error 3.1978663812142587 nonnegative True supported False
+candidate tau_4000us_dc tau 0.004 include_dc True epsilon_infinity 6.933623900259171 Delta 16.550571477161604 kappa -240.13427124335223 max_validation_abs_error 2.482106329202889 nonnegative False supported False
+supported_model_ids ['tau_2000us_dc']
+validation_threshold 1e-06
+candidate_fits {'tau_1000us_nodc': {'tau_s': 0.001, 'include_dc': False, 'epsilon_infinity': -1.2753304743923568, 'Delta': 18.907101812689106, 'kappa': 0.0, 'max_validation_abs_error': 3.9130213494462547, 'nonnegative': False, 'supported': False}, 'tau_1000us_dc': {'tau_s': 0.001, 'include_dc': True, 'epsilon_infinity': -0.43131500837503545, 'Delta': 17.868836663599545, 'kappa': 194.2496830722392, 'max_validation_abs_error': 3.563321838581282, 'nonnegative': False, 'supported': False}, 'tau_2000us_nodc': {'tau_s': 0.002, 'include_dc': False, 'epsilon_infinity': 3.931627739849093, 'Delta': 16.1083722601509, 'kappa': 0.0, 'max_validation_abs_error': 0.06420409629894941, 'nonnegative': True, 'supported': False}, 'tau_2000us_dc': {'tau_s': 0.002, 'include_dc': True, 'epsilon_infinity': 4.000000000000011, 'Delta': 15.999999999999982, 'kappa': 20.00000000000067, 'max_validation_abs_error': 1.0658141036401503e-14, 'nonnegative': True, 'supported': True}, 'tau_4000us_nodc': {'tau_s': 0.004, 'include_dc': False, 'epsilon_infinity': 7.6661469236403885, 'Delta': 14.857511368806977, 'kappa': 0.0, 'max_validation_abs_error': 3.1978663812142587, 'nonnegative': True, 'supported': False}, 'tau_4000us_dc': {'tau_s': 0.004, 'include_dc': True, 'epsilon_infinity': 6.933623900259171, 'Delta': 16.550571477161604, 'kappa': -240.13427124335223, 'max_validation_abs_error': 2.482106329202889, 'nonnegative': False, 'supported': False}}
+n_supported_dc 1 n_supported_nodc 0
+dc_loss_required_in_supplied_family True
+surviving_model_id tau_2000us_dc
+relaxation_time_s 0.002
+epsilon_infinity 4.000000000000011
+relaxation_strength_Delta 15.999999999999982
+epsilon_static_relaxation_only 19.999999999999993
+dc_loss_rate_per_s 20.00000000000067
+epsilon0_f_m 8.8541878128e-12
+dc_conductivity_s_m 1.7708375625600596e-10
+lowest_omega_rad_s 100.0
+dc_loss_at_lowest_omega 0.20000000000000673
+relax_loss_at_lowest_omega 3.0769230769230735
+total_loss_at_lowest_omega 3.2769230769230804
+dc_loss_fraction_at_lowest_omega 0.06103286384976725
+scope finite_candidate_conditional_dispersion_screen
+dc_is_not_extra_static_permittivity True
+unique_microscopic_mechanism_established False
+continuous_tau_uncertainty_established False

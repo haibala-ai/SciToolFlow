@@ -138,6 +138,9 @@ python -m baselines.scimas.build_knowledge
 | `item` | 映射中的当前输入元素 |
 | `collect` | 映射展开后的有序输出集合 |
 | `list` | 多个绑定的有序集合，可保留空集合的来源依赖 |
+| `python_code` | 仅用于 `ExecuteNumericalCode.code`：将 `inputs` 中的真实绑定值安全序列化为 Python 变量，再运行 `code`，保留数据依赖 |
+
+`python_code` 不授予文件或网络访问权限，不修改数值工具的契约。完整代码仍受 12,000 字符、AST 和资源限制；较大的数据应使用原生数组工具处理。最终 JSON 的字段组织由汇总角色完成，无须增加格式化工具节点。
 
 `decoded=true` 只允许读取契约明确声明的 JSON 字符串。自然语言输出供 Reviewer 阅读和最终报告使用；若下游需要结构化值，须规划实际解析或转换工具，不能把 Reviewer 猜出的字段当作原始工具输出。单位、对象和方法等确认元数据必须引用实际输出字段，并通过精确值核验。
 

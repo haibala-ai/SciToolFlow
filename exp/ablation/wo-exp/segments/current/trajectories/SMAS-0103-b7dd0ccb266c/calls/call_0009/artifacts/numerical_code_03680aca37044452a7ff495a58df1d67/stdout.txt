@@ -1,0 +1,3 @@
+minimum_singular_values_by_channel=[0.0, 2.0092506021309884, 1.0929591119074527]
+original_two_row_min_singular_value=0.0
+{"selected_channel_id":"lambda-B","minimum_singular_value":2.0092506021309884,"original_channels_identifiable":false}

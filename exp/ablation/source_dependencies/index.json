@@ -1,0 +1,16 @@
+[
+  {
+    "actor_commit": "2ade7929edfd4db5a324d7f33d230b0b16b43530",
+    "archive": "source_dependencies/2ade7929edfd4db5a324d7f33d230b0b16b43530/retrieval_indexes.tar.gz",
+    "sha256": "7ffc3a51ea9f9d730c2684db4b003e59c3938e7023ba730c7bbb07dfdf02d9df",
+    "files": 7,
+    "bytes": 13733173
+  },
+  {
+    "actor_commit": "9e7782d0fea293878e8301e408e01bd85060992d",
+    "archive": "source_dependencies/9e7782d0fea293878e8301e408e01bd85060992d/retrieval_indexes.tar.gz",
+    "sha256": "2c8ede8d612c71416714fb3e41aeaa6f934de5e426b2714520d57c97284ecd79",
+    "files": 7,
+    "bytes": 13733192
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "archive": "metadata/source_dependencies/dataset.tar.gz",
+  "sha256": "d97f1faa04bb78d473d3e9984ff330d21266c350f24d6b0d07d40f4cb4925733",
+  "files": 1605,
+  "scope": "Frozen task releases,public assets,reference trajectories and deterministic grading data; no credentials."
+}
