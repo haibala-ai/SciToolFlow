@@ -266,9 +266,11 @@ def test_api_failure_overlapping_tool_work_is_not_subtracted_twice(tmp_path, var
 
     def hook(payload, action):
         action = independent_hook(payload, action)
-        if payload.get("context", {}).get("stage") == "result":
+        ctx = payload.get("context", {})
+        no_reviewer = not resolve_ablation(variant).scientific_review
+        if ctx.get("stage") == "result" or (no_reviewer and "ready" in ctx and ctx["accepted_result_nodes"]):
             time.sleep(0.05)
-            raise CommunicationError("Injected reviewer transport failure", service="generation",
+            raise CommunicationError("Injected role transport failure", service="generation",
                 category="ReadTimeout", request_may_have_been_sent=True)
         return action
 

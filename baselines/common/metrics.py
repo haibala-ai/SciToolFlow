@@ -42,8 +42,9 @@ def task_metrics(
         if "started_seconds" in call and "finished_seconds" in call and origin is not None:
             work.append([origin + call["started_seconds"], origin + call["finished_seconds"]])
         elif "started" in call and bounds is not None:
-            # Pending SciMas calls carry an absolute dispatch timestamp.
-            work.append([call["started"], bounds[1]])
+            # A receipt awaiting review may already have finished. Do not extend
+            # its work across a later API outage just because it is still queued.
+            work.append([call["started"], call.get("finished", bounds[1])])
     excluded = subtract_intervals(intervals, work, bounds=bounds) if intervals else []
     network_wait = interval_seconds(excluded) if intervals else network_fault
     active = max(0, wall - network_wait) if wall is not None else None

@@ -20,20 +20,22 @@ from src.utils.io import atomic_json
 from src.models.communication import infrastructure_failure
 from tools.runtime.contracts import contract_errors
 from .schema import TEXT, ID, PATH, obj
-from .task_graph import TaskGraph, at, digest, descendants, node_dependencies
+from .task_graph import TaskGraph, at, digest, descendants, node_dependencies, bindings
 from .knowledge import ToolKnowledge, fresh_queries, embedding_usage_since
 from .planner import Planner, ACTION_SCHEMA
 from .runner import asset_previews
 from .roles import Roles, RecordedClient
 from .executor import Executor
-from .experience import Experience
-from .ablation.policy import resolve_ablation, DisabledExperience, LocalRepairDisabled
+from .experience import Experience, binding_recipe
+from .ablation.policy import resolve_ablation, DisabledExperience, LocalRepairDisabled, GraphRefinementDisabled
 from .trajectory import append_step
 from .verification import numerical_certificate
 from .validation import validate_graph
+from .feedback import review_basis, repair_feedback, plan_change_summary, repair_evidence_state, deterministic_review
 
 IDS = {"type": "array", "items": ID, "uniqueItems": True}
-REPAIR = obj({"nodes": IDS, "reason": TEXT})
+REPAIR = obj({"nodes": IDS, "reason": TEXT, "suggested_change": TEXT,
+              "verification": TEXT}, ["nodes", "reason"])
 INSPECT = obj(
     {
         "observation_id": TEXT,
@@ -139,7 +141,7 @@ def run_scimas(
         settings.update(config)
     if any(
         type(v) is not int
-        or v < (0 if k in {"transient_retries", "local_repairs"} else 1)
+        or v < (0 if k in {"transient_retries", "local_repairs", "graph_refinements"} else 1)
         for k, v in settings.items()
     ):
         raise ValueError("SciMas configuration requires positive integer bounds")
@@ -210,6 +212,7 @@ def run_scimas(
         0,
     )
     graph, gates, repairs, think_streak = None, {}, 0, 0
+    repair_evidence_cache = None
     refinements = 0
     repair_window = None
     executor = Executor(invoke, folder / "calls", settings["tool_concurrency"])
@@ -220,6 +223,20 @@ def run_scimas(
     embedding_baseline = deepcopy(knowledge.embedding.stats) if knowledge is not None else {}
 
     def save():
+        nonlocal repair_evidence_cache
+        revisions = trace["repairs"] + trace["graph_refinements"]
+        if graph is not None and revisions:
+            # Recompute only when graph/evidence changes, not on every token or
+            # model request checkpoint. No extra inference or disk write.
+            state = (graph.version,
+                     tuple((k, v["node_sha256"]) for k, v in results.items()),
+                     tuple((k, v["node_sha256"]) for k, v in pruned.items()))
+            if state != repair_evidence_cache:
+                graph_sha = graph.identity
+                for revision in revisions:
+                    if revision["graph_sha256"] == graph_sha:
+                        revision["execution_evidence"] = repair_evidence_state(revision, graph, results, pruned)
+                repair_evidence_cache = state
         if planning_report is not None and "planning" not in trace:
             # Full request messages already live in steps: avoid serializing a
             # second copy at every planning checkpoint.
@@ -244,6 +261,7 @@ def run_scimas(
                         "files",
                         "timeout_seconds",
                         "started",
+                        "finished",
                         "directory",
                         "stale",
                     )
@@ -365,6 +383,15 @@ def run_scimas(
         return preview
 
     def context(role, **extra):
+        # Match procedural advice to the current branch, not every historical
+        # tool in the graph. Final reporting uses observations, not skills.
+        focus_nodes = {row["id"] for row in extra.get("ready", [])}
+        if extra.get("stage") == "result":
+            focus_nodes.add(extra["node"])
+        focus_nodes.update(extra.get("allowed_changes", []))
+        for nid in list(focus_nodes):
+            focus_nodes.update(node_dependencies(graph.node(nid))[0])
+        focus_tools = {graph.node(nid)["tool"] for nid in focus_nodes}
         return {
             "task": task,
             "public_assets": assets,
@@ -376,7 +403,7 @@ def run_scimas(
             },
             "pruned": pruned,
             "observations": evidence(),
-            "experience": memory.match(role, graph.contracts),
+            "experience": memory.match(role, graph.contracts, focus_tools=focus_tools),
             "execution_policy": policy.document(),
             "gate_states": dict(gate_states),
             **extra,
@@ -414,6 +441,17 @@ def run_scimas(
 
     def ask(role, payload, schema, *, feedback_out=None):
         nonlocal think_streak
+        # Repair targets are protocol identifiers, not scientific judgments.
+        # Validate them with normal bounded format feedback before entering repair;
+        # a typo/empty target must not consume a repair round or abort the task.
+        schema = deepcopy(schema)
+        for branch in schema.get("oneOf", []):
+            repair_schema = branch.get("properties", {}).get("repair")
+            if repair_schema is not None:
+                repair_schema["properties"]["nodes"] = {
+                    "type": "array", "minItems": 1, "uniqueItems": True,
+                    "items": {"enum": [n["id"] for n in graph.plan["nodes"]]},
+                }
         # Preserve caller feedback (including final format/scientific corrections)
         # when adding inspection and thinking history for this decision.
         feedback = list(payload.get("feedback", []))
@@ -441,7 +479,10 @@ def run_scimas(
                     value = inspect(decision["inspect"])
                     feedback.append({"inspection": decision["inspect"], "value": value})
                 except (ValueError, KeyError, IndexError, TypeError) as error:
-                    feedback.append({"inspection_error": str(error)})
+                    feedback.append({
+                        "failed_inspection": deepcopy(decision["inspect"]),
+                        "inspection_error": str(error),
+                    })
             elif "think" in decision:
                 stats["think_steps"] += 1
                 think_streak += 1
@@ -482,6 +523,17 @@ def run_scimas(
             else []
         )
         for branch in schema["oneOf"]:
+            if stage == "result" and "accept" in branch["properties"]:
+                # The contract determines access syntax; the Reviewer determines
+                # scientific validity. Native JSON cannot require json.loads.
+                spec = catalog.tools[graph.node(extra["node"])["tool"]]
+                structured_string = spec.get("output_encoding", {}).get(
+                    "decoded_type"
+                ) in {"json_object", "json_array"}
+                if not structured_string:
+                    branch["properties"]["accept"]["properties"]["semantics"][
+                        "items"
+                    ]["properties"]["decoded"] = {"const": False}
             if "approve" in branch["properties"]:
                 branch["properties"]["approve"]["properties"]["gates"] = {
                     "type": "array",
@@ -490,34 +542,40 @@ def run_scimas(
                     "maxItems": len(expected_gates),
                     "uniqueItems": True,
                 }
-        decision = ask(
-            "reviewer",
-            context("reviewer", stage=stage, conditional_nodes=expected_gates, **extra),
-            schema,
-        )
+        if policy.scientific_review:
+            decision = ask(
+                "reviewer",
+                context("reviewer", stage=stage, conditional_nodes=expected_gates, **extra),
+                schema,
+            )
+        else:
+            decision = deterministic_review(stage, extra, expected_gates)
         trace["reviews"].append(
             {
                 "stage": stage,
                 "graph_sha256": graph.identity,
                 "node": extra.get("node"),
                 "decision": deepcopy(decision),
+                "mode": "llm_scientific" if policy.scientific_review else "deterministic_only",
+                "scientific_review": policy.scientific_review,
+                "basis": review_basis(stage, extra),
             }
         )
         save()
         return decision
 
-    def approve_graph():
+    def approve_graph(revision=None):
         nonlocal gates
         gate_states.clear()
         decision = review(
-            "graph", contracts=knowledge.planning_view(sorted(graph.contracts)),
+            "graph", contracts=knowledge.planning_view(sorted(graph.contracts)) if policy.scientific_review else {},
             graph_validation=validate_graph(graph, catalog),
+            **({"revision": revision} if revision is not None else {}),
         )
         if "repair" in decision:
             return decision["repair"]
         if "reject" in decision and not stats["scientific_calls"] and not executor.running:
-            # A pre-execution concern is feedback to the planner, not evidence
-            # that the task itself is impossible. All variants get this chance.
+            # The repair entry enforces the variant's pre-execution policy.
             return {"nodes": [n["id"] for n in graph.plan["nodes"]],
                     "reason": "Initial graph review requested correction: " + decision["reject"]}
         if "approve" not in decision:
@@ -533,6 +591,9 @@ def run_scimas(
     def repair(request):
         nonlocal graph, repairs, refinements, gates, repair_window
         initial = not stats["scientific_calls"] and not executor.running
+        if initial and not policy.graph_refinement:
+            add_step({"type": "graph_refinement_disabled", "request": deepcopy(request)})
+            raise GraphRefinementDisabled(request["reason"])
         if not initial and not policy.local_repair:
             add_step({"type": "repair_disabled", "request": deepcopy(request)})
             raise LocalRepairDisabled(request["reason"])
@@ -554,6 +615,7 @@ def run_scimas(
             # During execution, local repair must preserve unaffected evidence.
             allowed = ids if initial else descendants(old.plan, set(request["nodes"]))
             contracts = knowledge.planning_view(sorted(old.contracts))
+            diagnosis = repair_feedback(trace["reviews"], request, old.identity)
             feedback = []
             search_history, completed_queries = [], set()
             repair_window = {
@@ -570,6 +632,7 @@ def run_scimas(
                     context(
                         "planner",
                         request=request,
+                        review_feedback=diagnosis,
                         revision_stage=repair_window["stage"],
                         allowed_changes=sorted(allowed),
                         contracts=contracts,
@@ -641,17 +704,22 @@ def run_scimas(
                 pruned.pop(nid, None)
             graph, gates = new, {}
             trace["graphs"].append(graph.document())
-            trace["graph_refinements" if initial else "repairs"].append(
-                {
+            revision = {
                     "request": request,
+                    "review_feedback": diagnosis,
+                    "changes": plan_change_summary(old.plan, new.plan),
+                    "graph_review": "pending",
                     "delta": delta,
                     "parent": old.identity,
                     "graph_sha256": graph.identity,
                     "retained": sorted(results),
                 }
-            )
+            trace["graph_refinements" if initial else "repairs"].append(revision)
             save()
-            request = approve_graph()
+            request = approve_graph(revision={key: revision[key] for key in
+                                             ("request", "review_feedback", "changes")})
+            revision["graph_review"] = "approved" if request is None else "correction_requested"
+            save()
             if request is None:
                 return
 
@@ -833,7 +901,7 @@ def run_scimas(
                 arguments=record["arguments"],
                 observation_id=call["observation_id"],
                 structural_validation=structural or "passed",
-                contract=knowledge.planning_view([record["tool"]]),
+                contract=knowledge.planning_view([record["tool"]]) if policy.scientific_review else {},
                 semantic_feedback=feedback,
                 argument_provenance=provenance,
                 numerical_certificate=certificate,
@@ -854,6 +922,12 @@ def run_scimas(
                     continue
                 return
             if "accept" not in decision or accepted is None:
+                if "accept" in decision and accepted is None and attempt + 1 < settings["protocol_retries"]:
+                    feedback = [{"error": structural,
+                                 "instruction": "This observation failed the deterministic checks shown above. "
+                                 "It cannot be accepted. Identify a concrete correction with repair, "
+                                 "inspect the relevant evidence, or reject if no supported recovery exists."}]
+                    continue
                 call["review_state"] = "rejected"
                 raise ValueError(
                     "ResultRejected: " + str(decision) + "; " + str(structural)
@@ -892,49 +966,60 @@ def run_scimas(
                 ]
         accepted.update(semantics=semantics, observation_id=call["observation_id"])
         results[nid] = accepted
-        name, contract = record["tool"], graph.contracts[record["tool"]]
-        memory.confirm(
-            "executor",
-            name,
-            contract,
-            {
-                "validated_parameters": sorted(record["arguments"]),
-                "binding_kinds": {
-                    k: b["kind"] for k, b in graph.node(nid)["arguments"].items()
-                },
-            },
-            [call["observation_id"]],
-        )
-        memory.confirm(
-            "reviewer",
-            name,
-            contract,
-            {
-                "output_access": knowledge.tools.get(name, {})
-                .get("planning", {})
-                .get("output_access"),
-                "check": "public_output_contract_and_node_checks",
-            },
-            [call["observation_id"]],
-        )
-        parents = set.union(*node_dependencies(graph.node(nid)))
-        for parent in parents:
-            if parent in results:
-                pname = graph.node(parent)["tool"]
-                memory.confirm(
-                    "planner",
-                    pname,
-                    graph.contracts[pname],
-                    {
-                        "consumed_by": name,
-                        "bindings": {
-                            k: b
-                            for k, b in graph.node(nid)["arguments"].items()
-                            if b.get("kind") == "node" and b.get("node") == parent
-                        },
+        if policy.experience:
+            name, contract = record["tool"], graph.contracts[record["tool"]]
+            current_node = graph.node(nid)
+            node_tools = {n["id"]: n["tool"] for n in graph.plan["nodes"]}
+            data_parents = node_dependencies(current_node)[0]
+            required_contracts = {node_tools[p]: graph.contracts[node_tools[p]]
+                                  for p in data_parents}
+            memory.confirm(
+                "executor",
+                name,
+                contract,
+                {
+                    "validated_parameters": sorted(record["arguments"]),
+                    "parameter_patterns": {
+                        k: binding_recipe(b, node_tools) for k, b in current_node["arguments"].items()
                     },
-                    [results[parent]["observation_id"], call["observation_id"]],
-                )
+                },
+                [call["observation_id"]],
+                dependencies=required_contracts,
+            )
+            memory.confirm(
+                "reviewer",
+                name,
+                contract,
+                {
+                    "output_access": knowledge.tools.get(name, {})
+                    .get("planning", {})
+                    .get("output_access"),
+                    "check": "public_output_contract_and_node_checks",
+                },
+                [call["observation_id"]],
+            )
+            for parent in data_parents:
+                if parent in results:
+                    pname = graph.node(parent)["tool"]
+                    consumed = {
+                        k: [binding_recipe(b, node_tools) for b in bindings(value)
+                            if b.get("kind") in {"node", "collect"} and b.get("node") == parent]
+                        for k, value in current_node["arguments"].items()
+                    }
+                    consumed = {k: value for k, value in consumed.items() if value}
+                    if not consumed:
+                        continue
+                    memory.confirm(
+                        "planner",
+                        pname,
+                        graph.contracts[pname],
+                        {
+                            "consumed_by": name,
+                            "bindings": consumed,
+                        },
+                        [results[parent]["observation_id"], call["observation_id"]],
+                        dependencies={name: contract},
+                    )
         save()
 
     def available_files():
@@ -1228,7 +1313,7 @@ def run_scimas(
                 for nid in selected:
                     node = graph.node(nid)
                     parallel = (
-                        knowledge.tools.get(node["tool"], {})
+                        policy.parallel and knowledge.tools.get(node["tool"], {})
                         .get("planning", {})
                         .get("parallel_safe")
                         == "isolated_processes_with_resource_limits"

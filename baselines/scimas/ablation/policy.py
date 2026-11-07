@@ -12,12 +12,15 @@ class AblationPolicy:
     parallel: bool = True
     early_stop: bool = True
     local_repair: bool = True
+    graph_refinement: bool = True
+    scientific_review: bool = True
 
     def document(self):
         return {
-            "schema_version": "scimas.ablation.v1",
+            "schema_version": "scimas.ablation.v2",
             **asdict(self),
             "experience_scope": "task_local",
+            "experience_representation": "verified_interface_recipes.v1",
             "serial_order": "stable_topological_plan_order",
             "unrecoverable_error_policy": (
                 "bounded_local_repair" if self.local_repair else "fail_task"
@@ -30,6 +33,8 @@ class AblationPolicy:
             effective["tool_concurrency"] = 1
         if not self.local_repair:
             effective["local_repairs"] = 0
+        if not self.graph_refinement:
+            effective["graph_refinements"] = 0
         return effective
 
     def instructions(self):
@@ -59,11 +64,26 @@ class AblationPolicy:
         if not self.local_repair:
             lines.append(
                 "Adaptive graph replanning is disabled after scientific execution starts. "
-                "The common pre-execution graph refinement and review remain available. An unrecoverable "
-                "execution error or required graph correction terminates the task. "
+                "An unrecoverable execution error or required runtime graph correction terminates the task. "
                 "Do not hide errors or substitute unsupported answers to avoid failure. "
                 "Bounded automatic transient retries, inspection and answer-format "
                 "correction remain available; execution-stage repair requests terminate the task."
+            )
+        if not self.graph_refinement:
+            lines.append(
+                "Post-planning graph refinement is disabled before execution as well. "
+                "Do not invoke the repair role at any stage. Initial Planner construction, "
+                "contract/schema feedback while constructing its first graph and normal "
+                "protocol correction remain available. A required change to a submitted "
+                "graph terminates the task."
+            )
+        if not self.scientific_review:
+            lines.append(
+                "The scientific Reviewer is disabled for graphs, individual results and "
+                "final answers. Only deterministic contract, provenance and numerical "
+                "checks remain. Their acceptance is not scientific approval. Use actual "
+                "observations to reason and report accurately; do not assume another "
+                "role will correct a scientific error."
             )
         if not self.experience:
             lines.append(
@@ -78,10 +98,11 @@ VARIANTS = {
     "wo-exp": AblationPolicy("wo-exp", experience=False),
     "wo-parallel": AblationPolicy("wo-parallel", parallel=False),
     "wo-early-stop": AblationPolicy("wo-early-stop", early_stop=False),
-    "wo-local-repair": AblationPolicy("wo-local-repair", local_repair=False),
-    # The combined baseline disables all four mechanisms.
+    "wo-local-repair": AblationPolicy("wo-local-repair", local_repair=False, graph_refinement=False),
+    # Explicit extended definition: four mechanisms, initial refinement and Reviewer.
     "wo-all": AblationPolicy(
-        "wo-all", experience=False, parallel=False, early_stop=False, local_repair=False
+        "wo-all", experience=False, parallel=False, early_stop=False, local_repair=False,
+        graph_refinement=False, scientific_review=False,
     ),
 }
 
@@ -104,10 +125,10 @@ def runtime_options(baseline, variant="full"):
 class DisabledExperience(Experience):
     """Neither accumulate nor supply procedural experience, even after success."""
 
-    def confirm(self, role, tool, contract, operation, evidence):
+    def confirm(self, role, tool, contract, operation, evidence, *, dependencies=None):
         return None
 
-    def match(self, role, contracts):
+    def match(self, role, contracts, *, focus_tools=None):
         return []
 
     def invalidate(self, tool, contract):
@@ -116,3 +137,7 @@ class DisabledExperience(Experience):
 
 class LocalRepairDisabled(RuntimeError):
     """A task needs adaptive graph repair which this intervention forbids."""
+
+
+class GraphRefinementDisabled(RuntimeError):
+    """The submitted initial graph needs a refinement this variant forbids."""

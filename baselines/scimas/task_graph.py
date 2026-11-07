@@ -4,6 +4,7 @@ from copy import deepcopy
 from dataclasses import dataclass
 import hashlib
 import json
+from .schema import ID_MAX_LENGTH
 
 PUBLIC_FIELDS = (
     "id",
@@ -417,7 +418,14 @@ class TaskGraph:
             raise ValueError(
                 "Template source must be an array within the expansion limit"
             )
-        ids = [template_id + "__" + str(i) for i in range(len(values))]
+        ids = []
+        for index in range(len(values)):
+            suffix = "__" + str(index)
+            if len(template_id) + len(suffix) > ID_MAX_LENGTH:
+                # A valid long template ID must not generate invalid child IDs.
+                # Hash the full name so truncation does not merge distinct maps.
+                suffix = "__" + digest(template_id)[:10] + "_" + str(index)
+            ids.append(template_id[: ID_MAX_LENGTH - len(suffix)] + suffix)
         if set(ids) & {n["id"] for n in self.plan["nodes"]}:
             raise ValueError("Expansion ID collision")
 

@@ -81,6 +81,7 @@ class Planner:
             timeout,
         )
         self.prompt = (Path(__file__).parent / "prompts/planner.md").read_text()
+        self.decomposition_prompt = (Path(__file__).parent / "prompts/decompose.md").read_text()
 
     def plan(self, task, *, dataset="full", assets=None):
         public = public_task(task)
@@ -109,7 +110,8 @@ class Planner:
                 len(report["steps"]) < self.max_requests and time.monotonic() < deadline
             ):
                 messages = [
-                    {"role": "system", "content": self.prompt},
+                    {"role": "system", "content": self.decomposition_prompt
+                     if stage == "decompose" else self.prompt},
                     {
                         "role": "user",
                         "content": encode_payload(

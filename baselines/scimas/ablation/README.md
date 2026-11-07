@@ -1,47 +1,53 @@
 # SciMas 消融实验
 
-五种消融变体共用 SciMas 的模型客户端、工具库、任务输入、输出契约和评分器，只改变指定的运行机制。完整方法使用 `full`；默认运行方式不变。
+五种消融变体共用工具库、任务、模型客户端、轨迹与评分入口。当前定义为 **`scimas.ablation.v2`**：`w/o Local-repair` 同时关闭执行前图完善；`w/o All` 在四项机制及图完善之外，再关闭科学 Reviewer。这些是公开的扩展消融边界，不能与旧版同名实验直接混合。
 
 ## 变体定义
 
-| 论文名称 | `--scimas-ablation` | 角色经验 | 任务内并行 | 候选早停 | 局部修复 |
-|---|---|---|---|---|---|
-| SciMas | `full` | 开启 | 开启 | 开启 | 开启 |
-| w/o EXP | `wo-exp` | **关闭** | 开启 | 开启 | 开启 |
-| w/o Parallel | `wo-parallel` | 开启 | **关闭** | 开启 | 开启 |
-| w/o Early-stop | `wo-early-stop` | 开启 | 开启 | **关闭** | 开启 |
-| w/o Local-repair | `wo-local-repair` | 开启 | 开启 | 开启 | **关闭** |
-| w/o All | `wo-all` | **关闭** | **关闭** | **关闭** | **关闭** |
-
-`w/o All` 同时关闭角色经验、任务内并行、候选早停和局部修复四项机制，作为基础对照。
+| 变体 / CLI 值 | 角色经验 | 任务内并行 | 候选早停 | 运行期局部修复 | 执行前图完善 | 科学 Reviewer |
+| --- | --- | --- | --- | --- | --- | --- |
+| SciMas / `full` | 开启 | 开启 | 开启 | 开启 | 开启 | 开启 |
+| w/o EXP / `wo-exp` | 关闭 | 开启 | 开启 | 开启 | 开启 | 开启 |
+| w/o Parallel / `wo-parallel` | 开启 | 关闭 | 开启 | 开启 | 开启 | 开启 |
+| w/o Early-stop / `wo-early-stop` | 开启 | 开启 | 关闭 | 开启 | 开启 | 开启 |
+| w/o Local-repair / `wo-local-repair` | 开启 | 开启 | 开启 | 关闭 | 关闭 | 开启 |
+| w/o All / `wo-all` | 关闭 | 关闭 | 关闭 | 关闭 | 关闭 | 关闭 |
 
 ### w/o EXP
 
-不保存成功调用形成的程序性经验，也不向后续角色提供经验匹配结果。当前实现的经验生命周期是**单个 task 内**，没有跨 task 的持久经验库；这个实验不能解释为跨题知识迁移的消融。任务图、真实 observations、工具契约以及当前任务的结果依赖均保留，否则会同时损伤上下文记忆和正常数据传递。
+关闭成功调用后的接口模式提取、去重存储、失效处理和角色匹配注入。经验生命周期是单个 task，本组不代表跨题知识迁移的消融。原始 observations、工具契约和依赖数据仍可用；模型仍可从当前观测自行推理。
 
 ### w/o Parallel
 
-任务内工具并发上限固定为 1。调度器按已批准图中的节点顺序，在依赖满足的节点间稳定选择下一个节点；列表中的后继即使写在前驱前面，也不能提前执行。Executor 仍进行调度决策，Reviewer 仍审查结果，避免通过额外删除角色请求来改变对照条件。
+执行层将单题工具并发上限强制设为 1，按稳定拓扑顺序派发。单个任务的角色决策和评审保留。`--concurrency` 的任务级并发、API 请求并发和工具内部数值库线程不受影响。
 
-这是任务内工具调度的消融。`--concurrency 2` 仍表示同时运行两个独立 task；API 请求并发策略也不会被这个变体改成 1。
+派发记录的 `parallel=false` 与该策略一致；full 的 `parallel=true` 只代表获准重叠，实际并发需核对调用时间区间。
 
 ### w/o Early-stop
 
-保留图中 `when` 条件和 Reviewer 的校验记录。已解析为 false 的科学筛选条件不再剪掉该候选分支，其后继仍执行；Summary 必须区分“已经计算”与“满足筛选条件”。
+保留科学 Reviewer 以及 `when` 条件记录，但不因已解析为 false 的科学条件剪掉候选及其后继；动态模板展开后的节点同样执行。已计算不代表科学上合格，最终答案仍须按原条件报告。
 
-尚未获得证据的条件、未经审核的条件、失效的绑定、缺失的数据、工具错误和非法输入仍不能执行或作为有效结果传递。关闭候选筛选不等于放行错误计算。Reviewer 仍检查科学正确性；它不应仅因候选筛选失败而删除分支或请求修复。
-
-消融对象是图中显式表达的候选门控。若 Planner 一开始只列出筛选后的候选，没有构造其余候选分支，框架不会虚构缺失候选；若某题没有条件节点，早停机制在该题不会生效。分析时应报告实际出现门控的题数，不能仅凭变体名称断言发生了早停。
+未经审核或无法解析的条件仍不能直接执行，错误输入与无效输出仍会失败。这一消融针对框架的显式门控，不能确保模型初始规划列出所有可筛选对象，也不改写工具内部的条件逻辑；无门控的任务不能证明早停效果。
 
 ### w/o Local-repair
 
-采用实验定义中的**直接失败**策略，不进行整图重跑。工具异常在允许的瞬时重试次数耗尽后，或出现不可重试的无效输出时，任务失败并保留已发生的调用。任何运行期图修复请求也会产生 `LocalRepairDisabled`，不会调用修复角色或重写图。
+`local_repairs=0`、`graph_refinements=0`：初始图提交后，无论科学执行是否开始，都不调用修复角色。保留科学 Reviewer；它若认为初始图需要修改，任务以 `GraphRefinementDisabled` 终止。执行期的工具异常、绑定阻塞或任一角色的修复请求以 `LocalRepairDisabled` 终止，不进行整图重跑。
 
-初始规划及执行前的图完善、结构校验、有限的传输重试、输出格式纠错和已有 observation 的查看保持一致。执行前的 Reviewer 异议会反馈给 Planner，并记录在 `graph_refinement_attempts`／`graph_refinements`；此时还没有已执行的科学结果，各变体均可完善图。这与执行异常驱动的局部重规划是不同机制；只有后者受 `local_repair` 开关控制，记录在 `repair_attempts`／`repairs`。科学错误不会因禁用修复而自动通过。
+Planner 构造第一份合法图时的 schema、契约反馈和协议格式纠正仍可用。这里关闭的“执行前图完善”指合法图提交之后，由评审／执行角色触发的 Planner 修图；它与初始 Planner 的协议解析不是同一阶段。已声明模板按真实输入机械展开、有限瞬时与传输重试、已有 observation 查看、答案格式纠正也保留。
 
 ### w/o All
 
-初始规划后，按依赖关系串行执行全部候选分支，不积累或检索角色经验，不进行门控剪枝或自适应图修复。已声明 `for_each` 模板仍可按真实输入数组机械展开，这是实例化原计划，不是异常后的重新规划。输入输出校验、科学评审和最终答案汇总继续保留。
+关闭经验、并行、早停、运行期修复、执行前图完善以及科学 Reviewer。Planner 仍生成初始任务图，Executor 按依赖串行调用，Summary 根据实际观测提交答案。图、工具结果与最终答案三个阶段均不会调用 Reviewer 模型或加载其角色提示。
+
+程序仍执行图结构、工具契约、来源绑定、已有确定性数值证书以及答案格式／引用检查；它不会补充 LLM 科学判断，也不会自动推断 Reviewer 的科学语义元数据。轨迹 `reviews` 中的这些程序记录标记为 `mode=deterministic_only`、`scientific_review=false`，不能当成科学评审通过。确定性数值证书只覆盖已实现的检查（目前为对称特征系统），不能验证所有工具的科学结果；没有对应证书时，程序不会凭空增加检查或判定正确。科学答案是否正确仍由统一的外部评分器判定；正常结束不等于答案正确。
+
+## 比较与版本边界
+
+所有额外关闭项均出现在上表、轨迹 `ablation` 和实验配置中。各组保持同一任务、工具、基模、公共资源上限和评分规则，不添加未披露的限制。`w/o Local-repair` 是包含执行前修图的扩展消融；`w/o All` 是包括科学 Reviewer 的组合消融，不能将其差异仅归因于原来的四项机制。
+
+保留能力包括原始证据与正常依赖传递、工具输入输出校验、确定性数值检查、正常模板展开、有限通信／瞬时重试、协议和答案格式纠正、计时计费及正式评分。它们不承担被移除角色的 LLM 科学判断。
+
+v2 写入新的变体标记和实际配置，源文件指纹也随实现改变。旧版结果保留，不能在同一个结果目录拼接 v1／v2；正式对照应使用新代码版本重新运行。
 
 ## 运行与测评
 
@@ -83,7 +89,7 @@ python -m baselines.scimas.ablation.run --scimas-ablation wo-exp \
 | 每题 prediction 和 `trajectory.json → ablation` | 本题变体身份、经验范围、不可恢复异常策略 |
 | `trajectory.json → gate_evaluations` | 条件及证据、true / false / unknown 状态、剪枝或继续执行决定 |
 | `trajectory.json → graphs / repairs / reviews / experiences` | 实际图版本、修复与复用、评审、经验累积 |
-| `trajectory.json → graph_refinement_attempts / graph_refinements` | 各变体共有的执行前建图纠错，单独计数 |
+| `trajectory.json → graph_refinement_attempts / graph_refinements` | 仅启用图完善时记录，单独计数 |
 | `trajectory.json → repair_attempts` | 运行期局部修复的请求用量、最后错误与终止原因 |
 | `trajectory.json → steps` | 完整角色请求、决策、工具参数与输出；每次实际调用的起止时间 |
 | `task_metrics.json` | 逐题运行时间、工具调用数、输入和输出 token；当前共享任务计时口径 |
@@ -105,10 +111,14 @@ Mini-100 与 Mini-200 共用当前三项主指标：**运行完成率、综合�
 - [../runtime.py](../runtime.py)：执行层落实串行、门控和修复边界。
 - [../../react/runner.py](../../react/runner.py)：共享批量运行器中的参数传递、实验记录与续跑隔离。
 - [../../../tests/scimas/test_ablation.py](../../../tests/scimas/test_ablation.py)：固定角色决策的配对测试和真实矩阵工具调用；不读取标准答案，不调用生成 API。
+- [../../../tests/scimas/test_ablation_extended.py](../../../tests/scimas/test_ablation_extended.py)：v2 的图完善禁用、Reviewer 零调用及确定性检查。
+- [../../../tests/scimas/test_ablation_isolation.py](../../../tests/scimas/test_ablation_isolation.py)：经验路径哨兵、配置覆盖、各修复入口与动态展开后的开关隔离。
 
 ```bash
-python -m pytest tests/scimas/test_ablation.py tests/scimas/test_ablation_recording.py -q
+python -m pytest tests/scimas/test_ablation.py tests/scimas/test_ablation_isolation.py tests/scimas/test_ablation_extended.py tests/scimas/test_ablation_recording.py -q
 python -m pytest tests/scimas -q
 ```
+
+v2 固定源码回归 **317 项通过**，包括 7 项新增扩展边界测试。当前验收统计、实际配置和源文件哈希见 [acceptance.json](acceptance.json)；旧版隔离核查结果保留在对应审查报告中。
 
 记录链路验收使用受控角色响应与真实科学工具执行，核对当前评分、墙钟和通信重叠计时、工具调用数，以及输入／输出 token 的落盘一致性。通信失败中的未知 usage 保持 null。测试数据不作为模型消融成绩。

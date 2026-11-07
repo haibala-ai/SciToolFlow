@@ -164,13 +164,16 @@ class BudgetedClient:
             if self.resources.clock() >= self.resources.deadline:
                 raise ResourceLimit("TaskDeadline")
             return reply
-        except Exception as error:
-            failure = infrastructure_failure(error)
+        except (Exception, KeyboardInterrupt) as error:
+            interrupted = isinstance(error, KeyboardInterrupt)
+            failure = None if interrupted else infrastructure_failure(error)
             if failure:
                 entry["infrastructure_failure"] = failure
             if getattr(error, "generation_usage", None) is not None:
                 entry["usage"] = error.generation_usage
             entry["status"] = "error"
+            if interrupted:
+                entry["interrupted"] = True
             raise
         finally:
             finished = self.resources.clock()

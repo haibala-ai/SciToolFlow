@@ -11,7 +11,8 @@ def obj(properties, required=None):
 
 
 TEXT = {"type": "string", "minLength": 1}
-ID = {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"}
+ID_MAX_LENGTH = 80
+ID = {"type": "string", "pattern": rf"^[A-Za-z][A-Za-z0-9_-]{{0,{ID_MAX_LENGTH - 1}}}$"}
 PATH = {
     "type": "array",
     "maxItems": 32,

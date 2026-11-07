@@ -216,7 +216,7 @@ def test_no_early_stop_still_requires_approved_resolvable_conditions_and_valid_i
 
 
 @pytest.mark.parametrize("variant", VARIANTS)
-def test_initial_graph_correction_is_shared_by_all_variants(tmp_path, variant):
+def test_initial_graph_correction_follows_declared_variant(tmp_path, variant):
     requested = False
     def hook(payload, action):
         nonlocal requested
@@ -229,6 +229,17 @@ def test_initial_graph_correction_is_shared_by_all_variants(tmp_path, variant):
             return {"plan": plan}
         return action
     trace = run(tmp_path, Client(hook), scimas_ablation=variant)
+    policy = resolve_ablation(variant)
+    if not policy.scientific_review:
+        assert not requested
+        assert trace['status'] == 'completed', trace['failure_reason']
+        assert not trace['graph_refinements']
+        return
+    if not policy.graph_refinement:
+        assert 'GraphRefinementDisabled' in trace['failure_reason']
+        assert not trace['calls'] and not trace['graph_refinements']
+        assert not any(s.get('role') == 'repair' for s in trace['steps'])
+        return
     assert trace['status'] == 'completed', trace['failure_reason']
     assert len(trace['calls']) == 2 and not trace['repairs']
     assert len(trace['graph_refinements']) == 1
@@ -249,6 +260,16 @@ def test_initial_reviewer_rejection_becomes_actionable_planning_feedback(tmp_pat
             return {'plan': plan}
         return action
     trace = run(tmp_path, Client(hook), scimas_ablation=variant)
+    policy = resolve_ablation(variant)
+    if not policy.scientific_review:
+        assert not rejected
+        assert trace['status'] == 'completed', trace['failure_reason']
+        assert not trace['graph_refinements']
+        return
+    if not policy.graph_refinement:
+        assert 'GraphRefinementDisabled' in trace['failure_reason']
+        assert not trace['calls'] and not trace['graph_refinements']
+        return
     assert trace['status'] == 'completed', trace['failure_reason']
     assert len(trace['calls']) == 2 and not trace['repairs']
     assert len(trace['graph_refinements']) == 1

@@ -58,7 +58,7 @@ class Executor:
                 return self.invoke(
                     node["tool"], arguments, files=files, timeout=timeout
                 )
-            except Exception as error:
+            except (Exception, KeyboardInterrupt, SystemExit) as error:
                 return {
                     "status": "error",
                     "output": None,
@@ -75,17 +75,20 @@ class Executor:
         return record
 
     def completed(self, timeout=0.1):
+        """Yield receipts one at a time, retaining siblings until consumed.
+
+        Reviewing one result can repair the graph or raise. Completed siblings
+        must remain tracked for invalidation and final draining in either case.
+        """
         if not self.running:
-            return []
+            return
         done, _ = wait(self.running, timeout=timeout, return_when=FIRST_COMPLETED)
-        rows = []
         for future in sorted(
             done, key=lambda f: self.running[f].get("finished", float("inf"))
         ):
-            record = self.running.pop(future)
             response = future.result()
-            rows.append((record, response))
-        return rows
+            record = self.running.pop(future)
+            yield record, response
 
     def invalidate(self, ids):
         for record in self.running.values():

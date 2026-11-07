@@ -332,11 +332,11 @@ def test_executor_directories_event_order_and_cancel(tmp_path):
             files=[],
             timeout=10,
         )
-        done = pool.completed(2)
+        done = list(pool.completed(2))
         assert [r["node"] for r, _ in done] == ["fast"]
         assert next(iter(pool.running.values()))["node"] == "slow"
         pool.invalidate(["slow"])
-        done = pool.completed(2)
+        done = list(pool.completed(2))
         assert done[0][0]["stale"]
         assert len(list(tmp_path.rglob("same_name.txt"))) == 2
     finally:

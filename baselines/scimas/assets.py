@@ -42,7 +42,7 @@ def asset_previews(task, asset_root, *, limit=12000):
                     "format": "binary",
                     "bytes": len(content),
                     "sha256": manifest[path.name]["sha256"],
-                    "instruction": "Use a documented scientific/file tool to read this input.",
+                    "instruction": "If data are sourced from this binary file, use a documented scientific/file tool to read it. Complete values independently supplied in task.inputs may be used directly unless the task explicitly requires the file as the source.",
                 }
             )
         else:
@@ -52,7 +52,7 @@ def asset_previews(task, asset_root, *, limit=12000):
                     "text": text[:limit],
                     "truncated": limit is not None and len(text) > limit,
                     "sha256": manifest[path.name]["sha256"],
-                    "instruction": "Planning preview only. Read this file through a real tool and bind downstream scientific data to that tool output.",
+                    "instruction": "Planning preview only, not an executed observation. If scientific data are sourced from this file, read it through a real tool and bind consumers to its output. Complete values independently supplied in task.inputs may be used directly unless the task explicitly requires the file as the source.",
                 }
             )
     return result
